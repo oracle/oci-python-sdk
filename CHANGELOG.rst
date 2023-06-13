@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.104.2 - 2023-06-13
+====================
+
+Added
+-----
+* Support for the OCI Control Center service
+* Support for resource quotas and limits in the Usage service
+* Support for allowing users to select the billing interval of deleted ESXi hosts while adding new ESXi hosts in the VMWare Solution service
+* Support for custom key/value pairs and custom document classification in the AI Document service
+* Support for namespace-prefixed domains in the Object Storage service
+* Support for getting the full path to a pre-authenticated request in the Object Storage service
+* Support for Java migration analysis, performance tuning recommendations, and JDK LCM customization in the Java Management service
+* Support for the TCPS protocol for cloud databases in the Operations Insights service
+* Support for AIX hosts that are monitored via Enterprise Manager in the Operations Insights service
+ 
+====================
 2.104.1 - 2023-06-06
 ====================
 

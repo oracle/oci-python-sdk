@@ -11,7 +11,7 @@ from oci.decorators import init_model_state_from_kwargs
 class RequestJfrRecordingsDetails(object):
     """
     Details of the request to start JFR recordings.
-    When the targets aren't specified, then all managed instances currently in the fleet are selected.
+    When the targets aren't specified, then all managed instances currently in the Fleet are selected.
     """
 
     def __init__(self, **kwargs):
@@ -43,6 +43,10 @@ class RequestJfrRecordingsDetails(object):
             The value to assign to the recording_size_in_mb property of this RequestJfrRecordingsDetails.
         :type recording_size_in_mb: int
 
+        :param waiting_period_in_minutes:
+            The value to assign to the waiting_period_in_minutes property of this RequestJfrRecordingsDetails.
+        :type waiting_period_in_minutes: int
+
         """
         self.swagger_types = {
             'targets': 'list[JfrAttachmentTarget]',
@@ -50,7 +54,8 @@ class RequestJfrRecordingsDetails(object):
             'jfc_v1': 'str',
             'jfc_v2': 'str',
             'recording_duration_in_minutes': 'int',
-            'recording_size_in_mb': 'int'
+            'recording_size_in_mb': 'int',
+            'waiting_period_in_minutes': 'int'
         }
 
         self.attribute_map = {
@@ -59,7 +64,8 @@ class RequestJfrRecordingsDetails(object):
             'jfc_v1': 'jfcV1',
             'jfc_v2': 'jfcV2',
             'recording_duration_in_minutes': 'recordingDurationInMinutes',
-            'recording_size_in_mb': 'recordingSizeInMb'
+            'recording_size_in_mb': 'recordingSizeInMb',
+            'waiting_period_in_minutes': 'waitingPeriodInMinutes'
         }
 
         self._targets = None
@@ -68,6 +74,7 @@ class RequestJfrRecordingsDetails(object):
         self._jfc_v2 = None
         self._recording_duration_in_minutes = None
         self._recording_size_in_mb = None
+        self._waiting_period_in_minutes = None
 
     @property
     def targets(self):
@@ -220,6 +227,36 @@ class RequestJfrRecordingsDetails(object):
         :type: int
         """
         self._recording_size_in_mb = recording_size_in_mb
+
+    @property
+    def waiting_period_in_minutes(self):
+        """
+        Gets the waiting_period_in_minutes of this RequestJfrRecordingsDetails.
+        Period to looking for JVMs. In addition to attach to running JVMs when given the command,
+        JVM started within the waiting period will also be attached for JFR. The value should be
+        larger than the agent polling interval setting for the fleet to ensure agent can get the
+        instructions. If not specified, the agent polling interval for the fleet is used.
+
+
+        :return: The waiting_period_in_minutes of this RequestJfrRecordingsDetails.
+        :rtype: int
+        """
+        return self._waiting_period_in_minutes
+
+    @waiting_period_in_minutes.setter
+    def waiting_period_in_minutes(self, waiting_period_in_minutes):
+        """
+        Sets the waiting_period_in_minutes of this RequestJfrRecordingsDetails.
+        Period to looking for JVMs. In addition to attach to running JVMs when given the command,
+        JVM started within the waiting period will also be attached for JFR. The value should be
+        larger than the agent polling interval setting for the fleet to ensure agent can get the
+        instructions. If not specified, the agent polling interval for the fleet is used.
+
+
+        :param waiting_period_in_minutes: The waiting_period_in_minutes of this RequestJfrRecordingsDetails.
+        :type: int
+        """
+        self._waiting_period_in_minutes = waiting_period_in_minutes
 
     def __repr__(self):
         return formatted_flat_dict(self)

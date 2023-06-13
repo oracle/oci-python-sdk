@@ -5,8 +5,12 @@
 from __future__ import absolute_import
 
 
+from .resources_client import ResourcesClient
+from .resources_client_composite_operations import ResourcesClientCompositeOperations
 from .rewards_client import RewardsClient
 from .rewards_client_composite_operations import RewardsClientCompositeOperations
+from .usagelimits_client import UsagelimitsClient
+from .usagelimits_client_composite_operations import UsagelimitsClientCompositeOperations
 from . import models
 
-__all__ = ["RewardsClient", "RewardsClientCompositeOperations", "models"]
+__all__ = ["ResourcesClient", "ResourcesClientCompositeOperations", "RewardsClient", "RewardsClientCompositeOperations", "UsagelimitsClient", "UsagelimitsClientCompositeOperations", "models"]

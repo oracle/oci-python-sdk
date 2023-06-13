@@ -26,6 +26,10 @@ class CreatePeComanagedExadataVmclusterDetails(object):
             The value to assign to the opsi_private_endpoint_id property of this CreatePeComanagedExadataVmclusterDetails.
         :type opsi_private_endpoint_id: str
 
+        :param dbm_private_endpoint_id:
+            The value to assign to the dbm_private_endpoint_id property of this CreatePeComanagedExadataVmclusterDetails.
+        :type dbm_private_endpoint_id: str
+
         :param member_database_details:
             The value to assign to the member_database_details property of this CreatePeComanagedExadataVmclusterDetails.
         :type member_database_details: list[oci.opsi.models.CreatePeComanagedDatabaseInsightDetails]
@@ -38,6 +42,7 @@ class CreatePeComanagedExadataVmclusterDetails(object):
         self.swagger_types = {
             'vmcluster_id': 'str',
             'opsi_private_endpoint_id': 'str',
+            'dbm_private_endpoint_id': 'str',
             'member_database_details': 'list[CreatePeComanagedDatabaseInsightDetails]',
             'compartment_id': 'str'
         }
@@ -45,12 +50,14 @@ class CreatePeComanagedExadataVmclusterDetails(object):
         self.attribute_map = {
             'vmcluster_id': 'vmclusterId',
             'opsi_private_endpoint_id': 'opsiPrivateEndpointId',
+            'dbm_private_endpoint_id': 'dbmPrivateEndpointId',
             'member_database_details': 'memberDatabaseDetails',
             'compartment_id': 'compartmentId'
         }
 
         self._vmcluster_id = None
         self._opsi_private_endpoint_id = None
+        self._dbm_private_endpoint_id = None
         self._member_database_details = None
         self._compartment_id = None
 
@@ -109,6 +116,34 @@ class CreatePeComanagedExadataVmclusterDetails(object):
         :type: str
         """
         self._opsi_private_endpoint_id = opsi_private_endpoint_id
+
+    @property
+    def dbm_private_endpoint_id(self):
+        """
+        Gets the dbm_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
+        The `OCID`__ of the Database Management private endpoint
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The dbm_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
+        :rtype: str
+        """
+        return self._dbm_private_endpoint_id
+
+    @dbm_private_endpoint_id.setter
+    def dbm_private_endpoint_id(self, dbm_private_endpoint_id):
+        """
+        Sets the dbm_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
+        The `OCID`__ of the Database Management private endpoint
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param dbm_private_endpoint_id: The dbm_private_endpoint_id of this CreatePeComanagedExadataVmclusterDetails.
+        :type: str
+        """
+        self._dbm_private_endpoint_id = dbm_private_endpoint_id
 
     @property
     def member_database_details(self):

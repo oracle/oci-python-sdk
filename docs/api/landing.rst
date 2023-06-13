@@ -123,6 +123,7 @@ API Reference
 * :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
 * :doc:`Ocb Agent Svc <cloud_bridge/client/oci.cloud_bridge.OcbAgentSvcClient>`
+* :doc:`Occ Metrics <oci_control_center/client/oci.oci_control_center.OccMetricsClient>`
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Odapackage <oda/client/oci.oda.OdapackageClient>`
@@ -152,6 +153,7 @@ API Reference
 * :doc:`Replicas <mysql/client/oci.mysql.ReplicasClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
+* :doc:`Resources <usage/client/oci.usage.ResourcesClient>`
 * :doc:`Rewards <usage/client/oci.usage.RewardsClient>`
 * :doc:`Rover Cluster <rover/client/oci.rover.RoverClusterClient>`
 * :doc:`Rover Entitlement <rover/client/oci.rover.RoverEntitlementClient>`
@@ -184,6 +186,7 @@ API Reference
 * :doc:`Transfer Package <dts/client/oci.dts.TransferPackageClient>`
 * :doc:`Usage Plans <apigateway/client/oci.apigateway.UsagePlansClient>`
 * :doc:`Usageapi <usage_api/client/oci.usage_api.UsageapiClient>`
+* :doc:`Usagelimits <usage/client/oci.usage.UsagelimitsClient>`
 * :doc:`User <cims/client/oci.cims.UserClient>`
 * :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
 * :doc:`Vb Instance <visual_builder/client/oci.visual_builder.VbInstanceClient>`
@@ -304,6 +307,7 @@ API Reference
     nosql
     object_storage
     oce
+    oci_control_center
     ocvp
     oda
     onesubscription

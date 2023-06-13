@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FleetAdvancedFeatureConfiguration(object):
     """
-    Advanced feature metadata for the fleet
+    Metadata for the advanced features in the Fleet.
     """
 
     def __init__(self, **kwargs):
@@ -42,6 +42,14 @@ class FleetAdvancedFeatureConfiguration(object):
             The value to assign to the jfr_recording property of this FleetAdvancedFeatureConfiguration.
         :type jfr_recording: oci.jms.models.JfrRecording
 
+        :param performance_tuning_analysis:
+            The value to assign to the performance_tuning_analysis property of this FleetAdvancedFeatureConfiguration.
+        :type performance_tuning_analysis: oci.jms.models.PerformanceTuningAnalysis
+
+        :param java_migration_analysis:
+            The value to assign to the java_migration_analysis property of this FleetAdvancedFeatureConfiguration.
+        :type java_migration_analysis: oci.jms.models.JavaMigrationAnalysis
+
         :param time_last_modified:
             The value to assign to the time_last_modified property of this FleetAdvancedFeatureConfiguration.
         :type time_last_modified: datetime
@@ -54,6 +62,8 @@ class FleetAdvancedFeatureConfiguration(object):
             'crypto_event_analysis': 'CryptoEventAnalysis',
             'advanced_usage_tracking': 'AdvancedUsageTracking',
             'jfr_recording': 'JfrRecording',
+            'performance_tuning_analysis': 'PerformanceTuningAnalysis',
+            'java_migration_analysis': 'JavaMigrationAnalysis',
             'time_last_modified': 'datetime'
         }
 
@@ -64,6 +74,8 @@ class FleetAdvancedFeatureConfiguration(object):
             'crypto_event_analysis': 'cryptoEventAnalysis',
             'advanced_usage_tracking': 'advancedUsageTracking',
             'jfr_recording': 'jfrRecording',
+            'performance_tuning_analysis': 'performanceTuningAnalysis',
+            'java_migration_analysis': 'javaMigrationAnalysis',
             'time_last_modified': 'timeLastModified'
         }
 
@@ -73,13 +85,15 @@ class FleetAdvancedFeatureConfiguration(object):
         self._crypto_event_analysis = None
         self._advanced_usage_tracking = None
         self._jfr_recording = None
+        self._performance_tuning_analysis = None
+        self._java_migration_analysis = None
         self._time_last_modified = None
 
     @property
     def analytic_namespace(self):
         """
         **[Required]** Gets the analytic_namespace of this FleetAdvancedFeatureConfiguration.
-        Namespace for the fleet advanced feature
+        Namespace for the Fleet advanced feature.
 
 
         :return: The analytic_namespace of this FleetAdvancedFeatureConfiguration.
@@ -91,7 +105,7 @@ class FleetAdvancedFeatureConfiguration(object):
     def analytic_namespace(self, analytic_namespace):
         """
         Sets the analytic_namespace of this FleetAdvancedFeatureConfiguration.
-        Namespace for the fleet advanced feature
+        Namespace for the Fleet advanced feature.
 
 
         :param analytic_namespace: The analytic_namespace of this FleetAdvancedFeatureConfiguration.
@@ -103,7 +117,7 @@ class FleetAdvancedFeatureConfiguration(object):
     def analytic_bucket_name(self):
         """
         **[Required]** Gets the analytic_bucket_name of this FleetAdvancedFeatureConfiguration.
-        Bucket name required to store jfr and related data
+        Bucket name required to store JFR and related data.
 
 
         :return: The analytic_bucket_name of this FleetAdvancedFeatureConfiguration.
@@ -115,7 +129,7 @@ class FleetAdvancedFeatureConfiguration(object):
     def analytic_bucket_name(self, analytic_bucket_name):
         """
         Sets the analytic_bucket_name of this FleetAdvancedFeatureConfiguration.
-        Bucket name required to store jfr and related data
+        Bucket name required to store JFR and related data.
 
 
         :param analytic_bucket_name: The analytic_bucket_name of this FleetAdvancedFeatureConfiguration.
@@ -202,6 +216,46 @@ class FleetAdvancedFeatureConfiguration(object):
         :type: oci.jms.models.JfrRecording
         """
         self._jfr_recording = jfr_recording
+
+    @property
+    def performance_tuning_analysis(self):
+        """
+        **[Required]** Gets the performance_tuning_analysis of this FleetAdvancedFeatureConfiguration.
+
+        :return: The performance_tuning_analysis of this FleetAdvancedFeatureConfiguration.
+        :rtype: oci.jms.models.PerformanceTuningAnalysis
+        """
+        return self._performance_tuning_analysis
+
+    @performance_tuning_analysis.setter
+    def performance_tuning_analysis(self, performance_tuning_analysis):
+        """
+        Sets the performance_tuning_analysis of this FleetAdvancedFeatureConfiguration.
+
+        :param performance_tuning_analysis: The performance_tuning_analysis of this FleetAdvancedFeatureConfiguration.
+        :type: oci.jms.models.PerformanceTuningAnalysis
+        """
+        self._performance_tuning_analysis = performance_tuning_analysis
+
+    @property
+    def java_migration_analysis(self):
+        """
+        **[Required]** Gets the java_migration_analysis of this FleetAdvancedFeatureConfiguration.
+
+        :return: The java_migration_analysis of this FleetAdvancedFeatureConfiguration.
+        :rtype: oci.jms.models.JavaMigrationAnalysis
+        """
+        return self._java_migration_analysis
+
+    @java_migration_analysis.setter
+    def java_migration_analysis(self, java_migration_analysis):
+        """
+        Sets the java_migration_analysis of this FleetAdvancedFeatureConfiguration.
+
+        :param java_migration_analysis: The java_migration_analysis of this FleetAdvancedFeatureConfiguration.
+        :type: oci.jms.models.JavaMigrationAnalysis
+        """
+        self._java_migration_analysis = java_migration_analysis
 
     @property
     def time_last_modified(self):

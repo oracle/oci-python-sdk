@@ -202,8 +202,8 @@ class CreateFleetDetails(object):
     def is_advanced_features_enabled(self):
         """
         Gets the is_advanced_features_enabled of this CreateFleetDetails.
-        Whether or not advanced features are enabled in this fleet.
-        Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+        Whether or not advanced features are enabled in this Fleet.
+        Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 
 
         :return: The is_advanced_features_enabled of this CreateFleetDetails.
@@ -215,8 +215,8 @@ class CreateFleetDetails(object):
     def is_advanced_features_enabled(self, is_advanced_features_enabled):
         """
         Sets the is_advanced_features_enabled of this CreateFleetDetails.
-        Whether or not advanced features are enabled in this fleet.
-        Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
+        Whether or not advanced features are enabled in this Fleet.
+        Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 
 
         :param is_advanced_features_enabled: The is_advanced_features_enabled of this CreateFleetDetails.
@@ -258,7 +258,7 @@ class CreateFleetDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateFleetDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`. (See `Managing Tags and Tag Namespaces`__.)
 
         __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm
@@ -273,7 +273,7 @@ class CreateFleetDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateFleetDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`. (See `Managing Tags and Tag Namespaces`__.)
 
         __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/understandingfreeformtags.htm

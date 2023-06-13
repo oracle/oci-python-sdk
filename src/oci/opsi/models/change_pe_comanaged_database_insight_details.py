@@ -26,6 +26,10 @@ class ChangePeComanagedDatabaseInsightDetails(object):
             The value to assign to the credential_details property of this ChangePeComanagedDatabaseInsightDetails.
         :type credential_details: oci.opsi.models.CredentialDetails
 
+        :param connection_details:
+            The value to assign to the connection_details property of this ChangePeComanagedDatabaseInsightDetails.
+        :type connection_details: oci.opsi.models.PeComanagedDatabaseConnectionDetails
+
         :param opsi_private_endpoint_id:
             The value to assign to the opsi_private_endpoint_id property of this ChangePeComanagedDatabaseInsightDetails.
         :type opsi_private_endpoint_id: str
@@ -34,17 +38,20 @@ class ChangePeComanagedDatabaseInsightDetails(object):
         self.swagger_types = {
             'service_name': 'str',
             'credential_details': 'CredentialDetails',
+            'connection_details': 'PeComanagedDatabaseConnectionDetails',
             'opsi_private_endpoint_id': 'str'
         }
 
         self.attribute_map = {
             'service_name': 'serviceName',
             'credential_details': 'credentialDetails',
+            'connection_details': 'connectionDetails',
             'opsi_private_endpoint_id': 'opsiPrivateEndpointId'
         }
 
         self._service_name = None
         self._credential_details = None
+        self._connection_details = None
         self._opsi_private_endpoint_id = None
 
     @property
@@ -90,6 +97,26 @@ class ChangePeComanagedDatabaseInsightDetails(object):
         :type: oci.opsi.models.CredentialDetails
         """
         self._credential_details = credential_details
+
+    @property
+    def connection_details(self):
+        """
+        Gets the connection_details of this ChangePeComanagedDatabaseInsightDetails.
+
+        :return: The connection_details of this ChangePeComanagedDatabaseInsightDetails.
+        :rtype: oci.opsi.models.PeComanagedDatabaseConnectionDetails
+        """
+        return self._connection_details
+
+    @connection_details.setter
+    def connection_details(self, connection_details):
+        """
+        Sets the connection_details of this ChangePeComanagedDatabaseInsightDetails.
+
+        :param connection_details: The connection_details of this ChangePeComanagedDatabaseInsightDetails.
+        :type: oci.opsi.models.PeComanagedDatabaseConnectionDetails
+        """
+        self._connection_details = connection_details
 
     @property
     def opsi_private_endpoint_id(self):

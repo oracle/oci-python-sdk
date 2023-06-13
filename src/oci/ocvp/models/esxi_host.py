@@ -115,6 +115,22 @@ class EsxiHost(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param billing_donor_host_id:
+            The value to assign to the billing_donor_host_id property of this EsxiHost.
+        :type billing_donor_host_id: str
+
+        :param swap_billing_host_id:
+            The value to assign to the swap_billing_host_id property of this EsxiHost.
+        :type swap_billing_host_id: str
+
+        :param is_billing_continuation_in_progress:
+            The value to assign to the is_billing_continuation_in_progress property of this EsxiHost.
+        :type is_billing_continuation_in_progress: bool
+
+        :param is_billing_swapping_in_progress:
+            The value to assign to the is_billing_swapping_in_progress property of this EsxiHost.
+        :type is_billing_swapping_in_progress: bool
+
         :param current_sku:
             The value to assign to the current_sku property of this EsxiHost.
             Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS", 'UNKNOWN_ENUM_VALUE'.
@@ -189,6 +205,10 @@ class EsxiHost(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'billing_donor_host_id': 'str',
+            'swap_billing_host_id': 'str',
+            'is_billing_continuation_in_progress': 'bool',
+            'is_billing_swapping_in_progress': 'bool',
             'current_sku': 'str',
             'next_sku': 'str',
             'billing_contract_end_date': 'datetime',
@@ -215,6 +235,10 @@ class EsxiHost(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'billing_donor_host_id': 'billingDonorHostId',
+            'swap_billing_host_id': 'swapBillingHostId',
+            'is_billing_continuation_in_progress': 'isBillingContinuationInProgress',
+            'is_billing_swapping_in_progress': 'isBillingSwappingInProgress',
             'current_sku': 'currentSku',
             'next_sku': 'nextSku',
             'billing_contract_end_date': 'billingContractEndDate',
@@ -240,6 +264,10 @@ class EsxiHost(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._billing_donor_host_id = None
+        self._swap_billing_host_id = None
+        self._is_billing_continuation_in_progress = None
+        self._is_billing_swapping_in_progress = None
         self._current_sku = None
         self._next_sku = None
         self._billing_contract_end_date = None
@@ -495,6 +523,110 @@ class EsxiHost(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def billing_donor_host_id(self):
+        """
+        Gets the billing_donor_host_id of this EsxiHost.
+        The `OCID`__ of the deleted ESXi Host with LeftOver billing cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The billing_donor_host_id of this EsxiHost.
+        :rtype: str
+        """
+        return self._billing_donor_host_id
+
+    @billing_donor_host_id.setter
+    def billing_donor_host_id(self, billing_donor_host_id):
+        """
+        Sets the billing_donor_host_id of this EsxiHost.
+        The `OCID`__ of the deleted ESXi Host with LeftOver billing cycle.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param billing_donor_host_id: The billing_donor_host_id of this EsxiHost.
+        :type: str
+        """
+        self._billing_donor_host_id = billing_donor_host_id
+
+    @property
+    def swap_billing_host_id(self):
+        """
+        Gets the swap_billing_host_id of this EsxiHost.
+        The `OCID`__ of the active ESXi Host to swap billing with current host.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The swap_billing_host_id of this EsxiHost.
+        :rtype: str
+        """
+        return self._swap_billing_host_id
+
+    @swap_billing_host_id.setter
+    def swap_billing_host_id(self, swap_billing_host_id):
+        """
+        Sets the swap_billing_host_id of this EsxiHost.
+        The `OCID`__ of the active ESXi Host to swap billing with current host.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param swap_billing_host_id: The swap_billing_host_id of this EsxiHost.
+        :type: str
+        """
+        self._swap_billing_host_id = swap_billing_host_id
+
+    @property
+    def is_billing_continuation_in_progress(self):
+        """
+        Gets the is_billing_continuation_in_progress of this EsxiHost.
+        Indicates whether this host is in the progress of billing continuation.
+
+
+        :return: The is_billing_continuation_in_progress of this EsxiHost.
+        :rtype: bool
+        """
+        return self._is_billing_continuation_in_progress
+
+    @is_billing_continuation_in_progress.setter
+    def is_billing_continuation_in_progress(self, is_billing_continuation_in_progress):
+        """
+        Sets the is_billing_continuation_in_progress of this EsxiHost.
+        Indicates whether this host is in the progress of billing continuation.
+
+
+        :param is_billing_continuation_in_progress: The is_billing_continuation_in_progress of this EsxiHost.
+        :type: bool
+        """
+        self._is_billing_continuation_in_progress = is_billing_continuation_in_progress
+
+    @property
+    def is_billing_swapping_in_progress(self):
+        """
+        Gets the is_billing_swapping_in_progress of this EsxiHost.
+        Indicates whether this host is in the progress of swapping billing.
+
+
+        :return: The is_billing_swapping_in_progress of this EsxiHost.
+        :rtype: bool
+        """
+        return self._is_billing_swapping_in_progress
+
+    @is_billing_swapping_in_progress.setter
+    def is_billing_swapping_in_progress(self, is_billing_swapping_in_progress):
+        """
+        Sets the is_billing_swapping_in_progress of this EsxiHost.
+        Indicates whether this host is in the progress of swapping billing.
+
+
+        :param is_billing_swapping_in_progress: The is_billing_swapping_in_progress of this EsxiHost.
+        :type: bool
+        """
+        self._is_billing_swapping_in_progress = is_billing_swapping_in_progress
 
     @property
     def current_sku(self):

@@ -11,7 +11,7 @@ from oci.decorators import init_model_state_from_kwargs
 class RequestCryptoAnalysesDetails(object):
     """
     Details of the request to start a JFR analysis.
-    When the targets aren't specified, then all managed instances currently in the fleet are selected.
+    When the targets aren't specified, then all managed instances currently in the Fleet are selected.
     """
 
     def __init__(self, **kwargs):
@@ -27,19 +27,26 @@ class RequestCryptoAnalysesDetails(object):
             The value to assign to the recording_duration_in_minutes property of this RequestCryptoAnalysesDetails.
         :type recording_duration_in_minutes: int
 
+        :param waiting_period_in_minutes:
+            The value to assign to the waiting_period_in_minutes property of this RequestCryptoAnalysesDetails.
+        :type waiting_period_in_minutes: int
+
         """
         self.swagger_types = {
             'targets': 'list[JfrAttachmentTarget]',
-            'recording_duration_in_minutes': 'int'
+            'recording_duration_in_minutes': 'int',
+            'waiting_period_in_minutes': 'int'
         }
 
         self.attribute_map = {
             'targets': 'targets',
-            'recording_duration_in_minutes': 'recordingDurationInMinutes'
+            'recording_duration_in_minutes': 'recordingDurationInMinutes',
+            'waiting_period_in_minutes': 'waitingPeriodInMinutes'
         }
 
         self._targets = None
         self._recording_duration_in_minutes = None
+        self._waiting_period_in_minutes = None
 
     @property
     def targets(self):
@@ -88,6 +95,36 @@ class RequestCryptoAnalysesDetails(object):
         :type: int
         """
         self._recording_duration_in_minutes = recording_duration_in_minutes
+
+    @property
+    def waiting_period_in_minutes(self):
+        """
+        Gets the waiting_period_in_minutes of this RequestCryptoAnalysesDetails.
+        Period to looking for JVMs. In addition to attach to running JVMs when given the command,
+        JVM started within the waiting period will also be attached for JFR. The value should be
+        larger than the agent polling interval setting for the fleet to ensure agent can get the
+        instructions. If not specified, the agent polling interval for the fleet is used.
+
+
+        :return: The waiting_period_in_minutes of this RequestCryptoAnalysesDetails.
+        :rtype: int
+        """
+        return self._waiting_period_in_minutes
+
+    @waiting_period_in_minutes.setter
+    def waiting_period_in_minutes(self, waiting_period_in_minutes):
+        """
+        Sets the waiting_period_in_minutes of this RequestCryptoAnalysesDetails.
+        Period to looking for JVMs. In addition to attach to running JVMs when given the command,
+        JVM started within the waiting period will also be attached for JFR. The value should be
+        larger than the agent polling interval setting for the fleet to ensure agent can get the
+        instructions. If not specified, the agent polling interval for the fleet is used.
+
+
+        :param waiting_period_in_minutes: The waiting_period_in_minutes of this RequestCryptoAnalysesDetails.
+        :type: int
+        """
+        self._waiting_period_in_minutes = waiting_period_in_minutes
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -6,8 +6,12 @@ Usage
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.usage.ResourcesClient
     oci.usage.RewardsClient
+    oci.usage.UsagelimitsClient
+    oci.usage.ResourcesClientCompositeOperations
     oci.usage.RewardsClientCompositeOperations
+    oci.usage.UsagelimitsClientCompositeOperations
 
 --------
  Models
@@ -27,5 +31,12 @@ Usage
     oci.usage.models.RedeemableUserSummary
     oci.usage.models.RedemptionCollection
     oci.usage.models.RedemptionSummary
+    oci.usage.models.ResourceQuotumCollection
+    oci.usage.models.ResourceQuotumSummary
+    oci.usage.models.ResourceSummary
+    oci.usage.models.ResourcesCollection
     oci.usage.models.RewardCollection
     oci.usage.models.RewardDetails
+    oci.usage.models.SkuProducts
+    oci.usage.models.UsageLimitCollection
+    oci.usage.models.UsageLimitSummary

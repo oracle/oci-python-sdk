@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkItemSummary(object):
     """
-    The LCM work request for a JVM installation site.
+    Work item to complete a work request.
     """
 
     #: A constant which can be used with the status property of a WorkItemSummary.
@@ -58,6 +58,10 @@ class WorkItemSummary(object):
             The value to assign to the installation_site property of this WorkItemSummary.
         :type installation_site: oci.jms.models.InstallationSite
 
+        :param details:
+            The value to assign to the details property of this WorkItemSummary.
+        :type details: oci.jms.models.WorkItemDetails
+
         :param status:
             The value to assign to the status property of this WorkItemSummary.
             Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "NEEDS_ATTENTION", "RETRYING", 'UNKNOWN_ENUM_VALUE'.
@@ -77,6 +81,7 @@ class WorkItemSummary(object):
             'id': 'str',
             'work_request_id': 'str',
             'installation_site': 'InstallationSite',
+            'details': 'WorkItemDetails',
             'status': 'str',
             'retry_count': 'int',
             'time_last_updated': 'datetime'
@@ -86,6 +91,7 @@ class WorkItemSummary(object):
             'id': 'id',
             'work_request_id': 'workRequestId',
             'installation_site': 'installationSite',
+            'details': 'details',
             'status': 'status',
             'retry_count': 'retryCount',
             'time_last_updated': 'timeLastUpdated'
@@ -94,6 +100,7 @@ class WorkItemSummary(object):
         self._id = None
         self._work_request_id = None
         self._installation_site = None
+        self._details = None
         self._status = None
         self._retry_count = None
         self._time_last_updated = None
@@ -165,6 +172,26 @@ class WorkItemSummary(object):
         :type: oci.jms.models.InstallationSite
         """
         self._installation_site = installation_site
+
+    @property
+    def details(self):
+        """
+        **[Required]** Gets the details of this WorkItemSummary.
+
+        :return: The details of this WorkItemSummary.
+        :rtype: oci.jms.models.WorkItemDetails
+        """
+        return self._details
+
+    @details.setter
+    def details(self, details):
+        """
+        Sets the details of this WorkItemSummary.
+
+        :param details: The details of this WorkItemSummary.
+        :type: oci.jms.models.WorkItemDetails
+        """
+        self._details = details
 
     @property
     def status(self):

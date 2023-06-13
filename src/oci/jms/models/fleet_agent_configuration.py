@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FleetAgentConfiguration(object):
     """
-    Management Agent Configuration for a Fleet. Includes JRE scanning frequency and list of include/exclude file system paths.
+    Management Agent Configuration for a Fleet. Includes JRE scanning frequency and a list of include/exclude file system paths.
     """
 
     def __init__(self, **kwargs):
