@@ -13048,6 +13048,49 @@ def test_update_cloud_vm_cluster_iorm_config(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
+def test_update_console_connection(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateConsoleConnection'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateConsoleConnection')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateConsoleConnection')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_console_connection(
+                db_node_id=request.pop(util.camelize('dbNodeId')),
+                console_connection_id=request.pop(util.camelize('consoleConnectionId')),
+                update_console_connection_details=request.pop(util.camelize('UpdateConsoleConnectionDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateConsoleConnection',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'consoleConnection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_update_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -13211,6 +13254,48 @@ def test_update_db_home(testing_service_client):
             result,
             service_error,
             'dbHome',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
+def test_update_db_node(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateDbNode'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateDbNode')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateDbNode')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_db_node(
+                db_node_id=request.pop(util.camelize('dbNodeId')),
+                update_db_node_details=request.pop(util.camelize('UpdateDbNodeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateDbNode',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dbNode',
             False,
             False
         )

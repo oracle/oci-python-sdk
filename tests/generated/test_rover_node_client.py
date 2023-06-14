@@ -386,6 +386,47 @@ def test_list_rover_nodes(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="edge_rover_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
+def test_rover_node_action_retrieve_ca_bundle(testing_service_client):
+    if not testing_service_client.is_api_enabled('rover', 'RoverNodeActionRetrieveCaBundle'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('rover', util.camelize('rover_node'), 'RoverNodeActionRetrieveCaBundle')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='rover', api_name='RoverNodeActionRetrieveCaBundle')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.rover.RoverNodeClient(config, service_endpoint=service_endpoint)
+            response = client.rover_node_action_retrieve_ca_bundle(
+                rover_node_id=request.pop(util.camelize('roverNodeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'rover',
+            'RoverNodeActionRetrieveCaBundle',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'caBundleResponse',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="edge_rover_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
 def test_rover_node_action_set_key(testing_service_client):
     if not testing_service_client.is_api_enabled('rover', 'RoverNodeActionSetKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -423,6 +464,173 @@ def test_rover_node_action_set_key(testing_service_client):
             result,
             service_error,
             'roverNodeSetKey',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="edge_rover_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
+def test_rover_node_generate_certificate(testing_service_client):
+    if not testing_service_client.is_api_enabled('rover', 'RoverNodeGenerateCertificate'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('rover', util.camelize('rover_node'), 'RoverNodeGenerateCertificate')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='rover', api_name='RoverNodeGenerateCertificate')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.rover.RoverNodeClient(config, service_endpoint=service_endpoint)
+            response = client.rover_node_generate_certificate(
+                rover_node_generate_certificate_details=request.pop(util.camelize('RoverNodeGenerateCertificateDetails')),
+                rover_node_id=request.pop(util.camelize('roverNodeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'rover',
+            'RoverNodeGenerateCertificate',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'generateCertificateResponse',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="edge_rover_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
+def test_rover_node_renew_certificate(testing_service_client):
+    if not testing_service_client.is_api_enabled('rover', 'RoverNodeRenewCertificate'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('rover', util.camelize('rover_node'), 'RoverNodeRenewCertificate')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='rover', api_name='RoverNodeRenewCertificate')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.rover.RoverNodeClient(config, service_endpoint=service_endpoint)
+            response = client.rover_node_renew_certificate(
+                rover_node_renew_certificate_details=request.pop(util.camelize('RoverNodeRenewCertificateDetails')),
+                rover_node_id=request.pop(util.camelize('roverNodeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'rover',
+            'RoverNodeRenewCertificate',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'renewCertificateResponse',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="edge_rover_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
+def test_rover_node_replace_certificate_authority(testing_service_client):
+    if not testing_service_client.is_api_enabled('rover', 'RoverNodeReplaceCertificateAuthority'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('rover', util.camelize('rover_node'), 'RoverNodeReplaceCertificateAuthority')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='rover', api_name='RoverNodeReplaceCertificateAuthority')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.rover.RoverNodeClient(config, service_endpoint=service_endpoint)
+            response = client.rover_node_replace_certificate_authority(
+                rover_node_replace_certificate_authority_details=request.pop(util.camelize('RoverNodeReplaceCertificateAuthorityDetails')),
+                rover_node_id=request.pop(util.camelize('roverNodeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'rover',
+            'RoverNodeReplaceCertificateAuthority',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replaceCertificateAuthorityResponse',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="edge_rover_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
+def test_rover_node_retrieve_leaf_certificate(testing_service_client):
+    if not testing_service_client.is_api_enabled('rover', 'RoverNodeRetrieveLeafCertificate'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('rover', util.camelize('rover_node'), 'RoverNodeRetrieveLeafCertificate')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='rover', api_name='RoverNodeRetrieveLeafCertificate')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.rover.RoverNodeClient(config, service_endpoint=service_endpoint)
+            response = client.rover_node_retrieve_leaf_certificate(
+                rover_node_id=request.pop(util.camelize('roverNodeId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'rover',
+            'RoverNodeRetrieveLeafCertificate',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'leafCertificateResponse',
             False,
             False
         )

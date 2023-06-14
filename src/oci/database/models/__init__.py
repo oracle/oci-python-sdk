@@ -302,10 +302,12 @@ from .update_backup_destination_details import UpdateBackupDestinationDetails
 from .update_cloud_autonomous_vm_cluster_details import UpdateCloudAutonomousVmClusterDetails
 from .update_cloud_exadata_infrastructure_details import UpdateCloudExadataInfrastructureDetails
 from .update_cloud_vm_cluster_details import UpdateCloudVmClusterDetails
+from .update_console_connection_details import UpdateConsoleConnectionDetails
 from .update_data_guard_association_details import UpdateDataGuardAssociationDetails
 from .update_database_details import UpdateDatabaseDetails
 from .update_database_software_image_details import UpdateDatabaseSoftwareImageDetails
 from .update_db_home_details import UpdateDbHomeDetails
+from .update_db_node_details import UpdateDbNodeDetails
 from .update_db_system_details import UpdateDbSystemDetails
 from .update_details import UpdateDetails
 from .update_exadata_infrastructure_details import UpdateExadataInfrastructureDetails
@@ -639,10 +641,12 @@ database_type_mapping = {
     "UpdateCloudAutonomousVmClusterDetails": UpdateCloudAutonomousVmClusterDetails,
     "UpdateCloudExadataInfrastructureDetails": UpdateCloudExadataInfrastructureDetails,
     "UpdateCloudVmClusterDetails": UpdateCloudVmClusterDetails,
+    "UpdateConsoleConnectionDetails": UpdateConsoleConnectionDetails,
     "UpdateDataGuardAssociationDetails": UpdateDataGuardAssociationDetails,
     "UpdateDatabaseDetails": UpdateDatabaseDetails,
     "UpdateDatabaseSoftwareImageDetails": UpdateDatabaseSoftwareImageDetails,
     "UpdateDbHomeDetails": UpdateDbHomeDetails,
+    "UpdateDbNodeDetails": UpdateDbNodeDetails,
     "UpdateDbSystemDetails": UpdateDbSystemDetails,
     "UpdateDetails": UpdateDetails,
     "UpdateExadataInfrastructureDetails": UpdateExadataInfrastructureDetails,

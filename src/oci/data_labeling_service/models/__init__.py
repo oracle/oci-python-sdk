@@ -20,9 +20,14 @@ from .document_dataset_format_details import DocumentDatasetFormatDetails
 from .export_format import ExportFormat
 from .generate_dataset_records_details import GenerateDatasetRecordsDetails
 from .image_dataset_format_details import ImageDatasetFormatDetails
+from .import_format import ImportFormat
+from .import_metadata_path import ImportMetadataPath
+from .import_pre_annotated_data_details import ImportPreAnnotatedDataDetails
+from .initial_import_dataset_configuration import InitialImportDatasetConfiguration
 from .initial_record_generation_configuration import InitialRecordGenerationConfiguration
 from .label import Label
 from .label_set import LabelSet
+from .object_storage_import_metadata_path import ObjectStorageImportMetadataPath
 from .object_storage_snapshot_export_details import ObjectStorageSnapshotExportDetails
 from .object_storage_source_details import ObjectStorageSourceDetails
 from .remove_dataset_labels_details import RemoveDatasetLabelsDetails
@@ -59,9 +64,14 @@ data_labeling_service_type_mapping = {
     "ExportFormat": ExportFormat,
     "GenerateDatasetRecordsDetails": GenerateDatasetRecordsDetails,
     "ImageDatasetFormatDetails": ImageDatasetFormatDetails,
+    "ImportFormat": ImportFormat,
+    "ImportMetadataPath": ImportMetadataPath,
+    "ImportPreAnnotatedDataDetails": ImportPreAnnotatedDataDetails,
+    "InitialImportDatasetConfiguration": InitialImportDatasetConfiguration,
     "InitialRecordGenerationConfiguration": InitialRecordGenerationConfiguration,
     "Label": Label,
     "LabelSet": LabelSet,
+    "ObjectStorageImportMetadataPath": ObjectStorageImportMetadataPath,
     "ObjectStorageSnapshotExportDetails": ObjectStorageSnapshotExportDetails,
     "ObjectStorageSourceDetails": ObjectStorageSourceDetails,
     "RemoveDatasetLabelsDetails": RemoveDatasetLabelsDetails,

@@ -312,7 +312,7 @@ class NetworkSources(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this NetworkSources.
-        Date and time the group was created, in the format defined by RFC3339.
+        Date and time the network source was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -326,7 +326,7 @@ class NetworkSources(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this NetworkSources.
-        Date and time the group was created, in the format defined by RFC3339.
+        Date and time the network source was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 

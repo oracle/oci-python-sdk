@@ -24,6 +24,10 @@ class GenericEntity(Entity):
             Allowed values for this property are: "GENERIC", "IMAGEOBJECTSELECTION", "TEXTSELECTION", "KEYVALUESELECTION"
         :type entity_type: str
 
+        :param document_entity_metadata:
+            The value to assign to the document_entity_metadata property of this GenericEntity.
+        :type document_entity_metadata: oci.data_labeling_service_dataplane.models.DocumentEntityMetadata
+
         :param labels:
             The value to assign to the labels property of this GenericEntity.
         :type labels: list[oci.data_labeling_service_dataplane.models.Label]
@@ -35,20 +39,43 @@ class GenericEntity(Entity):
         """
         self.swagger_types = {
             'entity_type': 'str',
+            'document_entity_metadata': 'DocumentEntityMetadata',
             'labels': 'list[Label]',
             'extended_metadata': 'dict(str, str)'
         }
 
         self.attribute_map = {
             'entity_type': 'entityType',
+            'document_entity_metadata': 'documentEntityMetadata',
             'labels': 'labels',
             'extended_metadata': 'extendedMetadata'
         }
 
         self._entity_type = None
+        self._document_entity_metadata = None
         self._labels = None
         self._extended_metadata = None
         self._entity_type = 'GENERIC'
+
+    @property
+    def document_entity_metadata(self):
+        """
+        Gets the document_entity_metadata of this GenericEntity.
+
+        :return: The document_entity_metadata of this GenericEntity.
+        :rtype: oci.data_labeling_service_dataplane.models.DocumentEntityMetadata
+        """
+        return self._document_entity_metadata
+
+    @document_entity_metadata.setter
+    def document_entity_metadata(self, document_entity_metadata):
+        """
+        Sets the document_entity_metadata of this GenericEntity.
+
+        :param document_entity_metadata: The document_entity_metadata of this GenericEntity.
+        :type: oci.data_labeling_service_dataplane.models.DocumentEntityMetadata
+        """
+        self._document_entity_metadata = document_entity_metadata
 
     @property
     def labels(self):

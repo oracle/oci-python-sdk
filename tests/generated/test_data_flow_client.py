@@ -76,6 +76,48 @@ def test_change_application_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
+def test_change_pool_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_flow', 'ChangePoolCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_flow', util.camelize('data_flow'), 'ChangePoolCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_flow', api_name='ChangePoolCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
+            response = client.change_pool_compartment(
+                pool_id=request.pop(util.camelize('poolId')),
+                change_pool_compartment_details=request.pop(util.camelize('ChangePoolCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_flow',
+            'ChangePoolCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_pool_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
 def test_change_private_endpoint_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('data_flow', 'ChangePrivateEndpointCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -195,6 +237,47 @@ def test_create_application(testing_service_client):
             result,
             service_error,
             'application',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
+def test_create_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_flow', 'CreatePool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_flow', util.camelize('data_flow'), 'CreatePool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_flow', api_name='CreatePool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
+            response = client.create_pool(
+                create_pool_details=request.pop(util.camelize('CreatePoolDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_flow',
+            'CreatePool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pool',
             False,
             False
         )
@@ -366,6 +449,47 @@ def test_delete_application(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
+def test_delete_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_flow', 'DeletePool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_flow', util.camelize('data_flow'), 'DeletePool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_flow', api_name='DeletePool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
+            response = client.delete_pool(
+                pool_id=request.pop(util.camelize('poolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_flow',
+            'DeletePool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_pool',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
 def test_delete_private_endpoint(testing_service_client):
     if not testing_service_client.is_api_enabled('data_flow', 'DeletePrivateEndpoint'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -525,6 +649,47 @@ def test_get_application(testing_service_client):
             result,
             service_error,
             'application',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
+def test_get_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_flow', 'GetPool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_flow', util.camelize('data_flow'), 'GetPool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_flow', api_name='GetPool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
+            response = client.get_pool(
+                pool_id=request.pop(util.camelize('poolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_flow',
+            'GetPool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pool',
             False,
             False
         )
@@ -795,6 +960,69 @@ def test_list_applications(testing_service_client):
             result,
             service_error,
             'applicationSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
+def test_list_pools(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_flow', 'ListPools'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_flow', util.camelize('data_flow'), 'ListPools')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_flow', api_name='ListPools')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
+            response = client.list_pools(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_pools(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_pools(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_flow',
+            'ListPools',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'poolCollection',
             False,
             True
         )
@@ -1242,6 +1470,88 @@ def test_list_work_requests(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
+def test_start_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_flow', 'StartPool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_flow', util.camelize('data_flow'), 'StartPool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_flow', api_name='StartPool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
+            response = client.start_pool(
+                pool_id=request.pop(util.camelize('poolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_flow',
+            'StartPool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'start_pool',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
+def test_stop_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_flow', 'StopPool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_flow', util.camelize('data_flow'), 'StopPool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_flow', api_name='StopPool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
+            response = client.stop_pool(
+                pool_id=request.pop(util.camelize('poolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_flow',
+            'StopPool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stop_pool',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
 def test_update_application(testing_service_client):
     if not testing_service_client.is_api_enabled('data_flow', 'UpdateApplication'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1278,6 +1588,48 @@ def test_update_application(testing_service_client):
             result,
             service_error,
             'application',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
+def test_update_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_flow', 'UpdatePool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_flow', util.camelize('data_flow'), 'UpdatePool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_flow', api_name='UpdatePool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
+            response = client.update_pool(
+                update_pool_details=request.pop(util.camelize('UpdatePoolDetails')),
+                pool_id=request.pop(util.camelize('poolId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_flow',
+            'UpdatePool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_pool',
             False,
             False
         )

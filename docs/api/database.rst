@@ -316,10 +316,12 @@ Database
     oci.database.models.UpdateCloudAutonomousVmClusterDetails
     oci.database.models.UpdateCloudExadataInfrastructureDetails
     oci.database.models.UpdateCloudVmClusterDetails
+    oci.database.models.UpdateConsoleConnectionDetails
     oci.database.models.UpdateDataGuardAssociationDetails
     oci.database.models.UpdateDatabaseDetails
     oci.database.models.UpdateDatabaseSoftwareImageDetails
     oci.database.models.UpdateDbHomeDetails
+    oci.database.models.UpdateDbNodeDetails
     oci.database.models.UpdateDbSystemDetails
     oci.database.models.UpdateDetails
     oci.database.models.UpdateExadataInfrastructureDetails

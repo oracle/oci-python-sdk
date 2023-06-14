@@ -135,6 +135,10 @@ class CreateRunDetails(object):
             The value to assign to the parameters property of this CreateRunDetails.
         :type parameters: list[oci.data_flow.models.ApplicationParameter]
 
+        :param pool_id:
+            The value to assign to the pool_id property of this CreateRunDetails.
+        :type pool_id: str
+
         :param spark_version:
             The value to assign to the spark_version property of this CreateRunDetails.
         :type spark_version: str
@@ -176,6 +180,7 @@ class CreateRunDetails(object):
             'metastore_id': 'str',
             'num_executors': 'int',
             'parameters': 'list[ApplicationParameter]',
+            'pool_id': 'str',
             'spark_version': 'str',
             'type': 'str',
             'warehouse_bucket_uri': 'str',
@@ -202,6 +207,7 @@ class CreateRunDetails(object):
             'metastore_id': 'metastoreId',
             'num_executors': 'numExecutors',
             'parameters': 'parameters',
+            'pool_id': 'poolId',
             'spark_version': 'sparkVersion',
             'type': 'type',
             'warehouse_bucket_uri': 'warehouseBucketUri',
@@ -227,6 +233,7 @@ class CreateRunDetails(object):
         self._metastore_id = None
         self._num_executors = None
         self._parameters = None
+        self._pool_id = None
         self._spark_version = None
         self._type = None
         self._warehouse_bucket_uri = None
@@ -706,6 +713,30 @@ class CreateRunDetails(object):
         :type: list[oci.data_flow.models.ApplicationParameter]
         """
         self._parameters = parameters
+
+    @property
+    def pool_id(self):
+        """
+        Gets the pool_id of this CreateRunDetails.
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+
+
+        :return: The pool_id of this CreateRunDetails.
+        :rtype: str
+        """
+        return self._pool_id
+
+    @pool_id.setter
+    def pool_id(self, pool_id):
+        """
+        Sets the pool_id of this CreateRunDetails.
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+
+
+        :param pool_id: The pool_id of this CreateRunDetails.
+        :type: str
+        """
+        self._pool_id = pool_id
 
     @property
     def spark_version(self):

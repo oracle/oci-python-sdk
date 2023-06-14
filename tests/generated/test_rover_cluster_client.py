@@ -303,6 +303,48 @@ def test_list_rover_clusters(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="edge_rover_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
+def test_request_additional_nodes(testing_service_client):
+    if not testing_service_client.is_api_enabled('rover', 'RequestAdditionalNodes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('rover', util.camelize('rover_cluster'), 'RequestAdditionalNodes')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='rover', api_name='RequestAdditionalNodes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.rover.RoverClusterClient(config, service_endpoint=service_endpoint)
+            response = client.request_additional_nodes(
+                rover_cluster_id=request.pop(util.camelize('roverClusterId')),
+                request_additional_nodes_details=request.pop(util.camelize('RequestAdditionalNodesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'rover',
+            'RequestAdditionalNodes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'request_additional_nodes',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="edge_rover_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
 def test_update_rover_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('rover', 'UpdateRoverCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

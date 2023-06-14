@@ -324,6 +324,48 @@ def test_get_work_request(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci-dls_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
+def test_import_pre_annotated_data(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_labeling_service', 'ImportPreAnnotatedData'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_labeling_service', util.camelize('data_labeling_management'), 'ImportPreAnnotatedData')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_labeling_service', api_name='ImportPreAnnotatedData')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_labeling_service.DataLabelingManagementClient(config, service_endpoint=service_endpoint)
+            response = client.import_pre_annotated_data(
+                dataset_id=request.pop(util.camelize('datasetId')),
+                import_pre_annotated_data_details=request.pop(util.camelize('ImportPreAnnotatedDataDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_labeling_service',
+            'ImportPreAnnotatedData',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'import_pre_annotated_data',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci-dls_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
 def test_list_annotation_formats(testing_service_client):
     if not testing_service_client.is_api_enabled('data_labeling_service', 'ListAnnotationFormats'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

@@ -162,6 +162,10 @@ class Application(object):
             The value to assign to the parameters property of this Application.
         :type parameters: list[oci.data_flow.models.ApplicationParameter]
 
+        :param pool_id:
+            The value to assign to the pool_id property of this Application.
+        :type pool_id: str
+
         :param private_endpoint_id:
             The value to assign to the private_endpoint_id property of this Application.
         :type private_endpoint_id: str
@@ -223,6 +227,7 @@ class Application(object):
             'owner_principal_id': 'str',
             'owner_user_name': 'str',
             'parameters': 'list[ApplicationParameter]',
+            'pool_id': 'str',
             'private_endpoint_id': 'str',
             'spark_version': 'str',
             'time_created': 'datetime',
@@ -259,6 +264,7 @@ class Application(object):
             'owner_principal_id': 'ownerPrincipalId',
             'owner_user_name': 'ownerUserName',
             'parameters': 'parameters',
+            'pool_id': 'poolId',
             'private_endpoint_id': 'privateEndpointId',
             'spark_version': 'sparkVersion',
             'time_created': 'timeCreated',
@@ -294,6 +300,7 @@ class Application(object):
         self._owner_principal_id = None
         self._owner_user_name = None
         self._parameters = None
+        self._pool_id = None
         self._private_endpoint_id = None
         self._spark_version = None
         self._time_created = None
@@ -962,6 +969,30 @@ class Application(object):
         self._parameters = parameters
 
     @property
+    def pool_id(self):
+        """
+        Gets the pool_id of this Application.
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+
+
+        :return: The pool_id of this Application.
+        :rtype: str
+        """
+        return self._pool_id
+
+    @pool_id.setter
+    def pool_id(self, pool_id):
+        """
+        Sets the pool_id of this Application.
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+
+
+        :param pool_id: The pool_id of this Application.
+        :type: str
+        """
+        self._pool_id = pool_id
+
+    @property
     def private_endpoint_id(self):
         """
         Gets the private_endpoint_id of this Application.
@@ -1013,7 +1044,7 @@ class Application(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Application.
-        The date and time a application was created, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was created, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -1028,7 +1059,7 @@ class Application(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Application.
-        The date and time a application was created, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was created, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -1043,7 +1074,7 @@ class Application(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this Application.
-        The date and time a application was updated, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was updated, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -1058,7 +1089,7 @@ class Application(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Application.
-        The date and time a application was updated, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was updated, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339

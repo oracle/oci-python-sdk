@@ -44,6 +44,10 @@ class KeyValueSelectionEntity(Entity):
             The value to assign to the confidence property of this KeyValueSelectionEntity.
         :type confidence: float
 
+        :param page_number:
+            The value to assign to the page_number property of this KeyValueSelectionEntity.
+        :type page_number: float
+
         """
         self.swagger_types = {
             'entity_type': 'str',
@@ -51,7 +55,8 @@ class KeyValueSelectionEntity(Entity):
             'labels': 'list[Label]',
             'bounding_polygon': 'BoundingPolygon',
             'rotation': 'float',
-            'confidence': 'float'
+            'confidence': 'float',
+            'page_number': 'float'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class KeyValueSelectionEntity(Entity):
             'labels': 'labels',
             'bounding_polygon': 'boundingPolygon',
             'rotation': 'rotation',
-            'confidence': 'confidence'
+            'confidence': 'confidence',
+            'page_number': 'pageNumber'
         }
 
         self._entity_type = None
@@ -69,6 +75,7 @@ class KeyValueSelectionEntity(Entity):
         self._bounding_polygon = None
         self._rotation = None
         self._confidence = None
+        self._page_number = None
         self._entity_type = 'KEYVALUESELECTION'
 
     @property
@@ -186,6 +193,30 @@ class KeyValueSelectionEntity(Entity):
         :type: float
         """
         self._confidence = confidence
+
+    @property
+    def page_number(self):
+        """
+        Gets the page_number of this KeyValueSelectionEntity.
+        Integer value.
+
+
+        :return: The page_number of this KeyValueSelectionEntity.
+        :rtype: float
+        """
+        return self._page_number
+
+    @page_number.setter
+    def page_number(self, page_number):
+        """
+        Sets the page_number of this KeyValueSelectionEntity.
+        Integer value.
+
+
+        :param page_number: The page_number of this KeyValueSelectionEntity.
+        :type: float
+        """
+        self._page_number = page_number
 
     def __repr__(self):
         return formatted_flat_dict(self)

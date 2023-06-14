@@ -119,6 +119,10 @@ class UpdateApplicationDetails(object):
             The value to assign to the parameters property of this UpdateApplicationDetails.
         :type parameters: list[oci.data_flow.models.ApplicationParameter]
 
+        :param pool_id:
+            The value to assign to the pool_id property of this UpdateApplicationDetails.
+        :type pool_id: str
+
         :param private_endpoint_id:
             The value to assign to the private_endpoint_id property of this UpdateApplicationDetails.
         :type private_endpoint_id: str
@@ -158,6 +162,7 @@ class UpdateApplicationDetails(object):
             'metastore_id': 'str',
             'num_executors': 'int',
             'parameters': 'list[ApplicationParameter]',
+            'pool_id': 'str',
             'private_endpoint_id': 'str',
             'warehouse_bucket_uri': 'str',
             'max_duration_in_minutes': 'int',
@@ -186,6 +191,7 @@ class UpdateApplicationDetails(object):
             'metastore_id': 'metastoreId',
             'num_executors': 'numExecutors',
             'parameters': 'parameters',
+            'pool_id': 'poolId',
             'private_endpoint_id': 'privateEndpointId',
             'warehouse_bucket_uri': 'warehouseBucketUri',
             'max_duration_in_minutes': 'maxDurationInMinutes',
@@ -213,6 +219,7 @@ class UpdateApplicationDetails(object):
         self._metastore_id = None
         self._num_executors = None
         self._parameters = None
+        self._pool_id = None
         self._private_endpoint_id = None
         self._warehouse_bucket_uri = None
         self._max_duration_in_minutes = None
@@ -773,6 +780,30 @@ class UpdateApplicationDetails(object):
         :type: list[oci.data_flow.models.ApplicationParameter]
         """
         self._parameters = parameters
+
+    @property
+    def pool_id(self):
+        """
+        Gets the pool_id of this UpdateApplicationDetails.
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+
+
+        :return: The pool_id of this UpdateApplicationDetails.
+        :rtype: str
+        """
+        return self._pool_id
+
+    @pool_id.setter
+    def pool_id(self, pool_id):
+        """
+        Sets the pool_id of this UpdateApplicationDetails.
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+
+
+        :param pool_id: The pool_id of this UpdateApplicationDetails.
+        :type: str
+        """
+        self._pool_id = pool_id
 
     @property
     def private_endpoint_id(self):
