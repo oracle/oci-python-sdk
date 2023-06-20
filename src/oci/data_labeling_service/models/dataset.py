@@ -41,6 +41,10 @@ class Dataset(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_substate property of a Dataset.
+    #: This constant has a value of "IMPORT_DATASET"
+    LIFECYCLE_SUBSTATE_IMPORT_DATASET = "IMPORT_DATASET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Dataset object with values from keyword arguments.
@@ -80,6 +84,12 @@ class Dataset(object):
             The value to assign to the lifecycle_details property of this Dataset.
         :type lifecycle_details: str
 
+        :param lifecycle_substate:
+            The value to assign to the lifecycle_substate property of this Dataset.
+            Allowed values for this property are: "IMPORT_DATASET", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_substate: str
+
         :param annotation_format:
             The value to assign to the annotation_format property of this Dataset.
         :type annotation_format: str
@@ -100,6 +110,10 @@ class Dataset(object):
             The value to assign to the initial_record_generation_configuration property of this Dataset.
         :type initial_record_generation_configuration: oci.data_labeling_service.models.InitialRecordGenerationConfiguration
 
+        :param initial_import_dataset_configuration:
+            The value to assign to the initial_import_dataset_configuration property of this Dataset.
+        :type initial_import_dataset_configuration: oci.data_labeling_service.models.InitialImportDatasetConfiguration
+
         :param labeling_instructions:
             The value to assign to the labeling_instructions property of this Dataset.
         :type labeling_instructions: str
@@ -116,6 +130,10 @@ class Dataset(object):
             The value to assign to the system_tags property of this Dataset.
         :type system_tags: dict(str, dict(str, object))
 
+        :param additional_properties:
+            The value to assign to the additional_properties property of this Dataset.
+        :type additional_properties: dict(str, str)
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -126,15 +144,18 @@ class Dataset(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'lifecycle_substate': 'str',
             'annotation_format': 'str',
             'dataset_source_details': 'DatasetSourceDetails',
             'dataset_format_details': 'DatasetFormatDetails',
             'label_set': 'LabelSet',
             'initial_record_generation_configuration': 'InitialRecordGenerationConfiguration',
+            'initial_import_dataset_configuration': 'InitialImportDatasetConfiguration',
             'labeling_instructions': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'additional_properties': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -146,15 +167,18 @@ class Dataset(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'lifecycle_substate': 'lifecycleSubstate',
             'annotation_format': 'annotationFormat',
             'dataset_source_details': 'datasetSourceDetails',
             'dataset_format_details': 'datasetFormatDetails',
             'label_set': 'labelSet',
             'initial_record_generation_configuration': 'initialRecordGenerationConfiguration',
+            'initial_import_dataset_configuration': 'initialImportDatasetConfiguration',
             'labeling_instructions': 'labelingInstructions',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'additional_properties': 'additionalProperties'
         }
 
         self._id = None
@@ -165,15 +189,18 @@ class Dataset(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._lifecycle_substate = None
         self._annotation_format = None
         self._dataset_source_details = None
         self._dataset_format_details = None
         self._label_set = None
         self._initial_record_generation_configuration = None
+        self._initial_import_dataset_configuration = None
         self._labeling_instructions = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._additional_properties = None
 
     @property
     def id(self):
@@ -388,6 +415,38 @@ class Dataset(object):
         self._lifecycle_details = lifecycle_details
 
     @property
+    def lifecycle_substate(self):
+        """
+        Gets the lifecycle_substate of this Dataset.
+        The sub-state of the dataset.
+        IMPORT_DATASET - The dataset is being imported.
+
+        Allowed values for this property are: "IMPORT_DATASET", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_substate of this Dataset.
+        :rtype: str
+        """
+        return self._lifecycle_substate
+
+    @lifecycle_substate.setter
+    def lifecycle_substate(self, lifecycle_substate):
+        """
+        Sets the lifecycle_substate of this Dataset.
+        The sub-state of the dataset.
+        IMPORT_DATASET - The dataset is being imported.
+
+
+        :param lifecycle_substate: The lifecycle_substate of this Dataset.
+        :type: str
+        """
+        allowed_values = ["IMPORT_DATASET"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_substate, allowed_values):
+            lifecycle_substate = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_substate = lifecycle_substate
+
+    @property
     def annotation_format(self):
         """
         **[Required]** Gets the annotation_format of this Dataset.
@@ -492,6 +551,26 @@ class Dataset(object):
         self._initial_record_generation_configuration = initial_record_generation_configuration
 
     @property
+    def initial_import_dataset_configuration(self):
+        """
+        Gets the initial_import_dataset_configuration of this Dataset.
+
+        :return: The initial_import_dataset_configuration of this Dataset.
+        :rtype: oci.data_labeling_service.models.InitialImportDatasetConfiguration
+        """
+        return self._initial_import_dataset_configuration
+
+    @initial_import_dataset_configuration.setter
+    def initial_import_dataset_configuration(self, initial_import_dataset_configuration):
+        """
+        Sets the initial_import_dataset_configuration of this Dataset.
+
+        :param initial_import_dataset_configuration: The initial_import_dataset_configuration of this Dataset.
+        :type: oci.data_labeling_service.models.InitialImportDatasetConfiguration
+        """
+        self._initial_import_dataset_configuration = initial_import_dataset_configuration
+
+    @property
     def labeling_instructions(self):
         """
         Gets the labeling_instructions of this Dataset.
@@ -592,6 +671,32 @@ class Dataset(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def additional_properties(self):
+        """
+        Gets the additional_properties of this Dataset.
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The additional_properties of this Dataset.
+        :rtype: dict(str, str)
+        """
+        return self._additional_properties
+
+    @additional_properties.setter
+    def additional_properties(self, additional_properties):
+        """
+        Sets the additional_properties of this Dataset.
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
+
+
+        :param additional_properties: The additional_properties of this Dataset.
+        :type: dict(str, str)
+        """
+        self._additional_properties = additional_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

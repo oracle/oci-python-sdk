@@ -46,6 +46,10 @@ class ReplicatedRegionDetails(object):
             The value to assign to the url property of this ReplicatedRegionDetails.
         :type url: str
 
+        :param regional_url:
+            The value to assign to the regional_url property of this ReplicatedRegionDetails.
+        :type regional_url: str
+
         :param state:
             The value to assign to the state property of this ReplicatedRegionDetails.
             Allowed values for this property are: "ENABLING_REPLICATION", "REPLICATION_ENABLED", "DISABLING_REPLICATION", "REPLICATION_DISABLED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
@@ -56,17 +60,20 @@ class ReplicatedRegionDetails(object):
         self.swagger_types = {
             'region': 'str',
             'url': 'str',
+            'regional_url': 'str',
             'state': 'str'
         }
 
         self.attribute_map = {
             'region': 'region',
             'url': 'url',
+            'regional_url': 'regionalUrl',
             'state': 'state'
         }
 
         self._region = None
         self._url = None
+        self._regional_url = None
         self._state = None
 
     @property
@@ -124,6 +131,30 @@ class ReplicatedRegionDetails(object):
         :type: str
         """
         self._url = url
+
+    @property
+    def regional_url(self):
+        """
+        Gets the regional_url of this ReplicatedRegionDetails.
+        Region-specific identity domain URL.
+
+
+        :return: The regional_url of this ReplicatedRegionDetails.
+        :rtype: str
+        """
+        return self._regional_url
+
+    @regional_url.setter
+    def regional_url(self, regional_url):
+        """
+        Sets the regional_url of this ReplicatedRegionDetails.
+        Region-specific identity domain URL.
+
+
+        :param regional_url: The regional_url of this ReplicatedRegionDetails.
+        :type: str
+        """
+        self._regional_url = regional_url
 
     @property
     def state(self):

@@ -354,7 +354,7 @@ class ShippingAddress(object):
     def phone_number(self):
         """
         **[Required]** Gets the phone_number of this ShippingAddress.
-        recepient phone number.
+        recipient phone number.
 
 
         :return: The phone_number of this ShippingAddress.
@@ -366,7 +366,7 @@ class ShippingAddress(object):
     def phone_number(self, phone_number):
         """
         Sets the phone_number of this ShippingAddress.
-        recepient phone number.
+        recipient phone number.
 
 
         :param phone_number: The phone_number of this ShippingAddress.
@@ -378,7 +378,7 @@ class ShippingAddress(object):
     def email(self):
         """
         Gets the email of this ShippingAddress.
-        recepient email address.
+        recipient email address.
 
 
         :return: The email of this ShippingAddress.
@@ -390,7 +390,7 @@ class ShippingAddress(object):
     def email(self, email):
         """
         Sets the email of this ShippingAddress.
-        recepient email address.
+        recipient email address.
 
 
         :param email: The email of this ShippingAddress.

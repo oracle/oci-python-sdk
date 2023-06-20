@@ -198,6 +198,10 @@ class Run(object):
             The value to assign to the parameters property of this Run.
         :type parameters: list[oci.data_flow.models.ApplicationParameter]
 
+        :param pool_id:
+            The value to assign to the pool_id property of this Run.
+        :type pool_id: str
+
         :param private_endpoint_dns_zones:
             The value to assign to the private_endpoint_dns_zones property of this Run.
         :type private_endpoint_dns_zones: list[str]
@@ -287,6 +291,7 @@ class Run(object):
             'owner_principal_id': 'str',
             'owner_user_name': 'str',
             'parameters': 'list[ApplicationParameter]',
+            'pool_id': 'str',
             'private_endpoint_dns_zones': 'list[str]',
             'private_endpoint_max_host_count': 'int',
             'private_endpoint_nsg_ids': 'list[str]',
@@ -333,6 +338,7 @@ class Run(object):
             'owner_principal_id': 'ownerPrincipalId',
             'owner_user_name': 'ownerUserName',
             'parameters': 'parameters',
+            'pool_id': 'poolId',
             'private_endpoint_dns_zones': 'privateEndpointDnsZones',
             'private_endpoint_max_host_count': 'privateEndpointMaxHostCount',
             'private_endpoint_nsg_ids': 'privateEndpointNsgIds',
@@ -378,6 +384,7 @@ class Run(object):
         self._owner_principal_id = None
         self._owner_user_name = None
         self._parameters = None
+        self._pool_id = None
         self._private_endpoint_dns_zones = None
         self._private_endpoint_max_host_count = None
         self._private_endpoint_nsg_ids = None
@@ -1150,6 +1157,30 @@ class Run(object):
         self._parameters = parameters
 
     @property
+    def pool_id(self):
+        """
+        Gets the pool_id of this Run.
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+
+
+        :return: The pool_id of this Run.
+        :rtype: str
+        """
+        return self._pool_id
+
+    @pool_id.setter
+    def pool_id(self, pool_id):
+        """
+        Sets the pool_id of this Run.
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+
+
+        :param pool_id: The pool_id of this Run.
+        :type: str
+        """
+        self._pool_id = pool_id
+
+    @property
     def private_endpoint_dns_zones(self):
         """
         Gets the private_endpoint_dns_zones of this Run.
@@ -1329,7 +1360,7 @@ class Run(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Run.
-        The date and time a application was created, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was created, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -1344,7 +1375,7 @@ class Run(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Run.
-        The date and time a application was created, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was created, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -1359,7 +1390,7 @@ class Run(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this Run.
-        The date and time a application was updated, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was updated, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -1374,7 +1405,7 @@ class Run(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Run.
-        The date and time a application was updated, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was updated, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339

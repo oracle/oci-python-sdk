@@ -41,6 +41,18 @@ class Application(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the shape property of a Application.
+    #: This constant has a value of "GENERIC_X86"
+    SHAPE_GENERIC_X86 = "GENERIC_X86"
+
+    #: A constant which can be used with the shape property of a Application.
+    #: This constant has a value of "GENERIC_ARM"
+    SHAPE_GENERIC_ARM = "GENERIC_ARM"
+
+    #: A constant which can be used with the shape property of a Application.
+    #: This constant has a value of "GENERIC_X86_ARM"
+    SHAPE_GENERIC_X86_ARM = "GENERIC_X86_ARM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Application object with values from keyword arguments.
@@ -71,6 +83,12 @@ class Application(object):
         :param subnet_ids:
             The value to assign to the subnet_ids property of this Application.
         :type subnet_ids: list[str]
+
+        :param shape:
+            The value to assign to the shape property of this Application.
+            Allowed values for this property are: "GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type shape: str
 
         :param network_security_group_ids:
             The value to assign to the network_security_group_ids property of this Application.
@@ -112,6 +130,7 @@ class Application(object):
             'lifecycle_state': 'str',
             'config': 'dict(str, str)',
             'subnet_ids': 'list[str]',
+            'shape': 'str',
             'network_security_group_ids': 'list[str]',
             'syslog_url': 'str',
             'trace_config': 'ApplicationTraceConfig',
@@ -129,6 +148,7 @@ class Application(object):
             'lifecycle_state': 'lifecycleState',
             'config': 'config',
             'subnet_ids': 'subnetIds',
+            'shape': 'shape',
             'network_security_group_ids': 'networkSecurityGroupIds',
             'syslog_url': 'syslogUrl',
             'trace_config': 'traceConfig',
@@ -145,6 +165,7 @@ class Application(object):
         self._lifecycle_state = None
         self._config = None
         self._subnet_ids = None
+        self._shape = None
         self._network_security_group_ids = None
         self._syslog_url = None
         self._trace_config = None
@@ -321,6 +342,44 @@ class Application(object):
         :type: list[str]
         """
         self._subnet_ids = subnet_ids
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this Application.
+        Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture.
+        Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture.
+        When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture.
+        Accepted values are:
+        `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+
+        Allowed values for this property are: "GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The shape of this Application.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this Application.
+        Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture.
+        Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture.
+        When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture.
+        Accepted values are:
+        `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+
+
+        :param shape: The shape of this Application.
+        :type: str
+        """
+        allowed_values = ["GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM"]
+        if not value_allowed_none_or_none_sentinel(shape, allowed_values):
+            shape = 'UNKNOWN_ENUM_VALUE'
+        self._shape = shape
 
     @property
     def network_security_group_ids(self):

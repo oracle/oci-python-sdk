@@ -50,6 +50,10 @@ class NetworkSourcesSummary(object):
             The value to assign to the services property of this NetworkSourcesSummary.
         :type services: list[str]
 
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this NetworkSourcesSummary.
+        :type lifecycle_state: str
+
         :param time_created:
             The value to assign to the time_created property of this NetworkSourcesSummary.
         :type time_created: datetime
@@ -71,6 +75,7 @@ class NetworkSourcesSummary(object):
             'public_source_list': 'list[str]',
             'virtual_source_list': 'list[NetworkSourcesVirtualSourceList]',
             'services': 'list[str]',
+            'lifecycle_state': 'str',
             'time_created': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -84,6 +89,7 @@ class NetworkSourcesSummary(object):
             'public_source_list': 'publicSourceList',
             'virtual_source_list': 'virtualSourceList',
             'services': 'services',
+            'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -96,6 +102,7 @@ class NetworkSourcesSummary(object):
         self._public_source_list = None
         self._virtual_source_list = None
         self._services = None
+        self._lifecycle_state = None
         self._time_created = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -103,7 +110,7 @@ class NetworkSourcesSummary(object):
     @property
     def id(self):
         """
-        Gets the id of this NetworkSourcesSummary.
+        **[Required]** Gets the id of this NetworkSourcesSummary.
         The OCID of the network source.
 
 
@@ -127,7 +134,7 @@ class NetworkSourcesSummary(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this NetworkSourcesSummary.
+        **[Required]** Gets the compartment_id of this NetworkSourcesSummary.
         The OCID of the tenancy (root compartment) containing the network source.
 
 
@@ -151,7 +158,7 @@ class NetworkSourcesSummary(object):
     @property
     def name(self):
         """
-        Gets the name of this NetworkSourcesSummary.
+        **[Required]** Gets the name of this NetworkSourcesSummary.
         The name you assign to the network source during creation. The name must be unique across
         the tenancy and cannot be changed.
 
@@ -177,7 +184,7 @@ class NetworkSourcesSummary(object):
     @property
     def description(self):
         """
-        Gets the description of this NetworkSourcesSummary.
+        **[Required]** Gets the description of this NetworkSourcesSummary.
         The description you assign to the network source. Does not have to be unique, and it's changeable.
 
 
@@ -273,10 +280,36 @@ class NetworkSourcesSummary(object):
         self._services = services
 
     @property
+    def lifecycle_state(self):
+        """
+        **[Required]** Gets the lifecycle_state of this NetworkSourcesSummary.
+        The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to
+        ACTIVE before using it.
+
+
+        :return: The lifecycle_state of this NetworkSourcesSummary.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this NetworkSourcesSummary.
+        The network source object's current state. After creating a network source, make sure its `lifecycleState` changes from CREATING to
+        ACTIVE before using it.
+
+
+        :param lifecycle_state: The lifecycle_state of this NetworkSourcesSummary.
+        :type: str
+        """
+        self._lifecycle_state = lifecycle_state
+
+    @property
     def time_created(self):
         """
-        Gets the time_created of this NetworkSourcesSummary.
-        Date and time the group was created, in the format defined by RFC3339.
+        **[Required]** Gets the time_created of this NetworkSourcesSummary.
+        Date and time the network source was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -290,7 +323,7 @@ class NetworkSourcesSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this NetworkSourcesSummary.
-        Date and time the group was created, in the format defined by RFC3339.
+        Date and time the network source was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 

@@ -59,6 +59,22 @@ class ConsoleConnectionSummary(object):
             The value to assign to the fingerprint property of this ConsoleConnectionSummary.
         :type fingerprint: str
 
+        :param service_host_key_fingerprint:
+            The value to assign to the service_host_key_fingerprint property of this ConsoleConnectionSummary.
+        :type service_host_key_fingerprint: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this ConsoleConnectionSummary.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this ConsoleConnectionSummary.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this ConsoleConnectionSummary.
+        :type lifecycle_details: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ConsoleConnectionSummary.
             Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -72,6 +88,10 @@ class ConsoleConnectionSummary(object):
             'db_node_id': 'str',
             'connection_string': 'str',
             'fingerprint': 'str',
+            'service_host_key_fingerprint': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'lifecycle_details': 'str',
             'lifecycle_state': 'str'
         }
 
@@ -81,6 +101,10 @@ class ConsoleConnectionSummary(object):
             'db_node_id': 'dbNodeId',
             'connection_string': 'connectionString',
             'fingerprint': 'fingerprint',
+            'service_host_key_fingerprint': 'serviceHostKeyFingerprint',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
+            'lifecycle_details': 'lifecycleDetails',
             'lifecycle_state': 'lifecycleState'
         }
 
@@ -89,6 +113,10 @@ class ConsoleConnectionSummary(object):
         self._db_node_id = None
         self._connection_string = None
         self._fingerprint = None
+        self._service_host_key_fingerprint = None
+        self._freeform_tags = None
+        self._defined_tags = None
+        self._lifecycle_details = None
         self._lifecycle_state = None
 
     @property
@@ -210,6 +238,118 @@ class ConsoleConnectionSummary(object):
         :type: str
         """
         self._fingerprint = fingerprint
+
+    @property
+    def service_host_key_fingerprint(self):
+        """
+        Gets the service_host_key_fingerprint of this ConsoleConnectionSummary.
+        The SSH public key's fingerprint for the console connection service host.
+
+
+        :return: The service_host_key_fingerprint of this ConsoleConnectionSummary.
+        :rtype: str
+        """
+        return self._service_host_key_fingerprint
+
+    @service_host_key_fingerprint.setter
+    def service_host_key_fingerprint(self, service_host_key_fingerprint):
+        """
+        Sets the service_host_key_fingerprint of this ConsoleConnectionSummary.
+        The SSH public key's fingerprint for the console connection service host.
+
+
+        :param service_host_key_fingerprint: The service_host_key_fingerprint of this ConsoleConnectionSummary.
+        :type: str
+        """
+        self._service_host_key_fingerprint = service_host_key_fingerprint
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this ConsoleConnectionSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this ConsoleConnectionSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this ConsoleConnectionSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this ConsoleConnectionSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this ConsoleConnectionSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this ConsoleConnectionSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this ConsoleConnectionSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this ConsoleConnectionSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this ConsoleConnectionSummary.
+        Information about the current lifecycle state.
+
+
+        :return: The lifecycle_details of this ConsoleConnectionSummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this ConsoleConnectionSummary.
+        Information about the current lifecycle state.
+
+
+        :param lifecycle_details: The lifecycle_details of this ConsoleConnectionSummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def lifecycle_state(self):

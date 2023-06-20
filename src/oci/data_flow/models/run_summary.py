@@ -138,6 +138,10 @@ class RunSummary(object):
             The value to assign to the owner_user_name property of this RunSummary.
         :type owner_user_name: str
 
+        :param pool_id:
+            The value to assign to the pool_id property of this RunSummary.
+        :type pool_id: str
+
         :param run_duration_in_milliseconds:
             The value to assign to the run_duration_in_milliseconds property of this RunSummary.
         :type run_duration_in_milliseconds: int
@@ -176,6 +180,7 @@ class RunSummary(object):
             'opc_request_id': 'str',
             'owner_principal_id': 'str',
             'owner_user_name': 'str',
+            'pool_id': 'str',
             'run_duration_in_milliseconds': 'int',
             'total_o_cpu': 'int',
             'time_created': 'datetime',
@@ -198,6 +203,7 @@ class RunSummary(object):
             'opc_request_id': 'opcRequestId',
             'owner_principal_id': 'ownerPrincipalId',
             'owner_user_name': 'ownerUserName',
+            'pool_id': 'poolId',
             'run_duration_in_milliseconds': 'runDurationInMilliseconds',
             'total_o_cpu': 'totalOCpu',
             'time_created': 'timeCreated',
@@ -219,6 +225,7 @@ class RunSummary(object):
         self._opc_request_id = None
         self._owner_principal_id = None
         self._owner_user_name = None
+        self._pool_id = None
         self._run_duration_in_milliseconds = None
         self._total_o_cpu = None
         self._time_created = None
@@ -592,6 +599,30 @@ class RunSummary(object):
         self._owner_user_name = owner_user_name
 
     @property
+    def pool_id(self):
+        """
+        Gets the pool_id of this RunSummary.
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+
+
+        :return: The pool_id of this RunSummary.
+        :rtype: str
+        """
+        return self._pool_id
+
+    @pool_id.setter
+    def pool_id(self, pool_id):
+        """
+        Sets the pool_id of this RunSummary.
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+
+
+        :param pool_id: The pool_id of this RunSummary.
+        :type: str
+        """
+        self._pool_id = pool_id
+
+    @property
     def run_duration_in_milliseconds(self):
         """
         Gets the run_duration_in_milliseconds of this RunSummary.
@@ -643,7 +674,7 @@ class RunSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this RunSummary.
-        The date and time a application was created, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was created, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -658,7 +689,7 @@ class RunSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this RunSummary.
-        The date and time a application was created, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was created, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -673,7 +704,7 @@ class RunSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this RunSummary.
-        The date and time a application was updated, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was updated, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -688,7 +719,7 @@ class RunSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this RunSummary.
-        The date and time a application was updated, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was updated, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339

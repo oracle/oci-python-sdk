@@ -65,6 +65,46 @@ class RoverNode(object):
     #: This constant has a value of "CUSTOMER_PICKUP"
     SHIPPING_PREFERENCE_CUSTOMER_PICKUP = "CUSTOMER_PICKUP"
 
+    #: A constant which can be used with the cert_key_algorithm property of a RoverNode.
+    #: This constant has a value of "RSA2048"
+    CERT_KEY_ALGORITHM_RSA2048 = "RSA2048"
+
+    #: A constant which can be used with the cert_key_algorithm property of a RoverNode.
+    #: This constant has a value of "RSA4096"
+    CERT_KEY_ALGORITHM_RSA4096 = "RSA4096"
+
+    #: A constant which can be used with the cert_key_algorithm property of a RoverNode.
+    #: This constant has a value of "ECDSA_P256"
+    CERT_KEY_ALGORITHM_ECDSA_P256 = "ECDSA_P256"
+
+    #: A constant which can be used with the cert_key_algorithm property of a RoverNode.
+    #: This constant has a value of "ECDSA_P384"
+    CERT_KEY_ALGORITHM_ECDSA_P384 = "ECDSA_P384"
+
+    #: A constant which can be used with the cert_signature_algorithm property of a RoverNode.
+    #: This constant has a value of "SHA256_WITH_RSA"
+    CERT_SIGNATURE_ALGORITHM_SHA256_WITH_RSA = "SHA256_WITH_RSA"
+
+    #: A constant which can be used with the cert_signature_algorithm property of a RoverNode.
+    #: This constant has a value of "SHA384_WITH_RSA"
+    CERT_SIGNATURE_ALGORITHM_SHA384_WITH_RSA = "SHA384_WITH_RSA"
+
+    #: A constant which can be used with the cert_signature_algorithm property of a RoverNode.
+    #: This constant has a value of "SHA512_WITH_RSA"
+    CERT_SIGNATURE_ALGORITHM_SHA512_WITH_RSA = "SHA512_WITH_RSA"
+
+    #: A constant which can be used with the cert_signature_algorithm property of a RoverNode.
+    #: This constant has a value of "SHA256_WITH_ECDSA"
+    CERT_SIGNATURE_ALGORITHM_SHA256_WITH_ECDSA = "SHA256_WITH_ECDSA"
+
+    #: A constant which can be used with the cert_signature_algorithm property of a RoverNode.
+    #: This constant has a value of "SHA384_WITH_ECDSA"
+    CERT_SIGNATURE_ALGORITHM_SHA384_WITH_ECDSA = "SHA384_WITH_ECDSA"
+
+    #: A constant which can be used with the cert_signature_algorithm property of a RoverNode.
+    #: This constant has a value of "SHA512_WITH_ECDSA"
+    CERT_SIGNATURE_ALGORITHM_SHA512_WITH_ECDSA = "SHA512_WITH_ECDSA"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RoverNode object with values from keyword arguments.
@@ -214,6 +254,42 @@ class RoverNode(object):
             The value to assign to the master_key_id property of this RoverNode.
         :type master_key_id: str
 
+        :param certificate_authority_id:
+            The value to assign to the certificate_authority_id property of this RoverNode.
+        :type certificate_authority_id: str
+
+        :param time_cert_validity_end:
+            The value to assign to the time_cert_validity_end property of this RoverNode.
+        :type time_cert_validity_end: datetime
+
+        :param common_name:
+            The value to assign to the common_name property of this RoverNode.
+        :type common_name: str
+
+        :param cert_compartment_id:
+            The value to assign to the cert_compartment_id property of this RoverNode.
+        :type cert_compartment_id: str
+
+        :param certificate_version_number:
+            The value to assign to the certificate_version_number property of this RoverNode.
+        :type certificate_version_number: str
+
+        :param certificate_id:
+            The value to assign to the certificate_id property of this RoverNode.
+        :type certificate_id: str
+
+        :param cert_key_algorithm:
+            The value to assign to the cert_key_algorithm property of this RoverNode.
+            Allowed values for this property are: "RSA2048", "RSA4096", "ECDSA_P256", "ECDSA_P384", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type cert_key_algorithm: str
+
+        :param cert_signature_algorithm:
+            The value to assign to the cert_signature_algorithm property of this RoverNode.
+            Allowed values for this property are: "SHA256_WITH_RSA", "SHA384_WITH_RSA", "SHA512_WITH_RSA", "SHA256_WITH_ECDSA", "SHA384_WITH_ECDSA", "SHA512_WITH_ECDSA", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type cert_signature_algorithm: str
+
         :param tags:
             The value to assign to the tags property of this RoverNode.
         :type tags: str
@@ -266,6 +342,14 @@ class RoverNode(object):
             'public_key': 'str',
             'image_export_par': 'str',
             'master_key_id': 'str',
+            'certificate_authority_id': 'str',
+            'time_cert_validity_end': 'datetime',
+            'common_name': 'str',
+            'cert_compartment_id': 'str',
+            'certificate_version_number': 'str',
+            'certificate_id': 'str',
+            'cert_key_algorithm': 'str',
+            'cert_signature_algorithm': 'str',
             'tags': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -307,6 +391,14 @@ class RoverNode(object):
             'public_key': 'publicKey',
             'image_export_par': 'imageExportPar',
             'master_key_id': 'masterKeyId',
+            'certificate_authority_id': 'certificateAuthorityId',
+            'time_cert_validity_end': 'timeCertValidityEnd',
+            'common_name': 'commonName',
+            'cert_compartment_id': 'certCompartmentId',
+            'certificate_version_number': 'certificateVersionNumber',
+            'certificate_id': 'certificateId',
+            'cert_key_algorithm': 'certKeyAlgorithm',
+            'cert_signature_algorithm': 'certSignatureAlgorithm',
             'tags': 'tags',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -347,6 +439,14 @@ class RoverNode(object):
         self._public_key = None
         self._image_export_par = None
         self._master_key_id = None
+        self._certificate_authority_id = None
+        self._time_cert_validity_end = None
+        self._common_name = None
+        self._cert_compartment_id = None
+        self._certificate_version_number = None
+        self._certificate_id = None
+        self._cert_key_algorithm = None
+        self._cert_signature_algorithm = None
         self._tags = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -1187,6 +1287,210 @@ class RoverNode(object):
         :type: str
         """
         self._master_key_id = master_key_id
+
+    @property
+    def certificate_authority_id(self):
+        """
+        Gets the certificate_authority_id of this RoverNode.
+        The certificateAuthorityId of subordinate/intermediate certificate authority.
+
+
+        :return: The certificate_authority_id of this RoverNode.
+        :rtype: str
+        """
+        return self._certificate_authority_id
+
+    @certificate_authority_id.setter
+    def certificate_authority_id(self, certificate_authority_id):
+        """
+        Sets the certificate_authority_id of this RoverNode.
+        The certificateAuthorityId of subordinate/intermediate certificate authority.
+
+
+        :param certificate_authority_id: The certificate_authority_id of this RoverNode.
+        :type: str
+        """
+        self._certificate_authority_id = certificate_authority_id
+
+    @property
+    def time_cert_validity_end(self):
+        """
+        Gets the time_cert_validity_end of this RoverNode.
+        The time after which leaf certificate will invalid.
+
+
+        :return: The time_cert_validity_end of this RoverNode.
+        :rtype: datetime
+        """
+        return self._time_cert_validity_end
+
+    @time_cert_validity_end.setter
+    def time_cert_validity_end(self, time_cert_validity_end):
+        """
+        Sets the time_cert_validity_end of this RoverNode.
+        The time after which leaf certificate will invalid.
+
+
+        :param time_cert_validity_end: The time_cert_validity_end of this RoverNode.
+        :type: datetime
+        """
+        self._time_cert_validity_end = time_cert_validity_end
+
+    @property
+    def common_name(self):
+        """
+        Gets the common_name of this RoverNode.
+        The common name for the leaf certificate.
+
+
+        :return: The common_name of this RoverNode.
+        :rtype: str
+        """
+        return self._common_name
+
+    @common_name.setter
+    def common_name(self, common_name):
+        """
+        Sets the common_name of this RoverNode.
+        The common name for the leaf certificate.
+
+
+        :param common_name: The common_name of this RoverNode.
+        :type: str
+        """
+        self._common_name = common_name
+
+    @property
+    def cert_compartment_id(self):
+        """
+        Gets the cert_compartment_id of this RoverNode.
+        The compartmentId of the leaf certificate.
+
+
+        :return: The cert_compartment_id of this RoverNode.
+        :rtype: str
+        """
+        return self._cert_compartment_id
+
+    @cert_compartment_id.setter
+    def cert_compartment_id(self, cert_compartment_id):
+        """
+        Sets the cert_compartment_id of this RoverNode.
+        The compartmentId of the leaf certificate.
+
+
+        :param cert_compartment_id: The cert_compartment_id of this RoverNode.
+        :type: str
+        """
+        self._cert_compartment_id = cert_compartment_id
+
+    @property
+    def certificate_version_number(self):
+        """
+        Gets the certificate_version_number of this RoverNode.
+        The version number of the leaf certificate.
+
+
+        :return: The certificate_version_number of this RoverNode.
+        :rtype: str
+        """
+        return self._certificate_version_number
+
+    @certificate_version_number.setter
+    def certificate_version_number(self, certificate_version_number):
+        """
+        Sets the certificate_version_number of this RoverNode.
+        The version number of the leaf certificate.
+
+
+        :param certificate_version_number: The certificate_version_number of this RoverNode.
+        :type: str
+        """
+        self._certificate_version_number = certificate_version_number
+
+    @property
+    def certificate_id(self):
+        """
+        Gets the certificate_id of this RoverNode.
+        The id of the leaf certificate.
+
+
+        :return: The certificate_id of this RoverNode.
+        :rtype: str
+        """
+        return self._certificate_id
+
+    @certificate_id.setter
+    def certificate_id(self, certificate_id):
+        """
+        Sets the certificate_id of this RoverNode.
+        The id of the leaf certificate.
+
+
+        :param certificate_id: The certificate_id of this RoverNode.
+        :type: str
+        """
+        self._certificate_id = certificate_id
+
+    @property
+    def cert_key_algorithm(self):
+        """
+        Gets the cert_key_algorithm of this RoverNode.
+        key algorithm for issuing leaf certificate.
+
+        Allowed values for this property are: "RSA2048", "RSA4096", "ECDSA_P256", "ECDSA_P384", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The cert_key_algorithm of this RoverNode.
+        :rtype: str
+        """
+        return self._cert_key_algorithm
+
+    @cert_key_algorithm.setter
+    def cert_key_algorithm(self, cert_key_algorithm):
+        """
+        Sets the cert_key_algorithm of this RoverNode.
+        key algorithm for issuing leaf certificate.
+
+
+        :param cert_key_algorithm: The cert_key_algorithm of this RoverNode.
+        :type: str
+        """
+        allowed_values = ["RSA2048", "RSA4096", "ECDSA_P256", "ECDSA_P384"]
+        if not value_allowed_none_or_none_sentinel(cert_key_algorithm, allowed_values):
+            cert_key_algorithm = 'UNKNOWN_ENUM_VALUE'
+        self._cert_key_algorithm = cert_key_algorithm
+
+    @property
+    def cert_signature_algorithm(self):
+        """
+        Gets the cert_signature_algorithm of this RoverNode.
+        signature algorithm for issuing leaf certificate.
+
+        Allowed values for this property are: "SHA256_WITH_RSA", "SHA384_WITH_RSA", "SHA512_WITH_RSA", "SHA256_WITH_ECDSA", "SHA384_WITH_ECDSA", "SHA512_WITH_ECDSA", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The cert_signature_algorithm of this RoverNode.
+        :rtype: str
+        """
+        return self._cert_signature_algorithm
+
+    @cert_signature_algorithm.setter
+    def cert_signature_algorithm(self, cert_signature_algorithm):
+        """
+        Sets the cert_signature_algorithm of this RoverNode.
+        signature algorithm for issuing leaf certificate.
+
+
+        :param cert_signature_algorithm: The cert_signature_algorithm of this RoverNode.
+        :type: str
+        """
+        allowed_values = ["SHA256_WITH_RSA", "SHA384_WITH_RSA", "SHA512_WITH_RSA", "SHA256_WITH_ECDSA", "SHA384_WITH_ECDSA", "SHA512_WITH_ECDSA"]
+        if not value_allowed_none_or_none_sentinel(cert_signature_algorithm, allowed_values):
+            cert_signature_algorithm = 'UNKNOWN_ENUM_VALUE'
+        self._cert_signature_algorithm = cert_signature_algorithm
 
     @property
     def tags(self):

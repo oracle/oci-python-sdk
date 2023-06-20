@@ -18,7 +18,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.05.22"
+    version = "23.06.06"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -3494,6 +3494,8 @@ class ShowOCIData(object):
             data['defined_tags'] = lb['defined_tags']
             data['freeform_tags'] = lb['freeform_tags']
             data['certificates'] = lb['certificates']
+            data['ssl_cipher_suites'] = lb['ssl_cipher_suites']
+            data['routing_policies'] = lb['routing_policies']
 
             # subnets
             datasub = []

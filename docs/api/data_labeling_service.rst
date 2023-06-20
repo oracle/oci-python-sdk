@@ -34,9 +34,14 @@ Data Labeling Service
     oci.data_labeling_service.models.ExportFormat
     oci.data_labeling_service.models.GenerateDatasetRecordsDetails
     oci.data_labeling_service.models.ImageDatasetFormatDetails
+    oci.data_labeling_service.models.ImportFormat
+    oci.data_labeling_service.models.ImportMetadataPath
+    oci.data_labeling_service.models.ImportPreAnnotatedDataDetails
+    oci.data_labeling_service.models.InitialImportDatasetConfiguration
     oci.data_labeling_service.models.InitialRecordGenerationConfiguration
     oci.data_labeling_service.models.Label
     oci.data_labeling_service.models.LabelSet
+    oci.data_labeling_service.models.ObjectStorageImportMetadataPath
     oci.data_labeling_service.models.ObjectStorageSnapshotExportDetails
     oci.data_labeling_service.models.ObjectStorageSourceDetails
     oci.data_labeling_service.models.RemoveDatasetLabelsDetails

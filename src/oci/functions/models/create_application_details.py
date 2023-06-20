@@ -13,6 +13,18 @@ class CreateApplicationDetails(object):
     Properties for a new application.
     """
 
+    #: A constant which can be used with the shape property of a CreateApplicationDetails.
+    #: This constant has a value of "GENERIC_X86"
+    SHAPE_GENERIC_X86 = "GENERIC_X86"
+
+    #: A constant which can be used with the shape property of a CreateApplicationDetails.
+    #: This constant has a value of "GENERIC_ARM"
+    SHAPE_GENERIC_ARM = "GENERIC_ARM"
+
+    #: A constant which can be used with the shape property of a CreateApplicationDetails.
+    #: This constant has a value of "GENERIC_X86_ARM"
+    SHAPE_GENERIC_X86_ARM = "GENERIC_X86_ARM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateApplicationDetails object with values from keyword arguments.
@@ -33,6 +45,11 @@ class CreateApplicationDetails(object):
         :param subnet_ids:
             The value to assign to the subnet_ids property of this CreateApplicationDetails.
         :type subnet_ids: list[str]
+
+        :param shape:
+            The value to assign to the shape property of this CreateApplicationDetails.
+            Allowed values for this property are: "GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM"
+        :type shape: str
 
         :param network_security_group_ids:
             The value to assign to the network_security_group_ids property of this CreateApplicationDetails.
@@ -64,6 +81,7 @@ class CreateApplicationDetails(object):
             'display_name': 'str',
             'config': 'dict(str, str)',
             'subnet_ids': 'list[str]',
+            'shape': 'str',
             'network_security_group_ids': 'list[str]',
             'syslog_url': 'str',
             'trace_config': 'ApplicationTraceConfig',
@@ -77,6 +95,7 @@ class CreateApplicationDetails(object):
             'display_name': 'displayName',
             'config': 'config',
             'subnet_ids': 'subnetIds',
+            'shape': 'shape',
             'network_security_group_ids': 'networkSecurityGroupIds',
             'syslog_url': 'syslogUrl',
             'trace_config': 'traceConfig',
@@ -89,6 +108,7 @@ class CreateApplicationDetails(object):
         self._display_name = None
         self._config = None
         self._subnet_ids = None
+        self._shape = None
         self._network_security_group_ids = None
         self._syslog_url = None
         self._trace_config = None
@@ -205,6 +225,46 @@ class CreateApplicationDetails(object):
         :type: list[str]
         """
         self._subnet_ids = subnet_ids
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this CreateApplicationDetails.
+        Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture.
+        Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture.
+        When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture.
+        Accepted values are:
+        `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+
+        Allowed values for this property are: "GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM"
+
+
+        :return: The shape of this CreateApplicationDetails.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this CreateApplicationDetails.
+        Valid values are `GENERIC_X86`, `GENERIC_ARM` and `GENERIC_X86_ARM`. Default is `GENERIC_X86`. Setting this to `GENERIC_X86`, will run the functions in the application on X86 processor architecture.
+        Setting this to `GENERIC_ARM`, will run the functions in the application on ARM processor architecture.
+        When set to `GENERIC_X86_ARM`, functions in the application are run on either X86 or ARM processor architecture.
+        Accepted values are:
+        `GENERIC_X86`, `GENERIC_ARM`, `GENERIC_X86_ARM`
+
+
+        :param shape: The shape of this CreateApplicationDetails.
+        :type: str
+        """
+        allowed_values = ["GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM"]
+        if not value_allowed_none_or_none_sentinel(shape, allowed_values):
+            raise ValueError(
+                "Invalid value for `shape`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._shape = shape
 
     @property
     def network_security_group_ids(self):

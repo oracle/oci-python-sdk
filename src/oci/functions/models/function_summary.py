@@ -13,6 +13,18 @@ class FunctionSummary(object):
     Summary of a function.
     """
 
+    #: A constant which can be used with the shape property of a FunctionSummary.
+    #: This constant has a value of "GENERIC_X86"
+    SHAPE_GENERIC_X86 = "GENERIC_X86"
+
+    #: A constant which can be used with the shape property of a FunctionSummary.
+    #: This constant has a value of "GENERIC_ARM"
+    SHAPE_GENERIC_ARM = "GENERIC_ARM"
+
+    #: A constant which can be used with the shape property of a FunctionSummary.
+    #: This constant has a value of "GENERIC_X86_ARM"
+    SHAPE_GENERIC_X86_ARM = "GENERIC_X86_ARM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new FunctionSummary object with values from keyword arguments.
@@ -49,6 +61,12 @@ class FunctionSummary(object):
         :param source_details:
             The value to assign to the source_details property of this FunctionSummary.
         :type source_details: oci.functions.models.FunctionSourceDetails
+
+        :param shape:
+            The value to assign to the shape property of this FunctionSummary.
+            Allowed values for this property are: "GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type shape: str
 
         :param memory_in_mbs:
             The value to assign to the memory_in_mbs property of this FunctionSummary.
@@ -96,6 +114,7 @@ class FunctionSummary(object):
             'image': 'str',
             'image_digest': 'str',
             'source_details': 'FunctionSourceDetails',
+            'shape': 'str',
             'memory_in_mbs': 'int',
             'timeout_in_seconds': 'int',
             'provisioned_concurrency_config': 'FunctionProvisionedConcurrencyConfig',
@@ -116,6 +135,7 @@ class FunctionSummary(object):
             'image': 'image',
             'image_digest': 'imageDigest',
             'source_details': 'sourceDetails',
+            'shape': 'shape',
             'memory_in_mbs': 'memoryInMBs',
             'timeout_in_seconds': 'timeoutInSeconds',
             'provisioned_concurrency_config': 'provisionedConcurrencyConfig',
@@ -135,6 +155,7 @@ class FunctionSummary(object):
         self._image = None
         self._image_digest = None
         self._source_details = None
+        self._shape = None
         self._memory_in_mbs = None
         self._timeout_in_seconds = None
         self._provisioned_concurrency_config = None
@@ -344,6 +365,36 @@ class FunctionSummary(object):
         :type: oci.functions.models.FunctionSourceDetails
         """
         self._source_details = source_details
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this FunctionSummary.
+        The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+
+        Allowed values for this property are: "GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The shape of this FunctionSummary.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this FunctionSummary.
+        The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+
+
+        :param shape: The shape of this FunctionSummary.
+        :type: str
+        """
+        allowed_values = ["GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM"]
+        if not value_allowed_none_or_none_sentinel(shape, allowed_values):
+            shape = 'UNKNOWN_ENUM_VALUE'
+        self._shape = shape
 
     @property
     def memory_in_mbs(self):

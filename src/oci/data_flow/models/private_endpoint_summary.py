@@ -509,7 +509,7 @@ class PrivateEndpointSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this PrivateEndpointSummary.
-        The date and time a application was created, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was created, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -524,7 +524,7 @@ class PrivateEndpointSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this PrivateEndpointSummary.
-        The date and time a application was created, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was created, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -539,7 +539,7 @@ class PrivateEndpointSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this PrivateEndpointSummary.
-        The date and time a application was updated, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was updated, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -554,7 +554,7 @@ class PrivateEndpointSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this PrivateEndpointSummary.
-        The date and time a application was updated, expressed in `RFC 3339`__ timestamp format.
+        The date and time the resource was updated, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339

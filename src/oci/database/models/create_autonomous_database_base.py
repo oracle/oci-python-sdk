@@ -761,6 +761,7 @@ class CreateAutonomousDatabaseBase(object):
         """
         Gets the data_storage_size_in_tbs of this CreateAutonomousDatabaseBase.
         The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        A full Exadata service is allocated when the Autonomous Database size is set to the upper limit (384 TB).
 
         **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter.
 
@@ -777,6 +778,7 @@ class CreateAutonomousDatabaseBase(object):
         """
         Sets the data_storage_size_in_tbs of this CreateAutonomousDatabaseBase.
         The size, in terabytes, of the data volume that will be created and attached to the database. This storage can later be scaled up if needed. For Autonomous Databases on dedicated Exadata infrastructure, the maximum storage value is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        A full Exadata service is allocated when the Autonomous Database size is set to the upper limit (384 TB).
 
         **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter.
 
