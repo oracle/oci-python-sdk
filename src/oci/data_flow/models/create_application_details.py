@@ -131,6 +131,10 @@ class CreateApplicationDetails(object):
             The value to assign to the parameters property of this CreateApplicationDetails.
         :type parameters: list[oci.data_flow.models.ApplicationParameter]
 
+        :param pool_id:
+            The value to assign to the pool_id property of this CreateApplicationDetails.
+        :type pool_id: str
+
         :param private_endpoint_id:
             The value to assign to the private_endpoint_id property of this CreateApplicationDetails.
         :type private_endpoint_id: str
@@ -179,6 +183,7 @@ class CreateApplicationDetails(object):
             'metastore_id': 'str',
             'num_executors': 'int',
             'parameters': 'list[ApplicationParameter]',
+            'pool_id': 'str',
             'private_endpoint_id': 'str',
             'spark_version': 'str',
             'type': 'str',
@@ -209,6 +214,7 @@ class CreateApplicationDetails(object):
             'metastore_id': 'metastoreId',
             'num_executors': 'numExecutors',
             'parameters': 'parameters',
+            'pool_id': 'poolId',
             'private_endpoint_id': 'privateEndpointId',
             'spark_version': 'sparkVersion',
             'type': 'type',
@@ -238,6 +244,7 @@ class CreateApplicationDetails(object):
         self._metastore_id = None
         self._num_executors = None
         self._parameters = None
+        self._pool_id = None
         self._private_endpoint_id = None
         self._spark_version = None
         self._type = None
@@ -800,6 +807,30 @@ class CreateApplicationDetails(object):
         :type: list[oci.data_flow.models.ApplicationParameter]
         """
         self._parameters = parameters
+
+    @property
+    def pool_id(self):
+        """
+        Gets the pool_id of this CreateApplicationDetails.
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+
+
+        :return: The pool_id of this CreateApplicationDetails.
+        :rtype: str
+        """
+        return self._pool_id
+
+    @pool_id.setter
+    def pool_id(self, pool_id):
+        """
+        Sets the pool_id of this CreateApplicationDetails.
+        The OCID of a pool. Unique Id to indentify a dataflow pool resource.
+
+
+        :param pool_id: The pool_id of this CreateApplicationDetails.
+        :type: str
+        """
+        self._pool_id = pool_id
 
     @property
     def private_endpoint_id(self):

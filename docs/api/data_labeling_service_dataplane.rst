@@ -34,12 +34,16 @@ Data Labeling Service Dataplane
     oci.data_labeling_service_dataplane.models.DatasetSourceDetails
     oci.data_labeling_service_dataplane.models.DelimitedFileTypeMetadata
     oci.data_labeling_service_dataplane.models.DocumentDatasetFormatDetails
+    oci.data_labeling_service_dataplane.models.DocumentEntityMetadata
     oci.data_labeling_service_dataplane.models.DocumentMetadata
     oci.data_labeling_service_dataplane.models.Entity
     oci.data_labeling_service_dataplane.models.GenericEntity
     oci.data_labeling_service_dataplane.models.ImageDatasetFormatDetails
     oci.data_labeling_service_dataplane.models.ImageMetadata
     oci.data_labeling_service_dataplane.models.ImageObjectSelectionEntity
+    oci.data_labeling_service_dataplane.models.ImportFormat
+    oci.data_labeling_service_dataplane.models.ImportMetadataPath
+    oci.data_labeling_service_dataplane.models.InitialImportDatasetConfiguration
     oci.data_labeling_service_dataplane.models.InitialRecordGenerationConfiguration
     oci.data_labeling_service_dataplane.models.KeyValueSelectionEntity
     oci.data_labeling_service_dataplane.models.Label
@@ -47,6 +51,7 @@ Data Labeling Service Dataplane
     oci.data_labeling_service_dataplane.models.LabelSet
     oci.data_labeling_service_dataplane.models.NormalizedVertex
     oci.data_labeling_service_dataplane.models.ObjectStorageDatasetSourceDetails
+    oci.data_labeling_service_dataplane.models.ObjectStorageImportMetadataPath
     oci.data_labeling_service_dataplane.models.ObjectStorageSourceDetails
     oci.data_labeling_service_dataplane.models.Record
     oci.data_labeling_service_dataplane.models.RecordAggregationDimensions

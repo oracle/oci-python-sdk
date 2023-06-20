@@ -9,13 +9,22 @@ from .application_log_config import ApplicationLogConfig
 from .application_parameter import ApplicationParameter
 from .application_summary import ApplicationSummary
 from .change_application_compartment_details import ChangeApplicationCompartmentDetails
+from .change_pool_compartment_details import ChangePoolCompartmentDetails
 from .change_private_endpoint_compartment_details import ChangePrivateEndpointCompartmentDetails
 from .change_run_compartment_details import ChangeRunCompartmentDetails
 from .create_application_details import CreateApplicationDetails
+from .create_pool_details import CreatePoolDetails
 from .create_private_endpoint_details import CreatePrivateEndpointDetails
 from .create_run_details import CreateRunDetails
 from .create_statement_details import CreateStatementDetails
 from .image_png_statement_output_data import ImagePngStatementOutputData
+from .node_count import NodeCount
+from .pool import Pool
+from .pool_collection import PoolCollection
+from .pool_config import PoolConfig
+from .pool_metrics import PoolMetrics
+from .pool_schedule import PoolSchedule
+from .pool_summary import PoolSummary
 from .private_endpoint import PrivateEndpoint
 from .private_endpoint_collection import PrivateEndpointCollection
 from .private_endpoint_summary import PrivateEndpointSummary
@@ -32,6 +41,7 @@ from .statement_summary import StatementSummary
 from .text_html_statement_output_data import TextHtmlStatementOutputData
 from .text_plain_statement_output_data import TextPlainStatementOutputData
 from .update_application_details import UpdateApplicationDetails
+from .update_pool_details import UpdatePoolDetails
 from .update_private_endpoint_details import UpdatePrivateEndpointDetails
 from .update_run_details import UpdateRunDetails
 from .work_request import WorkRequest
@@ -50,13 +60,22 @@ data_flow_type_mapping = {
     "ApplicationParameter": ApplicationParameter,
     "ApplicationSummary": ApplicationSummary,
     "ChangeApplicationCompartmentDetails": ChangeApplicationCompartmentDetails,
+    "ChangePoolCompartmentDetails": ChangePoolCompartmentDetails,
     "ChangePrivateEndpointCompartmentDetails": ChangePrivateEndpointCompartmentDetails,
     "ChangeRunCompartmentDetails": ChangeRunCompartmentDetails,
     "CreateApplicationDetails": CreateApplicationDetails,
+    "CreatePoolDetails": CreatePoolDetails,
     "CreatePrivateEndpointDetails": CreatePrivateEndpointDetails,
     "CreateRunDetails": CreateRunDetails,
     "CreateStatementDetails": CreateStatementDetails,
     "ImagePngStatementOutputData": ImagePngStatementOutputData,
+    "NodeCount": NodeCount,
+    "Pool": Pool,
+    "PoolCollection": PoolCollection,
+    "PoolConfig": PoolConfig,
+    "PoolMetrics": PoolMetrics,
+    "PoolSchedule": PoolSchedule,
+    "PoolSummary": PoolSummary,
     "PrivateEndpoint": PrivateEndpoint,
     "PrivateEndpointCollection": PrivateEndpointCollection,
     "PrivateEndpointSummary": PrivateEndpointSummary,
@@ -73,6 +92,7 @@ data_flow_type_mapping = {
     "TextHtmlStatementOutputData": TextHtmlStatementOutputData,
     "TextPlainStatementOutputData": TextPlainStatementOutputData,
     "UpdateApplicationDetails": UpdateApplicationDetails,
+    "UpdatePoolDetails": UpdatePoolDetails,
     "UpdatePrivateEndpointDetails": UpdatePrivateEndpointDetails,
     "UpdateRunDetails": UpdateRunDetails,
     "WorkRequest": WorkRequest,

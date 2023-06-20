@@ -34,8 +34,8 @@ import platform
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.05.22"
-    oci_compatible_version = "2.101.0"
+    version = "23.06.06"
+    oci_compatible_version = "2.104.0"
 
     ##########################################################################
     # Global Constants
@@ -257,6 +257,106 @@ class ShowOCIService(object):
     service_not_available_array = [
         {'region': 'region_name', 'service': C_EMAIL}
     ]
+
+    ##########################################################################
+    # Shapes
+    ##########################################################################
+    ciphers_array = [
+        {'cipher': 'AES128-GCM-SHA256            ', 'tls': 1.2},
+        {'cipher': 'AES128-SHA                   ', 'tls': 1.0},
+        {'cipher': 'AES128-SHA256                ', 'tls': 1.2},
+        {'cipher': 'AES256-GCM-SHA384            ', 'tls': 1.2},
+        {'cipher': 'AES256-SHA                   ', 'tls': 1.0},
+        {'cipher': 'AES256-SHA256                ', 'tls': 1.2},
+        {'cipher': 'CAMELLIA128-SHA              ', 'tls': 1.0},
+        {'cipher': 'CAMELLIA256-SHA              ', 'tls': 1.0},
+        {'cipher': 'DES-CBC3-SHA                 ', 'tls': 1.0},
+        {'cipher': 'DH-DSS-AES128-GCM-SHA256     ', 'tls': 1.2},
+        {'cipher': 'DH-DSS-AES128-SHA            ', 'tls': 1.0},
+        {'cipher': 'DH-DSS-AES128-SHA256         ', 'tls': 1.2},
+        {'cipher': 'DH-DSS-AES256-GCM-SHA384     ', 'tls': 1.2},
+        {'cipher': 'DH-DSS-AES256-SHA            ', 'tls': 1.0},
+        {'cipher': 'DH-DSS-AES256-SHA256         ', 'tls': 1.2},
+        {'cipher': 'DH-DSS-CAMELLIA128-SHA       ', 'tls': 1.0},
+        {'cipher': 'DH-DSS-CAMELLIA256-SHA       ', 'tls': 1.0},
+        {'cipher': 'DH-DSS-DES-CBC3-SHAv         ', 'tls': 1.0},
+        {'cipher': 'DH-DSS-SEED-SHA              ', 'tls': 1.0},
+        {'cipher': 'DH-RSA-AES128-GCM-SHA256     ', 'tls': 1.2},
+        {'cipher': 'DH-RSA-AES128-SHA            ', 'tls': 1.0},
+        {'cipher': 'DH-RSA-AES128-SHA256         ', 'tls': 1.2},
+        {'cipher': 'DH-RSA-AES256-GCM-SHA384     ', 'tls': 1.2},
+        {'cipher': 'DH-RSA-AES256-SHA            ', 'tls': 1.0},
+        {'cipher': 'DH-RSA-AES256-SHA256         ', 'tls': 1.2},
+        {'cipher': 'DH-RSA-CAMELLIA128-SHA       ', 'tls': 1.0},
+        {'cipher': 'DH-RSA-CAMELLIA256-SHA       ', 'tls': 1.0},
+        {'cipher': 'DH-RSA-DES-CBC3-SHA          ', 'tls': 1.0},
+        {'cipher': 'DH-RSA-SEED-SHA              ', 'tls': 1.0},
+        {'cipher': 'DHE-DSS-AES128-GCM-SHA256    ', 'tls': 1.2},
+        {'cipher': 'DHE-DSS-AES128-SHA           ', 'tls': 1.0},
+        {'cipher': 'DHE-DSS-AES128-SHA256        ', 'tls': 1.2},
+        {'cipher': 'DHE-DSS-AES256-GCM-SHA384    ', 'tls': 1.2},
+        {'cipher': 'DHE-DSS-AES256-SHA           ', 'tls': 1.0},
+        {'cipher': 'DHE-DSS-AES256-SHA256        ', 'tls': 1.2},
+        {'cipher': 'DHE-DSS-CAMELLIA128-SHA      ', 'tls': 1.0},
+        {'cipher': 'DHE-DSS-CAMELLIA256-SHA      ', 'tls': 1.0},
+        {'cipher': 'DHE-DSS-DES-CBC3-SHA         ', 'tls': 1.0},
+        {'cipher': 'DHE-DSS-SEED-SHA             ', 'tls': 1.0},
+        {'cipher': 'DHE-RSA-AES128-GCM-SHA256    ', 'tls': 1.2},
+        {'cipher': 'DHE-RSA-AES128-SHA           ', 'tls': 1.0},
+        {'cipher': 'DHE-RSA-AES128-SHA256        ', 'tls': 1.2},
+        {'cipher': 'DHE-RSA-AES256-GCM-SHA384    ', 'tls': 1.2},
+        {'cipher': 'DHE-RSA-AES256-SHA           ', 'tls': 1.0},
+        {'cipher': 'DHE-RSA-AES256-SHA256        ', 'tls': 1.2},
+        {'cipher': 'DHE-RSA-CAMELLIA128-SHA      ', 'tls': 1.0},
+        {'cipher': 'DHE-RSA-CAMELLIA256-SHA      ', 'tls': 1.0},
+        {'cipher': 'DHE-RSA-DES-CBC3-SHA         ', 'tls': 1.0},
+        {'cipher': 'DHE-RSA-SEED-SHA             ', 'tls': 1.0},
+        {'cipher': 'ECDH-ECDSA-AES128-GCM-SHA256 ', 'tls': 1.2},
+        {'cipher': 'ECDH-ECDSA-AES128-SHA        ', 'tls': 1.0},
+        {'cipher': 'ECDH-ECDSA-AES128-SHA256     ', 'tls': 1.2},
+        {'cipher': 'ECDH-ECDSA-AES256-GCM-SHA384 ', 'tls': 1.2},
+        {'cipher': 'ECDH-ECDSA-AES256-SHA        ', 'tls': 1.0},
+        {'cipher': 'ECDH-ECDSA-AES256-SHA384     ', 'tls': 1.2},
+        {'cipher': 'ECDH-ECDSA-DES-CBC3-SHA      ', 'tls': 1.0},
+        {'cipher': 'ECDH-ECDSA-RC4-SHA           ', 'tls': 1.0},
+        {'cipher': 'ECDH-RSA-AES128-GCM-SHA256   ', 'tls': 1.2},
+        {'cipher': 'ECDH-RSA-AES128-SHA          ', 'tls': 1.0},
+        {'cipher': 'ECDH-RSA-AES128-SHA256       ', 'tls': 1.2},
+        {'cipher': 'ECDH-RSA-AES256-GCM-SHA384   ', 'tls': 1.2},
+        {'cipher': 'ECDH-RSA-AES256-SHA          ', 'tls': 1.0},
+        {'cipher': 'ECDH-RSA-AES256-SHA384       ', 'tls': 1.2},
+        {'cipher': 'ECDH-RSA-DES-CBC3-SHA        ', 'tls': 1.0},
+        {'cipher': 'ECDH-RSA-RC4-SHA             ', 'tls': 1.0},
+        {'cipher': 'ECDHE-ECDSA-AES128-GCM-SHA256', 'tls': 1.2},
+        {'cipher': 'ECDHE-ECDSA-AES128-SHA       ', 'tls': 1.0},
+        {'cipher': 'ECDHE-ECDSA-AES128-SHA256    ', 'tls': 1.2},
+        {'cipher': 'ECDHE-ECDSA-AES256-GCM-SHA384', 'tls': 1.2},
+        {'cipher': 'ECDHE-ECDSA-AES256-SHA       ', 'tls': 1.0},
+        {'cipher': 'ECDHE-ECDSA-AES256-SHA384    ', 'tls': 1.2},
+        {'cipher': 'ECDHE-ECDSA-DES-CBC3-SHA     ', 'tls': 1.1},
+        {'cipher': 'ECDHE-ECDSA-RC4-SHA          ', 'tls': 1.0},
+        {'cipher': 'ECDHE-RSA-AES128-GCM-SHA256  ', 'tls': 1.2},
+        {'cipher': 'ECDHE-RSA-AES128-SHA         ', 'tls': 1.0},
+        {'cipher': 'ECDHE-RSA-AES128-SHA256      ', 'tls': 1.2},
+        {'cipher': 'ECDHE-RSA-AES256-GCM-SHA384  ', 'tls': 1.2},
+        {'cipher': 'ECDHE-RSA-AES256-SHA         ', 'tls': 1.0},
+        {'cipher': 'ECDHE-RSA-AES256-SHA384      ', 'tls': 1.2},
+        {'cipher': 'ECDHE-RSA-DES-CBC3-SHA       ', 'tls': 1.0},
+        {'cipher': 'ECDHE-RSA-RC4-SHA            ', 'tls': 1.0},
+        {'cipher': 'IDEA-CBC-SHA                 ', 'tls': 1.0},
+        {'cipher': 'KRB5-DES-CBC3-MD5            ', 'tls': 1.0},
+        {'cipher': 'KRB5-DES-CBC3-SHA            ', 'tls': 1.0},
+        {'cipher': 'KRB5-IDEA-CBC-MD5            ', 'tls': 1.0},
+        {'cipher': 'KRB5-IDEA-CBC-SHA            ', 'tls': 1.0},
+        {'cipher': 'KRB5-RC4-MD5                 ', 'tls': 1.0},
+        {'cipher': 'KRB5-RC4-SHA                 ', 'tls': 1.0},
+        {'cipher': 'PSK-3DES-EDE-CBC-SHA         ', 'tls': 1.0},
+        {'cipher': 'PSK-AES128-CBC-SHA           ', 'tls': 1.0},
+        {'cipher': 'PSK-AES256-CBC-SHA           ', 'tls': 1.0},
+        {'cipher': 'PSK-RC4-SHA                  ', 'tls': 1.0},
+        {'cipher': 'RC4-MD5                      ', 'tls': 1.0},
+        {'cipher': 'RC4-SHA                      ', 'tls': 1.0},
+        {'cipher': 'SEED-SHA                     ', 'tls': 1.0}]
 
     ##########################################################################
     # Shapes
@@ -750,6 +850,16 @@ class ShowOCIService(object):
             if array['shape'] == shape_name:
                 return array
         return {}
+
+    ##########################################################################
+    # find cipher info
+    # returns tls
+    ##########################################################################
+    def get_cipher_tls(self, cipher_name):
+        for array in self.ciphers_array:
+            if str(array['cipher']).strip() == cipher_name:
+                return str(array['tls'])
+        return ""
 
     ##########################################################################
     # find database version date
@@ -6012,7 +6122,9 @@ class ShowOCIService(object):
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'region_name': str(self.config['region']),
                            'subnet_ids': [],
-                           'certificates': ''}
+                           'certificates': '',
+                           'ssl_cipher_suites': [],
+                           'routing_policies': []}
 
                     # Flexible Shapes
                     if arr.shape_details:
@@ -6078,6 +6190,24 @@ class ShowOCIService(object):
                         datapath.append({'name': str(pro.name), 'path_routes': array_path})
 
                     val['path_route'] = datapath
+
+                    # ssl_cipher_suites
+                    data_ciphers = []
+                    if arr.ssl_cipher_suites:
+                        for cipher in arr.ssl_cipher_suites:
+                            cdata = arr.ssl_cipher_suites[cipher]
+                            data_ciphers.append(str(cdata.name) + ":" + ",".join([x + ":TLS" + self.get_cipher_tls(x) for x in cdata.ciphers]))
+
+                    val['ssl_cipher_suites'] = data_ciphers
+
+                    # routing_policies
+                    routing_policies = []
+                    if arr.routing_policies:
+                        for rpolicy in arr.routing_policies:
+                            cdata = arr.routing_policies[rpolicy]
+                            routing_policies.append(str(rpolicy) + ":" + ",".join([str(x.name) + "." + str(x.condition) for x in cdata.rules]))
+
+                    val['routing_policies'] = routing_policies
 
                     # Hostnames
                     datahosts = []
@@ -7148,7 +7278,7 @@ class ShowOCIService(object):
                         try:
                             snapshots = oci.pagination.list_call_get_all_results(
                                 file_storage.list_snapshots,
-                                str(fs.id),
+                                file_system_id=str(fs.id),
                                 lifecycle_state=oci.file_storage.models.SnapshotSummary.LIFECYCLE_STATE_ACTIVE,
                                 retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                             ).data

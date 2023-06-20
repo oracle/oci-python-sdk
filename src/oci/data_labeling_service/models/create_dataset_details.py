@@ -46,6 +46,10 @@ class CreateDatasetDetails(object):
             The value to assign to the initial_record_generation_configuration property of this CreateDatasetDetails.
         :type initial_record_generation_configuration: oci.data_labeling_service.models.InitialRecordGenerationConfiguration
 
+        :param initial_import_dataset_configuration:
+            The value to assign to the initial_import_dataset_configuration property of this CreateDatasetDetails.
+        :type initial_import_dataset_configuration: oci.data_labeling_service.models.InitialImportDatasetConfiguration
+
         :param label_set:
             The value to assign to the label_set property of this CreateDatasetDetails.
         :type label_set: oci.data_labeling_service.models.LabelSet
@@ -71,6 +75,7 @@ class CreateDatasetDetails(object):
             'dataset_source_details': 'DatasetSourceDetails',
             'dataset_format_details': 'DatasetFormatDetails',
             'initial_record_generation_configuration': 'InitialRecordGenerationConfiguration',
+            'initial_import_dataset_configuration': 'InitialImportDatasetConfiguration',
             'label_set': 'LabelSet',
             'labeling_instructions': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -85,6 +90,7 @@ class CreateDatasetDetails(object):
             'dataset_source_details': 'datasetSourceDetails',
             'dataset_format_details': 'datasetFormatDetails',
             'initial_record_generation_configuration': 'initialRecordGenerationConfiguration',
+            'initial_import_dataset_configuration': 'initialImportDatasetConfiguration',
             'label_set': 'labelSet',
             'labeling_instructions': 'labelingInstructions',
             'freeform_tags': 'freeformTags',
@@ -98,6 +104,7 @@ class CreateDatasetDetails(object):
         self._dataset_source_details = None
         self._dataset_format_details = None
         self._initial_record_generation_configuration = None
+        self._initial_import_dataset_configuration = None
         self._label_set = None
         self._labeling_instructions = None
         self._freeform_tags = None
@@ -258,6 +265,26 @@ class CreateDatasetDetails(object):
         :type: oci.data_labeling_service.models.InitialRecordGenerationConfiguration
         """
         self._initial_record_generation_configuration = initial_record_generation_configuration
+
+    @property
+    def initial_import_dataset_configuration(self):
+        """
+        Gets the initial_import_dataset_configuration of this CreateDatasetDetails.
+
+        :return: The initial_import_dataset_configuration of this CreateDatasetDetails.
+        :rtype: oci.data_labeling_service.models.InitialImportDatasetConfiguration
+        """
+        return self._initial_import_dataset_configuration
+
+    @initial_import_dataset_configuration.setter
+    def initial_import_dataset_configuration(self, initial_import_dataset_configuration):
+        """
+        Sets the initial_import_dataset_configuration of this CreateDatasetDetails.
+
+        :param initial_import_dataset_configuration: The initial_import_dataset_configuration of this CreateDatasetDetails.
+        :type: oci.data_labeling_service.models.InitialImportDatasetConfiguration
+        """
+        self._initial_import_dataset_configuration = initial_import_dataset_configuration
 
     @property
     def label_set(self):

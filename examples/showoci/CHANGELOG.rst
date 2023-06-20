@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.06.06 - 23.06.06
+=====================
+* Added Load Balancer Cipher Suites and Routing Policies
+* fix breaking file system list snapshots
+
+=====================
 23.05.23 - 23.05.23
 =====================
 * Added Instance Parameters - Burstable, Launch options and more

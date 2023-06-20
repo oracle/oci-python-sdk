@@ -20,7 +20,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.05.22"
+    version = "23.06.06"
 
     ##########################################################################
     # spaces for align
@@ -6705,6 +6705,8 @@ class ShowOCICSV(object):
                             'listener_host': "",
                             'time_created': lb['time_created'],
                             'lb_certificates': lb['certificates'],
+                            'ssl_cipher_suites': str(', '.join(x for x in lb['ssl_cipher_suites'])),
+                            'routing_policies': str(', '.join(x for x in lb['routing_policies'])),
                             'freeform_tags': self.__get_freeform_tags(lb['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(lb['defined_tags']),
                             'loadbalancer_id': lb['id'],
@@ -6735,6 +6737,8 @@ class ShowOCICSV(object):
                             'listener_rule': str(', '.join(x for x in listener['rule_set_names'])),
                             'time_created': lb['time_created'],
                             'lb_certificates': lb['certificates'],
+                            'ssl_cipher_suites': str(', '.join(x for x in lb['ssl_cipher_suites'])),
+                            'routing_policies': str(', '.join(x for x in lb['routing_policies'])),
                             'freeform_tags': self.__get_freeform_tags(lb['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(lb['defined_tags']),
                             'loadbalancer_id': lb['id'],

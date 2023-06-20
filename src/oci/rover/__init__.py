@@ -5,6 +5,8 @@
 from __future__ import absolute_import
 
 
+from .rover_bundle_client import RoverBundleClient
+from .rover_bundle_client_composite_operations import RoverBundleClientCompositeOperations
 from .rover_cluster_client import RoverClusterClient
 from .rover_cluster_client_composite_operations import RoverClusterClientCompositeOperations
 from .rover_entitlement_client import RoverEntitlementClient
@@ -13,6 +15,8 @@ from .rover_node_client import RoverNodeClient
 from .rover_node_client_composite_operations import RoverNodeClientCompositeOperations
 from .shape_client import ShapeClient
 from .shape_client_composite_operations import ShapeClientCompositeOperations
+from .work_requests_client import WorkRequestsClient
+from .work_requests_client_composite_operations import WorkRequestsClientCompositeOperations
 from . import models
 
-__all__ = ["RoverClusterClient", "RoverClusterClientCompositeOperations", "RoverEntitlementClient", "RoverEntitlementClientCompositeOperations", "RoverNodeClient", "RoverNodeClientCompositeOperations", "ShapeClient", "ShapeClientCompositeOperations", "models"]
+__all__ = ["RoverBundleClient", "RoverBundleClientCompositeOperations", "RoverClusterClient", "RoverClusterClientCompositeOperations", "RoverEntitlementClient", "RoverEntitlementClientCompositeOperations", "RoverNodeClient", "RoverNodeClientCompositeOperations", "ShapeClient", "ShapeClientCompositeOperations", "WorkRequestsClient", "WorkRequestsClientCompositeOperations", "models"]

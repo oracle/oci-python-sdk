@@ -47,6 +47,8 @@ class ConstantProvisionedConcurrencyConfig(FunctionProvisionedConcurrencyConfig)
     def count(self):
         """
         **[Required]** Gets the count of this ConstantProvisionedConcurrencyConfig.
+        Configuration specifying a constant amount of provisioned concurrency.
+
 
         :return: The count of this ConstantProvisionedConcurrencyConfig.
         :rtype: int
@@ -57,6 +59,8 @@ class ConstantProvisionedConcurrencyConfig(FunctionProvisionedConcurrencyConfig)
     def count(self, count):
         """
         Sets the count of this ConstantProvisionedConcurrencyConfig.
+        Configuration specifying a constant amount of provisioned concurrency.
+
 
         :param count: The count of this ConstantProvisionedConcurrencyConfig.
         :type: int

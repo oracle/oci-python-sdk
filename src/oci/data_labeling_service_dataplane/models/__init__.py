@@ -20,12 +20,16 @@ from .dataset_format_details import DatasetFormatDetails
 from .dataset_source_details import DatasetSourceDetails
 from .delimited_file_type_metadata import DelimitedFileTypeMetadata
 from .document_dataset_format_details import DocumentDatasetFormatDetails
+from .document_entity_metadata import DocumentEntityMetadata
 from .document_metadata import DocumentMetadata
 from .entity import Entity
 from .generic_entity import GenericEntity
 from .image_dataset_format_details import ImageDatasetFormatDetails
 from .image_metadata import ImageMetadata
 from .image_object_selection_entity import ImageObjectSelectionEntity
+from .import_format import ImportFormat
+from .import_metadata_path import ImportMetadataPath
+from .initial_import_dataset_configuration import InitialImportDatasetConfiguration
 from .initial_record_generation_configuration import InitialRecordGenerationConfiguration
 from .key_value_selection_entity import KeyValueSelectionEntity
 from .label import Label
@@ -33,6 +37,7 @@ from .label_name import LabelName
 from .label_set import LabelSet
 from .normalized_vertex import NormalizedVertex
 from .object_storage_dataset_source_details import ObjectStorageDatasetSourceDetails
+from .object_storage_import_metadata_path import ObjectStorageImportMetadataPath
 from .object_storage_source_details import ObjectStorageSourceDetails
 from .record import Record
 from .record_aggregation_dimensions import RecordAggregationDimensions
@@ -68,12 +73,16 @@ data_labeling_service_dataplane_type_mapping = {
     "DatasetSourceDetails": DatasetSourceDetails,
     "DelimitedFileTypeMetadata": DelimitedFileTypeMetadata,
     "DocumentDatasetFormatDetails": DocumentDatasetFormatDetails,
+    "DocumentEntityMetadata": DocumentEntityMetadata,
     "DocumentMetadata": DocumentMetadata,
     "Entity": Entity,
     "GenericEntity": GenericEntity,
     "ImageDatasetFormatDetails": ImageDatasetFormatDetails,
     "ImageMetadata": ImageMetadata,
     "ImageObjectSelectionEntity": ImageObjectSelectionEntity,
+    "ImportFormat": ImportFormat,
+    "ImportMetadataPath": ImportMetadataPath,
+    "InitialImportDatasetConfiguration": InitialImportDatasetConfiguration,
     "InitialRecordGenerationConfiguration": InitialRecordGenerationConfiguration,
     "KeyValueSelectionEntity": KeyValueSelectionEntity,
     "Label": Label,
@@ -81,6 +90,7 @@ data_labeling_service_dataplane_type_mapping = {
     "LabelSet": LabelSet,
     "NormalizedVertex": NormalizedVertex,
     "ObjectStorageDatasetSourceDetails": ObjectStorageDatasetSourceDetails,
+    "ObjectStorageImportMetadataPath": ObjectStorageImportMetadataPath,
     "ObjectStorageSourceDetails": ObjectStorageSourceDetails,
     "Record": Record,
     "RecordAggregationDimensions": RecordAggregationDimensions,

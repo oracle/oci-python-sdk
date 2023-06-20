@@ -155,6 +155,7 @@ API Reference
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
 * :doc:`Resources <usage/client/oci.usage.ResourcesClient>`
 * :doc:`Rewards <usage/client/oci.usage.RewardsClient>`
+* :doc:`Rover Bundle <rover/client/oci.rover.RoverBundleClient>`
 * :doc:`Rover Cluster <rover/client/oci.rover.RoverClusterClient>`
 * :doc:`Rover Entitlement <rover/client/oci.rover.RoverEntitlementClient>`
 * :doc:`Rover Node <rover/client/oci.rover.RoverNodeClient>`
@@ -202,8 +203,9 @@ API Reference
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
-* :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`
-* :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`
+* :doc:`Work Requests <rover/client/oci.rover.WorkRequestsClient>`
+* :doc:`Work Requests <rover/client/oci.rover.WorkRequestsClient>`
+* :doc:`Work Requests <rover/client/oci.rover.WorkRequestsClient>`
 
 .. rubric:: Other Modules
 

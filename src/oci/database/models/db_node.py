@@ -130,6 +130,18 @@ class DbNode(object):
             The value to assign to the additional_details property of this DbNode.
         :type additional_details: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this DbNode.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this DbNode.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this DbNode.
+        :type lifecycle_details: str
+
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this DbNode.
         :type cpu_core_count: int
@@ -165,6 +177,9 @@ class DbNode(object):
             'time_maintenance_window_start': 'datetime',
             'time_maintenance_window_end': 'datetime',
             'additional_details': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'lifecycle_details': 'str',
             'cpu_core_count': 'int',
             'memory_size_in_gbs': 'int',
             'db_node_storage_size_in_gbs': 'int',
@@ -189,6 +204,9 @@ class DbNode(object):
             'time_maintenance_window_start': 'timeMaintenanceWindowStart',
             'time_maintenance_window_end': 'timeMaintenanceWindowEnd',
             'additional_details': 'additionalDetails',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
+            'lifecycle_details': 'lifecycleDetails',
             'cpu_core_count': 'cpuCoreCount',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
@@ -212,6 +230,9 @@ class DbNode(object):
         self._time_maintenance_window_start = None
         self._time_maintenance_window_end = None
         self._additional_details = None
+        self._freeform_tags = None
+        self._defined_tags = None
+        self._lifecycle_details = None
         self._cpu_core_count = None
         self._memory_size_in_gbs = None
         self._db_node_storage_size_in_gbs = None
@@ -692,6 +713,94 @@ class DbNode(object):
         :type: str
         """
         self._additional_details = additional_details
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this DbNode.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this DbNode.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this DbNode.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this DbNode.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this DbNode.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this DbNode.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this DbNode.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this DbNode.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this DbNode.
+        Information about the current lifecycle state.
+
+
+        :return: The lifecycle_details of this DbNode.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this DbNode.
+        Information about the current lifecycle state.
+
+
+        :param lifecycle_details: The lifecycle_details of this DbNode.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def cpu_core_count(self):

@@ -41,6 +41,18 @@ class Function(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the shape property of a Function.
+    #: This constant has a value of "GENERIC_X86"
+    SHAPE_GENERIC_X86 = "GENERIC_X86"
+
+    #: A constant which can be used with the shape property of a Function.
+    #: This constant has a value of "GENERIC_ARM"
+    SHAPE_GENERIC_ARM = "GENERIC_ARM"
+
+    #: A constant which can be used with the shape property of a Function.
+    #: This constant has a value of "GENERIC_X86_ARM"
+    SHAPE_GENERIC_X86_ARM = "GENERIC_X86_ARM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Function object with values from keyword arguments.
@@ -79,6 +91,12 @@ class Function(object):
         :param source_details:
             The value to assign to the source_details property of this Function.
         :type source_details: oci.functions.models.FunctionSourceDetails
+
+        :param shape:
+            The value to assign to the shape property of this Function.
+            Allowed values for this property are: "GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type shape: str
 
         :param memory_in_mbs:
             The value to assign to the memory_in_mbs property of this Function.
@@ -130,6 +148,7 @@ class Function(object):
             'image': 'str',
             'image_digest': 'str',
             'source_details': 'FunctionSourceDetails',
+            'shape': 'str',
             'memory_in_mbs': 'int',
             'config': 'dict(str, str)',
             'timeout_in_seconds': 'int',
@@ -151,6 +170,7 @@ class Function(object):
             'image': 'image',
             'image_digest': 'imageDigest',
             'source_details': 'sourceDetails',
+            'shape': 'shape',
             'memory_in_mbs': 'memoryInMBs',
             'config': 'config',
             'timeout_in_seconds': 'timeoutInSeconds',
@@ -171,6 +191,7 @@ class Function(object):
         self._image = None
         self._image_digest = None
         self._source_details = None
+        self._shape = None
         self._memory_in_mbs = None
         self._config = None
         self._timeout_in_seconds = None
@@ -387,6 +408,36 @@ class Function(object):
         :type: oci.functions.models.FunctionSourceDetails
         """
         self._source_details = source_details
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this Function.
+        The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+
+        Allowed values for this property are: "GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The shape of this Function.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this Function.
+        The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
+
+
+        :param shape: The shape of this Function.
+        :type: str
+        """
+        allowed_values = ["GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM"]
+        if not value_allowed_none_or_none_sentinel(shape, allowed_values):
+            shape = 'UNKNOWN_ENUM_VALUE'
+        self._shape = shape
 
     @property
     def memory_in_mbs(self):

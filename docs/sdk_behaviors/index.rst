@@ -13,6 +13,7 @@ This section describes SDK-specific behaviors:
 * :doc:`Enable Selective Service Imports </sdk_behaviors/enable_selective_service_imports>`
 * :doc:`Circuit Breakers </sdk_behaviors/circuit_breakers>`
 * :doc:`Allow control characters in response </sdk_behaviors/allow_control_chars_response>`
+* :doc:`Realm Specific Endpoint Template </sdk_behaviors/realm_specific_endpoint_template>`
 
 .. toctree::
     :hidden:
@@ -27,3 +28,4 @@ This section describes SDK-specific behaviors:
     enable_selective_service_imports
     circuit_breakers
     allow_control_chars_response
+    realm_specific_endpoint_template
