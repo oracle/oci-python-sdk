@@ -55,6 +55,7 @@ REGIONS_SHORT_NAMES = {
     'dus': 'eu-dcc-rating-1',
     'ork': 'eu-dcc-dublin-1',
     'vll': 'eu-madrid-2',
+    'str': 'eu-frankfurt-2',
     'beg': 'eu-jovanovac-1'
 }
 REGION_REALMS = {
@@ -118,6 +119,7 @@ REGION_REALMS = {
     'eu-dcc-dublin-1': 'oc14',
 
     'eu-madrid-2': 'oc19',
+    'eu-frankfurt-2': 'oc19',
 
     'eu-jovanovac-1': 'oc20'
 }
@@ -186,5 +188,6 @@ REGIONS = [
     'eu-dcc-rating-1',
     'eu-dcc-dublin-1',
     'eu-madrid-2',
+    'eu-frankfurt-2',
     'eu-jovanovac-1'
 ]
