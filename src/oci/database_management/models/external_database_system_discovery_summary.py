@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalDatabaseSystemDiscoverySummary(EntityDiscovered):
     """
-    The summary of the database system.
+    The summary of the DB system discovery.
     """
 
     #: A constant which can be used with the license_model property of a ExternalDatabaseSystemDiscoverySummary.
@@ -175,7 +175,7 @@ class ExternalDatabaseSystemDiscoverySummary(EntityDiscovered):
     def asm_connector_name(self):
         """
         Gets the asm_connector_name of this ExternalDatabaseSystemDiscoverySummary.
-        The display name of ASM connector.
+        The display name of the ASM connector.
 
 
         :return: The asm_connector_name of this ExternalDatabaseSystemDiscoverySummary.
@@ -187,7 +187,7 @@ class ExternalDatabaseSystemDiscoverySummary(EntityDiscovered):
     def asm_connector_name(self, asm_connector_name):
         """
         Sets the asm_connector_name of this ExternalDatabaseSystemDiscoverySummary.
-        The display name of ASM connector.
+        The display name of the ASM connector.
 
 
         :param asm_connector_name: The asm_connector_name of this ExternalDatabaseSystemDiscoverySummary.
@@ -229,7 +229,7 @@ class ExternalDatabaseSystemDiscoverySummary(EntityDiscovered):
     def compartment_id(self):
         """
         Gets the compartment_id of this ExternalDatabaseSystemDiscoverySummary.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -243,7 +243,7 @@ class ExternalDatabaseSystemDiscoverySummary(EntityDiscovered):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ExternalDatabaseSystemDiscoverySummary.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

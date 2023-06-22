@@ -75,6 +75,7 @@ Database
     oci.database.models.ChangeDisasterRecoveryConfigurationDetails
     oci.database.models.ChangeExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeKeyStoreCompartmentDetails
+    oci.database.models.ChangeKeyStoreTypeDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
     oci.database.models.CloudAutonomousVmCluster
     oci.database.models.CloudAutonomousVmClusterResourceDetails

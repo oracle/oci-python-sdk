@@ -153,7 +153,7 @@ class OccMetricsClient(object):
         resource_path = "/metricProperties/{namespaceName}"
         method = "GET"
         operation_name = "list_metric_properties"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occ/20230515/MetricPropertyCollection/ListMetricProperties"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -269,7 +269,7 @@ class OccMetricsClient(object):
         resource_path = "/namespaces"
         method = "GET"
         operation_name = "list_namespaces"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occ/20230515/NamespaceCollection/ListNamespaces"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -375,7 +375,7 @@ class OccMetricsClient(object):
         resource_path = "/requestSummarizedMetricData"
         method = "POST"
         operation_name = "request_summarized_metric_data"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/occ/20230515/SummarizedMetricDataCollection/RequestSummarizedMetricData"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

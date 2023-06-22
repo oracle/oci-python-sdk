@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalExadataStorageGrid(DbmResource):
     """
-    The Exadata storage grid details.
+    The details of the Exadata storage server grid.
     """
 
     def __init__(self, **kwargs):
@@ -134,7 +134,7 @@ class ExternalExadataStorageGrid(DbmResource):
     def exadata_infrastructure_id(self):
         """
         Gets the exadata_infrastructure_id of this ExternalExadataStorageGrid.
-        The `OCID`__ of Exadata infrastructure system.
+        The `OCID`__ of the Exadata infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -148,7 +148,7 @@ class ExternalExadataStorageGrid(DbmResource):
     def exadata_infrastructure_id(self, exadata_infrastructure_id):
         """
         Sets the exadata_infrastructure_id of this ExternalExadataStorageGrid.
-        The `OCID`__ of Exadata infrastructure system.
+        The `OCID`__ of the Exadata infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -162,7 +162,7 @@ class ExternalExadataStorageGrid(DbmResource):
     def server_count(self):
         """
         Gets the server_count of this ExternalExadataStorageGrid.
-        The number of the storage servers in the Exadata infrastructure.
+        The number of Exadata storage servers in the Exadata infrastructure.
 
 
         :return: The server_count of this ExternalExadataStorageGrid.
@@ -174,7 +174,7 @@ class ExternalExadataStorageGrid(DbmResource):
     def server_count(self, server_count):
         """
         Sets the server_count of this ExternalExadataStorageGrid.
-        The number of the storage servers in the Exadata infrastructure.
+        The number of Exadata storage servers in the Exadata infrastructure.
 
 
         :param server_count: The server_count of this ExternalExadataStorageGrid.
@@ -186,7 +186,7 @@ class ExternalExadataStorageGrid(DbmResource):
     def storage_servers(self):
         """
         Gets the storage_servers of this ExternalExadataStorageGrid.
-        A list of monitored Exadata storage server.
+        A list of monitored Exadata storage servers.
 
 
         :return: The storage_servers of this ExternalExadataStorageGrid.
@@ -198,7 +198,7 @@ class ExternalExadataStorageGrid(DbmResource):
     def storage_servers(self, storage_servers):
         """
         Sets the storage_servers of this ExternalExadataStorageGrid.
-        A list of monitored Exadata storage server.
+        A list of monitored Exadata storage servers.
 
 
         :param storage_servers: The storage_servers of this ExternalExadataStorageGrid.

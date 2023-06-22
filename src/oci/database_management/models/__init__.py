@@ -25,10 +25,13 @@ from .asm_property_summary import AsmPropertySummary
 from .associated_component import AssociatedComponent
 from .associated_database_collection import AssociatedDatabaseCollection
 from .associated_database_summary import AssociatedDatabaseSummary
+from .associated_service_details import AssociatedServiceDetails
 from .attention_log_collection import AttentionLogCollection
 from .attention_log_count_summary import AttentionLogCountSummary
 from .attention_log_counts_collection import AttentionLogCountsCollection
 from .attention_log_summary import AttentionLogSummary
+from .automatic_capture_filter import AutomaticCaptureFilter
+from .automatic_capture_filter_details import AutomaticCaptureFilterDetails
 from .awr_db_collection import AwrDbCollection
 from .awr_db_cpu_usage_collection import AwrDbCpuUsageCollection
 from .awr_db_cpu_usage_summary import AwrDbCpuUsageSummary
@@ -62,9 +65,14 @@ from .change_external_db_system_compartment_details import ChangeExternalDbSyste
 from .change_external_exadata_infrastructure_compartment_details import ChangeExternalExadataInfrastructureCompartmentDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_managed_database_group_compartment_details import ChangeManagedDatabaseGroupCompartmentDetails
+from .change_plan_retention_details import ChangePlanRetentionDetails
+from .change_space_budget_details import ChangeSpaceBudgetDetails
+from .change_sql_plan_baselines_attributes_details import ChangeSqlPlanBaselinesAttributesDetails
 from .child_database import ChildDatabase
 from .clone_sql_tuning_task_details import CloneSqlTuningTaskDetails
 from .cluster_cache_metric import ClusterCacheMetric
+from .configure_automatic_capture_filters_details import ConfigureAutomaticCaptureFiltersDetails
+from .configure_automatic_spm_evolve_advisor_task_details import ConfigureAutomaticSpmEvolveAdvisorTaskDetails
 from .consumer_group_privilege_collection import ConsumerGroupPrivilegeCollection
 from .consumer_group_privilege_summary import ConsumerGroupPrivilegeSummary
 from .cpu_utilization_aggregate_metrics import CpuUtilizationAggregateMetrics
@@ -79,6 +87,8 @@ from .create_job_details import CreateJobDetails
 from .create_managed_database_group_details import CreateManagedDatabaseGroupDetails
 from .create_sql_job_details import CreateSqlJobDetails
 from .create_tablespace_details import CreateTablespaceDetails
+from .cursor_cache_statement_collection import CursorCacheStatementCollection
+from .cursor_cache_statement_summary import CursorCacheStatementSummary
 from .data_access_container_collection import DataAccessContainerCollection
 from .data_access_container_summary import DataAccessContainerSummary
 from .database_connection_credentails_by_name import DatabaseConnectionCredentailsByName
@@ -107,6 +117,10 @@ from .db_management_private_endpoint import DbManagementPrivateEndpoint
 from .db_management_private_endpoint_collection import DbManagementPrivateEndpointCollection
 from .db_management_private_endpoint_summary import DbManagementPrivateEndpointSummary
 from .dbm_resource import DbmResource
+from .disable_automatic_initial_plan_capture_details import DisableAutomaticInitialPlanCaptureDetails
+from .disable_automatic_spm_evolve_advisor_task_details import DisableAutomaticSpmEvolveAdvisorTaskDetails
+from .disable_high_frequency_automatic_spm_evolve_advisor_task_details import DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails
+from .disable_sql_plan_baselines_usage_details import DisableSqlPlanBaselinesUsageDetails
 from .discover_external_exadata_infrastructure_details import DiscoverExternalExadataInfrastructureDetails
 from .discovered_external_asm import DiscoveredExternalAsm
 from .discovered_external_asm_instance import DiscoveredExternalAsmInstance
@@ -118,10 +132,16 @@ from .discovered_external_db_node import DiscoveredExternalDbNode
 from .discovered_external_db_system_component import DiscoveredExternalDbSystemComponent
 from .discovered_external_listener import DiscoveredExternalListener
 from .discovered_external_pluggable_database import DiscoveredExternalPluggableDatabase
+from .drop_sql_plan_baselines_details import DropSqlPlanBaselinesDetails
 from .drop_sql_tuning_task_details import DropSqlTuningTaskDetails
 from .drop_tablespace_details import DropTablespaceDetails
+from .enable_automatic_initial_plan_capture_details import EnableAutomaticInitialPlanCaptureDetails
+from .enable_automatic_spm_evolve_advisor_task_details import EnableAutomaticSpmEvolveAdvisorTaskDetails
 from .enable_external_db_system_database_management_details import EnableExternalDbSystemDatabaseManagementDetails
+from .enable_external_db_system_stack_monitoring_details import EnableExternalDbSystemStackMonitoringDetails
 from .enable_external_exadata_infrastructure_management_details import EnableExternalExadataInfrastructureManagementDetails
+from .enable_high_frequency_automatic_spm_evolve_advisor_task_details import EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails
+from .enable_sql_plan_baselines_usage_details import EnableSqlPlanBaselinesUsageDetails
 from .entity_discovered import EntityDiscovered
 from .execution_plan_stats_comparision import ExecutionPlanStatsComparision
 from .external_asm import ExternalAsm
@@ -172,6 +192,7 @@ from .external_db_system_discovery_connector import ExternalDbSystemDiscoveryCon
 from .external_db_system_discovery_macs_connector import ExternalDbSystemDiscoveryMacsConnector
 from .external_db_system_discovery_summary import ExternalDbSystemDiscoverySummary
 from .external_db_system_macs_connector import ExternalDbSystemMacsConnector
+from .external_db_system_stack_monitoring_config_details import ExternalDbSystemStackMonitoringConfigDetails
 from .external_db_system_summary import ExternalDbSystemSummary
 from .external_exadata_database_system_summary import ExternalExadataDatabaseSystemSummary
 from .external_exadata_infra_basic_info import ExternalExadataInfraBasicInfo
@@ -224,11 +245,17 @@ from .job_execution_result_location import JobExecutionResultLocation
 from .job_execution_summary import JobExecutionSummary
 from .job_executions_status_summary import JobExecutionsStatusSummary
 from .job_executions_status_summary_collection import JobExecutionsStatusSummaryCollection
+from .job_in_bind import JobInBind
+from .job_in_binds_details import JobInBindsDetails
+from .job_out_bind import JobOutBind
+from .job_out_binds_details import JobOutBindsDetails
 from .job_run import JobRun
 from .job_run_collection import JobRunCollection
 from .job_run_summary import JobRunSummary
 from .job_schedule_details import JobScheduleDetails
 from .job_summary import JobSummary
+from .load_sql_plan_baselines_from_awr_details import LoadSqlPlanBaselinesFromAwrDetails
+from .load_sql_plan_baselines_from_cursor_cache_details import LoadSqlPlanBaselinesFromCursorCacheDetails
 from .managed_database import ManagedDatabase
 from .managed_database_collection import ManagedDatabaseCollection
 from .managed_database_credential import ManagedDatabaseCredential
@@ -290,8 +317,19 @@ from .rule_finding import RuleFinding
 from .run_historic_addm_details import RunHistoricAddmDetails
 from .schema_definition import SchemaDefinition
 from .snapshot_details import SnapshotDetails
+from .spm_evolve_task_parameters import SpmEvolveTaskParameters
 from .sql_cpu_activity import SqlCpuActivity
 from .sql_job import SqlJob
+from .sql_plan_baseline import SqlPlanBaseline
+from .sql_plan_baseline_aggregation import SqlPlanBaselineAggregation
+from .sql_plan_baseline_aggregation_collection import SqlPlanBaselineAggregationCollection
+from .sql_plan_baseline_collection import SqlPlanBaselineCollection
+from .sql_plan_baseline_configuration import SqlPlanBaselineConfiguration
+from .sql_plan_baseline_dimensions import SqlPlanBaselineDimensions
+from .sql_plan_baseline_job import SqlPlanBaselineJob
+from .sql_plan_baseline_job_collection import SqlPlanBaselineJobCollection
+from .sql_plan_baseline_job_summary import SqlPlanBaselineJobSummary
+from .sql_plan_baseline_summary import SqlPlanBaselineSummary
 from .sql_tuning_advisor_task_collection import SqlTuningAdvisorTaskCollection
 from .sql_tuning_advisor_task_finding_collection import SqlTuningAdvisorTaskFindingCollection
 from .sql_tuning_advisor_task_finding_summary import SqlTuningAdvisorTaskFindingSummary
@@ -392,10 +430,13 @@ database_management_type_mapping = {
     "AssociatedComponent": AssociatedComponent,
     "AssociatedDatabaseCollection": AssociatedDatabaseCollection,
     "AssociatedDatabaseSummary": AssociatedDatabaseSummary,
+    "AssociatedServiceDetails": AssociatedServiceDetails,
     "AttentionLogCollection": AttentionLogCollection,
     "AttentionLogCountSummary": AttentionLogCountSummary,
     "AttentionLogCountsCollection": AttentionLogCountsCollection,
     "AttentionLogSummary": AttentionLogSummary,
+    "AutomaticCaptureFilter": AutomaticCaptureFilter,
+    "AutomaticCaptureFilterDetails": AutomaticCaptureFilterDetails,
     "AwrDbCollection": AwrDbCollection,
     "AwrDbCpuUsageCollection": AwrDbCpuUsageCollection,
     "AwrDbCpuUsageSummary": AwrDbCpuUsageSummary,
@@ -429,9 +470,14 @@ database_management_type_mapping = {
     "ChangeExternalExadataInfrastructureCompartmentDetails": ChangeExternalExadataInfrastructureCompartmentDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeManagedDatabaseGroupCompartmentDetails": ChangeManagedDatabaseGroupCompartmentDetails,
+    "ChangePlanRetentionDetails": ChangePlanRetentionDetails,
+    "ChangeSpaceBudgetDetails": ChangeSpaceBudgetDetails,
+    "ChangeSqlPlanBaselinesAttributesDetails": ChangeSqlPlanBaselinesAttributesDetails,
     "ChildDatabase": ChildDatabase,
     "CloneSqlTuningTaskDetails": CloneSqlTuningTaskDetails,
     "ClusterCacheMetric": ClusterCacheMetric,
+    "ConfigureAutomaticCaptureFiltersDetails": ConfigureAutomaticCaptureFiltersDetails,
+    "ConfigureAutomaticSpmEvolveAdvisorTaskDetails": ConfigureAutomaticSpmEvolveAdvisorTaskDetails,
     "ConsumerGroupPrivilegeCollection": ConsumerGroupPrivilegeCollection,
     "ConsumerGroupPrivilegeSummary": ConsumerGroupPrivilegeSummary,
     "CpuUtilizationAggregateMetrics": CpuUtilizationAggregateMetrics,
@@ -446,6 +492,8 @@ database_management_type_mapping = {
     "CreateManagedDatabaseGroupDetails": CreateManagedDatabaseGroupDetails,
     "CreateSqlJobDetails": CreateSqlJobDetails,
     "CreateTablespaceDetails": CreateTablespaceDetails,
+    "CursorCacheStatementCollection": CursorCacheStatementCollection,
+    "CursorCacheStatementSummary": CursorCacheStatementSummary,
     "DataAccessContainerCollection": DataAccessContainerCollection,
     "DataAccessContainerSummary": DataAccessContainerSummary,
     "DatabaseConnectionCredentailsByName": DatabaseConnectionCredentailsByName,
@@ -474,6 +522,10 @@ database_management_type_mapping = {
     "DbManagementPrivateEndpointCollection": DbManagementPrivateEndpointCollection,
     "DbManagementPrivateEndpointSummary": DbManagementPrivateEndpointSummary,
     "DbmResource": DbmResource,
+    "DisableAutomaticInitialPlanCaptureDetails": DisableAutomaticInitialPlanCaptureDetails,
+    "DisableAutomaticSpmEvolveAdvisorTaskDetails": DisableAutomaticSpmEvolveAdvisorTaskDetails,
+    "DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails": DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails,
+    "DisableSqlPlanBaselinesUsageDetails": DisableSqlPlanBaselinesUsageDetails,
     "DiscoverExternalExadataInfrastructureDetails": DiscoverExternalExadataInfrastructureDetails,
     "DiscoveredExternalAsm": DiscoveredExternalAsm,
     "DiscoveredExternalAsmInstance": DiscoveredExternalAsmInstance,
@@ -485,10 +537,16 @@ database_management_type_mapping = {
     "DiscoveredExternalDbSystemComponent": DiscoveredExternalDbSystemComponent,
     "DiscoveredExternalListener": DiscoveredExternalListener,
     "DiscoveredExternalPluggableDatabase": DiscoveredExternalPluggableDatabase,
+    "DropSqlPlanBaselinesDetails": DropSqlPlanBaselinesDetails,
     "DropSqlTuningTaskDetails": DropSqlTuningTaskDetails,
     "DropTablespaceDetails": DropTablespaceDetails,
+    "EnableAutomaticInitialPlanCaptureDetails": EnableAutomaticInitialPlanCaptureDetails,
+    "EnableAutomaticSpmEvolveAdvisorTaskDetails": EnableAutomaticSpmEvolveAdvisorTaskDetails,
     "EnableExternalDbSystemDatabaseManagementDetails": EnableExternalDbSystemDatabaseManagementDetails,
+    "EnableExternalDbSystemStackMonitoringDetails": EnableExternalDbSystemStackMonitoringDetails,
     "EnableExternalExadataInfrastructureManagementDetails": EnableExternalExadataInfrastructureManagementDetails,
+    "EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails": EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails,
+    "EnableSqlPlanBaselinesUsageDetails": EnableSqlPlanBaselinesUsageDetails,
     "EntityDiscovered": EntityDiscovered,
     "ExecutionPlanStatsComparision": ExecutionPlanStatsComparision,
     "ExternalAsm": ExternalAsm,
@@ -539,6 +597,7 @@ database_management_type_mapping = {
     "ExternalDbSystemDiscoveryMacsConnector": ExternalDbSystemDiscoveryMacsConnector,
     "ExternalDbSystemDiscoverySummary": ExternalDbSystemDiscoverySummary,
     "ExternalDbSystemMacsConnector": ExternalDbSystemMacsConnector,
+    "ExternalDbSystemStackMonitoringConfigDetails": ExternalDbSystemStackMonitoringConfigDetails,
     "ExternalDbSystemSummary": ExternalDbSystemSummary,
     "ExternalExadataDatabaseSystemSummary": ExternalExadataDatabaseSystemSummary,
     "ExternalExadataInfraBasicInfo": ExternalExadataInfraBasicInfo,
@@ -591,11 +650,17 @@ database_management_type_mapping = {
     "JobExecutionSummary": JobExecutionSummary,
     "JobExecutionsStatusSummary": JobExecutionsStatusSummary,
     "JobExecutionsStatusSummaryCollection": JobExecutionsStatusSummaryCollection,
+    "JobInBind": JobInBind,
+    "JobInBindsDetails": JobInBindsDetails,
+    "JobOutBind": JobOutBind,
+    "JobOutBindsDetails": JobOutBindsDetails,
     "JobRun": JobRun,
     "JobRunCollection": JobRunCollection,
     "JobRunSummary": JobRunSummary,
     "JobScheduleDetails": JobScheduleDetails,
     "JobSummary": JobSummary,
+    "LoadSqlPlanBaselinesFromAwrDetails": LoadSqlPlanBaselinesFromAwrDetails,
+    "LoadSqlPlanBaselinesFromCursorCacheDetails": LoadSqlPlanBaselinesFromCursorCacheDetails,
     "ManagedDatabase": ManagedDatabase,
     "ManagedDatabaseCollection": ManagedDatabaseCollection,
     "ManagedDatabaseCredential": ManagedDatabaseCredential,
@@ -657,8 +722,19 @@ database_management_type_mapping = {
     "RunHistoricAddmDetails": RunHistoricAddmDetails,
     "SchemaDefinition": SchemaDefinition,
     "SnapshotDetails": SnapshotDetails,
+    "SpmEvolveTaskParameters": SpmEvolveTaskParameters,
     "SqlCpuActivity": SqlCpuActivity,
     "SqlJob": SqlJob,
+    "SqlPlanBaseline": SqlPlanBaseline,
+    "SqlPlanBaselineAggregation": SqlPlanBaselineAggregation,
+    "SqlPlanBaselineAggregationCollection": SqlPlanBaselineAggregationCollection,
+    "SqlPlanBaselineCollection": SqlPlanBaselineCollection,
+    "SqlPlanBaselineConfiguration": SqlPlanBaselineConfiguration,
+    "SqlPlanBaselineDimensions": SqlPlanBaselineDimensions,
+    "SqlPlanBaselineJob": SqlPlanBaselineJob,
+    "SqlPlanBaselineJobCollection": SqlPlanBaselineJobCollection,
+    "SqlPlanBaselineJobSummary": SqlPlanBaselineJobSummary,
+    "SqlPlanBaselineSummary": SqlPlanBaselineSummary,
     "SqlTuningAdvisorTaskCollection": SqlTuningAdvisorTaskCollection,
     "SqlTuningAdvisorTaskFindingCollection": SqlTuningAdvisorTaskFindingCollection,
     "SqlTuningAdvisorTaskFindingSummary": SqlTuningAdvisorTaskFindingSummary,

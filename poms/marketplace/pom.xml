@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.oci.marketplace</groupId>
         <artifactId>marketplace-consumer-service-spec</artifactId>
-        <version>0.1.4423</version>
+        <version>0.1.4646</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

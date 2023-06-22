@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalExadataInfrastructure(DbmResource):
     """
-    The Exadata infrastructure details.
+    The details of the Exadata infrastructure.
     """
 
     #: A constant which can be used with the rack_size property of a ExternalExadataInfrastructure.
@@ -213,7 +213,7 @@ class ExternalExadataInfrastructure(DbmResource):
     def compartment_id(self):
         """
         Gets the compartment_id of this ExternalExadataInfrastructure.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -227,7 +227,7 @@ class ExternalExadataInfrastructure(DbmResource):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ExternalExadataInfrastructure.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -291,7 +291,7 @@ class ExternalExadataInfrastructure(DbmResource):
     def database_systems(self):
         """
         Gets the database_systems of this ExternalExadataInfrastructure.
-        A list of database systems.
+        A list of DB systems.
 
 
         :return: The database_systems of this ExternalExadataInfrastructure.
@@ -303,7 +303,7 @@ class ExternalExadataInfrastructure(DbmResource):
     def database_systems(self, database_systems):
         """
         Sets the database_systems of this ExternalExadataInfrastructure.
-        A list of database systems.
+        A list of DB systems.
 
 
         :param database_systems: The database_systems of this ExternalExadataInfrastructure.
@@ -315,7 +315,7 @@ class ExternalExadataInfrastructure(DbmResource):
     def database_compartments(self):
         """
         Gets the database_compartments of this ExternalExadataInfrastructure.
-        The list of `OCIDs]`__ of the compartments
+        The list of `OCIDs]`__ of the compartments.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -329,7 +329,7 @@ class ExternalExadataInfrastructure(DbmResource):
     def database_compartments(self, database_compartments):
         """
         Sets the database_compartments of this ExternalExadataInfrastructure.
-        The list of `OCIDs]`__ of the compartments
+        The list of `OCIDs]`__ of the compartments.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

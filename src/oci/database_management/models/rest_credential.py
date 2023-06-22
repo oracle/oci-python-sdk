@@ -122,7 +122,7 @@ class RestCredential(object):
     def ssl_trust_store_type(self):
         """
         Gets the ssl_trust_store_type of this RestCredential.
-        The SSL trust store type.
+        The SSL truststore type.
 
         Allowed values for this property are: "JKS", "BCFKS"
 
@@ -136,7 +136,7 @@ class RestCredential(object):
     def ssl_trust_store_type(self, ssl_trust_store_type):
         """
         Sets the ssl_trust_store_type of this RestCredential.
-        The SSL trust store type.
+        The SSL truststore type.
 
 
         :param ssl_trust_store_type: The ssl_trust_store_type of this RestCredential.
@@ -154,7 +154,7 @@ class RestCredential(object):
     def ssl_trust_store_location(self):
         """
         Gets the ssl_trust_store_location of this RestCredential.
-        The full path of the SSL trust store Location in the agent.
+        The full path of the SSL truststore location in the agent.
 
 
         :return: The ssl_trust_store_location of this RestCredential.
@@ -166,7 +166,7 @@ class RestCredential(object):
     def ssl_trust_store_location(self, ssl_trust_store_location):
         """
         Sets the ssl_trust_store_location of this RestCredential.
-        The full path of the SSL trust store Location in the agent.
+        The full path of the SSL truststore location in the agent.
 
 
         :param ssl_trust_store_location: The ssl_trust_store_location of this RestCredential.
@@ -178,7 +178,7 @@ class RestCredential(object):
     def ssl_trust_store_password(self):
         """
         Gets the ssl_trust_store_password of this RestCredential.
-        The password of the SSL trust store Location in the agent.
+        The password of the SSL truststore location in the agent.
 
 
         :return: The ssl_trust_store_password of this RestCredential.
@@ -190,7 +190,7 @@ class RestCredential(object):
     def ssl_trust_store_password(self, ssl_trust_store_password):
         """
         Sets the ssl_trust_store_password of this RestCredential.
-        The password of the SSL trust store Location in the agent.
+        The password of the SSL truststore location in the agent.
 
 
         :param ssl_trust_store_password: The ssl_trust_store_password of this RestCredential.

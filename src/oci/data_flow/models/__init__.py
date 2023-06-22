@@ -12,10 +12,12 @@ from .change_application_compartment_details import ChangeApplicationCompartment
 from .change_pool_compartment_details import ChangePoolCompartmentDetails
 from .change_private_endpoint_compartment_details import ChangePrivateEndpointCompartmentDetails
 from .change_run_compartment_details import ChangeRunCompartmentDetails
+from .change_sql_endpoint_compartment_details import ChangeSqlEndpointCompartmentDetails
 from .create_application_details import CreateApplicationDetails
 from .create_pool_details import CreatePoolDetails
 from .create_private_endpoint_details import CreatePrivateEndpointDetails
 from .create_run_details import CreateRunDetails
+from .create_sql_endpoint_details import CreateSqlEndpointDetails
 from .create_statement_details import CreateStatementDetails
 from .image_png_statement_output_data import ImagePngStatementOutputData
 from .node_count import NodeCount
@@ -32,7 +34,14 @@ from .run import Run
 from .run_log_summary import RunLogSummary
 from .run_summary import RunSummary
 from .scan import Scan
+from .secure_access_control_rule import SecureAccessControlRule
 from .shape_config import ShapeConfig
+from .sql_endpoint import SqlEndpoint
+from .sql_endpoint_collection import SqlEndpointCollection
+from .sql_endpoint_network_configuration import SqlEndpointNetworkConfiguration
+from .sql_endpoint_secure_access_config import SqlEndpointSecureAccessConfig
+from .sql_endpoint_summary import SqlEndpointSummary
+from .sql_endpoint_vcn_config import SqlEndpointVcnConfig
 from .statement import Statement
 from .statement_collection import StatementCollection
 from .statement_output import StatementOutput
@@ -44,6 +53,7 @@ from .update_application_details import UpdateApplicationDetails
 from .update_pool_details import UpdatePoolDetails
 from .update_private_endpoint_details import UpdatePrivateEndpointDetails
 from .update_run_details import UpdateRunDetails
+from .update_sql_endpoint_details import UpdateSqlEndpointDetails
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
 from .work_request_error import WorkRequestError
@@ -63,10 +73,12 @@ data_flow_type_mapping = {
     "ChangePoolCompartmentDetails": ChangePoolCompartmentDetails,
     "ChangePrivateEndpointCompartmentDetails": ChangePrivateEndpointCompartmentDetails,
     "ChangeRunCompartmentDetails": ChangeRunCompartmentDetails,
+    "ChangeSqlEndpointCompartmentDetails": ChangeSqlEndpointCompartmentDetails,
     "CreateApplicationDetails": CreateApplicationDetails,
     "CreatePoolDetails": CreatePoolDetails,
     "CreatePrivateEndpointDetails": CreatePrivateEndpointDetails,
     "CreateRunDetails": CreateRunDetails,
+    "CreateSqlEndpointDetails": CreateSqlEndpointDetails,
     "CreateStatementDetails": CreateStatementDetails,
     "ImagePngStatementOutputData": ImagePngStatementOutputData,
     "NodeCount": NodeCount,
@@ -83,7 +95,14 @@ data_flow_type_mapping = {
     "RunLogSummary": RunLogSummary,
     "RunSummary": RunSummary,
     "Scan": Scan,
+    "SecureAccessControlRule": SecureAccessControlRule,
     "ShapeConfig": ShapeConfig,
+    "SqlEndpoint": SqlEndpoint,
+    "SqlEndpointCollection": SqlEndpointCollection,
+    "SqlEndpointNetworkConfiguration": SqlEndpointNetworkConfiguration,
+    "SqlEndpointSecureAccessConfig": SqlEndpointSecureAccessConfig,
+    "SqlEndpointSummary": SqlEndpointSummary,
+    "SqlEndpointVcnConfig": SqlEndpointVcnConfig,
     "Statement": Statement,
     "StatementCollection": StatementCollection,
     "StatementOutput": StatementOutput,
@@ -95,6 +114,7 @@ data_flow_type_mapping = {
     "UpdatePoolDetails": UpdatePoolDetails,
     "UpdatePrivateEndpointDetails": UpdatePrivateEndpointDetails,
     "UpdateRunDetails": UpdateRunDetails,
+    "UpdateSqlEndpointDetails": UpdateSqlEndpointDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,
     "WorkRequestError": WorkRequestError,

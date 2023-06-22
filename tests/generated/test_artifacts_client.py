@@ -1222,6 +1222,90 @@ def test_update_container_configuration(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_update_container_image(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'UpdateContainerImage'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'UpdateContainerImage')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='UpdateContainerImage')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.update_container_image(
+                image_id=request.pop(util.camelize('imageId')),
+                update_container_image_details=request.pop(util.camelize('UpdateContainerImageDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'UpdateContainerImage',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'containerImage',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
+def test_update_container_image_signature(testing_service_client):
+    if not testing_service_client.is_api_enabled('artifacts', 'UpdateContainerImageSignature'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('artifacts', util.camelize('artifacts'), 'UpdateContainerImageSignature')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='artifacts', api_name='UpdateContainerImageSignature')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.artifacts.ArtifactsClient(config, service_endpoint=service_endpoint)
+            response = client.update_container_image_signature(
+                image_signature_id=request.pop(util.camelize('imageSignatureId')),
+                update_container_image_signature_details=request.pop(util.camelize('UpdateContainerImageSignatureDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'artifacts',
+            'UpdateContainerImageSignature',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'containerImageSignature',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="odx_registry_grp@oracle.com" jiraProject="OCIR" opsJiraProject="OCIR"
 def test_update_container_repository(testing_service_client):
     if not testing_service_client.is_api_enabled('artifacts', 'UpdateContainerRepository'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.oci.licensemanager</groupId>
         <artifactId>licensemanager-spec</artifactId>
-        <version>0.1.348</version>
+        <version>0.1.490</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

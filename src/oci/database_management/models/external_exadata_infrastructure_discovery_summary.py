@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalExadataInfrastructureDiscoverySummary(EntityDiscovered):
     """
-    The discovery result for the Exadata system infrastructure.
+    The summary of the Exadata system infrastructure discovery.
     """
 
     #: A constant which can be used with the rack_size property of a ExternalExadataInfrastructureDiscoverySummary.

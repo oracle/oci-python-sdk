@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalExadataStorageConnectorStatus(object):
     """
-    The status of a Exadata storage server connector.
+    The status of an Exadata storage server connector.
     """
 
     #: A constant which can be used with the status property of a ExternalExadataStorageConnectorStatus.
@@ -61,7 +61,7 @@ class ExternalExadataStorageConnectorStatus(object):
     def id(self):
         """
         Gets the id of this ExternalExadataStorageConnectorStatus.
-        The `OCID`__ of the Exadata storage connector.
+        The `OCID`__ of the Exadata storage server connector.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -75,7 +75,7 @@ class ExternalExadataStorageConnectorStatus(object):
     def id(self, id):
         """
         Sets the id of this ExternalExadataStorageConnectorStatus.
-        The `OCID`__ of the Exadata storage connector.
+        The `OCID`__ of the Exadata storage server connector.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

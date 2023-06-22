@@ -172,3 +172,4 @@
 
 ^src/oci/access_governance_cp/.*\.py$
 ^src/oci/oci_control_center/.*\.py$
+^src/oci/os_management_hub/.*\.py$

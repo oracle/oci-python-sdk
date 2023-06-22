@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.artifacts</groupId>
         <artifactId>artifacts-api-spec</artifactId>
-        <version>0.2.10</version>
+        <version>0.2.12</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

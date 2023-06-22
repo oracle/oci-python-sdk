@@ -1039,6 +1039,48 @@ def test_change_key_store_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
+def test_change_key_store_type(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ChangeKeyStoreType'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ChangeKeyStoreType')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ChangeKeyStoreType')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.change_key_store_type(
+                database_id=request.pop(util.camelize('databaseId')),
+                change_key_store_type_details=request.pop(util.camelize('ChangeKeyStoreTypeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ChangeKeyStoreType',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_key_store_type',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
 def test_change_oneoff_patch_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeOneoffPatchCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -11918,6 +11960,47 @@ def test_rotate_ords_certs(testing_service_client):
             result,
             service_error,
             'rotate_ords_certs',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAAS"
+def test_rotate_pluggable_database_encryption_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'RotatePluggableDatabaseEncryptionKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RotatePluggableDatabaseEncryptionKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='RotatePluggableDatabaseEncryptionKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.rotate_pluggable_database_encryption_key(
+                pluggable_database_id=request.pop(util.camelize('pluggableDatabaseId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'RotatePluggableDatabaseEncryptionKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'rotate_pluggable_database_encryption_key',
             False,
             False
         )

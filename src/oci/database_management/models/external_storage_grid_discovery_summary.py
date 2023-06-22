@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalStorageGridDiscoverySummary(EntityDiscovered):
     """
-    The Exadata storage server grid.
+    The summary of the Exadata storage server grid discovery.
     """
 
     def __init__(self, **kwargs):
@@ -118,7 +118,7 @@ class ExternalStorageGridDiscoverySummary(EntityDiscovered):
     def count_of_storage_servers_discovered(self):
         """
         Gets the count_of_storage_servers_discovered of this ExternalStorageGridDiscoverySummary.
-        The total number of the storage servers discovered.
+        The total number of Exadata storage servers discovered.
 
 
         :return: The count_of_storage_servers_discovered of this ExternalStorageGridDiscoverySummary.
@@ -130,7 +130,7 @@ class ExternalStorageGridDiscoverySummary(EntityDiscovered):
     def count_of_storage_servers_discovered(self, count_of_storage_servers_discovered):
         """
         Sets the count_of_storage_servers_discovered of this ExternalStorageGridDiscoverySummary.
-        The total number of the storage servers discovered.
+        The total number of Exadata storage servers discovered.
 
 
         :param count_of_storage_servers_discovered: The count_of_storage_servers_discovered of this ExternalStorageGridDiscoverySummary.

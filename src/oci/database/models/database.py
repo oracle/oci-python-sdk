@@ -176,6 +176,14 @@ class Database(object):
             The value to assign to the sid_prefix property of this Database.
         :type sid_prefix: str
 
+        :param key_store_id:
+            The value to assign to the key_store_id property of this Database.
+        :type key_store_id: str
+
+        :param key_store_wallet_name:
+            The value to assign to the key_store_wallet_name property of this Database.
+        :type key_store_wallet_name: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -206,7 +214,9 @@ class Database(object):
             'database_software_image_id': 'str',
             'is_cdb': 'bool',
             'database_management_config': 'CloudDatabaseManagementConfig',
-            'sid_prefix': 'str'
+            'sid_prefix': 'str',
+            'key_store_id': 'str',
+            'key_store_wallet_name': 'str'
         }
 
         self.attribute_map = {
@@ -238,7 +248,9 @@ class Database(object):
             'database_software_image_id': 'databaseSoftwareImageId',
             'is_cdb': 'isCdb',
             'database_management_config': 'databaseManagementConfig',
-            'sid_prefix': 'sidPrefix'
+            'sid_prefix': 'sidPrefix',
+            'key_store_id': 'keyStoreId',
+            'key_store_wallet_name': 'keyStoreWalletName'
         }
 
         self._id = None
@@ -270,6 +282,8 @@ class Database(object):
         self._is_cdb = None
         self._database_management_config = None
         self._sid_prefix = None
+        self._key_store_id = None
+        self._key_store_wallet_name = None
 
     @property
     def id(self):
@@ -1020,6 +1034,58 @@ class Database(object):
         :type: str
         """
         self._sid_prefix = sid_prefix
+
+    @property
+    def key_store_id(self):
+        """
+        Gets the key_store_id of this Database.
+        The `OCID`__ of the key store.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_id of this Database.
+        :rtype: str
+        """
+        return self._key_store_id
+
+    @key_store_id.setter
+    def key_store_id(self, key_store_id):
+        """
+        Sets the key_store_id of this Database.
+        The `OCID`__ of the key store.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_id: The key_store_id of this Database.
+        :type: str
+        """
+        self._key_store_id = key_store_id
+
+    @property
+    def key_store_wallet_name(self):
+        """
+        Gets the key_store_wallet_name of this Database.
+        The wallet name for Oracle Key Vault.
+
+
+        :return: The key_store_wallet_name of this Database.
+        :rtype: str
+        """
+        return self._key_store_wallet_name
+
+    @key_store_wallet_name.setter
+    def key_store_wallet_name(self, key_store_wallet_name):
+        """
+        Sets the key_store_wallet_name of this Database.
+        The wallet name for Oracle Key Vault.
+
+
+        :param key_store_wallet_name: The key_store_wallet_name of this Database.
+        :type: str
+        """
+        self._key_store_wallet_name = key_store_wallet_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

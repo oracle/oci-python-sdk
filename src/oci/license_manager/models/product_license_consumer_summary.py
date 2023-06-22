@@ -17,6 +17,10 @@ class ProductLicenseConsumerSummary(object):
     #: This constant has a value of "OCPU"
     RESOURCE_UNIT_TYPE_OCPU = "OCPU"
 
+    #: A constant which can be used with the resource_unit_type property of a ProductLicenseConsumerSummary.
+    #: This constant has a value of "ECPU"
+    RESOURCE_UNIT_TYPE_ECPU = "ECPU"
+
     #: A constant which can be used with the license_unit_type property of a ProductLicenseConsumerSummary.
     #: This constant has a value of "OCPU"
     LICENSE_UNIT_TYPE_OCPU = "OCPU"
@@ -56,7 +60,7 @@ class ProductLicenseConsumerSummary(object):
 
         :param resource_unit_type:
             The value to assign to the resource_unit_type property of this ProductLicenseConsumerSummary.
-            Allowed values for this property are: "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OCPU", "ECPU", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_unit_type: str
 
@@ -264,7 +268,7 @@ class ProductLicenseConsumerSummary(object):
         **[Required]** Gets the resource_unit_type of this ProductLicenseConsumerSummary.
         The unit type for the resource.
 
-        Allowed values for this property are: "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OCPU", "ECPU", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -283,7 +287,7 @@ class ProductLicenseConsumerSummary(object):
         :param resource_unit_type: The resource_unit_type of this ProductLicenseConsumerSummary.
         :type: str
         """
-        allowed_values = ["OCPU"]
+        allowed_values = ["OCPU", "ECPU"]
         if not value_allowed_none_or_none_sentinel(resource_unit_type, allowed_values):
             resource_unit_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_unit_type = resource_unit_type
