@@ -213,7 +213,7 @@ def handle_compute(connection):
                 {'col': 'local_storage_tb      ', 'csv': '    ', 'type': 'number        ', 'pk': 'n'},
                 {'col': 'public_ips            ', 'csv': '    ', 'type': 'varchar2(500) ', 'pk': 'n'},
                 {'col': 'private_ips           ', 'csv': '    ', 'type': 'varchar2(500) ', 'pk': 'n'},
-                {'col': 'security_groups       ', 'csv': '    ', 'type': 'varchar2(1000)', 'pk': 'n'},
+                {'col': 'security_groups       ', 'csv': '    ', 'type': 'varchar2(4000)', 'pk': 'n'},
                 {'col': 'internal_fqdn         ', 'csv': '    ', 'type': 'varchar2(1000)', 'pk': 'n'},
                 {'col': 'time_created          ', 'csv': '    ', 'type': 'date          ', 'pk': 'n'},
                 {'col': 'boot_volume           ', 'csv': '    ', 'type': 'varchar2(100) ', 'pk': 'n'},
