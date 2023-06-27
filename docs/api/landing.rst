@@ -100,6 +100,7 @@ API Reference
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
 * :doc:`Kms Vault <key_management/client/oci.key_management.KmsVaultClient>`
 * :doc:`License Manager <license_manager/client/oci.license_manager.LicenseManagerClient>`
+* :doc:`Lifecycle Environment <os_management_hub/client/oci.os_management_hub.LifecycleEnvironmentClient>`
 * :doc:`Limits <limits/client/oci.limits.LimitsClient>`
 * :doc:`Link <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
@@ -108,8 +109,11 @@ API Reference
 * :doc:`Log Search <loggingsearch/client/oci.loggingsearch.LogSearchClient>`
 * :doc:`Logging <loggingingestion/client/oci.loggingingestion.LoggingClient>`
 * :doc:`Logging Management <logging/client/oci.logging.LoggingManagementClient>`
+* :doc:`Managed Instance <os_management_hub/client/oci.os_management_hub.ManagedInstanceClient>`
+* :doc:`Managed Instance Group <os_management_hub/client/oci.os_management_hub.ManagedInstanceGroupClient>`
 * :doc:`Management <oda/client/oci.oda.ManagementClient>`
 * :doc:`Management Agent <management_agent/client/oci.management_agent.ManagementAgentClient>`
+* :doc:`Management Station <os_management_hub/client/oci.os_management_hub.ManagementStationClient>`
 * :doc:`Marketplace <marketplace/client/oci.marketplace.MarketplaceClient>`
 * :doc:`Media Services <media_services/client/oci.media_services.MediaServicesClient>`
 * :doc:`Media Stream <media_services/client/oci.media_services.MediaStreamClient>`
@@ -127,6 +131,7 @@ API Reference
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Odapackage <oda/client/oci.oda.OdapackageClient>`
+* :doc:`Onboarding <os_management_hub/client/oci.os_management_hub.OnboardingClient>`
 * :doc:`Opa Instance <opa/client/oci.opa.OpaInstanceClient>`
 * :doc:`Opensearch Cluster <opensearch/client/oci.opensearch.OpensearchClusterClient>`
 * :doc:`Opensearch Cluster Backup <opensearch/client/oci.opensearch.OpensearchClusterBackupClient>`
@@ -151,6 +156,7 @@ API Reference
 * :doc:`Recipient Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.RecipientInvitationClient>`
 * :doc:`Redirect <waas/client/oci.waas.RedirectClient>`
 * :doc:`Replicas <mysql/client/oci.mysql.ReplicasClient>`
+* :doc:`Reporting Managed Instance <os_management_hub/client/oci.os_management_hub.ReportingManagedInstanceClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
 * :doc:`Resources <usage/client/oci.usage.ResourcesClient>`
@@ -159,6 +165,7 @@ API Reference
 * :doc:`Rover Cluster <rover/client/oci.rover.RoverClusterClient>`
 * :doc:`Rover Entitlement <rover/client/oci.rover.RoverEntitlementClient>`
 * :doc:`Rover Node <rover/client/oci.rover.RoverNodeClient>`
+* :doc:`Scheduled Job <os_management_hub/client/oci.os_management_hub.ScheduledJobClient>`
 * :doc:`Sddc <ocvp/client/oci.ocvp.SddcClient>`
 * :doc:`Secrets <secrets/client/oci.secrets.SecretsClient>`
 * :doc:`Sender Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SenderInvitationClient>`
@@ -168,6 +175,7 @@ API Reference
 * :doc:`Service Mesh <service_mesh/client/oci.service_mesh.ServiceMeshClient>`
 * :doc:`Shape <rover/client/oci.rover.ShapeClient>`
 * :doc:`Shipping Vendors <dts/client/oci.dts.ShippingVendorsClient>`
+* :doc:`Software Source <os_management_hub/client/oci.os_management_hub.SoftwareSourceClient>`
 * :doc:`Sql Tuning <database_management/client/oci.database_management.SqlTuningClient>`
 * :doc:`Stack Monitoring <stack_monitoring/client/oci.stack_monitoring.StackMonitoringClient>`
 * :doc:`Stream <streaming/client/oci.streaming.StreamClient>`
@@ -198,6 +206,7 @@ API Reference
 * :doc:`Waa <waa/client/oci.waa.WaaClient>`
 * :doc:`Waas <waas/client/oci.waas.WaasClient>`
 * :doc:`Waf <waf/client/oci.waf.WafClient>`
+* :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
@@ -320,6 +329,7 @@ API Reference
     opsi
     optimizer
     os_management
+    os_management_hub
     osp_gateway
     osub_billing_schedule
     osub_organization_subscription

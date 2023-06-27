@@ -96,6 +96,18 @@ class ContainerImage(object):
             The value to assign to the versions property of this ContainerImage.
         :type versions: list[oci.artifacts.models.ContainerVersion]
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this ContainerImage.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this ContainerImage.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param system_tags:
+            The value to assign to the system_tags property of this ContainerImage.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -113,7 +125,10 @@ class ContainerImage(object):
             'time_created': 'datetime',
             'time_last_pulled': 'datetime',
             'version': 'str',
-            'versions': 'list[ContainerVersion]'
+            'versions': 'list[ContainerVersion]',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -132,7 +147,10 @@ class ContainerImage(object):
             'time_created': 'timeCreated',
             'time_last_pulled': 'timeLastPulled',
             'version': 'version',
-            'versions': 'versions'
+            'versions': 'versions',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
 
         self._compartment_id = None
@@ -151,6 +169,9 @@ class ContainerImage(object):
         self._time_last_pulled = None
         self._version = None
         self._versions = None
+        self._freeform_tags = None
+        self._defined_tags = None
+        self._system_tags = None
 
     @property
     def compartment_id(self):
@@ -565,6 +586,100 @@ class ContainerImage(object):
         :type: list[oci.artifacts.models.ContainerVersion]
         """
         self._versions = versions
+
+    @property
+    def freeform_tags(self):
+        """
+        **[Required]** Gets the freeform_tags of this ContainerImage.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this ContainerImage.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this ContainerImage.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this ContainerImage.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        **[Required]** Gets the defined_tags of this ContainerImage.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this ContainerImage.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this ContainerImage.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this ContainerImage.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        **[Required]** Gets the system_tags of this ContainerImage.
+        The system tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this ContainerImage.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ContainerImage.
+        The system tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this ContainerImage.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

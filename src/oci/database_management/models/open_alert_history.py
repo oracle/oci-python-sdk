@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OpenAlertHistory(object):
     """
-    The open alerts current existing in a storage server.
+    The existing open alerts in the Exadata storage server.
     """
 
     def __init__(self, **kwargs):

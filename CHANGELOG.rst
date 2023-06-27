@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.105.0 - 2023-06-27
+====================
+
+Added
+-----
+* Support for calling Oracle Cloud Infrastructure services in the eu-frankfurt-2 region
+* Support for the OS Management Hub service
+* Support for changing the key store type, and rotating keys, on Exadata Cloud at Customer in the Database service
+* Support for launching VM database systems using Ampere A1 shapes in the Database service
+* Support for additional currencies and countries on paid listings in the Marketplace service
+* Support for ECPU integration in the License Manager service
+* Support for freeform and defined tags on resources in the Generic Artifacts service
+* Support for SQL endpoints in the Data Flow service
+* Support for setting replication delays on channels in the MySQL Database service
+* Support for setting how channels handle replicated tables with no primary key in the MySQL Database service
+* Support for SQL Plan Management (SPM) in Database Management service  
+ 
+Breaking
+--------
+* Support for retries by default on operations of the Generic Artifacts service
+ 
+====================
 2.104.3 - 2023-06-20
 ====================
 

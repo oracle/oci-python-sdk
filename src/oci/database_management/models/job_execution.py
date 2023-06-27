@@ -208,6 +208,14 @@ class JobExecution(object):
             The value to assign to the sql_text property of this JobExecution.
         :type sql_text: str
 
+        :param in_binds:
+            The value to assign to the in_binds property of this JobExecution.
+        :type in_binds: oci.database_management.models.JobInBindsDetails
+
+        :param out_binds:
+            The value to assign to the out_binds property of this JobExecution.
+        :type out_binds: oci.database_management.models.JobOutBindsDetails
+
         :param schedule_details:
             The value to assign to the schedule_details property of this JobExecution.
         :type schedule_details: oci.database_management.models.JobScheduleDetails
@@ -235,6 +243,8 @@ class JobExecution(object):
             'time_completed': 'datetime',
             'user_name': 'str',
             'sql_text': 'str',
+            'in_binds': 'JobInBindsDetails',
+            'out_binds': 'JobOutBindsDetails',
             'schedule_details': 'JobScheduleDetails'
         }
 
@@ -260,6 +270,8 @@ class JobExecution(object):
             'time_completed': 'timeCompleted',
             'user_name': 'userName',
             'sql_text': 'sqlText',
+            'in_binds': 'inBinds',
+            'out_binds': 'outBinds',
             'schedule_details': 'scheduleDetails'
         }
 
@@ -284,6 +296,8 @@ class JobExecution(object):
         self._time_completed = None
         self._user_name = None
         self._sql_text = None
+        self._in_binds = None
+        self._out_binds = None
         self._schedule_details = None
 
     @property
@@ -833,6 +847,46 @@ class JobExecution(object):
         :type: str
         """
         self._sql_text = sql_text
+
+    @property
+    def in_binds(self):
+        """
+        Gets the in_binds of this JobExecution.
+
+        :return: The in_binds of this JobExecution.
+        :rtype: oci.database_management.models.JobInBindsDetails
+        """
+        return self._in_binds
+
+    @in_binds.setter
+    def in_binds(self, in_binds):
+        """
+        Sets the in_binds of this JobExecution.
+
+        :param in_binds: The in_binds of this JobExecution.
+        :type: oci.database_management.models.JobInBindsDetails
+        """
+        self._in_binds = in_binds
+
+    @property
+    def out_binds(self):
+        """
+        Gets the out_binds of this JobExecution.
+
+        :return: The out_binds of this JobExecution.
+        :rtype: oci.database_management.models.JobOutBindsDetails
+        """
+        return self._out_binds
+
+    @out_binds.setter
+    def out_binds(self, out_binds):
+        """
+        Sets the out_binds of this JobExecution.
+
+        :param out_binds: The out_binds of this JobExecution.
+        :type: oci.database_management.models.JobOutBindsDetails
+        """
+        self._out_binds = out_binds
 
     @property
     def schedule_details(self):

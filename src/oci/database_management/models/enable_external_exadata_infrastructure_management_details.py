@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EnableExternalExadataInfrastructureManagementDetails(object):
     """
-    Details to enable Management on an Exadata infrastructure.
+    The details required to enable Database Management on the Exadata infrastructure.
     """
 
     #: A constant which can be used with the license_model property of a EnableExternalExadataInfrastructureManagementDetails.

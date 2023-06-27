@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbmResource(object):
     """
-    The base exadata resource.
+    The base Exadata resource.
     """
 
     #: A constant which can be used with the lifecycle_state property of a DbmResource.
@@ -254,7 +254,7 @@ class DbmResource(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DbmResource.
-        The name of the resource. English letters, numbers, \"-\", \"_\" and \".\" only.
+        The name of the Exadata resource. English letters, numbers, \"-\", \"_\" and \".\" only.
 
 
         :return: The display_name of this DbmResource.
@@ -266,7 +266,7 @@ class DbmResource(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DbmResource.
-        The name of the resource. English letters, numbers, \"-\", \"_\" and \".\" only.
+        The name of the Exadata resource. English letters, numbers, \"-\", \"_\" and \".\" only.
 
 
         :param display_name: The display_name of this DbmResource.
@@ -278,7 +278,7 @@ class DbmResource(object):
     def version(self):
         """
         Gets the version of this DbmResource.
-        The version of the resource.
+        The version of the Exadata resource.
 
 
         :return: The version of this DbmResource.
@@ -290,7 +290,7 @@ class DbmResource(object):
     def version(self, version):
         """
         Sets the version of this DbmResource.
-        The version of the resource.
+        The version of the Exadata resource.
 
 
         :param version: The version of this DbmResource.
@@ -302,7 +302,7 @@ class DbmResource(object):
     def internal_id(self):
         """
         Gets the internal_id of this DbmResource.
-        The internal ID.
+        The internal ID of the Exadata resource.
 
 
         :return: The internal_id of this DbmResource.
@@ -314,7 +314,7 @@ class DbmResource(object):
     def internal_id(self, internal_id):
         """
         Sets the internal_id of this DbmResource.
-        The internal ID.
+        The internal ID of the Exadata resource.
 
 
         :param internal_id: The internal_id of this DbmResource.
@@ -326,7 +326,7 @@ class DbmResource(object):
     def status(self):
         """
         Gets the status of this DbmResource.
-        The status of the entity.
+        The status of the Exadata resource.
 
 
         :return: The status of this DbmResource.
@@ -338,7 +338,7 @@ class DbmResource(object):
     def status(self, status):
         """
         Sets the status of this DbmResource.
-        The status of the entity.
+        The status of the Exadata resource.
 
 
         :param status: The status of this DbmResource.
@@ -382,7 +382,7 @@ class DbmResource(object):
     def time_created(self):
         """
         Gets the time_created of this DbmResource.
-        The timestamp of the creation.
+        The timestamp of the creation of the Exadata resource.
 
 
         :return: The time_created of this DbmResource.
@@ -394,7 +394,7 @@ class DbmResource(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DbmResource.
-        The timestamp of the creation.
+        The timestamp of the creation of the Exadata resource.
 
 
         :param time_created: The time_created of this DbmResource.
@@ -406,7 +406,7 @@ class DbmResource(object):
     def time_updated(self):
         """
         Gets the time_updated of this DbmResource.
-        The timestamp of the last update.
+        The timestamp of the last update of the Exadata resource.
 
 
         :return: The time_updated of this DbmResource.
@@ -418,7 +418,7 @@ class DbmResource(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DbmResource.
-        The timestamp of the last update.
+        The timestamp of the last update of the Exadata resource.
 
 
         :param time_updated: The time_updated of this DbmResource.
@@ -430,7 +430,7 @@ class DbmResource(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this DbmResource.
-        The details of the lifecycle state.
+        The details of the lifecycle state of the Exadata resource.
 
 
         :return: The lifecycle_details of this DbmResource.
@@ -442,7 +442,7 @@ class DbmResource(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this DbmResource.
-        The details of the lifecycle state.
+        The details of the lifecycle state of the Exadata resource.
 
 
         :param lifecycle_details: The lifecycle_details of this DbmResource.
@@ -480,7 +480,7 @@ class DbmResource(object):
     def resource_type(self):
         """
         **[Required]** Gets the resource_type of this DbmResource.
-        The type of resource.
+        The type of Exadata resource.
 
         Allowed values for this property are: "INFRASTRUCTURE_SUMMARY", "INFRASTRUCTURE", "STORAGE_SERVER_SUMMARY", "STORAGE_SERVER", "STORAGE_GRID_SUMMARY", "STORAGE_GRID", "STORAGE_CONNECTOR_SUMMARY", "STORAGE_CONNECTOR", "DATABASE_SYSTEM_SUMMARY", "DATABASE_SUMMARY"
 
@@ -494,7 +494,7 @@ class DbmResource(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this DbmResource.
-        The type of resource.
+        The type of Exadata resource.
 
 
         :param resource_type: The resource_type of this DbmResource.

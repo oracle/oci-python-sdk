@@ -74,6 +74,10 @@ class ExternalDbSystem(object):
             The value to assign to the database_management_config property of this ExternalDbSystem.
         :type database_management_config: oci.database_management.models.ExternalDbSystemDatabaseManagementConfigDetails
 
+        :param stack_monitoring_config:
+            The value to assign to the stack_monitoring_config property of this ExternalDbSystem.
+        :type stack_monitoring_config: oci.database_management.models.ExternalDbSystemStackMonitoringConfigDetails
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ExternalDbSystem.
             Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
@@ -102,6 +106,7 @@ class ExternalDbSystem(object):
             'is_cluster': 'bool',
             'home_directory': 'str',
             'database_management_config': 'ExternalDbSystemDatabaseManagementConfigDetails',
+            'stack_monitoring_config': 'ExternalDbSystemStackMonitoringConfigDetails',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime',
@@ -117,6 +122,7 @@ class ExternalDbSystem(object):
             'is_cluster': 'isCluster',
             'home_directory': 'homeDirectory',
             'database_management_config': 'databaseManagementConfig',
+            'stack_monitoring_config': 'stackMonitoringConfig',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
@@ -131,6 +137,7 @@ class ExternalDbSystem(object):
         self._is_cluster = None
         self._home_directory = None
         self._database_management_config = None
+        self._stack_monitoring_config = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_created = None
@@ -341,6 +348,26 @@ class ExternalDbSystem(object):
         :type: oci.database_management.models.ExternalDbSystemDatabaseManagementConfigDetails
         """
         self._database_management_config = database_management_config
+
+    @property
+    def stack_monitoring_config(self):
+        """
+        Gets the stack_monitoring_config of this ExternalDbSystem.
+
+        :return: The stack_monitoring_config of this ExternalDbSystem.
+        :rtype: oci.database_management.models.ExternalDbSystemStackMonitoringConfigDetails
+        """
+        return self._stack_monitoring_config
+
+    @stack_monitoring_config.setter
+    def stack_monitoring_config(self, stack_monitoring_config):
+        """
+        Sets the stack_monitoring_config of this ExternalDbSystem.
+
+        :param stack_monitoring_config: The stack_monitoring_config of this ExternalDbSystem.
+        :type: oci.database_management.models.ExternalDbSystemStackMonitoringConfigDetails
+        """
+        self._stack_monitoring_config = stack_monitoring_config
 
     @property
     def lifecycle_state(self):

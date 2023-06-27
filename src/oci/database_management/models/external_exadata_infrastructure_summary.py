@@ -199,7 +199,7 @@ class ExternalExadataInfrastructureSummary(DbmResource):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ExternalExadataInfrastructureSummary.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -213,7 +213,7 @@ class ExternalExadataInfrastructureSummary(DbmResource):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ExternalExadataInfrastructureSummary.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalExadataInfrastructureDiscovery(EntityDiscovered):
     """
-    The discovery result of the Exadata infrastructure.
+    The result of the Exadata infrastructure discovery.
     """
 
     #: A constant which can be used with the license_model property of a ExternalExadataInfrastructureDiscovery.
@@ -255,7 +255,7 @@ class ExternalExadataInfrastructureDiscovery(EntityDiscovered):
     def compartment_id(self):
         """
         Gets the compartment_id of this ExternalExadataInfrastructureDiscovery.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -269,7 +269,7 @@ class ExternalExadataInfrastructureDiscovery(EntityDiscovered):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ExternalExadataInfrastructureDiscovery.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -313,7 +313,7 @@ class ExternalExadataInfrastructureDiscovery(EntityDiscovered):
     def grid_home_path(self):
         """
         Gets the grid_home_path of this ExternalExadataInfrastructureDiscovery.
-        The Oracle home path of the infrastructure.
+        The Oracle home path of the Exadata infrastructure.
 
 
         :return: The grid_home_path of this ExternalExadataInfrastructureDiscovery.
@@ -325,7 +325,7 @@ class ExternalExadataInfrastructureDiscovery(EntityDiscovered):
     def grid_home_path(self, grid_home_path):
         """
         Sets the grid_home_path of this ExternalExadataInfrastructureDiscovery.
-        The Oracle home path of the infrastructure.
+        The Oracle home path of the Exadata infrastructure.
 
 
         :param grid_home_path: The grid_home_path of this ExternalExadataInfrastructureDiscovery.
@@ -337,7 +337,7 @@ class ExternalExadataInfrastructureDiscovery(EntityDiscovered):
     def db_systems(self):
         """
         Gets the db_systems of this ExternalExadataInfrastructureDiscovery.
-        The list of all the rac database systems.
+        The list of DB systems in the Exadata infrastructure.
 
 
         :return: The db_systems of this ExternalExadataInfrastructureDiscovery.
@@ -349,7 +349,7 @@ class ExternalExadataInfrastructureDiscovery(EntityDiscovered):
     def db_systems(self, db_systems):
         """
         Sets the db_systems of this ExternalExadataInfrastructureDiscovery.
-        The list of all the rac database systems.
+        The list of DB systems in the Exadata infrastructure.
 
 
         :param db_systems: The db_systems of this ExternalExadataInfrastructureDiscovery.
@@ -381,7 +381,7 @@ class ExternalExadataInfrastructureDiscovery(EntityDiscovered):
     def storage_servers(self):
         """
         Gets the storage_servers of this ExternalExadataInfrastructureDiscovery.
-        The list of all the storage servers.
+        The list of storage servers in the Exadata infrastructure.
 
 
         :return: The storage_servers of this ExternalExadataInfrastructureDiscovery.
@@ -393,7 +393,7 @@ class ExternalExadataInfrastructureDiscovery(EntityDiscovered):
     def storage_servers(self, storage_servers):
         """
         Sets the storage_servers of this ExternalExadataInfrastructureDiscovery.
-        The list of all the storage servers.
+        The list of storage servers in the Exadata infrastructure.
 
 
         :param storage_servers: The storage_servers of this ExternalExadataInfrastructureDiscovery.

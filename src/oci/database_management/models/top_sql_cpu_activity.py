@@ -37,7 +37,7 @@ class TopSqlCpuActivity(object):
     def activity(self):
         """
         **[Required]** Gets the activity of this TopSqlCpuActivity.
-        A list of sql cpu activity.
+        A list of sql CPU activity.
 
 
         :return: The activity of this TopSqlCpuActivity.
@@ -49,7 +49,7 @@ class TopSqlCpuActivity(object):
     def activity(self, activity):
         """
         Sets the activity of this TopSqlCpuActivity.
-        A list of sql cpu activity.
+        A list of sql CPU activity.
 
 
         :param activity: The activity of this TopSqlCpuActivity.

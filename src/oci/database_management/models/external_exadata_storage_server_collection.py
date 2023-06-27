@@ -37,7 +37,7 @@ class ExternalExadataStorageServerCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ExternalExadataStorageServerCollection.
-        A list of Exadata storage server.
+        A list of Exadata storage servers.
 
 
         :return: The items of this ExternalExadataStorageServerCollection.
@@ -49,7 +49,7 @@ class ExternalExadataStorageServerCollection(object):
     def items(self, items):
         """
         Sets the items of this ExternalExadataStorageServerCollection.
-        A list of Exadata storage server.
+        A list of Exadata storage servers.
 
 
         :param items: The items of this ExternalExadataStorageServerCollection.

@@ -34,25 +34,32 @@ class CreateExternalDbSystemDetails(object):
             The value to assign to the database_management_config property of this CreateExternalDbSystemDetails.
         :type database_management_config: oci.database_management.models.ExternalDbSystemDatabaseManagementConfigDetails
 
+        :param stack_monitoring_config:
+            The value to assign to the stack_monitoring_config property of this CreateExternalDbSystemDetails.
+        :type stack_monitoring_config: oci.database_management.models.AssociatedServiceDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'compartment_id': 'str',
             'db_system_discovery_id': 'str',
-            'database_management_config': 'ExternalDbSystemDatabaseManagementConfigDetails'
+            'database_management_config': 'ExternalDbSystemDatabaseManagementConfigDetails',
+            'stack_monitoring_config': 'AssociatedServiceDetails'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
             'db_system_discovery_id': 'dbSystemDiscoveryId',
-            'database_management_config': 'databaseManagementConfig'
+            'database_management_config': 'databaseManagementConfig',
+            'stack_monitoring_config': 'stackMonitoringConfig'
         }
 
         self._display_name = None
         self._compartment_id = None
         self._db_system_discovery_id = None
         self._database_management_config = None
+        self._stack_monitoring_config = None
 
     @property
     def display_name(self):
@@ -153,6 +160,26 @@ class CreateExternalDbSystemDetails(object):
         :type: oci.database_management.models.ExternalDbSystemDatabaseManagementConfigDetails
         """
         self._database_management_config = database_management_config
+
+    @property
+    def stack_monitoring_config(self):
+        """
+        Gets the stack_monitoring_config of this CreateExternalDbSystemDetails.
+
+        :return: The stack_monitoring_config of this CreateExternalDbSystemDetails.
+        :rtype: oci.database_management.models.AssociatedServiceDetails
+        """
+        return self._stack_monitoring_config
+
+    @stack_monitoring_config.setter
+    def stack_monitoring_config(self, stack_monitoring_config):
+        """
+        Sets the stack_monitoring_config of this CreateExternalDbSystemDetails.
+
+        :param stack_monitoring_config: The stack_monitoring_config of this CreateExternalDbSystemDetails.
+        :type: oci.database_management.models.AssociatedServiceDetails
+        """
+        self._stack_monitoring_config = stack_monitoring_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

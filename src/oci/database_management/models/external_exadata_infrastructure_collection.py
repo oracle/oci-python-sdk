@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalExadataInfrastructureCollection(object):
     """
-    The Exadata infrastructure list.
+    A list of the Exadata infrastructure resources.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ExternalExadataInfrastructureCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ExternalExadataInfrastructureCollection.
-        A list of Exadata infrastructure.
+        A list of Exadata infrastructures.
 
 
         :return: The items of this ExternalExadataInfrastructureCollection.
@@ -49,7 +49,7 @@ class ExternalExadataInfrastructureCollection(object):
     def items(self, items):
         """
         Sets the items of this ExternalExadataInfrastructureCollection.
-        A list of Exadata infrastructure.
+        A list of Exadata infrastructures.
 
 
         :param items: The items of this ExternalExadataInfrastructureCollection.

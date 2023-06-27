@@ -69,6 +69,14 @@ class CreateSqlJobDetails(CreateJobDetails):
             The value to assign to the sql_text property of this CreateSqlJobDetails.
         :type sql_text: str
 
+        :param in_binds:
+            The value to assign to the in_binds property of this CreateSqlJobDetails.
+        :type in_binds: oci.database_management.models.JobInBindsDetails
+
+        :param out_binds:
+            The value to assign to the out_binds property of this CreateSqlJobDetails.
+        :type out_binds: oci.database_management.models.JobOutBindsDetails
+
         :param sql_type:
             The value to assign to the sql_type property of this CreateSqlJobDetails.
         :type sql_type: str
@@ -107,6 +115,8 @@ class CreateSqlJobDetails(CreateJobDetails):
             'result_location': 'JobExecutionResultLocation',
             'schedule_details': 'JobScheduleDetails',
             'sql_text': 'str',
+            'in_binds': 'JobInBindsDetails',
+            'out_binds': 'JobOutBindsDetails',
             'sql_type': 'str',
             'operation_type': 'str',
             'user_name': 'str',
@@ -128,6 +138,8 @@ class CreateSqlJobDetails(CreateJobDetails):
             'result_location': 'resultLocation',
             'schedule_details': 'scheduleDetails',
             'sql_text': 'sqlText',
+            'in_binds': 'inBinds',
+            'out_binds': 'outBinds',
             'sql_type': 'sqlType',
             'operation_type': 'operationType',
             'user_name': 'userName',
@@ -148,6 +160,8 @@ class CreateSqlJobDetails(CreateJobDetails):
         self._result_location = None
         self._schedule_details = None
         self._sql_text = None
+        self._in_binds = None
+        self._out_binds = None
         self._sql_type = None
         self._operation_type = None
         self._user_name = None
@@ -179,6 +193,46 @@ class CreateSqlJobDetails(CreateJobDetails):
         :type: str
         """
         self._sql_text = sql_text
+
+    @property
+    def in_binds(self):
+        """
+        Gets the in_binds of this CreateSqlJobDetails.
+
+        :return: The in_binds of this CreateSqlJobDetails.
+        :rtype: oci.database_management.models.JobInBindsDetails
+        """
+        return self._in_binds
+
+    @in_binds.setter
+    def in_binds(self, in_binds):
+        """
+        Sets the in_binds of this CreateSqlJobDetails.
+
+        :param in_binds: The in_binds of this CreateSqlJobDetails.
+        :type: oci.database_management.models.JobInBindsDetails
+        """
+        self._in_binds = in_binds
+
+    @property
+    def out_binds(self):
+        """
+        Gets the out_binds of this CreateSqlJobDetails.
+
+        :return: The out_binds of this CreateSqlJobDetails.
+        :rtype: oci.database_management.models.JobOutBindsDetails
+        """
+        return self._out_binds
+
+    @out_binds.setter
+    def out_binds(self, out_binds):
+        """
+        Sets the out_binds of this CreateSqlJobDetails.
+
+        :param out_binds: The out_binds of this CreateSqlJobDetails.
+        :type: oci.database_management.models.JobOutBindsDetails
+        """
+        self._out_binds = out_binds
 
     @property
     def sql_type(self):

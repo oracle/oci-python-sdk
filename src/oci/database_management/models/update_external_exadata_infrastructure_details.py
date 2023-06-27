@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateExternalExadataInfrastructureDetails(object):
     """
-    The details of updating external Exadata infrastructure.
+    The details required to update the external Exadata infrastructure.
     """
 
     #: A constant which can be used with the license_model property of a UpdateExternalExadataInfrastructureDetails.
@@ -137,7 +137,7 @@ class UpdateExternalExadataInfrastructureDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this UpdateExternalExadataInfrastructureDetails.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -151,7 +151,7 @@ class UpdateExternalExadataInfrastructureDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this UpdateExternalExadataInfrastructureDetails.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -189,7 +189,7 @@ class UpdateExternalExadataInfrastructureDetails(object):
     def db_system_ids(self):
         """
         Gets the db_system_ids of this UpdateExternalExadataInfrastructureDetails.
-        The list of all the rac database system OCIDs. If not specified, it keeps the existing database systems
+        The list of all the DB systems OCIDs.
 
 
         :return: The db_system_ids of this UpdateExternalExadataInfrastructureDetails.
@@ -201,7 +201,7 @@ class UpdateExternalExadataInfrastructureDetails(object):
     def db_system_ids(self, db_system_ids):
         """
         Sets the db_system_ids of this UpdateExternalExadataInfrastructureDetails.
-        The list of all the rac database system OCIDs. If not specified, it keeps the existing database systems
+        The list of all the DB systems OCIDs.
 
 
         :param db_system_ids: The db_system_ids of this UpdateExternalExadataInfrastructureDetails.
@@ -213,7 +213,7 @@ class UpdateExternalExadataInfrastructureDetails(object):
     def storage_server_names(self):
         """
         Gets the storage_server_names of this UpdateExternalExadataInfrastructureDetails.
-        The list of the names of the storage servers to be monitored. If not specified, it includes all the storage servers associated with the monitored database systems.
+        The list of the names of Exadata storage servers to be monitored. If not specified, it includes all Exadata storage servers associated with the monitored DB systems.
 
 
         :return: The storage_server_names of this UpdateExternalExadataInfrastructureDetails.
@@ -225,7 +225,7 @@ class UpdateExternalExadataInfrastructureDetails(object):
     def storage_server_names(self, storage_server_names):
         """
         Sets the storage_server_names of this UpdateExternalExadataInfrastructureDetails.
-        The list of the names of the storage servers to be monitored. If not specified, it includes all the storage servers associated with the monitored database systems.
+        The list of the names of Exadata storage servers to be monitored. If not specified, it includes all Exadata storage servers associated with the monitored DB systems.
 
 
         :param storage_server_names: The storage_server_names of this UpdateExternalExadataInfrastructureDetails.

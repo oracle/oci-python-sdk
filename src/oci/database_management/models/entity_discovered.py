@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EntityDiscovered(object):
     """
-    The base discover entity.
+    The details of the base entity discovery.
     """
 
     #: A constant which can be used with the discover_status property of a EntityDiscovered.
@@ -178,7 +178,7 @@ class EntityDiscovered(object):
     def id(self):
         """
         Gets the id of this EntityDiscovered.
-        The `OCID`__. Null for new discover case.
+        The `OCID`__ of the entity discovered.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -192,7 +192,7 @@ class EntityDiscovered(object):
     def id(self, id):
         """
         Sets the id of this EntityDiscovered.
-        The `OCID`__. Null for new discover case.
+        The `OCID`__ of the entity discovered.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -206,7 +206,7 @@ class EntityDiscovered(object):
     def agent_id(self):
         """
         Gets the agent_id of this EntityDiscovered.
-        The `OCID`__ of the agent could be used for monitoring.
+        The `OCID`__ of the agent used for monitoring.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -220,7 +220,7 @@ class EntityDiscovered(object):
     def agent_id(self, agent_id):
         """
         Sets the agent_id of this EntityDiscovered.
-        The `OCID`__ of the agent could be used for monitoring.
+        The `OCID`__ of the agent used for monitoring.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -310,7 +310,7 @@ class EntityDiscovered(object):
     def internal_id(self):
         """
         Gets the internal_id of this EntityDiscovered.
-        The internal identifier.
+        The internal identifier of the entity.
 
 
         :return: The internal_id of this EntityDiscovered.
@@ -322,7 +322,7 @@ class EntityDiscovered(object):
     def internal_id(self, internal_id):
         """
         Sets the internal_id of this EntityDiscovered.
-        The internal identifier.
+        The internal identifier of the entity.
 
 
         :param internal_id: The internal_id of this EntityDiscovered.
@@ -358,7 +358,7 @@ class EntityDiscovered(object):
     def discover_status(self):
         """
         Gets the discover_status of this EntityDiscovered.
-        The status of the entity discover.
+        The status of the entity discovery.
 
         Allowed values for this property are: "PREV_DISCOVERED", "NEW_DISCOVERED", "NOT_FOUND", "DISCOVERING"
 
@@ -372,7 +372,7 @@ class EntityDiscovered(object):
     def discover_status(self, discover_status):
         """
         Sets the discover_status of this EntityDiscovered.
-        The status of the entity discover.
+        The status of the entity discovery.
 
 
         :param discover_status: The discover_status of this EntityDiscovered.
@@ -390,7 +390,7 @@ class EntityDiscovered(object):
     def discover_error_code(self):
         """
         Gets the discover_error_code of this EntityDiscovered.
-        The error code of the discovery on the resource
+        The error code of the discovery.
 
 
         :return: The discover_error_code of this EntityDiscovered.
@@ -402,7 +402,7 @@ class EntityDiscovered(object):
     def discover_error_code(self, discover_error_code):
         """
         Sets the discover_error_code of this EntityDiscovered.
-        The error code of the discovery on the resource
+        The error code of the discovery.
 
 
         :param discover_error_code: The discover_error_code of this EntityDiscovered.
@@ -414,7 +414,7 @@ class EntityDiscovered(object):
     def discover_error_msg(self):
         """
         Gets the discover_error_msg of this EntityDiscovered.
-        The error message of the discovery on the resource
+        The error message of the discovery.
 
 
         :return: The discover_error_msg of this EntityDiscovered.
@@ -426,7 +426,7 @@ class EntityDiscovered(object):
     def discover_error_msg(self, discover_error_msg):
         """
         Sets the discover_error_msg of this EntityDiscovered.
-        The error message of the discovery on the resource
+        The error message of the discovery.
 
 
         :param discover_error_msg: The discover_error_msg of this EntityDiscovered.

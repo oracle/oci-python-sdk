@@ -1686,7 +1686,7 @@ class LicenseManagerClient(object):
         :param str resource_unit_type: (optional)
             A filter to return only resources whose unit matches the given resource unit.
 
-            Allowed values are: "OCPU"
+            Allowed values are: "OCPU", "ECPU"
 
         :param str sort_order: (optional)
             The sort order to use, whether `ASC` or `DESC`.
@@ -1745,7 +1745,7 @@ class LicenseManagerClient(object):
                 "list_top_utilized_resources got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'resource_unit_type' in kwargs:
-            resource_unit_type_allowed_values = ["OCPU"]
+            resource_unit_type_allowed_values = ["OCPU", "ECPU"]
             if kwargs['resource_unit_type'] not in resource_unit_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `resource_unit_type`, must be one of {0}".format(resource_unit_type_allowed_values)

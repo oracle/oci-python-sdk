@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalExadataStorageGridSummary(DbmResource):
     """
-    The storage server grid of the Exadata infrastructure.
+    The Exadata storage server grid of the Exadata infrastructure.
     """
 
     def __init__(self, **kwargs):
@@ -118,7 +118,7 @@ class ExternalExadataStorageGridSummary(DbmResource):
     def server_count(self):
         """
         Gets the server_count of this ExternalExadataStorageGridSummary.
-        The number of the storage servers in the Exadata infrastructure.
+        The number of Exadata storage servers in the Exadata infrastructure.
 
 
         :return: The server_count of this ExternalExadataStorageGridSummary.
@@ -130,7 +130,7 @@ class ExternalExadataStorageGridSummary(DbmResource):
     def server_count(self, server_count):
         """
         Sets the server_count of this ExternalExadataStorageGridSummary.
-        The number of the storage servers in the Exadata infrastructure.
+        The number of Exadata storage servers in the Exadata infrastructure.
 
 
         :param server_count: The server_count of this ExternalExadataStorageGridSummary.

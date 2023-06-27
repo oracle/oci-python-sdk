@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OpenAlertSummary(object):
     """
-    An alert from storage server.
+    An alert from the Exadata storage server.
     """
 
     #: A constant which can be used with the severity property of a OpenAlertSummary.
@@ -116,7 +116,7 @@ class OpenAlertSummary(object):
     def type(self):
         """
         Gets the type of this OpenAlertSummary.
-        The type of the alert.
+        The type of alert.
 
         Allowed values for this property are: "STATEFUL", "STATELESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -131,7 +131,7 @@ class OpenAlertSummary(object):
     def type(self, type):
         """
         Sets the type of this OpenAlertSummary.
-        The type of the alert.
+        The type of alert.
 
 
         :param type: The type of this OpenAlertSummary.

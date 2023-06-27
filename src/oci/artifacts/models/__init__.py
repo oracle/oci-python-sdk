@@ -34,6 +34,8 @@ from .repository_collection import RepositoryCollection
 from .repository_summary import RepositorySummary
 from .restore_container_image_details import RestoreContainerImageDetails
 from .update_container_configuration_details import UpdateContainerConfigurationDetails
+from .update_container_image_details import UpdateContainerImageDetails
+from .update_container_image_signature_details import UpdateContainerImageSignatureDetails
 from .update_container_repository_details import UpdateContainerRepositoryDetails
 from .update_generic_artifact_by_path_details import UpdateGenericArtifactByPathDetails
 from .update_generic_artifact_details import UpdateGenericArtifactDetails
@@ -72,6 +74,8 @@ artifacts_type_mapping = {
     "RepositorySummary": RepositorySummary,
     "RestoreContainerImageDetails": RestoreContainerImageDetails,
     "UpdateContainerConfigurationDetails": UpdateContainerConfigurationDetails,
+    "UpdateContainerImageDetails": UpdateContainerImageDetails,
+    "UpdateContainerImageSignatureDetails": UpdateContainerImageSignatureDetails,
     "UpdateContainerRepositoryDetails": UpdateContainerRepositoryDetails,
     "UpdateGenericArtifactByPathDetails": UpdateGenericArtifactByPathDetails,
     "UpdateGenericArtifactDetails": UpdateGenericArtifactDetails,

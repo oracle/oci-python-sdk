@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeExternalExadataInfrastructureCompartmentDetails(object):
     """
-    The details required to change the compartment of an Exadata infrastructure.
+    The details required to change the compartment of the Exadata infrastructure.
     """
 
     def __init__(self, **kwargs):

@@ -65,6 +65,10 @@ class ListingPackage(object):
             The value to assign to the operating_system property of this ListingPackage.
         :type operating_system: oci.marketplace.models.OperatingSystem
 
+        :param regions:
+            The value to assign to the regions property of this ListingPackage.
+        :type regions: list[oci.marketplace.models.Region]
+
         """
         self.swagger_types = {
             'description': 'str',
@@ -74,7 +78,8 @@ class ListingPackage(object):
             'pricing': 'PricingModel',
             'resource_id': 'str',
             'time_created': 'datetime',
-            'operating_system': 'OperatingSystem'
+            'operating_system': 'OperatingSystem',
+            'regions': 'list[Region]'
         }
 
         self.attribute_map = {
@@ -85,7 +90,8 @@ class ListingPackage(object):
             'pricing': 'pricing',
             'resource_id': 'resourceId',
             'time_created': 'timeCreated',
-            'operating_system': 'operatingSystem'
+            'operating_system': 'operatingSystem',
+            'regions': 'regions'
         }
 
         self._description = None
@@ -96,6 +102,7 @@ class ListingPackage(object):
         self._resource_id = None
         self._time_created = None
         self._operating_system = None
+        self._regions = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -312,6 +319,30 @@ class ListingPackage(object):
         :type: oci.marketplace.models.OperatingSystem
         """
         self._operating_system = operating_system
+
+    @property
+    def regions(self):
+        """
+        Gets the regions of this ListingPackage.
+        The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+
+
+        :return: The regions of this ListingPackage.
+        :rtype: list[oci.marketplace.models.Region]
+        """
+        return self._regions
+
+    @regions.setter
+    def regions(self, regions):
+        """
+        Sets the regions of this ListingPackage.
+        The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
+
+
+        :param regions: The regions of this ListingPackage.
+        :type: list[oci.marketplace.models.Region]
+        """
+        self._regions = regions
 
     def __repr__(self):
         return formatted_flat_dict(self)

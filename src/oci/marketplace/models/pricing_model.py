@@ -69,6 +69,22 @@ class PricingModel(object):
     #: This constant has a value of "OMR"
     CURRENCY_OMR = "OMR"
 
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "EUR"
+    CURRENCY_EUR = "EUR"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "CHF"
+    CURRENCY_CHF = "CHF"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "MXN"
+    CURRENCY_MXN = "MXN"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "CLP"
+    CURRENCY_CLP = "CLP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PricingModel object with values from keyword arguments.
@@ -88,7 +104,7 @@ class PricingModel(object):
 
         :param currency:
             The value to assign to the currency property of this PricingModel.
-            Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type currency: str
 
@@ -189,7 +205,7 @@ class PricingModel(object):
         Gets the currency of this PricingModel.
         The currency of the pricing model.
 
-        Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -208,7 +224,7 @@ class PricingModel(object):
         :param currency: The currency of this PricingModel.
         :type: str
         """
-        allowed_values = ["USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR"]
+        allowed_values = ["USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP"]
         if not value_allowed_none_or_none_sentinel(currency, allowed_values):
             currency = 'UNKNOWN_ENUM_VALUE'
         self._currency = currency

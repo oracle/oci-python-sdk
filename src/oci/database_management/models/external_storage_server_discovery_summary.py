@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalStorageServerDiscoverySummary(EntityDiscovered):
     """
-    The Exadata storage server.
+    The summary of the Exadata storage server discovery.
     """
 
     def __init__(self, **kwargs):
@@ -146,7 +146,7 @@ class ExternalStorageServerDiscoverySummary(EntityDiscovered):
     def ip_address(self):
         """
         Gets the ip_address of this ExternalStorageServerDiscoverySummary.
-        The IP address of the storage server.
+        The IP address of the Exadata storage server.
 
 
         :return: The ip_address of this ExternalStorageServerDiscoverySummary.
@@ -158,7 +158,7 @@ class ExternalStorageServerDiscoverySummary(EntityDiscovered):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this ExternalStorageServerDiscoverySummary.
-        The IP address of the storage server.
+        The IP address of the Exadata storage server.
 
 
         :param ip_address: The ip_address of this ExternalStorageServerDiscoverySummary.
@@ -170,7 +170,7 @@ class ExternalStorageServerDiscoverySummary(EntityDiscovered):
     def make_model(self):
         """
         Gets the make_model of this ExternalStorageServerDiscoverySummary.
-        The make model of the storage server.
+        The make model of the Exadata storage server.
 
 
         :return: The make_model of this ExternalStorageServerDiscoverySummary.
@@ -182,7 +182,7 @@ class ExternalStorageServerDiscoverySummary(EntityDiscovered):
     def make_model(self, make_model):
         """
         Sets the make_model of this ExternalStorageServerDiscoverySummary.
-        The make model of the storage server.
+        The make model of the Exadata storage server.
 
 
         :param make_model: The make_model of this ExternalStorageServerDiscoverySummary.
@@ -194,7 +194,7 @@ class ExternalStorageServerDiscoverySummary(EntityDiscovered):
     def cpu_count(self):
         """
         Gets the cpu_count of this ExternalStorageServerDiscoverySummary.
-        The cpu count of the storage server.
+        The CPU count of the Exadata storage server.
 
 
         :return: The cpu_count of this ExternalStorageServerDiscoverySummary.
@@ -206,7 +206,7 @@ class ExternalStorageServerDiscoverySummary(EntityDiscovered):
     def cpu_count(self, cpu_count):
         """
         Sets the cpu_count of this ExternalStorageServerDiscoverySummary.
-        The cpu count of the storage server.
+        The CPU count of the Exadata storage server.
 
 
         :param cpu_count: The cpu_count of this ExternalStorageServerDiscoverySummary.
@@ -218,7 +218,7 @@ class ExternalStorageServerDiscoverySummary(EntityDiscovered):
     def memory_gb(self):
         """
         Gets the memory_gb of this ExternalStorageServerDiscoverySummary.
-        The memory size in GB of the storage server.
+        The memory size in GB of the Exadata storage server.
 
 
         :return: The memory_gb of this ExternalStorageServerDiscoverySummary.
@@ -230,7 +230,7 @@ class ExternalStorageServerDiscoverySummary(EntityDiscovered):
     def memory_gb(self, memory_gb):
         """
         Sets the memory_gb of this ExternalStorageServerDiscoverySummary.
-        The memory size in GB of the storage server.
+        The memory size in GB of the Exadata storage server.
 
 
         :param memory_gb: The memory_gb of this ExternalStorageServerDiscoverySummary.
@@ -242,7 +242,7 @@ class ExternalStorageServerDiscoverySummary(EntityDiscovered):
     def connector_name(self):
         """
         Gets the connector_name of this ExternalStorageServerDiscoverySummary.
-        The connector name of the storage server in rediscovery case.
+        The name of the Exadata storage server connector in case of rediscovery.
 
 
         :return: The connector_name of this ExternalStorageServerDiscoverySummary.
@@ -254,7 +254,7 @@ class ExternalStorageServerDiscoverySummary(EntityDiscovered):
     def connector_name(self, connector_name):
         """
         Sets the connector_name of this ExternalStorageServerDiscoverySummary.
-        The connector name of the storage server in rediscovery case.
+        The name of the Exadata storage server connector in case of rediscovery.
 
 
         :param connector_name: The connector_name of this ExternalStorageServerDiscoverySummary.

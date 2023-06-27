@@ -48,6 +48,8 @@ Artifacts
     oci.artifacts.models.RepositorySummary
     oci.artifacts.models.RestoreContainerImageDetails
     oci.artifacts.models.UpdateContainerConfigurationDetails
+    oci.artifacts.models.UpdateContainerImageDetails
+    oci.artifacts.models.UpdateContainerImageSignatureDetails
     oci.artifacts.models.UpdateContainerRepositoryDetails
     oci.artifacts.models.UpdateGenericArtifactByPathDetails
     oci.artifacts.models.UpdateGenericArtifactDetails
