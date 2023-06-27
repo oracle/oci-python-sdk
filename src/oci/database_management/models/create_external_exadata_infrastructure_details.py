@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateExternalExadataInfrastructureDetails(object):
     """
-    The details of creating external Exadata infrastructure.
+    The details required to create the external Exadata infrastructure.
     """
 
     #: A constant which can be used with the license_model property of a CreateExternalExadataInfrastructureDetails.
@@ -137,7 +137,7 @@ class CreateExternalExadataInfrastructureDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateExternalExadataInfrastructureDetails.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -151,7 +151,7 @@ class CreateExternalExadataInfrastructureDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateExternalExadataInfrastructureDetails.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -189,7 +189,7 @@ class CreateExternalExadataInfrastructureDetails(object):
     def db_system_ids(self):
         """
         **[Required]** Gets the db_system_ids of this CreateExternalExadataInfrastructureDetails.
-        The list of all the rac database system OCIDs.
+        The list of DB systems in the Exadata infrastructure.
 
 
         :return: The db_system_ids of this CreateExternalExadataInfrastructureDetails.
@@ -201,7 +201,7 @@ class CreateExternalExadataInfrastructureDetails(object):
     def db_system_ids(self, db_system_ids):
         """
         Sets the db_system_ids of this CreateExternalExadataInfrastructureDetails.
-        The list of all the rac database system OCIDs.
+        The list of DB systems in the Exadata infrastructure.
 
 
         :param db_system_ids: The db_system_ids of this CreateExternalExadataInfrastructureDetails.
@@ -213,7 +213,7 @@ class CreateExternalExadataInfrastructureDetails(object):
     def storage_server_names(self):
         """
         Gets the storage_server_names of this CreateExternalExadataInfrastructureDetails.
-        The list of all the storage server names to be included for monitoering purpose. If not specified, all the storage servers associated with the database systems are included.
+        The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
 
 
         :return: The storage_server_names of this CreateExternalExadataInfrastructureDetails.
@@ -225,7 +225,7 @@ class CreateExternalExadataInfrastructureDetails(object):
     def storage_server_names(self, storage_server_names):
         """
         Sets the storage_server_names of this CreateExternalExadataInfrastructureDetails.
-        The list of all the storage server names to be included for monitoering purpose. If not specified, all the storage servers associated with the database systems are included.
+        The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the DB systems are included.
 
 
         :param storage_server_names: The storage_server_names of this CreateExternalExadataInfrastructureDetails.

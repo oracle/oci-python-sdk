@@ -52,6 +52,10 @@ class OrchestrationListingPackage(ListingPackage):
             The value to assign to the operating_system property of this OrchestrationListingPackage.
         :type operating_system: oci.marketplace.models.OperatingSystem
 
+        :param regions:
+            The value to assign to the regions property of this OrchestrationListingPackage.
+        :type regions: list[oci.marketplace.models.Region]
+
         :param resource_link:
             The value to assign to the resource_link property of this OrchestrationListingPackage.
         :type resource_link: str
@@ -59,10 +63,6 @@ class OrchestrationListingPackage(ListingPackage):
         :param variables:
             The value to assign to the variables property of this OrchestrationListingPackage.
         :type variables: list[oci.marketplace.models.OrchestrationVariable]
-
-        :param regions:
-            The value to assign to the regions property of this OrchestrationListingPackage.
-        :type regions: list[oci.marketplace.models.Region]
 
         """
         self.swagger_types = {
@@ -74,9 +74,9 @@ class OrchestrationListingPackage(ListingPackage):
             'resource_id': 'str',
             'time_created': 'datetime',
             'operating_system': 'OperatingSystem',
+            'regions': 'list[Region]',
             'resource_link': 'str',
-            'variables': 'list[OrchestrationVariable]',
-            'regions': 'list[Region]'
+            'variables': 'list[OrchestrationVariable]'
         }
 
         self.attribute_map = {
@@ -88,9 +88,9 @@ class OrchestrationListingPackage(ListingPackage):
             'resource_id': 'resourceId',
             'time_created': 'timeCreated',
             'operating_system': 'operatingSystem',
+            'regions': 'regions',
             'resource_link': 'resourceLink',
-            'variables': 'variables',
-            'regions': 'regions'
+            'variables': 'variables'
         }
 
         self._description = None
@@ -101,9 +101,9 @@ class OrchestrationListingPackage(ListingPackage):
         self._resource_id = None
         self._time_created = None
         self._operating_system = None
+        self._regions = None
         self._resource_link = None
         self._variables = None
-        self._regions = None
         self._package_type = 'ORCHESTRATION'
 
     @property
@@ -153,30 +153,6 @@ class OrchestrationListingPackage(ListingPackage):
         :type: list[oci.marketplace.models.OrchestrationVariable]
         """
         self._variables = variables
-
-    @property
-    def regions(self):
-        """
-        Gets the regions of this OrchestrationListingPackage.
-        The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
-
-
-        :return: The regions of this OrchestrationListingPackage.
-        :rtype: list[oci.marketplace.models.Region]
-        """
-        return self._regions
-
-    @regions.setter
-    def regions(self, regions):
-        """
-        Sets the regions of this OrchestrationListingPackage.
-        The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
-
-
-        :param regions: The regions of this OrchestrationListingPackage.
-        :type: list[oci.marketplace.models.Region]
-        """
-        self._regions = regions
 
     def __repr__(self):
         return formatted_flat_dict(self)

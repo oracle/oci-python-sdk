@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalExadataStorageConnector(DbmResource):
     """
-    The connector of the storage server.
+    The details of the Exadata storage server connector.
     """
 
     def __init__(self, **kwargs):
@@ -141,7 +141,7 @@ class ExternalExadataStorageConnector(DbmResource):
     def exadata_infrastructure_id(self):
         """
         Gets the exadata_infrastructure_id of this ExternalExadataStorageConnector.
-        The `OCID`__ of Exadata infrastructure system.
+        The `OCID`__ of the Exadata infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -155,7 +155,7 @@ class ExternalExadataStorageConnector(DbmResource):
     def exadata_infrastructure_id(self, exadata_infrastructure_id):
         """
         Sets the exadata_infrastructure_id of this ExternalExadataStorageConnector.
-        The `OCID`__ of Exadata infrastructure system.
+        The `OCID`__ of the Exadata infrastructure.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -197,7 +197,7 @@ class ExternalExadataStorageConnector(DbmResource):
     def connection_uri(self):
         """
         Gets the connection_uri of this ExternalExadataStorageConnector.
-        The unique connection string of the connection. For example, \"https://slcm21celadm02.us.oracle.com:443/MS/RESTService/\".
+        The unique string of the connection. For example, \"https://<storage-server-name>/MS/RESTService/\".
 
 
         :return: The connection_uri of this ExternalExadataStorageConnector.
@@ -209,7 +209,7 @@ class ExternalExadataStorageConnector(DbmResource):
     def connection_uri(self, connection_uri):
         """
         Sets the connection_uri of this ExternalExadataStorageConnector.
-        The unique connection string of the connection. For example, \"https://slcm21celadm02.us.oracle.com:443/MS/RESTService/\".
+        The unique string of the connection. For example, \"https://<storage-server-name>/MS/RESTService/\".
 
 
         :param connection_uri: The connection_uri of this ExternalExadataStorageConnector.

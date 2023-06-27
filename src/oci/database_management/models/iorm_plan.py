@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IormPlan(object):
     """
-    The IORM plan from a storage server.
+    The IORM plan from an Exadata storage server.
     """
 
     #: A constant which can be used with the plan_status property of a IormPlan.

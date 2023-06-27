@@ -157,6 +157,14 @@ class BackupSummary(object):
             The value to assign to the vault_id property of this BackupSummary.
         :type vault_id: str
 
+        :param key_store_id:
+            The value to assign to the key_store_id property of this BackupSummary.
+        :type key_store_id: str
+
+        :param key_store_wallet_name:
+            The value to assign to the key_store_wallet_name property of this BackupSummary.
+        :type key_store_wallet_name: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -175,7 +183,9 @@ class BackupSummary(object):
             'version': 'str',
             'kms_key_id': 'str',
             'kms_key_version_id': 'str',
-            'vault_id': 'str'
+            'vault_id': 'str',
+            'key_store_id': 'str',
+            'key_store_wallet_name': 'str'
         }
 
         self.attribute_map = {
@@ -195,7 +205,9 @@ class BackupSummary(object):
             'version': 'version',
             'kms_key_id': 'kmsKeyId',
             'kms_key_version_id': 'kmsKeyVersionId',
-            'vault_id': 'vaultId'
+            'vault_id': 'vaultId',
+            'key_store_id': 'keyStoreId',
+            'key_store_wallet_name': 'keyStoreWalletName'
         }
 
         self._id = None
@@ -215,6 +227,8 @@ class BackupSummary(object):
         self._kms_key_id = None
         self._kms_key_version_id = None
         self._vault_id = None
+        self._key_store_id = None
+        self._key_store_wallet_name = None
 
     @property
     def id(self):
@@ -659,6 +673,58 @@ class BackupSummary(object):
         :type: str
         """
         self._vault_id = vault_id
+
+    @property
+    def key_store_id(self):
+        """
+        Gets the key_store_id of this BackupSummary.
+        The `OCID`__ of the key store.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_id of this BackupSummary.
+        :rtype: str
+        """
+        return self._key_store_id
+
+    @key_store_id.setter
+    def key_store_id(self, key_store_id):
+        """
+        Sets the key_store_id of this BackupSummary.
+        The `OCID`__ of the key store.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_id: The key_store_id of this BackupSummary.
+        :type: str
+        """
+        self._key_store_id = key_store_id
+
+    @property
+    def key_store_wallet_name(self):
+        """
+        Gets the key_store_wallet_name of this BackupSummary.
+        The wallet name for Oracle Key Vault.
+
+
+        :return: The key_store_wallet_name of this BackupSummary.
+        :rtype: str
+        """
+        return self._key_store_wallet_name
+
+    @key_store_wallet_name.setter
+    def key_store_wallet_name(self, key_store_wallet_name):
+        """
+        Sets the key_store_wallet_name of this BackupSummary.
+        The wallet name for Oracle Key Vault.
+
+
+        :param key_store_wallet_name: The key_store_wallet_name of this BackupSummary.
+        :type: str
+        """
+        self._key_store_wallet_name = key_store_wallet_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

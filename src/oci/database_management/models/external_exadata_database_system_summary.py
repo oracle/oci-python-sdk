@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalExadataDatabaseSystemSummary(DbmResource):
     """
-    The database system of the Exadata infrastructure.
+    The DB systems of the Exadata infrastructure.
     """
 
     #: A constant which can be used with the license_model property of a ExternalExadataDatabaseSystemSummary.
@@ -137,7 +137,7 @@ class ExternalExadataDatabaseSystemSummary(DbmResource):
     def compartment_id(self):
         """
         Gets the compartment_id of this ExternalExadataDatabaseSystemSummary.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -151,7 +151,7 @@ class ExternalExadataDatabaseSystemSummary(DbmResource):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ExternalExadataDatabaseSystemSummary.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

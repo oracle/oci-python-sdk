@@ -61,6 +61,7 @@ from .change_dataguard_role_details import ChangeDataguardRoleDetails
 from .change_disaster_recovery_configuration_details import ChangeDisasterRecoveryConfigurationDetails
 from .change_exadata_infrastructure_compartment_details import ChangeExadataInfrastructureCompartmentDetails
 from .change_key_store_compartment_details import ChangeKeyStoreCompartmentDetails
+from .change_key_store_type_details import ChangeKeyStoreTypeDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
 from .cloud_autonomous_vm_cluster import CloudAutonomousVmCluster
 from .cloud_autonomous_vm_cluster_resource_details import CloudAutonomousVmClusterResourceDetails
@@ -400,6 +401,7 @@ database_type_mapping = {
     "ChangeDisasterRecoveryConfigurationDetails": ChangeDisasterRecoveryConfigurationDetails,
     "ChangeExadataInfrastructureCompartmentDetails": ChangeExadataInfrastructureCompartmentDetails,
     "ChangeKeyStoreCompartmentDetails": ChangeKeyStoreCompartmentDetails,
+    "ChangeKeyStoreTypeDetails": ChangeKeyStoreTypeDetails,
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
     "CloudAutonomousVmCluster": CloudAutonomousVmCluster,
     "CloudAutonomousVmClusterResourceDetails": CloudAutonomousVmClusterResourceDetails,

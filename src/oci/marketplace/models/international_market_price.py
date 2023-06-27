@@ -41,6 +41,22 @@ class InternationalMarketPrice(object):
     #: This constant has a value of "OMR"
     CURRENCY_CODE_OMR = "OMR"
 
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "EUR"
+    CURRENCY_CODE_EUR = "EUR"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "CHF"
+    CURRENCY_CODE_CHF = "CHF"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "MXN"
+    CURRENCY_CODE_MXN = "MXN"
+
+    #: A constant which can be used with the currency_code property of a InternationalMarketPrice.
+    #: This constant has a value of "CLP"
+    CURRENCY_CODE_CLP = "CLP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new InternationalMarketPrice object with values from keyword arguments.
@@ -48,7 +64,7 @@ class InternationalMarketPrice(object):
 
         :param currency_code:
             The value to assign to the currency_code property of this InternationalMarketPrice.
-            Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type currency_code: str
 
@@ -83,7 +99,7 @@ class InternationalMarketPrice(object):
         **[Required]** Gets the currency_code of this InternationalMarketPrice.
         The currency of the pricing model.
 
-        Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -102,7 +118,7 @@ class InternationalMarketPrice(object):
         :param currency_code: The currency_code of this InternationalMarketPrice.
         :type: str
         """
-        allowed_values = ["USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR"]
+        allowed_values = ["USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", "EUR", "CHF", "MXN", "CLP"]
         if not value_allowed_none_or_none_sentinel(currency_code, allowed_values):
             currency_code = 'UNKNOWN_ENUM_VALUE'
         self._currency_code = currency_code

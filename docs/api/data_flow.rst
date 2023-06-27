@@ -26,10 +26,12 @@ Data Flow
     oci.data_flow.models.ChangePoolCompartmentDetails
     oci.data_flow.models.ChangePrivateEndpointCompartmentDetails
     oci.data_flow.models.ChangeRunCompartmentDetails
+    oci.data_flow.models.ChangeSqlEndpointCompartmentDetails
     oci.data_flow.models.CreateApplicationDetails
     oci.data_flow.models.CreatePoolDetails
     oci.data_flow.models.CreatePrivateEndpointDetails
     oci.data_flow.models.CreateRunDetails
+    oci.data_flow.models.CreateSqlEndpointDetails
     oci.data_flow.models.CreateStatementDetails
     oci.data_flow.models.ImagePngStatementOutputData
     oci.data_flow.models.NodeCount
@@ -46,7 +48,14 @@ Data Flow
     oci.data_flow.models.RunLogSummary
     oci.data_flow.models.RunSummary
     oci.data_flow.models.Scan
+    oci.data_flow.models.SecureAccessControlRule
     oci.data_flow.models.ShapeConfig
+    oci.data_flow.models.SqlEndpoint
+    oci.data_flow.models.SqlEndpointCollection
+    oci.data_flow.models.SqlEndpointNetworkConfiguration
+    oci.data_flow.models.SqlEndpointSecureAccessConfig
+    oci.data_flow.models.SqlEndpointSummary
+    oci.data_flow.models.SqlEndpointVcnConfig
     oci.data_flow.models.Statement
     oci.data_flow.models.StatementCollection
     oci.data_flow.models.StatementOutput
@@ -58,6 +67,7 @@ Data Flow
     oci.data_flow.models.UpdatePoolDetails
     oci.data_flow.models.UpdatePrivateEndpointDetails
     oci.data_flow.models.UpdateRunDetails
+    oci.data_flow.models.UpdateSqlEndpointDetails
     oci.data_flow.models.WorkRequest
     oci.data_flow.models.WorkRequestCollection
     oci.data_flow.models.WorkRequestError

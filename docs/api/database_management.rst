@@ -43,10 +43,13 @@ Database Management
     oci.database_management.models.AssociatedComponent
     oci.database_management.models.AssociatedDatabaseCollection
     oci.database_management.models.AssociatedDatabaseSummary
+    oci.database_management.models.AssociatedServiceDetails
     oci.database_management.models.AttentionLogCollection
     oci.database_management.models.AttentionLogCountSummary
     oci.database_management.models.AttentionLogCountsCollection
     oci.database_management.models.AttentionLogSummary
+    oci.database_management.models.AutomaticCaptureFilter
+    oci.database_management.models.AutomaticCaptureFilterDetails
     oci.database_management.models.AwrDbCollection
     oci.database_management.models.AwrDbCpuUsageCollection
     oci.database_management.models.AwrDbCpuUsageSummary
@@ -80,9 +83,14 @@ Database Management
     oci.database_management.models.ChangeExternalExadataInfrastructureCompartmentDetails
     oci.database_management.models.ChangeJobCompartmentDetails
     oci.database_management.models.ChangeManagedDatabaseGroupCompartmentDetails
+    oci.database_management.models.ChangePlanRetentionDetails
+    oci.database_management.models.ChangeSpaceBudgetDetails
+    oci.database_management.models.ChangeSqlPlanBaselinesAttributesDetails
     oci.database_management.models.ChildDatabase
     oci.database_management.models.CloneSqlTuningTaskDetails
     oci.database_management.models.ClusterCacheMetric
+    oci.database_management.models.ConfigureAutomaticCaptureFiltersDetails
+    oci.database_management.models.ConfigureAutomaticSpmEvolveAdvisorTaskDetails
     oci.database_management.models.ConsumerGroupPrivilegeCollection
     oci.database_management.models.ConsumerGroupPrivilegeSummary
     oci.database_management.models.CpuUtilizationAggregateMetrics
@@ -97,6 +105,8 @@ Database Management
     oci.database_management.models.CreateManagedDatabaseGroupDetails
     oci.database_management.models.CreateSqlJobDetails
     oci.database_management.models.CreateTablespaceDetails
+    oci.database_management.models.CursorCacheStatementCollection
+    oci.database_management.models.CursorCacheStatementSummary
     oci.database_management.models.DataAccessContainerCollection
     oci.database_management.models.DataAccessContainerSummary
     oci.database_management.models.DatabaseConnectionCredentailsByName
@@ -125,6 +135,10 @@ Database Management
     oci.database_management.models.DbManagementPrivateEndpointCollection
     oci.database_management.models.DbManagementPrivateEndpointSummary
     oci.database_management.models.DbmResource
+    oci.database_management.models.DisableAutomaticInitialPlanCaptureDetails
+    oci.database_management.models.DisableAutomaticSpmEvolveAdvisorTaskDetails
+    oci.database_management.models.DisableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails
+    oci.database_management.models.DisableSqlPlanBaselinesUsageDetails
     oci.database_management.models.DiscoverExternalExadataInfrastructureDetails
     oci.database_management.models.DiscoveredExternalAsm
     oci.database_management.models.DiscoveredExternalAsmInstance
@@ -136,10 +150,16 @@ Database Management
     oci.database_management.models.DiscoveredExternalDbSystemComponent
     oci.database_management.models.DiscoveredExternalListener
     oci.database_management.models.DiscoveredExternalPluggableDatabase
+    oci.database_management.models.DropSqlPlanBaselinesDetails
     oci.database_management.models.DropSqlTuningTaskDetails
     oci.database_management.models.DropTablespaceDetails
+    oci.database_management.models.EnableAutomaticInitialPlanCaptureDetails
+    oci.database_management.models.EnableAutomaticSpmEvolveAdvisorTaskDetails
     oci.database_management.models.EnableExternalDbSystemDatabaseManagementDetails
+    oci.database_management.models.EnableExternalDbSystemStackMonitoringDetails
     oci.database_management.models.EnableExternalExadataInfrastructureManagementDetails
+    oci.database_management.models.EnableHighFrequencyAutomaticSpmEvolveAdvisorTaskDetails
+    oci.database_management.models.EnableSqlPlanBaselinesUsageDetails
     oci.database_management.models.EntityDiscovered
     oci.database_management.models.ExecutionPlanStatsComparision
     oci.database_management.models.ExternalAsm
@@ -190,6 +210,7 @@ Database Management
     oci.database_management.models.ExternalDbSystemDiscoveryMacsConnector
     oci.database_management.models.ExternalDbSystemDiscoverySummary
     oci.database_management.models.ExternalDbSystemMacsConnector
+    oci.database_management.models.ExternalDbSystemStackMonitoringConfigDetails
     oci.database_management.models.ExternalDbSystemSummary
     oci.database_management.models.ExternalExadataDatabaseSystemSummary
     oci.database_management.models.ExternalExadataInfraBasicInfo
@@ -242,11 +263,17 @@ Database Management
     oci.database_management.models.JobExecutionSummary
     oci.database_management.models.JobExecutionsStatusSummary
     oci.database_management.models.JobExecutionsStatusSummaryCollection
+    oci.database_management.models.JobInBind
+    oci.database_management.models.JobInBindsDetails
+    oci.database_management.models.JobOutBind
+    oci.database_management.models.JobOutBindsDetails
     oci.database_management.models.JobRun
     oci.database_management.models.JobRunCollection
     oci.database_management.models.JobRunSummary
     oci.database_management.models.JobScheduleDetails
     oci.database_management.models.JobSummary
+    oci.database_management.models.LoadSqlPlanBaselinesFromAwrDetails
+    oci.database_management.models.LoadSqlPlanBaselinesFromCursorCacheDetails
     oci.database_management.models.ManagedDatabase
     oci.database_management.models.ManagedDatabaseCollection
     oci.database_management.models.ManagedDatabaseCredential
@@ -308,8 +335,19 @@ Database Management
     oci.database_management.models.RunHistoricAddmDetails
     oci.database_management.models.SchemaDefinition
     oci.database_management.models.SnapshotDetails
+    oci.database_management.models.SpmEvolveTaskParameters
     oci.database_management.models.SqlCpuActivity
     oci.database_management.models.SqlJob
+    oci.database_management.models.SqlPlanBaseline
+    oci.database_management.models.SqlPlanBaselineAggregation
+    oci.database_management.models.SqlPlanBaselineAggregationCollection
+    oci.database_management.models.SqlPlanBaselineCollection
+    oci.database_management.models.SqlPlanBaselineConfiguration
+    oci.database_management.models.SqlPlanBaselineDimensions
+    oci.database_management.models.SqlPlanBaselineJob
+    oci.database_management.models.SqlPlanBaselineJobCollection
+    oci.database_management.models.SqlPlanBaselineJobSummary
+    oci.database_management.models.SqlPlanBaselineSummary
     oci.database_management.models.SqlTuningAdvisorTaskCollection
     oci.database_management.models.SqlTuningAdvisorTaskFindingCollection
     oci.database_management.models.SqlTuningAdvisorTaskFindingSummary

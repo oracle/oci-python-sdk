@@ -17,6 +17,10 @@ class TopUtilizedResourceSummary(object):
     #: This constant has a value of "OCPU"
     UNIT_TYPE_OCPU = "OCPU"
 
+    #: A constant which can be used with the unit_type property of a TopUtilizedResourceSummary.
+    #: This constant has a value of "ECPU"
+    UNIT_TYPE_ECPU = "ECPU"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TopUtilizedResourceSummary object with values from keyword arguments.
@@ -44,7 +48,7 @@ class TopUtilizedResourceSummary(object):
 
         :param unit_type:
             The value to assign to the unit_type property of this TopUtilizedResourceSummary.
-            Allowed values for this property are: "OCPU", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OCPU", "ECPU", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type unit_type: str
 
@@ -208,7 +212,7 @@ class TopUtilizedResourceSummary(object):
         **[Required]** Gets the unit_type of this TopUtilizedResourceSummary.
         The resource unit.
 
-        Allowed values for this property are: "OCPU", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OCPU", "ECPU", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -227,7 +231,7 @@ class TopUtilizedResourceSummary(object):
         :param unit_type: The unit_type of this TopUtilizedResourceSummary.
         :type: str
         """
-        allowed_values = ["OCPU"]
+        allowed_values = ["OCPU", "ECPU"]
         if not value_allowed_none_or_none_sentinel(unit_type, allowed_values):
             unit_type = 'UNKNOWN_ENUM_VALUE'
         self._unit_type = unit_type

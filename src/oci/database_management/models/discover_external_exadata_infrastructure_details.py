@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DiscoverExternalExadataInfrastructureDetails(object):
     """
-    The connection information and the discovery options for the Exadata discovery.
+    The connection details and the discovery options for the Exadata discovery.
     """
 
     #: A constant which can be used with the discovery_type property of a DiscoverExternalExadataInfrastructureDetails.
@@ -67,7 +67,7 @@ class DiscoverExternalExadataInfrastructureDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DiscoverExternalExadataInfrastructureDetails.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -81,7 +81,7 @@ class DiscoverExternalExadataInfrastructureDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DiscoverExternalExadataInfrastructureDetails.
-        The `OCID`__ of compartment.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -95,7 +95,7 @@ class DiscoverExternalExadataInfrastructureDetails(object):
     def discovery_type(self):
         """
         **[Required]** Gets the discovery_type of this DiscoverExternalExadataInfrastructureDetails.
-        The type of the discovery.
+        The type of discovery.
 
         Allowed values for this property are: "NEW", "OVERRIDE"
 
@@ -109,7 +109,7 @@ class DiscoverExternalExadataInfrastructureDetails(object):
     def discovery_type(self, discovery_type):
         """
         Sets the discovery_type of this DiscoverExternalExadataInfrastructureDetails.
-        The type of the discovery.
+        The type of discovery.
 
 
         :param discovery_type: The discovery_type of this DiscoverExternalExadataInfrastructureDetails.
@@ -127,7 +127,7 @@ class DiscoverExternalExadataInfrastructureDetails(object):
     def db_system_ids(self):
         """
         **[Required]** Gets the db_system_ids of this DiscoverExternalExadataInfrastructureDetails.
-        The list of the database system identifiers.
+        The list of the DB system identifiers.
 
 
         :return: The db_system_ids of this DiscoverExternalExadataInfrastructureDetails.
@@ -139,7 +139,7 @@ class DiscoverExternalExadataInfrastructureDetails(object):
     def db_system_ids(self, db_system_ids):
         """
         Sets the db_system_ids of this DiscoverExternalExadataInfrastructureDetails.
-        The list of the database system identifiers.
+        The list of the DB system identifiers.
 
 
         :param db_system_ids: The db_system_ids of this DiscoverExternalExadataInfrastructureDetails.
@@ -151,7 +151,7 @@ class DiscoverExternalExadataInfrastructureDetails(object):
     def exadata_infrastructure_id(self):
         """
         Gets the exadata_infrastructure_id of this DiscoverExternalExadataInfrastructureDetails.
-        The `OCID`__ of Exadata infrastructure system. For rediscover only.
+        The `OCID`__ of the Exadata infrastructure. This is applicable for rediscovery only.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -165,7 +165,7 @@ class DiscoverExternalExadataInfrastructureDetails(object):
     def exadata_infrastructure_id(self, exadata_infrastructure_id):
         """
         Sets the exadata_infrastructure_id of this DiscoverExternalExadataInfrastructureDetails.
-        The `OCID`__ of Exadata infrastructure system. For rediscover only.
+        The `OCID`__ of the Exadata infrastructure. This is applicable for rediscovery only.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

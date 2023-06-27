@@ -133,6 +133,14 @@ class SqlJob(Job):
             The value to assign to the sql_text property of this SqlJob.
         :type sql_text: str
 
+        :param in_binds:
+            The value to assign to the in_binds property of this SqlJob.
+        :type in_binds: oci.database_management.models.JobInBindsDetails
+
+        :param out_binds:
+            The value to assign to the out_binds property of this SqlJob.
+        :type out_binds: oci.database_management.models.JobOutBindsDetails
+
         :param operation_type:
             The value to assign to the operation_type property of this SqlJob.
             Allowed values for this property are: "EXECUTE_SQL", 'UNKNOWN_ENUM_VALUE'.
@@ -170,6 +178,8 @@ class SqlJob(Job):
             'time_updated': 'datetime',
             'sql_type': 'str',
             'sql_text': 'str',
+            'in_binds': 'JobInBindsDetails',
+            'out_binds': 'JobOutBindsDetails',
             'operation_type': 'str',
             'user_name': 'str',
             'role': 'str'
@@ -195,6 +205,8 @@ class SqlJob(Job):
             'time_updated': 'timeUpdated',
             'sql_type': 'sqlType',
             'sql_text': 'sqlText',
+            'in_binds': 'inBinds',
+            'out_binds': 'outBinds',
             'operation_type': 'operationType',
             'user_name': 'userName',
             'role': 'role'
@@ -219,6 +231,8 @@ class SqlJob(Job):
         self._time_updated = None
         self._sql_type = None
         self._sql_text = None
+        self._in_binds = None
+        self._out_binds = None
         self._operation_type = None
         self._user_name = None
         self._role = None
@@ -277,6 +291,46 @@ class SqlJob(Job):
         :type: str
         """
         self._sql_text = sql_text
+
+    @property
+    def in_binds(self):
+        """
+        Gets the in_binds of this SqlJob.
+
+        :return: The in_binds of this SqlJob.
+        :rtype: oci.database_management.models.JobInBindsDetails
+        """
+        return self._in_binds
+
+    @in_binds.setter
+    def in_binds(self, in_binds):
+        """
+        Sets the in_binds of this SqlJob.
+
+        :param in_binds: The in_binds of this SqlJob.
+        :type: oci.database_management.models.JobInBindsDetails
+        """
+        self._in_binds = in_binds
+
+    @property
+    def out_binds(self):
+        """
+        Gets the out_binds of this SqlJob.
+
+        :return: The out_binds of this SqlJob.
+        :rtype: oci.database_management.models.JobOutBindsDetails
+        """
+        return self._out_binds
+
+    @out_binds.setter
+    def out_binds(self, out_binds):
+        """
+        Sets the out_binds of this SqlJob.
+
+        :param out_binds: The out_binds of this SqlJob.
+        :type: oci.database_management.models.JobOutBindsDetails
+        """
+        self._out_binds = out_binds
 
     @property
     def operation_type(self):

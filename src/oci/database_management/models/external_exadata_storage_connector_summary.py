@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalExadataStorageConnectorSummary(DbmResource):
     """
-    The connector of the storage server.
+    The connector of the Exadata storage server.
     """
 
     def __init__(self, **kwargs):
@@ -134,7 +134,7 @@ class ExternalExadataStorageConnectorSummary(DbmResource):
     def connection_uri(self):
         """
         Gets the connection_uri of this ExternalExadataStorageConnectorSummary.
-        The unique connection string of the connection. For example, \"https://slcm21celadm02.us.oracle.com:443/MS/RESTService/\".
+        The unique string of the connection. For example, \"https://<storage-server-name>/MS/RESTService/\".
 
 
         :return: The connection_uri of this ExternalExadataStorageConnectorSummary.
@@ -146,7 +146,7 @@ class ExternalExadataStorageConnectorSummary(DbmResource):
     def connection_uri(self, connection_uri):
         """
         Sets the connection_uri of this ExternalExadataStorageConnectorSummary.
-        The unique connection string of the connection. For example, \"https://slcm21celadm02.us.oracle.com:443/MS/RESTService/\".
+        The unique string of the connection. For example, \"https://<storage-server-name>/MS/RESTService/\".
 
 
         :param connection_uri: The connection_uri of this ExternalExadataStorageConnectorSummary.

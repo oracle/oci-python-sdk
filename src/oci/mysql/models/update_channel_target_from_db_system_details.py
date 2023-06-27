@@ -35,25 +35,39 @@ class UpdateChannelTargetFromDbSystemDetails(UpdateChannelTargetDetails):
             The value to assign to the filters property of this UpdateChannelTargetFromDbSystemDetails.
         :type filters: list[oci.mysql.models.ChannelFilter]
 
+        :param tables_without_primary_key_handling:
+            The value to assign to the tables_without_primary_key_handling property of this UpdateChannelTargetFromDbSystemDetails.
+        :type tables_without_primary_key_handling: str
+
+        :param delay_in_seconds:
+            The value to assign to the delay_in_seconds property of this UpdateChannelTargetFromDbSystemDetails.
+        :type delay_in_seconds: int
+
         """
         self.swagger_types = {
             'target_type': 'str',
             'channel_name': 'str',
             'applier_username': 'str',
-            'filters': 'list[ChannelFilter]'
+            'filters': 'list[ChannelFilter]',
+            'tables_without_primary_key_handling': 'str',
+            'delay_in_seconds': 'int'
         }
 
         self.attribute_map = {
             'target_type': 'targetType',
             'channel_name': 'channelName',
             'applier_username': 'applierUsername',
-            'filters': 'filters'
+            'filters': 'filters',
+            'tables_without_primary_key_handling': 'tablesWithoutPrimaryKeyHandling',
+            'delay_in_seconds': 'delayInSeconds'
         }
 
         self._target_type = None
         self._channel_name = None
         self._applier_username = None
         self._filters = None
+        self._tables_without_primary_key_handling = None
+        self._delay_in_seconds = None
         self._target_type = 'DBSYSTEM'
 
     @property
@@ -135,6 +149,58 @@ class UpdateChannelTargetFromDbSystemDetails(UpdateChannelTargetDetails):
         :type: list[oci.mysql.models.ChannelFilter]
         """
         self._filters = filters
+
+    @property
+    def tables_without_primary_key_handling(self):
+        """
+        Gets the tables_without_primary_key_handling of this UpdateChannelTargetFromDbSystemDetails.
+        Specifies how a replication channel handles the creation and alteration of tables
+        that do not have a primary key.
+
+
+        :return: The tables_without_primary_key_handling of this UpdateChannelTargetFromDbSystemDetails.
+        :rtype: str
+        """
+        return self._tables_without_primary_key_handling
+
+    @tables_without_primary_key_handling.setter
+    def tables_without_primary_key_handling(self, tables_without_primary_key_handling):
+        """
+        Sets the tables_without_primary_key_handling of this UpdateChannelTargetFromDbSystemDetails.
+        Specifies how a replication channel handles the creation and alteration of tables
+        that do not have a primary key.
+
+
+        :param tables_without_primary_key_handling: The tables_without_primary_key_handling of this UpdateChannelTargetFromDbSystemDetails.
+        :type: str
+        """
+        self._tables_without_primary_key_handling = tables_without_primary_key_handling
+
+    @property
+    def delay_in_seconds(self):
+        """
+        Gets the delay_in_seconds of this UpdateChannelTargetFromDbSystemDetails.
+        Specifies the amount of time, in seconds, that the channel waits before
+        applying a transaction received from the source.
+
+
+        :return: The delay_in_seconds of this UpdateChannelTargetFromDbSystemDetails.
+        :rtype: int
+        """
+        return self._delay_in_seconds
+
+    @delay_in_seconds.setter
+    def delay_in_seconds(self, delay_in_seconds):
+        """
+        Sets the delay_in_seconds of this UpdateChannelTargetFromDbSystemDetails.
+        Specifies the amount of time, in seconds, that the channel waits before
+        applying a transaction received from the source.
+
+
+        :param delay_in_seconds: The delay_in_seconds of this UpdateChannelTargetFromDbSystemDetails.
+        :type: int
+        """
+        self._delay_in_seconds = delay_in_seconds
 
     def __repr__(self):
         return formatted_flat_dict(self)

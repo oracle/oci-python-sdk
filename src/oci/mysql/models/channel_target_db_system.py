@@ -13,6 +13,18 @@ class ChannelTargetDbSystem(ChannelTarget):
     Core properties of a DB System Channel target.
     """
 
+    #: A constant which can be used with the tables_without_primary_key_handling property of a ChannelTargetDbSystem.
+    #: This constant has a value of "RAISE_ERROR"
+    TABLES_WITHOUT_PRIMARY_KEY_HANDLING_RAISE_ERROR = "RAISE_ERROR"
+
+    #: A constant which can be used with the tables_without_primary_key_handling property of a ChannelTargetDbSystem.
+    #: This constant has a value of "ALLOW"
+    TABLES_WITHOUT_PRIMARY_KEY_HANDLING_ALLOW = "ALLOW"
+
+    #: A constant which can be used with the tables_without_primary_key_handling property of a ChannelTargetDbSystem.
+    #: This constant has a value of "GENERATE_IMPLICIT_PRIMARY_KEY"
+    TABLES_WITHOUT_PRIMARY_KEY_HANDLING_GENERATE_IMPLICIT_PRIMARY_KEY = "GENERATE_IMPLICIT_PRIMARY_KEY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ChannelTargetDbSystem object with values from keyword arguments. The default value of the :py:attr:`~oci.mysql.models.ChannelTargetDbSystem.target_type` attribute
@@ -21,7 +33,8 @@ class ChannelTargetDbSystem(ChannelTarget):
 
         :param target_type:
             The value to assign to the target_type property of this ChannelTargetDbSystem.
-            Allowed values for this property are: "DBSYSTEM"
+            Allowed values for this property are: "DBSYSTEM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type target_type: str
 
         :param db_system_id:
@@ -40,13 +53,25 @@ class ChannelTargetDbSystem(ChannelTarget):
             The value to assign to the filters property of this ChannelTargetDbSystem.
         :type filters: list[oci.mysql.models.ChannelFilter]
 
+        :param tables_without_primary_key_handling:
+            The value to assign to the tables_without_primary_key_handling property of this ChannelTargetDbSystem.
+            Allowed values for this property are: "RAISE_ERROR", "ALLOW", "GENERATE_IMPLICIT_PRIMARY_KEY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type tables_without_primary_key_handling: str
+
+        :param delay_in_seconds:
+            The value to assign to the delay_in_seconds property of this ChannelTargetDbSystem.
+        :type delay_in_seconds: int
+
         """
         self.swagger_types = {
             'target_type': 'str',
             'db_system_id': 'str',
             'channel_name': 'str',
             'applier_username': 'str',
-            'filters': 'list[ChannelFilter]'
+            'filters': 'list[ChannelFilter]',
+            'tables_without_primary_key_handling': 'str',
+            'delay_in_seconds': 'int'
         }
 
         self.attribute_map = {
@@ -54,7 +79,9 @@ class ChannelTargetDbSystem(ChannelTarget):
             'db_system_id': 'dbSystemId',
             'channel_name': 'channelName',
             'applier_username': 'applierUsername',
-            'filters': 'filters'
+            'filters': 'filters',
+            'tables_without_primary_key_handling': 'tablesWithoutPrimaryKeyHandling',
+            'delay_in_seconds': 'delayInSeconds'
         }
 
         self._target_type = None
@@ -62,6 +89,8 @@ class ChannelTargetDbSystem(ChannelTarget):
         self._channel_name = None
         self._applier_username = None
         self._filters = None
+        self._tables_without_primary_key_handling = None
+        self._delay_in_seconds = None
         self._target_type = 'DBSYSTEM'
 
     @property
@@ -167,6 +196,64 @@ class ChannelTargetDbSystem(ChannelTarget):
         :type: list[oci.mysql.models.ChannelFilter]
         """
         self._filters = filters
+
+    @property
+    def tables_without_primary_key_handling(self):
+        """
+        **[Required]** Gets the tables_without_primary_key_handling of this ChannelTargetDbSystem.
+        Specifies how a replication channel handles the creation and alteration of tables
+        that do not have a primary key.
+
+        Allowed values for this property are: "RAISE_ERROR", "ALLOW", "GENERATE_IMPLICIT_PRIMARY_KEY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The tables_without_primary_key_handling of this ChannelTargetDbSystem.
+        :rtype: str
+        """
+        return self._tables_without_primary_key_handling
+
+    @tables_without_primary_key_handling.setter
+    def tables_without_primary_key_handling(self, tables_without_primary_key_handling):
+        """
+        Sets the tables_without_primary_key_handling of this ChannelTargetDbSystem.
+        Specifies how a replication channel handles the creation and alteration of tables
+        that do not have a primary key.
+
+
+        :param tables_without_primary_key_handling: The tables_without_primary_key_handling of this ChannelTargetDbSystem.
+        :type: str
+        """
+        allowed_values = ["RAISE_ERROR", "ALLOW", "GENERATE_IMPLICIT_PRIMARY_KEY"]
+        if not value_allowed_none_or_none_sentinel(tables_without_primary_key_handling, allowed_values):
+            tables_without_primary_key_handling = 'UNKNOWN_ENUM_VALUE'
+        self._tables_without_primary_key_handling = tables_without_primary_key_handling
+
+    @property
+    def delay_in_seconds(self):
+        """
+        **[Required]** Gets the delay_in_seconds of this ChannelTargetDbSystem.
+        Specifies the amount of time, in seconds, that the channel waits before
+        applying a transaction received from the source.
+
+
+        :return: The delay_in_seconds of this ChannelTargetDbSystem.
+        :rtype: int
+        """
+        return self._delay_in_seconds
+
+    @delay_in_seconds.setter
+    def delay_in_seconds(self, delay_in_seconds):
+        """
+        Sets the delay_in_seconds of this ChannelTargetDbSystem.
+        Specifies the amount of time, in seconds, that the channel waits before
+        applying a transaction received from the source.
+
+
+        :param delay_in_seconds: The delay_in_seconds of this ChannelTargetDbSystem.
+        :type: int
+        """
+        self._delay_in_seconds = delay_in_seconds
 
     def __repr__(self):
         return formatted_flat_dict(self)

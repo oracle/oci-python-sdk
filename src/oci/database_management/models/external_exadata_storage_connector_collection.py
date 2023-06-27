@@ -37,7 +37,7 @@ class ExternalExadataStorageConnectorCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ExternalExadataStorageConnectorCollection.
-        A list of Exadata storage server connector.
+        A list of Exadata storage server connectors.
 
 
         :return: The items of this ExternalExadataStorageConnectorCollection.
@@ -49,7 +49,7 @@ class ExternalExadataStorageConnectorCollection(object):
     def items(self, items):
         """
         Sets the items of this ExternalExadataStorageConnectorCollection.
-        A list of Exadata storage server connector.
+        A list of Exadata storage server connectors.
 
 
         :param items: The items of this ExternalExadataStorageConnectorCollection.

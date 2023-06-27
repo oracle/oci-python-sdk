@@ -52,6 +52,10 @@ class ImageListingPackage(ListingPackage):
             The value to assign to the operating_system property of this ImageListingPackage.
         :type operating_system: oci.marketplace.models.OperatingSystem
 
+        :param regions:
+            The value to assign to the regions property of this ImageListingPackage.
+        :type regions: list[oci.marketplace.models.Region]
+
         :param app_catalog_listing_id:
             The value to assign to the app_catalog_listing_id property of this ImageListingPackage.
         :type app_catalog_listing_id: str
@@ -64,10 +68,6 @@ class ImageListingPackage(ListingPackage):
             The value to assign to the image_id property of this ImageListingPackage.
         :type image_id: str
 
-        :param regions:
-            The value to assign to the regions property of this ImageListingPackage.
-        :type regions: list[oci.marketplace.models.Region]
-
         """
         self.swagger_types = {
             'description': 'str',
@@ -78,10 +78,10 @@ class ImageListingPackage(ListingPackage):
             'resource_id': 'str',
             'time_created': 'datetime',
             'operating_system': 'OperatingSystem',
+            'regions': 'list[Region]',
             'app_catalog_listing_id': 'str',
             'app_catalog_listing_resource_version': 'str',
-            'image_id': 'str',
-            'regions': 'list[Region]'
+            'image_id': 'str'
         }
 
         self.attribute_map = {
@@ -93,10 +93,10 @@ class ImageListingPackage(ListingPackage):
             'resource_id': 'resourceId',
             'time_created': 'timeCreated',
             'operating_system': 'operatingSystem',
+            'regions': 'regions',
             'app_catalog_listing_id': 'appCatalogListingId',
             'app_catalog_listing_resource_version': 'appCatalogListingResourceVersion',
-            'image_id': 'imageId',
-            'regions': 'regions'
+            'image_id': 'imageId'
         }
 
         self._description = None
@@ -107,10 +107,10 @@ class ImageListingPackage(ListingPackage):
         self._resource_id = None
         self._time_created = None
         self._operating_system = None
+        self._regions = None
         self._app_catalog_listing_id = None
         self._app_catalog_listing_resource_version = None
         self._image_id = None
-        self._regions = None
         self._package_type = 'IMAGE'
 
     @property
@@ -188,30 +188,6 @@ class ImageListingPackage(ListingPackage):
         :type: str
         """
         self._image_id = image_id
-
-    @property
-    def regions(self):
-        """
-        Gets the regions of this ImageListingPackage.
-        The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
-
-
-        :return: The regions of this ImageListingPackage.
-        :rtype: list[oci.marketplace.models.Region]
-        """
-        return self._regions
-
-    @regions.setter
-    def regions(self, regions):
-        """
-        Sets the regions of this ImageListingPackage.
-        The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
-
-
-        :param regions: The regions of this ImageListingPackage.
-        :type: list[oci.marketplace.models.Region]
-        """
-        self._regions = regions
 
     def __repr__(self):
         return formatted_flat_dict(self)

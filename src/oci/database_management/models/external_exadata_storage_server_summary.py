@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExternalExadataStorageServerSummary(DbmResource):
     """
-    The storage server of the Exadata infrastructure.
+    The Exadata storage server of the Exadata infrastructure.
     """
 
     def __init__(self, **kwargs):
@@ -176,7 +176,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def make_model(self):
         """
         Gets the make_model of this ExternalExadataStorageServerSummary.
-        The make model of the storage server.
+        The make model of the Exadata storage server.
 
 
         :return: The make_model of this ExternalExadataStorageServerSummary.
@@ -188,7 +188,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def make_model(self, make_model):
         """
         Sets the make_model of this ExternalExadataStorageServerSummary.
-        The make model of the storage server.
+        The make model of the Exadata storage server.
 
 
         :param make_model: The make_model of this ExternalExadataStorageServerSummary.
@@ -200,7 +200,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def ip_address(self):
         """
         Gets the ip_address of this ExternalExadataStorageServerSummary.
-        The IP address of the storage server.
+        The IP address of the Exadata storage server.
 
 
         :return: The ip_address of this ExternalExadataStorageServerSummary.
@@ -212,7 +212,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this ExternalExadataStorageServerSummary.
-        The IP address of the storage server.
+        The IP address of the Exadata storage server.
 
 
         :param ip_address: The ip_address of this ExternalExadataStorageServerSummary.
@@ -224,7 +224,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def cpu_count(self):
         """
         Gets the cpu_count of this ExternalExadataStorageServerSummary.
-        The CPU count of the storage server
+        The CPU count of the Exadata storage server.
 
 
         :return: The cpu_count of this ExternalExadataStorageServerSummary.
@@ -236,7 +236,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def cpu_count(self, cpu_count):
         """
         Sets the cpu_count of this ExternalExadataStorageServerSummary.
-        The CPU count of the storage server
+        The CPU count of the Exadata storage server.
 
 
         :param cpu_count: The cpu_count of this ExternalExadataStorageServerSummary.
@@ -248,7 +248,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def memory_gb(self):
         """
         Gets the memory_gb of this ExternalExadataStorageServerSummary.
-        The storage server memory size in GB
+        The Exadata storage server memory size in GB.
 
 
         :return: The memory_gb of this ExternalExadataStorageServerSummary.
@@ -260,7 +260,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def memory_gb(self, memory_gb):
         """
         Sets the memory_gb of this ExternalExadataStorageServerSummary.
-        The storage server memory size in GB
+        The Exadata storage server memory size in GB.
 
 
         :param memory_gb: The memory_gb of this ExternalExadataStorageServerSummary.
@@ -272,7 +272,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def max_hard_disk_iops(self):
         """
         Gets the max_hard_disk_iops of this ExternalExadataStorageServerSummary.
-        The maximum hard disk IO operations per second of the storage server
+        The maximum hard disk IO operations per second of the Exadata storage server.
 
 
         :return: The max_hard_disk_iops of this ExternalExadataStorageServerSummary.
@@ -284,7 +284,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def max_hard_disk_iops(self, max_hard_disk_iops):
         """
         Sets the max_hard_disk_iops of this ExternalExadataStorageServerSummary.
-        The maximum hard disk IO operations per second of the storage server
+        The maximum hard disk IO operations per second of the Exadata storage server.
 
 
         :param max_hard_disk_iops: The max_hard_disk_iops of this ExternalExadataStorageServerSummary.
@@ -296,7 +296,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def max_hard_disk_throughput(self):
         """
         Gets the max_hard_disk_throughput of this ExternalExadataStorageServerSummary.
-        The maximum hard disk IO throughput in MB/s of the storage server
+        The maximum hard disk IO throughput in MB/s of the Exadata storage server.
 
 
         :return: The max_hard_disk_throughput of this ExternalExadataStorageServerSummary.
@@ -308,7 +308,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def max_hard_disk_throughput(self, max_hard_disk_throughput):
         """
         Sets the max_hard_disk_throughput of this ExternalExadataStorageServerSummary.
-        The maximum hard disk IO throughput in MB/s of the storage server
+        The maximum hard disk IO throughput in MB/s of the Exadata storage server.
 
 
         :param max_hard_disk_throughput: The max_hard_disk_throughput of this ExternalExadataStorageServerSummary.
@@ -320,7 +320,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def max_flash_disk_iops(self):
         """
         Gets the max_flash_disk_iops of this ExternalExadataStorageServerSummary.
-        The maximum flash disk IO operations per second of the storage server
+        The maximum flash disk IO operations per second of the Exadata storage server.
 
 
         :return: The max_flash_disk_iops of this ExternalExadataStorageServerSummary.
@@ -332,7 +332,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def max_flash_disk_iops(self, max_flash_disk_iops):
         """
         Sets the max_flash_disk_iops of this ExternalExadataStorageServerSummary.
-        The maximum flash disk IO operations per second of the storage server
+        The maximum flash disk IO operations per second of the Exadata storage server.
 
 
         :param max_flash_disk_iops: The max_flash_disk_iops of this ExternalExadataStorageServerSummary.
@@ -344,7 +344,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def max_flash_disk_throughput(self):
         """
         Gets the max_flash_disk_throughput of this ExternalExadataStorageServerSummary.
-        The maximum flash disk IO throughput in MB/s of the storage server
+        The maximum flash disk IO throughput in MB/s of the Exadata storage server.
 
 
         :return: The max_flash_disk_throughput of this ExternalExadataStorageServerSummary.
@@ -356,7 +356,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def max_flash_disk_throughput(self, max_flash_disk_throughput):
         """
         Sets the max_flash_disk_throughput of this ExternalExadataStorageServerSummary.
-        The maximum flash disk IO throughput in MB/s of the storage server
+        The maximum flash disk IO throughput in MB/s of the Exadata storage server.
 
 
         :param max_flash_disk_throughput: The max_flash_disk_throughput of this ExternalExadataStorageServerSummary.
@@ -368,7 +368,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def connector_id(self):
         """
         Gets the connector_id of this ExternalExadataStorageServerSummary.
-        The `OCID`__ of connector.
+        The `OCID`__ of the connector.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -382,7 +382,7 @@ class ExternalExadataStorageServerSummary(DbmResource):
     def connector_id(self, connector_id):
         """
         Sets the connector_id of this ExternalExadataStorageServerSummary.
-        The `OCID`__ of connector.
+        The `OCID`__ of the connector.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

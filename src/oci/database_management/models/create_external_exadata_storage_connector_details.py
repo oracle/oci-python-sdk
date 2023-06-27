@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateExternalExadataStorageConnectorDetails(object):
     """
-    The details of creating the connector to the Exadata storage server.
+    The details required to create the connector to the Exadata storage server.
     """
 
     def __init__(self, **kwargs):
@@ -121,7 +121,7 @@ class CreateExternalExadataStorageConnectorDetails(object):
     def connector_name(self):
         """
         **[Required]** Gets the connector_name of this CreateExternalExadataStorageConnectorDetails.
-        The connector name if OCI connector is created.
+        The name of the Exadata storage server connector.
 
 
         :return: The connector_name of this CreateExternalExadataStorageConnectorDetails.
@@ -133,7 +133,7 @@ class CreateExternalExadataStorageConnectorDetails(object):
     def connector_name(self, connector_name):
         """
         Sets the connector_name of this CreateExternalExadataStorageConnectorDetails.
-        The connector name if OCI connector is created.
+        The name of the Exadata storage server connector.
 
 
         :param connector_name: The connector_name of this CreateExternalExadataStorageConnectorDetails.
@@ -145,7 +145,7 @@ class CreateExternalExadataStorageConnectorDetails(object):
     def connection_uri(self):
         """
         **[Required]** Gets the connection_uri of this CreateExternalExadataStorageConnectorDetails.
-        The unique connection string of the connection. For example, \"https://slcm21celadm02.us.oracle.com:443/MS/RESTService/\".
+        The unique string of the connection. For example, \"https://<storage-server-name>/MS/RESTService/\".
 
 
         :return: The connection_uri of this CreateExternalExadataStorageConnectorDetails.
@@ -157,7 +157,7 @@ class CreateExternalExadataStorageConnectorDetails(object):
     def connection_uri(self, connection_uri):
         """
         Sets the connection_uri of this CreateExternalExadataStorageConnectorDetails.
-        The unique connection string of the connection. For example, \"https://slcm21celadm02.us.oracle.com:443/MS/RESTService/\".
+        The unique string of the connection. For example, \"https://<storage-server-name>/MS/RESTService/\".
 
 
         :param connection_uri: The connection_uri of this CreateExternalExadataStorageConnectorDetails.
