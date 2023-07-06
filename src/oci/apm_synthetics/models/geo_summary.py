@@ -172,7 +172,7 @@ class GeoSummary(object):
     def latitude(self):
         """
         Gets the latitude of this GeoSummary.
-        Degrees north of the Equator.
+        Degrees north of the equator.
 
 
         :return: The latitude of this GeoSummary.
@@ -184,7 +184,7 @@ class GeoSummary(object):
     def latitude(self, latitude):
         """
         Sets the latitude of this GeoSummary.
-        Degrees north of the Equator.
+        Degrees north of the equator.
 
 
         :param latitude: The latitude of this GeoSummary.

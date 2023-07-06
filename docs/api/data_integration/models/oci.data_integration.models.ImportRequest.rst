@@ -1,0 +1,11 @@
+ImportRequest
+=============
+
+.. currentmodule:: oci.data_integration.models
+
+.. autoclass:: ImportRequest
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

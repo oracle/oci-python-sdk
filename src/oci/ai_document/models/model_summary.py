@@ -68,6 +68,14 @@ class ModelSummary(object):
             The value to assign to the precision property of this ModelSummary.
         :type precision: float
 
+        :param tenancy_id:
+            The value to assign to the tenancy_id property of this ModelSummary.
+        :type tenancy_id: str
+
+        :param alias_name:
+            The value to assign to the alias_name property of this ModelSummary.
+        :type alias_name: str
+
         :param training_dataset:
             The value to assign to the training_dataset property of this ModelSummary.
         :type training_dataset: oci.ai_document.models.Dataset
@@ -79,6 +87,14 @@ class ModelSummary(object):
         :param validation_dataset:
             The value to assign to the validation_dataset property of this ModelSummary.
         :type validation_dataset: oci.ai_document.models.Dataset
+
+        :param component_models:
+            The value to assign to the component_models property of this ModelSummary.
+        :type component_models: list[oci.ai_document.models.ComponentModel]
+
+        :param is_composed_model:
+            The value to assign to the is_composed_model property of this ModelSummary.
+        :type is_composed_model: bool
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ModelSummary.
@@ -106,9 +122,13 @@ class ModelSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'precision': 'float',
+            'tenancy_id': 'str',
+            'alias_name': 'str',
             'training_dataset': 'Dataset',
             'testing_dataset': 'Dataset',
             'validation_dataset': 'Dataset',
+            'component_models': 'list[ComponentModel]',
+            'is_composed_model': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -127,9 +147,13 @@ class ModelSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'precision': 'precision',
+            'tenancy_id': 'tenancyId',
+            'alias_name': 'aliasName',
             'training_dataset': 'trainingDataset',
             'testing_dataset': 'testingDataset',
             'validation_dataset': 'validationDataset',
+            'component_models': 'componentModels',
+            'is_composed_model': 'isComposedModel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -147,9 +171,13 @@ class ModelSummary(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._precision = None
+        self._tenancy_id = None
+        self._alias_name = None
         self._training_dataset = None
         self._testing_dataset = None
         self._validation_dataset = None
+        self._component_models = None
+        self._is_composed_model = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -447,6 +475,54 @@ class ModelSummary(object):
         self._precision = precision
 
     @property
+    def tenancy_id(self):
+        """
+        Gets the tenancy_id of this ModelSummary.
+        The tenancy id of the model.
+
+
+        :return: The tenancy_id of this ModelSummary.
+        :rtype: str
+        """
+        return self._tenancy_id
+
+    @tenancy_id.setter
+    def tenancy_id(self, tenancy_id):
+        """
+        Sets the tenancy_id of this ModelSummary.
+        The tenancy id of the model.
+
+
+        :param tenancy_id: The tenancy_id of this ModelSummary.
+        :type: str
+        """
+        self._tenancy_id = tenancy_id
+
+    @property
+    def alias_name(self):
+        """
+        Gets the alias_name of this ModelSummary.
+        the alias name of the model.
+
+
+        :return: The alias_name of this ModelSummary.
+        :rtype: str
+        """
+        return self._alias_name
+
+    @alias_name.setter
+    def alias_name(self, alias_name):
+        """
+        Sets the alias_name of this ModelSummary.
+        the alias name of the model.
+
+
+        :param alias_name: The alias_name of this ModelSummary.
+        :type: str
+        """
+        self._alias_name = alias_name
+
+    @property
     def training_dataset(self):
         """
         Gets the training_dataset of this ModelSummary.
@@ -505,6 +581,58 @@ class ModelSummary(object):
         :type: oci.ai_document.models.Dataset
         """
         self._validation_dataset = validation_dataset
+
+    @property
+    def component_models(self):
+        """
+        Gets the component_models of this ModelSummary.
+        The `OCID`__ list of active custom Key Value models that need to be composed.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The component_models of this ModelSummary.
+        :rtype: list[oci.ai_document.models.ComponentModel]
+        """
+        return self._component_models
+
+    @component_models.setter
+    def component_models(self, component_models):
+        """
+        Sets the component_models of this ModelSummary.
+        The `OCID`__ list of active custom Key Value models that need to be composed.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param component_models: The component_models of this ModelSummary.
+        :type: list[oci.ai_document.models.ComponentModel]
+        """
+        self._component_models = component_models
+
+    @property
+    def is_composed_model(self):
+        """
+        Gets the is_composed_model of this ModelSummary.
+        Set to true when the model is created by using multiple key value extraction models.
+
+
+        :return: The is_composed_model of this ModelSummary.
+        :rtype: bool
+        """
+        return self._is_composed_model
+
+    @is_composed_model.setter
+    def is_composed_model(self, is_composed_model):
+        """
+        Sets the is_composed_model of this ModelSummary.
+        Set to true when the model is created by using multiple key value extraction models.
+
+
+        :param is_composed_model: The is_composed_model of this ModelSummary.
+        :type: bool
+        """
+        self._is_composed_model = is_composed_model
 
     @property
     def freeform_tags(self):

@@ -11,6 +11,8 @@ from .aggregated_network_data import AggregatedNetworkData
 from .aggregated_network_data_result import AggregatedNetworkDataResult
 from .availability_configuration import AvailabilityConfiguration
 from .browser_monitor_configuration import BrowserMonitorConfiguration
+from .client_certificate import ClientCertificate
+from .client_certificate_details import ClientCertificateDetails
 from .create_dedicated_vantage_point_details import CreateDedicatedVantagePointDetails
 from .create_monitor_details import CreateMonitorDetails
 from .create_script_details import CreateScriptDetails
@@ -35,6 +37,7 @@ from .monitor_summary import MonitorSummary
 from .network_configuration import NetworkConfiguration
 from .node import Node
 from .oracle_rm_stack import OracleRMStack
+from .private_key import PrivateKey
 from .public_vantage_point_collection import PublicVantagePointCollection
 from .public_vantage_point_summary import PublicVantagePointSummary
 from .request_authentication_details import RequestAuthenticationDetails
@@ -62,6 +65,8 @@ apm_synthetics_type_mapping = {
     "AggregatedNetworkDataResult": AggregatedNetworkDataResult,
     "AvailabilityConfiguration": AvailabilityConfiguration,
     "BrowserMonitorConfiguration": BrowserMonitorConfiguration,
+    "ClientCertificate": ClientCertificate,
+    "ClientCertificateDetails": ClientCertificateDetails,
     "CreateDedicatedVantagePointDetails": CreateDedicatedVantagePointDetails,
     "CreateMonitorDetails": CreateMonitorDetails,
     "CreateScriptDetails": CreateScriptDetails,
@@ -86,6 +91,7 @@ apm_synthetics_type_mapping = {
     "NetworkConfiguration": NetworkConfiguration,
     "Node": Node,
     "OracleRMStack": OracleRMStack,
+    "PrivateKey": PrivateKey,
     "PublicVantagePointCollection": PublicVantagePointCollection,
     "PublicVantagePointSummary": PublicVantagePointSummary,
     "RequestAuthenticationDetails": RequestAuthenticationDetails,

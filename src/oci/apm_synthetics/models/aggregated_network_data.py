@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AggregatedNetworkData(object):
     """
-    aggregated network data.
+    Details of the aggregated network data.
     """
 
     #: A constant which can be used with the result_state property of a AggregatedNetworkData.
@@ -81,7 +81,7 @@ class AggregatedNetworkData(object):
     def result_state(self):
         """
         **[Required]** Gets the result_state of this AggregatedNetworkData.
-        state of the result
+        Status of the aggregated network data result.
 
         Allowed values for this property are: "SUCCESS", "FAILURE", "PARTIAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -96,7 +96,7 @@ class AggregatedNetworkData(object):
     def result_state(self, result_state):
         """
         Sets the result_state of this AggregatedNetworkData.
-        state of the result
+        Status of the aggregated network data result.
 
 
         :param result_state: The result_state of this AggregatedNetworkData.
@@ -111,7 +111,7 @@ class AggregatedNetworkData(object):
     def vantage_point_nodes(self):
         """
         Gets the vantage_point_nodes of this AggregatedNetworkData.
-        List of VantagePointNode items.
+        List of vantage point nodes.
 
 
         :return: The vantage_point_nodes of this AggregatedNetworkData.
@@ -123,7 +123,7 @@ class AggregatedNetworkData(object):
     def vantage_point_nodes(self, vantage_point_nodes):
         """
         Sets the vantage_point_nodes of this AggregatedNetworkData.
-        List of VantagePointNode items.
+        List of vantage point nodes.
 
 
         :param vantage_point_nodes: The vantage_point_nodes of this AggregatedNetworkData.
@@ -135,7 +135,7 @@ class AggregatedNetworkData(object):
     def nodes_by_level(self):
         """
         Gets the nodes_by_level of this AggregatedNetworkData.
-        2d array of nodes where each internal array corresponds to 1 level
+        An array of node arrays where each internal array corresponds to nodes at one level.
 
 
         :return: The nodes_by_level of this AggregatedNetworkData.
@@ -147,7 +147,7 @@ class AggregatedNetworkData(object):
     def nodes_by_level(self, nodes_by_level):
         """
         Sets the nodes_by_level of this AggregatedNetworkData.
-        2d array of nodes where each internal array corresponds to 1 level
+        An array of node arrays where each internal array corresponds to nodes at one level.
 
 
         :param nodes_by_level: The nodes_by_level of this AggregatedNetworkData.
@@ -159,7 +159,7 @@ class AggregatedNetworkData(object):
     def links(self):
         """
         Gets the links of this AggregatedNetworkData.
-        map of Link objects
+        Map of link objects.
 
 
         :return: The links of this AggregatedNetworkData.
@@ -171,7 +171,7 @@ class AggregatedNetworkData(object):
     def links(self, links):
         """
         Sets the links of this AggregatedNetworkData.
-        map of Link objects
+        Map of link objects.
 
 
         :param links: The links of this AggregatedNetworkData.
@@ -183,7 +183,7 @@ class AggregatedNetworkData(object):
     def error_details(self):
         """
         Gets the error_details of this AggregatedNetworkData.
-        string contaiing error details
+        String containing error details.
 
 
         :return: The error_details of this AggregatedNetworkData.
@@ -195,7 +195,7 @@ class AggregatedNetworkData(object):
     def error_details(self, error_details):
         """
         Sets the error_details of this AggregatedNetworkData.
-        string contaiing error details
+        String containing error details.
 
 
         :param error_details: The error_details of this AggregatedNetworkData.

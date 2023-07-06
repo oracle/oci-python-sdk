@@ -59,7 +59,7 @@ class CreditCardPaymentDetail(PaymentDetail):
 
         :param payment_method:
             The value to assign to the payment_method property of this CreditCardPaymentDetail.
-            Allowed values for this property are: "CREDIT_CARD", "PAYPAL", "OTHER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREDIT_CARD", "PAYPAL", "ECHECK", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type payment_method: str
 

@@ -21,6 +21,10 @@ class UpdateOciCliDumpTransferDetails(UpdateHostDumpTransferDetails):
         of this class is ``OCI_CLI`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param wallet_location:
+            The value to assign to the wallet_location property of this UpdateOciCliDumpTransferDetails.
+        :type wallet_location: str
+
         :param kind:
             The value to assign to the kind property of this UpdateOciCliDumpTransferDetails.
             Allowed values for this property are: "CURL", "OCI_CLI"
@@ -32,15 +36,18 @@ class UpdateOciCliDumpTransferDetails(UpdateHostDumpTransferDetails):
 
         """
         self.swagger_types = {
+            'wallet_location': 'str',
             'kind': 'str',
             'oci_home': 'str'
         }
 
         self.attribute_map = {
+            'wallet_location': 'walletLocation',
             'kind': 'kind',
             'oci_home': 'ociHome'
         }
 
+        self._wallet_location = None
         self._kind = None
         self._oci_home = None
         self._kind = 'OCI_CLI'

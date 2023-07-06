@@ -43,6 +43,18 @@ class OtherPaymentDetail(PaymentDetail):
     #: This constant has a value of "ELO"
     CREDIT_CARD_TYPE_ELO = "ELO"
 
+    #: A constant which can be used with the credit_card_type property of a OtherPaymentDetail.
+    #: This constant has a value of "SAVING"
+    CREDIT_CARD_TYPE_SAVING = "SAVING"
+
+    #: A constant which can be used with the credit_card_type property of a OtherPaymentDetail.
+    #: This constant has a value of "CHECKING"
+    CREDIT_CARD_TYPE_CHECKING = "CHECKING"
+
+    #: A constant which can be used with the credit_card_type property of a OtherPaymentDetail.
+    #: This constant has a value of "CORPORATE_CHECKING"
+    CREDIT_CARD_TYPE_CORPORATE_CHECKING = "CORPORATE_CHECKING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OtherPaymentDetail object with values from keyword arguments. The default value of the :py:attr:`~oci.osp_gateway.models.OtherPaymentDetail.payment_method` attribute
@@ -59,7 +71,7 @@ class OtherPaymentDetail(PaymentDetail):
 
         :param payment_method:
             The value to assign to the payment_method property of this OtherPaymentDetail.
-            Allowed values for this property are: "CREDIT_CARD", "PAYPAL", "OTHER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREDIT_CARD", "PAYPAL", "ECHECK", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type payment_method: str
 
@@ -77,7 +89,7 @@ class OtherPaymentDetail(PaymentDetail):
 
         :param credit_card_type:
             The value to assign to the credit_card_type property of this OtherPaymentDetail.
-            Allowed values for this property are: "VISA", "AMEX", "MASTERCARD", "DISCOVER", "JCB", "DINER", "ELO", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VISA", "AMEX", "MASTERCARD", "DISCOVER", "JCB", "DINER", "ELO", "SAVING", "CHECKING", "CORPORATE_CHECKING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type credit_card_type: str
 
@@ -179,7 +191,7 @@ class OtherPaymentDetail(PaymentDetail):
         Gets the credit_card_type of this OtherPaymentDetail.
         Echeck card type
 
-        Allowed values for this property are: "VISA", "AMEX", "MASTERCARD", "DISCOVER", "JCB", "DINER", "ELO", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VISA", "AMEX", "MASTERCARD", "DISCOVER", "JCB", "DINER", "ELO", "SAVING", "CHECKING", "CORPORATE_CHECKING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -198,7 +210,7 @@ class OtherPaymentDetail(PaymentDetail):
         :param credit_card_type: The credit_card_type of this OtherPaymentDetail.
         :type: str
         """
-        allowed_values = ["VISA", "AMEX", "MASTERCARD", "DISCOVER", "JCB", "DINER", "ELO"]
+        allowed_values = ["VISA", "AMEX", "MASTERCARD", "DISCOVER", "JCB", "DINER", "ELO", "SAVING", "CHECKING", "CORPORATE_CHECKING"]
         if not value_allowed_none_or_none_sentinel(credit_card_type, allowed_values):
             credit_card_type = 'UNKNOWN_ENUM_VALUE'
         self._credit_card_type = credit_card_type

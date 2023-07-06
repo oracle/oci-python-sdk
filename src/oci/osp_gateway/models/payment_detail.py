@@ -24,6 +24,10 @@ class PaymentDetail(object):
     PAYMENT_METHOD_PAYPAL = "PAYPAL"
 
     #: A constant which can be used with the payment_method property of a PaymentDetail.
+    #: This constant has a value of "ECHECK"
+    PAYMENT_METHOD_ECHECK = "ECHECK"
+
+    #: A constant which can be used with the payment_method property of a PaymentDetail.
     #: This constant has a value of "OTHER"
     PAYMENT_METHOD_OTHER = "OTHER"
 
@@ -32,6 +36,7 @@ class PaymentDetail(object):
         Initializes a new PaymentDetail object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.osp_gateway.models.EcheckPaymentDetail`
         * :class:`~oci.osp_gateway.models.OtherPaymentDetail`
         * :class:`~oci.osp_gateway.models.PaypalPaymentDetail`
         * :class:`~oci.osp_gateway.models.CreditCardPaymentDetail`
@@ -48,7 +53,7 @@ class PaymentDetail(object):
 
         :param payment_method:
             The value to assign to the payment_method property of this PaymentDetail.
-            Allowed values for this property are: "CREDIT_CARD", "PAYPAL", "OTHER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREDIT_CARD", "PAYPAL", "ECHECK", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type payment_method: str
 
@@ -83,6 +88,9 @@ class PaymentDetail(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['paymentMethod']
+
+        if type == 'ECHECK':
+            return 'EcheckPaymentDetail'
 
         if type == 'OTHER':
             return 'OtherPaymentDetail'
@@ -149,7 +157,7 @@ class PaymentDetail(object):
         **[Required]** Gets the payment_method of this PaymentDetail.
         Payment method
 
-        Allowed values for this property are: "CREDIT_CARD", "PAYPAL", "OTHER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREDIT_CARD", "PAYPAL", "ECHECK", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -168,7 +176,7 @@ class PaymentDetail(object):
         :param payment_method: The payment_method of this PaymentDetail.
         :type: str
         """
-        allowed_values = ["CREDIT_CARD", "PAYPAL", "OTHER"]
+        allowed_values = ["CREDIT_CARD", "PAYPAL", "ECHECK", "OTHER"]
         if not value_allowed_none_or_none_sentinel(payment_method, allowed_values):
             payment_method = 'UNKNOWN_ENUM_VALUE'
         self._payment_method = payment_method

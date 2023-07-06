@@ -585,6 +585,48 @@ def test_create_entity_shape(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_create_export_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'CreateExportRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'CreateExportRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='CreateExportRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.create_export_request(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                create_export_request_details=request.pop(util.camelize('CreateExportRequestDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'CreateExportRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exportRequest',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_create_external_publication(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'CreateExternalPublication'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -749,6 +791,48 @@ def test_create_function_library(testing_service_client):
             result,
             service_error,
             'functionLibrary',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_create_import_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'CreateImportRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'CreateImportRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='CreateImportRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.create_import_request(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                create_import_request_details=request.pop(util.camelize('CreateImportRequestDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'CreateImportRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'importRequest',
             False,
             False
         )
@@ -1682,6 +1766,48 @@ def test_delete_dis_application_detailed_description(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_delete_export_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'DeleteExportRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'DeleteExportRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='DeleteExportRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.delete_export_request(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                export_request_key=request.pop(util.camelize('exportRequestKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'DeleteExportRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_export_request',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_delete_external_publication(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'DeleteExternalPublication'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1846,6 +1972,48 @@ def test_delete_function_library(testing_service_client):
             result,
             service_error,
             'delete_function_library',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_delete_import_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'DeleteImportRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'DeleteImportRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='DeleteImportRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.delete_import_request(
+                import_request_key=request.pop(util.camelize('importRequestKey')),
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'DeleteImportRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_import_request',
             True,
             False
         )
@@ -2443,6 +2611,49 @@ def test_get_application_detailed_description(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_get_composite_state(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'GetCompositeState'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'GetCompositeState')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='GetCompositeState')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_composite_state(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                application_key=request.pop(util.camelize('applicationKey')),
+                aggregator_key=request.pop(util.camelize('aggregatorKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'GetCompositeState',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'compositeState',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_get_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'GetConnection'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2908,6 +3119,48 @@ def test_get_dis_application_detailed_description(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_get_export_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'GetExportRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'GetExportRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='GetExportRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_export_request(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                export_request_key=request.pop(util.camelize('exportRequestKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'GetExportRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exportRequest',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_get_external_publication(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'GetExternalPublication'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3074,6 +3327,72 @@ def test_get_function_library(testing_service_client):
             'functionLibrary',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_get_import_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'GetImportRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'GetImportRequest')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='GetImportRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_import_request(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                import_request_key=request.pop(util.camelize('importRequestKey')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.get_import_request(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    import_request_key=request.pop(util.camelize('importRequestKey')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.get_import_request(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        import_request_key=request.pop(util.camelize('importRequestKey')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'GetImportRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'importRequest',
+            False,
+            True
         )
 
 
@@ -4595,6 +4914,69 @@ def test_list_dis_applications(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_export_requests(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListExportRequests'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListExportRequests')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListExportRequests')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_export_requests(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_export_requests(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_export_requests(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListExportRequests',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exportRequestSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_list_external_publication_validations(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'ListExternalPublicationValidations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4847,6 +5229,69 @@ def test_list_function_libraries(testing_service_client):
             result,
             service_error,
             'functionLibrarySummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_import_requests(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListImportRequests'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListImportRequests')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListImportRequests')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_import_requests(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_import_requests(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_import_requests(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListImportRequests',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'importRequestSummaryCollection',
             False,
             True
         )
@@ -6836,6 +7281,49 @@ def test_update_dis_application_detailed_description(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_update_export_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'UpdateExportRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'UpdateExportRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='UpdateExportRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.update_export_request(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                export_request_key=request.pop(util.camelize('exportRequestKey')),
+                update_export_request_details=request.pop(util.camelize('UpdateExportRequestDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'UpdateExportRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exportRequest',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_update_external_publication(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'UpdateExternalPublication'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6960,6 +7448,49 @@ def test_update_function_library(testing_service_client):
             result,
             service_error,
             'functionLibrary',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_update_import_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'UpdateImportRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'UpdateImportRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='UpdateImportRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.update_import_request(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                import_request_key=request.pop(util.camelize('importRequestKey')),
+                update_import_request_details=request.pop(util.camelize('UpdateImportRequestDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'UpdateImportRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'importRequest',
             False,
             False
         )

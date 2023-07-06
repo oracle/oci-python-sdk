@@ -74,6 +74,14 @@ class Model(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
+        :param tenancy_id:
+            The value to assign to the tenancy_id property of this Model.
+        :type tenancy_id: str
+
+        :param alias_name:
+            The value to assign to the alias_name property of this Model.
+        :type alias_name: str
+
         :param labels:
             The value to assign to the labels property of this Model.
         :type labels: list[str]
@@ -101,6 +109,14 @@ class Model(object):
         :param validation_dataset:
             The value to assign to the validation_dataset property of this Model.
         :type validation_dataset: oci.ai_document.models.Dataset
+
+        :param component_models:
+            The value to assign to the component_models property of this Model.
+        :type component_models: list[oci.ai_document.models.ComponentModel]
+
+        :param is_composed_model:
+            The value to assign to the is_composed_model property of this Model.
+        :type is_composed_model: bool
 
         :param model_version:
             The value to assign to the model_version property of this Model.
@@ -151,6 +167,8 @@ class Model(object):
             'description': 'str',
             'compartment_id': 'str',
             'model_type': 'str',
+            'tenancy_id': 'str',
+            'alias_name': 'str',
             'labels': 'list[str]',
             'is_quick_mode': 'bool',
             'max_training_time_in_hours': 'float',
@@ -158,6 +176,8 @@ class Model(object):
             'training_dataset': 'Dataset',
             'testing_dataset': 'Dataset',
             'validation_dataset': 'Dataset',
+            'component_models': 'list[ComponentModel]',
+            'is_composed_model': 'bool',
             'model_version': 'str',
             'project_id': 'str',
             'time_created': 'datetime',
@@ -176,6 +196,8 @@ class Model(object):
             'description': 'description',
             'compartment_id': 'compartmentId',
             'model_type': 'modelType',
+            'tenancy_id': 'tenancyId',
+            'alias_name': 'aliasName',
             'labels': 'labels',
             'is_quick_mode': 'isQuickMode',
             'max_training_time_in_hours': 'maxTrainingTimeInHours',
@@ -183,6 +205,8 @@ class Model(object):
             'training_dataset': 'trainingDataset',
             'testing_dataset': 'testingDataset',
             'validation_dataset': 'validationDataset',
+            'component_models': 'componentModels',
+            'is_composed_model': 'isComposedModel',
             'model_version': 'modelVersion',
             'project_id': 'projectId',
             'time_created': 'timeCreated',
@@ -200,6 +224,8 @@ class Model(object):
         self._description = None
         self._compartment_id = None
         self._model_type = None
+        self._tenancy_id = None
+        self._alias_name = None
         self._labels = None
         self._is_quick_mode = None
         self._max_training_time_in_hours = None
@@ -207,6 +233,8 @@ class Model(object):
         self._training_dataset = None
         self._testing_dataset = None
         self._validation_dataset = None
+        self._component_models = None
+        self._is_composed_model = None
         self._model_version = None
         self._project_id = None
         self._time_created = None
@@ -345,6 +373,54 @@ class Model(object):
         self._model_type = model_type
 
     @property
+    def tenancy_id(self):
+        """
+        Gets the tenancy_id of this Model.
+        The tenancy id of the model.
+
+
+        :return: The tenancy_id of this Model.
+        :rtype: str
+        """
+        return self._tenancy_id
+
+    @tenancy_id.setter
+    def tenancy_id(self, tenancy_id):
+        """
+        Sets the tenancy_id of this Model.
+        The tenancy id of the model.
+
+
+        :param tenancy_id: The tenancy_id of this Model.
+        :type: str
+        """
+        self._tenancy_id = tenancy_id
+
+    @property
+    def alias_name(self):
+        """
+        Gets the alias_name of this Model.
+        the alias name of the model.
+
+
+        :return: The alias_name of this Model.
+        :rtype: str
+        """
+        return self._alias_name
+
+    @alias_name.setter
+    def alias_name(self, alias_name):
+        """
+        Sets the alias_name of this Model.
+        the alias name of the model.
+
+
+        :param alias_name: The alias_name of this Model.
+        :type: str
+        """
+        self._alias_name = alias_name
+
+    @property
     def labels(self):
         """
         Gets the labels of this Model.
@@ -443,7 +519,7 @@ class Model(object):
     @property
     def training_dataset(self):
         """
-        **[Required]** Gets the training_dataset of this Model.
+        Gets the training_dataset of this Model.
 
         :return: The training_dataset of this Model.
         :rtype: oci.ai_document.models.Dataset
@@ -499,6 +575,58 @@ class Model(object):
         :type: oci.ai_document.models.Dataset
         """
         self._validation_dataset = validation_dataset
+
+    @property
+    def component_models(self):
+        """
+        Gets the component_models of this Model.
+        The `OCID`__ collection of active custom Key Value models that need to be composed.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The component_models of this Model.
+        :rtype: list[oci.ai_document.models.ComponentModel]
+        """
+        return self._component_models
+
+    @component_models.setter
+    def component_models(self, component_models):
+        """
+        Sets the component_models of this Model.
+        The `OCID`__ collection of active custom Key Value models that need to be composed.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param component_models: The component_models of this Model.
+        :type: list[oci.ai_document.models.ComponentModel]
+        """
+        self._component_models = component_models
+
+    @property
+    def is_composed_model(self):
+        """
+        Gets the is_composed_model of this Model.
+        Set to true when the model is created by using multiple key value extraction models.
+
+
+        :return: The is_composed_model of this Model.
+        :rtype: bool
+        """
+        return self._is_composed_model
+
+    @is_composed_model.setter
+    def is_composed_model(self, is_composed_model):
+        """
+        Sets the is_composed_model of this Model.
+        Set to true when the model is created by using multiple key value extraction models.
+
+
+        :param is_composed_model: The is_composed_model of this Model.
+        :type: bool
+        """
+        self._is_composed_model = is_composed_model
 
     @property
     def model_version(self):

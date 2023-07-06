@@ -56,6 +56,26 @@ class CreateConnectionDetails(object):
     MODEL_TYPE_LAKE_CONNECTION = "LAKE_CONNECTION"
 
     #: A constant which can be used with the model_type property of a CreateConnectionDetails.
+    #: This constant has a value of "ORACLE_PEOPLESOFT_CONNECTION"
+    MODEL_TYPE_ORACLE_PEOPLESOFT_CONNECTION = "ORACLE_PEOPLESOFT_CONNECTION"
+
+    #: A constant which can be used with the model_type property of a CreateConnectionDetails.
+    #: This constant has a value of "ORACLE_EBS_CONNECTION"
+    MODEL_TYPE_ORACLE_EBS_CONNECTION = "ORACLE_EBS_CONNECTION"
+
+    #: A constant which can be used with the model_type property of a CreateConnectionDetails.
+    #: This constant has a value of "ORACLE_SIEBEL_CONNECTION"
+    MODEL_TYPE_ORACLE_SIEBEL_CONNECTION = "ORACLE_SIEBEL_CONNECTION"
+
+    #: A constant which can be used with the model_type property of a CreateConnectionDetails.
+    #: This constant has a value of "HDFS_CONNECTION"
+    MODEL_TYPE_HDFS_CONNECTION = "HDFS_CONNECTION"
+
+    #: A constant which can be used with the model_type property of a CreateConnectionDetails.
+    #: This constant has a value of "MYSQL_HEATWAVE_CONNECTION"
+    MODEL_TYPE_MYSQL_HEATWAVE_CONNECTION = "MYSQL_HEATWAVE_CONNECTION"
+
+    #: A constant which can be used with the model_type property of a CreateConnectionDetails.
     #: This constant has a value of "REST_NO_AUTH_CONNECTION"
     MODEL_TYPE_REST_NO_AUTH_CONNECTION = "REST_NO_AUTH_CONNECTION"
 
@@ -68,16 +88,21 @@ class CreateConnectionDetails(object):
         Initializes a new CreateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
-        * :class:`~oci.data_integration.models.CreateConnectionFromMySQL`
+        * :class:`~oci.data_integration.models.CreateConnectionFromOracleSiebel`
         * :class:`~oci.data_integration.models.CreateConnectionFromAmazonS3`
-        * :class:`~oci.data_integration.models.CreateConnectionFromJdbc`
         * :class:`~oci.data_integration.models.CreateConnectionFromBICC`
         * :class:`~oci.data_integration.models.CreateConnectionFromAtp`
-        * :class:`~oci.data_integration.models.CreateConnectionFromBIP`
+        * :class:`~oci.data_integration.models.CreateConnectionFromHdfs`
+        * :class:`~oci.data_integration.models.CreateConnectionFromMySqlHeatWave`
         * :class:`~oci.data_integration.models.CreateConnectionFromRestBasicAuth`
+        * :class:`~oci.data_integration.models.CreateConnectionFromOracle`
+        * :class:`~oci.data_integration.models.CreateConnectionFromOraclePeopleSoft`
+        * :class:`~oci.data_integration.models.CreateConnectionFromOracleEbs`
+        * :class:`~oci.data_integration.models.CreateConnectionFromMySQL`
+        * :class:`~oci.data_integration.models.CreateConnectionFromJdbc`
+        * :class:`~oci.data_integration.models.CreateConnectionFromBIP`
         * :class:`~oci.data_integration.models.CreateConnectionFromAdwc`
         * :class:`~oci.data_integration.models.CreateConnectionFromRestNoAuth`
-        * :class:`~oci.data_integration.models.CreateConnectionFromOracle`
         * :class:`~oci.data_integration.models.CreateConnectionFromObjectStorage`
         * :class:`~oci.data_integration.models.CreateConnectionFromLake`
 
@@ -85,7 +110,7 @@ class CreateConnectionDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this CreateConnectionDetails.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"
         :type model_type: str
 
         :param key:
@@ -170,14 +195,11 @@ class CreateConnectionDetails(object):
         """
         type = object_dictionary['modelType']
 
-        if type == 'MYSQL_CONNECTION':
-            return 'CreateConnectionFromMySQL'
+        if type == 'ORACLE_SIEBEL_CONNECTION':
+            return 'CreateConnectionFromOracleSiebel'
 
         if type == 'AMAZON_S3_CONNECTION':
             return 'CreateConnectionFromAmazonS3'
-
-        if type == 'GENERIC_JDBC_CONNECTION':
-            return 'CreateConnectionFromJdbc'
 
         if type == 'BICC_CONNECTION':
             return 'CreateConnectionFromBICC'
@@ -185,20 +207,38 @@ class CreateConnectionDetails(object):
         if type == 'ORACLE_ATP_CONNECTION':
             return 'CreateConnectionFromAtp'
 
-        if type == 'BIP_CONNECTION':
-            return 'CreateConnectionFromBIP'
+        if type == 'HDFS_CONNECTION':
+            return 'CreateConnectionFromHdfs'
+
+        if type == 'MYSQL_HEATWAVE_CONNECTION':
+            return 'CreateConnectionFromMySqlHeatWave'
 
         if type == 'REST_BASIC_AUTH_CONNECTION':
             return 'CreateConnectionFromRestBasicAuth'
+
+        if type == 'ORACLEDB_CONNECTION':
+            return 'CreateConnectionFromOracle'
+
+        if type == 'ORACLE_PEOPLESOFT_CONNECTION':
+            return 'CreateConnectionFromOraclePeopleSoft'
+
+        if type == 'ORACLE_EBS_CONNECTION':
+            return 'CreateConnectionFromOracleEbs'
+
+        if type == 'MYSQL_CONNECTION':
+            return 'CreateConnectionFromMySQL'
+
+        if type == 'GENERIC_JDBC_CONNECTION':
+            return 'CreateConnectionFromJdbc'
+
+        if type == 'BIP_CONNECTION':
+            return 'CreateConnectionFromBIP'
 
         if type == 'ORACLE_ADWC_CONNECTION':
             return 'CreateConnectionFromAdwc'
 
         if type == 'REST_NO_AUTH_CONNECTION':
             return 'CreateConnectionFromRestNoAuth'
-
-        if type == 'ORACLEDB_CONNECTION':
-            return 'CreateConnectionFromOracle'
 
         if type == 'ORACLE_OBJECT_STORAGE_CONNECTION':
             return 'CreateConnectionFromObjectStorage'
@@ -214,7 +254,7 @@ class CreateConnectionDetails(object):
         Gets the model_type of this CreateConnectionDetails.
         The type of the connection.
 
-        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"
+        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"
 
 
         :return: The model_type of this CreateConnectionDetails.
@@ -232,7 +272,7 @@ class CreateConnectionDetails(object):
         :param model_type: The model_type of this CreateConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"]
+        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

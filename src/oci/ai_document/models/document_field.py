@@ -38,7 +38,8 @@ class DocumentField(object):
 
         :param field_type:
             The value to assign to the field_type property of this DocumentField.
-            Allowed values for this property are: "LINE_ITEM_GROUP", "LINE_ITEM", "LINE_ITEM_FIELD", "KEY_VALUE"
+            Allowed values for this property are: "LINE_ITEM_GROUP", "LINE_ITEM", "LINE_ITEM_FIELD", "KEY_VALUE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type field_type: str
 
         :param field_label:
@@ -79,7 +80,8 @@ class DocumentField(object):
         **[Required]** Gets the field_type of this DocumentField.
         The field type.
 
-        Allowed values for this property are: "LINE_ITEM_GROUP", "LINE_ITEM", "LINE_ITEM_FIELD", "KEY_VALUE"
+        Allowed values for this property are: "LINE_ITEM_GROUP", "LINE_ITEM", "LINE_ITEM_FIELD", "KEY_VALUE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The field_type of this DocumentField.
@@ -99,10 +101,7 @@ class DocumentField(object):
         """
         allowed_values = ["LINE_ITEM_GROUP", "LINE_ITEM", "LINE_ITEM_FIELD", "KEY_VALUE"]
         if not value_allowed_none_or_none_sentinel(field_type, allowed_values):
-            raise ValueError(
-                "Invalid value for `field_type`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            field_type = 'UNKNOWN_ENUM_VALUE'
         self._field_type = field_type
 
     @property

@@ -108,7 +108,7 @@ class RequestAuthenticationDetails(object):
     def oauth_scheme(self):
         """
         Gets the oauth_scheme of this RequestAuthenticationDetails.
-        Request http oauth scheme.
+        Request HTTP OAuth scheme.
 
         Allowed values for this property are: "NONE", "BASIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -123,7 +123,7 @@ class RequestAuthenticationDetails(object):
     def oauth_scheme(self, oauth_scheme):
         """
         Sets the oauth_scheme of this RequestAuthenticationDetails.
-        Request http oauth scheme.
+        Request HTTP OAuth scheme.
 
 
         :param oauth_scheme: The oauth_scheme of this RequestAuthenticationDetails.
@@ -138,7 +138,7 @@ class RequestAuthenticationDetails(object):
     def auth_user_name(self):
         """
         Gets the auth_user_name of this RequestAuthenticationDetails.
-        Username for authentication.
+        User name for authentication.
 
 
         :return: The auth_user_name of this RequestAuthenticationDetails.
@@ -150,7 +150,7 @@ class RequestAuthenticationDetails(object):
     def auth_user_name(self, auth_user_name):
         """
         Sets the auth_user_name of this RequestAuthenticationDetails.
-        Username for authentication.
+        User name for authentication.
 
 
         :param auth_user_name: The auth_user_name of this RequestAuthenticationDetails.
@@ -210,7 +210,7 @@ class RequestAuthenticationDetails(object):
     def auth_url(self):
         """
         Gets the auth_url of this RequestAuthenticationDetails.
-        URL to get authetication token.
+        URL to get authentication token.
 
 
         :return: The auth_url of this RequestAuthenticationDetails.
@@ -222,7 +222,7 @@ class RequestAuthenticationDetails(object):
     def auth_url(self, auth_url):
         """
         Sets the auth_url of this RequestAuthenticationDetails.
-        URL to get authetication token.
+        URL to get authentication token.
 
 
         :param auth_url: The auth_url of this RequestAuthenticationDetails.

@@ -626,7 +626,9 @@ class ClusterSummary(object):
     def type(self):
         """
         Gets the type of this ClusterSummary.
-        Type of cluster
+        Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see `Cluster Types`__
+
+        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm
 
         Allowed values for this property are: "BASIC_CLUSTER", "ENHANCED_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -641,7 +643,9 @@ class ClusterSummary(object):
     def type(self, type):
         """
         Sets the type of this ClusterSummary.
-        Type of cluster
+        Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see `Cluster Types`__
+
+        __ https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm
 
 
         :param type: The type of this ClusterSummary.

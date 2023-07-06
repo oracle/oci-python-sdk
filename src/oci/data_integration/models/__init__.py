@@ -35,6 +35,7 @@ from .change_dis_application_compartment_details import ChangeDisApplicationComp
 from .child_reference import ChildReference
 from .child_reference_detail import ChildReferenceDetail
 from .composite_field_map import CompositeFieldMap
+from .composite_state import CompositeState
 from .composite_type import CompositeType
 from .compression import Compression
 from .conditional_composite_field_map import ConditionalCompositeFieldMap
@@ -59,16 +60,26 @@ from .connection_from_bicc import ConnectionFromBICC
 from .connection_from_bicc_details import ConnectionFromBICCDetails
 from .connection_from_bip import ConnectionFromBIP
 from .connection_from_bip_details import ConnectionFromBipDetails
+from .connection_from_hdfs import ConnectionFromHdfs
+from .connection_from_hdfs_details import ConnectionFromHdfsDetails
 from .connection_from_jdbc import ConnectionFromJdbc
 from .connection_from_jdbc_details import ConnectionFromJdbcDetails
 from .connection_from_lake import ConnectionFromLake
 from .connection_from_lake_details import ConnectionFromLakeDetails
 from .connection_from_my_sql import ConnectionFromMySQL
 from .connection_from_my_sql_details import ConnectionFromMySQLDetails
+from .connection_from_my_sql_heat_wave import ConnectionFromMySqlHeatWave
+from .connection_from_my_sql_heat_wave_details import ConnectionFromMySqlHeatWaveDetails
 from .connection_from_object_storage import ConnectionFromObjectStorage
 from .connection_from_object_storage_details import ConnectionFromObjectStorageDetails
 from .connection_from_oracle import ConnectionFromOracle
 from .connection_from_oracle_details import ConnectionFromOracleDetails
+from .connection_from_oracle_ebs import ConnectionFromOracleEbs
+from .connection_from_oracle_ebs_details import ConnectionFromOracleEbsDetails
+from .connection_from_oracle_people_soft import ConnectionFromOraclePeopleSoft
+from .connection_from_oracle_people_soft_details import ConnectionFromOraclePeopleSoftDetails
+from .connection_from_oracle_siebel import ConnectionFromOracleSiebel
+from .connection_from_oracle_siebel_details import ConnectionFromOracleSiebelDetails
 from .connection_from_rest_basic_auth import ConnectionFromRestBasicAuth
 from .connection_from_rest_basic_auth_details import ConnectionFromRestBasicAuthDetails
 from .connection_from_rest_no_auth import ConnectionFromRestNoAuth
@@ -81,11 +92,16 @@ from .connection_summary_from_amazon_s3 import ConnectionSummaryFromAmazonS3
 from .connection_summary_from_atp import ConnectionSummaryFromAtp
 from .connection_summary_from_bicc import ConnectionSummaryFromBICC
 from .connection_summary_from_bip import ConnectionSummaryFromBIP
+from .connection_summary_from_hdfs import ConnectionSummaryFromHdfs
 from .connection_summary_from_jdbc import ConnectionSummaryFromJdbc
 from .connection_summary_from_lake import ConnectionSummaryFromLake
 from .connection_summary_from_my_sql import ConnectionSummaryFromMySQL
+from .connection_summary_from_my_sql_heat_wave import ConnectionSummaryFromMySqlHeatWave
 from .connection_summary_from_object_storage import ConnectionSummaryFromObjectStorage
 from .connection_summary_from_oracle import ConnectionSummaryFromOracle
+from .connection_summary_from_oracle_ebs import ConnectionSummaryFromOracleEbs
+from .connection_summary_from_oracle_people_soft import ConnectionSummaryFromOraclePeopleSoft
+from .connection_summary_from_oracle_siebel import ConnectionSummaryFromOracleSiebel
 from .connection_summary_from_rest_basic_auth import ConnectionSummaryFromRestBasicAuth
 from .connection_summary_from_rest_no_auth import ConnectionSummaryFromRestNoAuth
 from .connection_validation import ConnectionValidation
@@ -107,11 +123,16 @@ from .create_connection_from_amazon_s3 import CreateConnectionFromAmazonS3
 from .create_connection_from_atp import CreateConnectionFromAtp
 from .create_connection_from_bicc import CreateConnectionFromBICC
 from .create_connection_from_bip import CreateConnectionFromBIP
+from .create_connection_from_hdfs import CreateConnectionFromHdfs
 from .create_connection_from_jdbc import CreateConnectionFromJdbc
 from .create_connection_from_lake import CreateConnectionFromLake
 from .create_connection_from_my_sql import CreateConnectionFromMySQL
+from .create_connection_from_my_sql_heat_wave import CreateConnectionFromMySqlHeatWave
 from .create_connection_from_object_storage import CreateConnectionFromObjectStorage
 from .create_connection_from_oracle import CreateConnectionFromOracle
+from .create_connection_from_oracle_ebs import CreateConnectionFromOracleEbs
+from .create_connection_from_oracle_people_soft import CreateConnectionFromOraclePeopleSoft
+from .create_connection_from_oracle_siebel import CreateConnectionFromOracleSiebel
 from .create_connection_from_rest_basic_auth import CreateConnectionFromRestBasicAuth
 from .create_connection_from_rest_no_auth import CreateConnectionFromRestNoAuth
 from .create_connection_validation_details import CreateConnectionValidationDetails
@@ -121,11 +142,16 @@ from .create_data_asset_from_adwc import CreateDataAssetFromAdwc
 from .create_data_asset_from_amazon_s3 import CreateDataAssetFromAmazonS3
 from .create_data_asset_from_atp import CreateDataAssetFromAtp
 from .create_data_asset_from_fusion_app import CreateDataAssetFromFusionApp
+from .create_data_asset_from_hdfs import CreateDataAssetFromHdfs
 from .create_data_asset_from_jdbc import CreateDataAssetFromJdbc
 from .create_data_asset_from_lake import CreateDataAssetFromLake
 from .create_data_asset_from_my_sql import CreateDataAssetFromMySQL
+from .create_data_asset_from_my_sql_heat_wave import CreateDataAssetFromMySqlHeatWave
 from .create_data_asset_from_object_storage import CreateDataAssetFromObjectStorage
 from .create_data_asset_from_oracle import CreateDataAssetFromOracle
+from .create_data_asset_from_oracle_ebs import CreateDataAssetFromOracleEbs
+from .create_data_asset_from_oracle_people_soft import CreateDataAssetFromOraclePeopleSoft
+from .create_data_asset_from_oracle_siebel import CreateDataAssetFromOracleSiebel
 from .create_data_asset_from_rest import CreateDataAssetFromRest
 from .create_data_flow_details import CreateDataFlowDetails
 from .create_data_flow_validation_details import CreateDataFlowValidationDetails
@@ -133,11 +159,14 @@ from .create_detailed_description_details import CreateDetailedDescriptionDetail
 from .create_dis_application_details import CreateDisApplicationDetails
 from .create_entity_shape_details import CreateEntityShapeDetails
 from .create_entity_shape_from_file import CreateEntityShapeFromFile
+from .create_entity_shape_from_object import CreateEntityShapeFromObject
 from .create_entity_shape_from_sql import CreateEntityShapeFromSQL
+from .create_export_request_details import CreateExportRequestDetails
 from .create_external_publication_details import CreateExternalPublicationDetails
 from .create_external_publication_validation_details import CreateExternalPublicationValidationDetails
 from .create_folder_details import CreateFolderDetails
 from .create_function_library_details import CreateFunctionLibraryDetails
+from .create_import_request_details import CreateImportRequestDetails
 from .create_patch_details import CreatePatchDetails
 from .create_pipeline_details import CreatePipelineDetails
 from .create_pipeline_validation_details import CreatePipelineValidationDetails
@@ -168,11 +197,16 @@ from .data_asset_from_adwc_details import DataAssetFromAdwcDetails
 from .data_asset_from_amazon_s3 import DataAssetFromAmazonS3
 from .data_asset_from_atp_details import DataAssetFromAtpDetails
 from .data_asset_from_fusion_app import DataAssetFromFusionApp
+from .data_asset_from_hdfs_details import DataAssetFromHdfsDetails
 from .data_asset_from_jdbc import DataAssetFromJdbc
 from .data_asset_from_lake_details import DataAssetFromLakeDetails
 from .data_asset_from_my_sql import DataAssetFromMySQL
+from .data_asset_from_my_sql_heat_wave import DataAssetFromMySqlHeatWave
 from .data_asset_from_object_storage_details import DataAssetFromObjectStorageDetails
 from .data_asset_from_oracle_details import DataAssetFromOracleDetails
+from .data_asset_from_oracle_ebs_details import DataAssetFromOracleEbsDetails
+from .data_asset_from_oracle_people_soft_details import DataAssetFromOraclePeopleSoftDetails
+from .data_asset_from_oracle_siebel_details import DataAssetFromOracleSiebelDetails
 from .data_asset_from_rest_details import DataAssetFromRestDetails
 from .data_asset_summary import DataAssetSummary
 from .data_asset_summary_collection import DataAssetSummaryCollection
@@ -180,11 +214,16 @@ from .data_asset_summary_from_adwc import DataAssetSummaryFromAdwc
 from .data_asset_summary_from_amazon_s3 import DataAssetSummaryFromAmazonS3
 from .data_asset_summary_from_atp import DataAssetSummaryFromAtp
 from .data_asset_summary_from_fusion_app import DataAssetSummaryFromFusionApp
+from .data_asset_summary_from_hdfs import DataAssetSummaryFromHdfs
 from .data_asset_summary_from_jdbc import DataAssetSummaryFromJdbc
 from .data_asset_summary_from_lake import DataAssetSummaryFromLake
 from .data_asset_summary_from_my_sql import DataAssetSummaryFromMySQL
+from .data_asset_summary_from_my_sql_heat_wave import DataAssetSummaryFromMySqlHeatWave
 from .data_asset_summary_from_object_storage import DataAssetSummaryFromObjectStorage
 from .data_asset_summary_from_oracle import DataAssetSummaryFromOracle
+from .data_asset_summary_from_oracle_ebs import DataAssetSummaryFromOracleEbs
+from .data_asset_summary_from_oracle_people_soft import DataAssetSummaryFromOraclePeopleSoft
+from .data_asset_summary_from_oracle_siebel import DataAssetSummaryFromOracleSiebel
 from .data_asset_summary_from_rest import DataAssetSummaryFromRest
 from .data_entity import DataEntity
 from .data_entity_details import DataEntityDetails
@@ -192,6 +231,8 @@ from .data_entity_from_data_store import DataEntityFromDataStore
 from .data_entity_from_data_store_entity_details import DataEntityFromDataStoreEntityDetails
 from .data_entity_from_file import DataEntityFromFile
 from .data_entity_from_file_entity_details import DataEntityFromFileEntityDetails
+from .data_entity_from_object import DataEntityFromObject
+from .data_entity_from_object_entity_details import DataEntityFromObjectEntityDetails
 from .data_entity_from_sql import DataEntityFromSql
 from .data_entity_from_sql_entity_details import DataEntityFromSqlEntityDetails
 from .data_entity_from_table import DataEntityFromTable
@@ -202,6 +243,7 @@ from .data_entity_summary import DataEntitySummary
 from .data_entity_summary_collection import DataEntitySummaryCollection
 from .data_entity_summary_from_data_store import DataEntitySummaryFromDataStore
 from .data_entity_summary_from_file import DataEntitySummaryFromFile
+from .data_entity_summary_from_object import DataEntitySummaryFromObject
 from .data_entity_summary_from_sql import DataEntitySummaryFromSql
 from .data_entity_summary_from_table import DataEntitySummaryFromTable
 from .data_entity_summary_from_view import DataEntitySummaryFromView
@@ -238,9 +280,14 @@ from .end_operator import EndOperator
 from .enriched_entity import EnrichedEntity
 from .entity_shape import EntityShape
 from .entity_shape_from_file import EntityShapeFromFile
+from .entity_shape_from_object import EntityShapeFromObject
 from .entity_shape_from_sql import EntityShapeFromSQL
 from .error_details import ErrorDetails
 from .execute_rest_call_config import ExecuteRestCallConfig
+from .export_object_metadata_summary import ExportObjectMetadataSummary
+from .export_request import ExportRequest
+from .export_request_summary import ExportRequestSummary
+from .export_request_summary_collection import ExportRequestSummaryCollection
 from .expression import Expression
 from .expression_operator import ExpressionOperator
 from .external_publication import ExternalPublication
@@ -277,6 +324,11 @@ from .generic_rest_api_attributes import GenericRestApiAttributes
 from .generic_rest_call_attribute import GenericRestCallAttribute
 from .grouped_name_pattern_rule import GroupedNamePatternRule
 from .hourly_frequency_details import HourlyFrequencyDetails
+from .import_conflict_resolution import ImportConflictResolution
+from .import_object_metadata_summary import ImportObjectMetadataSummary
+from .import_request import ImportRequest
+from .import_request_summary import ImportRequestSummary
+from .import_request_summary_collection import ImportRequestSummaryCollection
 from .input_field import InputField
 from .input_link import InputLink
 from .input_port import InputPort
@@ -413,6 +465,7 @@ from .source import Source
 from .source_application_info import SourceApplicationInfo
 from .split import Split
 from .start_operator import StartOperator
+from .state import State
 from .structured_type import StructuredType
 from .target import Target
 from .task import Task
@@ -467,11 +520,16 @@ from .update_connection_from_amazon_s3 import UpdateConnectionFromAmazonS3
 from .update_connection_from_atp import UpdateConnectionFromAtp
 from .update_connection_from_bicc import UpdateConnectionFromBICC
 from .update_connection_from_bip import UpdateConnectionFromBIP
+from .update_connection_from_hdfs import UpdateConnectionFromHdfs
 from .update_connection_from_jdbc import UpdateConnectionFromJdbc
 from .update_connection_from_lake import UpdateConnectionFromLake
 from .update_connection_from_my_sql import UpdateConnectionFromMySQL
+from .update_connection_from_my_sql_heat_wave import UpdateConnectionFromMySqlHeatWave
 from .update_connection_from_object_storage import UpdateConnectionFromObjectStorage
 from .update_connection_from_oracle import UpdateConnectionFromOracle
+from .update_connection_from_oracle_ebs import UpdateConnectionFromOracleEbs
+from .update_connection_from_oracle_people_soft import UpdateConnectionFromOraclePeopleSoft
+from .update_connection_from_oracle_siebel import UpdateConnectionFromOracleSiebel
 from .update_connection_from_rest_basic_auth import UpdateConnectionFromRestBasicAuth
 from .update_connection_from_rest_no_auth import UpdateConnectionFromRestNoAuth
 from .update_copy_object_request_details import UpdateCopyObjectRequestDetails
@@ -480,18 +538,25 @@ from .update_data_asset_from_adwc import UpdateDataAssetFromAdwc
 from .update_data_asset_from_amazon_s3 import UpdateDataAssetFromAmazonS3
 from .update_data_asset_from_atp import UpdateDataAssetFromAtp
 from .update_data_asset_from_fusion_app import UpdateDataAssetFromFusionApp
+from .update_data_asset_from_hdfs import UpdateDataAssetFromHdfs
 from .update_data_asset_from_jdbc import UpdateDataAssetFromJdbc
 from .update_data_asset_from_lake import UpdateDataAssetFromLake
 from .update_data_asset_from_my_sql import UpdateDataAssetFromMySQL
+from .update_data_asset_from_my_sql_heat_wave import UpdateDataAssetFromMySqlHeatWave
 from .update_data_asset_from_object_storage import UpdateDataAssetFromObjectStorage
 from .update_data_asset_from_oracle import UpdateDataAssetFromOracle
+from .update_data_asset_from_oracle_ebs import UpdateDataAssetFromOracleEbs
+from .update_data_asset_from_oracle_people_soft import UpdateDataAssetFromOraclePeopleSoft
+from .update_data_asset_from_oracle_siebel import UpdateDataAssetFromOracleSiebel
 from .update_data_asset_from_rest import UpdateDataAssetFromRest
 from .update_data_flow_details import UpdateDataFlowDetails
 from .update_detailed_description_details import UpdateDetailedDescriptionDetails
 from .update_dis_application_details import UpdateDisApplicationDetails
+from .update_export_request_details import UpdateExportRequestDetails
 from .update_external_publication_details import UpdateExternalPublicationDetails
 from .update_folder_details import UpdateFolderDetails
 from .update_function_library_details import UpdateFunctionLibraryDetails
+from .update_import_request_details import UpdateImportRequestDetails
 from .update_pipeline_details import UpdatePipelineDetails
 from .update_project_details import UpdateProjectDetails
 from .update_reference_details import UpdateReferenceDetails
@@ -557,6 +622,7 @@ data_integration_type_mapping = {
     "ChildReference": ChildReference,
     "ChildReferenceDetail": ChildReferenceDetail,
     "CompositeFieldMap": CompositeFieldMap,
+    "CompositeState": CompositeState,
     "CompositeType": CompositeType,
     "Compression": Compression,
     "ConditionalCompositeFieldMap": ConditionalCompositeFieldMap,
@@ -581,16 +647,26 @@ data_integration_type_mapping = {
     "ConnectionFromBICCDetails": ConnectionFromBICCDetails,
     "ConnectionFromBIP": ConnectionFromBIP,
     "ConnectionFromBipDetails": ConnectionFromBipDetails,
+    "ConnectionFromHdfs": ConnectionFromHdfs,
+    "ConnectionFromHdfsDetails": ConnectionFromHdfsDetails,
     "ConnectionFromJdbc": ConnectionFromJdbc,
     "ConnectionFromJdbcDetails": ConnectionFromJdbcDetails,
     "ConnectionFromLake": ConnectionFromLake,
     "ConnectionFromLakeDetails": ConnectionFromLakeDetails,
     "ConnectionFromMySQL": ConnectionFromMySQL,
     "ConnectionFromMySQLDetails": ConnectionFromMySQLDetails,
+    "ConnectionFromMySqlHeatWave": ConnectionFromMySqlHeatWave,
+    "ConnectionFromMySqlHeatWaveDetails": ConnectionFromMySqlHeatWaveDetails,
     "ConnectionFromObjectStorage": ConnectionFromObjectStorage,
     "ConnectionFromObjectStorageDetails": ConnectionFromObjectStorageDetails,
     "ConnectionFromOracle": ConnectionFromOracle,
     "ConnectionFromOracleDetails": ConnectionFromOracleDetails,
+    "ConnectionFromOracleEbs": ConnectionFromOracleEbs,
+    "ConnectionFromOracleEbsDetails": ConnectionFromOracleEbsDetails,
+    "ConnectionFromOraclePeopleSoft": ConnectionFromOraclePeopleSoft,
+    "ConnectionFromOraclePeopleSoftDetails": ConnectionFromOraclePeopleSoftDetails,
+    "ConnectionFromOracleSiebel": ConnectionFromOracleSiebel,
+    "ConnectionFromOracleSiebelDetails": ConnectionFromOracleSiebelDetails,
     "ConnectionFromRestBasicAuth": ConnectionFromRestBasicAuth,
     "ConnectionFromRestBasicAuthDetails": ConnectionFromRestBasicAuthDetails,
     "ConnectionFromRestNoAuth": ConnectionFromRestNoAuth,
@@ -603,11 +679,16 @@ data_integration_type_mapping = {
     "ConnectionSummaryFromAtp": ConnectionSummaryFromAtp,
     "ConnectionSummaryFromBICC": ConnectionSummaryFromBICC,
     "ConnectionSummaryFromBIP": ConnectionSummaryFromBIP,
+    "ConnectionSummaryFromHdfs": ConnectionSummaryFromHdfs,
     "ConnectionSummaryFromJdbc": ConnectionSummaryFromJdbc,
     "ConnectionSummaryFromLake": ConnectionSummaryFromLake,
     "ConnectionSummaryFromMySQL": ConnectionSummaryFromMySQL,
+    "ConnectionSummaryFromMySqlHeatWave": ConnectionSummaryFromMySqlHeatWave,
     "ConnectionSummaryFromObjectStorage": ConnectionSummaryFromObjectStorage,
     "ConnectionSummaryFromOracle": ConnectionSummaryFromOracle,
+    "ConnectionSummaryFromOracleEbs": ConnectionSummaryFromOracleEbs,
+    "ConnectionSummaryFromOraclePeopleSoft": ConnectionSummaryFromOraclePeopleSoft,
+    "ConnectionSummaryFromOracleSiebel": ConnectionSummaryFromOracleSiebel,
     "ConnectionSummaryFromRestBasicAuth": ConnectionSummaryFromRestBasicAuth,
     "ConnectionSummaryFromRestNoAuth": ConnectionSummaryFromRestNoAuth,
     "ConnectionValidation": ConnectionValidation,
@@ -629,11 +710,16 @@ data_integration_type_mapping = {
     "CreateConnectionFromAtp": CreateConnectionFromAtp,
     "CreateConnectionFromBICC": CreateConnectionFromBICC,
     "CreateConnectionFromBIP": CreateConnectionFromBIP,
+    "CreateConnectionFromHdfs": CreateConnectionFromHdfs,
     "CreateConnectionFromJdbc": CreateConnectionFromJdbc,
     "CreateConnectionFromLake": CreateConnectionFromLake,
     "CreateConnectionFromMySQL": CreateConnectionFromMySQL,
+    "CreateConnectionFromMySqlHeatWave": CreateConnectionFromMySqlHeatWave,
     "CreateConnectionFromObjectStorage": CreateConnectionFromObjectStorage,
     "CreateConnectionFromOracle": CreateConnectionFromOracle,
+    "CreateConnectionFromOracleEbs": CreateConnectionFromOracleEbs,
+    "CreateConnectionFromOraclePeopleSoft": CreateConnectionFromOraclePeopleSoft,
+    "CreateConnectionFromOracleSiebel": CreateConnectionFromOracleSiebel,
     "CreateConnectionFromRestBasicAuth": CreateConnectionFromRestBasicAuth,
     "CreateConnectionFromRestNoAuth": CreateConnectionFromRestNoAuth,
     "CreateConnectionValidationDetails": CreateConnectionValidationDetails,
@@ -643,11 +729,16 @@ data_integration_type_mapping = {
     "CreateDataAssetFromAmazonS3": CreateDataAssetFromAmazonS3,
     "CreateDataAssetFromAtp": CreateDataAssetFromAtp,
     "CreateDataAssetFromFusionApp": CreateDataAssetFromFusionApp,
+    "CreateDataAssetFromHdfs": CreateDataAssetFromHdfs,
     "CreateDataAssetFromJdbc": CreateDataAssetFromJdbc,
     "CreateDataAssetFromLake": CreateDataAssetFromLake,
     "CreateDataAssetFromMySQL": CreateDataAssetFromMySQL,
+    "CreateDataAssetFromMySqlHeatWave": CreateDataAssetFromMySqlHeatWave,
     "CreateDataAssetFromObjectStorage": CreateDataAssetFromObjectStorage,
     "CreateDataAssetFromOracle": CreateDataAssetFromOracle,
+    "CreateDataAssetFromOracleEbs": CreateDataAssetFromOracleEbs,
+    "CreateDataAssetFromOraclePeopleSoft": CreateDataAssetFromOraclePeopleSoft,
+    "CreateDataAssetFromOracleSiebel": CreateDataAssetFromOracleSiebel,
     "CreateDataAssetFromRest": CreateDataAssetFromRest,
     "CreateDataFlowDetails": CreateDataFlowDetails,
     "CreateDataFlowValidationDetails": CreateDataFlowValidationDetails,
@@ -655,11 +746,14 @@ data_integration_type_mapping = {
     "CreateDisApplicationDetails": CreateDisApplicationDetails,
     "CreateEntityShapeDetails": CreateEntityShapeDetails,
     "CreateEntityShapeFromFile": CreateEntityShapeFromFile,
+    "CreateEntityShapeFromObject": CreateEntityShapeFromObject,
     "CreateEntityShapeFromSQL": CreateEntityShapeFromSQL,
+    "CreateExportRequestDetails": CreateExportRequestDetails,
     "CreateExternalPublicationDetails": CreateExternalPublicationDetails,
     "CreateExternalPublicationValidationDetails": CreateExternalPublicationValidationDetails,
     "CreateFolderDetails": CreateFolderDetails,
     "CreateFunctionLibraryDetails": CreateFunctionLibraryDetails,
+    "CreateImportRequestDetails": CreateImportRequestDetails,
     "CreatePatchDetails": CreatePatchDetails,
     "CreatePipelineDetails": CreatePipelineDetails,
     "CreatePipelineValidationDetails": CreatePipelineValidationDetails,
@@ -690,11 +784,16 @@ data_integration_type_mapping = {
     "DataAssetFromAmazonS3": DataAssetFromAmazonS3,
     "DataAssetFromAtpDetails": DataAssetFromAtpDetails,
     "DataAssetFromFusionApp": DataAssetFromFusionApp,
+    "DataAssetFromHdfsDetails": DataAssetFromHdfsDetails,
     "DataAssetFromJdbc": DataAssetFromJdbc,
     "DataAssetFromLakeDetails": DataAssetFromLakeDetails,
     "DataAssetFromMySQL": DataAssetFromMySQL,
+    "DataAssetFromMySqlHeatWave": DataAssetFromMySqlHeatWave,
     "DataAssetFromObjectStorageDetails": DataAssetFromObjectStorageDetails,
     "DataAssetFromOracleDetails": DataAssetFromOracleDetails,
+    "DataAssetFromOracleEbsDetails": DataAssetFromOracleEbsDetails,
+    "DataAssetFromOraclePeopleSoftDetails": DataAssetFromOraclePeopleSoftDetails,
+    "DataAssetFromOracleSiebelDetails": DataAssetFromOracleSiebelDetails,
     "DataAssetFromRestDetails": DataAssetFromRestDetails,
     "DataAssetSummary": DataAssetSummary,
     "DataAssetSummaryCollection": DataAssetSummaryCollection,
@@ -702,11 +801,16 @@ data_integration_type_mapping = {
     "DataAssetSummaryFromAmazonS3": DataAssetSummaryFromAmazonS3,
     "DataAssetSummaryFromAtp": DataAssetSummaryFromAtp,
     "DataAssetSummaryFromFusionApp": DataAssetSummaryFromFusionApp,
+    "DataAssetSummaryFromHdfs": DataAssetSummaryFromHdfs,
     "DataAssetSummaryFromJdbc": DataAssetSummaryFromJdbc,
     "DataAssetSummaryFromLake": DataAssetSummaryFromLake,
     "DataAssetSummaryFromMySQL": DataAssetSummaryFromMySQL,
+    "DataAssetSummaryFromMySqlHeatWave": DataAssetSummaryFromMySqlHeatWave,
     "DataAssetSummaryFromObjectStorage": DataAssetSummaryFromObjectStorage,
     "DataAssetSummaryFromOracle": DataAssetSummaryFromOracle,
+    "DataAssetSummaryFromOracleEbs": DataAssetSummaryFromOracleEbs,
+    "DataAssetSummaryFromOraclePeopleSoft": DataAssetSummaryFromOraclePeopleSoft,
+    "DataAssetSummaryFromOracleSiebel": DataAssetSummaryFromOracleSiebel,
     "DataAssetSummaryFromRest": DataAssetSummaryFromRest,
     "DataEntity": DataEntity,
     "DataEntityDetails": DataEntityDetails,
@@ -714,6 +818,8 @@ data_integration_type_mapping = {
     "DataEntityFromDataStoreEntityDetails": DataEntityFromDataStoreEntityDetails,
     "DataEntityFromFile": DataEntityFromFile,
     "DataEntityFromFileEntityDetails": DataEntityFromFileEntityDetails,
+    "DataEntityFromObject": DataEntityFromObject,
+    "DataEntityFromObjectEntityDetails": DataEntityFromObjectEntityDetails,
     "DataEntityFromSql": DataEntityFromSql,
     "DataEntityFromSqlEntityDetails": DataEntityFromSqlEntityDetails,
     "DataEntityFromTable": DataEntityFromTable,
@@ -724,6 +830,7 @@ data_integration_type_mapping = {
     "DataEntitySummaryCollection": DataEntitySummaryCollection,
     "DataEntitySummaryFromDataStore": DataEntitySummaryFromDataStore,
     "DataEntitySummaryFromFile": DataEntitySummaryFromFile,
+    "DataEntitySummaryFromObject": DataEntitySummaryFromObject,
     "DataEntitySummaryFromSql": DataEntitySummaryFromSql,
     "DataEntitySummaryFromTable": DataEntitySummaryFromTable,
     "DataEntitySummaryFromView": DataEntitySummaryFromView,
@@ -760,9 +867,14 @@ data_integration_type_mapping = {
     "EnrichedEntity": EnrichedEntity,
     "EntityShape": EntityShape,
     "EntityShapeFromFile": EntityShapeFromFile,
+    "EntityShapeFromObject": EntityShapeFromObject,
     "EntityShapeFromSQL": EntityShapeFromSQL,
     "ErrorDetails": ErrorDetails,
     "ExecuteRestCallConfig": ExecuteRestCallConfig,
+    "ExportObjectMetadataSummary": ExportObjectMetadataSummary,
+    "ExportRequest": ExportRequest,
+    "ExportRequestSummary": ExportRequestSummary,
+    "ExportRequestSummaryCollection": ExportRequestSummaryCollection,
     "Expression": Expression,
     "ExpressionOperator": ExpressionOperator,
     "ExternalPublication": ExternalPublication,
@@ -799,6 +911,11 @@ data_integration_type_mapping = {
     "GenericRestCallAttribute": GenericRestCallAttribute,
     "GroupedNamePatternRule": GroupedNamePatternRule,
     "HourlyFrequencyDetails": HourlyFrequencyDetails,
+    "ImportConflictResolution": ImportConflictResolution,
+    "ImportObjectMetadataSummary": ImportObjectMetadataSummary,
+    "ImportRequest": ImportRequest,
+    "ImportRequestSummary": ImportRequestSummary,
+    "ImportRequestSummaryCollection": ImportRequestSummaryCollection,
     "InputField": InputField,
     "InputLink": InputLink,
     "InputPort": InputPort,
@@ -935,6 +1052,7 @@ data_integration_type_mapping = {
     "SourceApplicationInfo": SourceApplicationInfo,
     "Split": Split,
     "StartOperator": StartOperator,
+    "State": State,
     "StructuredType": StructuredType,
     "Target": Target,
     "Task": Task,
@@ -989,11 +1107,16 @@ data_integration_type_mapping = {
     "UpdateConnectionFromAtp": UpdateConnectionFromAtp,
     "UpdateConnectionFromBICC": UpdateConnectionFromBICC,
     "UpdateConnectionFromBIP": UpdateConnectionFromBIP,
+    "UpdateConnectionFromHdfs": UpdateConnectionFromHdfs,
     "UpdateConnectionFromJdbc": UpdateConnectionFromJdbc,
     "UpdateConnectionFromLake": UpdateConnectionFromLake,
     "UpdateConnectionFromMySQL": UpdateConnectionFromMySQL,
+    "UpdateConnectionFromMySqlHeatWave": UpdateConnectionFromMySqlHeatWave,
     "UpdateConnectionFromObjectStorage": UpdateConnectionFromObjectStorage,
     "UpdateConnectionFromOracle": UpdateConnectionFromOracle,
+    "UpdateConnectionFromOracleEbs": UpdateConnectionFromOracleEbs,
+    "UpdateConnectionFromOraclePeopleSoft": UpdateConnectionFromOraclePeopleSoft,
+    "UpdateConnectionFromOracleSiebel": UpdateConnectionFromOracleSiebel,
     "UpdateConnectionFromRestBasicAuth": UpdateConnectionFromRestBasicAuth,
     "UpdateConnectionFromRestNoAuth": UpdateConnectionFromRestNoAuth,
     "UpdateCopyObjectRequestDetails": UpdateCopyObjectRequestDetails,
@@ -1002,18 +1125,25 @@ data_integration_type_mapping = {
     "UpdateDataAssetFromAmazonS3": UpdateDataAssetFromAmazonS3,
     "UpdateDataAssetFromAtp": UpdateDataAssetFromAtp,
     "UpdateDataAssetFromFusionApp": UpdateDataAssetFromFusionApp,
+    "UpdateDataAssetFromHdfs": UpdateDataAssetFromHdfs,
     "UpdateDataAssetFromJdbc": UpdateDataAssetFromJdbc,
     "UpdateDataAssetFromLake": UpdateDataAssetFromLake,
     "UpdateDataAssetFromMySQL": UpdateDataAssetFromMySQL,
+    "UpdateDataAssetFromMySqlHeatWave": UpdateDataAssetFromMySqlHeatWave,
     "UpdateDataAssetFromObjectStorage": UpdateDataAssetFromObjectStorage,
     "UpdateDataAssetFromOracle": UpdateDataAssetFromOracle,
+    "UpdateDataAssetFromOracleEbs": UpdateDataAssetFromOracleEbs,
+    "UpdateDataAssetFromOraclePeopleSoft": UpdateDataAssetFromOraclePeopleSoft,
+    "UpdateDataAssetFromOracleSiebel": UpdateDataAssetFromOracleSiebel,
     "UpdateDataAssetFromRest": UpdateDataAssetFromRest,
     "UpdateDataFlowDetails": UpdateDataFlowDetails,
     "UpdateDetailedDescriptionDetails": UpdateDetailedDescriptionDetails,
     "UpdateDisApplicationDetails": UpdateDisApplicationDetails,
+    "UpdateExportRequestDetails": UpdateExportRequestDetails,
     "UpdateExternalPublicationDetails": UpdateExternalPublicationDetails,
     "UpdateFolderDetails": UpdateFolderDetails,
     "UpdateFunctionLibraryDetails": UpdateFunctionLibraryDetails,
+    "UpdateImportRequestDetails": UpdateImportRequestDetails,
     "UpdatePipelineDetails": UpdatePipelineDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
     "UpdateReferenceDetails": UpdateReferenceDetails,

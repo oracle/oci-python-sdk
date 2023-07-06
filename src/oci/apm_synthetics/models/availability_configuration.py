@@ -46,7 +46,7 @@ class AvailabilityConfiguration(object):
     def max_allowed_failures_per_interval(self):
         """
         Gets the max_allowed_failures_per_interval of this AvailabilityConfiguration.
-        Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+        Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
 
 
         :return: The max_allowed_failures_per_interval of this AvailabilityConfiguration.
@@ -58,7 +58,7 @@ class AvailabilityConfiguration(object):
     def max_allowed_failures_per_interval(self, max_allowed_failures_per_interval):
         """
         Sets the max_allowed_failures_per_interval of this AvailabilityConfiguration.
-        Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+        Maximum number of failed runs allowed in an interval. If an interval has more failed runs than the specified value, then the interval will be classified as UNAVAILABLE.
 
 
         :param max_allowed_failures_per_interval: The max_allowed_failures_per_interval of this AvailabilityConfiguration.
@@ -70,7 +70,7 @@ class AvailabilityConfiguration(object):
     def min_allowed_runs_per_interval(self):
         """
         Gets the min_allowed_runs_per_interval of this AvailabilityConfiguration.
-        Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
 
 
         :return: The min_allowed_runs_per_interval of this AvailabilityConfiguration.
@@ -82,7 +82,7 @@ class AvailabilityConfiguration(object):
     def min_allowed_runs_per_interval(self, min_allowed_runs_per_interval):
         """
         Sets the min_allowed_runs_per_interval of this AvailabilityConfiguration.
-        Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        Minimum number of runs allowed in an interval. If an interval has fewer runs than the specified value, then the interval will be classified as UNKNOWN and will be excluded from the availability calculations.
 
 
         :param min_allowed_runs_per_interval: The min_allowed_runs_per_interval of this AvailabilityConfiguration.

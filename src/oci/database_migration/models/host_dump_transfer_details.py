@@ -33,6 +33,10 @@ class HostDumpTransferDetails(object):
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param wallet_location:
+            The value to assign to the wallet_location property of this HostDumpTransferDetails.
+        :type wallet_location: str
+
         :param kind:
             The value to assign to the kind property of this HostDumpTransferDetails.
             Allowed values for this property are: "CURL", "OCI_CLI", 'UNKNOWN_ENUM_VALUE'.
@@ -41,13 +45,16 @@ class HostDumpTransferDetails(object):
 
         """
         self.swagger_types = {
+            'wallet_location': 'str',
             'kind': 'str'
         }
 
         self.attribute_map = {
+            'wallet_location': 'walletLocation',
             'kind': 'kind'
         }
 
+        self._wallet_location = None
         self._kind = None
 
     @staticmethod
@@ -65,6 +72,30 @@ class HostDumpTransferDetails(object):
             return 'CurlTransferDetails'
         else:
             return 'HostDumpTransferDetails'
+
+    @property
+    def wallet_location(self):
+        """
+        Gets the wallet_location of this HostDumpTransferDetails.
+        Directory path to OCI SSL wallet location on Db server node.
+
+
+        :return: The wallet_location of this HostDumpTransferDetails.
+        :rtype: str
+        """
+        return self._wallet_location
+
+    @wallet_location.setter
+    def wallet_location(self, wallet_location):
+        """
+        Sets the wallet_location of this HostDumpTransferDetails.
+        Directory path to OCI SSL wallet location on Db server node.
+
+
+        :param wallet_location: The wallet_location of this HostDumpTransferDetails.
+        :type: str
+        """
+        self._wallet_location = wallet_location
 
     @property
     def kind(self):

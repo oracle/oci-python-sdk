@@ -60,7 +60,8 @@ class FieldValue(object):
 
         :param value_type:
             The value to assign to the value_type property of this FieldValue.
-            Allowed values for this property are: "STRING", "DATE", "TIME", "PHONE_NUMBER", "NUMBER", "INTEGER", "ARRAY"
+            Allowed values for this property are: "STRING", "DATE", "TIME", "PHONE_NUMBER", "NUMBER", "INTEGER", "ARRAY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type value_type: str
 
         :param text:
@@ -139,7 +140,8 @@ class FieldValue(object):
         **[Required]** Gets the value_type of this FieldValue.
         The type of data detected.
 
-        Allowed values for this property are: "STRING", "DATE", "TIME", "PHONE_NUMBER", "NUMBER", "INTEGER", "ARRAY"
+        Allowed values for this property are: "STRING", "DATE", "TIME", "PHONE_NUMBER", "NUMBER", "INTEGER", "ARRAY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The value_type of this FieldValue.
@@ -159,10 +161,7 @@ class FieldValue(object):
         """
         allowed_values = ["STRING", "DATE", "TIME", "PHONE_NUMBER", "NUMBER", "INTEGER", "ARRAY"]
         if not value_allowed_none_or_none_sentinel(value_type, allowed_values):
-            raise ValueError(
-                "Invalid value for `value_type`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            value_type = 'UNKNOWN_ENUM_VALUE'
         self._value_type = value_type
 
     @property

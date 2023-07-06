@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Link(object):
     """
-    link between 2 nodes
+    Details of the link between two nodes.
     """
 
     def __init__(self, **kwargs):
@@ -52,6 +52,10 @@ class Link(object):
             The value to assign to the max_delay_in_milliseconds property of this Link.
         :type max_delay_in_milliseconds: float
 
+        :param paths:
+            The value to assign to the paths property of this Link.
+        :type paths: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -61,7 +65,8 @@ class Link(object):
             'forwarding_loss': 'float',
             'delay_in_milliseconds': 'float',
             'min_delay_in_milliseconds': 'float',
-            'max_delay_in_milliseconds': 'float'
+            'max_delay_in_milliseconds': 'float',
+            'paths': 'list[str]'
         }
 
         self.attribute_map = {
@@ -72,7 +77,8 @@ class Link(object):
             'forwarding_loss': 'forwardingLoss',
             'delay_in_milliseconds': 'delayInMilliseconds',
             'min_delay_in_milliseconds': 'minDelayInMilliseconds',
-            'max_delay_in_milliseconds': 'maxDelayInMilliseconds'
+            'max_delay_in_milliseconds': 'maxDelayInMilliseconds',
+            'paths': 'paths'
         }
 
         self._id = None
@@ -83,12 +89,13 @@ class Link(object):
         self._delay_in_milliseconds = None
         self._min_delay_in_milliseconds = None
         self._max_delay_in_milliseconds = None
+        self._paths = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this Link.
-        id of Link
+        ID of the link.
 
 
         :return: The id of this Link.
@@ -100,7 +107,7 @@ class Link(object):
     def id(self, id):
         """
         Sets the id of this Link.
-        id of Link
+        ID of the link.
 
 
         :param id: The id of this Link.
@@ -112,7 +119,7 @@ class Link(object):
     def source(self):
         """
         Gets the source of this Link.
-        source node id
+        ID of the source node.
 
 
         :return: The source of this Link.
@@ -124,7 +131,7 @@ class Link(object):
     def source(self, source):
         """
         Sets the source of this Link.
-        source node id
+        ID of the source node.
 
 
         :param source: The source of this Link.
@@ -136,7 +143,7 @@ class Link(object):
     def destination(self):
         """
         Gets the destination of this Link.
-        destination node id
+        ID of the destination node.
 
 
         :return: The destination of this Link.
@@ -148,7 +155,7 @@ class Link(object):
     def destination(self, destination):
         """
         Sets the destination of this Link.
-        destination node id
+        ID of the destination node.
 
 
         :param destination: The destination of this Link.
@@ -160,7 +167,7 @@ class Link(object):
     def repeat_count(self):
         """
         Gets the repeat_count of this Link.
-        number of times this link is repeated
+        Number of times the link is repeated.
 
 
         :return: The repeat_count of this Link.
@@ -172,7 +179,7 @@ class Link(object):
     def repeat_count(self, repeat_count):
         """
         Sets the repeat_count of this Link.
-        number of times this link is repeated
+        Number of times the link is repeated.
 
 
         :param repeat_count: The repeat_count of this Link.
@@ -184,7 +191,7 @@ class Link(object):
     def forwarding_loss(self):
         """
         Gets the forwarding_loss of this Link.
-        average packet loss
+        Average packet loss.
 
 
         :return: The forwarding_loss of this Link.
@@ -196,7 +203,7 @@ class Link(object):
     def forwarding_loss(self, forwarding_loss):
         """
         Sets the forwarding_loss of this Link.
-        average packet loss
+        Average packet loss.
 
 
         :param forwarding_loss: The forwarding_loss of this Link.
@@ -208,7 +215,7 @@ class Link(object):
     def delay_in_milliseconds(self):
         """
         Gets the delay_in_milliseconds of this Link.
-        difference of packet response time between source and destination in milliseconds
+        Difference of the packet response time between source and destination nodes, in milliseconds.
 
 
         :return: The delay_in_milliseconds of this Link.
@@ -220,7 +227,7 @@ class Link(object):
     def delay_in_milliseconds(self, delay_in_milliseconds):
         """
         Sets the delay_in_milliseconds of this Link.
-        difference of packet response time between source and destination in milliseconds
+        Difference of the packet response time between source and destination nodes, in milliseconds.
 
 
         :param delay_in_milliseconds: The delay_in_milliseconds of this Link.
@@ -232,7 +239,7 @@ class Link(object):
     def min_delay_in_milliseconds(self):
         """
         Gets the min_delay_in_milliseconds of this Link.
-        minimum delay in milliseconds
+        Minimum delay in milliseconds.
 
 
         :return: The min_delay_in_milliseconds of this Link.
@@ -244,7 +251,7 @@ class Link(object):
     def min_delay_in_milliseconds(self, min_delay_in_milliseconds):
         """
         Sets the min_delay_in_milliseconds of this Link.
-        minimum delay in milliseconds
+        Minimum delay in milliseconds.
 
 
         :param min_delay_in_milliseconds: The min_delay_in_milliseconds of this Link.
@@ -256,7 +263,7 @@ class Link(object):
     def max_delay_in_milliseconds(self):
         """
         Gets the max_delay_in_milliseconds of this Link.
-        maximum delay in milliseconds
+        Maximum delay in milliseconds.
 
 
         :return: The max_delay_in_milliseconds of this Link.
@@ -268,13 +275,37 @@ class Link(object):
     def max_delay_in_milliseconds(self, max_delay_in_milliseconds):
         """
         Sets the max_delay_in_milliseconds of this Link.
-        maximum delay in milliseconds
+        Maximum delay in milliseconds.
 
 
         :param max_delay_in_milliseconds: The max_delay_in_milliseconds of this Link.
         :type: float
         """
         self._max_delay_in_milliseconds = max_delay_in_milliseconds
+
+    @property
+    def paths(self):
+        """
+        Gets the paths of this Link.
+        List of all path ids of which this link is part of.
+
+
+        :return: The paths of this Link.
+        :rtype: list[str]
+        """
+        return self._paths
+
+    @paths.setter
+    def paths(self, paths):
+        """
+        Sets the paths of this Link.
+        List of all path ids of which this link is part of.
+
+
+        :param paths: The paths of this Link.
+        :type: list[str]
+        """
+        self._paths = paths
 
     def __repr__(self):
         return formatted_flat_dict(self)

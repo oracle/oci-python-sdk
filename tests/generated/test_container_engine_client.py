@@ -240,6 +240,48 @@ def test_create_virtual_node_pool(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_create_workload_mapping(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'CreateWorkloadMapping'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'CreateWorkloadMapping')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='CreateWorkloadMapping')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.create_workload_mapping(
+                cluster_id=request.pop(util.camelize('clusterId')),
+                create_workload_mapping_details=request.pop(util.camelize('CreateWorkloadMappingDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'CreateWorkloadMapping',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workloadMapping',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_delete_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'DeleteCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -440,6 +482,48 @@ def test_delete_work_request(testing_service_client):
             result,
             service_error,
             'delete_work_request',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_delete_workload_mapping(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'DeleteWorkloadMapping'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'DeleteWorkloadMapping')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='DeleteWorkloadMapping')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.delete_workload_mapping(
+                cluster_id=request.pop(util.camelize('clusterId')),
+                workload_mapping_id=request.pop(util.camelize('workloadMappingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'DeleteWorkloadMapping',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_workload_mapping',
             True,
             False
         )
@@ -854,6 +938,48 @@ def test_get_work_request(testing_service_client):
             result,
             service_error,
             'workRequest',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_get_workload_mapping(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'GetWorkloadMapping'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'GetWorkloadMapping')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='GetWorkloadMapping')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.get_workload_mapping(
+                cluster_id=request.pop(util.camelize('clusterId')),
+                workload_mapping_id=request.pop(util.camelize('workloadMappingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'GetWorkloadMapping',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workloadMapping',
             False,
             False
         )
@@ -1490,6 +1616,69 @@ def test_list_work_requests(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_list_workload_mappings(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'ListWorkloadMappings'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'ListWorkloadMappings')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='ListWorkloadMappings')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.list_workload_mappings(
+                cluster_id=request.pop(util.camelize('clusterId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_workload_mappings(
+                    cluster_id=request.pop(util.camelize('clusterId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_workload_mappings(
+                        cluster_id=request.pop(util.camelize('clusterId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'ListWorkloadMappings',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workloadMappingSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_update_addon(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'UpdateAddon'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1695,6 +1884,49 @@ def test_update_virtual_node_pool(testing_service_client):
             result,
             service_error,
             'update_virtual_node_pool',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
+def test_update_workload_mapping(testing_service_client):
+    if not testing_service_client.is_api_enabled('container_engine', 'UpdateWorkloadMapping'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('container_engine', util.camelize('container_engine'), 'UpdateWorkloadMapping')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='container_engine', api_name='UpdateWorkloadMapping')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
+            response = client.update_workload_mapping(
+                cluster_id=request.pop(util.camelize('clusterId')),
+                workload_mapping_id=request.pop(util.camelize('workloadMappingId')),
+                update_workload_mapping_details=request.pop(util.camelize('UpdateWorkloadMappingDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'container_engine',
+            'UpdateWorkloadMapping',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workloadMapping',
             False,
             False
         )

@@ -539,7 +539,7 @@ class UpdateMonitorDetails(object):
     def is_run_now(self):
         """
         Gets the is_run_now of this UpdateMonitorDetails.
-        If isRunNow is enabled, then the monitor will run now.
+        If isRunNow is enabled, then the monitor will run immediately.
 
 
         :return: The is_run_now of this UpdateMonitorDetails.
@@ -551,7 +551,7 @@ class UpdateMonitorDetails(object):
     def is_run_now(self, is_run_now):
         """
         Sets the is_run_now of this UpdateMonitorDetails.
-        If isRunNow is enabled, then the monitor will run now.
+        If isRunNow is enabled, then the monitor will run immediately.
 
 
         :param is_run_now: The is_run_now of this UpdateMonitorDetails.
@@ -563,7 +563,7 @@ class UpdateMonitorDetails(object):
     def scheduling_policy(self):
         """
         Gets the scheduling_policy of this UpdateMonitorDetails.
-        Scheduling policy on Vantage points.
+        Scheduling policy to decide the distribution of monitor executions on vantage points.
 
         Allowed values for this property are: "ALL", "ROUND_ROBIN", "BATCHED_ROUND_ROBIN"
 
@@ -577,7 +577,7 @@ class UpdateMonitorDetails(object):
     def scheduling_policy(self, scheduling_policy):
         """
         Sets the scheduling_policy of this UpdateMonitorDetails.
-        Scheduling policy on Vantage points.
+        Scheduling policy to decide the distribution of monitor executions on vantage points.
 
 
         :param scheduling_policy: The scheduling_policy of this UpdateMonitorDetails.
@@ -595,7 +595,7 @@ class UpdateMonitorDetails(object):
     def batch_interval_in_seconds(self):
         """
         Gets the batch_interval_in_seconds of this UpdateMonitorDetails.
-        Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
 
 
         :return: The batch_interval_in_seconds of this UpdateMonitorDetails.
@@ -607,7 +607,7 @@ class UpdateMonitorDetails(object):
     def batch_interval_in_seconds(self, batch_interval_in_seconds):
         """
         Sets the batch_interval_in_seconds of this UpdateMonitorDetails.
-        Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
 
 
         :param batch_interval_in_seconds: The batch_interval_in_seconds of this UpdateMonitorDetails.

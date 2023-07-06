@@ -33,6 +33,7 @@ from .create_node_pool_details import CreateNodePoolDetails
 from .create_node_pool_node_config_details import CreateNodePoolNodeConfigDetails
 from .create_node_shape_config_details import CreateNodeShapeConfigDetails
 from .create_virtual_node_pool_details import CreateVirtualNodePoolDetails
+from .create_workload_mapping_details import CreateWorkloadMappingDetails
 from .flannel_overlay_cluster_pod_network_option_details import FlannelOverlayClusterPodNetworkOptionDetails
 from .flannel_overlay_node_pool_pod_network_option_details import FlannelOverlayNodePoolPodNetworkOptionDetails
 from .image_policy_config import ImagePolicyConfig
@@ -81,6 +82,7 @@ from .update_node_pool_details import UpdateNodePoolDetails
 from .update_node_pool_node_config_details import UpdateNodePoolNodeConfigDetails
 from .update_node_shape_config_details import UpdateNodeShapeConfigDetails
 from .update_virtual_node_pool_details import UpdateVirtualNodePoolDetails
+from .update_workload_mapping_details import UpdateWorkloadMappingDetails
 from .virtual_node import VirtualNode
 from .virtual_node_pool import VirtualNodePool
 from .virtual_node_pool_summary import VirtualNodePoolSummary
@@ -91,6 +93,8 @@ from .work_request_error import WorkRequestError
 from .work_request_log_entry import WorkRequestLogEntry
 from .work_request_resource import WorkRequestResource
 from .work_request_summary import WorkRequestSummary
+from .workload_mapping import WorkloadMapping
+from .workload_mapping_summary import WorkloadMappingSummary
 
 # Maps type names to classes for container_engine services.
 container_engine_type_mapping = {
@@ -121,6 +125,7 @@ container_engine_type_mapping = {
     "CreateNodePoolNodeConfigDetails": CreateNodePoolNodeConfigDetails,
     "CreateNodeShapeConfigDetails": CreateNodeShapeConfigDetails,
     "CreateVirtualNodePoolDetails": CreateVirtualNodePoolDetails,
+    "CreateWorkloadMappingDetails": CreateWorkloadMappingDetails,
     "FlannelOverlayClusterPodNetworkOptionDetails": FlannelOverlayClusterPodNetworkOptionDetails,
     "FlannelOverlayNodePoolPodNetworkOptionDetails": FlannelOverlayNodePoolPodNetworkOptionDetails,
     "ImagePolicyConfig": ImagePolicyConfig,
@@ -169,6 +174,7 @@ container_engine_type_mapping = {
     "UpdateNodePoolNodeConfigDetails": UpdateNodePoolNodeConfigDetails,
     "UpdateNodeShapeConfigDetails": UpdateNodeShapeConfigDetails,
     "UpdateVirtualNodePoolDetails": UpdateVirtualNodePoolDetails,
+    "UpdateWorkloadMappingDetails": UpdateWorkloadMappingDetails,
     "VirtualNode": VirtualNode,
     "VirtualNodePool": VirtualNodePool,
     "VirtualNodePoolSummary": VirtualNodePoolSummary,
@@ -178,5 +184,7 @@ container_engine_type_mapping = {
     "WorkRequestError": WorkRequestError,
     "WorkRequestLogEntry": WorkRequestLogEntry,
     "WorkRequestResource": WorkRequestResource,
-    "WorkRequestSummary": WorkRequestSummary
+    "WorkRequestSummary": WorkRequestSummary,
+    "WorkloadMapping": WorkloadMapping,
+    "WorkloadMappingSummary": WorkloadMappingSummary
 }

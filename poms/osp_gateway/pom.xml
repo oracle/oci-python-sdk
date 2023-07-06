@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.store</groupId>
         <artifactId>osp-gateway-api-spec</artifactId>
-        <version>0.2.11</version>
+        <version>0.2.16</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

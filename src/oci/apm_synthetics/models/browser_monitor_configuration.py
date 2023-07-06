@@ -38,9 +38,17 @@ class BrowserMonitorConfiguration(MonitorConfiguration):
             The value to assign to the is_certificate_validation_enabled property of this BrowserMonitorConfiguration.
         :type is_certificate_validation_enabled: bool
 
+        :param is_default_snapshot_enabled:
+            The value to assign to the is_default_snapshot_enabled property of this BrowserMonitorConfiguration.
+        :type is_default_snapshot_enabled: bool
+
         :param verify_texts:
             The value to assign to the verify_texts property of this BrowserMonitorConfiguration.
         :type verify_texts: list[oci.apm_synthetics.models.VerifyText]
+
+        :param verify_response_codes:
+            The value to assign to the verify_response_codes property of this BrowserMonitorConfiguration.
+        :type verify_response_codes: list[str]
 
         :param network_configuration:
             The value to assign to the network_configuration property of this BrowserMonitorConfiguration.
@@ -52,7 +60,9 @@ class BrowserMonitorConfiguration(MonitorConfiguration):
             'is_failure_retried': 'bool',
             'dns_configuration': 'DnsConfiguration',
             'is_certificate_validation_enabled': 'bool',
+            'is_default_snapshot_enabled': 'bool',
             'verify_texts': 'list[VerifyText]',
+            'verify_response_codes': 'list[str]',
             'network_configuration': 'NetworkConfiguration'
         }
 
@@ -61,7 +71,9 @@ class BrowserMonitorConfiguration(MonitorConfiguration):
             'is_failure_retried': 'isFailureRetried',
             'dns_configuration': 'dnsConfiguration',
             'is_certificate_validation_enabled': 'isCertificateValidationEnabled',
+            'is_default_snapshot_enabled': 'isDefaultSnapshotEnabled',
             'verify_texts': 'verifyTexts',
+            'verify_response_codes': 'verifyResponseCodes',
             'network_configuration': 'networkConfiguration'
         }
 
@@ -69,7 +81,9 @@ class BrowserMonitorConfiguration(MonitorConfiguration):
         self._is_failure_retried = None
         self._dns_configuration = None
         self._is_certificate_validation_enabled = None
+        self._is_default_snapshot_enabled = None
         self._verify_texts = None
+        self._verify_response_codes = None
         self._network_configuration = None
         self._config_type = 'BROWSER_CONFIG'
 
@@ -98,6 +112,30 @@ class BrowserMonitorConfiguration(MonitorConfiguration):
         self._is_certificate_validation_enabled = is_certificate_validation_enabled
 
     @property
+    def is_default_snapshot_enabled(self):
+        """
+        Gets the is_default_snapshot_enabled of this BrowserMonitorConfiguration.
+        If disabled then auto snapshots are not collected.
+
+
+        :return: The is_default_snapshot_enabled of this BrowserMonitorConfiguration.
+        :rtype: bool
+        """
+        return self._is_default_snapshot_enabled
+
+    @is_default_snapshot_enabled.setter
+    def is_default_snapshot_enabled(self, is_default_snapshot_enabled):
+        """
+        Sets the is_default_snapshot_enabled of this BrowserMonitorConfiguration.
+        If disabled then auto snapshots are not collected.
+
+
+        :param is_default_snapshot_enabled: The is_default_snapshot_enabled of this BrowserMonitorConfiguration.
+        :type: bool
+        """
+        self._is_default_snapshot_enabled = is_default_snapshot_enabled
+
+    @property
     def verify_texts(self):
         """
         Gets the verify_texts of this BrowserMonitorConfiguration.
@@ -122,6 +160,30 @@ class BrowserMonitorConfiguration(MonitorConfiguration):
         :type: list[oci.apm_synthetics.models.VerifyText]
         """
         self._verify_texts = verify_texts
+
+    @property
+    def verify_response_codes(self):
+        """
+        Gets the verify_response_codes of this BrowserMonitorConfiguration.
+        Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+
+
+        :return: The verify_response_codes of this BrowserMonitorConfiguration.
+        :rtype: list[str]
+        """
+        return self._verify_response_codes
+
+    @verify_response_codes.setter
+    def verify_response_codes(self, verify_response_codes):
+        """
+        Sets the verify_response_codes of this BrowserMonitorConfiguration.
+        Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
+
+
+        :param verify_response_codes: The verify_response_codes of this BrowserMonitorConfiguration.
+        :type: list[str]
+        """
+        self._verify_response_codes = verify_response_codes
 
     @property
     def network_configuration(self):

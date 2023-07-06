@@ -38,7 +38,8 @@ class Dimensions(object):
 
         :param unit:
             The value to assign to the unit property of this Dimensions.
-            Allowed values for this property are: "PIXEL", "INCH"
+            Allowed values for this property are: "PIXEL", "INCH", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type unit: str
 
         """
@@ -112,7 +113,8 @@ class Dimensions(object):
         **[Required]** Gets the unit of this Dimensions.
         The unit of length.
 
-        Allowed values for this property are: "PIXEL", "INCH"
+        Allowed values for this property are: "PIXEL", "INCH", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The unit of this Dimensions.
@@ -132,10 +134,7 @@ class Dimensions(object):
         """
         allowed_values = ["PIXEL", "INCH"]
         if not value_allowed_none_or_none_sentinel(unit, allowed_values):
-            raise ValueError(
-                "Invalid value for `unit`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            unit = 'UNKNOWN_ENUM_VALUE'
         self._unit = unit
 
     def __repr__(self):

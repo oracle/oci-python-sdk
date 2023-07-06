@@ -46,7 +46,7 @@ class VantagePointExecution(object):
     def name(self):
         """
         Gets the name of this VantagePointExecution.
-        Vantage point name.
+        Name of the vantage point.
 
 
         :return: The name of this VantagePointExecution.
@@ -58,7 +58,7 @@ class VantagePointExecution(object):
     def name(self, name):
         """
         Sets the name of this VantagePointExecution.
-        Vantage point name.
+        Name of the vantage point.
 
 
         :param name: The name of this VantagePointExecution.
@@ -70,7 +70,7 @@ class VantagePointExecution(object):
     def executions(self):
         """
         Gets the executions of this VantagePointExecution.
-        list of execution times in milli seconds.
+        List of execution times in milliseconds.
 
 
         :return: The executions of this VantagePointExecution.
@@ -82,7 +82,7 @@ class VantagePointExecution(object):
     def executions(self, executions):
         """
         Sets the executions of this VantagePointExecution.
-        list of execution times in milli seconds.
+        List of execution times in milliseconds.
 
 
         :param executions: The executions of this VantagePointExecution.

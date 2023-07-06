@@ -31,7 +31,7 @@ class PaypalPaymentDetail(PaymentDetail):
 
         :param payment_method:
             The value to assign to the payment_method property of this PaypalPaymentDetail.
-            Allowed values for this property are: "CREDIT_CARD", "PAYPAL", "OTHER"
+            Allowed values for this property are: "CREDIT_CARD", "PAYPAL", "ECHECK", "OTHER"
         :type payment_method: str
 
         :param amount_paid:

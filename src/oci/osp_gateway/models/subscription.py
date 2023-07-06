@@ -47,6 +47,18 @@ class Subscription(object):
     #: This constant has a value of "UPGRADE_ERROR"
     UPGRADE_STATE_DETAILS_UPGRADE_ERROR = "UPGRADE_ERROR"
 
+    #: A constant which can be used with the account_type property of a Subscription.
+    #: This constant has a value of "PERSONAL"
+    ACCOUNT_TYPE_PERSONAL = "PERSONAL"
+
+    #: A constant which can be used with the account_type property of a Subscription.
+    #: This constant has a value of "CORPORATE"
+    ACCOUNT_TYPE_CORPORATE = "CORPORATE"
+
+    #: A constant which can be used with the account_type property of a Subscription.
+    #: This constant has a value of "CORPORATE_SUBMITTED"
+    ACCOUNT_TYPE_CORPORATE_SUBMITTED = "CORPORATE_SUBMITTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Subscription object with values from keyword arguments.
@@ -114,6 +126,12 @@ class Subscription(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type upgrade_state_details: str
 
+        :param account_type:
+            The value to assign to the account_type property of this Subscription.
+            Allowed values for this property are: "PERSONAL", "CORPORATE", "CORPORATE_SUBMITTED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type account_type: str
+
         :param tax_info:
             The value to assign to the tax_info property of this Subscription.
         :type tax_info: oci.osp_gateway.models.TaxInfo
@@ -128,11 +146,15 @@ class Subscription(object):
 
         :param billing_address:
             The value to assign to the billing_address property of this Subscription.
-        :type billing_address: oci.osp_gateway.models.BillingAddress
+        :type billing_address: oci.osp_gateway.models.Address
 
         :param time_plan_upgrade:
             The value to assign to the time_plan_upgrade property of this Subscription.
         :type time_plan_upgrade: datetime
+
+        :param time_personal_to_corporate_conv:
+            The value to assign to the time_personal_to_corporate_conv property of this Subscription.
+        :type time_personal_to_corporate_conv: datetime
 
         """
         self.swagger_types = {
@@ -150,11 +172,13 @@ class Subscription(object):
             'organization_id': 'str',
             'upgrade_state': 'str',
             'upgrade_state_details': 'str',
+            'account_type': 'str',
             'tax_info': 'TaxInfo',
             'payment_options': 'list[PaymentOption]',
             'payment_gateway': 'PaymentGateway',
-            'billing_address': 'BillingAddress',
-            'time_plan_upgrade': 'datetime'
+            'billing_address': 'Address',
+            'time_plan_upgrade': 'datetime',
+            'time_personal_to_corporate_conv': 'datetime'
         }
 
         self.attribute_map = {
@@ -172,11 +196,13 @@ class Subscription(object):
             'organization_id': 'organizationId',
             'upgrade_state': 'upgradeState',
             'upgrade_state_details': 'upgradeStateDetails',
+            'account_type': 'accountType',
             'tax_info': 'taxInfo',
             'payment_options': 'paymentOptions',
             'payment_gateway': 'paymentGateway',
             'billing_address': 'billingAddress',
-            'time_plan_upgrade': 'timePlanUpgrade'
+            'time_plan_upgrade': 'timePlanUpgrade',
+            'time_personal_to_corporate_conv': 'timePersonalToCorporateConv'
         }
 
         self._id = None
@@ -193,11 +219,13 @@ class Subscription(object):
         self._organization_id = None
         self._upgrade_state = None
         self._upgrade_state_details = None
+        self._account_type = None
         self._tax_info = None
         self._payment_options = None
         self._payment_gateway = None
         self._billing_address = None
         self._time_plan_upgrade = None
+        self._time_personal_to_corporate_conv = None
 
     @property
     def id(self):
@@ -554,6 +582,36 @@ class Subscription(object):
         self._upgrade_state_details = upgrade_state_details
 
     @property
+    def account_type(self):
+        """
+        Gets the account_type of this Subscription.
+        Account type.
+
+        Allowed values for this property are: "PERSONAL", "CORPORATE", "CORPORATE_SUBMITTED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The account_type of this Subscription.
+        :rtype: str
+        """
+        return self._account_type
+
+    @account_type.setter
+    def account_type(self, account_type):
+        """
+        Sets the account_type of this Subscription.
+        Account type.
+
+
+        :param account_type: The account_type of this Subscription.
+        :type: str
+        """
+        allowed_values = ["PERSONAL", "CORPORATE", "CORPORATE_SUBMITTED"]
+        if not value_allowed_none_or_none_sentinel(account_type, allowed_values):
+            account_type = 'UNKNOWN_ENUM_VALUE'
+        self._account_type = account_type
+
+    @property
     def tax_info(self):
         """
         Gets the tax_info of this Subscription.
@@ -623,7 +681,7 @@ class Subscription(object):
         Gets the billing_address of this Subscription.
 
         :return: The billing_address of this Subscription.
-        :rtype: oci.osp_gateway.models.BillingAddress
+        :rtype: oci.osp_gateway.models.Address
         """
         return self._billing_address
 
@@ -633,7 +691,7 @@ class Subscription(object):
         Sets the billing_address of this Subscription.
 
         :param billing_address: The billing_address of this Subscription.
-        :type: oci.osp_gateway.models.BillingAddress
+        :type: oci.osp_gateway.models.Address
         """
         self._billing_address = billing_address
 
@@ -660,6 +718,30 @@ class Subscription(object):
         :type: datetime
         """
         self._time_plan_upgrade = time_plan_upgrade
+
+    @property
+    def time_personal_to_corporate_conv(self):
+        """
+        Gets the time_personal_to_corporate_conv of this Subscription.
+        Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+
+
+        :return: The time_personal_to_corporate_conv of this Subscription.
+        :rtype: datetime
+        """
+        return self._time_personal_to_corporate_conv
+
+    @time_personal_to_corporate_conv.setter
+    def time_personal_to_corporate_conv(self, time_personal_to_corporate_conv):
+        """
+        Sets the time_personal_to_corporate_conv of this Subscription.
+        Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+
+
+        :param time_personal_to_corporate_conv: The time_personal_to_corporate_conv of this Subscription.
+        :type: datetime
+        """
+        self._time_personal_to_corporate_conv = time_personal_to_corporate_conv
 
     def __repr__(self):
         return formatted_flat_dict(self)

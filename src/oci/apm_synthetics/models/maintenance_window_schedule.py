@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MaintenanceWindowSchedule(object):
     """
-    Details used to schedule maintenance window.
+    Details required to schedule maintenance window.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class MaintenanceWindowSchedule(object):
     def time_started(self):
         """
         Gets the time_started of this MaintenanceWindowSchedule.
-        Start time for the maintenance window, expressed in `RFC 3339`__ timestamp format.
+        Start time of the maintenance window, expressed in `RFC 3339`__ timestamp format.
         Example: `2020-02-12T22:47:12.613Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -61,7 +61,7 @@ class MaintenanceWindowSchedule(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this MaintenanceWindowSchedule.
-        Start time for the maintenance window, expressed in `RFC 3339`__ timestamp format.
+        Start time of the maintenance window, expressed in `RFC 3339`__ timestamp format.
         Example: `2020-02-12T22:47:12.613Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -76,7 +76,7 @@ class MaintenanceWindowSchedule(object):
     def time_ended(self):
         """
         Gets the time_ended of this MaintenanceWindowSchedule.
-        End time for the maintenance window, expressed in `RFC 3339`__ timestamp format.
+        End time of the maintenance window, expressed in `RFC 3339`__ timestamp format.
         Example: `2020-02-12T22:47:12.613Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -91,7 +91,7 @@ class MaintenanceWindowSchedule(object):
     def time_ended(self, time_ended):
         """
         Sets the time_ended of this MaintenanceWindowSchedule.
-        End time for the maintenance window, expressed in `RFC 3339`__ timestamp format.
+        End time of the maintenance window, expressed in `RFC 3339`__ timestamp format.
         Example: `2020-02-12T22:47:12.613Z`
 
         __ https://tools.ietf.org/html/rfc3339

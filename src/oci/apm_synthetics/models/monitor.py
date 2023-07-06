@@ -291,7 +291,7 @@ class Monitor(object):
     def monitor_type(self):
         """
         **[Required]** Gets the monitor_type of this Monitor.
-        Type of the monitor.
+        Type of monitor.
 
         Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -306,7 +306,7 @@ class Monitor(object):
     def monitor_type(self, monitor_type):
         """
         Sets the monitor_type of this Monitor.
-        Type of the monitor.
+        Type of monitor.
 
 
         :param monitor_type: The monitor_type of this Monitor.
@@ -763,7 +763,7 @@ class Monitor(object):
     def is_run_now(self):
         """
         **[Required]** Gets the is_run_now of this Monitor.
-        If isRunNow is enabled, then the monitor will run now.
+        If isRunNow is enabled, then the monitor will run immediately.
 
 
         :return: The is_run_now of this Monitor.
@@ -775,7 +775,7 @@ class Monitor(object):
     def is_run_now(self, is_run_now):
         """
         Sets the is_run_now of this Monitor.
-        If isRunNow is enabled, then the monitor will run now.
+        If isRunNow is enabled, then the monitor will run immediately.
 
 
         :param is_run_now: The is_run_now of this Monitor.
@@ -787,7 +787,7 @@ class Monitor(object):
     def scheduling_policy(self):
         """
         **[Required]** Gets the scheduling_policy of this Monitor.
-        Scheduling policy on Vantage points.
+        Scheduling policy to decide the distribution of monitor executions on vantage points.
 
         Allowed values for this property are: "ALL", "ROUND_ROBIN", "BATCHED_ROUND_ROBIN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -802,7 +802,7 @@ class Monitor(object):
     def scheduling_policy(self, scheduling_policy):
         """
         Sets the scheduling_policy of this Monitor.
-        Scheduling policy on Vantage points.
+        Scheduling policy to decide the distribution of monitor executions on vantage points.
 
 
         :param scheduling_policy: The scheduling_policy of this Monitor.
@@ -817,7 +817,7 @@ class Monitor(object):
     def batch_interval_in_seconds(self):
         """
         **[Required]** Gets the batch_interval_in_seconds of this Monitor.
-        Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
 
 
         :return: The batch_interval_in_seconds of this Monitor.
@@ -829,7 +829,7 @@ class Monitor(object):
     def batch_interval_in_seconds(self, batch_interval_in_seconds):
         """
         Sets the batch_interval_in_seconds of this Monitor.
-        Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
+        Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
 
 
         :param batch_interval_in_seconds: The batch_interval_in_seconds of this Monitor.

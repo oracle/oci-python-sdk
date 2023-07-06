@@ -32,22 +32,29 @@ class UpdateBootVolumeBackupDetails(object):
             The value to assign to the freeform_tags property of this UpdateBootVolumeBackupDetails.
         :type freeform_tags: dict(str, str)
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this UpdateBootVolumeBackupDetails.
+        :type kms_key_id: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'kms_key_id': 'str'
         }
 
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'kms_key_id': 'kmsKeyId'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._kms_key_id = None
 
     @property
     def defined_tags(self):
@@ -142,6 +149,42 @@ class UpdateBootVolumeBackupDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this UpdateBootVolumeBackupDetails.
+        The OCID of the Vault service key which is the master encryption key for the volume backup.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :return: The kms_key_id of this UpdateBootVolumeBackupDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this UpdateBootVolumeBackupDetails.
+        The OCID of the Vault service key which is the master encryption key for the volume backup.
+        For more information about the Vault service and encryption keys, see
+        `Overview of Vault service`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :param kms_key_id: The kms_key_id of this UpdateBootVolumeBackupDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

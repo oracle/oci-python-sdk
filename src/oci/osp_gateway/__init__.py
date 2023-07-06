@@ -7,10 +7,14 @@
 from __future__ import absolute_import
 
 
+from .address_rule_service_client import AddressRuleServiceClient
+from .address_rule_service_client_composite_operations import AddressRuleServiceClientCompositeOperations
+from .address_service_client import AddressServiceClient
+from .address_service_client_composite_operations import AddressServiceClientCompositeOperations
 from .invoice_service_client import InvoiceServiceClient
 from .invoice_service_client_composite_operations import InvoiceServiceClientCompositeOperations
 from .subscription_service_client import SubscriptionServiceClient
 from .subscription_service_client_composite_operations import SubscriptionServiceClientCompositeOperations
 from . import models
 
-__all__ = ["InvoiceServiceClient", "InvoiceServiceClientCompositeOperations", "SubscriptionServiceClient", "SubscriptionServiceClientCompositeOperations", "models"]
+__all__ = ["AddressRuleServiceClient", "AddressRuleServiceClientCompositeOperations", "AddressServiceClient", "AddressServiceClientCompositeOperations", "InvoiceServiceClient", "InvoiceServiceClientCompositeOperations", "SubscriptionServiceClient", "SubscriptionServiceClientCompositeOperations", "models"]

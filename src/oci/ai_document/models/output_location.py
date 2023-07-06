@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OutputLocation(object):
     """
-    The Object Storage Location.
+    The object storage location where to store analysis results.
     """
 
     def __init__(self, **kwargs):

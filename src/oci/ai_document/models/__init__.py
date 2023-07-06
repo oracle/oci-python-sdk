@@ -6,11 +6,13 @@
 
 from __future__ import absolute_import
 
+from .analyze_document_details import AnalyzeDocumentDetails
 from .analyze_document_result import AnalyzeDocumentResult
 from .bounding_polygon import BoundingPolygon
 from .cell import Cell
 from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
+from .component_model import ComponentModel
 from .create_model_details import CreateModelDetails
 from .create_processor_job_details import CreateProcessorJobDetails
 from .create_project_details import CreateProjectDetails
@@ -25,6 +27,7 @@ from .document_classification_feature import DocumentClassificationFeature
 from .document_classification_label_metrics_report import DocumentClassificationLabelMetricsReport
 from .document_classification_model_metrics import DocumentClassificationModelMetrics
 from .document_classification_overall_metrics_report import DocumentClassificationOverallMetricsReport
+from .document_details import DocumentDetails
 from .document_feature import DocumentFeature
 from .document_field import DocumentField
 from .document_key_value_extraction_feature import DocumentKeyValueExtractionFeature
@@ -37,6 +40,7 @@ from .field_name import FieldName
 from .field_value import FieldValue
 from .general_processor_config import GeneralProcessorConfig
 from .inline_document_content import InlineDocumentContent
+from .inline_document_details import InlineDocumentDetails
 from .input_location import InputLocation
 from .key_value_detection_confidence_entry import KeyValueDetectionConfidenceEntry
 from .key_value_detection_label_metrics_report import KeyValueDetectionLabelMetricsReport
@@ -50,9 +54,13 @@ from .model_summary import ModelSummary
 from .normalized_vertex import NormalizedVertex
 from .object_location import ObjectLocation
 from .object_storage_dataset import ObjectStorageDataset
+from .object_storage_document_details import ObjectStorageDocumentDetails
 from .object_storage_locations import ObjectStorageLocations
 from .output_location import OutputLocation
 from .page import Page
+from .patch_model_details import PatchModelDetails
+from .patch_model_operation import PatchModelOperation
+from .patch_response_message import PatchResponseMessage
 from .processing_error import ProcessingError
 from .processor_config import ProcessorConfig
 from .processor_job import ProcessorJob
@@ -82,11 +90,13 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for ai_document services.
 ai_document_type_mapping = {
+    "AnalyzeDocumentDetails": AnalyzeDocumentDetails,
     "AnalyzeDocumentResult": AnalyzeDocumentResult,
     "BoundingPolygon": BoundingPolygon,
     "Cell": Cell,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
+    "ComponentModel": ComponentModel,
     "CreateModelDetails": CreateModelDetails,
     "CreateProcessorJobDetails": CreateProcessorJobDetails,
     "CreateProjectDetails": CreateProjectDetails,
@@ -101,6 +111,7 @@ ai_document_type_mapping = {
     "DocumentClassificationLabelMetricsReport": DocumentClassificationLabelMetricsReport,
     "DocumentClassificationModelMetrics": DocumentClassificationModelMetrics,
     "DocumentClassificationOverallMetricsReport": DocumentClassificationOverallMetricsReport,
+    "DocumentDetails": DocumentDetails,
     "DocumentFeature": DocumentFeature,
     "DocumentField": DocumentField,
     "DocumentKeyValueExtractionFeature": DocumentKeyValueExtractionFeature,
@@ -113,6 +124,7 @@ ai_document_type_mapping = {
     "FieldValue": FieldValue,
     "GeneralProcessorConfig": GeneralProcessorConfig,
     "InlineDocumentContent": InlineDocumentContent,
+    "InlineDocumentDetails": InlineDocumentDetails,
     "InputLocation": InputLocation,
     "KeyValueDetectionConfidenceEntry": KeyValueDetectionConfidenceEntry,
     "KeyValueDetectionLabelMetricsReport": KeyValueDetectionLabelMetricsReport,
@@ -126,9 +138,13 @@ ai_document_type_mapping = {
     "NormalizedVertex": NormalizedVertex,
     "ObjectLocation": ObjectLocation,
     "ObjectStorageDataset": ObjectStorageDataset,
+    "ObjectStorageDocumentDetails": ObjectStorageDocumentDetails,
     "ObjectStorageLocations": ObjectStorageLocations,
     "OutputLocation": OutputLocation,
     "Page": Page,
+    "PatchModelDetails": PatchModelDetails,
+    "PatchModelOperation": PatchModelOperation,
+    "PatchResponseMessage": PatchResponseMessage,
     "ProcessingError": ProcessingError,
     "ProcessorConfig": ProcessorConfig,
     "ProcessorJob": ProcessorJob,

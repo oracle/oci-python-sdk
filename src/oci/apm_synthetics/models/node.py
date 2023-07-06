@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Node(object):
     """
-    Network node
+    Details of the network node.
     """
 
     #: A constant which can be used with the type property of a Node.
@@ -124,7 +124,7 @@ class Node(object):
     def id(self):
         """
         **[Required]** Gets the id of this Node.
-        id of node
+        ID of the network node.
 
 
         :return: The id of this Node.
@@ -136,7 +136,7 @@ class Node(object):
     def id(self, id):
         """
         Sets the id of this Node.
-        id of node
+        ID of the network node.
 
 
         :param id: The id of this Node.
@@ -148,7 +148,7 @@ class Node(object):
     def ip_address(self):
         """
         Gets the ip_address of this Node.
-        ip address of node
+        IP address of the network node.
 
 
         :return: The ip_address of this Node.
@@ -160,7 +160,7 @@ class Node(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this Node.
-        ip address of node
+        IP address of the network node.
 
 
         :param ip_address: The ip_address of this Node.
@@ -172,7 +172,7 @@ class Node(object):
     def display_name(self):
         """
         Gets the display_name of this Node.
-        display name of node
+        Display name of the network node.
 
 
         :return: The display_name of this Node.
@@ -184,7 +184,7 @@ class Node(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Node.
-        display name of node
+        Display name of the network node.
 
 
         :param display_name: The display_name of this Node.
@@ -196,7 +196,7 @@ class Node(object):
     def geo_info(self):
         """
         Gets the geo_info of this Node.
-        geo info
+        Geographical information of the network node.
 
 
         :return: The geo_info of this Node.
@@ -208,7 +208,7 @@ class Node(object):
     def geo_info(self, geo_info):
         """
         Sets the geo_info of this Node.
-        geo info
+        Geographical information of the network node.
 
 
         :param geo_info: The geo_info of this Node.
@@ -220,7 +220,7 @@ class Node(object):
     def outgoing_links(self):
         """
         Gets the outgoing_links of this Node.
-        links outgoing from this node
+        Outgoing links from the network node.
 
 
         :return: The outgoing_links of this Node.
@@ -232,7 +232,7 @@ class Node(object):
     def outgoing_links(self, outgoing_links):
         """
         Sets the outgoing_links of this Node.
-        links outgoing from this node
+        Outgoing links from the network node.
 
 
         :param outgoing_links: The outgoing_links of this Node.
@@ -244,7 +244,7 @@ class Node(object):
     def consecutive_anonymous_count(self):
         """
         Gets the consecutive_anonymous_count of this Node.
-        consecutive anonymous node count
+        Number of consecutive anonymous network nodes.
 
 
         :return: The consecutive_anonymous_count of this Node.
@@ -256,7 +256,7 @@ class Node(object):
     def consecutive_anonymous_count(self, consecutive_anonymous_count):
         """
         Sets the consecutive_anonymous_count of this Node.
-        consecutive anonymous node count
+        Number of consecutive anonymous network nodes.
 
 
         :param consecutive_anonymous_count: The consecutive_anonymous_count of this Node.
@@ -268,7 +268,7 @@ class Node(object):
     def level(self):
         """
         Gets the level of this Node.
-        level of this node
+        Level of the network node.
 
 
         :return: The level of this Node.
@@ -280,7 +280,7 @@ class Node(object):
     def level(self, level):
         """
         Sets the level of this Node.
-        level of this node
+        Level of the network node.
 
 
         :param level: The level of this Node.
@@ -292,7 +292,7 @@ class Node(object):
     def avg_packet_response_time_in_ms(self):
         """
         Gets the avg_packet_response_time_in_ms of this Node.
-        average packet response time in milli seconds
+        Average packet response time in milliseconds.
 
 
         :return: The avg_packet_response_time_in_ms of this Node.
@@ -304,7 +304,7 @@ class Node(object):
     def avg_packet_response_time_in_ms(self, avg_packet_response_time_in_ms):
         """
         Sets the avg_packet_response_time_in_ms of this Node.
-        average packet response time in milli seconds
+        Average packet response time in milliseconds.
 
 
         :param avg_packet_response_time_in_ms: The avg_packet_response_time_in_ms of this Node.
@@ -316,7 +316,7 @@ class Node(object):
     def avg_packet_loss_percent(self):
         """
         Gets the avg_packet_loss_percent of this Node.
-        average packet loss percentage
+        Percentage of the average packet loss.
 
 
         :return: The avg_packet_loss_percent of this Node.
@@ -328,7 +328,7 @@ class Node(object):
     def avg_packet_loss_percent(self, avg_packet_loss_percent):
         """
         Sets the avg_packet_loss_percent of this Node.
-        average packet loss percentage
+        Percentage of the average packet loss.
 
 
         :param avg_packet_loss_percent: The avg_packet_loss_percent of this Node.
@@ -340,7 +340,7 @@ class Node(object):
     def type(self):
         """
         Gets the type of this Node.
-        type of node
+        Type of network node.
 
         Allowed values for this property are: "SOURCE", "DESTINATION", "ANONYMOUS", "INTERNAL", "DANGLING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -355,7 +355,7 @@ class Node(object):
     def type(self, type):
         """
         Sets the type of this Node.
-        type of node
+        Type of network node.
 
 
         :param type: The type of this Node.

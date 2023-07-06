@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="junqian_org_ww@oracle.com" jiraProject="OCASDOC" opsJiraProject="OCASDOC"
+def test_analyze_document(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_document', 'AnalyzeDocument'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_document', util.camelize('ai_service_document'), 'AnalyzeDocument')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_document', api_name='AnalyzeDocument')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_document.AIServiceDocumentClient(config, service_endpoint=service_endpoint)
+            response = client.analyze_document(
+                analyze_document_details=request.pop(util.camelize('AnalyzeDocumentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_document',
+            'AnalyzeDocument',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'analyzeDocumentResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="junqian_org_ww@oracle.com" jiraProject="OCASDOC" opsJiraProject="OCASDOC"
 def test_cancel_processor_job(testing_service_client):
     if not testing_service_client.is_api_enabled('ai_document', 'CancelProcessorJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -871,6 +912,48 @@ def test_list_work_requests(testing_service_client):
             'workRequestSummaryCollection',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="junqian_org_ww@oracle.com" jiraProject="OCASDOC" opsJiraProject="OCASDOC"
+def test_patch_model(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_document', 'PatchModel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_document', util.camelize('ai_service_document'), 'PatchModel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_document', api_name='PatchModel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_document.AIServiceDocumentClient(config, service_endpoint=service_endpoint)
+            response = client.patch_model(
+                model_id=request.pop(util.camelize('modelId')),
+                patch_model_details=request.pop(util.camelize('PatchModelDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_document',
+            'PatchModel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'patchResponseMessage',
+            False,
+            False
         )
 
 

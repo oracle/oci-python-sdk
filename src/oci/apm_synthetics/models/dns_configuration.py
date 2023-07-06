@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DnsConfiguration(object):
     """
-    Dns settings.
+    Information about the DNS settings.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class DnsConfiguration(object):
     def is_override_dns(self):
         """
         Gets the is_override_dns of this DnsConfiguration.
-        If isOverrideDns is true, then dns will be overridden.
+        If isOverrideDns is true, then DNS settings will be overridden.
 
 
         :return: The is_override_dns of this DnsConfiguration.
@@ -58,7 +58,7 @@ class DnsConfiguration(object):
     def is_override_dns(self, is_override_dns):
         """
         Sets the is_override_dns of this DnsConfiguration.
-        If isOverrideDns is true, then dns will be overridden.
+        If isOverrideDns is true, then DNS settings will be overridden.
 
 
         :param is_override_dns: The is_override_dns of this DnsConfiguration.
@@ -70,7 +70,7 @@ class DnsConfiguration(object):
     def override_dns_ip(self):
         """
         Gets the override_dns_ip of this DnsConfiguration.
-        Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
 
 
         :return: The override_dns_ip of this DnsConfiguration.
@@ -82,7 +82,7 @@ class DnsConfiguration(object):
     def override_dns_ip(self, override_dns_ip):
         """
         Sets the override_dns_ip of this DnsConfiguration.
-        Override dns ip value. This value will be honored only if *ref-isOverrideDns is set to true.
+        Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
 
 
         :param override_dns_ip: The override_dns_ip of this DnsConfiguration.

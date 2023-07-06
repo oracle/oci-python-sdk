@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VantagePointNode(object):
     """
-    Vantage Point Node
+    Details of the vantage point node.
     """
 
     def __init__(self, **kwargs):
@@ -67,7 +67,7 @@ class VantagePointNode(object):
     def id(self):
         """
         Gets the id of this VantagePointNode.
-        id of Vantage Point node
+        ID of the vantage point node.
 
 
         :return: The id of this VantagePointNode.
@@ -79,7 +79,7 @@ class VantagePointNode(object):
     def id(self, id):
         """
         Sets the id of this VantagePointNode.
-        id of Vantage Point node
+        ID of the vantage point node.
 
 
         :param id: The id of this VantagePointNode.
@@ -91,7 +91,7 @@ class VantagePointNode(object):
     def name(self):
         """
         **[Required]** Gets the name of this VantagePointNode.
-        name of Vantage Point node
+        Name of the vantage point node.
 
 
         :return: The name of this VantagePointNode.
@@ -103,7 +103,7 @@ class VantagePointNode(object):
     def name(self, name):
         """
         Sets the name of this VantagePointNode.
-        name of Vantage Point node
+        Name of the vantage point node.
 
 
         :param name: The name of this VantagePointNode.
@@ -115,7 +115,7 @@ class VantagePointNode(object):
     def display_name(self):
         """
         Gets the display_name of this VantagePointNode.
-        display name of Vantage Point node
+        Display name of the vantage point node.
 
 
         :return: The display_name of this VantagePointNode.
@@ -127,7 +127,7 @@ class VantagePointNode(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this VantagePointNode.
-        display name of Vantage Point node
+        Display name of the vantage point node.
 
 
         :param display_name: The display_name of this VantagePointNode.
@@ -139,7 +139,7 @@ class VantagePointNode(object):
     def geo_info(self):
         """
         Gets the geo_info of this VantagePointNode.
-        geo info
+        Geographical information of the vantage point node.
 
 
         :return: The geo_info of this VantagePointNode.
@@ -151,7 +151,7 @@ class VantagePointNode(object):
     def geo_info(self, geo_info):
         """
         Sets the geo_info of this VantagePointNode.
-        geo info
+        Geographical information of the vantage point node.
 
 
         :param geo_info: The geo_info of this VantagePointNode.
@@ -163,7 +163,7 @@ class VantagePointNode(object):
     def outgoing_links(self):
         """
         Gets the outgoing_links of this VantagePointNode.
-        links outgoing from this Vantage Point node
+        Outgoing links from the vantage point node.
 
 
         :return: The outgoing_links of this VantagePointNode.
@@ -175,7 +175,7 @@ class VantagePointNode(object):
     def outgoing_links(self, outgoing_links):
         """
         Sets the outgoing_links of this VantagePointNode.
-        links outgoing from this Vantage Point node
+        Outgoing links from the vantage point node.
 
 
         :param outgoing_links: The outgoing_links of this VantagePointNode.

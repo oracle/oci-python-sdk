@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.dis</groupId>
         <artifactId>dis-sdk-spec</artifactId>
-        <version>1.4.0-12</version>
+        <version>1.4.0-20</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
