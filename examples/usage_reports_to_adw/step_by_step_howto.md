@@ -449,9 +449,10 @@ Download run_load_showoci_csv_to_adw.sh if not exist
 
 ```
 wget https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh -O /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh
+
 chmod +x /home/opc/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh
 chmod +x /home/opc/showoci/run_daily_report.sh
-chmod +x /home/opc/usage_reports_to_adw/shell_scripts/run_load_showoci_csv_to_adw.s
+chmod +x /home/opc/usage_reports_to_adw/shell_scripts/run_load_showoci_csv_to_adw.sh
 ```
 
 Edit crontab using crontab -e and add/update the below (If exist remove the # before the command)
