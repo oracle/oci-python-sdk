@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.07.04 - 23.07.04
+=====================
+* Added flag -exclude with options to exclude Services currently support - NETWORK 
+
+=====================
 23.06.06 - 23.06.06
 =====================
 * Added Load Balancer Cipher Suites and Routing Policies

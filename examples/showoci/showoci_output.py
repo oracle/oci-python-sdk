@@ -20,7 +20,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.06.06"
+    version = "23.07.04"
 
     ##########################################################################
     # spaces for align

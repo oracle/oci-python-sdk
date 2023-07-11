@@ -1,9 +1,9 @@
-BillingAddress
-==============
+AddressTypeRule
+===============
 
 .. currentmodule:: oci.osp_gateway.models
 
-.. autoclass:: BillingAddress
+.. autoclass:: AddressTypeRule
     :show-inheritance:
     :special-members: __init__
     :members:

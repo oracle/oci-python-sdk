@@ -45,6 +45,7 @@ Container Engine
     oci.container_engine.models.CreateNodePoolNodeConfigDetails
     oci.container_engine.models.CreateNodeShapeConfigDetails
     oci.container_engine.models.CreateVirtualNodePoolDetails
+    oci.container_engine.models.CreateWorkloadMappingDetails
     oci.container_engine.models.FlannelOverlayClusterPodNetworkOptionDetails
     oci.container_engine.models.FlannelOverlayNodePoolPodNetworkOptionDetails
     oci.container_engine.models.ImagePolicyConfig
@@ -93,6 +94,7 @@ Container Engine
     oci.container_engine.models.UpdateNodePoolNodeConfigDetails
     oci.container_engine.models.UpdateNodeShapeConfigDetails
     oci.container_engine.models.UpdateVirtualNodePoolDetails
+    oci.container_engine.models.UpdateWorkloadMappingDetails
     oci.container_engine.models.VirtualNode
     oci.container_engine.models.VirtualNodePool
     oci.container_engine.models.VirtualNodePoolSummary
@@ -103,3 +105,5 @@ Container Engine
     oci.container_engine.models.WorkRequestLogEntry
     oci.container_engine.models.WorkRequestResource
     oci.container_engine.models.WorkRequestSummary
+    oci.container_engine.models.WorkloadMapping
+    oci.container_engine.models.WorkloadMappingSummary
