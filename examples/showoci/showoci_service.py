@@ -34,8 +34,8 @@ import platform
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.06.06"
-    oci_compatible_version = "2.104.0"
+    version = "23.07.04"
+    oci_compatible_version = "2.104.3"
 
     ##########################################################################
     # Global Constants
@@ -250,6 +250,11 @@ class ShowOCIService(object):
     reboot_migration_counter = 0
     dbsystem_maintenance = []
     tenancy_home_region = ""
+
+    ##########################################################################
+    # Exclude Services
+    ##########################################################################
+    EXCLUDE_NETWORK = 'NETWORK'
 
     ##########################################################################
     # Service not yet available - need to remove on availability
@@ -2164,6 +2169,10 @@ class ShowOCIService(object):
     def __load_core_network_main(self):
 
         try:
+            # if to exclude network
+            if self.EXCLUDE_NETWORK in self.flags.exclude:
+                return
+
             print("Network...")
 
             # Open connectivity to OCI
@@ -14765,7 +14774,7 @@ class ShowOCIFlags(object):
     skip_identity_user_credential = False
     skip_backups = False
     skip_dbhomes = False
-    pause = False
+    exclude = []
     connection_timeout = 20
     read_timeout = 150
 

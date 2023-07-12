@@ -47,6 +47,7 @@ Data Integration
     oci.data_integration.models.ChildReference
     oci.data_integration.models.ChildReferenceDetail
     oci.data_integration.models.CompositeFieldMap
+    oci.data_integration.models.CompositeState
     oci.data_integration.models.CompositeType
     oci.data_integration.models.Compression
     oci.data_integration.models.ConditionalCompositeFieldMap
@@ -71,16 +72,26 @@ Data Integration
     oci.data_integration.models.ConnectionFromBICCDetails
     oci.data_integration.models.ConnectionFromBIP
     oci.data_integration.models.ConnectionFromBipDetails
+    oci.data_integration.models.ConnectionFromHdfs
+    oci.data_integration.models.ConnectionFromHdfsDetails
     oci.data_integration.models.ConnectionFromJdbc
     oci.data_integration.models.ConnectionFromJdbcDetails
     oci.data_integration.models.ConnectionFromLake
     oci.data_integration.models.ConnectionFromLakeDetails
     oci.data_integration.models.ConnectionFromMySQL
     oci.data_integration.models.ConnectionFromMySQLDetails
+    oci.data_integration.models.ConnectionFromMySqlHeatWave
+    oci.data_integration.models.ConnectionFromMySqlHeatWaveDetails
     oci.data_integration.models.ConnectionFromObjectStorage
     oci.data_integration.models.ConnectionFromObjectStorageDetails
     oci.data_integration.models.ConnectionFromOracle
     oci.data_integration.models.ConnectionFromOracleDetails
+    oci.data_integration.models.ConnectionFromOracleEbs
+    oci.data_integration.models.ConnectionFromOracleEbsDetails
+    oci.data_integration.models.ConnectionFromOraclePeopleSoft
+    oci.data_integration.models.ConnectionFromOraclePeopleSoftDetails
+    oci.data_integration.models.ConnectionFromOracleSiebel
+    oci.data_integration.models.ConnectionFromOracleSiebelDetails
     oci.data_integration.models.ConnectionFromRestBasicAuth
     oci.data_integration.models.ConnectionFromRestBasicAuthDetails
     oci.data_integration.models.ConnectionFromRestNoAuth
@@ -93,11 +104,16 @@ Data Integration
     oci.data_integration.models.ConnectionSummaryFromAtp
     oci.data_integration.models.ConnectionSummaryFromBICC
     oci.data_integration.models.ConnectionSummaryFromBIP
+    oci.data_integration.models.ConnectionSummaryFromHdfs
     oci.data_integration.models.ConnectionSummaryFromJdbc
     oci.data_integration.models.ConnectionSummaryFromLake
     oci.data_integration.models.ConnectionSummaryFromMySQL
+    oci.data_integration.models.ConnectionSummaryFromMySqlHeatWave
     oci.data_integration.models.ConnectionSummaryFromObjectStorage
     oci.data_integration.models.ConnectionSummaryFromOracle
+    oci.data_integration.models.ConnectionSummaryFromOracleEbs
+    oci.data_integration.models.ConnectionSummaryFromOraclePeopleSoft
+    oci.data_integration.models.ConnectionSummaryFromOracleSiebel
     oci.data_integration.models.ConnectionSummaryFromRestBasicAuth
     oci.data_integration.models.ConnectionSummaryFromRestNoAuth
     oci.data_integration.models.ConnectionValidation
@@ -119,11 +135,16 @@ Data Integration
     oci.data_integration.models.CreateConnectionFromAtp
     oci.data_integration.models.CreateConnectionFromBICC
     oci.data_integration.models.CreateConnectionFromBIP
+    oci.data_integration.models.CreateConnectionFromHdfs
     oci.data_integration.models.CreateConnectionFromJdbc
     oci.data_integration.models.CreateConnectionFromLake
     oci.data_integration.models.CreateConnectionFromMySQL
+    oci.data_integration.models.CreateConnectionFromMySqlHeatWave
     oci.data_integration.models.CreateConnectionFromObjectStorage
     oci.data_integration.models.CreateConnectionFromOracle
+    oci.data_integration.models.CreateConnectionFromOracleEbs
+    oci.data_integration.models.CreateConnectionFromOraclePeopleSoft
+    oci.data_integration.models.CreateConnectionFromOracleSiebel
     oci.data_integration.models.CreateConnectionFromRestBasicAuth
     oci.data_integration.models.CreateConnectionFromRestNoAuth
     oci.data_integration.models.CreateConnectionValidationDetails
@@ -133,11 +154,16 @@ Data Integration
     oci.data_integration.models.CreateDataAssetFromAmazonS3
     oci.data_integration.models.CreateDataAssetFromAtp
     oci.data_integration.models.CreateDataAssetFromFusionApp
+    oci.data_integration.models.CreateDataAssetFromHdfs
     oci.data_integration.models.CreateDataAssetFromJdbc
     oci.data_integration.models.CreateDataAssetFromLake
     oci.data_integration.models.CreateDataAssetFromMySQL
+    oci.data_integration.models.CreateDataAssetFromMySqlHeatWave
     oci.data_integration.models.CreateDataAssetFromObjectStorage
     oci.data_integration.models.CreateDataAssetFromOracle
+    oci.data_integration.models.CreateDataAssetFromOracleEbs
+    oci.data_integration.models.CreateDataAssetFromOraclePeopleSoft
+    oci.data_integration.models.CreateDataAssetFromOracleSiebel
     oci.data_integration.models.CreateDataAssetFromRest
     oci.data_integration.models.CreateDataFlowDetails
     oci.data_integration.models.CreateDataFlowValidationDetails
@@ -145,11 +171,14 @@ Data Integration
     oci.data_integration.models.CreateDisApplicationDetails
     oci.data_integration.models.CreateEntityShapeDetails
     oci.data_integration.models.CreateEntityShapeFromFile
+    oci.data_integration.models.CreateEntityShapeFromObject
     oci.data_integration.models.CreateEntityShapeFromSQL
+    oci.data_integration.models.CreateExportRequestDetails
     oci.data_integration.models.CreateExternalPublicationDetails
     oci.data_integration.models.CreateExternalPublicationValidationDetails
     oci.data_integration.models.CreateFolderDetails
     oci.data_integration.models.CreateFunctionLibraryDetails
+    oci.data_integration.models.CreateImportRequestDetails
     oci.data_integration.models.CreatePatchDetails
     oci.data_integration.models.CreatePipelineDetails
     oci.data_integration.models.CreatePipelineValidationDetails
@@ -180,11 +209,16 @@ Data Integration
     oci.data_integration.models.DataAssetFromAmazonS3
     oci.data_integration.models.DataAssetFromAtpDetails
     oci.data_integration.models.DataAssetFromFusionApp
+    oci.data_integration.models.DataAssetFromHdfsDetails
     oci.data_integration.models.DataAssetFromJdbc
     oci.data_integration.models.DataAssetFromLakeDetails
     oci.data_integration.models.DataAssetFromMySQL
+    oci.data_integration.models.DataAssetFromMySqlHeatWave
     oci.data_integration.models.DataAssetFromObjectStorageDetails
     oci.data_integration.models.DataAssetFromOracleDetails
+    oci.data_integration.models.DataAssetFromOracleEbsDetails
+    oci.data_integration.models.DataAssetFromOraclePeopleSoftDetails
+    oci.data_integration.models.DataAssetFromOracleSiebelDetails
     oci.data_integration.models.DataAssetFromRestDetails
     oci.data_integration.models.DataAssetSummary
     oci.data_integration.models.DataAssetSummaryCollection
@@ -192,11 +226,16 @@ Data Integration
     oci.data_integration.models.DataAssetSummaryFromAmazonS3
     oci.data_integration.models.DataAssetSummaryFromAtp
     oci.data_integration.models.DataAssetSummaryFromFusionApp
+    oci.data_integration.models.DataAssetSummaryFromHdfs
     oci.data_integration.models.DataAssetSummaryFromJdbc
     oci.data_integration.models.DataAssetSummaryFromLake
     oci.data_integration.models.DataAssetSummaryFromMySQL
+    oci.data_integration.models.DataAssetSummaryFromMySqlHeatWave
     oci.data_integration.models.DataAssetSummaryFromObjectStorage
     oci.data_integration.models.DataAssetSummaryFromOracle
+    oci.data_integration.models.DataAssetSummaryFromOracleEbs
+    oci.data_integration.models.DataAssetSummaryFromOraclePeopleSoft
+    oci.data_integration.models.DataAssetSummaryFromOracleSiebel
     oci.data_integration.models.DataAssetSummaryFromRest
     oci.data_integration.models.DataEntity
     oci.data_integration.models.DataEntityDetails
@@ -204,6 +243,8 @@ Data Integration
     oci.data_integration.models.DataEntityFromDataStoreEntityDetails
     oci.data_integration.models.DataEntityFromFile
     oci.data_integration.models.DataEntityFromFileEntityDetails
+    oci.data_integration.models.DataEntityFromObject
+    oci.data_integration.models.DataEntityFromObjectEntityDetails
     oci.data_integration.models.DataEntityFromSql
     oci.data_integration.models.DataEntityFromSqlEntityDetails
     oci.data_integration.models.DataEntityFromTable
@@ -214,6 +255,7 @@ Data Integration
     oci.data_integration.models.DataEntitySummaryCollection
     oci.data_integration.models.DataEntitySummaryFromDataStore
     oci.data_integration.models.DataEntitySummaryFromFile
+    oci.data_integration.models.DataEntitySummaryFromObject
     oci.data_integration.models.DataEntitySummaryFromSql
     oci.data_integration.models.DataEntitySummaryFromTable
     oci.data_integration.models.DataEntitySummaryFromView
@@ -250,9 +292,14 @@ Data Integration
     oci.data_integration.models.EnrichedEntity
     oci.data_integration.models.EntityShape
     oci.data_integration.models.EntityShapeFromFile
+    oci.data_integration.models.EntityShapeFromObject
     oci.data_integration.models.EntityShapeFromSQL
     oci.data_integration.models.ErrorDetails
     oci.data_integration.models.ExecuteRestCallConfig
+    oci.data_integration.models.ExportObjectMetadataSummary
+    oci.data_integration.models.ExportRequest
+    oci.data_integration.models.ExportRequestSummary
+    oci.data_integration.models.ExportRequestSummaryCollection
     oci.data_integration.models.Expression
     oci.data_integration.models.ExpressionOperator
     oci.data_integration.models.ExternalPublication
@@ -289,6 +336,11 @@ Data Integration
     oci.data_integration.models.GenericRestCallAttribute
     oci.data_integration.models.GroupedNamePatternRule
     oci.data_integration.models.HourlyFrequencyDetails
+    oci.data_integration.models.ImportConflictResolution
+    oci.data_integration.models.ImportObjectMetadataSummary
+    oci.data_integration.models.ImportRequest
+    oci.data_integration.models.ImportRequestSummary
+    oci.data_integration.models.ImportRequestSummaryCollection
     oci.data_integration.models.InputField
     oci.data_integration.models.InputLink
     oci.data_integration.models.InputPort
@@ -425,6 +477,7 @@ Data Integration
     oci.data_integration.models.SourceApplicationInfo
     oci.data_integration.models.Split
     oci.data_integration.models.StartOperator
+    oci.data_integration.models.State
     oci.data_integration.models.StructuredType
     oci.data_integration.models.Target
     oci.data_integration.models.Task
@@ -479,11 +532,16 @@ Data Integration
     oci.data_integration.models.UpdateConnectionFromAtp
     oci.data_integration.models.UpdateConnectionFromBICC
     oci.data_integration.models.UpdateConnectionFromBIP
+    oci.data_integration.models.UpdateConnectionFromHdfs
     oci.data_integration.models.UpdateConnectionFromJdbc
     oci.data_integration.models.UpdateConnectionFromLake
     oci.data_integration.models.UpdateConnectionFromMySQL
+    oci.data_integration.models.UpdateConnectionFromMySqlHeatWave
     oci.data_integration.models.UpdateConnectionFromObjectStorage
     oci.data_integration.models.UpdateConnectionFromOracle
+    oci.data_integration.models.UpdateConnectionFromOracleEbs
+    oci.data_integration.models.UpdateConnectionFromOraclePeopleSoft
+    oci.data_integration.models.UpdateConnectionFromOracleSiebel
     oci.data_integration.models.UpdateConnectionFromRestBasicAuth
     oci.data_integration.models.UpdateConnectionFromRestNoAuth
     oci.data_integration.models.UpdateCopyObjectRequestDetails
@@ -492,18 +550,25 @@ Data Integration
     oci.data_integration.models.UpdateDataAssetFromAmazonS3
     oci.data_integration.models.UpdateDataAssetFromAtp
     oci.data_integration.models.UpdateDataAssetFromFusionApp
+    oci.data_integration.models.UpdateDataAssetFromHdfs
     oci.data_integration.models.UpdateDataAssetFromJdbc
     oci.data_integration.models.UpdateDataAssetFromLake
     oci.data_integration.models.UpdateDataAssetFromMySQL
+    oci.data_integration.models.UpdateDataAssetFromMySqlHeatWave
     oci.data_integration.models.UpdateDataAssetFromObjectStorage
     oci.data_integration.models.UpdateDataAssetFromOracle
+    oci.data_integration.models.UpdateDataAssetFromOracleEbs
+    oci.data_integration.models.UpdateDataAssetFromOraclePeopleSoft
+    oci.data_integration.models.UpdateDataAssetFromOracleSiebel
     oci.data_integration.models.UpdateDataAssetFromRest
     oci.data_integration.models.UpdateDataFlowDetails
     oci.data_integration.models.UpdateDetailedDescriptionDetails
     oci.data_integration.models.UpdateDisApplicationDetails
+    oci.data_integration.models.UpdateExportRequestDetails
     oci.data_integration.models.UpdateExternalPublicationDetails
     oci.data_integration.models.UpdateFolderDetails
     oci.data_integration.models.UpdateFunctionLibraryDetails
+    oci.data_integration.models.UpdateImportRequestDetails
     oci.data_integration.models.UpdatePipelineDetails
     oci.data_integration.models.UpdateProjectDetails
     oci.data_integration.models.UpdateReferenceDetails

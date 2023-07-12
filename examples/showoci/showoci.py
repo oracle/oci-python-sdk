@@ -117,7 +117,7 @@ import datetime
 import contextlib
 import os
 
-version = "23.06.06"
+version = "23.07.04"
 
 ##########################################################################
 # check OCI version
@@ -323,6 +323,7 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-cn', action='store_true', default=False, dest='container', help='Print Containers')
     parser.add_argument('-d', action='store_true', default=False, dest='database', help='Print Database')
     parser.add_argument('-e', action='store_true', default=False, dest='email', help='Print EMail')
+    parser.add_argument('-exclude', default="", dest='exclude', help='Exclude Services, Currently support NETWORK')
     parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge, DNS Services and WAAS policies')
     parser.add_argument('-f', action='store_true', default=False, dest='file', help='Print File Storage')
     parser.add_argument('-fun', action='store_true', default=False, dest='function', help='Print Functions')
@@ -485,6 +486,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.skip_backups:
         prm.skip_backups = True
+
+    if cmd.exclude:
+        prm.exclude = str(cmd.exclude).split(",")
 
     if cmd.conntimeout:
         prm.connection_timeout = cmd.conntimeout

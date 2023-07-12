@@ -6,6 +6,8 @@ API Reference
 * :doc:`Access Governance Cp <access_governance_cp/client/oci.access_governance_cp.AccessGovernanceCPClient>`
 * :doc:`Access Requests <operator_access_control/client/oci.operator_access_control.AccessRequestsClient>`
 * :doc:`Account <marketplace/client/oci.marketplace.AccountClient>`
+* :doc:`Address Rule Service <osp_gateway/client/oci.osp_gateway.AddressRuleServiceClient>`
+* :doc:`Address Service <osp_gateway/client/oci.osp_gateway.AddressServiceClient>`
 * :doc:`Ai Service Document <ai_document/client/oci.ai_document.AIServiceDocumentClient>`
 * :doc:`Ai Service Language <ai_language/client/oci.ai_language.AIServiceLanguageClient>`
 * :doc:`Ai Service Speech <ai_speech/client/oci.ai_speech.AIServiceSpeechClient>`

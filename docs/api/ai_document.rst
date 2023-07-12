@@ -18,11 +18,13 @@ Ai Document
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.ai_document.models.AnalyzeDocumentDetails
     oci.ai_document.models.AnalyzeDocumentResult
     oci.ai_document.models.BoundingPolygon
     oci.ai_document.models.Cell
     oci.ai_document.models.ChangeModelCompartmentDetails
     oci.ai_document.models.ChangeProjectCompartmentDetails
+    oci.ai_document.models.ComponentModel
     oci.ai_document.models.CreateModelDetails
     oci.ai_document.models.CreateProcessorJobDetails
     oci.ai_document.models.CreateProjectDetails
@@ -37,6 +39,7 @@ Ai Document
     oci.ai_document.models.DocumentClassificationLabelMetricsReport
     oci.ai_document.models.DocumentClassificationModelMetrics
     oci.ai_document.models.DocumentClassificationOverallMetricsReport
+    oci.ai_document.models.DocumentDetails
     oci.ai_document.models.DocumentFeature
     oci.ai_document.models.DocumentField
     oci.ai_document.models.DocumentKeyValueExtractionFeature
@@ -49,6 +52,7 @@ Ai Document
     oci.ai_document.models.FieldValue
     oci.ai_document.models.GeneralProcessorConfig
     oci.ai_document.models.InlineDocumentContent
+    oci.ai_document.models.InlineDocumentDetails
     oci.ai_document.models.InputLocation
     oci.ai_document.models.KeyValueDetectionConfidenceEntry
     oci.ai_document.models.KeyValueDetectionLabelMetricsReport
@@ -62,9 +66,13 @@ Ai Document
     oci.ai_document.models.NormalizedVertex
     oci.ai_document.models.ObjectLocation
     oci.ai_document.models.ObjectStorageDataset
+    oci.ai_document.models.ObjectStorageDocumentDetails
     oci.ai_document.models.ObjectStorageLocations
     oci.ai_document.models.OutputLocation
     oci.ai_document.models.Page
+    oci.ai_document.models.PatchModelDetails
+    oci.ai_document.models.PatchModelOperation
+    oci.ai_document.models.PatchResponseMessage
     oci.ai_document.models.ProcessingError
     oci.ai_document.models.ProcessorConfig
     oci.ai_document.models.ProcessorJob
