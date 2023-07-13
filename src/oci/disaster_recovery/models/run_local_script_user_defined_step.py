@@ -69,10 +69,10 @@ class RunLocalScriptUserDefinedStep(DrPlanUserDefinedStep):
     @property
     def run_on_instance_id(self):
         """
-        Gets the run_on_instance_id of this RunLocalScriptUserDefinedStep.
+        **[Required]** Gets the run_on_instance_id of this RunLocalScriptUserDefinedStep.
         The OCID of the instance where this script or command should be executed.
 
-        Example: `ocid1.instance.oc1.phx.exampleocid1`
+        Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 
 
         :return: The run_on_instance_id of this RunLocalScriptUserDefinedStep.
@@ -86,7 +86,7 @@ class RunLocalScriptUserDefinedStep(DrPlanUserDefinedStep):
         Sets the run_on_instance_id of this RunLocalScriptUserDefinedStep.
         The OCID of the instance where this script or command should be executed.
 
-        Example: `ocid1.instance.oc1.phx.exampleocid1`
+        Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 
 
         :param run_on_instance_id: The run_on_instance_id of this RunLocalScriptUserDefinedStep.
@@ -97,7 +97,7 @@ class RunLocalScriptUserDefinedStep(DrPlanUserDefinedStep):
     @property
     def run_on_instance_region(self):
         """
-        Gets the run_on_instance_region of this RunLocalScriptUserDefinedStep.
+        **[Required]** Gets the run_on_instance_region of this RunLocalScriptUserDefinedStep.
         The region in which the instance is present.
 
         Example: `us-phoenix-1`
@@ -125,7 +125,7 @@ class RunLocalScriptUserDefinedStep(DrPlanUserDefinedStep):
     @property
     def script_command(self):
         """
-        Gets the script_command of this RunLocalScriptUserDefinedStep.
+        **[Required]** Gets the script_command of this RunLocalScriptUserDefinedStep.
         The script name and arguments.
 
         Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerSummary(object):
     """
-    A reduced set of details about a single Container returned by list APIs.
+    Summary information about a container.
     """
 
     def __init__(self, **kwargs):
@@ -144,7 +144,9 @@ class ContainerSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ContainerSummary.
-        Unique identifier that is immutable on creation
+        The `OCID`__ of the container.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ContainerSummary.
@@ -156,7 +158,9 @@ class ContainerSummary(object):
     def id(self, id):
         """
         Sets the id of this ContainerSummary.
-        Unique identifier that is immutable on creation
+        The `OCID`__ of the container.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ContainerSummary.
@@ -168,7 +172,7 @@ class ContainerSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ContainerSummary.
-        Display name for the Container. Can be renamed.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this ContainerSummary.
@@ -180,7 +184,7 @@ class ContainerSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ContainerSummary.
-        Display name for the Container. Can be renamed.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this ContainerSummary.
@@ -192,7 +196,9 @@ class ContainerSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ContainerSummary.
-        Compartment Identifier
+        The compartment `OCID`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ContainerSummary.
@@ -204,7 +210,9 @@ class ContainerSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ContainerSummary.
-        Compartment Identifier
+        The compartment `OCID`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ContainerSummary.
@@ -243,7 +251,7 @@ class ContainerSummary(object):
         """
         Gets the defined_tags of this ContainerSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :return: The defined_tags of this ContainerSummary.
@@ -256,7 +264,7 @@ class ContainerSummary(object):
         """
         Sets the defined_tags of this ContainerSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :param defined_tags: The defined_tags of this ContainerSummary.
@@ -269,7 +277,7 @@ class ContainerSummary(object):
         """
         Gets the system_tags of this ContainerSummary.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`.
 
 
         :return: The system_tags of this ContainerSummary.
@@ -282,7 +290,7 @@ class ContainerSummary(object):
         """
         Sets the system_tags of this ContainerSummary.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`.
 
 
         :param system_tags: The system_tags of this ContainerSummary.
@@ -294,7 +302,7 @@ class ContainerSummary(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this ContainerSummary.
-        Availability Domain where the Container's Instance is running.
+        The availability domain where the container instance that hosts this container runs.
 
 
         :return: The availability_domain of this ContainerSummary.
@@ -306,7 +314,7 @@ class ContainerSummary(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this ContainerSummary.
-        Availability Domain where the Container's Instance is running.
+        The availability domain where the container instance that hosts this container runs.
 
 
         :param availability_domain: The availability_domain of this ContainerSummary.
@@ -318,7 +326,7 @@ class ContainerSummary(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this ContainerSummary.
-        Fault Domain where the Container's Instance is running.
+        The fault domain where the container instance that hosts the container runs.
 
 
         :return: The fault_domain of this ContainerSummary.
@@ -330,7 +338,7 @@ class ContainerSummary(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this ContainerSummary.
-        Fault Domain where the Container's Instance is running.
+        The fault domain where the container instance that hosts the container runs.
 
 
         :param fault_domain: The fault_domain of this ContainerSummary.
@@ -342,7 +350,7 @@ class ContainerSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ContainerSummary.
-        The current state of the Container.
+        The current state of the container.
 
 
         :return: The lifecycle_state of this ContainerSummary.
@@ -354,7 +362,7 @@ class ContainerSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ContainerSummary.
-        The current state of the Container.
+        The current state of the container.
 
 
         :param lifecycle_state: The lifecycle_state of this ContainerSummary.
@@ -366,8 +374,8 @@ class ContainerSummary(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this ContainerSummary.
-        A message describing the current state in more detail. For example, can be used to provide
-        actionable information for a resource in Failed state.
+        A message that describes the current state of the container in more detail. Can be used to provide
+        actionable information.
 
 
         :return: The lifecycle_details of this ContainerSummary.
@@ -379,8 +387,8 @@ class ContainerSummary(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this ContainerSummary.
-        A message describing the current state in more detail. For example, can be used to provide
-        actionable information for a resource in Failed state.
+        A message that describes the current state of the container in more detail. Can be used to provide
+        actionable information.
 
 
         :param lifecycle_details: The lifecycle_details of this ContainerSummary.
@@ -392,7 +400,9 @@ class ContainerSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ContainerSummary.
-        The time the the Container was created. An RFC3339 formatted datetime string
+        The time the the container was created in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this ContainerSummary.
@@ -404,7 +414,9 @@ class ContainerSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ContainerSummary.
-        The time the the Container was created. An RFC3339 formatted datetime string
+        The time the the container was created in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this ContainerSummary.
@@ -416,7 +428,9 @@ class ContainerSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this ContainerSummary.
-        The time the Container was updated. An RFC3339 formatted datetime string
+        The time the container was updated in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_updated of this ContainerSummary.
@@ -428,7 +442,9 @@ class ContainerSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ContainerSummary.
-        The time the Container was updated. An RFC3339 formatted datetime string
+        The time the container was updated in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_updated: The time_updated of this ContainerSummary.
@@ -440,7 +456,9 @@ class ContainerSummary(object):
     def container_instance_id(self):
         """
         **[Required]** Gets the container_instance_id of this ContainerSummary.
-        The identifier of the Container Instance on which this container is running.
+        The `OCID`__ of the container instance on which the container is running.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The container_instance_id of this ContainerSummary.
@@ -452,7 +470,9 @@ class ContainerSummary(object):
     def container_instance_id(self, container_instance_id):
         """
         Sets the container_instance_id of this ContainerSummary.
-        The identifier of the Container Instance on which this container is running.
+        The `OCID`__ of the container instance on which the container is running.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param container_instance_id: The container_instance_id of this ContainerSummary.
@@ -484,9 +504,8 @@ class ContainerSummary(object):
     def image_url(self):
         """
         **[Required]** Gets the image_url of this ContainerSummary.
-        The container image information. Currently only support public docker registry. Can be either image name,
-        e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g
-        `docker.io/library/containerImage:latest`.
+        A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+
         If no registry is provided, will default the registry to public docker hub `docker.io/library`.
         The registry used for container image must be reachable over the Container Instance's VNIC.
 
@@ -500,9 +519,8 @@ class ContainerSummary(object):
     def image_url(self, image_url):
         """
         Sets the image_url of this ContainerSummary.
-        The container image information. Currently only support public docker registry. Can be either image name,
-        e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g
-        `docker.io/library/containerImage:latest`.
+        A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+
         If no registry is provided, will default the registry to public docker hub `docker.io/library`.
         The registry used for container image must be reachable over the Container Instance's VNIC.
 
@@ -516,10 +534,10 @@ class ContainerSummary(object):
     def is_resource_principal_disabled(self):
         """
         Gets the is_resource_principal_disabled of this ContainerSummary.
-        Determines if the Container will have access to the Container Instance Resource Principal.
-        This method utilizes resource principal version 2.2. Please refer to
-        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-        for detailed explanation of how to leverage the exposed resource principal elements.
+        Determines whether the container will have access to the container instance resource principal.
+
+        This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see
+        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
 
 
         :return: The is_resource_principal_disabled of this ContainerSummary.
@@ -531,10 +549,10 @@ class ContainerSummary(object):
     def is_resource_principal_disabled(self, is_resource_principal_disabled):
         """
         Sets the is_resource_principal_disabled of this ContainerSummary.
-        Determines if the Container will have access to the Container Instance Resource Principal.
-        This method utilizes resource principal version 2.2. Please refer to
-        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-        for detailed explanation of how to leverage the exposed resource principal elements.
+        Determines whether the container will have access to the container instance resource principal.
+
+        This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see
+        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
 
 
         :param is_resource_principal_disabled: The is_resource_principal_disabled of this ContainerSummary.

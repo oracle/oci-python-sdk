@@ -24,10 +24,12 @@ Bds
     oci.bds.models.AddBlockStorageDetails
     oci.bds.models.AddCloudSqlDetails
     oci.bds.models.AddKafkaDetails
+    oci.bds.models.AddMasterNodesDetails
     oci.bds.models.AddMetricBasedHorizontalScalingPolicyDetails
     oci.bds.models.AddMetricBasedVerticalScalingPolicyDetails
     oci.bds.models.AddScheduleBasedHorizontalScalingPolicyDetails
     oci.bds.models.AddScheduleBasedVerticalScalingPolicyDetails
+    oci.bds.models.AddUtilityNodesDetails
     oci.bds.models.AddWorkerNodesDetails
     oci.bds.models.AutoScalePolicy
     oci.bds.models.AutoScalePolicyDetails
@@ -55,6 +57,7 @@ Bds
     oci.bds.models.DefaultError
     oci.bds.models.ExecuteBootstrapScriptDetails
     oci.bds.models.HorizontalScalingScheduleDetails
+    oci.bds.models.InstallOsPatchDetails
     oci.bds.models.InstallPatchDetails
     oci.bds.models.KerberosDetails
     oci.bds.models.MetricBasedHorizontalScaleInConfig
@@ -66,6 +69,9 @@ Bds
     oci.bds.models.MetricThresholdRule
     oci.bds.models.NetworkConfig
     oci.bds.models.Node
+    oci.bds.models.OsPatchDetails
+    oci.bds.models.OsPatchPackageSummary
+    oci.bds.models.OsPatchSummary
     oci.bds.models.PatchHistorySummary
     oci.bds.models.PatchSummary
     oci.bds.models.RemoveAutoScalingConfigurationDetails

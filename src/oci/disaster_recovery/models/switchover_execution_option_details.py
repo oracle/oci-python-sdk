@@ -56,7 +56,7 @@ class SwitchoverExecutionOptionDetails(DrPlanExecutionOptionDetails):
     def are_prechecks_enabled(self):
         """
         Gets the are_prechecks_enabled of this SwitchoverExecutionOptionDetails.
-        A flag indicating whether a precheck should be executed before the plan.
+        A flag indicating whether prechecks should be executed before the plan execution.
 
         Example: `false`
 
@@ -70,7 +70,7 @@ class SwitchoverExecutionOptionDetails(DrPlanExecutionOptionDetails):
     def are_prechecks_enabled(self, are_prechecks_enabled):
         """
         Sets the are_prechecks_enabled of this SwitchoverExecutionOptionDetails.
-        A flag indicating whether a precheck should be executed before the plan.
+        A flag indicating whether prechecks should be executed before the plan execution.
 
         Example: `false`
 
@@ -84,7 +84,7 @@ class SwitchoverExecutionOptionDetails(DrPlanExecutionOptionDetails):
     def are_warnings_ignored(self):
         """
         Gets the are_warnings_ignored of this SwitchoverExecutionOptionDetails.
-        A flag indicating whether warnigs should be ignored during the switchover.
+        A flag indicating whether warnings should be ignored during the switchover.
 
         Example: `true`
 
@@ -98,7 +98,7 @@ class SwitchoverExecutionOptionDetails(DrPlanExecutionOptionDetails):
     def are_warnings_ignored(self, are_warnings_ignored):
         """
         Sets the are_warnings_ignored of this SwitchoverExecutionOptionDetails.
-        A flag indicating whether warnigs should be ignored during the switchover.
+        A flag indicating whether warnings should be ignored during the switchover.
 
         Example: `true`
 

@@ -20,6 +20,7 @@ class InstanceConfigurationInstanceDetails(object):
         Initializes a new InstanceConfigurationInstanceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.core.models.ComputeInstanceOptions`
         * :class:`~oci.core.models.ComputeInstanceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -46,6 +47,9 @@ class InstanceConfigurationInstanceDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['instanceType']
+
+        if type == 'instance_options':
+            return 'ComputeInstanceOptions'
 
         if type == 'compute':
             return 'ComputeInstanceDetails'

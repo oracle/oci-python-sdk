@@ -114,7 +114,7 @@ class ContainerCommandHealthCheck(ContainerHealthCheck):
     def command(self):
         """
         **[Required]** Gets the command of this ContainerCommandHealthCheck.
-        The list of strings which will be concatenated to a single command for checking container's status.
+        The list of strings that will be simplified to a single command for checking the status of the container.
 
 
         :return: The command of this ContainerCommandHealthCheck.
@@ -126,7 +126,7 @@ class ContainerCommandHealthCheck(ContainerHealthCheck):
     def command(self, command):
         """
         Sets the command of this ContainerCommandHealthCheck.
-        The list of strings which will be concatenated to a single command for checking container's status.
+        The list of strings that will be simplified to a single command for checking the status of the container.
 
 
         :param command: The command of this ContainerCommandHealthCheck.

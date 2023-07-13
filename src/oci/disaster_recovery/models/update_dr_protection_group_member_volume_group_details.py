@@ -27,7 +27,7 @@ class UpdateDrProtectionGroupMemberVolumeGroupDetails(UpdateDrProtectionGroupMem
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberVolumeGroupDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
         :type member_type: str
 
         """

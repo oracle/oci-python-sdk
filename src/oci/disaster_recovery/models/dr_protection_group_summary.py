@@ -169,7 +169,7 @@ class DrProtectionGroupSummary(object):
         **[Required]** Gets the id of this DrProtectionGroupSummary.
         The OCID of the DR Protection Group.
 
-        Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 
 
         :return: The id of this DrProtectionGroupSummary.
@@ -183,7 +183,7 @@ class DrProtectionGroupSummary(object):
         Sets the id of this DrProtectionGroupSummary.
         The OCID of the DR Protection Group.
 
-        Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 
 
         :param id: The id of this DrProtectionGroupSummary.
@@ -197,7 +197,7 @@ class DrProtectionGroupSummary(object):
         **[Required]** Gets the compartment_id of this DrProtectionGroupSummary.
         The OCID of the compartment containing the DR Protection Group.
 
-        Example: `ocid1.compartment.oc1..exampleocid1`
+        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 
 
         :return: The compartment_id of this DrProtectionGroupSummary.
@@ -211,7 +211,7 @@ class DrProtectionGroupSummary(object):
         Sets the compartment_id of this DrProtectionGroupSummary.
         The OCID of the compartment containing the DR Protection Group.
 
-        Example: `ocid1.compartment.oc1..exampleocid1`
+        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 
 
         :param compartment_id: The compartment_id of this DrProtectionGroupSummary.
@@ -283,7 +283,7 @@ class DrProtectionGroupSummary(object):
         Gets the peer_id of this DrProtectionGroupSummary.
         The OCID of the peer (remote) DR Protection Group.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 
 
         :return: The peer_id of this DrProtectionGroupSummary.
@@ -297,7 +297,7 @@ class DrProtectionGroupSummary(object):
         Sets the peer_id of this DrProtectionGroupSummary.
         The OCID of the peer (remote) DR Protection Group.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 
 
         :param peer_id: The peer_id of this DrProtectionGroupSummary.

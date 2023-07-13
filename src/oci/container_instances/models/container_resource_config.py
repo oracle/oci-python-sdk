@@ -12,8 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerResourceConfig(object):
     """
-    The resource configuration for a Container. The resource configuration determines
-    the guaranteed resources allocated to the container and the maximum allowed resources for a container.
+    The resource configuration for a container. The resource configuration determines
+    the amount of resources allocated to the container and the maximum allowed resources for a container.
     """
 
     def __init__(self, **kwargs):
@@ -47,9 +47,11 @@ class ContainerResourceConfig(object):
     def vcpus_limit(self):
         """
         Gets the vcpus_limit of this ContainerResourceConfig.
-        The maximum amount of CPU utilization which may be consumed by the Container's
-        process. If no value is provided, then the process may consume
-        all CPU resources on the Instance.
+        The maximum amount of CPUs that can be consumed by the container's process.
+
+        If you do not set a value, then the process
+        may use all available CPU resources on the container instance.
+
         CPU usage is defined in terms of logical CPUs. This means that the
         maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
 
@@ -63,9 +65,11 @@ class ContainerResourceConfig(object):
     def vcpus_limit(self, vcpus_limit):
         """
         Sets the vcpus_limit of this ContainerResourceConfig.
-        The maximum amount of CPU utilization which may be consumed by the Container's
-        process. If no value is provided, then the process may consume
-        all CPU resources on the Instance.
+        The maximum amount of CPUs that can be consumed by the container's process.
+
+        If you do not set a value, then the process
+        may use all available CPU resources on the container instance.
+
         CPU usage is defined in terms of logical CPUs. This means that the
         maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
 
@@ -79,9 +83,9 @@ class ContainerResourceConfig(object):
     def memory_limit_in_gbs(self):
         """
         Gets the memory_limit_in_gbs of this ContainerResourceConfig.
-        The maximum amount of memory which may be consumed by the Container's
-        process. If no value is provided, then the process
-        may use all available memory on the Instance.
+        The maximum amount of memory that can be consumed by the container's
+        process. If you do not set a value, then the process
+        may use all available memory on the instance.
 
 
         :return: The memory_limit_in_gbs of this ContainerResourceConfig.
@@ -93,9 +97,9 @@ class ContainerResourceConfig(object):
     def memory_limit_in_gbs(self, memory_limit_in_gbs):
         """
         Sets the memory_limit_in_gbs of this ContainerResourceConfig.
-        The maximum amount of memory which may be consumed by the Container's
-        process. If no value is provided, then the process
-        may use all available memory on the Instance.
+        The maximum amount of memory that can be consumed by the container's
+        process. If you do not set a value, then the process
+        may use all available memory on the instance.
 
 
         :param memory_limit_in_gbs: The memory_limit_in_gbs of this ContainerResourceConfig.

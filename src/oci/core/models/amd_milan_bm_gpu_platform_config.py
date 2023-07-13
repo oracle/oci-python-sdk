@@ -12,8 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AmdMilanBmGpuPlatformConfig(PlatformConfig):
     """
-    The platform configuration used when launching a bare metal GPU instance with the following shape: BM.GPU.GM4.8
-    (the AMD Milan platform).
+    The platform configuration used when launching a bare metal GPU instance with the following shape: BM.GPU.GM4.8 (also
+    named BM.GPU.A100-v2.8) (the AMD Milan platform).
     """
 
     #: A constant which can be used with the numa_nodes_per_socket property of a AmdMilanBmGpuPlatformConfig.

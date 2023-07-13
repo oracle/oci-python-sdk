@@ -153,6 +153,7 @@ Core Services
     oci.core.models.ComputeImageCapabilitySchema
     oci.core.models.ComputeImageCapabilitySchemaSummary
     oci.core.models.ComputeInstanceDetails
+    oci.core.models.ComputeInstanceOptions
     oci.core.models.ConnectLocalPeeringGatewaysDetails
     oci.core.models.ConnectRemotePeeringConnectionsDetails
     oci.core.models.ConsoleHistory
@@ -318,6 +319,7 @@ Core Services
     oci.core.models.InstanceConfigurationInstanceDetails
     oci.core.models.InstanceConfigurationInstanceOptions
     oci.core.models.InstanceConfigurationInstanceSourceDetails
+    oci.core.models.InstanceConfigurationInstanceSourceImageFilterDetails
     oci.core.models.InstanceConfigurationInstanceSourceViaBootVolumeDetails
     oci.core.models.InstanceConfigurationInstanceSourceViaImageDetails
     oci.core.models.InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
@@ -352,6 +354,7 @@ Core Services
     oci.core.models.InstanceReservationShapeConfigDetails
     oci.core.models.InstanceShapeConfig
     oci.core.models.InstanceSourceDetails
+    oci.core.models.InstanceSourceImageFilterDetails
     oci.core.models.InstanceSourceViaBootVolumeDetails
     oci.core.models.InstanceSourceViaImageDetails
     oci.core.models.InstanceSummary

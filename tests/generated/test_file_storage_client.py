@@ -160,6 +160,48 @@ def test_change_mount_target_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_change_outbound_connector_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'ChangeOutboundConnectorCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ChangeOutboundConnectorCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ChangeOutboundConnectorCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.change_outbound_connector_compartment(
+                outbound_connector_id=request.pop(util.camelize('outboundConnectorId')),
+                change_outbound_connector_compartment_details=request.pop(util.camelize('ChangeOutboundConnectorCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'ChangeOutboundConnectorCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_outbound_connector_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_change_replication_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ChangeReplicationCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -360,6 +402,47 @@ def test_create_mount_target(testing_service_client):
             result,
             service_error,
             'mountTarget',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_create_outbound_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'CreateOutboundConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'CreateOutboundConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='CreateOutboundConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.create_outbound_connector(
+                create_outbound_connector_details=request.pop(util.camelize('CreateOutboundConnectorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'CreateOutboundConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'outboundConnector',
             False,
             False
         )
@@ -606,6 +689,47 @@ def test_delete_mount_target(testing_service_client):
             result,
             service_error,
             'delete_mount_target',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_delete_outbound_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'DeleteOutboundConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'DeleteOutboundConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='DeleteOutboundConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.delete_outbound_connector(
+                outbound_connector_id=request.pop(util.camelize('outboundConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'DeleteOutboundConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_outbound_connector',
             True,
             False
         )
@@ -975,6 +1099,47 @@ def test_get_mount_target(testing_service_client):
             result,
             service_error,
             'mountTarget',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_get_outbound_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'GetOutboundConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'GetOutboundConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='GetOutboundConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.get_outbound_connector(
+                outbound_connector_id=request.pop(util.camelize('outboundConnectorId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'GetOutboundConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'outboundConnector',
             False,
             False
         )
@@ -1422,6 +1587,72 @@ def test_list_mount_targets(testing_service_client):
             result,
             service_error,
             'mountTargetSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_list_outbound_connectors(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'ListOutboundConnectors'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ListOutboundConnectors')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ListOutboundConnectors')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.list_outbound_connectors(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                availability_domain=request.pop(util.camelize('availabilityDomain')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_outbound_connectors(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    availability_domain=request.pop(util.camelize('availabilityDomain')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_outbound_connectors(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        availability_domain=request.pop(util.camelize('availabilityDomain')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'ListOutboundConnectors',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'outboundConnectorSummary',
             False,
             True
         )
@@ -1912,6 +2143,48 @@ def test_update_mount_target(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_update_outbound_connector(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'UpdateOutboundConnector'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'UpdateOutboundConnector')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='UpdateOutboundConnector')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.update_outbound_connector(
+                outbound_connector_id=request.pop(util.camelize('outboundConnectorId')),
+                update_outbound_connector_details=request.pop(util.camelize('UpdateOutboundConnectorDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'UpdateOutboundConnector',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'outboundConnector',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_update_replication(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'UpdateReplication'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1990,6 +2263,47 @@ def test_update_snapshot(testing_service_client):
             result,
             service_error,
             'snapshot',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_validate_key_tabs(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'ValidateKeyTabs'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ValidateKeyTabs')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ValidateKeyTabs')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.validate_key_tabs(
+                validate_key_tabs_details=request.pop(util.camelize('ValidateKeyTabsDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'ValidateKeyTabs',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'validateKeyTabsResponseDetails',
             False,
             False
         )

@@ -155,7 +155,7 @@ class WorkRequestSummary(object):
     def operation_type(self):
         """
         **[Required]** Gets the operation_type of this WorkRequestSummary.
-        Type of the work request
+        Type of work request.
 
         Allowed values for this property are: "CREATE_CONTAINER_INSTANCE", "UPDATE_CONTAINER_INSTANCE", "DELETE_CONTAINER_INSTANCE", "MOVE_CONTAINER_INSTANCE", "START_CONTAINER_INSTANCE", "STOP_CONTAINER_INSTANCE", "RESTART_CONTAINER_INSTANCE", "UPDATE_CONTAINER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -170,7 +170,7 @@ class WorkRequestSummary(object):
     def operation_type(self, operation_type):
         """
         Sets the operation_type of this WorkRequestSummary.
-        Type of the work request
+        Type of work request.
 
 
         :param operation_type: The operation_type of this WorkRequestSummary.
@@ -215,7 +215,7 @@ class WorkRequestSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this WorkRequestSummary.
-        The id of the work request.
+        The ID of the work request.
 
 
         :return: The id of this WorkRequestSummary.
@@ -227,7 +227,7 @@ class WorkRequestSummary(object):
     def id(self, id):
         """
         Sets the id of this WorkRequestSummary.
-        The id of the work request.
+        The ID of the work request.
 
 
         :param id: The id of this WorkRequestSummary.
@@ -239,10 +239,8 @@ class WorkRequestSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this WorkRequestSummary.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
-        the same compartment as the resource the work request affects. If the work request affects multiple resources,
-        and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used
+        The OCID of the compartment that contains the work request. Work requests should be scoped to
+        the same compartment as the resource the work request affects.
 
 
         :return: The compartment_id of this WorkRequestSummary.
@@ -254,10 +252,8 @@ class WorkRequestSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequestSummary.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
-        the same compartment as the resource the work request affects. If the work request affects multiple resources,
-        and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used
+        The OCID of the compartment that contains the work request. Work requests should be scoped to
+        the same compartment as the resource the work request affects.
 
 
         :param compartment_id: The compartment_id of this WorkRequestSummary.

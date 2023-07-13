@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerCollection(object):
     """
-    A list of matching Containers.
+    A list of containers.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ContainerCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ContainerCollection.
-        List of Containers.
+        List of containers.
 
 
         :return: The items of this ContainerCollection.
@@ -51,7 +51,7 @@ class ContainerCollection(object):
     def items(self, items):
         """
         Sets the items of this ContainerCollection.
-        List of Containers.
+        List of containers.
 
 
         :param items: The items of this ContainerCollection.

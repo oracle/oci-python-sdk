@@ -20,6 +20,14 @@ class UpdateDrProtectionGroupMemberDetails(object):
     MEMBER_TYPE_COMPUTE_INSTANCE = "COMPUTE_INSTANCE"
 
     #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "COMPUTE_INSTANCE_MOVABLE"
+    MEMBER_TYPE_COMPUTE_INSTANCE_MOVABLE = "COMPUTE_INSTANCE_MOVABLE"
+
+    #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "COMPUTE_INSTANCE_NON_MOVABLE"
+    MEMBER_TYPE_COMPUTE_INSTANCE_NON_MOVABLE = "COMPUTE_INSTANCE_NON_MOVABLE"
+
+    #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
     #: This constant has a value of "VOLUME_GROUP"
     MEMBER_TYPE_VOLUME_GROUP = "VOLUME_GROUP"
 
@@ -39,6 +47,8 @@ class UpdateDrProtectionGroupMemberDetails(object):
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberAutonomousDatabaseDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberVolumeGroupDetails`
+        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails`
+        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceMovableDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberDatabaseDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -49,7 +59,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
         :type member_type: str
 
         """
@@ -83,6 +93,12 @@ class UpdateDrProtectionGroupMemberDetails(object):
         if type == 'VOLUME_GROUP':
             return 'UpdateDrProtectionGroupMemberVolumeGroupDetails'
 
+        if type == 'COMPUTE_INSTANCE_NON_MOVABLE':
+            return 'UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails'
+
+        if type == 'COMPUTE_INSTANCE_MOVABLE':
+            return 'UpdateDrProtectionGroupMemberComputeInstanceMovableDetails'
+
         if type == 'DATABASE':
             return 'UpdateDrProtectionGroupMemberDatabaseDetails'
         else:
@@ -94,7 +110,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         **[Required]** Gets the member_id of this UpdateDrProtectionGroupMemberDetails.
         The OCID of the member.
 
-        Example: `ocid1.database.oc1.phx.exampleocid1`
+        Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
 
 
         :return: The member_id of this UpdateDrProtectionGroupMemberDetails.
@@ -108,7 +124,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         Sets the member_id of this UpdateDrProtectionGroupMemberDetails.
         The OCID of the member.
 
-        Example: `ocid1.database.oc1.phx.exampleocid1`
+        Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
 
 
         :param member_id: The member_id of this UpdateDrProtectionGroupMemberDetails.
@@ -122,7 +138,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         **[Required]** Gets the member_type of this UpdateDrProtectionGroupMemberDetails.
         The type of the member.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
 
 
         :return: The member_type of this UpdateDrProtectionGroupMemberDetails.
@@ -140,7 +156,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         :param member_type: The member_type of this UpdateDrProtectionGroupMemberDetails.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"]
+        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             raise ValueError(
                 "Invalid value for `member_type`, must be None or one of {0}"

@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.siteguard</groupId>
         <artifactId>siteguard-cloud-service-spec</artifactId>
-        <version>0.2.487</version>
+        <version>0.2.722</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

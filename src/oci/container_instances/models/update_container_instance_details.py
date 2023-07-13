@@ -53,7 +53,7 @@ class UpdateContainerInstanceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateContainerInstanceDetails.
-        ContainerInstance Identifier
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateContainerInstanceDetails.
@@ -65,7 +65,7 @@ class UpdateContainerInstanceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateContainerInstanceDetails.
-        ContainerInstance Identifier
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateContainerInstanceDetails.
@@ -104,7 +104,7 @@ class UpdateContainerInstanceDetails(object):
         """
         Gets the defined_tags of this UpdateContainerInstanceDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :return: The defined_tags of this UpdateContainerInstanceDetails.
@@ -117,7 +117,7 @@ class UpdateContainerInstanceDetails(object):
         """
         Sets the defined_tags of this UpdateContainerInstanceDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :param defined_tags: The defined_tags of this UpdateContainerInstanceDetails.

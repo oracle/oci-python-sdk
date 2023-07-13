@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.identity</groupId>
         <artifactId>identity-data-plane-api-spec-preview</artifactId>
-        <version>0.2.69</version>
+        <version>0.2.80</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

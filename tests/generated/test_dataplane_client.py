@@ -72,3 +72,44 @@ def test_generate_scoped_access_token(testing_service_client):
             False,
             False
         )
+
+
+# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+def test_generate_user_security_token(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_data_plane', 'GenerateUserSecurityToken'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_data_plane', util.camelize('dataplane'), 'GenerateUserSecurityToken')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_data_plane', api_name='GenerateUserSecurityToken')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity_data_plane.DataplaneClient(config, service_endpoint=service_endpoint)
+            response = client.generate_user_security_token(
+                generate_user_security_token_details=request.pop(util.camelize('GenerateUserSecurityTokenDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_data_plane',
+            'GenerateUserSecurityToken',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'securityToken',
+            False,
+            False
+        )

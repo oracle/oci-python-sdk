@@ -20,6 +20,14 @@ class DrProtectionGroupMember(object):
     MEMBER_TYPE_COMPUTE_INSTANCE = "COMPUTE_INSTANCE"
 
     #: A constant which can be used with the member_type property of a DrProtectionGroupMember.
+    #: This constant has a value of "COMPUTE_INSTANCE_MOVABLE"
+    MEMBER_TYPE_COMPUTE_INSTANCE_MOVABLE = "COMPUTE_INSTANCE_MOVABLE"
+
+    #: A constant which can be used with the member_type property of a DrProtectionGroupMember.
+    #: This constant has a value of "COMPUTE_INSTANCE_NON_MOVABLE"
+    MEMBER_TYPE_COMPUTE_INSTANCE_NON_MOVABLE = "COMPUTE_INSTANCE_NON_MOVABLE"
+
+    #: A constant which can be used with the member_type property of a DrProtectionGroupMember.
     #: This constant has a value of "VOLUME_GROUP"
     MEMBER_TYPE_VOLUME_GROUP = "VOLUME_GROUP"
 
@@ -37,8 +45,10 @@ class DrProtectionGroupMember(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberVolumeGroup`
+        * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceMovable`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberAutonomousDatabase`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstance`
+        * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceNonMovable`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberDatabase`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -49,7 +59,7 @@ class DrProtectionGroupMember(object):
 
         :param member_type:
             The value to assign to the member_type property of this DrProtectionGroupMember.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type member_type: str
 
@@ -78,11 +88,17 @@ class DrProtectionGroupMember(object):
         if type == 'VOLUME_GROUP':
             return 'DrProtectionGroupMemberVolumeGroup'
 
+        if type == 'COMPUTE_INSTANCE_MOVABLE':
+            return 'DrProtectionGroupMemberComputeInstanceMovable'
+
         if type == 'AUTONOMOUS_DATABASE':
             return 'DrProtectionGroupMemberAutonomousDatabase'
 
         if type == 'COMPUTE_INSTANCE':
             return 'DrProtectionGroupMemberComputeInstance'
+
+        if type == 'COMPUTE_INSTANCE_NON_MOVABLE':
+            return 'DrProtectionGroupMemberComputeInstanceNonMovable'
 
         if type == 'DATABASE':
             return 'DrProtectionGroupMemberDatabase'
@@ -95,7 +111,7 @@ class DrProtectionGroupMember(object):
         **[Required]** Gets the member_id of this DrProtectionGroupMember.
         The OCID of the member.
 
-        Example: `ocid1.instance.oc1.phx.exampleocid1`
+        Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 
 
         :return: The member_id of this DrProtectionGroupMember.
@@ -109,7 +125,7 @@ class DrProtectionGroupMember(object):
         Sets the member_id of this DrProtectionGroupMember.
         The OCID of the member.
 
-        Example: `ocid1.instance.oc1.phx.exampleocid1`
+        Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 
 
         :param member_id: The member_id of this DrProtectionGroupMember.
@@ -123,7 +139,7 @@ class DrProtectionGroupMember(object):
         **[Required]** Gets the member_type of this DrProtectionGroupMember.
         The type of the member.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -142,7 +158,7 @@ class DrProtectionGroupMember(object):
         :param member_type: The member_type of this DrProtectionGroupMember.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"]
+        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             member_type = 'UNKNOWN_ENUM_VALUE'
         self._member_type = member_type

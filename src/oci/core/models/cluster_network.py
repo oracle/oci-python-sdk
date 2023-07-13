@@ -12,9 +12,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ClusterNetwork(object):
     """
-    A cluster network is a group of high performance computing (HPC) bare metal instances that are connected
-    with an ultra low latency network. For more information about cluster networks, see
-    `Managing Cluster Networks`__.
+    A cluster network is a group of high performance computing (HPC), GPU, or optimized bare metal
+    instances that are connected with an ultra low-latency remote direct memory access (RDMA)
+    network. `Cluster networks with instance pools`__
+    use instance pools to manage groups of identical instances.
+
+    Use cluster networks with instance pools when you want predictable capacity for a specific number of identical
+    instances that are managed as a group.
+
+    If you want to manage instances in the RDMA network independently of each other or use different types of instances
+    in the network group, use compute clusters instead. For details, see :class:`ComputeCluster`.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
     """
@@ -210,7 +217,7 @@ class ClusterNetwork(object):
     def hpc_island_id(self):
         """
         Gets the hpc_island_id of this ClusterNetwork.
-        The `OCID`__ of the hpc island used by the cluster network.
+        The `OCID`__ of the HPC island used by the cluster network.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -224,7 +231,7 @@ class ClusterNetwork(object):
     def hpc_island_id(self, hpc_island_id):
         """
         Sets the hpc_island_id of this ClusterNetwork.
-        The `OCID`__ of the hpc island used by the cluster network.
+        The `OCID`__ of the HPC island used by the cluster network.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

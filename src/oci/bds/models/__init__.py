@@ -12,10 +12,12 @@ from .add_auto_scaling_configuration_details import AddAutoScalingConfigurationD
 from .add_block_storage_details import AddBlockStorageDetails
 from .add_cloud_sql_details import AddCloudSqlDetails
 from .add_kafka_details import AddKafkaDetails
+from .add_master_nodes_details import AddMasterNodesDetails
 from .add_metric_based_horizontal_scaling_policy_details import AddMetricBasedHorizontalScalingPolicyDetails
 from .add_metric_based_vertical_scaling_policy_details import AddMetricBasedVerticalScalingPolicyDetails
 from .add_schedule_based_horizontal_scaling_policy_details import AddScheduleBasedHorizontalScalingPolicyDetails
 from .add_schedule_based_vertical_scaling_policy_details import AddScheduleBasedVerticalScalingPolicyDetails
+from .add_utility_nodes_details import AddUtilityNodesDetails
 from .add_worker_nodes_details import AddWorkerNodesDetails
 from .auto_scale_policy import AutoScalePolicy
 from .auto_scale_policy_details import AutoScalePolicyDetails
@@ -43,6 +45,7 @@ from .day_based_vertical_scaling_schedule_details import DayBasedVerticalScaling
 from .default_error import DefaultError
 from .execute_bootstrap_script_details import ExecuteBootstrapScriptDetails
 from .horizontal_scaling_schedule_details import HorizontalScalingScheduleDetails
+from .install_os_patch_details import InstallOsPatchDetails
 from .install_patch_details import InstallPatchDetails
 from .kerberos_details import KerberosDetails
 from .metric_based_horizontal_scale_in_config import MetricBasedHorizontalScaleInConfig
@@ -54,6 +57,9 @@ from .metric_based_vertical_scaling_policy_details import MetricBasedVerticalSca
 from .metric_threshold_rule import MetricThresholdRule
 from .network_config import NetworkConfig
 from .node import Node
+from .os_patch_details import OsPatchDetails
+from .os_patch_package_summary import OsPatchPackageSummary
+from .os_patch_summary import OsPatchSummary
 from .patch_history_summary import PatchHistorySummary
 from .patch_summary import PatchSummary
 from .remove_auto_scaling_configuration_details import RemoveAutoScalingConfigurationDetails
@@ -93,10 +99,12 @@ bds_type_mapping = {
     "AddBlockStorageDetails": AddBlockStorageDetails,
     "AddCloudSqlDetails": AddCloudSqlDetails,
     "AddKafkaDetails": AddKafkaDetails,
+    "AddMasterNodesDetails": AddMasterNodesDetails,
     "AddMetricBasedHorizontalScalingPolicyDetails": AddMetricBasedHorizontalScalingPolicyDetails,
     "AddMetricBasedVerticalScalingPolicyDetails": AddMetricBasedVerticalScalingPolicyDetails,
     "AddScheduleBasedHorizontalScalingPolicyDetails": AddScheduleBasedHorizontalScalingPolicyDetails,
     "AddScheduleBasedVerticalScalingPolicyDetails": AddScheduleBasedVerticalScalingPolicyDetails,
+    "AddUtilityNodesDetails": AddUtilityNodesDetails,
     "AddWorkerNodesDetails": AddWorkerNodesDetails,
     "AutoScalePolicy": AutoScalePolicy,
     "AutoScalePolicyDetails": AutoScalePolicyDetails,
@@ -124,6 +132,7 @@ bds_type_mapping = {
     "DefaultError": DefaultError,
     "ExecuteBootstrapScriptDetails": ExecuteBootstrapScriptDetails,
     "HorizontalScalingScheduleDetails": HorizontalScalingScheduleDetails,
+    "InstallOsPatchDetails": InstallOsPatchDetails,
     "InstallPatchDetails": InstallPatchDetails,
     "KerberosDetails": KerberosDetails,
     "MetricBasedHorizontalScaleInConfig": MetricBasedHorizontalScaleInConfig,
@@ -135,6 +144,9 @@ bds_type_mapping = {
     "MetricThresholdRule": MetricThresholdRule,
     "NetworkConfig": NetworkConfig,
     "Node": Node,
+    "OsPatchDetails": OsPatchDetails,
+    "OsPatchPackageSummary": OsPatchPackageSummary,
+    "OsPatchSummary": OsPatchSummary,
     "PatchHistorySummary": PatchHistorySummary,
     "PatchSummary": PatchSummary,
     "RemoveAutoScalingConfigurationDetails": RemoveAutoScalingConfigurationDetails,

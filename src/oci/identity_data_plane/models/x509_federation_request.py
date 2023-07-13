@@ -78,7 +78,7 @@ class X509FederationRequest(object):
         """
         **[Required]** Gets the public_key of this X509FederationRequest.
         A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-        key will by put inside the security token by the auth service after successful validation of the certificate.
+        key will be put inside the security token by the auth service after successful validation of the certificate.
 
 
         :return: The public_key of this X509FederationRequest.
@@ -91,7 +91,7 @@ class X509FederationRequest(object):
         """
         Sets the public_key of this X509FederationRequest.
         A temporary public key, owned by the service. The service also owns the corresponding private key. This public
-        key will by put inside the security token by the auth service after successful validation of the certificate.
+        key will be put inside the security token by the auth service after successful validation of the certificate.
 
 
         :param public_key: The public_key of this X509FederationRequest.

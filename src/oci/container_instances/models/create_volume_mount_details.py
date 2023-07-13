@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateVolumeMountDetails(object):
     """
-    Define the mapping from volume to a mount path in container.
+    Defines the mapping from volume to a mount path in a container.
     """
 
     def __init__(self, **kwargs):
@@ -67,7 +67,7 @@ class CreateVolumeMountDetails(object):
     def mount_path(self):
         """
         **[Required]** Gets the mount_path of this CreateVolumeMountDetails.
-        mountPath describes the volume access path.
+        The volume access path.
 
 
         :return: The mount_path of this CreateVolumeMountDetails.
@@ -79,7 +79,7 @@ class CreateVolumeMountDetails(object):
     def mount_path(self, mount_path):
         """
         Sets the mount_path of this CreateVolumeMountDetails.
-        mountPath describes the volume access path.
+        The volume access path.
 
 
         :param mount_path: The mount_path of this CreateVolumeMountDetails.
@@ -91,7 +91,7 @@ class CreateVolumeMountDetails(object):
     def volume_name(self):
         """
         **[Required]** Gets the volume_name of this CreateVolumeMountDetails.
-        The name of the volume.
+        The name of the volume. Avoid entering confidential information.
 
 
         :return: The volume_name of this CreateVolumeMountDetails.
@@ -103,7 +103,7 @@ class CreateVolumeMountDetails(object):
     def volume_name(self, volume_name):
         """
         Sets the volume_name of this CreateVolumeMountDetails.
-        The name of the volume.
+        The name of the volume. Avoid entering confidential information.
 
 
         :param volume_name: The volume_name of this CreateVolumeMountDetails.
@@ -115,7 +115,7 @@ class CreateVolumeMountDetails(object):
     def sub_path(self):
         """
         Gets the sub_path of this CreateVolumeMountDetails.
-        specifies a sub-path inside the referenced volume instead of its root
+        A subpath inside the referenced volume.
 
 
         :return: The sub_path of this CreateVolumeMountDetails.
@@ -127,7 +127,7 @@ class CreateVolumeMountDetails(object):
     def sub_path(self, sub_path):
         """
         Sets the sub_path of this CreateVolumeMountDetails.
-        specifies a sub-path inside the referenced volume instead of its root
+        A subpath inside the referenced volume.
 
 
         :param sub_path: The sub_path of this CreateVolumeMountDetails.
@@ -139,7 +139,7 @@ class CreateVolumeMountDetails(object):
     def is_read_only(self):
         """
         Gets the is_read_only of this CreateVolumeMountDetails.
-        Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+        Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
 
 
         :return: The is_read_only of this CreateVolumeMountDetails.
@@ -151,7 +151,7 @@ class CreateVolumeMountDetails(object):
     def is_read_only(self, is_read_only):
         """
         Sets the is_read_only of this CreateVolumeMountDetails.
-        Whether the volume was mounted in read-only mode. Defaults to false if not specified.
+        Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
 
 
         :param is_read_only: The is_read_only of this CreateVolumeMountDetails.
@@ -163,12 +163,12 @@ class CreateVolumeMountDetails(object):
     def partition(self):
         """
         Gets the partition of this CreateVolumeMountDetails.
-        If there is more than 1 partitions in the volume, this is the number of partition which be referenced.
-        Here is a example:
+        If there is more than one partition in the volume, reference this number of partitions.
+        Here is an example:
         Number  Start   End     Size    File system  Name                  Flags
-         1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
-         2      106MB   1180MB  1074MB  xfs
-         3      1180MB  50.0GB  48.8GB                                     lvm
+        1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
+        2      106MB   1180MB  1074MB  xfs
+        3      1180MB  50.0GB  48.8GB                                     lvm
 
 
         :return: The partition of this CreateVolumeMountDetails.
@@ -180,12 +180,12 @@ class CreateVolumeMountDetails(object):
     def partition(self, partition):
         """
         Sets the partition of this CreateVolumeMountDetails.
-        If there is more than 1 partitions in the volume, this is the number of partition which be referenced.
-        Here is a example:
+        If there is more than one partition in the volume, reference this number of partitions.
+        Here is an example:
         Number  Start   End     Size    File system  Name                  Flags
-         1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
-         2      106MB   1180MB  1074MB  xfs
-         3      1180MB  50.0GB  48.8GB                                     lvm
+        1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp
+        2      106MB   1180MB  1074MB  xfs
+        3      1180MB  50.0GB  48.8GB                                     lvm
 
 
         :param partition: The partition of this CreateVolumeMountDetails.

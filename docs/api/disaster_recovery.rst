@@ -21,6 +21,8 @@ Disaster Recovery
     oci.disaster_recovery.models.AssociateDrProtectionGroupDetails
     oci.disaster_recovery.models.CancelDrPlanExecutionDetails
     oci.disaster_recovery.models.ChangeDrProtectionGroupCompartmentDetails
+    oci.disaster_recovery.models.ComputeInstanceMovableVnicMapping
+    oci.disaster_recovery.models.ComputeInstanceMovableVnicMappingDetails
     oci.disaster_recovery.models.ComputeInstanceVnicMapping
     oci.disaster_recovery.models.ComputeInstanceVnicMappingDetails
     oci.disaster_recovery.models.CreateDrPlanDetails
@@ -28,6 +30,8 @@ Disaster Recovery
     oci.disaster_recovery.models.CreateDrProtectionGroupDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberAutonomousDatabaseDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberComputeInstanceDetails
+    oci.disaster_recovery.models.CreateDrProtectionGroupMemberComputeInstanceMovableDetails
+    oci.disaster_recovery.models.CreateDrProtectionGroupMemberComputeInstanceNonMovableDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberDatabaseDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberVolumeGroupDetails
@@ -53,6 +57,8 @@ Disaster Recovery
     oci.disaster_recovery.models.DrProtectionGroupMember
     oci.disaster_recovery.models.DrProtectionGroupMemberAutonomousDatabase
     oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstance
+    oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceMovable
+    oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceNonMovable
     oci.disaster_recovery.models.DrProtectionGroupMemberDatabase
     oci.disaster_recovery.models.DrProtectionGroupMemberVolumeGroup
     oci.disaster_recovery.models.DrProtectionGroupSummary
@@ -84,6 +90,8 @@ Disaster Recovery
     oci.disaster_recovery.models.UpdateDrProtectionGroupDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceDetails
+    oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceMovableDetails
+    oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberDatabaseDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberVolumeGroupDetails

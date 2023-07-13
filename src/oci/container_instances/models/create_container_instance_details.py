@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateContainerInstanceDetails(object):
     """
-    The information about new ContainerInstance.
+    Information to create a container instance.
     """
 
     def __init__(self, **kwargs):
@@ -137,8 +137,7 @@ class CreateContainerInstanceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateContainerInstanceDetails.
-        Human-readable name for the ContainerInstance. If none is provided,
-        OCI will select one for you.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 
 
         :return: The display_name of this CreateContainerInstanceDetails.
@@ -150,8 +149,7 @@ class CreateContainerInstanceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateContainerInstanceDetails.
-        Human-readable name for the ContainerInstance. If none is provided,
-        OCI will select one for you.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 
 
         :param display_name: The display_name of this CreateContainerInstanceDetails.
@@ -163,7 +161,7 @@ class CreateContainerInstanceDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateContainerInstanceDetails.
-        Compartment Identifier
+        The compartment OCID.
 
 
         :return: The compartment_id of this CreateContainerInstanceDetails.
@@ -175,7 +173,7 @@ class CreateContainerInstanceDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateContainerInstanceDetails.
-        Compartment Identifier
+        The compartment OCID.
 
 
         :param compartment_id: The compartment_id of this CreateContainerInstanceDetails.
@@ -187,7 +185,7 @@ class CreateContainerInstanceDetails(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this CreateContainerInstanceDetails.
-        Availability Domain where the ContainerInstance should be created.
+        The availability domain where the container instance runs.
 
 
         :return: The availability_domain of this CreateContainerInstanceDetails.
@@ -199,7 +197,7 @@ class CreateContainerInstanceDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateContainerInstanceDetails.
-        Availability Domain where the ContainerInstance should be created.
+        The availability domain where the container instance runs.
 
 
         :param availability_domain: The availability_domain of this CreateContainerInstanceDetails.
@@ -211,7 +209,7 @@ class CreateContainerInstanceDetails(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this CreateContainerInstanceDetails.
-        Fault Domain where the ContainerInstance should run.
+        The fault domain where the container instance runs.
 
 
         :return: The fault_domain of this CreateContainerInstanceDetails.
@@ -223,7 +221,7 @@ class CreateContainerInstanceDetails(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this CreateContainerInstanceDetails.
-        Fault Domain where the ContainerInstance should run.
+        The fault domain where the container instance runs.
 
 
         :param fault_domain: The fault_domain of this CreateContainerInstanceDetails.
@@ -235,7 +233,7 @@ class CreateContainerInstanceDetails(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this CreateContainerInstanceDetails.
-        The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+        The shape of the container instance. The shape determines the resources available to the container instance.
 
 
         :return: The shape of this CreateContainerInstanceDetails.
@@ -247,7 +245,7 @@ class CreateContainerInstanceDetails(object):
     def shape(self, shape):
         """
         Sets the shape of this CreateContainerInstanceDetails.
-        The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+        The shape of the container instance. The shape determines the resources available to the container instance.
 
 
         :param shape: The shape of this CreateContainerInstanceDetails.
@@ -279,9 +277,10 @@ class CreateContainerInstanceDetails(object):
     def volumes(self):
         """
         Gets the volumes of this CreateContainerInstanceDetails.
-        A Volume represents a directory with data that is accessible across multiple containers in a
-        ContainerInstance.
-        Up to 32 volumes can be attached to single container instance.
+        A volume is a directory with data that is accessible across multiple containers in a
+        container instance.
+
+        You can attach up to 32 volumes to single container instance.
 
 
         :return: The volumes of this CreateContainerInstanceDetails.
@@ -293,9 +292,10 @@ class CreateContainerInstanceDetails(object):
     def volumes(self, volumes):
         """
         Sets the volumes of this CreateContainerInstanceDetails.
-        A Volume represents a directory with data that is accessible across multiple containers in a
-        ContainerInstance.
-        Up to 32 volumes can be attached to single container instance.
+        A volume is a directory with data that is accessible across multiple containers in a
+        container instance.
+
+        You can attach up to 32 volumes to single container instance.
 
 
         :param volumes: The volumes of this CreateContainerInstanceDetails.
@@ -307,7 +307,7 @@ class CreateContainerInstanceDetails(object):
     def containers(self):
         """
         **[Required]** Gets the containers of this CreateContainerInstanceDetails.
-        The Containers to create on this Instance.
+        The containers to create on this container instance.
 
 
         :return: The containers of this CreateContainerInstanceDetails.
@@ -319,7 +319,7 @@ class CreateContainerInstanceDetails(object):
     def containers(self, containers):
         """
         Sets the containers of this CreateContainerInstanceDetails.
-        The Containers to create on this Instance.
+        The containers to create on this container instance.
 
 
         :param containers: The containers of this CreateContainerInstanceDetails.
@@ -331,7 +331,7 @@ class CreateContainerInstanceDetails(object):
     def vnics(self):
         """
         **[Required]** Gets the vnics of this CreateContainerInstanceDetails.
-        The networks to make available to containers on this Instance.
+        The networks available to containers on this container instance.
 
 
         :return: The vnics of this CreateContainerInstanceDetails.
@@ -343,7 +343,7 @@ class CreateContainerInstanceDetails(object):
     def vnics(self, vnics):
         """
         Sets the vnics of this CreateContainerInstanceDetails.
-        The networks to make available to containers on this Instance.
+        The networks available to containers on this container instance.
 
 
         :param vnics: The vnics of this CreateContainerInstanceDetails.
@@ -375,7 +375,7 @@ class CreateContainerInstanceDetails(object):
     def graceful_shutdown_timeout_in_seconds(self):
         """
         Gets the graceful_shutdown_timeout_in_seconds of this CreateContainerInstanceDetails.
-        Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 
 
         :return: The graceful_shutdown_timeout_in_seconds of this CreateContainerInstanceDetails.
@@ -387,7 +387,7 @@ class CreateContainerInstanceDetails(object):
     def graceful_shutdown_timeout_in_seconds(self, graceful_shutdown_timeout_in_seconds):
         """
         Sets the graceful_shutdown_timeout_in_seconds of this CreateContainerInstanceDetails.
-        Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 
 
         :param graceful_shutdown_timeout_in_seconds: The graceful_shutdown_timeout_in_seconds of this CreateContainerInstanceDetails.
@@ -399,7 +399,7 @@ class CreateContainerInstanceDetails(object):
     def image_pull_secrets(self):
         """
         Gets the image_pull_secrets of this CreateContainerInstanceDetails.
-        The image pull secrets for accessing private registry to pull images for containers
+        The image pulls secrets so you can access private registry to pull container images.
 
 
         :return: The image_pull_secrets of this CreateContainerInstanceDetails.
@@ -411,7 +411,7 @@ class CreateContainerInstanceDetails(object):
     def image_pull_secrets(self, image_pull_secrets):
         """
         Sets the image_pull_secrets of this CreateContainerInstanceDetails.
-        The image pull secrets for accessing private registry to pull images for containers
+        The image pulls secrets so you can access private registry to pull container images.
 
 
         :param image_pull_secrets: The image_pull_secrets of this CreateContainerInstanceDetails.
@@ -474,7 +474,7 @@ class CreateContainerInstanceDetails(object):
         """
         Gets the defined_tags of this CreateContainerInstanceDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :return: The defined_tags of this CreateContainerInstanceDetails.
@@ -487,7 +487,7 @@ class CreateContainerInstanceDetails(object):
         """
         Sets the defined_tags of this CreateContainerInstanceDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :param defined_tags: The defined_tags of this CreateContainerInstanceDetails.

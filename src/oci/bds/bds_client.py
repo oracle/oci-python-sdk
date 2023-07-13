@@ -705,6 +705,242 @@ class BdsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def add_master_nodes(self, bds_instance_id, add_master_nodes_details, **kwargs):
+        """
+        Increases the size (scales out) of a cluster by adding master nodes. The added master nodes will have the same shape and will have the same amount of attached block storage as other master nodes in the cluster.
+
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param oci.bds.models.AddMasterNodesDetails add_master_nodes_details: (required)
+            Details for the newly added nodes.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/add_master_nodes.py.html>`__ to see an example of how to use add_master_nodes API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
+        resource_path = "/bdsInstances/{bdsInstanceId}/actions/addMasterNodes"
+        method = "POST"
+        operation_name = "add_master_nodes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddMasterNodes"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "add_master_nodes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "bdsInstanceId": bds_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_master_nodes_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_master_nodes_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def add_utility_nodes(self, bds_instance_id, add_utility_nodes_details, **kwargs):
+        """
+        Increases the size (scales out) of a cluster by adding utility nodes. The added utility nodes will have the same shape and will have the same amount of attached block storage as other utility nodes in the cluster.
+
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param oci.bds.models.AddUtilityNodesDetails add_utility_nodes_details: (required)
+            Details for the newly added nodes.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/add_utility_nodes.py.html>`__ to see an example of how to use add_utility_nodes API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
+        resource_path = "/bdsInstances/{bdsInstanceId}/actions/addUtilityNodes"
+        method = "POST"
+        operation_name = "add_utility_nodes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/AddUtilityNodes"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "add_utility_nodes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "bdsInstanceId": bds_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_utility_nodes_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_utility_nodes_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def add_worker_nodes(self, bds_instance_id, add_worker_nodes_details, **kwargs):
         """
         Increases the size (scales out) a cluster by adding worker nodes(data/compute). The added worker nodes will have the same shape and will have the same amount of attached block storage as other worker nodes in the cluster.
@@ -2202,6 +2438,131 @@ class BdsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_os_patch_details(self, bds_instance_id, os_patch_version, **kwargs):
+        """
+        Get the details of an os patch
+
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param str os_patch_version: (required)
+            The version of the OS patch.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.bds.models.OsPatchDetails`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/get_os_patch_details.py.html>`__ to see an example of how to use get_os_patch_details API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId', 'osPatchVersion']
+        resource_path = "/bdsInstances/{bdsInstanceId}/actions/getOsPatch"
+        method = "POST"
+        operation_name = "get_os_patch_details"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetOsPatchDetails"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_os_patch_details got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "bdsInstanceId": bds_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "osPatchVersion": os_patch_version
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OsPatchDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OsPatchDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_work_request(self, work_request_id, **kwargs):
         """
         Returns the status of the work request identified by the given ID.
@@ -2293,6 +2654,124 @@ class BdsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def install_os_patch(self, bds_instance_id, install_os_patch_details, **kwargs):
+        """
+        Install an os patch on a cluster
+
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param oci.bds.models.InstallOsPatchDetails install_os_patch_details: (required)
+            Details of the target os patch that will be installed
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/install_os_patch.py.html>`__ to see an example of how to use install_os_patch API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
+        resource_path = "/bdsInstances/{bdsInstanceId}/actions/installOsPatch"
+        method = "POST"
+        operation_name = "install_os_patch"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/InstallOsPatch"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "install_os_patch got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "bdsInstanceId": bds_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=install_os_patch_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=install_os_patch_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -3074,6 +3553,165 @@ class BdsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_os_patches(self, bds_instance_id, **kwargs):
+        """
+        List all available os patches for a given cluster
+
+
+        :param str bds_instance_id: (required)
+            The OCID of the cluster.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error, without risk of executing that same action again. Retry tokens expire after 24
+            hours but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.bds.models.OsPatchSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/bds/list_os_patches.py.html>`__ to see an example of how to use list_os_patches API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['bdsInstanceId']
+        resource_path = "/bdsInstances/{bdsInstanceId}/actions/listOsPatches"
+        method = "POST"
+        operation_name = "list_os_patches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListOsPatches"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_os_patches got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "bdsInstanceId": bds_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[OsPatchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[OsPatchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_patch_histories(self, bds_instance_id, **kwargs):
         """
         List the patch history of this cluster.
@@ -3108,6 +3746,11 @@ class BdsClient(object):
 
         :param int limit: (optional)
             The maximum number of items to return.
+
+        :param str patch_type: (optional)
+            The type of a BDS patch history entity.
+
+            Allowed values are: "ODH", "OS"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3144,7 +3787,8 @@ class BdsClient(object):
             "patch_version",
             "sort_order",
             "page",
-            "limit"
+            "limit",
+            "patch_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3182,13 +3826,21 @@ class BdsClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'patch_type' in kwargs:
+            patch_type_allowed_values = ["ODH", "OS"]
+            if kwargs['patch_type'] not in patch_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `patch_type`, must be one of {0}".format(patch_type_allowed_values)
+                )
+
         query_params = {
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "patchVersion": kwargs.get("patch_version", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing)
+            "limit": kwargs.get("limit", missing),
+            "patchType": kwargs.get("patch_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.bds</groupId>
         <artifactId>bds-cp-spec</artifactId>
-        <version>1.0.130</version>
+        <version>1.0.172</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

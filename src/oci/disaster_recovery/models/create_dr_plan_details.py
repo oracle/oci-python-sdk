@@ -138,7 +138,7 @@ class CreateDrPlanDetails(object):
         **[Required]** Gets the dr_protection_group_id of this CreateDrPlanDetails.
         The OCID of the DR Protection Group to which this DR Plan belongs.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 
 
         :return: The dr_protection_group_id of this CreateDrPlanDetails.
@@ -152,7 +152,7 @@ class CreateDrPlanDetails(object):
         Sets the dr_protection_group_id of this CreateDrPlanDetails.
         The OCID of the DR Protection Group to which this DR Plan belongs.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 
 
         :param dr_protection_group_id: The dr_protection_group_id of this CreateDrPlanDetails.

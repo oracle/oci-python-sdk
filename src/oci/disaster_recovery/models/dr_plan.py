@@ -183,7 +183,7 @@ class DrPlan(object):
         **[Required]** Gets the id of this DrPlan.
         The OCID of this DR Plan.
 
-        Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 
 
         :return: The id of this DrPlan.
@@ -197,7 +197,7 @@ class DrPlan(object):
         Sets the id of this DrPlan.
         The OCID of this DR Plan.
 
-        Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 
 
         :param id: The id of this DrPlan.
@@ -239,7 +239,7 @@ class DrPlan(object):
         **[Required]** Gets the compartment_id of this DrPlan.
         The OCID of the compartment containing the DR Plan.
 
-        Example: `ocid1.compartment.oc1..exampleocid1`
+        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 
 
         :return: The compartment_id of this DrPlan.
@@ -253,7 +253,7 @@ class DrPlan(object):
         Sets the compartment_id of this DrPlan.
         The OCID of the compartment containing the DR Plan.
 
-        Example: `ocid1.compartment.oc1..exampleocid1`
+        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 
 
         :param compartment_id: The compartment_id of this DrPlan.
@@ -353,7 +353,7 @@ class DrPlan(object):
         **[Required]** Gets the dr_protection_group_id of this DrPlan.
         The OCID of the DR Protection Group with which this DR Plan is associated.
 
-        Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 
 
         :return: The dr_protection_group_id of this DrPlan.
@@ -367,7 +367,7 @@ class DrPlan(object):
         Sets the dr_protection_group_id of this DrPlan.
         The OCID of the DR Protection Group with which this DR Plan is associated.
 
-        Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 
 
         :param dr_protection_group_id: The dr_protection_group_id of this DrPlan.
@@ -382,7 +382,7 @@ class DrPlan(object):
         The OCID of the peer (remote) DR Protection Group associated with this plan's
         DR Protection Group.
 
-        Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 
 
         :return: The peer_dr_protection_group_id of this DrPlan.
@@ -397,7 +397,7 @@ class DrPlan(object):
         The OCID of the peer (remote) DR Protection Group associated with this plan's
         DR Protection Group.
 
-        Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid1`
+        Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
 
 
         :param peer_dr_protection_group_id: The peer_dr_protection_group_id of this DrPlan.

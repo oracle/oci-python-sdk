@@ -85,7 +85,7 @@ class UpdateDrPlanStepDetails(object):
         Gets the id of this UpdateDrPlanStepDetails.
         The unique id of this step.
 
-        Example: `sgid1.step..examplestepsgid`
+        Example: `sgid1.step..&lt;unique_id&gt;`
 
 
         :return: The id of this UpdateDrPlanStepDetails.
@@ -99,7 +99,7 @@ class UpdateDrPlanStepDetails(object):
         Sets the id of this UpdateDrPlanStepDetails.
         The unique id of this step.
 
-        Example: `sgid1.step..examplestepsgid`
+        Example: `sgid1.step..&lt;unique_id&gt;`
 
 
         :param id: The id of this UpdateDrPlanStepDetails.

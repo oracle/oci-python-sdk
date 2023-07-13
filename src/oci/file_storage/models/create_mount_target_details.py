@@ -44,9 +44,21 @@ class CreateMountTargetDetails(object):
             The value to assign to the subnet_id property of this CreateMountTargetDetails.
         :type subnet_id: str
 
+        :param idmap_type:
+            The value to assign to the idmap_type property of this CreateMountTargetDetails.
+        :type idmap_type: str
+
+        :param ldap_idmap:
+            The value to assign to the ldap_idmap property of this CreateMountTargetDetails.
+        :type ldap_idmap: oci.file_storage.models.CreateLdapIdmapDetails
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this CreateMountTargetDetails.
         :type nsg_ids: list[str]
+
+        :param kerberos:
+            The value to assign to the kerberos property of this CreateMountTargetDetails.
+        :type kerberos: oci.file_storage.models.CreateKerberosDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateMountTargetDetails.
@@ -64,7 +76,10 @@ class CreateMountTargetDetails(object):
             'hostname_label': 'str',
             'ip_address': 'str',
             'subnet_id': 'str',
+            'idmap_type': 'str',
+            'ldap_idmap': 'CreateLdapIdmapDetails',
             'nsg_ids': 'list[str]',
+            'kerberos': 'CreateKerberosDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -76,7 +91,10 @@ class CreateMountTargetDetails(object):
             'hostname_label': 'hostnameLabel',
             'ip_address': 'ipAddress',
             'subnet_id': 'subnetId',
+            'idmap_type': 'idmapType',
+            'ldap_idmap': 'ldapIdmap',
             'nsg_ids': 'nsgIds',
+            'kerberos': 'kerberos',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -87,7 +105,10 @@ class CreateMountTargetDetails(object):
         self._hostname_label = None
         self._ip_address = None
         self._subnet_id = None
+        self._idmap_type = None
+        self._ldap_idmap = None
         self._nsg_ids = None
+        self._kerberos = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -338,6 +359,50 @@ class CreateMountTargetDetails(object):
         self._subnet_id = subnet_id
 
     @property
+    def idmap_type(self):
+        """
+        Gets the idmap_type of this CreateMountTargetDetails.
+        The method used to map a Unix UID to secondary groups, if any.
+
+
+        :return: The idmap_type of this CreateMountTargetDetails.
+        :rtype: str
+        """
+        return self._idmap_type
+
+    @idmap_type.setter
+    def idmap_type(self, idmap_type):
+        """
+        Sets the idmap_type of this CreateMountTargetDetails.
+        The method used to map a Unix UID to secondary groups, if any.
+
+
+        :param idmap_type: The idmap_type of this CreateMountTargetDetails.
+        :type: str
+        """
+        self._idmap_type = idmap_type
+
+    @property
+    def ldap_idmap(self):
+        """
+        Gets the ldap_idmap of this CreateMountTargetDetails.
+
+        :return: The ldap_idmap of this CreateMountTargetDetails.
+        :rtype: oci.file_storage.models.CreateLdapIdmapDetails
+        """
+        return self._ldap_idmap
+
+    @ldap_idmap.setter
+    def ldap_idmap(self, ldap_idmap):
+        """
+        Sets the ldap_idmap of this CreateMountTargetDetails.
+
+        :param ldap_idmap: The ldap_idmap of this CreateMountTargetDetails.
+        :type: oci.file_storage.models.CreateLdapIdmapDetails
+        """
+        self._ldap_idmap = ldap_idmap
+
+    @property
     def nsg_ids(self):
         """
         Gets the nsg_ids of this CreateMountTargetDetails.
@@ -372,6 +437,26 @@ class CreateMountTargetDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def kerberos(self):
+        """
+        Gets the kerberos of this CreateMountTargetDetails.
+
+        :return: The kerberos of this CreateMountTargetDetails.
+        :rtype: oci.file_storage.models.CreateKerberosDetails
+        """
+        return self._kerberos
+
+    @kerberos.setter
+    def kerberos(self, kerberos):
+        """
+        Sets the kerberos of this CreateMountTargetDetails.
+
+        :param kerberos: The kerberos of this CreateMountTargetDetails.
+        :type: oci.file_storage.models.CreateKerberosDetails
+        """
+        self._kerberos = kerberos
 
     @property
     def freeform_tags(self):

@@ -68,7 +68,7 @@ class AssociateDrProtectionGroupDetails(object):
         Gets the peer_id of this AssociateDrProtectionGroupDetails.
         The OCID of the peer (remote) DR Protection Group.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 
 
         :return: The peer_id of this AssociateDrProtectionGroupDetails.
@@ -82,7 +82,7 @@ class AssociateDrProtectionGroupDetails(object):
         Sets the peer_id of this AssociateDrProtectionGroupDetails.
         The OCID of the peer (remote) DR Protection Group.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.exampleocid2`
+        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
 
 
         :param peer_id: The peer_id of this AssociateDrProtectionGroupDetails.

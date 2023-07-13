@@ -348,13 +348,15 @@ class ComputeManagementClient(object):
 
     def change_cluster_network_compartment(self, cluster_network_id, change_cluster_network_compartment_details, **kwargs):
         """
-        Moves a cluster network into a different compartment within the same tenancy. For
+        Moves a `cluster network with instance pools`__
+        into a different compartment within the same tenancy. For
         information about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
         When you move a cluster network to a different compartment, associated resources such as the instances
         in the cluster network, boot volumes, and VNICs are not moved.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
@@ -732,8 +734,17 @@ class ComputeManagementClient(object):
 
     def create_cluster_network(self, create_cluster_network_details, **kwargs):
         """
-        Creates a cluster network. For more information about cluster networks, see
-        `Managing Cluster Networks`__.
+        Creates a `cluster network with instance pools`__.
+        A cluster network is a group of high performance computing (HPC), GPU, or optimized bare metal
+        instances that are connected with an ultra low-latency remote direct memory access (RDMA) network.
+        Cluster networks with instance pools use instance pools to manage groups of identical instances.
+
+        Use cluster networks with instance pools when you want predictable capacity for a specific number of identical
+        instances that are managed as a group.
+
+        If you want to manage instances in the RDMA network independently of each other or use different types of instances
+        in the network group, create a compute cluster by using the :func:`create_compute_cluster`
+        operation.
 
         To determine whether capacity is available for a specific shape before you create a cluster network,
         use the :func:`create_compute_capacity_report`
@@ -1334,7 +1345,9 @@ class ComputeManagementClient(object):
 
     def get_cluster_network(self, cluster_network_id, **kwargs):
         """
-        Gets information about the specified cluster network.
+        Gets information about a `cluster network with instance pools`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
         :param str cluster_network_id: (required)
@@ -1898,7 +1911,9 @@ class ComputeManagementClient(object):
 
     def list_cluster_network_instances(self, compartment_id, cluster_network_id, **kwargs):
         """
-        Lists the instances in the specified cluster network.
+        Lists the instances in a `cluster network with instance pools`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
         :param str compartment_id: (required)
@@ -2063,7 +2078,10 @@ class ComputeManagementClient(object):
 
     def list_cluster_networks(self, compartment_id, **kwargs):
         """
-        Lists the cluster networks in the specified compartment.
+        Lists the `cluster networks with instance pools`__
+        in the specified compartment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
         :param str compartment_id: (required)
@@ -3258,10 +3276,12 @@ class ComputeManagementClient(object):
 
     def terminate_cluster_network(self, cluster_network_id, **kwargs):
         """
-        Terminates the specified cluster network.
+        Deletes (terminates) a `cluster network with instance pools`__.
 
         When you delete a cluster network, all of its resources are permanently deleted,
         including associated instances and instance pools.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
         :param str cluster_network_id: (required)
@@ -3464,7 +3484,10 @@ class ComputeManagementClient(object):
 
     def update_cluster_network(self, cluster_network_id, update_cluster_network_details, **kwargs):
         """
-        Updates the specified cluster network. The OCID of the cluster network remains the same.
+        Updates a `cluster network with instance pools`__.
+        The OCID of the cluster network remains the same.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
         :param str cluster_network_id: (required)

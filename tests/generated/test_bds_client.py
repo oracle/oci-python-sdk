@@ -245,6 +245,90 @@ def test_add_kafka(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_add_master_nodes(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'AddMasterNodes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'AddMasterNodes')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='AddMasterNodes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.add_master_nodes(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                add_master_nodes_details=request.pop(util.camelize('AddMasterNodesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'AddMasterNodes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'add_master_nodes',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_add_utility_nodes(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'AddUtilityNodes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'AddUtilityNodes')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='AddUtilityNodes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.add_utility_nodes(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                add_utility_nodes_details=request.pop(util.camelize('AddUtilityNodesDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'AddUtilityNodes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'add_utility_nodes',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
 def test_add_worker_nodes(testing_service_client):
     if not testing_service_client.is_api_enabled('bds', 'AddWorkerNodes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -830,6 +914,48 @@ def test_get_bds_metastore_configuration(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_get_os_patch_details(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'GetOsPatchDetails'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'GetOsPatchDetails')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='GetOsPatchDetails')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.get_os_patch_details(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                os_patch_version=request.pop(util.camelize('osPatchVersion')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'GetOsPatchDetails',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'osPatchDetails',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
 def test_get_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('bds', 'GetWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -865,6 +991,48 @@ def test_get_work_request(testing_service_client):
             result,
             service_error,
             'workRequest',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_install_os_patch(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'InstallOsPatch'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'InstallOsPatch')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='InstallOsPatch')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.install_os_patch(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                install_os_patch_details=request.pop(util.camelize('InstallOsPatchDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'InstallOsPatch',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'install_os_patch',
             False,
             False
         )
@@ -1162,6 +1330,69 @@ def test_list_bds_metastore_configurations(testing_service_client):
             result,
             service_error,
             'bdsMetastoreConfigurationSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_list_os_patches(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'ListOsPatches'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'ListOsPatches')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='ListOsPatches')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.list_os_patches(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_os_patches(
+                    bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_os_patches(
+                        bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'ListOsPatches',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'osPatchSummary',
             False,
             True
         )

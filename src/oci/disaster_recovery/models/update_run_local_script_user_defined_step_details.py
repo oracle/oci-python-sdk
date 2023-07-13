@@ -62,10 +62,10 @@ class UpdateRunLocalScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedStepDeta
     @property
     def run_on_instance_id(self):
         """
-        Gets the run_on_instance_id of this UpdateRunLocalScriptUserDefinedStepDetails.
+        **[Required]** Gets the run_on_instance_id of this UpdateRunLocalScriptUserDefinedStepDetails.
         The OCID of the instance where this script or command should be executed.
 
-        Example: `ocid1.instance.oc1.phx.exampleocid1`
+        Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 
 
         :return: The run_on_instance_id of this UpdateRunLocalScriptUserDefinedStepDetails.
@@ -79,7 +79,7 @@ class UpdateRunLocalScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedStepDeta
         Sets the run_on_instance_id of this UpdateRunLocalScriptUserDefinedStepDetails.
         The OCID of the instance where this script or command should be executed.
 
-        Example: `ocid1.instance.oc1.phx.exampleocid1`
+        Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 
 
         :param run_on_instance_id: The run_on_instance_id of this UpdateRunLocalScriptUserDefinedStepDetails.
@@ -90,7 +90,7 @@ class UpdateRunLocalScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedStepDeta
     @property
     def script_command(self):
         """
-        Gets the script_command of this UpdateRunLocalScriptUserDefinedStepDetails.
+        **[Required]** Gets the script_command of this UpdateRunLocalScriptUserDefinedStepDetails.
         The script name and arguments.
 
         Example: `/usr/bin/python3 /home/opc/scripts/my_app_script.py arg1 arg2 arg3`

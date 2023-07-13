@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateContainerEmptyDirVolumeDetails(CreateContainerVolumeDetails):
     """
-    The empty directory for container instance
+    The empty directory for the container instance.
     """
 
     def __init__(self, **kwargs):
@@ -56,7 +56,7 @@ class CreateContainerEmptyDirVolumeDetails(CreateContainerVolumeDetails):
     def backing_store(self):
         """
         Gets the backing_store of this CreateContainerEmptyDirVolumeDetails.
-        Volume type that we are using for empty dir where it could be either File Storage or Memory
+        The volume type of the empty directory, can be either File Storage or Memory.
 
 
         :return: The backing_store of this CreateContainerEmptyDirVolumeDetails.
@@ -68,7 +68,7 @@ class CreateContainerEmptyDirVolumeDetails(CreateContainerVolumeDetails):
     def backing_store(self, backing_store):
         """
         Sets the backing_store of this CreateContainerEmptyDirVolumeDetails.
-        Volume type that we are using for empty dir where it could be either File Storage or Memory
+        The volume type of the empty directory, can be either File Storage or Memory.
 
 
         :param backing_store: The backing_store of this CreateContainerEmptyDirVolumeDetails.

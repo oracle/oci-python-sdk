@@ -216,6 +216,10 @@ class Instance(object):
             The value to assign to the platform_config property of this Instance.
         :type platform_config: oci.core.models.PlatformConfig
 
+        :param instance_configuration_id:
+            The value to assign to the instance_configuration_id property of this Instance.
+        :type instance_configuration_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -246,7 +250,8 @@ class Instance(object):
             'time_created': 'datetime',
             'agent_config': 'InstanceAgentConfig',
             'time_maintenance_reboot_due': 'datetime',
-            'platform_config': 'PlatformConfig'
+            'platform_config': 'PlatformConfig',
+            'instance_configuration_id': 'str'
         }
 
         self.attribute_map = {
@@ -278,7 +283,8 @@ class Instance(object):
             'time_created': 'timeCreated',
             'agent_config': 'agentConfig',
             'time_maintenance_reboot_due': 'timeMaintenanceRebootDue',
-            'platform_config': 'platformConfig'
+            'platform_config': 'platformConfig',
+            'instance_configuration_id': 'instanceConfigurationId'
         }
 
         self._availability_domain = None
@@ -310,6 +316,7 @@ class Instance(object):
         self._agent_config = None
         self._time_maintenance_reboot_due = None
         self._platform_config = None
+        self._instance_configuration_id = None
 
     @property
     def availability_domain(self):
@@ -1148,6 +1155,30 @@ class Instance(object):
         :type: oci.core.models.PlatformConfig
         """
         self._platform_config = platform_config
+
+    @property
+    def instance_configuration_id(self):
+        """
+        Gets the instance_configuration_id of this Instance.
+        The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+
+
+        :return: The instance_configuration_id of this Instance.
+        :rtype: str
+        """
+        return self._instance_configuration_id
+
+    @instance_configuration_id.setter
+    def instance_configuration_id(self, instance_configuration_id):
+        """
+        Sets the instance_configuration_id of this Instance.
+        The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+
+
+        :param instance_configuration_id: The instance_configuration_id of this Instance.
+        :type: str
+        """
+        self._instance_configuration_id = instance_configuration_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

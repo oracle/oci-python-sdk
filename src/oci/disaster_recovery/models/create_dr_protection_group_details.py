@@ -83,7 +83,7 @@ class CreateDrProtectionGroupDetails(object):
         **[Required]** Gets the compartment_id of this CreateDrProtectionGroupDetails.
         The OCID of the compartment in which to create the DR Protection Group.
 
-        Example: `ocid1.compartment.oc1..exampleocid1`
+        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 
 
         :return: The compartment_id of this CreateDrProtectionGroupDetails.
@@ -97,7 +97,7 @@ class CreateDrProtectionGroupDetails(object):
         Sets the compartment_id of this CreateDrProtectionGroupDetails.
         The OCID of the compartment in which to create the DR Protection Group.
 
-        Example: `ocid1.compartment.oc1..exampleocid1`
+        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 
 
         :param compartment_id: The compartment_id of this CreateDrProtectionGroupDetails.

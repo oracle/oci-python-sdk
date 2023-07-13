@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputeClusterSummary(object):
     """
-    Summary information for a `compute cluster`__, which is a remote direct memory access (RDMA) network group.
+    Summary information for a compute cluster. A `compute cluster`__
+    is a remote direct memory access (RDMA) network group.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
     """
@@ -91,6 +92,7 @@ class ComputeClusterSummary(object):
         """
         **[Required]** Gets the availability_domain of this ComputeClusterSummary.
         The availability domain the compute cluster is running in.
+
         Example: `Uocm:PHX-AD-1`
 
 
@@ -104,6 +106,7 @@ class ComputeClusterSummary(object):
         """
         Sets the availability_domain of this ComputeClusterSummary.
         The availability domain the compute cluster is running in.
+
         Example: `Uocm:PHX-AD-1`
 
 
@@ -116,7 +119,7 @@ class ComputeClusterSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ComputeClusterSummary.
-        The `OCID`__ of the compartment that contains this compute cluster.
+        The `OCID`__ of the compartment that contains the compute cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -130,7 +133,7 @@ class ComputeClusterSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ComputeClusterSummary.
-        The `OCID`__ of the compartment that contains this compute cluster.
+        The `OCID`__ of the compartment that contains the compute cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -170,7 +173,7 @@ class ComputeClusterSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ComputeClusterSummary.
-        The `OCID`__ of this compute cluster.
+        The `OCID`__ of the compute cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -184,7 +187,7 @@ class ComputeClusterSummary(object):
     def id(self, id):
         """
         Sets the id of this ComputeClusterSummary.
-        The `OCID`__ of this compute cluster.
+        The `OCID`__ of the compute cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -224,6 +227,7 @@ class ComputeClusterSummary(object):
         **[Required]** Gets the time_created of this ComputeClusterSummary.
         The date and time the compute cluster was created,
         in the format defined by `RFC3339`__.
+
         Example: `2016-08-25T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -240,6 +244,7 @@ class ComputeClusterSummary(object):
         Sets the time_created of this ComputeClusterSummary.
         The date and time the compute cluster was created,
         in the format defined by `RFC3339`__.
+
         Example: `2016-08-25T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339

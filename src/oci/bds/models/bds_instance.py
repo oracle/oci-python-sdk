@@ -180,6 +180,10 @@ class BdsInstance(object):
             The value to assign to the number_of_nodes property of this BdsInstance.
         :type number_of_nodes: int
 
+        :param number_of_nodes_requiring_maintenance_reboot:
+            The value to assign to the number_of_nodes_requiring_maintenance_reboot property of this BdsInstance.
+        :type number_of_nodes_requiring_maintenance_reboot: int
+
         :param bootstrap_script_url:
             The value to assign to the bootstrap_script_url property of this BdsInstance.
         :type bootstrap_script_url: str
@@ -221,6 +225,7 @@ class BdsInstance(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'number_of_nodes': 'int',
+            'number_of_nodes_requiring_maintenance_reboot': 'int',
             'bootstrap_script_url': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -246,6 +251,7 @@ class BdsInstance(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'number_of_nodes': 'numberOfNodes',
+            'number_of_nodes_requiring_maintenance_reboot': 'numberOfNodesRequiringMaintenanceReboot',
             'bootstrap_script_url': 'bootstrapScriptUrl',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -270,6 +276,7 @@ class BdsInstance(object):
         self._time_created = None
         self._time_updated = None
         self._number_of_nodes = None
+        self._number_of_nodes_requiring_maintenance_reboot = None
         self._bootstrap_script_url = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -683,6 +690,30 @@ class BdsInstance(object):
         :type: int
         """
         self._number_of_nodes = number_of_nodes
+
+    @property
+    def number_of_nodes_requiring_maintenance_reboot(self):
+        """
+        Gets the number_of_nodes_requiring_maintenance_reboot of this BdsInstance.
+        Number of nodes that require a maintenance reboot
+
+
+        :return: The number_of_nodes_requiring_maintenance_reboot of this BdsInstance.
+        :rtype: int
+        """
+        return self._number_of_nodes_requiring_maintenance_reboot
+
+    @number_of_nodes_requiring_maintenance_reboot.setter
+    def number_of_nodes_requiring_maintenance_reboot(self, number_of_nodes_requiring_maintenance_reboot):
+        """
+        Sets the number_of_nodes_requiring_maintenance_reboot of this BdsInstance.
+        Number of nodes that require a maintenance reboot
+
+
+        :param number_of_nodes_requiring_maintenance_reboot: The number_of_nodes_requiring_maintenance_reboot of this BdsInstance.
+        :type: int
+        """
+        self._number_of_nodes_requiring_maintenance_reboot = number_of_nodes_requiring_maintenance_reboot
 
     @property
     def bootstrap_script_url(self):

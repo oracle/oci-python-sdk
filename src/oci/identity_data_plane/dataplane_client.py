@@ -20,7 +20,7 @@ missing = Sentinel("Missing")
 
 class DataplaneClient(object):
     """
-    API for the Identity Dataplane
+    APIs for managing identity data plane services. For example, use this API to create a scoped-access security token. To manage identity domains (for example, creating or deleting an identity domain) or to manage resources (for example, users and groups) within the default identity domain, see [IAM API](https://docs.oracle.com/iaas/api/#/en/identity/).
     """
 
     def __init__(self, config, **kwargs):
@@ -113,11 +113,11 @@ class DataplaneClient(object):
 
     def generate_scoped_access_token(self, generate_scoped_access_token_details, **kwargs):
         """
-        Based on the calling principal and the input payload, derive the claims and create a security token.
+        Based on the calling Principal and the input payload, derive the claims, and generate a scoped-access token for specific resources. For example, set scope to urn:oracle:db::id::<compartment-id> for access to a database in a compartment.
 
 
         :param oci.identity_data_plane.models.GenerateScopedAccessTokenDetails generate_scoped_access_token_details: (required)
-            Scoped Access token request
+            Scoped access token request
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -142,7 +142,7 @@ class DataplaneClient(object):
         resource_path = "/actions/generateScopedAccessToken"
         method = "POST"
         operation_name = "generate_scoped_access_token"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-dp/v1/SecurityToken/GenerateScopedAccessToken"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -181,6 +181,95 @@ class DataplaneClient(object):
                 method=method,
                 header_params=header_params,
                 body=generate_scoped_access_token_details,
+                response_type="SecurityToken",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def generate_user_security_token(self, generate_user_security_token_details, **kwargs):
+        """
+        Exchanges a valid user token-based signature (API key and UPST) for a short-lived UPST of the authenticated
+        user principal. When not specified, the user session duration is set to a default of 60 minutes in all realms. Resulting UPSTs
+        are refreshable while the user session has not expired.
+
+
+        :param oci.identity_data_plane.models.GenerateUserSecurityTokenDetails generate_user_security_token_details: (required)
+            The key-value pair object storing the token exchange request parameters required to obtain a UPST for self.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_data_plane.models.SecurityToken`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydataplane/generate_user_security_token.py.html>`__ to see an example of how to use generate_user_security_token API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/token/upst/actions/GenerateUpst"
+        method = "POST"
+        operation_name = "generate_user_security_token"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-dp/v1/SecurityToken/GenerateUserSecurityToken"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "generate_user_security_token got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=generate_user_security_token_details,
+                response_type="SecurityToken",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=generate_user_security_token_details,
                 response_type="SecurityToken",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
