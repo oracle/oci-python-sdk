@@ -41,13 +41,18 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
             The value to assign to the boot_volume_vpus_per_gb property of this InstanceConfigurationInstanceSourceViaImageDetails.
         :type boot_volume_vpus_per_gb: int
 
+        :param instance_source_image_filter_details:
+            The value to assign to the instance_source_image_filter_details property of this InstanceConfigurationInstanceSourceViaImageDetails.
+        :type instance_source_image_filter_details: oci.core.models.InstanceConfigurationInstanceSourceImageFilterDetails
+
         """
         self.swagger_types = {
             'source_type': 'str',
             'boot_volume_size_in_gbs': 'int',
             'image_id': 'str',
             'kms_key_id': 'str',
-            'boot_volume_vpus_per_gb': 'int'
+            'boot_volume_vpus_per_gb': 'int',
+            'instance_source_image_filter_details': 'InstanceConfigurationInstanceSourceImageFilterDetails'
         }
 
         self.attribute_map = {
@@ -55,7 +60,8 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
             'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs',
             'image_id': 'imageId',
             'kms_key_id': 'kmsKeyId',
-            'boot_volume_vpus_per_gb': 'bootVolumeVpusPerGB'
+            'boot_volume_vpus_per_gb': 'bootVolumeVpusPerGB',
+            'instance_source_image_filter_details': 'instanceSourceImageFilterDetails'
         }
 
         self._source_type = None
@@ -63,6 +69,7 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
         self._image_id = None
         self._kms_key_id = None
         self._boot_volume_vpus_per_gb = None
+        self._instance_source_image_filter_details = None
         self._source_type = 'image'
 
     @property
@@ -190,6 +197,26 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
         :type: int
         """
         self._boot_volume_vpus_per_gb = boot_volume_vpus_per_gb
+
+    @property
+    def instance_source_image_filter_details(self):
+        """
+        Gets the instance_source_image_filter_details of this InstanceConfigurationInstanceSourceViaImageDetails.
+
+        :return: The instance_source_image_filter_details of this InstanceConfigurationInstanceSourceViaImageDetails.
+        :rtype: oci.core.models.InstanceConfigurationInstanceSourceImageFilterDetails
+        """
+        return self._instance_source_image_filter_details
+
+    @instance_source_image_filter_details.setter
+    def instance_source_image_filter_details(self, instance_source_image_filter_details):
+        """
+        Sets the instance_source_image_filter_details of this InstanceConfigurationInstanceSourceViaImageDetails.
+
+        :param instance_source_image_filter_details: The instance_source_image_filter_details of this InstanceConfigurationInstanceSourceViaImageDetails.
+        :type: oci.core.models.InstanceConfigurationInstanceSourceImageFilterDetails
+        """
+        self._instance_source_image_filter_details = instance_source_image_filter_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

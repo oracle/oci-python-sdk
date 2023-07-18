@@ -97,7 +97,7 @@ class CreateDrPlanExecutionDetails(object):
         **[Required]** Gets the plan_id of this CreateDrPlanExecutionDetails.
         The OCID of the DR Plan.
 
-        Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 
 
         :return: The plan_id of this CreateDrPlanExecutionDetails.
@@ -111,7 +111,7 @@ class CreateDrPlanExecutionDetails(object):
         Sets the plan_id of this CreateDrPlanExecutionDetails.
         The OCID of the DR Plan.
 
-        Example: `ocid1.drplan.oc1.iad.exampleocid2`
+        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
 
 
         :param plan_id: The plan_id of this CreateDrPlanExecutionDetails.

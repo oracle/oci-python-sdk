@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ShapeMemoryOptions(object):
     """
-    For a flexible shape, the amount of memory available for instances that use this shape.
+    For a flexible shape, the amount of memory available for container instances that use this shape.
     """
 
     def __init__(self, **kwargs):
@@ -67,7 +67,7 @@ class ShapeMemoryOptions(object):
     def min_in_gbs(self):
         """
         **[Required]** Gets the min_in_gbs of this ShapeMemoryOptions.
-        The minimum amount of memory, in gigabytes.
+        The minimum amount of memory (GB).
 
 
         :return: The min_in_gbs of this ShapeMemoryOptions.
@@ -79,7 +79,7 @@ class ShapeMemoryOptions(object):
     def min_in_gbs(self, min_in_gbs):
         """
         Sets the min_in_gbs of this ShapeMemoryOptions.
-        The minimum amount of memory, in gigabytes.
+        The minimum amount of memory (GB).
 
 
         :param min_in_gbs: The min_in_gbs of this ShapeMemoryOptions.
@@ -91,7 +91,7 @@ class ShapeMemoryOptions(object):
     def max_in_gbs(self):
         """
         **[Required]** Gets the max_in_gbs of this ShapeMemoryOptions.
-        The maximum amount of memory, in gigabytes.
+        The maximum amount of memory (GB).
 
 
         :return: The max_in_gbs of this ShapeMemoryOptions.
@@ -103,7 +103,7 @@ class ShapeMemoryOptions(object):
     def max_in_gbs(self, max_in_gbs):
         """
         Sets the max_in_gbs of this ShapeMemoryOptions.
-        The maximum amount of memory, in gigabytes.
+        The maximum amount of memory (GB).
 
 
         :param max_in_gbs: The max_in_gbs of this ShapeMemoryOptions.
@@ -115,7 +115,7 @@ class ShapeMemoryOptions(object):
     def default_per_ocpu_in_gbs(self):
         """
         **[Required]** Gets the default_per_ocpu_in_gbs of this ShapeMemoryOptions.
-        The default amount of memory per OCPU available for this shape, in gigabytes.
+        The default amount of memory per OCPU available for this shape (GB).
 
 
         :return: The default_per_ocpu_in_gbs of this ShapeMemoryOptions.
@@ -127,7 +127,7 @@ class ShapeMemoryOptions(object):
     def default_per_ocpu_in_gbs(self, default_per_ocpu_in_gbs):
         """
         Sets the default_per_ocpu_in_gbs of this ShapeMemoryOptions.
-        The default amount of memory per OCPU available for this shape, in gigabytes.
+        The default amount of memory per OCPU available for this shape (GB).
 
 
         :param default_per_ocpu_in_gbs: The default_per_ocpu_in_gbs of this ShapeMemoryOptions.
@@ -139,7 +139,7 @@ class ShapeMemoryOptions(object):
     def min_per_ocpu_in_gbs(self):
         """
         **[Required]** Gets the min_per_ocpu_in_gbs of this ShapeMemoryOptions.
-        The minimum amount of memory per OCPU available for this shape, in gigabytes.
+        The minimum amount of memory per OCPU available for this shape (GB).
 
 
         :return: The min_per_ocpu_in_gbs of this ShapeMemoryOptions.
@@ -151,7 +151,7 @@ class ShapeMemoryOptions(object):
     def min_per_ocpu_in_gbs(self, min_per_ocpu_in_gbs):
         """
         Sets the min_per_ocpu_in_gbs of this ShapeMemoryOptions.
-        The minimum amount of memory per OCPU available for this shape, in gigabytes.
+        The minimum amount of memory per OCPU available for this shape (GB).
 
 
         :param min_per_ocpu_in_gbs: The min_per_ocpu_in_gbs of this ShapeMemoryOptions.
@@ -163,7 +163,7 @@ class ShapeMemoryOptions(object):
     def max_per_ocpu_in_gbs(self):
         """
         **[Required]** Gets the max_per_ocpu_in_gbs of this ShapeMemoryOptions.
-        The maximum amount of memory per OCPU available for this shape, in gigabytes.
+        The maximum amount of memory per OCPU available for this shape (GB).
 
 
         :return: The max_per_ocpu_in_gbs of this ShapeMemoryOptions.
@@ -175,7 +175,7 @@ class ShapeMemoryOptions(object):
     def max_per_ocpu_in_gbs(self, max_per_ocpu_in_gbs):
         """
         Sets the max_per_ocpu_in_gbs of this ShapeMemoryOptions.
-        The maximum amount of memory per OCPU available for this shape, in gigabytes.
+        The maximum amount of memory per OCPU available for this shape (GB).
 
 
         :param max_per_ocpu_in_gbs: The max_per_ocpu_in_gbs of this ShapeMemoryOptions.

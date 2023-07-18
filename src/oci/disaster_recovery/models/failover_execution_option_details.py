@@ -56,7 +56,7 @@ class FailoverExecutionOptionDetails(DrPlanExecutionOptionDetails):
     def are_prechecks_enabled(self):
         """
         Gets the are_prechecks_enabled of this FailoverExecutionOptionDetails.
-        A flag indicating whether a precheck should be executed before the plan.
+        A flag indicating whether prechecks should be executed before the plan execution.
 
         Example: `true`
 
@@ -70,7 +70,7 @@ class FailoverExecutionOptionDetails(DrPlanExecutionOptionDetails):
     def are_prechecks_enabled(self, are_prechecks_enabled):
         """
         Sets the are_prechecks_enabled of this FailoverExecutionOptionDetails.
-        A flag indicating whether a precheck should be executed before the plan.
+        A flag indicating whether prechecks should be executed before the plan execution.
 
         Example: `true`
 
@@ -84,7 +84,7 @@ class FailoverExecutionOptionDetails(DrPlanExecutionOptionDetails):
     def are_warnings_ignored(self):
         """
         Gets the are_warnings_ignored of this FailoverExecutionOptionDetails.
-        A flag indicating whether warnigs should be ignored during the failover.
+        A flag indicating whether warnings should be ignored during the failover.
 
         Example: `false`
 
@@ -98,7 +98,7 @@ class FailoverExecutionOptionDetails(DrPlanExecutionOptionDetails):
     def are_warnings_ignored(self, are_warnings_ignored):
         """
         Sets the are_warnings_ignored of this FailoverExecutionOptionDetails.
-        A flag indicating whether warnigs should be ignored during the failover.
+        A flag indicating whether warnings should be ignored during the failover.
 
         Example: `false`
 

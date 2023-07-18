@@ -12,7 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateClusterNetworkDetails(object):
     """
-    The data to update a cluster network.
+    The data to update a `cluster network with instance pools`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
     """
 
     def __init__(self, **kwargs):

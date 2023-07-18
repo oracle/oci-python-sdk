@@ -20,7 +20,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.07.04"
+    version = "23.07.19"
 
     ##########################################################################
     # spaces for align
@@ -6421,12 +6421,18 @@ class ShowOCICSV(object):
                         'boot_volume_id': "",
                         'boot_volume_size_gb': "",
                         'boot_volume_b_policy': "",
-                        'boot_volume_encryption': "",
+                        'boot_volume_transit_encryption': "",
+                        'boot_volume_encryption_in_transit_type': "",
                         'block_volumes': "",
                         'block_volumes_ids': "",
                         'block_volumes_total_gb': "",
                         'block_volumes_size_gb': "",
                         'block_volumes_b_policy': "",
+                        'block_volumes_attachment_type': "",
+                        'block_volumes_transit_encryption': "",
+                        'block_volumes_iscsi_login_state': "",
+                        'block_volumes_is_multipath': "",
+                        'block_volumes_is_read_only': "",
                         'vnic_ids': "",
                         'freeform_tags': self.__get_freeform_tags(instance['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(instance['defined_tags']),
@@ -6456,13 +6462,19 @@ class ShowOCICSV(object):
                         data['boot_volume'] = bv['display_name']
                         data['boot_volume_size_gb'] = bv['sum_size_gb']
                         data['boot_volume_b_policy'] = bv['backup_policy']
-                        data['boot_volume_encryption'] = bv['is_pv_encryption_in_transit_enabled']
+                        data['boot_volume_transit_encryption'] = bv['is_pv_encryption_in_transit_enabled']
+                        data['boot_volume_encryption_in_transit_type'] = bv['encryption_in_transit_type']
 
                 if 'block_volume' in instance:
                     data['block_volumes'] = str(', '.join(x['display_name'] for x in instance['block_volume']))
                     data['block_volumes_ids'] = str(', '.join(x['id'] for x in instance['block_volume']))
                     data['block_volumes_size_gb'] = str('+ '.join(x['size'] for x in instance['block_volume']))
                     data['block_volumes_b_policy'] = str(', '.join(x['backup_policy'] for x in instance['block_volume']))
+                    data['block_volumes_attachment_type'] = str(', '.join(x['attachment_type'] for x in instance['block_volume']))
+                    data['block_volumes_transit_encryption'] = str(', '.join(x['is_pv_encryption_in_transit_enabled'] for x in instance['block_volume']))
+                    data['block_volumes_iscsi_login_state'] = str(', '.join(x['iscsi_login_state'] for x in instance['block_volume']))
+                    data['block_volumes_is_multipath'] = str(', '.join(x['is_multipath'] for x in instance['block_volume']))
+                    data['block_volumes_is_read_only'] = str(', '.join(x['is_read_only'] for x in instance['block_volume']))
 
                     bv_total_size = 0
                     for bv in instance['block_volume']:
@@ -6500,6 +6512,15 @@ class ShowOCICSV(object):
                             'vpus_per_gb': bv['vpus_per_gb'],
                             'volume_group_name': bv['volume_group_name'],
                             'instance_name': instance['display_name'],
+                            'is_auto_tune_enabled': bv['is_auto_tune_enabled'],
+                            'auto_tuned_vpus_per_gb': bv['auto_tuned_vpus_per_gb'],
+                            'is_pv_encryption_in_transit_enabled': bv['is_pv_encryption_in_transit_enabled'],
+                            'encryption_in_transit_type': bv['encryption_in_transit_type'],
+                            'is_hydrated': bv['is_hydrated'],
+                            'is_read_only': "",
+                            'is_shareable': "",
+                            'is_multipath': "",
+                            'iscsi_login_state': "",
                             'instance_id': instance['id'],
                             'freeform_tags': self.__get_freeform_tags(bv['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(bv['defined_tags'])
@@ -6521,6 +6542,15 @@ class ShowOCICSV(object):
                             'vpus_per_gb': bv['vpus_per_gb'],
                             'volume_group_name': bv['volume_group_name'],
                             'instance_name': instance['display_name'],
+                            'is_auto_tune_enabled': bv['is_auto_tune_enabled'],
+                            'auto_tuned_vpus_per_gb': bv['auto_tuned_vpus_per_gb'],
+                            'is_pv_encryption_in_transit_enabled': bv['is_pv_encryption_in_transit_enabled'],
+                            'encryption_in_transit_type': "",
+                            'is_hydrated': bv['is_hydrated'],
+                            'is_read_only': bv['is_read_only'],
+                            'is_shareable': bv['is_shareable'],
+                            'is_multipath': bv['is_multipath'],
+                            'iscsi_login_state': bv['iscsi_login_state'],
                             'instance_id': instance['id'],
                             'freeform_tags': self.__get_freeform_tags(bv['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(bv['defined_tags'])

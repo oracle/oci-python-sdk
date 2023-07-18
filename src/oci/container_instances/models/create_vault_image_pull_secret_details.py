@@ -16,8 +16,8 @@ class CreateVaultImagePullSecretDetails(CreateImagePullSecretDetails):
     **Sample Format for username and password in Vault Secret**
     ```
     {
-    \"username\": \"xxxxxxxxxx\",
-    \"password\": \"xxxxxxxxxx\"
+    \"username\": \"this-is-not-the-secret\",
+    \"password\": \"example-password\"
     }
     ```
     """

@@ -113,11 +113,13 @@ class ContainerInstanceClient(object):
 
     def change_container_instance_compartment(self, container_instance_id, change_container_instance_compartment_details, **kwargs):
         """
-        Moves a ContainerInstance resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+        Moves a container instance resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
 
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.container_instances.models.ChangeContainerInstanceCompartmentDetails change_container_instance_compartment_details: (required)
             The information to be updated.
@@ -130,7 +132,7 @@ class ContainerInstanceClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -223,11 +225,11 @@ class ContainerInstanceClient(object):
 
     def create_container_instance(self, create_container_instance_details, **kwargs):
         """
-        Creates a new ContainerInstance.
+        Creates a container instance and deploys the containers on it.
 
 
         :param oci.container_instances.models.CreateContainerInstanceDetails create_container_instance_details: (required)
-            Details for the new ContainerInstance.
+            Details for the new container instance.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -237,7 +239,7 @@ class ContainerInstanceClient(object):
             might be rejected.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -321,11 +323,13 @@ class ContainerInstanceClient(object):
 
     def delete_container_instance(self, container_instance_id, **kwargs):
         """
-        Deletes a ContainerInstance resource by identifier
+        Deletes a container instance and its containers.
 
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -335,7 +339,7 @@ class ContainerInstanceClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -430,10 +434,12 @@ class ContainerInstanceClient(object):
 
 
         :param str container_id: (required)
-            The unique identifier for the Container.
+            The `OCID`__ of the container.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -524,14 +530,16 @@ class ContainerInstanceClient(object):
 
     def get_container_instance(self, container_instance_id, **kwargs):
         """
-        Gets a ContainerInstance by identifier
+        Gets information about the specified container instance.
 
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -629,7 +637,7 @@ class ContainerInstanceClient(object):
             The ID of the asynchronous request.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -720,11 +728,13 @@ class ContainerInstanceClient(object):
 
     def list_container_instance_shapes(self, compartment_id, **kwargs):
         """
-        Get a list of shapes for creating Container Instances and their details.
+        Lists the shapes that can be used to create container instances.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The `OCID`__ of the compartment in which to list resources.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -732,13 +742,17 @@ class ContainerInstanceClient(object):
             Example: `Uocm:PHX-AD-1`
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -830,14 +844,16 @@ class ContainerInstanceClient(object):
 
     def list_container_instances(self, compartment_id, **kwargs):
         """
-        Returns a list of ContainerInstances.
+        Returns a list of container instances.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The `OCID`__ of the compartment in which to list resources.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources whose lifecycleState matches the given lifecycleState.
+            A filter to only return resources that match the given lifecycle state.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -850,21 +866,25 @@ class ContainerInstanceClient(object):
             Example: `Uocm:PHX-AD-1`
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use (ASC) or (DESC).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+            The field to sort by. You can provide one sort order. Default order for timeCreated is descending. Default order for displayName is ascending. If you don't specify a value, timeCreated is the default.
 
             Allowed values are: "timeCreated", "displayName"
 
@@ -987,14 +1007,16 @@ class ContainerInstanceClient(object):
 
     def list_containers(self, compartment_id, **kwargs):
         """
-        Return a list of Containers.
+        Returns a list of containers in a compartment.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The `OCID`__ of the compartment in which to list resources.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources whose lifecycleState matches the given lifecycleState.
+            A filter to only return resources that match the given lifecycle state.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -1002,7 +1024,9 @@ class ContainerInstanceClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str container_instance_id: (optional)
-            unique ContainerInstance identifier
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -1010,21 +1034,25 @@ class ContainerInstanceClient(object):
             Example: `Uocm:PHX-AD-1`
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use (ASC) or (DESC).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+            The field to sort by. You can provide one sort order. Default order for timeCreated is descending. Default order for displayName is ascending. If you don't specify a value, timeCreated is the default.
 
             Allowed values are: "timeCreated", "displayName"
 
@@ -1149,20 +1177,24 @@ class ContainerInstanceClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of errors for a given work request.
+        Return a paginated list of errors for a given work request.
 
 
         :param str work_request_id: (required)
             The ID of the asynchronous request.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1263,20 +1295,24 @@ class ContainerInstanceClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of logs for a given work request.
+        Return a paginated list of logs for a given work request.
 
 
         :param str work_request_id: (required)
             The ID of the asynchronous request.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1381,19 +1417,25 @@ class ContainerInstanceClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The `OCID`__ of the compartment in which to list resources.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str work_request_id: (optional)
             The ID of the asynchronous work request.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1489,7 +1531,9 @@ class ContainerInstanceClient(object):
 
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1499,7 +1543,7 @@ class ContainerInstanceClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1590,14 +1634,16 @@ class ContainerInstanceClient(object):
 
     def retrieve_logs(self, container_id, **kwargs):
         """
-        Retrieve recent log from a single container by the container ID up to 256KB.
+        Retrieves recent logs from the specified container. The most recent 256 KB of logs are returned.
 
 
         :param str container_id: (required)
-            The unique identifier for the Container.
+            The `OCID`__ of the container.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1692,7 +1738,9 @@ class ContainerInstanceClient(object):
 
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1702,7 +1750,7 @@ class ContainerInstanceClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1797,7 +1845,9 @@ class ContainerInstanceClient(object):
 
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1807,7 +1857,7 @@ class ContainerInstanceClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1898,11 +1948,13 @@ class ContainerInstanceClient(object):
 
     def update_container(self, container_id, update_container_details, **kwargs):
         """
-        Update a Container.
+        Updates a container.
 
 
         :param str container_id: (required)
-            The unique identifier for the Container.
+            The `OCID`__ of the container.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.container_instances.models.UpdateContainerDetails update_container_details: (required)
             The information to be updated.
@@ -1915,7 +1967,7 @@ class ContainerInstanceClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2008,11 +2060,13 @@ class ContainerInstanceClient(object):
 
     def update_container_instance(self, container_instance_id, update_container_instance_details, **kwargs):
         """
-        Updates the ContainerInstance
+        Updates a container instance.
 
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.container_instances.models.UpdateContainerInstanceDetails update_container_instance_details: (required)
             The information to be updated.
@@ -2025,7 +2079,7 @@ class ContainerInstanceClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

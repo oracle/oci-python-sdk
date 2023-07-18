@@ -18,7 +18,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.07.04"
+    version = "23.07.19"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -1490,6 +1490,8 @@ class ShowOCIData(object):
                     'is_hydrated': bv['is_hydrated'],
                     'encryption_in_transit_type': bva['encryption_in_transit_type'],
                     'is_pv_encryption_in_transit_enabled': bva['is_pv_encryption_in_transit_enabled'],
+                    'is_auto_tune_enabled': bv['is_auto_tune_enabled'],
+                    'auto_tuned_vpus_per_gb': bv['auto_tuned_vpus_per_gb'],
                     'time_created': bv['time_created'],
                     'display_name': bv['display_name'],
                     'defined_tags': bv['defined_tags'],
@@ -1534,7 +1536,7 @@ class ShowOCIData(object):
                     'compartment_name': bv['compartment_name'],
                     'compartment_path': bv['compartment_path'],
                     'compartment_id': bv['compartment_id'],
-                    'backup_policy': "None" if bv['backup_policy'] == "" else bv['backup_policy'],
+                    'backup_policy': bv['backup_policy'],
                     'display_name': bv['display_name'],
                     'vpus_per_gb': bv['vpus_per_gb'],
                     'volume_group_name': bv['volume_group_name'],
@@ -1543,7 +1545,10 @@ class ShowOCIData(object):
                     'is_read_only': str(bva['is_read_only']),
                     'is_shareable': str(bva['is_shareable']),
                     'is_pv_encryption_in_transit_enabled': str(bva['is_pv_encryption_in_transit_enabled']),
+                    'attachment_type': str(bva['attachment_type']),
                     'is_multipath': str(bva['is_multipath']),
+                    'is_auto_tune_enabled': bv['is_auto_tune_enabled'],
+                    'auto_tuned_vpus_per_gb': bv['auto_tuned_vpus_per_gb'],
                     'iscsi_login_state': str(bva['iscsi_login_state']),
                     'defined_tags': bv['defined_tags'],
                     'freeform_tags': bv['freeform_tags']

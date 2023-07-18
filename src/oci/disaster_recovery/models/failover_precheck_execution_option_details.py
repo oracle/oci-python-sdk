@@ -49,7 +49,7 @@ class FailoverPrecheckExecutionOptionDetails(DrPlanExecutionOptionDetails):
     def are_warnings_ignored(self):
         """
         Gets the are_warnings_ignored of this FailoverPrecheckExecutionOptionDetails.
-        A flag indicating whether warnigs should be ignored during the failover.
+        A flag indicating whether warnings should be ignored during the failover precheck.
 
         Example: `false`
 
@@ -63,7 +63,7 @@ class FailoverPrecheckExecutionOptionDetails(DrPlanExecutionOptionDetails):
     def are_warnings_ignored(self, are_warnings_ignored):
         """
         Sets the are_warnings_ignored of this FailoverPrecheckExecutionOptionDetails.
-        A flag indicating whether warnigs should be ignored during the failover.
+        A flag indicating whether warnings should be ignored during the failover precheck.
 
         Example: `false`
 

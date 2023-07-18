@@ -43,6 +43,10 @@ class LaunchInstanceShapeConfigDetails(object):
             The value to assign to the ocpus property of this LaunchInstanceShapeConfigDetails.
         :type ocpus: float
 
+        :param vcpus:
+            The value to assign to the vcpus property of this LaunchInstanceShapeConfigDetails.
+        :type vcpus: int
+
         :param memory_in_gbs:
             The value to assign to the memory_in_gbs property of this LaunchInstanceShapeConfigDetails.
         :type memory_in_gbs: float
@@ -59,6 +63,7 @@ class LaunchInstanceShapeConfigDetails(object):
         """
         self.swagger_types = {
             'ocpus': 'float',
+            'vcpus': 'int',
             'memory_in_gbs': 'float',
             'baseline_ocpu_utilization': 'str',
             'nvmes': 'int'
@@ -66,12 +71,14 @@ class LaunchInstanceShapeConfigDetails(object):
 
         self.attribute_map = {
             'ocpus': 'ocpus',
+            'vcpus': 'vcpus',
             'memory_in_gbs': 'memoryInGBs',
             'baseline_ocpu_utilization': 'baselineOcpuUtilization',
             'nvmes': 'nvmes'
         }
 
         self._ocpus = None
+        self._vcpus = None
         self._memory_in_gbs = None
         self._baseline_ocpu_utilization = None
         self._nvmes = None
@@ -99,6 +106,34 @@ class LaunchInstanceShapeConfigDetails(object):
         :type: float
         """
         self._ocpus = ocpus
+
+    @property
+    def vcpus(self):
+        """
+        Gets the vcpus of this LaunchInstanceShapeConfigDetails.
+        The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+        in which case the actual number of OCPUs will be calculated based on this value
+        and the actual hardware. This must be a multiple of 2.
+
+
+        :return: The vcpus of this LaunchInstanceShapeConfigDetails.
+        :rtype: int
+        """
+        return self._vcpus
+
+    @vcpus.setter
+    def vcpus(self, vcpus):
+        """
+        Sets the vcpus of this LaunchInstanceShapeConfigDetails.
+        The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+        in which case the actual number of OCPUs will be calculated based on this value
+        and the actual hardware. This must be a multiple of 2.
+
+
+        :param vcpus: The vcpus of this LaunchInstanceShapeConfigDetails.
+        :type: int
+        """
+        self._vcpus = vcpus
 
     @property
     def memory_in_gbs(self):

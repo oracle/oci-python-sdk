@@ -79,6 +79,10 @@ class InstanceShapeConfig(object):
             The value to assign to the local_disk_description property of this InstanceShapeConfig.
         :type local_disk_description: str
 
+        :param vcpus:
+            The value to assign to the vcpus property of this InstanceShapeConfig.
+        :type vcpus: int
+
         """
         self.swagger_types = {
             'ocpus': 'float',
@@ -91,7 +95,8 @@ class InstanceShapeConfig(object):
             'gpu_description': 'str',
             'local_disks': 'int',
             'local_disks_total_size_in_gbs': 'float',
-            'local_disk_description': 'str'
+            'local_disk_description': 'str',
+            'vcpus': 'int'
         }
 
         self.attribute_map = {
@@ -105,7 +110,8 @@ class InstanceShapeConfig(object):
             'gpu_description': 'gpuDescription',
             'local_disks': 'localDisks',
             'local_disks_total_size_in_gbs': 'localDisksTotalSizeInGBs',
-            'local_disk_description': 'localDiskDescription'
+            'local_disk_description': 'localDiskDescription',
+            'vcpus': 'vcpus'
         }
 
         self._ocpus = None
@@ -119,6 +125,7 @@ class InstanceShapeConfig(object):
         self._local_disks = None
         self._local_disks_total_size_in_gbs = None
         self._local_disk_description = None
+        self._vcpus = None
 
     @property
     def ocpus(self):
@@ -413,6 +420,34 @@ class InstanceShapeConfig(object):
         :type: str
         """
         self._local_disk_description = local_disk_description
+
+    @property
+    def vcpus(self):
+        """
+        Gets the vcpus of this InstanceShapeConfig.
+        The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+        in which case the actual number of OCPUs will be calculated based on this value
+        and the actual hardware. This must be a multiple of 2.
+
+
+        :return: The vcpus of this InstanceShapeConfig.
+        :rtype: int
+        """
+        return self._vcpus
+
+    @vcpus.setter
+    def vcpus(self, vcpus):
+        """
+        Sets the vcpus of this InstanceShapeConfig.
+        The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+        in which case the actual number of OCPUs will be calculated based on this value
+        and the actual hardware. This must be a multiple of 2.
+
+
+        :param vcpus: The vcpus of this InstanceShapeConfig.
+        :type: int
+        """
+        self._vcpus = vcpus
 
     def __repr__(self):
         return formatted_flat_dict(self)

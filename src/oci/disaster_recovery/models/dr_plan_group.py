@@ -76,7 +76,7 @@ class DrPlanGroup(object):
         **[Required]** Gets the id of this DrPlanGroup.
         The unique id of this group. Must not be modified by user.
 
-        Example: `sgid1.group..examplegroupsgid`
+        Example: `sgid1.group..&lt;unique_id&gt;`
 
 
         :return: The id of this DrPlanGroup.
@@ -90,7 +90,7 @@ class DrPlanGroup(object):
         Sets the id of this DrPlanGroup.
         The unique id of this group. Must not be modified by user.
 
-        Example: `sgid1.group..examplegroupsgid`
+        Example: `sgid1.group..&lt;unique_id&gt;`
 
 
         :param id: The id of this DrPlanGroup.

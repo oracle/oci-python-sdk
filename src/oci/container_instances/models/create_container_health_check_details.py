@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateContainerHealthCheckDetails(object):
     """
-    Container Health Check is using for checking container status and taking appropriate actions on behalf of customers.
+    Container Health Check is used to check and report the status of a container.
     """
 
     #: A constant which can be used with the health_check_type property of a CreateContainerHealthCheckDetails.

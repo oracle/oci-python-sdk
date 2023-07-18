@@ -128,7 +128,7 @@ class ContainerHttpHealthCheck(ContainerHealthCheck):
     def path(self):
         """
         **[Required]** Gets the path of this ContainerHttpHealthCheck.
-        Container health check Http's path
+        Container health check HTTP path.
 
 
         :return: The path of this ContainerHttpHealthCheck.
@@ -140,7 +140,7 @@ class ContainerHttpHealthCheck(ContainerHealthCheck):
     def path(self, path):
         """
         Sets the path of this ContainerHttpHealthCheck.
-        Container health check Http's path
+        Container health check HTTP path.
 
 
         :param path: The path of this ContainerHttpHealthCheck.
@@ -152,7 +152,7 @@ class ContainerHttpHealthCheck(ContainerHealthCheck):
     def port(self):
         """
         **[Required]** Gets the port of this ContainerHttpHealthCheck.
-        Container health check Http's port
+        Container health check HTTP port.
 
 
         :return: The port of this ContainerHttpHealthCheck.
@@ -164,7 +164,7 @@ class ContainerHttpHealthCheck(ContainerHealthCheck):
     def port(self, port):
         """
         Sets the port of this ContainerHttpHealthCheck.
-        Container health check Http's port
+        Container health check HTTP port.
 
 
         :param port: The port of this ContainerHttpHealthCheck.
@@ -176,7 +176,7 @@ class ContainerHttpHealthCheck(ContainerHealthCheck):
     def headers(self):
         """
         Gets the headers of this ContainerHttpHealthCheck.
-        Container health check Http's headers.
+        Container health check HTTP headers.
 
 
         :return: The headers of this ContainerHttpHealthCheck.
@@ -188,7 +188,7 @@ class ContainerHttpHealthCheck(ContainerHealthCheck):
     def headers(self, headers):
         """
         Sets the headers of this ContainerHttpHealthCheck.
-        Container health check Http's headers.
+        Container health check HTTP headers.
 
 
         :param headers: The headers of this ContainerHttpHealthCheck.

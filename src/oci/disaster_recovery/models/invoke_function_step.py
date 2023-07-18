@@ -62,10 +62,10 @@ class InvokeFunctionStep(DrPlanUserDefinedStep):
     @property
     def function_id(self):
         """
-        Gets the function_id of this InvokeFunctionStep.
+        **[Required]** Gets the function_id of this InvokeFunctionStep.
         The OCID of function to be invoked.
 
-        Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+        Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
 
 
         :return: The function_id of this InvokeFunctionStep.
@@ -79,7 +79,7 @@ class InvokeFunctionStep(DrPlanUserDefinedStep):
         Sets the function_id of this InvokeFunctionStep.
         The OCID of function to be invoked.
 
-        Example: `ocid1.fnfunc.oc1.iad.exampleocid2`
+        Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
 
 
         :param function_id: The function_id of this InvokeFunctionStep.
@@ -90,7 +90,7 @@ class InvokeFunctionStep(DrPlanUserDefinedStep):
     @property
     def function_region(self):
         """
-        Gets the function_region of this InvokeFunctionStep.
+        **[Required]** Gets the function_region of this InvokeFunctionStep.
         The region in which the function is deployed.
 
         Example: `us-ashburn-1`

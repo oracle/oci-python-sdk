@@ -135,6 +135,7 @@ from .compute_global_image_capability_schema_version_summary import ComputeGloba
 from .compute_image_capability_schema import ComputeImageCapabilitySchema
 from .compute_image_capability_schema_summary import ComputeImageCapabilitySchemaSummary
 from .compute_instance_details import ComputeInstanceDetails
+from .compute_instance_options import ComputeInstanceOptions
 from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .connect_remote_peering_connections_details import ConnectRemotePeeringConnectionsDetails
 from .console_history import ConsoleHistory
@@ -300,6 +301,7 @@ from .instance_configuration_detached_volume_autotune_policy import InstanceConf
 from .instance_configuration_instance_details import InstanceConfigurationInstanceDetails
 from .instance_configuration_instance_options import InstanceConfigurationInstanceOptions
 from .instance_configuration_instance_source_details import InstanceConfigurationInstanceSourceDetails
+from .instance_configuration_instance_source_image_filter_details import InstanceConfigurationInstanceSourceImageFilterDetails
 from .instance_configuration_instance_source_via_boot_volume_details import InstanceConfigurationInstanceSourceViaBootVolumeDetails
 from .instance_configuration_instance_source_via_image_details import InstanceConfigurationInstanceSourceViaImageDetails
 from .instance_configuration_intel_icelake_bm_launch_instance_platform_config import InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
@@ -334,6 +336,7 @@ from .instance_reservation_config_details import InstanceReservationConfigDetail
 from .instance_reservation_shape_config_details import InstanceReservationShapeConfigDetails
 from .instance_shape_config import InstanceShapeConfig
 from .instance_source_details import InstanceSourceDetails
+from .instance_source_image_filter_details import InstanceSourceImageFilterDetails
 from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolumeDetails
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
 from .instance_summary import InstanceSummary
@@ -675,6 +678,7 @@ core_type_mapping = {
     "ComputeImageCapabilitySchema": ComputeImageCapabilitySchema,
     "ComputeImageCapabilitySchemaSummary": ComputeImageCapabilitySchemaSummary,
     "ComputeInstanceDetails": ComputeInstanceDetails,
+    "ComputeInstanceOptions": ComputeInstanceOptions,
     "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConnectRemotePeeringConnectionsDetails": ConnectRemotePeeringConnectionsDetails,
     "ConsoleHistory": ConsoleHistory,
@@ -840,6 +844,7 @@ core_type_mapping = {
     "InstanceConfigurationInstanceDetails": InstanceConfigurationInstanceDetails,
     "InstanceConfigurationInstanceOptions": InstanceConfigurationInstanceOptions,
     "InstanceConfigurationInstanceSourceDetails": InstanceConfigurationInstanceSourceDetails,
+    "InstanceConfigurationInstanceSourceImageFilterDetails": InstanceConfigurationInstanceSourceImageFilterDetails,
     "InstanceConfigurationInstanceSourceViaBootVolumeDetails": InstanceConfigurationInstanceSourceViaBootVolumeDetails,
     "InstanceConfigurationInstanceSourceViaImageDetails": InstanceConfigurationInstanceSourceViaImageDetails,
     "InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig": InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig,
@@ -874,6 +879,7 @@ core_type_mapping = {
     "InstanceReservationShapeConfigDetails": InstanceReservationShapeConfigDetails,
     "InstanceShapeConfig": InstanceShapeConfig,
     "InstanceSourceDetails": InstanceSourceDetails,
+    "InstanceSourceImageFilterDetails": InstanceSourceImageFilterDetails,
     "InstanceSourceViaBootVolumeDetails": InstanceSourceViaBootVolumeDetails,
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
     "InstanceSummary": InstanceSummary,

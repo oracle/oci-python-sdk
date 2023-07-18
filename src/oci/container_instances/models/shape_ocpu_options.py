@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ShapeOcpuOptions(object):
     """
-    For a flexible shape, the number of OCPUs available for instances that use this shape.
+    For a flexible shape, the number of OCPUs available for container instances that use this shape.
     """
 
     def __init__(self, **kwargs):

@@ -152,7 +152,7 @@ class WorkRequestResource(object):
         **[Required]** Gets the identifier of this WorkRequestResource.
         The identifier (OCID) of the resource the work request affects.
 
-        Example: `ocid1.drplanexecution.oc1.iad.exampleocid2`
+        Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
 
 
         :return: The identifier of this WorkRequestResource.
@@ -166,7 +166,7 @@ class WorkRequestResource(object):
         Sets the identifier of this WorkRequestResource.
         The identifier (OCID) of the resource the work request affects.
 
-        Example: `ocid1.drplanexecution.oc1.iad.exampleocid2`
+        Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
 
 
         :param identifier: The identifier of this WorkRequestResource.

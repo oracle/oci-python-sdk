@@ -40,6 +40,10 @@ class BdsInstanceSummary(object):
             The value to assign to the number_of_nodes property of this BdsInstanceSummary.
         :type number_of_nodes: int
 
+        :param number_of_nodes_requiring_maintenance_reboot:
+            The value to assign to the number_of_nodes_requiring_maintenance_reboot property of this BdsInstanceSummary.
+        :type number_of_nodes_requiring_maintenance_reboot: int
+
         :param cluster_version:
             The value to assign to the cluster_version property of this BdsInstanceSummary.
         :type cluster_version: str
@@ -83,6 +87,7 @@ class BdsInstanceSummary(object):
             'display_name': 'str',
             'lifecycle_state': 'str',
             'number_of_nodes': 'int',
+            'number_of_nodes_requiring_maintenance_reboot': 'int',
             'cluster_version': 'str',
             'is_high_availability': 'bool',
             'is_secure': 'bool',
@@ -100,6 +105,7 @@ class BdsInstanceSummary(object):
             'display_name': 'displayName',
             'lifecycle_state': 'lifecycleState',
             'number_of_nodes': 'numberOfNodes',
+            'number_of_nodes_requiring_maintenance_reboot': 'numberOfNodesRequiringMaintenanceReboot',
             'cluster_version': 'clusterVersion',
             'is_high_availability': 'isHighAvailability',
             'is_secure': 'isSecure',
@@ -116,6 +122,7 @@ class BdsInstanceSummary(object):
         self._display_name = None
         self._lifecycle_state = None
         self._number_of_nodes = None
+        self._number_of_nodes_requiring_maintenance_reboot = None
         self._cluster_version = None
         self._is_high_availability = None
         self._is_secure = None
@@ -245,6 +252,30 @@ class BdsInstanceSummary(object):
         :type: int
         """
         self._number_of_nodes = number_of_nodes
+
+    @property
+    def number_of_nodes_requiring_maintenance_reboot(self):
+        """
+        Gets the number_of_nodes_requiring_maintenance_reboot of this BdsInstanceSummary.
+        Number of nodes that require a maintenance reboot
+
+
+        :return: The number_of_nodes_requiring_maintenance_reboot of this BdsInstanceSummary.
+        :rtype: int
+        """
+        return self._number_of_nodes_requiring_maintenance_reboot
+
+    @number_of_nodes_requiring_maintenance_reboot.setter
+    def number_of_nodes_requiring_maintenance_reboot(self, number_of_nodes_requiring_maintenance_reboot):
+        """
+        Sets the number_of_nodes_requiring_maintenance_reboot of this BdsInstanceSummary.
+        Number of nodes that require a maintenance reboot
+
+
+        :param number_of_nodes_requiring_maintenance_reboot: The number_of_nodes_requiring_maintenance_reboot of this BdsInstanceSummary.
+        :type: int
+        """
+        self._number_of_nodes_requiring_maintenance_reboot = number_of_nodes_requiring_maintenance_reboot
 
     @property
     def cluster_version(self):

@@ -41,7 +41,7 @@ class ChangeDrProtectionGroupCompartmentDetails(object):
         **[Required]** Gets the compartment_id of this ChangeDrProtectionGroupCompartmentDetails.
         The OCID of the compartment to which the DR Protection Group should be moved.
 
-        Example: `ocid1.compartment.oc1..exampleocid1`
+        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 
 
         :return: The compartment_id of this ChangeDrProtectionGroupCompartmentDetails.
@@ -55,7 +55,7 @@ class ChangeDrProtectionGroupCompartmentDetails(object):
         Sets the compartment_id of this ChangeDrProtectionGroupCompartmentDetails.
         The OCID of the compartment to which the DR Protection Group should be moved.
 
-        Example: `ocid1.compartment.oc1..exampleocid1`
+        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 
 
         :param compartment_id: The compartment_id of this ChangeDrProtectionGroupCompartmentDetails.

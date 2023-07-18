@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateContainerDetails(object):
     """
-    The information to be updated.
+    The container information to be updated.
     """
 
     def __init__(self, **kwargs):
@@ -53,8 +53,7 @@ class UpdateContainerDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateContainerDetails.
-        Display name for the Container. There are no guarantees of uniqueness
-        for this name.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateContainerDetails.
@@ -66,8 +65,7 @@ class UpdateContainerDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateContainerDetails.
-        Display name for the Container. There are no guarantees of uniqueness
-        for this name.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateContainerDetails.
@@ -106,7 +104,7 @@ class UpdateContainerDetails(object):
         """
         Gets the defined_tags of this UpdateContainerDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :return: The defined_tags of this UpdateContainerDetails.
@@ -119,7 +117,7 @@ class UpdateContainerDetails(object):
         """
         Sets the defined_tags of this UpdateContainerDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :param defined_tags: The defined_tags of this UpdateContainerDetails.

@@ -602,7 +602,7 @@ class FileSystem(object):
     def is_targetable(self):
         """
         Gets the is_targetable of this FileSystem.
-        Specifies whether the file system can be used as a target file system for replication.
+        Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`.
         For more information, see `Using Replication`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm
@@ -617,7 +617,7 @@ class FileSystem(object):
     def is_targetable(self, is_targetable):
         """
         Sets the is_targetable of this FileSystem.
-        Specifies whether the file system can be used as a target file system for replication.
+        Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`.
         For more information, see `Using Replication`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm

@@ -9,14 +9,20 @@ from __future__ import absolute_import
 from .change_file_system_compartment_details import ChangeFileSystemCompartmentDetails
 from .change_filesystem_snapshot_policy_compartment_details import ChangeFilesystemSnapshotPolicyCompartmentDetails
 from .change_mount_target_compartment_details import ChangeMountTargetCompartmentDetails
+from .change_outbound_connector_compartment_details import ChangeOutboundConnectorCompartmentDetails
 from .change_replication_compartment_details import ChangeReplicationCompartmentDetails
 from .client_options import ClientOptions
 from .create_export_details import CreateExportDetails
 from .create_file_system_details import CreateFileSystemDetails
 from .create_filesystem_snapshot_policy_details import CreateFilesystemSnapshotPolicyDetails
+from .create_kerberos_details import CreateKerberosDetails
+from .create_ldap_bind_account_details import CreateLdapBindAccountDetails
+from .create_ldap_idmap_details import CreateLdapIdmapDetails
 from .create_mount_target_details import CreateMountTargetDetails
+from .create_outbound_connector_details import CreateOutboundConnectorDetails
 from .create_replication_details import CreateReplicationDetails
 from .create_snapshot_details import CreateSnapshotDetails
+from .endpoint import Endpoint
 from .export import Export
 from .export_set import ExportSet
 from .export_set_summary import ExportSetSummary
@@ -25,8 +31,16 @@ from .file_system import FileSystem
 from .file_system_summary import FileSystemSummary
 from .filesystem_snapshot_policy import FilesystemSnapshotPolicy
 from .filesystem_snapshot_policy_summary import FilesystemSnapshotPolicySummary
+from .kerberos import Kerberos
+from .kerberos_keytab_entry import KerberosKeytabEntry
+from .key_tab_secret_details import KeyTabSecretDetails
+from .ldap_bind_account import LdapBindAccount
+from .ldap_bind_account_summary import LdapBindAccountSummary
+from .ldap_idmap import LdapIdmap
 from .mount_target import MountTarget
 from .mount_target_summary import MountTargetSummary
+from .outbound_connector import OutboundConnector
+from .outbound_connector_summary import OutboundConnectorSummary
 from .replication import Replication
 from .replication_estimate import ReplicationEstimate
 from .replication_summary import ReplicationSummary
@@ -40,23 +54,34 @@ from .update_export_details import UpdateExportDetails
 from .update_export_set_details import UpdateExportSetDetails
 from .update_file_system_details import UpdateFileSystemDetails
 from .update_filesystem_snapshot_policy_details import UpdateFilesystemSnapshotPolicyDetails
+from .update_kerberos_details import UpdateKerberosDetails
+from .update_ldap_idmap_details import UpdateLdapIdmapDetails
 from .update_mount_target_details import UpdateMountTargetDetails
+from .update_outbound_connector_details import UpdateOutboundConnectorDetails
 from .update_replication_details import UpdateReplicationDetails
 from .update_snapshot_details import UpdateSnapshotDetails
+from .validate_key_tabs_details import ValidateKeyTabsDetails
+from .validate_key_tabs_response_details import ValidateKeyTabsResponseDetails
 
 # Maps type names to classes for file_storage services.
 file_storage_type_mapping = {
     "ChangeFileSystemCompartmentDetails": ChangeFileSystemCompartmentDetails,
     "ChangeFilesystemSnapshotPolicyCompartmentDetails": ChangeFilesystemSnapshotPolicyCompartmentDetails,
     "ChangeMountTargetCompartmentDetails": ChangeMountTargetCompartmentDetails,
+    "ChangeOutboundConnectorCompartmentDetails": ChangeOutboundConnectorCompartmentDetails,
     "ChangeReplicationCompartmentDetails": ChangeReplicationCompartmentDetails,
     "ClientOptions": ClientOptions,
     "CreateExportDetails": CreateExportDetails,
     "CreateFileSystemDetails": CreateFileSystemDetails,
     "CreateFilesystemSnapshotPolicyDetails": CreateFilesystemSnapshotPolicyDetails,
+    "CreateKerberosDetails": CreateKerberosDetails,
+    "CreateLdapBindAccountDetails": CreateLdapBindAccountDetails,
+    "CreateLdapIdmapDetails": CreateLdapIdmapDetails,
     "CreateMountTargetDetails": CreateMountTargetDetails,
+    "CreateOutboundConnectorDetails": CreateOutboundConnectorDetails,
     "CreateReplicationDetails": CreateReplicationDetails,
     "CreateSnapshotDetails": CreateSnapshotDetails,
+    "Endpoint": Endpoint,
     "Export": Export,
     "ExportSet": ExportSet,
     "ExportSetSummary": ExportSetSummary,
@@ -65,8 +90,16 @@ file_storage_type_mapping = {
     "FileSystemSummary": FileSystemSummary,
     "FilesystemSnapshotPolicy": FilesystemSnapshotPolicy,
     "FilesystemSnapshotPolicySummary": FilesystemSnapshotPolicySummary,
+    "Kerberos": Kerberos,
+    "KerberosKeytabEntry": KerberosKeytabEntry,
+    "KeyTabSecretDetails": KeyTabSecretDetails,
+    "LdapBindAccount": LdapBindAccount,
+    "LdapBindAccountSummary": LdapBindAccountSummary,
+    "LdapIdmap": LdapIdmap,
     "MountTarget": MountTarget,
     "MountTargetSummary": MountTargetSummary,
+    "OutboundConnector": OutboundConnector,
+    "OutboundConnectorSummary": OutboundConnectorSummary,
     "Replication": Replication,
     "ReplicationEstimate": ReplicationEstimate,
     "ReplicationSummary": ReplicationSummary,
@@ -80,7 +113,12 @@ file_storage_type_mapping = {
     "UpdateExportSetDetails": UpdateExportSetDetails,
     "UpdateFileSystemDetails": UpdateFileSystemDetails,
     "UpdateFilesystemSnapshotPolicyDetails": UpdateFilesystemSnapshotPolicyDetails,
+    "UpdateKerberosDetails": UpdateKerberosDetails,
+    "UpdateLdapIdmapDetails": UpdateLdapIdmapDetails,
     "UpdateMountTargetDetails": UpdateMountTargetDetails,
+    "UpdateOutboundConnectorDetails": UpdateOutboundConnectorDetails,
     "UpdateReplicationDetails": UpdateReplicationDetails,
-    "UpdateSnapshotDetails": UpdateSnapshotDetails
+    "UpdateSnapshotDetails": UpdateSnapshotDetails,
+    "ValidateKeyTabsDetails": ValidateKeyTabsDetails,
+    "ValidateKeyTabsResponseDetails": ValidateKeyTabsResponseDetails
 }

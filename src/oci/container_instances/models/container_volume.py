@@ -12,8 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerVolume(object):
     """
-    A Volume represents a directory with data that is accessible across multiple containers in a
-    ContainerInstance.
+    A volume represents a directory with data that is accessible across multiple containers in a
+    container instance.
     """
 
     #: A constant which can be used with the volume_type property of a ContainerVolume.
@@ -78,7 +78,7 @@ class ContainerVolume(object):
     def name(self):
         """
         **[Required]** Gets the name of this ContainerVolume.
-        The name of the volume. This has be unique cross single ContainerInstance.
+        The name of the volume. This must be unique within a single container instance.
 
 
         :return: The name of this ContainerVolume.
@@ -90,7 +90,7 @@ class ContainerVolume(object):
     def name(self, name):
         """
         Sets the name of this ContainerVolume.
-        The name of the volume. This has be unique cross single ContainerInstance.
+        The name of the volume. This must be unique within a single container instance.
 
 
         :param name: The name of this ContainerVolume.

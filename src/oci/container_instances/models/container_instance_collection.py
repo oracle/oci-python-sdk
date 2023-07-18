@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerInstanceCollection(object):
     """
-    Results of a containerInstance search. Contains boh ContainerInstanceSummary items and other information, such as metadata.
+    Summary information about a list of container instances.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ContainerInstanceCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ContainerInstanceCollection.
-        List of containerInstances.
+        List of container instances.
 
 
         :return: The items of this ContainerInstanceCollection.
@@ -51,7 +51,7 @@ class ContainerInstanceCollection(object):
     def items(self, items):
         """
         Sets the items of this ContainerInstanceCollection.
-        List of containerInstances.
+        List of container instances.
 
 
         :param items: The items of this ContainerInstanceCollection.

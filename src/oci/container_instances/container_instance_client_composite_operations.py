@@ -31,7 +31,9 @@ class ContainerInstanceClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.container_instances.models.ChangeContainerInstanceCompartmentDetails change_container_instance_compartment_details: (required)
             The information to be updated.
@@ -72,7 +74,7 @@ class ContainerInstanceClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.container_instances.models.CreateContainerInstanceDetails create_container_instance_details: (required)
-            Details for the new ContainerInstance.
+            Details for the new container instance.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.container_instances.models.WorkRequest.status`
@@ -110,7 +112,9 @@ class ContainerInstanceClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.container_instances.models.WorkRequest.status`
@@ -156,7 +160,9 @@ class ContainerInstanceClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.container_instances.models.WorkRequest.status`
@@ -194,7 +200,9 @@ class ContainerInstanceClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.container_instances.models.WorkRequest.status`
@@ -232,7 +240,9 @@ class ContainerInstanceClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.container_instances.models.WorkRequest.status`
@@ -270,7 +280,9 @@ class ContainerInstanceClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str container_id: (required)
-            The unique identifier for the Container.
+            The `OCID`__ of the container.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.container_instances.models.UpdateContainerDetails update_container_details: (required)
             The information to be updated.
@@ -311,7 +323,9 @@ class ContainerInstanceClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str container_instance_id: (required)
-            The system-generated unique identifier for the ContainerInstance.
+            The `OCID`__ of the container instance.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.container_instances.models.UpdateContainerInstanceDetails update_container_instance_details: (required)
             The information to be updated.

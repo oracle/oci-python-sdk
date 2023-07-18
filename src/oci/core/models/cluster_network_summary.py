@@ -12,7 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ClusterNetworkSummary(object):
     """
-    Summary information for a cluster network.
+    Summary information for a `cluster network with instance pools`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a ClusterNetworkSummary.

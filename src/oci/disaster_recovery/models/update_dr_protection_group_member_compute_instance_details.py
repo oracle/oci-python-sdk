@@ -27,7 +27,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
         :type member_type: str
 
         :param is_movable:
@@ -131,7 +131,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
         Gets the destination_compartment_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
         The OCID of the compartment for this compute instance in the destination region.
 
-        Example: `ocid1.compartment.oc1..exampleocid1`
+        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 
 
         :return: The destination_compartment_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
@@ -145,7 +145,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
         Sets the destination_compartment_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
         The OCID of the compartment for this compute instance in the destination region.
 
-        Example: `ocid1.compartment.oc1..exampleocid1`
+        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
 
 
         :param destination_compartment_id: The destination_compartment_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
@@ -160,7 +160,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
         The OCID of the dedicated VM Host in the destination region where this compute instance
         should be launched
 
-        Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+        Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
 
 
         :return: The destination_dedicated_vm_host_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
@@ -175,7 +175,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
         The OCID of the dedicated VM Host in the destination region where this compute instance
         should be launched
 
-        Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid2`
+        Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
 
 
         :param destination_dedicated_vm_host_id: The destination_dedicated_vm_host_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.

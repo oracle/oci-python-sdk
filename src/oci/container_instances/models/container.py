@@ -12,9 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Container(object):
     """
-    A single container on a Container Instance.
+    A single container on a container instance.
 
-    If this Container is DELETED, the record will remain visible for a short period
+    If you delete a container, the record remains visible for a short period
     of time before being permanently removed.
     """
 
@@ -45,14 +45,6 @@ class Container(object):
     #: A constant which can be used with the lifecycle_state property of a Container.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
-
-    #: A constant which can be used with the additional_capabilities property of a Container.
-    #: This constant has a value of "CAP_NET_ADMIN"
-    ADDITIONAL_CAPABILITIES_CAP_NET_ADMIN = "CAP_NET_ADMIN"
-
-    #: A constant which can be used with the additional_capabilities property of a Container.
-    #: This constant has a value of "CAP_NET_RAW"
-    ADDITIONAL_CAPABILITIES_CAP_NET_RAW = "CAP_NET_RAW"
 
     def __init__(self, **kwargs):
         """
@@ -133,12 +125,6 @@ class Container(object):
             The value to assign to the arguments property of this Container.
         :type arguments: list[str]
 
-        :param additional_capabilities:
-            The value to assign to the additional_capabilities property of this Container.
-            Allowed values for items in this list are: "CAP_NET_ADMIN", "CAP_NET_RAW", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        :type additional_capabilities: list[str]
-
         :param working_directory:
             The value to assign to the working_directory property of this Container.
         :type working_directory: str
@@ -187,7 +173,6 @@ class Container(object):
             'image_url': 'str',
             'command': 'list[str]',
             'arguments': 'list[str]',
-            'additional_capabilities': 'list[str]',
             'working_directory': 'str',
             'environment_variables': 'dict(str, str)',
             'volume_mounts': 'list[VolumeMount]',
@@ -216,7 +201,6 @@ class Container(object):
             'image_url': 'imageUrl',
             'command': 'command',
             'arguments': 'arguments',
-            'additional_capabilities': 'additionalCapabilities',
             'working_directory': 'workingDirectory',
             'environment_variables': 'environmentVariables',
             'volume_mounts': 'volumeMounts',
@@ -244,7 +228,6 @@ class Container(object):
         self._image_url = None
         self._command = None
         self._arguments = None
-        self._additional_capabilities = None
         self._working_directory = None
         self._environment_variables = None
         self._volume_mounts = None
@@ -257,7 +240,9 @@ class Container(object):
     def id(self):
         """
         **[Required]** Gets the id of this Container.
-        Unique identifier that is immutable on creation
+        The `OCID`__ of the container.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Container.
@@ -269,7 +254,9 @@ class Container(object):
     def id(self, id):
         """
         Sets the id of this Container.
-        Unique identifier that is immutable on creation
+        The `OCID`__ of the container.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Container.
@@ -281,7 +268,7 @@ class Container(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this Container.
-        Display name for the Container. Can be renamed.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this Container.
@@ -293,7 +280,7 @@ class Container(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Container.
-        Display name for the Container. Can be renamed.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this Container.
@@ -305,7 +292,7 @@ class Container(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Container.
-        Compartment Identifier
+        The OCID of the compartment that contains the container.
 
 
         :return: The compartment_id of this Container.
@@ -317,7 +304,7 @@ class Container(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Container.
-        Compartment Identifier
+        The OCID of the compartment that contains the container.
 
 
         :param compartment_id: The compartment_id of this Container.
@@ -356,7 +343,7 @@ class Container(object):
         """
         Gets the defined_tags of this Container.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :return: The defined_tags of this Container.
@@ -369,7 +356,7 @@ class Container(object):
         """
         Sets the defined_tags of this Container.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :param defined_tags: The defined_tags of this Container.
@@ -382,7 +369,7 @@ class Container(object):
         """
         Gets the system_tags of this Container.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`.
 
 
         :return: The system_tags of this Container.
@@ -395,7 +382,7 @@ class Container(object):
         """
         Sets the system_tags of this Container.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`.
 
 
         :param system_tags: The system_tags of this Container.
@@ -407,7 +394,7 @@ class Container(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this Container.
-        Availability Domain where the Container's Instance is running.
+        The availability domain where the container instance that hosts the container runs.
 
 
         :return: The availability_domain of this Container.
@@ -419,7 +406,7 @@ class Container(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this Container.
-        Availability Domain where the Container's Instance is running.
+        The availability domain where the container instance that hosts the container runs.
 
 
         :param availability_domain: The availability_domain of this Container.
@@ -431,7 +418,7 @@ class Container(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this Container.
-        Fault Domain where the Container's Instance is running.
+        The fault domain of the container instance that hosts the container runs.
 
 
         :return: The fault_domain of this Container.
@@ -443,7 +430,7 @@ class Container(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this Container.
-        Fault Domain where the Container's Instance is running.
+        The fault domain of the container instance that hosts the container runs.
 
 
         :param fault_domain: The fault_domain of this Container.
@@ -455,7 +442,7 @@ class Container(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Container.
-        The current state of the Container.
+        The current state of the container.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -470,7 +457,7 @@ class Container(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Container.
-        The current state of the Container.
+        The current state of the container.
 
 
         :param lifecycle_state: The lifecycle_state of this Container.
@@ -485,8 +472,8 @@ class Container(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this Container.
-        A message describing the current state in more detail. For example, can be used to provide
-        actionable information for a resource in Failed state.
+        A message that describes the current state of the container in more detail. Can be used to provide
+        actionable information.
 
 
         :return: The lifecycle_details of this Container.
@@ -498,8 +485,8 @@ class Container(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this Container.
-        A message describing the current state in more detail. For example, can be used to provide
-        actionable information for a resource in Failed state.
+        A message that describes the current state of the container in more detail. Can be used to provide
+        actionable information.
 
 
         :param lifecycle_details: The lifecycle_details of this Container.
@@ -511,7 +498,7 @@ class Container(object):
     def exit_code(self):
         """
         Gets the exit_code of this Container.
-        The exit code of the container process if it has stopped executing.
+        The exit code of the container process when it stopped running.
 
 
         :return: The exit_code of this Container.
@@ -523,7 +510,7 @@ class Container(object):
     def exit_code(self, exit_code):
         """
         Sets the exit_code of this Container.
-        The exit code of the container process if it has stopped executing.
+        The exit code of the container process when it stopped running.
 
 
         :param exit_code: The exit_code of this Container.
@@ -535,7 +522,9 @@ class Container(object):
     def time_terminated(self):
         """
         Gets the time_terminated of this Container.
-        Time at which the container last terminated. An RFC3339 formatted datetime string
+        The time when the container last deleted (terminated), in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_terminated of this Container.
@@ -547,7 +536,9 @@ class Container(object):
     def time_terminated(self, time_terminated):
         """
         Sets the time_terminated of this Container.
-        Time at which the container last terminated. An RFC3339 formatted datetime string
+        The time when the container last deleted (terminated), in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_terminated: The time_terminated of this Container.
@@ -559,7 +550,9 @@ class Container(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Container.
-        The time the the Container was created. An RFC3339 formatted datetime string
+        The time the container was created, in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this Container.
@@ -571,7 +564,9 @@ class Container(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Container.
-        The time the the Container was created. An RFC3339 formatted datetime string
+        The time the container was created, in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this Container.
@@ -583,7 +578,9 @@ class Container(object):
     def time_updated(self):
         """
         Gets the time_updated of this Container.
-        The time the Container was updated. An RFC3339 formatted datetime string
+        The time the container was updated, in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_updated of this Container.
@@ -595,7 +592,9 @@ class Container(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Container.
-        The time the Container was updated. An RFC3339 formatted datetime string
+        The time the container was updated, in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_updated: The time_updated of this Container.
@@ -607,7 +606,9 @@ class Container(object):
     def container_instance_id(self):
         """
         **[Required]** Gets the container_instance_id of this Container.
-        The identifier of the Container Instance on which this container is running.
+        The `OCID`__ of the container instance that the container is running on.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The container_instance_id of this Container.
@@ -619,7 +620,9 @@ class Container(object):
     def container_instance_id(self, container_instance_id):
         """
         Sets the container_instance_id of this Container.
-        The identifier of the Container Instance on which this container is running.
+        The `OCID`__ of the container instance that the container is running on.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param container_instance_id: The container_instance_id of this Container.
@@ -631,11 +634,13 @@ class Container(object):
     def image_url(self):
         """
         **[Required]** Gets the image_url of this Container.
-        The container image information. Currently only support public docker registry. Can be either image name,
-        e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g
+        The container image information. Currently only supports public Docker registry.
+
+        You can provide either the image name (containerImage), image name with version (containerImagev1), or complete Docker image URL
         `docker.io/library/containerImage:latest`.
-        If no registry is provided, will default the registry to public docker hub `docker.io/library`.
-        The registry used for container image must be reachable over the Container Instance's VNIC.
+
+        If you do not provide a registry, the registry defaults to public Docker hub `docker.io/library`.
+        The registry used for the container image must be reachable over the VNIC of the container instance.
 
 
         :return: The image_url of this Container.
@@ -647,11 +652,13 @@ class Container(object):
     def image_url(self, image_url):
         """
         Sets the image_url of this Container.
-        The container image information. Currently only support public docker registry. Can be either image name,
-        e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g
+        The container image information. Currently only supports public Docker registry.
+
+        You can provide either the image name (containerImage), image name with version (containerImagev1), or complete Docker image URL
         `docker.io/library/containerImage:latest`.
-        If no registry is provided, will default the registry to public docker hub `docker.io/library`.
-        The registry used for container image must be reachable over the Container Instance's VNIC.
+
+        If you do not provide a registry, the registry defaults to public Docker hub `docker.io/library`.
+        The registry used for the container image must be reachable over the VNIC of the container instance.
 
 
         :param image_url: The image_url of this Container.
@@ -663,8 +670,8 @@ class Container(object):
     def command(self):
         """
         Gets the command of this Container.
-        This command will override the container's entrypoint process.
-        If not specified, the existing entrypoint process defined in the image will be used.
+        This command overrides ENTRYPOINT process of the container.
+        If you do not specify this command, the existing ENTRYPOINT process defined in the image is the default.
 
 
         :return: The command of this Container.
@@ -676,8 +683,8 @@ class Container(object):
     def command(self, command):
         """
         Sets the command of this Container.
-        This command will override the container's entrypoint process.
-        If not specified, the existing entrypoint process defined in the image will be used.
+        This command overrides ENTRYPOINT process of the container.
+        If you do not specify this command, the existing ENTRYPOINT process defined in the image is the default.
 
 
         :param command: The command of this Container.
@@ -689,11 +696,10 @@ class Container(object):
     def arguments(self):
         """
         Gets the arguments of this Container.
-        A list of string arguments for a Container's entrypoint process.
+        A list of string arguments for the ENTRYPOINT process of the container.
 
-        Many containers use an entrypoint process pointing to a shell,
-        for example /bin/bash. For such containers, this argument list
-        can also be used to specify the main command in the container process.
+        Many containers use an ENTRYPOINT process pointing to a shell
+        `/bin/bash`. For those containers, you can use the argument list to specify the main command in the container process.
 
 
         :return: The arguments of this Container.
@@ -705,11 +711,10 @@ class Container(object):
     def arguments(self, arguments):
         """
         Sets the arguments of this Container.
-        A list of string arguments for a Container's entrypoint process.
+        A list of string arguments for the ENTRYPOINT process of the container.
 
-        Many containers use an entrypoint process pointing to a shell,
-        for example /bin/bash. For such containers, this argument list
-        can also be used to specify the main command in the container process.
+        Many containers use an ENTRYPOINT process pointing to a shell
+        `/bin/bash`. For those containers, you can use the argument list to specify the main command in the container process.
 
 
         :param arguments: The arguments of this Container.
@@ -718,42 +723,12 @@ class Container(object):
         self._arguments = arguments
 
     @property
-    def additional_capabilities(self):
-        """
-        Gets the additional_capabilities of this Container.
-        A list of additional configurable container capabilities
-
-        Allowed values for items in this list are: "CAP_NET_ADMIN", "CAP_NET_RAW", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-
-
-        :return: The additional_capabilities of this Container.
-        :rtype: list[str]
-        """
-        return self._additional_capabilities
-
-    @additional_capabilities.setter
-    def additional_capabilities(self, additional_capabilities):
-        """
-        Sets the additional_capabilities of this Container.
-        A list of additional configurable container capabilities
-
-
-        :param additional_capabilities: The additional_capabilities of this Container.
-        :type: list[str]
-        """
-        allowed_values = ["CAP_NET_ADMIN", "CAP_NET_RAW"]
-        if additional_capabilities:
-            additional_capabilities[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in additional_capabilities]
-        self._additional_capabilities = additional_capabilities
-
-    @property
     def working_directory(self):
         """
         Gets the working_directory of this Container.
-        The working directory within the Container's filesystem for
-        the Container process. If this is not present, the default
-        working directory from the image will be used.
+        The working directory within the container's filesystem for
+        the container process. If not specified, the default
+        working directory from the image is used.
 
 
         :return: The working_directory of this Container.
@@ -765,9 +740,9 @@ class Container(object):
     def working_directory(self, working_directory):
         """
         Sets the working_directory of this Container.
-        The working directory within the Container's filesystem for
-        the Container process. If this is not present, the default
-        working directory from the image will be used.
+        The working directory within the container's filesystem for
+        the container process. If not specified, the default
+        working directory from the image is used.
 
 
         :param working_directory: The working_directory of this Container.
@@ -779,8 +754,8 @@ class Container(object):
     def environment_variables(self):
         """
         Gets the environment_variables of this Container.
-        A map of additional environment variables to set in the environment of the container's
-        entrypoint process. These variables are in addition to any variables already defined
+        A map of additional environment variables to set in the environment of the
+        ENTRYPOINT process of the container. These variables are in addition to any variables already defined
         in the container's image.
 
 
@@ -793,8 +768,8 @@ class Container(object):
     def environment_variables(self, environment_variables):
         """
         Sets the environment_variables of this Container.
-        A map of additional environment variables to set in the environment of the container's
-        entrypoint process. These variables are in addition to any variables already defined
+        A map of additional environment variables to set in the environment of the
+        ENTRYPOINT process of the container. These variables are in addition to any variables already defined
         in the container's image.
 
 
@@ -855,10 +830,10 @@ class Container(object):
     def is_resource_principal_disabled(self):
         """
         Gets the is_resource_principal_disabled of this Container.
-        Determines if the Container will have access to the Container Instance Resource Principal.
-        This method utilizes resource principal version 2.2. Please refer to
-        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-        for detailed explanation of how to leverage the exposed resource principal elements.
+        Determines if the container will have access to the container instance resource principal.
+
+        This method utilizes resource principal version 2.2. For more information on how to use the exposed resource principal elements, see
+        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
 
 
         :return: The is_resource_principal_disabled of this Container.
@@ -870,10 +845,10 @@ class Container(object):
     def is_resource_principal_disabled(self, is_resource_principal_disabled):
         """
         Sets the is_resource_principal_disabled of this Container.
-        Determines if the Container will have access to the Container Instance Resource Principal.
-        This method utilizes resource principal version 2.2. Please refer to
-        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-        for detailed explanation of how to leverage the exposed resource principal elements.
+        Determines if the container will have access to the container instance resource principal.
+
+        This method utilizes resource principal version 2.2. For more information on how to use the exposed resource principal elements, see
+        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
 
 
         :param is_resource_principal_disabled: The is_resource_principal_disabled of this Container.
@@ -905,7 +880,7 @@ class Container(object):
     def container_restart_attempt_count(self):
         """
         Gets the container_restart_attempt_count of this Container.
-        The number of container restart attempts. A restart may be attempted after a health check failure or a container exit, based on the restart policy.
+        The number of container restart attempts. Depending on the restart policy, a restart might be attempted after a health check failure or a container exit.
 
 
         :return: The container_restart_attempt_count of this Container.
@@ -917,7 +892,7 @@ class Container(object):
     def container_restart_attempt_count(self, container_restart_attempt_count):
         """
         Sets the container_restart_attempt_count of this Container.
-        The number of container restart attempts. A restart may be attempted after a health check failure or a container exit, based on the restart policy.
+        The number of container restart attempts. Depending on the restart policy, a restart might be attempted after a health check failure or a container exit.
 
 
         :param container_restart_attempt_count: The container_restart_attempt_count of this Container.

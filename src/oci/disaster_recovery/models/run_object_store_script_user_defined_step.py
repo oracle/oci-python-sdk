@@ -62,10 +62,10 @@ class RunObjectStoreScriptUserDefinedStep(DrPlanUserDefinedStep):
     @property
     def run_on_instance_id(self):
         """
-        Gets the run_on_instance_id of this RunObjectStoreScriptUserDefinedStep.
+        **[Required]** Gets the run_on_instance_id of this RunObjectStoreScriptUserDefinedStep.
         The OCID of the instance where this script or command should be executed.
 
-        Example: `ocid1.instance.oc1.phx.exampleocid1`
+        Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 
 
         :return: The run_on_instance_id of this RunObjectStoreScriptUserDefinedStep.
@@ -79,7 +79,7 @@ class RunObjectStoreScriptUserDefinedStep(DrPlanUserDefinedStep):
         Sets the run_on_instance_id of this RunObjectStoreScriptUserDefinedStep.
         The OCID of the instance where this script or command should be executed.
 
-        Example: `ocid1.instance.oc1.phx.exampleocid1`
+        Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
 
 
         :param run_on_instance_id: The run_on_instance_id of this RunObjectStoreScriptUserDefinedStep.
@@ -90,7 +90,7 @@ class RunObjectStoreScriptUserDefinedStep(DrPlanUserDefinedStep):
     @property
     def run_on_instance_region(self):
         """
-        Gets the run_on_instance_region of this RunObjectStoreScriptUserDefinedStep.
+        **[Required]** Gets the run_on_instance_region of this RunObjectStoreScriptUserDefinedStep.
         The region of the instance where this script or command should be executed.
 
         Example: `us-phoenix-1`
@@ -118,7 +118,7 @@ class RunObjectStoreScriptUserDefinedStep(DrPlanUserDefinedStep):
     @property
     def object_storage_script_location(self):
         """
-        Gets the object_storage_script_location of this RunObjectStoreScriptUserDefinedStep.
+        **[Required]** Gets the object_storage_script_location of this RunObjectStoreScriptUserDefinedStep.
 
         :return: The object_storage_script_location of this RunObjectStoreScriptUserDefinedStep.
         :rtype: oci.disaster_recovery.models.ObjectStorageScriptLocation

@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateComputeClusterDetails(object):
     """
-    The data to update a `compute cluster`__, which is a remote direct memory access (RDMA) network group.
+    The data to update a compute cluster. A `compute cluster`__
+    is a remote direct memory access (RDMA) network group.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
     """

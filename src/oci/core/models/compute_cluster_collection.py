@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputeClusterCollection(object):
     """
-    A list of compute clusters that match filter criteria, if any. A `compute cluster`__ is a remote direct memory access (RDMA) network group.
+    A list of compute clusters that match filter criteria, if any. A `compute cluster`__
+    is a remote direct memory access (RDMA) network group.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
     """

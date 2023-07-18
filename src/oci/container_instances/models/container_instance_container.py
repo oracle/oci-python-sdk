@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerInstanceContainer(object):
     """
-    A container on a Container Instance.
+    A container on a container instance.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class ContainerInstanceContainer(object):
     def container_id(self):
         """
         **[Required]** Gets the container_id of this ContainerInstanceContainer.
-        The ID of the Container on this Instance.
+        The OCID of the container.
 
 
         :return: The container_id of this ContainerInstanceContainer.
@@ -58,7 +58,7 @@ class ContainerInstanceContainer(object):
     def container_id(self, container_id):
         """
         Sets the container_id of this ContainerInstanceContainer.
-        The ID of the Container on this Instance.
+        The OCID of the container.
 
 
         :param container_id: The container_id of this ContainerInstanceContainer.

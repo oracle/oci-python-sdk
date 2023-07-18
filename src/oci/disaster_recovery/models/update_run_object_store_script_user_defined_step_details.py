@@ -55,7 +55,7 @@ class UpdateRunObjectStoreScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedSt
     @property
     def run_on_instance_id(self):
         """
-        Gets the run_on_instance_id of this UpdateRunObjectStoreScriptUserDefinedStepDetails.
+        **[Required]** Gets the run_on_instance_id of this UpdateRunObjectStoreScriptUserDefinedStepDetails.
         The OCID of the instance where this script or command should be executed.
 
 
@@ -79,7 +79,7 @@ class UpdateRunObjectStoreScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedSt
     @property
     def object_storage_script_location(self):
         """
-        Gets the object_storage_script_location of this UpdateRunObjectStoreScriptUserDefinedStepDetails.
+        **[Required]** Gets the object_storage_script_location of this UpdateRunObjectStoreScriptUserDefinedStepDetails.
 
         :return: The object_storage_script_location of this UpdateRunObjectStoreScriptUserDefinedStepDetails.
         :rtype: oci.disaster_recovery.models.UpdateObjectStorageScriptLocationDetails

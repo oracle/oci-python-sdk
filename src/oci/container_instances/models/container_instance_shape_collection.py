@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerInstanceShapeCollection(object):
     """
-    A collection of Container Instance Shapes.
+    A collection of container instance shapes.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ContainerInstanceShapeCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ContainerInstanceShapeCollection.
-        List of shapes.
+        A list of shapes.
 
 
         :return: The items of this ContainerInstanceShapeCollection.
@@ -51,7 +51,7 @@ class ContainerInstanceShapeCollection(object):
     def items(self, items):
         """
         Sets the items of this ContainerInstanceShapeCollection.
-        List of shapes.
+        A list of shapes.
 
 
         :param items: The items of this ContainerInstanceShapeCollection.
