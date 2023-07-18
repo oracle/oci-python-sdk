@@ -12,13 +12,17 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateComputeClusterDetails(object):
     """
-    The data for creating a compute cluster, which is an empty remote direct memory access (RDMA) network group.
+    The data for creating a `compute cluster`__. A compute cluster
+    is an empty remote direct memory access (RDMA) network group
+
     After the compute cluster is created, you can use the compute cluster's OCID with the
     :func:`launch_instance` operation to create instances in the compute cluster.
-    Compute clusters allow you to manage instances in the cluster individually.
-    For more information, see `Compute Clusters`__.
+    The instances must be created in the same compartment and availability domain as the cluster.
 
-    For details about creating a cluster network that uses intance pools to manage groups of identical instances,
+    Use compute clusters when you want to manage instances in the cluster individually, or when you want
+    to use different types of instances in the RDMA network group.
+
+    For details about creating a cluster network that uses instance pools to manage groups of identical instances,
     see :func:`create_cluster_network_details`.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
@@ -76,7 +80,8 @@ class CreateComputeClusterDetails(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this CreateComputeClusterDetails.
-        The availability domain that the compute cluster is running in.
+        The availability domain to place the compute cluster in.
+
         Example: `Uocm:PHX-AD-1`
 
 
@@ -89,7 +94,8 @@ class CreateComputeClusterDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateComputeClusterDetails.
-        The availability domain that the compute cluster is running in.
+        The availability domain to place the compute cluster in.
+
         Example: `Uocm:PHX-AD-1`
 
 
@@ -102,7 +108,7 @@ class CreateComputeClusterDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateComputeClusterDetails.
-        The `OCID`__ of the compartment that contains this compute cluster.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -116,7 +122,7 @@ class CreateComputeClusterDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateComputeClusterDetails.
-        The `OCID`__ of the compartment that contains this compute cluster.
+        The `OCID`__ of the compartment.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerVnic(object):
     """
-    An interface to a virtual network available to Containers on a Container Instance.
+    An interface to a virtual network available to containers on a container instance.
     """
 
     def __init__(self, **kwargs):
@@ -39,9 +39,9 @@ class ContainerVnic(object):
     def vnic_id(self):
         """
         Gets the vnic_id of this ContainerVnic.
-        The ID of the Virtual Network Interface Card (VNIC) over which
-        Containers accessing this network can communicate with the
-        larger Virtual Client Network.
+        The identifier of the virtual network interface card (VNIC) over which
+        the containers accessing this network can communicate with the
+        larger virtual cloud network.
 
 
         :return: The vnic_id of this ContainerVnic.
@@ -53,9 +53,9 @@ class ContainerVnic(object):
     def vnic_id(self, vnic_id):
         """
         Sets the vnic_id of this ContainerVnic.
-        The ID of the Virtual Network Interface Card (VNIC) over which
-        Containers accessing this network can communicate with the
-        larger Virtual Client Network.
+        The identifier of the virtual network interface card (VNIC) over which
+        the containers accessing this network can communicate with the
+        larger virtual cloud network.
 
 
         :param vnic_id: The vnic_id of this ContainerVnic.

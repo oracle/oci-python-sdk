@@ -12,22 +12,14 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateContainerDetails(object):
     """
-    Information to create a new Container within a ContainerInstance.
+    Information to create a new container within a container instance.
 
-    The Container created by this call will contain both the tags specified
-    in this object as well as any tags specified in the parent ContainerInstance object.
+    The container created by this call contains both the tags specified
+    in this object and any tags specified in the parent container instance.
 
-    The Container will be created with the same `compartmentId`, `availabilityDomain`,
-    and `faultDomain` as the parent ContainerInstance object.
+    The container is created in the same compartment, availability domain,
+    and fault domain as its container instance.
     """
-
-    #: A constant which can be used with the additional_capabilities property of a CreateContainerDetails.
-    #: This constant has a value of "CAP_NET_ADMIN"
-    ADDITIONAL_CAPABILITIES_CAP_NET_ADMIN = "CAP_NET_ADMIN"
-
-    #: A constant which can be used with the additional_capabilities property of a CreateContainerDetails.
-    #: This constant has a value of "CAP_NET_RAW"
-    ADDITIONAL_CAPABILITIES_CAP_NET_RAW = "CAP_NET_RAW"
 
     def __init__(self, **kwargs):
         """
@@ -49,11 +41,6 @@ class CreateContainerDetails(object):
         :param arguments:
             The value to assign to the arguments property of this CreateContainerDetails.
         :type arguments: list[str]
-
-        :param additional_capabilities:
-            The value to assign to the additional_capabilities property of this CreateContainerDetails.
-            Allowed values for items in this list are: "CAP_NET_ADMIN", "CAP_NET_RAW"
-        :type additional_capabilities: list[str]
 
         :param working_directory:
             The value to assign to the working_directory property of this CreateContainerDetails.
@@ -93,7 +80,6 @@ class CreateContainerDetails(object):
             'image_url': 'str',
             'command': 'list[str]',
             'arguments': 'list[str]',
-            'additional_capabilities': 'list[str]',
             'working_directory': 'str',
             'environment_variables': 'dict(str, str)',
             'volume_mounts': 'list[CreateVolumeMountDetails]',
@@ -109,7 +95,6 @@ class CreateContainerDetails(object):
             'image_url': 'imageUrl',
             'command': 'command',
             'arguments': 'arguments',
-            'additional_capabilities': 'additionalCapabilities',
             'working_directory': 'workingDirectory',
             'environment_variables': 'environmentVariables',
             'volume_mounts': 'volumeMounts',
@@ -124,7 +109,6 @@ class CreateContainerDetails(object):
         self._image_url = None
         self._command = None
         self._arguments = None
-        self._additional_capabilities = None
         self._working_directory = None
         self._environment_variables = None
         self._volume_mounts = None
@@ -138,8 +122,9 @@ class CreateContainerDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateContainerDetails.
-        Display name for the Container. There are no guarantees of uniqueness
-        for this name. If none is provided, it will be calculated automatically.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+
+        If you don't provide a name, a name is generated automatically.
 
 
         :return: The display_name of this CreateContainerDetails.
@@ -151,8 +136,9 @@ class CreateContainerDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateContainerDetails.
-        Display name for the Container. There are no guarantees of uniqueness
-        for this name. If none is provided, it will be calculated automatically.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+
+        If you don't provide a name, a name is generated automatically.
 
 
         :param display_name: The display_name of this CreateContainerDetails.
@@ -164,10 +150,10 @@ class CreateContainerDetails(object):
     def image_url(self):
         """
         **[Required]** Gets the image_url of this CreateContainerDetails.
-        The container image information. Currently only support public docker registry. Can be either image name,
-        e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g
-        `docker.io/library/containerImage:latest`.
+        A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+
         If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+
         The registry used for container image must be reachable over the Container Instance's VNIC.
 
 
@@ -180,10 +166,10 @@ class CreateContainerDetails(object):
     def image_url(self, image_url):
         """
         Sets the image_url of this CreateContainerDetails.
-        The container image information. Currently only support public docker registry. Can be either image name,
-        e.g `containerImage`, image name with version, e.g `containerImage:v1` or complete docker image Url e.g
-        `docker.io/library/containerImage:latest`.
+        A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
+
         If no registry is provided, will default the registry to public docker hub `docker.io/library`.
+
         The registry used for container image must be reachable over the Container Instance's VNIC.
 
 
@@ -196,8 +182,8 @@ class CreateContainerDetails(object):
     def command(self):
         """
         Gets the command of this CreateContainerDetails.
-        This command will override the container's entrypoint process.
-        If not specified, the existing entrypoint process defined in the image will be used.
+        An optional command that overrides the ENTRYPOINT process.
+        If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
 
 
         :return: The command of this CreateContainerDetails.
@@ -209,8 +195,8 @@ class CreateContainerDetails(object):
     def command(self, command):
         """
         Sets the command of this CreateContainerDetails.
-        This command will override the container's entrypoint process.
-        If not specified, the existing entrypoint process defined in the image will be used.
+        An optional command that overrides the ENTRYPOINT process.
+        If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
 
 
         :param command: The command of this CreateContainerDetails.
@@ -222,13 +208,13 @@ class CreateContainerDetails(object):
     def arguments(self):
         """
         Gets the arguments of this CreateContainerDetails.
-        A list of string arguments for a container's entrypoint process.
+        A list of string arguments for a container's ENTRYPOINT process.
 
-        Many containers use an entrypoint process pointing to a shell,
-        for example /bin/bash. For such containers, this argument list
-        can also be used to specify the main command in the container process.
+        Many containers use an ENTRYPOINT process pointing to a shell
+        (/bin/bash). For those containers, this argument list
+        specifies the main command in the container process.
 
-        All arguments together must be 64KB or smaller.
+        The total size of all arguments combined must be 64 KB or smaller.
 
 
         :return: The arguments of this CreateContainerDetails.
@@ -240,13 +226,13 @@ class CreateContainerDetails(object):
     def arguments(self, arguments):
         """
         Sets the arguments of this CreateContainerDetails.
-        A list of string arguments for a container's entrypoint process.
+        A list of string arguments for a container's ENTRYPOINT process.
 
-        Many containers use an entrypoint process pointing to a shell,
-        for example /bin/bash. For such containers, this argument list
-        can also be used to specify the main command in the container process.
+        Many containers use an ENTRYPOINT process pointing to a shell
+        (/bin/bash). For those containers, this argument list
+        specifies the main command in the container process.
 
-        All arguments together must be 64KB or smaller.
+        The total size of all arguments combined must be 64 KB or smaller.
 
 
         :param arguments: The arguments of this CreateContainerDetails.
@@ -255,47 +241,12 @@ class CreateContainerDetails(object):
         self._arguments = arguments
 
     @property
-    def additional_capabilities(self):
-        """
-        Gets the additional_capabilities of this CreateContainerDetails.
-        A list of additional capabilities for the container.
-
-        Allowed values for items in this list are: "CAP_NET_ADMIN", "CAP_NET_RAW"
-
-
-        :return: The additional_capabilities of this CreateContainerDetails.
-        :rtype: list[str]
-        """
-        return self._additional_capabilities
-
-    @additional_capabilities.setter
-    def additional_capabilities(self, additional_capabilities):
-        """
-        Sets the additional_capabilities of this CreateContainerDetails.
-        A list of additional capabilities for the container.
-
-
-        :param additional_capabilities: The additional_capabilities of this CreateContainerDetails.
-        :type: list[str]
-        """
-        allowed_values = ["CAP_NET_ADMIN", "CAP_NET_RAW"]
-
-        if additional_capabilities and additional_capabilities is not NONE_SENTINEL:
-            for value in additional_capabilities:
-                if not value_allowed_none_or_none_sentinel(value, allowed_values):
-                    raise ValueError(
-                        "Invalid value for `additional_capabilities`, must be None or one of {0}"
-                        .format(allowed_values)
-                    )
-        self._additional_capabilities = additional_capabilities
-
-    @property
     def working_directory(self):
         """
         Gets the working_directory of this CreateContainerDetails.
-        The working directory within the Container's filesystem for
-        the Container process. If none is set, the Container will run in the
-        working directory set by the container image.
+        The working directory within the container's filesystem for
+        the container process. If not specified, the default
+        working directory from the image is used.
 
 
         :return: The working_directory of this CreateContainerDetails.
@@ -307,9 +258,9 @@ class CreateContainerDetails(object):
     def working_directory(self, working_directory):
         """
         Sets the working_directory of this CreateContainerDetails.
-        The working directory within the Container's filesystem for
-        the Container process. If none is set, the Container will run in the
-        working directory set by the container image.
+        The working directory within the container's filesystem for
+        the container process. If not specified, the default
+        working directory from the image is used.
 
 
         :param working_directory: The working_directory of this CreateContainerDetails.
@@ -322,10 +273,10 @@ class CreateContainerDetails(object):
         """
         Gets the environment_variables of this CreateContainerDetails.
         A map of additional environment variables to set in the environment of the container's
-        entrypoint process. These variables are in addition to any variables already defined
+        ENTRYPOINT process. These variables are in addition to any variables already defined
         in the container's image.
 
-        All environment variables together, name and values, must be 64KB or smaller.
+        The total size of all environment variables combined, name and values, must be 64 KB or smaller.
 
 
         :return: The environment_variables of this CreateContainerDetails.
@@ -338,10 +289,10 @@ class CreateContainerDetails(object):
         """
         Sets the environment_variables of this CreateContainerDetails.
         A map of additional environment variables to set in the environment of the container's
-        entrypoint process. These variables are in addition to any variables already defined
+        ENTRYPOINT process. These variables are in addition to any variables already defined
         in the container's image.
 
-        All environment variables together, name and values, must be 64KB or smaller.
+        The total size of all environment variables combined, name and values, must be 64 KB or smaller.
 
 
         :param environment_variables: The environment_variables of this CreateContainerDetails.
@@ -377,10 +328,10 @@ class CreateContainerDetails(object):
     def is_resource_principal_disabled(self):
         """
         Gets the is_resource_principal_disabled of this CreateContainerDetails.
-        Determines if the Container will have access to the Container Instance Resource Principal.
-        This method utilizes resource principal version 2.2. Please refer to
-        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-        for detailed explanation of how to leverage the exposed resource principal elements.
+        Determines if the container will have access to the container instance resource principal.
+
+        This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see
+        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
 
 
         :return: The is_resource_principal_disabled of this CreateContainerDetails.
@@ -392,10 +343,10 @@ class CreateContainerDetails(object):
     def is_resource_principal_disabled(self, is_resource_principal_disabled):
         """
         Sets the is_resource_principal_disabled of this CreateContainerDetails.
-        Determines if the Container will have access to the Container Instance Resource Principal.
-        This method utilizes resource principal version 2.2. Please refer to
-        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal
-        for detailed explanation of how to leverage the exposed resource principal elements.
+        Determines if the container will have access to the container instance resource principal.
+
+        This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see
+        https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
 
 
         :param is_resource_principal_disabled: The is_resource_principal_disabled of this CreateContainerDetails.
@@ -480,7 +431,7 @@ class CreateContainerDetails(object):
         """
         Gets the defined_tags of this CreateContainerDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :return: The defined_tags of this CreateContainerDetails.
@@ -493,7 +444,7 @@ class CreateContainerDetails(object):
         """
         Sets the defined_tags of this CreateContainerDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :param defined_tags: The defined_tags of this CreateContainerDetails.

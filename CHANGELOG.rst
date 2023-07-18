@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.107.0 - 2023-07-18
+====================
+
+Added
+-----
+* Support for calling Oracle Cloud Infrastructure services in the mx-monterrey-1 region
+* Support for Kerberos and LDAP with NFSv3 in the File Storage service
+* Support for capacity reservation checks for movable compute instances in the Disaster Recovery service
+* Support for Oracle MFT monitoring in the Stack Monitoring service
+* Support for OS patching in the Big Data service
+* Support for master and utility nodes in the Big Data service
+* Support for connectivity testing in the GoldenGate service
+ 
+Breaking
+--------
+* The type of property `size_in_bytes` was changed from `float` to `int` for the `DeploymentBackup`, `DeploymentBackupSummary`, `TrailFileSummary`, and `TrailSequenceSummary` in the GoldenGate service
+* The property `function_id` was made required in the model `UpdateInvokeFunctionUserDefinedStepDetails` in the Disaster Recovery service
+* The properties `run_on_instance_id` and `script_command` were made required in the model `UpdateRunLocalScriptUserDefinedStepDetails` in the Disaster Recovery service
+* The properties `run_on_instance_id` and `object_storage_script_location` were made required in the model `UpdateRunObjectStoreScriptUserDefinedStepDetails` in the Disaster Recovery service
+* The property `additional_capabilities` was removed from models `CreateContainerDetails` and `Container` in the Container Instances service
+ 
+====================
 2.106.0 - 2023-07-11
 ====================
 

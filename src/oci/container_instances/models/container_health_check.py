@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerHealthCheck(object):
     """
-    Type of container health check which could be either HTTP, TCP or Command.
+    Type of container health check which could be either HTTP, TCP, or Command.
     """
 
     #: A constant which can be used with the health_check_type property of a ContainerHealthCheck.

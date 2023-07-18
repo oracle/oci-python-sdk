@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.07.19 - 23.07.19
+=====================
+* Added additional attributes for compute csv extract
+* reform output of False and True and None, completed Core and Identity (up to line 7500 of showoci_services)
+
+=====================
 23.07.04 - 23.07.04
 =====================
 * Added flag -exclude with options to exclude Services currently support - NETWORK 

@@ -75,7 +75,7 @@ class UpdateDrPlanGroupDetails(object):
         Gets the id of this UpdateDrPlanGroupDetails.
         The unique id of this group. Must not be modified by user.
 
-        Example: `sgid1.group..examplegroupsgid`
+        Example: `sgid1.group..&lt;unique_id&gt;`
 
 
         :return: The id of this UpdateDrPlanGroupDetails.
@@ -89,7 +89,7 @@ class UpdateDrPlanGroupDetails(object):
         Sets the id of this UpdateDrPlanGroupDetails.
         The unique id of this group. Must not be modified by user.
 
-        Example: `sgid1.group..examplegroupsgid`
+        Example: `sgid1.group..&lt;unique_id&gt;`
 
 
         :param id: The id of this UpdateDrPlanGroupDetails.

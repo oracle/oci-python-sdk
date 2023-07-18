@@ -51,7 +51,7 @@ class ClusterConfigDetails(object):
     def hpc_island_id(self):
         """
         **[Required]** Gets the hpc_island_id of this ClusterConfigDetails.
-        The `OCID`__ of the HpcIsland.
+        The `OCID`__ of the HPC island.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -65,7 +65,7 @@ class ClusterConfigDetails(object):
     def hpc_island_id(self, hpc_island_id):
         """
         Sets the hpc_island_id of this ClusterConfigDetails.
-        The `OCID`__ of the HpcIsland.
+        The `OCID`__ of the HPC island.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -79,7 +79,7 @@ class ClusterConfigDetails(object):
     def network_block_ids(self):
         """
         Gets the network_block_ids of this ClusterConfigDetails.
-        The list of OCID of the network blocks.
+        The list of OCIDs of the network blocks.
 
 
         :return: The network_block_ids of this ClusterConfigDetails.
@@ -91,7 +91,7 @@ class ClusterConfigDetails(object):
     def network_block_ids(self, network_block_ids):
         """
         Sets the network_block_ids of this ClusterConfigDetails.
-        The list of OCID of the network blocks.
+        The list of OCIDs of the network blocks.
 
 
         :param network_block_ids: The network_block_ids of this ClusterConfigDetails.

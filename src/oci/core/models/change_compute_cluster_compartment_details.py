@@ -12,9 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeComputeClusterCompartmentDetails(object):
     """
-    The configuration details for the compartment to move the compute cluster to. A `compute cluster`__ is a remote direct memory access (RDMA) network group.
-
-    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
+    The configuration details for the move operation.
     """
 
     def __init__(self, **kwargs):

@@ -71,6 +71,7 @@ Golden Gate
     oci.golden_gate.models.DefaultSnoozeDeploymentUpgradeDetails
     oci.golden_gate.models.DefaultStartDeploymentDetails
     oci.golden_gate.models.DefaultStopDeploymentDetails
+    oci.golden_gate.models.DefaultTestConnectionAssignmentDetails
     oci.golden_gate.models.DefaultUpgradeDeploymentUpgradeDetails
     oci.golden_gate.models.Deployment
     oci.golden_gate.models.DeploymentBackup
@@ -130,6 +131,9 @@ Golden Gate
     oci.golden_gate.models.SnowflakeConnectionSummary
     oci.golden_gate.models.StartDeploymentDetails
     oci.golden_gate.models.StopDeploymentDetails
+    oci.golden_gate.models.TestConnectionAssignmentDetails
+    oci.golden_gate.models.TestConnectionAssignmentError
+    oci.golden_gate.models.TestConnectionAssignmentResult
     oci.golden_gate.models.TrailFileCollection
     oci.golden_gate.models.TrailFileSummary
     oci.golden_gate.models.TrailSequenceCollection

@@ -39,6 +39,22 @@ class ClientOptions(object):
     #: This constant has a value of "ALL"
     IDENTITY_SQUASH_ALL = "ALL"
 
+    #: A constant which can be used with the allowed_auth property of a ClientOptions.
+    #: This constant has a value of "SYS"
+    ALLOWED_AUTH_SYS = "SYS"
+
+    #: A constant which can be used with the allowed_auth property of a ClientOptions.
+    #: This constant has a value of "KRB5"
+    ALLOWED_AUTH_KRB5 = "KRB5"
+
+    #: A constant which can be used with the allowed_auth property of a ClientOptions.
+    #: This constant has a value of "KRB5I"
+    ALLOWED_AUTH_KRB5_I = "KRB5I"
+
+    #: A constant which can be used with the allowed_auth property of a ClientOptions.
+    #: This constant has a value of "KRB5P"
+    ALLOWED_AUTH_KRB5_P = "KRB5P"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ClientOptions object with values from keyword arguments.
@@ -72,6 +88,16 @@ class ClientOptions(object):
             The value to assign to the anonymous_gid property of this ClientOptions.
         :type anonymous_gid: int
 
+        :param is_anonymous_access_allowed:
+            The value to assign to the is_anonymous_access_allowed property of this ClientOptions.
+        :type is_anonymous_access_allowed: bool
+
+        :param allowed_auth:
+            The value to assign to the allowed_auth property of this ClientOptions.
+            Allowed values for items in this list are: "SYS", "KRB5", "KRB5I", "KRB5P", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type allowed_auth: list[str]
+
         """
         self.swagger_types = {
             'source': 'str',
@@ -79,7 +105,9 @@ class ClientOptions(object):
             'access': 'str',
             'identity_squash': 'str',
             'anonymous_uid': 'int',
-            'anonymous_gid': 'int'
+            'anonymous_gid': 'int',
+            'is_anonymous_access_allowed': 'bool',
+            'allowed_auth': 'list[str]'
         }
 
         self.attribute_map = {
@@ -88,7 +116,9 @@ class ClientOptions(object):
             'access': 'access',
             'identity_squash': 'identitySquash',
             'anonymous_uid': 'anonymousUid',
-            'anonymous_gid': 'anonymousGid'
+            'anonymous_gid': 'anonymousGid',
+            'is_anonymous_access_allowed': 'isAnonymousAccessAllowed',
+            'allowed_auth': 'allowedAuth'
         }
 
         self._source = None
@@ -97,6 +127,8 @@ class ClientOptions(object):
         self._identity_squash = None
         self._anonymous_uid = None
         self._anonymous_gid = None
+        self._is_anonymous_access_allowed = None
+        self._allowed_auth = None
 
     @property
     def source(self):
@@ -287,6 +319,62 @@ class ClientOptions(object):
         :type: int
         """
         self._anonymous_gid = anonymous_gid
+
+    @property
+    def is_anonymous_access_allowed(self):
+        """
+        Gets the is_anonymous_access_allowed of this ClientOptions.
+        Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping.
+        If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+
+
+        :return: The is_anonymous_access_allowed of this ClientOptions.
+        :rtype: bool
+        """
+        return self._is_anonymous_access_allowed
+
+    @is_anonymous_access_allowed.setter
+    def is_anonymous_access_allowed(self, is_anonymous_access_allowed):
+        """
+        Sets the is_anonymous_access_allowed of this ClientOptions.
+        Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping.
+        If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
+
+
+        :param is_anonymous_access_allowed: The is_anonymous_access_allowed of this ClientOptions.
+        :type: bool
+        """
+        self._is_anonymous_access_allowed = is_anonymous_access_allowed
+
+    @property
+    def allowed_auth(self):
+        """
+        Gets the allowed_auth of this ClientOptions.
+        Array of allowed NFS authentication types.
+
+        Allowed values for items in this list are: "SYS", "KRB5", "KRB5I", "KRB5P", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The allowed_auth of this ClientOptions.
+        :rtype: list[str]
+        """
+        return self._allowed_auth
+
+    @allowed_auth.setter
+    def allowed_auth(self, allowed_auth):
+        """
+        Sets the allowed_auth of this ClientOptions.
+        Array of allowed NFS authentication types.
+
+
+        :param allowed_auth: The allowed_auth of this ClientOptions.
+        :type: list[str]
+        """
+        allowed_values = ["SYS", "KRB5", "KRB5I", "KRB5P"]
+        if allowed_auth:
+            allowed_auth[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in allowed_auth]
+        self._allowed_auth = allowed_auth
 
     def __repr__(self):
         return formatted_flat_dict(self)

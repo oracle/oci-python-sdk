@@ -27,6 +27,14 @@ class PatchHistorySummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the patch_type property of a PatchHistorySummary.
+    #: This constant has a value of "ODH"
+    PATCH_TYPE_ODH = "ODH"
+
+    #: A constant which can be used with the patch_type property of a PatchHistorySummary.
+    #: This constant has a value of "OS"
+    PATCH_TYPE_OS = "OS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PatchHistorySummary object with values from keyword arguments.
@@ -46,22 +54,31 @@ class PatchHistorySummary(object):
             The value to assign to the time_updated property of this PatchHistorySummary.
         :type time_updated: datetime
 
+        :param patch_type:
+            The value to assign to the patch_type property of this PatchHistorySummary.
+            Allowed values for this property are: "ODH", "OS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type patch_type: str
+
         """
         self.swagger_types = {
             'version': 'str',
             'lifecycle_state': 'str',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'patch_type': 'str'
         }
 
         self.attribute_map = {
             'version': 'version',
             'lifecycle_state': 'lifecycleState',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'patch_type': 'patchType'
         }
 
         self._version = None
         self._lifecycle_state = None
         self._time_updated = None
+        self._patch_type = None
 
     @property
     def version(self):
@@ -140,6 +157,42 @@ class PatchHistorySummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def patch_type(self):
+        """
+        **[Required]** Gets the patch_type of this PatchHistorySummary.
+        The type of current patch history.
+        DP - Data Plane patch(This history type is internal available only)
+        ODH - Oracle Distribution of Hadoop patch
+        OS - Operating System patch
+
+        Allowed values for this property are: "ODH", "OS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The patch_type of this PatchHistorySummary.
+        :rtype: str
+        """
+        return self._patch_type
+
+    @patch_type.setter
+    def patch_type(self, patch_type):
+        """
+        Sets the patch_type of this PatchHistorySummary.
+        The type of current patch history.
+        DP - Data Plane patch(This history type is internal available only)
+        ODH - Oracle Distribution of Hadoop patch
+        OS - Operating System patch
+
+
+        :param patch_type: The patch_type of this PatchHistorySummary.
+        :type: str
+        """
+        allowed_values = ["ODH", "OS"]
+        if not value_allowed_none_or_none_sentinel(patch_type, allowed_values):
+            patch_type = 'UNKNOWN_ENUM_VALUE'
+        self._patch_type = patch_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -37,6 +37,14 @@ class MountTarget(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the idmap_type property of a MountTarget.
+    #: This constant has a value of "LDAP"
+    IDMAP_TYPE_LDAP = "LDAP"
+
+    #: A constant which can be used with the idmap_type property of a MountTarget.
+    #: This constant has a value of "NONE"
+    IDMAP_TYPE_NONE = "NONE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MountTarget object with values from keyword arguments.
@@ -80,9 +88,23 @@ class MountTarget(object):
             The value to assign to the subnet_id property of this MountTarget.
         :type subnet_id: str
 
+        :param idmap_type:
+            The value to assign to the idmap_type property of this MountTarget.
+            Allowed values for this property are: "LDAP", "NONE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type idmap_type: str
+
+        :param ldap_idmap:
+            The value to assign to the ldap_idmap property of this MountTarget.
+        :type ldap_idmap: oci.file_storage.models.LdapIdmap
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this MountTarget.
         :type nsg_ids: list[str]
+
+        :param kerberos:
+            The value to assign to the kerberos property of this MountTarget.
+        :type kerberos: oci.file_storage.models.Kerberos
 
         :param time_created:
             The value to assign to the time_created property of this MountTarget.
@@ -107,7 +129,10 @@ class MountTarget(object):
             'lifecycle_state': 'str',
             'private_ip_ids': 'list[str]',
             'subnet_id': 'str',
+            'idmap_type': 'str',
+            'ldap_idmap': 'LdapIdmap',
             'nsg_ids': 'list[str]',
+            'kerberos': 'Kerberos',
             'time_created': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -123,7 +148,10 @@ class MountTarget(object):
             'lifecycle_state': 'lifecycleState',
             'private_ip_ids': 'privateIpIds',
             'subnet_id': 'subnetId',
+            'idmap_type': 'idmapType',
+            'ldap_idmap': 'ldapIdmap',
             'nsg_ids': 'nsgIds',
+            'kerberos': 'kerberos',
             'time_created': 'timeCreated',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -138,7 +166,10 @@ class MountTarget(object):
         self._lifecycle_state = None
         self._private_ip_ids = None
         self._subnet_id = None
+        self._idmap_type = None
+        self._ldap_idmap = None
         self._nsg_ids = None
+        self._kerberos = None
         self._time_created = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -398,6 +429,56 @@ class MountTarget(object):
         self._subnet_id = subnet_id
 
     @property
+    def idmap_type(self):
+        """
+        Gets the idmap_type of this MountTarget.
+        The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
+
+        Allowed values for this property are: "LDAP", "NONE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The idmap_type of this MountTarget.
+        :rtype: str
+        """
+        return self._idmap_type
+
+    @idmap_type.setter
+    def idmap_type(self, idmap_type):
+        """
+        Sets the idmap_type of this MountTarget.
+        The method used to map a Unix UID to secondary groups. If NONE, the mount target will not use the Unix UID for ID mapping.
+
+
+        :param idmap_type: The idmap_type of this MountTarget.
+        :type: str
+        """
+        allowed_values = ["LDAP", "NONE"]
+        if not value_allowed_none_or_none_sentinel(idmap_type, allowed_values):
+            idmap_type = 'UNKNOWN_ENUM_VALUE'
+        self._idmap_type = idmap_type
+
+    @property
+    def ldap_idmap(self):
+        """
+        Gets the ldap_idmap of this MountTarget.
+
+        :return: The ldap_idmap of this MountTarget.
+        :rtype: oci.file_storage.models.LdapIdmap
+        """
+        return self._ldap_idmap
+
+    @ldap_idmap.setter
+    def ldap_idmap(self, ldap_idmap):
+        """
+        Sets the ldap_idmap of this MountTarget.
+
+        :param ldap_idmap: The ldap_idmap of this MountTarget.
+        :type: oci.file_storage.models.LdapIdmap
+        """
+        self._ldap_idmap = ldap_idmap
+
+    @property
     def nsg_ids(self):
         """
         Gets the nsg_ids of this MountTarget.
@@ -432,6 +513,26 @@ class MountTarget(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def kerberos(self):
+        """
+        Gets the kerberos of this MountTarget.
+
+        :return: The kerberos of this MountTarget.
+        :rtype: oci.file_storage.models.Kerberos
+        """
+        return self._kerberos
+
+    @kerberos.setter
+    def kerberos(self, kerberos):
+        """
+        Sets the kerberos of this MountTarget.
+
+        :param kerberos: The kerberos of this MountTarget.
+        :type: oci.file_storage.models.Kerberos
+        """
+        self._kerberos = kerberos
 
     @property
     def time_created(self):

@@ -157,7 +157,7 @@ class DrPlanGroupExecution(object):
         **[Required]** Gets the group_id of this DrPlanGroupExecution.
         The unique id of the group. Must not be modified by user.
 
-        Example: `sgid1.group..examplegroupsgid`
+        Example: `sgid1.group..&lt;unique_id&gt;`
 
 
         :return: The group_id of this DrPlanGroupExecution.
@@ -171,7 +171,7 @@ class DrPlanGroupExecution(object):
         Sets the group_id of this DrPlanGroupExecution.
         The unique id of the group. Must not be modified by user.
 
-        Example: `sgid1.group..examplegroupsgid`
+        Example: `sgid1.group..&lt;unique_id&gt;`
 
 
         :param group_id: The group_id of this DrPlanGroupExecution.

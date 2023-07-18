@@ -59,6 +59,7 @@ from .default_rollback_deployment_upgrade_details import DefaultRollbackDeployme
 from .default_snooze_deployment_upgrade_details import DefaultSnoozeDeploymentUpgradeDetails
 from .default_start_deployment_details import DefaultStartDeploymentDetails
 from .default_stop_deployment_details import DefaultStopDeploymentDetails
+from .default_test_connection_assignment_details import DefaultTestConnectionAssignmentDetails
 from .default_upgrade_deployment_upgrade_details import DefaultUpgradeDeploymentUpgradeDetails
 from .deployment import Deployment
 from .deployment_backup import DeploymentBackup
@@ -118,6 +119,9 @@ from .snowflake_connection import SnowflakeConnection
 from .snowflake_connection_summary import SnowflakeConnectionSummary
 from .start_deployment_details import StartDeploymentDetails
 from .stop_deployment_details import StopDeploymentDetails
+from .test_connection_assignment_details import TestConnectionAssignmentDetails
+from .test_connection_assignment_error import TestConnectionAssignmentError
+from .test_connection_assignment_result import TestConnectionAssignmentResult
 from .trail_file_collection import TrailFileCollection
 from .trail_file_summary import TrailFileSummary
 from .trail_sequence_collection import TrailSequenceCollection
@@ -208,6 +212,7 @@ golden_gate_type_mapping = {
     "DefaultSnoozeDeploymentUpgradeDetails": DefaultSnoozeDeploymentUpgradeDetails,
     "DefaultStartDeploymentDetails": DefaultStartDeploymentDetails,
     "DefaultStopDeploymentDetails": DefaultStopDeploymentDetails,
+    "DefaultTestConnectionAssignmentDetails": DefaultTestConnectionAssignmentDetails,
     "DefaultUpgradeDeploymentUpgradeDetails": DefaultUpgradeDeploymentUpgradeDetails,
     "Deployment": Deployment,
     "DeploymentBackup": DeploymentBackup,
@@ -267,6 +272,9 @@ golden_gate_type_mapping = {
     "SnowflakeConnectionSummary": SnowflakeConnectionSummary,
     "StartDeploymentDetails": StartDeploymentDetails,
     "StopDeploymentDetails": StopDeploymentDetails,
+    "TestConnectionAssignmentDetails": TestConnectionAssignmentDetails,
+    "TestConnectionAssignmentError": TestConnectionAssignmentError,
+    "TestConnectionAssignmentResult": TestConnectionAssignmentResult,
     "TrailFileCollection": TrailFileCollection,
     "TrailFileSummary": TrailFileSummary,
     "TrailSequenceCollection": TrailSequenceCollection,

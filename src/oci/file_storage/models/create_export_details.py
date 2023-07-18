@@ -36,25 +36,32 @@ class CreateExportDetails(object):
             The value to assign to the path property of this CreateExportDetails.
         :type path: str
 
+        :param is_idmap_groups_for_sys_auth:
+            The value to assign to the is_idmap_groups_for_sys_auth property of this CreateExportDetails.
+        :type is_idmap_groups_for_sys_auth: bool
+
         """
         self.swagger_types = {
             'export_options': 'list[ClientOptions]',
             'export_set_id': 'str',
             'file_system_id': 'str',
-            'path': 'str'
+            'path': 'str',
+            'is_idmap_groups_for_sys_auth': 'bool'
         }
 
         self.attribute_map = {
             'export_options': 'exportOptions',
             'export_set_id': 'exportSetId',
             'file_system_id': 'fileSystemId',
-            'path': 'path'
+            'path': 'path',
+            'is_idmap_groups_for_sys_auth': 'isIdmapGroupsForSysAuth'
         }
 
         self._export_options = None
         self._export_set_id = None
         self._file_system_id = None
         self._path = None
+        self._is_idmap_groups_for_sys_auth = None
 
     @property
     def export_options(self):
@@ -217,6 +224,30 @@ class CreateExportDetails(object):
         :type: str
         """
         self._path = path
+
+    @property
+    def is_idmap_groups_for_sys_auth(self):
+        """
+        Gets the is_idmap_groups_for_sys_auth of this CreateExportDetails.
+        Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+
+
+        :return: The is_idmap_groups_for_sys_auth of this CreateExportDetails.
+        :rtype: bool
+        """
+        return self._is_idmap_groups_for_sys_auth
+
+    @is_idmap_groups_for_sys_auth.setter
+    def is_idmap_groups_for_sys_auth(self, is_idmap_groups_for_sys_auth):
+        """
+        Sets the is_idmap_groups_for_sys_auth of this CreateExportDetails.
+        Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+
+
+        :param is_idmap_groups_for_sys_auth: The is_idmap_groups_for_sys_auth of this CreateExportDetails.
+        :type: bool
+        """
+        self._is_idmap_groups_for_sys_auth = is_idmap_groups_for_sys_auth
 
     def __repr__(self):
         return formatted_flat_dict(self)

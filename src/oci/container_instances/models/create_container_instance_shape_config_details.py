@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateContainerInstanceShapeConfigDetails(object):
     """
-    The size and amount of resources available to the Container Instance.
+    The size and amount of resources available to the container instance.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class CreateContainerInstanceShapeConfigDetails(object):
     def ocpus(self):
         """
         **[Required]** Gets the ocpus of this CreateContainerInstanceShapeConfigDetails.
-        The total number of OCPUs available to the instance.
+        The total number of OCPUs available to the container instance.
 
 
         :return: The ocpus of this CreateContainerInstanceShapeConfigDetails.
@@ -58,7 +58,7 @@ class CreateContainerInstanceShapeConfigDetails(object):
     def ocpus(self, ocpus):
         """
         Sets the ocpus of this CreateContainerInstanceShapeConfigDetails.
-        The total number of OCPUs available to the instance.
+        The total number of OCPUs available to the container instance.
 
 
         :param ocpus: The ocpus of this CreateContainerInstanceShapeConfigDetails.
@@ -70,7 +70,7 @@ class CreateContainerInstanceShapeConfigDetails(object):
     def memory_in_gbs(self):
         """
         Gets the memory_in_gbs of this CreateContainerInstanceShapeConfigDetails.
-        The total amount of memory available to the instance, in gigabytes.
+        The total amount of memory available to the container instance (GB).
 
 
         :return: The memory_in_gbs of this CreateContainerInstanceShapeConfigDetails.
@@ -82,7 +82,7 @@ class CreateContainerInstanceShapeConfigDetails(object):
     def memory_in_gbs(self, memory_in_gbs):
         """
         Sets the memory_in_gbs of this CreateContainerInstanceShapeConfigDetails.
-        The total amount of memory available to the instance, in gigabytes.
+        The total amount of memory available to the container instance (GB).
 
 
         :param memory_in_gbs: The memory_in_gbs of this CreateContainerInstanceShapeConfigDetails.

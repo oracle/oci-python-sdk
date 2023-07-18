@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerInstanceShapeSummary(object):
     """
-    Details about a shape for a container Instance.
+    Details about a shape for a container instance.
     """
 
     def __init__(self, **kwargs):
@@ -91,7 +91,7 @@ class ContainerInstanceShapeSummary(object):
     def processor_description(self):
         """
         **[Required]** Gets the processor_description of this ContainerInstanceShapeSummary.
-        A short description of the Instance's processor (CPU).
+        A short description of the container instance's processor (CPU).
 
 
         :return: The processor_description of this ContainerInstanceShapeSummary.
@@ -103,7 +103,7 @@ class ContainerInstanceShapeSummary(object):
     def processor_description(self, processor_description):
         """
         Sets the processor_description of this ContainerInstanceShapeSummary.
-        A short description of the Instance's processor (CPU).
+        A short description of the container instance's processor (CPU).
 
 
         :param processor_description: The processor_description of this ContainerInstanceShapeSummary.

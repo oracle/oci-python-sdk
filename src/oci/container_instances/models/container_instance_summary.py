@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerInstanceSummary(object):
     """
-    A reduced set of details about a single ContainerInstance returned by list APIs.
+    A set of details about a single container instance returned by list APIs.
     """
 
     def __init__(self, **kwargs):
@@ -158,7 +158,7 @@ class ContainerInstanceSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ContainerInstanceSummary.
-        Unique identifier that is immutable on creation
+        OCID that cannot be changed.
 
 
         :return: The id of this ContainerInstanceSummary.
@@ -170,7 +170,7 @@ class ContainerInstanceSummary(object):
     def id(self, id):
         """
         Sets the id of this ContainerInstanceSummary.
-        Unique identifier that is immutable on creation
+        OCID that cannot be changed.
 
 
         :param id: The id of this ContainerInstanceSummary.
@@ -182,7 +182,7 @@ class ContainerInstanceSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ContainerInstanceSummary.
-        Display name for the ContainerInstance. Can be renamed.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this ContainerInstanceSummary.
@@ -194,7 +194,7 @@ class ContainerInstanceSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ContainerInstanceSummary.
-        Display name for the ContainerInstance. Can be renamed.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this ContainerInstanceSummary.
@@ -206,7 +206,7 @@ class ContainerInstanceSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ContainerInstanceSummary.
-        Compartment Identifier
+        The OCID of the compartment to create the container instance in.
 
 
         :return: The compartment_id of this ContainerInstanceSummary.
@@ -218,7 +218,7 @@ class ContainerInstanceSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ContainerInstanceSummary.
-        Compartment Identifier
+        The OCID of the compartment to create the container instance in.
 
 
         :param compartment_id: The compartment_id of this ContainerInstanceSummary.
@@ -257,7 +257,7 @@ class ContainerInstanceSummary(object):
         """
         Gets the defined_tags of this ContainerInstanceSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :return: The defined_tags of this ContainerInstanceSummary.
@@ -270,7 +270,7 @@ class ContainerInstanceSummary(object):
         """
         Sets the defined_tags of this ContainerInstanceSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :param defined_tags: The defined_tags of this ContainerInstanceSummary.
@@ -283,7 +283,7 @@ class ContainerInstanceSummary(object):
         """
         Gets the system_tags of this ContainerInstanceSummary.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`.
 
 
         :return: The system_tags of this ContainerInstanceSummary.
@@ -296,7 +296,7 @@ class ContainerInstanceSummary(object):
         """
         Sets the system_tags of this ContainerInstanceSummary.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`.
 
 
         :param system_tags: The system_tags of this ContainerInstanceSummary.
@@ -308,7 +308,7 @@ class ContainerInstanceSummary(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this ContainerInstanceSummary.
-        Availability Domain where the ContainerInstance is running.
+        The availability domain where the container instance runs.
 
 
         :return: The availability_domain of this ContainerInstanceSummary.
@@ -320,7 +320,7 @@ class ContainerInstanceSummary(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this ContainerInstanceSummary.
-        Availability Domain where the ContainerInstance is running.
+        The availability domain where the container instance runs.
 
 
         :param availability_domain: The availability_domain of this ContainerInstanceSummary.
@@ -332,7 +332,7 @@ class ContainerInstanceSummary(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this ContainerInstanceSummary.
-        Fault Domain where the ContainerInstance is running.
+        The fault domain where the container instance runs.
 
 
         :return: The fault_domain of this ContainerInstanceSummary.
@@ -344,7 +344,7 @@ class ContainerInstanceSummary(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this ContainerInstanceSummary.
-        Fault Domain where the ContainerInstance is running.
+        The fault domain where the container instance runs.
 
 
         :param fault_domain: The fault_domain of this ContainerInstanceSummary.
@@ -356,7 +356,7 @@ class ContainerInstanceSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ContainerInstanceSummary.
-        The current state of the ContainerInstance.
+        The current state of the container instance.
 
 
         :return: The lifecycle_state of this ContainerInstanceSummary.
@@ -368,7 +368,7 @@ class ContainerInstanceSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ContainerInstanceSummary.
-        The current state of the ContainerInstance.
+        The current state of the container instance.
 
 
         :param lifecycle_state: The lifecycle_state of this ContainerInstanceSummary.
@@ -380,8 +380,8 @@ class ContainerInstanceSummary(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this ContainerInstanceSummary.
-        A message describing the current state in more detail. For example, can be used to provide
-        actionable information for a resource in Failed state.
+        A message that describes the current state of the container instance in more detail. Can be used to provide
+        actionable information.
 
 
         :return: The lifecycle_details of this ContainerInstanceSummary.
@@ -393,8 +393,8 @@ class ContainerInstanceSummary(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this ContainerInstanceSummary.
-        A message describing the current state in more detail. For example, can be used to provide
-        actionable information for a resource in Failed state.
+        A message that describes the current state of the container instance in more detail. Can be used to provide
+        actionable information.
 
 
         :param lifecycle_details: The lifecycle_details of this ContainerInstanceSummary.
@@ -406,7 +406,7 @@ class ContainerInstanceSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ContainerInstanceSummary.
-        The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        The time the container instance was created, in the format defined by RFC3339.
 
 
         :return: The time_created of this ContainerInstanceSummary.
@@ -418,7 +418,7 @@ class ContainerInstanceSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ContainerInstanceSummary.
-        The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        The time the container instance was created, in the format defined by RFC3339.
 
 
         :param time_created: The time_created of this ContainerInstanceSummary.
@@ -430,7 +430,7 @@ class ContainerInstanceSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this ContainerInstanceSummary.
-        The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        The time the container instance was updated, in the format defined by RFC3339.
 
 
         :return: The time_updated of this ContainerInstanceSummary.
@@ -442,7 +442,7 @@ class ContainerInstanceSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ContainerInstanceSummary.
-        The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        The time the container instance was updated, in the format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this ContainerInstanceSummary.
@@ -454,7 +454,7 @@ class ContainerInstanceSummary(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this ContainerInstanceSummary.
-        The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+        The shape of the container instance. The shape determines the resources available to the container instance.
 
 
         :return: The shape of this ContainerInstanceSummary.
@@ -466,7 +466,7 @@ class ContainerInstanceSummary(object):
     def shape(self, shape):
         """
         Sets the shape of this ContainerInstanceSummary.
-        The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+        The shape of the container instance. The shape determines the resources available to the container instance.
 
 
         :param shape: The shape of this ContainerInstanceSummary.
@@ -498,7 +498,7 @@ class ContainerInstanceSummary(object):
     def container_count(self):
         """
         **[Required]** Gets the container_count of this ContainerInstanceSummary.
-        The number of containers on this Instance
+        The number of containers in the container instance.
 
 
         :return: The container_count of this ContainerInstanceSummary.
@@ -510,7 +510,7 @@ class ContainerInstanceSummary(object):
     def container_count(self, container_count):
         """
         Sets the container_count of this ContainerInstanceSummary.
-        The number of containers on this Instance
+        The number of containers in the container instance.
 
 
         :param container_count: The container_count of this ContainerInstanceSummary.
@@ -522,7 +522,7 @@ class ContainerInstanceSummary(object):
     def graceful_shutdown_timeout_in_seconds(self):
         """
         Gets the graceful_shutdown_timeout_in_seconds of this ContainerInstanceSummary.
-        Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 
 
         :return: The graceful_shutdown_timeout_in_seconds of this ContainerInstanceSummary.
@@ -534,7 +534,7 @@ class ContainerInstanceSummary(object):
     def graceful_shutdown_timeout_in_seconds(self, graceful_shutdown_timeout_in_seconds):
         """
         Sets the graceful_shutdown_timeout_in_seconds of this ContainerInstanceSummary.
-        Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 
 
         :param graceful_shutdown_timeout_in_seconds: The graceful_shutdown_timeout_in_seconds of this ContainerInstanceSummary.
@@ -546,7 +546,7 @@ class ContainerInstanceSummary(object):
     def volume_count(self):
         """
         Gets the volume_count of this ContainerInstanceSummary.
-        The number of volumes that attached to this Instance
+        The number of volumes that are attached to the container instance.
 
 
         :return: The volume_count of this ContainerInstanceSummary.
@@ -558,7 +558,7 @@ class ContainerInstanceSummary(object):
     def volume_count(self, volume_count):
         """
         Sets the volume_count of this ContainerInstanceSummary.
-        The number of volumes that attached to this Instance
+        The number of volumes that are attached to the container instance.
 
 
         :param volume_count: The volume_count of this ContainerInstanceSummary.

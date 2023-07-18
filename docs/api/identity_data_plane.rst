@@ -43,6 +43,7 @@ Identity Data Plane
     oci.identity_data_plane.models.FilterGroupMembershipDetails
     oci.identity_data_plane.models.FilterGroupMembershipResult
     oci.identity_data_plane.models.GenerateScopedAccessTokenDetails
+    oci.identity_data_plane.models.GenerateUserSecurityTokenDetails
     oci.identity_data_plane.models.IdentityProvider
     oci.identity_data_plane.models.JWK
     oci.identity_data_plane.models.OnBehalfOfRequest

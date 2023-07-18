@@ -125,6 +125,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the platform_config property of this LaunchInstanceDetails.
         :type platform_config: oci.core.models.LaunchInstancePlatformConfig
 
+        :param instance_configuration_id:
+            The value to assign to the instance_configuration_id property of this LaunchInstanceDetails.
+        :type instance_configuration_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -152,7 +156,8 @@ class LaunchInstanceDetails(object):
             'source_details': 'InstanceSourceDetails',
             'subnet_id': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool',
-            'platform_config': 'LaunchInstancePlatformConfig'
+            'platform_config': 'LaunchInstancePlatformConfig',
+            'instance_configuration_id': 'str'
         }
 
         self.attribute_map = {
@@ -181,7 +186,8 @@ class LaunchInstanceDetails(object):
             'source_details': 'sourceDetails',
             'subnet_id': 'subnetId',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
-            'platform_config': 'platformConfig'
+            'platform_config': 'platformConfig',
+            'instance_configuration_id': 'instanceConfigurationId'
         }
 
         self._availability_domain = None
@@ -210,6 +216,7 @@ class LaunchInstanceDetails(object):
         self._subnet_id = None
         self._is_pv_encryption_in_transit_enabled = None
         self._platform_config = None
+        self._instance_configuration_id = None
 
     @property
     def availability_domain(self):
@@ -525,7 +532,8 @@ class LaunchInstanceDetails(object):
     def compute_cluster_id(self):
         """
         Gets the compute_cluster_id of this LaunchInstanceDetails.
-        The `OCID`__ of the `compute cluster`__ that the instance will be created in.
+        The `OCID`__ of the
+        `compute cluster`__ that the instance will be created in.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
@@ -540,7 +548,8 @@ class LaunchInstanceDetails(object):
     def compute_cluster_id(self, compute_cluster_id):
         """
         Sets the compute_cluster_id of this LaunchInstanceDetails.
-        The `OCID`__ of the `compute cluster`__ that the instance will be created in.
+        The `OCID`__ of the
+        `compute cluster`__ that the instance will be created in.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
@@ -918,7 +927,7 @@ class LaunchInstanceDetails(object):
     @property
     def shape(self):
         """
-        **[Required]** Gets the shape of this LaunchInstanceDetails.
+        Gets the shape of this LaunchInstanceDetails.
         The shape of an instance. The shape determines the number of CPUs, amount of memory,
         and other resources allocated to the instance.
 
@@ -1056,6 +1065,30 @@ class LaunchInstanceDetails(object):
         :type: oci.core.models.LaunchInstancePlatformConfig
         """
         self._platform_config = platform_config
+
+    @property
+    def instance_configuration_id(self):
+        """
+        Gets the instance_configuration_id of this LaunchInstanceDetails.
+        The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+
+
+        :return: The instance_configuration_id of this LaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._instance_configuration_id
+
+    @instance_configuration_id.setter
+    def instance_configuration_id(self, instance_configuration_id):
+        """
+        Sets the instance_configuration_id of this LaunchInstanceDetails.
+        The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
+
+
+        :param instance_configuration_id: The instance_configuration_id of this LaunchInstanceDetails.
+        :type: str
+        """
+        self._instance_configuration_id = instance_configuration_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

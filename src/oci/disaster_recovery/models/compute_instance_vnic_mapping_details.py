@@ -28,6 +28,14 @@ class ComputeInstanceVnicMappingDetails(object):
             The value to assign to the destination_subnet_id property of this ComputeInstanceVnicMappingDetails.
         :type destination_subnet_id: str
 
+        :param destination_primary_private_ip_address:
+            The value to assign to the destination_primary_private_ip_address property of this ComputeInstanceVnicMappingDetails.
+        :type destination_primary_private_ip_address: str
+
+        :param destination_primary_private_ip_hostname_label:
+            The value to assign to the destination_primary_private_ip_hostname_label property of this ComputeInstanceVnicMappingDetails.
+        :type destination_primary_private_ip_hostname_label: str
+
         :param destination_nsg_id_list:
             The value to assign to the destination_nsg_id_list property of this ComputeInstanceVnicMappingDetails.
         :type destination_nsg_id_list: list[str]
@@ -36,17 +44,23 @@ class ComputeInstanceVnicMappingDetails(object):
         self.swagger_types = {
             'source_vnic_id': 'str',
             'destination_subnet_id': 'str',
+            'destination_primary_private_ip_address': 'str',
+            'destination_primary_private_ip_hostname_label': 'str',
             'destination_nsg_id_list': 'list[str]'
         }
 
         self.attribute_map = {
             'source_vnic_id': 'sourceVnicId',
             'destination_subnet_id': 'destinationSubnetId',
+            'destination_primary_private_ip_address': 'destinationPrimaryPrivateIpAddress',
+            'destination_primary_private_ip_hostname_label': 'destinationPrimaryPrivateIpHostnameLabel',
             'destination_nsg_id_list': 'destinationNsgIdList'
         }
 
         self._source_vnic_id = None
         self._destination_subnet_id = None
+        self._destination_primary_private_ip_address = None
+        self._destination_primary_private_ip_hostname_label = None
         self._destination_nsg_id_list = None
 
     @property
@@ -55,7 +69,7 @@ class ComputeInstanceVnicMappingDetails(object):
         **[Required]** Gets the source_vnic_id of this ComputeInstanceVnicMappingDetails.
         The OCID of the VNIC.
 
-        Example: `ocid1.vnic.oc1.phx.exampleocid1`
+        Example: `ocid1.vnic.oc1.phx.&lt;unique_id&gt;`
 
 
         :return: The source_vnic_id of this ComputeInstanceVnicMappingDetails.
@@ -69,7 +83,7 @@ class ComputeInstanceVnicMappingDetails(object):
         Sets the source_vnic_id of this ComputeInstanceVnicMappingDetails.
         The OCID of the VNIC.
 
-        Example: `ocid1.vnic.oc1.phx.exampleocid1`
+        Example: `ocid1.vnic.oc1.phx.&lt;unique_id&gt;`
 
 
         :param source_vnic_id: The source_vnic_id of this ComputeInstanceVnicMappingDetails.
@@ -83,7 +97,7 @@ class ComputeInstanceVnicMappingDetails(object):
         **[Required]** Gets the destination_subnet_id of this ComputeInstanceVnicMappingDetails.
         The OCID of the destination (remote) subnet to which this VNIC should connect.
 
-        Example: `ocid1.subnet.oc1.iad.exampleocid2`
+        Example: `ocid1.subnet.oc1.iad.&lt;unique_id&gt;`
 
 
         :return: The destination_subnet_id of this ComputeInstanceVnicMappingDetails.
@@ -97,7 +111,7 @@ class ComputeInstanceVnicMappingDetails(object):
         Sets the destination_subnet_id of this ComputeInstanceVnicMappingDetails.
         The OCID of the destination (remote) subnet to which this VNIC should connect.
 
-        Example: `ocid1.subnet.oc1.iad.exampleocid2`
+        Example: `ocid1.subnet.oc1.iad.&lt;unique_id&gt;`
 
 
         :param destination_subnet_id: The destination_subnet_id of this ComputeInstanceVnicMappingDetails.
@@ -106,12 +120,72 @@ class ComputeInstanceVnicMappingDetails(object):
         self._destination_subnet_id = destination_subnet_id
 
     @property
+    def destination_primary_private_ip_address(self):
+        """
+        Gets the destination_primary_private_ip_address of this ComputeInstanceVnicMappingDetails.
+        The primary private IP address to assign. This address must belong to the destination subnet.
+
+        Example: `10.0.3.3`
+
+
+        :return: The destination_primary_private_ip_address of this ComputeInstanceVnicMappingDetails.
+        :rtype: str
+        """
+        return self._destination_primary_private_ip_address
+
+    @destination_primary_private_ip_address.setter
+    def destination_primary_private_ip_address(self, destination_primary_private_ip_address):
+        """
+        Sets the destination_primary_private_ip_address of this ComputeInstanceVnicMappingDetails.
+        The primary private IP address to assign. This address must belong to the destination subnet.
+
+        Example: `10.0.3.3`
+
+
+        :param destination_primary_private_ip_address: The destination_primary_private_ip_address of this ComputeInstanceVnicMappingDetails.
+        :type: str
+        """
+        self._destination_primary_private_ip_address = destination_primary_private_ip_address
+
+    @property
+    def destination_primary_private_ip_hostname_label(self):
+        """
+        Gets the destination_primary_private_ip_hostname_label of this ComputeInstanceVnicMappingDetails.
+        The hostname to assign for this primary private IP.
+        The value is the hostname portion of the private IP's fully qualified domain name (FQDN)
+        (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).
+
+        Example: `bminstance1`
+
+
+        :return: The destination_primary_private_ip_hostname_label of this ComputeInstanceVnicMappingDetails.
+        :rtype: str
+        """
+        return self._destination_primary_private_ip_hostname_label
+
+    @destination_primary_private_ip_hostname_label.setter
+    def destination_primary_private_ip_hostname_label(self, destination_primary_private_ip_hostname_label):
+        """
+        Sets the destination_primary_private_ip_hostname_label of this ComputeInstanceVnicMappingDetails.
+        The hostname to assign for this primary private IP.
+        The value is the hostname portion of the private IP's fully qualified domain name (FQDN)
+        (for example, bminstance1 in FQDN bminstance1.subnet123.vcn1.oraclevcn.com).
+
+        Example: `bminstance1`
+
+
+        :param destination_primary_private_ip_hostname_label: The destination_primary_private_ip_hostname_label of this ComputeInstanceVnicMappingDetails.
+        :type: str
+        """
+        self._destination_primary_private_ip_hostname_label = destination_primary_private_ip_hostname_label
+
+    @property
     def destination_nsg_id_list(self):
         """
         Gets the destination_nsg_id_list of this ComputeInstanceVnicMappingDetails.
-        A list of destination region's network security group (NSG) Ids which this VNIC should use.
+        A list of network security group (NSG) IDs in the destination region which this VNIC should use.
 
-        Example: `[ ocid1.networksecuritygroup.oc1.iad.abcd1, ocid1.networksecuritygroup.oc1.iad.wxyz2 ]`
+        Example: `[ ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt; ]`
 
 
         :return: The destination_nsg_id_list of this ComputeInstanceVnicMappingDetails.
@@ -123,9 +197,9 @@ class ComputeInstanceVnicMappingDetails(object):
     def destination_nsg_id_list(self, destination_nsg_id_list):
         """
         Sets the destination_nsg_id_list of this ComputeInstanceVnicMappingDetails.
-        A list of destination region's network security group (NSG) Ids which this VNIC should use.
+        A list of network security group (NSG) IDs in the destination region which this VNIC should use.
 
-        Example: `[ ocid1.networksecuritygroup.oc1.iad.abcd1, ocid1.networksecuritygroup.oc1.iad.wxyz2 ]`
+        Example: `[ ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt;, ocid1.networksecuritygroup.oc1.iad.&lt;unique_id&gt; ]`
 
 
         :param destination_nsg_id_list: The destination_nsg_id_list of this ComputeInstanceVnicMappingDetails.

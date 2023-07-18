@@ -46,7 +46,7 @@ class HealthCheckHttpHeader(object):
     def name(self):
         """
         **[Required]** Gets the name of this HealthCheckHttpHeader.
-        Container Http header Key.
+        Container HTTP header Key.
 
 
         :return: The name of this HealthCheckHttpHeader.
@@ -58,7 +58,7 @@ class HealthCheckHttpHeader(object):
     def name(self, name):
         """
         Sets the name of this HealthCheckHttpHeader.
-        Container Http header Key.
+        Container HTTP header Key.
 
 
         :param name: The name of this HealthCheckHttpHeader.
@@ -70,7 +70,7 @@ class HealthCheckHttpHeader(object):
     def value(self):
         """
         **[Required]** Gets the value of this HealthCheckHttpHeader.
-        Container Http header value.
+        Container HTTP header value.
 
 
         :return: The value of this HealthCheckHttpHeader.
@@ -82,7 +82,7 @@ class HealthCheckHttpHeader(object):
     def value(self, value):
         """
         Sets the value of this HealthCheckHttpHeader.
-        Container Http header value.
+        Container HTTP header value.
 
 
         :param value: The value of this HealthCheckHttpHeader.

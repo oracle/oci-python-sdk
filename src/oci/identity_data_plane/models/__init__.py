@@ -31,6 +31,7 @@ from .entity_status import EntityStatus
 from .filter_group_membership_details import FilterGroupMembershipDetails
 from .filter_group_membership_result import FilterGroupMembershipResult
 from .generate_scoped_access_token_details import GenerateScopedAccessTokenDetails
+from .generate_user_security_token_details import GenerateUserSecurityTokenDetails
 from .identity_provider import IdentityProvider
 from .jwk import JWK
 from .on_behalf_of_request import OnBehalfOfRequest
@@ -79,6 +80,7 @@ identity_data_plane_type_mapping = {
     "FilterGroupMembershipDetails": FilterGroupMembershipDetails,
     "FilterGroupMembershipResult": FilterGroupMembershipResult,
     "GenerateScopedAccessTokenDetails": GenerateScopedAccessTokenDetails,
+    "GenerateUserSecurityTokenDetails": GenerateUserSecurityTokenDetails,
     "IdentityProvider": IdentityProvider,
     "JWK": JWK,
     "OnBehalfOfRequest": OnBehalfOfRequest,

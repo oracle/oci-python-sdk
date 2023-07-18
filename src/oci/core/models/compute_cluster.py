@@ -12,12 +12,15 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputeCluster(object):
     """
-    A remote direct memory access (RDMA) network group. Compute clusters are groups
-    of high performance computing (HPC) bare metal instances that are connected with an ultra low latency network.
-    Compute clusters allow you to manage instances in the cluster individually.
-    For more information, see `Compute Clusters`__.
+    A remote direct memory access (RDMA) network group.
 
-    For details about cluster networks that use intance pools to manage groups of identical instances,
+    A cluster network on a `compute cluster`__ is a group of
+    high performance computing (HPC), GPU, or optimized instances that are connected with an ultra low-latency network.
+
+    Use compute clusters when you want to manage instances in the cluster individually, or when you want
+    to use different types of instances in the RDMA network group.
+
+    For details about cluster networks that use instance pools to manage groups of identical instances,
     see :class:`ClusterNetwork`.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
@@ -107,6 +110,7 @@ class ComputeCluster(object):
         """
         **[Required]** Gets the availability_domain of this ComputeCluster.
         The availability domain the compute cluster is running in.
+
         Example: `Uocm:PHX-AD-1`
 
 
@@ -120,6 +124,7 @@ class ComputeCluster(object):
         """
         Sets the availability_domain of this ComputeCluster.
         The availability domain the compute cluster is running in.
+
         Example: `Uocm:PHX-AD-1`
 
 
@@ -132,7 +137,7 @@ class ComputeCluster(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ComputeCluster.
-        The `OCID`__ of the compartment that contains this compute cluster.
+        The `OCID`__ of the compartment that contains the compute cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -146,7 +151,7 @@ class ComputeCluster(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ComputeCluster.
-        The `OCID`__ of the compartment that contains this compute cluster.
+        The `OCID`__ of the compartment that contains the compute cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -254,7 +259,7 @@ class ComputeCluster(object):
     def id(self):
         """
         **[Required]** Gets the id of this ComputeCluster.
-        The `OCID`__ of this compute cluster.
+        The `OCID`__ of the compute cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -268,7 +273,7 @@ class ComputeCluster(object):
     def id(self, id):
         """
         Sets the id of this ComputeCluster.
-        The `OCID`__ of this compute cluster.
+        The `OCID`__ of the compute cluster.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -314,6 +319,7 @@ class ComputeCluster(object):
         **[Required]** Gets the time_created of this ComputeCluster.
         The date and time the compute cluster was created,
         in the format defined by `RFC3339`__.
+
         Example: `2016-08-25T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -330,6 +336,7 @@ class ComputeCluster(object):
         Sets the time_created of this ComputeCluster.
         The date and time the compute cluster was created,
         in the format defined by `RFC3339`__.
+
         Example: `2016-08-25T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339

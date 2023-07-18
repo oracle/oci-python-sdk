@@ -841,18 +841,19 @@ class ComputeClient(object):
     def change_compute_cluster_compartment(self, compute_cluster_id, change_compute_cluster_compartment_details, **kwargs):
         """
         Moves a compute cluster into a different compartment within the same tenancy.
-        A compute cluster is a remote direct memory access (RDMA) network group.
+        A `compute cluster`__ is a remote direct memory access (RDMA) network group.
 
         For information about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str compute_cluster_id: (required)
             The `OCID`__ of the compute cluster.
-            A compute cluster is a remote direct memory access (RDMA) network group.
-            For more information, see `Compute Clusters`__.
+            A `compute cluster`__ is a remote direct memory
+            access (RDMA) network group.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
             __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
@@ -1761,25 +1762,35 @@ class ComputeClient(object):
 
     def create_compute_cluster(self, create_compute_cluster_details, **kwargs):
         """
-        Creates an empty compute cluster, which is a remote direct memory access (RDMA) network group.
+        Creates an empty `compute cluster`__. A compute cluster
+        is a remote direct memory access (RDMA) network group.
+
         After the compute cluster is created, you can use the compute cluster's OCID with the
         :func:`launch_instance` operation to create instances in the compute cluster.
-        For more information, see `Compute Clusters`__.
+        The instances must be created in the same compartment and availability domain as the cluster.
 
-        To create a cluster network that uses intance pools to manage groups of identical instances,
-        see :func:`create_cluster_network`.
+        Use compute clusters when you want to manage instances in the cluster individually, or when you want
+        to use different types of instances in the RDMA network group.
+
+        If you want predictable capacity for a specific number of identical instances that are managed as a group,
+        create a cluster network that uses instance pools by using the
+        :func:`create_cluster_network` operation.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :param oci.core.models.CreateComputeClusterDetails create_compute_cluster_details: (required)
-            Details for creating a `compute cluster`__, which is a remote direct memory access (RDMA) network group.
-            When first created, the compute cluster is empty.
-            After the compute cluster is created, you can use the compute cluster's OCID with the :func:`launch_instance`
-            operation to create instances in the compute cluster.
-            Compute clusters allow you to manage instances in the cluster individually.
+            The data for creating a `compute cluster`__. A compute cluster
+            is an empty remote direct memory access (RDMA) network group.
 
-            For details about creating a cluster network that uses intance pools to manage groups of identical instances,
+            After the compute cluster is created, you can use the compute cluster's OCID with the
+            :func:`launch_instance` operation to create instances in the compute cluster.
+            The instances must be created in the same compartment and availability domain as the cluster.
+
+            Use compute clusters when you want to manage instances in the cluster individually, or when you want
+            to use different types of instances in the RDMA network group.
+
+            For details about creating a cluster network that uses instance pools to manage groups of identical instances,
             see :func:`create_cluster_network_details`.
 
             __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
@@ -2478,14 +2489,19 @@ class ComputeClient(object):
 
     def delete_compute_cluster(self, compute_cluster_id, **kwargs):
         """
-        Deletes the compute cluster, which is a remote direct memory access (RDMA) network group.
-        To delete a compute cluster, all instances in the cluster must be deleted first.
+        Deletes a compute cluster. A `compute cluster`__ is a
+        remote direct memory access (RDMA) network group.
+
+        Before you delete a compute cluster, first delete all instances in the cluster by using
+        the :func:`terminate_instance` operation.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :param str compute_cluster_id: (required)
             The `OCID`__ of the compute cluster.
-            A compute cluster is a remote direct memory access (RDMA) network group.
-            For more information, see `Compute Clusters`__.
+            A `compute cluster`__ is a remote direct memory
+            access (RDMA) network group.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
             __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
@@ -3961,13 +3977,16 @@ class ComputeClient(object):
 
     def get_compute_cluster(self, compute_cluster_id, **kwargs):
         """
-        Gets information about the specified compute cluster.
+        Gets information about a compute cluster. A `compute cluster`__
+        is a remote direct memory access (RDMA) network group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :param str compute_cluster_id: (required)
             The `OCID`__ of the compute cluster.
-            A compute cluster is a remote direct memory access (RDMA) network group.
-            For more information, see `Compute Clusters`__.
+            A `compute cluster`__ is a remote direct memory
+            access (RDMA) network group.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
             __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
@@ -8897,8 +8916,8 @@ class ComputeClient(object):
 
         :param str compute_cluster_id: (optional)
             The `OCID`__ of the compute cluster.
-            A compute cluster is a remote direct memory access (RDMA) network group.
-            For more information, see `Compute Clusters`__.
+            A `compute cluster`__ is a remote direct memory
+            access (RDMA) network group.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
             __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
@@ -9530,7 +9549,7 @@ class ComputeClient(object):
 
     def terminate_instance(self, instance_id, **kwargs):
         """
-        Terminates (deletes) the specified instance. Any attached VNICs and volumes are automatically detached
+        Permanently terminates (deletes) the specified instance. Any attached VNICs and volumes are automatically detached
         when the instance terminates.
 
         To preserve the boot volume associated with the instance, specify `true` for `PreserveBootVolumeQueryParam`.
@@ -9757,13 +9776,22 @@ class ComputeClient(object):
 
     def update_compute_cluster(self, compute_cluster_id, update_compute_cluster_details, **kwargs):
         """
-        Updates the specified compute cluster.
+        Updates a compute cluster. A `compute cluster`__ is a
+        remote direct memory access (RDMA) network group.
+
+        To create instances within a compute cluster, use the :func:`launch_instance`
+        operation.
+
+        To delete instances from a compute cluster, use the :func:`terminate_instance`
+        operation.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm
 
 
         :param str compute_cluster_id: (required)
             The `OCID`__ of the compute cluster.
-            A compute cluster is a remote direct memory access (RDMA) network group.
-            For more information, see `Compute Clusters`__.
+            A `compute cluster`__ is a remote direct memory
+            access (RDMA) network group.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
             __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm

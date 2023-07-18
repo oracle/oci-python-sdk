@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateContainerDnsConfigDetails(object):
     """
-    Allow customers to define DNS settings for containers. If this is not provided, the containers will use
+    Allow customers to define DNS settings for containers. If this is not provided, the containers use
     the default DNS settings of the subnet.
     """
 
@@ -55,7 +55,7 @@ class CreateContainerDnsConfigDetails(object):
         """
         Gets the nameservers of this CreateContainerDnsConfigDetails.
         IP address of a name server that the resolver should query, either an IPv4 address
-        (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use
+        (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses
         nameservers from subnet dhcpDnsOptions.
 
 
@@ -69,7 +69,7 @@ class CreateContainerDnsConfigDetails(object):
         """
         Sets the nameservers of this CreateContainerDnsConfigDetails.
         IP address of a name server that the resolver should query, either an IPv4 address
-        (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, we will use
+        (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses
         nameservers from subnet dhcpDnsOptions.
 
 
@@ -107,7 +107,7 @@ class CreateContainerDnsConfigDetails(object):
         """
         Gets the options of this CreateContainerDnsConfigDetails.
         Options allows certain internal resolver variables to be modified. Options are a list of objects in
-        https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [\"ndots:n\", \"edns0\"]
+        https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [\"ndots:n\", \"edns0\"].
 
 
         :return: The options of this CreateContainerDnsConfigDetails.
@@ -120,7 +120,7 @@ class CreateContainerDnsConfigDetails(object):
         """
         Sets the options of this CreateContainerDnsConfigDetails.
         Options allows certain internal resolver variables to be modified. Options are a list of objects in
-        https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [\"ndots:n\", \"edns0\"]
+        https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: [\"ndots:n\", \"edns0\"].
 
 
         :param options: The options of this CreateContainerDnsConfigDetails.

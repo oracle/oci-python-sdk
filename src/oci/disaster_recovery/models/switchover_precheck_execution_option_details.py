@@ -49,7 +49,7 @@ class SwitchoverPrecheckExecutionOptionDetails(DrPlanExecutionOptionDetails):
     def are_warnings_ignored(self):
         """
         Gets the are_warnings_ignored of this SwitchoverPrecheckExecutionOptionDetails.
-        A flag indicating whether warnigs should be ignored during the switchover.
+        A flag indicating whether warnings should be ignored during the switchover precheck.
 
         Example: `true`
 
@@ -63,7 +63,7 @@ class SwitchoverPrecheckExecutionOptionDetails(DrPlanExecutionOptionDetails):
     def are_warnings_ignored(self, are_warnings_ignored):
         """
         Sets the are_warnings_ignored of this SwitchoverPrecheckExecutionOptionDetails.
-        A flag indicating whether warnigs should be ignored during the switchover.
+        A flag indicating whether warnings should be ignored during the switchover precheck.
 
         Example: `true`
 

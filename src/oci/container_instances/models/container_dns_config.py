@@ -53,7 +53,7 @@ class ContainerDnsConfig(object):
     def nameservers(self):
         """
         Gets the nameservers of this ContainerDnsConfig.
-        Name server IP address
+        IP address of the name server..
 
 
         :return: The nameservers of this ContainerDnsConfig.
@@ -65,7 +65,7 @@ class ContainerDnsConfig(object):
     def nameservers(self, nameservers):
         """
         Sets the nameservers of this ContainerDnsConfig.
-        Name server IP address
+        IP address of the name server..
 
 
         :param nameservers: The nameservers of this ContainerDnsConfig.
@@ -77,7 +77,7 @@ class ContainerDnsConfig(object):
     def searches(self):
         """
         Gets the searches of this ContainerDnsConfig.
-        Search list for host-name lookup.
+        Search list for hostname lookup.
 
 
         :return: The searches of this ContainerDnsConfig.
@@ -89,7 +89,7 @@ class ContainerDnsConfig(object):
     def searches(self, searches):
         """
         Sets the searches of this ContainerDnsConfig.
-        Search list for host-name lookup.
+        Search list for hostname lookup.
 
 
         :param searches: The searches of this ContainerDnsConfig.

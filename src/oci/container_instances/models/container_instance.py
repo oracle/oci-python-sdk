@@ -12,9 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerInstance(object):
     """
-    A ContainerInstance for hosting Containers.
+    A container instance to host containers.
 
-    If this ContainerInstance is DELETED, the record will remain visible for a short period
+    If you delete a container instance, the record remains visible for a short period
     of time before being permanently removed.
     """
 
@@ -240,7 +240,7 @@ class ContainerInstance(object):
     def id(self):
         """
         **[Required]** Gets the id of this ContainerInstance.
-        Unique identifier that is immutable on creation
+        An OCID that cannot be changed.
 
 
         :return: The id of this ContainerInstance.
@@ -252,7 +252,7 @@ class ContainerInstance(object):
     def id(self, id):
         """
         Sets the id of this ContainerInstance.
-        Unique identifier that is immutable on creation
+        An OCID that cannot be changed.
 
 
         :param id: The id of this ContainerInstance.
@@ -264,7 +264,7 @@ class ContainerInstance(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ContainerInstance.
-        Display name for the ContainerInstance. Can be renamed.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this ContainerInstance.
@@ -276,7 +276,7 @@ class ContainerInstance(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ContainerInstance.
-        Display name for the ContainerInstance. Can be renamed.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this ContainerInstance.
@@ -288,7 +288,7 @@ class ContainerInstance(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ContainerInstance.
-        Compartment Identifier
+        The OCID of the compartment.
 
 
         :return: The compartment_id of this ContainerInstance.
@@ -300,7 +300,7 @@ class ContainerInstance(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ContainerInstance.
-        Compartment Identifier
+        The OCID of the compartment.
 
 
         :param compartment_id: The compartment_id of this ContainerInstance.
@@ -339,7 +339,7 @@ class ContainerInstance(object):
         """
         Gets the defined_tags of this ContainerInstance.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :return: The defined_tags of this ContainerInstance.
@@ -352,7 +352,7 @@ class ContainerInstance(object):
         """
         Sets the defined_tags of this ContainerInstance.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`.
 
 
         :param defined_tags: The defined_tags of this ContainerInstance.
@@ -365,7 +365,7 @@ class ContainerInstance(object):
         """
         Gets the system_tags of this ContainerInstance.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`.
 
 
         :return: The system_tags of this ContainerInstance.
@@ -378,7 +378,7 @@ class ContainerInstance(object):
         """
         Sets the system_tags of this ContainerInstance.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`.
 
 
         :param system_tags: The system_tags of this ContainerInstance.
@@ -390,7 +390,7 @@ class ContainerInstance(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this ContainerInstance.
-        Availability Domain where the ContainerInstance is running.
+        The availability domain to place the container instance.
 
 
         :return: The availability_domain of this ContainerInstance.
@@ -402,7 +402,7 @@ class ContainerInstance(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this ContainerInstance.
-        Availability Domain where the ContainerInstance is running.
+        The availability domain to place the container instance.
 
 
         :param availability_domain: The availability_domain of this ContainerInstance.
@@ -414,7 +414,7 @@ class ContainerInstance(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this ContainerInstance.
-        Fault Domain where the ContainerInstance is running.
+        The fault domain to place the container instance.
 
 
         :return: The fault_domain of this ContainerInstance.
@@ -426,7 +426,7 @@ class ContainerInstance(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this ContainerInstance.
-        Fault Domain where the ContainerInstance is running.
+        The fault domain to place the container instance.
 
 
         :param fault_domain: The fault_domain of this ContainerInstance.
@@ -438,7 +438,7 @@ class ContainerInstance(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this ContainerInstance.
-        The current state of the ContainerInstance.
+        The current state of the container instance.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -453,7 +453,7 @@ class ContainerInstance(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ContainerInstance.
-        The current state of the ContainerInstance.
+        The current state of the container instance.
 
 
         :param lifecycle_state: The lifecycle_state of this ContainerInstance.
@@ -468,8 +468,8 @@ class ContainerInstance(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this ContainerInstance.
-        A message describing the current state in more detail. For example, can be used to provide
-        actionable information for a resource in Failed state.
+        A message that describes the current state of the container in more detail. Can be used to provide
+        actionable information.
 
 
         :return: The lifecycle_details of this ContainerInstance.
@@ -481,8 +481,8 @@ class ContainerInstance(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this ContainerInstance.
-        A message describing the current state in more detail. For example, can be used to provide
-        actionable information for a resource in Failed state.
+        A message that describes the current state of the container in more detail. Can be used to provide
+        actionable information.
 
 
         :param lifecycle_details: The lifecycle_details of this ContainerInstance.
@@ -494,8 +494,8 @@ class ContainerInstance(object):
     def volumes(self):
         """
         Gets the volumes of this ContainerInstance.
-        A Volume represents a directory with data that is accessible across multiple containers in a
-        ContainerInstance.
+        A volume is a directory with data that is accessible across multiple containers in a
+        container instance.
 
 
         :return: The volumes of this ContainerInstance.
@@ -507,8 +507,8 @@ class ContainerInstance(object):
     def volumes(self, volumes):
         """
         Sets the volumes of this ContainerInstance.
-        A Volume represents a directory with data that is accessible across multiple containers in a
-        ContainerInstance.
+        A volume is a directory with data that is accessible across multiple containers in a
+        container instance.
 
 
         :param volumes: The volumes of this ContainerInstance.
@@ -520,7 +520,7 @@ class ContainerInstance(object):
     def volume_count(self):
         """
         Gets the volume_count of this ContainerInstance.
-        The number of volumes that attached to this Instance
+        The number of volumes that are attached to the container instance.
 
 
         :return: The volume_count of this ContainerInstance.
@@ -532,7 +532,7 @@ class ContainerInstance(object):
     def volume_count(self, volume_count):
         """
         Sets the volume_count of this ContainerInstance.
-        The number of volumes that attached to this Instance
+        The number of volumes that are attached to the container instance.
 
 
         :param volume_count: The volume_count of this ContainerInstance.
@@ -544,7 +544,7 @@ class ContainerInstance(object):
     def containers(self):
         """
         **[Required]** Gets the containers of this ContainerInstance.
-        The Containers on this Instance
+        The containers on the container instance.
 
 
         :return: The containers of this ContainerInstance.
@@ -556,7 +556,7 @@ class ContainerInstance(object):
     def containers(self, containers):
         """
         Sets the containers of this ContainerInstance.
-        The Containers on this Instance
+        The containers on the container instance.
 
 
         :param containers: The containers of this ContainerInstance.
@@ -568,7 +568,7 @@ class ContainerInstance(object):
     def container_count(self):
         """
         **[Required]** Gets the container_count of this ContainerInstance.
-        The number of containers on this Instance
+        The number of containers on the container instance.
 
 
         :return: The container_count of this ContainerInstance.
@@ -580,7 +580,7 @@ class ContainerInstance(object):
     def container_count(self, container_count):
         """
         Sets the container_count of this ContainerInstance.
-        The number of containers on this Instance
+        The number of containers on the container instance.
 
 
         :param container_count: The container_count of this ContainerInstance.
@@ -592,7 +592,9 @@ class ContainerInstance(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this ContainerInstance.
-        The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        The time the container instance was created, in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this ContainerInstance.
@@ -604,7 +606,9 @@ class ContainerInstance(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ContainerInstance.
-        The time the the ContainerInstance was created. An RFC3339 formatted datetime string
+        The time the container instance was created, in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this ContainerInstance.
@@ -616,7 +620,9 @@ class ContainerInstance(object):
     def time_updated(self):
         """
         Gets the time_updated of this ContainerInstance.
-        The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        The time the container instance was updated, in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_updated of this ContainerInstance.
@@ -628,7 +634,9 @@ class ContainerInstance(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ContainerInstance.
-        The time the ContainerInstance was updated. An RFC3339 formatted datetime string
+        The time the container instance was updated, in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_updated: The time_updated of this ContainerInstance.
@@ -640,7 +648,7 @@ class ContainerInstance(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this ContainerInstance.
-        The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+        The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
 
 
         :return: The shape of this ContainerInstance.
@@ -652,7 +660,7 @@ class ContainerInstance(object):
     def shape(self, shape):
         """
         Sets the shape of this ContainerInstance.
-        The shape of the Container Instance. The shape determines the resources available to the Container Instance.
+        The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
 
 
         :param shape: The shape of this ContainerInstance.
@@ -684,7 +692,7 @@ class ContainerInstance(object):
     def vnics(self):
         """
         **[Required]** Gets the vnics of this ContainerInstance.
-        The virtual networks available to containers running on this Container Instance.
+        The virtual networks available to the containers in the container instance.
 
 
         :return: The vnics of this ContainerInstance.
@@ -696,7 +704,7 @@ class ContainerInstance(object):
     def vnics(self, vnics):
         """
         Sets the vnics of this ContainerInstance.
-        The virtual networks available to containers running on this Container Instance.
+        The virtual networks available to the containers in the container instance.
 
 
         :param vnics: The vnics of this ContainerInstance.
@@ -728,7 +736,7 @@ class ContainerInstance(object):
     def graceful_shutdown_timeout_in_seconds(self):
         """
         Gets the graceful_shutdown_timeout_in_seconds of this ContainerInstance.
-        Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 
 
         :return: The graceful_shutdown_timeout_in_seconds of this ContainerInstance.
@@ -740,7 +748,7 @@ class ContainerInstance(object):
     def graceful_shutdown_timeout_in_seconds(self, graceful_shutdown_timeout_in_seconds):
         """
         Sets the graceful_shutdown_timeout_in_seconds of this ContainerInstance.
-        Duration in seconds processes within a Container have to gracefully terminate. This applies whenever a Container must be halted, such as when the Container Instance is deleted. Processes will first be sent a termination signal. After this timeout is reached, the processes will be sent a termination signal.
+        The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 
 
         :param graceful_shutdown_timeout_in_seconds: The graceful_shutdown_timeout_in_seconds of this ContainerInstance.
@@ -752,7 +760,7 @@ class ContainerInstance(object):
     def image_pull_secrets(self):
         """
         Gets the image_pull_secrets of this ContainerInstance.
-        The image pull secrets for accessing private registry to pull images for containers
+        The image pulls secrets so you can access private registry to pull container images.
 
 
         :return: The image_pull_secrets of this ContainerInstance.
@@ -764,7 +772,7 @@ class ContainerInstance(object):
     def image_pull_secrets(self, image_pull_secrets):
         """
         Sets the image_pull_secrets of this ContainerInstance.
-        The image pull secrets for accessing private registry to pull images for containers
+        The image pulls secrets so you can access private registry to pull container images.
 
 
         :param image_pull_secrets: The image_pull_secrets of this ContainerInstance.

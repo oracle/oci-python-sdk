@@ -12,8 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerInstanceShapeConfig(object):
     """
-    The shape configuration for a Container Instance. The shape configuration determines
-    the resources allocated to the Instance and it's containers.
+    The shape configuration for a container instance. The shape configuration determines
+    the resources thats are available to the container instance and its containers.
     """
 
     def __init__(self, **kwargs):
@@ -61,7 +61,7 @@ class ContainerInstanceShapeConfig(object):
     def ocpus(self):
         """
         **[Required]** Gets the ocpus of this ContainerInstanceShapeConfig.
-        The total number of OCPUs available to the instance.
+        The total number of OCPUs available to the container instance.
 
 
         :return: The ocpus of this ContainerInstanceShapeConfig.
@@ -73,7 +73,7 @@ class ContainerInstanceShapeConfig(object):
     def ocpus(self, ocpus):
         """
         Sets the ocpus of this ContainerInstanceShapeConfig.
-        The total number of OCPUs available to the instance.
+        The total number of OCPUs available to the container instance.
 
 
         :param ocpus: The ocpus of this ContainerInstanceShapeConfig.
@@ -85,7 +85,7 @@ class ContainerInstanceShapeConfig(object):
     def memory_in_gbs(self):
         """
         **[Required]** Gets the memory_in_gbs of this ContainerInstanceShapeConfig.
-        The total amount of memory available to the instance, in gigabytes.
+        The total amount of memory available to the container instance, in gigabytes.
 
 
         :return: The memory_in_gbs of this ContainerInstanceShapeConfig.
@@ -97,7 +97,7 @@ class ContainerInstanceShapeConfig(object):
     def memory_in_gbs(self, memory_in_gbs):
         """
         Sets the memory_in_gbs of this ContainerInstanceShapeConfig.
-        The total amount of memory available to the instance, in gigabytes.
+        The total amount of memory available to the container instance, in gigabytes.
 
 
         :param memory_in_gbs: The memory_in_gbs of this ContainerInstanceShapeConfig.
@@ -109,7 +109,7 @@ class ContainerInstanceShapeConfig(object):
     def processor_description(self):
         """
         **[Required]** Gets the processor_description of this ContainerInstanceShapeConfig.
-        A short description of the instance's processor (CPU).
+        A short description of the container instance's processor (CPU).
 
 
         :return: The processor_description of this ContainerInstanceShapeConfig.
@@ -121,7 +121,7 @@ class ContainerInstanceShapeConfig(object):
     def processor_description(self, processor_description):
         """
         Sets the processor_description of this ContainerInstanceShapeConfig.
-        A short description of the instance's processor (CPU).
+        A short description of the container instance's processor (CPU).
 
 
         :param processor_description: The processor_description of this ContainerInstanceShapeConfig.
@@ -133,7 +133,7 @@ class ContainerInstanceShapeConfig(object):
     def networking_bandwidth_in_gbps(self):
         """
         **[Required]** Gets the networking_bandwidth_in_gbps of this ContainerInstanceShapeConfig.
-        The networking bandwidth available to the instance, in gigabits per second.
+        The networking bandwidth available to the container instance, in gigabits per second.
 
 
         :return: The networking_bandwidth_in_gbps of this ContainerInstanceShapeConfig.
@@ -145,7 +145,7 @@ class ContainerInstanceShapeConfig(object):
     def networking_bandwidth_in_gbps(self, networking_bandwidth_in_gbps):
         """
         Sets the networking_bandwidth_in_gbps of this ContainerInstanceShapeConfig.
-        The networking bandwidth available to the instance, in gigabits per second.
+        The networking bandwidth available to the container instance, in gigabits per second.
 
 
         :param networking_bandwidth_in_gbps: The networking_bandwidth_in_gbps of this ContainerInstanceShapeConfig.

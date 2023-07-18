@@ -24,9 +24,21 @@ class UpdateMountTargetDetails(object):
             The value to assign to the display_name property of this UpdateMountTargetDetails.
         :type display_name: str
 
+        :param idmap_type:
+            The value to assign to the idmap_type property of this UpdateMountTargetDetails.
+        :type idmap_type: str
+
+        :param ldap_idmap:
+            The value to assign to the ldap_idmap property of this UpdateMountTargetDetails.
+        :type ldap_idmap: oci.file_storage.models.UpdateLdapIdmapDetails
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this UpdateMountTargetDetails.
         :type nsg_ids: list[str]
+
+        :param kerberos:
+            The value to assign to the kerberos property of this UpdateMountTargetDetails.
+        :type kerberos: oci.file_storage.models.UpdateKerberosDetails
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateMountTargetDetails.
@@ -39,20 +51,29 @@ class UpdateMountTargetDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'idmap_type': 'str',
+            'ldap_idmap': 'UpdateLdapIdmapDetails',
             'nsg_ids': 'list[str]',
+            'kerberos': 'UpdateKerberosDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'idmap_type': 'idmapType',
+            'ldap_idmap': 'ldapIdmap',
             'nsg_ids': 'nsgIds',
+            'kerberos': 'kerberos',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
+        self._idmap_type = None
+        self._ldap_idmap = None
         self._nsg_ids = None
+        self._kerberos = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -85,6 +106,50 @@ class UpdateMountTargetDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def idmap_type(self):
+        """
+        Gets the idmap_type of this UpdateMountTargetDetails.
+        The method used to map a Unix UID to secondary groups, if any.
+
+
+        :return: The idmap_type of this UpdateMountTargetDetails.
+        :rtype: str
+        """
+        return self._idmap_type
+
+    @idmap_type.setter
+    def idmap_type(self, idmap_type):
+        """
+        Sets the idmap_type of this UpdateMountTargetDetails.
+        The method used to map a Unix UID to secondary groups, if any.
+
+
+        :param idmap_type: The idmap_type of this UpdateMountTargetDetails.
+        :type: str
+        """
+        self._idmap_type = idmap_type
+
+    @property
+    def ldap_idmap(self):
+        """
+        Gets the ldap_idmap of this UpdateMountTargetDetails.
+
+        :return: The ldap_idmap of this UpdateMountTargetDetails.
+        :rtype: oci.file_storage.models.UpdateLdapIdmapDetails
+        """
+        return self._ldap_idmap
+
+    @ldap_idmap.setter
+    def ldap_idmap(self, ldap_idmap):
+        """
+        Sets the ldap_idmap of this UpdateMountTargetDetails.
+
+        :param ldap_idmap: The ldap_idmap of this UpdateMountTargetDetails.
+        :type: oci.file_storage.models.UpdateLdapIdmapDetails
+        """
+        self._ldap_idmap = ldap_idmap
 
     @property
     def nsg_ids(self):
@@ -121,6 +186,26 @@ class UpdateMountTargetDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def kerberos(self):
+        """
+        Gets the kerberos of this UpdateMountTargetDetails.
+
+        :return: The kerberos of this UpdateMountTargetDetails.
+        :rtype: oci.file_storage.models.UpdateKerberosDetails
+        """
+        return self._kerberos
+
+    @kerberos.setter
+    def kerberos(self, kerberos):
+        """
+        Sets the kerberos of this UpdateMountTargetDetails.
+
+        :param kerberos: The kerberos of this UpdateMountTargetDetails.
+        :type: oci.file_storage.models.UpdateKerberosDetails
+        """
+        self._kerberos = kerberos
 
     @property
     def freeform_tags(self):

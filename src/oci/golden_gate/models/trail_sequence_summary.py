@@ -30,7 +30,7 @@ class TrailSequenceSummary(object):
 
         :param size_in_bytes:
             The value to assign to the size_in_bytes property of this TrailSequenceSummary.
-        :type size_in_bytes: float
+        :type size_in_bytes: int
 
         :param time_last_updated:
             The value to assign to the time_last_updated property of this TrailSequenceSummary.
@@ -40,7 +40,7 @@ class TrailSequenceSummary(object):
         self.swagger_types = {
             'sequence_id': 'str',
             'display_name': 'str',
-            'size_in_bytes': 'float',
+            'size_in_bytes': 'int',
             'time_last_updated': 'datetime'
         }
 
@@ -112,7 +112,7 @@ class TrailSequenceSummary(object):
 
 
         :return: The size_in_bytes of this TrailSequenceSummary.
-        :rtype: float
+        :rtype: int
         """
         return self._size_in_bytes
 
@@ -124,7 +124,7 @@ class TrailSequenceSummary(object):
 
 
         :param size_in_bytes: The size_in_bytes of this TrailSequenceSummary.
-        :type: float
+        :type: int
         """
         self._size_in_bytes = size_in_bytes
 

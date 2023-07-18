@@ -172,6 +172,10 @@ class Node(object):
             The value to assign to the local_disks_total_size_in_gbs property of this Node.
         :type local_disks_total_size_in_gbs: float
 
+        :param time_maintenance_reboot_due:
+            The value to assign to the time_maintenance_reboot_due property of this Node.
+        :type time_maintenance_reboot_due: datetime
+
         """
         self.swagger_types = {
             'instance_id': 'str',
@@ -192,7 +196,8 @@ class Node(object):
             'ocpus': 'int',
             'memory_in_gbs': 'int',
             'nvmes': 'int',
-            'local_disks_total_size_in_gbs': 'float'
+            'local_disks_total_size_in_gbs': 'float',
+            'time_maintenance_reboot_due': 'datetime'
         }
 
         self.attribute_map = {
@@ -214,7 +219,8 @@ class Node(object):
             'ocpus': 'ocpus',
             'memory_in_gbs': 'memoryInGBs',
             'nvmes': 'nvmes',
-            'local_disks_total_size_in_gbs': 'localDisksTotalSizeInGBs'
+            'local_disks_total_size_in_gbs': 'localDisksTotalSizeInGBs',
+            'time_maintenance_reboot_due': 'timeMaintenanceRebootDue'
         }
 
         self._instance_id = None
@@ -236,6 +242,7 @@ class Node(object):
         self._memory_in_gbs = None
         self._nvmes = None
         self._local_disks_total_size_in_gbs = None
+        self._time_maintenance_reboot_due = None
 
     @property
     def instance_id(self):
@@ -704,6 +711,30 @@ class Node(object):
         :type: float
         """
         self._local_disks_total_size_in_gbs = local_disks_total_size_in_gbs
+
+    @property
+    def time_maintenance_reboot_due(self):
+        """
+        Gets the time_maintenance_reboot_due of this Node.
+        The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+
+
+        :return: The time_maintenance_reboot_due of this Node.
+        :rtype: datetime
+        """
+        return self._time_maintenance_reboot_due
+
+    @time_maintenance_reboot_due.setter
+    def time_maintenance_reboot_due(self, time_maintenance_reboot_due):
+        """
+        Sets the time_maintenance_reboot_due of this Node.
+        The date and time the instance is expected to be stopped / started, in the format defined by RFC3339.
+
+
+        :param time_maintenance_reboot_due: The time_maintenance_reboot_due of this Node.
+        :type: datetime
+        """
+        self._time_maintenance_reboot_due = time_maintenance_reboot_due
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -12,7 +12,16 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateClusterNetworkDetails(object):
     """
-    The data to create a cluster network.
+    The data to create a `cluster network with instance pools`__.
+
+    Use cluster networks with instance pools when you want predictable capacity for a specific number of identical
+    instances that are managed as a group.
+
+    For details about creating compute clusters, which let you manage instances in the RDMA network independently
+    of each other or use different types of instances in the network group,
+    see :func:`create_compute_cluster_details`.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
     """
 
     def __init__(self, **kwargs):

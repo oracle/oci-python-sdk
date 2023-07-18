@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestLogEntry(object):
     """
-    A log message from the execution of a work request.
+    A log message from a work request.
     """
 
     def __init__(self, **kwargs):
@@ -70,7 +70,9 @@ class WorkRequestLogEntry(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestLogEntry.
-        The time the log message was written. An RFC3339 formatted datetime string
+        The time the log message was written, in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The timestamp of this WorkRequestLogEntry.
@@ -82,7 +84,9 @@ class WorkRequestLogEntry(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestLogEntry.
-        The time the log message was written. An RFC3339 formatted datetime string
+        The time the log message was written, in the format defined by `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param timestamp: The timestamp of this WorkRequestLogEntry.

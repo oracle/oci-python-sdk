@@ -113,7 +113,7 @@ class CreateContainerHttpHealthCheckDetails(CreateContainerHealthCheckDetails):
     def path(self):
         """
         **[Required]** Gets the path of this CreateContainerHttpHealthCheckDetails.
-        Container health check Http's path.
+        Container health check HTTP path.
 
 
         :return: The path of this CreateContainerHttpHealthCheckDetails.
@@ -125,7 +125,7 @@ class CreateContainerHttpHealthCheckDetails(CreateContainerHealthCheckDetails):
     def path(self, path):
         """
         Sets the path of this CreateContainerHttpHealthCheckDetails.
-        Container health check Http's path.
+        Container health check HTTP path.
 
 
         :param path: The path of this CreateContainerHttpHealthCheckDetails.
@@ -137,7 +137,7 @@ class CreateContainerHttpHealthCheckDetails(CreateContainerHealthCheckDetails):
     def port(self):
         """
         **[Required]** Gets the port of this CreateContainerHttpHealthCheckDetails.
-        Container health check Http's port.
+        Container health check HTTP port.
 
 
         :return: The port of this CreateContainerHttpHealthCheckDetails.
@@ -149,7 +149,7 @@ class CreateContainerHttpHealthCheckDetails(CreateContainerHealthCheckDetails):
     def port(self, port):
         """
         Sets the port of this CreateContainerHttpHealthCheckDetails.
-        Container health check Http's port.
+        Container health check HTTP port.
 
 
         :param port: The port of this CreateContainerHttpHealthCheckDetails.
@@ -161,7 +161,7 @@ class CreateContainerHttpHealthCheckDetails(CreateContainerHealthCheckDetails):
     def headers(self):
         """
         Gets the headers of this CreateContainerHttpHealthCheckDetails.
-        Container health check Http's headers.
+        Container health check HTTP headers.
 
 
         :return: The headers of this CreateContainerHttpHealthCheckDetails.
@@ -173,7 +173,7 @@ class CreateContainerHttpHealthCheckDetails(CreateContainerHealthCheckDetails):
     def headers(self, headers):
         """
         Sets the headers of this CreateContainerHttpHealthCheckDetails.
-        Container health check Http's headers.
+        Container health check HTTP headers.
 
 
         :param headers: The headers of this CreateContainerHttpHealthCheckDetails.

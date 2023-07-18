@@ -120,7 +120,7 @@ class DeploymentBackup(object):
 
         :param size_in_bytes:
             The value to assign to the size_in_bytes property of this DeploymentBackup.
-        :type size_in_bytes: float
+        :type size_in_bytes: int
 
         :param backup_type:
             The value to assign to the backup_type property of this DeploymentBackup.
@@ -175,7 +175,7 @@ class DeploymentBackup(object):
             'lifecycle_details': 'str',
             'time_of_backup': 'datetime',
             'time_backup_finished': 'datetime',
-            'size_in_bytes': 'float',
+            'size_in_bytes': 'int',
             'backup_type': 'str',
             'ogg_version': 'str',
             'namespace_name': 'str',
@@ -488,7 +488,7 @@ class DeploymentBackup(object):
 
 
         :return: The size_in_bytes of this DeploymentBackup.
-        :rtype: float
+        :rtype: int
         """
         return self._size_in_bytes
 
@@ -500,7 +500,7 @@ class DeploymentBackup(object):
 
 
         :param size_in_bytes: The size_in_bytes of this DeploymentBackup.
-        :type: float
+        :type: int
         """
         self._size_in_bytes = size_in_bytes
 

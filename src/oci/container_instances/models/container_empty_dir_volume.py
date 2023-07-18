@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerEmptyDirVolume(ContainerVolume):
     """
-    The empty director of container
+    The empty directory of container.
     """
 
     #: A constant which can be used with the backing_store property of a ContainerEmptyDirVolume.
@@ -67,7 +67,7 @@ class ContainerEmptyDirVolume(ContainerVolume):
     def backing_store(self):
         """
         Gets the backing_store of this ContainerEmptyDirVolume.
-        Volume type that we are using for empty dir where it could be either File Storage or Memory
+        The volume type of the empty directory, can be either File Storage or Memory.
 
         Allowed values for this property are: "EPHEMERAL_STORAGE", "MEMORY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -82,7 +82,7 @@ class ContainerEmptyDirVolume(ContainerVolume):
     def backing_store(self, backing_store):
         """
         Sets the backing_store of this ContainerEmptyDirVolume.
-        Volume type that we are using for empty dir where it could be either File Storage or Memory
+        The volume type of the empty directory, can be either File Storage or Memory.
 
 
         :param backing_store: The backing_store of this ContainerEmptyDirVolume.

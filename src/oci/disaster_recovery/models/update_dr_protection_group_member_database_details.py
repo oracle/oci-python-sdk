@@ -27,7 +27,7 @@ class UpdateDrProtectionGroupMemberDatabaseDetails(UpdateDrProtectionGroupMember
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberDatabaseDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
         :type member_type: str
 
         :param password_vault_secret_id:
@@ -58,7 +58,7 @@ class UpdateDrProtectionGroupMemberDatabaseDetails(UpdateDrProtectionGroupMember
         Gets the password_vault_secret_id of this UpdateDrProtectionGroupMemberDatabaseDetails.
         The OCID of the vault secret where the database password is stored.
 
-        Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+        Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
 
 
         :return: The password_vault_secret_id of this UpdateDrProtectionGroupMemberDatabaseDetails.
@@ -72,7 +72,7 @@ class UpdateDrProtectionGroupMemberDatabaseDetails(UpdateDrProtectionGroupMember
         Sets the password_vault_secret_id of this UpdateDrProtectionGroupMemberDatabaseDetails.
         The OCID of the vault secret where the database password is stored.
 
-        Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+        Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
 
 
         :param password_vault_secret_id: The password_vault_secret_id of this UpdateDrProtectionGroupMemberDatabaseDetails.
