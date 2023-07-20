@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.ocas.document</groupId>
         <artifactId>document-service-spec</artifactId>
-        <version>0.3.100</version>
+        <version>0.3.102</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

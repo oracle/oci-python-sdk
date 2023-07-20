@@ -135,7 +135,7 @@
       <dependency>
         <groupId>com.oracle.oci.usage.budgets</groupId>
         <artifactId>budgets-control-plane-spec</artifactId>
-        <version>2.4.10-releasePreview</version>
+        <version>3.0.2</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

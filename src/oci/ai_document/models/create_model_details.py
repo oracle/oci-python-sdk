@@ -304,7 +304,7 @@ class CreateModelDetails(object):
     @property
     def training_dataset(self):
         """
-        **[Required]** Gets the training_dataset of this CreateModelDetails.
+        Gets the training_dataset of this CreateModelDetails.
 
         :return: The training_dataset of this CreateModelDetails.
         :rtype: oci.ai_document.models.Dataset
