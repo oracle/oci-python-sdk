@@ -6,6 +6,7 @@
 # showoci.py
 #
 # @author: Adi Zohar
+# @contributors: Olaf Heimburger
 #
 # Supports Python 3 and above
 #
@@ -116,7 +117,7 @@ import datetime
 import contextlib
 import os
 
-version = "23.07.19"
+version = "23.07.26"
 
 ##########################################################################
 # check OCI version
@@ -198,7 +199,7 @@ def execute_extract():
     if cmd.servicefile or cmd.servicescr:
         if cmd.servicefile:
             if cmd.servicefile.name:
-                print_to_json_file(cmd.servicefile.name, data.get_service_data(), "Service Data")
+                print_to_json_file(output, cmd.servicefile.name, data.get_service_data(), "Service Data")
 
         elif cmd.servicescr:
             print(json.dumps(data.get_service_data(), indent=4, sort_keys=False))
