@@ -99,3 +99,47 @@ languages:
       - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:passwordless:User"
         mapping:
           identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_passwordless_user"
+
+      # 2023-07-20 additions
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:radiusApp:App"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_radiusApp_app"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:samlServiceProvider_app"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_saml_service_provider_app"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:webTierPolicy_app"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_web_tier_policy_app"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:managedapp_app"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_managedapp_app"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:formFillAppTemplate_app_template"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_form_Fill_app_template_app_template"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:opcService:App"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_opc_service_app"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:kerberosRealm:App"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_kerberos_realm_app"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:requestable:App"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_requestable_app"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:formFillApp:App"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_form_fill_app_app"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:dbcs:App"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_dbcs_app"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:enterpriseApp:App"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_enterprise_app_app"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:multicloudServiceApp:App"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_multicloud_service_app_app"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:thirdParty:AuthenticationFactorSettings"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings"
+      - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:fido:AuthenticationFactorSettings"
+        mapping:
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings"
