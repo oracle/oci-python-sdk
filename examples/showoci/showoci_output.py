@@ -5,6 +5,7 @@
 # showoci_output.py
 #
 # @author: Adi Zohar
+# @contributors: Olaf Heimburger
 #
 # Supports Python 3 and above
 #
@@ -20,7 +21,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.07.19"
+    version = "23.07.26"
 
     ##########################################################################
     # spaces for align
@@ -113,14 +114,14 @@ class ShowOCIOutput(object):
         try:
             self.print_header(data['program'], 1)
             print("Author          : " + data['author'])
-            print("Contributers    : " + data['contributers'])
+            print("Contributors    : " + data['contributors'])
             print("Disclaimer      : " + data['disclaimer'])
             print("Machine         : " + data['machine'])
             print("Python Version  : " + data['python'])
             if data['use_instance_principals']:
                 print("Authentication  : Instance Principals")
             elif data['use_delegation_token']:
-                print("Authentication  : Instance Principals With Delegation Token")
+                print("Authentication  : Instance Principals with Delegation Token")
                 print("Config File     : " + data['config_file'])
                 print("Config Profile  : " + data['config_profile'])
             elif data['use_security_token']:
@@ -134,7 +135,7 @@ class ShowOCIOutput(object):
             print("Date/Time       : " + data['datetime'])
             print("API Conn Timeout: " + str(data['connection_timeout']))
             print("API Read Timeout: " + str(data['read_timeout']))
-            print("Comand Line     : " + data['cmdline'])
+            print("Command Line    : " + data['cmdline'])
             print("Showoci Version : " + data['version'])
             print("OCI SDK Version : " + data['oci_sdk_version'])
             if 'proxy' in data:
@@ -2388,7 +2389,7 @@ class ShowOCIOutput(object):
                     print(self.tabs2 + "Management URL: " + val['management_endpoint'])
                     print(self.tabs2 + "Crypto URL    : " + val['crypto_endpoint'])
                     for rep in val['replicas']:
-                        print(self.tabs2 + "Replicas      : " + val['status'] + ", " + val['region'] + ", " + val['crypto_endpoint'])
+                        print(self.tabs2 + "Replicas      : " + rep['status'] + ", " + rep['region'] + ", " + rep['crypto_endpoint'])
                     print("")
 
             # Logging
@@ -3213,6 +3214,9 @@ class ShowOCISummary(object):
                     if 'identity_providers' in domain:
                         self.__summary_core_count(domain['identity_providers'], "Identity Domains - IDPs")
 
+                    if 'password_policies' in domain:
+                        self.__summary_core_count(domain['password_policies'], 'Identity Domains - Password Policies')
+
             # aggregate the data
             self.summary_global_list = self.__summary_group_by("type", self.summary_global_list)
 
@@ -3882,6 +3886,7 @@ class ShowOCICSV(object):
     csv_identity_domains_groups = []
     csv_identity_domains_dyngroups = []
     csv_identity_domains_kmsi_setting = []
+    csv_identity_domains_password_policies = []
     csv_identity_domains_idps = []
     csv_identity_domains_auth_factors = []
     csv_compute = []
@@ -4000,6 +4005,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("identity_domains_kmsi", self.csv_identity_domains_kmsi_setting)
             self.__export_to_csv_file("identity_domains_idps", self.csv_identity_domains_idps)
             self.__export_to_csv_file("identity_domains_auth", self.csv_identity_domains_auth_factors)
+            self.__export_to_csv_file("identity_domains_pwd_policies", self.csv_identity_domains_password_policies)
 
             self.__export_to_csv_file("compute", self.csv_compute)
             self.__export_to_csv_file("compute_reservations", self.csv_compute_reservations)
@@ -4260,9 +4266,12 @@ class ShowOCICSV(object):
                     'id': user['id'],
                     'user_name': user['name'],
                     'description': user['description'],
+                    'email': user['email'],
                     'is_mfa_activated': user['is_mfa_activated'],
                     'lifecycle_state': user['lifecycle_state'],
                     'identity_provider_name': user['identity_provider_name'],
+                    'identity_provider_id': user['identity_provider_id'],
+                    'external_identifier': user['external_identifier'],
                     'user_time_created': user['time_created'],
                     'groups': user['groups'],
                     'api_keys': "Not Checked",
@@ -4272,6 +4281,10 @@ class ShowOCICSV(object):
                     'last_successful_login_time': user['last_successful_login_time'],
                     'previous_successful_login_time': user['previous_successful_login_time']
                 }
+
+                capabilities = user['capabilities']
+                for k in capabilities:
+                    data[k] = capabilities[k]
 
                 # Check if credential exist
                 if 'api_keys' in user:
@@ -4303,10 +4316,10 @@ class ShowOCICSV(object):
                     'home_region_url': var['home_region_url'],
                     'home_region': var['home_region'],
                     'type': var['type'],
-                    'license_type': var['type'],
-                    'is_hidden_on_login': var['type'],
-                    'time_created': var['type'],
-                    'lifecycle_state': var['type'],
+                    'license_type': var['license_type'],
+                    'is_hidden_on_login': var['is_hidden_on_login'],
+                    'time_created': var['time_created'],
+                    'lifecycle_state': var['lifecycle_state'],
                     'freeform_tags': self.__get_freeform_tags(var['freeform_tags']),
                     'defined_tags': self.__get_defined_tags(var['defined_tags']),
                     'replica_regions': var['replica_regions'],
@@ -4337,6 +4350,9 @@ class ShowOCICSV(object):
 
                 if var['authentication_factor_settings']:
                     self.__csv_identity_domains_auth_factor(var['authentication_factor_settings'], var['display_name'], var['id'])
+
+                if var['password_policies']:
+                    self.__csv_identity_domains_password_policies(var['password_policies'], var['display_name'], var['id'])
 
         except Exception as e:
             self.__print_error("__csv_identity_domains", e)
@@ -4791,6 +4807,72 @@ class ShowOCICSV(object):
             self.__print_error("__csv_identity_domains_auth_factor", e)
 
     ##########################################################################
+    # CSV Identity Domain Password Policies
+    ##########################################################################
+
+    def __csv_identity_domains_password_policies(self, policies, domain_name, domain_id):
+        try:
+            for var in policies:
+                data = {
+                    'domain_id': domain_id,
+                    'domain_name': domain_name,
+                    'id': var['id'],
+                    'ocid': var['ocid'],
+                    'schemas': var['schemas'],
+                    'meta_resource_type': var['meta']['resource_type'],
+                    'meta_created': var['meta']['created'],
+                    'meta_last_modified': var['meta']['last_modified'],
+                    'meta_location': var['meta']['location'],
+                    'meta_version': var['meta']['version'],
+                    'idcs_created_by': str(var['idcs_created_by']),
+                    'idcs_last_modified_by': str(var['idcs_last_modified_by']),
+                    'idcs_last_upgraded_in_release': str(var['idcs_last_upgraded_in_release']),
+                    'idcs_prevented_operations': str(var['idcs_prevented_operations']),
+                    'tags': str(','.join(x['key'] + "=" + x['value'] for x in var['tags'])),
+                    'compartment_ocid': var['compartment_ocid'],
+                    'domain_ocid': var['domain_ocid'],
+                    'external_id': var['external_id'],
+                    'name': var['name'],
+                    'description': var['description'],
+                    'allowed_chars': var['allowed_chars'],
+                    'configured_password_policy_rules': str(','.join(x['key'] + '=' + x['value'] for x in var['configured_password_policy_rules'])),
+                    'dictionary_delimiter': var['dictionary_delimiter'],
+                    'dictionary_location': var['dictionary_location'],
+                    'dictionary_word_disallowed': var['dictionary_word_disallowed'],
+                    'disallowed_chars': var['disallowed_chars'],
+                    'disallowed_substrings': var['disallowed_substrings'],
+                    'first_name_disallowed': var['first_name_disallowed'],
+                    'force_password_reset': var['force_password_reset'],
+                    'groups': str(','.join(x['ref'] + '=' + x['value'] for x in var['groups'])),
+                    'last_name_disallowed': var['last_name_disallowed'],
+                    'lockout_duration': var['lockout_duration'],
+                    'max_incorrect_attempts': var['max_incorrect_attempts'],
+                    'max_length': var['max_length'],
+                    'max_repeated_chars': var['max_repeated_chars'],
+                    'max_special_chars': var['max_special_chars'],
+                    'min_alpha_numerals': var['min_alpha_numerals'],
+                    'min_alphas': var['min_alphas'],
+                    'min_length': var['min_length'],
+                    'min_lower_case': var['min_lower_case'],
+                    'min_numerals': var['min_numerals'],
+                    'min_password_age': var['min_password_age'],
+                    'min_special_chars': var['min_special_chars'],
+                    'min_unique_chars': var['min_unique_chars'],
+                    'min_upper_case': var['min_upper_case'],
+                    'num_passwords_in_history': var['num_passwords_in_history'],
+                    'password_expire_warning': var['password_expire_warning'],
+                    'password_expires_after': var['password_expires_after'],
+                    'password_strength': var['password_strength'],
+                    'priority': var['priority'],
+                    'required_chars': var['required_chars'],
+                    'starts_with_alphabet': var['starts_with_alphabet'],
+                    'user_name_disallowed': var['user_name_disallowed']
+                }
+                self.csv_identity_domains_password_policies.append(data)
+        except Exception as e:
+            self.__print_error("__csv_identity_domains_password_policies", e)
+
+    ##########################################################################
     # CSV Identity Compartments
     ##########################################################################
 
@@ -4834,7 +4916,13 @@ class ShowOCICSV(object):
                     seq = 0
                     for statement in policy['statements']:
                         seq += 1
-                        self.csv_identity_policies.append({'compartment': c['compartment_path'], 'policy_name': policy['name'], 'seq': seq, 'statement': statement})
+                        self.csv_identity_policies.append({
+                            'compartment': c['compartment_path'],
+                            'policy_name': policy['name'],
+                            'id': policy['id'],
+                            'seq': seq,
+                            'statement': statement
+                        })
 
         except Exception as e:
             self.__print_error("__csv_identity_policies", e)
@@ -5531,6 +5619,8 @@ class ShowOCICSV(object):
                             'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes'])),
                             'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(db['defined_tags']),
+                            'kms_key_id': db['kms_key_id'],
+                            'vault_id': db['vault_id'],
                             'database_id': db['id'],
                             'dbsystem_id': dbs['id'],
                             'db_home': db_home['home_name'],
@@ -5566,6 +5656,8 @@ class ShowOCICSV(object):
                     'size': backup['sum_size_gb'],
                     'id': backup['id'],
                     'database_id': backup['database_id'],
+                    'kms_key_id': backup['kms_key_id'],
+                    'vault_id': backup['vault_id'],
                     'lifecycle_state': backup['lifecycle_state']
                 }
                 # if not exist in array add
@@ -5759,6 +5851,8 @@ class ShowOCICSV(object):
                         'cluster_count': len(dbs['vm_clusters']),
                         'cluster_names': str(', '.join(x['display_name'] for x in dbs['vm_clusters'])),
                         'time_created': dbs['time_created'],
+                        'kms_key_id': dbs['kms_key_id'],
+                        'vault_id': dbs['vault_id'],
                         'freeform_tags': self.__get_freeform_tags(dbs['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
                         'maintenance_window': dbs['maintenance_window']['display'] if dbs['maintenance_window'] else "",
@@ -5847,6 +5941,8 @@ class ShowOCICSV(object):
                                     'domain': "",
                                     'auto_backup_enabled': db['auto_backup_enabled'],
                                     'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
+                                    'kms_key_id': db['kms_key_id'],
+                                    'vault_id': db['vault_id'],
                                     'freeform_tags': self.__get_freeform_tags(db['freeform_tags']),
                                     'defined_tags': self.__get_defined_tags(db['defined_tags']),
                                     'database_id': db['id'],
@@ -5947,6 +6043,8 @@ class ShowOCICSV(object):
                         'domain': "",
                         'auto_backup_enabled': "True",
                         'db_nodes': "",
+                        'kms_key_id': dbs['kms_key_id'],
+                        'vault_id': dbs['vault_id'],
                         'freeform_tags': self.__get_freeform_tags(dbs['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
                         'database_id': dbs['id'],
@@ -5995,6 +6093,8 @@ class ShowOCICSV(object):
                         'supported_regions_to_clone_to': dbs['supported_regions_to_clone_to'],
                         'key_store_wallet_name': dbs['key_store_wallet_name'],
                         'key_store_id': dbs['key_store_id'],
+                        'kms_key_id': dbs['kms_key_id'],
+                        'vault_id': dbs['vault_id'],
                         'freeform_tags': self.__get_freeform_tags(dbs['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
                         'id': dbs['id']
@@ -6018,6 +6118,8 @@ class ShowOCICSV(object):
                             'size': "",
                             'id': backup['id'],
                             'database_id': dbs['id'],
+                            'kms_key_id': dbs['kms_key_id'],
+                            'vault_id': dbs['vault_id'],
                             'lifecycle_state': backup['lifecycle_state']
                         }
                         self.csv_database_backups.append(data)
@@ -6916,26 +7018,38 @@ class ShowOCICSV(object):
 
                     mount_ips = ""
                     exports = ""
+                    options = ""
                     # list the exports
-                    for ex in fs['exports']:
-                        if ex['path'] not in exports:
-                            exports += ex['path'] + ","
+                    fs_exports = fs['exports']
+                    if fs_exports:
+                        for ex in fs_exports:
+                            if ex['path'] not in exports:
+                                exports += ex['path'] + ","
+
+                        ex_options = ex['options']
+                        if ex_options:
+                            for opt in ex_options:
+                                options += str(opt)
 
                         # list the Ips for each mount
-                        for mnt in ex['mount_target']:
-                            ip_to_add = str(','.join(x for x in mnt['private_ip_ids']))
-                            if ip_to_add not in mount_ips:
-                                mount_ips += ip_to_add + ","
+                        ex_mount_target = ex['mount_target']
+                        if ex_mount_target:
+                            for mnt in ex_mount_target:
+                                ip_to_add = str(','.join(x for x in mnt['private_ip_ids']))
+                                if ip_to_add not in mount_ips:
+                                    mount_ips += ip_to_add + ","
 
                     data = {'region_name': region_name,
                             'compartment_name': fs['compartment_name'],
                             'compartment_path': fs['compartment_path'],
                             'availability_domain': fs['availability_domain'],
                             'display_name': fs['display_name'],
+                            'kms_key_id': fs['kms_key_id'],
                             'size_gb': fs['size_gb'],
                             'id': fs['id'],
                             'time_created': fs['time_created'],
                             'exports': exports,
+                            'export_options': options,
                             'mount_ips': mount_ips,
                             'snapshots': str(','.join(x for x in fs['snapshots'])),
                             'freeform_tags': self.__get_freeform_tags(fs['freeform_tags']),

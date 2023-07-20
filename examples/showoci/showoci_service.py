@@ -5,6 +5,7 @@
 # showoci_service.py
 #
 # @author: Adi Zohar
+# @contributors: Olaf Heimburger
 #
 # Supports Python 3 and above
 #
@@ -34,8 +35,8 @@ import platform
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.07.19"
-    oci_compatible_version = "2.104.3"
+    version = "23.07.26"
+    oci_compatible_version = "2.106.0"
 
     ##########################################################################
     # Global Constants
@@ -541,7 +542,7 @@ class ShowOCIService(object):
         except oci.exceptions.ProfileNotFound as e:
             print("*********************************************************************")
             print("* " + str(e))
-            print("* Aboting.                                                          *")
+            print("* Aborting.                                                         *")
             print("*********************************************************************")
             print("")
             raise SystemExit
@@ -564,7 +565,7 @@ class ShowOCIService(object):
         except oci.exceptions.ProfileNotFound as e:
             print("*********************************************************************")
             print("* " + str(e))
-            print("* Aborting.                                                          *")
+            print("* Aborting.                                                         *")
             print("*********************************************************************")
             print("")
             raise SystemExit
@@ -572,7 +573,7 @@ class ShowOCIService(object):
         except Exception as e:
             print("*********************************************************************")
             print("* " + str(e))
-            print("* Aborting.                                                          *")
+            print("* Aborting.                                                         *")
             print("*********************************************************************")
             print("")
             raise SystemExit
@@ -589,7 +590,7 @@ class ShowOCIService(object):
         except Exception:
             print("*********************************************************************")
             print("* Error obtaining instance principals certificate.                  *")
-            print("* Aboting.                                                          *")
+            print("* Aborting.                                                         *")
             print("*********************************************************************")
             print("")
             raise SystemExit
@@ -627,7 +628,7 @@ class ShowOCIService(object):
             print("* Key Error obtaining delegation_token_file")
             print("* Config  File = " + self.flags.config_file)
             print("* Section File = " + self.flags.config_section)
-            print("* Aborting.                                                          *")
+            print("* Aborting.                                                         *")
             print("*********************************************************************")
             print("")
             raise SystemExit
@@ -636,7 +637,7 @@ class ShowOCIService(object):
             print("*********************************************************************")
             print("* Error obtaining instance principals certificate                   *")
             print("* with delegation token                                             *")
-            print("* Aborting.                                                          *")
+            print("* Aborting.                                                         *")
             print("*********************************************************************")
             print("")
             raise SystemExit
@@ -968,7 +969,7 @@ class ShowOCIService(object):
                     print("Please use below command to upgrade OCI SDK:")
                     print("   python -m pip install --upgrade oci")
                     print("")
-                    print("Aboting.")
+                    print("Aborting.")
                     print("*********************************************************************")
                     print("")
                     raise SystemExit
@@ -1364,7 +1365,7 @@ class ShowOCIService(object):
 
                 # Load Identity Domains
                 print("")
-                showoci_domains = ShowOCIDomains(self.config, self.signer, self.flags.proxy, self.flags.read_timeout, self.flags.connection_timeout)
+                showoci_domains = ShowOCIDomains(self.config, self.signer, self.flags.proxy, self.flags.read_timeout, self.flags.connection_timeout, self.flags.skip_identity_user_credential)
                 domains_data = showoci_domains.load_identity_domains_main()
                 self.error += showoci_domains.error
                 self.warning += showoci_domains.warning
@@ -1450,7 +1451,7 @@ class ShowOCIService(object):
             print("\n*********************************************************************")
             print("* Error Authenticating in __load_identity_tenancy:")
             print("* " + str(e.message))
-            print("* Aborting.                                                          *")
+            print("* Aborting.                                                         *")
             print("*********************************************************************")
             print("")
             raise SystemExit
@@ -1708,7 +1709,7 @@ class ShowOCIService(object):
                     'last_successful_login_time': self.get_value(user.last_successful_login_time),
                     'previous_successful_login_time': self.get_value(user.previous_successful_login_time),
                     'groups': ', '.join(x for x in group_users),
-                    'capabilities': {}
+                    'capabilities': user.capabilities
                 }
 
                 if user.capabilities:
@@ -1892,7 +1893,11 @@ class ShowOCIService(object):
                     if policies:
                         datapol = []
                         for policy in policies:
-                            datapol.append({'name': policy.name, 'statements': [str(e) for e in policy.statements]})
+                            datapol.append({
+                                'name': policy.name,
+                                'id': policy.id,
+                                'statements': [str(e) for e in policy.statements]
+                            })
 
                         dataval = {
                             'compartment_id': str(c['id']),
@@ -2833,11 +2838,12 @@ class ShowOCIService(object):
             'dst_port_max': "",
             'icmp_code': "",
             'icmp_type': "",
+            'direction': direction,
             'security_alert': False
         }
 
         # Process the security rule
-        line = str(direction).ljust(7) + " : "
+        line = str(direction).ljust(7) + ": "
 
         # process the source or dest
         if isinstance(security_rule, oci.core.models.EgressSecurityRule):
@@ -5709,7 +5715,8 @@ class ShowOCIService(object):
                            'time_created': str(arr.time_created),
                            'kms_key_id': str(arr.kms_key_id),
                            'volume_group_id': str(arr.volume_group_id),
-                           'volume_group_name': "", 'availability_domain': str(arr.availability_domain),
+                           'volume_group_name': "",
+                           'availability_domain': str(arr.availability_domain),
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
@@ -5787,16 +5794,19 @@ class ShowOCIService(object):
                 # loop on array
                 # arr = oci.core.models.VolumeGroup.
                 for arr in arrs:
-                    val = {'id': str(arr.id), 'display_name': str(arr.display_name),
-                           'size_in_gbs': str(arr.size_in_gbs),
-                           'time_created': str(arr.time_created),
-                           'volume_ids': [str(a) for a in arr.volume_ids],
-                           'compartment_name': str(compartment['name']),
-                           'compartment_path': str(compartment['path']),
-                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
-                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                           'lifecycle_state': arr.lifecycle_state,
-                           'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
+                    val = {
+                        'id': str(arr.id),
+                        'display_name': str(arr.display_name),
+                        'size_in_gbs': str(arr.size_in_gbs),
+                        'time_created': str(arr.time_created),
+                        'volume_ids': [str(a) for a in arr.volume_ids],
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                        'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        'lifecycle_state': arr.lifecycle_state,
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region'])}
 
                     # check boot volume backup policy
                     data.append(val)
@@ -5860,6 +5870,7 @@ class ShowOCIService(object):
                            'time_created': self.get_value(arr.time_created),
                            'display_name': self.get_value(arr.display_name),
                            'size_in_gbs': self.get_value(arr.size_in_gbs),
+                           'kms_key_id': self.get_value(arr.kms_key_id),
                            'unique_size_in_gbs': self.get_value(arr.unique_size_in_gbs),
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
@@ -5946,6 +5957,7 @@ class ShowOCIService(object):
                            'display_name': self.get_value(arr.display_name),
                            'size_in_gbs': self.get_value(arr.size_in_gbs),
                            'unique_size_in_gbs': self.get_value(arr.unique_size_in_gbs),
+                           'kms_key_id': self.get_value(arr.kms_key_id),
                            'compartment_name': str(compartment['name']),
                            'compartment_path': str(compartment['path']),
                            'compartment_id': str(compartment['id']),
@@ -6031,6 +6043,7 @@ class ShowOCIService(object):
                            'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region']),
                            'backup_lifecycle_state': "",
+                           'kms_key_id': "",
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'expiration_time': "Keep" if arr.expiration_time is None else str(arr.expiration_time)}
@@ -6494,8 +6507,8 @@ class ShowOCIService(object):
                         continue
                     else:
                         self.__load_print_auth_warning("b", False)
-                        continue
                         time.sleep(1)
+                        continue
 
                 # print next load balancer
                 print("L", end="")
@@ -6676,8 +6689,8 @@ class ShowOCIService(object):
                         continue
                     else:
                         self.__load_print_auth_warning("b", False)
-                        continue
                         time.sleep(1)
+                        continue
 
                 # print next load balancer
                 print("L", end="")
@@ -7337,6 +7350,7 @@ class ShowOCIService(object):
                                'compartment_name': str(compartment['name']),
                                'compartment_id': str(compartment['id']),
                                'compartment_path': str(compartment['path']),
+                               'kms_key_id': str(fs.kms_key_id),
                                'region_name': str(self.config['region'])}
 
                         # add snapshots to the file systems
@@ -7498,7 +7512,21 @@ class ShowOCIService(object):
                                       'max_fs_stat_bytes': self.get_value(exp.max_fs_stat_bytes),
                                       'max_fs_stat_files': self.get_value(exp.max_fs_stat_files),
                                       'time_created': str(exp.time_created),
-                                      'vcn_id': self.get_value(exp.vcn_id)}
+                                      'vcn_id': self.get_value(exp.vcn_id),
+                                      'options': []}
+                            exp_summary = file_storage.list_exports(export_set_id=exp.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                            for e in exp_summary:
+                                xport = file_storage.get_export(e.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                                opts = xport.export_options
+                                for opt in opts:
+                                    valexp['options'].append({
+                                        'access': opt.access,
+                                        'anonymous_gid': opt.anonymous_gid,
+                                        'anonymous_uid': opt.anonymous_uid,
+                                        'identity_squash': opt.identity_squash,
+                                        'require_privileged_source_port': opt.require_privileged_source_port,
+                                        'source': opt.source
+                                    })
                             val['export_set'] = valexp
 
                     except oci.exceptions.ServiceError as e:
@@ -7539,7 +7567,7 @@ class ShowOCIService(object):
         try:
             print("Database...")
 
-            # LoadBalancerClient
+            # DatabaseClient
             database_client = oci.database.DatabaseClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             if self.flags.proxy:
                 database_client.base_client.session.proxies = {'https': self.flags.proxy}
@@ -8915,6 +8943,7 @@ class ShowOCIService(object):
                     'time_created': str(db.time_created),
                     'last_backup_timestamp': str(db.last_backup_timestamp),
                     'kms_key_id': str(db.kms_key_id),
+                    'vault_id': str(db.vault_id),
                     'source_database_point_in_time_recovery_timestamp': str(db.source_database_point_in_time_recovery_timestamp),
                     'database_software_image_id': str(db.database_software_image_id),
                     'is_cdb': str(db.is_cdb),
@@ -9480,6 +9509,8 @@ class ShowOCIService(object):
                              'dataguard_region_type': str(dbs.dataguard_region_type),
                              'customer_contacts': "" if dbs.customer_contacts is None else str(', '.join(x.email for x in dbs.customer_contacts)),
                              'supported_regions_to_clone_to': dbs.supported_regions_to_clone_to,
+                             'kms_key_id': str(dbs.kms_key_id),
+                             'vault_id': str(dbs.vault_id),
                              'key_store_wallet_name': str(dbs.key_store_wallet_name),
                              'key_store_id': str(dbs.key_store_id),
                              'available_upgrade_versions': str(dbs.available_upgrade_versions),
@@ -10330,6 +10361,8 @@ class ShowOCIService(object):
                      'display_name': str(backup.display_name),
                      'is_automatic': str(backup.is_automatic),
                      'type': str(backup.type),
+                     'kms_key_id': str(backup.kms_key_id),
+                     'vault_id': str(backup.vault_id),
                      'lifecycle_state': str(backup.lifecycle_state),
                      'lifecycle_details': str(backup.lifecycle_details),
                      'time_started': str(backup.time_started),
@@ -14924,6 +14957,7 @@ class ShowOCIFlags(object):
 # list_kmsi_settings
 # list_identity_providers
 # list_authentication_factor_settings
+# list_password_policies
 ##########################################################################
 class ShowOCIDomains(object):
 
@@ -14935,17 +14969,19 @@ class ShowOCIDomains(object):
     warning = 0
     read_timeout = 30
     connection_timeout = 30
+    skip_identity_user_credential = False
 
     ##########################################################################
     # init class
     # Creates a new data object
     ##########################################################################
-    def __init__(self, config, signer, proxy=None, read_timeout=30, connection_timeout=30):
+    def __init__(self, config, signer, proxy=None, read_timeout=30, connection_timeout=30, skip_identity_user_credential=False):
         self.data = []
         self.config = config
         self.signer = signer
         self.read_timeout = read_timeout
         self.connection_timeout = connection_timeout
+        self.skip_identity_user_credential = skip_identity_user_credential
         self.proxy = proxy
 
     ##################################################################################
@@ -14977,6 +15013,143 @@ class ShowOCIDomains(object):
         if not val:
             return ""
         return str(val)[0:16].replace("T", " ")
+
+    ##################################################################################
+    # __get_api_keys
+    ##################################################################################
+    def __get_api_keys(self, identity_domain_client, ocid, ext_credential):
+        keys = []
+        try:
+            if ext_credential is not None:
+                search_request = oci.identity_domains.models.ApiKeySearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
+                result = identity_domain_client.search_api_keys(api_key_search_request=search_request)
+                for r in result.data.resources:
+                    k = {
+                        "ocid": r.ocid,
+                        "fingerprint": r.fingerprint,
+                        "time_created": self.get_date(r.meta.created),
+                    }
+                    keys.append(k)
+            return keys
+        except Exception as e:
+            self.__print_error("__get_api_keys", e)
+            return keys
+
+    ##################################################################################
+    # __get_auth_tokens
+    ##################################################################################
+    def __get_auth_tokens(self, identity_domain_client, ocid, ext_credential):
+        keys = []
+        try:
+            if ext_credential is not None:
+                search_request = oci.identity_domains.models.AuthTokenSearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
+                result = identity_domain_client.search_auth_tokens(auth_token_search_request=search_request)
+                for r in result.data.resources:
+                    k = {
+                        "ocid": r.ocid,
+                        "status": r.status,
+                        "time_created": self.get_date(r.meta.created),
+                        "expires_on": r.expires_on
+                    }
+                    keys.append(k)
+            return keys
+        except Exception as e:
+            self.__print_error("__get_auth_tokens", e)
+            return keys
+
+    ##################################################################################
+    # __get_customer_secret_keys
+    ##################################################################################
+    def __get_customer_secret_keys(self, identity_domain_client, ocid, ext_credential):
+        keys = []
+        try:
+            if ext_credential is not None:
+                search_request = oci.identity_domains.models.CustomerSecretKeySearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
+                result = identity_domain_client.search_customer_secret_keys(customer_secret_key_search_request=search_request)
+                for r in result.data.resources:
+                    k = {
+                        "ocid": r.ocid,
+                        "display_name": r.display_name,
+                        "description": r.description,
+                        "status": r.status,
+                        "time_created": self.get_date(r.meta.created),
+                        "expires_on": r.expires_on
+                    }
+                    keys.append(k)
+            return keys
+        except Exception as e:
+            self.__print_error("__get_customer_secret_keys", e)
+            return keys
+
+    ##################################################################################
+    # __get_o_auth2_client_credentials
+    ##################################################################################
+    def __get_o_auth2_client_credentials(self, identity_domain_client, ocid, ext_credential):
+        keys = []
+        try:
+            if ext_credential is not None:
+                search_request = oci.identity_domains.models.OAuth2ClientCredentialSearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
+                result = identity_domain_client.search_o_auth2_client_credentials(o_auth2_client_credential_search_request=search_request)
+                for r in result.data.resources:
+                    print(">> " + str(r))
+                    k = {
+                        "ocid": r.ocid,
+                        "description": r.description,
+                        "status": r.status,
+                        "time_created": self.get_date(r.meta.created),
+                        "expires_on": r.expires_on
+                    }
+                    keys.append(k)
+            return keys
+        except Exception as e:
+            self.__print_error("__get_o_auth2_client_credentials", e)
+            return keys
+
+    ##################################################################################
+    # __get_smtp_credentials
+    ##################################################################################
+    def __get_smtp_credentials(self, identity_domain_client, ocid, ext_credential):
+        keys = []
+        try:
+            if ext_credential is not None:
+                search_request = oci.identity_domains.models.SmtpCredentialSearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
+                result = identity_domain_client.search_smtp_credentials(smtp_credential_search_request=search_request)
+                for r in result.data.resources:
+                    k = {
+                        "ocid": r.ocid,
+                        "description": r.description,
+                        "status": r.status,
+                        "time_created": self.get_date(r.meta.created),
+                        "expires_on": r.expires_on
+                    }
+                    keys.append(k)
+            return keys
+        except Exception as e:
+            self.__print_error("__get_smtp_credentials", e)
+            return keys
+
+    ##################################################################################
+    # __get_user_db_credentials
+    ##################################################################################
+    def __get_user_db_credentials(self, identity_domain_client, ocid, ext_credential):
+        keys = []
+        try:
+            if ext_credential is not None:
+                search_request = oci.identity_domains.models.UserDbCredentialsSearchRequest(filter='user.ocid eq "' + self.get_value(ocid) + '"', schemas=["urn:ietf:params:scim:api:messages:2.0:SearchRequest"])
+                result = identity_domain_client.search_user_db_credentials(user_db_credentials_search_request=search_request)
+                for r in result.data.resources:
+                    k = {
+                        "ocid": r.ocid,
+                        "description": r.description,
+                        "status": r.status,
+                        "time_created": self.get_date(r.meta.created),
+                        "expires_on": r.expires_on
+                    }
+                    keys.append(k)
+            return keys
+        except Exception as e:
+            self.__print_error("__get_user_db_credentials", e)
+            return keys
 
     ##########################################################################
     # print count result
@@ -15185,7 +15358,7 @@ class ShowOCIDomains(object):
                 ext_capabilities = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user
                 ext_self_change = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
 
-                data.append({
+                user_value = {
                     'id': self.get_value(var.id),
                     'ocid': self.get_value(var.ocid),
                     'display_name': self.get_value(var.display_name),
@@ -15304,14 +15477,24 @@ class ShowOCIDomains(object):
                         'can_use_db_credentials': self.get_value(ext_capabilities.can_use_db_credentials) if ext_capabilities else ""
                     },
                     'roles': [{'value': x.value, 'type': x.type} for x in var.roles] if var.roles else [],
-                    'api_keys': self.get_value_ocid_ref(ext_credential.api_keys) if ext_credential else [],
-                    'customer_secret_keys': self.get_value_ocid_ref(ext_credential.customer_secret_keys) if ext_credential else [],
-                    'auth_tokens': self.get_value_ocid_ref(ext_credential.auth_tokens) if ext_credential else [],
-                    'smtp_credentials': self.get_value_ocid_ref(ext_credential.smtp_credentials) if ext_credential else [],
-                    'o_auth2_client_credentials': self.get_value_ocid_ref(ext_credential.o_auth2_client_credentials) if ext_credential else [],
-                    'db_credentials': self.get_value_ocid_ref(ext_credential.db_credentials) if ext_credential else [],
+                    'api_keys': [],
+                    'customer_secret_keys': [],
+                    'auth_tokens': [],
+                    'smtp_credentials': [],
+                    'o_auth2_client_credentials': [],
+                    'db_credentials': [],
                     'allow_self_change': self.get_value(ext_self_change.allow_self_change) if ext_self_change else ""
-                })
+                }
+
+                if not self.skip_identity_user_credential:
+                    user_value['api_keys'] = self.__get_api_keys(identity_domain_client, var.ocid, ext_credential)
+                    user_value['customer_secret_keys'] = self.__get_customer_secret_keys(identity_domain_client, var.ocid, ext_credential)
+                    user_value['auth_tokens'] = self.__get_auth_tokens(identity_domain_client, var.ocid, ext_credential)
+                    user_value['smtp_credentials'] = self.__get_smtp_credentials(identity_domain_client, var.ocid, ext_credential)
+                    user_value['o_auth2_client_credentials'] = self.__get_o_auth2_client_credentials(identity_domain_client, var.ocid, ext_credential)
+                    user_value['db_credentials'] = self.__get_user_db_credentials(identity_domain_client, var.ocid, ext_credential)
+
+                data.append(user_value)
 
             self.__load_print_cnt(len(data), start_time)
             return data
@@ -15331,7 +15514,7 @@ class ShowOCIDomains(object):
             self.__print_error("__load_identity_domain_users", e)
 
 ##################################################################################
-# load_identity_domain_users
+# load_identity_domain_groups
 ##################################################################################
     def __load_identity_domain_groups(self, identity_domain_client, domain_name):
         data = []
@@ -15694,7 +15877,7 @@ class ShowOCIDomains(object):
     def __load_identity_domain_authentication_factor_settings(self, identity_domain_client, domain_name):
         data = []
 
-        self.__load_print_status(domain_name[0:10] + ".Kmsi Setting")
+        self.__load_print_status(domain_name[0:10] + ".AuthN Factors")
         start_time = time.time()
 
         try:
@@ -15821,6 +16004,94 @@ class ShowOCIDomains(object):
         except Exception as e:
             self.__print_error("__load_identity_domain_authentication_factor_settings", e)
 
+##################################################################################
+# __load_identity_domain_password_policies
+##################################################################################
+    def __load_identity_domain_password_policies(self, identity_domain_client, domain_name):
+        data = []
+        self.__load_print_status(domain_name[0:10] + ".Password Policies")
+        start_time = time.time()
+        try:
+            policies = self.__list_call_get_all_results(
+                identity_domain_client.list_password_policies,
+                attribute_sets=["all"],
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+            # oci.identity_domains.models.PasswordPolicy
+            for var in policies:
+                if var.delete_in_progress:
+                    continue
+                print(".", end="")
+                data.append({
+                    'id': self.get_value(var.id),
+                    'ocid': self.get_value(var.ocid),
+                    'schemas': str(','.join(x for x in var.schemas)) if var.schemas else "",
+                    'meta': self.__load_identity_meta_info(var.meta),
+                    'idcs_created_by': var.idcs_created_by.value if var.idcs_created_by else "",
+                    'idcs_last_modified_by': var.idcs_last_modified_by.value if var.idcs_last_modified_by else "",
+                    'idcs_prevented_operations': str(','.join(x for x in var.idcs_prevented_operations)) if var.idcs_prevented_operations else "",
+                    'tags': [{'key': x.key, 'value': x.value} for x in var.tags] if var.tags else [],
+                    'idcs_last_upgraded_in_release': self.get_value(var.idcs_last_upgraded_in_release),
+                    'compartment_ocid': self.get_value(var.compartment_ocid),
+                    'domain_ocid': self.get_value(var.domain_ocid),
+                    'external_id': self.get_value(var.external_id),
+                    'name': self.get_value(var.name),
+                    'description': self.get_value(var.description),
+                    'allowed_chars': self.get_value(var.allowed_chars),
+                    'configured_password_policy_rules': [{
+                        'key': x.key,
+                        'value': x.value
+                    } for x in var.configured_password_policy_rules] if var.configured_password_policy_rules else [],
+                    'dictionary_delimiter': self.get_value(var.dictionary_delimiter),
+                    'dictionary_location': self.get_value(var.dictionary_location),
+                    'dictionary_word_disallowed': self.get_value(var.dictionary_word_disallowed),
+                    'disallowed_chars': self.get_value(var.disallowed_chars),
+                    'disallowed_substrings': self.get_value(var.disallowed_substrings),
+                    'first_name_disallowed': self.get_value(var.first_name_disallowed),
+                    'force_password_reset': self.get_value(var.force_password_reset),
+                    'groups': [{
+                        'display': x.display,
+                        'ref': x.ref,
+                        'value': x.value
+                    } for x in var.groups] if var.groups else [],
+                    'last_name_disallowed': self.get_value(var.last_name_disallowed),
+                    'lockout_duration': self.get_value(var.lockout_duration),
+                    'max_incorrect_attempts': self.get_value(var.max_incorrect_attempts),
+                    'max_length': self.get_value(var.max_length),
+                    'max_repeated_chars': self.get_value(var.max_repeated_chars),
+                    'max_special_chars': self.get_value(var.max_special_chars),
+                    'min_alpha_numerals': self.get_value(var.min_alpha_numerals),
+                    'min_alphas': self.get_value(var.min_alphas),
+                    'min_length': self.get_value(var.min_length),
+                    'min_lower_case': self.get_value(var.min_lower_case),
+                    'min_numerals': self.get_value(var.min_numerals),
+                    'min_password_age': self.get_value(var.min_password_age),
+                    'min_special_chars': self.get_value(var.min_special_chars),
+                    'min_unique_chars': self.get_value(var.min_unique_chars),
+                    'min_upper_case': self.get_value(var.min_upper_case),
+                    'num_passwords_in_history': self.get_value(var.num_passwords_in_history),
+                    'password_expire_warning': self.get_value(var.password_expire_warning),
+                    'password_expires_after': self.get_value(var.password_expires_after),
+                    'password_strength': self.get_value(var.password_strength),
+                    'priority': self.get_value(var.priority),
+                    'required_chars': self.get_value(var.required_chars),
+                    'starts_with_alphabet': self.get_value(var.starts_with_alphabet),
+                    'user_name_disallowed': self.get_value(var.user_name_disallowed)
+                })
+            self.__load_print_cnt(len(data), start_time)
+            return data
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+            else:
+                raise
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return
+            raise
+        except Exception as e:
+            self.__print_error("__load_identity_domain_password_policies", e)
+
     ##########################################################################
     # Identity Module
     ##########################################################################
@@ -15880,7 +16151,8 @@ class ShowOCIDomains(object):
                     'dynamic_groups': self.__load_identity_domain_dynamic_resource_groups(identity_domain_client, domain.display_name),
                     'kmsi_setting': self.__load_identity_domain_kmsi_setting(identity_domain_client, domain.display_name),
                     'identity_providers': self.__load_identity_domain_identity_providers(identity_domain_client, domain.display_name),
-                    'authentication_factor_settings': self.__load_identity_domain_authentication_factor_settings(identity_domain_client, domain.display_name)
+                    'authentication_factor_settings': self.__load_identity_domain_authentication_factor_settings(identity_domain_client, domain.display_name),
+                    'password_policies': self.__load_identity_domain_password_policies(identity_domain_client, domain.display_name)
                 }
 
                 self.data.append(domain_data)

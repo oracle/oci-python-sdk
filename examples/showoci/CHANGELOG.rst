@@ -5,10 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.07.26 - 23.07.26
+=====================
+* Added support for identity domain password policies, can be skipped using -isc flag
+* Added more information to database service (vault_id) and other areas
+
+=====================
 23.07.19 - 23.07.19
 =====================
 * Added additional attributes for compute csv extract
-* reform output of False and True and None, completed Core and Identity (up to line 7500 of showoci_services)
+* reform output of False and True and None 50% completed (up to line 7500)
 
 =====================
 23.07.04 - 23.07.04
