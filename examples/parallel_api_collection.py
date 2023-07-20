@@ -1,4 +1,3 @@
-
 # !!!Goal of Script!!!
 # By avoiding API calls without dependencies to be processed in serial in our code, we get a significant performance increase on API collections.
 # This code sends the API call to the thread pool so we do not have to wait for the previous API call to finish before going to the next API call.
