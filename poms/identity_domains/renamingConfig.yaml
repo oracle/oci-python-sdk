@@ -103,7 +103,7 @@ languages:
       # 2023-07-20 additions
       - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:radiusApp:App"
         mapping:
-          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_radiusApp_app"
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_radius_app_app"
       - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:samlServiceProvider_app"
         mapping:
           identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_saml_service_provider_app"
@@ -115,7 +115,7 @@ languages:
           identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_managedapp_app"
       - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:formFillAppTemplate_app_template"
         mapping:
-          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_form_Fill_app_template_app_template"
+          identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_form_fill_app_template_app_template"
       - originalName: "urn:ietf:params:scim:schemas:oracle:idcs:extension:opcService:App"
         mapping:
           identifier: "urn_ietf_params_scim_schemas_oracle_idcs_extension_opc_service_app"
