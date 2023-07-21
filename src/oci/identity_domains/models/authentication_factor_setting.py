@@ -216,13 +216,13 @@ class AuthenticationFactorSetting(object):
             The value to assign to the totp_settings property of this AuthenticationFactorSetting.
         :type totp_settings: oci.identity_domains.models.AuthenticationFactorSettingsTotpSettings
 
-        :param urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings property of this AuthenticationFactorSetting.
-        :type urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: oci.identity_domains.models.ExtensionThirdPartyAuthenticationFactorSettings
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings property of this AuthenticationFactorSetting.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings: oci.identity_domains.models.ExtensionThirdPartyAuthenticationFactorSettings
 
-        :param urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings:
-            The value to assign to the urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings property of this AuthenticationFactorSetting.
-        :type urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: oci.identity_domains.models.ExtensionFidoAuthenticationFactorSettings
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings:
+            The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings property of this AuthenticationFactorSetting.
+        :type urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings: oci.identity_domains.models.ExtensionFidoAuthenticationFactorSettings
 
         """
         self.swagger_types = {
@@ -262,8 +262,8 @@ class AuthenticationFactorSetting(object):
             'endpoint_restrictions': 'AuthenticationFactorSettingsEndpointRestrictions',
             'compliance_policy': 'list[AuthenticationFactorSettingsCompliancePolicy]',
             'totp_settings': 'AuthenticationFactorSettingsTotpSettings',
-            'urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings': 'ExtensionThirdPartyAuthenticationFactorSettings',
-            'urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings': 'ExtensionFidoAuthenticationFactorSettings'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings': 'ExtensionThirdPartyAuthenticationFactorSettings',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings': 'ExtensionFidoAuthenticationFactorSettings'
         }
 
         self.attribute_map = {
@@ -303,8 +303,8 @@ class AuthenticationFactorSetting(object):
             'endpoint_restrictions': 'endpointRestrictions',
             'compliance_policy': 'compliancePolicy',
             'totp_settings': 'totpSettings',
-            'urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:thirdParty:AuthenticationFactorSettings',
-            'urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:fido:AuthenticationFactorSettings'
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:thirdParty:AuthenticationFactorSettings',
+            'urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:fido:AuthenticationFactorSettings'
         }
 
         self._id = None
@@ -343,8 +343,8 @@ class AuthenticationFactorSetting(object):
         self._endpoint_restrictions = None
         self._compliance_policy = None
         self._totp_settings = None
-        self._urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings = None
-        self._urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings = None
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings = None
 
     @property
     def id(self):
@@ -1689,44 +1689,44 @@ class AuthenticationFactorSetting(object):
         self._totp_settings = totp_settings
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings of this AuthenticationFactorSetting.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings of this AuthenticationFactorSetting.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings of this AuthenticationFactorSetting.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings of this AuthenticationFactorSetting.
         :rtype: oci.identity_domains.models.ExtensionThirdPartyAuthenticationFactorSettings
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings
 
-    @urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings.setter
-    def urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings(self, urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings of this AuthenticationFactorSetting.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings of this AuthenticationFactorSetting.
 
-        :param urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings: The urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings of this AuthenticationFactorSetting.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings: The urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings of this AuthenticationFactorSetting.
         :type: oci.identity_domains.models.ExtensionThirdPartyAuthenticationFactorSettings
         """
-        self._urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings = urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings = urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings
 
     @property
-    def urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings(self):
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings(self):
         """
-        Gets the urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings of this AuthenticationFactorSetting.
+        Gets the urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings of this AuthenticationFactorSetting.
 
-        :return: The urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings of this AuthenticationFactorSetting.
+        :return: The urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings of this AuthenticationFactorSetting.
         :rtype: oci.identity_domains.models.ExtensionFidoAuthenticationFactorSettings
         """
-        return self._urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings
+        return self._urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings
 
-    @urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings.setter
-    def urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings(self, urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings):
+    @urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings.setter
+    def urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings(self, urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings):
         """
-        Sets the urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings of this AuthenticationFactorSetting.
+        Sets the urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings of this AuthenticationFactorSetting.
 
-        :param urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings: The urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings of this AuthenticationFactorSetting.
+        :param urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings: The urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings of this AuthenticationFactorSetting.
         :type: oci.identity_domains.models.ExtensionFidoAuthenticationFactorSettings
         """
-        self._urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings = urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings
+        self._urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings = urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings
 
     def __repr__(self):
         return formatted_flat_dict(self)
