@@ -4,13 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.107.1 - TBD
+2.108.0 - 2023-07-25
 ====================
 
 Added
 -----
-* TBD
-
+* Support for composing multiple document service custom key value models into one single model in Document Understanding Service
+* Support for custom hostname in the Compute service
+* Support for cloud subscription in the Organizations service
+* Support for automatic backup download in the GoldenGate service
+* Support for creating single use (non-recurring) budgets in the Budgets service  
+ 
+Breaking
+--------
+* Support for retries by default on operations of the Budgets service
+* Properties `is_classic_subscription`, `payment_model`, `region_assignment`, `lifecycle_state`, `start_date`, `end_date`, `classic_subscription_id`, `time_created` are deleted from model `SubscriptionSummary` in the Organizations service
+* Properties `classic_subscription_id`, `is_classic_subscription`, `payment_model`, `region_assignment`, `lifecycle_state`, `skus`, `program_type`, `customer_country_code`, `cloud_amount_currency`, `csi_number`, `subscription_tier`, `is_government_subscription`, `promotion`, `purchase_entitlement_id`, `start_date`, `end_date` are deleted from models `Subscription` and `AssignedSubscription` in the Organizations service
+* Properties `classic_subscription_id`, `is_classic_subscription`, `payment_model`, `region_assignment`, `lifecycle_state`, `start_date`, `end_date`, `csi_number` are deleted from model `AssignedSubscriptionSummary` in the Organizations service
+ 
 ====================
 2.107.0 - 2023-07-18
 ====================
