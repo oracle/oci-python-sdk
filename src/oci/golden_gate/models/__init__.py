@@ -25,6 +25,7 @@ from .connection_assignment_collection import ConnectionAssignmentCollection
 from .connection_assignment_summary import ConnectionAssignmentSummary
 from .connection_collection import ConnectionCollection
 from .connection_summary import ConnectionSummary
+from .copy_deployment_backup_details import CopyDeploymentBackupDetails
 from .create_amazon_s3_connection_details import CreateAmazonS3ConnectionDetails
 from .create_azure_data_lake_storage_connection_details import CreateAzureDataLakeStorageConnectionDetails
 from .create_azure_synapse_connection_details import CreateAzureSynapseConnectionDetails
@@ -178,6 +179,7 @@ golden_gate_type_mapping = {
     "ConnectionAssignmentSummary": ConnectionAssignmentSummary,
     "ConnectionCollection": ConnectionCollection,
     "ConnectionSummary": ConnectionSummary,
+    "CopyDeploymentBackupDetails": CopyDeploymentBackupDetails,
     "CreateAmazonS3ConnectionDetails": CreateAmazonS3ConnectionDetails,
     "CreateAzureDataLakeStorageConnectionDetails": CreateAzureDataLakeStorageConnectionDetails,
     "CreateAzureSynapseConnectionDetails": CreateAzureSynapseConnectionDetails,

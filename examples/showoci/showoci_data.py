@@ -5,6 +5,7 @@
 # showoci_data.py
 #
 # @author: Adi Zohar
+# @contributors: Olaf Heimburger
 #
 # Supports Python 3 and above
 #
@@ -18,7 +19,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.07.19"
+    version = "23.07.26"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -132,7 +133,7 @@ class ShowOCIData(object):
         data = {
             'program': "showoci.py",
             'author': "Adi Zohar",
-            'contributers': "",
+            'contributors': "Olaf Heimburger",
             'disclaimer': "This is not an official Oracle application, it is not supported by Oracle. It should NOT be used for utilization calculation purposes. If you run into issues using this, please file an issue at https://github.com/oracle/oci-python-sdk/issues rather than contacting support",
             'config_file': self.service.flags.config_file,
             'config_profile': self.service.flags.config_section,
@@ -672,7 +673,6 @@ class ShowOCIData(object):
         except Exception as e:
             self.__print_error("__get_core_network_vcn_subnets", e)
             return data
-            pass
 
     ##########################################################################
     # __get_core_network_vcn_vlans
@@ -735,7 +735,6 @@ class ShowOCIData(object):
         except Exception as e:
             self.__print_error("__get_core_network_vcn_vlans", e)
             return data
-            pass
 
     ##########################################################################
     # Print Network vcn security list
@@ -1584,6 +1583,7 @@ class ShowOCIData(object):
                 value['volume_id'] = backup['volume_id']
                 value['source_name'] = backup['backup_name']
                 value['backup_type'] = backup['type']
+                value['kms_key_id'] = backup['kms_key_id']
                 value['schedule_type'] = backup['source_type']
                 value['time_created'] = backup['time_created'][0:16]
                 value['expiration_time'] = backup['expiration_time'][0:16]
@@ -1718,25 +1718,30 @@ class ShowOCIData(object):
             volgroups = self.service.search_multi_items(self.service.C_BLOCK, self.service.C_BLOCK_VOLGRP, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for vplgrp in volgroups:
-                value = {'id': vplgrp['id'], 'name': vplgrp['display_name'], 'size_in_gbs': vplgrp['size_in_gbs'],
+                value = {'id': vplgrp['id'],
+                         'name': vplgrp['display_name'],
+                         'size_in_gbs': vplgrp['size_in_gbs'],
                          'compartment_name': str(vplgrp['compartment_name']),
                          'compartment_path': str(vplgrp['compartment_path']),
                          'volumes': [],
                          'time_created': vplgrp['time_created'],
                          'defined_tags': vplgrp['defined_tags'],
                          'freeform_tags': vplgrp['freeform_tags']}
-
-                # check volumes
                 for vol_id in vplgrp['volume_ids']:
                     vol = self.service.search_unique_item(self.service.C_BLOCK, self.service.C_BLOCK_VOL, 'id', vol_id)
-                    if vol:
-                        value['volumes'].append(vol['display_name'] + " - " + vol['size_in_gbs'] + "GB")
 
-                # check boot vol
-                for vol_id in vplgrp['volume_ids']:
-                    vol = self.service.search_unique_item(self.service.C_BLOCK, self.service.C_BLOCK_BOOT, 'id', vol_id)
-                    if vol:
-                        value['volumes'].append(vol['display_name'] + " - " + vol['size_in_gbs'] + "GB")
+                    # if Not a volume, try boot volume
+                    if vol is None:
+                        vol = self.service.search_unique_item(self.service.C_BLOCK, self.service.C_BLOCK_BOOT, 'id', vol_id)
+
+                    # if None continue
+                    if vol is None:
+                        continue
+                    value['volumes'].append({
+                        'id': vol['id'],
+                        'display_name': vol['display_name'],
+                        'desc': vol['display_name'] + " - " + vol['size_in_gbs'] + 'GB'
+                    })
 
                 data.append(value)
 
@@ -2227,6 +2232,7 @@ class ShowOCIData(object):
                          'connection_strings_cdb': db['connection_strings_cdb'],
                          'source_database_point_in_time_recovery_timestamp': db['source_database_point_in_time_recovery_timestamp'],
                          'kms_key_id': db['kms_key_id'],
+                         'vault_id': db['vault_id'],
                          'last_backup_timestamp': db['last_backup_timestamp'],
                          'id': db['id']
                          }
@@ -2834,6 +2840,8 @@ class ShowOCIData(object):
                         'lifecycle_state': backup['lifecycle_state'],
                         'type': backup['type'],
                         'id': backup['id'],
+                        'kms_key_id': backup['kms_key_id'],
+                        'vault_id': backup['vault_id'],
                         'is_automatic': backup['is_automatic']
                     }
                 )
@@ -2909,6 +2917,8 @@ class ShowOCIData(object):
                 'dataguard_region_type': dbs['dataguard_region_type'],
                 'customer_contacts': dbs['customer_contacts'],
                 'supported_regions_to_clone_to': dbs['supported_regions_to_clone_to'],
+                'kms_key_id': dbs['kms_key_id'],
+                'vault_id': dbs['vault_id'],
                 'key_store_wallet_name': dbs['key_store_wallet_name'],
                 'key_store_id': dbs['key_store_id'],
                 'role': dbs['role'],
@@ -3283,8 +3293,13 @@ class ShowOCIData(object):
             exports = self.service.search_multi_items(self.service.C_FILE_STORAGE, self.service.C_FILE_STORAGE_EXPORTS, 'file_system_id', file_system_id)
 
             for export in exports:
-                dataval = {'id': export['id'], 'file_system_id': export['file_system_id'],
-                           'time_created': export['time_created'], 'path': export['path'], 'exportset': ""}
+                dataval = {
+                    'id': export['id'],
+                    'file_system_id': export['file_system_id'],
+                    'time_created': export['time_created'],
+                    'path': export['path'],
+                    'exportset': "",
+                    'options': []}
 
                 # export set
                 if export['export_set']:
@@ -3292,7 +3307,11 @@ class ShowOCIData(object):
                     dataval['exportset'] = str(exp['display_name']) + ", " + str(exp['availability_domain']) + ", Limits: " + self.__get_file_storage_limits(exp)
                     dataval['display_name'] = str(exp['display_name'])
                     dataval['availability_domain'] = str(exp['availability_domain'])
-
+                    for opt in exp['options']:
+                        v = {}
+                        for k in opt.keys():
+                            v[k] = opt[k]
+                        dataval['options'].append(v)
                 # Mount Target
                 dataval['mount_target'] = self.__get_file_storage_mount_target(export['export_set_id'])
                 data.append(dataval)
@@ -3331,6 +3350,7 @@ class ShowOCIData(object):
                            'compartment_name': fs['compartment_name'],
                            'compartment_path': fs['compartment_path'],
                            'compartment_id': fs['compartment_id'],
+                           'kms_key_id': fs['kms_key_id'],
                            'region_name': region_name,
                            'exports': self.__get_file_storage_exports(fs['id'])}
                 data.append(dataval)

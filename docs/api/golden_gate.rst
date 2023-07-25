@@ -37,6 +37,7 @@ Golden Gate
     oci.golden_gate.models.ConnectionAssignmentSummary
     oci.golden_gate.models.ConnectionCollection
     oci.golden_gate.models.ConnectionSummary
+    oci.golden_gate.models.CopyDeploymentBackupDetails
     oci.golden_gate.models.CreateAmazonS3ConnectionDetails
     oci.golden_gate.models.CreateAzureDataLakeStorageConnectionDetails
     oci.golden_gate.models.CreateAzureSynapseConnectionDetails

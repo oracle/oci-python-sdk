@@ -44,6 +44,14 @@ class UpdateInstancePoolDetails(object):
             The value to assign to the size property of this UpdateInstancePoolDetails.
         :type size: int
 
+        :param instance_display_name_formatter:
+            The value to assign to the instance_display_name_formatter property of this UpdateInstancePoolDetails.
+        :type instance_display_name_formatter: str
+
+        :param instance_hostname_formatter:
+            The value to assign to the instance_hostname_formatter property of this UpdateInstancePoolDetails.
+        :type instance_hostname_formatter: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -51,7 +59,9 @@ class UpdateInstancePoolDetails(object):
             'freeform_tags': 'dict(str, str)',
             'instance_configuration_id': 'str',
             'placement_configurations': 'list[UpdateInstancePoolPlacementConfigurationDetails]',
-            'size': 'int'
+            'size': 'int',
+            'instance_display_name_formatter': 'str',
+            'instance_hostname_formatter': 'str'
         }
 
         self.attribute_map = {
@@ -60,7 +70,9 @@ class UpdateInstancePoolDetails(object):
             'freeform_tags': 'freeformTags',
             'instance_configuration_id': 'instanceConfigurationId',
             'placement_configurations': 'placementConfigurations',
-            'size': 'size'
+            'size': 'size',
+            'instance_display_name_formatter': 'instanceDisplayNameFormatter',
+            'instance_hostname_formatter': 'instanceHostnameFormatter'
         }
 
         self._defined_tags = None
@@ -69,6 +81,8 @@ class UpdateInstancePoolDetails(object):
         self._instance_configuration_id = None
         self._placement_configurations = None
         self._size = None
+        self._instance_display_name_formatter = None
+        self._instance_hostname_formatter = None
 
     @property
     def defined_tags(self):
@@ -259,6 +273,58 @@ class UpdateInstancePoolDetails(object):
         :type: int
         """
         self._size = size
+
+    @property
+    def instance_display_name_formatter(self):
+        """
+        Gets the instance_display_name_formatter of this UpdateInstancePoolDetails.
+        A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format.
+        The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+
+
+        :return: The instance_display_name_formatter of this UpdateInstancePoolDetails.
+        :rtype: str
+        """
+        return self._instance_display_name_formatter
+
+    @instance_display_name_formatter.setter
+    def instance_display_name_formatter(self, instance_display_name_formatter):
+        """
+        Sets the instance_display_name_formatter of this UpdateInstancePoolDetails.
+        A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format.
+        The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+
+
+        :param instance_display_name_formatter: The instance_display_name_formatter of this UpdateInstancePoolDetails.
+        :type: str
+        """
+        self._instance_display_name_formatter = instance_display_name_formatter
+
+    @property
+    def instance_hostname_formatter(self):
+        """
+        Gets the instance_hostname_formatter of this UpdateInstancePoolDetails.
+        A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format.
+        The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+
+
+        :return: The instance_hostname_formatter of this UpdateInstancePoolDetails.
+        :rtype: str
+        """
+        return self._instance_hostname_formatter
+
+    @instance_hostname_formatter.setter
+    def instance_hostname_formatter(self, instance_hostname_formatter):
+        """
+        Sets the instance_hostname_formatter of this UpdateInstancePoolDetails.
+        A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format.
+        The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+
+
+        :param instance_hostname_formatter: The instance_hostname_formatter of this UpdateInstancePoolDetails.
+        :type: str
+        """
+        self._instance_hostname_formatter = instance_hostname_formatter
 
     def __repr__(self):
         return formatted_flat_dict(self)

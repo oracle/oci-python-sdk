@@ -23,6 +23,10 @@ class UpdateBudgetDetails(object):
     #: This constant has a value of "MONTH"
     PROCESSING_PERIOD_TYPE_MONTH = "MONTH"
 
+    #: A constant which can be used with the processing_period_type property of a UpdateBudgetDetails.
+    #: This constant has a value of "SINGLE_USE"
+    PROCESSING_PERIOD_TYPE_SINGLE_USE = "SINGLE_USE"
+
     #: A constant which can be used with the reset_period property of a UpdateBudgetDetails.
     #: This constant has a value of "MONTHLY"
     RESET_PERIOD_MONTHLY = "MONTHLY"
@@ -50,8 +54,16 @@ class UpdateBudgetDetails(object):
 
         :param processing_period_type:
             The value to assign to the processing_period_type property of this UpdateBudgetDetails.
-            Allowed values for this property are: "INVOICE", "MONTH"
+            Allowed values for this property are: "INVOICE", "MONTH", "SINGLE_USE"
         :type processing_period_type: str
+
+        :param start_date:
+            The value to assign to the start_date property of this UpdateBudgetDetails.
+        :type start_date: datetime
+
+        :param end_date:
+            The value to assign to the end_date property of this UpdateBudgetDetails.
+        :type end_date: datetime
 
         :param reset_period:
             The value to assign to the reset_period property of this UpdateBudgetDetails.
@@ -73,6 +85,8 @@ class UpdateBudgetDetails(object):
             'amount': 'float',
             'budget_processing_period_start_offset': 'int',
             'processing_period_type': 'str',
+            'start_date': 'datetime',
+            'end_date': 'datetime',
             'reset_period': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -84,6 +98,8 @@ class UpdateBudgetDetails(object):
             'amount': 'amount',
             'budget_processing_period_start_offset': 'budgetProcessingPeriodStartOffset',
             'processing_period_type': 'processingPeriodType',
+            'start_date': 'startDate',
+            'end_date': 'endDate',
             'reset_period': 'resetPeriod',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -94,6 +110,8 @@ class UpdateBudgetDetails(object):
         self._amount = None
         self._budget_processing_period_start_offset = None
         self._processing_period_type = None
+        self._start_date = None
+        self._end_date = None
         self._reset_period = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -198,9 +216,9 @@ class UpdateBudgetDetails(object):
     def processing_period_type(self):
         """
         Gets the processing_period_type of this UpdateBudgetDetails.
-        The type of the budget processing period. Valid values are INVOICE and MONTH.
+        The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 
-        Allowed values for this property are: "INVOICE", "MONTH"
+        Allowed values for this property are: "INVOICE", "MONTH", "SINGLE_USE"
 
 
         :return: The processing_period_type of this UpdateBudgetDetails.
@@ -212,19 +230,67 @@ class UpdateBudgetDetails(object):
     def processing_period_type(self, processing_period_type):
         """
         Sets the processing_period_type of this UpdateBudgetDetails.
-        The type of the budget processing period. Valid values are INVOICE and MONTH.
+        The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 
 
         :param processing_period_type: The processing_period_type of this UpdateBudgetDetails.
         :type: str
         """
-        allowed_values = ["INVOICE", "MONTH"]
+        allowed_values = ["INVOICE", "MONTH", "SINGLE_USE"]
         if not value_allowed_none_or_none_sentinel(processing_period_type, allowed_values):
             raise ValueError(
                 "Invalid value for `processing_period_type`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._processing_period_type = processing_period_type
+
+    @property
+    def start_date(self):
+        """
+        Gets the start_date of this UpdateBudgetDetails.
+        The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+
+
+        :return: The start_date of this UpdateBudgetDetails.
+        :rtype: datetime
+        """
+        return self._start_date
+
+    @start_date.setter
+    def start_date(self, start_date):
+        """
+        Sets the start_date of this UpdateBudgetDetails.
+        The date when the one-time budget begins. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+
+
+        :param start_date: The start_date of this UpdateBudgetDetails.
+        :type: datetime
+        """
+        self._start_date = start_date
+
+    @property
+    def end_date(self):
+        """
+        Gets the end_date of this UpdateBudgetDetails.
+        The time when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+
+
+        :return: The end_date of this UpdateBudgetDetails.
+        :rtype: datetime
+        """
+        return self._end_date
+
+    @end_date.setter
+    def end_date(self, end_date):
+        """
+        Sets the end_date of this UpdateBudgetDetails.
+        The time when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
+
+
+        :param end_date: The end_date of this UpdateBudgetDetails.
+        :type: datetime
+        """
+        self._end_date = end_date
 
     @property
     def reset_period(self):

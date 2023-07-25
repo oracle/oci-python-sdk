@@ -39,9 +39,19 @@ Tenant Manager Control Plane
     oci.tenant_manager_control_plane.models.ActivateOrderDetails
     oci.tenant_manager_control_plane.models.AssignedSubscription
     oci.tenant_manager_control_plane.models.AssignedSubscriptionCollection
+    oci.tenant_manager_control_plane.models.AssignedSubscriptionLineItemCollection
+    oci.tenant_manager_control_plane.models.AssignedSubscriptionLineItemSummary
     oci.tenant_manager_control_plane.models.AssignedSubscriptionSummary
     oci.tenant_manager_control_plane.models.AvailableRegionCollection
     oci.tenant_manager_control_plane.models.AvailableRegionSummary
+    oci.tenant_manager_control_plane.models.ClassicAssignedSubscription
+    oci.tenant_manager_control_plane.models.ClassicAssignedSubscriptionSummary
+    oci.tenant_manager_control_plane.models.ClassicSubscription
+    oci.tenant_manager_control_plane.models.ClassicSubscriptionSummary
+    oci.tenant_manager_control_plane.models.CloudAssignedSubscription
+    oci.tenant_manager_control_plane.models.CloudAssignedSubscriptionSummary
+    oci.tenant_manager_control_plane.models.CloudSubscription
+    oci.tenant_manager_control_plane.models.CloudSubscriptionSummary
     oci.tenant_manager_control_plane.models.CreateChildTenancyDetails
     oci.tenant_manager_control_plane.models.CreateDomainDetails
     oci.tenant_manager_control_plane.models.CreateDomainGovernanceDetails
@@ -67,6 +77,7 @@ Tenant Manager Control Plane
     oci.tenant_manager_control_plane.models.RecipientInvitation
     oci.tenant_manager_control_plane.models.RecipientInvitationCollection
     oci.tenant_manager_control_plane.models.RecipientInvitationSummary
+    oci.tenant_manager_control_plane.models.ReviveWorkflowInstanceDetails
     oci.tenant_manager_control_plane.models.SenderInvitation
     oci.tenant_manager_control_plane.models.SenderInvitationCollection
     oci.tenant_manager_control_plane.models.SenderInvitationSummary
@@ -74,6 +85,8 @@ Tenant Manager Control Plane
     oci.tenant_manager_control_plane.models.Subscription
     oci.tenant_manager_control_plane.models.SubscriptionCollection
     oci.tenant_manager_control_plane.models.SubscriptionInfo
+    oci.tenant_manager_control_plane.models.SubscriptionLineItemCollection
+    oci.tenant_manager_control_plane.models.SubscriptionLineItemSummary
     oci.tenant_manager_control_plane.models.SubscriptionMapping
     oci.tenant_manager_control_plane.models.SubscriptionMappingCollection
     oci.tenant_manager_control_plane.models.SubscriptionMappingSummary

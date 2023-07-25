@@ -38,7 +38,7 @@ class ComponentModel(object):
     @property
     def model_id(self):
         """
-        **[Required]** Gets the model_id of this ComponentModel.
+        Gets the model_id of this ComponentModel.
         The `OCID`__ of active custom Key Value model that need to be composed.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
