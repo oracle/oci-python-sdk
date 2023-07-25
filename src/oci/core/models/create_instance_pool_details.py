@@ -52,6 +52,14 @@ class CreateInstancePoolDetails(object):
             The value to assign to the load_balancers property of this CreateInstancePoolDetails.
         :type load_balancers: list[oci.core.models.AttachLoadBalancerDetails]
 
+        :param instance_display_name_formatter:
+            The value to assign to the instance_display_name_formatter property of this CreateInstancePoolDetails.
+        :type instance_display_name_formatter: str
+
+        :param instance_hostname_formatter:
+            The value to assign to the instance_hostname_formatter property of this CreateInstancePoolDetails.
+        :type instance_hostname_formatter: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -61,7 +69,9 @@ class CreateInstancePoolDetails(object):
             'instance_configuration_id': 'str',
             'placement_configurations': 'list[CreateInstancePoolPlacementConfigurationDetails]',
             'size': 'int',
-            'load_balancers': 'list[AttachLoadBalancerDetails]'
+            'load_balancers': 'list[AttachLoadBalancerDetails]',
+            'instance_display_name_formatter': 'str',
+            'instance_hostname_formatter': 'str'
         }
 
         self.attribute_map = {
@@ -72,7 +82,9 @@ class CreateInstancePoolDetails(object):
             'instance_configuration_id': 'instanceConfigurationId',
             'placement_configurations': 'placementConfigurations',
             'size': 'size',
-            'load_balancers': 'loadBalancers'
+            'load_balancers': 'loadBalancers',
+            'instance_display_name_formatter': 'instanceDisplayNameFormatter',
+            'instance_hostname_formatter': 'instanceHostnameFormatter'
         }
 
         self._compartment_id = None
@@ -83,6 +95,8 @@ class CreateInstancePoolDetails(object):
         self._placement_configurations = None
         self._size = None
         self._load_balancers = None
+        self._instance_display_name_formatter = None
+        self._instance_hostname_formatter = None
 
     @property
     def compartment_id(self):
@@ -317,6 +331,58 @@ class CreateInstancePoolDetails(object):
         :type: list[oci.core.models.AttachLoadBalancerDetails]
         """
         self._load_balancers = load_balancers
+
+    @property
+    def instance_display_name_formatter(self):
+        """
+        Gets the instance_display_name_formatter of this CreateInstancePoolDetails.
+        A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format.
+        The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+
+
+        :return: The instance_display_name_formatter of this CreateInstancePoolDetails.
+        :rtype: str
+        """
+        return self._instance_display_name_formatter
+
+    @instance_display_name_formatter.setter
+    def instance_display_name_formatter(self, instance_display_name_formatter):
+        """
+        Sets the instance_display_name_formatter of this CreateInstancePoolDetails.
+        A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format.
+        The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
+
+
+        :param instance_display_name_formatter: The instance_display_name_formatter of this CreateInstancePoolDetails.
+        :type: str
+        """
+        self._instance_display_name_formatter = instance_display_name_formatter
+
+    @property
+    def instance_hostname_formatter(self):
+        """
+        Gets the instance_hostname_formatter of this CreateInstancePoolDetails.
+        A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format.
+        The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+
+
+        :return: The instance_hostname_formatter of this CreateInstancePoolDetails.
+        :rtype: str
+        """
+        return self._instance_hostname_formatter
+
+    @instance_hostname_formatter.setter
+    def instance_hostname_formatter(self, instance_hostname_formatter):
+        """
+        Sets the instance_hostname_formatter of this CreateInstancePoolDetails.
+        A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format.
+        The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
+
+
+        :param instance_hostname_formatter: The instance_hostname_formatter of this CreateInstancePoolDetails.
+        :type: str
+        """
+        self._instance_hostname_formatter = instance_hostname_formatter
 
     def __repr__(self):
         return formatted_flat_dict(self)
