@@ -76,6 +76,14 @@ class ScheduledActivitySummary(object):
             The value to assign to the lifecycle_details property of this ScheduledActivitySummary.
         :type lifecycle_details: str
 
+        :param scheduled_activity_phase:
+            The value to assign to the scheduled_activity_phase property of this ScheduledActivitySummary.
+        :type scheduled_activity_phase: str
+
+        :param scheduled_activity_association_id:
+            The value to assign to the scheduled_activity_association_id property of this ScheduledActivitySummary.
+        :type scheduled_activity_association_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ScheduledActivitySummary.
         :type freeform_tags: dict(str, str)
@@ -100,6 +108,8 @@ class ScheduledActivitySummary(object):
             'time_accepted': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_details': 'str',
+            'scheduled_activity_phase': 'str',
+            'scheduled_activity_association_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -119,6 +129,8 @@ class ScheduledActivitySummary(object):
             'time_accepted': 'timeAccepted',
             'time_updated': 'timeUpdated',
             'lifecycle_details': 'lifecycleDetails',
+            'scheduled_activity_phase': 'scheduledActivityPhase',
+            'scheduled_activity_association_id': 'scheduledActivityAssociationId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -137,6 +149,8 @@ class ScheduledActivitySummary(object):
         self._time_accepted = None
         self._time_updated = None
         self._lifecycle_details = None
+        self._scheduled_activity_phase = None
+        self._scheduled_activity_association_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -475,6 +489,54 @@ class ScheduledActivitySummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def scheduled_activity_phase(self):
+        """
+        **[Required]** Gets the scheduled_activity_phase of this ScheduledActivitySummary.
+        A property describing the phase of the scheduled activity.
+
+
+        :return: The scheduled_activity_phase of this ScheduledActivitySummary.
+        :rtype: str
+        """
+        return self._scheduled_activity_phase
+
+    @scheduled_activity_phase.setter
+    def scheduled_activity_phase(self, scheduled_activity_phase):
+        """
+        Sets the scheduled_activity_phase of this ScheduledActivitySummary.
+        A property describing the phase of the scheduled activity.
+
+
+        :param scheduled_activity_phase: The scheduled_activity_phase of this ScheduledActivitySummary.
+        :type: str
+        """
+        self._scheduled_activity_phase = scheduled_activity_phase
+
+    @property
+    def scheduled_activity_association_id(self):
+        """
+        **[Required]** Gets the scheduled_activity_association_id of this ScheduledActivitySummary.
+        The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+
+
+        :return: The scheduled_activity_association_id of this ScheduledActivitySummary.
+        :rtype: str
+        """
+        return self._scheduled_activity_association_id
+
+    @scheduled_activity_association_id.setter
+    def scheduled_activity_association_id(self, scheduled_activity_association_id):
+        """
+        Sets the scheduled_activity_association_id of this ScheduledActivitySummary.
+        The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+
+
+        :param scheduled_activity_association_id: The scheduled_activity_association_id of this ScheduledActivitySummary.
+        :type: str
+        """
+        self._scheduled_activity_association_id = scheduled_activity_association_id
 
     @property
     def freeform_tags(self):

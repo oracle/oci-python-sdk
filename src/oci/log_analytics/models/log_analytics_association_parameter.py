@@ -58,6 +58,14 @@ class LogAnalyticsAssociationParameter(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
+        :param status_description:
+            The value to assign to the status_description property of this LogAnalyticsAssociationParameter.
+        :type status_description: str
+
+        :param association_properties:
+            The value to assign to the association_properties property of this LogAnalyticsAssociationParameter.
+        :type association_properties: list[oci.log_analytics.models.AssociationProperty]
+
         :param missing_properties:
             The value to assign to the missing_properties property of this LogAnalyticsAssociationParameter.
         :type missing_properties: list[str]
@@ -75,6 +83,8 @@ class LogAnalyticsAssociationParameter(object):
             'source_display_name': 'str',
             'source_type': 'str',
             'status': 'str',
+            'status_description': 'str',
+            'association_properties': 'list[AssociationProperty]',
             'missing_properties': 'list[str]',
             'required_properties': 'list[str]'
         }
@@ -87,6 +97,8 @@ class LogAnalyticsAssociationParameter(object):
             'source_display_name': 'sourceDisplayName',
             'source_type': 'sourceType',
             'status': 'status',
+            'status_description': 'statusDescription',
+            'association_properties': 'associationProperties',
             'missing_properties': 'missingProperties',
             'required_properties': 'requiredProperties'
         }
@@ -98,6 +110,8 @@ class LogAnalyticsAssociationParameter(object):
         self._source_display_name = None
         self._source_type = None
         self._status = None
+        self._status_description = None
+        self._association_properties = None
         self._missing_properties = None
         self._required_properties = None
 
@@ -274,6 +288,54 @@ class LogAnalyticsAssociationParameter(object):
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
+
+    @property
+    def status_description(self):
+        """
+        Gets the status_description of this LogAnalyticsAssociationParameter.
+        The status description.
+
+
+        :return: The status_description of this LogAnalyticsAssociationParameter.
+        :rtype: str
+        """
+        return self._status_description
+
+    @status_description.setter
+    def status_description(self, status_description):
+        """
+        Sets the status_description of this LogAnalyticsAssociationParameter.
+        The status description.
+
+
+        :param status_description: The status_description of this LogAnalyticsAssociationParameter.
+        :type: str
+        """
+        self._status_description = status_description
+
+    @property
+    def association_properties(self):
+        """
+        Gets the association_properties of this LogAnalyticsAssociationParameter.
+        A list of association properties.
+
+
+        :return: The association_properties of this LogAnalyticsAssociationParameter.
+        :rtype: list[oci.log_analytics.models.AssociationProperty]
+        """
+        return self._association_properties
+
+    @association_properties.setter
+    def association_properties(self, association_properties):
+        """
+        Sets the association_properties of this LogAnalyticsAssociationParameter.
+        A list of association properties.
+
+
+        :param association_properties: The association_properties of this LogAnalyticsAssociationParameter.
+        :type: list[oci.log_analytics.models.AssociationProperty]
+        """
+        self._association_properties = association_properties
 
     @property
     def missing_properties(self):

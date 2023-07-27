@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Storage(object):
     """
-    This is the storage configuration and status of a tenancy in Logan Analytics application
+    This is the storage configuration and status of a tenancy in Logging Analytics application
     """
 
     def __init__(self, **kwargs):

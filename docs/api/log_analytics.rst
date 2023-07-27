@@ -33,6 +33,7 @@ Log Analytics
     oci.log_analytics.models.AssignEncryptionKeyDetails
     oci.log_analytics.models.AssociableEntity
     oci.log_analytics.models.AssociableEntityCollection
+    oci.log_analytics.models.AssociationProperty
     oci.log_analytics.models.AssociationSummaryReport
     oci.log_analytics.models.AutoAssociationCollection
     oci.log_analytics.models.AutoAssociationState
@@ -63,6 +64,7 @@ Log Analytics
     oci.log_analytics.models.CompareContentDetails
     oci.log_analytics.models.CompareContentResult
     oci.log_analytics.models.CompareLineResult
+    oci.log_analytics.models.ConditionBlock
     oci.log_analytics.models.CreateAccelerationTaskDetails
     oci.log_analytics.models.CreateIngestTimeRuleDetails
     oci.log_analytics.models.CreateLogAnalyticsEmBridgeDetails
@@ -74,6 +76,7 @@ Log Analytics
     oci.log_analytics.models.CreateStandardTaskDetails
     oci.log_analytics.models.CreateViewCommandDescriptor
     oci.log_analytics.models.CreationSource
+    oci.log_analytics.models.CredentialEndpoint
     oci.log_analytics.models.CronSchedule
     oci.log_analytics.models.DedupCommandDescriptor
     oci.log_analytics.models.DeleteCommandDescriptor
@@ -85,10 +88,17 @@ Log Analytics
     oci.log_analytics.models.DisableAutoAssociationDetails
     oci.log_analytics.models.DistinctCommandDescriptor
     oci.log_analytics.models.EfdRegexResult
+    oci.log_analytics.models.EffectivePropertyCollection
+    oci.log_analytics.models.EffectivePropertySummary
     oci.log_analytics.models.EnableAutoAssociationDetail
     oci.log_analytics.models.EnableAutoAssociationDetails
     oci.log_analytics.models.EncryptionKeyInfoCollection
     oci.log_analytics.models.EncryptionKeyInfoSummary
+    oci.log_analytics.models.EndpointCredentials
+    oci.log_analytics.models.EndpointProxy
+    oci.log_analytics.models.EndpointRequest
+    oci.log_analytics.models.EndpointResponse
+    oci.log_analytics.models.EndpointResult
     oci.log_analytics.models.EntityTypeProperty
     oci.log_analytics.models.ErrorDetails
     oci.log_analytics.models.EstimatePurgeDataSizeDetails
@@ -121,6 +131,7 @@ Log Analytics
     oci.log_analytics.models.FilterDetails
     oci.log_analytics.models.FilterOutput
     oci.log_analytics.models.FixedFrequencySchedule
+    oci.log_analytics.models.FrequentCommandDescriptor
     oci.log_analytics.models.FunctionField
     oci.log_analytics.models.GeoStatsCommandDescriptor
     oci.log_analytics.models.HeadCommandDescriptor
@@ -144,6 +155,7 @@ Log Analytics
     oci.log_analytics.models.LabelSourceCollection
     oci.log_analytics.models.LabelSourceSummary
     oci.log_analytics.models.LabelSummaryReport
+    oci.log_analytics.models.Level
     oci.log_analytics.models.LinkCommandDescriptor
     oci.log_analytics.models.LinkDetailsCommandDescriptor
     oci.log_analytics.models.LiteralArgument
@@ -163,6 +175,7 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsEmBridgeCollection
     oci.log_analytics.models.LogAnalyticsEmBridgeSummary
     oci.log_analytics.models.LogAnalyticsEmBridgeSummaryReport
+    oci.log_analytics.models.LogAnalyticsEndpoint
     oci.log_analytics.models.LogAnalyticsEntity
     oci.log_analytics.models.LogAnalyticsEntityCollection
     oci.log_analytics.models.LogAnalyticsEntitySummary
@@ -219,6 +232,7 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsPreference
     oci.log_analytics.models.LogAnalyticsPreferenceCollection
     oci.log_analytics.models.LogAnalyticsPreferenceDetails
+    oci.log_analytics.models.LogAnalyticsProperty
     oci.log_analytics.models.LogAnalyticsResourceCategory
     oci.log_analytics.models.LogAnalyticsResourceCategoryCollection
     oci.log_analytics.models.LogAnalyticsResourceCategoryDetails
@@ -237,9 +251,13 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsSourceSummary
     oci.log_analytics.models.LogAnalyticsWarning
     oci.log_analytics.models.LogAnalyticsWarningCollection
+    oci.log_analytics.models.LogEndpoint
     oci.log_analytics.models.LogGroupSummaryReport
+    oci.log_analytics.models.LogListEndpoint
+    oci.log_analytics.models.LogListTypeEndpoint
     oci.log_analytics.models.LogSetCollection
     oci.log_analytics.models.LogSetsCount
+    oci.log_analytics.models.LogTypeEndpoint
     oci.log_analytics.models.LookupCommandDescriptor
     oci.log_analytics.models.LookupField
     oci.log_analytics.models.LookupSummaryReport
@@ -249,16 +267,23 @@ Log Analytics
     oci.log_analytics.models.MetricExtraction
     oci.log_analytics.models.ModuleCommandDescriptor
     oci.log_analytics.models.MultiSearchCommandDescriptor
+    oci.log_analytics.models.NameValuePair
     oci.log_analytics.models.Namespace
     oci.log_analytics.models.NamespaceCollection
     oci.log_analytics.models.NamespaceSummary
     oci.log_analytics.models.NlpCommandDescriptor
+    oci.log_analytics.models.OutlierCommandDescriptor
+    oci.log_analytics.models.OverlappingRecallCollection
+    oci.log_analytics.models.OverlappingRecallSummary
     oci.log_analytics.models.ParseQueryDetails
     oci.log_analytics.models.ParseQueryOutput
     oci.log_analytics.models.ParsedContent
     oci.log_analytics.models.ParsedField
     oci.log_analytics.models.ParserSummaryReport
     oci.log_analytics.models.ParserTestResult
+    oci.log_analytics.models.PatternOverride
+    oci.log_analytics.models.PropertyMetadataSummary
+    oci.log_analytics.models.PropertyMetadataSummaryCollection
     oci.log_analytics.models.PropertyOverride
     oci.log_analytics.models.PurgeAction
     oci.log_analytics.models.PurgeStorageDataDetails
@@ -267,9 +292,13 @@ Log Analytics
     oci.log_analytics.models.QueryWorkRequest
     oci.log_analytics.models.QueryWorkRequestCollection
     oci.log_analytics.models.QueryWorkRequestSummary
+    oci.log_analytics.models.RareCommandDescriptor
     oci.log_analytics.models.RecallArchivedDataDetails
+    oci.log_analytics.models.RecallCount
     oci.log_analytics.models.RecalledData
     oci.log_analytics.models.RecalledDataCollection
+    oci.log_analytics.models.RecalledDataInfo
+    oci.log_analytics.models.RecalledDataSize
     oci.log_analytics.models.RegexCommandDescriptor
     oci.log_analytics.models.RegexMatchResult
     oci.log_analytics.models.ReleaseRecalledDataDetails
@@ -279,6 +308,7 @@ Log Analytics
     oci.log_analytics.models.Rule
     oci.log_analytics.models.RuleSummary
     oci.log_analytics.models.RuleSummaryCollection
+    oci.log_analytics.models.RuleSummaryReport
     oci.log_analytics.models.Schedule
     oci.log_analytics.models.ScheduledTask
     oci.log_analytics.models.ScheduledTaskCollection
@@ -306,6 +336,7 @@ Log Analytics
     oci.log_analytics.models.Success
     oci.log_analytics.models.SuggestDetails
     oci.log_analytics.models.SuggestOutput
+    oci.log_analytics.models.TableColumn
     oci.log_analytics.models.TailCommandDescriptor
     oci.log_analytics.models.TestParserPayloadDetails
     oci.log_analytics.models.TimeClusterColumn
@@ -347,6 +378,9 @@ Log Analytics
     oci.log_analytics.models.UpsertLogAnalyticsParserDetails
     oci.log_analytics.models.UpsertLogAnalyticsSourceDetails
     oci.log_analytics.models.UsageStatusItem
+    oci.log_analytics.models.ValidateEndpointResult
+    oci.log_analytics.models.ValidateLabelConditionDetails
+    oci.log_analytics.models.ValidateLabelConditionResult
     oci.log_analytics.models.VerifyOutput
     oci.log_analytics.models.Violation
     oci.log_analytics.models.WarningReferenceDetails

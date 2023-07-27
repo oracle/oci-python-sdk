@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Namespace(object):
     """
-    This is the namespace details of a tenancy in Logan Analytics application
+    This is the namespace details of a tenancy in Logging Analytics application
     """
 
     def __init__(self, **kwargs):

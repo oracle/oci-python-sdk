@@ -286,6 +286,48 @@ def test_change_host_insight_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_change_news_report_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ChangeNewsReportCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ChangeNewsReportCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ChangeNewsReportCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.change_news_report_compartment(
+                news_report_id=request.pop(util.camelize('newsReportId')),
+                change_news_report_compartment_details=request.pop(util.camelize('ChangeNewsReportCompartmentDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ChangeNewsReportCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_news_report_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_change_operations_insights_private_endpoint_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'ChangeOperationsInsightsPrivateEndpointCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -611,6 +653,47 @@ def test_create_host_insight(testing_service_client):
             result,
             service_error,
             'hostInsight',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_create_news_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'CreateNewsReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'CreateNewsReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='CreateNewsReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.create_news_report(
+                create_news_report_details=request.pop(util.camelize('CreateNewsReportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'CreateNewsReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'newsReport',
             False,
             False
         )
@@ -980,6 +1063,47 @@ def test_delete_host_insight(testing_service_client):
             result,
             service_error,
             'delete_host_insight',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_delete_news_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'DeleteNewsReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'DeleteNewsReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='DeleteNewsReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_news_report(
+                news_report_id=request.pop(util.camelize('newsReportId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'DeleteNewsReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_news_report',
             True,
             False
         )
@@ -1850,6 +1974,47 @@ def test_get_host_insight(testing_service_client):
             result,
             service_error,
             'hostInsight',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_get_news_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'GetNewsReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'GetNewsReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='GetNewsReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.get_news_report(
+                news_report_id=request.pop(util.camelize('newsReportId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'GetNewsReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'newsReport',
             False,
             False
         )
@@ -3738,6 +3903,66 @@ def test_list_importable_enterprise_manager_entities(testing_service_client):
             result,
             service_error,
             'importableEnterpriseManagerEntityCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_list_news_reports(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ListNewsReports'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ListNewsReports')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ListNewsReports')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.list_news_reports(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_news_reports(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_news_reports(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ListNewsReports',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'newsReportCollection',
             False,
             True
         )
@@ -8008,6 +8233,48 @@ def test_update_host_insight(testing_service_client):
             result,
             service_error,
             'update_host_insight',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_update_news_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'UpdateNewsReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'UpdateNewsReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='UpdateNewsReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.update_news_report(
+                news_report_id=request.pop(util.camelize('newsReportId')),
+                update_news_report_details=request.pop(util.camelize('UpdateNewsReportDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'UpdateNewsReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_news_report',
             False,
             False
         )

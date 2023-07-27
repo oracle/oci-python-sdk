@@ -34,6 +34,7 @@ from .create_node_pool_node_config_details import CreateNodePoolNodeConfigDetail
 from .create_node_shape_config_details import CreateNodeShapeConfigDetails
 from .create_virtual_node_pool_details import CreateVirtualNodePoolDetails
 from .create_workload_mapping_details import CreateWorkloadMappingDetails
+from .credential_rotation_status import CredentialRotationStatus
 from .flannel_overlay_cluster_pod_network_option_details import FlannelOverlayClusterPodNetworkOptionDetails
 from .flannel_overlay_node_pool_pod_network_option_details import FlannelOverlayNodePoolPodNetworkOptionDetails
 from .image_policy_config import ImagePolicyConfig
@@ -71,6 +72,7 @@ from .service_lb_config_details import ServiceLbConfigDetails
 from .shape_memory_options import ShapeMemoryOptions
 from .shape_network_bandwidth_options import ShapeNetworkBandwidthOptions
 from .shape_ocpu_options import ShapeOcpuOptions
+from .start_credential_rotation_details import StartCredentialRotationDetails
 from .taint import Taint
 from .terminate_preemption_action import TerminatePreemptionAction
 from .update_addon_details import UpdateAddonDetails
@@ -126,6 +128,7 @@ container_engine_type_mapping = {
     "CreateNodeShapeConfigDetails": CreateNodeShapeConfigDetails,
     "CreateVirtualNodePoolDetails": CreateVirtualNodePoolDetails,
     "CreateWorkloadMappingDetails": CreateWorkloadMappingDetails,
+    "CredentialRotationStatus": CredentialRotationStatus,
     "FlannelOverlayClusterPodNetworkOptionDetails": FlannelOverlayClusterPodNetworkOptionDetails,
     "FlannelOverlayNodePoolPodNetworkOptionDetails": FlannelOverlayNodePoolPodNetworkOptionDetails,
     "ImagePolicyConfig": ImagePolicyConfig,
@@ -163,6 +166,7 @@ container_engine_type_mapping = {
     "ShapeMemoryOptions": ShapeMemoryOptions,
     "ShapeNetworkBandwidthOptions": ShapeNetworkBandwidthOptions,
     "ShapeOcpuOptions": ShapeOcpuOptions,
+    "StartCredentialRotationDetails": StartCredentialRotationDetails,
     "Taint": Taint,
     "TerminatePreemptionAction": TerminatePreemptionAction,
     "UpdateAddonDetails": UpdateAddonDetails,

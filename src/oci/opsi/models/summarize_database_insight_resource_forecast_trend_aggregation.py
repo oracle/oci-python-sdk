@@ -124,6 +124,10 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type usage_unit: str
 
+        :param selected_forecast_algorithm:
+            The value to assign to the selected_forecast_algorithm property of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
+        :type selected_forecast_algorithm: str
+
         :param pattern:
             The value to assign to the pattern property of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
             Allowed values for this property are: "LINEAR", "MONTHLY_SEASONS", "MONTHLY_AND_YEARLY_SEASONS", "WEEKLY_SEASONS", "WEEKLY_AND_MONTHLY_SEASONS", "WEEKLY_MONTHLY_AND_YEARLY_SEASONS", "WEEKLY_AND_YEARLY_SEASONS", "YEARLY_SEASONS", 'UNKNOWN_ENUM_VALUE'.
@@ -150,6 +154,7 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
             'low_utilization_threshold': 'int',
             'resource_metric': 'str',
             'usage_unit': 'str',
+            'selected_forecast_algorithm': 'str',
             'pattern': 'str',
             'tablespace_name': 'str',
             'historical_data': 'list[HistoricalDataItem]',
@@ -163,6 +168,7 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
             'low_utilization_threshold': 'lowUtilizationThreshold',
             'resource_metric': 'resourceMetric',
             'usage_unit': 'usageUnit',
+            'selected_forecast_algorithm': 'selectedForecastAlgorithm',
             'pattern': 'pattern',
             'tablespace_name': 'tablespaceName',
             'historical_data': 'historicalData',
@@ -175,6 +181,7 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
         self._low_utilization_threshold = None
         self._resource_metric = None
         self._usage_unit = None
+        self._selected_forecast_algorithm = None
         self._pattern = None
         self._tablespace_name = None
         self._historical_data = None
@@ -335,6 +342,30 @@ class SummarizeDatabaseInsightResourceForecastTrendAggregation(object):
         if not value_allowed_none_or_none_sentinel(usage_unit, allowed_values):
             usage_unit = 'UNKNOWN_ENUM_VALUE'
         self._usage_unit = usage_unit
+
+    @property
+    def selected_forecast_algorithm(self):
+        """
+        Gets the selected_forecast_algorithm of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
+        Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+
+
+        :return: The selected_forecast_algorithm of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
+        :rtype: str
+        """
+        return self._selected_forecast_algorithm
+
+    @selected_forecast_algorithm.setter
+    def selected_forecast_algorithm(self, selected_forecast_algorithm):
+        """
+        Sets the selected_forecast_algorithm of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
+        Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+
+
+        :param selected_forecast_algorithm: The selected_forecast_algorithm of this SummarizeDatabaseInsightResourceForecastTrendAggregation.
+        :type: str
+        """
+        self._selected_forecast_algorithm = selected_forecast_algorithm
 
     @property
     def pattern(self):

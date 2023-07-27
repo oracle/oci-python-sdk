@@ -63,6 +63,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/fleet_software_update/pom.xml</module>
     <module>poms/os_management_hub/pom.xml</module>
     <module>poms/oci_control_center/pom.xml</module>
     <module>poms/access_governance_cp/pom.xml</module>

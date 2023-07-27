@@ -63,6 +63,10 @@ class AbstractField(object):
     #: This constant has a value of "FACET"
     VALUE_TYPE_FACET = "FACET"
 
+    #: A constant which can be used with the value_type property of a AbstractField.
+    #: This constant has a value of "TABLE"
+    VALUE_TYPE_TABLE = "TABLE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AbstractField object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -99,7 +103,7 @@ class AbstractField(object):
 
         :param value_type:
             The value to assign to the value_type property of this AbstractField.
-            Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", "TABLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type value_type: str
 
@@ -320,7 +324,7 @@ class AbstractField(object):
         Gets the value_type of this AbstractField.
         Field denoting field data type.
 
-        Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", "TABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -339,7 +343,7 @@ class AbstractField(object):
         :param value_type: The value_type of this AbstractField.
         :type: str
         """
-        allowed_values = ["BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET"]
+        allowed_values = ["BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", "TABLE"]
         if not value_allowed_none_or_none_sentinel(value_type, allowed_values):
             value_type = 'UNKNOWN_ENUM_VALUE'
         self._value_type = value_type

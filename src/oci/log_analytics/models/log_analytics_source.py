@@ -168,6 +168,14 @@ class LogAnalyticsSource(object):
             The value to assign to the categories property of this LogAnalyticsSource.
         :type categories: list[oci.log_analytics.models.LogAnalyticsCategory]
 
+        :param endpoints:
+            The value to assign to the endpoints property of this LogAnalyticsSource.
+        :type endpoints: list[oci.log_analytics.models.LogAnalyticsEndpoint]
+
+        :param source_properties:
+            The value to assign to the source_properties property of this LogAnalyticsSource.
+        :type source_properties: list[oci.log_analytics.models.LogAnalyticsProperty]
+
         """
         self.swagger_types = {
             'label_conditions': 'list[LogAnalyticsSourceLabelCondition]',
@@ -206,7 +214,9 @@ class LogAnalyticsSource(object):
             'user_parsers': 'list[LogAnalyticsParser]',
             'time_updated': 'datetime',
             'event_types': 'list[EventType]',
-            'categories': 'list[LogAnalyticsCategory]'
+            'categories': 'list[LogAnalyticsCategory]',
+            'endpoints': 'list[LogAnalyticsEndpoint]',
+            'source_properties': 'list[LogAnalyticsProperty]'
         }
 
         self.attribute_map = {
@@ -246,7 +256,9 @@ class LogAnalyticsSource(object):
             'user_parsers': 'userParsers',
             'time_updated': 'timeUpdated',
             'event_types': 'eventTypes',
-            'categories': 'categories'
+            'categories': 'categories',
+            'endpoints': 'endpoints',
+            'source_properties': 'sourceProperties'
         }
 
         self._label_conditions = None
@@ -286,6 +298,8 @@ class LogAnalyticsSource(object):
         self._time_updated = None
         self._event_types = None
         self._categories = None
+        self._endpoints = None
+        self._source_properties = None
 
     @property
     def label_conditions(self):
@@ -1178,6 +1192,54 @@ class LogAnalyticsSource(object):
         :type: list[oci.log_analytics.models.LogAnalyticsCategory]
         """
         self._categories = categories
+
+    @property
+    def endpoints(self):
+        """
+        Gets the endpoints of this LogAnalyticsSource.
+        An array of REST API endpoints for log collection.
+
+
+        :return: The endpoints of this LogAnalyticsSource.
+        :rtype: list[oci.log_analytics.models.LogAnalyticsEndpoint]
+        """
+        return self._endpoints
+
+    @endpoints.setter
+    def endpoints(self, endpoints):
+        """
+        Sets the endpoints of this LogAnalyticsSource.
+        An array of REST API endpoints for log collection.
+
+
+        :param endpoints: The endpoints of this LogAnalyticsSource.
+        :type: list[oci.log_analytics.models.LogAnalyticsEndpoint]
+        """
+        self._endpoints = endpoints
+
+    @property
+    def source_properties(self):
+        """
+        Gets the source_properties of this LogAnalyticsSource.
+        A list of source properties.
+
+
+        :return: The source_properties of this LogAnalyticsSource.
+        :rtype: list[oci.log_analytics.models.LogAnalyticsProperty]
+        """
+        return self._source_properties
+
+    @source_properties.setter
+    def source_properties(self, source_properties):
+        """
+        Sets the source_properties of this LogAnalyticsSource.
+        A list of source properties.
+
+
+        :param source_properties: The source_properties of this LogAnalyticsSource.
+        :type: list[oci.log_analytics.models.LogAnalyticsProperty]
+        """
+        self._source_properties = source_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

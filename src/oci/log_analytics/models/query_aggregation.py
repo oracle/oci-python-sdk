@@ -36,6 +36,10 @@ class QueryAggregation(object):
             The value to assign to the partial_result_reason property of this QueryAggregation.
         :type partial_result_reason: str
 
+        :param is_content_hidden:
+            The value to assign to the is_content_hidden property of this QueryAggregation.
+        :type is_content_hidden: bool
+
         :param columns:
             The value to assign to the columns property of this QueryAggregation.
         :type columns: list[oci.log_analytics.models.AbstractColumn]
@@ -62,6 +66,7 @@ class QueryAggregation(object):
             'total_matched_count': 'int',
             'are_partial_results': 'bool',
             'partial_result_reason': 'str',
+            'is_content_hidden': 'bool',
             'columns': 'list[AbstractColumn]',
             'fields': 'list[AbstractColumn]',
             'items': 'list[dict(str, object)]',
@@ -74,6 +79,7 @@ class QueryAggregation(object):
             'total_matched_count': 'totalMatchedCount',
             'are_partial_results': 'arePartialResults',
             'partial_result_reason': 'partialResultReason',
+            'is_content_hidden': 'isContentHidden',
             'columns': 'columns',
             'fields': 'fields',
             'items': 'items',
@@ -85,6 +91,7 @@ class QueryAggregation(object):
         self._total_matched_count = None
         self._are_partial_results = None
         self._partial_result_reason = None
+        self._is_content_hidden = None
         self._columns = None
         self._fields = None
         self._items = None
@@ -186,6 +193,30 @@ class QueryAggregation(object):
         :type: str
         """
         self._partial_result_reason = partial_result_reason
+
+    @property
+    def is_content_hidden(self):
+        """
+        Gets the is_content_hidden of this QueryAggregation.
+        True if the data returned by query is hidden.
+
+
+        :return: The is_content_hidden of this QueryAggregation.
+        :rtype: bool
+        """
+        return self._is_content_hidden
+
+    @is_content_hidden.setter
+    def is_content_hidden(self, is_content_hidden):
+        """
+        Sets the is_content_hidden of this QueryAggregation.
+        True if the data returned by query is hidden.
+
+
+        :param is_content_hidden: The is_content_hidden of this QueryAggregation.
+        :type: bool
+        """
+        self._is_content_hidden = is_content_hidden
 
     @property
     def columns(self):

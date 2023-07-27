@@ -64,6 +64,10 @@ class ExadataInsightResourceForecastTrendSummary(object):
             The value to assign to the days_to_reach_capacity property of this ExadataInsightResourceForecastTrendSummary.
         :type days_to_reach_capacity: int
 
+        :param selected_forecast_algorithm:
+            The value to assign to the selected_forecast_algorithm property of this ExadataInsightResourceForecastTrendSummary.
+        :type selected_forecast_algorithm: str
+
         :param pattern:
             The value to assign to the pattern property of this ExadataInsightResourceForecastTrendSummary.
             Allowed values for this property are: "LINEAR", "MONTHLY_SEASONS", "MONTHLY_AND_YEARLY_SEASONS", "WEEKLY_SEASONS", "WEEKLY_AND_MONTHLY_SEASONS", "WEEKLY_MONTHLY_AND_YEARLY_SEASONS", "WEEKLY_AND_YEARLY_SEASONS", "YEARLY_SEASONS", 'UNKNOWN_ENUM_VALUE'.
@@ -83,6 +87,7 @@ class ExadataInsightResourceForecastTrendSummary(object):
             'id': 'str',
             'name': 'str',
             'days_to_reach_capacity': 'int',
+            'selected_forecast_algorithm': 'str',
             'pattern': 'str',
             'historical_data': 'list[HistoricalDataItem]',
             'projected_data': 'list[ProjectedDataItem]'
@@ -92,6 +97,7 @@ class ExadataInsightResourceForecastTrendSummary(object):
             'id': 'id',
             'name': 'name',
             'days_to_reach_capacity': 'daysToReachCapacity',
+            'selected_forecast_algorithm': 'selectedForecastAlgorithm',
             'pattern': 'pattern',
             'historical_data': 'historicalData',
             'projected_data': 'projectedData'
@@ -100,6 +106,7 @@ class ExadataInsightResourceForecastTrendSummary(object):
         self._id = None
         self._name = None
         self._days_to_reach_capacity = None
+        self._selected_forecast_algorithm = None
         self._pattern = None
         self._historical_data = None
         self._projected_data = None
@@ -179,6 +186,30 @@ class ExadataInsightResourceForecastTrendSummary(object):
         :type: int
         """
         self._days_to_reach_capacity = days_to_reach_capacity
+
+    @property
+    def selected_forecast_algorithm(self):
+        """
+        Gets the selected_forecast_algorithm of this ExadataInsightResourceForecastTrendSummary.
+        Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+
+
+        :return: The selected_forecast_algorithm of this ExadataInsightResourceForecastTrendSummary.
+        :rtype: str
+        """
+        return self._selected_forecast_algorithm
+
+    @selected_forecast_algorithm.setter
+    def selected_forecast_algorithm(self, selected_forecast_algorithm):
+        """
+        Sets the selected_forecast_algorithm of this ExadataInsightResourceForecastTrendSummary.
+        Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+
+
+        :param selected_forecast_algorithm: The selected_forecast_algorithm of this ExadataInsightResourceForecastTrendSummary.
+        :type: str
+        """
+        self._selected_forecast_algorithm = selected_forecast_algorithm
 
     @property
     def pattern(self):

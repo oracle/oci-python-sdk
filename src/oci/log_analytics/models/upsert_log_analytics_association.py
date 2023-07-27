@@ -52,6 +52,10 @@ class UpsertLogAnalyticsAssociation(object):
             The value to assign to the log_group_id property of this UpsertLogAnalyticsAssociation.
         :type log_group_id: str
 
+        :param association_properties:
+            The value to assign to the association_properties property of this UpsertLogAnalyticsAssociation.
+        :type association_properties: list[oci.log_analytics.models.AssociationProperty]
+
         """
         self.swagger_types = {
             'agent_id': 'str',
@@ -61,7 +65,8 @@ class UpsertLogAnalyticsAssociation(object):
             'entity_name': 'str',
             'entity_type_name': 'str',
             'host': 'str',
-            'log_group_id': 'str'
+            'log_group_id': 'str',
+            'association_properties': 'list[AssociationProperty]'
         }
 
         self.attribute_map = {
@@ -72,7 +77,8 @@ class UpsertLogAnalyticsAssociation(object):
             'entity_name': 'entityName',
             'entity_type_name': 'entityTypeName',
             'host': 'host',
-            'log_group_id': 'logGroupId'
+            'log_group_id': 'logGroupId',
+            'association_properties': 'associationProperties'
         }
 
         self._agent_id = None
@@ -83,6 +89,7 @@ class UpsertLogAnalyticsAssociation(object):
         self._entity_type_name = None
         self._host = None
         self._log_group_id = None
+        self._association_properties = None
 
     @property
     def agent_id(self):
@@ -275,6 +282,30 @@ class UpsertLogAnalyticsAssociation(object):
         :type: str
         """
         self._log_group_id = log_group_id
+
+    @property
+    def association_properties(self):
+        """
+        Gets the association_properties of this UpsertLogAnalyticsAssociation.
+        A list of association properties.
+
+
+        :return: The association_properties of this UpsertLogAnalyticsAssociation.
+        :rtype: list[oci.log_analytics.models.AssociationProperty]
+        """
+        return self._association_properties
+
+    @association_properties.setter
+    def association_properties(self, association_properties):
+        """
+        Sets the association_properties of this UpsertLogAnalyticsAssociation.
+        A list of association properties.
+
+
+        :param association_properties: The association_properties of this UpsertLogAnalyticsAssociation.
+        :type: list[oci.log_analytics.models.AssociationProperty]
+        """
+        self._association_properties = association_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)
