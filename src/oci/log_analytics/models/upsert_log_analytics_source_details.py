@@ -136,6 +136,14 @@ class UpsertLogAnalyticsSourceDetails(object):
             The value to assign to the categories property of this UpsertLogAnalyticsSourceDetails.
         :type categories: list[oci.log_analytics.models.LogAnalyticsCategory]
 
+        :param endpoints:
+            The value to assign to the endpoints property of this UpsertLogAnalyticsSourceDetails.
+        :type endpoints: list[oci.log_analytics.models.LogAnalyticsEndpoint]
+
+        :param source_properties:
+            The value to assign to the source_properties property of this UpsertLogAnalyticsSourceDetails.
+        :type source_properties: list[oci.log_analytics.models.LogAnalyticsProperty]
+
         """
         self.swagger_types = {
             'label_conditions': 'list[LogAnalyticsSourceLabelCondition]',
@@ -166,7 +174,9 @@ class UpsertLogAnalyticsSourceDetails(object):
             'entity_types': 'list[LogAnalyticsSourceEntityType]',
             'is_timezone_override': 'bool',
             'user_parsers': 'list[LogAnalyticsParser]',
-            'categories': 'list[LogAnalyticsCategory]'
+            'categories': 'list[LogAnalyticsCategory]',
+            'endpoints': 'list[LogAnalyticsEndpoint]',
+            'source_properties': 'list[LogAnalyticsProperty]'
         }
 
         self.attribute_map = {
@@ -198,7 +208,9 @@ class UpsertLogAnalyticsSourceDetails(object):
             'entity_types': 'entityTypes',
             'is_timezone_override': 'isTimezoneOverride',
             'user_parsers': 'userParsers',
-            'categories': 'categories'
+            'categories': 'categories',
+            'endpoints': 'endpoints',
+            'source_properties': 'sourceProperties'
         }
 
         self._label_conditions = None
@@ -230,6 +242,8 @@ class UpsertLogAnalyticsSourceDetails(object):
         self._is_timezone_override = None
         self._user_parsers = None
         self._categories = None
+        self._endpoints = None
+        self._source_properties = None
 
     @property
     def label_conditions(self):
@@ -930,6 +944,54 @@ class UpsertLogAnalyticsSourceDetails(object):
         :type: list[oci.log_analytics.models.LogAnalyticsCategory]
         """
         self._categories = categories
+
+    @property
+    def endpoints(self):
+        """
+        Gets the endpoints of this UpsertLogAnalyticsSourceDetails.
+        An array of REST API endpoints for log collection.
+
+
+        :return: The endpoints of this UpsertLogAnalyticsSourceDetails.
+        :rtype: list[oci.log_analytics.models.LogAnalyticsEndpoint]
+        """
+        return self._endpoints
+
+    @endpoints.setter
+    def endpoints(self, endpoints):
+        """
+        Sets the endpoints of this UpsertLogAnalyticsSourceDetails.
+        An array of REST API endpoints for log collection.
+
+
+        :param endpoints: The endpoints of this UpsertLogAnalyticsSourceDetails.
+        :type: list[oci.log_analytics.models.LogAnalyticsEndpoint]
+        """
+        self._endpoints = endpoints
+
+    @property
+    def source_properties(self):
+        """
+        Gets the source_properties of this UpsertLogAnalyticsSourceDetails.
+        A list of source properties.
+
+
+        :return: The source_properties of this UpsertLogAnalyticsSourceDetails.
+        :rtype: list[oci.log_analytics.models.LogAnalyticsProperty]
+        """
+        return self._source_properties
+
+    @source_properties.setter
+    def source_properties(self, source_properties):
+        """
+        Sets the source_properties of this UpsertLogAnalyticsSourceDetails.
+        A list of source properties.
+
+
+        :param source_properties: The source_properties of this UpsertLogAnalyticsSourceDetails.
+        :type: list[oci.log_analytics.models.LogAnalyticsProperty]
+        """
+        self._source_properties = source_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

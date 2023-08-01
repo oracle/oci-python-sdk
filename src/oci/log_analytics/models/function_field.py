@@ -44,7 +44,7 @@ class FunctionField(AbstractField):
 
         :param value_type:
             The value to assign to the value_type property of this FunctionField.
-            Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET"
+            Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", "TABLE"
         :type value_type: str
 
         :param is_groupable:

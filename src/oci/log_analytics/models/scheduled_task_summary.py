@@ -27,10 +27,6 @@ class ScheduledTaskSummary(object):
     #: This constant has a value of "PURGE"
     TASK_TYPE_PURGE = "PURGE"
 
-    #: A constant which can be used with the task_type property of a ScheduledTaskSummary.
-    #: This constant has a value of "ACCELERATION_MAINTENANCE"
-    TASK_TYPE_ACCELERATION_MAINTENANCE = "ACCELERATION_MAINTENANCE"
-
     #: A constant which can be used with the task_status property of a ScheduledTaskSummary.
     #: This constant has a value of "READY"
     TASK_STATUS_READY = "READY"
@@ -66,7 +62,7 @@ class ScheduledTaskSummary(object):
 
         :param task_type:
             The value to assign to the task_type property of this ScheduledTaskSummary.
-            Allowed values for this property are: "SAVED_SEARCH", "ACCELERATION", "PURGE", "ACCELERATION_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SAVED_SEARCH", "ACCELERATION", "PURGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type task_type: str
 
@@ -206,7 +202,7 @@ class ScheduledTaskSummary(object):
         **[Required]** Gets the task_type of this ScheduledTaskSummary.
         Task type.
 
-        Allowed values for this property are: "SAVED_SEARCH", "ACCELERATION", "PURGE", "ACCELERATION_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SAVED_SEARCH", "ACCELERATION", "PURGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -225,7 +221,7 @@ class ScheduledTaskSummary(object):
         :param task_type: The task_type of this ScheduledTaskSummary.
         :type: str
         """
-        allowed_values = ["SAVED_SEARCH", "ACCELERATION", "PURGE", "ACCELERATION_MAINTENANCE"]
+        allowed_values = ["SAVED_SEARCH", "ACCELERATION", "PURGE"]
         if not value_allowed_none_or_none_sentinel(task_type, allowed_values):
             task_type = 'UNKNOWN_ENUM_VALUE'
         self._task_type = task_type

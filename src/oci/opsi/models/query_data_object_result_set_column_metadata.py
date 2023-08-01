@@ -84,7 +84,7 @@ class QueryDataObjectResultSetColumnMetadata(object):
     def data_type_name(self):
         """
         Gets the data_type_name of this QueryDataObjectResultSetColumnMetadata.
-        Type of the column in a data object query result set.
+        Type name of the column in a data object query result set.
 
         Allowed values for this property are: "NUMBER", "TIMESTAMP", "VARCHAR2", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -99,7 +99,7 @@ class QueryDataObjectResultSetColumnMetadata(object):
     def data_type_name(self, data_type_name):
         """
         Sets the data_type_name of this QueryDataObjectResultSetColumnMetadata.
-        Type of the column in a data object query result set.
+        Type name of the column in a data object query result set.
 
 
         :param data_type_name: The data_type_name of this QueryDataObjectResultSetColumnMetadata.

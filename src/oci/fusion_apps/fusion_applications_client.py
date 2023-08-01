@@ -3284,6 +3284,14 @@ class FusionApplicationsClient(object):
 
             Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELED"
 
+        :param str scheduled_activity_association_id: (optional)
+            A filter that returns all resources that match the specified scheduledActivityAssociationId.
+
+        :param str scheduled_activity_phase: (optional)
+            A filter that returns all resources that match the specified scheduledActivityPhase.
+
+            Allowed values are: "PRE_MAINTENANCE", "MAINTENANCE", "POST_MAINTENANCE"
+
         :param int limit: (optional)
             The maximum number of items to return.
 
@@ -3337,6 +3345,8 @@ class FusionApplicationsClient(object):
             "time_expected_finish_less_than_or_equal_to",
             "run_cycle",
             "lifecycle_state",
+            "scheduled_activity_association_id",
+            "scheduled_activity_phase",
             "limit",
             "page",
             "sort_order",
@@ -3372,6 +3382,13 @@ class FusionApplicationsClient(object):
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
+        if 'scheduled_activity_phase' in kwargs:
+            scheduled_activity_phase_allowed_values = ["PRE_MAINTENANCE", "MAINTENANCE", "POST_MAINTENANCE"]
+            if kwargs['scheduled_activity_phase'] not in scheduled_activity_phase_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scheduled_activity_phase`, must be one of {0}".format(scheduled_activity_phase_allowed_values)
+                )
+
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
@@ -3392,6 +3409,8 @@ class FusionApplicationsClient(object):
             "timeExpectedFinishLessThanOrEqualTo": kwargs.get("time_expected_finish_less_than_or_equal_to", missing),
             "runCycle": kwargs.get("run_cycle", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "scheduledActivityAssociationId": kwargs.get("scheduled_activity_association_id", missing),
+            "scheduledActivityPhase": kwargs.get("scheduled_activity_phase", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),

@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.109.0 - 2023-08-01
+====================
+
+Added
+-----
+* Support for the Exadata Fleet Update service
+* Support for REST-based log collection, multi-conditional labels, and collection properties in the Logging Analytics service
+* Support for Kubernetes cluster credential rotation in the Container Engine for Kubernetes service
+* Support for zero-downtime features in the Fusion Apps as a Service service
+* Support for news reports in the Operations Insights service 
+ 
+Breaking
+--------
+* Allowed value `ACCELERATION_MAINTENANCE` was removed from the property `task_type` in the models `StandardTask`, `ScheduledTaskSummary` and `ScheduledTask` in the Logging Analytics service
+* Allowed value `ACCELERATION_MAINTENANCE` was removed from the parameter `task_type` in operation `list_scheduled_tasks` in the Logging Analytics service
+ 
+====================
 2.108.0 - 2023-07-25
 ====================
 

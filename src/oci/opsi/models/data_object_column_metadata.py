@@ -163,7 +163,7 @@ class DataObjectColumnMetadata(object):
     def data_type_name(self):
         """
         Gets the data_type_name of this DataObjectColumnMetadata.
-        Type of a data object column.
+        Type name of a data object column.
 
         Allowed values for this property are: "NUMBER", "TIMESTAMP", "VARCHAR2", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -178,7 +178,7 @@ class DataObjectColumnMetadata(object):
     def data_type_name(self, data_type_name):
         """
         Sets the data_type_name of this DataObjectColumnMetadata.
-        Type of a data object column.
+        Type name of a data object column.
 
 
         :param data_type_name: The data_type_name of this DataObjectColumnMetadata.

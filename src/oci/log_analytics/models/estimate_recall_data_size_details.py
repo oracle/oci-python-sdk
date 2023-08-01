@@ -28,19 +28,33 @@ class EstimateRecallDataSizeDetails(object):
             The value to assign to the time_data_ended property of this EstimateRecallDataSizeDetails.
         :type time_data_ended: datetime
 
+        :param log_sets:
+            The value to assign to the log_sets property of this EstimateRecallDataSizeDetails.
+        :type log_sets: str
+
+        :param is_recall_new_data_only:
+            The value to assign to the is_recall_new_data_only property of this EstimateRecallDataSizeDetails.
+        :type is_recall_new_data_only: bool
+
         """
         self.swagger_types = {
             'time_data_started': 'datetime',
-            'time_data_ended': 'datetime'
+            'time_data_ended': 'datetime',
+            'log_sets': 'str',
+            'is_recall_new_data_only': 'bool'
         }
 
         self.attribute_map = {
             'time_data_started': 'timeDataStarted',
-            'time_data_ended': 'timeDataEnded'
+            'time_data_ended': 'timeDataEnded',
+            'log_sets': 'logSets',
+            'is_recall_new_data_only': 'isRecallNewDataOnly'
         }
 
         self._time_data_started = None
         self._time_data_ended = None
+        self._log_sets = None
+        self._is_recall_new_data_only = None
 
     @property
     def time_data_started(self):
@@ -89,6 +103,54 @@ class EstimateRecallDataSizeDetails(object):
         :type: datetime
         """
         self._time_data_ended = time_data_ended
+
+    @property
+    def log_sets(self):
+        """
+        Gets the log_sets of this EstimateRecallDataSizeDetails.
+        This is the list of logsets to be accounted for in the recalled data
+
+
+        :return: The log_sets of this EstimateRecallDataSizeDetails.
+        :rtype: str
+        """
+        return self._log_sets
+
+    @log_sets.setter
+    def log_sets(self, log_sets):
+        """
+        Sets the log_sets of this EstimateRecallDataSizeDetails.
+        This is the list of logsets to be accounted for in the recalled data
+
+
+        :param log_sets: The log_sets of this EstimateRecallDataSizeDetails.
+        :type: str
+        """
+        self._log_sets = log_sets
+
+    @property
+    def is_recall_new_data_only(self):
+        """
+        Gets the is_recall_new_data_only of this EstimateRecallDataSizeDetails.
+        This indicates if only new data has to be recalled in the timeframe
+
+
+        :return: The is_recall_new_data_only of this EstimateRecallDataSizeDetails.
+        :rtype: bool
+        """
+        return self._is_recall_new_data_only
+
+    @is_recall_new_data_only.setter
+    def is_recall_new_data_only(self, is_recall_new_data_only):
+        """
+        Sets the is_recall_new_data_only of this EstimateRecallDataSizeDetails.
+        This indicates if only new data has to be recalled in the timeframe
+
+
+        :param is_recall_new_data_only: The is_recall_new_data_only of this EstimateRecallDataSizeDetails.
+        :type: bool
+        """
+        self._is_recall_new_data_only = is_recall_new_data_only
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -45,7 +45,7 @@ class StandardTask(ScheduledTask):
 
         :param task_type:
             The value to assign to the task_type property of this StandardTask.
-            Allowed values for this property are: "SAVED_SEARCH", "ACCELERATION", "PURGE", "ACCELERATION_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SAVED_SEARCH", "ACCELERATION", "PURGE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type task_type: str
 

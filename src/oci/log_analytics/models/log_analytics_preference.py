@@ -46,7 +46,7 @@ class LogAnalyticsPreference(object):
     def name(self):
         """
         Gets the name of this LogAnalyticsPreference.
-        The preference name. Currently, only \"DEFAULT_HOMEPAGE\" is supported.
+        The preference name.
 
 
         :return: The name of this LogAnalyticsPreference.
@@ -58,7 +58,7 @@ class LogAnalyticsPreference(object):
     def name(self, name):
         """
         Sets the name of this LogAnalyticsPreference.
-        The preference name. Currently, only \"DEFAULT_HOMEPAGE\" is supported.
+        The preference name.
 
 
         :param name: The name of this LogAnalyticsPreference.

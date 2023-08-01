@@ -23,6 +23,10 @@ class RecalledData(object):
     #: This constant has a value of "PENDING"
     STATUS_PENDING = "PENDING"
 
+    #: A constant which can be used with the status property of a RecalledData.
+    #: This constant has a value of "FAILED"
+    STATUS_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RecalledData object with values from keyword arguments.
@@ -42,7 +46,7 @@ class RecalledData(object):
 
         :param status:
             The value to assign to the status property of this RecalledData.
-            Allowed values for this property are: "RECALLED", "PENDING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "RECALLED", "PENDING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -54,6 +58,26 @@ class RecalledData(object):
             The value to assign to the storage_usage_in_bytes property of this RecalledData.
         :type storage_usage_in_bytes: int
 
+        :param not_recalled_data_in_bytes:
+            The value to assign to the not_recalled_data_in_bytes property of this RecalledData.
+        :type not_recalled_data_in_bytes: int
+
+        :param purpose:
+            The value to assign to the purpose property of this RecalledData.
+        :type purpose: str
+
+        :param query_string:
+            The value to assign to the query_string property of this RecalledData.
+        :type query_string: str
+
+        :param log_sets:
+            The value to assign to the log_sets property of this RecalledData.
+        :type log_sets: str
+
+        :param created_by:
+            The value to assign to the created_by property of this RecalledData.
+        :type created_by: str
+
         """
         self.swagger_types = {
             'time_data_ended': 'datetime',
@@ -61,7 +85,12 @@ class RecalledData(object):
             'time_started': 'datetime',
             'status': 'str',
             'recall_count': 'int',
-            'storage_usage_in_bytes': 'int'
+            'storage_usage_in_bytes': 'int',
+            'not_recalled_data_in_bytes': 'int',
+            'purpose': 'str',
+            'query_string': 'str',
+            'log_sets': 'str',
+            'created_by': 'str'
         }
 
         self.attribute_map = {
@@ -70,7 +99,12 @@ class RecalledData(object):
             'time_started': 'timeStarted',
             'status': 'status',
             'recall_count': 'recallCount',
-            'storage_usage_in_bytes': 'storageUsageInBytes'
+            'storage_usage_in_bytes': 'storageUsageInBytes',
+            'not_recalled_data_in_bytes': 'notRecalledDataInBytes',
+            'purpose': 'purpose',
+            'query_string': 'queryString',
+            'log_sets': 'logSets',
+            'created_by': 'createdBy'
         }
 
         self._time_data_ended = None
@@ -79,6 +113,11 @@ class RecalledData(object):
         self._status = None
         self._recall_count = None
         self._storage_usage_in_bytes = None
+        self._not_recalled_data_in_bytes = None
+        self._purpose = None
+        self._query_string = None
+        self._log_sets = None
+        self._created_by = None
 
     @property
     def time_data_ended(self):
@@ -158,7 +197,7 @@ class RecalledData(object):
         **[Required]** Gets the status of this RecalledData.
         This is the status of the recall
 
-        Allowed values for this property are: "RECALLED", "PENDING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "RECALLED", "PENDING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -177,7 +216,7 @@ class RecalledData(object):
         :param status: The status of this RecalledData.
         :type: str
         """
-        allowed_values = ["RECALLED", "PENDING"]
+        allowed_values = ["RECALLED", "PENDING", "FAILED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
@@ -231,6 +270,126 @@ class RecalledData(object):
         :type: int
         """
         self._storage_usage_in_bytes = storage_usage_in_bytes
+
+    @property
+    def not_recalled_data_in_bytes(self):
+        """
+        **[Required]** Gets the not_recalled_data_in_bytes of this RecalledData.
+        This is the size of the archival data not recalled yet within the specified time range
+
+
+        :return: The not_recalled_data_in_bytes of this RecalledData.
+        :rtype: int
+        """
+        return self._not_recalled_data_in_bytes
+
+    @not_recalled_data_in_bytes.setter
+    def not_recalled_data_in_bytes(self, not_recalled_data_in_bytes):
+        """
+        Sets the not_recalled_data_in_bytes of this RecalledData.
+        This is the size of the archival data not recalled yet within the specified time range
+
+
+        :param not_recalled_data_in_bytes: The not_recalled_data_in_bytes of this RecalledData.
+        :type: int
+        """
+        self._not_recalled_data_in_bytes = not_recalled_data_in_bytes
+
+    @property
+    def purpose(self):
+        """
+        **[Required]** Gets the purpose of this RecalledData.
+        This is the purpose of the recall
+
+
+        :return: The purpose of this RecalledData.
+        :rtype: str
+        """
+        return self._purpose
+
+    @purpose.setter
+    def purpose(self, purpose):
+        """
+        Sets the purpose of this RecalledData.
+        This is the purpose of the recall
+
+
+        :param purpose: The purpose of this RecalledData.
+        :type: str
+        """
+        self._purpose = purpose
+
+    @property
+    def query_string(self):
+        """
+        **[Required]** Gets the query_string of this RecalledData.
+        This is the query associated with the recall
+
+
+        :return: The query_string of this RecalledData.
+        :rtype: str
+        """
+        return self._query_string
+
+    @query_string.setter
+    def query_string(self, query_string):
+        """
+        Sets the query_string of this RecalledData.
+        This is the query associated with the recall
+
+
+        :param query_string: The query_string of this RecalledData.
+        :type: str
+        """
+        self._query_string = query_string
+
+    @property
+    def log_sets(self):
+        """
+        **[Required]** Gets the log_sets of this RecalledData.
+        This is the list of logsets associated with the recall
+
+
+        :return: The log_sets of this RecalledData.
+        :rtype: str
+        """
+        return self._log_sets
+
+    @log_sets.setter
+    def log_sets(self, log_sets):
+        """
+        Sets the log_sets of this RecalledData.
+        This is the list of logsets associated with the recall
+
+
+        :param log_sets: The log_sets of this RecalledData.
+        :type: str
+        """
+        self._log_sets = log_sets
+
+    @property
+    def created_by(self):
+        """
+        **[Required]** Gets the created_by of this RecalledData.
+        This is the user who initiated the recall request
+
+
+        :return: The created_by of this RecalledData.
+        :rtype: str
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """
+        Sets the created_by of this RecalledData.
+        This is the user who initiated the recall request
+
+
+        :param created_by: The created_by of this RecalledData.
+        :type: str
+        """
+        self._created_by = created_by
 
     def __repr__(self):
         return formatted_flat_dict(self)

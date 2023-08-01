@@ -23,7 +23,7 @@ class TrendColumn(AbstractColumn):
 
         :param type:
             The value to assign to the type property of this TrendColumn.
-            Allowed values for this property are: "COLUMN", "CHART_COLUMN", "CHART_DATA_COLUMN", "TIME_STATS_COLUMN", "TIME_STATS_DATA_COLUMN", "TIME_CLUSTER_COLUMN", "TIME_CLUSTER_DATA_COLUMN", "TIME_COLUMN", "TREND_COLUMN", "CLASSIFY_COLUMN"
+            Allowed values for this property are: "COLUMN", "CHART_COLUMN", "CHART_DATA_COLUMN", "TIME_STATS_COLUMN", "TIME_STATS_DATA_COLUMN", "TIME_CLUSTER_COLUMN", "TIME_CLUSTER_DATA_COLUMN", "TABLE_COLUMN", "TIME_COLUMN", "TREND_COLUMN", "CLASSIFY_COLUMN"
         :type type: str
 
         :param display_name:
@@ -61,7 +61,7 @@ class TrendColumn(AbstractColumn):
 
         :param value_type:
             The value to assign to the value_type property of this TrendColumn.
-            Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET"
+            Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", "TABLE"
         :type value_type: str
 
         :param original_display_name:
@@ -235,6 +235,8 @@ class TrendColumn(AbstractColumn):
     def total_interval_counts_after_filter(self):
         """
         Gets the total_interval_counts_after_filter of this TrendColumn.
+        Sum of column values for a given timestamp after applying filter.
+
 
         :return: The total_interval_counts_after_filter of this TrendColumn.
         :rtype: list[int]
@@ -245,6 +247,8 @@ class TrendColumn(AbstractColumn):
     def total_interval_counts_after_filter(self, total_interval_counts_after_filter):
         """
         Sets the total_interval_counts_after_filter of this TrendColumn.
+        Sum of column values for a given timestamp after applying filter.
+
 
         :param total_interval_counts_after_filter: The total_interval_counts_after_filter of this TrendColumn.
         :type: list[int]
@@ -255,6 +259,8 @@ class TrendColumn(AbstractColumn):
     def interval_group_counts(self):
         """
         Gets the interval_group_counts of this TrendColumn.
+        Number of aggregated groups for a given timestamp.
+
 
         :return: The interval_group_counts of this TrendColumn.
         :rtype: list[int]
@@ -265,6 +271,8 @@ class TrendColumn(AbstractColumn):
     def interval_group_counts(self, interval_group_counts):
         """
         Sets the interval_group_counts of this TrendColumn.
+        Number of aggregated groups for a given timestamp.
+
 
         :param interval_group_counts: The interval_group_counts of this TrendColumn.
         :type: list[int]
@@ -275,6 +283,8 @@ class TrendColumn(AbstractColumn):
     def interval_group_counts_after_filter(self):
         """
         Gets the interval_group_counts_after_filter of this TrendColumn.
+        Number of aggregated groups for a given timestamp after applying filter.
+
 
         :return: The interval_group_counts_after_filter of this TrendColumn.
         :rtype: list[int]
@@ -285,6 +295,8 @@ class TrendColumn(AbstractColumn):
     def interval_group_counts_after_filter(self, interval_group_counts_after_filter):
         """
         Sets the interval_group_counts_after_filter of this TrendColumn.
+        Number of aggregated groups for a given timestamp after applying filter.
+
 
         :param interval_group_counts_after_filter: The interval_group_counts_after_filter of this TrendColumn.
         :type: list[int]

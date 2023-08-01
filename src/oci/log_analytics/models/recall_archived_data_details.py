@@ -53,6 +53,14 @@ class RecallArchivedDataDetails(object):
             The value to assign to the query property of this RecallArchivedDataDetails.
         :type query: str
 
+        :param purpose:
+            The value to assign to the purpose property of this RecallArchivedDataDetails.
+        :type purpose: str
+
+        :param is_recall_new_data_only:
+            The value to assign to the is_recall_new_data_only property of this RecallArchivedDataDetails.
+        :type is_recall_new_data_only: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -60,7 +68,9 @@ class RecallArchivedDataDetails(object):
             'time_data_started': 'datetime',
             'data_type': 'str',
             'log_sets': 'str',
-            'query': 'str'
+            'query': 'str',
+            'purpose': 'str',
+            'is_recall_new_data_only': 'bool'
         }
 
         self.attribute_map = {
@@ -69,7 +79,9 @@ class RecallArchivedDataDetails(object):
             'time_data_started': 'timeDataStarted',
             'data_type': 'dataType',
             'log_sets': 'logSets',
-            'query': 'query'
+            'query': 'query',
+            'purpose': 'purpose',
+            'is_recall_new_data_only': 'isRecallNewDataOnly'
         }
 
         self._compartment_id = None
@@ -78,6 +90,8 @@ class RecallArchivedDataDetails(object):
         self._data_type = None
         self._log_sets = None
         self._query = None
+        self._purpose = None
+        self._is_recall_new_data_only = None
 
     @property
     def compartment_id(self):
@@ -230,6 +244,54 @@ class RecallArchivedDataDetails(object):
         :type: str
         """
         self._query = query
+
+    @property
+    def purpose(self):
+        """
+        Gets the purpose of this RecallArchivedDataDetails.
+        This is the purpose of the recall
+
+
+        :return: The purpose of this RecallArchivedDataDetails.
+        :rtype: str
+        """
+        return self._purpose
+
+    @purpose.setter
+    def purpose(self, purpose):
+        """
+        Sets the purpose of this RecallArchivedDataDetails.
+        This is the purpose of the recall
+
+
+        :param purpose: The purpose of this RecallArchivedDataDetails.
+        :type: str
+        """
+        self._purpose = purpose
+
+    @property
+    def is_recall_new_data_only(self):
+        """
+        Gets the is_recall_new_data_only of this RecallArchivedDataDetails.
+        This indicates if only new data has to be recalled in this recall request
+
+
+        :return: The is_recall_new_data_only of this RecallArchivedDataDetails.
+        :rtype: bool
+        """
+        return self._is_recall_new_data_only
+
+    @is_recall_new_data_only.setter
+    def is_recall_new_data_only(self, is_recall_new_data_only):
+        """
+        Sets the is_recall_new_data_only of this RecallArchivedDataDetails.
+        This indicates if only new data has to be recalled in this recall request
+
+
+        :param is_recall_new_data_only: The is_recall_new_data_only of this RecallArchivedDataDetails.
+        :type: bool
+        """
+        self._is_recall_new_data_only = is_recall_new_data_only
 
     def __repr__(self):
         return formatted_flat_dict(self)

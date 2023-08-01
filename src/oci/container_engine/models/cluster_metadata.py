@@ -56,6 +56,10 @@ class ClusterMetadata(object):
             The value to assign to the updated_by_work_request_id property of this ClusterMetadata.
         :type updated_by_work_request_id: str
 
+        :param time_credential_expiration:
+            The value to assign to the time_credential_expiration property of this ClusterMetadata.
+        :type time_credential_expiration: datetime
+
         """
         self.swagger_types = {
             'time_created': 'datetime',
@@ -66,7 +70,8 @@ class ClusterMetadata(object):
             'deleted_by_work_request_id': 'str',
             'time_updated': 'datetime',
             'updated_by_user_id': 'str',
-            'updated_by_work_request_id': 'str'
+            'updated_by_work_request_id': 'str',
+            'time_credential_expiration': 'datetime'
         }
 
         self.attribute_map = {
@@ -78,7 +83,8 @@ class ClusterMetadata(object):
             'deleted_by_work_request_id': 'deletedByWorkRequestId',
             'time_updated': 'timeUpdated',
             'updated_by_user_id': 'updatedByUserId',
-            'updated_by_work_request_id': 'updatedByWorkRequestId'
+            'updated_by_work_request_id': 'updatedByWorkRequestId',
+            'time_credential_expiration': 'timeCredentialExpiration'
         }
 
         self._time_created = None
@@ -90,6 +96,7 @@ class ClusterMetadata(object):
         self._time_updated = None
         self._updated_by_user_id = None
         self._updated_by_work_request_id = None
+        self._time_credential_expiration = None
 
     @property
     def time_created(self):
@@ -306,6 +313,30 @@ class ClusterMetadata(object):
         :type: str
         """
         self._updated_by_work_request_id = updated_by_work_request_id
+
+    @property
+    def time_credential_expiration(self):
+        """
+        Gets the time_credential_expiration of this ClusterMetadata.
+        The time until which the cluster credential is valid.
+
+
+        :return: The time_credential_expiration of this ClusterMetadata.
+        :rtype: datetime
+        """
+        return self._time_credential_expiration
+
+    @time_credential_expiration.setter
+    def time_credential_expiration(self, time_credential_expiration):
+        """
+        Sets the time_credential_expiration of this ClusterMetadata.
+        The time until which the cluster credential is valid.
+
+
+        :param time_credential_expiration: The time_credential_expiration of this ClusterMetadata.
+        :type: datetime
+        """
+        self._time_credential_expiration = time_credential_expiration
 
     def __repr__(self):
         return formatted_flat_dict(self)

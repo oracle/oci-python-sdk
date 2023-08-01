@@ -96,6 +96,10 @@ class LogAnalyticsSourcePattern(object):
             The value to assign to the entity_type property of this LogAnalyticsSourcePattern.
         :type entity_type: list[str]
 
+        :param pattern_properties:
+            The value to assign to the pattern_properties property of this LogAnalyticsSourcePattern.
+        :type pattern_properties: list[oci.log_analytics.models.LogAnalyticsProperty]
+
         """
         self.swagger_types = {
             'converted_text': 'str',
@@ -116,7 +120,8 @@ class LogAnalyticsSourcePattern(object):
             'is_agent_warning_suppressed': 'bool',
             'pattern_text': 'str',
             'pattern_type': 'int',
-            'entity_type': 'list[str]'
+            'entity_type': 'list[str]',
+            'pattern_properties': 'list[LogAnalyticsProperty]'
         }
 
         self.attribute_map = {
@@ -138,7 +143,8 @@ class LogAnalyticsSourcePattern(object):
             'is_agent_warning_suppressed': 'isAgentWarningSuppressed',
             'pattern_text': 'patternText',
             'pattern_type': 'patternType',
-            'entity_type': 'entityType'
+            'entity_type': 'entityType',
+            'pattern_properties': 'patternProperties'
         }
 
         self._converted_text = None
@@ -160,6 +166,7 @@ class LogAnalyticsSourcePattern(object):
         self._pattern_text = None
         self._pattern_type = None
         self._entity_type = None
+        self._pattern_properties = None
 
     @property
     def converted_text(self):
@@ -616,6 +623,30 @@ class LogAnalyticsSourcePattern(object):
         :type: list[str]
         """
         self._entity_type = entity_type
+
+    @property
+    def pattern_properties(self):
+        """
+        Gets the pattern_properties of this LogAnalyticsSourcePattern.
+        A list of pattern properties.
+
+
+        :return: The pattern_properties of this LogAnalyticsSourcePattern.
+        :rtype: list[oci.log_analytics.models.LogAnalyticsProperty]
+        """
+        return self._pattern_properties
+
+    @pattern_properties.setter
+    def pattern_properties(self, pattern_properties):
+        """
+        Sets the pattern_properties of this LogAnalyticsSourcePattern.
+        A list of pattern properties.
+
+
+        :param pattern_properties: The pattern_properties of this LogAnalyticsSourcePattern.
+        :type: list[oci.log_analytics.models.LogAnalyticsProperty]
+        """
+        self._pattern_properties = pattern_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

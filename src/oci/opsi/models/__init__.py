@@ -77,6 +77,7 @@ from .change_database_insight_compartment_details import ChangeDatabaseInsightCo
 from .change_enterprise_manager_bridge_compartment_details import ChangeEnterpriseManagerBridgeCompartmentDetails
 from .change_exadata_insight_compartment_details import ChangeExadataInsightCompartmentDetails
 from .change_host_insight_compartment_details import ChangeHostInsightCompartmentDetails
+from .change_news_report_compartment_details import ChangeNewsReportCompartmentDetails
 from .change_operations_insights_private_endpoint_compartment_details import ChangeOperationsInsightsPrivateEndpointCompartmentDetails
 from .change_opsi_configuration_compartment_details import ChangeOpsiConfigurationCompartmentDetails
 from .change_pe_comanaged_database_insight_details import ChangePeComanagedDatabaseInsightDetails
@@ -103,6 +104,7 @@ from .create_exadata_insight_details import CreateExadataInsightDetails
 from .create_host_insight_details import CreateHostInsightDetails
 from .create_macs_managed_cloud_host_insight_details import CreateMacsManagedCloudHostInsightDetails
 from .create_macs_managed_external_host_insight_details import CreateMacsManagedExternalHostInsightDetails
+from .create_news_report_details import CreateNewsReportDetails
 from .create_operations_insights_private_endpoint_details import CreateOperationsInsightsPrivateEndpointDetails
 from .create_operations_insights_warehouse_details import CreateOperationsInsightsWarehouseDetails
 from .create_operations_insights_warehouse_user_details import CreateOperationsInsightsWarehouseUserDetails
@@ -241,6 +243,8 @@ from .ingest_host_configuration_details import IngestHostConfigurationDetails
 from .ingest_host_configuration_response_details import IngestHostConfigurationResponseDetails
 from .ingest_host_metrics_details import IngestHostMetricsDetails
 from .ingest_host_metrics_response_details import IngestHostMetricsResponseDetails
+from .ingest_my_sql_sql_text_details import IngestMySqlSqlTextDetails
+from .ingest_my_sql_sql_text_response_details import IngestMySqlSqlTextResponseDetails
 from .ingest_sql_bucket_details import IngestSqlBucketDetails
 from .ingest_sql_bucket_response_details import IngestSqlBucketResponseDetails
 from .ingest_sql_plan_lines_details import IngestSqlPlanLinesDetails
@@ -259,8 +263,14 @@ from .macs_managed_external_database_insight_summary import MacsManagedExternalD
 from .macs_managed_external_host_configuration_summary import MacsManagedExternalHostConfigurationSummary
 from .macs_managed_external_host_insight import MacsManagedExternalHostInsight
 from .macs_managed_external_host_insight_summary import MacsManagedExternalHostInsightSummary
+from .my_sql_sql_text import MySqlSqlText
 from .network_usage_trend import NetworkUsageTrend
 from .network_usage_trend_aggregation import NetworkUsageTrendAggregation
+from .news_content_types import NewsContentTypes
+from .news_report import NewsReport
+from .news_report_collection import NewsReportCollection
+from .news_report_summary import NewsReportSummary
+from .news_reports import NewsReports
 from .operations_insights_private_endpoint import OperationsInsightsPrivateEndpoint
 from .operations_insights_private_endpoint_collection import OperationsInsightsPrivateEndpointCollection
 from .operations_insights_private_endpoint_summary import OperationsInsightsPrivateEndpointSummary
@@ -388,6 +398,7 @@ from .update_host_insight_details import UpdateHostInsightDetails
 from .update_macs_managed_cloud_host_insight_details import UpdateMacsManagedCloudHostInsightDetails
 from .update_macs_managed_external_database_insight_details import UpdateMacsManagedExternalDatabaseInsightDetails
 from .update_macs_managed_external_host_insight_details import UpdateMacsManagedExternalHostInsightDetails
+from .update_news_report_details import UpdateNewsReportDetails
 from .update_operations_insights_private_endpoint_details import UpdateOperationsInsightsPrivateEndpointDetails
 from .update_operations_insights_warehouse_details import UpdateOperationsInsightsWarehouseDetails
 from .update_operations_insights_warehouse_user_details import UpdateOperationsInsightsWarehouseUserDetails
@@ -479,6 +490,7 @@ opsi_type_mapping = {
     "ChangeEnterpriseManagerBridgeCompartmentDetails": ChangeEnterpriseManagerBridgeCompartmentDetails,
     "ChangeExadataInsightCompartmentDetails": ChangeExadataInsightCompartmentDetails,
     "ChangeHostInsightCompartmentDetails": ChangeHostInsightCompartmentDetails,
+    "ChangeNewsReportCompartmentDetails": ChangeNewsReportCompartmentDetails,
     "ChangeOperationsInsightsPrivateEndpointCompartmentDetails": ChangeOperationsInsightsPrivateEndpointCompartmentDetails,
     "ChangeOpsiConfigurationCompartmentDetails": ChangeOpsiConfigurationCompartmentDetails,
     "ChangePeComanagedDatabaseInsightDetails": ChangePeComanagedDatabaseInsightDetails,
@@ -505,6 +517,7 @@ opsi_type_mapping = {
     "CreateHostInsightDetails": CreateHostInsightDetails,
     "CreateMacsManagedCloudHostInsightDetails": CreateMacsManagedCloudHostInsightDetails,
     "CreateMacsManagedExternalHostInsightDetails": CreateMacsManagedExternalHostInsightDetails,
+    "CreateNewsReportDetails": CreateNewsReportDetails,
     "CreateOperationsInsightsPrivateEndpointDetails": CreateOperationsInsightsPrivateEndpointDetails,
     "CreateOperationsInsightsWarehouseDetails": CreateOperationsInsightsWarehouseDetails,
     "CreateOperationsInsightsWarehouseUserDetails": CreateOperationsInsightsWarehouseUserDetails,
@@ -643,6 +656,8 @@ opsi_type_mapping = {
     "IngestHostConfigurationResponseDetails": IngestHostConfigurationResponseDetails,
     "IngestHostMetricsDetails": IngestHostMetricsDetails,
     "IngestHostMetricsResponseDetails": IngestHostMetricsResponseDetails,
+    "IngestMySqlSqlTextDetails": IngestMySqlSqlTextDetails,
+    "IngestMySqlSqlTextResponseDetails": IngestMySqlSqlTextResponseDetails,
     "IngestSqlBucketDetails": IngestSqlBucketDetails,
     "IngestSqlBucketResponseDetails": IngestSqlBucketResponseDetails,
     "IngestSqlPlanLinesDetails": IngestSqlPlanLinesDetails,
@@ -661,8 +676,14 @@ opsi_type_mapping = {
     "MacsManagedExternalHostConfigurationSummary": MacsManagedExternalHostConfigurationSummary,
     "MacsManagedExternalHostInsight": MacsManagedExternalHostInsight,
     "MacsManagedExternalHostInsightSummary": MacsManagedExternalHostInsightSummary,
+    "MySqlSqlText": MySqlSqlText,
     "NetworkUsageTrend": NetworkUsageTrend,
     "NetworkUsageTrendAggregation": NetworkUsageTrendAggregation,
+    "NewsContentTypes": NewsContentTypes,
+    "NewsReport": NewsReport,
+    "NewsReportCollection": NewsReportCollection,
+    "NewsReportSummary": NewsReportSummary,
+    "NewsReports": NewsReports,
     "OperationsInsightsPrivateEndpoint": OperationsInsightsPrivateEndpoint,
     "OperationsInsightsPrivateEndpointCollection": OperationsInsightsPrivateEndpointCollection,
     "OperationsInsightsPrivateEndpointSummary": OperationsInsightsPrivateEndpointSummary,
@@ -790,6 +811,7 @@ opsi_type_mapping = {
     "UpdateMacsManagedCloudHostInsightDetails": UpdateMacsManagedCloudHostInsightDetails,
     "UpdateMacsManagedExternalDatabaseInsightDetails": UpdateMacsManagedExternalDatabaseInsightDetails,
     "UpdateMacsManagedExternalHostInsightDetails": UpdateMacsManagedExternalHostInsightDetails,
+    "UpdateNewsReportDetails": UpdateNewsReportDetails,
     "UpdateOperationsInsightsPrivateEndpointDetails": UpdateOperationsInsightsPrivateEndpointDetails,
     "UpdateOperationsInsightsWarehouseDetails": UpdateOperationsInsightsWarehouseDetails,
     "UpdateOperationsInsightsWarehouseUserDetails": UpdateOperationsInsightsWarehouseUserDetails,

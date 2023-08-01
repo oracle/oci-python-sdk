@@ -46,6 +46,7 @@ Container Engine
     oci.container_engine.models.CreateNodeShapeConfigDetails
     oci.container_engine.models.CreateVirtualNodePoolDetails
     oci.container_engine.models.CreateWorkloadMappingDetails
+    oci.container_engine.models.CredentialRotationStatus
     oci.container_engine.models.FlannelOverlayClusterPodNetworkOptionDetails
     oci.container_engine.models.FlannelOverlayNodePoolPodNetworkOptionDetails
     oci.container_engine.models.ImagePolicyConfig
@@ -83,6 +84,7 @@ Container Engine
     oci.container_engine.models.ShapeMemoryOptions
     oci.container_engine.models.ShapeNetworkBandwidthOptions
     oci.container_engine.models.ShapeOcpuOptions
+    oci.container_engine.models.StartCredentialRotationDetails
     oci.container_engine.models.Taint
     oci.container_engine.models.TerminatePreemptionAction
     oci.container_engine.models.UpdateAddonDetails
