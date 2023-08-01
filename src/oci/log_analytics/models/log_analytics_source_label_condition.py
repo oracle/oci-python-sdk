@@ -20,6 +20,14 @@ class LogAnalyticsSourceLabelCondition(object):
         Initializes a new LogAnalyticsSourceLabelCondition object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param condition_string:
+            The value to assign to the condition_string property of this LogAnalyticsSourceLabelCondition.
+        :type condition_string: str
+
+        :param condition_block:
+            The value to assign to the condition_block property of this LogAnalyticsSourceLabelCondition.
+        :type condition_block: oci.log_analytics.models.ConditionBlock
+
         :param message:
             The value to assign to the message property of this LogAnalyticsSourceLabelCondition.
         :type message: str
@@ -94,6 +102,8 @@ class LogAnalyticsSourceLabelCondition(object):
 
         """
         self.swagger_types = {
+            'condition_string': 'str',
+            'condition_block': 'ConditionBlock',
             'message': 'str',
             'is_visible': 'bool',
             'block_condition_field': 'str',
@@ -115,6 +125,8 @@ class LogAnalyticsSourceLabelCondition(object):
         }
 
         self.attribute_map = {
+            'condition_string': 'conditionString',
+            'condition_block': 'conditionBlock',
             'message': 'message',
             'is_visible': 'isVisible',
             'block_condition_field': 'blockConditionField',
@@ -135,6 +147,8 @@ class LogAnalyticsSourceLabelCondition(object):
             'is_inline_label_existing_in_database': 'isInlineLabelExistingInDatabase'
         }
 
+        self._condition_string = None
+        self._condition_block = None
         self._message = None
         self._is_visible = None
         self._block_condition_field = None
@@ -153,6 +167,50 @@ class LogAnalyticsSourceLabelCondition(object):
         self._storage_field = None
         self._label_name = None
         self._is_inline_label_existing_in_database = None
+
+    @property
+    def condition_string(self):
+        """
+        Gets the condition_string of this LogAnalyticsSourceLabelCondition.
+        String representation of the label condition. This supports specifying multiple condition blocks at various nested levels.
+
+
+        :return: The condition_string of this LogAnalyticsSourceLabelCondition.
+        :rtype: str
+        """
+        return self._condition_string
+
+    @condition_string.setter
+    def condition_string(self, condition_string):
+        """
+        Sets the condition_string of this LogAnalyticsSourceLabelCondition.
+        String representation of the label condition. This supports specifying multiple condition blocks at various nested levels.
+
+
+        :param condition_string: The condition_string of this LogAnalyticsSourceLabelCondition.
+        :type: str
+        """
+        self._condition_string = condition_string
+
+    @property
+    def condition_block(self):
+        """
+        Gets the condition_block of this LogAnalyticsSourceLabelCondition.
+
+        :return: The condition_block of this LogAnalyticsSourceLabelCondition.
+        :rtype: oci.log_analytics.models.ConditionBlock
+        """
+        return self._condition_block
+
+    @condition_block.setter
+    def condition_block(self, condition_block):
+        """
+        Sets the condition_block of this LogAnalyticsSourceLabelCondition.
+
+        :param condition_block: The condition_block of this LogAnalyticsSourceLabelCondition.
+        :type: oci.log_analytics.models.ConditionBlock
+        """
+        self._condition_block = condition_block
 
     @property
     def message(self):

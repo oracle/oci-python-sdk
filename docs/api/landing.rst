@@ -81,6 +81,7 @@ API Reference
 * :doc:`Event <os_management/client/oci.os_management.EventClient>`
 * :doc:`Events <events/client/oci.events.EventsClient>`
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
+* :doc:`Fleet Software Update <fleet_software_update/client/oci.fleet_software_update.FleetSoftwareUpdateClient>`
 * :doc:`Functions Invoke <functions/client/oci.functions.FunctionsInvokeClient>`
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
 * :doc:`Fusion Applications <fusion_apps/client/oci.fusion_apps.FusionApplicationsClient>`
@@ -289,6 +290,7 @@ API Reference
     email
     events
     file_storage
+    fleet_software_update
     functions
     fusion_apps
     generic_artifacts_content

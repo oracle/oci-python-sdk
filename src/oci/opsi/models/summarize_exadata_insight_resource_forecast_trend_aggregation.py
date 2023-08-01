@@ -138,6 +138,10 @@ class SummarizeExadataInsightResourceForecastTrendAggregation(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type usage_unit: str
 
+        :param selected_forecast_algorithm:
+            The value to assign to the selected_forecast_algorithm property of this SummarizeExadataInsightResourceForecastTrendAggregation.
+        :type selected_forecast_algorithm: str
+
         :param pattern:
             The value to assign to the pattern property of this SummarizeExadataInsightResourceForecastTrendAggregation.
             Allowed values for this property are: "LINEAR", "MONTHLY_SEASONS", "MONTHLY_AND_YEARLY_SEASONS", "WEEKLY_SEASONS", "WEEKLY_AND_MONTHLY_SEASONS", "WEEKLY_MONTHLY_AND_YEARLY_SEASONS", "WEEKLY_AND_YEARLY_SEASONS", "YEARLY_SEASONS", 'UNKNOWN_ENUM_VALUE'.
@@ -163,6 +167,7 @@ class SummarizeExadataInsightResourceForecastTrendAggregation(object):
             'exadata_resource_metric': 'str',
             'exadata_resource_type': 'str',
             'usage_unit': 'str',
+            'selected_forecast_algorithm': 'str',
             'pattern': 'str',
             'days_to_reach_capacity': 'int',
             'historical_data': 'list[HistoricalDataItem]',
@@ -175,6 +180,7 @@ class SummarizeExadataInsightResourceForecastTrendAggregation(object):
             'exadata_resource_metric': 'exadataResourceMetric',
             'exadata_resource_type': 'exadataResourceType',
             'usage_unit': 'usageUnit',
+            'selected_forecast_algorithm': 'selectedForecastAlgorithm',
             'pattern': 'pattern',
             'days_to_reach_capacity': 'daysToReachCapacity',
             'historical_data': 'historicalData',
@@ -186,6 +192,7 @@ class SummarizeExadataInsightResourceForecastTrendAggregation(object):
         self._exadata_resource_metric = None
         self._exadata_resource_type = None
         self._usage_unit = None
+        self._selected_forecast_algorithm = None
         self._pattern = None
         self._days_to_reach_capacity = None
         self._historical_data = None
@@ -328,6 +335,30 @@ class SummarizeExadataInsightResourceForecastTrendAggregation(object):
         if not value_allowed_none_or_none_sentinel(usage_unit, allowed_values):
             usage_unit = 'UNKNOWN_ENUM_VALUE'
         self._usage_unit = usage_unit
+
+    @property
+    def selected_forecast_algorithm(self):
+        """
+        Gets the selected_forecast_algorithm of this SummarizeExadataInsightResourceForecastTrendAggregation.
+        Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+
+
+        :return: The selected_forecast_algorithm of this SummarizeExadataInsightResourceForecastTrendAggregation.
+        :rtype: str
+        """
+        return self._selected_forecast_algorithm
+
+    @selected_forecast_algorithm.setter
+    def selected_forecast_algorithm(self, selected_forecast_algorithm):
+        """
+        Sets the selected_forecast_algorithm of this SummarizeExadataInsightResourceForecastTrendAggregation.
+        Auto-ML algorithm leveraged for the forecast. Only applicable for Auto-ML forecast.
+
+
+        :param selected_forecast_algorithm: The selected_forecast_algorithm of this SummarizeExadataInsightResourceForecastTrendAggregation.
+        :type: str
+        """
+        self._selected_forecast_algorithm = selected_forecast_algorithm
 
     @property
     def pattern(self):

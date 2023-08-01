@@ -36,25 +36,46 @@ class EstimateRecallDataSizeResult(object):
             The value to assign to the is_overlapping_with_existing_recalls property of this EstimateRecallDataSizeResult.
         :type is_overlapping_with_existing_recalls: bool
 
+        :param core_group_count:
+            The value to assign to the core_group_count property of this EstimateRecallDataSizeResult.
+        :type core_group_count: int
+
+        :param core_group_count_limit:
+            The value to assign to the core_group_count_limit property of this EstimateRecallDataSizeResult.
+        :type core_group_count_limit: int
+
+        :param size_limit_in_bytes:
+            The value to assign to the size_limit_in_bytes property of this EstimateRecallDataSizeResult.
+        :type size_limit_in_bytes: int
+
         """
         self.swagger_types = {
             'time_data_ended': 'datetime',
             'time_data_started': 'datetime',
             'size_in_bytes': 'int',
-            'is_overlapping_with_existing_recalls': 'bool'
+            'is_overlapping_with_existing_recalls': 'bool',
+            'core_group_count': 'int',
+            'core_group_count_limit': 'int',
+            'size_limit_in_bytes': 'int'
         }
 
         self.attribute_map = {
             'time_data_ended': 'timeDataEnded',
             'time_data_started': 'timeDataStarted',
             'size_in_bytes': 'sizeInBytes',
-            'is_overlapping_with_existing_recalls': 'isOverlappingWithExistingRecalls'
+            'is_overlapping_with_existing_recalls': 'isOverlappingWithExistingRecalls',
+            'core_group_count': 'coreGroupCount',
+            'core_group_count_limit': 'coreGroupCountLimit',
+            'size_limit_in_bytes': 'sizeLimitInBytes'
         }
 
         self._time_data_ended = None
         self._time_data_started = None
         self._size_in_bytes = None
         self._is_overlapping_with_existing_recalls = None
+        self._core_group_count = None
+        self._core_group_count_limit = None
+        self._size_limit_in_bytes = None
 
     @property
     def time_data_ended(self):
@@ -155,6 +176,78 @@ class EstimateRecallDataSizeResult(object):
         :type: bool
         """
         self._is_overlapping_with_existing_recalls = is_overlapping_with_existing_recalls
+
+    @property
+    def core_group_count(self):
+        """
+        Gets the core_group_count of this EstimateRecallDataSizeResult.
+        This is the number of core groups estimated for this recall
+
+
+        :return: The core_group_count of this EstimateRecallDataSizeResult.
+        :rtype: int
+        """
+        return self._core_group_count
+
+    @core_group_count.setter
+    def core_group_count(self, core_group_count):
+        """
+        Sets the core_group_count of this EstimateRecallDataSizeResult.
+        This is the number of core groups estimated for this recall
+
+
+        :param core_group_count: The core_group_count of this EstimateRecallDataSizeResult.
+        :type: int
+        """
+        self._core_group_count = core_group_count
+
+    @property
+    def core_group_count_limit(self):
+        """
+        Gets the core_group_count_limit of this EstimateRecallDataSizeResult.
+        This is the max number of core groups that is available for any recall
+
+
+        :return: The core_group_count_limit of this EstimateRecallDataSizeResult.
+        :rtype: int
+        """
+        return self._core_group_count_limit
+
+    @core_group_count_limit.setter
+    def core_group_count_limit(self, core_group_count_limit):
+        """
+        Sets the core_group_count_limit of this EstimateRecallDataSizeResult.
+        This is the max number of core groups that is available for any recall
+
+
+        :param core_group_count_limit: The core_group_count_limit of this EstimateRecallDataSizeResult.
+        :type: int
+        """
+        self._core_group_count_limit = core_group_count_limit
+
+    @property
+    def size_limit_in_bytes(self):
+        """
+        Gets the size_limit_in_bytes of this EstimateRecallDataSizeResult.
+        This is the size limit in bytes
+
+
+        :return: The size_limit_in_bytes of this EstimateRecallDataSizeResult.
+        :rtype: int
+        """
+        return self._size_limit_in_bytes
+
+    @size_limit_in_bytes.setter
+    def size_limit_in_bytes(self, size_limit_in_bytes):
+        """
+        Sets the size_limit_in_bytes of this EstimateRecallDataSizeResult.
+        This is the size limit in bytes
+
+
+        :param size_limit_in_bytes: The size_limit_in_bytes of this EstimateRecallDataSizeResult.
+        :type: int
+        """
+        self._size_limit_in_bytes = size_limit_in_bytes
 
     def __repr__(self):
         return formatted_flat_dict(self)

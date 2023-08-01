@@ -20,6 +20,10 @@ class CreationSource(object):
     TYPE_EM_BRIDGE = "EM_BRIDGE"
 
     #: A constant which can be used with the type property of a CreationSource.
+    #: This constant has a value of "BULK_DISCOVERY"
+    TYPE_BULK_DISCOVERY = "BULK_DISCOVERY"
+
+    #: A constant which can be used with the type property of a CreationSource.
     #: This constant has a value of "SERVICE_CONNECTOR_HUB"
     TYPE_SERVICE_CONNECTOR_HUB = "SERVICE_CONNECTOR_HUB"
 
@@ -38,7 +42,7 @@ class CreationSource(object):
 
         :param type:
             The value to assign to the type property of this CreationSource.
-            Allowed values for this property are: "EM_BRIDGE", "SERVICE_CONNECTOR_HUB", "DISCOVERY", "NONE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EM_BRIDGE", "BULK_DISCOVERY", "SERVICE_CONNECTOR_HUB", "DISCOVERY", "NONE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -66,7 +70,7 @@ class CreationSource(object):
         Gets the type of this CreationSource.
         Source that auto-created the entity.
 
-        Allowed values for this property are: "EM_BRIDGE", "SERVICE_CONNECTOR_HUB", "DISCOVERY", "NONE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EM_BRIDGE", "BULK_DISCOVERY", "SERVICE_CONNECTOR_HUB", "DISCOVERY", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -85,7 +89,7 @@ class CreationSource(object):
         :param type: The type of this CreationSource.
         :type: str
         """
-        allowed_values = ["EM_BRIDGE", "SERVICE_CONNECTOR_HUB", "DISCOVERY", "NONE"]
+        allowed_values = ["EM_BRIDGE", "BULK_DISCOVERY", "SERVICE_CONNECTOR_HUB", "DISCOVERY", "NONE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

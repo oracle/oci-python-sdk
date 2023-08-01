@@ -215,6 +215,18 @@ class AbstractCommandDescriptor(object):
     #: This constant has a value of "TIME_CLUSTER"
     NAME_TIME_CLUSTER = "TIME_CLUSTER"
 
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "FREQUENT"
+    NAME_FREQUENT = "FREQUENT"
+
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "RARE"
+    NAME_RARE = "RARE"
+
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "OUTLIER"
+    NAME_OUTLIER = "OUTLIER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AbstractCommandDescriptor object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -224,6 +236,7 @@ class AbstractCommandDescriptor(object):
         * :class:`~oci.log_analytics.models.HighlightCommandDescriptor`
         * :class:`~oci.log_analytics.models.StatsCommandDescriptor`
         * :class:`~oci.log_analytics.models.TailCommandDescriptor`
+        * :class:`~oci.log_analytics.models.OutlierCommandDescriptor`
         * :class:`~oci.log_analytics.models.DemoModeCommandDescriptor`
         * :class:`~oci.log_analytics.models.FieldSummaryCommandDescriptor`
         * :class:`~oci.log_analytics.models.GeoStatsCommandDescriptor`
@@ -235,6 +248,7 @@ class AbstractCommandDescriptor(object):
         * :class:`~oci.log_analytics.models.DeleteCommandDescriptor`
         * :class:`~oci.log_analytics.models.SearchCommandDescriptor`
         * :class:`~oci.log_analytics.models.BucketCommandDescriptor`
+        * :class:`~oci.log_analytics.models.RareCommandDescriptor`
         * :class:`~oci.log_analytics.models.AddInsightsCommandDescriptor`
         * :class:`~oci.log_analytics.models.LinkCommandDescriptor`
         * :class:`~oci.log_analytics.models.SortCommandDescriptor`
@@ -254,6 +268,7 @@ class AbstractCommandDescriptor(object):
         * :class:`~oci.log_analytics.models.EventStatsCommandDescriptor`
         * :class:`~oci.log_analytics.models.WhereCommandDescriptor`
         * :class:`~oci.log_analytics.models.ClusterSplitCommandDescriptor`
+        * :class:`~oci.log_analytics.models.FrequentCommandDescriptor`
         * :class:`~oci.log_analytics.models.ClusterDetailsCommandDescriptor`
         * :class:`~oci.log_analytics.models.ClusterCompareCommandDescriptor`
         * :class:`~oci.log_analytics.models.CommandDescriptor`
@@ -275,7 +290,7 @@ class AbstractCommandDescriptor(object):
 
         :param name:
             The value to assign to the name property of this AbstractCommandDescriptor.
-            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER", "FREQUENT", "RARE", "OUTLIER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type name: str
 
@@ -352,6 +367,9 @@ class AbstractCommandDescriptor(object):
         if type == 'TAIL':
             return 'TailCommandDescriptor'
 
+        if type == 'OUTLIER':
+            return 'OutlierCommandDescriptor'
+
         if type == 'DEMO_MODE':
             return 'DemoModeCommandDescriptor'
 
@@ -384,6 +402,9 @@ class AbstractCommandDescriptor(object):
 
         if type == 'BUCKET':
             return 'BucketCommandDescriptor'
+
+        if type == 'RARE':
+            return 'RareCommandDescriptor'
 
         if type == 'ADD_INSIGHTS':
             return 'AddInsightsCommandDescriptor'
@@ -442,6 +463,9 @@ class AbstractCommandDescriptor(object):
         if type == 'CLUSTER_SPLIT':
             return 'ClusterSplitCommandDescriptor'
 
+        if type == 'FREQUENT':
+            return 'FrequentCommandDescriptor'
+
         if type == 'CLUSTER_DETAILS':
             return 'ClusterDetailsCommandDescriptor'
 
@@ -498,7 +522,7 @@ class AbstractCommandDescriptor(object):
         **[Required]** Gets the name of this AbstractCommandDescriptor.
         Name of querylanguage command
 
-        Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER", "FREQUENT", "RARE", "OUTLIER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -517,7 +541,7 @@ class AbstractCommandDescriptor(object):
         :param name: The name of this AbstractCommandDescriptor.
         :type: str
         """
-        allowed_values = ["COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER"]
+        allowed_values = ["COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MODULE", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", "ADD_INSIGHTS", "ANOMALY", "DEDUP", "TIME_CLUSTER", "FREQUENT", "RARE", "OUTLIER"]
         if not value_allowed_none_or_none_sentinel(name, allowed_values):
             name = 'UNKNOWN_ENUM_VALUE'
         self._name = name

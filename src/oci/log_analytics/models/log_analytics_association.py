@@ -106,6 +106,10 @@ class LogAnalyticsAssociation(object):
             The value to assign to the log_group_compartment property of this LogAnalyticsAssociation.
         :type log_group_compartment: str
 
+        :param association_properties:
+            The value to assign to the association_properties property of this LogAnalyticsAssociation.
+        :type association_properties: list[oci.log_analytics.models.AssociationProperty]
+
         """
         self.swagger_types = {
             'failure_message': 'str',
@@ -124,7 +128,8 @@ class LogAnalyticsAssociation(object):
             'entity_type_display_name': 'str',
             'log_group_id': 'str',
             'log_group_name': 'str',
-            'log_group_compartment': 'str'
+            'log_group_compartment': 'str',
+            'association_properties': 'list[AssociationProperty]'
         }
 
         self.attribute_map = {
@@ -144,7 +149,8 @@ class LogAnalyticsAssociation(object):
             'entity_type_display_name': 'entityTypeDisplayName',
             'log_group_id': 'logGroupId',
             'log_group_name': 'logGroupName',
-            'log_group_compartment': 'logGroupCompartment'
+            'log_group_compartment': 'logGroupCompartment',
+            'association_properties': 'associationProperties'
         }
 
         self._failure_message = None
@@ -164,6 +170,7 @@ class LogAnalyticsAssociation(object):
         self._log_group_id = None
         self._log_group_name = None
         self._log_group_compartment = None
+        self._association_properties = None
 
     @property
     def failure_message(self):
@@ -582,6 +589,30 @@ class LogAnalyticsAssociation(object):
         :type: str
         """
         self._log_group_compartment = log_group_compartment
+
+    @property
+    def association_properties(self):
+        """
+        Gets the association_properties of this LogAnalyticsAssociation.
+        A list of association properties.
+
+
+        :return: The association_properties of this LogAnalyticsAssociation.
+        :rtype: list[oci.log_analytics.models.AssociationProperty]
+        """
+        return self._association_properties
+
+    @association_properties.setter
+    def association_properties(self, association_properties):
+        """
+        Sets the association_properties of this LogAnalyticsAssociation.
+        A list of association properties.
+
+
+        :param association_properties: The association_properties of this LogAnalyticsAssociation.
+        :type: list[oci.log_analytics.models.AssociationProperty]
+        """
+        self._association_properties = association_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

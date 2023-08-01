@@ -1,0 +1,11 @@
+RollbackDetails
+===============
+
+.. currentmodule:: oci.fleet_software_update.models
+
+.. autoclass:: RollbackDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

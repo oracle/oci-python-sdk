@@ -79,6 +79,18 @@ class ScheduledActivity(object):
     #: This constant has a value of "ROLLBACKFAILED"
     LIFECYCLE_DETAILS_ROLLBACKFAILED = "ROLLBACKFAILED"
 
+    #: A constant which can be used with the scheduled_activity_phase property of a ScheduledActivity.
+    #: This constant has a value of "PRE_MAINTENANCE"
+    SCHEDULED_ACTIVITY_PHASE_PRE_MAINTENANCE = "PRE_MAINTENANCE"
+
+    #: A constant which can be used with the scheduled_activity_phase property of a ScheduledActivity.
+    #: This constant has a value of "MAINTENANCE"
+    SCHEDULED_ACTIVITY_PHASE_MAINTENANCE = "MAINTENANCE"
+
+    #: A constant which can be used with the scheduled_activity_phase property of a ScheduledActivity.
+    #: This constant has a value of "POST_MAINTENANCE"
+    SCHEDULED_ACTIVITY_PHASE_POST_MAINTENANCE = "POST_MAINTENANCE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ScheduledActivity object with values from keyword arguments.
@@ -148,6 +160,16 @@ class ScheduledActivity(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_details: str
 
+        :param scheduled_activity_phase:
+            The value to assign to the scheduled_activity_phase property of this ScheduledActivity.
+            Allowed values for this property are: "PRE_MAINTENANCE", "MAINTENANCE", "POST_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type scheduled_activity_phase: str
+
+        :param scheduled_activity_association_id:
+            The value to assign to the scheduled_activity_association_id property of this ScheduledActivity.
+        :type scheduled_activity_association_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -163,7 +185,9 @@ class ScheduledActivity(object):
             'delay_in_hours': 'int',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'scheduled_activity_phase': 'str',
+            'scheduled_activity_association_id': 'str'
         }
 
         self.attribute_map = {
@@ -180,7 +204,9 @@ class ScheduledActivity(object):
             'delay_in_hours': 'delayInHours',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'scheduled_activity_phase': 'scheduledActivityPhase',
+            'scheduled_activity_association_id': 'scheduledActivityAssociationId'
         }
 
         self._id = None
@@ -197,6 +223,8 @@ class ScheduledActivity(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_details = None
+        self._scheduled_activity_phase = None
+        self._scheduled_activity_association_id = None
 
     @property
     def id(self):
@@ -557,6 +585,60 @@ class ScheduledActivity(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_details, allowed_values):
             lifecycle_details = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def scheduled_activity_phase(self):
+        """
+        **[Required]** Gets the scheduled_activity_phase of this ScheduledActivity.
+        A property describing the phase of the scheduled activity.
+
+        Allowed values for this property are: "PRE_MAINTENANCE", "MAINTENANCE", "POST_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The scheduled_activity_phase of this ScheduledActivity.
+        :rtype: str
+        """
+        return self._scheduled_activity_phase
+
+    @scheduled_activity_phase.setter
+    def scheduled_activity_phase(self, scheduled_activity_phase):
+        """
+        Sets the scheduled_activity_phase of this ScheduledActivity.
+        A property describing the phase of the scheduled activity.
+
+
+        :param scheduled_activity_phase: The scheduled_activity_phase of this ScheduledActivity.
+        :type: str
+        """
+        allowed_values = ["PRE_MAINTENANCE", "MAINTENANCE", "POST_MAINTENANCE"]
+        if not value_allowed_none_or_none_sentinel(scheduled_activity_phase, allowed_values):
+            scheduled_activity_phase = 'UNKNOWN_ENUM_VALUE'
+        self._scheduled_activity_phase = scheduled_activity_phase
+
+    @property
+    def scheduled_activity_association_id(self):
+        """
+        **[Required]** Gets the scheduled_activity_association_id of this ScheduledActivity.
+        The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+
+
+        :return: The scheduled_activity_association_id of this ScheduledActivity.
+        :rtype: str
+        """
+        return self._scheduled_activity_association_id
+
+    @scheduled_activity_association_id.setter
+    def scheduled_activity_association_id(self, scheduled_activity_association_id):
+        """
+        Sets the scheduled_activity_association_id of this ScheduledActivity.
+        The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+
+
+        :param scheduled_activity_association_id: The scheduled_activity_association_id of this ScheduledActivity.
+        :type: str
+        """
+        self._scheduled_activity_association_id = scheduled_activity_association_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

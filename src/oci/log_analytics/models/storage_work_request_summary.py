@@ -60,6 +60,10 @@ class StorageWorkRequestSummary(object):
     OPERATION_TYPE_RELEASE_RECALLED_STORAGE_DATA = "RELEASE_RECALLED_STORAGE_DATA"
 
     #: A constant which can be used with the operation_type property of a StorageWorkRequestSummary.
+    #: This constant has a value of "PURGE_ARCHIVAL_DATA"
+    OPERATION_TYPE_PURGE_ARCHIVAL_DATA = "PURGE_ARCHIVAL_DATA"
+
+    #: A constant which can be used with the operation_type property of a StorageWorkRequestSummary.
     #: This constant has a value of "ARCHIVE_STORAGE_DATA"
     OPERATION_TYPE_ARCHIVE_STORAGE_DATA = "ARCHIVE_STORAGE_DATA"
 
@@ -170,7 +174,7 @@ class StorageWorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this StorageWorkRequestSummary.
-            Allowed values for this property are: "OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", "ENCRYPT_ACTIVE_DATA", "ENCRYPT_ARCHIVAL_DATA", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "PURGE_ARCHIVAL_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", "ENCRYPT_ACTIVE_DATA", "ENCRYPT_ARCHIVAL_DATA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -183,6 +187,22 @@ class StorageWorkRequestSummary(object):
             Allowed values for this property are: "ACTIVE_DATA", "ARCHIVAL_DATA", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type key_type: str
+
+        :param log_sets:
+            The value to assign to the log_sets property of this StorageWorkRequestSummary.
+        :type log_sets: str
+
+        :param purpose:
+            The value to assign to the purpose property of this StorageWorkRequestSummary.
+        :type purpose: str
+
+        :param query:
+            The value to assign to the query property of this StorageWorkRequestSummary.
+        :type query: str
+
+        :param is_recall_new_data_only:
+            The value to assign to the is_recall_new_data_only property of this StorageWorkRequestSummary.
+        :type is_recall_new_data_only: bool
 
         """
         self.swagger_types = {
@@ -206,7 +226,11 @@ class StorageWorkRequestSummary(object):
             'compartment_id_in_subtree': 'bool',
             'operation_type': 'str',
             'key_id': 'str',
-            'key_type': 'str'
+            'key_type': 'str',
+            'log_sets': 'str',
+            'purpose': 'str',
+            'query': 'str',
+            'is_recall_new_data_only': 'bool'
         }
 
         self.attribute_map = {
@@ -230,7 +254,11 @@ class StorageWorkRequestSummary(object):
             'compartment_id_in_subtree': 'compartmentIdInSubtree',
             'operation_type': 'operationType',
             'key_id': 'keyId',
-            'key_type': 'keyType'
+            'key_type': 'keyType',
+            'log_sets': 'logSets',
+            'purpose': 'purpose',
+            'query': 'query',
+            'is_recall_new_data_only': 'isRecallNewDataOnly'
         }
 
         self._id = None
@@ -254,6 +282,10 @@ class StorageWorkRequestSummary(object):
         self._operation_type = None
         self._key_id = None
         self._key_type = None
+        self._log_sets = None
+        self._purpose = None
+        self._query = None
+        self._is_recall_new_data_only = None
 
     @property
     def id(self):
@@ -709,7 +741,7 @@ class StorageWorkRequestSummary(object):
         **[Required]** Gets the operation_type of this StorageWorkRequestSummary.
         This is the type of the work request.
 
-        Allowed values for this property are: "OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", "ENCRYPT_ACTIVE_DATA", "ENCRYPT_ARCHIVAL_DATA", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "PURGE_ARCHIVAL_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", "ENCRYPT_ACTIVE_DATA", "ENCRYPT_ARCHIVAL_DATA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -728,7 +760,7 @@ class StorageWorkRequestSummary(object):
         :param operation_type: The operation_type of this StorageWorkRequestSummary.
         :type: str
         """
-        allowed_values = ["OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", "ENCRYPT_ACTIVE_DATA", "ENCRYPT_ARCHIVAL_DATA"]
+        allowed_values = ["OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "PURGE_ARCHIVAL_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", "ENCRYPT_ACTIVE_DATA", "ENCRYPT_ARCHIVAL_DATA"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -786,6 +818,102 @@ class StorageWorkRequestSummary(object):
         if not value_allowed_none_or_none_sentinel(key_type, allowed_values):
             key_type = 'UNKNOWN_ENUM_VALUE'
         self._key_type = key_type
+
+    @property
+    def log_sets(self):
+        """
+        Gets the log_sets of this StorageWorkRequestSummary.
+        This is a list of logsets associated with this work request
+
+
+        :return: The log_sets of this StorageWorkRequestSummary.
+        :rtype: str
+        """
+        return self._log_sets
+
+    @log_sets.setter
+    def log_sets(self, log_sets):
+        """
+        Sets the log_sets of this StorageWorkRequestSummary.
+        This is a list of logsets associated with this work request
+
+
+        :param log_sets: The log_sets of this StorageWorkRequestSummary.
+        :type: str
+        """
+        self._log_sets = log_sets
+
+    @property
+    def purpose(self):
+        """
+        Gets the purpose of this StorageWorkRequestSummary.
+        This is the purpose of the operation associated with this work request
+
+
+        :return: The purpose of this StorageWorkRequestSummary.
+        :rtype: str
+        """
+        return self._purpose
+
+    @purpose.setter
+    def purpose(self, purpose):
+        """
+        Sets the purpose of this StorageWorkRequestSummary.
+        This is the purpose of the operation associated with this work request
+
+
+        :param purpose: The purpose of this StorageWorkRequestSummary.
+        :type: str
+        """
+        self._purpose = purpose
+
+    @property
+    def query(self):
+        """
+        Gets the query of this StorageWorkRequestSummary.
+        This is the query string applied on the operation associated with this work request
+
+
+        :return: The query of this StorageWorkRequestSummary.
+        :rtype: str
+        """
+        return self._query
+
+    @query.setter
+    def query(self, query):
+        """
+        Sets the query of this StorageWorkRequestSummary.
+        This is the query string applied on the operation associated with this work request
+
+
+        :param query: The query of this StorageWorkRequestSummary.
+        :type: str
+        """
+        self._query = query
+
+    @property
+    def is_recall_new_data_only(self):
+        """
+        Gets the is_recall_new_data_only of this StorageWorkRequestSummary.
+        This is the flag to indicate if only new data has to be recalled in this work request
+
+
+        :return: The is_recall_new_data_only of this StorageWorkRequestSummary.
+        :rtype: bool
+        """
+        return self._is_recall_new_data_only
+
+    @is_recall_new_data_only.setter
+    def is_recall_new_data_only(self, is_recall_new_data_only):
+        """
+        Sets the is_recall_new_data_only of this StorageWorkRequestSummary.
+        This is the flag to indicate if only new data has to be recalled in this work request
+
+
+        :param is_recall_new_data_only: The is_recall_new_data_only of this StorageWorkRequestSummary.
+        :type: bool
+        """
+        self._is_recall_new_data_only = is_recall_new_data_only
 
     def __repr__(self):
         return formatted_flat_dict(self)

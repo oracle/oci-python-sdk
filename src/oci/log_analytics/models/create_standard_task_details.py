@@ -29,10 +29,6 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
     #: This constant has a value of "PURGE"
     TASK_TYPE_PURGE = "PURGE"
 
-    #: A constant which can be used with the task_type property of a CreateStandardTaskDetails.
-    #: This constant has a value of "ACCELERATION_MAINTENANCE"
-    TASK_TYPE_ACCELERATION_MAINTENANCE = "ACCELERATION_MAINTENANCE"
-
     def __init__(self, **kwargs):
         """
         Initializes a new CreateStandardTaskDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.log_analytics.models.CreateStandardTaskDetails.kind` attribute
@@ -62,7 +58,7 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
 
         :param task_type:
             The value to assign to the task_type property of this CreateStandardTaskDetails.
-            Allowed values for this property are: "SAVED_SEARCH", "ACCELERATION", "PURGE", "ACCELERATION_MAINTENANCE"
+            Allowed values for this property are: "SAVED_SEARCH", "ACCELERATION", "PURGE"
         :type task_type: str
 
         :param schedules:
@@ -112,7 +108,7 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
         **[Required]** Gets the task_type of this CreateStandardTaskDetails.
         Task type.
 
-        Allowed values for this property are: "SAVED_SEARCH", "ACCELERATION", "PURGE", "ACCELERATION_MAINTENANCE"
+        Allowed values for this property are: "SAVED_SEARCH", "ACCELERATION", "PURGE"
 
 
         :return: The task_type of this CreateStandardTaskDetails.
@@ -130,7 +126,7 @@ class CreateStandardTaskDetails(CreateScheduledTaskDetails):
         :param task_type: The task_type of this CreateStandardTaskDetails.
         :type: str
         """
-        allowed_values = ["SAVED_SEARCH", "ACCELERATION", "PURGE", "ACCELERATION_MAINTENANCE"]
+        allowed_values = ["SAVED_SEARCH", "ACCELERATION", "PURGE"]
         if not value_allowed_none_or_none_sentinel(task_type, allowed_values):
             raise ValueError(
                 "Invalid value for `task_type`, must be None or one of {0}"

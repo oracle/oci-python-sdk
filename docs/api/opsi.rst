@@ -89,6 +89,7 @@ Opsi
     oci.opsi.models.ChangeEnterpriseManagerBridgeCompartmentDetails
     oci.opsi.models.ChangeExadataInsightCompartmentDetails
     oci.opsi.models.ChangeHostInsightCompartmentDetails
+    oci.opsi.models.ChangeNewsReportCompartmentDetails
     oci.opsi.models.ChangeOperationsInsightsPrivateEndpointCompartmentDetails
     oci.opsi.models.ChangeOpsiConfigurationCompartmentDetails
     oci.opsi.models.ChangePeComanagedDatabaseInsightDetails
@@ -115,6 +116,7 @@ Opsi
     oci.opsi.models.CreateHostInsightDetails
     oci.opsi.models.CreateMacsManagedCloudHostInsightDetails
     oci.opsi.models.CreateMacsManagedExternalHostInsightDetails
+    oci.opsi.models.CreateNewsReportDetails
     oci.opsi.models.CreateOperationsInsightsPrivateEndpointDetails
     oci.opsi.models.CreateOperationsInsightsWarehouseDetails
     oci.opsi.models.CreateOperationsInsightsWarehouseUserDetails
@@ -253,6 +255,8 @@ Opsi
     oci.opsi.models.IngestHostConfigurationResponseDetails
     oci.opsi.models.IngestHostMetricsDetails
     oci.opsi.models.IngestHostMetricsResponseDetails
+    oci.opsi.models.IngestMySqlSqlTextDetails
+    oci.opsi.models.IngestMySqlSqlTextResponseDetails
     oci.opsi.models.IngestSqlBucketDetails
     oci.opsi.models.IngestSqlBucketResponseDetails
     oci.opsi.models.IngestSqlPlanLinesDetails
@@ -271,8 +275,14 @@ Opsi
     oci.opsi.models.MacsManagedExternalHostConfigurationSummary
     oci.opsi.models.MacsManagedExternalHostInsight
     oci.opsi.models.MacsManagedExternalHostInsightSummary
+    oci.opsi.models.MySqlSqlText
     oci.opsi.models.NetworkUsageTrend
     oci.opsi.models.NetworkUsageTrendAggregation
+    oci.opsi.models.NewsContentTypes
+    oci.opsi.models.NewsReport
+    oci.opsi.models.NewsReportCollection
+    oci.opsi.models.NewsReportSummary
+    oci.opsi.models.NewsReports
     oci.opsi.models.OperationsInsightsPrivateEndpoint
     oci.opsi.models.OperationsInsightsPrivateEndpointCollection
     oci.opsi.models.OperationsInsightsPrivateEndpointSummary
@@ -400,6 +410,7 @@ Opsi
     oci.opsi.models.UpdateMacsManagedCloudHostInsightDetails
     oci.opsi.models.UpdateMacsManagedExternalDatabaseInsightDetails
     oci.opsi.models.UpdateMacsManagedExternalHostInsightDetails
+    oci.opsi.models.UpdateNewsReportDetails
     oci.opsi.models.UpdateOperationsInsightsPrivateEndpointDetails
     oci.opsi.models.UpdateOperationsInsightsWarehouseDetails
     oci.opsi.models.UpdateOperationsInsightsWarehouseUserDetails

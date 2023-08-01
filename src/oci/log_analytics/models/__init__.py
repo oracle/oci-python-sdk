@@ -21,6 +21,7 @@ from .argument import Argument
 from .assign_encryption_key_details import AssignEncryptionKeyDetails
 from .associable_entity import AssociableEntity
 from .associable_entity_collection import AssociableEntityCollection
+from .association_property import AssociationProperty
 from .association_summary_report import AssociationSummaryReport
 from .auto_association_collection import AutoAssociationCollection
 from .auto_association_state import AutoAssociationState
@@ -51,6 +52,7 @@ from .compare_command_descriptor import CompareCommandDescriptor
 from .compare_content_details import CompareContentDetails
 from .compare_content_result import CompareContentResult
 from .compare_line_result import CompareLineResult
+from .condition_block import ConditionBlock
 from .create_acceleration_task_details import CreateAccelerationTaskDetails
 from .create_ingest_time_rule_details import CreateIngestTimeRuleDetails
 from .create_log_analytics_em_bridge_details import CreateLogAnalyticsEmBridgeDetails
@@ -62,6 +64,7 @@ from .create_scheduled_task_details import CreateScheduledTaskDetails
 from .create_standard_task_details import CreateStandardTaskDetails
 from .create_view_command_descriptor import CreateViewCommandDescriptor
 from .creation_source import CreationSource
+from .credential_endpoint import CredentialEndpoint
 from .cron_schedule import CronSchedule
 from .dedup_command_descriptor import DedupCommandDescriptor
 from .delete_command_descriptor import DeleteCommandDescriptor
@@ -73,10 +76,17 @@ from .disable_auto_association_detail import DisableAutoAssociationDetail
 from .disable_auto_association_details import DisableAutoAssociationDetails
 from .distinct_command_descriptor import DistinctCommandDescriptor
 from .efd_regex_result import EfdRegexResult
+from .effective_property_collection import EffectivePropertyCollection
+from .effective_property_summary import EffectivePropertySummary
 from .enable_auto_association_detail import EnableAutoAssociationDetail
 from .enable_auto_association_details import EnableAutoAssociationDetails
 from .encryption_key_info_collection import EncryptionKeyInfoCollection
 from .encryption_key_info_summary import EncryptionKeyInfoSummary
+from .endpoint_credentials import EndpointCredentials
+from .endpoint_proxy import EndpointProxy
+from .endpoint_request import EndpointRequest
+from .endpoint_response import EndpointResponse
+from .endpoint_result import EndpointResult
 from .entity_type_property import EntityTypeProperty
 from .error_details import ErrorDetails
 from .estimate_purge_data_size_details import EstimatePurgeDataSizeDetails
@@ -109,6 +119,7 @@ from .filter import Filter
 from .filter_details import FilterDetails
 from .filter_output import FilterOutput
 from .fixed_frequency_schedule import FixedFrequencySchedule
+from .frequent_command_descriptor import FrequentCommandDescriptor
 from .function_field import FunctionField
 from .geo_stats_command_descriptor import GeoStatsCommandDescriptor
 from .head_command_descriptor import HeadCommandDescriptor
@@ -132,6 +143,7 @@ from .label_priority_collection import LabelPriorityCollection
 from .label_source_collection import LabelSourceCollection
 from .label_source_summary import LabelSourceSummary
 from .label_summary_report import LabelSummaryReport
+from .level import Level
 from .link_command_descriptor import LinkCommandDescriptor
 from .link_details_command_descriptor import LinkDetailsCommandDescriptor
 from .literal_argument import LiteralArgument
@@ -151,6 +163,7 @@ from .log_analytics_em_bridge import LogAnalyticsEmBridge
 from .log_analytics_em_bridge_collection import LogAnalyticsEmBridgeCollection
 from .log_analytics_em_bridge_summary import LogAnalyticsEmBridgeSummary
 from .log_analytics_em_bridge_summary_report import LogAnalyticsEmBridgeSummaryReport
+from .log_analytics_endpoint import LogAnalyticsEndpoint
 from .log_analytics_entity import LogAnalyticsEntity
 from .log_analytics_entity_collection import LogAnalyticsEntityCollection
 from .log_analytics_entity_summary import LogAnalyticsEntitySummary
@@ -207,6 +220,7 @@ from .log_analytics_pattern_filter import LogAnalyticsPatternFilter
 from .log_analytics_preference import LogAnalyticsPreference
 from .log_analytics_preference_collection import LogAnalyticsPreferenceCollection
 from .log_analytics_preference_details import LogAnalyticsPreferenceDetails
+from .log_analytics_property import LogAnalyticsProperty
 from .log_analytics_resource_category import LogAnalyticsResourceCategory
 from .log_analytics_resource_category_collection import LogAnalyticsResourceCategoryCollection
 from .log_analytics_resource_category_details import LogAnalyticsResourceCategoryDetails
@@ -225,9 +239,13 @@ from .log_analytics_source_pattern_collection import LogAnalyticsSourcePatternCo
 from .log_analytics_source_summary import LogAnalyticsSourceSummary
 from .log_analytics_warning import LogAnalyticsWarning
 from .log_analytics_warning_collection import LogAnalyticsWarningCollection
+from .log_endpoint import LogEndpoint
 from .log_group_summary_report import LogGroupSummaryReport
+from .log_list_endpoint import LogListEndpoint
+from .log_list_type_endpoint import LogListTypeEndpoint
 from .log_set_collection import LogSetCollection
 from .log_sets_count import LogSetsCount
+from .log_type_endpoint import LogTypeEndpoint
 from .lookup_command_descriptor import LookupCommandDescriptor
 from .lookup_field import LookupField
 from .lookup_summary_report import LookupSummaryReport
@@ -237,16 +255,23 @@ from .match_info import MatchInfo
 from .metric_extraction import MetricExtraction
 from .module_command_descriptor import ModuleCommandDescriptor
 from .multi_search_command_descriptor import MultiSearchCommandDescriptor
+from .name_value_pair import NameValuePair
 from .namespace import Namespace
 from .namespace_collection import NamespaceCollection
 from .namespace_summary import NamespaceSummary
 from .nlp_command_descriptor import NlpCommandDescriptor
+from .outlier_command_descriptor import OutlierCommandDescriptor
+from .overlapping_recall_collection import OverlappingRecallCollection
+from .overlapping_recall_summary import OverlappingRecallSummary
 from .parse_query_details import ParseQueryDetails
 from .parse_query_output import ParseQueryOutput
 from .parsed_content import ParsedContent
 from .parsed_field import ParsedField
 from .parser_summary_report import ParserSummaryReport
 from .parser_test_result import ParserTestResult
+from .pattern_override import PatternOverride
+from .property_metadata_summary import PropertyMetadataSummary
+from .property_metadata_summary_collection import PropertyMetadataSummaryCollection
 from .property_override import PropertyOverride
 from .purge_action import PurgeAction
 from .purge_storage_data_details import PurgeStorageDataDetails
@@ -255,9 +280,13 @@ from .query_details import QueryDetails
 from .query_work_request import QueryWorkRequest
 from .query_work_request_collection import QueryWorkRequestCollection
 from .query_work_request_summary import QueryWorkRequestSummary
+from .rare_command_descriptor import RareCommandDescriptor
 from .recall_archived_data_details import RecallArchivedDataDetails
+from .recall_count import RecallCount
 from .recalled_data import RecalledData
 from .recalled_data_collection import RecalledDataCollection
+from .recalled_data_info import RecalledDataInfo
+from .recalled_data_size import RecalledDataSize
 from .regex_command_descriptor import RegexCommandDescriptor
 from .regex_match_result import RegexMatchResult
 from .release_recalled_data_details import ReleaseRecalledDataDetails
@@ -267,6 +296,7 @@ from .result_column import ResultColumn
 from .rule import Rule
 from .rule_summary import RuleSummary
 from .rule_summary_collection import RuleSummaryCollection
+from .rule_summary_report import RuleSummaryReport
 from .schedule import Schedule
 from .scheduled_task import ScheduledTask
 from .scheduled_task_collection import ScheduledTaskCollection
@@ -294,6 +324,7 @@ from .stream_action import StreamAction
 from .success import Success
 from .suggest_details import SuggestDetails
 from .suggest_output import SuggestOutput
+from .table_column import TableColumn
 from .tail_command_descriptor import TailCommandDescriptor
 from .test_parser_payload_details import TestParserPayloadDetails
 from .time_cluster_column import TimeClusterColumn
@@ -335,6 +366,9 @@ from .upsert_log_analytics_label_details import UpsertLogAnalyticsLabelDetails
 from .upsert_log_analytics_parser_details import UpsertLogAnalyticsParserDetails
 from .upsert_log_analytics_source_details import UpsertLogAnalyticsSourceDetails
 from .usage_status_item import UsageStatusItem
+from .validate_endpoint_result import ValidateEndpointResult
+from .validate_label_condition_details import ValidateLabelConditionDetails
+from .validate_label_condition_result import ValidateLabelConditionResult
 from .verify_output import VerifyOutput
 from .violation import Violation
 from .warning_reference_details import WarningReferenceDetails
@@ -366,6 +400,7 @@ log_analytics_type_mapping = {
     "AssignEncryptionKeyDetails": AssignEncryptionKeyDetails,
     "AssociableEntity": AssociableEntity,
     "AssociableEntityCollection": AssociableEntityCollection,
+    "AssociationProperty": AssociationProperty,
     "AssociationSummaryReport": AssociationSummaryReport,
     "AutoAssociationCollection": AutoAssociationCollection,
     "AutoAssociationState": AutoAssociationState,
@@ -396,6 +431,7 @@ log_analytics_type_mapping = {
     "CompareContentDetails": CompareContentDetails,
     "CompareContentResult": CompareContentResult,
     "CompareLineResult": CompareLineResult,
+    "ConditionBlock": ConditionBlock,
     "CreateAccelerationTaskDetails": CreateAccelerationTaskDetails,
     "CreateIngestTimeRuleDetails": CreateIngestTimeRuleDetails,
     "CreateLogAnalyticsEmBridgeDetails": CreateLogAnalyticsEmBridgeDetails,
@@ -407,6 +443,7 @@ log_analytics_type_mapping = {
     "CreateStandardTaskDetails": CreateStandardTaskDetails,
     "CreateViewCommandDescriptor": CreateViewCommandDescriptor,
     "CreationSource": CreationSource,
+    "CredentialEndpoint": CredentialEndpoint,
     "CronSchedule": CronSchedule,
     "DedupCommandDescriptor": DedupCommandDescriptor,
     "DeleteCommandDescriptor": DeleteCommandDescriptor,
@@ -418,10 +455,17 @@ log_analytics_type_mapping = {
     "DisableAutoAssociationDetails": DisableAutoAssociationDetails,
     "DistinctCommandDescriptor": DistinctCommandDescriptor,
     "EfdRegexResult": EfdRegexResult,
+    "EffectivePropertyCollection": EffectivePropertyCollection,
+    "EffectivePropertySummary": EffectivePropertySummary,
     "EnableAutoAssociationDetail": EnableAutoAssociationDetail,
     "EnableAutoAssociationDetails": EnableAutoAssociationDetails,
     "EncryptionKeyInfoCollection": EncryptionKeyInfoCollection,
     "EncryptionKeyInfoSummary": EncryptionKeyInfoSummary,
+    "EndpointCredentials": EndpointCredentials,
+    "EndpointProxy": EndpointProxy,
+    "EndpointRequest": EndpointRequest,
+    "EndpointResponse": EndpointResponse,
+    "EndpointResult": EndpointResult,
     "EntityTypeProperty": EntityTypeProperty,
     "ErrorDetails": ErrorDetails,
     "EstimatePurgeDataSizeDetails": EstimatePurgeDataSizeDetails,
@@ -454,6 +498,7 @@ log_analytics_type_mapping = {
     "FilterDetails": FilterDetails,
     "FilterOutput": FilterOutput,
     "FixedFrequencySchedule": FixedFrequencySchedule,
+    "FrequentCommandDescriptor": FrequentCommandDescriptor,
     "FunctionField": FunctionField,
     "GeoStatsCommandDescriptor": GeoStatsCommandDescriptor,
     "HeadCommandDescriptor": HeadCommandDescriptor,
@@ -477,6 +522,7 @@ log_analytics_type_mapping = {
     "LabelSourceCollection": LabelSourceCollection,
     "LabelSourceSummary": LabelSourceSummary,
     "LabelSummaryReport": LabelSummaryReport,
+    "Level": Level,
     "LinkCommandDescriptor": LinkCommandDescriptor,
     "LinkDetailsCommandDescriptor": LinkDetailsCommandDescriptor,
     "LiteralArgument": LiteralArgument,
@@ -496,6 +542,7 @@ log_analytics_type_mapping = {
     "LogAnalyticsEmBridgeCollection": LogAnalyticsEmBridgeCollection,
     "LogAnalyticsEmBridgeSummary": LogAnalyticsEmBridgeSummary,
     "LogAnalyticsEmBridgeSummaryReport": LogAnalyticsEmBridgeSummaryReport,
+    "LogAnalyticsEndpoint": LogAnalyticsEndpoint,
     "LogAnalyticsEntity": LogAnalyticsEntity,
     "LogAnalyticsEntityCollection": LogAnalyticsEntityCollection,
     "LogAnalyticsEntitySummary": LogAnalyticsEntitySummary,
@@ -552,6 +599,7 @@ log_analytics_type_mapping = {
     "LogAnalyticsPreference": LogAnalyticsPreference,
     "LogAnalyticsPreferenceCollection": LogAnalyticsPreferenceCollection,
     "LogAnalyticsPreferenceDetails": LogAnalyticsPreferenceDetails,
+    "LogAnalyticsProperty": LogAnalyticsProperty,
     "LogAnalyticsResourceCategory": LogAnalyticsResourceCategory,
     "LogAnalyticsResourceCategoryCollection": LogAnalyticsResourceCategoryCollection,
     "LogAnalyticsResourceCategoryDetails": LogAnalyticsResourceCategoryDetails,
@@ -570,9 +618,13 @@ log_analytics_type_mapping = {
     "LogAnalyticsSourceSummary": LogAnalyticsSourceSummary,
     "LogAnalyticsWarning": LogAnalyticsWarning,
     "LogAnalyticsWarningCollection": LogAnalyticsWarningCollection,
+    "LogEndpoint": LogEndpoint,
     "LogGroupSummaryReport": LogGroupSummaryReport,
+    "LogListEndpoint": LogListEndpoint,
+    "LogListTypeEndpoint": LogListTypeEndpoint,
     "LogSetCollection": LogSetCollection,
     "LogSetsCount": LogSetsCount,
+    "LogTypeEndpoint": LogTypeEndpoint,
     "LookupCommandDescriptor": LookupCommandDescriptor,
     "LookupField": LookupField,
     "LookupSummaryReport": LookupSummaryReport,
@@ -582,16 +634,23 @@ log_analytics_type_mapping = {
     "MetricExtraction": MetricExtraction,
     "ModuleCommandDescriptor": ModuleCommandDescriptor,
     "MultiSearchCommandDescriptor": MultiSearchCommandDescriptor,
+    "NameValuePair": NameValuePair,
     "Namespace": Namespace,
     "NamespaceCollection": NamespaceCollection,
     "NamespaceSummary": NamespaceSummary,
     "NlpCommandDescriptor": NlpCommandDescriptor,
+    "OutlierCommandDescriptor": OutlierCommandDescriptor,
+    "OverlappingRecallCollection": OverlappingRecallCollection,
+    "OverlappingRecallSummary": OverlappingRecallSummary,
     "ParseQueryDetails": ParseQueryDetails,
     "ParseQueryOutput": ParseQueryOutput,
     "ParsedContent": ParsedContent,
     "ParsedField": ParsedField,
     "ParserSummaryReport": ParserSummaryReport,
     "ParserTestResult": ParserTestResult,
+    "PatternOverride": PatternOverride,
+    "PropertyMetadataSummary": PropertyMetadataSummary,
+    "PropertyMetadataSummaryCollection": PropertyMetadataSummaryCollection,
     "PropertyOverride": PropertyOverride,
     "PurgeAction": PurgeAction,
     "PurgeStorageDataDetails": PurgeStorageDataDetails,
@@ -600,9 +659,13 @@ log_analytics_type_mapping = {
     "QueryWorkRequest": QueryWorkRequest,
     "QueryWorkRequestCollection": QueryWorkRequestCollection,
     "QueryWorkRequestSummary": QueryWorkRequestSummary,
+    "RareCommandDescriptor": RareCommandDescriptor,
     "RecallArchivedDataDetails": RecallArchivedDataDetails,
+    "RecallCount": RecallCount,
     "RecalledData": RecalledData,
     "RecalledDataCollection": RecalledDataCollection,
+    "RecalledDataInfo": RecalledDataInfo,
+    "RecalledDataSize": RecalledDataSize,
     "RegexCommandDescriptor": RegexCommandDescriptor,
     "RegexMatchResult": RegexMatchResult,
     "ReleaseRecalledDataDetails": ReleaseRecalledDataDetails,
@@ -612,6 +675,7 @@ log_analytics_type_mapping = {
     "Rule": Rule,
     "RuleSummary": RuleSummary,
     "RuleSummaryCollection": RuleSummaryCollection,
+    "RuleSummaryReport": RuleSummaryReport,
     "Schedule": Schedule,
     "ScheduledTask": ScheduledTask,
     "ScheduledTaskCollection": ScheduledTaskCollection,
@@ -639,6 +703,7 @@ log_analytics_type_mapping = {
     "Success": Success,
     "SuggestDetails": SuggestDetails,
     "SuggestOutput": SuggestOutput,
+    "TableColumn": TableColumn,
     "TailCommandDescriptor": TailCommandDescriptor,
     "TestParserPayloadDetails": TestParserPayloadDetails,
     "TimeClusterColumn": TimeClusterColumn,
@@ -680,6 +745,9 @@ log_analytics_type_mapping = {
     "UpsertLogAnalyticsParserDetails": UpsertLogAnalyticsParserDetails,
     "UpsertLogAnalyticsSourceDetails": UpsertLogAnalyticsSourceDetails,
     "UsageStatusItem": UsageStatusItem,
+    "ValidateEndpointResult": ValidateEndpointResult,
+    "ValidateLabelConditionDetails": ValidateLabelConditionDetails,
+    "ValidateLabelConditionResult": ValidateLabelConditionResult,
     "VerifyOutput": VerifyOutput,
     "Violation": Violation,
     "WarningReferenceDetails": WarningReferenceDetails,
