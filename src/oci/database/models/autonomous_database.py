@@ -378,6 +378,10 @@ class AutonomousDatabase(object):
             The value to assign to the cpu_core_count property of this AutonomousDatabase.
         :type cpu_core_count: int
 
+        :param local_adg_auto_failover_max_data_loss_limit:
+            The value to assign to the local_adg_auto_failover_max_data_loss_limit property of this AutonomousDatabase.
+        :type local_adg_auto_failover_max_data_loss_limit: int
+
         :param compute_model:
             The value to assign to the compute_model property of this AutonomousDatabase.
             Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
@@ -764,6 +768,7 @@ class AutonomousDatabase(object):
             'backup_config': 'AutonomousDatabaseBackupConfig',
             'key_history_entry': 'list[AutonomousDatabaseKeyHistoryEntry]',
             'cpu_core_count': 'int',
+            'local_adg_auto_failover_max_data_loss_limit': 'int',
             'compute_model': 'str',
             'compute_count': 'float',
             'backup_retention_period_in_days': 'int',
@@ -870,6 +875,7 @@ class AutonomousDatabase(object):
             'backup_config': 'backupConfig',
             'key_history_entry': 'keyHistoryEntry',
             'cpu_core_count': 'cpuCoreCount',
+            'local_adg_auto_failover_max_data_loss_limit': 'localAdgAutoFailoverMaxDataLossLimit',
             'compute_model': 'computeModel',
             'compute_count': 'computeCount',
             'backup_retention_period_in_days': 'backupRetentionPeriodInDays',
@@ -975,6 +981,7 @@ class AutonomousDatabase(object):
         self._backup_config = None
         self._key_history_entry = None
         self._cpu_core_count = None
+        self._local_adg_auto_failover_max_data_loss_limit = None
         self._compute_model = None
         self._compute_count = None
         self._backup_retention_period_in_days = None
@@ -1574,6 +1581,30 @@ class AutonomousDatabase(object):
         :type: int
         """
         self._cpu_core_count = cpu_core_count
+
+    @property
+    def local_adg_auto_failover_max_data_loss_limit(self):
+        """
+        Gets the local_adg_auto_failover_max_data_loss_limit of this AutonomousDatabase.
+        Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+
+
+        :return: The local_adg_auto_failover_max_data_loss_limit of this AutonomousDatabase.
+        :rtype: int
+        """
+        return self._local_adg_auto_failover_max_data_loss_limit
+
+    @local_adg_auto_failover_max_data_loss_limit.setter
+    def local_adg_auto_failover_max_data_loss_limit(self, local_adg_auto_failover_max_data_loss_limit):
+        """
+        Sets the local_adg_auto_failover_max_data_loss_limit of this AutonomousDatabase.
+        Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+
+
+        :param local_adg_auto_failover_max_data_loss_limit: The local_adg_auto_failover_max_data_loss_limit of this AutonomousDatabase.
+        :type: int
+        """
+        self._local_adg_auto_failover_max_data_loss_limit = local_adg_auto_failover_max_data_loss_limit
 
     @property
     def compute_model(self):

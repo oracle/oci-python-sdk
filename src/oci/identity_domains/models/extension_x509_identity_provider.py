@@ -15,6 +15,30 @@ class ExtensionX509IdentityProvider(object):
     X509 Identity Provider Extension Schema
     """
 
+    #: A constant which can be used with the eku_values property of a ExtensionX509IdentityProvider.
+    #: This constant has a value of "SERVER_AUTH"
+    EKU_VALUES_SERVER_AUTH = "SERVER_AUTH"
+
+    #: A constant which can be used with the eku_values property of a ExtensionX509IdentityProvider.
+    #: This constant has a value of "CLIENT_AUTH"
+    EKU_VALUES_CLIENT_AUTH = "CLIENT_AUTH"
+
+    #: A constant which can be used with the eku_values property of a ExtensionX509IdentityProvider.
+    #: This constant has a value of "CODE_SIGNING"
+    EKU_VALUES_CODE_SIGNING = "CODE_SIGNING"
+
+    #: A constant which can be used with the eku_values property of a ExtensionX509IdentityProvider.
+    #: This constant has a value of "EMAIL_PROTECTION"
+    EKU_VALUES_EMAIL_PROTECTION = "EMAIL_PROTECTION"
+
+    #: A constant which can be used with the eku_values property of a ExtensionX509IdentityProvider.
+    #: This constant has a value of "TIME_STAMPING"
+    EKU_VALUES_TIME_STAMPING = "TIME_STAMPING"
+
+    #: A constant which can be used with the eku_values property of a ExtensionX509IdentityProvider.
+    #: This constant has a value of "OCSP_SIGNING"
+    EKU_VALUES_OCSP_SIGNING = "OCSP_SIGNING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ExtensionX509IdentityProvider object with values from keyword arguments.
@@ -80,6 +104,16 @@ class ExtensionX509IdentityProvider(object):
             The value to assign to the crl_reload_duration property of this ExtensionX509IdentityProvider.
         :type crl_reload_duration: int
 
+        :param eku_validation_enabled:
+            The value to assign to the eku_validation_enabled property of this ExtensionX509IdentityProvider.
+        :type eku_validation_enabled: bool
+
+        :param eku_values:
+            The value to assign to the eku_values property of this ExtensionX509IdentityProvider.
+            Allowed values for items in this list are: "SERVER_AUTH", "CLIENT_AUTH", "CODE_SIGNING", "EMAIL_PROTECTION", "TIME_STAMPING", "OCSP_SIGNING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type eku_values: list[str]
+
         """
         self.swagger_types = {
             'cert_match_attribute': 'str',
@@ -96,7 +130,9 @@ class ExtensionX509IdentityProvider(object):
             'crl_enabled': 'bool',
             'crl_check_on_ocsp_failure_enabled': 'bool',
             'crl_location': 'str',
-            'crl_reload_duration': 'int'
+            'crl_reload_duration': 'int',
+            'eku_validation_enabled': 'bool',
+            'eku_values': 'list[str]'
         }
 
         self.attribute_map = {
@@ -114,7 +150,9 @@ class ExtensionX509IdentityProvider(object):
             'crl_enabled': 'crlEnabled',
             'crl_check_on_ocsp_failure_enabled': 'crlCheckOnOCSPFailureEnabled',
             'crl_location': 'crlLocation',
-            'crl_reload_duration': 'crlReloadDuration'
+            'crl_reload_duration': 'crlReloadDuration',
+            'eku_validation_enabled': 'ekuValidationEnabled',
+            'eku_values': 'ekuValues'
         }
 
         self._cert_match_attribute = None
@@ -132,6 +170,8 @@ class ExtensionX509IdentityProvider(object):
         self._crl_check_on_ocsp_failure_enabled = None
         self._crl_location = None
         self._crl_reload_duration = None
+        self._eku_validation_enabled = None
+        self._eku_values = None
 
     @property
     def cert_match_attribute(self):
@@ -852,6 +892,108 @@ class ExtensionX509IdentityProvider(object):
         :type: int
         """
         self._crl_reload_duration = crl_reload_duration
+
+    @property
+    def eku_validation_enabled(self):
+        """
+        Gets the eku_validation_enabled of this ExtensionX509IdentityProvider.
+        Set to true to enable EKU Validation
+
+        **Added In:** 2304270343
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :return: The eku_validation_enabled of this ExtensionX509IdentityProvider.
+        :rtype: bool
+        """
+        return self._eku_validation_enabled
+
+    @eku_validation_enabled.setter
+    def eku_validation_enabled(self, eku_validation_enabled):
+        """
+        Sets the eku_validation_enabled of this ExtensionX509IdentityProvider.
+        Set to true to enable EKU Validation
+
+        **Added In:** 2304270343
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :param eku_validation_enabled: The eku_validation_enabled of this ExtensionX509IdentityProvider.
+        :type: bool
+        """
+        self._eku_validation_enabled = eku_validation_enabled
+
+    @property
+    def eku_values(self):
+        """
+        Gets the eku_values of this ExtensionX509IdentityProvider.
+        List of EKU which needs to be validated
+
+        **Added In:** 2304270343
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: false
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+        Allowed values for items in this list are: "SERVER_AUTH", "CLIENT_AUTH", "CODE_SIGNING", "EMAIL_PROTECTION", "TIME_STAMPING", "OCSP_SIGNING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The eku_values of this ExtensionX509IdentityProvider.
+        :rtype: list[str]
+        """
+        return self._eku_values
+
+    @eku_values.setter
+    def eku_values(self, eku_values):
+        """
+        Sets the eku_values of this ExtensionX509IdentityProvider.
+        List of EKU which needs to be validated
+
+        **Added In:** 2304270343
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: false
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :param eku_values: The eku_values of this ExtensionX509IdentityProvider.
+        :type: list[str]
+        """
+        allowed_values = ["SERVER_AUTH", "CLIENT_AUTH", "CODE_SIGNING", "EMAIL_PROTECTION", "TIME_STAMPING", "OCSP_SIGNING"]
+        if eku_values:
+            eku_values[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in eku_values]
+        self._eku_values = eku_values
 
     def __repr__(self):
         return formatted_flat_dict(self)

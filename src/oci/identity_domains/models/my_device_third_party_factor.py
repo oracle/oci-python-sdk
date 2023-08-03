@@ -83,6 +83,8 @@ class MyDeviceThirdPartyFactor(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The third_party_vendor_name of this MyDeviceThirdPartyFactor.
@@ -106,6 +108,8 @@ class MyDeviceThirdPartyFactor(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param third_party_vendor_name: The third_party_vendor_name of this MyDeviceThirdPartyFactor.
@@ -129,6 +133,8 @@ class MyDeviceThirdPartyFactor(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The third_party_factor_type of this MyDeviceThirdPartyFactor.
@@ -152,6 +158,8 @@ class MyDeviceThirdPartyFactor(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param third_party_factor_type: The third_party_factor_type of this MyDeviceThirdPartyFactor.
@@ -175,6 +183,8 @@ class MyDeviceThirdPartyFactor(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The value of this MyDeviceThirdPartyFactor.
@@ -198,6 +208,8 @@ class MyDeviceThirdPartyFactor(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param value: The value of this MyDeviceThirdPartyFactor.
@@ -221,6 +233,8 @@ class MyDeviceThirdPartyFactor(object):
          - returned: default
          - type: reference
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The ref of this MyDeviceThirdPartyFactor.
@@ -244,6 +258,8 @@ class MyDeviceThirdPartyFactor(object):
          - returned: default
          - type: reference
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param ref: The ref of this MyDeviceThirdPartyFactor.

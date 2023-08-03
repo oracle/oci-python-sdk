@@ -24,6 +24,14 @@ class RouteRule(object):
     #: This constant has a value of "SERVICE_CIDR_BLOCK"
     DESTINATION_TYPE_SERVICE_CIDR_BLOCK = "SERVICE_CIDR_BLOCK"
 
+    #: A constant which can be used with the route_type property of a RouteRule.
+    #: This constant has a value of "STATIC"
+    ROUTE_TYPE_STATIC = "STATIC"
+
+    #: A constant which can be used with the route_type property of a RouteRule.
+    #: This constant has a value of "LOCAL"
+    ROUTE_TYPE_LOCAL = "LOCAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RouteRule object with values from keyword arguments.
@@ -47,25 +55,41 @@ class RouteRule(object):
             The value to assign to the network_entity_id property of this RouteRule.
         :type network_entity_id: str
 
+        :param description:
+            The value to assign to the description property of this RouteRule.
+        :type description: str
+
+        :param route_type:
+            The value to assign to the route_type property of this RouteRule.
+            Allowed values for this property are: "STATIC", "LOCAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type route_type: str
+
         """
         self.swagger_types = {
             'cidr_block': 'str',
             'destination': 'str',
             'destination_type': 'str',
-            'network_entity_id': 'str'
+            'network_entity_id': 'str',
+            'description': 'str',
+            'route_type': 'str'
         }
 
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
             'destination': 'destination',
             'destination_type': 'destinationType',
-            'network_entity_id': 'networkEntityId'
+            'network_entity_id': 'networkEntityId',
+            'description': 'description',
+            'route_type': 'routeType'
         }
 
         self._cidr_block = None
         self._destination = None
         self._destination_type = None
         self._network_entity_id = None
+        self._description = None
+        self._route_type = None
 
     @property
     def cidr_block(self):
@@ -236,6 +260,60 @@ class RouteRule(object):
         :type: str
         """
         self._network_entity_id = network_entity_id
+
+    @property
+    def description(self):
+        """
+        Gets the description of this RouteRule.
+        An optional description of your choice for the rule.
+
+
+        :return: The description of this RouteRule.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this RouteRule.
+        An optional description of your choice for the rule.
+
+
+        :param description: The description of this RouteRule.
+        :type: str
+        """
+        self._description = description
+
+    @property
+    def route_type(self):
+        """
+        Gets the route_type of this RouteRule.
+        A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the route table.
+
+        Allowed values for this property are: "STATIC", "LOCAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The route_type of this RouteRule.
+        :rtype: str
+        """
+        return self._route_type
+
+    @route_type.setter
+    def route_type(self, route_type):
+        """
+        Sets the route_type of this RouteRule.
+        A route rule can be STATIC if manually added to the route table, LOCAL if added by OCI to the route table.
+
+
+        :param route_type: The route_type of this RouteRule.
+        :type: str
+        """
+        allowed_values = ["STATIC", "LOCAL"]
+        if not value_allowed_none_or_none_sentinel(route_type, allowed_values):
+            route_type = 'UNKNOWN_ENUM_VALUE'
+        self._route_type = route_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

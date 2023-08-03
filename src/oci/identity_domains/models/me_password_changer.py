@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MePasswordChanger(object):
     """
-    Schema to handle userpassword change by self.
+    The schema used for a user changing their own password.
     """
 
     #: A constant which can be used with the idcs_prevented_operations property of a MePasswordChanger.
@@ -750,7 +750,7 @@ class MePasswordChanger(object):
     def old_password(self):
         """
         **[Required]** Gets the old_password of this MePasswordChanger.
-        Old password attribute
+        The old password attribute.
 
         **SCIM++ Properties:**
          - type: string
@@ -773,7 +773,7 @@ class MePasswordChanger(object):
     def old_password(self, old_password):
         """
         Sets the old_password of this MePasswordChanger.
-        Old password attribute
+        The old password attribute.
 
         **SCIM++ Properties:**
          - type: string

@@ -20,7 +20,7 @@
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <!-- Service Spec file goes here -->
-    <vnmonitoring-spec-spec-file>release/api.yaml</vnmonitoring-spec-spec-file>
+    <vnmonitoring-spec-spec-file>source/api.cond.yaml</vnmonitoring-spec-spec-file>
   </properties>
   <build>
     <directory>${sdk-root-dir}/target</directory>
@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.vnmonitoring</groupId>
         <artifactId>vnmonitoring-spec</artifactId>
-        <version>0.1.14</version>
+        <version>0.1.15</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

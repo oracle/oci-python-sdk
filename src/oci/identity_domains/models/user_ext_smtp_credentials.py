@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserExtSmtpCredentials(object):
     """
-    A list of smtp credentials corresponding to user.
+    A list of SMTP credentials corresponding to user.
 
     **Added In:** 2012271618
 
@@ -65,7 +65,7 @@ class UserExtSmtpCredentials(object):
     def value(self):
         """
         Gets the value of this UserExtSmtpCredentials.
-        The identifier of the User's smtp credential.
+        The user's SMTP credential identifier.
 
         **Added In:** 2012271618
 
@@ -89,7 +89,7 @@ class UserExtSmtpCredentials(object):
     def value(self, value):
         """
         Sets the value of this UserExtSmtpCredentials.
-        The identifier of the User's smtp credential.
+        The user's SMTP credential identifier.
 
         **Added In:** 2012271618
 
@@ -113,7 +113,7 @@ class UserExtSmtpCredentials(object):
     def ocid(self):
         """
         Gets the ocid of this UserExtSmtpCredentials.
-        Ocid of the User's auth token.
+        The user's Auth token OCID.
 
         **Added In:** 2012271618
 
@@ -137,7 +137,7 @@ class UserExtSmtpCredentials(object):
     def ocid(self, ocid):
         """
         Sets the ocid of this UserExtSmtpCredentials.
-        Ocid of the User's auth token.
+        The user's Auth token OCID.
 
         **Added In:** 2012271618
 
@@ -161,7 +161,7 @@ class UserExtSmtpCredentials(object):
     def ref(self):
         """
         Gets the ref of this UserExtSmtpCredentials.
-        The URI of the corresponding SmtpCredential resource to which the user belongs
+        The URI of the corresponding SmtpCredential resource to which the user belongs.
 
         **Added In:** 2012271618
 
@@ -184,7 +184,7 @@ class UserExtSmtpCredentials(object):
     def ref(self, ref):
         """
         Sets the ref of this UserExtSmtpCredentials.
-        The URI of the corresponding SmtpCredential resource to which the user belongs
+        The URI of the corresponding SmtpCredential resource to which the user belongs.
 
         **Added In:** 2012271618
 

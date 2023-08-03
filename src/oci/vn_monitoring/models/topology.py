@@ -56,6 +56,10 @@ class Topology(object):
             The value to assign to the relationships property of this Topology.
         :type relationships: list[oci.vn_monitoring.models.TopologyEntityRelationship]
 
+        :param limited_entities:
+            The value to assign to the limited_entities property of this Topology.
+        :type limited_entities: list[str]
+
         :param time_created:
             The value to assign to the time_created property of this Topology.
         :type time_created: datetime
@@ -65,6 +69,7 @@ class Topology(object):
             'type': 'str',
             'entities': 'list[object]',
             'relationships': 'list[TopologyEntityRelationship]',
+            'limited_entities': 'list[str]',
             'time_created': 'datetime'
         }
 
@@ -72,12 +77,14 @@ class Topology(object):
             'type': 'type',
             'entities': 'entities',
             'relationships': 'relationships',
+            'limited_entities': 'limitedEntities',
             'time_created': 'timeCreated'
         }
 
         self._type = None
         self._entities = None
         self._relationships = None
+        self._limited_entities = None
         self._time_created = None
 
     @staticmethod
@@ -181,6 +188,34 @@ class Topology(object):
         :type: list[oci.vn_monitoring.models.TopologyEntityRelationship]
         """
         self._relationships = relationships
+
+    @property
+    def limited_entities(self):
+        """
+        **[Required]** Gets the limited_entities of this Topology.
+        Lists entities that are limited during ingestion.
+        The values for the items in the list are the entity type names of the limitedEntities.
+        Example: `vcn`
+
+
+        :return: The limited_entities of this Topology.
+        :rtype: list[str]
+        """
+        return self._limited_entities
+
+    @limited_entities.setter
+    def limited_entities(self, limited_entities):
+        """
+        Sets the limited_entities of this Topology.
+        Lists entities that are limited during ingestion.
+        The values for the items in the list are the entity type names of the limitedEntities.
+        Example: `vcn`
+
+
+        :param limited_entities: The limited_entities of this Topology.
+        :type: list[str]
+        """
+        self._limited_entities = limited_entities
 
     @property
     def time_created(self):

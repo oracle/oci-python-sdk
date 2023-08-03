@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExtensionSecurityQuestionsUser(object):
     """
-    This extension defines attributes used to store Security Questions of User.
+    This extension defines the attributes used to store the security questions of a user.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ExtensionSecurityQuestionsUser(object):
     def sec_questions(self):
         """
         Gets the sec_questions of this ExtensionSecurityQuestionsUser.
-        Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+        The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
 
         **SCIM++ Properties:**
          - idcsCompositeKey: [value]
@@ -60,7 +60,7 @@ class ExtensionSecurityQuestionsUser(object):
     def sec_questions(self, sec_questions):
         """
         Sets the sec_questions of this ExtensionSecurityQuestionsUser.
-        Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+        The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
 
         **SCIM++ Properties:**
          - idcsCompositeKey: [value]

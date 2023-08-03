@@ -980,6 +980,47 @@ def test_get_model(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_get_model_type(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'GetModelType'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'GetModelType')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='GetModelType')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.get_model_type(
+                model_type=request.pop(util.camelize('modelType')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'GetModelType',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'modelTypeInfo',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
 def test_get_project(testing_service_client):
     if not testing_service_client.is_api_enabled('ai_language', 'GetProject'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

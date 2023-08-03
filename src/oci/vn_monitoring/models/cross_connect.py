@@ -70,9 +70,17 @@ class CrossConnect(object):
             The value to assign to the cross_connect_group_id property of this CrossConnect.
         :type cross_connect_group_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CrossConnect.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this CrossConnect.
         :type display_name: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CrossConnect.
+        :type freeform_tags: dict(str, str)
 
         :param id:
             The value to assign to the id property of this CrossConnect.
@@ -95,44 +103,78 @@ class CrossConnect(object):
             The value to assign to the port_speed_shape_name property of this CrossConnect.
         :type port_speed_shape_name: str
 
+        :param customer_reference_name:
+            The value to assign to the customer_reference_name property of this CrossConnect.
+        :type customer_reference_name: str
+
         :param time_created:
             The value to assign to the time_created property of this CrossConnect.
         :type time_created: datetime
+
+        :param macsec_properties:
+            The value to assign to the macsec_properties property of this CrossConnect.
+        :type macsec_properties: oci.vn_monitoring.models.MacsecProperties
+
+        :param oci_physical_device_name:
+            The value to assign to the oci_physical_device_name property of this CrossConnect.
+        :type oci_physical_device_name: str
+
+        :param oci_logical_device_name:
+            The value to assign to the oci_logical_device_name property of this CrossConnect.
+        :type oci_logical_device_name: str
 
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'cross_connect_group_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'lifecycle_state': 'str',
             'location_name': 'str',
             'port_name': 'str',
             'port_speed_shape_name': 'str',
-            'time_created': 'datetime'
+            'customer_reference_name': 'str',
+            'time_created': 'datetime',
+            'macsec_properties': 'MacsecProperties',
+            'oci_physical_device_name': 'str',
+            'oci_logical_device_name': 'str'
         }
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'cross_connect_group_id': 'crossConnectGroupId',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'location_name': 'locationName',
             'port_name': 'portName',
             'port_speed_shape_name': 'portSpeedShapeName',
-            'time_created': 'timeCreated'
+            'customer_reference_name': 'customerReferenceName',
+            'time_created': 'timeCreated',
+            'macsec_properties': 'macsecProperties',
+            'oci_physical_device_name': 'ociPhysicalDeviceName',
+            'oci_logical_device_name': 'ociLogicalDeviceName'
         }
 
         self._compartment_id = None
         self._cross_connect_group_id = None
+        self._defined_tags = None
         self._display_name = None
+        self._freeform_tags = None
         self._id = None
         self._lifecycle_state = None
         self._location_name = None
         self._port_name = None
         self._port_speed_shape_name = None
+        self._customer_reference_name = None
         self._time_created = None
+        self._macsec_properties = None
+        self._oci_physical_device_name = None
+        self._oci_logical_device_name = None
 
     @property
     def compartment_id(self):
@@ -191,6 +233,32 @@ class CrossConnect(object):
         self._cross_connect_group_id = cross_connect_group_id
 
     @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CrossConnect.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this CrossConnect.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CrossConnect.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this CrossConnect.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
     def display_name(self):
         """
         Gets the display_name of this CrossConnect.
@@ -215,6 +283,32 @@ class CrossConnect(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CrossConnect.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this CrossConnect.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CrossConnect.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this CrossConnect.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def id(self):
@@ -349,6 +443,32 @@ class CrossConnect(object):
         self._port_speed_shape_name = port_speed_shape_name
 
     @property
+    def customer_reference_name(self):
+        """
+        Gets the customer_reference_name of this CrossConnect.
+        A reference name or identifier for the physical fiber connection that this cross-connect
+        uses.
+
+
+        :return: The customer_reference_name of this CrossConnect.
+        :rtype: str
+        """
+        return self._customer_reference_name
+
+    @customer_reference_name.setter
+    def customer_reference_name(self, customer_reference_name):
+        """
+        Sets the customer_reference_name of this CrossConnect.
+        A reference name or identifier for the physical fiber connection that this cross-connect
+        uses.
+
+
+        :param customer_reference_name: The customer_reference_name of this CrossConnect.
+        :type: str
+        """
+        self._customer_reference_name = customer_reference_name
+
+    @property
     def time_created(self):
         """
         Gets the time_created of this CrossConnect.
@@ -379,6 +499,76 @@ class CrossConnect(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def macsec_properties(self):
+        """
+        Gets the macsec_properties of this CrossConnect.
+
+        :return: The macsec_properties of this CrossConnect.
+        :rtype: oci.vn_monitoring.models.MacsecProperties
+        """
+        return self._macsec_properties
+
+    @macsec_properties.setter
+    def macsec_properties(self, macsec_properties):
+        """
+        Sets the macsec_properties of this CrossConnect.
+
+        :param macsec_properties: The macsec_properties of this CrossConnect.
+        :type: oci.vn_monitoring.models.MacsecProperties
+        """
+        self._macsec_properties = macsec_properties
+
+    @property
+    def oci_physical_device_name(self):
+        """
+        Gets the oci_physical_device_name of this CrossConnect.
+        The FastConnect device that terminates the physical connection.
+
+
+        :return: The oci_physical_device_name of this CrossConnect.
+        :rtype: str
+        """
+        return self._oci_physical_device_name
+
+    @oci_physical_device_name.setter
+    def oci_physical_device_name(self, oci_physical_device_name):
+        """
+        Sets the oci_physical_device_name of this CrossConnect.
+        The FastConnect device that terminates the physical connection.
+
+
+        :param oci_physical_device_name: The oci_physical_device_name of this CrossConnect.
+        :type: str
+        """
+        self._oci_physical_device_name = oci_physical_device_name
+
+    @property
+    def oci_logical_device_name(self):
+        """
+        Gets the oci_logical_device_name of this CrossConnect.
+        The FastConnect device that terminates the logical connection.
+        This device might be different than the device that terminates the physical connection.
+
+
+        :return: The oci_logical_device_name of this CrossConnect.
+        :rtype: str
+        """
+        return self._oci_logical_device_name
+
+    @oci_logical_device_name.setter
+    def oci_logical_device_name(self, oci_logical_device_name):
+        """
+        Sets the oci_logical_device_name of this CrossConnect.
+        The FastConnect device that terminates the logical connection.
+        This device might be different than the device that terminates the physical connection.
+
+
+        :param oci_logical_device_name: The oci_logical_device_name of this CrossConnect.
+        :type: str
+        """
+        self._oci_logical_device_name = oci_logical_device_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

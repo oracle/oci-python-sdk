@@ -35,6 +35,10 @@ class PathTopology(Topology):
             The value to assign to the relationships property of this PathTopology.
         :type relationships: list[oci.vn_monitoring.models.TopologyEntityRelationship]
 
+        :param limited_entities:
+            The value to assign to the limited_entities property of this PathTopology.
+        :type limited_entities: list[str]
+
         :param time_created:
             The value to assign to the time_created property of this PathTopology.
         :type time_created: datetime
@@ -44,6 +48,7 @@ class PathTopology(Topology):
             'type': 'str',
             'entities': 'list[object]',
             'relationships': 'list[TopologyEntityRelationship]',
+            'limited_entities': 'list[str]',
             'time_created': 'datetime'
         }
 
@@ -51,12 +56,14 @@ class PathTopology(Topology):
             'type': 'type',
             'entities': 'entities',
             'relationships': 'relationships',
+            'limited_entities': 'limitedEntities',
             'time_created': 'timeCreated'
         }
 
         self._type = None
         self._entities = None
         self._relationships = None
+        self._limited_entities = None
         self._time_created = None
         self._type = 'PATH'
 

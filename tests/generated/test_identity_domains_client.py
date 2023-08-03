@@ -74,6 +74,86 @@ def test_create_api_key(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_app(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'CreateApp'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'CreateApp')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='CreateApp')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateApp")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.create_app(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'CreateApp',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'app',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_app_role(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'CreateAppRole'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'CreateAppRole')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='CreateAppRole')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateAppRole")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.create_app_role(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'CreateAppRole',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'appRole',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_create_auth_token(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'CreateAuthToken'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -228,6 +308,46 @@ def test_create_dynamic_resource_group(testing_service_client):
             result,
             service_error,
             'dynamicResourceGroup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_grant(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'CreateGrant'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'CreateGrant')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='CreateGrant')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateGrant")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.create_grant(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'CreateGrant',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'grant',
             False,
             False
         )
@@ -634,6 +754,46 @@ def test_create_my_o_auth2_client_credential(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_my_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'CreateMyRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'CreateMyRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='CreateMyRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateMyRequest")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.create_my_request(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'CreateMyRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'myRequest',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_create_my_smtp_credential(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'CreateMySmtpCredential'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -834,6 +994,46 @@ def test_create_password_policy(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_security_question(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'CreateSecurityQuestion'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'CreateSecurityQuestion')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='CreateSecurityQuestion')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "CreateSecurityQuestion")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.create_security_question(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'CreateSecurityQuestion',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'securityQuestion',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_create_smtp_credential(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'CreateSmtpCredential'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -995,6 +1195,88 @@ def test_delete_api_key(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_app(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'DeleteApp'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'DeleteApp')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='DeleteApp')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteApp")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_app(
+                app_id=request.pop(util.camelize('appId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'DeleteApp',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_app',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_app_role(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'DeleteAppRole'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'DeleteAppRole')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='DeleteAppRole')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteAppRole")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_app_role(
+                app_role_id=request.pop(util.camelize('appRoleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'DeleteAppRole',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_app_role',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_delete_auth_token(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'DeleteAuthToken'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1112,6 +1394,47 @@ def test_delete_dynamic_resource_group(testing_service_client):
             result,
             service_error,
             'delete_dynamic_resource_group',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_grant(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'DeleteGrant'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'DeleteGrant')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='DeleteGrant')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteGrant")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_grant(
+                grant_id=request.pop(util.camelize('grantId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'DeleteGrant',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_grant',
             True,
             False
         )
@@ -1651,6 +1974,47 @@ def test_delete_password_policy(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_security_question(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'DeleteSecurityQuestion'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'DeleteSecurityQuestion')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='DeleteSecurityQuestion')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "DeleteSecurityQuestion")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_security_question(
+                security_question_id=request.pop(util.camelize('securityQuestionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'DeleteSecurityQuestion',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_security_question',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_delete_smtp_credential(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'DeleteSmtpCredential'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1774,6 +2138,88 @@ def test_delete_user_db_credential(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_account_mgmt_info(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'GetAccountMgmtInfo'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'GetAccountMgmtInfo')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='GetAccountMgmtInfo')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetAccountMgmtInfo")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.get_account_mgmt_info(
+                account_mgmt_info_id=request.pop(util.camelize('accountMgmtInfoId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'GetAccountMgmtInfo',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'accountMgmtInfo',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_account_recovery_setting(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'GetAccountRecoverySetting'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'GetAccountRecoverySetting')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='GetAccountRecoverySetting')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetAccountRecoverySetting")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.get_account_recovery_setting(
+                account_recovery_setting_id=request.pop(util.camelize('accountRecoverySettingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'GetAccountRecoverySetting',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'accountRecoverySetting',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_get_api_key(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'GetApiKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1809,6 +2255,88 @@ def test_get_api_key(testing_service_client):
             result,
             service_error,
             'apiKey',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_app(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'GetApp'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'GetApp')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='GetApp')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetApp")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.get_app(
+                app_id=request.pop(util.camelize('appId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'GetApp',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'app',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_app_role(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'GetAppRole'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'GetAppRole')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='GetAppRole')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetAppRole")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.get_app_role(
+                app_role_id=request.pop(util.camelize('appRoleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'GetAppRole',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'appRole',
             False,
             False
         )
@@ -1979,6 +2507,47 @@ def test_get_dynamic_resource_group(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_grant(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'GetGrant'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'GetGrant')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='GetGrant')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetGrant")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.get_grant(
+                grant_id=request.pop(util.camelize('grantId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'GetGrant',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'grant',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_get_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'GetGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2055,6 +2624,47 @@ def test_get_identity_provider(testing_service_client):
             result,
             service_error,
             'identityProvider',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_identity_setting(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'GetIdentitySetting'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'GetIdentitySetting')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='GetIdentitySetting')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetIdentitySetting")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.get_identity_setting(
+                identity_setting_id=request.pop(util.camelize('identitySettingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'GetIdentitySetting',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'identitySetting',
             False,
             False
         )
@@ -2593,6 +3203,88 @@ def test_get_password_policy(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_security_question(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'GetSecurityQuestion'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'GetSecurityQuestion')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='GetSecurityQuestion')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetSecurityQuestion")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.get_security_question(
+                security_question_id=request.pop(util.camelize('securityQuestionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'GetSecurityQuestion',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'securityQuestion',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_security_question_setting(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'GetSecurityQuestionSetting'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'GetSecurityQuestionSetting')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='GetSecurityQuestionSetting')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetSecurityQuestionSetting")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.get_security_question_setting(
+                security_question_setting_id=request.pop(util.camelize('securityQuestionSettingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'GetSecurityQuestionSetting',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'securityQuestionSetting',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_get_smtp_credential(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'GetSmtpCredential'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2675,6 +3367,47 @@ def test_get_user(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_user_attributes_setting(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'GetUserAttributesSetting'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'GetUserAttributesSetting')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='GetUserAttributesSetting')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "GetUserAttributesSetting")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.get_user_attributes_setting(
+                user_attributes_setting_id=request.pop(util.camelize('userAttributesSettingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'GetUserAttributesSetting',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'userAttributesSetting',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_get_user_db_credential(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'GetUserDbCredential'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2712,6 +3445,126 @@ def test_get_user_db_credential(testing_service_client):
             'userDbCredential',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_account_mgmt_infos(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListAccountMgmtInfos'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListAccountMgmtInfos')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListAccountMgmtInfos')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListAccountMgmtInfos")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_account_mgmt_infos(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_account_mgmt_infos(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_account_mgmt_infos(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListAccountMgmtInfos',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'accountMgmtInfos',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_account_recovery_settings(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListAccountRecoverySettings'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListAccountRecoverySettings')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListAccountRecoverySettings')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListAccountRecoverySettings")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_account_recovery_settings(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_account_recovery_settings(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_account_recovery_settings(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListAccountRecoverySettings',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'accountRecoverySettings',
+            False,
+            True
         )
 
 
@@ -2770,6 +3623,126 @@ def test_list_api_keys(testing_service_client):
             result,
             service_error,
             'apiKeys',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_app_roles(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListAppRoles'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListAppRoles')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListAppRoles')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListAppRoles")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_app_roles(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_app_roles(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_app_roles(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListAppRoles',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'appRoles',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_apps(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListApps'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListApps')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListApps')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListApps")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_apps(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_apps(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_apps(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListApps',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'apps',
             False,
             True
         )
@@ -3016,6 +3989,66 @@ def test_list_dynamic_resource_groups(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_grants(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListGrants'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListGrants')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListGrants')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListGrants")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_grants(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_grants(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_grants(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListGrants',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'grants',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_list_groups(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'ListGroups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3136,6 +4169,66 @@ def test_list_identity_providers(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_identity_settings(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListIdentitySettings'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListIdentitySettings')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListIdentitySettings')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListIdentitySettings")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_identity_settings(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_identity_settings(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_identity_settings(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListIdentitySettings',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'identitySettings',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_list_kmsi_settings(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'ListKmsiSettings'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3250,6 +4343,66 @@ def test_list_my_api_keys(testing_service_client):
             result,
             service_error,
             'myApiKeys',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_my_apps(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListMyApps'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListMyApps')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListMyApps')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMyApps")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_my_apps(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_my_apps(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_my_apps(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListMyApps',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'myApps',
             False,
             True
         )
@@ -3550,6 +4703,126 @@ def test_list_my_o_auth2_client_credentials(testing_service_client):
             result,
             service_error,
             'myOAuth2ClientCredentials',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_my_requestable_groups(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListMyRequestableGroups'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListMyRequestableGroups')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListMyRequestableGroups')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMyRequestableGroups")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_my_requestable_groups(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_my_requestable_groups(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_my_requestable_groups(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListMyRequestableGroups',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'myRequestableGroups',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_my_requests(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListMyRequests'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListMyRequests')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListMyRequests')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListMyRequests")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_my_requests(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_my_requests(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_my_requests(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListMyRequests',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'myRequests',
             False,
             True
         )
@@ -3916,6 +5189,186 @@ def test_list_password_policies(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_resource_type_schema_attributes(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListResourceTypeSchemaAttributes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListResourceTypeSchemaAttributes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListResourceTypeSchemaAttributes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListResourceTypeSchemaAttributes")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_resource_type_schema_attributes(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_resource_type_schema_attributes(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_resource_type_schema_attributes(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListResourceTypeSchemaAttributes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resourceTypeSchemaAttributes',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_security_question_settings(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListSecurityQuestionSettings'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListSecurityQuestionSettings')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListSecurityQuestionSettings')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListSecurityQuestionSettings")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_security_question_settings(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_security_question_settings(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_security_question_settings(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListSecurityQuestionSettings',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'securityQuestionSettings',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_security_questions(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListSecurityQuestions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListSecurityQuestions')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListSecurityQuestions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListSecurityQuestions")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_security_questions(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_security_questions(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_security_questions(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListSecurityQuestions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'securityQuestions',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_list_smtp_credentials(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'ListSmtpCredentials'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3970,6 +5423,66 @@ def test_list_smtp_credentials(testing_service_client):
             result,
             service_error,
             'smtpCredentials',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_user_attributes_settings(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'ListUserAttributesSettings'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'ListUserAttributesSettings')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='ListUserAttributesSettings')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "ListUserAttributesSettings")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.list_user_attributes_settings(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_user_attributes_settings(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_user_attributes_settings(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'ListUserAttributesSettings',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'userAttributesSettings',
             False,
             True
         )
@@ -4096,6 +5609,47 @@ def test_list_users(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_patch_account_recovery_setting(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PatchAccountRecoverySetting'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PatchAccountRecoverySetting')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PatchAccountRecoverySetting')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchAccountRecoverySetting")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.patch_account_recovery_setting(
+                account_recovery_setting_id=request.pop(util.camelize('accountRecoverySettingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PatchAccountRecoverySetting',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'accountRecoverySetting',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_patch_api_key(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'PatchApiKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4131,6 +5685,88 @@ def test_patch_api_key(testing_service_client):
             result,
             service_error,
             'apiKey',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_patch_app(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PatchApp'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PatchApp')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PatchApp')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchApp")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.patch_app(
+                app_id=request.pop(util.camelize('appId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PatchApp',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'app',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_patch_app_role(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PatchAppRole'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PatchAppRole')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PatchAppRole')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchAppRole")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.patch_app_role(
+                app_role_id=request.pop(util.camelize('appRoleId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PatchAppRole',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'appRole',
             False,
             False
         )
@@ -4260,6 +5896,47 @@ def test_patch_dynamic_resource_group(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_patch_grant(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PatchGrant'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PatchGrant')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PatchGrant')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchGrant")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.patch_grant(
+                grant_id=request.pop(util.camelize('grantId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PatchGrant',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'grant',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_patch_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'PatchGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4336,6 +6013,47 @@ def test_patch_identity_provider(testing_service_client):
             result,
             service_error,
             'identityProvider',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_patch_identity_setting(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PatchIdentitySetting'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PatchIdentitySetting')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PatchIdentitySetting')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchIdentitySetting")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.patch_identity_setting(
+                identity_setting_id=request.pop(util.camelize('identitySettingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PatchIdentitySetting',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'identitySetting',
             False,
             False
         )
@@ -4751,6 +6469,88 @@ def test_patch_password_policy(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_patch_security_question(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PatchSecurityQuestion'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PatchSecurityQuestion')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PatchSecurityQuestion')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchSecurityQuestion")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.patch_security_question(
+                security_question_id=request.pop(util.camelize('securityQuestionId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PatchSecurityQuestion',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'securityQuestion',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_patch_security_question_setting(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PatchSecurityQuestionSetting'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PatchSecurityQuestionSetting')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PatchSecurityQuestionSetting')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchSecurityQuestionSetting")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.patch_security_question_setting(
+                security_question_setting_id=request.pop(util.camelize('securityQuestionSettingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PatchSecurityQuestionSetting',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'securityQuestionSetting',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_patch_smtp_credential(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'PatchSmtpCredential'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4827,6 +6627,170 @@ def test_patch_user(testing_service_client):
             result,
             service_error,
             'user',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_patch_user_attributes_setting(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PatchUserAttributesSetting'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PatchUserAttributesSetting')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PatchUserAttributesSetting')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PatchUserAttributesSetting")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.patch_user_attributes_setting(
+                user_attributes_setting_id=request.pop(util.camelize('userAttributesSettingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PatchUserAttributesSetting',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'userAttributesSetting',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_put_account_recovery_setting(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PutAccountRecoverySetting'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PutAccountRecoverySetting')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PutAccountRecoverySetting')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutAccountRecoverySetting")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.put_account_recovery_setting(
+                account_recovery_setting_id=request.pop(util.camelize('accountRecoverySettingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PutAccountRecoverySetting',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'accountRecoverySetting',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_put_app(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PutApp'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PutApp')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PutApp')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutApp")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.put_app(
+                app_id=request.pop(util.camelize('appId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PutApp',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'app',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_put_app_status_changer(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PutAppStatusChanger'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PutAppStatusChanger')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PutAppStatusChanger')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutAppStatusChanger")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.put_app_status_changer(
+                app_status_changer_id=request.pop(util.camelize('appStatusChangerId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PutAppStatusChanger',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'appStatusChanger',
             False,
             False
         )
@@ -4997,6 +6961,47 @@ def test_put_identity_provider(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_put_identity_setting(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PutIdentitySetting'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PutIdentitySetting')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PutIdentitySetting')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutIdentitySetting")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.put_identity_setting(
+                identity_setting_id=request.pop(util.camelize('identitySettingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PutIdentitySetting',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'identitySetting',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_put_kmsi_setting(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'PutKmsiSetting'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5153,6 +7158,47 @@ def test_put_password_policy(testing_service_client):
             result,
             service_error,
             'passwordPolicy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_put_security_question_setting(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'PutSecurityQuestionSetting'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'PutSecurityQuestionSetting')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='PutSecurityQuestionSetting')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "PutSecurityQuestionSetting")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.put_security_question_setting(
+                security_question_setting_id=request.pop(util.camelize('securityQuestionSettingId')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'PutSecurityQuestionSetting',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'securityQuestionSetting',
             False,
             False
         )
@@ -5364,6 +7410,66 @@ def test_put_user_status_changer(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_search_account_mgmt_infos(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'SearchAccountMgmtInfos'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'SearchAccountMgmtInfos')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='SearchAccountMgmtInfos')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchAccountMgmtInfos")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.search_account_mgmt_infos(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.search_account_mgmt_infos(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.search_account_mgmt_infos(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'SearchAccountMgmtInfos',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'accountMgmtInfos',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_search_api_keys(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'SearchApiKeys'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5418,6 +7524,126 @@ def test_search_api_keys(testing_service_client):
             result,
             service_error,
             'apiKeys',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_search_app_roles(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'SearchAppRoles'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'SearchAppRoles')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='SearchAppRoles')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchAppRoles")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.search_app_roles(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.search_app_roles(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.search_app_roles(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'SearchAppRoles',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'appRoles',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_search_apps(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'SearchApps'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'SearchApps')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='SearchApps')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchApps")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.search_apps(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.search_apps(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.search_apps(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'SearchApps',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'apps',
             False,
             True
         )
@@ -5664,6 +7890,66 @@ def test_search_dynamic_resource_groups(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_search_grants(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'SearchGrants'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'SearchGrants')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='SearchGrants')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchGrants")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.search_grants(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.search_grants(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.search_grants(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'SearchGrants',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'grants',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_search_groups(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'SearchGroups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5784,6 +8070,66 @@ def test_search_identity_providers(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_search_identity_settings(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'SearchIdentitySettings'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'SearchIdentitySettings')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='SearchIdentitySettings')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchIdentitySettings")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.search_identity_settings(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.search_identity_settings(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.search_identity_settings(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'SearchIdentitySettings',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'identitySettings',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_search_kmsi_settings(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'SearchKmsiSettings'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5844,6 +8190,66 @@ def test_search_kmsi_settings(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_search_my_apps(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'SearchMyApps'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'SearchMyApps')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='SearchMyApps')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchMyApps")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.search_my_apps(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.search_my_apps(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.search_my_apps(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'SearchMyApps',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'myApps',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_search_my_groups(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'SearchMyGroups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5898,6 +8304,126 @@ def test_search_my_groups(testing_service_client):
             result,
             service_error,
             'myGroups',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_search_my_requestable_groups(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'SearchMyRequestableGroups'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'SearchMyRequestableGroups')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='SearchMyRequestableGroups')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchMyRequestableGroups")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.search_my_requestable_groups(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.search_my_requestable_groups(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.search_my_requestable_groups(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'SearchMyRequestableGroups',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'myRequestableGroups',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_search_my_requests(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'SearchMyRequests'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'SearchMyRequests')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='SearchMyRequests')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchMyRequests")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.search_my_requests(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.search_my_requests(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.search_my_requests(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'SearchMyRequests',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'myRequests',
             False,
             True
         )
@@ -6024,6 +8550,186 @@ def test_search_password_policies(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_search_resource_type_schema_attributes(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'SearchResourceTypeSchemaAttributes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'SearchResourceTypeSchemaAttributes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='SearchResourceTypeSchemaAttributes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchResourceTypeSchemaAttributes")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.search_resource_type_schema_attributes(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.search_resource_type_schema_attributes(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.search_resource_type_schema_attributes(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'SearchResourceTypeSchemaAttributes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resourceTypeSchemaAttributes',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_search_security_question_settings(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'SearchSecurityQuestionSettings'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'SearchSecurityQuestionSettings')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='SearchSecurityQuestionSettings')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchSecurityQuestionSettings")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.search_security_question_settings(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.search_security_question_settings(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.search_security_question_settings(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'SearchSecurityQuestionSettings',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'securityQuestionSettings',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_search_security_questions(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'SearchSecurityQuestions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'SearchSecurityQuestions')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='SearchSecurityQuestions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchSecurityQuestions")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.search_security_questions(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.search_security_questions(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.search_security_questions(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'SearchSecurityQuestions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'securityQuestions',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_search_smtp_credentials(testing_service_client):
     if not testing_service_client.is_api_enabled('identity_domains', 'SearchSmtpCredentials'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6078,6 +8784,66 @@ def test_search_smtp_credentials(testing_service_client):
             result,
             service_error,
             'smtpCredentials',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_search_user_attributes_settings(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity_domains', 'SearchUserAttributesSettings'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity_domains', util.camelize('identity_domains'), 'SearchUserAttributesSettings')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity_domains', api_name='SearchUserAttributesSettings')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("identity_domains", "IdentityDomainsClient", "SearchUserAttributesSettings")
+            client = oci.identity_domains.IdentityDomainsClient(config, service_endpoint=service_endpoint)
+            response = client.search_user_attributes_settings(
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.search_user_attributes_settings(
+                    page=next_page,
+                    retry_strategy=oci.retry.NoneRetryStrategy(),
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.search_user_attributes_settings(
+                        page=next_response.headers[prev_page],
+                        retry_strategy=oci.retry.NoneRetryStrategy(),
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity_domains',
+            'SearchUserAttributesSettings',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'userAttributesSettings',
             False,
             True
         )

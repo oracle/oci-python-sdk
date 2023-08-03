@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserExtRealmUsers(object):
     """
-    A list of kerberos realm users for an OCI IAM User
+    A list of kerberos realm users for an Oracle Identity Cloud Service User
 
     **SCIM++ Properties:**
     - idcsCompositeKey: [value]
@@ -69,7 +69,7 @@ class UserExtRealmUsers(object):
     def value(self):
         """
         **[Required]** Gets the value of this UserExtRealmUsers.
-        id of the KerberosRealmUser associated with the OCI IAM User.
+        id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -91,7 +91,7 @@ class UserExtRealmUsers(object):
     def value(self, value):
         """
         Sets the value of this UserExtRealmUsers.
-        id of the KerberosRealmUser associated with the OCI IAM User.
+        id of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -113,7 +113,7 @@ class UserExtRealmUsers(object):
     def ref(self):
         """
         Gets the ref of this UserExtRealmUsers.
-        The URI of the corresponding KerberosRealmUser resource associated with the OCI IAM User.
+        The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity Cloud Service User.
 
         **SCIM++ Properties:**
          - idcsSearchable: false
@@ -134,7 +134,7 @@ class UserExtRealmUsers(object):
     def ref(self, ref):
         """
         Sets the ref of this UserExtRealmUsers.
-        The URI of the corresponding KerberosRealmUser resource associated with the OCI IAM User.
+        The URI of the corresponding KerberosRealmUser resource associated with the Oracle Identity Cloud Service User.
 
         **SCIM++ Properties:**
          - idcsSearchable: false
@@ -155,7 +155,7 @@ class UserExtRealmUsers(object):
     def principal_name(self):
         """
         Gets the principal_name of this UserExtRealmUsers.
-        Principal Name of the KerberosRealmUser associated with the OCI IAM User.
+        Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
 
         **SCIM++ Properties:**
          - idcsPii: true
@@ -177,7 +177,7 @@ class UserExtRealmUsers(object):
     def principal_name(self, principal_name):
         """
         Sets the principal_name of this UserExtRealmUsers.
-        Principal Name of the KerberosRealmUser associated with the OCI IAM User.
+        Principal Name of the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
 
         **SCIM++ Properties:**
          - idcsPii: true
@@ -199,7 +199,7 @@ class UserExtRealmUsers(object):
     def realm_name(self):
         """
         Gets the realm_name of this UserExtRealmUsers.
-        Realm Name for the KerberosRealmUser associated with the OCI IAM User.
+        Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
 
         **SCIM++ Properties:**
          - idcsSearchable: true
@@ -220,7 +220,7 @@ class UserExtRealmUsers(object):
     def realm_name(self, realm_name):
         """
         Sets the realm_name of this UserExtRealmUsers.
-        Realm Name for the KerberosRealmUser associated with the OCI IAM User.
+        Realm Name for the KerberosRealmUser associated with the Oracle Identity Cloud Service User.
 
         **SCIM++ Properties:**
          - idcsSearchable: true

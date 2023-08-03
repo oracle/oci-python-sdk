@@ -93,7 +93,7 @@ class IdentityDomainsClient(object):
         base_client_init_kwargs = {
             'regional_client': False,
             'service_endpoint': service_endpoint,
-            'base_path': '/admin/v1',
+            'base_path': '',
             'service_endpoint_template': 'https://identity.{region}.oci.{secondLevelDomain}',
             'service_endpoint_template_per_realm': {  },  # noqa: E201 E202
             'skip_deserialization': kwargs.get('skip_deserialization', False),
@@ -112,7 +112,7 @@ class IdentityDomainsClient(object):
 
     def create_api_key(self, **kwargs):
         """
-        Add a user's api key
+        Create a user's API key.
 
 
         :param str authorization: (optional)
@@ -167,7 +167,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/ApiKeys"
+        resource_path = "/admin/v1/ApiKeys"
         method = "POST"
         operation_name = "create_api_key"
         api_reference_link = ""
@@ -246,9 +246,281 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_app(self, **kwargs):
+        """
+        Create an App
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.App app: (optional)
+            App schema.
+
+            Before you specify an attribute-value in a request to create a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.App`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_app.py.html>`__ to see an example of how to use create_app API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/Apps"
+        method = "POST"
+        operation_name = "create_app"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "app",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_app got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('app'),
+                response_type="App",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('app'),
+                response_type="App",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def create_app_role(self, **kwargs):
+        """
+        Create an AppRole
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.AppRole app_role: (optional)
+            AppRole schema.
+
+            Before you specify an attribute-value in a request to create a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AppRole`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_app_role.py.html>`__ to see an example of how to use create_app_role API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/AppRoles"
+        method = "POST"
+        operation_name = "create_app_role"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "app_role",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_app_role got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('app_role'),
+                response_type="AppRole",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('app_role'),
+                response_type="AppRole",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_auth_token(self, **kwargs):
         """
-        Add a user's auth token
+        Create a user's Auth token.
 
 
         :param str authorization: (optional)
@@ -303,7 +575,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/AuthTokens"
+        resource_path = "/admin/v1/AuthTokens"
         method = "POST"
         operation_name = "create_auth_token"
         api_reference_link = ""
@@ -431,7 +703,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/AuthenticationFactorsRemover"
+        resource_path = "/admin/v1/AuthenticationFactorsRemover"
         method = "POST"
         operation_name = "create_authentication_factors_remover"
         api_reference_link = ""
@@ -494,7 +766,7 @@ class IdentityDomainsClient(object):
 
     def create_customer_secret_key(self, **kwargs):
         """
-        Add a user's customer secret key
+        Create a user's customer secret key.
 
 
         :param str authorization: (optional)
@@ -549,7 +821,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/CustomerSecretKeys"
+        resource_path = "/admin/v1/CustomerSecretKeys"
         method = "POST"
         operation_name = "create_customer_secret_key"
         api_reference_link = ""
@@ -630,7 +902,7 @@ class IdentityDomainsClient(object):
 
     def create_dynamic_resource_group(self, **kwargs):
         """
-        Create a DynamicResourceGroup
+        Create a Dynamic Resource Group.
 
 
         :param str authorization: (optional)
@@ -685,7 +957,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/DynamicResourceGroups"
+        resource_path = "/admin/v1/DynamicResourceGroups"
         method = "POST"
         operation_name = "create_dynamic_resource_group"
         api_reference_link = ""
@@ -764,9 +1036,145 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_grant(self, **kwargs):
+        """
+        Add a Grantee to an AppRole
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.Grant grant: (optional)
+            Grant schema.
+
+            Before you specify an attribute-value in a request to create a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Grant`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_grant.py.html>`__ to see an example of how to use create_grant API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/Grants"
+        method = "POST"
+        operation_name = "create_grant"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "grant",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_grant got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('grant'),
+                response_type="Grant",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('grant'),
+                response_type="Grant",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_group(self, **kwargs):
         """
-        Create a Group
+        Create a group.
 
 
         :param str authorization: (optional)
@@ -821,7 +1229,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/Groups"
+        resource_path = "/admin/v1/Groups"
         method = "POST"
         operation_name = "create_group"
         api_reference_link = ""
@@ -957,7 +1365,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/IdentityProviders"
+        resource_path = "/admin/v1/IdentityProviders"
         method = "POST"
         operation_name = "create_identity_provider"
         api_reference_link = ""
@@ -1038,7 +1446,7 @@ class IdentityDomainsClient(object):
 
     def create_me(self, **kwargs):
         """
-        Self Register
+        Self register a user.
 
 
         :param str authorization: (optional)
@@ -1093,7 +1501,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/Me"
+        resource_path = "/admin/v1/Me"
         method = "POST"
         operation_name = "create_me"
         api_reference_link = ""
@@ -1174,7 +1582,7 @@ class IdentityDomainsClient(object):
 
     def create_my_api_key(self, **kwargs):
         """
-        Add a user's api key
+        Add a user's own API key.
 
 
         :param str authorization: (optional)
@@ -1221,7 +1629,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyApiKeys"
+        resource_path = "/admin/v1/MyApiKeys"
         method = "POST"
         operation_name = "create_my_api_key"
         api_reference_link = ""
@@ -1284,7 +1692,7 @@ class IdentityDomainsClient(object):
 
     def create_my_auth_token(self, **kwargs):
         """
-        Add user's auth token
+        Create a user's own Auth token.
 
 
         :param str authorization: (optional)
@@ -1331,7 +1739,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyAuthTokens"
+        resource_path = "/admin/v1/MyAuthTokens"
         method = "POST"
         operation_name = "create_my_auth_token"
         api_reference_link = ""
@@ -1441,7 +1849,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyAuthenticationFactorInitiator"
+        resource_path = "/admin/v1/MyAuthenticationFactorInitiator"
         method = "POST"
         operation_name = "create_my_authentication_factor_initiator"
         api_reference_link = ""
@@ -1551,7 +1959,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyAuthenticationFactorValidator"
+        resource_path = "/admin/v1/MyAuthenticationFactorValidator"
         method = "POST"
         operation_name = "create_my_authentication_factor_validator"
         api_reference_link = ""
@@ -1661,7 +2069,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyAuthenticationFactorsRemover"
+        resource_path = "/admin/v1/MyAuthenticationFactorsRemover"
         method = "POST"
         operation_name = "create_my_authentication_factors_remover"
         api_reference_link = ""
@@ -1724,7 +2132,7 @@ class IdentityDomainsClient(object):
 
     def create_my_customer_secret_key(self, **kwargs):
         """
-        Add a user's customer secret key
+        Add a user's own customer secret key.
 
 
         :param str authorization: (optional)
@@ -1771,7 +2179,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyCustomerSecretKeys"
+        resource_path = "/admin/v1/MyCustomerSecretKeys"
         method = "POST"
         operation_name = "create_my_customer_secret_key"
         api_reference_link = ""
@@ -1834,7 +2242,7 @@ class IdentityDomainsClient(object):
 
     def create_my_o_auth2_client_credential(self, **kwargs):
         """
-        Add a user's oauth2 client credential
+        Create a user's own OAuth2 client credential.
 
 
         :param str authorization: (optional)
@@ -1881,7 +2289,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyOAuth2ClientCredentials"
+        resource_path = "/admin/v1/MyOAuth2ClientCredentials"
         method = "POST"
         operation_name = "create_my_o_auth2_client_credential"
         api_reference_link = ""
@@ -1942,9 +2350,145 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_my_request(self, **kwargs):
+        """
+        Create a Request
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.MyRequest my_request: (optional)
+            MyRequest schema.
+
+            Before you specify an attribute-value in a request to create a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyRequest`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_my_request.py.html>`__ to see an example of how to use create_my_request API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/MyRequests"
+        method = "POST"
+        operation_name = "create_my_request"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "my_request",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_my_request got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('my_request'),
+                response_type="MyRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('my_request'),
+                response_type="MyRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_my_smtp_credential(self, **kwargs):
         """
-        Add a user's smtp credenials
+        Create a user's own SMTP credential.
 
 
         :param str authorization: (optional)
@@ -1991,7 +2535,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MySmtpCredentials"
+        resource_path = "/admin/v1/MySmtpCredentials"
         method = "POST"
         operation_name = "create_my_smtp_credential"
         api_reference_link = ""
@@ -2054,7 +2598,7 @@ class IdentityDomainsClient(object):
 
     def create_my_support_account(self, **kwargs):
         """
-        Create a Support Account
+        Create a user's own support account.
 
 
         :param str authorization: (optional)
@@ -2101,7 +2645,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MySupportAccounts"
+        resource_path = "/admin/v1/MySupportAccounts"
         method = "POST"
         operation_name = "create_my_support_account"
         api_reference_link = ""
@@ -2164,7 +2708,7 @@ class IdentityDomainsClient(object):
 
     def create_my_user_db_credential(self, **kwargs):
         """
-        Set a User's DbCredential
+        Create a user's own database (DB) credential.
 
 
         :param str authorization: (optional)
@@ -2211,7 +2755,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyUserDbCredentials"
+        resource_path = "/admin/v1/MyUserDbCredentials"
         method = "POST"
         operation_name = "create_my_user_db_credential"
         api_reference_link = ""
@@ -2274,7 +2818,7 @@ class IdentityDomainsClient(object):
 
     def create_o_auth2_client_credential(self, **kwargs):
         """
-        Add a user's oauth2 client credential
+        Add a user's OAuth2 client credentials.
 
 
         :param str authorization: (optional)
@@ -2329,7 +2873,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/OAuth2ClientCredentials"
+        resource_path = "/admin/v1/OAuth2ClientCredentials"
         method = "POST"
         operation_name = "create_o_auth2_client_credential"
         api_reference_link = ""
@@ -2410,7 +2954,7 @@ class IdentityDomainsClient(object):
 
     def create_password_policy(self, **kwargs):
         """
-        Create a Password Policy
+        Create a password policy.
 
 
         :param str authorization: (optional)
@@ -2465,7 +3009,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/PasswordPolicies"
+        resource_path = "/admin/v1/PasswordPolicies"
         method = "POST"
         operation_name = "create_password_policy"
         api_reference_link = ""
@@ -2544,9 +3088,145 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_security_question(self, **kwargs):
+        """
+        Create a security question.
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.SecurityQuestion security_question: (optional)
+            SecurityQuestion schema.
+
+            Before you specify an attribute-value in a request to create a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestion`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/create_security_question.py.html>`__ to see an example of how to use create_security_question API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/SecurityQuestions"
+        method = "POST"
+        operation_name = "create_security_question"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "security_question",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_security_question got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('security_question'),
+                response_type="SecurityQuestion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('security_question'),
+                response_type="SecurityQuestion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_smtp_credential(self, **kwargs):
         """
-        Add a user's smtp credenials
+        Create a user's SMTP credentials.
 
 
         :param str authorization: (optional)
@@ -2601,7 +3281,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/SmtpCredentials"
+        resource_path = "/admin/v1/SmtpCredentials"
         method = "POST"
         operation_name = "create_smtp_credential"
         api_reference_link = ""
@@ -2682,7 +3362,7 @@ class IdentityDomainsClient(object):
 
     def create_user(self, **kwargs):
         """
-        Create a User
+        Create a user.
 
 
         :param str authorization: (optional)
@@ -2737,7 +3417,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/Users"
+        resource_path = "/admin/v1/Users"
         method = "POST"
         operation_name = "create_user"
         api_reference_link = ""
@@ -2818,7 +3498,7 @@ class IdentityDomainsClient(object):
 
     def create_user_db_credential(self, **kwargs):
         """
-        Set a User's DbCredential
+        Create a user's database (DB) credentials.
 
 
         :param str authorization: (optional)
@@ -2873,7 +3553,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/UserDbCredentials"
+        resource_path = "/admin/v1/UserDbCredentials"
         method = "POST"
         operation_name = "create_user_db_credential"
         api_reference_link = ""
@@ -2954,7 +3634,7 @@ class IdentityDomainsClient(object):
 
     def delete_api_key(self, api_key_id, **kwargs):
         """
-        Delete user's api key
+        Delete a user's API key.
 
 
         :param str api_key_id: (required)
@@ -2995,7 +3675,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiKeyId']
-        resource_path = "/ApiKeys/{apiKeyId}"
+        resource_path = "/admin/v1/ApiKeys/{apiKeyId}"
         method = "DELETE"
         operation_name = "delete_api_key"
         api_reference_link = ""
@@ -3073,9 +3753,251 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def delete_app(self, app_id, **kwargs):
+        """
+        Delete an App
+
+
+        :param str app_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param bool force_delete: (optional)
+            To force delete the resource and all its references (if any).
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_app.py.html>`__ to see an example of how to use delete_app API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['appId']
+        resource_path = "/admin/v1/Apps/{appId}"
+        method = "DELETE"
+        operation_name = "delete_app"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "force_delete",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_app got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "appId": app_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "forceDelete": kwargs.get("force_delete", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def delete_app_role(self, app_role_id, **kwargs):
+        """
+        Delete an AppRole
+
+
+        :param str app_role_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param bool force_delete: (optional)
+            To force delete the resource and all its references (if any).
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_app_role.py.html>`__ to see an example of how to use delete_app_role API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['appRoleId']
+        resource_path = "/admin/v1/AppRoles/{appRoleId}"
+        method = "DELETE"
+        operation_name = "delete_app_role"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "force_delete",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_app_role got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "appRoleId": app_role_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "forceDelete": kwargs.get("force_delete", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def delete_auth_token(self, auth_token_id, **kwargs):
         """
-        Delete user's auth token
+        Delete a user's Auth token.
 
 
         :param str auth_token_id: (required)
@@ -3116,7 +4038,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['authTokenId']
-        resource_path = "/AuthTokens/{authTokenId}"
+        resource_path = "/admin/v1/AuthTokens/{authTokenId}"
         method = "DELETE"
         operation_name = "delete_auth_token"
         api_reference_link = ""
@@ -3196,7 +4118,7 @@ class IdentityDomainsClient(object):
 
     def delete_customer_secret_key(self, customer_secret_key_id, **kwargs):
         """
-        Delete user's customer secret key
+        Delete a user's customer secret key.
 
 
         :param str customer_secret_key_id: (required)
@@ -3237,7 +4159,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customerSecretKeyId']
-        resource_path = "/CustomerSecretKeys/{customerSecretKeyId}"
+        resource_path = "/admin/v1/CustomerSecretKeys/{customerSecretKeyId}"
         method = "DELETE"
         operation_name = "delete_customer_secret_key"
         api_reference_link = ""
@@ -3317,7 +4239,7 @@ class IdentityDomainsClient(object):
 
     def delete_dynamic_resource_group(self, dynamic_resource_group_id, **kwargs):
         """
-        Delete a DynamicResourceGroup
+        Delete a Dynamic Resource Group.
 
 
         :param str dynamic_resource_group_id: (required)
@@ -3358,7 +4280,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dynamicResourceGroupId']
-        resource_path = "/DynamicResourceGroups/{dynamicResourceGroupId}"
+        resource_path = "/admin/v1/DynamicResourceGroups/{dynamicResourceGroupId}"
         method = "DELETE"
         operation_name = "delete_dynamic_resource_group"
         api_reference_link = ""
@@ -3436,9 +4358,130 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def delete_grant(self, grant_id, **kwargs):
+        """
+        Remove a Grantee from an AppRole
+
+
+        :param str grant_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param bool force_delete: (optional)
+            To force delete the resource and all its references (if any).
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_grant.py.html>`__ to see an example of how to use delete_grant API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['grantId']
+        resource_path = "/admin/v1/Grants/{grantId}"
+        method = "DELETE"
+        operation_name = "delete_grant"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "force_delete",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_grant got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "grantId": grant_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "forceDelete": kwargs.get("force_delete", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def delete_group(self, group_id, **kwargs):
         """
-        Delete a Group
+        Delete a group.
 
 
         :param str group_id: (required)
@@ -3479,7 +4522,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['groupId']
-        resource_path = "/Groups/{groupId}"
+        resource_path = "/admin/v1/Groups/{groupId}"
         method = "DELETE"
         operation_name = "delete_group"
         api_reference_link = ""
@@ -3600,7 +4643,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
-        resource_path = "/IdentityProviders/{identityProviderId}"
+        resource_path = "/admin/v1/IdentityProviders/{identityProviderId}"
         method = "DELETE"
         operation_name = "delete_identity_provider"
         api_reference_link = ""
@@ -3680,7 +4723,7 @@ class IdentityDomainsClient(object):
 
     def delete_my_api_key(self, my_api_key_id, **kwargs):
         """
-        Delete user's api key
+        Delete a user's own API key.
 
 
         :param str my_api_key_id: (required)
@@ -3721,7 +4764,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myApiKeyId']
-        resource_path = "/MyApiKeys/{myApiKeyId}"
+        resource_path = "/admin/v1/MyApiKeys/{myApiKeyId}"
         method = "DELETE"
         operation_name = "delete_my_api_key"
         api_reference_link = ""
@@ -3801,7 +4844,7 @@ class IdentityDomainsClient(object):
 
     def delete_my_auth_token(self, my_auth_token_id, **kwargs):
         """
-        Delete user's auth token
+        Delete a user's own Auth token.
 
 
         :param str my_auth_token_id: (required)
@@ -3842,7 +4885,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myAuthTokenId']
-        resource_path = "/MyAuthTokens/{myAuthTokenId}"
+        resource_path = "/admin/v1/MyAuthTokens/{myAuthTokenId}"
         method = "DELETE"
         operation_name = "delete_my_auth_token"
         api_reference_link = ""
@@ -3922,7 +4965,7 @@ class IdentityDomainsClient(object):
 
     def delete_my_customer_secret_key(self, my_customer_secret_key_id, **kwargs):
         """
-        Delete user's customer secret key
+        Delete a user's own customer secret key.
 
 
         :param str my_customer_secret_key_id: (required)
@@ -3963,7 +5006,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myCustomerSecretKeyId']
-        resource_path = "/MyCustomerSecretKeys/{myCustomerSecretKeyId}"
+        resource_path = "/admin/v1/MyCustomerSecretKeys/{myCustomerSecretKeyId}"
         method = "DELETE"
         operation_name = "delete_my_customer_secret_key"
         api_reference_link = ""
@@ -4084,7 +5127,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myDeviceId']
-        resource_path = "/MyDevices/{myDeviceId}"
+        resource_path = "/admin/v1/MyDevices/{myDeviceId}"
         method = "DELETE"
         operation_name = "delete_my_device"
         api_reference_link = ""
@@ -4164,7 +5207,7 @@ class IdentityDomainsClient(object):
 
     def delete_my_o_auth2_client_credential(self, my_o_auth2_client_credential_id, **kwargs):
         """
-        Delete user's oauth2 client credential
+        Delete a user's own OAuth2 client credential.
 
 
         :param str my_o_auth2_client_credential_id: (required)
@@ -4205,7 +5248,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myOAuth2ClientCredentialId']
-        resource_path = "/MyOAuth2ClientCredentials/{myOAuth2ClientCredentialId}"
+        resource_path = "/admin/v1/MyOAuth2ClientCredentials/{myOAuth2ClientCredentialId}"
         method = "DELETE"
         operation_name = "delete_my_o_auth2_client_credential"
         api_reference_link = ""
@@ -4285,7 +5328,7 @@ class IdentityDomainsClient(object):
 
     def delete_my_smtp_credential(self, my_smtp_credential_id, **kwargs):
         """
-        Delete user's smtp credenials
+        Delete a user's own SMTP credential.
 
 
         :param str my_smtp_credential_id: (required)
@@ -4326,7 +5369,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mySmtpCredentialId']
-        resource_path = "/MySmtpCredentials/{mySmtpCredentialId}"
+        resource_path = "/admin/v1/MySmtpCredentials/{mySmtpCredentialId}"
         method = "DELETE"
         operation_name = "delete_my_smtp_credential"
         api_reference_link = ""
@@ -4406,7 +5449,7 @@ class IdentityDomainsClient(object):
 
     def delete_my_support_account(self, my_support_account_id, **kwargs):
         """
-        Delete a Support Account
+        Delete a user's own support account.
 
 
         :param str my_support_account_id: (required)
@@ -4447,7 +5490,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mySupportAccountId']
-        resource_path = "/MySupportAccounts/{mySupportAccountId}"
+        resource_path = "/admin/v1/MySupportAccounts/{mySupportAccountId}"
         method = "DELETE"
         operation_name = "delete_my_support_account"
         api_reference_link = ""
@@ -4568,7 +5611,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myTrustedUserAgentId']
-        resource_path = "/MyTrustedUserAgents/{myTrustedUserAgentId}"
+        resource_path = "/admin/v1/MyTrustedUserAgents/{myTrustedUserAgentId}"
         method = "DELETE"
         operation_name = "delete_my_trusted_user_agent"
         api_reference_link = ""
@@ -4648,7 +5691,7 @@ class IdentityDomainsClient(object):
 
     def delete_my_user_db_credential(self, my_user_db_credential_id, **kwargs):
         """
-        Remove a User's DbCredential
+        Delete a user's own database (DB) credential.
 
 
         :param str my_user_db_credential_id: (required)
@@ -4689,7 +5732,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myUserDbCredentialId']
-        resource_path = "/MyUserDbCredentials/{myUserDbCredentialId}"
+        resource_path = "/admin/v1/MyUserDbCredentials/{myUserDbCredentialId}"
         method = "DELETE"
         operation_name = "delete_my_user_db_credential"
         api_reference_link = ""
@@ -4769,7 +5812,7 @@ class IdentityDomainsClient(object):
 
     def delete_o_auth2_client_credential(self, o_auth2_client_credential_id, **kwargs):
         """
-        Delete user's oauth2 client credential
+        Delete a user's OAuth2 client credentials.
 
 
         :param str o_auth2_client_credential_id: (required)
@@ -4810,7 +5853,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['oAuth2ClientCredentialId']
-        resource_path = "/OAuth2ClientCredentials/{oAuth2ClientCredentialId}"
+        resource_path = "/admin/v1/OAuth2ClientCredentials/{oAuth2ClientCredentialId}"
         method = "DELETE"
         operation_name = "delete_o_auth2_client_credential"
         api_reference_link = ""
@@ -4890,7 +5933,7 @@ class IdentityDomainsClient(object):
 
     def delete_password_policy(self, password_policy_id, **kwargs):
         """
-        Delete a Password Policy
+        Delete a password policy.
 
 
         :param str password_policy_id: (required)
@@ -4931,7 +5974,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['passwordPolicyId']
-        resource_path = "/PasswordPolicies/{passwordPolicyId}"
+        resource_path = "/admin/v1/PasswordPolicies/{passwordPolicyId}"
         method = "DELETE"
         operation_name = "delete_password_policy"
         api_reference_link = ""
@@ -5009,9 +6052,130 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def delete_security_question(self, security_question_id, **kwargs):
+        """
+        Delete a security question.
+
+
+        :param str security_question_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param bool force_delete: (optional)
+            To force delete the resource and all its references (if any).
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/delete_security_question.py.html>`__ to see an example of how to use delete_security_question API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityQuestionId']
+        resource_path = "/admin/v1/SecurityQuestions/{securityQuestionId}"
+        method = "DELETE"
+        operation_name = "delete_security_question"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "force_delete",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_security_question got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "securityQuestionId": security_question_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "forceDelete": kwargs.get("force_delete", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def delete_smtp_credential(self, smtp_credential_id, **kwargs):
         """
-        Delete user's smtp credenials
+        Delete a user's SMTP credentials.
 
 
         :param str smtp_credential_id: (required)
@@ -5052,7 +6216,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['smtpCredentialId']
-        resource_path = "/SmtpCredentials/{smtpCredentialId}"
+        resource_path = "/admin/v1/SmtpCredentials/{smtpCredentialId}"
         method = "DELETE"
         operation_name = "delete_smtp_credential"
         api_reference_link = ""
@@ -5132,7 +6296,7 @@ class IdentityDomainsClient(object):
 
     def delete_user(self, user_id, **kwargs):
         """
-        Delete a User
+        Delete a user.
 
 
         :param str user_id: (required)
@@ -5173,7 +6337,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
-        resource_path = "/Users/{userId}"
+        resource_path = "/admin/v1/Users/{userId}"
         method = "DELETE"
         operation_name = "delete_user"
         api_reference_link = ""
@@ -5253,7 +6417,7 @@ class IdentityDomainsClient(object):
 
     def delete_user_db_credential(self, user_db_credential_id, **kwargs):
         """
-        Remove a User's DbCredential
+        Delete a user's database (DB) credentials.
 
 
         :param str user_db_credential_id: (required)
@@ -5294,7 +6458,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userDbCredentialId']
-        resource_path = "/UserDbCredentials/{userDbCredentialId}"
+        resource_path = "/admin/v1/UserDbCredentials/{userDbCredentialId}"
         method = "DELETE"
         operation_name = "delete_user_db_credential"
         api_reference_link = ""
@@ -5372,9 +6536,275 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_account_mgmt_info(self, account_mgmt_info_id, **kwargs):
+        """
+        Get Account Mgmt Info
+
+
+        :param str account_mgmt_info_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountMgmtInfo`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_account_mgmt_info.py.html>`__ to see an example of how to use get_account_mgmt_info API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accountMgmtInfoId']
+        resource_path = "/admin/v1/AccountMgmtInfos/{accountMgmtInfoId}"
+        method = "GET"
+        operation_name = "get_account_mgmt_info"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_account_mgmt_info got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "accountMgmtInfoId": account_mgmt_info_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AccountMgmtInfo",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AccountMgmtInfo",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_account_recovery_setting(self, account_recovery_setting_id, **kwargs):
+        """
+        Get an account recovery setting.
+
+
+        :param str account_recovery_setting_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountRecoverySetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_account_recovery_setting.py.html>`__ to see an example of how to use get_account_recovery_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accountRecoverySettingId']
+        resource_path = "/admin/v1/AccountRecoverySettings/{accountRecoverySettingId}"
+        method = "GET"
+        operation_name = "get_account_recovery_setting"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_account_recovery_setting got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "accountRecoverySettingId": account_recovery_setting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AccountRecoverySetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AccountRecoverySetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_api_key(self, api_key_id, **kwargs):
         """
-        Get user's api key
+        Get a user's API key.
 
 
         :param str api_key_id: (required)
@@ -5417,7 +6847,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiKeyId']
-        resource_path = "/ApiKeys/{apiKeyId}"
+        resource_path = "/admin/v1/ApiKeys/{apiKeyId}"
         method = "GET"
         operation_name = "get_api_key"
         api_reference_link = ""
@@ -5505,9 +6935,275 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_app(self, app_id, **kwargs):
+        """
+        Get an App
+
+
+        :param str app_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.App`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_app.py.html>`__ to see an example of how to use get_app API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['appId']
+        resource_path = "/admin/v1/Apps/{appId}"
+        method = "GET"
+        operation_name = "get_app"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_app got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "appId": app_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="App",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="App",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_app_role(self, app_role_id, **kwargs):
+        """
+        Get an AppRole
+
+
+        :param str app_role_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AppRole`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_app_role.py.html>`__ to see an example of how to use get_app_role API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['appRoleId']
+        resource_path = "/admin/v1/AppRoles/{appRoleId}"
+        method = "GET"
+        operation_name = "get_app_role"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_app_role got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "appRoleId": app_role_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AppRole",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AppRole",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_auth_token(self, auth_token_id, **kwargs):
         """
-        Get user's auth token
+        Get a user's Auth token.
 
 
         :param str auth_token_id: (required)
@@ -5550,7 +7246,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['authTokenId']
-        resource_path = "/AuthTokens/{authTokenId}"
+        resource_path = "/admin/v1/AuthTokens/{authTokenId}"
         method = "GET"
         operation_name = "get_auth_token"
         api_reference_link = ""
@@ -5683,7 +7379,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['authenticationFactorSettingId']
-        resource_path = "/AuthenticationFactorSettings/{authenticationFactorSettingId}"
+        resource_path = "/admin/v1/AuthenticationFactorSettings/{authenticationFactorSettingId}"
         method = "GET"
         operation_name = "get_authentication_factor_setting"
         api_reference_link = ""
@@ -5773,7 +7469,7 @@ class IdentityDomainsClient(object):
 
     def get_customer_secret_key(self, customer_secret_key_id, **kwargs):
         """
-        Get user's customer secret key
+        Get a user's customer secret key.
 
 
         :param str customer_secret_key_id: (required)
@@ -5816,7 +7512,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customerSecretKeyId']
-        resource_path = "/CustomerSecretKeys/{customerSecretKeyId}"
+        resource_path = "/admin/v1/CustomerSecretKeys/{customerSecretKeyId}"
         method = "GET"
         operation_name = "get_customer_secret_key"
         api_reference_link = ""
@@ -5906,7 +7602,7 @@ class IdentityDomainsClient(object):
 
     def get_dynamic_resource_group(self, dynamic_resource_group_id, **kwargs):
         """
-        Get a DynamicResourceGroup
+        Get a Dynamic Resource Group.
 
 
         :param str dynamic_resource_group_id: (required)
@@ -5949,7 +7645,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dynamicResourceGroupId']
-        resource_path = "/DynamicResourceGroups/{dynamicResourceGroupId}"
+        resource_path = "/admin/v1/DynamicResourceGroups/{dynamicResourceGroupId}"
         method = "GET"
         operation_name = "get_dynamic_resource_group"
         api_reference_link = ""
@@ -6037,9 +7733,142 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_grant(self, grant_id, **kwargs):
+        """
+        Get a Grant
+
+
+        :param str grant_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Grant`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_grant.py.html>`__ to see an example of how to use get_grant API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['grantId']
+        resource_path = "/admin/v1/Grants/{grantId}"
+        method = "GET"
+        operation_name = "get_grant"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_grant got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "grantId": grant_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Grant",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Grant",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_group(self, group_id, **kwargs):
         """
-        Get a Group - The Group search and get operations on users/members will throw an exception if it has more than 10K members, to avoid the exception use the pagination filter to get or search group members
+        Get a group. <b>Important:</b> The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
 
 
         :param str group_id: (required)
@@ -6082,7 +7911,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['groupId']
-        resource_path = "/Groups/{groupId}"
+        resource_path = "/admin/v1/Groups/{groupId}"
         method = "GET"
         operation_name = "get_group"
         api_reference_link = ""
@@ -6215,7 +8044,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
-        resource_path = "/IdentityProviders/{identityProviderId}"
+        resource_path = "/admin/v1/IdentityProviders/{identityProviderId}"
         method = "GET"
         operation_name = "get_identity_provider"
         api_reference_link = ""
@@ -6303,6 +8132,139 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_identity_setting(self, identity_setting_id, **kwargs):
+        """
+        Get an Identity setting.
+
+
+        :param str identity_setting_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentitySetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_identity_setting.py.html>`__ to see an example of how to use get_identity_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identitySettingId']
+        resource_path = "/admin/v1/IdentitySettings/{identitySettingId}"
+        method = "GET"
+        operation_name = "get_identity_setting"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_identity_setting got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "identitySettingId": identity_setting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="IdentitySetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="IdentitySetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_kmsi_setting(self, kmsi_setting_id, **kwargs):
         """
         Get KmsiSettings
@@ -6348,7 +8310,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['kmsiSettingId']
-        resource_path = "/KmsiSettings/{kmsiSettingId}"
+        resource_path = "/admin/v1/KmsiSettings/{kmsiSettingId}"
         method = "GET"
         operation_name = "get_kmsi_setting"
         api_reference_link = ""
@@ -6438,7 +8400,7 @@ class IdentityDomainsClient(object):
 
     def get_me(self, **kwargs):
         """
-        Get User Info
+        Get a user's own information.
 
 
         :param str authorization: (optional)
@@ -6478,7 +8440,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/Me"
+        resource_path = "/admin/v1/Me"
         method = "GET"
         operation_name = "get_me"
         api_reference_link = ""
@@ -6556,7 +8518,7 @@ class IdentityDomainsClient(object):
 
     def get_my_api_key(self, my_api_key_id, **kwargs):
         """
-        Get user's api key
+        Get a user's own API key.
 
 
         :param str my_api_key_id: (required)
@@ -6591,7 +8553,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myApiKeyId']
-        resource_path = "/MyApiKeys/{myApiKeyId}"
+        resource_path = "/admin/v1/MyApiKeys/{myApiKeyId}"
         method = "GET"
         operation_name = "get_my_api_key"
         api_reference_link = ""
@@ -6663,7 +8625,7 @@ class IdentityDomainsClient(object):
 
     def get_my_auth_token(self, my_auth_token_id, **kwargs):
         """
-        Get user's auth token
+        Get a user's own Auth token.
 
 
         :param str my_auth_token_id: (required)
@@ -6698,7 +8660,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myAuthTokenId']
-        resource_path = "/MyAuthTokens/{myAuthTokenId}"
+        resource_path = "/admin/v1/MyAuthTokens/{myAuthTokenId}"
         method = "GET"
         operation_name = "get_my_auth_token"
         api_reference_link = ""
@@ -6770,7 +8732,7 @@ class IdentityDomainsClient(object):
 
     def get_my_customer_secret_key(self, my_customer_secret_key_id, **kwargs):
         """
-        Get user's customer secret key
+        Get a user's own customer secret key.
 
 
         :param str my_customer_secret_key_id: (required)
@@ -6805,7 +8767,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myCustomerSecretKeyId']
-        resource_path = "/MyCustomerSecretKeys/{myCustomerSecretKeyId}"
+        resource_path = "/admin/v1/MyCustomerSecretKeys/{myCustomerSecretKeyId}"
         method = "GET"
         operation_name = "get_my_customer_secret_key"
         api_reference_link = ""
@@ -6920,7 +8882,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myDeviceId']
-        resource_path = "/MyDevices/{myDeviceId}"
+        resource_path = "/admin/v1/MyDevices/{myDeviceId}"
         method = "GET"
         operation_name = "get_my_device"
         api_reference_link = ""
@@ -7010,7 +8972,7 @@ class IdentityDomainsClient(object):
 
     def get_my_o_auth2_client_credential(self, my_o_auth2_client_credential_id, **kwargs):
         """
-        Get user's oauth2 client credential
+        Get a user's own OAuth2 client credential.
 
 
         :param str my_o_auth2_client_credential_id: (required)
@@ -7045,7 +9007,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myOAuth2ClientCredentialId']
-        resource_path = "/MyOAuth2ClientCredentials/{myOAuth2ClientCredentialId}"
+        resource_path = "/admin/v1/MyOAuth2ClientCredentials/{myOAuth2ClientCredentialId}"
         method = "GET"
         operation_name = "get_my_o_auth2_client_credential"
         api_reference_link = ""
@@ -7117,7 +9079,7 @@ class IdentityDomainsClient(object):
 
     def get_my_smtp_credential(self, my_smtp_credential_id, **kwargs):
         """
-        Get user's smtp credentials
+        Get a user's own SMTP credential.
 
 
         :param str my_smtp_credential_id: (required)
@@ -7152,7 +9114,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mySmtpCredentialId']
-        resource_path = "/MySmtpCredentials/{mySmtpCredentialId}"
+        resource_path = "/admin/v1/MySmtpCredentials/{mySmtpCredentialId}"
         method = "GET"
         operation_name = "get_my_smtp_credential"
         api_reference_link = ""
@@ -7224,7 +9186,7 @@ class IdentityDomainsClient(object):
 
     def get_my_support_account(self, my_support_account_id, **kwargs):
         """
-        Get a Support Account
+        Get a user's own support account.
 
 
         :param str my_support_account_id: (required)
@@ -7259,7 +9221,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mySupportAccountId']
-        resource_path = "/MySupportAccounts/{mySupportAccountId}"
+        resource_path = "/admin/v1/MySupportAccounts/{mySupportAccountId}"
         method = "GET"
         operation_name = "get_my_support_account"
         api_reference_link = ""
@@ -7374,7 +9336,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myTrustedUserAgentId']
-        resource_path = "/MyTrustedUserAgents/{myTrustedUserAgentId}"
+        resource_path = "/admin/v1/MyTrustedUserAgents/{myTrustedUserAgentId}"
         method = "GET"
         operation_name = "get_my_trusted_user_agent"
         api_reference_link = ""
@@ -7464,7 +9426,7 @@ class IdentityDomainsClient(object):
 
     def get_my_user_db_credential(self, my_user_db_credential_id, **kwargs):
         """
-        Get a User's DbCredentials
+        Get a user's own database (DB) credential.
 
 
         :param str my_user_db_credential_id: (required)
@@ -7499,7 +9461,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myUserDbCredentialId']
-        resource_path = "/MyUserDbCredentials/{myUserDbCredentialId}"
+        resource_path = "/admin/v1/MyUserDbCredentials/{myUserDbCredentialId}"
         method = "GET"
         operation_name = "get_my_user_db_credential"
         api_reference_link = ""
@@ -7571,7 +9533,7 @@ class IdentityDomainsClient(object):
 
     def get_o_auth2_client_credential(self, o_auth2_client_credential_id, **kwargs):
         """
-        Get user's oauth2 client credential
+        Get a user's OAuth2 client credentials.
 
 
         :param str o_auth2_client_credential_id: (required)
@@ -7614,7 +9576,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['oAuth2ClientCredentialId']
-        resource_path = "/OAuth2ClientCredentials/{oAuth2ClientCredentialId}"
+        resource_path = "/admin/v1/OAuth2ClientCredentials/{oAuth2ClientCredentialId}"
         method = "GET"
         operation_name = "get_o_auth2_client_credential"
         api_reference_link = ""
@@ -7704,7 +9666,7 @@ class IdentityDomainsClient(object):
 
     def get_password_policy(self, password_policy_id, **kwargs):
         """
-        Get a Password Policy
+        Get a password policy.
 
 
         :param str password_policy_id: (required)
@@ -7747,7 +9709,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['passwordPolicyId']
-        resource_path = "/PasswordPolicies/{passwordPolicyId}"
+        resource_path = "/admin/v1/PasswordPolicies/{passwordPolicyId}"
         method = "GET"
         operation_name = "get_password_policy"
         api_reference_link = ""
@@ -7835,9 +9797,275 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_security_question(self, security_question_id, **kwargs):
+        """
+        Get a security question.
+
+
+        :param str security_question_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestion`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_security_question.py.html>`__ to see an example of how to use get_security_question API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityQuestionId']
+        resource_path = "/admin/v1/SecurityQuestions/{securityQuestionId}"
+        method = "GET"
+        operation_name = "get_security_question"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_security_question got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "securityQuestionId": security_question_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SecurityQuestion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SecurityQuestion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_security_question_setting(self, security_question_setting_id, **kwargs):
+        """
+        Get a security question setting.
+
+
+        :param str security_question_setting_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestionSetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_security_question_setting.py.html>`__ to see an example of how to use get_security_question_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityQuestionSettingId']
+        resource_path = "/admin/v1/SecurityQuestionSettings/{securityQuestionSettingId}"
+        method = "GET"
+        operation_name = "get_security_question_setting"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_security_question_setting got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "securityQuestionSettingId": security_question_setting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SecurityQuestionSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SecurityQuestionSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_smtp_credential(self, smtp_credential_id, **kwargs):
         """
-        Get user's smtp credentials
+        Get a user's SMTP credentials.
 
 
         :param str smtp_credential_id: (required)
@@ -7880,7 +10108,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['smtpCredentialId']
-        resource_path = "/SmtpCredentials/{smtpCredentialId}"
+        resource_path = "/admin/v1/SmtpCredentials/{smtpCredentialId}"
         method = "GET"
         operation_name = "get_smtp_credential"
         api_reference_link = ""
@@ -7970,7 +10198,7 @@ class IdentityDomainsClient(object):
 
     def get_user(self, user_id, **kwargs):
         """
-        Get a User
+        Get a user.
 
 
         :param str user_id: (required)
@@ -8013,7 +10241,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
-        resource_path = "/Users/{userId}"
+        resource_path = "/admin/v1/Users/{userId}"
         method = "GET"
         operation_name = "get_user"
         api_reference_link = ""
@@ -8101,9 +10329,142 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def get_user_attributes_setting(self, user_attributes_setting_id, **kwargs):
+        """
+        Get User Schema Attribute Settings
+
+
+        :param str user_attributes_setting_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserAttributesSetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/get_user_attributes_setting.py.html>`__ to see an example of how to use get_user_attributes_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAttributesSettingId']
+        resource_path = "/admin/v1/UserAttributesSettings/{userAttributesSettingId}"
+        method = "GET"
+        operation_name = "get_user_attributes_setting"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_user_attributes_setting got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userAttributesSettingId": user_attributes_setting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="UserAttributesSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="UserAttributesSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_user_db_credential(self, user_db_credential_id, **kwargs):
         """
-        Get a User's DbCredentials
+        Get a user's database (DB) credentials.
 
 
         :param str user_db_credential_id: (required)
@@ -8146,7 +10507,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userDbCredentialId']
-        resource_path = "/UserDbCredentials/{userDbCredentialId}"
+        resource_path = "/admin/v1/UserDbCredentials/{userDbCredentialId}"
         method = "GET"
         operation_name = "get_user_db_credential"
         api_reference_link = ""
@@ -8234,9 +10595,301 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_account_mgmt_infos(self, **kwargs):
+        """
+        Search Account Mgmt Info
+
+
+        :param str filter: (optional)
+            OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
+
+        :param str sort_by: (optional)
+            OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
+
+        :param str sort_order: (optional)
+            A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See (`Sorting Section`__). OPTIONAL.
+
+            __ https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3
+
+            Allowed values are: "ASCENDING", "DESCENDING"
+
+        :param int start_index: (optional)
+            OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+
+        :param int count: (optional)
+            OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountMgmtInfos`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_account_mgmt_infos.py.html>`__ to see an example of how to use list_account_mgmt_infos API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/AccountMgmtInfos"
+        method = "GET"
+        operation_name = "list_account_mgmt_infos"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "filter",
+            "sort_by",
+            "sort_order",
+            "start_index",
+            "count",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_account_mgmt_infos got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "filter": kwargs.get("filter", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "startIndex": kwargs.get("start_index", missing),
+            "count": kwargs.get("count", missing),
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AccountMgmtInfos",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AccountMgmtInfos",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_account_recovery_settings(self, **kwargs):
+        """
+        Search for account recovery settings.
+
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountRecoverySettings`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_account_recovery_settings.py.html>`__ to see an example of how to use list_account_recovery_settings API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/AccountRecoverySettings"
+        method = "GET"
+        operation_name = "list_account_recovery_settings"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_account_recovery_settings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AccountRecoverySettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AccountRecoverySettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_api_keys(self, **kwargs):
         """
-        Search Api Key
+        Search API keys.
 
 
         :param str filter: (optional)
@@ -8301,7 +10954,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/ApiKeys"
+        resource_path = "/admin/v1/ApiKeys"
         method = "GET"
         operation_name = "list_api_keys"
         api_reference_link = ""
@@ -8398,9 +11051,337 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_app_roles(self, **kwargs):
+        """
+        Search AppRoles
+
+
+        :param str filter: (optional)
+            OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
+
+        :param str sort_by: (optional)
+            OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
+
+        :param str sort_order: (optional)
+            A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See (`Sorting Section`__). OPTIONAL.
+
+            __ https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3
+
+            Allowed values are: "ASCENDING", "DESCENDING"
+
+        :param int start_index: (optional)
+            OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+
+        :param int count: (optional)
+            OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AppRoles`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_app_roles.py.html>`__ to see an example of how to use list_app_roles API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/AppRoles"
+        method = "GET"
+        operation_name = "list_app_roles"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "filter",
+            "sort_by",
+            "sort_order",
+            "start_index",
+            "count",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_app_roles got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "filter": kwargs.get("filter", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "startIndex": kwargs.get("start_index", missing),
+            "count": kwargs.get("count", missing),
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AppRoles",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AppRoles",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_apps(self, **kwargs):
+        """
+        Search Apps
+
+
+        :param str filter: (optional)
+            OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
+
+        :param str sort_by: (optional)
+            OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
+
+        :param str sort_order: (optional)
+            A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See (`Sorting Section`__). OPTIONAL.
+
+            __ https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3
+
+            Allowed values are: "ASCENDING", "DESCENDING"
+
+        :param int start_index: (optional)
+            OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+
+        :param int count: (optional)
+            OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Apps`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_apps.py.html>`__ to see an example of how to use list_apps API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/Apps"
+        method = "GET"
+        operation_name = "list_apps"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "filter",
+            "sort_by",
+            "sort_order",
+            "start_index",
+            "count",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_apps got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "filter": kwargs.get("filter", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "startIndex": kwargs.get("start_index", missing),
+            "count": kwargs.get("count", missing),
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Apps",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Apps",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_auth_tokens(self, **kwargs):
         """
-        Search AuthTokens
+        Search for Auth tokens.
 
 
         :param str filter: (optional)
@@ -8465,7 +11446,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/AuthTokens"
+        resource_path = "/admin/v1/AuthTokens"
         method = "GET"
         operation_name = "list_auth_tokens"
         api_reference_link = ""
@@ -8610,7 +11591,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/AuthenticationFactorSettings"
+        resource_path = "/admin/v1/AuthenticationFactorSettings"
         method = "GET"
         operation_name = "list_authentication_factor_settings"
         api_reference_link = ""
@@ -8692,7 +11673,7 @@ class IdentityDomainsClient(object):
 
     def list_customer_secret_keys(self, **kwargs):
         """
-        Search user's customer secret key
+        Search for a user's customer secret keys.
 
 
         :param str filter: (optional)
@@ -8757,7 +11738,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/CustomerSecretKeys"
+        resource_path = "/admin/v1/CustomerSecretKeys"
         method = "GET"
         operation_name = "list_customer_secret_keys"
         api_reference_link = ""
@@ -8856,7 +11837,7 @@ class IdentityDomainsClient(object):
 
     def list_dynamic_resource_groups(self, **kwargs):
         """
-        Search DynamicResourceGroups
+        Search for Dynamic Resource Groups.
 
 
         :param str filter: (optional)
@@ -8921,7 +11902,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/DynamicResourceGroups"
+        resource_path = "/admin/v1/DynamicResourceGroups"
         method = "GET"
         operation_name = "list_dynamic_resource_groups"
         api_reference_link = ""
@@ -9018,9 +11999,173 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_grants(self, **kwargs):
+        """
+        Search Grants
+
+
+        :param str filter: (optional)
+            OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
+
+        :param str sort_by: (optional)
+            OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
+
+        :param str sort_order: (optional)
+            A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See (`Sorting Section`__). OPTIONAL.
+
+            __ https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3
+
+            Allowed values are: "ASCENDING", "DESCENDING"
+
+        :param int start_index: (optional)
+            OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+
+        :param int count: (optional)
+            OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Grants`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_grants.py.html>`__ to see an example of how to use list_grants API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/Grants"
+        method = "GET"
+        operation_name = "list_grants"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "filter",
+            "sort_by",
+            "sort_order",
+            "start_index",
+            "count",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_grants got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "filter": kwargs.get("filter", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "startIndex": kwargs.get("start_index", missing),
+            "count": kwargs.get("count", missing),
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Grants",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Grants",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_groups(self, **kwargs):
         """
-        Search Groups.The Group search and get operations on users/members will throw an exception if it has more than 10K members, to avoid the exception use the pagination filter to get or search group members
+        Search for groups. <b>Important:</b> The Group SEARCH and GET operations on users and members will throw an exception if the response has more than 10,000 members. To avoid the exception, use the pagination filter to GET or SEARCH group members.
 
 
         :param str filter: (optional)
@@ -9085,7 +12230,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/Groups"
+        resource_path = "/admin/v1/Groups"
         method = "GET"
         operation_name = "list_groups"
         api_reference_link = ""
@@ -9249,7 +12394,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/IdentityProviders"
+        resource_path = "/admin/v1/IdentityProviders"
         method = "GET"
         operation_name = "list_identity_providers"
         api_reference_link = ""
@@ -9346,6 +12491,134 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_identity_settings(self, **kwargs):
+        """
+        Search for Identity settings.
+
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentitySettings`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_identity_settings.py.html>`__ to see an example of how to use list_identity_settings API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/IdentitySettings"
+        method = "GET"
+        operation_name = "list_identity_settings"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_identity_settings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="IdentitySettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="IdentitySettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_kmsi_settings(self, **kwargs):
         """
         Search KmsiSettings
@@ -9394,7 +12667,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/KmsiSettings"
+        resource_path = "/admin/v1/KmsiSettings"
         method = "GET"
         operation_name = "list_kmsi_settings"
         api_reference_link = ""
@@ -9476,7 +12749,7 @@ class IdentityDomainsClient(object):
 
     def list_my_api_keys(self, **kwargs):
         """
-        Search Api Key
+        Search for a user's own API key.
 
 
         :param str filter: (optional)
@@ -9533,7 +12806,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyApiKeys"
+        resource_path = "/admin/v1/MyApiKeys"
         method = "GET"
         operation_name = "list_my_api_keys"
         api_reference_link = ""
@@ -9618,9 +12891,153 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_my_apps(self, **kwargs):
+        """
+        Search My Apps
+
+
+        :param str filter: (optional)
+            OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
+
+        :param str sort_by: (optional)
+            OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
+
+        :param str sort_order: (optional)
+            A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See (`Sorting Section`__). OPTIONAL.
+
+            __ https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3
+
+            Allowed values are: "ASCENDING", "DESCENDING"
+
+        :param int start_index: (optional)
+            OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+
+        :param int count: (optional)
+            OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyApps`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_apps.py.html>`__ to see an example of how to use list_my_apps API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/MyApps"
+        method = "GET"
+        operation_name = "list_my_apps"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "filter",
+            "sort_by",
+            "sort_order",
+            "start_index",
+            "count",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_my_apps got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "filter": kwargs.get("filter", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "startIndex": kwargs.get("start_index", missing),
+            "count": kwargs.get("count", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MyApps",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MyApps",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_my_auth_tokens(self, **kwargs):
         """
-        Search AuthTokens
+        Search for a user's own Auth token.
 
 
         :param str filter: (optional)
@@ -9677,7 +13094,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyAuthTokens"
+        resource_path = "/admin/v1/MyAuthTokens"
         method = "GET"
         operation_name = "list_my_auth_tokens"
         api_reference_link = ""
@@ -9764,7 +13181,7 @@ class IdentityDomainsClient(object):
 
     def list_my_customer_secret_keys(self, **kwargs):
         """
-        Search user's customer secret key
+        Search for a user's own customer secret key.
 
 
         :param str filter: (optional)
@@ -9821,7 +13238,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyCustomerSecretKeys"
+        resource_path = "/admin/v1/MyCustomerSecretKeys"
         method = "GET"
         operation_name = "list_my_customer_secret_keys"
         api_reference_link = ""
@@ -9973,7 +13390,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyDevices"
+        resource_path = "/admin/v1/MyDevices"
         method = "GET"
         operation_name = "list_my_devices"
         api_reference_link = ""
@@ -10072,7 +13489,7 @@ class IdentityDomainsClient(object):
 
     def list_my_groups(self, **kwargs):
         """
-        Search My Groups
+        Search for 'My Groups'.
 
 
         :param str filter: (optional)
@@ -10137,7 +13554,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyGroups"
+        resource_path = "/admin/v1/MyGroups"
         method = "GET"
         operation_name = "list_my_groups"
         api_reference_link = ""
@@ -10236,7 +13653,7 @@ class IdentityDomainsClient(object):
 
     def list_my_o_auth2_client_credentials(self, **kwargs):
         """
-        Search oauth2 client credentials
+        Search for a user's own OAuth2 client credential.
 
 
         :param str filter: (optional)
@@ -10293,7 +13710,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyOAuth2ClientCredentials"
+        resource_path = "/admin/v1/MyOAuth2ClientCredentials"
         method = "GET"
         operation_name = "list_my_o_auth2_client_credentials"
         api_reference_link = ""
@@ -10378,9 +13795,317 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_my_requestable_groups(self, **kwargs):
+        """
+        Search My Requestable Groups
+
+
+        :param str filter: (optional)
+            OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
+
+        :param str sort_by: (optional)
+            OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
+
+        :param str sort_order: (optional)
+            A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See (`Sorting Section`__). OPTIONAL.
+
+            __ https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3
+
+            Allowed values are: "ASCENDING", "DESCENDING"
+
+        :param int start_index: (optional)
+            OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+
+        :param int count: (optional)
+            OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyRequestableGroups`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_requestable_groups.py.html>`__ to see an example of how to use list_my_requestable_groups API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/MyRequestableGroups"
+        method = "GET"
+        operation_name = "list_my_requestable_groups"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "filter",
+            "sort_by",
+            "sort_order",
+            "start_index",
+            "count",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_my_requestable_groups got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "filter": kwargs.get("filter", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "startIndex": kwargs.get("start_index", missing),
+            "count": kwargs.get("count", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MyRequestableGroups",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MyRequestableGroups",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_my_requests(self, **kwargs):
+        """
+        Search My Requests
+
+
+        :param str filter: (optional)
+            OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
+
+        :param str sort_by: (optional)
+            OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
+
+        :param str sort_order: (optional)
+            A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See (`Sorting Section`__). OPTIONAL.
+
+            __ https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3
+
+            Allowed values are: "ASCENDING", "DESCENDING"
+
+        :param int start_index: (optional)
+            OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+
+        :param int count: (optional)
+            OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyRequests`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_my_requests.py.html>`__ to see an example of how to use list_my_requests API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/MyRequests"
+        method = "GET"
+        operation_name = "list_my_requests"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "filter",
+            "sort_by",
+            "sort_order",
+            "start_index",
+            "count",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_my_requests got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "filter": kwargs.get("filter", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "startIndex": kwargs.get("start_index", missing),
+            "count": kwargs.get("count", missing),
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MyRequests",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MyRequests",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_my_smtp_credentials(self, **kwargs):
         """
-        Search smtp credentials
+        Search for a user's own SMTP credential.
 
 
         :param str filter: (optional)
@@ -10437,7 +14162,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MySmtpCredentials"
+        resource_path = "/admin/v1/MySmtpCredentials"
         method = "GET"
         operation_name = "list_my_smtp_credentials"
         api_reference_link = ""
@@ -10524,7 +14249,7 @@ class IdentityDomainsClient(object):
 
     def list_my_support_accounts(self, **kwargs):
         """
-        Search Support Accounts
+        Search for a user's own support account.
 
 
         :param str filter: (optional)
@@ -10581,7 +14306,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MySupportAccounts"
+        resource_path = "/admin/v1/MySupportAccounts"
         method = "GET"
         operation_name = "list_my_support_accounts"
         api_reference_link = ""
@@ -10733,7 +14458,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyTrustedUserAgents"
+        resource_path = "/admin/v1/MyTrustedUserAgents"
         method = "GET"
         operation_name = "list_my_trusted_user_agents"
         api_reference_link = ""
@@ -10832,7 +14557,7 @@ class IdentityDomainsClient(object):
 
     def list_my_user_db_credentials(self, **kwargs):
         """
-        Search a User's DBCredentials
+        Search for a user's own database (DB) credential.
 
 
         :param str filter: (optional)
@@ -10889,7 +14614,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyUserDbCredentials"
+        resource_path = "/admin/v1/MyUserDbCredentials"
         method = "GET"
         operation_name = "list_my_user_db_credentials"
         api_reference_link = ""
@@ -10976,7 +14701,7 @@ class IdentityDomainsClient(object):
 
     def list_o_auth2_client_credentials(self, **kwargs):
         """
-        Search oauth2 client credentials
+        Search for a user's OAuth2 client credentials.
 
 
         :param str filter: (optional)
@@ -11041,7 +14766,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/OAuth2ClientCredentials"
+        resource_path = "/admin/v1/OAuth2ClientCredentials"
         method = "GET"
         operation_name = "list_o_auth2_client_credentials"
         api_reference_link = ""
@@ -11140,7 +14865,7 @@ class IdentityDomainsClient(object):
 
     def list_password_policies(self, **kwargs):
         """
-        Search Password Policies
+        Search for password policies.
 
 
         :param str filter: (optional)
@@ -11205,7 +14930,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/PasswordPolicies"
+        resource_path = "/admin/v1/PasswordPolicies"
         method = "GET"
         operation_name = "list_password_policies"
         api_reference_link = ""
@@ -11302,9 +15027,465 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_resource_type_schema_attributes(self, **kwargs):
+        """
+        Search Resource Type Schema Attributes
+
+
+        :param str filter: (optional)
+            OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
+
+        :param str sort_by: (optional)
+            OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
+
+        :param str sort_order: (optional)
+            A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See (`Sorting Section`__). OPTIONAL.
+
+            __ https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3
+
+            Allowed values are: "ASCENDING", "DESCENDING"
+
+        :param int start_index: (optional)
+            OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+
+        :param int count: (optional)
+            OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ResourceTypeSchemaAttributes`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_resource_type_schema_attributes.py.html>`__ to see an example of how to use list_resource_type_schema_attributes API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/ResourceTypeSchemaAttributes"
+        method = "GET"
+        operation_name = "list_resource_type_schema_attributes"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "filter",
+            "sort_by",
+            "sort_order",
+            "start_index",
+            "count",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_resource_type_schema_attributes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "filter": kwargs.get("filter", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "startIndex": kwargs.get("start_index", missing),
+            "count": kwargs.get("count", missing),
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceTypeSchemaAttributes",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceTypeSchemaAttributes",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_security_question_settings(self, **kwargs):
+        """
+        Search for security question settings.
+
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestionSettings`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_security_question_settings.py.html>`__ to see an example of how to use list_security_question_settings API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/SecurityQuestionSettings"
+        method = "GET"
+        operation_name = "list_security_question_settings"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_security_question_settings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SecurityQuestionSettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SecurityQuestionSettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_security_questions(self, **kwargs):
+        """
+        Search for security questions.
+
+
+        :param str filter: (optional)
+            OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
+
+        :param str sort_by: (optional)
+            OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
+
+        :param str sort_order: (optional)
+            A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See (`Sorting Section`__). OPTIONAL.
+
+            __ https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3
+
+            Allowed values are: "ASCENDING", "DESCENDING"
+
+        :param int start_index: (optional)
+            OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
+
+        :param int count: (optional)
+            OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestions`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_security_questions.py.html>`__ to see an example of how to use list_security_questions API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/SecurityQuestions"
+        method = "GET"
+        operation_name = "list_security_questions"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "filter",
+            "sort_by",
+            "sort_order",
+            "start_index",
+            "count",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_security_questions got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "filter": kwargs.get("filter", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "startIndex": kwargs.get("start_index", missing),
+            "count": kwargs.get("count", missing),
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SecurityQuestions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SecurityQuestions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_smtp_credentials(self, **kwargs):
         """
-        Search smtp credentials
+        Search for SMTP credentials.
 
 
         :param str filter: (optional)
@@ -11369,7 +15550,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/SmtpCredentials"
+        resource_path = "/admin/v1/SmtpCredentials"
         method = "GET"
         operation_name = "list_smtp_credentials"
         api_reference_link = ""
@@ -11466,9 +15647,137 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_user_attributes_settings(self, **kwargs):
+        """
+        Search User Schema Attribute Settings
+
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserAttributesSettings`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/list_user_attributes_settings.py.html>`__ to see an example of how to use list_user_attributes_settings API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/UserAttributesSettings"
+        method = "GET"
+        operation_name = "list_user_attributes_settings"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "attributes",
+            "attribute_sets",
+            "authorization",
+            "resource_type_schema_version",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_user_attributes_settings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="UserAttributesSettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="UserAttributesSettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_user_db_credentials(self, **kwargs):
         """
-        Search a User's DBCredentials
+        Search for a user's database (DB) credentials.
 
 
         :param str filter: (optional)
@@ -11533,7 +15842,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/UserDbCredentials"
+        resource_path = "/admin/v1/UserDbCredentials"
         method = "GET"
         operation_name = "list_user_db_credentials"
         api_reference_link = ""
@@ -11632,7 +15941,7 @@ class IdentityDomainsClient(object):
 
     def list_users(self, **kwargs):
         """
-        Search Users
+        Search for users.
 
 
         :param str filter: (optional)
@@ -11697,7 +16006,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/Users"
+        resource_path = "/admin/v1/Users"
         method = "GET"
         operation_name = "list_users"
         api_reference_link = ""
@@ -11794,9 +16103,165 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def patch_account_recovery_setting(self, account_recovery_setting_id, **kwargs):
+        """
+        Update an account recovery setting.
+
+
+        :param str account_recovery_setting_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.PatchOp patch_op: (optional)
+            Update the AccountRecoverySettings with SCIM Patch schema.
+
+            Before you specify an attribute-value in a request to update a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountRecoverySetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_account_recovery_setting.py.html>`__ to see an example of how to use patch_account_recovery_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accountRecoverySettingId']
+        resource_path = "/admin/v1/AccountRecoverySettings/{accountRecoverySettingId}"
+        method = "PATCH"
+        operation_name = "patch_account_recovery_setting"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "patch_op",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "patch_account_recovery_setting got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "accountRecoverySettingId": account_recovery_setting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="AccountRecoverySetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="AccountRecoverySetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def patch_api_key(self, api_key_id, **kwargs):
         """
-        Update user's api key
+        Update a user's API key.
 
 
         :param str api_key_id: (required)
@@ -11857,7 +16322,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['apiKeyId']
-        resource_path = "/ApiKeys/{apiKeyId}"
+        resource_path = "/admin/v1/ApiKeys/{apiKeyId}"
         method = "PATCH"
         operation_name = "patch_api_key"
         api_reference_link = ""
@@ -11950,9 +16415,321 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def patch_app(self, app_id, **kwargs):
+        """
+        Update an App
+
+
+        :param str app_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.PatchOp patch_op: (optional)
+            Update the App with SCIM Patch schema.
+
+            Before you specify an attribute-value in a request to update a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.App`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_app.py.html>`__ to see an example of how to use patch_app API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['appId']
+        resource_path = "/admin/v1/Apps/{appId}"
+        method = "PATCH"
+        operation_name = "patch_app"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "patch_op",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "patch_app got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "appId": app_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="App",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="App",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def patch_app_role(self, app_role_id, **kwargs):
+        """
+        Update an AppRole
+
+
+        :param str app_role_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.PatchOp patch_op: (optional)
+            Update the AppRole with SCIM Patch schema.
+
+            Before you specify an attribute-value in a request to update a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AppRole`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_app_role.py.html>`__ to see an example of how to use patch_app_role API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['appRoleId']
+        resource_path = "/admin/v1/AppRoles/{appRoleId}"
+        method = "PATCH"
+        operation_name = "patch_app_role"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "patch_op",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "patch_app_role got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "appRoleId": app_role_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="AppRole",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="AppRole",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def patch_auth_token(self, auth_token_id, **kwargs):
         """
-        Update user's AuthToken
+        Update a user's Auth token.
 
 
         :param str auth_token_id: (required)
@@ -12013,7 +16790,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['authTokenId']
-        resource_path = "/AuthTokens/{authTokenId}"
+        resource_path = "/admin/v1/AuthTokens/{authTokenId}"
         method = "PATCH"
         operation_name = "patch_auth_token"
         api_reference_link = ""
@@ -12108,7 +16885,7 @@ class IdentityDomainsClient(object):
 
     def patch_customer_secret_key(self, customer_secret_key_id, **kwargs):
         """
-        Update user's customer secret key
+        Update a user's customer secret key.
 
 
         :param str customer_secret_key_id: (required)
@@ -12169,7 +16946,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['customerSecretKeyId']
-        resource_path = "/CustomerSecretKeys/{customerSecretKeyId}"
+        resource_path = "/admin/v1/CustomerSecretKeys/{customerSecretKeyId}"
         method = "PATCH"
         operation_name = "patch_customer_secret_key"
         api_reference_link = ""
@@ -12264,7 +17041,7 @@ class IdentityDomainsClient(object):
 
     def patch_dynamic_resource_group(self, dynamic_resource_group_id, **kwargs):
         """
-        Update a DynamicResourceGroup
+        Update a Dynamic Resource Group.
 
 
         :param str dynamic_resource_group_id: (required)
@@ -12325,7 +17102,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dynamicResourceGroupId']
-        resource_path = "/DynamicResourceGroups/{dynamicResourceGroupId}"
+        resource_path = "/admin/v1/DynamicResourceGroups/{dynamicResourceGroupId}"
         method = "PATCH"
         operation_name = "patch_dynamic_resource_group"
         api_reference_link = ""
@@ -12418,9 +17195,165 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def patch_grant(self, grant_id, **kwargs):
+        """
+        Update a Grant
+
+
+        :param str grant_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.PatchOp patch_op: (optional)
+            Update the Grant with SCIM Patch schema.
+
+            Before you specify an attribute-value in a request to update a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Grant`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_grant.py.html>`__ to see an example of how to use patch_grant API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['grantId']
+        resource_path = "/admin/v1/Grants/{grantId}"
+        method = "PATCH"
+        operation_name = "patch_grant"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "patch_op",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "patch_grant got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "grantId": grant_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="Grant",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="Grant",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def patch_group(self, group_id, **kwargs):
         """
-        Update a Group
+        Update a group.
 
 
         :param str group_id: (required)
@@ -12481,7 +17414,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['groupId']
-        resource_path = "/Groups/{groupId}"
+        resource_path = "/admin/v1/Groups/{groupId}"
         method = "PATCH"
         operation_name = "patch_group"
         api_reference_link = ""
@@ -12637,7 +17570,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
-        resource_path = "/IdentityProviders/{identityProviderId}"
+        resource_path = "/admin/v1/IdentityProviders/{identityProviderId}"
         method = "PATCH"
         operation_name = "patch_identity_provider"
         api_reference_link = ""
@@ -12730,6 +17663,162 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def patch_identity_setting(self, identity_setting_id, **kwargs):
+        """
+        Update an Identity setting.
+
+
+        :param str identity_setting_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.PatchOp patch_op: (optional)
+            Update the IdentitySettings with SCIM Patch schema.
+
+            Before you specify an attribute-value in a request to update a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentitySetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_identity_setting.py.html>`__ to see an example of how to use patch_identity_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identitySettingId']
+        resource_path = "/admin/v1/IdentitySettings/{identitySettingId}"
+        method = "PATCH"
+        operation_name = "patch_identity_setting"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "patch_op",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "patch_identity_setting got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "identitySettingId": identity_setting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="IdentitySetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="IdentitySetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def patch_kmsi_setting(self, kmsi_setting_id, **kwargs):
         """
         Update a Setting
@@ -12793,7 +17882,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['kmsiSettingId']
-        resource_path = "/KmsiSettings/{kmsiSettingId}"
+        resource_path = "/admin/v1/KmsiSettings/{kmsiSettingId}"
         method = "PATCH"
         operation_name = "patch_kmsi_setting"
         api_reference_link = ""
@@ -12888,7 +17977,7 @@ class IdentityDomainsClient(object):
 
     def patch_me(self, **kwargs):
         """
-        Update User Info
+        Update a user's own information.
 
 
         :param str authorization: (optional)
@@ -12946,7 +18035,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/Me"
+        resource_path = "/admin/v1/Me"
         method = "PATCH"
         operation_name = "patch_me"
         api_reference_link = ""
@@ -13029,7 +18118,7 @@ class IdentityDomainsClient(object):
 
     def patch_my_api_key(self, my_api_key_id, **kwargs):
         """
-        Update user's api key
+        Update a user's own API key.
 
 
         :param str my_api_key_id: (required)
@@ -13082,7 +18171,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myApiKeyId']
-        resource_path = "/MyApiKeys/{myApiKeyId}"
+        resource_path = "/admin/v1/MyApiKeys/{myApiKeyId}"
         method = "PATCH"
         operation_name = "patch_my_api_key"
         api_reference_link = ""
@@ -13159,7 +18248,7 @@ class IdentityDomainsClient(object):
 
     def patch_my_auth_token(self, my_auth_token_id, **kwargs):
         """
-        Update user's AuthToken
+        Update a user's own Auth token.
 
 
         :param str my_auth_token_id: (required)
@@ -13212,7 +18301,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myAuthTokenId']
-        resource_path = "/MyAuthTokens/{myAuthTokenId}"
+        resource_path = "/admin/v1/MyAuthTokens/{myAuthTokenId}"
         method = "PATCH"
         operation_name = "patch_my_auth_token"
         api_reference_link = ""
@@ -13289,7 +18378,7 @@ class IdentityDomainsClient(object):
 
     def patch_my_customer_secret_key(self, my_customer_secret_key_id, **kwargs):
         """
-        Update user's customer secret key
+        Update a user's own customer secret key.
 
 
         :param str my_customer_secret_key_id: (required)
@@ -13342,7 +18431,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myCustomerSecretKeyId']
-        resource_path = "/MyCustomerSecretKeys/{myCustomerSecretKeyId}"
+        resource_path = "/admin/v1/MyCustomerSecretKeys/{myCustomerSecretKeyId}"
         method = "PATCH"
         operation_name = "patch_my_customer_secret_key"
         api_reference_link = ""
@@ -13480,7 +18569,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myDeviceId']
-        resource_path = "/MyDevices/{myDeviceId}"
+        resource_path = "/admin/v1/MyDevices/{myDeviceId}"
         method = "PATCH"
         operation_name = "patch_my_device"
         api_reference_link = ""
@@ -13575,7 +18664,7 @@ class IdentityDomainsClient(object):
 
     def patch_my_o_auth2_client_credential(self, my_o_auth2_client_credential_id, **kwargs):
         """
-        Update user's oauth2 client credential
+        Update a user's own OAuth2 client credential.
 
 
         :param str my_o_auth2_client_credential_id: (required)
@@ -13628,7 +18717,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['myOAuth2ClientCredentialId']
-        resource_path = "/MyOAuth2ClientCredentials/{myOAuth2ClientCredentialId}"
+        resource_path = "/admin/v1/MyOAuth2ClientCredentials/{myOAuth2ClientCredentialId}"
         method = "PATCH"
         operation_name = "patch_my_o_auth2_client_credential"
         api_reference_link = ""
@@ -13705,7 +18794,7 @@ class IdentityDomainsClient(object):
 
     def patch_my_smtp_credential(self, my_smtp_credential_id, **kwargs):
         """
-        Update user's smtp credentials
+        Update a user's own SMTP credential.
 
 
         :param str my_smtp_credential_id: (required)
@@ -13758,7 +18847,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['mySmtpCredentialId']
-        resource_path = "/MySmtpCredentials/{mySmtpCredentialId}"
+        resource_path = "/admin/v1/MySmtpCredentials/{mySmtpCredentialId}"
         method = "PATCH"
         operation_name = "patch_my_smtp_credential"
         api_reference_link = ""
@@ -13835,7 +18924,7 @@ class IdentityDomainsClient(object):
 
     def patch_o_auth2_client_credential(self, o_auth2_client_credential_id, **kwargs):
         """
-        Update user's oauth2 client credential
+        Update a user's OAuth2 client credentials.
 
 
         :param str o_auth2_client_credential_id: (required)
@@ -13896,7 +18985,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['oAuth2ClientCredentialId']
-        resource_path = "/OAuth2ClientCredentials/{oAuth2ClientCredentialId}"
+        resource_path = "/admin/v1/OAuth2ClientCredentials/{oAuth2ClientCredentialId}"
         method = "PATCH"
         operation_name = "patch_o_auth2_client_credential"
         api_reference_link = ""
@@ -13991,7 +19080,7 @@ class IdentityDomainsClient(object):
 
     def patch_password_policy(self, password_policy_id, **kwargs):
         """
-        Update a Password Policy
+        Update a password policy.
 
 
         :param str password_policy_id: (required)
@@ -14052,7 +19141,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['passwordPolicyId']
-        resource_path = "/PasswordPolicies/{passwordPolicyId}"
+        resource_path = "/admin/v1/PasswordPolicies/{passwordPolicyId}"
         method = "PATCH"
         operation_name = "patch_password_policy"
         api_reference_link = ""
@@ -14145,9 +19234,321 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def patch_security_question(self, security_question_id, **kwargs):
+        """
+        Update a security question.
+
+
+        :param str security_question_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.PatchOp patch_op: (optional)
+            Update the SecurityQuestion with SCIM Patch schema.
+
+            Before you specify an attribute-value in a request to update a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestion`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_security_question.py.html>`__ to see an example of how to use patch_security_question API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityQuestionId']
+        resource_path = "/admin/v1/SecurityQuestions/{securityQuestionId}"
+        method = "PATCH"
+        operation_name = "patch_security_question"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "patch_op",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "patch_security_question got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "securityQuestionId": security_question_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="SecurityQuestion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="SecurityQuestion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def patch_security_question_setting(self, security_question_setting_id, **kwargs):
+        """
+        Update a security question setting.
+
+
+        :param str security_question_setting_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.PatchOp patch_op: (optional)
+            Update the SecurityQuestionSettings with SCIM Patch schema.
+
+            Before you specify an attribute-value in a request to update a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestionSetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_security_question_setting.py.html>`__ to see an example of how to use patch_security_question_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityQuestionSettingId']
+        resource_path = "/admin/v1/SecurityQuestionSettings/{securityQuestionSettingId}"
+        method = "PATCH"
+        operation_name = "patch_security_question_setting"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "patch_op",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "patch_security_question_setting got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "securityQuestionSettingId": security_question_setting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="SecurityQuestionSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="SecurityQuestionSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def patch_smtp_credential(self, smtp_credential_id, **kwargs):
         """
-        Update user's smtp credentials
+        Update a user's SMTP credentials.
 
 
         :param str smtp_credential_id: (required)
@@ -14208,7 +19609,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['smtpCredentialId']
-        resource_path = "/SmtpCredentials/{smtpCredentialId}"
+        resource_path = "/admin/v1/SmtpCredentials/{smtpCredentialId}"
         method = "PATCH"
         operation_name = "patch_smtp_credential"
         api_reference_link = ""
@@ -14303,7 +19704,7 @@ class IdentityDomainsClient(object):
 
     def patch_user(self, user_id, **kwargs):
         """
-        Update a User
+        Update a user.
 
 
         :param str user_id: (required)
@@ -14364,7 +19765,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
-        resource_path = "/Users/{userId}"
+        resource_path = "/admin/v1/Users/{userId}"
         method = "PATCH"
         operation_name = "patch_user"
         api_reference_link = ""
@@ -14457,6 +19858,630 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def patch_user_attributes_setting(self, user_attributes_setting_id, **kwargs):
+        """
+        Update User Schema Attribute Settings
+
+
+        :param str user_attributes_setting_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.PatchOp patch_op: (optional)
+            Update the UserAttributesSettings with SCIM Patch schema.
+
+            Before you specify an attribute-value in a request to update a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserAttributesSetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/patch_user_attributes_setting.py.html>`__ to see an example of how to use patch_user_attributes_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['userAttributesSettingId']
+        resource_path = "/admin/v1/UserAttributesSettings/{userAttributesSettingId}"
+        method = "PATCH"
+        operation_name = "patch_user_attributes_setting"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "patch_op",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "patch_user_attributes_setting got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "userAttributesSettingId": user_attributes_setting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="UserAttributesSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('patch_op'),
+                response_type="UserAttributesSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def put_account_recovery_setting(self, account_recovery_setting_id, **kwargs):
+        """
+        Replace an account recovery setting.
+
+
+        :param str account_recovery_setting_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.AccountRecoverySetting account_recovery_setting: (optional)
+            Replace the current instance of AccountRecoverySettings with provided payload.
+
+            Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountRecoverySetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_account_recovery_setting.py.html>`__ to see an example of how to use put_account_recovery_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['accountRecoverySettingId']
+        resource_path = "/admin/v1/AccountRecoverySettings/{accountRecoverySettingId}"
+        method = "PUT"
+        operation_name = "put_account_recovery_setting"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "account_recovery_setting",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "put_account_recovery_setting got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "accountRecoverySettingId": account_recovery_setting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('account_recovery_setting'),
+                response_type="AccountRecoverySetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('account_recovery_setting'),
+                response_type="AccountRecoverySetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def put_app(self, app_id, **kwargs):
+        """
+        Replace an App
+
+
+        :param str app_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.App app: (optional)
+            Replace the current instance of App with provided payload.
+
+            Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.App`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_app.py.html>`__ to see an example of how to use put_app API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['appId']
+        resource_path = "/admin/v1/Apps/{appId}"
+        method = "PUT"
+        operation_name = "put_app"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "app",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "put_app got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "appId": app_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('app'),
+                response_type="App",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('app'),
+                response_type="App",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def put_app_status_changer(self, app_status_changer_id, **kwargs):
+        """
+        Activate/Deactivate an App
+
+
+        :param str app_status_changer_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.AppStatusChanger app_status_changer: (optional)
+            Replace the current instance of AppStatusChanger with provided payload.
+
+            Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AppStatusChanger`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_app_status_changer.py.html>`__ to see an example of how to use put_app_status_changer API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['appStatusChangerId']
+        resource_path = "/admin/v1/AppStatusChanger/{appStatusChangerId}"
+        method = "PUT"
+        operation_name = "put_app_status_changer"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "app_status_changer",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "put_app_status_changer got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "appStatusChangerId": app_status_changer_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('app_status_changer'),
+                response_type="AppStatusChanger",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('app_status_changer'),
+                response_type="AppStatusChanger",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def put_authentication_factor_setting(self, authentication_factor_setting_id, **kwargs):
         """
         Replace Authentication Factor Settings
@@ -14520,7 +20545,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['authenticationFactorSettingId']
-        resource_path = "/AuthenticationFactorSettings/{authenticationFactorSettingId}"
+        resource_path = "/admin/v1/AuthenticationFactorSettings/{authenticationFactorSettingId}"
         method = "PUT"
         operation_name = "put_authentication_factor_setting"
         api_reference_link = ""
@@ -14615,7 +20640,7 @@ class IdentityDomainsClient(object):
 
     def put_dynamic_resource_group(self, dynamic_resource_group_id, **kwargs):
         """
-        Replace a DynamicResourceGroup
+        Replace a Dynamic Resource Group.
 
 
         :param str dynamic_resource_group_id: (required)
@@ -14676,7 +20701,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['dynamicResourceGroupId']
-        resource_path = "/DynamicResourceGroups/{dynamicResourceGroupId}"
+        resource_path = "/admin/v1/DynamicResourceGroups/{dynamicResourceGroupId}"
         method = "PUT"
         operation_name = "put_dynamic_resource_group"
         api_reference_link = ""
@@ -14771,7 +20796,7 @@ class IdentityDomainsClient(object):
 
     def put_group(self, group_id, **kwargs):
         """
-        Replace a Group
+        Replace a group.
 
 
         :param str group_id: (required)
@@ -14832,7 +20857,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['groupId']
-        resource_path = "/Groups/{groupId}"
+        resource_path = "/admin/v1/Groups/{groupId}"
         method = "PUT"
         operation_name = "put_group"
         api_reference_link = ""
@@ -14988,7 +21013,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['identityProviderId']
-        resource_path = "/IdentityProviders/{identityProviderId}"
+        resource_path = "/admin/v1/IdentityProviders/{identityProviderId}"
         method = "PUT"
         operation_name = "put_identity_provider"
         api_reference_link = ""
@@ -15081,6 +21106,162 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def put_identity_setting(self, identity_setting_id, **kwargs):
+        """
+        Replace an Identity setting.
+
+
+        :param str identity_setting_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.IdentitySetting identity_setting: (optional)
+            Replace the current instance of IdentitySettings with provided payload.
+
+            Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentitySetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_identity_setting.py.html>`__ to see an example of how to use put_identity_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['identitySettingId']
+        resource_path = "/admin/v1/IdentitySettings/{identitySettingId}"
+        method = "PUT"
+        operation_name = "put_identity_setting"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "identity_setting",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "put_identity_setting got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "identitySettingId": identity_setting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_setting'),
+                response_type="IdentitySetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_setting'),
+                response_type="IdentitySetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def put_kmsi_setting(self, kmsi_setting_id, **kwargs):
         """
         Replace KmsiSettings
@@ -15144,7 +21325,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['kmsiSettingId']
-        resource_path = "/KmsiSettings/{kmsiSettingId}"
+        resource_path = "/admin/v1/KmsiSettings/{kmsiSettingId}"
         method = "PUT"
         operation_name = "put_kmsi_setting"
         api_reference_link = ""
@@ -15239,7 +21420,7 @@ class IdentityDomainsClient(object):
 
     def put_me(self, **kwargs):
         """
-        Replace User Info
+        Replace a user's own information.
 
 
         :param str authorization: (optional)
@@ -15297,7 +21478,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/Me"
+        resource_path = "/admin/v1/Me"
         method = "PUT"
         operation_name = "put_me"
         api_reference_link = ""
@@ -15380,7 +21561,7 @@ class IdentityDomainsClient(object):
 
     def put_me_password_changer(self, **kwargs):
         """
-        Self-Service Password Update
+        Update a user's own password.
 
 
         :param str authorization: (optional)
@@ -15430,7 +21611,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MePasswordChanger"
+        resource_path = "/admin/v1/MePasswordChanger"
         method = "PUT"
         operation_name = "put_me_password_changer"
         api_reference_link = ""
@@ -15495,7 +21676,7 @@ class IdentityDomainsClient(object):
 
     def put_password_policy(self, password_policy_id, **kwargs):
         """
-        Replace a Password Policy
+        Replace a password policy.
 
 
         :param str password_policy_id: (required)
@@ -15556,7 +21737,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['passwordPolicyId']
-        resource_path = "/PasswordPolicies/{passwordPolicyId}"
+        resource_path = "/admin/v1/PasswordPolicies/{passwordPolicyId}"
         method = "PUT"
         operation_name = "put_password_policy"
         api_reference_link = ""
@@ -15649,9 +21830,165 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def put_security_question_setting(self, security_question_setting_id, **kwargs):
+        """
+        Replace a security question setting.
+
+
+        :param str security_question_setting_id: (required)
+            ID of the resource
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param str attributes: (optional)
+            A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
+
+        :param list[str] attribute_sets: (optional)
+            A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
+
+            Allowed values are: "all", "always", "never", "request", "default"
+
+        :param oci.identity_domains.models.SecurityQuestionSetting security_question_setting: (optional)
+            Replace the current instance of SecurityQuestionSettings with provided payload.
+
+            Before you specify an attribute-value in a request to replace a resource, please check the **'mutability'** property of that attribute in the resource-type schema below. Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+             - Your request to create, update or replace a resource may specify in its payload a value for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or *mutability:immutable*:
+             - The SCIM APIs to create a resource will ignore silently any value that you specify for an attribute that is defined as *mutability:readOnly*.
+             - The SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify a value for an attribute that is defined as *mutability:readOnly*.
+             - Similarly, the SCIM APIs to update or replace a resource will fail with an error 400 Bad Request if you specify any value for an attribute that is defined as *mutability:immutable* and that already has a value in the specified resource.
+
+            Also, before you use the query-parameter attributes to request specific attributes, please check the **'returned'** property of that attribute in the resource-type schema below:
+             - Your request to read a resource (or to search a resource-type) can specify as the value of attributes any attributes that are defined as *returned:default* or *returned:request* or *returned:always*:
+             - If you request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the set of attributes that you requested, as well as any attribute that is defined as *returned:always*.
+             - If you do not request a specific set of attributes, the SCIM APIs to read a resource (or to search a resource-type) will return in each resource the the set of attributes defined as *returned:default*, as well as any attribute that is defined as *returned:always*.
+             - The SCIM APIs to read a resource (or to search a resource-type) will ignore silently any request to return an attribute that is defined as *returned:never*.
+
+        :param str if_match: (optional)
+            Used to make the request conditional on an ETag
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestionSetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/put_security_question_setting.py.html>`__ to see an example of how to use put_security_question_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['securityQuestionSettingId']
+        resource_path = "/admin/v1/SecurityQuestionSettings/{securityQuestionSettingId}"
+        method = "PUT"
+        operation_name = "put_security_question_setting"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "attributes",
+            "attribute_sets",
+            "security_question_setting",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "put_security_question_setting got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "securityQuestionSettingId": security_question_setting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'attribute_sets' in kwargs:
+            attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
+            for attribute_sets_item in kwargs['attribute_sets']:
+                if attribute_sets_item not in attribute_sets_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                    )
+
+        query_params = {
+            "attributes": kwargs.get("attributes", missing),
+            "attributeSets": self.base_client.generate_collection_format_param(kwargs.get("attribute_sets", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('security_question_setting'),
+                response_type="SecurityQuestionSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('security_question_setting'),
+                response_type="SecurityQuestionSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def put_user(self, user_id, **kwargs):
         """
-        Replace a User
+        Replace a user.
 
 
         :param str user_id: (required)
@@ -15712,7 +22049,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userId']
-        resource_path = "/Users/{userId}"
+        resource_path = "/admin/v1/Users/{userId}"
         method = "PUT"
         operation_name = "put_user"
         api_reference_link = ""
@@ -15807,7 +22144,7 @@ class IdentityDomainsClient(object):
 
     def put_user_capabilities_changer(self, user_capabilities_changer_id, **kwargs):
         """
-        Change user capabilities
+        Change a user's capabilities.
 
 
         :param str user_capabilities_changer_id: (required)
@@ -15860,7 +22197,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userCapabilitiesChangerId']
-        resource_path = "/UserCapabilitiesChanger/{userCapabilitiesChangerId}"
+        resource_path = "/admin/v1/UserCapabilitiesChanger/{userCapabilitiesChangerId}"
         method = "PUT"
         operation_name = "put_user_capabilities_changer"
         api_reference_link = ""
@@ -15937,7 +22274,7 @@ class IdentityDomainsClient(object):
 
     def put_user_password_changer(self, user_password_changer_id, **kwargs):
         """
-        Change a User Password (Known Value)
+        Change a user's password to a known value.
 
 
         :param str user_password_changer_id: (required)
@@ -15990,7 +22327,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userPasswordChangerId']
-        resource_path = "/UserPasswordChanger/{userPasswordChangerId}"
+        resource_path = "/admin/v1/UserPasswordChanger/{userPasswordChangerId}"
         method = "PUT"
         operation_name = "put_user_password_changer"
         api_reference_link = ""
@@ -16067,7 +22404,7 @@ class IdentityDomainsClient(object):
 
     def put_user_password_resetter(self, user_password_resetter_id, **kwargs):
         """
-        Reset a User Password (Random Value)
+        Reset a user's password to a randomly-generated value.
 
 
         :param str user_password_resetter_id: (required)
@@ -16120,7 +22457,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userPasswordResetterId']
-        resource_path = "/UserPasswordResetter/{userPasswordResetterId}"
+        resource_path = "/admin/v1/UserPasswordResetter/{userPasswordResetterId}"
         method = "PUT"
         operation_name = "put_user_password_resetter"
         api_reference_link = ""
@@ -16197,7 +22534,7 @@ class IdentityDomainsClient(object):
 
     def put_user_status_changer(self, user_status_changer_id, **kwargs):
         """
-        Change User Status
+        Change a user's status.
 
 
         :param str user_status_changer_id: (required)
@@ -16258,7 +22595,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = ['userStatusChangerId']
-        resource_path = "/UserStatusChanger/{userStatusChangerId}"
+        resource_path = "/admin/v1/UserStatusChanger/{userStatusChangerId}"
         method = "PUT"
         operation_name = "put_user_status_changer"
         api_reference_link = ""
@@ -16351,6 +22688,120 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def search_account_mgmt_infos(self, **kwargs):
+        """
+        Search Account Mgmt Info Using POST
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.AccountMgmtInfoSearchRequest account_mgmt_info_search_request: (optional)
+            Parameters for searching AccountMgmtInfos
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AccountMgmtInfos`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_account_mgmt_infos.py.html>`__ to see an example of how to use search_account_mgmt_infos API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/AccountMgmtInfos/.search"
+        method = "POST"
+        operation_name = "search_account_mgmt_infos"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "account_mgmt_info_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_account_mgmt_infos got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('account_mgmt_info_search_request'),
+                response_type="AccountMgmtInfos",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('account_mgmt_info_search_request'),
+                response_type="AccountMgmtInfos",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def search_api_keys(self, **kwargs):
         """
         Search ApiKeys Using POST
@@ -16394,7 +22845,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/ApiKeys/.search"
+        resource_path = "/admin/v1/ApiKeys/.search"
         method = "POST"
         operation_name = "search_api_keys"
         api_reference_link = ""
@@ -16465,9 +22916,237 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def search_app_roles(self, **kwargs):
+        """
+        Search AppRoles Using POST
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.AppRoleSearchRequest app_role_search_request: (optional)
+            Parameters for searching AppRoles
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.AppRoles`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_app_roles.py.html>`__ to see an example of how to use search_app_roles API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/AppRoles/.search"
+        method = "POST"
+        operation_name = "search_app_roles"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "app_role_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_app_roles got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('app_role_search_request'),
+                response_type="AppRoles",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('app_role_search_request'),
+                response_type="AppRoles",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def search_apps(self, **kwargs):
+        """
+        Search Apps Using POST
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.AppSearchRequest app_search_request: (optional)
+            Parameters for searching Apps
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Apps`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_apps.py.html>`__ to see an example of how to use search_apps API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/Apps/.search"
+        method = "POST"
+        operation_name = "search_apps"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "app_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_apps got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('app_search_request'),
+                response_type="Apps",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('app_search_request'),
+                response_type="Apps",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def search_auth_tokens(self, **kwargs):
         """
-        Search AuthTokens Using POST
+        Search for Auth tokens using POST.
 
 
         :param str authorization: (optional)
@@ -16508,7 +23187,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/AuthTokens/.search"
+        resource_path = "/admin/v1/AuthTokens/.search"
         method = "POST"
         operation_name = "search_auth_tokens"
         api_reference_link = ""
@@ -16622,7 +23301,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/AuthenticationFactorSettings/.search"
+        resource_path = "/admin/v1/AuthenticationFactorSettings/.search"
         method = "POST"
         operation_name = "search_authentication_factor_settings"
         api_reference_link = ""
@@ -16695,7 +23374,7 @@ class IdentityDomainsClient(object):
 
     def search_customer_secret_keys(self, **kwargs):
         """
-        Search CustomerSecretKeys Using POST
+        Search for customer secret keys using POST.
 
 
         :param str authorization: (optional)
@@ -16736,7 +23415,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/CustomerSecretKeys/.search"
+        resource_path = "/admin/v1/CustomerSecretKeys/.search"
         method = "POST"
         operation_name = "search_customer_secret_keys"
         api_reference_link = ""
@@ -16809,7 +23488,7 @@ class IdentityDomainsClient(object):
 
     def search_dynamic_resource_groups(self, **kwargs):
         """
-        Search DynamicResourceGroups Using POST
+        Search for Dynamic Resource Groups using POST.
 
 
         :param str authorization: (optional)
@@ -16850,7 +23529,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/DynamicResourceGroups/.search"
+        resource_path = "/admin/v1/DynamicResourceGroups/.search"
         method = "POST"
         operation_name = "search_dynamic_resource_groups"
         api_reference_link = ""
@@ -16921,9 +23600,123 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def search_grants(self, **kwargs):
+        """
+        Search Grants Using POST
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.GrantSearchRequest grant_search_request: (optional)
+            Parameters for searching Grants
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.Grants`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_grants.py.html>`__ to see an example of how to use search_grants API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/Grants/.search"
+        method = "POST"
+        operation_name = "search_grants"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "grant_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_grants got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('grant_search_request'),
+                response_type="Grants",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('grant_search_request'),
+                response_type="Grants",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def search_groups(self, **kwargs):
         """
-        Search Groups Using POST
+        Search for groups using POST.
 
 
         :param str authorization: (optional)
@@ -16964,7 +23757,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/Groups/.search"
+        resource_path = "/admin/v1/Groups/.search"
         method = "POST"
         operation_name = "search_groups"
         api_reference_link = ""
@@ -17078,7 +23871,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/IdentityProviders/.search"
+        resource_path = "/admin/v1/IdentityProviders/.search"
         method = "POST"
         operation_name = "search_identity_providers"
         api_reference_link = ""
@@ -17149,6 +23942,120 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def search_identity_settings(self, **kwargs):
+        """
+        Search for Identity settings using POST.
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.IdentitySettingsSearchRequest identity_settings_search_request: (optional)
+            Parameters for searching IdentitySettings
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.IdentitySettings`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_identity_settings.py.html>`__ to see an example of how to use search_identity_settings API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/IdentitySettings/.search"
+        method = "POST"
+        operation_name = "search_identity_settings"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "identity_settings_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_identity_settings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_settings_search_request'),
+                response_type="IdentitySettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('identity_settings_search_request'),
+                response_type="IdentitySettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def search_kmsi_settings(self, **kwargs):
         """
         Search KmsiSettings Using POST
@@ -17192,7 +24099,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/KmsiSettings/.search"
+        resource_path = "/admin/v1/KmsiSettings/.search"
         method = "POST"
         operation_name = "search_kmsi_settings"
         api_reference_link = ""
@@ -17263,9 +24170,123 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def search_my_apps(self, **kwargs):
+        """
+        Search My Apps Using POST
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.MyAppSearchRequest my_app_search_request: (optional)
+            Parameters for searching MyApps
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyApps`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_my_apps.py.html>`__ to see an example of how to use search_my_apps API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/MyApps/.search"
+        method = "POST"
+        operation_name = "search_my_apps"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "my_app_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_my_apps got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('my_app_search_request'),
+                response_type="MyApps",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('my_app_search_request'),
+                response_type="MyApps",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def search_my_groups(self, **kwargs):
         """
-        Search My Groups Using POST
+        Search for 'My Groups' using POST.
 
 
         :param str authorization: (optional)
@@ -17306,7 +24327,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/MyGroups/.search"
+        resource_path = "/admin/v1/MyGroups/.search"
         method = "POST"
         operation_name = "search_my_groups"
         api_reference_link = ""
@@ -17377,9 +24398,237 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def search_my_requestable_groups(self, **kwargs):
+        """
+        Search My Requestable Groups Using POST
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.MyRequestableGroupSearchRequest my_requestable_group_search_request: (optional)
+            Parameters for searching MyRequestableGroups
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyRequestableGroups`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_my_requestable_groups.py.html>`__ to see an example of how to use search_my_requestable_groups API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/MyRequestableGroups/.search"
+        method = "POST"
+        operation_name = "search_my_requestable_groups"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "my_requestable_group_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_my_requestable_groups got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('my_requestable_group_search_request'),
+                response_type="MyRequestableGroups",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('my_requestable_group_search_request'),
+                response_type="MyRequestableGroups",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def search_my_requests(self, **kwargs):
+        """
+        Search My Requests Using POST
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.MyRequestSearchRequest my_request_search_request: (optional)
+            Parameters for searching MyRequests
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.MyRequests`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_my_requests.py.html>`__ to see an example of how to use search_my_requests API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/MyRequests/.search"
+        method = "POST"
+        operation_name = "search_my_requests"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "my_request_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_my_requests got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('my_request_search_request'),
+                response_type="MyRequests",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('my_request_search_request'),
+                response_type="MyRequests",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def search_o_auth2_client_credentials(self, **kwargs):
         """
-        Search Oauth2Clients Using POST
+        Search for OAuth2 client credentials using POST.
 
 
         :param str authorization: (optional)
@@ -17420,7 +24669,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/OAuth2ClientCredentials/.search"
+        resource_path = "/admin/v1/OAuth2ClientCredentials/.search"
         method = "POST"
         operation_name = "search_o_auth2_client_credentials"
         api_reference_link = ""
@@ -17493,7 +24742,7 @@ class IdentityDomainsClient(object):
 
     def search_password_policies(self, **kwargs):
         """
-        Search Password Policies Using POST
+        Search for password policies using POST.
 
 
         :param str authorization: (optional)
@@ -17534,7 +24783,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/PasswordPolicies/.search"
+        resource_path = "/admin/v1/PasswordPolicies/.search"
         method = "POST"
         operation_name = "search_password_policies"
         api_reference_link = ""
@@ -17605,9 +24854,351 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def search_resource_type_schema_attributes(self, **kwargs):
+        """
+        Search Resource Type Schema Attributes Using POST
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.ResourceTypeSchemaAttributeSearchRequest resource_type_schema_attribute_search_request: (optional)
+            Parameters for searching ResourceTypeSchemaAttributes
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.ResourceTypeSchemaAttributes`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_resource_type_schema_attributes.py.html>`__ to see an example of how to use search_resource_type_schema_attributes API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/ResourceTypeSchemaAttributes/.search"
+        method = "POST"
+        operation_name = "search_resource_type_schema_attributes"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "resource_type_schema_attribute_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_resource_type_schema_attributes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('resource_type_schema_attribute_search_request'),
+                response_type="ResourceTypeSchemaAttributes",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('resource_type_schema_attribute_search_request'),
+                response_type="ResourceTypeSchemaAttributes",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def search_security_question_settings(self, **kwargs):
+        """
+        Search for security question settings using POST.
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.SecurityQuestionSettingsSearchRequest security_question_settings_search_request: (optional)
+            Parameters for searching SecurityQuestionSettings
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestionSettings`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_security_question_settings.py.html>`__ to see an example of how to use search_security_question_settings API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/SecurityQuestionSettings/.search"
+        method = "POST"
+        operation_name = "search_security_question_settings"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "security_question_settings_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_security_question_settings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('security_question_settings_search_request'),
+                response_type="SecurityQuestionSettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('security_question_settings_search_request'),
+                response_type="SecurityQuestionSettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def search_security_questions(self, **kwargs):
+        """
+        Search for security questions using POST.
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.SecurityQuestionSearchRequest security_question_search_request: (optional)
+            Parameters for searching SecurityQuestions
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.SecurityQuestions`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_security_questions.py.html>`__ to see an example of how to use search_security_questions API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/SecurityQuestions/.search"
+        method = "POST"
+        operation_name = "search_security_questions"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "security_question_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_security_questions got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('security_question_search_request'),
+                response_type="SecurityQuestions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('security_question_search_request'),
+                response_type="SecurityQuestions",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def search_smtp_credentials(self, **kwargs):
         """
-        Search smtp credentials Using POST
+        Search for SMTP credentials using POST.
 
 
         :param str authorization: (optional)
@@ -17648,7 +25239,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/SmtpCredentials/.search"
+        resource_path = "/admin/v1/SmtpCredentials/.search"
         method = "POST"
         operation_name = "search_smtp_credentials"
         api_reference_link = ""
@@ -17719,9 +25310,123 @@ class IdentityDomainsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def search_user_attributes_settings(self, **kwargs):
+        """
+        Search User Schema Attribute Settings Using POST
+
+
+        :param str authorization: (optional)
+            The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
+
+        :param str resource_type_schema_version: (optional)
+            An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
+
+        :param oci.identity_domains.models.UserAttributesSettingsSearchRequest user_attributes_settings_search_request: (optional)
+            Parameters for searching UserAttributesSettings
+
+        :param str opc_retry_token: (optional)
+            A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous 'List' call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated 'List' call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity_domains.models.UserAttributesSettings`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identitydomains/search_user_attributes_settings.py.html>`__ to see an example of how to use search_user_attributes_settings API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/admin/v1/UserAttributesSettings/.search"
+        method = "POST"
+        operation_name = "search_user_attributes_settings"
+        api_reference_link = ""
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "authorization",
+            "resource_type_schema_version",
+            "user_attributes_settings_search_request",
+            "opc_retry_token",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "search_user_attributes_settings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json, application/scim+json",
+            "content-type": "application/json",
+            "authorization": kwargs.get("authorization", missing),
+            "resource_type_schema_version": kwargs.get("resource_type_schema_version", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('user_attributes_settings_search_request'),
+                response_type="UserAttributesSettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=kwargs.get('user_attributes_settings_search_request'),
+                response_type="UserAttributesSettings",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def search_user_db_credentials(self, **kwargs):
         """
-        Search a User's DBCredentials using POST
+        Search for a user's database (DB) credentials using POST.
 
 
         :param str authorization: (optional)
@@ -17762,7 +25467,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/UserDbCredentials/.search"
+        resource_path = "/admin/v1/UserDbCredentials/.search"
         method = "POST"
         operation_name = "search_user_db_credentials"
         api_reference_link = ""
@@ -17835,7 +25540,7 @@ class IdentityDomainsClient(object):
 
     def search_users(self, **kwargs):
         """
-        Search Users Using POST
+        Search for users using POST.
 
 
         :param str authorization: (optional)
@@ -17876,7 +25581,7 @@ class IdentityDomainsClient(object):
         """
         # Required path and query arguments. These are in camelCase to replace values in service endpoints.
         required_arguments = []
-        resource_path = "/Users/.search"
+        resource_path = "/admin/v1/Users/.search"
         method = "POST"
         operation_name = "search_users"
         api_reference_link = ""

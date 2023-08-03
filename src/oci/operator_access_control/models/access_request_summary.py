@@ -31,6 +31,10 @@ class AccessRequestSummary(object):
     #: This constant has a value of "CLOUDAUTONOMOUSVMCLUSTER"
     RESOURCE_TYPE_CLOUDAUTONOMOUSVMCLUSTER = "CLOUDAUTONOMOUSVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a AccessRequestSummary.
+    #: This constant has a value of "CCCINFRASTRUCTURE"
+    RESOURCE_TYPE_CCCINFRASTRUCTURE = "CCCINFRASTRUCTURE"
+
     #: A constant which can be used with the lifecycle_state property of a AccessRequestSummary.
     #: This constant has a value of "CREATED"
     LIFECYCLE_STATE_CREATED = "CREATED"
@@ -168,9 +172,13 @@ class AccessRequestSummary(object):
             The value to assign to the resource_name property of this AccessRequestSummary.
         :type resource_name: str
 
+        :param sub_resource_list:
+            The value to assign to the sub_resource_list property of this AccessRequestSummary.
+        :type sub_resource_list: list[str]
+
         :param resource_type:
             The value to assign to the resource_type property of this AccessRequestSummary.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -230,6 +238,7 @@ class AccessRequestSummary(object):
             'compartment_id': 'str',
             'resource_id': 'str',
             'resource_name': 'str',
+            'sub_resource_list': 'list[str]',
             'resource_type': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -251,6 +260,7 @@ class AccessRequestSummary(object):
             'compartment_id': 'compartmentId',
             'resource_id': 'resourceId',
             'resource_name': 'resourceName',
+            'sub_resource_list': 'subResourceList',
             'resource_type': 'resourceType',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -271,6 +281,7 @@ class AccessRequestSummary(object):
         self._compartment_id = None
         self._resource_id = None
         self._resource_name = None
+        self._sub_resource_list = None
         self._resource_type = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -431,12 +442,36 @@ class AccessRequestSummary(object):
         self._resource_name = resource_name
 
     @property
+    def sub_resource_list(self):
+        """
+        Gets the sub_resource_list of this AccessRequestSummary.
+        The subresources requested for approval.
+
+
+        :return: The sub_resource_list of this AccessRequestSummary.
+        :rtype: list[str]
+        """
+        return self._sub_resource_list
+
+    @sub_resource_list.setter
+    def sub_resource_list(self, sub_resource_list):
+        """
+        Sets the sub_resource_list of this AccessRequestSummary.
+        The subresources requested for approval.
+
+
+        :param sub_resource_list: The sub_resource_list of this AccessRequestSummary.
+        :type: list[str]
+        """
+        self._sub_resource_list = sub_resource_list
+
+    @property
     def resource_type(self):
         """
         Gets the resource_type of this AccessRequestSummary.
         resourceType for which the AccessRequest is applicable
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -455,7 +490,7 @@ class AccessRequestSummary(object):
         :param resource_type: The resource_type of this AccessRequestSummary.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type

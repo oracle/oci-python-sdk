@@ -32,6 +32,10 @@ class OperatorControlAssignment(object):
     #: This constant has a value of "CLOUDAUTONOMOUSVMCLUSTER"
     RESOURCE_TYPE_CLOUDAUTONOMOUSVMCLUSTER = "CLOUDAUTONOMOUSVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a OperatorControlAssignment.
+    #: This constant has a value of "CCCINFRASTRUCTURE"
+    RESOURCE_TYPE_CCCINFRASTRUCTURE = "CCCINFRASTRUCTURE"
+
     #: A constant which can be used with the lifecycle_state property of a OperatorControlAssignment.
     #: This constant has a value of "CREATED"
     LIFECYCLE_STATE_CREATED = "CREATED"
@@ -47,6 +51,10 @@ class OperatorControlAssignment(object):
     #: A constant which can be used with the lifecycle_state property of a OperatorControlAssignment.
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a OperatorControlAssignment.
+    #: This constant has a value of "UPDATEFAILED"
+    LIFECYCLE_STATE_UPDATEFAILED = "UPDATEFAILED"
 
     #: A constant which can be used with the lifecycle_state property of a OperatorControlAssignment.
     #: This constant has a value of "DELETING"
@@ -91,7 +99,7 @@ class OperatorControlAssignment(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this OperatorControlAssignment.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -109,7 +117,7 @@ class OperatorControlAssignment(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this OperatorControlAssignment.
-            Allowed values for this property are: "CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "DELETING", "DELETED", "DELETIONFAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "UPDATEFAILED", "DELETING", "DELETED", "DELETIONFAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -169,6 +177,10 @@ class OperatorControlAssignment(object):
             The value to assign to the error_message property of this OperatorControlAssignment.
         :type error_message: str
 
+        :param is_default_assignment:
+            The value to assign to the is_default_assignment property of this OperatorControlAssignment.
+        :type is_default_assignment: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this OperatorControlAssignment.
         :type freeform_tags: dict(str, str)
@@ -204,6 +216,7 @@ class OperatorControlAssignment(object):
             'is_auto_approve_during_maintenance': 'bool',
             'error_code': 'int',
             'error_message': 'str',
+            'is_default_assignment': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -234,6 +247,7 @@ class OperatorControlAssignment(object):
             'is_auto_approve_during_maintenance': 'isAutoApproveDuringMaintenance',
             'error_code': 'errorCode',
             'error_message': 'errorMessage',
+            'is_default_assignment': 'isDefaultAssignment',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -263,6 +277,7 @@ class OperatorControlAssignment(object):
         self._is_auto_approve_during_maintenance = None
         self._error_code = None
         self._error_message = None
+        self._is_default_assignment = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -416,7 +431,7 @@ class OperatorControlAssignment(object):
         Gets the resource_type of this OperatorControlAssignment.
         resourceType for which the OperatorControlAssignment is applicable
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -435,7 +450,7 @@ class OperatorControlAssignment(object):
         :param resource_type: The resource_type of this OperatorControlAssignment.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
@@ -530,7 +545,7 @@ class OperatorControlAssignment(object):
         Gets the lifecycle_state of this OperatorControlAssignment.
         The current lifcycle state of the OperatorControl.
 
-        Allowed values for this property are: "CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "DELETING", "DELETED", "DELETIONFAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "UPDATEFAILED", "DELETING", "DELETED", "DELETIONFAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -549,7 +564,7 @@ class OperatorControlAssignment(object):
         :param lifecycle_state: The lifecycle_state of this OperatorControlAssignment.
         :type: str
         """
-        allowed_values = ["CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "DELETING", "DELETED", "DELETIONFAILED"]
+        allowed_values = ["CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "UPDATEFAILED", "DELETING", "DELETED", "DELETIONFAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -897,6 +912,30 @@ class OperatorControlAssignment(object):
         :type: str
         """
         self._error_message = error_message
+
+    @property
+    def is_default_assignment(self):
+        """
+        Gets the is_default_assignment of this OperatorControlAssignment.
+        Whether the assignment is a default assignment.
+
+
+        :return: The is_default_assignment of this OperatorControlAssignment.
+        :rtype: bool
+        """
+        return self._is_default_assignment
+
+    @is_default_assignment.setter
+    def is_default_assignment(self, is_default_assignment):
+        """
+        Sets the is_default_assignment of this OperatorControlAssignment.
+        Whether the assignment is a default assignment.
+
+
+        :param is_default_assignment: The is_default_assignment of this OperatorControlAssignment.
+        :type: bool
+        """
+        self._is_default_assignment = is_default_assignment
 
     @property
     def freeform_tags(self):

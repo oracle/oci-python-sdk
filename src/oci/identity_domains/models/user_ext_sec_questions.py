@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserExtSecQuestions(object):
     """
-    Security question and answers provided by end-user for Account recovery and/or MFA. While setting up security questions, end-user can also provide hint along with answer.
+    The schema used to mnage security question and answers provided by a user for account recovery and/or MFA. While setting up security questions, a user can also provide a hint for the answer.
 
     **SCIM++ Properties:**
     - idcsCompositeKey: [value]
@@ -69,7 +69,7 @@ class UserExtSecQuestions(object):
     def value(self):
         """
         **[Required]** Gets the value of this UserExtSecQuestions.
-        Id of the question selected by user while setting up Security Question.
+        The identifier of the question selected by the user when setting up a security question.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -91,7 +91,7 @@ class UserExtSecQuestions(object):
     def value(self, value):
         """
         Sets the value of this UserExtSecQuestions.
-        Id of the question selected by user while setting up Security Question.
+        The identifier of the question selected by the user when setting up a security question.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -113,7 +113,7 @@ class UserExtSecQuestions(object):
     def ref(self):
         """
         Gets the ref of this UserExtSecQuestions.
-        The URI of the corresponding SecurityQuestion resource
+        The URI of the corresponding Security Question resource.
 
         **SCIM++ Properties:**
          - idcsSearchable: false
@@ -134,7 +134,7 @@ class UserExtSecQuestions(object):
     def ref(self, ref):
         """
         Sets the ref of this UserExtSecQuestions.
-        The URI of the corresponding SecurityQuestion resource
+        The URI of the corresponding Security Question resource.
 
         **SCIM++ Properties:**
          - idcsSearchable: false
@@ -155,7 +155,7 @@ class UserExtSecQuestions(object):
     def answer(self):
         """
         **[Required]** Gets the answer of this UserExtSecQuestions.
-        Answer provided by an user for a security question.
+        The answer provided by a user for a security question.
 
         **SCIM++ Properties:**
          - idcsCsvAttributeName: Answer
@@ -179,7 +179,7 @@ class UserExtSecQuestions(object):
     def answer(self, answer):
         """
         Sets the answer of this UserExtSecQuestions.
-        Answer provided by an user for a security question.
+        The answer provided by a user for a security question.
 
         **SCIM++ Properties:**
          - idcsCsvAttributeName: Answer
@@ -203,7 +203,7 @@ class UserExtSecQuestions(object):
     def hint_text(self):
         """
         Gets the hint_text of this UserExtSecQuestions.
-        Hint for an answer given by user while setting up Security Question.
+        The hint for an answer that's given by user when setting up a security question.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -224,7 +224,7 @@ class UserExtSecQuestions(object):
     def hint_text(self, hint_text):
         """
         Sets the hint_text of this UserExtSecQuestions.
-        Hint for an answer given by user while setting up Security Question.
+        The hint for an answer that's given by user when setting up a security question.
 
         **SCIM++ Properties:**
          - caseExact: false

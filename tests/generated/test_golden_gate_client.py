@@ -76,6 +76,48 @@ def test_cancel_deployment_backup(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_cancel_deployment_upgrade(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'CancelDeploymentUpgrade'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'CancelDeploymentUpgrade')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='CancelDeploymentUpgrade')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.cancel_deployment_upgrade(
+                deployment_upgrade_id=request.pop(util.camelize('deploymentUpgradeId')),
+                cancel_deployment_upgrade_details=request.pop(util.camelize('CancelDeploymentUpgradeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'CancelDeploymentUpgrade',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'deploymentUpgrade',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
 def test_cancel_snooze_deployment_upgrade(testing_service_client):
     if not testing_service_client.is_api_enabled('golden_gate', 'CancelSnoozeDeploymentUpgrade'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2137,6 +2179,48 @@ def test_list_work_requests(testing_service_client):
             'workRequest',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_reschedule_deployment_upgrade(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'RescheduleDeploymentUpgrade'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'RescheduleDeploymentUpgrade')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='RescheduleDeploymentUpgrade')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.reschedule_deployment_upgrade(
+                deployment_upgrade_id=request.pop(util.camelize('deploymentUpgradeId')),
+                reschedule_deployment_upgrade_details=request.pop(util.camelize('RescheduleDeploymentUpgradeDetails')),
+                retry_strategy=oci.retry.NoneRetryStrategy(),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'RescheduleDeploymentUpgrade',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'deploymentUpgrade',
+            False,
+            False
         )
 
 

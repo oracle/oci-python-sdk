@@ -20,20 +20,60 @@ class UpdateRemotePeeringConnectionDetails(object):
         Initializes a new UpdateRemotePeeringConnectionDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this UpdateRemotePeeringConnectionDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this UpdateRemotePeeringConnectionDetails.
         :type display_name: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this UpdateRemotePeeringConnectionDetails.
+        :type freeform_tags: dict(str, str)
+
         """
         self.swagger_types = {
-            'display_name': 'str'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'display_name': 'str',
+            'freeform_tags': 'dict(str, str)'
         }
 
         self.attribute_map = {
-            'display_name': 'displayName'
+            'defined_tags': 'definedTags',
+            'display_name': 'displayName',
+            'freeform_tags': 'freeformTags'
         }
 
+        self._defined_tags = None
         self._display_name = None
+        self._freeform_tags = None
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this UpdateRemotePeeringConnectionDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this UpdateRemotePeeringConnectionDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this UpdateRemotePeeringConnectionDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this UpdateRemotePeeringConnectionDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     @property
     def display_name(self):
@@ -60,6 +100,32 @@ class UpdateRemotePeeringConnectionDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this UpdateRemotePeeringConnectionDetails.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this UpdateRemotePeeringConnectionDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this UpdateRemotePeeringConnectionDetails.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this UpdateRemotePeeringConnectionDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AuthTokenUser(object):
     """
-    User linked to auth token
+    The user linked to the Auth token.
 
     **SCIM++ Properties:**
     - caseExact: false
@@ -77,7 +77,7 @@ class AuthTokenUser(object):
     def value(self):
         """
         Gets the value of this AuthTokenUser.
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -99,7 +99,7 @@ class AuthTokenUser(object):
     def value(self, value):
         """
         Sets the value of this AuthTokenUser.
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -121,7 +121,7 @@ class AuthTokenUser(object):
     def ocid(self):
         """
         Gets the ocid of this AuthTokenUser.
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -143,7 +143,7 @@ class AuthTokenUser(object):
     def ocid(self, ocid):
         """
         Sets the ocid of this AuthTokenUser.
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -209,7 +209,7 @@ class AuthTokenUser(object):
     def display(self):
         """
         Gets the display of this AuthTokenUser.
-        User display name
+        The user's display name.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -231,7 +231,7 @@ class AuthTokenUser(object):
     def display(self, display):
         """
         Sets the display of this AuthTokenUser.
-        User display name
+        The user's display name.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -253,7 +253,7 @@ class AuthTokenUser(object):
     def name(self):
         """
         Gets the name of this AuthTokenUser.
-        User name
+        The username.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -275,7 +275,7 @@ class AuthTokenUser(object):
     def name(self, name):
         """
         Sets the name of this AuthTokenUser.
-        User name
+        The username.
 
         **SCIM++ Properties:**
          - caseExact: false

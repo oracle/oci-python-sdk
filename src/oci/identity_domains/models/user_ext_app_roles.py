@@ -417,7 +417,7 @@ class UserExtAppRoles(object):
     def legacy_group_name(self):
         """
         Gets the legacy_group_name of this UserExtAppRoles.
-        The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. OCI IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+        The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
 
         **SCIM++ Properties:**
          - idcsSearchable: true
@@ -438,7 +438,7 @@ class UserExtAppRoles(object):
     def legacy_group_name(self, legacy_group_name):
         """
         Sets the legacy_group_name of this UserExtAppRoles.
-        The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. OCI IAM distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
+        The name (if any) under which this AppRole should appear in this User's group-memberships for reasons of backward compatibility. Oracle Identity Cloud Service distinguishes between Groups and AppRoles, but some services still expect AppRoles appear as if they were service-instance-specific Groups.
 
         **SCIM++ Properties:**
          - idcsSearchable: true

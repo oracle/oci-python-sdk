@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MyOAuth2ClientCredential(object):
     """
-    User's oauth2 client credential
+    The user's OAuth2 client credentials.
     """
 
     #: A constant which can be used with the idcs_prevented_operations property of a MyOAuth2ClientCredential.
@@ -780,7 +780,7 @@ class MyOAuth2ClientCredential(object):
     def status(self):
         """
         Gets the status of this MyOAuth2ClientCredential.
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -807,7 +807,7 @@ class MyOAuth2ClientCredential(object):
     def status(self, status):
         """
         Sets the status of this MyOAuth2ClientCredential.
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -834,7 +834,7 @@ class MyOAuth2ClientCredential(object):
     def expires_on(self):
         """
         Gets the expires_on of this MyOAuth2ClientCredential.
-        User credential expires on
+        When the user's credentials expire.
 
         **Added In:** 2109090424
 
@@ -858,7 +858,7 @@ class MyOAuth2ClientCredential(object):
     def expires_on(self, expires_on):
         """
         Sets the expires_on of this MyOAuth2ClientCredential.
-        User credential expires on
+        When the user's credentials expire.
 
         **Added In:** 2109090424
 
@@ -882,7 +882,7 @@ class MyOAuth2ClientCredential(object):
     def is_reset_secret(self):
         """
         Gets the is_reset_secret of this MyOAuth2ClientCredential.
-        Specifies if secret need to be reset
+        Specifies whether the secret must be reset.
 
         **Added In:** 2109090424
 
@@ -906,7 +906,7 @@ class MyOAuth2ClientCredential(object):
     def is_reset_secret(self, is_reset_secret):
         """
         Sets the is_reset_secret of this MyOAuth2ClientCredential.
-        Specifies if secret need to be reset
+        Specifies whether the secret must be reset.
 
         **Added In:** 2109090424
 

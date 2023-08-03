@@ -177,7 +177,7 @@ class ExtensionMfaUser(object):
     def preferred_authentication_factor(self):
         """
         Gets the preferred_authentication_factor of this ExtensionMfaUser.
-        Preferred Authentication Factor Type
+        The preferred authentication factor type.
 
         **Added In:** 18.3.6
 
@@ -204,7 +204,7 @@ class ExtensionMfaUser(object):
     def preferred_authentication_factor(self, preferred_authentication_factor):
         """
         Sets the preferred_authentication_factor of this ExtensionMfaUser.
-        Preferred Authentication Factor Type
+        The preferred authentication factor type.
 
         **Added In:** 18.3.6
 
@@ -231,7 +231,7 @@ class ExtensionMfaUser(object):
     def mfa_status(self):
         """
         Gets the mfa_status of this ExtensionMfaUser.
-        User Opted for MFA
+        The user opted for MFA.
 
         **Added In:** 18.3.6
 
@@ -240,6 +240,7 @@ class ExtensionMfaUser(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: string
@@ -258,7 +259,7 @@ class ExtensionMfaUser(object):
     def mfa_status(self, mfa_status):
         """
         Sets the mfa_status of this ExtensionMfaUser.
-        User Opted for MFA
+        The user opted for MFA.
 
         **Added In:** 18.3.6
 
@@ -267,6 +268,7 @@ class ExtensionMfaUser(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: string
@@ -285,7 +287,7 @@ class ExtensionMfaUser(object):
     def preferred_third_party_vendor(self):
         """
         Gets the preferred_third_party_vendor of this ExtensionMfaUser.
-        Preferred Third party vendor name
+        The preferred third-party vendor name.
 
         **Added In:** 19.2.1
 
@@ -309,7 +311,7 @@ class ExtensionMfaUser(object):
     def preferred_third_party_vendor(self, preferred_third_party_vendor):
         """
         Sets the preferred_third_party_vendor of this ExtensionMfaUser.
-        Preferred Third party vendor name
+        The preferred third-party vendor name.
 
         **Added In:** 19.2.1
 
@@ -333,7 +335,7 @@ class ExtensionMfaUser(object):
     def preferred_authentication_method(self):
         """
         Gets the preferred_authentication_method of this ExtensionMfaUser.
-        Preferred Authentication method
+        The preferred authentication method.
 
         **Added In:** 2009232244
 
@@ -357,7 +359,7 @@ class ExtensionMfaUser(object):
     def preferred_authentication_method(self, preferred_authentication_method):
         """
         Sets the preferred_authentication_method of this ExtensionMfaUser.
-        Preferred Authentication method
+        The preferred authentication method.
 
         **Added In:** 2009232244
 
@@ -381,7 +383,7 @@ class ExtensionMfaUser(object):
     def login_attempts(self):
         """
         Gets the login_attempts of this ExtensionMfaUser.
-        Number of incorrect Multi Factor Authentication login attempts made by this user. The user gets locked, if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings
+        The number of incorrect multi factor authentication sign in attempts made by this user. The user is  locked if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings.
 
         **Added In:** 18.3.6
 
@@ -389,6 +391,8 @@ class ExtensionMfaUser(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: integer
@@ -404,7 +408,7 @@ class ExtensionMfaUser(object):
     def login_attempts(self, login_attempts):
         """
         Sets the login_attempts of this ExtensionMfaUser.
-        Number of incorrect Multi Factor Authentication login attempts made by this user. The user gets locked, if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings
+        The number of incorrect multi factor authentication sign in attempts made by this user. The user is  locked if this reaches the threshold specified in the maxIncorrectAttempts attribute in AuthenticationFactorSettings.
 
         **Added In:** 18.3.6
 
@@ -412,6 +416,8 @@ class ExtensionMfaUser(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: integer
@@ -427,7 +433,7 @@ class ExtensionMfaUser(object):
     def mfa_enabled_on(self):
         """
         Gets the mfa_enabled_on of this ExtensionMfaUser.
-        This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+        The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
 
         **Added In:** 18.3.6
 
@@ -450,7 +456,7 @@ class ExtensionMfaUser(object):
     def mfa_enabled_on(self, mfa_enabled_on):
         """
         Sets the mfa_enabled_on of this ExtensionMfaUser.
-        This represents the date when the user enrolled for multi factor authentication. This will be set to null, when the user resets his factors.
+        The date when the user enrolled in multi factor authentication. This will be set to null, when the user resets their factors.
 
         **Added In:** 18.3.6
 
@@ -587,7 +593,7 @@ class ExtensionMfaUser(object):
     def bypass_codes(self):
         """
         Gets the bypass_codes of this ExtensionMfaUser.
-        A list of bypass codes belongs to user
+        A list of bypass codes that belongs to the user.
 
         **Added In:** 18.3.6
 
@@ -610,7 +616,7 @@ class ExtensionMfaUser(object):
     def bypass_codes(self, bypass_codes):
         """
         Sets the bypass_codes of this ExtensionMfaUser.
-        A list of bypass codes belongs to user
+        A list of bypass codes that belongs to the user.
 
         **Added In:** 18.3.6
 

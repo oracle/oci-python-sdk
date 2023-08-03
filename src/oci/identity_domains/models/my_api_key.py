@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MyApiKey(object):
     """
-    User's api key
+    The user's API key.
     """
 
     #: A constant which can be used with the idcs_prevented_operations property of a MyApiKey.

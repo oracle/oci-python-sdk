@@ -290,6 +290,14 @@ class Deployment(object):
             The value to assign to the next_maintenance_description property of this Deployment.
         :type next_maintenance_description: str
 
+        :param maintenance_configuration:
+            The value to assign to the maintenance_configuration property of this Deployment.
+        :type maintenance_configuration: oci.golden_gate.models.MaintenanceConfiguration
+
+        :param time_ogg_version_supported_until:
+            The value to assign to the time_ogg_version_supported_until property of this Deployment.
+        :type time_ogg_version_supported_until: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -326,7 +334,9 @@ class Deployment(object):
             'maintenance_window': 'MaintenanceWindow',
             'time_of_next_maintenance': 'datetime',
             'next_maintenance_action_type': 'str',
-            'next_maintenance_description': 'str'
+            'next_maintenance_description': 'str',
+            'maintenance_configuration': 'MaintenanceConfiguration',
+            'time_ogg_version_supported_until': 'datetime'
         }
 
         self.attribute_map = {
@@ -364,7 +374,9 @@ class Deployment(object):
             'maintenance_window': 'maintenanceWindow',
             'time_of_next_maintenance': 'timeOfNextMaintenance',
             'next_maintenance_action_type': 'nextMaintenanceActionType',
-            'next_maintenance_description': 'nextMaintenanceDescription'
+            'next_maintenance_description': 'nextMaintenanceDescription',
+            'maintenance_configuration': 'maintenanceConfiguration',
+            'time_ogg_version_supported_until': 'timeOggVersionSupportedUntil'
         }
 
         self._id = None
@@ -402,6 +414,8 @@ class Deployment(object):
         self._time_of_next_maintenance = None
         self._next_maintenance_action_type = None
         self._next_maintenance_description = None
+        self._maintenance_configuration = None
+        self._time_ogg_version_supported_until = None
 
     @property
     def id(self):
@@ -1340,6 +1354,56 @@ class Deployment(object):
         :type: str
         """
         self._next_maintenance_description = next_maintenance_description
+
+    @property
+    def maintenance_configuration(self):
+        """
+        Gets the maintenance_configuration of this Deployment.
+
+        :return: The maintenance_configuration of this Deployment.
+        :rtype: oci.golden_gate.models.MaintenanceConfiguration
+        """
+        return self._maintenance_configuration
+
+    @maintenance_configuration.setter
+    def maintenance_configuration(self, maintenance_configuration):
+        """
+        Sets the maintenance_configuration of this Deployment.
+
+        :param maintenance_configuration: The maintenance_configuration of this Deployment.
+        :type: oci.golden_gate.models.MaintenanceConfiguration
+        """
+        self._maintenance_configuration = maintenance_configuration
+
+    @property
+    def time_ogg_version_supported_until(self):
+        """
+        Gets the time_ogg_version_supported_until of this Deployment.
+        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_ogg_version_supported_until of this Deployment.
+        :rtype: datetime
+        """
+        return self._time_ogg_version_supported_until
+
+    @time_ogg_version_supported_until.setter
+    def time_ogg_version_supported_until(self, time_ogg_version_supported_until):
+        """
+        Sets the time_ogg_version_supported_until of this Deployment.
+        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_ogg_version_supported_until: The time_ogg_version_supported_until of this Deployment.
+        :type: datetime
+        """
+        self._time_ogg_version_supported_until = time_ogg_version_supported_until
 
     def __repr__(self):
         return formatted_flat_dict(self)

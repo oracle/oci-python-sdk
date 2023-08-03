@@ -20,6 +20,8 @@ from .batch_detect_language_text_classification_details import BatchDetectLangua
 from .batch_detect_language_text_classification_result import BatchDetectLanguageTextClassificationResult
 from .batch_language_translation_details import BatchLanguageTranslationDetails
 from .batch_language_translation_result import BatchLanguageTranslationResult
+from .capabilities import Capabilities
+from .capability import Capability
 from .change_endpoint_compartment_details import ChangeEndpointCompartmentDetails
 from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
@@ -66,6 +68,7 @@ from .model import Model
 from .model_collection import ModelCollection
 from .model_details import ModelDetails
 from .model_summary import ModelSummary
+from .model_type_info import ModelTypeInfo
 from .named_entity_recognition_evaluation_result import NamedEntityRecognitionEvaluationResult
 from .named_entity_recognition_evaluation_results import NamedEntityRecognitionEvaluationResults
 from .named_entity_recognition_model_details import NamedEntityRecognitionModelDetails
@@ -79,6 +82,16 @@ from .pii_entity_masking import PiiEntityMasking
 from .pii_entity_remove import PiiEntityRemove
 from .pii_entity_replace import PiiEntityReplace
 from .pre_deployed_language_models import PreDeployedLanguageModels
+from .pre_trained_health_nlu_model_details import PreTrainedHealthNluModelDetails
+from .pre_trained_key_phrase_extraction_model_details import PreTrainedKeyPhraseExtractionModelDetails
+from .pre_trained_language_detection_model_details import PreTrainedLanguageDetectionModelDetails
+from .pre_trained_named_entity_recognition_model_details import PreTrainedNamedEntityRecognitionModelDetails
+from .pre_trained_phi_model_details import PreTrainedPhiModelDetails
+from .pre_trained_pii_model_details import PreTrainedPiiModelDetails
+from .pre_trained_sentiment_analysis_model_details import PreTrainedSentimentAnalysisModelDetails
+from .pre_trained_summarization import PreTrainedSummarization
+from .pre_trained_text_classification_model_details import PreTrainedTextClassificationModelDetails
+from .pre_trained_universal_model import PreTrainedUniversalModel
 from .project import Project
 from .project_collection import ProjectCollection
 from .project_summary import ProjectSummary
@@ -123,6 +136,8 @@ ai_language_type_mapping = {
     "BatchDetectLanguageTextClassificationResult": BatchDetectLanguageTextClassificationResult,
     "BatchLanguageTranslationDetails": BatchLanguageTranslationDetails,
     "BatchLanguageTranslationResult": BatchLanguageTranslationResult,
+    "Capabilities": Capabilities,
+    "Capability": Capability,
     "ChangeEndpointCompartmentDetails": ChangeEndpointCompartmentDetails,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
@@ -169,6 +184,7 @@ ai_language_type_mapping = {
     "ModelCollection": ModelCollection,
     "ModelDetails": ModelDetails,
     "ModelSummary": ModelSummary,
+    "ModelTypeInfo": ModelTypeInfo,
     "NamedEntityRecognitionEvaluationResult": NamedEntityRecognitionEvaluationResult,
     "NamedEntityRecognitionEvaluationResults": NamedEntityRecognitionEvaluationResults,
     "NamedEntityRecognitionModelDetails": NamedEntityRecognitionModelDetails,
@@ -182,6 +198,16 @@ ai_language_type_mapping = {
     "PiiEntityRemove": PiiEntityRemove,
     "PiiEntityReplace": PiiEntityReplace,
     "PreDeployedLanguageModels": PreDeployedLanguageModels,
+    "PreTrainedHealthNluModelDetails": PreTrainedHealthNluModelDetails,
+    "PreTrainedKeyPhraseExtractionModelDetails": PreTrainedKeyPhraseExtractionModelDetails,
+    "PreTrainedLanguageDetectionModelDetails": PreTrainedLanguageDetectionModelDetails,
+    "PreTrainedNamedEntityRecognitionModelDetails": PreTrainedNamedEntityRecognitionModelDetails,
+    "PreTrainedPhiModelDetails": PreTrainedPhiModelDetails,
+    "PreTrainedPiiModelDetails": PreTrainedPiiModelDetails,
+    "PreTrainedSentimentAnalysisModelDetails": PreTrainedSentimentAnalysisModelDetails,
+    "PreTrainedSummarization": PreTrainedSummarization,
+    "PreTrainedTextClassificationModelDetails": PreTrainedTextClassificationModelDetails,
+    "PreTrainedUniversalModel": PreTrainedUniversalModel,
     "Project": Project,
     "ProjectCollection": ProjectCollection,
     "ProjectSummary": ProjectSummary,

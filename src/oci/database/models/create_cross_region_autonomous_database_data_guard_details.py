@@ -85,6 +85,10 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             The value to assign to the cpu_core_count property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type cpu_core_count: int
 
+        :param backup_retention_period_in_days:
+            The value to assign to the backup_retention_period_in_days property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
+        :type backup_retention_period_in_days: int
+
         :param compute_model:
             The value to assign to the compute_model property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
             Allowed values for this property are: "ECPU", "OCPU"
@@ -261,6 +265,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             'ncharacter_set': 'str',
             'db_name': 'str',
             'cpu_core_count': 'int',
+            'backup_retention_period_in_days': 'int',
             'compute_model': 'str',
             'compute_count': 'float',
             'ocpu_count': 'float',
@@ -310,6 +315,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             'ncharacter_set': 'ncharacterSet',
             'db_name': 'dbName',
             'cpu_core_count': 'cpuCoreCount',
+            'backup_retention_period_in_days': 'backupRetentionPeriodInDays',
             'compute_model': 'computeModel',
             'compute_count': 'computeCount',
             'ocpu_count': 'ocpuCount',
@@ -358,6 +364,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
         self._ncharacter_set = None
         self._db_name = None
         self._cpu_core_count = None
+        self._backup_retention_period_in_days = None
         self._compute_model = None
         self._compute_count = None
         self._ocpu_count = None

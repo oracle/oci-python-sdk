@@ -43,6 +43,10 @@ class Subnet(object):
     #: This constant has a value of "TERMINATED"
     LIFECYCLE_STATE_TERMINATED = "TERMINATED"
 
+    #: A constant which can be used with the lifecycle_state property of a Subnet.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Subnet object with values from keyword arguments.
@@ -88,9 +92,9 @@ class Subnet(object):
             The value to assign to the ipv6_cidr_block property of this Subnet.
         :type ipv6_cidr_block: str
 
-        :param ipv6_public_cidr_block:
-            The value to assign to the ipv6_public_cidr_block property of this Subnet.
-        :type ipv6_public_cidr_block: str
+        :param ipv6_cidr_blocks:
+            The value to assign to the ipv6_cidr_blocks property of this Subnet.
+        :type ipv6_cidr_blocks: list[str]
 
         :param ipv6_virtual_router_ip:
             The value to assign to the ipv6_virtual_router_ip property of this Subnet.
@@ -98,8 +102,12 @@ class Subnet(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Subnet.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"
         :type lifecycle_state: str
+
+        :param prohibit_internet_ingress:
+            The value to assign to the prohibit_internet_ingress property of this Subnet.
+        :type prohibit_internet_ingress: bool
 
         :param prohibit_public_ip_on_vnic:
             The value to assign to the prohibit_public_ip_on_vnic property of this Subnet.
@@ -145,9 +153,10 @@ class Subnet(object):
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'ipv6_cidr_block': 'str',
-            'ipv6_public_cidr_block': 'str',
+            'ipv6_cidr_blocks': 'list[str]',
             'ipv6_virtual_router_ip': 'str',
             'lifecycle_state': 'str',
+            'prohibit_internet_ingress': 'bool',
             'prohibit_public_ip_on_vnic': 'bool',
             'route_table_id': 'str',
             'security_list_ids': 'list[str]',
@@ -169,9 +178,10 @@ class Subnet(object):
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'ipv6_cidr_block': 'ipv6CidrBlock',
-            'ipv6_public_cidr_block': 'ipv6PublicCidrBlock',
+            'ipv6_cidr_blocks': 'ipv6CidrBlocks',
             'ipv6_virtual_router_ip': 'ipv6VirtualRouterIp',
             'lifecycle_state': 'lifecycleState',
+            'prohibit_internet_ingress': 'prohibitInternetIngress',
             'prohibit_public_ip_on_vnic': 'prohibitPublicIpOnVnic',
             'route_table_id': 'routeTableId',
             'security_list_ids': 'securityListIds',
@@ -192,9 +202,10 @@ class Subnet(object):
         self._freeform_tags = None
         self._id = None
         self._ipv6_cidr_block = None
-        self._ipv6_public_cidr_block = None
+        self._ipv6_cidr_blocks = None
         self._ipv6_virtual_router_ip = None
         self._lifecycle_state = None
+        self._prohibit_internet_ingress = None
         self._prohibit_public_ip_on_vnic = None
         self._route_table_id = None
         self._security_list_ids = None
@@ -207,8 +218,9 @@ class Subnet(object):
     @property
     def availability_domain(self):
         """
-        **[Required]** Gets the availability_domain of this Subnet.
-        The subnet's availability domain.
+        Gets the availability_domain of this Subnet.
+        The subnet's availability domain. This attribute will be null if this is a regional subnet
+        instead of an AD-specific subnet. Oracle recommends creating regional subnets.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -222,7 +234,8 @@ class Subnet(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this Subnet.
-        The subnet's availability domain.
+        The subnet's availability domain. This attribute will be null if this is a regional subnet
+        instead of an AD-specific subnet. Oracle recommends creating regional subnets.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -374,7 +387,7 @@ class Subnet(object):
         Gets the dns_label of this Subnet.
         A DNS label for the subnet, used in conjunction with the VNIC's hostname and
         VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-        within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`).
         Must be an alphanumeric string that begins with a letter and is unique within the VCN.
         The value cannot be changed.
 
@@ -400,7 +413,7 @@ class Subnet(object):
         Sets the dns_label of this Subnet.
         A DNS label for the subnet, used in conjunction with the VNIC's hostname and
         VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-        within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`).
         Must be an alphanumeric string that begins with a letter and is unique within the VCN.
         The value cannot be changed.
 
@@ -478,9 +491,8 @@ class Subnet(object):
     def ipv6_cidr_block(self):
         """
         Gets the ipv6_cidr_block of this Subnet.
-        For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
-        space. The subnet size is always /64. IPv6 addressing is supported for all commercial and government regions.
-        See `IPv6 Addresses`__.
+        For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space.
+        The subnet size is always /64. See `IPv6 Addresses`__.
 
         Example: `2001:0db8:0123:1111::/64`
 
@@ -496,9 +508,8 @@ class Subnet(object):
     def ipv6_cidr_block(self, ipv6_cidr_block):
         """
         Sets the ipv6_cidr_block of this Subnet.
-        For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
-        space. The subnet size is always /64. IPv6 addressing is supported for all commercial and government regions.
-        See `IPv6 Addresses`__.
+        For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's IP address space.
+        The subnet size is always /64. See `IPv6 Addresses`__.
 
         Example: `2001:0db8:0123:1111::/64`
 
@@ -511,38 +522,28 @@ class Subnet(object):
         self._ipv6_cidr_block = ipv6_cidr_block
 
     @property
-    def ipv6_public_cidr_block(self):
+    def ipv6_cidr_blocks(self):
         """
-        Gets the ipv6_public_cidr_block of this Subnet.
-        For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP address
-        space. The subnet size is always /64. The left 48 bits are inherited from the
-        `ipv6PublicCidrBlock` of the :class:`Vcn`,
-        and the remaining 16 bits are from the subnet's `ipv6CidrBlock`.
-
-        Example: `2001:0db8:0123:1111::/64`
+        Gets the ipv6_cidr_blocks of this Subnet.
+        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
 
 
-        :return: The ipv6_public_cidr_block of this Subnet.
-        :rtype: str
+        :return: The ipv6_cidr_blocks of this Subnet.
+        :rtype: list[str]
         """
-        return self._ipv6_public_cidr_block
+        return self._ipv6_cidr_blocks
 
-    @ipv6_public_cidr_block.setter
-    def ipv6_public_cidr_block(self, ipv6_public_cidr_block):
+    @ipv6_cidr_blocks.setter
+    def ipv6_cidr_blocks(self, ipv6_cidr_blocks):
         """
-        Sets the ipv6_public_cidr_block of this Subnet.
-        For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP address
-        space. The subnet size is always /64. The left 48 bits are inherited from the
-        `ipv6PublicCidrBlock` of the :class:`Vcn`,
-        and the remaining 16 bits are from the subnet's `ipv6CidrBlock`.
-
-        Example: `2001:0db8:0123:1111::/64`
+        Sets the ipv6_cidr_blocks of this Subnet.
+        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
 
 
-        :param ipv6_public_cidr_block: The ipv6_public_cidr_block of this Subnet.
-        :type: str
+        :param ipv6_cidr_blocks: The ipv6_cidr_blocks of this Subnet.
+        :type: list[str]
         """
-        self._ipv6_public_cidr_block = ipv6_public_cidr_block
+        self._ipv6_cidr_blocks = ipv6_cidr_blocks
 
     @property
     def ipv6_virtual_router_ip(self):
@@ -578,7 +579,7 @@ class Subnet(object):
         **[Required]** Gets the lifecycle_state of this Subnet.
         The subnet's current state.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"
 
 
         :return: The lifecycle_state of this Subnet.
@@ -596,13 +597,61 @@ class Subnet(object):
         :param lifecycle_state: The lifecycle_state of this Subnet.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
                 "Invalid value for `lifecycle_state`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def prohibit_internet_ingress(self):
+        """
+        Gets the prohibit_internet_ingress of this Subnet.
+        Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+
+        For IPV4, `prohibitInternetIngress` behaves similarly to `prohibitPublicIpOnVnic`.
+        If it is set to false, VNICs created in this subnet will automatically be assigned public IP
+        addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp`
+        flag in :class:`CreateVnicDetails`).
+        If `prohibitInternetIngress` is set to true, VNICs created in this subnet cannot have public IP addresses
+        (that is, it's a privatesubnet).
+
+        For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any
+        IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+
+        Example: `true`
+
+
+        :return: The prohibit_internet_ingress of this Subnet.
+        :rtype: bool
+        """
+        return self._prohibit_internet_ingress
+
+    @prohibit_internet_ingress.setter
+    def prohibit_internet_ingress(self, prohibit_internet_ingress):
+        """
+        Sets the prohibit_internet_ingress of this Subnet.
+        Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+
+        For IPV4, `prohibitInternetIngress` behaves similarly to `prohibitPublicIpOnVnic`.
+        If it is set to false, VNICs created in this subnet will automatically be assigned public IP
+        addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp`
+        flag in :class:`CreateVnicDetails`).
+        If `prohibitInternetIngress` is set to true, VNICs created in this subnet cannot have public IP addresses
+        (that is, it's a privatesubnet).
+
+        For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any
+        IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+
+        Example: `true`
+
+
+        :param prohibit_internet_ingress: The prohibit_internet_ingress of this Subnet.
+        :type: bool
+        """
+        self._prohibit_internet_ingress = prohibit_internet_ingress
 
     @property
     def prohibit_public_ip_on_vnic(self):

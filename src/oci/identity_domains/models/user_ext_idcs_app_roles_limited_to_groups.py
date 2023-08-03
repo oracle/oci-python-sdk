@@ -78,7 +78,7 @@ class UserExtIdcsAppRolesLimitedToGroups(object):
     def idcs_app_role_id(self):
         """
         **[Required]** Gets the idcs_app_role_id of this UserExtIdcsAppRolesLimitedToGroups.
-        The id of the OCI IAM AppRole grant limited to one or more Groups.
+        The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
 
         **Added In:** 19.2.1
 
@@ -102,7 +102,7 @@ class UserExtIdcsAppRolesLimitedToGroups(object):
     def idcs_app_role_id(self, idcs_app_role_id):
         """
         Sets the idcs_app_role_id of this UserExtIdcsAppRolesLimitedToGroups.
-        The id of the OCI IAM AppRole grant limited to one or more Groups.
+        The id of the Oracle Identity Cloud Service AppRole grant limited to one or more Groups.
 
         **Added In:** 19.2.1
 

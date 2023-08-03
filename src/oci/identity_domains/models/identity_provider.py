@@ -280,10 +280,6 @@ class IdentityProvider(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type jit_user_prov_group_mapping_mode: str
 
-        :param jit_user_prov_group_mappings:
-            The value to assign to the jit_user_prov_group_mappings property of this IdentityProvider.
-        :type jit_user_prov_group_mappings: list[oci.identity_domains.models.IdentityProviderJitUserProvGroupMappings]
-
         :param jit_user_prov_group_saml_attribute_name:
             The value to assign to the jit_user_prov_group_saml_attribute_name property of this IdentityProvider.
         :type jit_user_prov_group_saml_attribute_name: str
@@ -331,6 +327,14 @@ class IdentityProvider(object):
         :param jit_user_prov_ignore_error_on_absent_groups:
             The value to assign to the jit_user_prov_ignore_error_on_absent_groups property of this IdentityProvider.
         :type jit_user_prov_ignore_error_on_absent_groups: bool
+
+        :param last_notification_sent_time:
+            The value to assign to the last_notification_sent_time property of this IdentityProvider.
+        :type last_notification_sent_time: str
+
+        :param jit_user_prov_group_mappings:
+            The value to assign to the jit_user_prov_group_mappings property of this IdentityProvider.
+        :type jit_user_prov_group_mappings: list[oci.identity_domains.models.IdentityProviderJitUserProvGroupMappings]
 
         :param jit_user_prov_attributes:
             The value to assign to the jit_user_prov_attributes property of this IdentityProvider.
@@ -395,7 +399,6 @@ class IdentityProvider(object):
             'jit_user_prov_attribute_update_enabled': 'bool',
             'jit_user_prov_group_assignment_method': 'str',
             'jit_user_prov_group_mapping_mode': 'str',
-            'jit_user_prov_group_mappings': 'list[IdentityProviderJitUserProvGroupMappings]',
             'jit_user_prov_group_saml_attribute_name': 'str',
             'service_instance_identifier': 'str',
             'user_mapping_method': 'str',
@@ -407,6 +410,8 @@ class IdentityProvider(object):
             'saml_ho_k_required': 'bool',
             'requested_authentication_context': 'list[str]',
             'jit_user_prov_ignore_error_on_absent_groups': 'bool',
+            'last_notification_sent_time': 'str',
+            'jit_user_prov_group_mappings': 'list[IdentityProviderJitUserProvGroupMappings]',
             'jit_user_prov_attributes': 'IdentityProviderJitUserProvAttributes',
             'jit_user_prov_assigned_groups': 'list[IdentityProviderJitUserProvAssignedGroups]',
             'correlation_policy': 'IdentityProviderCorrelationPolicy',
@@ -456,7 +461,6 @@ class IdentityProvider(object):
             'jit_user_prov_attribute_update_enabled': 'jitUserProvAttributeUpdateEnabled',
             'jit_user_prov_group_assignment_method': 'jitUserProvGroupAssignmentMethod',
             'jit_user_prov_group_mapping_mode': 'jitUserProvGroupMappingMode',
-            'jit_user_prov_group_mappings': 'jitUserProvGroupMappings',
             'jit_user_prov_group_saml_attribute_name': 'jitUserProvGroupSAMLAttributeName',
             'service_instance_identifier': 'serviceInstanceIdentifier',
             'user_mapping_method': 'userMappingMethod',
@@ -468,6 +472,8 @@ class IdentityProvider(object):
             'saml_ho_k_required': 'samlHoKRequired',
             'requested_authentication_context': 'requestedAuthenticationContext',
             'jit_user_prov_ignore_error_on_absent_groups': 'jitUserProvIgnoreErrorOnAbsentGroups',
+            'last_notification_sent_time': 'lastNotificationSentTime',
+            'jit_user_prov_group_mappings': 'jitUserProvGroupMappings',
             'jit_user_prov_attributes': 'jitUserProvAttributes',
             'jit_user_prov_assigned_groups': 'jitUserProvAssignedGroups',
             'correlation_policy': 'correlationPolicy',
@@ -516,7 +522,6 @@ class IdentityProvider(object):
         self._jit_user_prov_attribute_update_enabled = None
         self._jit_user_prov_group_assignment_method = None
         self._jit_user_prov_group_mapping_mode = None
-        self._jit_user_prov_group_mappings = None
         self._jit_user_prov_group_saml_attribute_name = None
         self._service_instance_identifier = None
         self._user_mapping_method = None
@@ -528,6 +533,8 @@ class IdentityProvider(object):
         self._saml_ho_k_required = None
         self._requested_authentication_context = None
         self._jit_user_prov_ignore_error_on_absent_groups = None
+        self._last_notification_sent_time = None
+        self._jit_user_prov_group_mappings = None
         self._jit_user_prov_attributes = None
         self._jit_user_prov_assigned_groups = None
         self._correlation_policy = None
@@ -2329,52 +2336,6 @@ class IdentityProvider(object):
         self._jit_user_prov_group_mapping_mode = jit_user_prov_group_mapping_mode
 
     @property
-    def jit_user_prov_group_mappings(self):
-        """
-        Gets the jit_user_prov_group_mappings of this IdentityProvider.
-        The list of mappings between the Identity Domain Group and the IDP group.
-
-        **Added In:** 2205120021
-
-        **SCIM++ Properties:**
-         - idcsCompositeKey: [idpGroup]
-         - multiValued: true
-         - mutability: readWrite
-         - required: false
-         - returned: default
-         - type: complex
-         - uniqueness: none
-
-
-        :return: The jit_user_prov_group_mappings of this IdentityProvider.
-        :rtype: list[oci.identity_domains.models.IdentityProviderJitUserProvGroupMappings]
-        """
-        return self._jit_user_prov_group_mappings
-
-    @jit_user_prov_group_mappings.setter
-    def jit_user_prov_group_mappings(self, jit_user_prov_group_mappings):
-        """
-        Sets the jit_user_prov_group_mappings of this IdentityProvider.
-        The list of mappings between the Identity Domain Group and the IDP group.
-
-        **Added In:** 2205120021
-
-        **SCIM++ Properties:**
-         - idcsCompositeKey: [idpGroup]
-         - multiValued: true
-         - mutability: readWrite
-         - required: false
-         - returned: default
-         - type: complex
-         - uniqueness: none
-
-
-        :param jit_user_prov_group_mappings: The jit_user_prov_group_mappings of this IdentityProvider.
-        :type: list[oci.identity_domains.models.IdentityProviderJitUserProvGroupMappings]
-        """
-        self._jit_user_prov_group_mappings = jit_user_prov_group_mappings
-
-    @property
     def jit_user_prov_group_saml_attribute_name(self):
         """
         Gets the jit_user_prov_group_saml_attribute_name of this IdentityProvider.
@@ -2921,6 +2882,100 @@ class IdentityProvider(object):
         :type: bool
         """
         self._jit_user_prov_ignore_error_on_absent_groups = jit_user_prov_ignore_error_on_absent_groups
+
+    @property
+    def last_notification_sent_time(self):
+        """
+        Gets the last_notification_sent_time of this IdentityProvider.
+        Records the notification timestamp for the IdP whose signing certificate is about to expire
+
+        **Added In:** 2302092332
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readOnly
+         - required: false
+         - returned: default
+         - type: dateTime
+         - uniqueness: none
+
+
+        :return: The last_notification_sent_time of this IdentityProvider.
+        :rtype: str
+        """
+        return self._last_notification_sent_time
+
+    @last_notification_sent_time.setter
+    def last_notification_sent_time(self, last_notification_sent_time):
+        """
+        Sets the last_notification_sent_time of this IdentityProvider.
+        Records the notification timestamp for the IdP whose signing certificate is about to expire
+
+        **Added In:** 2302092332
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readOnly
+         - required: false
+         - returned: default
+         - type: dateTime
+         - uniqueness: none
+
+
+        :param last_notification_sent_time: The last_notification_sent_time of this IdentityProvider.
+        :type: str
+        """
+        self._last_notification_sent_time = last_notification_sent_time
+
+    @property
+    def jit_user_prov_group_mappings(self):
+        """
+        Gets the jit_user_prov_group_mappings of this IdentityProvider.
+        The list of mappings between the Identity Domain Group and the IDP group.
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+         - idcsCompositeKey: [idpGroup]
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: complex
+         - uniqueness: none
+
+
+        :return: The jit_user_prov_group_mappings of this IdentityProvider.
+        :rtype: list[oci.identity_domains.models.IdentityProviderJitUserProvGroupMappings]
+        """
+        return self._jit_user_prov_group_mappings
+
+    @jit_user_prov_group_mappings.setter
+    def jit_user_prov_group_mappings(self, jit_user_prov_group_mappings):
+        """
+        Sets the jit_user_prov_group_mappings of this IdentityProvider.
+        The list of mappings between the Identity Domain Group and the IDP group.
+
+        **Added In:** 2205120021
+
+        **SCIM++ Properties:**
+         - idcsCompositeKey: [idpGroup]
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: complex
+         - uniqueness: none
+
+
+        :param jit_user_prov_group_mappings: The jit_user_prov_group_mappings of this IdentityProvider.
+        :type: list[oci.identity_domains.models.IdentityProviderJitUserProvGroupMappings]
+        """
+        self._jit_user_prov_group_mappings = jit_user_prov_group_mappings
 
     @property
     def jit_user_prov_attributes(self):

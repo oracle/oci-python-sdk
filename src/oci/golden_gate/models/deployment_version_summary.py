@@ -80,13 +80,18 @@ class DeploymentVersionSummary(object):
             The value to assign to the is_security_fix property of this DeploymentVersionSummary.
         :type is_security_fix: bool
 
+        :param time_supported_until:
+            The value to assign to the time_supported_until property of this DeploymentVersionSummary.
+        :type time_supported_until: datetime
+
         """
         self.swagger_types = {
             'ogg_version': 'str',
             'deployment_type': 'str',
             'time_released': 'datetime',
             'release_type': 'str',
-            'is_security_fix': 'bool'
+            'is_security_fix': 'bool',
+            'time_supported_until': 'datetime'
         }
 
         self.attribute_map = {
@@ -94,7 +99,8 @@ class DeploymentVersionSummary(object):
             'deployment_type': 'deploymentType',
             'time_released': 'timeReleased',
             'release_type': 'releaseType',
-            'is_security_fix': 'isSecurityFix'
+            'is_security_fix': 'isSecurityFix',
+            'time_supported_until': 'timeSupportedUntil'
         }
 
         self._ogg_version = None
@@ -102,6 +108,7 @@ class DeploymentVersionSummary(object):
         self._time_released = None
         self._release_type = None
         self._is_security_fix = None
+        self._time_supported_until = None
 
     @property
     def ogg_version(self):
@@ -244,6 +251,36 @@ class DeploymentVersionSummary(object):
         :type: bool
         """
         self._is_security_fix = is_security_fix
+
+    @property
+    def time_supported_until(self):
+        """
+        Gets the time_supported_until of this DeploymentVersionSummary.
+        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_supported_until of this DeploymentVersionSummary.
+        :rtype: datetime
+        """
+        return self._time_supported_until
+
+    @time_supported_until.setter
+    def time_supported_until(self, time_supported_until):
+        """
+        Sets the time_supported_until of this DeploymentVersionSummary.
+        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_supported_until: The time_supported_until of this DeploymentVersionSummary.
+        :type: datetime
+        """
+        self._time_supported_until = time_supported_until
 
     def __repr__(self):
         return formatted_flat_dict(self)

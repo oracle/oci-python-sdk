@@ -132,6 +132,8 @@ class MyDeviceAuthenticationFactors(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
         Allowed values for this property are: "EMAIL", "SMS", "TOTP", "PUSH", "OFFLINETOTP", "VOICE", "PHONE_CALL", "THIRDPARTY", "FIDO_AUTHENTICATOR", "YUBICO_OTP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -157,6 +159,8 @@ class MyDeviceAuthenticationFactors(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param type: The type of this MyDeviceAuthenticationFactors.
@@ -181,6 +185,8 @@ class MyDeviceAuthenticationFactors(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
         Allowed values for this property are: "INITIATED", "INPROGRESS", "ENROLLED", "LOCKED", "INACTIVE", "BLOCKED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -205,6 +211,8 @@ class MyDeviceAuthenticationFactors(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param status: The status of this MyDeviceAuthenticationFactors.
@@ -229,6 +237,8 @@ class MyDeviceAuthenticationFactors(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The public_key of this MyDeviceAuthenticationFactors.
@@ -250,6 +260,8 @@ class MyDeviceAuthenticationFactors(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param public_key: The public_key of this MyDeviceAuthenticationFactors.

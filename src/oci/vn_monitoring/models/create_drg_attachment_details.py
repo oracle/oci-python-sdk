@@ -44,6 +44,10 @@ class CreateDrgAttachmentDetails(object):
             The value to assign to the freeform_tags property of this CreateDrgAttachmentDetails.
         :type freeform_tags: dict(str, str)
 
+        :param route_table_id:
+            The value to assign to the route_table_id property of this CreateDrgAttachmentDetails.
+        :type route_table_id: str
+
         :param vcn_id:
             The value to assign to the vcn_id property of this CreateDrgAttachmentDetails.
         :type vcn_id: str
@@ -56,6 +60,7 @@ class CreateDrgAttachmentDetails(object):
             'network_details': 'DrgAttachmentNetworkCreateDetails',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'route_table_id': 'str',
             'vcn_id': 'str'
         }
 
@@ -66,6 +71,7 @@ class CreateDrgAttachmentDetails(object):
             'network_details': 'networkDetails',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'route_table_id': 'routeTableId',
             'vcn_id': 'vcnId'
         }
 
@@ -75,6 +81,7 @@ class CreateDrgAttachmentDetails(object):
         self._network_details = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._route_table_id = None
         self._vcn_id = None
 
     @property
@@ -234,6 +241,56 @@ class CreateDrgAttachmentDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def route_table_id(self):
+        """
+        Gets the route_table_id of this CreateDrgAttachmentDetails.
+        The `OCID`__ of the route table used by the DRG attachment.
+
+        If you don't specify a route table here, the DRG attachment is created without an associated route
+        table. The Networking service does NOT automatically associate the attached VCN's default route table
+        with the DRG attachment.
+        For information about why you would associate a route table with a DRG attachment, see:
+
+          * `Transit Routing: Access to Multiple VCNs in Same Region`__
+          * `Transit Routing: Private Access to Oracle Services`__
+        This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
+
+
+        :return: The route_table_id of this CreateDrgAttachmentDetails.
+        :rtype: str
+        """
+        return self._route_table_id
+
+    @route_table_id.setter
+    def route_table_id(self, route_table_id):
+        """
+        Sets the route_table_id of this CreateDrgAttachmentDetails.
+        The `OCID`__ of the route table used by the DRG attachment.
+
+        If you don't specify a route table here, the DRG attachment is created without an associated route
+        table. The Networking service does NOT automatically associate the attached VCN's default route table
+        with the DRG attachment.
+        For information about why you would associate a route table with a DRG attachment, see:
+
+          * `Transit Routing: Access to Multiple VCNs in Same Region`__
+          * `Transit Routing: Private Access to Oracle Services`__
+        This field is deprecated. Instead, use the networkDetails field to specify the VCN route table for this attachment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
+
+
+        :param route_table_id: The route_table_id of this CreateDrgAttachmentDetails.
+        :type: str
+        """
+        self._route_table_id = route_table_id
 
     @property
     def vcn_id(self):

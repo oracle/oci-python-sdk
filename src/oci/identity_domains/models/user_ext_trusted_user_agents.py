@@ -64,7 +64,7 @@ class UserExtTrustedUserAgents(object):
     def value(self):
         """
         **[Required]** Gets the value of this UserExtTrustedUserAgents.
-        The identifier of the User's trusted user agent.
+        The user's trusted user agent identifier.
 
         **Added In:** 18.3.6
 
@@ -88,7 +88,7 @@ class UserExtTrustedUserAgents(object):
     def value(self, value):
         """
         Sets the value of this UserExtTrustedUserAgents.
-        The identifier of the User's trusted user agent.
+        The user's trusted user agent identifier.
 
         **Added In:** 18.3.6
 

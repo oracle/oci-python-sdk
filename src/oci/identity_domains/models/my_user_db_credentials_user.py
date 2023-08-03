@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MyUserDbCredentialsUser(object):
     """
-    User linked to db credential
+    The user linked to the database credential.
 
     **SCIM++ Properties:**
     - caseExact: false
@@ -78,7 +78,7 @@ class MyUserDbCredentialsUser(object):
     def value(self):
         """
         **[Required]** Gets the value of this MyUserDbCredentialsUser.
-        User's id
+        The user's identifier.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -100,7 +100,7 @@ class MyUserDbCredentialsUser(object):
     def value(self, value):
         """
         Sets the value of this MyUserDbCredentialsUser.
-        User's id
+        The user's identifier.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -122,7 +122,7 @@ class MyUserDbCredentialsUser(object):
     def ocid(self):
         """
         Gets the ocid of this MyUserDbCredentialsUser.
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -144,7 +144,7 @@ class MyUserDbCredentialsUser(object):
     def ocid(self, ocid):
         """
         Sets the ocid of this MyUserDbCredentialsUser.
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -166,7 +166,7 @@ class MyUserDbCredentialsUser(object):
     def ref(self):
         """
         Gets the ref of this MyUserDbCredentialsUser.
-        The URI that corresponds to the user linked to this credential
+        The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -188,7 +188,7 @@ class MyUserDbCredentialsUser(object):
     def ref(self, ref):
         """
         Sets the ref of this MyUserDbCredentialsUser.
-        The URI that corresponds to the user linked to this credential
+        The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -210,7 +210,7 @@ class MyUserDbCredentialsUser(object):
     def display(self):
         """
         Gets the display of this MyUserDbCredentialsUser.
-        User display name
+        The user display name.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -232,7 +232,7 @@ class MyUserDbCredentialsUser(object):
     def display(self, display):
         """
         Sets the display of this MyUserDbCredentialsUser.
-        User display name
+        The user display name.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -254,7 +254,7 @@ class MyUserDbCredentialsUser(object):
     def name(self):
         """
         Gets the name of this MyUserDbCredentialsUser.
-        User name
+        The username.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -276,7 +276,7 @@ class MyUserDbCredentialsUser(object):
     def name(self, name):
         """
         Sets the name of this MyUserDbCredentialsUser.
-        User name
+        The username.
 
         **SCIM++ Properties:**
          - caseExact: false

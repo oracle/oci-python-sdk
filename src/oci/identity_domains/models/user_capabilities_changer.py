@@ -114,6 +114,10 @@ class UserCapabilitiesChanger(object):
             The value to assign to the can_use_db_credentials property of this UserCapabilitiesChanger.
         :type can_use_db_credentials: bool
 
+        :param can_use_console:
+            The value to assign to the can_use_console property of this UserCapabilitiesChanger.
+        :type can_use_console: bool
+
         :param urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user:
             The value to assign to the urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user property of this UserCapabilitiesChanger.
         :type urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user: oci.identity_domains.models.ExtensionSelfChangeUser
@@ -140,6 +144,7 @@ class UserCapabilitiesChanger(object):
             'can_use_o_auth2_client_credentials': 'bool',
             'can_use_smtp_credentials': 'bool',
             'can_use_db_credentials': 'bool',
+            'can_use_console': 'bool',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'ExtensionSelfChangeUser'
         }
 
@@ -164,6 +169,7 @@ class UserCapabilitiesChanger(object):
             'can_use_o_auth2_client_credentials': 'canUseOAuth2ClientCredentials',
             'can_use_smtp_credentials': 'canUseSmtpCredentials',
             'can_use_db_credentials': 'canUseDbCredentials',
+            'can_use_console': 'canUseConsole',
             'urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user': 'urn:ietf:params:scim:schemas:oracle:idcs:extension:selfChange:User'
         }
 
@@ -187,6 +193,7 @@ class UserCapabilitiesChanger(object):
         self._can_use_o_auth2_client_credentials = None
         self._can_use_smtp_credentials = None
         self._can_use_db_credentials = None
+        self._can_use_console = None
         self._urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user = None
 
     @property
@@ -697,7 +704,7 @@ class UserCapabilitiesChanger(object):
     def can_use_api_keys(self):
         """
         Gets the can_use_api_keys of this UserCapabilitiesChanger.
-        Indicates weather a user can use api keys
+        Indicates whether a user can use API keys.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -719,7 +726,7 @@ class UserCapabilitiesChanger(object):
     def can_use_api_keys(self, can_use_api_keys):
         """
         Sets the can_use_api_keys of this UserCapabilitiesChanger.
-        Indicates weather a user can use api keys
+        Indicates whether a user can use API keys.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -741,7 +748,7 @@ class UserCapabilitiesChanger(object):
     def can_use_auth_tokens(self):
         """
         Gets the can_use_auth_tokens of this UserCapabilitiesChanger.
-        Indicates weather a user can use auth tokens
+        Indicates whether a user can use Auth tokens.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -763,7 +770,7 @@ class UserCapabilitiesChanger(object):
     def can_use_auth_tokens(self, can_use_auth_tokens):
         """
         Sets the can_use_auth_tokens of this UserCapabilitiesChanger.
-        Indicates weather a user can use auth tokens
+        Indicates whether a user can use Auth tokens.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -785,7 +792,7 @@ class UserCapabilitiesChanger(object):
     def can_use_console_password(self):
         """
         Gets the can_use_console_password of this UserCapabilitiesChanger.
-        Indicates weather a user can use console password
+        Indicates whether a user can use Console passwords.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -807,7 +814,7 @@ class UserCapabilitiesChanger(object):
     def can_use_console_password(self, can_use_console_password):
         """
         Sets the can_use_console_password of this UserCapabilitiesChanger.
-        Indicates weather a user can use console password
+        Indicates whether a user can use Console passwords.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -829,7 +836,7 @@ class UserCapabilitiesChanger(object):
     def can_use_customer_secret_keys(self):
         """
         Gets the can_use_customer_secret_keys of this UserCapabilitiesChanger.
-        Indicates weather a user can use customer secret keys
+        Indicates whether a user can use customer secret keys.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -851,7 +858,7 @@ class UserCapabilitiesChanger(object):
     def can_use_customer_secret_keys(self, can_use_customer_secret_keys):
         """
         Sets the can_use_customer_secret_keys of this UserCapabilitiesChanger.
-        Indicates weather a user can use customer secret keys
+        Indicates whether a user can use customer secret keys.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -873,7 +880,7 @@ class UserCapabilitiesChanger(object):
     def can_use_o_auth2_client_credentials(self):
         """
         Gets the can_use_o_auth2_client_credentials of this UserCapabilitiesChanger.
-        Indicates weather a user can use oauth2 client credentials
+        Indicates whether a user can use OAuth2 client credentials.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -895,7 +902,7 @@ class UserCapabilitiesChanger(object):
     def can_use_o_auth2_client_credentials(self, can_use_o_auth2_client_credentials):
         """
         Sets the can_use_o_auth2_client_credentials of this UserCapabilitiesChanger.
-        Indicates weather a user can use oauth2 client credentials
+        Indicates whether a user can use OAuth2 client credentials.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -917,7 +924,7 @@ class UserCapabilitiesChanger(object):
     def can_use_smtp_credentials(self):
         """
         Gets the can_use_smtp_credentials of this UserCapabilitiesChanger.
-        Indicates weather a user can use smtp credentials
+        Indicates whether a user can use SMTP credentials.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -939,7 +946,7 @@ class UserCapabilitiesChanger(object):
     def can_use_smtp_credentials(self, can_use_smtp_credentials):
         """
         Sets the can_use_smtp_credentials of this UserCapabilitiesChanger.
-        Indicates weather a user can use smtp credentials
+        Indicates whether a user can use SMTP credentials.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -961,7 +968,7 @@ class UserCapabilitiesChanger(object):
     def can_use_db_credentials(self):
         """
         Gets the can_use_db_credentials of this UserCapabilitiesChanger.
-        Indicates weather a user can use db credentials
+        Indicates whether a user can use database credentials.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -983,7 +990,7 @@ class UserCapabilitiesChanger(object):
     def can_use_db_credentials(self, can_use_db_credentials):
         """
         Sets the can_use_db_credentials of this UserCapabilitiesChanger.
-        Indicates weather a user can use db credentials
+        Indicates whether a user can use database credentials.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -1000,6 +1007,52 @@ class UserCapabilitiesChanger(object):
         :type: bool
         """
         self._can_use_db_credentials = can_use_db_credentials
+
+    @property
+    def can_use_console(self):
+        """
+        Gets the can_use_console of this UserCapabilitiesChanger.
+        Indicates whether a user can use the Console.
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: readWrite
+         - idcsDefaultValue: false
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :return: The can_use_console of this UserCapabilitiesChanger.
+        :rtype: bool
+        """
+        return self._can_use_console
+
+    @can_use_console.setter
+    def can_use_console(self, can_use_console):
+        """
+        Sets the can_use_console of this UserCapabilitiesChanger.
+        Indicates whether a user can use the Console.
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: readWrite
+         - idcsDefaultValue: false
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :param can_use_console: The can_use_console of this UserCapabilitiesChanger.
+        :type: bool
+        """
+        self._can_use_console = can_use_console
 
     @property
     def urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user(self):

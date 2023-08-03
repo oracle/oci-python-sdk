@@ -920,6 +920,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The display_name of this MyDevice.
@@ -942,6 +944,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param display_name: The display_name of this MyDevice.
@@ -959,6 +963,8 @@ class MyDevice(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: immutable
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: string
@@ -983,6 +989,8 @@ class MyDevice(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: immutable
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: string
@@ -1012,6 +1020,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
         Allowed values for this property are: "INITIATED", "INPROGRESS", "INACTIVE", "ENROLLED", "LOCKED", "BLOCKED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1037,6 +1047,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param status: The status of this MyDevice.
@@ -1103,6 +1115,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The device_type of this MyDevice.
@@ -1124,6 +1138,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param device_type: The device_type of this MyDevice.
@@ -1145,6 +1161,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The app_version of this MyDevice.
@@ -1166,6 +1184,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param app_version: The app_version of this MyDevice.
@@ -1187,6 +1207,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The package_id of this MyDevice.
@@ -1208,6 +1230,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param package_id: The package_id of this MyDevice.
@@ -1225,6 +1249,8 @@ class MyDevice(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: dateTime
@@ -1246,6 +1272,8 @@ class MyDevice(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: dateTime
@@ -1270,6 +1298,8 @@ class MyDevice(object):
          - idcsAllowUpdatesInReadOnlyMode: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: dateTime
@@ -1294,6 +1324,8 @@ class MyDevice(object):
          - idcsAllowUpdatesInReadOnlyMode: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: dateTime
@@ -1365,6 +1397,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The country_code of this MyDevice.
@@ -1388,6 +1422,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param country_code: The country_code of this MyDevice.
@@ -1409,6 +1445,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The phone_number of this MyDevice.
@@ -1430,6 +1468,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param phone_number: The phone_number of this MyDevice.
@@ -1452,6 +1492,8 @@ class MyDevice(object):
          - returned: default
          - type: boolean
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The is_acc_rec_enabled of this MyDevice.
@@ -1474,6 +1516,8 @@ class MyDevice(object):
          - returned: default
          - type: boolean
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param is_acc_rec_enabled: The is_acc_rec_enabled of this MyDevice.
@@ -1495,6 +1539,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The device_uuid of this MyDevice.
@@ -1516,6 +1562,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param device_uuid: The device_uuid of this MyDevice.
@@ -1537,6 +1585,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The base_public_key of this MyDevice.
@@ -1558,6 +1608,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param base_public_key: The base_public_key of this MyDevice.
@@ -1581,6 +1633,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The authentication_method of this MyDevice.
@@ -1604,6 +1658,8 @@ class MyDevice(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param authentication_method: The authentication_method of this MyDevice.

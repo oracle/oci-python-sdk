@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MyUserDbCredential(object):
     """
-    User's Db Credential
+    User's Database Credential
     """
 
     #: A constant which can be used with the idcs_prevented_operations property of a MyUserDbCredential.
@@ -770,7 +770,7 @@ class MyUserDbCredential(object):
     def db_password(self):
         """
         **[Required]** Gets the db_password of this MyUserDbCredential.
-        The db password of the user
+        The user's database password.
 
         **SCIM++ Properties:**
          - type: string
@@ -788,7 +788,7 @@ class MyUserDbCredential(object):
     def db_password(self, db_password):
         """
         Sets the db_password of this MyUserDbCredential.
-        The db password of the user
+        The user's database password.
 
         **SCIM++ Properties:**
          - type: string
@@ -848,7 +848,7 @@ class MyUserDbCredential(object):
     def mixed_db_password(self):
         """
         Gets the mixed_db_password of this MyUserDbCredential.
-        The db password of the user with mixed salt
+        The user's database password with mixed salt.
 
         **SCIM++ Properties:**
          - type: string
@@ -866,7 +866,7 @@ class MyUserDbCredential(object):
     def mixed_db_password(self, mixed_db_password):
         """
         Sets the mixed_db_password of this MyUserDbCredential.
-        The db password of the user with mixed salt
+        The user's database password with mixed salt.
 
         **SCIM++ Properties:**
          - type: string
@@ -884,7 +884,7 @@ class MyUserDbCredential(object):
     def salt(self):
         """
         Gets the salt of this MyUserDbCredential.
-        The salt of the password
+        The salt of the password.
 
         **SCIM++ Properties:**
          - type: string
@@ -902,7 +902,7 @@ class MyUserDbCredential(object):
     def salt(self, salt):
         """
         Sets the salt of this MyUserDbCredential.
-        The salt of the password
+        The salt of the password.
 
         **SCIM++ Properties:**
          - type: string
@@ -920,7 +920,7 @@ class MyUserDbCredential(object):
     def mixed_salt(self):
         """
         Gets the mixed_salt of this MyUserDbCredential.
-        The mixed salt of the password
+        The mixed salt of the password.
 
         **SCIM++ Properties:**
          - type: string
@@ -938,7 +938,7 @@ class MyUserDbCredential(object):
     def mixed_salt(self, mixed_salt):
         """
         Sets the mixed_salt of this MyUserDbCredential.
-        The mixed salt of the password
+        The mixed salt of the password.
 
         **SCIM++ Properties:**
          - type: string
@@ -956,7 +956,7 @@ class MyUserDbCredential(object):
     def last_set_date(self):
         """
         Gets the last_set_date of this MyUserDbCredential.
-        A DateTime that specifies the date and time when the current db password was set
+        A DateTime that specifies the date and time when the current database password was set.
 
         **SCIM++ Properties:**
          - type: dateTime
@@ -973,7 +973,7 @@ class MyUserDbCredential(object):
     def last_set_date(self, last_set_date):
         """
         Sets the last_set_date of this MyUserDbCredential.
-        A DateTime that specifies the date and time when the current db password was set
+        A DateTime that specifies the date and time when the current database password was set.
 
         **SCIM++ Properties:**
          - type: dateTime
@@ -990,7 +990,7 @@ class MyUserDbCredential(object):
     def expired(self):
         """
         Gets the expired of this MyUserDbCredential.
-        Indicates that the db password has expired
+        Indicates that the database password has expired.
 
         **SCIM++ Properties:**
          - type: boolean
@@ -1007,7 +1007,7 @@ class MyUserDbCredential(object):
     def expired(self, expired):
         """
         Sets the expired of this MyUserDbCredential.
-        Indicates that the db password has expired
+        Indicates that the database password has expired.
 
         **SCIM++ Properties:**
          - type: boolean
@@ -1078,7 +1078,7 @@ class MyUserDbCredential(object):
     def expires_on(self):
         """
         Gets the expires_on of this MyUserDbCredential.
-        User credential expires on
+        When the user credential expires.
 
         **Added In:** 2109090424
 
@@ -1102,7 +1102,7 @@ class MyUserDbCredential(object):
     def expires_on(self, expires_on):
         """
         Sets the expires_on of this MyUserDbCredential.
-        User credential expires on
+        When the user credential expires.
 
         **Added In:** 2109090424
 

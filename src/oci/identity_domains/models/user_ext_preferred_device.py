@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserExtPreferredDevice(object):
     """
-    User preferred device
+    The user's preferred device.
 
     **Added In:** 18.3.6
 
@@ -65,7 +65,7 @@ class UserExtPreferredDevice(object):
     def value(self):
         """
         **[Required]** Gets the value of this UserExtPreferredDevice.
-        The identifier of the User's preferred device
+        The user's preferred device identifier.
 
         **Added In:** 18.3.6
 
@@ -89,7 +89,7 @@ class UserExtPreferredDevice(object):
     def value(self, value):
         """
         Sets the value of this UserExtPreferredDevice.
-        The identifier of the User's preferred device
+        The user's preferred device identifier.
 
         **Added In:** 18.3.6
 
@@ -113,7 +113,7 @@ class UserExtPreferredDevice(object):
     def ref(self):
         """
         Gets the ref of this UserExtPreferredDevice.
-        The URI that corresponds to the device resource
+        The URI that corresponds to the device resource.
 
         **Added In:** 18.3.6
 
@@ -136,7 +136,7 @@ class UserExtPreferredDevice(object):
     def ref(self, ref):
         """
         Sets the ref of this UserExtPreferredDevice.
-        The URI that corresponds to the device resource
+        The URI that corresponds to the device resource.
 
         **Added In:** 18.3.6
 
@@ -159,7 +159,7 @@ class UserExtPreferredDevice(object):
     def display(self):
         """
         Gets the display of this UserExtPreferredDevice.
-        Device display name
+        The device display name.
 
         **Added In:** 18.3.6
 
@@ -183,7 +183,7 @@ class UserExtPreferredDevice(object):
     def display(self, display):
         """
         Sets the display of this UserExtPreferredDevice.
-        Device display name
+        The device display name.
 
         **Added In:** 18.3.6
 

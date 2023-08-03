@@ -77,6 +77,7 @@ class MyTrustedUserAgentUser(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: true
          - returned: default
          - type: string
@@ -99,6 +100,7 @@ class MyTrustedUserAgentUser(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: true
          - returned: default
          - type: string
@@ -120,6 +122,7 @@ class MyTrustedUserAgentUser(object):
          - caseExact: false
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: true
          - returned: default
          - type: reference
@@ -141,6 +144,7 @@ class MyTrustedUserAgentUser(object):
          - caseExact: false
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: true
          - returned: default
          - type: reference
@@ -207,6 +211,7 @@ class MyTrustedUserAgentUser(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: always
          - type: string
@@ -231,6 +236,7 @@ class MyTrustedUserAgentUser(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: always
          - type: string

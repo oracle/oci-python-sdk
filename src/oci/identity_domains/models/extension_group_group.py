@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExtensionGroupGroup(object):
     """
-    Idcs Group
+    Oracle Identity Cloud Service Group
     """
 
     #: A constant which can be used with the creation_mechanism property of a ExtensionGroupGroup.

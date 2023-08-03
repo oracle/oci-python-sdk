@@ -34,6 +34,10 @@ class SubnetTopology(Topology):
             The value to assign to the relationships property of this SubnetTopology.
         :type relationships: list[oci.vn_monitoring.models.TopologyEntityRelationship]
 
+        :param limited_entities:
+            The value to assign to the limited_entities property of this SubnetTopology.
+        :type limited_entities: list[str]
+
         :param time_created:
             The value to assign to the time_created property of this SubnetTopology.
         :type time_created: datetime
@@ -47,6 +51,7 @@ class SubnetTopology(Topology):
             'type': 'str',
             'entities': 'list[object]',
             'relationships': 'list[TopologyEntityRelationship]',
+            'limited_entities': 'list[str]',
             'time_created': 'datetime',
             'subnet_id': 'str'
         }
@@ -55,6 +60,7 @@ class SubnetTopology(Topology):
             'type': 'type',
             'entities': 'entities',
             'relationships': 'relationships',
+            'limited_entities': 'limitedEntities',
             'time_created': 'timeCreated',
             'subnet_id': 'subnetId'
         }
@@ -62,6 +68,7 @@ class SubnetTopology(Topology):
         self._type = None
         self._entities = None
         self._relationships = None
+        self._limited_entities = None
         self._time_created = None
         self._subnet_id = None
         self._type = 'SUBNET'
