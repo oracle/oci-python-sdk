@@ -4,12 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.109.1 - TBD
+2.110.0 - 2023-08-08
 ====================
 
 Added
 -----
-* TBD
+* Support for backup retention on autonomous database create operations in the Database service
+* Support for exclude tables for replication in the Database Migration service
+* Support for adding and updating auto failover maximum data loss limits for local autonomous data guards in the Database service
+* Support for limiting networking diagram ingestion in the Networking Monitoring service
+* Support for new operations for deployment upgrades in the GoldenGate service
+* Support for getting model type information and base model versions while creating language custom models in the AI Language service
+* Support for support field in class metric in the AI Language service
+* Support for Compute Cloud at Customer resource type in the Operator Access Control service
+* Support for managing account management info, account recovery settings, app roles, apps, app status changers, grants, identity propagation trusts and settings, request-able groups, requests, security questions, OAuth tokens, and user attribute settings in the Identity Domains service
+
+Breaking
+--------
+* Property `ipv6_cidr_block` is removed from models `Vcn` and `CreateVcnDetails` in the Networking Monitoring service
+* Property `ipv6_public_cidr_block` is removed from models `Vcn` and `Subnet` in the Networking Monitoring service
+* Property `is_internet_access_allowed` is removed from models `UpdateIpv6Details`, `Ipv6` and `CreateIpv6Details` in the Networking Monitoring service
+* Property `public_ip_address` is removed from model `Ipv6` in the Networking Monitoring service
+* Support for retries by default on operations of the Operator Access Control service
 
 ====================
 2.109.0 - 2023-08-01
