@@ -223,7 +223,7 @@ class UserExtSupportAccounts(object):
     def ocid(self):
         """
         Gets the ocid of this UserExtSupportAccounts.
-        Ocid of the User's Support Account.
+        The OCID of the user's support account.
 
         **Added In:** 2103141444
 
@@ -247,7 +247,7 @@ class UserExtSupportAccounts(object):
     def ocid(self, ocid):
         """
         Sets the ocid of this UserExtSupportAccounts.
-        Ocid of the User's Support Account.
+        The OCID of the user's support account.
 
         **Added In:** 2103141444
 

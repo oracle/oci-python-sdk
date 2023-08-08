@@ -32,6 +32,8 @@ Ai Language
     oci.ai_language.models.BatchDetectLanguageTextClassificationResult
     oci.ai_language.models.BatchLanguageTranslationDetails
     oci.ai_language.models.BatchLanguageTranslationResult
+    oci.ai_language.models.Capabilities
+    oci.ai_language.models.Capability
     oci.ai_language.models.ChangeEndpointCompartmentDetails
     oci.ai_language.models.ChangeModelCompartmentDetails
     oci.ai_language.models.ChangeProjectCompartmentDetails
@@ -78,6 +80,7 @@ Ai Language
     oci.ai_language.models.ModelCollection
     oci.ai_language.models.ModelDetails
     oci.ai_language.models.ModelSummary
+    oci.ai_language.models.ModelTypeInfo
     oci.ai_language.models.NamedEntityRecognitionEvaluationResult
     oci.ai_language.models.NamedEntityRecognitionEvaluationResults
     oci.ai_language.models.NamedEntityRecognitionModelDetails
@@ -91,6 +94,16 @@ Ai Language
     oci.ai_language.models.PiiEntityRemove
     oci.ai_language.models.PiiEntityReplace
     oci.ai_language.models.PreDeployedLanguageModels
+    oci.ai_language.models.PreTrainedHealthNluModelDetails
+    oci.ai_language.models.PreTrainedKeyPhraseExtractionModelDetails
+    oci.ai_language.models.PreTrainedLanguageDetectionModelDetails
+    oci.ai_language.models.PreTrainedNamedEntityRecognitionModelDetails
+    oci.ai_language.models.PreTrainedPhiModelDetails
+    oci.ai_language.models.PreTrainedPiiModelDetails
+    oci.ai_language.models.PreTrainedSentimentAnalysisModelDetails
+    oci.ai_language.models.PreTrainedSummarization
+    oci.ai_language.models.PreTrainedTextClassificationModelDetails
+    oci.ai_language.models.PreTrainedUniversalModel
     oci.ai_language.models.Project
     oci.ai_language.models.ProjectCollection
     oci.ai_language.models.ProjectSummary

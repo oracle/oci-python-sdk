@@ -118,6 +118,10 @@ class CreateDeploymentDetails(object):
             The value to assign to the maintenance_window property of this CreateDeploymentDetails.
         :type maintenance_window: oci.golden_gate.models.CreateMaintenanceWindowDetails
 
+        :param maintenance_configuration:
+            The value to assign to the maintenance_configuration property of this CreateDeploymentDetails.
+        :type maintenance_configuration: oci.golden_gate.models.CreateMaintenanceConfigurationDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -135,7 +139,8 @@ class CreateDeploymentDetails(object):
             'is_auto_scaling_enabled': 'bool',
             'deployment_type': 'str',
             'ogg_data': 'CreateOggDeploymentDetails',
-            'maintenance_window': 'CreateMaintenanceWindowDetails'
+            'maintenance_window': 'CreateMaintenanceWindowDetails',
+            'maintenance_configuration': 'CreateMaintenanceConfigurationDetails'
         }
 
         self.attribute_map = {
@@ -154,7 +159,8 @@ class CreateDeploymentDetails(object):
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'deployment_type': 'deploymentType',
             'ogg_data': 'oggData',
-            'maintenance_window': 'maintenanceWindow'
+            'maintenance_window': 'maintenanceWindow',
+            'maintenance_configuration': 'maintenanceConfiguration'
         }
 
         self._display_name = None
@@ -173,6 +179,7 @@ class CreateDeploymentDetails(object):
         self._deployment_type = None
         self._ogg_data = None
         self._maintenance_window = None
+        self._maintenance_configuration = None
 
     @property
     def display_name(self):
@@ -591,6 +598,26 @@ class CreateDeploymentDetails(object):
         :type: oci.golden_gate.models.CreateMaintenanceWindowDetails
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def maintenance_configuration(self):
+        """
+        Gets the maintenance_configuration of this CreateDeploymentDetails.
+
+        :return: The maintenance_configuration of this CreateDeploymentDetails.
+        :rtype: oci.golden_gate.models.CreateMaintenanceConfigurationDetails
+        """
+        return self._maintenance_configuration
+
+    @maintenance_configuration.setter
+    def maintenance_configuration(self, maintenance_configuration):
+        """
+        Sets the maintenance_configuration of this CreateDeploymentDetails.
+
+        :param maintenance_configuration: The maintenance_configuration of this CreateDeploymentDetails.
+        :type: oci.golden_gate.models.CreateMaintenanceConfigurationDetails
+        """
+        self._maintenance_configuration = maintenance_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

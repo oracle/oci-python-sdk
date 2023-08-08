@@ -47,6 +47,14 @@ class MysqlConnection(Connection):
     #: This constant has a value of "OCI_MYSQL"
     TECHNOLOGY_TYPE_OCI_MYSQL = "OCI_MYSQL"
 
+    #: A constant which can be used with the technology_type property of a MysqlConnection.
+    #: This constant has a value of "SINGLESTOREDB"
+    TECHNOLOGY_TYPE_SINGLESTOREDB = "SINGLESTOREDB"
+
+    #: A constant which can be used with the technology_type property of a MysqlConnection.
+    #: This constant has a value of "SINGLESTOREDB_CLOUD"
+    TECHNOLOGY_TYPE_SINGLESTOREDB_CLOUD = "SINGLESTOREDB_CLOUD"
+
     #: A constant which can be used with the security_protocol property of a MysqlConnection.
     #: This constant has a value of "PLAIN"
     SECURITY_PROTOCOL_PLAIN = "PLAIN"
@@ -159,7 +167,7 @@ class MysqlConnection(Connection):
 
         :param technology_type:
             The value to assign to the technology_type property of this MysqlConnection.
-            Allowed values for this property are: "AMAZON_AURORA_MYSQL", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AZURE_MYSQL", "GOOGLE_CLOUD_SQL_MYSQL", "MARIADB", "MYSQL_SERVER", "OCI_MYSQL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMAZON_AURORA_MYSQL", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AZURE_MYSQL", "GOOGLE_CLOUD_SQL_MYSQL", "MARIADB", "MYSQL_SERVER", "OCI_MYSQL", "SINGLESTOREDB", "SINGLESTOREDB_CLOUD", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
@@ -299,7 +307,7 @@ class MysqlConnection(Connection):
         **[Required]** Gets the technology_type of this MysqlConnection.
         The MySQL technology type.
 
-        Allowed values for this property are: "AMAZON_AURORA_MYSQL", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AZURE_MYSQL", "GOOGLE_CLOUD_SQL_MYSQL", "MARIADB", "MYSQL_SERVER", "OCI_MYSQL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMAZON_AURORA_MYSQL", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AZURE_MYSQL", "GOOGLE_CLOUD_SQL_MYSQL", "MARIADB", "MYSQL_SERVER", "OCI_MYSQL", "SINGLESTOREDB", "SINGLESTOREDB_CLOUD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -318,7 +326,7 @@ class MysqlConnection(Connection):
         :param technology_type: The technology_type of this MysqlConnection.
         :type: str
         """
-        allowed_values = ["AMAZON_AURORA_MYSQL", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AZURE_MYSQL", "GOOGLE_CLOUD_SQL_MYSQL", "MARIADB", "MYSQL_SERVER", "OCI_MYSQL"]
+        allowed_values = ["AMAZON_AURORA_MYSQL", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AZURE_MYSQL", "GOOGLE_CLOUD_SQL_MYSQL", "MARIADB", "MYSQL_SERVER", "OCI_MYSQL", "SINGLESTOREDB", "SINGLESTOREDB_CLOUD"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type

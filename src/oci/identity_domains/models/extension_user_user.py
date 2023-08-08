@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExtensionUserUser(object):
     """
-    OCI IAM User
+    Oracle Identity Cloud Service User
     """
 
     #: A constant which can be used with the status property of a ExtensionUserUser.
@@ -38,6 +38,18 @@ class ExtensionUserUser(object):
     #: A constant which can be used with the provider property of a ExtensionUserUser.
     #: This constant has a value of "twitter"
     PROVIDER_TWITTER = "twitter"
+
+    #: A constant which can be used with the preferred_ui_landing_page property of a ExtensionUserUser.
+    #: This constant has a value of "MyApps"
+    PREFERRED_UI_LANDING_PAGE_MY_APPS = "MyApps"
+
+    #: A constant which can be used with the preferred_ui_landing_page property of a ExtensionUserUser.
+    #: This constant has a value of "MyProfile"
+    PREFERRED_UI_LANDING_PAGE_MY_PROFILE = "MyProfile"
+
+    #: A constant which can be used with the preferred_ui_landing_page property of a ExtensionUserUser.
+    #: This constant has a value of "OciConsole"
+    PREFERRED_UI_LANDING_PAGE_OCI_CONSOLE = "OciConsole"
 
     #: A constant which can be used with the creation_mechanism property of a ExtensionUserUser.
     #: This constant has a value of "bulk"
@@ -96,11 +108,21 @@ class ExtensionUserUser(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type provider: str
 
+        :param preferred_ui_landing_page:
+            The value to assign to the preferred_ui_landing_page property of this ExtensionUserUser.
+            Allowed values for this property are: "MyApps", "MyProfile", "OciConsole", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type preferred_ui_landing_page: str
+
         :param creation_mechanism:
             The value to assign to the creation_mechanism property of this ExtensionUserUser.
             Allowed values for this property are: "bulk", "api", "adsync", "idcsui", "import", "authsync", "selfreg", "samljit", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type creation_mechanism: str
+
+        :param group_membership_last_modified:
+            The value to assign to the group_membership_last_modified property of this ExtensionUserUser.
+        :type group_membership_last_modified: str
 
         :param do_not_show_getting_started:
             The value to assign to the do_not_show_getting_started property of this ExtensionUserUser.
@@ -176,7 +198,9 @@ class ExtensionUserUser(object):
             'is_authentication_delegated': 'bool',
             'status': 'str',
             'provider': 'str',
+            'preferred_ui_landing_page': 'str',
             'creation_mechanism': 'str',
+            'group_membership_last_modified': 'str',
             'do_not_show_getting_started': 'bool',
             'bypass_notification': 'bool',
             'is_account_recovery_enrolled': 'bool',
@@ -201,7 +225,9 @@ class ExtensionUserUser(object):
             'is_authentication_delegated': 'isAuthenticationDelegated',
             'status': 'status',
             'provider': 'provider',
+            'preferred_ui_landing_page': 'preferredUiLandingPage',
             'creation_mechanism': 'creationMechanism',
+            'group_membership_last_modified': 'groupMembershipLastModified',
             'do_not_show_getting_started': 'doNotShowGettingStarted',
             'bypass_notification': 'bypassNotification',
             'is_account_recovery_enrolled': 'isAccountRecoveryEnrolled',
@@ -225,7 +251,9 @@ class ExtensionUserUser(object):
         self._is_authentication_delegated = None
         self._status = None
         self._provider = None
+        self._preferred_ui_landing_page = None
         self._creation_mechanism = None
+        self._group_membership_last_modified = None
         self._do_not_show_getting_started = None
         self._bypass_notification = None
         self._is_account_recovery_enrolled = None
@@ -257,6 +285,7 @@ class ExtensionUserUser(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: boolean
@@ -281,6 +310,7 @@ class ExtensionUserUser(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: boolean
@@ -441,6 +471,60 @@ class ExtensionUserUser(object):
         self._provider = provider
 
     @property
+    def preferred_ui_landing_page(self):
+        """
+        Gets the preferred_ui_landing_page of this ExtensionUserUser.
+        User's preferred landing page following login, logout and reset password.
+
+        **Added In:** 2302092332
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+        Allowed values for this property are: "MyApps", "MyProfile", "OciConsole", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The preferred_ui_landing_page of this ExtensionUserUser.
+        :rtype: str
+        """
+        return self._preferred_ui_landing_page
+
+    @preferred_ui_landing_page.setter
+    def preferred_ui_landing_page(self, preferred_ui_landing_page):
+        """
+        Sets the preferred_ui_landing_page of this ExtensionUserUser.
+        User's preferred landing page following login, logout and reset password.
+
+        **Added In:** 2302092332
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :param preferred_ui_landing_page: The preferred_ui_landing_page of this ExtensionUserUser.
+        :type: str
+        """
+        allowed_values = ["MyApps", "MyProfile", "OciConsole"]
+        if not value_allowed_none_or_none_sentinel(preferred_ui_landing_page, allowed_values):
+            preferred_ui_landing_page = 'UNKNOWN_ENUM_VALUE'
+        self._preferred_ui_landing_page = preferred_ui_landing_page
+
+    @property
     def creation_mechanism(self):
         """
         Gets the creation_mechanism of this ExtensionUserUser.
@@ -452,6 +536,7 @@ class ExtensionUserUser(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: immutable
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: request
          - type: string
@@ -478,6 +563,7 @@ class ExtensionUserUser(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: immutable
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: request
          - type: string
@@ -491,6 +577,52 @@ class ExtensionUserUser(object):
         if not value_allowed_none_or_none_sentinel(creation_mechanism, allowed_values):
             creation_mechanism = 'UNKNOWN_ENUM_VALUE'
         self._creation_mechanism = creation_mechanism
+
+    @property
+    def group_membership_last_modified(self):
+        """
+        Gets the group_membership_last_modified of this ExtensionUserUser.
+        Specifies date time when a User's group membership was last modified.
+
+        **Added In:** 2304270343
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - multiValued: false
+         - mutability: readOnly
+         - required: false
+         - returned: request
+         - type: dateTime
+         - uniqueness: none
+
+
+        :return: The group_membership_last_modified of this ExtensionUserUser.
+        :rtype: str
+        """
+        return self._group_membership_last_modified
+
+    @group_membership_last_modified.setter
+    def group_membership_last_modified(self, group_membership_last_modified):
+        """
+        Sets the group_membership_last_modified of this ExtensionUserUser.
+        Specifies date time when a User's group membership was last modified.
+
+        **Added In:** 2304270343
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - multiValued: false
+         - mutability: readOnly
+         - required: false
+         - returned: request
+         - type: dateTime
+         - uniqueness: none
+
+
+        :param group_membership_last_modified: The group_membership_last_modified of this ExtensionUserUser.
+        :type: str
+        """
+        self._group_membership_last_modified = group_membership_last_modified
 
     @property
     def do_not_show_getting_started(self):
@@ -548,6 +680,7 @@ class ExtensionUserUser(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: immutable
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: never
          - type: boolean
@@ -571,6 +704,7 @@ class ExtensionUserUser(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: immutable
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: never
          - type: boolean

@@ -15,6 +15,18 @@ class CreateDhcpDetails(object):
     CreateDhcpDetails model.
     """
 
+    #: A constant which can be used with the domain_name_type property of a CreateDhcpDetails.
+    #: This constant has a value of "SUBNET_DOMAIN"
+    DOMAIN_NAME_TYPE_SUBNET_DOMAIN = "SUBNET_DOMAIN"
+
+    #: A constant which can be used with the domain_name_type property of a CreateDhcpDetails.
+    #: This constant has a value of "VCN_DOMAIN"
+    DOMAIN_NAME_TYPE_VCN_DOMAIN = "VCN_DOMAIN"
+
+    #: A constant which can be used with the domain_name_type property of a CreateDhcpDetails.
+    #: This constant has a value of "CUSTOM_DOMAIN"
+    DOMAIN_NAME_TYPE_CUSTOM_DOMAIN = "CUSTOM_DOMAIN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDhcpDetails object with values from keyword arguments.
@@ -44,6 +56,11 @@ class CreateDhcpDetails(object):
             The value to assign to the vcn_id property of this CreateDhcpDetails.
         :type vcn_id: str
 
+        :param domain_name_type:
+            The value to assign to the domain_name_type property of this CreateDhcpDetails.
+            Allowed values for this property are: "SUBNET_DOMAIN", "VCN_DOMAIN", "CUSTOM_DOMAIN"
+        :type domain_name_type: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -51,7 +68,8 @@ class CreateDhcpDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'options': 'list[DhcpOption]',
-            'vcn_id': 'str'
+            'vcn_id': 'str',
+            'domain_name_type': 'str'
         }
 
         self.attribute_map = {
@@ -60,7 +78,8 @@ class CreateDhcpDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'options': 'options',
-            'vcn_id': 'vcnId'
+            'vcn_id': 'vcnId',
+            'domain_name_type': 'domainNameType'
         }
 
         self._compartment_id = None
@@ -69,6 +88,7 @@ class CreateDhcpDetails(object):
         self._freeform_tags = None
         self._options = None
         self._vcn_id = None
+        self._domain_name_type = None
 
     @property
     def compartment_id(self):
@@ -227,6 +247,38 @@ class CreateDhcpDetails(object):
         :type: str
         """
         self._vcn_id = vcn_id
+
+    @property
+    def domain_name_type(self):
+        """
+        Gets the domain_name_type of this CreateDhcpDetails.
+        The search domain name type of DHCP options
+
+        Allowed values for this property are: "SUBNET_DOMAIN", "VCN_DOMAIN", "CUSTOM_DOMAIN"
+
+
+        :return: The domain_name_type of this CreateDhcpDetails.
+        :rtype: str
+        """
+        return self._domain_name_type
+
+    @domain_name_type.setter
+    def domain_name_type(self, domain_name_type):
+        """
+        Sets the domain_name_type of this CreateDhcpDetails.
+        The search domain name type of DHCP options
+
+
+        :param domain_name_type: The domain_name_type of this CreateDhcpDetails.
+        :type: str
+        """
+        allowed_values = ["SUBNET_DOMAIN", "VCN_DOMAIN", "CUSTOM_DOMAIN"]
+        if not value_allowed_none_or_none_sentinel(domain_name_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `domain_name_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._domain_name_type = domain_name_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -149,7 +149,7 @@ class MeGroups(object):
     def ocid(self):
         """
         Gets the ocid of this MeGroups.
-        Ocid of the User's group.
+        The OCID of the User's group.
 
         **Added In:** 2102181953
 
@@ -173,7 +173,7 @@ class MeGroups(object):
     def ocid(self, ocid):
         """
         Sets the ocid of this MeGroups.
-        Ocid of the User's group.
+        The OCID of the User's group.
 
         **Added In:** 2102181953
 
@@ -421,7 +421,7 @@ class MeGroups(object):
     def membership_ocid(self):
         """
         Gets the membership_ocid of this MeGroups.
-        Membership Ocid
+        The membership OCID.
 
         **Added In:** 2103141444
 
@@ -444,7 +444,7 @@ class MeGroups(object):
     def membership_ocid(self, membership_ocid):
         """
         Sets the membership_ocid of this MeGroups.
-        Membership Ocid
+        The membership OCID.
 
         **Added In:** 2103141444
 

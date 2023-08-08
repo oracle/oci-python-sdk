@@ -74,7 +74,7 @@ class ExtensionUserCredentialsUser(object):
     def db_credentials(self):
         """
         Gets the db_credentials of this ExtensionUserCredentialsUser.
-        A list of db credentials corresponding to user.
+        A list of database credentials corresponding to user.
 
         **Added In:** 2102181953
 
@@ -98,7 +98,7 @@ class ExtensionUserCredentialsUser(object):
     def db_credentials(self, db_credentials):
         """
         Sets the db_credentials of this ExtensionUserCredentialsUser.
-        A list of db credentials corresponding to user.
+        A list of database credentials corresponding to user.
 
         **Added In:** 2102181953
 
@@ -170,7 +170,7 @@ class ExtensionUserCredentialsUser(object):
     def auth_tokens(self):
         """
         Gets the auth_tokens of this ExtensionUserCredentialsUser.
-        A list of auth tokens corresponding to user.
+        A list of Auth tokens corresponding to user.
 
         **Added In:** 2012271618
 
@@ -194,7 +194,7 @@ class ExtensionUserCredentialsUser(object):
     def auth_tokens(self, auth_tokens):
         """
         Sets the auth_tokens of this ExtensionUserCredentialsUser.
-        A list of auth tokens corresponding to user.
+        A list of Auth tokens corresponding to user.
 
         **Added In:** 2012271618
 
@@ -218,7 +218,7 @@ class ExtensionUserCredentialsUser(object):
     def smtp_credentials(self):
         """
         Gets the smtp_credentials of this ExtensionUserCredentialsUser.
-        A list of smtp credentials corresponding to user.
+        A list of SMTP credentials corresponding to user.
 
         **Added In:** 2012271618
 
@@ -242,7 +242,7 @@ class ExtensionUserCredentialsUser(object):
     def smtp_credentials(self, smtp_credentials):
         """
         Sets the smtp_credentials of this ExtensionUserCredentialsUser.
-        A list of smtp credentials corresponding to user.
+        A list of SMTP credentials corresponding to user.
 
         **Added In:** 2012271618
 
@@ -266,7 +266,7 @@ class ExtensionUserCredentialsUser(object):
     def api_keys(self):
         """
         Gets the api_keys of this ExtensionUserCredentialsUser.
-        A list of api keys corresponding to user.
+        A list of API keys corresponding to user.
 
         **Added In:** 2012271618
 
@@ -290,7 +290,7 @@ class ExtensionUserCredentialsUser(object):
     def api_keys(self, api_keys):
         """
         Sets the api_keys of this ExtensionUserCredentialsUser.
-        A list of api keys corresponding to user.
+        A list of API keys corresponding to user.
 
         **Added In:** 2012271618
 
@@ -314,7 +314,7 @@ class ExtensionUserCredentialsUser(object):
     def o_auth2_client_credentials(self):
         """
         Gets the o_auth2_client_credentials of this ExtensionUserCredentialsUser.
-        A list of oauth2 client credentials corresponding to user.
+        A list of OAuth2 client credentials corresponding to a user.
 
         **Added In:** 2012271618
 
@@ -338,7 +338,7 @@ class ExtensionUserCredentialsUser(object):
     def o_auth2_client_credentials(self, o_auth2_client_credentials):
         """
         Sets the o_auth2_client_credentials of this ExtensionUserCredentialsUser.
-        A list of oauth2 client credentials corresponding to user.
+        A list of OAuth2 client credentials corresponding to a user.
 
         **Added In:** 2012271618
 

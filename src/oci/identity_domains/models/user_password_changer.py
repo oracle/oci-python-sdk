@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserPasswordChanger(object):
     """
-    Schema to handle userpassword change by administrator.
+    The schema used to handle a user password change by an administrator.
     """
 
     #: A constant which can be used with the idcs_prevented_operations property of a UserPasswordChanger.
@@ -716,7 +716,7 @@ class UserPasswordChanger(object):
     def password(self):
         """
         **[Required]** Gets the password of this UserPasswordChanger.
-        Password attribute. Max length for password is controlled via Password Policy.
+        The password attribute. The maximum length for the password is set in the password policy.
 
         **SCIM++ Properties:**
          - type: string
@@ -737,7 +737,7 @@ class UserPasswordChanger(object):
     def password(self, password):
         """
         Sets the password of this UserPasswordChanger.
-        Password attribute. Max length for password is controlled via Password Policy.
+        The password attribute. The maximum length for the password is set in the password policy.
 
         **SCIM++ Properties:**
          - type: string
@@ -758,7 +758,7 @@ class UserPasswordChanger(object):
     def bypass_notification(self):
         """
         Gets the bypass_notification of this UserPasswordChanger.
-        A Boolean value indicating whether or not to send email notification after password is changed.
+        Indicates whether to send an email notification after a password is changed.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -780,7 +780,7 @@ class UserPasswordChanger(object):
     def bypass_notification(self, bypass_notification):
         """
         Sets the bypass_notification of this UserPasswordChanger.
-        A Boolean value indicating whether or not to send email notification after password is changed.
+        Indicates whether to send an email notification after a password is changed.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -802,7 +802,7 @@ class UserPasswordChanger(object):
     def notification_email_template_id(self):
         """
         Gets the notification_email_template_id of this UserPasswordChanger.
-        Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+        Specifies the EmailTemplate to be used when sending a notification to the user. If specified, it overrides the default EmailTemplate.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -824,7 +824,7 @@ class UserPasswordChanger(object):
     def notification_email_template_id(self, notification_email_template_id):
         """
         Sets the notification_email_template_id of this UserPasswordChanger.
-        Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+        Specifies the EmailTemplate to be used when sending a notification to the user. If specified, it overrides the default EmailTemplate.
 
         **SCIM++ Properties:**
          - caseExact: false

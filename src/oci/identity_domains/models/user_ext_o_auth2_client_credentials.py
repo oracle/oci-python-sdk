@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserExtOAuth2ClientCredentials(object):
     """
-    A list of oauth2 client credentials corresponding to user.
+    A list of OAuth2 client credentials corresponding to a user.
 
     **Added In:** 2012271618
 
@@ -65,7 +65,7 @@ class UserExtOAuth2ClientCredentials(object):
     def value(self):
         """
         Gets the value of this UserExtOAuth2ClientCredentials.
-        The identifier of the User's oAuth2 client credential.
+        The user's OAuth2 client credential identifier.
 
         **Added In:** 2012271618
 
@@ -89,7 +89,7 @@ class UserExtOAuth2ClientCredentials(object):
     def value(self, value):
         """
         Sets the value of this UserExtOAuth2ClientCredentials.
-        The identifier of the User's oAuth2 client credential.
+        The user's OAuth2 client credential identifier.
 
         **Added In:** 2012271618
 
@@ -113,7 +113,7 @@ class UserExtOAuth2ClientCredentials(object):
     def ocid(self):
         """
         Gets the ocid of this UserExtOAuth2ClientCredentials.
-        Ocid of the User's oAuth2 client credential.
+        The user's OAuth2 client credential OCID.
 
         **Added In:** 2012271618
 
@@ -137,7 +137,7 @@ class UserExtOAuth2ClientCredentials(object):
     def ocid(self, ocid):
         """
         Sets the ocid of this UserExtOAuth2ClientCredentials.
-        Ocid of the User's oAuth2 client credential.
+        The user's OAuth2 client credential OCID.
 
         **Added In:** 2012271618
 
@@ -161,7 +161,7 @@ class UserExtOAuth2ClientCredentials(object):
     def ref(self):
         """
         Gets the ref of this UserExtOAuth2ClientCredentials.
-        The URI of the corresponding OAuth2ClientCredential resource to which the user belongs
+        The URI of the corresponding OAuth2ClientCredential resource to which the user belongs.
 
         **Added In:** 2012271618
 
@@ -184,7 +184,7 @@ class UserExtOAuth2ClientCredentials(object):
     def ref(self, ref):
         """
         Sets the ref of this UserExtOAuth2ClientCredentials.
-        The URI of the corresponding OAuth2ClientCredential resource to which the user belongs
+        The URI of the corresponding OAuth2ClientCredential resource to which the user belongs.
 
         **Added In:** 2012271618
 

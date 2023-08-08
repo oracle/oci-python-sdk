@@ -39,7 +39,7 @@ class ExtensionKerberosUserUser(object):
     def realm_users(self):
         """
         Gets the realm_users of this ExtensionKerberosUserUser.
-        A list of kerberos realm users for an OCI IAM User
+        A list of kerberos realm users for an Oracle Identity Cloud Service User
 
         **SCIM++ Properties:**
          - idcsCompositeKey: [value]
@@ -60,7 +60,7 @@ class ExtensionKerberosUserUser(object):
     def realm_users(self, realm_users):
         """
         Sets the realm_users of this ExtensionKerberosUserUser.
-        A list of kerberos realm users for an OCI IAM User
+        A list of kerberos realm users for an Oracle Identity Cloud Service User
 
         **SCIM++ Properties:**
          - idcsCompositeKey: [value]

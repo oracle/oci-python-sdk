@@ -63,6 +63,10 @@ class AuthenticationFactorSetting(object):
     #: This constant has a value of "FIDO_AUTHENTICATOR"
     USER_ENROLLMENT_DISABLED_FACTORS_FIDO_AUTHENTICATOR = "FIDO_AUTHENTICATOR"
 
+    #: A constant which can be used with the user_enrollment_disabled_factors property of a AuthenticationFactorSetting.
+    #: This constant has a value of "YUBICO_OTP"
+    USER_ENROLLMENT_DISABLED_FACTORS_YUBICO_OTP = "YUBICO_OTP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AuthenticationFactorSetting object with values from keyword arguments.
@@ -176,7 +180,7 @@ class AuthenticationFactorSetting(object):
 
         :param user_enrollment_disabled_factors:
             The value to assign to the user_enrollment_disabled_factors property of this AuthenticationFactorSetting.
-            Allowed values for items in this list are: "EMAIL", "SMS", "TOTP", "PUSH", "OFFLINETOTP", "VOICE", "PHONE_CALL", "THIRDPARTY", "FIDO_AUTHENTICATOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "EMAIL", "SMS", "TOTP", "PUSH", "OFFLINETOTP", "VOICE", "PHONE_CALL", "THIRDPARTY", "FIDO_AUTHENTICATOR", "YUBICO_OTP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type user_enrollment_disabled_factors: list[str]
 
@@ -1449,7 +1453,7 @@ class AuthenticationFactorSetting(object):
          - type: string
          - uniqueness: none
 
-        Allowed values for items in this list are: "EMAIL", "SMS", "TOTP", "PUSH", "OFFLINETOTP", "VOICE", "PHONE_CALL", "THIRDPARTY", "FIDO_AUTHENTICATOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "EMAIL", "SMS", "TOTP", "PUSH", "OFFLINETOTP", "VOICE", "PHONE_CALL", "THIRDPARTY", "FIDO_AUTHENTICATOR", "YUBICO_OTP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1479,7 +1483,7 @@ class AuthenticationFactorSetting(object):
         :param user_enrollment_disabled_factors: The user_enrollment_disabled_factors of this AuthenticationFactorSetting.
         :type: list[str]
         """
-        allowed_values = ["EMAIL", "SMS", "TOTP", "PUSH", "OFFLINETOTP", "VOICE", "PHONE_CALL", "THIRDPARTY", "FIDO_AUTHENTICATOR"]
+        allowed_values = ["EMAIL", "SMS", "TOTP", "PUSH", "OFFLINETOTP", "VOICE", "PHONE_CALL", "THIRDPARTY", "FIDO_AUTHENTICATOR", "YUBICO_OTP"]
         if user_enrollment_disabled_factors:
             user_enrollment_disabled_factors[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in user_enrollment_disabled_factors]
         self._user_enrollment_disabled_factors = user_enrollment_disabled_factors

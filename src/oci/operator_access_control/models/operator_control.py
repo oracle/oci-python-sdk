@@ -31,6 +31,10 @@ class OperatorControl(object):
     #: This constant has a value of "CLOUDAUTONOMOUSVMCLUSTER"
     RESOURCE_TYPE_CLOUDAUTONOMOUSVMCLUSTER = "CLOUDAUTONOMOUSVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a OperatorControl.
+    #: This constant has a value of "CCCINFRASTRUCTURE"
+    RESOURCE_TYPE_CCCINFRASTRUCTURE = "CCCINFRASTRUCTURE"
+
     #: A constant which can be used with the lifecycle_state property of a OperatorControl.
     #: This constant has a value of "CREATED"
     LIFECYCLE_STATE_CREATED = "CREATED"
@@ -90,7 +94,7 @@ class OperatorControl(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this OperatorControl.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -115,6 +119,10 @@ class OperatorControl(object):
         :param time_of_modification:
             The value to assign to the time_of_modification property of this OperatorControl.
         :type time_of_modification: datetime
+
+        :param is_default_operator_control:
+            The value to assign to the is_default_operator_control property of this OperatorControl.
+        :type is_default_operator_control: bool
 
         :param time_of_deletion:
             The value to assign to the time_of_deletion property of this OperatorControl.
@@ -149,6 +157,7 @@ class OperatorControl(object):
             'lifecycle_state': 'str',
             'time_of_creation': 'datetime',
             'time_of_modification': 'datetime',
+            'is_default_operator_control': 'bool',
             'time_of_deletion': 'datetime',
             'last_modified_info': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -171,6 +180,7 @@ class OperatorControl(object):
             'lifecycle_state': 'lifecycleState',
             'time_of_creation': 'timeOfCreation',
             'time_of_modification': 'timeOfModification',
+            'is_default_operator_control': 'isDefaultOperatorControl',
             'time_of_deletion': 'timeOfDeletion',
             'last_modified_info': 'lastModifiedInfo',
             'freeform_tags': 'freeformTags',
@@ -192,6 +202,7 @@ class OperatorControl(object):
         self._lifecycle_state = None
         self._time_of_creation = None
         self._time_of_modification = None
+        self._is_default_operator_control = None
         self._time_of_deletion = None
         self._last_modified_info = None
         self._freeform_tags = None
@@ -427,7 +438,7 @@ class OperatorControl(object):
         Gets the resource_type of this OperatorControl.
         resourceType for which the OperatorControl is applicable
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -446,7 +457,7 @@ class OperatorControl(object):
         :param resource_type: The resource_type of this OperatorControl.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type
@@ -584,6 +595,30 @@ class OperatorControl(object):
         :type: datetime
         """
         self._time_of_modification = time_of_modification
+
+    @property
+    def is_default_operator_control(self):
+        """
+        Gets the is_default_operator_control of this OperatorControl.
+        Whether the operator control is a default Operator Control.
+
+
+        :return: The is_default_operator_control of this OperatorControl.
+        :rtype: bool
+        """
+        return self._is_default_operator_control
+
+    @is_default_operator_control.setter
+    def is_default_operator_control(self, is_default_operator_control):
+        """
+        Sets the is_default_operator_control of this OperatorControl.
+        Whether the operator control is a default Operator Control.
+
+
+        :param is_default_operator_control: The is_default_operator_control of this OperatorControl.
+        :type: bool
+        """
+        self._is_default_operator_control = is_default_operator_control
 
     @property
     def time_of_deletion(self):

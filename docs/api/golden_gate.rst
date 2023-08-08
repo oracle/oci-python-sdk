@@ -25,6 +25,7 @@ Golden Gate
     oci.golden_gate.models.AzureSynapseConnection
     oci.golden_gate.models.AzureSynapseConnectionSummary
     oci.golden_gate.models.CancelDeploymentBackupDetails
+    oci.golden_gate.models.CancelDeploymentUpgradeDetails
     oci.golden_gate.models.CancelSnoozeDeploymentUpgradeDetails
     oci.golden_gate.models.ChangeConnectionCompartmentDetails
     oci.golden_gate.models.ChangeDatabaseRegistrationCompartmentDetails
@@ -51,6 +52,7 @@ Golden Gate
     oci.golden_gate.models.CreateJavaMessageServiceConnectionDetails
     oci.golden_gate.models.CreateKafkaConnectionDetails
     oci.golden_gate.models.CreateKafkaSchemaRegistryConnectionDetails
+    oci.golden_gate.models.CreateMaintenanceConfigurationDetails
     oci.golden_gate.models.CreateMaintenanceWindowDetails
     oci.golden_gate.models.CreateMicrosoftSqlserverConnectionDetails
     oci.golden_gate.models.CreateMongoDbConnectionDetails
@@ -65,6 +67,7 @@ Golden Gate
     oci.golden_gate.models.DatabaseRegistrationCollection
     oci.golden_gate.models.DatabaseRegistrationSummary
     oci.golden_gate.models.DefaultCancelDeploymentBackupDetails
+    oci.golden_gate.models.DefaultCancelDeploymentUpgradeDetails
     oci.golden_gate.models.DefaultCancelSnoozeDeploymentUpgradeDetails
     oci.golden_gate.models.DefaultDeploymentWalletExistsDetails
     oci.golden_gate.models.DefaultRestoreDeploymentDetails
@@ -107,6 +110,7 @@ Golden Gate
     oci.golden_gate.models.KafkaConnectionSummary
     oci.golden_gate.models.KafkaSchemaRegistryConnection
     oci.golden_gate.models.KafkaSchemaRegistryConnectionSummary
+    oci.golden_gate.models.MaintenanceConfiguration
     oci.golden_gate.models.MaintenanceWindow
     oci.golden_gate.models.MessageSummary
     oci.golden_gate.models.MicrosoftSqlserverConnection
@@ -125,6 +129,8 @@ Golden Gate
     oci.golden_gate.models.OracleNosqlConnectionSummary
     oci.golden_gate.models.PostgresqlConnection
     oci.golden_gate.models.PostgresqlConnectionSummary
+    oci.golden_gate.models.RescheduleDeploymentUpgradeDetails
+    oci.golden_gate.models.RescheduleDeploymentUpgradeToDateDetails
     oci.golden_gate.models.RestoreDeploymentDetails
     oci.golden_gate.models.RollbackDeploymentUpgradeDetails
     oci.golden_gate.models.SnoozeDeploymentUpgradeDetails
@@ -151,6 +157,7 @@ Golden Gate
     oci.golden_gate.models.UpdateJavaMessageServiceConnectionDetails
     oci.golden_gate.models.UpdateKafkaConnectionDetails
     oci.golden_gate.models.UpdateKafkaSchemaRegistryConnectionDetails
+    oci.golden_gate.models.UpdateMaintenanceConfigurationDetails
     oci.golden_gate.models.UpdateMaintenanceWindowDetails
     oci.golden_gate.models.UpdateMicrosoftSqlserverConnectionDetails
     oci.golden_gate.models.UpdateMongoDbConnectionDetails

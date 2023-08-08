@@ -232,6 +232,22 @@ class DeploymentUpgrade(object):
             The value to assign to the is_rollback_allowed property of this DeploymentUpgrade.
         :type is_rollback_allowed: bool
 
+        :param time_ogg_version_supported_until:
+            The value to assign to the time_ogg_version_supported_until property of this DeploymentUpgrade.
+        :type time_ogg_version_supported_until: datetime
+
+        :param is_cancel_allowed:
+            The value to assign to the is_cancel_allowed property of this DeploymentUpgrade.
+        :type is_cancel_allowed: bool
+
+        :param is_reschedule_allowed:
+            The value to assign to the is_reschedule_allowed property of this DeploymentUpgrade.
+        :type is_reschedule_allowed: bool
+
+        :param time_schedule_max:
+            The value to assign to the time_schedule_max property of this DeploymentUpgrade.
+        :type time_schedule_max: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -258,7 +274,11 @@ class DeploymentUpgrade(object):
             'time_released': 'datetime',
             'release_type': 'str',
             'is_security_fix': 'bool',
-            'is_rollback_allowed': 'bool'
+            'is_rollback_allowed': 'bool',
+            'time_ogg_version_supported_until': 'datetime',
+            'is_cancel_allowed': 'bool',
+            'is_reschedule_allowed': 'bool',
+            'time_schedule_max': 'datetime'
         }
 
         self.attribute_map = {
@@ -286,7 +306,11 @@ class DeploymentUpgrade(object):
             'time_released': 'timeReleased',
             'release_type': 'releaseType',
             'is_security_fix': 'isSecurityFix',
-            'is_rollback_allowed': 'isRollbackAllowed'
+            'is_rollback_allowed': 'isRollbackAllowed',
+            'time_ogg_version_supported_until': 'timeOggVersionSupportedUntil',
+            'is_cancel_allowed': 'isCancelAllowed',
+            'is_reschedule_allowed': 'isRescheduleAllowed',
+            'time_schedule_max': 'timeScheduleMax'
         }
 
         self._id = None
@@ -314,6 +338,10 @@ class DeploymentUpgrade(object):
         self._release_type = None
         self._is_security_fix = None
         self._is_rollback_allowed = None
+        self._time_ogg_version_supported_until = None
+        self._is_cancel_allowed = None
+        self._is_reschedule_allowed = None
+        self._time_schedule_max = None
 
     @property
     def id(self):
@@ -1020,6 +1048,116 @@ class DeploymentUpgrade(object):
         :type: bool
         """
         self._is_rollback_allowed = is_rollback_allowed
+
+    @property
+    def time_ogg_version_supported_until(self):
+        """
+        Gets the time_ogg_version_supported_until of this DeploymentUpgrade.
+        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_ogg_version_supported_until of this DeploymentUpgrade.
+        :rtype: datetime
+        """
+        return self._time_ogg_version_supported_until
+
+    @time_ogg_version_supported_until.setter
+    def time_ogg_version_supported_until(self, time_ogg_version_supported_until):
+        """
+        Sets the time_ogg_version_supported_until of this DeploymentUpgrade.
+        The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_ogg_version_supported_until: The time_ogg_version_supported_until of this DeploymentUpgrade.
+        :type: datetime
+        """
+        self._time_ogg_version_supported_until = time_ogg_version_supported_until
+
+    @property
+    def is_cancel_allowed(self):
+        """
+        Gets the is_cancel_allowed of this DeploymentUpgrade.
+        Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,
+        otherwise only reschedule allowed.
+
+
+        :return: The is_cancel_allowed of this DeploymentUpgrade.
+        :rtype: bool
+        """
+        return self._is_cancel_allowed
+
+    @is_cancel_allowed.setter
+    def is_cancel_allowed(self, is_cancel_allowed):
+        """
+        Sets the is_cancel_allowed of this DeploymentUpgrade.
+        Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,
+        otherwise only reschedule allowed.
+
+
+        :param is_cancel_allowed: The is_cancel_allowed of this DeploymentUpgrade.
+        :type: bool
+        """
+        self._is_cancel_allowed = is_cancel_allowed
+
+    @property
+    def is_reschedule_allowed(self):
+        """
+        Gets the is_reschedule_allowed of this DeploymentUpgrade.
+        Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+
+
+        :return: The is_reschedule_allowed of this DeploymentUpgrade.
+        :rtype: bool
+        """
+        return self._is_reschedule_allowed
+
+    @is_reschedule_allowed.setter
+    def is_reschedule_allowed(self, is_reschedule_allowed):
+        """
+        Sets the is_reschedule_allowed of this DeploymentUpgrade.
+        Indicates if reschedule is allowed. Upgrade can be rescheduled postponed until the end of the service defined auto-upgrade period.
+
+
+        :param is_reschedule_allowed: The is_reschedule_allowed of this DeploymentUpgrade.
+        :type: bool
+        """
+        self._is_reschedule_allowed = is_reschedule_allowed
+
+    @property
+    def time_schedule_max(self):
+        """
+        Gets the time_schedule_max of this DeploymentUpgrade.
+        Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_schedule_max of this DeploymentUpgrade.
+        :rtype: datetime
+        """
+        return self._time_schedule_max
+
+    @time_schedule_max.setter
+    def time_schedule_max(self, time_schedule_max):
+        """
+        Sets the time_schedule_max of this DeploymentUpgrade.
+        Indicates the latest time until the deployment upgrade could be rescheduled. The format is defined by
+        `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_schedule_max: The time_schedule_max of this DeploymentUpgrade.
+        :type: datetime
+        """
+        self._time_schedule_max = time_schedule_max
 
     def __repr__(self):
         return formatted_flat_dict(self)

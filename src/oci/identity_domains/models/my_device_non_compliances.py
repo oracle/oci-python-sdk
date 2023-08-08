@@ -81,6 +81,8 @@ class MyDeviceNonCompliances(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The name of this MyDeviceNonCompliances.
@@ -102,6 +104,8 @@ class MyDeviceNonCompliances(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param name: The name of this MyDeviceNonCompliances.
@@ -123,6 +127,8 @@ class MyDeviceNonCompliances(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The value of this MyDeviceNonCompliances.
@@ -144,6 +150,8 @@ class MyDeviceNonCompliances(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param value: The value of this MyDeviceNonCompliances.
@@ -165,6 +173,8 @@ class MyDeviceNonCompliances(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
         Allowed values for this property are: "NOTIFY", "BLOCK", "ALLOW", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -189,6 +199,8 @@ class MyDeviceNonCompliances(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param action: The action of this MyDeviceNonCompliances.

@@ -24,6 +24,10 @@ class DrgRouteDistributionMatchCriteria(object):
     #: This constant has a value of "DRG_ATTACHMENT_ID"
     MATCH_TYPE_DRG_ATTACHMENT_ID = "DRG_ATTACHMENT_ID"
 
+    #: A constant which can be used with the match_type property of a DrgRouteDistributionMatchCriteria.
+    #: This constant has a value of "MATCH_ALL"
+    MATCH_TYPE_MATCH_ALL = "MATCH_ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrgRouteDistributionMatchCriteria object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -31,12 +35,13 @@ class DrgRouteDistributionMatchCriteria(object):
 
         * :class:`~oci.vn_monitoring.models.DrgAttachmentIdDrgRouteDistributionMatchCriteria`
         * :class:`~oci.vn_monitoring.models.DrgAttachmentTypeDrgRouteDistributionMatchCriteria`
+        * :class:`~oci.vn_monitoring.models.DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param match_type:
             The value to assign to the match_type property of this DrgRouteDistributionMatchCriteria.
-            Allowed values for this property are: "DRG_ATTACHMENT_TYPE", "DRG_ATTACHMENT_ID"
+            Allowed values for this property are: "DRG_ATTACHMENT_TYPE", "DRG_ATTACHMENT_ID", "MATCH_ALL"
         :type match_type: str
 
         """
@@ -63,6 +68,9 @@ class DrgRouteDistributionMatchCriteria(object):
 
         if type == 'DRG_ATTACHMENT_TYPE':
             return 'DrgAttachmentTypeDrgRouteDistributionMatchCriteria'
+
+        if type == 'MATCH_ALL':
+            return 'DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria'
         else:
             return 'DrgRouteDistributionMatchCriteria'
 
@@ -72,7 +80,7 @@ class DrgRouteDistributionMatchCriteria(object):
         **[Required]** Gets the match_type of this DrgRouteDistributionMatchCriteria.
         The type of the match criteria for a route distribution statement.
 
-        Allowed values for this property are: "DRG_ATTACHMENT_TYPE", "DRG_ATTACHMENT_ID"
+        Allowed values for this property are: "DRG_ATTACHMENT_TYPE", "DRG_ATTACHMENT_ID", "MATCH_ALL"
 
 
         :return: The match_type of this DrgRouteDistributionMatchCriteria.
@@ -90,7 +98,7 @@ class DrgRouteDistributionMatchCriteria(object):
         :param match_type: The match_type of this DrgRouteDistributionMatchCriteria.
         :type: str
         """
-        allowed_values = ["DRG_ATTACHMENT_TYPE", "DRG_ATTACHMENT_ID"]
+        allowed_values = ["DRG_ATTACHMENT_TYPE", "DRG_ATTACHMENT_ID", "MATCH_ALL"]
         if not value_allowed_none_or_none_sentinel(match_type, allowed_values):
             raise ValueError(
                 "Invalid value for `match_type`, must be None or one of {0}"

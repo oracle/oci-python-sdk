@@ -56,6 +56,14 @@ class CreateSubnetDetails(object):
             The value to assign to the ipv6_cidr_block property of this CreateSubnetDetails.
         :type ipv6_cidr_block: str
 
+        :param ipv6_cidr_blocks:
+            The value to assign to the ipv6_cidr_blocks property of this CreateSubnetDetails.
+        :type ipv6_cidr_blocks: list[str]
+
+        :param prohibit_internet_ingress:
+            The value to assign to the prohibit_internet_ingress property of this CreateSubnetDetails.
+        :type prohibit_internet_ingress: bool
+
         :param prohibit_public_ip_on_vnic:
             The value to assign to the prohibit_public_ip_on_vnic property of this CreateSubnetDetails.
         :type prohibit_public_ip_on_vnic: bool
@@ -83,6 +91,8 @@ class CreateSubnetDetails(object):
             'dns_label': 'str',
             'freeform_tags': 'dict(str, str)',
             'ipv6_cidr_block': 'str',
+            'ipv6_cidr_blocks': 'list[str]',
+            'prohibit_internet_ingress': 'bool',
             'prohibit_public_ip_on_vnic': 'bool',
             'route_table_id': 'str',
             'security_list_ids': 'list[str]',
@@ -99,6 +109,8 @@ class CreateSubnetDetails(object):
             'dns_label': 'dnsLabel',
             'freeform_tags': 'freeformTags',
             'ipv6_cidr_block': 'ipv6CidrBlock',
+            'ipv6_cidr_blocks': 'ipv6CidrBlocks',
+            'prohibit_internet_ingress': 'prohibitInternetIngress',
             'prohibit_public_ip_on_vnic': 'prohibitPublicIpOnVnic',
             'route_table_id': 'routeTableId',
             'security_list_ids': 'securityListIds',
@@ -114,6 +126,8 @@ class CreateSubnetDetails(object):
         self._dns_label = None
         self._freeform_tags = None
         self._ipv6_cidr_block = None
+        self._ipv6_cidr_blocks = None
+        self._prohibit_internet_ingress = None
         self._prohibit_public_ip_on_vnic = None
         self._route_table_id = None
         self._security_list_ids = None
@@ -122,8 +136,18 @@ class CreateSubnetDetails(object):
     @property
     def availability_domain(self):
         """
-        **[Required]** Gets the availability_domain of this CreateSubnetDetails.
-        The availability domain to contain the subnet.
+        Gets the availability_domain of this CreateSubnetDetails.
+        Controls whether the subnet is regional or specific to an availability domain. Oracle
+        recommends creating regional subnets because they're more flexible and make it easier to
+        implement failover across availability domains. Originally, AD-specific subnets were the
+        only kind available to use.
+
+        To create a regional subnet, omit this attribute. Then any resources later created in this
+        subnet (such as a Compute instance) can be created in any availability domain in the region.
+
+        To instead create an AD-specific subnet, set this attribute to the availability domain you
+        want this subnet to be in. Then any resources later created in this subnet can only be
+        created in that availability domain.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -137,7 +161,17 @@ class CreateSubnetDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateSubnetDetails.
-        The availability domain to contain the subnet.
+        Controls whether the subnet is regional or specific to an availability domain. Oracle
+        recommends creating regional subnets because they're more flexible and make it easier to
+        implement failover across availability domains. Originally, AD-specific subnets were the
+        only kind available to use.
+
+        To create a regional subnet, omit this attribute. Then any resources later created in this
+        subnet (such as a Compute instance) can be created in any availability domain in the region.
+
+        To instead create an AD-specific subnet, set this attribute to the availability domain you
+        want this subnet to be in. Then any resources later created in this subnet can only be
+        created in that availability domain.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -297,7 +331,7 @@ class CreateSubnetDetails(object):
         Gets the dns_label of this CreateSubnetDetails.
         A DNS label for the subnet, used in conjunction with the VNIC's hostname and
         VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-        within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`).
         Must be an alphanumeric string that begins with a letter and is unique within the VCN.
         The value cannot be changed.
 
@@ -324,7 +358,7 @@ class CreateSubnetDetails(object):
         Sets the dns_label of this CreateSubnetDetails.
         A DNS label for the subnet, used in conjunction with the VNIC's hostname and
         VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC
-        within this subnet (for example, `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`).
         Must be an alphanumeric string that begins with a letter and is unique within the VCN.
         The value cannot be changed.
 
@@ -412,6 +446,76 @@ class CreateSubnetDetails(object):
         self._ipv6_cidr_block = ipv6_cidr_block
 
     @property
+    def ipv6_cidr_blocks(self):
+        """
+        Gets the ipv6_cidr_blocks of this CreateSubnetDetails.
+        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
+        - The CIDR blocks must be valid.
+        - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+        - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+
+
+        :return: The ipv6_cidr_blocks of this CreateSubnetDetails.
+        :rtype: list[str]
+        """
+        return self._ipv6_cidr_blocks
+
+    @ipv6_cidr_blocks.setter
+    def ipv6_cidr_blocks(self, ipv6_cidr_blocks):
+        """
+        Sets the ipv6_cidr_blocks of this CreateSubnetDetails.
+        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
+        - The CIDR blocks must be valid.
+        - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+        - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+
+
+        :param ipv6_cidr_blocks: The ipv6_cidr_blocks of this CreateSubnetDetails.
+        :type: list[str]
+        """
+        self._ipv6_cidr_blocks = ipv6_cidr_blocks
+
+    @property
+    def prohibit_internet_ingress(self):
+        """
+        Gets the prohibit_internet_ingress of this CreateSubnetDetails.
+        Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+
+        For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any
+        IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+
+        `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4
+        behavior in this subnet. Only one or the other flag should be specified.
+
+        Example: `true`
+
+
+        :return: The prohibit_internet_ingress of this CreateSubnetDetails.
+        :rtype: bool
+        """
+        return self._prohibit_internet_ingress
+
+    @prohibit_internet_ingress.setter
+    def prohibit_internet_ingress(self, prohibit_internet_ingress):
+        """
+        Sets the prohibit_internet_ingress of this CreateSubnetDetails.
+        Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
+
+        For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any
+        IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+
+        `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4
+        behavior in this subnet. Only one or the other flag should be specified.
+
+        Example: `true`
+
+
+        :param prohibit_internet_ingress: The prohibit_internet_ingress of this CreateSubnetDetails.
+        :type: bool
+        """
+        self._prohibit_internet_ingress = prohibit_internet_ingress
+
+    @property
     def prohibit_public_ip_on_vnic(self):
         """
         Gets the prohibit_public_ip_on_vnic of this CreateSubnetDetails.
@@ -424,8 +528,8 @@ class CreateSubnetDetails(object):
         subnet cannot have public IP addresses (that is, it's a private
         subnet).
 
-        For IPv6, if `prohibitPublicIpOnVnic` is set to `true`, internet access is not allowed for any
-        IPv6s assigned to VNICs in the subnet.
+        If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to
+        specify ingress internet traffic behavior of the subnet.
 
         Example: `true`
 
@@ -448,8 +552,8 @@ class CreateSubnetDetails(object):
         subnet cannot have public IP addresses (that is, it's a private
         subnet).
 
-        For IPv6, if `prohibitPublicIpOnVnic` is set to `true`, internet access is not allowed for any
-        IPv6s assigned to VNICs in the subnet.
+        If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to
+        specify ingress internet traffic behavior of the subnet.
 
         Example: `true`
 

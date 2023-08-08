@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserExtAuthTokens(object):
     """
-    A list of auth tokens corresponding to user.
+    A list of Auth tokens corresponding to user.
 
     **Added In:** 2012271618
 
@@ -65,7 +65,7 @@ class UserExtAuthTokens(object):
     def value(self):
         """
         Gets the value of this UserExtAuthTokens.
-        The identifier of the User's auth token.
+        The user's Auth token identifier.
 
         **Added In:** 2012271618
 
@@ -89,7 +89,7 @@ class UserExtAuthTokens(object):
     def value(self, value):
         """
         Sets the value of this UserExtAuthTokens.
-        The identifier of the User's auth token.
+        The user's Auth token identifier.
 
         **Added In:** 2012271618
 
@@ -113,7 +113,7 @@ class UserExtAuthTokens(object):
     def ocid(self):
         """
         Gets the ocid of this UserExtAuthTokens.
-        Ocid of the User's auth token.
+        The user's Auth token OCID.
 
         **Added In:** 2012271618
 
@@ -137,7 +137,7 @@ class UserExtAuthTokens(object):
     def ocid(self, ocid):
         """
         Sets the ocid of this UserExtAuthTokens.
-        Ocid of the User's auth token.
+        The user's Auth token OCID.
 
         **Added In:** 2012271618
 
@@ -161,7 +161,7 @@ class UserExtAuthTokens(object):
     def ref(self):
         """
         Gets the ref of this UserExtAuthTokens.
-        The URI of the corresponding AuthToken resource to which the user belongs
+        The URI of the corresponding AuthToken resource to which the user belongs.
 
         **Added In:** 2012271618
 
@@ -184,7 +184,7 @@ class UserExtAuthTokens(object):
     def ref(self, ref):
         """
         Sets the ref of this UserExtAuthTokens.
-        The URI of the corresponding AuthToken resource to which the user belongs
+        The URI of the corresponding AuthToken resource to which the user belongs.
 
         **Added In:** 2012271618
 

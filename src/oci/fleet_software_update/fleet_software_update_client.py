@@ -160,7 +160,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuDiscoveries/{fsuDiscoveryId}/actions/abort"
         method = "POST"
         operation_name = "abort_fsu_discovery"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuDiscovery/AbortFsuDiscovery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -281,7 +281,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCollections/{fsuCollectionId}/targets"
         method = "POST"
         operation_name = "add_fsu_collection_targets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/AddFsuCollectionTargets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -398,7 +398,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuActions/{fsuActionId}/actions/cancel"
         method = "POST"
         operation_name = "cancel_fsu_action"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/CancelFsuAction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -517,7 +517,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuActions/{fsuActionId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_fsu_action_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/ChangeFsuActionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -638,7 +638,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCollections/{fsuCollectionId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_fsu_collection_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/ChangeFsuCollectionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -759,7 +759,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCycles/{fsuCycleId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_fsu_cycle_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCycle/ChangeFsuCycleCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -880,7 +880,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuDiscoveries/{fsuDiscoveryId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_fsu_discovery_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuDiscovery/ChangeFsuDiscoveryCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -993,7 +993,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCycles/{fsuCycleId}/actions/clone"
         method = "POST"
         operation_name = "clone_fsu_cycle"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCycle/CloneFsuCycle"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1495,7 +1495,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuActions/{fsuActionId}"
         method = "DELETE"
         operation_name = "delete_fsu_action"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/DeleteFsuAction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1600,7 +1600,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCollections/{fsuCollectionId}"
         method = "DELETE"
         operation_name = "delete_fsu_collection"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/DeleteFsuCollection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1705,7 +1705,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCycles/{fsuCycleId}"
         method = "DELETE"
         operation_name = "delete_fsu_cycle"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCycle/DeleteFsuCycle"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1810,7 +1810,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuDiscoveries/{fsuDiscoveryId}"
         method = "DELETE"
         operation_name = "delete_fsu_discovery"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuDiscovery/DeleteFsuDiscovery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1915,7 +1915,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuJobs/{fsuJobId}"
         method = "DELETE"
         operation_name = "delete_fsu_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJob/DeleteFsuJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2013,7 +2013,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuActions/{fsuActionId}"
         method = "GET"
         operation_name = "get_fsu_action"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/GetFsuAction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2112,7 +2112,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuActions/{fsuActionId}/output/content"
         method = "GET"
         operation_name = "get_fsu_action_output_content"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/GetFsuActionOutputContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2210,7 +2210,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCollections/{fsuCollectionId}"
         method = "GET"
         operation_name = "get_fsu_collection"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/GetFsuCollection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2308,7 +2308,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCycles/{fsuCycleId}"
         method = "GET"
         operation_name = "get_fsu_cycle"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCycle/GetFsuCycle"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2406,7 +2406,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuDiscoveries/{fsuDiscoveryId}"
         method = "GET"
         operation_name = "get_fsu_discovery"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuDiscovery/GetFsuDiscovery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2504,7 +2504,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuJobs/{fsuJobId}"
         method = "GET"
         operation_name = "get_fsu_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJob/GetFsuJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2602,7 +2602,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuJobs/{fsuJobId}/output/content"
         method = "GET"
         operation_name = "get_fsu_job_output_content"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJob/GetFsuJobOutputContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2700,7 +2700,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2831,7 +2831,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuActions"
         method = "GET"
         operation_name = "list_fsu_actions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuActionSummaryCollection/ListFsuActions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2996,7 +2996,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCollections/{fsuCollectionId}/targets"
         method = "GET"
         operation_name = "list_fsu_collection_targets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/TargetSummaryCollection/ListFsuCollectionTargets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3165,7 +3165,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCollections"
         method = "GET"
         operation_name = "list_fsu_collections"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollectionSummaryCollection/ListFsuCollections"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3336,7 +3336,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCycles"
         method = "GET"
         operation_name = "list_fsu_cycles"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCycleSummary/ListFsuCycles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3500,7 +3500,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuDiscoveries"
         method = "GET"
         operation_name = "list_fsu_discoveries"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuDiscoverySummary/ListFsuDiscoveries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3654,7 +3654,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuDiscoveries/{fsuDiscoveryId}/targets"
         method = "GET"
         operation_name = "list_fsu_discovery_targets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/TargetSummaryCollection/ListFsuDiscoveryTargets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3800,7 +3800,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuJobs/{fsuJobId}/output"
         method = "GET"
         operation_name = "list_fsu_job_outputs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJobOutputSummary/ListFsuJobOutputs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3933,7 +3933,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuJobs"
         method = "GET"
         operation_name = "list_fsu_jobs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJobSummary/ListFsuJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4076,7 +4076,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4219,7 +4219,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4373,7 +4373,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4520,7 +4520,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCollections/{fsuCollectionId}/targets"
         method = "PUT"
         operation_name = "remove_fsu_collection_targets"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/RemoveFsuCollectionTargets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4637,7 +4637,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuActions/{fsuActionId}/actions/resume"
         method = "POST"
         operation_name = "resume_fsu_action"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/ResumeFsuAction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4753,7 +4753,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuJobs/{fsuJobId}/actions/retry"
         method = "POST"
         operation_name = "retry_fsu_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJob/RetryFsuJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4864,7 +4864,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuActions/{fsuActionId}"
         method = "PUT"
         operation_name = "update_fsu_action"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuAction/UpdateFsuAction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4974,7 +4974,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCollections/{fsuCollectionId}"
         method = "PUT"
         operation_name = "update_fsu_collection"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/UpdateFsuCollection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5084,7 +5084,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuCycles/{fsuCycleId}"
         method = "PUT"
         operation_name = "update_fsu_cycle"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCycle/UpdateFsuCycle"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5194,7 +5194,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuDiscoveries/{fsuDiscoveryId}"
         method = "PUT"
         operation_name = "update_fsu_discovery"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuDiscovery/UpdateFsuDiscovery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5304,7 +5304,7 @@ class FleetSoftwareUpdateClient(object):
         resource_path = "/fsuJobs/{fsuJobId}"
         method = "PUT"
         operation_name = "update_fsu_job"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuJob/UpdateFsuJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

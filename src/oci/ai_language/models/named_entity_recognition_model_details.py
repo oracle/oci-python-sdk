@@ -27,23 +27,54 @@ class NamedEntityRecognitionModelDetails(ModelDetails):
 
         :param model_type:
             The value to assign to the model_type property of this NamedEntityRecognitionModelDetails.
-            Allowed values for this property are: "NAMED_ENTITY_RECOGNITION", "TEXT_CLASSIFICATION"
+            Allowed values for this property are: "NAMED_ENTITY_RECOGNITION", "TEXT_CLASSIFICATION", "PRE_TRAINED_NAMED_ENTITY_RECOGNITION", "PRE_TRAINED_TEXT_CLASSIFICATION", "PRE_TRAINED_SENTIMENT_ANALYSIS", "PRE_TRAINED_KEYPHRASE_EXTRACTION", "PRE_TRAINED_LANGUAGE_DETECTION", "PRE_TRAINED_PII", "PRE_TRAINED_TRANSLATION", "PRE_TRAINED_HEALTH_NLU", "PRE_TRAINED_SUMMARIZATION", "PRE_TRAINED_UNIVERSAL"
         :type model_type: str
+
+        :param version:
+            The value to assign to the version property of this NamedEntityRecognitionModelDetails.
+        :type version: str
 
         """
         self.swagger_types = {
             'language_code': 'str',
-            'model_type': 'str'
+            'model_type': 'str',
+            'version': 'str'
         }
 
         self.attribute_map = {
             'language_code': 'languageCode',
-            'model_type': 'modelType'
+            'model_type': 'modelType',
+            'version': 'version'
         }
 
         self._language_code = None
         self._model_type = None
+        self._version = None
         self._model_type = 'NAMED_ENTITY_RECOGNITION'
+
+    @property
+    def version(self):
+        """
+        Gets the version of this NamedEntityRecognitionModelDetails.
+        Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
+
+
+        :return: The version of this NamedEntityRecognitionModelDetails.
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this NamedEntityRecognitionModelDetails.
+        Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
+
+
+        :param version: The version of this NamedEntityRecognitionModelDetails.
+        :type: str
+        """
+        self._version = version
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -29,6 +29,10 @@ class CreateVnicDetails(object):
             The value to assign to the assign_public_ip property of this CreateVnicDetails.
         :type assign_public_ip: bool
 
+        :param assign_private_dns_record:
+            The value to assign to the assign_private_dns_record property of this CreateVnicDetails.
+        :type assign_private_dns_record: bool
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateVnicDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -61,9 +65,14 @@ class CreateVnicDetails(object):
             The value to assign to the subnet_id property of this CreateVnicDetails.
         :type subnet_id: str
 
+        :param vlan_id:
+            The value to assign to the vlan_id property of this CreateVnicDetails.
+        :type vlan_id: str
+
         """
         self.swagger_types = {
             'assign_public_ip': 'bool',
+            'assign_private_dns_record': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -71,11 +80,13 @@ class CreateVnicDetails(object):
             'nsg_ids': 'list[str]',
             'private_ip': 'str',
             'skip_source_dest_check': 'bool',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'vlan_id': 'str'
         }
 
         self.attribute_map = {
             'assign_public_ip': 'assignPublicIp',
+            'assign_private_dns_record': 'assignPrivateDnsRecord',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -83,10 +94,12 @@ class CreateVnicDetails(object):
             'nsg_ids': 'nsgIds',
             'private_ip': 'privateIp',
             'skip_source_dest_check': 'skipSourceDestCheck',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'vlan_id': 'vlanId'
         }
 
         self._assign_public_ip = None
+        self._assign_private_dns_record = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
@@ -95,6 +108,7 @@ class CreateVnicDetails(object):
         self._private_ip = None
         self._skip_source_dest_check = None
         self._subnet_id = None
+        self._vlan_id = None
 
     @property
     def assign_public_ip(self):
@@ -120,6 +134,9 @@ class CreateVnicDetails(object):
         `Public IP Addresses`__.
 
         Example: `false`
+
+        If you specify a `vlanId`, then `assignPublicIp` must be set to false. See
+        :class:`Vlan`.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
@@ -155,6 +172,9 @@ class CreateVnicDetails(object):
 
         Example: `false`
 
+        If you specify a `vlanId`, then `assignPublicIp` must be set to false. See
+        :class:`Vlan`.
+
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPaddresses.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
@@ -163,6 +183,38 @@ class CreateVnicDetails(object):
         :type: bool
         """
         self._assign_public_ip = assign_public_ip
+
+    @property
+    def assign_private_dns_record(self):
+        """
+        Gets the assign_private_dns_record of this CreateVnicDetails.
+        Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record
+        registration for the VNIC. If set to true, the DNS record will be registered. The default
+        value is true.
+
+        If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
+
+
+        :return: The assign_private_dns_record of this CreateVnicDetails.
+        :rtype: bool
+        """
+        return self._assign_private_dns_record
+
+    @assign_private_dns_record.setter
+    def assign_private_dns_record(self, assign_private_dns_record):
+        """
+        Sets the assign_private_dns_record of this CreateVnicDetails.
+        Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record
+        registration for the VNIC. If set to true, the DNS record will be registered. The default
+        value is true.
+
+        If you specify a `hostnameLabel`, then `assignPrivateDnsRecord` must be set to true.
+
+
+        :param assign_private_dns_record: The assign_private_dns_record of this CreateVnicDetails.
+        :type: bool
+        """
+        self._assign_private_dns_record = assign_private_dns_record
 
     @property
     def defined_tags(self):
@@ -248,7 +300,7 @@ class CreateVnicDetails(object):
         Gets the hostname_label of this CreateVnicDetails.
         The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
         portion of the primary private IP's fully qualified domain name (FQDN)
-        (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`).
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
@@ -265,7 +317,10 @@ class CreateVnicDetails(object):
         :func:`launch_instance_details`.
         If you provide both, the values must match.
 
-        Example: `bminstance-1`
+        Example: `bminstance1`
+
+        If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN
+        can not be assigned a hostname. See :class:`Vlan`.
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
@@ -283,7 +338,7 @@ class CreateVnicDetails(object):
         Sets the hostname_label of this CreateVnicDetails.
         The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname
         portion of the primary private IP's fully qualified domain name (FQDN)
-        (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`).
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
@@ -300,7 +355,10 @@ class CreateVnicDetails(object):
         :func:`launch_instance_details`.
         If you provide both, the values must match.
 
-        Example: `bminstance-1`
+        Example: `bminstance1`
+
+        If you specify a `vlanId`, the `hostnameLabel` cannot be specified. VNICs on a VLAN
+        can not be assigned a hostname. See :class:`Vlan`.
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
@@ -320,6 +378,11 @@ class CreateVnicDetails(object):
         information about NSGs, see
         :class:`NetworkSecurityGroup`.
 
+        If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId`
+        indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs,
+        all VNICs in the VLAN belong to the NSGs that are associated with the VLAN.
+        See :class:`Vlan`.
+
 
         :return: The nsg_ids of this CreateVnicDetails.
         :rtype: list[str]
@@ -333,6 +396,11 @@ class CreateVnicDetails(object):
         A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more
         information about NSGs, see
         :class:`NetworkSecurityGroup`.
+
+        If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId`
+        indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs,
+        all VNICs in the VLAN belong to the NSGs that are associated with the VLAN.
+        See :class:`Vlan`.
 
 
         :param nsg_ids: The nsg_ids of this CreateVnicDetails.
@@ -353,6 +421,9 @@ class CreateVnicDetails(object):
         :func:`list_private_ips` and
         :func:`get_private_ip`.
 
+
+        If you specify a `vlanId`, the `privateIp` cannot be specified.
+        See :class:`Vlan`.
 
         Example: `10.0.3.3`
 
@@ -376,6 +447,9 @@ class CreateVnicDetails(object):
         :func:`get_private_ip`.
 
 
+        If you specify a `vlanId`, the `privateIp` cannot be specified.
+        See :class:`Vlan`.
+
         Example: `10.0.3.3`
 
 
@@ -393,6 +467,10 @@ class CreateVnicDetails(object):
         about why you would skip the source/destination check, see
         `Using a Private IP as a Route Target`__.
 
+
+        If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the
+        source/destination check is always disabled for VNICs in a VLAN. See
+        :class:`Vlan`.
 
         Example: `true`
 
@@ -414,6 +492,10 @@ class CreateVnicDetails(object):
         `Using a Private IP as a Route Target`__.
 
 
+        If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the
+        source/destination check is always disabled for VNICs in a VLAN. See
+        :class:`Vlan`.
+
         Example: `true`
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
@@ -427,11 +509,15 @@ class CreateVnicDetails(object):
     @property
     def subnet_id(self):
         """
-        **[Required]** Gets the subnet_id of this CreateVnicDetails.
+        Gets the subnet_id of this CreateVnicDetails.
         The `OCID`__ of the subnet to create the VNIC in. When launching an instance,
         use this `subnetId` instead of the deprecated `subnetId` in
         :func:`launch_instance_details`.
         At least one of them is required; if you provide both, the values must match.
+
+        If you are an Oracle Cloud VMware Solution customer and creating a secondary
+        VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`.
+        If you provide both a `vlanId` and `subnetId`, the request fails.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -450,6 +536,10 @@ class CreateVnicDetails(object):
         :func:`launch_instance_details`.
         At least one of them is required; if you provide both, the values must match.
 
+        If you are an Oracle Cloud VMware Solution customer and creating a secondary
+        VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`.
+        If you provide both a `vlanId` and `subnetId`, the request fails.
+
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
@@ -457,6 +547,44 @@ class CreateVnicDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def vlan_id(self):
+        """
+        Gets the vlan_id of this CreateVnicDetails.
+        Provide this attribute only if you are an Oracle Cloud VMware Solution
+        customer and creating a secondary VNIC in a VLAN. The value is the `OCID`__ of the VLAN.
+        See :class:`Vlan`.
+
+        Provide a `vlanId` instead of a `subnetId`. If you provide both a
+        `vlanId` and `subnetId`, the request fails.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vlan_id of this CreateVnicDetails.
+        :rtype: str
+        """
+        return self._vlan_id
+
+    @vlan_id.setter
+    def vlan_id(self, vlan_id):
+        """
+        Sets the vlan_id of this CreateVnicDetails.
+        Provide this attribute only if you are an Oracle Cloud VMware Solution
+        customer and creating a secondary VNIC in a VLAN. The value is the `OCID`__ of the VLAN.
+        See :class:`Vlan`.
+
+        Provide a `vlanId` instead of a `subnetId`. If you provide both a
+        `vlanId` and `subnetId`, the request fails.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param vlan_id: The vlan_id of this CreateVnicDetails.
+        :type: str
+        """
+        self._vlan_id = vlan_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

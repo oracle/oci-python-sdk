@@ -46,25 +46,32 @@ class MigrationObjectSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type object_status: str
 
+        :param is_omit_excluded_table_from_replication:
+            The value to assign to the is_omit_excluded_table_from_replication property of this MigrationObjectSummary.
+        :type is_omit_excluded_table_from_replication: bool
+
         """
         self.swagger_types = {
             'owner': 'str',
             'object_name': 'str',
             'type': 'str',
-            'object_status': 'str'
+            'object_status': 'str',
+            'is_omit_excluded_table_from_replication': 'bool'
         }
 
         self.attribute_map = {
             'owner': 'owner',
             'object_name': 'objectName',
             'type': 'type',
-            'object_status': 'objectStatus'
+            'object_status': 'objectStatus',
+            'is_omit_excluded_table_from_replication': 'isOmitExcludedTableFromReplication'
         }
 
         self._owner = None
         self._object_name = None
         self._type = None
         self._object_status = None
+        self._is_omit_excluded_table_from_replication = None
 
     @property
     def owner(self):
@@ -169,6 +176,30 @@ class MigrationObjectSummary(object):
         if not value_allowed_none_or_none_sentinel(object_status, allowed_values):
             object_status = 'UNKNOWN_ENUM_VALUE'
         self._object_status = object_status
+
+    @property
+    def is_omit_excluded_table_from_replication(self):
+        """
+        Gets the is_omit_excluded_table_from_replication of this MigrationObjectSummary.
+        Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and object status EXCLUDE.
+
+
+        :return: The is_omit_excluded_table_from_replication of this MigrationObjectSummary.
+        :rtype: bool
+        """
+        return self._is_omit_excluded_table_from_replication
+
+    @is_omit_excluded_table_from_replication.setter
+    def is_omit_excluded_table_from_replication(self, is_omit_excluded_table_from_replication):
+        """
+        Sets the is_omit_excluded_table_from_replication of this MigrationObjectSummary.
+        Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and object status EXCLUDE.
+
+
+        :param is_omit_excluded_table_from_replication: The is_omit_excluded_table_from_replication of this MigrationObjectSummary.
+        :type: bool
+        """
+        self._is_omit_excluded_table_from_replication = is_omit_excluded_table_from_replication
 
     def __repr__(self):
         return formatted_flat_dict(self)

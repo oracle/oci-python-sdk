@@ -15,6 +15,14 @@ class VcnDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
     Specifies details within the VCN.
     """
 
+    #: A constant which can be used with the vcn_route_type property of a VcnDrgAttachmentNetworkDetails.
+    #: This constant has a value of "VCN_CIDRS"
+    VCN_ROUTE_TYPE_VCN_CIDRS = "VCN_CIDRS"
+
+    #: A constant which can be used with the vcn_route_type property of a VcnDrgAttachmentNetworkDetails.
+    #: This constant has a value of "SUBNET_CIDRS"
+    VCN_ROUTE_TYPE_SUBNET_CIDRS = "SUBNET_CIDRS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new VcnDrgAttachmentNetworkDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.vn_monitoring.models.VcnDrgAttachmentNetworkDetails.type` attribute
@@ -34,22 +42,30 @@ class VcnDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
             The value to assign to the route_table_id property of this VcnDrgAttachmentNetworkDetails.
         :type route_table_id: str
 
+        :param vcn_route_type:
+            The value to assign to the vcn_route_type property of this VcnDrgAttachmentNetworkDetails.
+            Allowed values for this property are: "VCN_CIDRS", "SUBNET_CIDRS"
+        :type vcn_route_type: str
+
         """
         self.swagger_types = {
             'type': 'str',
             'id': 'str',
-            'route_table_id': 'str'
+            'route_table_id': 'str',
+            'vcn_route_type': 'str'
         }
 
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
-            'route_table_id': 'routeTableId'
+            'route_table_id': 'routeTableId',
+            'vcn_route_type': 'vcnRouteType'
         }
 
         self._type = None
         self._id = None
         self._route_table_id = None
+        self._vcn_route_type = None
         self._type = 'VCN'
 
     @property
@@ -93,6 +109,40 @@ class VcnDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
         :type: str
         """
         self._route_table_id = route_table_id
+
+    @property
+    def vcn_route_type(self):
+        """
+        Gets the vcn_route_type of this VcnDrgAttachmentNetworkDetails.
+        Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+        Routes from the VCN ingress route table are always imported.
+
+        Allowed values for this property are: "VCN_CIDRS", "SUBNET_CIDRS"
+
+
+        :return: The vcn_route_type of this VcnDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._vcn_route_type
+
+    @vcn_route_type.setter
+    def vcn_route_type(self, vcn_route_type):
+        """
+        Sets the vcn_route_type of this VcnDrgAttachmentNetworkDetails.
+        Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+        Routes from the VCN ingress route table are always imported.
+
+
+        :param vcn_route_type: The vcn_route_type of this VcnDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        allowed_values = ["VCN_CIDRS", "SUBNET_CIDRS"]
+        if not value_allowed_none_or_none_sentinel(vcn_route_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `vcn_route_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._vcn_route_type = vcn_route_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

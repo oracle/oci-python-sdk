@@ -40,13 +40,18 @@ class CreateCpeDetails(object):
             The value to assign to the ip_address property of this CreateCpeDetails.
         :type ip_address: str
 
+        :param cpe_device_shape_id:
+            The value to assign to the cpe_device_shape_id property of this CreateCpeDetails.
+        :type cpe_device_shape_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'ip_address': 'str'
+            'ip_address': 'str',
+            'cpe_device_shape_id': 'str'
         }
 
         self.attribute_map = {
@@ -54,7 +59,8 @@ class CreateCpeDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'ip_address': 'ipAddress'
+            'ip_address': 'ipAddress',
+            'cpe_device_shape_id': 'cpeDeviceShapeId'
         }
 
         self._compartment_id = None
@@ -62,6 +68,7 @@ class CreateCpeDetails(object):
         self._display_name = None
         self._freeform_tags = None
         self._ip_address = None
+        self._cpe_device_shape_id = None
 
     @property
     def compartment_id(self):
@@ -196,6 +203,56 @@ class CreateCpeDetails(object):
         :type: str
         """
         self._ip_address = ip_address
+
+    @property
+    def cpe_device_shape_id(self):
+        """
+        Gets the cpe_device_shape_id of this CreateCpeDetails.
+        The `OCID`__ of the CPE device type. You can provide
+        a value if you want to later generate CPE device configuration content for IPSec connections
+        that use this CPE. You can also call :func:`update_cpe` later to
+        provide a value. For a list of possible values, see
+        :func:`list_cpe_device_shapes`.
+
+        For more information about generating CPE device configuration content, see:
+
+          * :func:`get_cpe_device_config_content`
+          * :func:`get_ipsec_cpe_device_config_content`
+          * :func:`get_tunnel_cpe_device_config_content`
+          * :func:`get_tunnel_cpe_device_config`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The cpe_device_shape_id of this CreateCpeDetails.
+        :rtype: str
+        """
+        return self._cpe_device_shape_id
+
+    @cpe_device_shape_id.setter
+    def cpe_device_shape_id(self, cpe_device_shape_id):
+        """
+        Sets the cpe_device_shape_id of this CreateCpeDetails.
+        The `OCID`__ of the CPE device type. You can provide
+        a value if you want to later generate CPE device configuration content for IPSec connections
+        that use this CPE. You can also call :func:`update_cpe` later to
+        provide a value. For a list of possible values, see
+        :func:`list_cpe_device_shapes`.
+
+        For more information about generating CPE device configuration content, see:
+
+          * :func:`get_cpe_device_config_content`
+          * :func:`get_ipsec_cpe_device_config_content`
+          * :func:`get_tunnel_cpe_device_config_content`
+          * :func:`get_tunnel_cpe_device_config`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param cpe_device_shape_id: The cpe_device_shape_id of this CreateCpeDetails.
+        :type: str
+        """
+        self._cpe_device_shape_id = cpe_device_shape_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

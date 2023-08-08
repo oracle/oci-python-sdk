@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MyGroup(object):
     """
-    Group resource.
+    The Group resource.
     """
 
     #: A constant which can be used with the idcs_prevented_operations property of a MyGroup.
@@ -727,7 +727,7 @@ class MyGroup(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this MyGroup.
-        Group display name
+        The Group display name.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -751,7 +751,7 @@ class MyGroup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this MyGroup.
-        Group display name
+        The Group display name.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -775,7 +775,7 @@ class MyGroup(object):
     def non_unique_display_name(self):
         """
         Gets the non_unique_display_name of this MyGroup.
-        A human readable name for Group as defined by the Service Consumer
+        A human readable name for the group as defined by the Service Consumer.
 
         **Added In:** 2011192329
 
@@ -799,7 +799,7 @@ class MyGroup(object):
     def non_unique_display_name(self, non_unique_display_name):
         """
         Sets the non_unique_display_name of this MyGroup.
-        A human readable name for Group as defined by the Service Consumer
+        A human readable name for the group as defined by the Service Consumer.
 
         **Added In:** 2011192329
 
@@ -823,7 +823,7 @@ class MyGroup(object):
     def members(self):
         """
         Gets the members of this MyGroup.
-        Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+        The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -848,7 +848,7 @@ class MyGroup(object):
     def members(self, members):
         """
         Sets the members of this MyGroup.
-        Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+        The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
 
         **SCIM++ Properties:**
          - caseExact: false

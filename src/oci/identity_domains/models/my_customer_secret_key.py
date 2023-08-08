@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MyCustomerSecretKey(object):
     """
-    User's customer secret key
+    The user's customer secret key.
     """
 
     #: A constant which can be used with the idcs_prevented_operations property of a MyCustomerSecretKey.
@@ -769,7 +769,7 @@ class MyCustomerSecretKey(object):
     def status(self):
         """
         Gets the status of this MyCustomerSecretKey.
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -796,7 +796,7 @@ class MyCustomerSecretKey(object):
     def status(self, status):
         """
         Sets the status of this MyCustomerSecretKey.
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -823,7 +823,7 @@ class MyCustomerSecretKey(object):
     def expires_on(self):
         """
         Gets the expires_on of this MyCustomerSecretKey.
-        User credential expires on
+        When the user's credential expire.
 
         **Added In:** 2109090424
 
@@ -847,7 +847,7 @@ class MyCustomerSecretKey(object):
     def expires_on(self, expires_on):
         """
         Sets the expires_on of this MyCustomerSecretKey.
-        User credential expires on
+        When the user's credential expire.
 
         **Added In:** 2109090424
 
@@ -871,7 +871,7 @@ class MyCustomerSecretKey(object):
     def access_key(self):
         """
         Gets the access_key of this MyCustomerSecretKey.
-        Access key
+        The access key.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -890,7 +890,7 @@ class MyCustomerSecretKey(object):
     def access_key(self, access_key):
         """
         Sets the access_key of this MyCustomerSecretKey.
-        Access key
+        The access key.
 
         **SCIM++ Properties:**
          - caseExact: true

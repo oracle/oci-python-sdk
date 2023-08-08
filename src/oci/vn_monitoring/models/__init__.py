@@ -12,20 +12,66 @@ from .add_drg_route_distribution_statements_details import AddDrgRouteDistributi
 from .add_drg_route_rule_details import AddDrgRouteRuleDetails
 from .add_drg_route_rules_details import AddDrgRouteRulesDetails
 from .add_network_security_group_security_rules_details import AddNetworkSecurityGroupSecurityRulesDetails
+from .add_public_ip_pool_capacity_details import AddPublicIpPoolCapacityDetails
 from .add_security_rule_details import AddSecurityRuleDetails
+from .add_subnet_ipv6_cidr_details import AddSubnetIpv6CidrDetails
+from .add_vcn_cidr_details import AddVcnCidrDetails
+from .add_vcn_ipv6_cidr_details import AddVcnIpv6CidrDetails
 from .added_network_security_group_security_rules import AddedNetworkSecurityGroupSecurityRules
 from .adhoc_get_path_analysis_details import AdhocGetPathAnalysisDetails
+from .allowed_ike_ip_sec_parameters import AllowedIkeIPSecParameters
+from .allowed_phase_one_parameters import AllowedPhaseOneParameters
+from .allowed_phase_two_parameters import AllowedPhaseTwoParameters
 from .allowed_security_action import AllowedSecurityAction
 from .allowed_security_action_details import AllowedSecurityActionDetails
 from .allowed_security_configuration import AllowedSecurityConfiguration
+from .bgp_session_info import BgpSessionInfo
 from .bulk_add_virtual_circuit_public_prefixes_details import BulkAddVirtualCircuitPublicPrefixesDetails
 from .bulk_delete_virtual_circuit_public_prefixes_details import BulkDeleteVirtualCircuitPublicPrefixesDetails
+from .byoip_allocated_range_collection import ByoipAllocatedRangeCollection
+from .byoip_allocated_range_summary import ByoipAllocatedRangeSummary
+from .byoip_range import ByoipRange
+from .byoip_range_collection import ByoipRangeCollection
+from .byoip_range_summary import ByoipRangeSummary
+from .byoip_range_vcn_ipv6_allocation_summary import ByoipRangeVcnIpv6AllocationSummary
+from .byoipv6_cidr_details import Byoipv6CidrDetails
+from .capture_filter import CaptureFilter
+from .change_byoip_range_compartment_details import ChangeByoipRangeCompartmentDetails
+from .change_capture_filter_compartment_details import ChangeCaptureFilterCompartmentDetails
+from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
+from .change_cross_connect_compartment_details import ChangeCrossConnectCompartmentDetails
+from .change_cross_connect_group_compartment_details import ChangeCrossConnectGroupCompartmentDetails
+from .change_dhcp_options_compartment_details import ChangeDhcpOptionsCompartmentDetails
+from .change_drg_compartment_details import ChangeDrgCompartmentDetails
+from .change_ip_sec_connection_compartment_details import ChangeIPSecConnectionCompartmentDetails
+from .change_internet_gateway_compartment_details import ChangeInternetGatewayCompartmentDetails
+from .change_local_peering_gateway_compartment_details import ChangeLocalPeeringGatewayCompartmentDetails
+from .change_nat_gateway_compartment_details import ChangeNatGatewayCompartmentDetails
+from .change_network_security_group_compartment_details import ChangeNetworkSecurityGroupCompartmentDetails
 from .change_path_analyzer_test_compartment_details import ChangePathAnalyzerTestCompartmentDetails
+from .change_public_ip_compartment_details import ChangePublicIpCompartmentDetails
+from .change_public_ip_pool_compartment_details import ChangePublicIpPoolCompartmentDetails
+from .change_remote_peering_connection_compartment_details import ChangeRemotePeeringConnectionCompartmentDetails
+from .change_route_table_compartment_details import ChangeRouteTableCompartmentDetails
+from .change_security_list_compartment_details import ChangeSecurityListCompartmentDetails
+from .change_service_gateway_compartment_details import ChangeServiceGatewayCompartmentDetails
+from .change_subnet_compartment_details import ChangeSubnetCompartmentDetails
+from .change_vcn_compartment_details import ChangeVcnCompartmentDetails
+from .change_virtual_circuit_compartment_details import ChangeVirtualCircuitCompartmentDetails
+from .change_vlan_compartment_details import ChangeVlanCompartmentDetails
+from .change_vtap_compartment_details import ChangeVtapCompartmentDetails
 from .compartment_internal import CompartmentInternal
 from .compute_instance_endpoint import ComputeInstanceEndpoint
 from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .connect_remote_peering_connections_details import ConnectRemotePeeringConnectionsDetails
 from .cpe import Cpe
+from .cpe_device_config_answer import CpeDeviceConfigAnswer
+from .cpe_device_config_question import CpeDeviceConfigQuestion
+from .cpe_device_info import CpeDeviceInfo
+from .cpe_device_shape_detail import CpeDeviceShapeDetail
+from .cpe_device_shape_summary import CpeDeviceShapeSummary
+from .create_byoip_range_details import CreateByoipRangeDetails
+from .create_capture_filter_details import CreateCaptureFilterDetails
 from .create_cpe_details import CreateCpeDetails
 from .create_cross_connect_details import CreateCrossConnectDetails
 from .create_cross_connect_group_details import CreateCrossConnectGroupDetails
@@ -35,13 +81,20 @@ from .create_drg_details import CreateDrgDetails
 from .create_drg_route_distribution_details import CreateDrgRouteDistributionDetails
 from .create_drg_route_table_details import CreateDrgRouteTableDetails
 from .create_ip_sec_connection_details import CreateIPSecConnectionDetails
+from .create_ip_sec_connection_tunnel_details import CreateIPSecConnectionTunnelDetails
+from .create_ip_sec_tunnel_bgp_session_details import CreateIPSecTunnelBgpSessionDetails
+from .create_ip_sec_tunnel_encryption_domain_details import CreateIPSecTunnelEncryptionDomainDetails
 from .create_internet_gateway_details import CreateInternetGatewayDetails
 from .create_ipv6_details import CreateIpv6Details
 from .create_local_peering_gateway_details import CreateLocalPeeringGatewayDetails
+from .create_macsec_key import CreateMacsecKey
+from .create_macsec_properties import CreateMacsecProperties
+from .create_nat_gateway_details import CreateNatGatewayDetails
 from .create_network_security_group_details import CreateNetworkSecurityGroupDetails
 from .create_path_analyzer_test_details import CreatePathAnalyzerTestDetails
 from .create_private_ip_details import CreatePrivateIpDetails
 from .create_public_ip_details import CreatePublicIpDetails
+from .create_public_ip_pool_details import CreatePublicIpPoolDetails
 from .create_remote_peering_connection_details import CreateRemotePeeringConnectionDetails
 from .create_route_table_details import CreateRouteTableDetails
 from .create_security_list_details import CreateSecurityListDetails
@@ -50,14 +103,20 @@ from .create_subnet_details import CreateSubnetDetails
 from .create_vcn_details import CreateVcnDetails
 from .create_virtual_circuit_details import CreateVirtualCircuitDetails
 from .create_virtual_circuit_public_prefix_details import CreateVirtualCircuitPublicPrefixDetails
+from .create_vlan_details import CreateVlanDetails
 from .create_vnic_details import CreateVnicDetails
+from .create_vtap_details import CreateVtapDetails
 from .cross_connect import CrossConnect
 from .cross_connect_group import CrossConnectGroup
 from .cross_connect_location import CrossConnectLocation
 from .cross_connect_mapping import CrossConnectMapping
+from .cross_connect_mapping_details import CrossConnectMappingDetails
+from .cross_connect_mapping_details_collection import CrossConnectMappingDetailsCollection
 from .cross_connect_port_speed_shape import CrossConnectPortSpeedShape
 from .cross_connect_status import CrossConnectStatus
 from .default_drg_route_tables import DefaultDrgRouteTables
+from .default_phase_one_parameters import DefaultPhaseOneParameters
+from .default_phase_two_parameters import DefaultPhaseTwoParameters
 from .delete_virtual_circuit_public_prefix_details import DeleteVirtualCircuitPublicPrefixDetails
 from .denied_security_action import DeniedSecurityAction
 from .denied_security_action_details import DeniedSecurityActionDetails
@@ -65,14 +124,17 @@ from .dhcp_dns_option import DhcpDnsOption
 from .dhcp_option import DhcpOption
 from .dhcp_options import DhcpOptions
 from .dhcp_search_domain_option import DhcpSearchDomainOption
+from .dpd_config import DpdConfig
 from .drg import Drg
 from .drg_attachment import DrgAttachment
 from .drg_attachment_id_drg_route_distribution_match_criteria import DrgAttachmentIdDrgRouteDistributionMatchCriteria
 from .drg_attachment_info import DrgAttachmentInfo
+from .drg_attachment_match_all_drg_route_distribution_match_criteria import DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria
 from .drg_attachment_network_create_details import DrgAttachmentNetworkCreateDetails
 from .drg_attachment_network_details import DrgAttachmentNetworkDetails
 from .drg_attachment_network_update_details import DrgAttachmentNetworkUpdateDetails
 from .drg_attachment_type_drg_route_distribution_match_criteria import DrgAttachmentTypeDrgRouteDistributionMatchCriteria
+from .drg_redundancy_status import DrgRedundancyStatus
 from .drg_route_distribution import DrgRouteDistribution
 from .drg_route_distribution_match_criteria import DrgRouteDistributionMatchCriteria
 from .drg_route_distribution_statement import DrgRouteDistributionStatement
@@ -82,8 +144,10 @@ from .drg_routing_configuration import DrgRoutingConfiguration
 from .egress_security_list_configuration import EgressSecurityListConfiguration
 from .egress_security_rule import EgressSecurityRule
 from .egress_traffic_spec import EgressTrafficSpec
+from .encryption_domain_config import EncryptionDomainConfig
 from .endpoint import Endpoint
 from .fast_connect_provider_service import FastConnectProviderService
+from .fast_connect_provider_service_key import FastConnectProviderServiceKey
 from .forwarded_routing_action import ForwardedRoutingAction
 from .forwarded_routing_action_details import ForwardedRoutingActionDetails
 from .forwarded_routing_configuration import ForwardedRoutingConfiguration
@@ -93,6 +157,9 @@ from .get_public_ip_by_private_ip_id_details import GetPublicIpByPrivateIpIdDeta
 from .ip_sec_connection import IPSecConnection
 from .ip_sec_connection_device_config import IPSecConnectionDeviceConfig
 from .ip_sec_connection_device_status import IPSecConnectionDeviceStatus
+from .ip_sec_connection_tunnel import IPSecConnectionTunnel
+from .ip_sec_connection_tunnel_error_details import IPSecConnectionTunnelErrorDetails
+from .ip_sec_connection_tunnel_shared_secret import IPSecConnectionTunnelSharedSecret
 from .icmp_options import IcmpOptions
 from .icmp_protocol_parameters import IcmpProtocolParameters
 from .icmp_traffic_protocol_parameters import IcmpTrafficProtocolParameters
@@ -107,6 +174,10 @@ from .letter_of_authority import LetterOfAuthority
 from .load_balancer_endpoint import LoadBalancerEndpoint
 from .load_balancer_listener_endpoint import LoadBalancerListenerEndpoint
 from .local_peering_gateway import LocalPeeringGateway
+from .macsec_key import MacsecKey
+from .macsec_properties import MacsecProperties
+from .modify_vcn_cidr_details import ModifyVcnCidrDetails
+from .nat_gateway import NatGateway
 from .network_load_balancer_endpoint import NetworkLoadBalancerEndpoint
 from .network_load_balancer_listener_endpoint import NetworkLoadBalancerListenerEndpoint
 from .network_security_group import NetworkSecurityGroup
@@ -122,16 +193,25 @@ from .path_analyzer_test_collection import PathAnalyzerTestCollection
 from .path_analyzer_test_summary import PathAnalyzerTestSummary
 from .path_topology import PathTopology
 from .persisted_get_path_analysis_details import PersistedGetPathAnalysisDetails
+from .phase_one_config_details import PhaseOneConfigDetails
+from .phase_two_config_details import PhaseTwoConfigDetails
 from .port_range import PortRange
 from .private_ip import PrivateIp
 from .protocol_parameters import ProtocolParameters
 from .public_ip import PublicIp
+from .public_ip_pool import PublicIpPool
+from .public_ip_pool_collection import PublicIpPoolCollection
+from .public_ip_pool_summary import PublicIpPoolSummary
 from .query_options import QueryOptions
 from .remote_peering_connection import RemotePeeringConnection
 from .remote_peering_connection_drg_attachment_network_details import RemotePeeringConnectionDrgAttachmentNetworkDetails
 from .remove_drg_route_distribution_statements_details import RemoveDrgRouteDistributionStatementsDetails
 from .remove_drg_route_rules_details import RemoveDrgRouteRulesDetails
 from .remove_network_security_group_security_rules_details import RemoveNetworkSecurityGroupSecurityRulesDetails
+from .remove_public_ip_pool_capacity_details import RemovePublicIpPoolCapacityDetails
+from .remove_subnet_ipv6_cidr_details import RemoveSubnetIpv6CidrDetails
+from .remove_vcn_cidr_details import RemoveVcnCidrDetails
+from .remove_vcn_ipv6_cidr_details import RemoveVcnIpv6CidrDetails
 from .route_rule import RouteRule
 from .route_table import RouteTable
 from .routing_action import RoutingAction
@@ -162,10 +242,17 @@ from .traffic_node import TrafficNode
 from .traffic_protocol_parameters import TrafficProtocolParameters
 from .traffic_route import TrafficRoute
 from .tunnel_config import TunnelConfig
+from .tunnel_cpe_device_config import TunnelCpeDeviceConfig
+from .tunnel_phase_one_details import TunnelPhaseOneDetails
+from .tunnel_phase_two_details import TunnelPhaseTwoDetails
+from .tunnel_route_summary import TunnelRouteSummary
+from .tunnel_security_association_summary import TunnelSecurityAssociationSummary
 from .tunnel_status import TunnelStatus
 from .udp_options import UdpOptions
 from .udp_protocol_parameters import UdpProtocolParameters
 from .udp_traffic_protocol_parameters import UdpTrafficProtocolParameters
+from .update_byoip_range_details import UpdateByoipRangeDetails
+from .update_capture_filter_details import UpdateCaptureFilterDetails
 from .update_cpe_details import UpdateCpeDetails
 from .update_cross_connect_details import UpdateCrossConnectDetails
 from .update_cross_connect_group_details import UpdateCrossConnectGroupDetails
@@ -179,26 +266,38 @@ from .update_drg_route_rule_details import UpdateDrgRouteRuleDetails
 from .update_drg_route_rules_details import UpdateDrgRouteRulesDetails
 from .update_drg_route_table_details import UpdateDrgRouteTableDetails
 from .update_ip_sec_connection_details import UpdateIPSecConnectionDetails
+from .update_ip_sec_connection_tunnel_details import UpdateIPSecConnectionTunnelDetails
+from .update_ip_sec_connection_tunnel_shared_secret_details import UpdateIPSecConnectionTunnelSharedSecretDetails
+from .update_ip_sec_tunnel_bgp_session_details import UpdateIPSecTunnelBgpSessionDetails
+from .update_ip_sec_tunnel_encryption_domain_details import UpdateIPSecTunnelEncryptionDomainDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
 from .update_ipv6_details import UpdateIpv6Details
 from .update_local_peering_gateway_details import UpdateLocalPeeringGatewayDetails
+from .update_macsec_key import UpdateMacsecKey
+from .update_macsec_properties import UpdateMacsecProperties
+from .update_nat_gateway_details import UpdateNatGatewayDetails
 from .update_network_security_group_details import UpdateNetworkSecurityGroupDetails
 from .update_network_security_group_security_rules_details import UpdateNetworkSecurityGroupSecurityRulesDetails
 from .update_path_analyzer_test_details import UpdatePathAnalyzerTestDetails
 from .update_private_ip_details import UpdatePrivateIpDetails
 from .update_public_ip_details import UpdatePublicIpDetails
+from .update_public_ip_pool_details import UpdatePublicIpPoolDetails
 from .update_remote_peering_connection_details import UpdateRemotePeeringConnectionDetails
 from .update_route_table_details import UpdateRouteTableDetails
 from .update_security_list_details import UpdateSecurityListDetails
 from .update_security_rule_details import UpdateSecurityRuleDetails
 from .update_service_gateway_details import UpdateServiceGatewayDetails
 from .update_subnet_details import UpdateSubnetDetails
+from .update_tunnel_cpe_device_config_details import UpdateTunnelCpeDeviceConfigDetails
 from .update_vcn_details import UpdateVcnDetails
 from .update_virtual_circuit_details import UpdateVirtualCircuitDetails
+from .update_vlan_details import UpdateVlanDetails
 from .update_vnic_details import UpdateVnicDetails
+from .update_vtap_details import UpdateVtapDetails
 from .updated_network_security_group_security_rules import UpdatedNetworkSecurityGroupSecurityRules
 from .upgrade_status import UpgradeStatus
 from .vcn import Vcn
+from .vcn_dns_resolver_association import VcnDnsResolverAssociation
 from .vcn_drg_attachment_network_create_details import VcnDrgAttachmentNetworkCreateDetails
 from .vcn_drg_attachment_network_details import VcnDrgAttachmentNetworkDetails
 from .vcn_drg_attachment_network_update_details import VcnDrgAttachmentNetworkUpdateDetails
@@ -209,9 +308,12 @@ from .virtual_circuit_bandwidth_shape import VirtualCircuitBandwidthShape
 from .virtual_circuit_drg_attachment_network_details import VirtualCircuitDrgAttachmentNetworkDetails
 from .virtual_circuit_public_prefix import VirtualCircuitPublicPrefix
 from .visible_traffic_node import VisibleTrafficNode
+from .vlan import Vlan
 from .vlan_endpoint import VlanEndpoint
 from .vnic import Vnic
 from .vnic_endpoint import VnicEndpoint
+from .vtap import Vtap
+from .vtap_capture_filter_rule_details import VtapCaptureFilterRuleDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -231,20 +333,66 @@ vn_monitoring_type_mapping = {
     "AddDrgRouteRuleDetails": AddDrgRouteRuleDetails,
     "AddDrgRouteRulesDetails": AddDrgRouteRulesDetails,
     "AddNetworkSecurityGroupSecurityRulesDetails": AddNetworkSecurityGroupSecurityRulesDetails,
+    "AddPublicIpPoolCapacityDetails": AddPublicIpPoolCapacityDetails,
     "AddSecurityRuleDetails": AddSecurityRuleDetails,
+    "AddSubnetIpv6CidrDetails": AddSubnetIpv6CidrDetails,
+    "AddVcnCidrDetails": AddVcnCidrDetails,
+    "AddVcnIpv6CidrDetails": AddVcnIpv6CidrDetails,
     "AddedNetworkSecurityGroupSecurityRules": AddedNetworkSecurityGroupSecurityRules,
     "AdhocGetPathAnalysisDetails": AdhocGetPathAnalysisDetails,
+    "AllowedIkeIPSecParameters": AllowedIkeIPSecParameters,
+    "AllowedPhaseOneParameters": AllowedPhaseOneParameters,
+    "AllowedPhaseTwoParameters": AllowedPhaseTwoParameters,
     "AllowedSecurityAction": AllowedSecurityAction,
     "AllowedSecurityActionDetails": AllowedSecurityActionDetails,
     "AllowedSecurityConfiguration": AllowedSecurityConfiguration,
+    "BgpSessionInfo": BgpSessionInfo,
     "BulkAddVirtualCircuitPublicPrefixesDetails": BulkAddVirtualCircuitPublicPrefixesDetails,
     "BulkDeleteVirtualCircuitPublicPrefixesDetails": BulkDeleteVirtualCircuitPublicPrefixesDetails,
+    "ByoipAllocatedRangeCollection": ByoipAllocatedRangeCollection,
+    "ByoipAllocatedRangeSummary": ByoipAllocatedRangeSummary,
+    "ByoipRange": ByoipRange,
+    "ByoipRangeCollection": ByoipRangeCollection,
+    "ByoipRangeSummary": ByoipRangeSummary,
+    "ByoipRangeVcnIpv6AllocationSummary": ByoipRangeVcnIpv6AllocationSummary,
+    "Byoipv6CidrDetails": Byoipv6CidrDetails,
+    "CaptureFilter": CaptureFilter,
+    "ChangeByoipRangeCompartmentDetails": ChangeByoipRangeCompartmentDetails,
+    "ChangeCaptureFilterCompartmentDetails": ChangeCaptureFilterCompartmentDetails,
+    "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
+    "ChangeCrossConnectCompartmentDetails": ChangeCrossConnectCompartmentDetails,
+    "ChangeCrossConnectGroupCompartmentDetails": ChangeCrossConnectGroupCompartmentDetails,
+    "ChangeDhcpOptionsCompartmentDetails": ChangeDhcpOptionsCompartmentDetails,
+    "ChangeDrgCompartmentDetails": ChangeDrgCompartmentDetails,
+    "ChangeIPSecConnectionCompartmentDetails": ChangeIPSecConnectionCompartmentDetails,
+    "ChangeInternetGatewayCompartmentDetails": ChangeInternetGatewayCompartmentDetails,
+    "ChangeLocalPeeringGatewayCompartmentDetails": ChangeLocalPeeringGatewayCompartmentDetails,
+    "ChangeNatGatewayCompartmentDetails": ChangeNatGatewayCompartmentDetails,
+    "ChangeNetworkSecurityGroupCompartmentDetails": ChangeNetworkSecurityGroupCompartmentDetails,
     "ChangePathAnalyzerTestCompartmentDetails": ChangePathAnalyzerTestCompartmentDetails,
+    "ChangePublicIpCompartmentDetails": ChangePublicIpCompartmentDetails,
+    "ChangePublicIpPoolCompartmentDetails": ChangePublicIpPoolCompartmentDetails,
+    "ChangeRemotePeeringConnectionCompartmentDetails": ChangeRemotePeeringConnectionCompartmentDetails,
+    "ChangeRouteTableCompartmentDetails": ChangeRouteTableCompartmentDetails,
+    "ChangeSecurityListCompartmentDetails": ChangeSecurityListCompartmentDetails,
+    "ChangeServiceGatewayCompartmentDetails": ChangeServiceGatewayCompartmentDetails,
+    "ChangeSubnetCompartmentDetails": ChangeSubnetCompartmentDetails,
+    "ChangeVcnCompartmentDetails": ChangeVcnCompartmentDetails,
+    "ChangeVirtualCircuitCompartmentDetails": ChangeVirtualCircuitCompartmentDetails,
+    "ChangeVlanCompartmentDetails": ChangeVlanCompartmentDetails,
+    "ChangeVtapCompartmentDetails": ChangeVtapCompartmentDetails,
     "CompartmentInternal": CompartmentInternal,
     "ComputeInstanceEndpoint": ComputeInstanceEndpoint,
     "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConnectRemotePeeringConnectionsDetails": ConnectRemotePeeringConnectionsDetails,
     "Cpe": Cpe,
+    "CpeDeviceConfigAnswer": CpeDeviceConfigAnswer,
+    "CpeDeviceConfigQuestion": CpeDeviceConfigQuestion,
+    "CpeDeviceInfo": CpeDeviceInfo,
+    "CpeDeviceShapeDetail": CpeDeviceShapeDetail,
+    "CpeDeviceShapeSummary": CpeDeviceShapeSummary,
+    "CreateByoipRangeDetails": CreateByoipRangeDetails,
+    "CreateCaptureFilterDetails": CreateCaptureFilterDetails,
     "CreateCpeDetails": CreateCpeDetails,
     "CreateCrossConnectDetails": CreateCrossConnectDetails,
     "CreateCrossConnectGroupDetails": CreateCrossConnectGroupDetails,
@@ -254,13 +402,20 @@ vn_monitoring_type_mapping = {
     "CreateDrgRouteDistributionDetails": CreateDrgRouteDistributionDetails,
     "CreateDrgRouteTableDetails": CreateDrgRouteTableDetails,
     "CreateIPSecConnectionDetails": CreateIPSecConnectionDetails,
+    "CreateIPSecConnectionTunnelDetails": CreateIPSecConnectionTunnelDetails,
+    "CreateIPSecTunnelBgpSessionDetails": CreateIPSecTunnelBgpSessionDetails,
+    "CreateIPSecTunnelEncryptionDomainDetails": CreateIPSecTunnelEncryptionDomainDetails,
     "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
     "CreateIpv6Details": CreateIpv6Details,
     "CreateLocalPeeringGatewayDetails": CreateLocalPeeringGatewayDetails,
+    "CreateMacsecKey": CreateMacsecKey,
+    "CreateMacsecProperties": CreateMacsecProperties,
+    "CreateNatGatewayDetails": CreateNatGatewayDetails,
     "CreateNetworkSecurityGroupDetails": CreateNetworkSecurityGroupDetails,
     "CreatePathAnalyzerTestDetails": CreatePathAnalyzerTestDetails,
     "CreatePrivateIpDetails": CreatePrivateIpDetails,
     "CreatePublicIpDetails": CreatePublicIpDetails,
+    "CreatePublicIpPoolDetails": CreatePublicIpPoolDetails,
     "CreateRemotePeeringConnectionDetails": CreateRemotePeeringConnectionDetails,
     "CreateRouteTableDetails": CreateRouteTableDetails,
     "CreateSecurityListDetails": CreateSecurityListDetails,
@@ -269,14 +424,20 @@ vn_monitoring_type_mapping = {
     "CreateVcnDetails": CreateVcnDetails,
     "CreateVirtualCircuitDetails": CreateVirtualCircuitDetails,
     "CreateVirtualCircuitPublicPrefixDetails": CreateVirtualCircuitPublicPrefixDetails,
+    "CreateVlanDetails": CreateVlanDetails,
     "CreateVnicDetails": CreateVnicDetails,
+    "CreateVtapDetails": CreateVtapDetails,
     "CrossConnect": CrossConnect,
     "CrossConnectGroup": CrossConnectGroup,
     "CrossConnectLocation": CrossConnectLocation,
     "CrossConnectMapping": CrossConnectMapping,
+    "CrossConnectMappingDetails": CrossConnectMappingDetails,
+    "CrossConnectMappingDetailsCollection": CrossConnectMappingDetailsCollection,
     "CrossConnectPortSpeedShape": CrossConnectPortSpeedShape,
     "CrossConnectStatus": CrossConnectStatus,
     "DefaultDrgRouteTables": DefaultDrgRouteTables,
+    "DefaultPhaseOneParameters": DefaultPhaseOneParameters,
+    "DefaultPhaseTwoParameters": DefaultPhaseTwoParameters,
     "DeleteVirtualCircuitPublicPrefixDetails": DeleteVirtualCircuitPublicPrefixDetails,
     "DeniedSecurityAction": DeniedSecurityAction,
     "DeniedSecurityActionDetails": DeniedSecurityActionDetails,
@@ -284,14 +445,17 @@ vn_monitoring_type_mapping = {
     "DhcpOption": DhcpOption,
     "DhcpOptions": DhcpOptions,
     "DhcpSearchDomainOption": DhcpSearchDomainOption,
+    "DpdConfig": DpdConfig,
     "Drg": Drg,
     "DrgAttachment": DrgAttachment,
     "DrgAttachmentIdDrgRouteDistributionMatchCriteria": DrgAttachmentIdDrgRouteDistributionMatchCriteria,
     "DrgAttachmentInfo": DrgAttachmentInfo,
+    "DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria": DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria,
     "DrgAttachmentNetworkCreateDetails": DrgAttachmentNetworkCreateDetails,
     "DrgAttachmentNetworkDetails": DrgAttachmentNetworkDetails,
     "DrgAttachmentNetworkUpdateDetails": DrgAttachmentNetworkUpdateDetails,
     "DrgAttachmentTypeDrgRouteDistributionMatchCriteria": DrgAttachmentTypeDrgRouteDistributionMatchCriteria,
+    "DrgRedundancyStatus": DrgRedundancyStatus,
     "DrgRouteDistribution": DrgRouteDistribution,
     "DrgRouteDistributionMatchCriteria": DrgRouteDistributionMatchCriteria,
     "DrgRouteDistributionStatement": DrgRouteDistributionStatement,
@@ -301,8 +465,10 @@ vn_monitoring_type_mapping = {
     "EgressSecurityListConfiguration": EgressSecurityListConfiguration,
     "EgressSecurityRule": EgressSecurityRule,
     "EgressTrafficSpec": EgressTrafficSpec,
+    "EncryptionDomainConfig": EncryptionDomainConfig,
     "Endpoint": Endpoint,
     "FastConnectProviderService": FastConnectProviderService,
+    "FastConnectProviderServiceKey": FastConnectProviderServiceKey,
     "ForwardedRoutingAction": ForwardedRoutingAction,
     "ForwardedRoutingActionDetails": ForwardedRoutingActionDetails,
     "ForwardedRoutingConfiguration": ForwardedRoutingConfiguration,
@@ -312,6 +478,9 @@ vn_monitoring_type_mapping = {
     "IPSecConnection": IPSecConnection,
     "IPSecConnectionDeviceConfig": IPSecConnectionDeviceConfig,
     "IPSecConnectionDeviceStatus": IPSecConnectionDeviceStatus,
+    "IPSecConnectionTunnel": IPSecConnectionTunnel,
+    "IPSecConnectionTunnelErrorDetails": IPSecConnectionTunnelErrorDetails,
+    "IPSecConnectionTunnelSharedSecret": IPSecConnectionTunnelSharedSecret,
     "IcmpOptions": IcmpOptions,
     "IcmpProtocolParameters": IcmpProtocolParameters,
     "IcmpTrafficProtocolParameters": IcmpTrafficProtocolParameters,
@@ -326,6 +495,10 @@ vn_monitoring_type_mapping = {
     "LoadBalancerEndpoint": LoadBalancerEndpoint,
     "LoadBalancerListenerEndpoint": LoadBalancerListenerEndpoint,
     "LocalPeeringGateway": LocalPeeringGateway,
+    "MacsecKey": MacsecKey,
+    "MacsecProperties": MacsecProperties,
+    "ModifyVcnCidrDetails": ModifyVcnCidrDetails,
+    "NatGateway": NatGateway,
     "NetworkLoadBalancerEndpoint": NetworkLoadBalancerEndpoint,
     "NetworkLoadBalancerListenerEndpoint": NetworkLoadBalancerListenerEndpoint,
     "NetworkSecurityGroup": NetworkSecurityGroup,
@@ -341,16 +514,25 @@ vn_monitoring_type_mapping = {
     "PathAnalyzerTestSummary": PathAnalyzerTestSummary,
     "PathTopology": PathTopology,
     "PersistedGetPathAnalysisDetails": PersistedGetPathAnalysisDetails,
+    "PhaseOneConfigDetails": PhaseOneConfigDetails,
+    "PhaseTwoConfigDetails": PhaseTwoConfigDetails,
     "PortRange": PortRange,
     "PrivateIp": PrivateIp,
     "ProtocolParameters": ProtocolParameters,
     "PublicIp": PublicIp,
+    "PublicIpPool": PublicIpPool,
+    "PublicIpPoolCollection": PublicIpPoolCollection,
+    "PublicIpPoolSummary": PublicIpPoolSummary,
     "QueryOptions": QueryOptions,
     "RemotePeeringConnection": RemotePeeringConnection,
     "RemotePeeringConnectionDrgAttachmentNetworkDetails": RemotePeeringConnectionDrgAttachmentNetworkDetails,
     "RemoveDrgRouteDistributionStatementsDetails": RemoveDrgRouteDistributionStatementsDetails,
     "RemoveDrgRouteRulesDetails": RemoveDrgRouteRulesDetails,
     "RemoveNetworkSecurityGroupSecurityRulesDetails": RemoveNetworkSecurityGroupSecurityRulesDetails,
+    "RemovePublicIpPoolCapacityDetails": RemovePublicIpPoolCapacityDetails,
+    "RemoveSubnetIpv6CidrDetails": RemoveSubnetIpv6CidrDetails,
+    "RemoveVcnCidrDetails": RemoveVcnCidrDetails,
+    "RemoveVcnIpv6CidrDetails": RemoveVcnIpv6CidrDetails,
     "RouteRule": RouteRule,
     "RouteTable": RouteTable,
     "RoutingAction": RoutingAction,
@@ -381,10 +563,17 @@ vn_monitoring_type_mapping = {
     "TrafficProtocolParameters": TrafficProtocolParameters,
     "TrafficRoute": TrafficRoute,
     "TunnelConfig": TunnelConfig,
+    "TunnelCpeDeviceConfig": TunnelCpeDeviceConfig,
+    "TunnelPhaseOneDetails": TunnelPhaseOneDetails,
+    "TunnelPhaseTwoDetails": TunnelPhaseTwoDetails,
+    "TunnelRouteSummary": TunnelRouteSummary,
+    "TunnelSecurityAssociationSummary": TunnelSecurityAssociationSummary,
     "TunnelStatus": TunnelStatus,
     "UdpOptions": UdpOptions,
     "UdpProtocolParameters": UdpProtocolParameters,
     "UdpTrafficProtocolParameters": UdpTrafficProtocolParameters,
+    "UpdateByoipRangeDetails": UpdateByoipRangeDetails,
+    "UpdateCaptureFilterDetails": UpdateCaptureFilterDetails,
     "UpdateCpeDetails": UpdateCpeDetails,
     "UpdateCrossConnectDetails": UpdateCrossConnectDetails,
     "UpdateCrossConnectGroupDetails": UpdateCrossConnectGroupDetails,
@@ -398,26 +587,38 @@ vn_monitoring_type_mapping = {
     "UpdateDrgRouteRulesDetails": UpdateDrgRouteRulesDetails,
     "UpdateDrgRouteTableDetails": UpdateDrgRouteTableDetails,
     "UpdateIPSecConnectionDetails": UpdateIPSecConnectionDetails,
+    "UpdateIPSecConnectionTunnelDetails": UpdateIPSecConnectionTunnelDetails,
+    "UpdateIPSecConnectionTunnelSharedSecretDetails": UpdateIPSecConnectionTunnelSharedSecretDetails,
+    "UpdateIPSecTunnelBgpSessionDetails": UpdateIPSecTunnelBgpSessionDetails,
+    "UpdateIPSecTunnelEncryptionDomainDetails": UpdateIPSecTunnelEncryptionDomainDetails,
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
     "UpdateIpv6Details": UpdateIpv6Details,
     "UpdateLocalPeeringGatewayDetails": UpdateLocalPeeringGatewayDetails,
+    "UpdateMacsecKey": UpdateMacsecKey,
+    "UpdateMacsecProperties": UpdateMacsecProperties,
+    "UpdateNatGatewayDetails": UpdateNatGatewayDetails,
     "UpdateNetworkSecurityGroupDetails": UpdateNetworkSecurityGroupDetails,
     "UpdateNetworkSecurityGroupSecurityRulesDetails": UpdateNetworkSecurityGroupSecurityRulesDetails,
     "UpdatePathAnalyzerTestDetails": UpdatePathAnalyzerTestDetails,
     "UpdatePrivateIpDetails": UpdatePrivateIpDetails,
     "UpdatePublicIpDetails": UpdatePublicIpDetails,
+    "UpdatePublicIpPoolDetails": UpdatePublicIpPoolDetails,
     "UpdateRemotePeeringConnectionDetails": UpdateRemotePeeringConnectionDetails,
     "UpdateRouteTableDetails": UpdateRouteTableDetails,
     "UpdateSecurityListDetails": UpdateSecurityListDetails,
     "UpdateSecurityRuleDetails": UpdateSecurityRuleDetails,
     "UpdateServiceGatewayDetails": UpdateServiceGatewayDetails,
     "UpdateSubnetDetails": UpdateSubnetDetails,
+    "UpdateTunnelCpeDeviceConfigDetails": UpdateTunnelCpeDeviceConfigDetails,
     "UpdateVcnDetails": UpdateVcnDetails,
     "UpdateVirtualCircuitDetails": UpdateVirtualCircuitDetails,
+    "UpdateVlanDetails": UpdateVlanDetails,
     "UpdateVnicDetails": UpdateVnicDetails,
+    "UpdateVtapDetails": UpdateVtapDetails,
     "UpdatedNetworkSecurityGroupSecurityRules": UpdatedNetworkSecurityGroupSecurityRules,
     "UpgradeStatus": UpgradeStatus,
     "Vcn": Vcn,
+    "VcnDnsResolverAssociation": VcnDnsResolverAssociation,
     "VcnDrgAttachmentNetworkCreateDetails": VcnDrgAttachmentNetworkCreateDetails,
     "VcnDrgAttachmentNetworkDetails": VcnDrgAttachmentNetworkDetails,
     "VcnDrgAttachmentNetworkUpdateDetails": VcnDrgAttachmentNetworkUpdateDetails,
@@ -428,9 +629,12 @@ vn_monitoring_type_mapping = {
     "VirtualCircuitDrgAttachmentNetworkDetails": VirtualCircuitDrgAttachmentNetworkDetails,
     "VirtualCircuitPublicPrefix": VirtualCircuitPublicPrefix,
     "VisibleTrafficNode": VisibleTrafficNode,
+    "Vlan": Vlan,
     "VlanEndpoint": VlanEndpoint,
     "Vnic": Vnic,
     "VnicEndpoint": VnicEndpoint,
+    "Vtap": Vtap,
+    "VtapCaptureFilterRuleDetails": VtapCaptureFilterRuleDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

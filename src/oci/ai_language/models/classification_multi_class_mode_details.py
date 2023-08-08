@@ -26,17 +26,48 @@ class ClassificationMultiClassModeDetails(ClassificationType):
             Allowed values for this property are: "MULTI_CLASS", "MULTI_LABEL"
         :type classification_mode: str
 
+        :param version:
+            The value to assign to the version property of this ClassificationMultiClassModeDetails.
+        :type version: str
+
         """
         self.swagger_types = {
-            'classification_mode': 'str'
+            'classification_mode': 'str',
+            'version': 'str'
         }
 
         self.attribute_map = {
-            'classification_mode': 'classificationMode'
+            'classification_mode': 'classificationMode',
+            'version': 'version'
         }
 
         self._classification_mode = None
+        self._version = None
         self._classification_mode = 'MULTI_CLASS'
+
+    @property
+    def version(self):
+        """
+        Gets the version of this ClassificationMultiClassModeDetails.
+        Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
+
+
+        :return: The version of this ClassificationMultiClassModeDetails.
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this ClassificationMultiClassModeDetails.
+        Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
+
+
+        :param version: The version of this ClassificationMultiClassModeDetails.
+        :type: str
+        """
+        self._version = version
 
     def __repr__(self):
         return formatted_flat_dict(self)

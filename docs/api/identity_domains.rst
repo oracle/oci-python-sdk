@@ -18,11 +18,86 @@ Identity Domains
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.identity_domains.models.AccountMgmtInfo
+    oci.identity_domains.models.AccountMgmtInfoApp
+    oci.identity_domains.models.AccountMgmtInfoMatchingOwners
+    oci.identity_domains.models.AccountMgmtInfoObjectClass
+    oci.identity_domains.models.AccountMgmtInfoOwner
+    oci.identity_domains.models.AccountMgmtInfoResourceType
+    oci.identity_domains.models.AccountMgmtInfoSearchRequest
+    oci.identity_domains.models.AccountMgmtInfoUserWalletArtifact
+    oci.identity_domains.models.AccountMgmtInfos
+    oci.identity_domains.models.AccountRecoverySetting
+    oci.identity_domains.models.AccountRecoverySettings
     oci.identity_domains.models.Addresses
     oci.identity_domains.models.ApiKey
     oci.identity_domains.models.ApiKeySearchRequest
     oci.identity_domains.models.ApiKeyUser
     oci.identity_domains.models.ApiKeys
+    oci.identity_domains.models.App
+    oci.identity_domains.models.AppAccounts
+    oci.identity_domains.models.AppAdminRoles
+    oci.identity_domains.models.AppAliasApps
+    oci.identity_domains.models.AppAllowAuthzPolicy
+    oci.identity_domains.models.AppAllowedScopes
+    oci.identity_domains.models.AppAllowedTags
+    oci.identity_domains.models.AppAppResources
+    oci.identity_domains.models.AppAppSignonPolicy
+    oci.identity_domains.models.AppAppsNetworkPerimeters
+    oci.identity_domains.models.AppAsOPCService
+    oci.identity_domains.models.AppAttrRenderingMetadata
+    oci.identity_domains.models.AppBasedOnTemplate
+    oci.identity_domains.models.AppBundleConfigurationProperties
+    oci.identity_domains.models.AppBundlePoolConfiguration
+    oci.identity_domains.models.AppCertificates
+    oci.identity_domains.models.AppCloudControlProperties
+    oci.identity_domains.models.AppConnectorBundle
+    oci.identity_domains.models.AppDenyAuthzPolicy
+    oci.identity_domains.models.AppDomainApp
+    oci.identity_domains.models.AppEditableAttributes
+    oci.identity_domains.models.AppExtensionDbcsApp
+    oci.identity_domains.models.AppExtensionEnterpriseAppApp
+    oci.identity_domains.models.AppExtensionFormFillAppApp
+    oci.identity_domains.models.AppExtensionFormFillAppTemplateAppTemplate
+    oci.identity_domains.models.AppExtensionKerberosRealmApp
+    oci.identity_domains.models.AppExtensionManagedappApp
+    oci.identity_domains.models.AppExtensionMulticloudServiceAppApp
+    oci.identity_domains.models.AppExtensionOpcServiceApp
+    oci.identity_domains.models.AppExtensionRadiusAppApp
+    oci.identity_domains.models.AppExtensionRequestableApp
+    oci.identity_domains.models.AppExtensionSamlServiceProviderApp
+    oci.identity_domains.models.AppExtensionWebTierPolicyApp
+    oci.identity_domains.models.AppFlatFileBundleConfigurationProperties
+    oci.identity_domains.models.AppFlatFileConnectorBundle
+    oci.identity_domains.models.AppFormFillUrlMatch
+    oci.identity_domains.models.AppGrantedAppRoles
+    oci.identity_domains.models.AppGrants
+    oci.identity_domains.models.AppGroupAssertionAttributes
+    oci.identity_domains.models.AppGroupMembershipToReturn
+    oci.identity_domains.models.AppIdentityBridges
+    oci.identity_domains.models.AppIdentityProviders
+    oci.identity_domains.models.AppIdpPolicy
+    oci.identity_domains.models.AppObjectClasses
+    oci.identity_domains.models.AppOutboundAssertionAttributes
+    oci.identity_domains.models.AppProtectableSecondaryAudiences
+    oci.identity_domains.models.AppRadiusPolicy
+    oci.identity_domains.models.AppRole
+    oci.identity_domains.models.AppRoleApp
+    oci.identity_domains.models.AppRoleMembers
+    oci.identity_domains.models.AppRoleSearchRequest
+    oci.identity_domains.models.AppRoles
+    oci.identity_domains.models.AppSamlServiceProvider
+    oci.identity_domains.models.AppScopes
+    oci.identity_domains.models.AppSearchRequest
+    oci.identity_domains.models.AppServiceParams
+    oci.identity_domains.models.AppSignonPolicy
+    oci.identity_domains.models.AppStatusChanger
+    oci.identity_domains.models.AppTermsOfUse
+    oci.identity_domains.models.AppThreeLeggedOAuthCredential
+    oci.identity_domains.models.AppTrustPolicies
+    oci.identity_domains.models.AppUserAssertionAttributes
+    oci.identity_domains.models.AppUserRoles
+    oci.identity_domains.models.Apps
     oci.identity_domains.models.AuthToken
     oci.identity_domains.models.AuthTokenSearchRequest
     oci.identity_domains.models.AuthTokenUser
@@ -84,6 +159,14 @@ Identity Domains
     oci.identity_domains.models.ExtensionUserUser
     oci.identity_domains.models.ExtensionX509IdentityProvider
     oci.identity_domains.models.FreeformTags
+    oci.identity_domains.models.Grant
+    oci.identity_domains.models.GrantApp
+    oci.identity_domains.models.GrantAppEntitlementCollection
+    oci.identity_domains.models.GrantEntitlement
+    oci.identity_domains.models.GrantGrantee
+    oci.identity_domains.models.GrantGrantor
+    oci.identity_domains.models.GrantSearchRequest
+    oci.identity_domains.models.Grants
     oci.identity_domains.models.Group
     oci.identity_domains.models.GroupExtAppRoles
     oci.identity_domains.models.GroupExtDomainLevelSchemaNames
@@ -104,6 +187,13 @@ Identity Domains
     oci.identity_domains.models.IdentityProviderJitUserProvGroupMappings
     oci.identity_domains.models.IdentityProviderSearchRequest
     oci.identity_domains.models.IdentityProviders
+    oci.identity_domains.models.IdentitySetting
+    oci.identity_domains.models.IdentitySettings
+    oci.identity_domains.models.IdentitySettingsMyProfile
+    oci.identity_domains.models.IdentitySettingsPOSIXGid
+    oci.identity_domains.models.IdentitySettingsPOSIXUid
+    oci.identity_domains.models.IdentitySettingsSearchRequest
+    oci.identity_domains.models.IdentitySettingsTokens
     oci.identity_domains.models.KmsiSetting
     oci.identity_domains.models.KmsiSettings
     oci.identity_domains.models.KmsiSettingsSearchRequest
@@ -122,6 +212,12 @@ Identity Domains
     oci.identity_domains.models.MyApiKey
     oci.identity_domains.models.MyApiKeyUser
     oci.identity_domains.models.MyApiKeys
+    oci.identity_domains.models.MyApp
+    oci.identity_domains.models.MyAppApp
+    oci.identity_domains.models.MyAppOwner
+    oci.identity_domains.models.MyAppSearchRequest
+    oci.identity_domains.models.MyAppUserWalletArtifact
+    oci.identity_domains.models.MyApps
     oci.identity_domains.models.MyAuthToken
     oci.identity_domains.models.MyAuthTokenUser
     oci.identity_domains.models.MyAuthTokens
@@ -153,6 +249,15 @@ Identity Domains
     oci.identity_domains.models.MyOAuth2ClientCredentialScopes
     oci.identity_domains.models.MyOAuth2ClientCredentialUser
     oci.identity_domains.models.MyOAuth2ClientCredentials
+    oci.identity_domains.models.MyRequest
+    oci.identity_domains.models.MyRequestRequesting
+    oci.identity_domains.models.MyRequestRequestor
+    oci.identity_domains.models.MyRequestSearchRequest
+    oci.identity_domains.models.MyRequestableGroup
+    oci.identity_domains.models.MyRequestableGroupMembers
+    oci.identity_domains.models.MyRequestableGroupSearchRequest
+    oci.identity_domains.models.MyRequestableGroups
+    oci.identity_domains.models.MyRequests
     oci.identity_domains.models.MySmtpCredential
     oci.identity_domains.models.MySmtpCredentialUser
     oci.identity_domains.models.MySmtpCredentials
@@ -178,12 +283,26 @@ Identity Domains
     oci.identity_domains.models.PasswordPolicyGroups
     oci.identity_domains.models.PasswordPolicySearchRequest
     oci.identity_domains.models.PatchOp
+    oci.identity_domains.models.ResourceTypeSchemaAttribute
+    oci.identity_domains.models.ResourceTypeSchemaAttributeSearchRequest
+    oci.identity_domains.models.ResourceTypeSchemaAttributes
+    oci.identity_domains.models.SecurityQuestion
+    oci.identity_domains.models.SecurityQuestionQuestionText
+    oci.identity_domains.models.SecurityQuestionSearchRequest
+    oci.identity_domains.models.SecurityQuestionSetting
+    oci.identity_domains.models.SecurityQuestionSettings
+    oci.identity_domains.models.SecurityQuestionSettingsSearchRequest
+    oci.identity_domains.models.SecurityQuestions
     oci.identity_domains.models.SmtpCredential
     oci.identity_domains.models.SmtpCredentialSearchRequest
     oci.identity_domains.models.SmtpCredentialUser
     oci.identity_domains.models.SmtpCredentials
     oci.identity_domains.models.Tags
     oci.identity_domains.models.User
+    oci.identity_domains.models.UserAttributesSetting
+    oci.identity_domains.models.UserAttributesSettings
+    oci.identity_domains.models.UserAttributesSettingsAttributeSettings
+    oci.identity_domains.models.UserAttributesSettingsSearchRequest
     oci.identity_domains.models.UserCapabilitiesChanger
     oci.identity_domains.models.UserDbCredential
     oci.identity_domains.models.UserDbCredentials

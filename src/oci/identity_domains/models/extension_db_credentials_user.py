@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExtensionDbCredentialsUser(object):
     """
-    Db Credentials User extension
+    The database credentials user extension.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class ExtensionDbCredentialsUser(object):
     def db_user_name(self):
         """
         Gets the db_user_name of this ExtensionDbCredentialsUser.
-        The Database User Name
+        The database username.
 
         **Added In:** 2102181953
 
@@ -70,7 +70,7 @@ class ExtensionDbCredentialsUser(object):
     def db_user_name(self, db_user_name):
         """
         Sets the db_user_name of this ExtensionDbCredentialsUser.
-        The Database User Name
+        The database username.
 
         **Added In:** 2102181953
 

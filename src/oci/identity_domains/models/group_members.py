@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GroupMembers(object):
     """
-    Group members - when requesting members attribute, a max of 10,000 members will be returned in a single request. It is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
+    The group members. <b>Important:</b> When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use 'startIndex' and 'count' to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
     """
 
     #: A constant which can be used with the type property of a GroupMembers.
@@ -94,7 +94,7 @@ class GroupMembers(object):
     def value(self):
         """
         **[Required]** Gets the value of this GroupMembers.
-        ID of the member of this Group
+        The ID of the member of this Group
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -116,7 +116,7 @@ class GroupMembers(object):
     def value(self, value):
         """
         Sets the value of this GroupMembers.
-        ID of the member of this Group
+        The ID of the member of this Group
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -138,7 +138,7 @@ class GroupMembers(object):
     def date_added(self):
         """
         Gets the date_added of this GroupMembers.
-        The DateTime the member was added to the Group.
+        The date and time that the member was added to the group.
 
         **Added In:** 2012271618
 
@@ -160,7 +160,7 @@ class GroupMembers(object):
     def date_added(self, date_added):
         """
         Sets the date_added of this GroupMembers.
-        The DateTime the member was added to the Group.
+        The date and time that the member was added to the group.
 
         **Added In:** 2012271618
 
@@ -182,7 +182,7 @@ class GroupMembers(object):
     def ocid(self):
         """
         Gets the ocid of this GroupMembers.
-        OCID of the member of this Group
+        The OCID of the member of this group.
 
         **Added In:** 2012271618
 
@@ -206,7 +206,7 @@ class GroupMembers(object):
     def ocid(self, ocid):
         """
         Sets the ocid of this GroupMembers.
-        OCID of the member of this Group
+        The OCID of the member of this group.
 
         **Added In:** 2012271618
 
@@ -230,7 +230,7 @@ class GroupMembers(object):
     def membership_ocid(self):
         """
         Gets the membership_ocid of this GroupMembers.
-        Membership Ocid
+        The membership OCID.
 
         **Added In:** 2102181953
 
@@ -254,7 +254,7 @@ class GroupMembers(object):
     def membership_ocid(self, membership_ocid):
         """
         Sets the membership_ocid of this GroupMembers.
-        Membership Ocid
+        The membership OCID.
 
         **Added In:** 2102181953
 
@@ -278,7 +278,7 @@ class GroupMembers(object):
     def ref(self):
         """
         Gets the ref of this GroupMembers.
-        The URI that corresponds to the member Resource of this Group
+        The URI that corresponds to the member Resource of this group.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -300,7 +300,7 @@ class GroupMembers(object):
     def ref(self, ref):
         """
         Sets the ref of this GroupMembers.
-        The URI that corresponds to the member Resource of this Group
+        The URI that corresponds to the member Resource of this group.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -322,7 +322,7 @@ class GroupMembers(object):
     def display(self):
         """
         Gets the display of this GroupMembers.
-        Member display name
+        The member's display name.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -344,7 +344,7 @@ class GroupMembers(object):
     def display(self, display):
         """
         Sets the display of this GroupMembers.
-        Member display name
+        The member's display name.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -366,7 +366,7 @@ class GroupMembers(object):
     def type(self):
         """
         **[Required]** Gets the type of this GroupMembers.
-        Indicates the type of resource--for example, User or Group
+        Indicates the type of resource, for example, User or Group.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -392,7 +392,7 @@ class GroupMembers(object):
     def type(self, type):
         """
         Sets the type of this GroupMembers.
-        Indicates the type of resource--for example, User or Group
+        Indicates the type of resource, for example, User or Group.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -418,7 +418,7 @@ class GroupMembers(object):
     def name(self):
         """
         Gets the name of this GroupMembers.
-        Member name
+        The member's name.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -440,7 +440,7 @@ class GroupMembers(object):
     def name(self, name):
         """
         Sets the name of this GroupMembers.
-        Member name
+        The member's name.
 
         **SCIM++ Properties:**
          - caseExact: false

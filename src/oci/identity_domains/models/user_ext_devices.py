@@ -106,7 +106,7 @@ class UserExtDevices(object):
     def value(self):
         """
         **[Required]** Gets the value of this UserExtDevices.
-        The identifier of the User's device.
+        The user's device identifier.
 
         **Added In:** 18.3.6
 
@@ -130,7 +130,7 @@ class UserExtDevices(object):
     def value(self, value):
         """
         Sets the value of this UserExtDevices.
-        The identifier of the User's device.
+        The user's device identifier.
 
         **Added In:** 18.3.6
 
@@ -154,7 +154,7 @@ class UserExtDevices(object):
     def ref(self):
         """
         Gets the ref of this UserExtDevices.
-        The URI of the corresponding Device resource which belongs to user
+        The URI of the corresponding Device resource which belongs to user.
 
         **Added In:** 18.3.6
 
@@ -177,7 +177,7 @@ class UserExtDevices(object):
     def ref(self, ref):
         """
         Sets the ref of this UserExtDevices.
-        The URI of the corresponding Device resource which belongs to user
+        The URI of the corresponding Device resource which belongs to user.
 
         **Added In:** 18.3.6
 
@@ -246,7 +246,7 @@ class UserExtDevices(object):
     def status(self):
         """
         Gets the status of this UserExtDevices.
-        Device status.
+        The device's status.
 
         **Added In:** 18.4.2
 
@@ -269,7 +269,7 @@ class UserExtDevices(object):
     def status(self, status):
         """
         Sets the status of this UserExtDevices.
-        Device status.
+        The device's status.
 
         **Added In:** 18.4.2
 
@@ -292,7 +292,7 @@ class UserExtDevices(object):
     def last_sync_time(self):
         """
         Gets the last_sync_time of this UserExtDevices.
-        Last Sync time for device.
+        The last sync time for device.
 
         **Added In:** 18.4.2
 
@@ -315,7 +315,7 @@ class UserExtDevices(object):
     def last_sync_time(self, last_sync_time):
         """
         Sets the last_sync_time of this UserExtDevices.
-        Last Sync time for device.
+        The last sync time for device.
 
         **Added In:** 18.4.2
 
@@ -338,7 +338,7 @@ class UserExtDevices(object):
     def factor_type(self):
         """
         Gets the factor_type of this UserExtDevices.
-        Device authentication factor type.
+        The device authentication factor type.
 
         **Added In:** 18.4.2
 
@@ -361,7 +361,7 @@ class UserExtDevices(object):
     def factor_type(self, factor_type):
         """
         Sets the factor_type of this UserExtDevices.
-        Device authentication factor type.
+        The device authentication factor type.
 
         **Added In:** 18.4.2
 
@@ -384,7 +384,7 @@ class UserExtDevices(object):
     def factor_status(self):
         """
         Gets the factor_status of this UserExtDevices.
-        Device authentication factor status.
+        The device authentication factor status.
 
         **Added In:** 18.4.2
 
@@ -407,7 +407,7 @@ class UserExtDevices(object):
     def factor_status(self, factor_status):
         """
         Sets the factor_status of this UserExtDevices.
-        Device authentication factor status.
+        The device authentication factor status.
 
         **Added In:** 18.4.2
 
@@ -430,7 +430,7 @@ class UserExtDevices(object):
     def authentication_method(self):
         """
         Gets the authentication_method of this UserExtDevices.
-        Authentication method.
+        The authentication method.
 
         **Added In:** 2009232244
 
@@ -453,7 +453,7 @@ class UserExtDevices(object):
     def authentication_method(self, authentication_method):
         """
         Sets the authentication_method of this UserExtDevices.
-        Authentication method.
+        The authentication method.
 
         **Added In:** 2009232244
 
@@ -476,7 +476,7 @@ class UserExtDevices(object):
     def third_party_vendor_name(self):
         """
         Gets the third_party_vendor_name of this UserExtDevices.
-        Third party factor vendor name.
+        The third-party factor vendor name.
 
         **Added In:** 2009232244
 
@@ -499,7 +499,7 @@ class UserExtDevices(object):
     def third_party_vendor_name(self, third_party_vendor_name):
         """
         Sets the third_party_vendor_name of this UserExtDevices.
-        Third party factor vendor name.
+        The third-party factor vendor name.
 
         **Added In:** 2009232244
 

@@ -84,6 +84,7 @@ class MyTrustedUserAgentTrustedFactors(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: true
          - returned: default
          - type: string
@@ -108,6 +109,7 @@ class MyTrustedUserAgentTrustedFactors(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: true
          - returned: default
          - type: string
@@ -132,6 +134,7 @@ class MyTrustedUserAgentTrustedFactors(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: string
@@ -159,6 +162,7 @@ class MyTrustedUserAgentTrustedFactors(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: string
@@ -186,6 +190,7 @@ class MyTrustedUserAgentTrustedFactors(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: true
          - returned: default
          - type: dateTime
@@ -210,6 +215,7 @@ class MyTrustedUserAgentTrustedFactors(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: true
          - returned: default
          - type: dateTime
