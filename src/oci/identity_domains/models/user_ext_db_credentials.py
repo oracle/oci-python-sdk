@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserExtDbCredentials(object):
     """
-    A list of db credentials corresponding to user.
+    A list of database credentials corresponding to user.
 
     **Added In:** 2102181953
 
@@ -65,7 +65,7 @@ class UserExtDbCredentials(object):
     def value(self):
         """
         Gets the value of this UserExtDbCredentials.
-        The identifier of the User's db credential.
+        The user's database credential identifier.
 
         **Added In:** 2102181953
 
@@ -89,7 +89,7 @@ class UserExtDbCredentials(object):
     def value(self, value):
         """
         Sets the value of this UserExtDbCredentials.
-        The identifier of the User's db credential.
+        The user's database credential identifier.
 
         **Added In:** 2102181953
 
@@ -113,7 +113,7 @@ class UserExtDbCredentials(object):
     def ref(self):
         """
         Gets the ref of this UserExtDbCredentials.
-        The URI of the corresponding UserDbCredential resource to which the user belongs
+        The URI of the corresponding UserDbCredential resource to which the user belongs.
 
         **Added In:** 2102181953
 
@@ -136,7 +136,7 @@ class UserExtDbCredentials(object):
     def ref(self, ref):
         """
         Sets the ref of this UserExtDbCredentials.
-        The URI of the corresponding UserDbCredential resource to which the user belongs
+        The URI of the corresponding UserDbCredential resource to which the user belongs.
 
         **Added In:** 2102181953
 
@@ -159,7 +159,7 @@ class UserExtDbCredentials(object):
     def ocid(self):
         """
         Gets the ocid of this UserExtDbCredentials.
-        Ocid of the User's db credential.
+        The user's database credential OCID.
 
         **Added In:** 2102181953
 
@@ -183,7 +183,7 @@ class UserExtDbCredentials(object):
     def ocid(self, ocid):
         """
         Sets the ocid of this UserExtDbCredentials.
-        Ocid of the User's db credential.
+        The user's database credential OCID.
 
         **Added In:** 2102181953
 

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserExtLocked(object):
     """
-    A complex attribute that indicates an account is locked (blocking new sessions)
+    A complex attribute that indicates an account is locked (blocking any new sessions).
 
     **SCIM++ Properties:**
     - idcsCsvAttributeNameMappings: [[columnHeaderName:Locked, mapsTo:locked.on], [columnHeaderName:Locked Reason, mapsTo:locked.reason], [columnHeaderName:Locked Date, mapsTo:locked.lockDate]]
@@ -71,12 +71,14 @@ class UserExtLocked(object):
     def reason(self):
         """
         Gets the reason of this UserExtLocked.
-        Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+        Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
 
         **SCIM++ Properties:**
          - idcsSearchable: false
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: integer
@@ -92,12 +94,14 @@ class UserExtLocked(object):
     def reason(self, reason):
         """
         Sets the reason of this UserExtLocked.
-        Indicates the reason for locking. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
+        Indicates the reason for locking the account. Valid values are: 0 - failed password login attempts, 1 - admin lock, 2 - failed reset password attempts, 3 - failed MFA login attempts, 4 - failed MFA login attempts for federated user, 5 - failed Database login attempts
 
         **SCIM++ Properties:**
          - idcsSearchable: false
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: integer
@@ -113,13 +117,15 @@ class UserExtLocked(object):
     def on(self):
         """
         Gets the on of this UserExtLocked.
-        Indicates tat the account is locked
+        Indicates that the account is locked.
 
         **SCIM++ Properties:**
          - caseExact: false
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: boolean
@@ -135,13 +141,15 @@ class UserExtLocked(object):
     def on(self, on):
         """
         Sets the on of this UserExtLocked.
-        Indicates tat the account is locked
+        Indicates that the account is locked.
 
         **SCIM++ Properties:**
          - caseExact: false
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: boolean
@@ -157,12 +165,13 @@ class UserExtLocked(object):
     def lock_date(self):
         """
         Gets the lock_date of this UserExtLocked.
-        The date and time that the current resource was locked
+        The date and time that the current resource was locked.
 
         **SCIM++ Properties:**
          - idcsSearchable: false
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: dateTime
@@ -178,12 +187,13 @@ class UserExtLocked(object):
     def lock_date(self, lock_date):
         """
         Sets the lock_date of this UserExtLocked.
-        The date and time that the current resource was locked
+        The date and time that the current resource was locked.
 
         **SCIM++ Properties:**
          - idcsSearchable: false
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: dateTime
@@ -199,7 +209,7 @@ class UserExtLocked(object):
     def expired(self):
         """
         Gets the expired of this UserExtLocked.
-        Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
 
         **Added In:** 20.1.3
 
@@ -223,7 +233,7 @@ class UserExtLocked(object):
     def expired(self, expired):
         """
         Sets the expired of this UserExtLocked.
-        Indicates whether user password is expired. If this value is false, password expiry will still be evaluated during user login.
+        Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
 
         **Added In:** 20.1.3
 

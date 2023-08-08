@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExtensionUserStateUser(object):
     """
-    This extension defines attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+    This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
     """
 
     def __init__(self, **kwargs):
@@ -95,13 +95,14 @@ class ExtensionUserStateUser(object):
     def last_successful_login_date(self):
         """
         Gets the last_successful_login_date of this ExtensionUserStateUser.
-        The last successful login date
+        The last successful login date.
 
         **SCIM++ Properties:**
          - idcsSearchable: true
          - idcsAllowUpdatesInReadOnlyMode: true
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: request
          - type: dateTime
@@ -117,13 +118,14 @@ class ExtensionUserStateUser(object):
     def last_successful_login_date(self, last_successful_login_date):
         """
         Sets the last_successful_login_date of this ExtensionUserStateUser.
-        The last successful login date
+        The last successful login date.
 
         **SCIM++ Properties:**
          - idcsSearchable: true
          - idcsAllowUpdatesInReadOnlyMode: true
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: request
          - type: dateTime
@@ -139,13 +141,14 @@ class ExtensionUserStateUser(object):
     def previous_successful_login_date(self):
         """
         Gets the previous_successful_login_date of this ExtensionUserStateUser.
-        The previous successful login date
+        The previous successful login date.
 
         **SCIM++ Properties:**
          - caseExact: false
          - idcsSearchable: false
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: request
          - type: dateTime
@@ -161,13 +164,14 @@ class ExtensionUserStateUser(object):
     def previous_successful_login_date(self, previous_successful_login_date):
         """
         Sets the previous_successful_login_date of this ExtensionUserStateUser.
-        The previous successful login date
+        The previous successful login date.
 
         **SCIM++ Properties:**
          - caseExact: false
          - idcsSearchable: false
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: request
          - type: dateTime
@@ -183,13 +187,14 @@ class ExtensionUserStateUser(object):
     def last_failed_login_date(self):
         """
         Gets the last_failed_login_date of this ExtensionUserStateUser.
-        The last failed login date
+        The last failed login date.
 
         **SCIM++ Properties:**
          - idcsSearchable: false
          - idcsAllowUpdatesInReadOnlyMode: true
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: request
          - type: dateTime
@@ -205,13 +210,14 @@ class ExtensionUserStateUser(object):
     def last_failed_login_date(self, last_failed_login_date):
         """
         Sets the last_failed_login_date of this ExtensionUserStateUser.
-        The last failed login date
+        The last failed login date.
 
         **SCIM++ Properties:**
          - idcsSearchable: false
          - idcsAllowUpdatesInReadOnlyMode: true
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: request
          - type: dateTime
@@ -234,6 +240,8 @@ class ExtensionUserStateUser(object):
          - idcsAllowUpdatesInReadOnlyMode: true
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: request
          - type: integer
@@ -256,6 +264,8 @@ class ExtensionUserStateUser(object):
          - idcsAllowUpdatesInReadOnlyMode: true
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          - required: false
          - returned: request
          - type: integer
@@ -279,6 +289,7 @@ class ExtensionUserStateUser(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: request
          - type: integer
@@ -302,6 +313,7 @@ class ExtensionUserStateUser(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: readOnly
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: request
          - type: integer
@@ -363,7 +375,7 @@ class ExtensionUserStateUser(object):
     def max_concurrent_sessions(self):
         """
         Gets the max_concurrent_sessions of this ExtensionUserStateUser.
-        Maximum number of concurrent sessions for a User
+        The maximum number of concurrent sessions for a user.
 
         **Added In:** 20.1.3
 
@@ -388,7 +400,7 @@ class ExtensionUserStateUser(object):
     def max_concurrent_sessions(self, max_concurrent_sessions):
         """
         Sets the max_concurrent_sessions of this ExtensionUserStateUser.
-        Maximum number of concurrent sessions for a User
+        The maximum number of concurrent sessions for a user.
 
         **Added In:** 20.1.3
 

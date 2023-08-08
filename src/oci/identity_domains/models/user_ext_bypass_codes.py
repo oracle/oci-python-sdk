@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserExtBypassCodes(object):
     """
-    A list of bypass codes belongs to user
+    A list of bypass codes that belongs to the user.
 
     **Added In:** 18.3.6
 
@@ -57,7 +57,7 @@ class UserExtBypassCodes(object):
     def value(self):
         """
         **[Required]** Gets the value of this UserExtBypassCodes.
-        The identifier of the User's bypass code.
+        The user's bypass code identifier.
 
         **Added In:** 18.3.6
 
@@ -81,7 +81,7 @@ class UserExtBypassCodes(object):
     def value(self, value):
         """
         Sets the value of this UserExtBypassCodes.
-        The identifier of the User's bypass code.
+        The user's bypass code identifier.
 
         **Added In:** 18.3.6
 

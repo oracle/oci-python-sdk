@@ -35,6 +35,10 @@ class VcnTopology(Topology):
             The value to assign to the relationships property of this VcnTopology.
         :type relationships: list[oci.core.models.TopologyEntityRelationship]
 
+        :param limited_entities:
+            The value to assign to the limited_entities property of this VcnTopology.
+        :type limited_entities: list[str]
+
         :param time_created:
             The value to assign to the time_created property of this VcnTopology.
         :type time_created: datetime
@@ -48,6 +52,7 @@ class VcnTopology(Topology):
             'type': 'str',
             'entities': 'list[object]',
             'relationships': 'list[TopologyEntityRelationship]',
+            'limited_entities': 'list[str]',
             'time_created': 'datetime',
             'vcn_id': 'str'
         }
@@ -56,6 +61,7 @@ class VcnTopology(Topology):
             'type': 'type',
             'entities': 'entities',
             'relationships': 'relationships',
+            'limited_entities': 'limitedEntities',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
         }
@@ -63,6 +69,7 @@ class VcnTopology(Topology):
         self._type = None
         self._entities = None
         self._relationships = None
+        self._limited_entities = None
         self._time_created = None
         self._vcn_id = None
         self._type = 'VCN'

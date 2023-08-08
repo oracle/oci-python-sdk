@@ -171,7 +171,7 @@ class DrgRouteRule(object):
     def destination_type(self):
         """
         **[Required]** Gets the destination_type of this DrgRouteRule.
-        The type of destination for the rule. the type is required if `direction` = `EGRESS`.
+        The type of destination for the rule.
 
         Allowed values:
 
@@ -193,7 +193,7 @@ class DrgRouteRule(object):
     def destination_type(self, destination_type):
         """
         Sets the destination_type of this DrgRouteRule.
-        The type of destination for the rule. the type is required if `direction` = `EGRESS`.
+        The type of destination for the rule.
 
         Allowed values:
 

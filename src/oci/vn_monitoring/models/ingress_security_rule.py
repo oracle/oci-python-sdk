@@ -58,6 +58,10 @@ class IngressSecurityRule(object):
             The value to assign to the udp_options property of this IngressSecurityRule.
         :type udp_options: oci.vn_monitoring.models.UdpOptions
 
+        :param description:
+            The value to assign to the description property of this IngressSecurityRule.
+        :type description: str
+
         """
         self.swagger_types = {
             'icmp_options': 'IcmpOptions',
@@ -66,7 +70,8 @@ class IngressSecurityRule(object):
             'source': 'str',
             'source_type': 'str',
             'tcp_options': 'TcpOptions',
-            'udp_options': 'UdpOptions'
+            'udp_options': 'UdpOptions',
+            'description': 'str'
         }
 
         self.attribute_map = {
@@ -76,7 +81,8 @@ class IngressSecurityRule(object):
             'source': 'source',
             'source_type': 'sourceType',
             'tcp_options': 'tcpOptions',
-            'udp_options': 'udpOptions'
+            'udp_options': 'udpOptions',
+            'description': 'description'
         }
 
         self._icmp_options = None
@@ -86,6 +92,7 @@ class IngressSecurityRule(object):
         self._source_type = None
         self._tcp_options = None
         self._udp_options = None
+        self._description = None
 
     @property
     def icmp_options(self):
@@ -304,6 +311,30 @@ class IngressSecurityRule(object):
         :type: oci.vn_monitoring.models.UdpOptions
         """
         self._udp_options = udp_options
+
+    @property
+    def description(self):
+        """
+        Gets the description of this IngressSecurityRule.
+        An optional description of your choice for the rule.
+
+
+        :return: The description of this IngressSecurityRule.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this IngressSecurityRule.
+        An optional description of your choice for the rule.
+
+
+        :param description: The description of this IngressSecurityRule.
+        :type: str
+        """
+        self._description = description
 
     def __repr__(self):
         return formatted_flat_dict(self)

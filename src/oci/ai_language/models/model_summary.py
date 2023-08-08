@@ -343,7 +343,8 @@ class ModelSummary(object):
     def version(self):
         """
         Gets the version of this ModelSummary.
-        Identifying the model by model id is difficult. This param provides ease of use for end customer.
+        For pre trained models this will identify model type version used for model creation
+        For custom identifying the model by model id is difficult. This param provides ease of use for end customer.
         <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which this training has to be done>>
         ex: ai-lang::NER_V1::CUSTOM-V0
 
@@ -357,7 +358,8 @@ class ModelSummary(object):
     def version(self, version):
         """
         Sets the version of this ModelSummary.
-        Identifying the model by model id is difficult. This param provides ease of use for end customer.
+        For pre trained models this will identify model type version used for model creation
+        For custom identifying the model by model id is difficult. This param provides ease of use for end customer.
         <<service>>::<<service-name>>-<<model-type-version>>::<<custom model on which this training has to be done>>
         ex: ai-lang::NER_V1::CUSTOM-V0
 

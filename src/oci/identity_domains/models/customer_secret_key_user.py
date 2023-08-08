@@ -77,7 +77,7 @@ class CustomerSecretKeyUser(object):
     def value(self):
         """
         Gets the value of this CustomerSecretKeyUser.
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -99,7 +99,7 @@ class CustomerSecretKeyUser(object):
     def value(self, value):
         """
         Sets the value of this CustomerSecretKeyUser.
-        User's id
+        The user's ID.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -121,7 +121,7 @@ class CustomerSecretKeyUser(object):
     def ocid(self):
         """
         Gets the ocid of this CustomerSecretKeyUser.
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -143,7 +143,7 @@ class CustomerSecretKeyUser(object):
     def ocid(self, ocid):
         """
         Sets the ocid of this CustomerSecretKeyUser.
-        User's ocid
+        The user's OCID.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -165,7 +165,7 @@ class CustomerSecretKeyUser(object):
     def ref(self):
         """
         Gets the ref of this CustomerSecretKeyUser.
-        The URI that corresponds to the user linked to this credential
+        The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -187,7 +187,7 @@ class CustomerSecretKeyUser(object):
     def ref(self, ref):
         """
         Sets the ref of this CustomerSecretKeyUser.
-        The URI that corresponds to the user linked to this credential
+        The URI that corresponds to the user linked to this credential.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -209,7 +209,7 @@ class CustomerSecretKeyUser(object):
     def display(self):
         """
         Gets the display of this CustomerSecretKeyUser.
-        User display name
+        The user's display name.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -231,7 +231,7 @@ class CustomerSecretKeyUser(object):
     def display(self, display):
         """
         Sets the display of this CustomerSecretKeyUser.
-        User display name
+        The user's display name.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -253,7 +253,7 @@ class CustomerSecretKeyUser(object):
     def name(self):
         """
         Gets the name of this CustomerSecretKeyUser.
-        User name
+        The user's name.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -275,7 +275,7 @@ class CustomerSecretKeyUser(object):
     def name(self, name):
         """
         Sets the name of this CustomerSecretKeyUser.
-        User name
+        The user's name.
 
         **SCIM++ Properties:**
          - caseExact: false

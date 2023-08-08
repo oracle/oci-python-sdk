@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserExtDelegatedAuthenticationTargetApp(object):
     """
-    If set, indicates the user's preferred authentication target app. If not set and the user's \\\"syncedFromApp\\\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to OCI IAM.
+    If set, indicates the user's preferred authentication target app. If not set and the user's \\\"syncedFromApp\\\" is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
 
     **Added In:** 17.4.6
 

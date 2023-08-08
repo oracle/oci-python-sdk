@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserExtApiKeys(object):
     """
-    A list of api keys corresponding to user.
+    A list of API keys corresponding to user.
 
     **Added In:** 2012271618
 
@@ -72,7 +72,7 @@ class UserExtApiKeys(object):
     def key(self):
         """
         Gets the key of this UserExtApiKeys.
-        The value of of the User's api key.
+        The user's API key value.
 
         **Added In:** 2106240046
 
@@ -96,7 +96,7 @@ class UserExtApiKeys(object):
     def key(self, key):
         """
         Sets the key of this UserExtApiKeys.
-        The value of of the User's api key.
+        The user's API key value.
 
         **Added In:** 2106240046
 
@@ -120,7 +120,7 @@ class UserExtApiKeys(object):
     def value(self):
         """
         Gets the value of this UserExtApiKeys.
-        The identifier of the User's api key.
+        The user's API key identifier.
 
         **Added In:** 2012271618
 
@@ -144,7 +144,7 @@ class UserExtApiKeys(object):
     def value(self, value):
         """
         Sets the value of this UserExtApiKeys.
-        The identifier of the User's api key.
+        The user's API key identifier.
 
         **Added In:** 2012271618
 
@@ -168,7 +168,7 @@ class UserExtApiKeys(object):
     def ocid(self):
         """
         Gets the ocid of this UserExtApiKeys.
-        Ocid of the User's api key.
+        The user's API key OCID.
 
         **Added In:** 2012271618
 
@@ -192,7 +192,7 @@ class UserExtApiKeys(object):
     def ocid(self, ocid):
         """
         Sets the ocid of this UserExtApiKeys.
-        Ocid of the User's api key.
+        The user's API key OCID.
 
         **Added In:** 2012271618
 
@@ -216,7 +216,7 @@ class UserExtApiKeys(object):
     def ref(self):
         """
         Gets the ref of this UserExtApiKeys.
-        The URI of the corresponding ApiKey resource to which the user belongs
+        The URI of the corresponding ApiKey resource to which the user belongs.
 
         **Added In:** 2012271618
 
@@ -239,7 +239,7 @@ class UserExtApiKeys(object):
     def ref(self, ref):
         """
         Sets the ref of this UserExtApiKeys.
-        The URI of the corresponding ApiKey resource to which the user belongs
+        The URI of the corresponding ApiKey resource to which the user belongs.
 
         **Added In:** 2012271618
 

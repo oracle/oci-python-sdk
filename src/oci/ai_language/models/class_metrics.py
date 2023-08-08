@@ -36,25 +36,32 @@ class ClassMetrics(object):
             The value to assign to the recall property of this ClassMetrics.
         :type recall: float
 
+        :param support:
+            The value to assign to the support property of this ClassMetrics.
+        :type support: float
+
         """
         self.swagger_types = {
             'label': 'str',
             'f1': 'float',
             'precision': 'float',
-            'recall': 'float'
+            'recall': 'float',
+            'support': 'float'
         }
 
         self.attribute_map = {
             'label': 'label',
             'f1': 'f1',
             'precision': 'precision',
-            'recall': 'recall'
+            'recall': 'recall',
+            'support': 'support'
         }
 
         self._label = None
         self._f1 = None
         self._precision = None
         self._recall = None
+        self._support = None
 
     @property
     def label(self):
@@ -151,6 +158,30 @@ class ClassMetrics(object):
         :type: float
         """
         self._recall = recall
+
+    @property
+    def support(self):
+        """
+        Gets the support of this ClassMetrics.
+        number of samples in the test set
+
+
+        :return: The support of this ClassMetrics.
+        :rtype: float
+        """
+        return self._support
+
+    @support.setter
+    def support(self, support):
+        """
+        Sets the support of this ClassMetrics.
+        number of samples in the test set
+
+
+        :param support: The support of this ClassMetrics.
+        :type: float
+        """
+        self._support = support
 
     def __repr__(self):
         return formatted_flat_dict(self)

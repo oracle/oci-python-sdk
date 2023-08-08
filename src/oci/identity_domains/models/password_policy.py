@@ -170,6 +170,10 @@ class PasswordPolicy(object):
             The value to assign to the user_name_disallowed property of this PasswordPolicy.
         :type user_name_disallowed: bool
 
+        :param disallowed_user_attribute_values:
+            The value to assign to the disallowed_user_attribute_values property of this PasswordPolicy.
+        :type disallowed_user_attribute_values: list[str]
+
         :param min_password_age:
             The value to assign to the min_password_age property of this PasswordPolicy.
         :type min_password_age: int
@@ -232,13 +236,17 @@ class PasswordPolicy(object):
             The value to assign to the force_password_reset property of this PasswordPolicy.
         :type force_password_reset: bool
 
-        :param groups:
-            The value to assign to the groups property of this PasswordPolicy.
-        :type groups: list[oci.identity_domains.models.PasswordPolicyGroups]
+        :param distinct_characters:
+            The value to assign to the distinct_characters property of this PasswordPolicy.
+        :type distinct_characters: int
 
         :param priority:
             The value to assign to the priority property of this PasswordPolicy.
         :type priority: int
+
+        :param groups:
+            The value to assign to the groups property of this PasswordPolicy.
+        :type groups: list[oci.identity_domains.models.PasswordPolicyGroups]
 
         :param configured_password_policy_rules:
             The value to assign to the configured_password_policy_rules property of this PasswordPolicy.
@@ -277,6 +285,7 @@ class PasswordPolicy(object):
             'first_name_disallowed': 'bool',
             'last_name_disallowed': 'bool',
             'user_name_disallowed': 'bool',
+            'disallowed_user_attribute_values': 'list[str]',
             'min_password_age': 'int',
             'password_expires_after': 'int',
             'password_expire_warning': 'int',
@@ -292,8 +301,9 @@ class PasswordPolicy(object):
             'num_passwords_in_history': 'int',
             'password_strength': 'str',
             'force_password_reset': 'bool',
-            'groups': 'list[PasswordPolicyGroups]',
+            'distinct_characters': 'int',
             'priority': 'int',
+            'groups': 'list[PasswordPolicyGroups]',
             'configured_password_policy_rules': 'list[PasswordPolicyConfiguredPasswordPolicyRules]'
         }
 
@@ -329,6 +339,7 @@ class PasswordPolicy(object):
             'first_name_disallowed': 'firstNameDisallowed',
             'last_name_disallowed': 'lastNameDisallowed',
             'user_name_disallowed': 'userNameDisallowed',
+            'disallowed_user_attribute_values': 'disallowedUserAttributeValues',
             'min_password_age': 'minPasswordAge',
             'password_expires_after': 'passwordExpiresAfter',
             'password_expire_warning': 'passwordExpireWarning',
@@ -344,8 +355,9 @@ class PasswordPolicy(object):
             'num_passwords_in_history': 'numPasswordsInHistory',
             'password_strength': 'passwordStrength',
             'force_password_reset': 'forcePasswordReset',
-            'groups': 'groups',
+            'distinct_characters': 'distinctCharacters',
             'priority': 'priority',
+            'groups': 'groups',
             'configured_password_policy_rules': 'configuredPasswordPolicyRules'
         }
 
@@ -380,6 +392,7 @@ class PasswordPolicy(object):
         self._first_name_disallowed = None
         self._last_name_disallowed = None
         self._user_name_disallowed = None
+        self._disallowed_user_attribute_values = None
         self._min_password_age = None
         self._password_expires_after = None
         self._password_expire_warning = None
@@ -395,8 +408,9 @@ class PasswordPolicy(object):
         self._num_passwords_in_history = None
         self._password_strength = None
         self._force_password_reset = None
-        self._groups = None
+        self._distinct_characters = None
         self._priority = None
+        self._groups = None
         self._configured_password_policy_rules = None
 
     @property
@@ -1664,6 +1678,52 @@ class PasswordPolicy(object):
         self._user_name_disallowed = user_name_disallowed
 
     @property
+    def disallowed_user_attribute_values(self):
+        """
+        Gets the disallowed_user_attribute_values of this PasswordPolicy.
+        List of User attributes whose values are not allowed in the password.
+
+        **Added In:** 2303212224
+
+        **SCIM++ Properties:**
+         - idcsSearchable: false
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :return: The disallowed_user_attribute_values of this PasswordPolicy.
+        :rtype: list[str]
+        """
+        return self._disallowed_user_attribute_values
+
+    @disallowed_user_attribute_values.setter
+    def disallowed_user_attribute_values(self, disallowed_user_attribute_values):
+        """
+        Sets the disallowed_user_attribute_values of this PasswordPolicy.
+        List of User attributes whose values are not allowed in the password.
+
+        **Added In:** 2303212224
+
+        **SCIM++ Properties:**
+         - idcsSearchable: false
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :param disallowed_user_attribute_values: The disallowed_user_attribute_values of this PasswordPolicy.
+        :type: list[str]
+        """
+        self._disallowed_user_attribute_values = disallowed_user_attribute_values
+
+    @property
     def min_password_age(self):
         """
         Gets the min_password_age of this PasswordPolicy.
@@ -2300,54 +2360,50 @@ class PasswordPolicy(object):
         self._force_password_reset = force_password_reset
 
     @property
-    def groups(self):
+    def distinct_characters(self):
         """
-        Gets the groups of this PasswordPolicy.
-        A list of groups that the password policy belongs to.
+        Gets the distinct_characters of this PasswordPolicy.
+        The number of distinct characters between old password and new password
 
-        **Added In:** 20.1.3
+        **Added In:** 2303212224
 
         **SCIM++ Properties:**
          - caseExact: false
-         - idcsCompositeKey: [value]
-         - idcsSearchable: true
-         - multiValued: true
+         - multiValued: false
          - mutability: readWrite
          - required: false
          - returned: default
-         - type: complex
+         - type: integer
          - uniqueness: none
 
 
-        :return: The groups of this PasswordPolicy.
-        :rtype: list[oci.identity_domains.models.PasswordPolicyGroups]
+        :return: The distinct_characters of this PasswordPolicy.
+        :rtype: int
         """
-        return self._groups
+        return self._distinct_characters
 
-    @groups.setter
-    def groups(self, groups):
+    @distinct_characters.setter
+    def distinct_characters(self, distinct_characters):
         """
-        Sets the groups of this PasswordPolicy.
-        A list of groups that the password policy belongs to.
+        Sets the distinct_characters of this PasswordPolicy.
+        The number of distinct characters between old password and new password
 
-        **Added In:** 20.1.3
+        **Added In:** 2303212224
 
         **SCIM++ Properties:**
          - caseExact: false
-         - idcsCompositeKey: [value]
-         - idcsSearchable: true
-         - multiValued: true
+         - multiValued: false
          - mutability: readWrite
          - required: false
          - returned: default
-         - type: complex
+         - type: integer
          - uniqueness: none
 
 
-        :param groups: The groups of this PasswordPolicy.
-        :type: list[oci.identity_domains.models.PasswordPolicyGroups]
+        :param distinct_characters: The distinct_characters of this PasswordPolicy.
+        :type: int
         """
-        self._groups = groups
+        self._distinct_characters = distinct_characters
 
     @property
     def priority(self):
@@ -2396,6 +2452,56 @@ class PasswordPolicy(object):
         :type: int
         """
         self._priority = priority
+
+    @property
+    def groups(self):
+        """
+        Gets the groups of this PasswordPolicy.
+        A list of groups that the password policy belongs to.
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsCompositeKey: [value]
+         - idcsSearchable: true
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: complex
+         - uniqueness: none
+
+
+        :return: The groups of this PasswordPolicy.
+        :rtype: list[oci.identity_domains.models.PasswordPolicyGroups]
+        """
+        return self._groups
+
+    @groups.setter
+    def groups(self, groups):
+        """
+        Sets the groups of this PasswordPolicy.
+        A list of groups that the password policy belongs to.
+
+        **Added In:** 20.1.3
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsCompositeKey: [value]
+         - idcsSearchable: true
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: complex
+         - uniqueness: none
+
+
+        :param groups: The groups of this PasswordPolicy.
+        :type: list[oci.identity_domains.models.PasswordPolicyGroups]
+        """
+        self._groups = groups
 
     @property
     def configured_password_policy_rules(self):

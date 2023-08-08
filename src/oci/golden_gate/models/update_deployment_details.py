@@ -81,6 +81,10 @@ class UpdateDeploymentDetails(object):
             The value to assign to the maintenance_window property of this UpdateDeploymentDetails.
         :type maintenance_window: oci.golden_gate.models.UpdateMaintenanceWindowDetails
 
+        :param maintenance_configuration:
+            The value to assign to the maintenance_configuration property of this UpdateDeploymentDetails.
+        :type maintenance_configuration: oci.golden_gate.models.UpdateMaintenanceConfigurationDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -95,7 +99,8 @@ class UpdateDeploymentDetails(object):
             'cpu_core_count': 'int',
             'is_auto_scaling_enabled': 'bool',
             'ogg_data': 'UpdateOggDeploymentDetails',
-            'maintenance_window': 'UpdateMaintenanceWindowDetails'
+            'maintenance_window': 'UpdateMaintenanceWindowDetails',
+            'maintenance_configuration': 'UpdateMaintenanceConfigurationDetails'
         }
 
         self.attribute_map = {
@@ -111,7 +116,8 @@ class UpdateDeploymentDetails(object):
             'cpu_core_count': 'cpuCoreCount',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'ogg_data': 'oggData',
-            'maintenance_window': 'maintenanceWindow'
+            'maintenance_window': 'maintenanceWindow',
+            'maintenance_configuration': 'maintenanceConfiguration'
         }
 
         self._display_name = None
@@ -127,6 +133,7 @@ class UpdateDeploymentDetails(object):
         self._is_auto_scaling_enabled = None
         self._ogg_data = None
         self._maintenance_window = None
+        self._maintenance_configuration = None
 
     @property
     def display_name(self):
@@ -453,6 +460,26 @@ class UpdateDeploymentDetails(object):
         :type: oci.golden_gate.models.UpdateMaintenanceWindowDetails
         """
         self._maintenance_window = maintenance_window
+
+    @property
+    def maintenance_configuration(self):
+        """
+        Gets the maintenance_configuration of this UpdateDeploymentDetails.
+
+        :return: The maintenance_configuration of this UpdateDeploymentDetails.
+        :rtype: oci.golden_gate.models.UpdateMaintenanceConfigurationDetails
+        """
+        return self._maintenance_configuration
+
+    @maintenance_configuration.setter
+    def maintenance_configuration(self, maintenance_configuration):
+        """
+        Sets the maintenance_configuration of this UpdateDeploymentDetails.
+
+        :param maintenance_configuration: The maintenance_configuration of this UpdateDeploymentDetails.
+        :type: oci.golden_gate.models.UpdateMaintenanceConfigurationDetails
+        """
+        self._maintenance_configuration = maintenance_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

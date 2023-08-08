@@ -31,6 +31,10 @@ class OperatorControlSummary(object):
     #: This constant has a value of "CLOUDAUTONOMOUSVMCLUSTER"
     RESOURCE_TYPE_CLOUDAUTONOMOUSVMCLUSTER = "CLOUDAUTONOMOUSVMCLUSTER"
 
+    #: A constant which can be used with the resource_type property of a OperatorControlSummary.
+    #: This constant has a value of "CCCINFRASTRUCTURE"
+    RESOURCE_TYPE_CCCINFRASTRUCTURE = "CCCINFRASTRUCTURE"
+
     #: A constant which can be used with the lifecycle_state property of a OperatorControlSummary.
     #: This constant has a value of "CREATED"
     LIFECYCLE_STATE_CREATED = "CREATED"
@@ -70,7 +74,7 @@ class OperatorControlSummary(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this OperatorControlSummary.
-            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_type: str
 
@@ -243,7 +247,7 @@ class OperatorControlSummary(object):
         Gets the resource_type of this OperatorControlSummary.
         resourceType for which the OperatorControl is applicable
 
-        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -262,7 +266,7 @@ class OperatorControlSummary(object):
         :param resource_type: The resource_type of this OperatorControlSummary.
         :type: str
         """
-        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", "CLOUDAUTONOMOUSVMCLUSTER", "CCCINFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             resource_type = 'UNKNOWN_ENUM_VALUE'
         self._resource_type = resource_type

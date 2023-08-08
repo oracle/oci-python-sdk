@@ -85,6 +85,8 @@ class MyDeviceUser(object):
          - returned: always
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The value of this MyDeviceUser.
@@ -109,6 +111,8 @@ class MyDeviceUser(object):
          - returned: always
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param value: The value of this MyDeviceUser.
@@ -132,6 +136,8 @@ class MyDeviceUser(object):
          - returned: default
          - type: reference
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The ref of this MyDeviceUser.
@@ -155,6 +161,8 @@ class MyDeviceUser(object):
          - returned: default
          - type: reference
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param ref: The ref of this MyDeviceUser.
@@ -227,6 +235,8 @@ class MyDeviceUser(object):
          - returned: always
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The ocid of this MyDeviceUser.
@@ -251,6 +261,8 @@ class MyDeviceUser(object):
          - returned: always
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param ocid: The ocid of this MyDeviceUser.

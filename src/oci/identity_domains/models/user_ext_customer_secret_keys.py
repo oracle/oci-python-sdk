@@ -65,7 +65,7 @@ class UserExtCustomerSecretKeys(object):
     def value(self):
         """
         Gets the value of this UserExtCustomerSecretKeys.
-        The identifier of the User's customer secret key.
+        The user's customer secret key identifier.
 
         **Added In:** 2102181953
 
@@ -89,7 +89,7 @@ class UserExtCustomerSecretKeys(object):
     def value(self, value):
         """
         Sets the value of this UserExtCustomerSecretKeys.
-        The identifier of the User's customer secret key.
+        The user's customer secret key identifier.
 
         **Added In:** 2102181953
 
@@ -113,7 +113,7 @@ class UserExtCustomerSecretKeys(object):
     def ocid(self):
         """
         Gets the ocid of this UserExtCustomerSecretKeys.
-        Ocid of the User's customer secret key.
+        The user's customer secret key OCID.
 
         **Added In:** 2102181953
 
@@ -137,7 +137,7 @@ class UserExtCustomerSecretKeys(object):
     def ocid(self, ocid):
         """
         Sets the ocid of this UserExtCustomerSecretKeys.
-        Ocid of the User's customer secret key.
+        The user's customer secret key OCID.
 
         **Added In:** 2102181953
 
@@ -161,7 +161,7 @@ class UserExtCustomerSecretKeys(object):
     def ref(self):
         """
         Gets the ref of this UserExtCustomerSecretKeys.
-        The URI of the corresponding CustomerSecretKey resource to which the user belongs
+        The URI of the corresponding CustomerSecretKey resource to which the user belongs.
 
         **Added In:** 2102181953
 
@@ -184,7 +184,7 @@ class UserExtCustomerSecretKeys(object):
     def ref(self, ref):
         """
         Sets the ref of this UserExtCustomerSecretKeys.
-        The URI of the corresponding CustomerSecretKey resource to which the user belongs
+        The URI of the corresponding CustomerSecretKey resource to which the user belongs.
 
         **Added In:** 2102181953
 

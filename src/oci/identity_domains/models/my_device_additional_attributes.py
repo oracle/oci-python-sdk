@@ -56,6 +56,8 @@ class MyDeviceAdditionalAttributes(object):
          - returned: always
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The key of this MyDeviceAdditionalAttributes.
@@ -77,6 +79,8 @@ class MyDeviceAdditionalAttributes(object):
          - returned: always
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param key: The key of this MyDeviceAdditionalAttributes.
@@ -98,6 +102,8 @@ class MyDeviceAdditionalAttributes(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The value of this MyDeviceAdditionalAttributes.
@@ -119,6 +125,8 @@ class MyDeviceAdditionalAttributes(object):
          - returned: default
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param value: The value of this MyDeviceAdditionalAttributes.

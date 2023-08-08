@@ -21,6 +21,14 @@ class UpdateAutonomousDatabaseDetails(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
+    #: A constant which can be used with the compute_model property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "ECPU"
+    COMPUTE_MODEL_ECPU = "ECPU"
+
+    #: A constant which can be used with the compute_model property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "OCPU"
+    COMPUTE_MODEL_OCPU = "OCPU"
+
     #: A constant which can be used with the db_workload property of a UpdateAutonomousDatabaseDetails.
     #: This constant has a value of "OLTP"
     DB_WORKLOAD_OLTP = "OLTP"
@@ -73,6 +81,19 @@ class UpdateAutonomousDatabaseDetails(object):
         """
         Initializes a new UpdateAutonomousDatabaseDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param backup_retention_period_in_days:
+            The value to assign to the backup_retention_period_in_days property of this UpdateAutonomousDatabaseDetails.
+        :type backup_retention_period_in_days: int
+
+        :param compute_model:
+            The value to assign to the compute_model property of this UpdateAutonomousDatabaseDetails.
+            Allowed values for this property are: "ECPU", "OCPU"
+        :type compute_model: str
+
+        :param local_adg_auto_failover_max_data_loss_limit:
+            The value to assign to the local_adg_auto_failover_max_data_loss_limit property of this UpdateAutonomousDatabaseDetails.
+        :type local_adg_auto_failover_max_data_loss_limit: int
 
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this UpdateAutonomousDatabaseDetails.
@@ -241,6 +262,9 @@ class UpdateAutonomousDatabaseDetails(object):
 
         """
         self.swagger_types = {
+            'backup_retention_period_in_days': 'int',
+            'compute_model': 'str',
+            'local_adg_auto_failover_max_data_loss_limit': 'int',
             'cpu_core_count': 'int',
             'long_term_backup_schedule': 'LongTermBackUpScheduleDetails',
             'compute_count': 'float',
@@ -284,6 +308,9 @@ class UpdateAutonomousDatabaseDetails(object):
         }
 
         self.attribute_map = {
+            'backup_retention_period_in_days': 'backupRetentionPeriodInDays',
+            'compute_model': 'computeModel',
+            'local_adg_auto_failover_max_data_loss_limit': 'localAdgAutoFailoverMaxDataLossLimit',
             'cpu_core_count': 'cpuCoreCount',
             'long_term_backup_schedule': 'longTermBackupSchedule',
             'compute_count': 'computeCount',
@@ -326,6 +353,9 @@ class UpdateAutonomousDatabaseDetails(object):
             'secret_version_number': 'secretVersionNumber'
         }
 
+        self._backup_retention_period_in_days = None
+        self._compute_model = None
+        self._local_adg_auto_failover_max_data_loss_limit = None
         self._cpu_core_count = None
         self._long_term_backup_schedule = None
         self._compute_count = None
@@ -366,6 +396,86 @@ class UpdateAutonomousDatabaseDetails(object):
         self._db_tools_details = None
         self._secret_id = None
         self._secret_version_number = None
+
+    @property
+    def backup_retention_period_in_days(self):
+        """
+        Gets the backup_retention_period_in_days of this UpdateAutonomousDatabaseDetails.
+        Retention period, in days, for long-term backups
+
+
+        :return: The backup_retention_period_in_days of this UpdateAutonomousDatabaseDetails.
+        :rtype: int
+        """
+        return self._backup_retention_period_in_days
+
+    @backup_retention_period_in_days.setter
+    def backup_retention_period_in_days(self, backup_retention_period_in_days):
+        """
+        Sets the backup_retention_period_in_days of this UpdateAutonomousDatabaseDetails.
+        Retention period, in days, for long-term backups
+
+
+        :param backup_retention_period_in_days: The backup_retention_period_in_days of this UpdateAutonomousDatabaseDetails.
+        :type: int
+        """
+        self._backup_retention_period_in_days = backup_retention_period_in_days
+
+    @property
+    def compute_model(self):
+        """
+        Gets the compute_model of this UpdateAutonomousDatabaseDetails.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+
+        Allowed values for this property are: "ECPU", "OCPU"
+
+
+        :return: The compute_model of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._compute_model
+
+    @compute_model.setter
+    def compute_model(self, compute_model):
+        """
+        Sets the compute_model of this UpdateAutonomousDatabaseDetails.
+        The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
+
+
+        :param compute_model: The compute_model of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["ECPU", "OCPU"]
+        if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
+            raise ValueError(
+                "Invalid value for `compute_model`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._compute_model = compute_model
+
+    @property
+    def local_adg_auto_failover_max_data_loss_limit(self):
+        """
+        Gets the local_adg_auto_failover_max_data_loss_limit of this UpdateAutonomousDatabaseDetails.
+        Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+
+
+        :return: The local_adg_auto_failover_max_data_loss_limit of this UpdateAutonomousDatabaseDetails.
+        :rtype: int
+        """
+        return self._local_adg_auto_failover_max_data_loss_limit
+
+    @local_adg_auto_failover_max_data_loss_limit.setter
+    def local_adg_auto_failover_max_data_loss_limit(self, local_adg_auto_failover_max_data_loss_limit):
+        """
+        Sets the local_adg_auto_failover_max_data_loss_limit of this UpdateAutonomousDatabaseDetails.
+        Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+
+
+        :param local_adg_auto_failover_max_data_loss_limit: The local_adg_auto_failover_max_data_loss_limit of this UpdateAutonomousDatabaseDetails.
+        :type: int
+        """
+        self._local_adg_auto_failover_max_data_loss_limit = local_adg_auto_failover_max_data_loss_limit
 
     @property
     def cpu_core_count(self):

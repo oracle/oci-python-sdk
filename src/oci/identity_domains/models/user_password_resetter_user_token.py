@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserPasswordResetterUserToken(object):
     """
-    User token returned if userFlowControlledByExternalClient is true
+    The user token returned if userFlowControlledByExternalClient is set to true.
 
     **SCIM++ Properties:**
     - type: complex
@@ -55,7 +55,7 @@ class UserPasswordResetterUserToken(object):
     def value(self):
         """
         Gets the value of this UserPasswordResetterUserToken.
-        User Token identifier
+        The user token identifier.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -77,7 +77,7 @@ class UserPasswordResetterUserToken(object):
     def value(self, value):
         """
         Sets the value of this UserPasswordResetterUserToken.
-        User Token identifier
+        The user token identifier.
 
         **SCIM++ Properties:**
          - caseExact: true
@@ -99,7 +99,7 @@ class UserPasswordResetterUserToken(object):
     def ref(self):
         """
         Gets the ref of this UserPasswordResetterUserToken.
-        User Token URI
+        The user token URI.
 
         **SCIM++ Properties:**
          - idcsSearchable: false
@@ -120,7 +120,7 @@ class UserPasswordResetterUserToken(object):
     def ref(self, ref):
         """
         Sets the ref of this UserPasswordResetterUserToken.
-        User Token URI
+        The user token URI.
 
         **SCIM++ Properties:**
          - idcsSearchable: false

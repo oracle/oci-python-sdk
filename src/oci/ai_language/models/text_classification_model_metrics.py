@@ -221,7 +221,7 @@ class TextClassificationModelMetrics(object):
     @property
     def macro_precision(self):
         """
-        Gets the macro_precision of this TextClassificationModelMetrics.
+        **[Required]** Gets the macro_precision of this TextClassificationModelMetrics.
         Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
 
 
@@ -245,7 +245,7 @@ class TextClassificationModelMetrics(object):
     @property
     def macro_recall(self):
         """
-        Gets the macro_recall of this TextClassificationModelMetrics.
+        **[Required]** Gets the macro_recall of this TextClassificationModelMetrics.
         Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
 
 

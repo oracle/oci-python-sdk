@@ -44,6 +44,10 @@ class UpdateDrgAttachmentDetails(object):
             The value to assign to the export_drg_route_distribution_id property of this UpdateDrgAttachmentDetails.
         :type export_drg_route_distribution_id: str
 
+        :param route_table_id:
+            The value to assign to the route_table_id property of this UpdateDrgAttachmentDetails.
+        :type route_table_id: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -51,7 +55,8 @@ class UpdateDrgAttachmentDetails(object):
             'network_details': 'DrgAttachmentNetworkUpdateDetails',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
-            'export_drg_route_distribution_id': 'str'
+            'export_drg_route_distribution_id': 'str',
+            'route_table_id': 'str'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class UpdateDrgAttachmentDetails(object):
             'network_details': 'networkDetails',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
-            'export_drg_route_distribution_id': 'exportDrgRouteDistributionId'
+            'export_drg_route_distribution_id': 'exportDrgRouteDistributionId',
+            'route_table_id': 'routeTableId'
         }
 
         self._display_name = None
@@ -69,6 +75,7 @@ class UpdateDrgAttachmentDetails(object):
         self._defined_tags = None
         self._freeform_tags = None
         self._export_drg_route_distribution_id = None
+        self._route_table_id = None
 
     @property
     def display_name(self):
@@ -237,6 +244,48 @@ class UpdateDrgAttachmentDetails(object):
         :type: str
         """
         self._export_drg_route_distribution_id = export_drg_route_distribution_id
+
+    @property
+    def route_table_id(self):
+        """
+        Gets the route_table_id of this UpdateDrgAttachmentDetails.
+        This is the `OCID`__ of the route table that is used to route the traffic as it enters a VCN through this attachment.
+
+        For information about why you would associate a route table with a DRG attachment, see:
+
+          * `Transit Routing: Access to Multiple VCNs in Same Region`__
+          * `Transit Routing: Private Access to Oracle Services`__
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
+
+
+        :return: The route_table_id of this UpdateDrgAttachmentDetails.
+        :rtype: str
+        """
+        return self._route_table_id
+
+    @route_table_id.setter
+    def route_table_id(self, route_table_id):
+        """
+        Sets the route_table_id of this UpdateDrgAttachmentDetails.
+        This is the `OCID`__ of the route table that is used to route the traffic as it enters a VCN through this attachment.
+
+        For information about why you would associate a route table with a DRG attachment, see:
+
+          * `Transit Routing: Access to Multiple VCNs in Same Region`__
+          * `Transit Routing: Private Access to Oracle Services`__
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
+
+
+        :param route_table_id: The route_table_id of this UpdateDrgAttachmentDetails.
+        :type: str
+        """
+        self._route_table_id = route_table_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

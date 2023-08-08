@@ -44,6 +44,10 @@ class CreatePrivateIpDetails(object):
             The value to assign to the vnic_id property of this CreatePrivateIpDetails.
         :type vnic_id: str
 
+        :param vlan_id:
+            The value to assign to the vlan_id property of this CreatePrivateIpDetails.
+        :type vlan_id: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -51,7 +55,8 @@ class CreatePrivateIpDetails(object):
             'freeform_tags': 'dict(str, str)',
             'hostname_label': 'str',
             'ip_address': 'str',
-            'vnic_id': 'str'
+            'vnic_id': 'str',
+            'vlan_id': 'str'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class CreatePrivateIpDetails(object):
             'freeform_tags': 'freeformTags',
             'hostname_label': 'hostnameLabel',
             'ip_address': 'ipAddress',
-            'vnic_id': 'vnicId'
+            'vnic_id': 'vnicId',
+            'vlan_id': 'vlanId'
         }
 
         self._defined_tags = None
@@ -69,6 +75,7 @@ class CreatePrivateIpDetails(object):
         self._hostname_label = None
         self._ip_address = None
         self._vnic_id = None
+        self._vlan_id = None
 
     @property
     def defined_tags(self):
@@ -154,7 +161,7 @@ class CreatePrivateIpDetails(object):
         Gets the hostname_label of this CreatePrivateIpDetails.
         The hostname for the private IP. Used for DNS. The value
         is the hostname portion of the private IP's fully qualified domain name (FQDN)
-        (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`).
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
@@ -162,7 +169,7 @@ class CreatePrivateIpDetails(object):
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Example: `bminstance-1`
+        Example: `bminstance1`
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
@@ -180,7 +187,7 @@ class CreatePrivateIpDetails(object):
         Sets the hostname_label of this CreatePrivateIpDetails.
         The hostname for the private IP. Used for DNS. The value
         is the hostname portion of the private IP's fully qualified domain name (FQDN)
-        (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`).
+        (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`).
         Must be unique across all VNICs in the subnet and comply with
         `RFC 952`__ and
         `RFC 1123`__.
@@ -188,7 +195,7 @@ class CreatePrivateIpDetails(object):
         For more information, see
         `DNS in Your Virtual Cloud Network`__.
 
-        Example: `bminstance-1`
+        Example: `bminstance1`
 
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
@@ -235,7 +242,7 @@ class CreatePrivateIpDetails(object):
     @property
     def vnic_id(self):
         """
-        **[Required]** Gets the vnic_id of this CreatePrivateIpDetails.
+        Gets the vnic_id of this CreatePrivateIpDetails.
         The `OCID`__ of the VNIC to assign the private IP to. The VNIC and private IP
         must be in the same subnet.
 
@@ -261,6 +268,40 @@ class CreatePrivateIpDetails(object):
         :type: str
         """
         self._vnic_id = vnic_id
+
+    @property
+    def vlan_id(self):
+        """
+        Gets the vlan_id of this CreatePrivateIpDetails.
+        Use this attribute only with the Oracle Cloud VMware Solution.
+
+        The `OCID`__ of the VLAN from which the private IP is to be drawn. The IP address,
+        *if supplied*, must be valid for the given VLAN. See :class:`Vlan`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vlan_id of this CreatePrivateIpDetails.
+        :rtype: str
+        """
+        return self._vlan_id
+
+    @vlan_id.setter
+    def vlan_id(self, vlan_id):
+        """
+        Sets the vlan_id of this CreatePrivateIpDetails.
+        Use this attribute only with the Oracle Cloud VMware Solution.
+
+        The `OCID`__ of the VLAN from which the private IP is to be drawn. The IP address,
+        *if supplied*, must be valid for the given VLAN. See :class:`Vlan`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param vlan_id: The vlan_id of this CreatePrivateIpDetails.
+        :type: str
+        """
+        self._vlan_id = vlan_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

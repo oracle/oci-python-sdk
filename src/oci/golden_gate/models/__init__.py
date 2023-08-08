@@ -13,6 +13,7 @@ from .azure_data_lake_storage_connection_summary import AzureDataLakeStorageConn
 from .azure_synapse_connection import AzureSynapseConnection
 from .azure_synapse_connection_summary import AzureSynapseConnectionSummary
 from .cancel_deployment_backup_details import CancelDeploymentBackupDetails
+from .cancel_deployment_upgrade_details import CancelDeploymentUpgradeDetails
 from .cancel_snooze_deployment_upgrade_details import CancelSnoozeDeploymentUpgradeDetails
 from .change_connection_compartment_details import ChangeConnectionCompartmentDetails
 from .change_database_registration_compartment_details import ChangeDatabaseRegistrationCompartmentDetails
@@ -39,6 +40,7 @@ from .create_hdfs_connection_details import CreateHdfsConnectionDetails
 from .create_java_message_service_connection_details import CreateJavaMessageServiceConnectionDetails
 from .create_kafka_connection_details import CreateKafkaConnectionDetails
 from .create_kafka_schema_registry_connection_details import CreateKafkaSchemaRegistryConnectionDetails
+from .create_maintenance_configuration_details import CreateMaintenanceConfigurationDetails
 from .create_maintenance_window_details import CreateMaintenanceWindowDetails
 from .create_microsoft_sqlserver_connection_details import CreateMicrosoftSqlserverConnectionDetails
 from .create_mongo_db_connection_details import CreateMongoDbConnectionDetails
@@ -53,6 +55,7 @@ from .database_registration import DatabaseRegistration
 from .database_registration_collection import DatabaseRegistrationCollection
 from .database_registration_summary import DatabaseRegistrationSummary
 from .default_cancel_deployment_backup_details import DefaultCancelDeploymentBackupDetails
+from .default_cancel_deployment_upgrade_details import DefaultCancelDeploymentUpgradeDetails
 from .default_cancel_snooze_deployment_upgrade_details import DefaultCancelSnoozeDeploymentUpgradeDetails
 from .default_deployment_wallet_exists_details import DefaultDeploymentWalletExistsDetails
 from .default_restore_deployment_details import DefaultRestoreDeploymentDetails
@@ -95,6 +98,7 @@ from .kafka_connection import KafkaConnection
 from .kafka_connection_summary import KafkaConnectionSummary
 from .kafka_schema_registry_connection import KafkaSchemaRegistryConnection
 from .kafka_schema_registry_connection_summary import KafkaSchemaRegistryConnectionSummary
+from .maintenance_configuration import MaintenanceConfiguration
 from .maintenance_window import MaintenanceWindow
 from .message_summary import MessageSummary
 from .microsoft_sqlserver_connection import MicrosoftSqlserverConnection
@@ -113,6 +117,8 @@ from .oracle_nosql_connection import OracleNosqlConnection
 from .oracle_nosql_connection_summary import OracleNosqlConnectionSummary
 from .postgresql_connection import PostgresqlConnection
 from .postgresql_connection_summary import PostgresqlConnectionSummary
+from .reschedule_deployment_upgrade_details import RescheduleDeploymentUpgradeDetails
+from .reschedule_deployment_upgrade_to_date_details import RescheduleDeploymentUpgradeToDateDetails
 from .restore_deployment_details import RestoreDeploymentDetails
 from .rollback_deployment_upgrade_details import RollbackDeploymentUpgradeDetails
 from .snooze_deployment_upgrade_details import SnoozeDeploymentUpgradeDetails
@@ -139,6 +145,7 @@ from .update_hdfs_connection_details import UpdateHdfsConnectionDetails
 from .update_java_message_service_connection_details import UpdateJavaMessageServiceConnectionDetails
 from .update_kafka_connection_details import UpdateKafkaConnectionDetails
 from .update_kafka_schema_registry_connection_details import UpdateKafkaSchemaRegistryConnectionDetails
+from .update_maintenance_configuration_details import UpdateMaintenanceConfigurationDetails
 from .update_maintenance_window_details import UpdateMaintenanceWindowDetails
 from .update_microsoft_sqlserver_connection_details import UpdateMicrosoftSqlserverConnectionDetails
 from .update_mongo_db_connection_details import UpdateMongoDbConnectionDetails
@@ -167,6 +174,7 @@ golden_gate_type_mapping = {
     "AzureSynapseConnection": AzureSynapseConnection,
     "AzureSynapseConnectionSummary": AzureSynapseConnectionSummary,
     "CancelDeploymentBackupDetails": CancelDeploymentBackupDetails,
+    "CancelDeploymentUpgradeDetails": CancelDeploymentUpgradeDetails,
     "CancelSnoozeDeploymentUpgradeDetails": CancelSnoozeDeploymentUpgradeDetails,
     "ChangeConnectionCompartmentDetails": ChangeConnectionCompartmentDetails,
     "ChangeDatabaseRegistrationCompartmentDetails": ChangeDatabaseRegistrationCompartmentDetails,
@@ -193,6 +201,7 @@ golden_gate_type_mapping = {
     "CreateJavaMessageServiceConnectionDetails": CreateJavaMessageServiceConnectionDetails,
     "CreateKafkaConnectionDetails": CreateKafkaConnectionDetails,
     "CreateKafkaSchemaRegistryConnectionDetails": CreateKafkaSchemaRegistryConnectionDetails,
+    "CreateMaintenanceConfigurationDetails": CreateMaintenanceConfigurationDetails,
     "CreateMaintenanceWindowDetails": CreateMaintenanceWindowDetails,
     "CreateMicrosoftSqlserverConnectionDetails": CreateMicrosoftSqlserverConnectionDetails,
     "CreateMongoDbConnectionDetails": CreateMongoDbConnectionDetails,
@@ -207,6 +216,7 @@ golden_gate_type_mapping = {
     "DatabaseRegistrationCollection": DatabaseRegistrationCollection,
     "DatabaseRegistrationSummary": DatabaseRegistrationSummary,
     "DefaultCancelDeploymentBackupDetails": DefaultCancelDeploymentBackupDetails,
+    "DefaultCancelDeploymentUpgradeDetails": DefaultCancelDeploymentUpgradeDetails,
     "DefaultCancelSnoozeDeploymentUpgradeDetails": DefaultCancelSnoozeDeploymentUpgradeDetails,
     "DefaultDeploymentWalletExistsDetails": DefaultDeploymentWalletExistsDetails,
     "DefaultRestoreDeploymentDetails": DefaultRestoreDeploymentDetails,
@@ -249,6 +259,7 @@ golden_gate_type_mapping = {
     "KafkaConnectionSummary": KafkaConnectionSummary,
     "KafkaSchemaRegistryConnection": KafkaSchemaRegistryConnection,
     "KafkaSchemaRegistryConnectionSummary": KafkaSchemaRegistryConnectionSummary,
+    "MaintenanceConfiguration": MaintenanceConfiguration,
     "MaintenanceWindow": MaintenanceWindow,
     "MessageSummary": MessageSummary,
     "MicrosoftSqlserverConnection": MicrosoftSqlserverConnection,
@@ -267,6 +278,8 @@ golden_gate_type_mapping = {
     "OracleNosqlConnectionSummary": OracleNosqlConnectionSummary,
     "PostgresqlConnection": PostgresqlConnection,
     "PostgresqlConnectionSummary": PostgresqlConnectionSummary,
+    "RescheduleDeploymentUpgradeDetails": RescheduleDeploymentUpgradeDetails,
+    "RescheduleDeploymentUpgradeToDateDetails": RescheduleDeploymentUpgradeToDateDetails,
     "RestoreDeploymentDetails": RestoreDeploymentDetails,
     "RollbackDeploymentUpgradeDetails": RollbackDeploymentUpgradeDetails,
     "SnoozeDeploymentUpgradeDetails": SnoozeDeploymentUpgradeDetails,
@@ -293,6 +306,7 @@ golden_gate_type_mapping = {
     "UpdateJavaMessageServiceConnectionDetails": UpdateJavaMessageServiceConnectionDetails,
     "UpdateKafkaConnectionDetails": UpdateKafkaConnectionDetails,
     "UpdateKafkaSchemaRegistryConnectionDetails": UpdateKafkaSchemaRegistryConnectionDetails,
+    "UpdateMaintenanceConfigurationDetails": UpdateMaintenanceConfigurationDetails,
     "UpdateMaintenanceWindowDetails": UpdateMaintenanceWindowDetails,
     "UpdateMicrosoftSqlserverConnectionDetails": UpdateMicrosoftSqlserverConnectionDetails,
     "UpdateMongoDbConnectionDetails": UpdateMongoDbConnectionDetails,

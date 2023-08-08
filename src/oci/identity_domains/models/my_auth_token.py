@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MyAuthToken(object):
     """
-    User's Auth token resource
+    The user's Auth token resource.
     """
 
     #: A constant which can be used with the idcs_prevented_operations property of a MyAuthToken.
@@ -721,7 +721,7 @@ class MyAuthToken(object):
     def status(self):
         """
         Gets the status of this MyAuthToken.
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -748,7 +748,7 @@ class MyAuthToken(object):
     def status(self, status):
         """
         Sets the status of this MyAuthToken.
-        User credential status
+        The user's credential status.
 
         **Added In:** 2109090424
 
@@ -775,7 +775,7 @@ class MyAuthToken(object):
     def expires_on(self):
         """
         Gets the expires_on of this MyAuthToken.
-        User credential expires on
+        When the user's credential expire.
 
         **Added In:** 2109090424
 
@@ -799,7 +799,7 @@ class MyAuthToken(object):
     def expires_on(self, expires_on):
         """
         Sets the expires_on of this MyAuthToken.
-        User credential expires on
+        When the user's credential expire.
 
         **Added In:** 2109090424
 

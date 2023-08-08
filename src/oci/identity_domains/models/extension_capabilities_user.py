@@ -48,6 +48,10 @@ class ExtensionCapabilitiesUser(object):
             The value to assign to the can_use_db_credentials property of this ExtensionCapabilitiesUser.
         :type can_use_db_credentials: bool
 
+        :param can_use_console:
+            The value to assign to the can_use_console property of this ExtensionCapabilitiesUser.
+        :type can_use_console: bool
+
         """
         self.swagger_types = {
             'can_use_api_keys': 'bool',
@@ -56,7 +60,8 @@ class ExtensionCapabilitiesUser(object):
             'can_use_customer_secret_keys': 'bool',
             'can_use_o_auth2_client_credentials': 'bool',
             'can_use_smtp_credentials': 'bool',
-            'can_use_db_credentials': 'bool'
+            'can_use_db_credentials': 'bool',
+            'can_use_console': 'bool'
         }
 
         self.attribute_map = {
@@ -66,7 +71,8 @@ class ExtensionCapabilitiesUser(object):
             'can_use_customer_secret_keys': 'canUseCustomerSecretKeys',
             'can_use_o_auth2_client_credentials': 'canUseOAuth2ClientCredentials',
             'can_use_smtp_credentials': 'canUseSmtpCredentials',
-            'can_use_db_credentials': 'canUseDbCredentials'
+            'can_use_db_credentials': 'canUseDbCredentials',
+            'can_use_console': 'canUseConsole'
         }
 
         self._can_use_api_keys = None
@@ -76,12 +82,13 @@ class ExtensionCapabilitiesUser(object):
         self._can_use_o_auth2_client_credentials = None
         self._can_use_smtp_credentials = None
         self._can_use_db_credentials = None
+        self._can_use_console = None
 
     @property
     def can_use_api_keys(self):
         """
         Gets the can_use_api_keys of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use api keys
+        Indicates whether a user can use API keys.
 
         **Added In:** 2012271618
 
@@ -105,7 +112,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_api_keys(self, can_use_api_keys):
         """
         Sets the can_use_api_keys of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use api keys
+        Indicates whether a user can use API keys.
 
         **Added In:** 2012271618
 
@@ -129,7 +136,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_auth_tokens(self):
         """
         Gets the can_use_auth_tokens of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use auth tokens
+        Indicates whether a user can use Auth tokens.
 
         **Added In:** 2012271618
 
@@ -153,7 +160,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_auth_tokens(self, can_use_auth_tokens):
         """
         Sets the can_use_auth_tokens of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use auth tokens
+        Indicates whether a user can use Auth tokens.
 
         **Added In:** 2012271618
 
@@ -177,7 +184,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_console_password(self):
         """
         Gets the can_use_console_password of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use console password
+        Indicates whether a user can use Console passwords.
 
         **Added In:** 2012271618
 
@@ -201,7 +208,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_console_password(self, can_use_console_password):
         """
         Sets the can_use_console_password of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use console password
+        Indicates whether a user can use Console passwords.
 
         **Added In:** 2012271618
 
@@ -225,7 +232,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_customer_secret_keys(self):
         """
         Gets the can_use_customer_secret_keys of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use customer secret keys
+        Indicates whether a user can use customer secret keys.
 
         **Added In:** 2012271618
 
@@ -249,7 +256,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_customer_secret_keys(self, can_use_customer_secret_keys):
         """
         Sets the can_use_customer_secret_keys of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use customer secret keys
+        Indicates whether a user can use customer secret keys.
 
         **Added In:** 2012271618
 
@@ -273,7 +280,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_o_auth2_client_credentials(self):
         """
         Gets the can_use_o_auth2_client_credentials of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use oauth2 client credentials
+        Indicates whether a user can use OAuth2 client credentials.
 
         **Added In:** 2012271618
 
@@ -297,7 +304,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_o_auth2_client_credentials(self, can_use_o_auth2_client_credentials):
         """
         Sets the can_use_o_auth2_client_credentials of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use oauth2 client credentials
+        Indicates whether a user can use OAuth2 client credentials.
 
         **Added In:** 2012271618
 
@@ -321,7 +328,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_smtp_credentials(self):
         """
         Gets the can_use_smtp_credentials of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use smtp credentials
+        Indicates whether a user can use SMTP credentials.
 
         **Added In:** 2012271618
 
@@ -345,7 +352,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_smtp_credentials(self, can_use_smtp_credentials):
         """
         Sets the can_use_smtp_credentials of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use smtp credentials
+        Indicates whether a user can use SMTP credentials.
 
         **Added In:** 2012271618
 
@@ -369,7 +376,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_db_credentials(self):
         """
         Gets the can_use_db_credentials of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use db credentials
+        Indicates whether a user can use database credentials.
 
         **Added In:** 2012271618
 
@@ -393,7 +400,7 @@ class ExtensionCapabilitiesUser(object):
     def can_use_db_credentials(self, can_use_db_credentials):
         """
         Sets the can_use_db_credentials of this ExtensionCapabilitiesUser.
-        Indicates weather a user can use db credentials
+        Indicates whether a user can use database credentials.
 
         **Added In:** 2012271618
 
@@ -412,6 +419,54 @@ class ExtensionCapabilitiesUser(object):
         :type: bool
         """
         self._can_use_db_credentials = can_use_db_credentials
+
+    @property
+    def can_use_console(self):
+        """
+        Gets the can_use_console of this ExtensionCapabilitiesUser.
+        Specifies whether user can access the Console.
+
+        **Added In:** 2206280902
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :return: The can_use_console of this ExtensionCapabilitiesUser.
+        :rtype: bool
+        """
+        return self._can_use_console
+
+    @can_use_console.setter
+    def can_use_console(self, can_use_console):
+        """
+        Sets the can_use_console of this ExtensionCapabilitiesUser.
+        Specifies whether user can access the Console.
+
+        **Added In:** 2206280902
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsSearchable: false
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :param can_use_console: The can_use_console of this ExtensionCapabilitiesUser.
+        :type: bool
+        """
+        self._can_use_console = can_use_console
 
     def __repr__(self):
         return formatted_flat_dict(self)

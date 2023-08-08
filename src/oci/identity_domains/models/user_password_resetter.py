@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserPasswordResetter(object):
     """
-    Schema to handle userpassword reset by administrator.
+    The schema used to handle a user password reset by an administrator.
     """
 
     #: A constant which can be used with the idcs_prevented_operations property of a UserPasswordResetter.
@@ -730,7 +730,7 @@ class UserPasswordResetter(object):
     def bypass_notification(self):
         """
         Gets the bypass_notification of this UserPasswordResetter.
-        A Boolean value indicating whether or not to send email notification after resetting the password of the OCI IAM user.
+        Indicates whether to send an email notification after resetting the user's password.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -752,7 +752,7 @@ class UserPasswordResetter(object):
     def bypass_notification(self, bypass_notification):
         """
         Sets the bypass_notification of this UserPasswordResetter.
-        A Boolean value indicating whether or not to send email notification after resetting the password of the OCI IAM user.
+        Indicates whether to send an email notification after resetting the user's password.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -838,7 +838,7 @@ class UserPasswordResetter(object):
     def notification_email_template_id(self):
         """
         Gets the notification_email_template_id of this UserPasswordResetter.
-        Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+        Specifies the EmailTemplate to be used when sending notifications to the user. If specified, it overrides the default EmailTemplate.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -860,7 +860,7 @@ class UserPasswordResetter(object):
     def notification_email_template_id(self, notification_email_template_id):
         """
         Sets the notification_email_template_id of this UserPasswordResetter.
-        Specifies the EmailTemplate to be used when sending notification to the user this request is for. If specified, it overrides the default EmailTemplate for this event.
+        Specifies the EmailTemplate to be used when sending notifications to the user. If specified, it overrides the default EmailTemplate.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -882,7 +882,7 @@ class UserPasswordResetter(object):
     def one_time_password(self):
         """
         Gets the one_time_password of this UserPasswordResetter.
-        One time password will be returned when user does not have primary email address
+        A one time password will be returned when the user doesn't have a primary email address.
 
         **SCIM++ Properties:**
          - caseExact: false
@@ -904,7 +904,7 @@ class UserPasswordResetter(object):
     def one_time_password(self, one_time_password):
         """
         Sets the one_time_password of this UserPasswordResetter.
-        One time password will be returned when user does not have primary email address
+        A one time password will be returned when the user doesn't have a primary email address.
 
         **SCIM++ Properties:**
          - caseExact: false

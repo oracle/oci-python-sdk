@@ -6,11 +6,86 @@
 
 from __future__ import absolute_import
 
+from .account_mgmt_info import AccountMgmtInfo
+from .account_mgmt_info_app import AccountMgmtInfoApp
+from .account_mgmt_info_matching_owners import AccountMgmtInfoMatchingOwners
+from .account_mgmt_info_object_class import AccountMgmtInfoObjectClass
+from .account_mgmt_info_owner import AccountMgmtInfoOwner
+from .account_mgmt_info_resource_type import AccountMgmtInfoResourceType
+from .account_mgmt_info_search_request import AccountMgmtInfoSearchRequest
+from .account_mgmt_info_user_wallet_artifact import AccountMgmtInfoUserWalletArtifact
+from .account_mgmt_infos import AccountMgmtInfos
+from .account_recovery_setting import AccountRecoverySetting
+from .account_recovery_settings import AccountRecoverySettings
 from .addresses import Addresses
 from .api_key import ApiKey
 from .api_key_search_request import ApiKeySearchRequest
 from .api_key_user import ApiKeyUser
 from .api_keys import ApiKeys
+from .app import App
+from .app_accounts import AppAccounts
+from .app_admin_roles import AppAdminRoles
+from .app_alias_apps import AppAliasApps
+from .app_allow_authz_policy import AppAllowAuthzPolicy
+from .app_allowed_scopes import AppAllowedScopes
+from .app_allowed_tags import AppAllowedTags
+from .app_app_resources import AppAppResources
+from .app_app_signon_policy import AppAppSignonPolicy
+from .app_apps_network_perimeters import AppAppsNetworkPerimeters
+from .app_as_opc_service import AppAsOPCService
+from .app_attr_rendering_metadata import AppAttrRenderingMetadata
+from .app_based_on_template import AppBasedOnTemplate
+from .app_bundle_configuration_properties import AppBundleConfigurationProperties
+from .app_bundle_pool_configuration import AppBundlePoolConfiguration
+from .app_certificates import AppCertificates
+from .app_cloud_control_properties import AppCloudControlProperties
+from .app_connector_bundle import AppConnectorBundle
+from .app_deny_authz_policy import AppDenyAuthzPolicy
+from .app_domain_app import AppDomainApp
+from .app_editable_attributes import AppEditableAttributes
+from .app_extension_dbcs_app import AppExtensionDbcsApp
+from .app_extension_enterprise_app_app import AppExtensionEnterpriseAppApp
+from .app_extension_form_fill_app_app import AppExtensionFormFillAppApp
+from .app_extension_form_fill_app_template_app_template import AppExtensionFormFillAppTemplateAppTemplate
+from .app_extension_kerberos_realm_app import AppExtensionKerberosRealmApp
+from .app_extension_managedapp_app import AppExtensionManagedappApp
+from .app_extension_multicloud_service_app_app import AppExtensionMulticloudServiceAppApp
+from .app_extension_opc_service_app import AppExtensionOpcServiceApp
+from .app_extension_radius_app_app import AppExtensionRadiusAppApp
+from .app_extension_requestable_app import AppExtensionRequestableApp
+from .app_extension_saml_service_provider_app import AppExtensionSamlServiceProviderApp
+from .app_extension_web_tier_policy_app import AppExtensionWebTierPolicyApp
+from .app_flat_file_bundle_configuration_properties import AppFlatFileBundleConfigurationProperties
+from .app_flat_file_connector_bundle import AppFlatFileConnectorBundle
+from .app_form_fill_url_match import AppFormFillUrlMatch
+from .app_granted_app_roles import AppGrantedAppRoles
+from .app_grants import AppGrants
+from .app_group_assertion_attributes import AppGroupAssertionAttributes
+from .app_group_membership_to_return import AppGroupMembershipToReturn
+from .app_identity_bridges import AppIdentityBridges
+from .app_identity_providers import AppIdentityProviders
+from .app_idp_policy import AppIdpPolicy
+from .app_object_classes import AppObjectClasses
+from .app_outbound_assertion_attributes import AppOutboundAssertionAttributes
+from .app_protectable_secondary_audiences import AppProtectableSecondaryAudiences
+from .app_radius_policy import AppRadiusPolicy
+from .app_role import AppRole
+from .app_role_app import AppRoleApp
+from .app_role_members import AppRoleMembers
+from .app_role_search_request import AppRoleSearchRequest
+from .app_roles import AppRoles
+from .app_saml_service_provider import AppSamlServiceProvider
+from .app_scopes import AppScopes
+from .app_search_request import AppSearchRequest
+from .app_service_params import AppServiceParams
+from .app_signon_policy import AppSignonPolicy
+from .app_status_changer import AppStatusChanger
+from .app_terms_of_use import AppTermsOfUse
+from .app_three_legged_o_auth_credential import AppThreeLeggedOAuthCredential
+from .app_trust_policies import AppTrustPolicies
+from .app_user_assertion_attributes import AppUserAssertionAttributes
+from .app_user_roles import AppUserRoles
+from .apps import Apps
 from .auth_token import AuthToken
 from .auth_token_search_request import AuthTokenSearchRequest
 from .auth_token_user import AuthTokenUser
@@ -72,6 +147,14 @@ from .extension_user_state_user import ExtensionUserStateUser
 from .extension_user_user import ExtensionUserUser
 from .extension_x509_identity_provider import ExtensionX509IdentityProvider
 from .freeform_tags import FreeformTags
+from .grant import Grant
+from .grant_app import GrantApp
+from .grant_app_entitlement_collection import GrantAppEntitlementCollection
+from .grant_entitlement import GrantEntitlement
+from .grant_grantee import GrantGrantee
+from .grant_grantor import GrantGrantor
+from .grant_search_request import GrantSearchRequest
+from .grants import Grants
 from .group import Group
 from .group_ext_app_roles import GroupExtAppRoles
 from .group_ext_domain_level_schema_names import GroupExtDomainLevelSchemaNames
@@ -92,6 +175,13 @@ from .identity_provider_jit_user_prov_attributes import IdentityProviderJitUserP
 from .identity_provider_jit_user_prov_group_mappings import IdentityProviderJitUserProvGroupMappings
 from .identity_provider_search_request import IdentityProviderSearchRequest
 from .identity_providers import IdentityProviders
+from .identity_setting import IdentitySetting
+from .identity_settings import IdentitySettings
+from .identity_settings_my_profile import IdentitySettingsMyProfile
+from .identity_settings_posix_gid import IdentitySettingsPOSIXGid
+from .identity_settings_posix_uid import IdentitySettingsPOSIXUid
+from .identity_settings_search_request import IdentitySettingsSearchRequest
+from .identity_settings_tokens import IdentitySettingsTokens
 from .kmsi_setting import KmsiSetting
 from .kmsi_settings import KmsiSettings
 from .kmsi_settings_search_request import KmsiSettingsSearchRequest
@@ -110,6 +200,12 @@ from .meta import Meta
 from .my_api_key import MyApiKey
 from .my_api_key_user import MyApiKeyUser
 from .my_api_keys import MyApiKeys
+from .my_app import MyApp
+from .my_app_app import MyAppApp
+from .my_app_owner import MyAppOwner
+from .my_app_search_request import MyAppSearchRequest
+from .my_app_user_wallet_artifact import MyAppUserWalletArtifact
+from .my_apps import MyApps
 from .my_auth_token import MyAuthToken
 from .my_auth_token_user import MyAuthTokenUser
 from .my_auth_tokens import MyAuthTokens
@@ -141,6 +237,15 @@ from .my_o_auth2_client_credential import MyOAuth2ClientCredential
 from .my_o_auth2_client_credential_scopes import MyOAuth2ClientCredentialScopes
 from .my_o_auth2_client_credential_user import MyOAuth2ClientCredentialUser
 from .my_o_auth2_client_credentials import MyOAuth2ClientCredentials
+from .my_request import MyRequest
+from .my_request_requesting import MyRequestRequesting
+from .my_request_requestor import MyRequestRequestor
+from .my_request_search_request import MyRequestSearchRequest
+from .my_requestable_group import MyRequestableGroup
+from .my_requestable_group_members import MyRequestableGroupMembers
+from .my_requestable_group_search_request import MyRequestableGroupSearchRequest
+from .my_requestable_groups import MyRequestableGroups
+from .my_requests import MyRequests
 from .my_smtp_credential import MySmtpCredential
 from .my_smtp_credential_user import MySmtpCredentialUser
 from .my_smtp_credentials import MySmtpCredentials
@@ -166,12 +271,26 @@ from .password_policy_configured_password_policy_rules import PasswordPolicyConf
 from .password_policy_groups import PasswordPolicyGroups
 from .password_policy_search_request import PasswordPolicySearchRequest
 from .patch_op import PatchOp
+from .resource_type_schema_attribute import ResourceTypeSchemaAttribute
+from .resource_type_schema_attribute_search_request import ResourceTypeSchemaAttributeSearchRequest
+from .resource_type_schema_attributes import ResourceTypeSchemaAttributes
+from .security_question import SecurityQuestion
+from .security_question_question_text import SecurityQuestionQuestionText
+from .security_question_search_request import SecurityQuestionSearchRequest
+from .security_question_setting import SecurityQuestionSetting
+from .security_question_settings import SecurityQuestionSettings
+from .security_question_settings_search_request import SecurityQuestionSettingsSearchRequest
+from .security_questions import SecurityQuestions
 from .smtp_credential import SmtpCredential
 from .smtp_credential_search_request import SmtpCredentialSearchRequest
 from .smtp_credential_user import SmtpCredentialUser
 from .smtp_credentials import SmtpCredentials
 from .tags import Tags
 from .user import User
+from .user_attributes_setting import UserAttributesSetting
+from .user_attributes_settings import UserAttributesSettings
+from .user_attributes_settings_attribute_settings import UserAttributesSettingsAttributeSettings
+from .user_attributes_settings_search_request import UserAttributesSettingsSearchRequest
 from .user_capabilities_changer import UserCapabilitiesChanger
 from .user_db_credential import UserDbCredential
 from .user_db_credentials import UserDbCredentials
@@ -226,11 +345,86 @@ from .users import Users
 
 # Maps type names to classes for identity_domains services.
 identity_domains_type_mapping = {
+    "AccountMgmtInfo": AccountMgmtInfo,
+    "AccountMgmtInfoApp": AccountMgmtInfoApp,
+    "AccountMgmtInfoMatchingOwners": AccountMgmtInfoMatchingOwners,
+    "AccountMgmtInfoObjectClass": AccountMgmtInfoObjectClass,
+    "AccountMgmtInfoOwner": AccountMgmtInfoOwner,
+    "AccountMgmtInfoResourceType": AccountMgmtInfoResourceType,
+    "AccountMgmtInfoSearchRequest": AccountMgmtInfoSearchRequest,
+    "AccountMgmtInfoUserWalletArtifact": AccountMgmtInfoUserWalletArtifact,
+    "AccountMgmtInfos": AccountMgmtInfos,
+    "AccountRecoverySetting": AccountRecoverySetting,
+    "AccountRecoverySettings": AccountRecoverySettings,
     "Addresses": Addresses,
     "ApiKey": ApiKey,
     "ApiKeySearchRequest": ApiKeySearchRequest,
     "ApiKeyUser": ApiKeyUser,
     "ApiKeys": ApiKeys,
+    "App": App,
+    "AppAccounts": AppAccounts,
+    "AppAdminRoles": AppAdminRoles,
+    "AppAliasApps": AppAliasApps,
+    "AppAllowAuthzPolicy": AppAllowAuthzPolicy,
+    "AppAllowedScopes": AppAllowedScopes,
+    "AppAllowedTags": AppAllowedTags,
+    "AppAppResources": AppAppResources,
+    "AppAppSignonPolicy": AppAppSignonPolicy,
+    "AppAppsNetworkPerimeters": AppAppsNetworkPerimeters,
+    "AppAsOPCService": AppAsOPCService,
+    "AppAttrRenderingMetadata": AppAttrRenderingMetadata,
+    "AppBasedOnTemplate": AppBasedOnTemplate,
+    "AppBundleConfigurationProperties": AppBundleConfigurationProperties,
+    "AppBundlePoolConfiguration": AppBundlePoolConfiguration,
+    "AppCertificates": AppCertificates,
+    "AppCloudControlProperties": AppCloudControlProperties,
+    "AppConnectorBundle": AppConnectorBundle,
+    "AppDenyAuthzPolicy": AppDenyAuthzPolicy,
+    "AppDomainApp": AppDomainApp,
+    "AppEditableAttributes": AppEditableAttributes,
+    "AppExtensionDbcsApp": AppExtensionDbcsApp,
+    "AppExtensionEnterpriseAppApp": AppExtensionEnterpriseAppApp,
+    "AppExtensionFormFillAppApp": AppExtensionFormFillAppApp,
+    "AppExtensionFormFillAppTemplateAppTemplate": AppExtensionFormFillAppTemplateAppTemplate,
+    "AppExtensionKerberosRealmApp": AppExtensionKerberosRealmApp,
+    "AppExtensionManagedappApp": AppExtensionManagedappApp,
+    "AppExtensionMulticloudServiceAppApp": AppExtensionMulticloudServiceAppApp,
+    "AppExtensionOpcServiceApp": AppExtensionOpcServiceApp,
+    "AppExtensionRadiusAppApp": AppExtensionRadiusAppApp,
+    "AppExtensionRequestableApp": AppExtensionRequestableApp,
+    "AppExtensionSamlServiceProviderApp": AppExtensionSamlServiceProviderApp,
+    "AppExtensionWebTierPolicyApp": AppExtensionWebTierPolicyApp,
+    "AppFlatFileBundleConfigurationProperties": AppFlatFileBundleConfigurationProperties,
+    "AppFlatFileConnectorBundle": AppFlatFileConnectorBundle,
+    "AppFormFillUrlMatch": AppFormFillUrlMatch,
+    "AppGrantedAppRoles": AppGrantedAppRoles,
+    "AppGrants": AppGrants,
+    "AppGroupAssertionAttributes": AppGroupAssertionAttributes,
+    "AppGroupMembershipToReturn": AppGroupMembershipToReturn,
+    "AppIdentityBridges": AppIdentityBridges,
+    "AppIdentityProviders": AppIdentityProviders,
+    "AppIdpPolicy": AppIdpPolicy,
+    "AppObjectClasses": AppObjectClasses,
+    "AppOutboundAssertionAttributes": AppOutboundAssertionAttributes,
+    "AppProtectableSecondaryAudiences": AppProtectableSecondaryAudiences,
+    "AppRadiusPolicy": AppRadiusPolicy,
+    "AppRole": AppRole,
+    "AppRoleApp": AppRoleApp,
+    "AppRoleMembers": AppRoleMembers,
+    "AppRoleSearchRequest": AppRoleSearchRequest,
+    "AppRoles": AppRoles,
+    "AppSamlServiceProvider": AppSamlServiceProvider,
+    "AppScopes": AppScopes,
+    "AppSearchRequest": AppSearchRequest,
+    "AppServiceParams": AppServiceParams,
+    "AppSignonPolicy": AppSignonPolicy,
+    "AppStatusChanger": AppStatusChanger,
+    "AppTermsOfUse": AppTermsOfUse,
+    "AppThreeLeggedOAuthCredential": AppThreeLeggedOAuthCredential,
+    "AppTrustPolicies": AppTrustPolicies,
+    "AppUserAssertionAttributes": AppUserAssertionAttributes,
+    "AppUserRoles": AppUserRoles,
+    "Apps": Apps,
     "AuthToken": AuthToken,
     "AuthTokenSearchRequest": AuthTokenSearchRequest,
     "AuthTokenUser": AuthTokenUser,
@@ -292,6 +486,14 @@ identity_domains_type_mapping = {
     "ExtensionUserUser": ExtensionUserUser,
     "ExtensionX509IdentityProvider": ExtensionX509IdentityProvider,
     "FreeformTags": FreeformTags,
+    "Grant": Grant,
+    "GrantApp": GrantApp,
+    "GrantAppEntitlementCollection": GrantAppEntitlementCollection,
+    "GrantEntitlement": GrantEntitlement,
+    "GrantGrantee": GrantGrantee,
+    "GrantGrantor": GrantGrantor,
+    "GrantSearchRequest": GrantSearchRequest,
+    "Grants": Grants,
     "Group": Group,
     "GroupExtAppRoles": GroupExtAppRoles,
     "GroupExtDomainLevelSchemaNames": GroupExtDomainLevelSchemaNames,
@@ -312,6 +514,13 @@ identity_domains_type_mapping = {
     "IdentityProviderJitUserProvGroupMappings": IdentityProviderJitUserProvGroupMappings,
     "IdentityProviderSearchRequest": IdentityProviderSearchRequest,
     "IdentityProviders": IdentityProviders,
+    "IdentitySetting": IdentitySetting,
+    "IdentitySettings": IdentitySettings,
+    "IdentitySettingsMyProfile": IdentitySettingsMyProfile,
+    "IdentitySettingsPOSIXGid": IdentitySettingsPOSIXGid,
+    "IdentitySettingsPOSIXUid": IdentitySettingsPOSIXUid,
+    "IdentitySettingsSearchRequest": IdentitySettingsSearchRequest,
+    "IdentitySettingsTokens": IdentitySettingsTokens,
     "KmsiSetting": KmsiSetting,
     "KmsiSettings": KmsiSettings,
     "KmsiSettingsSearchRequest": KmsiSettingsSearchRequest,
@@ -330,6 +539,12 @@ identity_domains_type_mapping = {
     "MyApiKey": MyApiKey,
     "MyApiKeyUser": MyApiKeyUser,
     "MyApiKeys": MyApiKeys,
+    "MyApp": MyApp,
+    "MyAppApp": MyAppApp,
+    "MyAppOwner": MyAppOwner,
+    "MyAppSearchRequest": MyAppSearchRequest,
+    "MyAppUserWalletArtifact": MyAppUserWalletArtifact,
+    "MyApps": MyApps,
     "MyAuthToken": MyAuthToken,
     "MyAuthTokenUser": MyAuthTokenUser,
     "MyAuthTokens": MyAuthTokens,
@@ -361,6 +576,15 @@ identity_domains_type_mapping = {
     "MyOAuth2ClientCredentialScopes": MyOAuth2ClientCredentialScopes,
     "MyOAuth2ClientCredentialUser": MyOAuth2ClientCredentialUser,
     "MyOAuth2ClientCredentials": MyOAuth2ClientCredentials,
+    "MyRequest": MyRequest,
+    "MyRequestRequesting": MyRequestRequesting,
+    "MyRequestRequestor": MyRequestRequestor,
+    "MyRequestSearchRequest": MyRequestSearchRequest,
+    "MyRequestableGroup": MyRequestableGroup,
+    "MyRequestableGroupMembers": MyRequestableGroupMembers,
+    "MyRequestableGroupSearchRequest": MyRequestableGroupSearchRequest,
+    "MyRequestableGroups": MyRequestableGroups,
+    "MyRequests": MyRequests,
     "MySmtpCredential": MySmtpCredential,
     "MySmtpCredentialUser": MySmtpCredentialUser,
     "MySmtpCredentials": MySmtpCredentials,
@@ -386,12 +610,26 @@ identity_domains_type_mapping = {
     "PasswordPolicyGroups": PasswordPolicyGroups,
     "PasswordPolicySearchRequest": PasswordPolicySearchRequest,
     "PatchOp": PatchOp,
+    "ResourceTypeSchemaAttribute": ResourceTypeSchemaAttribute,
+    "ResourceTypeSchemaAttributeSearchRequest": ResourceTypeSchemaAttributeSearchRequest,
+    "ResourceTypeSchemaAttributes": ResourceTypeSchemaAttributes,
+    "SecurityQuestion": SecurityQuestion,
+    "SecurityQuestionQuestionText": SecurityQuestionQuestionText,
+    "SecurityQuestionSearchRequest": SecurityQuestionSearchRequest,
+    "SecurityQuestionSetting": SecurityQuestionSetting,
+    "SecurityQuestionSettings": SecurityQuestionSettings,
+    "SecurityQuestionSettingsSearchRequest": SecurityQuestionSettingsSearchRequest,
+    "SecurityQuestions": SecurityQuestions,
     "SmtpCredential": SmtpCredential,
     "SmtpCredentialSearchRequest": SmtpCredentialSearchRequest,
     "SmtpCredentialUser": SmtpCredentialUser,
     "SmtpCredentials": SmtpCredentials,
     "Tags": Tags,
     "User": User,
+    "UserAttributesSetting": UserAttributesSetting,
+    "UserAttributesSettings": UserAttributesSettings,
+    "UserAttributesSettingsAttributeSettings": UserAttributesSettingsAttributeSettings,
+    "UserAttributesSettingsSearchRequest": UserAttributesSettingsSearchRequest,
     "UserCapabilitiesChanger": UserCapabilitiesChanger,
     "UserDbCredential": UserDbCredential,
     "UserDbCredentials": UserDbCredentials,

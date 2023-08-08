@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserExtRecoveryLocked(object):
     """
-    A complex attribute that indicates an password recovery is locked (blocking new sessions)
+    A complex attribute that indicates a password recovery is locked (blocking any new sessions).
 
     **Added In:** 19.1.4
 
@@ -57,7 +57,7 @@ class UserExtRecoveryLocked(object):
     def on(self):
         """
         Gets the on of this UserExtRecoveryLocked.
-        Indicates that the rev is locked
+        Indicates that the recovery is locked.
 
         **Added In:** 19.1.4
 
@@ -66,6 +66,7 @@ class UserExtRecoveryLocked(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: boolean
@@ -81,7 +82,7 @@ class UserExtRecoveryLocked(object):
     def on(self, on):
         """
         Sets the on of this UserExtRecoveryLocked.
-        Indicates that the rev is locked
+        Indicates that the recovery is locked.
 
         **Added In:** 19.1.4
 
@@ -90,6 +91,7 @@ class UserExtRecoveryLocked(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: boolean
@@ -105,7 +107,7 @@ class UserExtRecoveryLocked(object):
     def lock_date(self):
         """
         Gets the lock_date of this UserExtRecoveryLocked.
-        The date and time that the current resource was locked
+        The date and time that the current resource was locked.
 
         **Added In:** 19.1.4
 
@@ -113,6 +115,7 @@ class UserExtRecoveryLocked(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: dateTime
@@ -128,7 +131,7 @@ class UserExtRecoveryLocked(object):
     def lock_date(self, lock_date):
         """
         Sets the lock_date of this UserExtRecoveryLocked.
-        The date and time that the current resource was locked
+        The date and time that the current resource was locked.
 
         **Added In:** 19.1.4
 
@@ -136,6 +139,7 @@ class UserExtRecoveryLocked(object):
          - idcsSearchable: false
          - multiValued: false
          - mutability: readWrite
+         - idcsRequiresWriteForAccessFlows: true
          - required: false
          - returned: default
          - type: dateTime

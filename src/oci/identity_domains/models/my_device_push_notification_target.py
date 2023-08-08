@@ -66,6 +66,8 @@ class MyDevicePushNotificationTarget(object):
          - returned: always
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The value of this MyDevicePushNotificationTarget.
@@ -88,6 +90,8 @@ class MyDevicePushNotificationTarget(object):
          - returned: always
          - type: string
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param value: The value of this MyDevicePushNotificationTarget.
@@ -109,6 +113,8 @@ class MyDevicePushNotificationTarget(object):
          - returned: default
          - type: reference
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :return: The ref of this MyDevicePushNotificationTarget.
@@ -130,6 +136,8 @@ class MyDevicePushNotificationTarget(object):
          - returned: default
          - type: reference
          - uniqueness: none
+         - idcsRequiresWriteForAccessFlows: true
+         - idcsRequiresImmediateReadAfterWriteForAccessFlows: true
 
 
         :param ref: The ref of this MyDevicePushNotificationTarget.

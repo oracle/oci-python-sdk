@@ -101,31 +101,9 @@ class TextDocument(object):
     def language_code(self):
         """
         Gets the language_code of this TextDocument.
-        Language code supported
-        Automatically detect language - auto
-        Arabic - ar
-        Brazilian Portuguese - pt-BR
-        Czech - cs
-        Danish - da
-        Dutch - nl
-        English - en
-        Finnish - fi
-        French - fr
-        Canadian French - fr-CA
-        German - de
-        Italian - it
-        Japanese - ja
-        Korean - ko
-        Norwegian - no
-        Polish - pl
-        Romanian - ro
-        Simplified Chinese - zh-CN
-        Spanish - es
-        Swedish - sv
-        Traditional Chinese - zh-TW
-        Turkish - tr
-        Greek - el
-        Hebrew - he
+        Language code of the document. Please refer to respective model `API documentation`__ for supported languages.
+
+        __ https://docs.cloud.oracle.com/iaas/language/using/overview.htm
 
 
         :return: The language_code of this TextDocument.
@@ -137,31 +115,9 @@ class TextDocument(object):
     def language_code(self, language_code):
         """
         Sets the language_code of this TextDocument.
-        Language code supported
-        Automatically detect language - auto
-        Arabic - ar
-        Brazilian Portuguese - pt-BR
-        Czech - cs
-        Danish - da
-        Dutch - nl
-        English - en
-        Finnish - fi
-        French - fr
-        Canadian French - fr-CA
-        German - de
-        Italian - it
-        Japanese - ja
-        Korean - ko
-        Norwegian - no
-        Polish - pl
-        Romanian - ro
-        Simplified Chinese - zh-CN
-        Spanish - es
-        Swedish - sv
-        Traditional Chinese - zh-TW
-        Turkish - tr
-        Greek - el
-        Hebrew - he
+        Language code of the document. Please refer to respective model `API documentation`__ for supported languages.
+
+        __ https://docs.cloud.oracle.com/iaas/language/using/overview.htm
 
 
         :param language_code: The language_code of this TextDocument.

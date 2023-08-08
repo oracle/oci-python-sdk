@@ -571,7 +571,7 @@ class ExtensionFidoAuthenticationFactorSettings(object):
     def domain_validation_level(self):
         """
         Gets the domain_validation_level of this ExtensionFidoAuthenticationFactorSettings.
-        Number of domain levels IDCS should use for origin comparision
+        Number of domain levels Oracle Identity Cloud Service should use for origin comparision
 
         **Added In:** 2109020413
 
@@ -596,7 +596,7 @@ class ExtensionFidoAuthenticationFactorSettings(object):
     def domain_validation_level(self, domain_validation_level):
         """
         Sets the domain_validation_level of this ExtensionFidoAuthenticationFactorSettings.
-        Number of domain levels IDCS should use for origin comparision
+        Number of domain levels Oracle Identity Cloud Service should use for origin comparision
 
         **Added In:** 2109020413
 
