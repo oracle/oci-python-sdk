@@ -88,7 +88,7 @@ class InstancePoolPlacementConfiguration(object):
     def primary_subnet_id(self):
         """
         **[Required]** Gets the primary_subnet_id of this InstancePoolPlacementConfiguration.
-        The `OCID`__ of the primary subnet to place instances.
+        The `OCID`__ of the primary subnet in which to place instances.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -102,7 +102,7 @@ class InstancePoolPlacementConfiguration(object):
     def primary_subnet_id(self, primary_subnet_id):
         """
         Sets the primary_subnet_id of this InstancePoolPlacementConfiguration.
-        The `OCID`__ of the primary subnet to place instances.
+        The `OCID`__ of the primary subnet in which to place instances.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

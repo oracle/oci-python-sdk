@@ -232,7 +232,7 @@ class CreateIpv6Details(object):
     def ipv6_subnet_cidr(self):
         """
         Gets the ipv6_subnet_cidr of this CreateIpv6Details.
-        The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+        The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 
 
         :return: The ipv6_subnet_cidr of this CreateIpv6Details.
@@ -244,7 +244,7 @@ class CreateIpv6Details(object):
     def ipv6_subnet_cidr(self, ipv6_subnet_cidr):
         """
         Sets the ipv6_subnet_cidr of this CreateIpv6Details.
-        The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+        The IPv6 prefix allocated to the subnet. This is required if more than one IPv6 prefix exists on the subnet.
 
 
         :param ipv6_subnet_cidr: The ipv6_subnet_cidr of this CreateIpv6Details.

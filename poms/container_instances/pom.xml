@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.pic.container</groupId>
         <artifactId>container-vm-control-plane-spec</artifactId>
-        <version>0.2.946</version>
+        <version>0.2.987</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

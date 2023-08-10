@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemoveSubnetIpv6CidrDetails(object):
     """
-    Details object for removing an IPv6 CIDR Block from a Subnet.
+    Details object for removing an IPv6 prefix from a subnet.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class RemoveSubnetIpv6CidrDetails(object):
     def ipv6_cidr_block(self):
         """
         **[Required]** Gets the ipv6_cidr_block of this RemoveSubnetIpv6CidrDetails.
-        This field is not required and should only be specified when removing an IPv6 CIDR
+        This field is not required and should only be specified when removing an IPv6 prefix
         from a subnet's IPv6 address space.
         See`IPv6 Addresses`__.
 
@@ -57,7 +57,7 @@ class RemoveSubnetIpv6CidrDetails(object):
     def ipv6_cidr_block(self, ipv6_cidr_block):
         """
         Sets the ipv6_cidr_block of this RemoveSubnetIpv6CidrDetails.
-        This field is not required and should only be specified when removing an IPv6 CIDR
+        This field is not required and should only be specified when removing an IPv6 prefix
         from a subnet's IPv6 address space.
         See`IPv6 Addresses`__.
 

@@ -322,7 +322,7 @@ class VirtualNetworkClient(object):
 
     def add_ipv6_subnet_cidr(self, subnet_id, add_subnet_ipv6_cidr_details, **kwargs):
         """
-        Add an IPv6 CIDR to a subnet.
+        Add an IPv6 prefix to a subnet.
 
 
         :param str subnet_id: (required)
@@ -331,7 +331,7 @@ class VirtualNetworkClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AddSubnetIpv6CidrDetails add_subnet_ipv6_cidr_details: (required)
-            Details object for adding an IPv6 CIDR to a subnet.
+            Details object for adding an IPv6 prefix to a subnet.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -441,8 +441,8 @@ class VirtualNetworkClient(object):
 
     def add_ipv6_vcn_cidr(self, vcn_id, **kwargs):
         """
-        Add an IPv6 CIDR to a VCN. The VCN size is always /56 and assigned by Oracle.
-        Once added the IPv6 CIDR block cannot be removed or modified.
+        Add an IPv6 prefix to a VCN. The VCN size is always /56 and assigned by Oracle.
+        Once added the IPv6 prefix cannot be removed or modified.
 
 
         :param str vcn_id: (required)
@@ -22724,7 +22724,7 @@ class VirtualNetworkClient(object):
 
     def remove_ipv6_subnet_cidr(self, subnet_id, remove_subnet_ipv6_cidr_details, **kwargs):
         """
-        Remove an IPv6 CIDR from a subnet. At least one IPv6 CIDR should remain.
+        Remove an IPv6 prefix from a subnet. At least one IPv6 CIDR should remain.
 
 
         :param str subnet_id: (required)
@@ -22733,7 +22733,7 @@ class VirtualNetworkClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.RemoveSubnetIpv6CidrDetails remove_subnet_ipv6_cidr_details: (required)
-            Details object for removing an IPv6 SUBNET CIDR.
+            Details object for removing an IPv6 SUBNET prefix.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -22843,7 +22843,7 @@ class VirtualNetworkClient(object):
 
     def remove_ipv6_vcn_cidr(self, vcn_id, **kwargs):
         """
-        Removing an existing IPv6 CIDR from a VCN.
+        Removing an existing IPv6 prefix from a VCN.
 
 
         :param str vcn_id: (required)
@@ -22868,7 +22868,7 @@ class VirtualNetworkClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param oci.core.models.RemoveVcnIpv6CidrDetails remove_vcn_ipv6_cidr_details: (optional)
-            Details object for removing a VCN ipv6 CIDR.
+            Details object for removing a VCN IPv6 prefix.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

@@ -44,10 +44,14 @@ from .create_container_tcp_health_check_details import CreateContainerTcpHealthC
 from .create_container_vnic_details import CreateContainerVnicDetails
 from .create_container_volume_details import CreateContainerVolumeDetails
 from .create_image_pull_secret_details import CreateImagePullSecretDetails
+from .create_linux_security_context_details import CreateLinuxSecurityContextDetails
+from .create_security_context_details import CreateSecurityContextDetails
 from .create_vault_image_pull_secret_details import CreateVaultImagePullSecretDetails
 from .create_volume_mount_details import CreateVolumeMountDetails
 from .health_check_http_header import HealthCheckHttpHeader
 from .image_pull_secret import ImagePullSecret
+from .linux_security_context import LinuxSecurityContext
+from .security_context import SecurityContext
 from .shape_memory_options import ShapeMemoryOptions
 from .shape_networking_bandwidth_options import ShapeNetworkingBandwidthOptions
 from .shape_ocpu_options import ShapeOcpuOptions
@@ -104,10 +108,14 @@ container_instances_type_mapping = {
     "CreateContainerVnicDetails": CreateContainerVnicDetails,
     "CreateContainerVolumeDetails": CreateContainerVolumeDetails,
     "CreateImagePullSecretDetails": CreateImagePullSecretDetails,
+    "CreateLinuxSecurityContextDetails": CreateLinuxSecurityContextDetails,
+    "CreateSecurityContextDetails": CreateSecurityContextDetails,
     "CreateVaultImagePullSecretDetails": CreateVaultImagePullSecretDetails,
     "CreateVolumeMountDetails": CreateVolumeMountDetails,
     "HealthCheckHttpHeader": HealthCheckHttpHeader,
     "ImagePullSecret": ImagePullSecret,
+    "LinuxSecurityContext": LinuxSecurityContext,
+    "SecurityContext": SecurityContext,
     "ShapeMemoryOptions": ShapeMemoryOptions,
     "ShapeNetworkingBandwidthOptions": ShapeNetworkingBandwidthOptions,
     "ShapeOcpuOptions": ShapeOcpuOptions,

@@ -197,10 +197,10 @@ class CreateVcnDetails(object):
     def ipv6_private_cidr_blocks(self):
         """
         Gets the ipv6_private_cidr_blocks of this CreateVcnDetails.
-        The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
+        The list of one or more ULA or Private IPv6 prefixes for the VCN that meets the following criteria:
         - The CIDR blocks must be valid.
-        - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+        - Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+        - The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
 
         **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
 
@@ -214,10 +214,10 @@ class CreateVcnDetails(object):
     def ipv6_private_cidr_blocks(self, ipv6_private_cidr_blocks):
         """
         Sets the ipv6_private_cidr_blocks of this CreateVcnDetails.
-        The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
+        The list of one or more ULA or Private IPv6 prefixes for the VCN that meets the following criteria:
         - The CIDR blocks must be valid.
-        - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a vcn.
+        - Multiple CIDR blocks must not overlap each other or the on-premises network prefix.
+        - The number of CIDR blocks must not exceed the limit of IPv6 prefixes allowed to a VCN.
 
         **Important:** Do *not* specify a value for `ipv6CidrBlock`. Use this parameter instead.
 
@@ -257,7 +257,7 @@ class CreateVcnDetails(object):
     def byoipv6_cidr_details(self):
         """
         Gets the byoipv6_cidr_details of this CreateVcnDetails.
-        The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+        The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
 
 
         :return: The byoipv6_cidr_details of this CreateVcnDetails.
@@ -269,7 +269,7 @@ class CreateVcnDetails(object):
     def byoipv6_cidr_details(self, byoipv6_cidr_details):
         """
         Sets the byoipv6_cidr_details of this CreateVcnDetails.
-        The list of BYOIPv6 OCIDs and BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+        The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
 
 
         :param byoipv6_cidr_details: The byoipv6_cidr_details of this CreateVcnDetails.

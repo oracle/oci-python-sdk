@@ -84,6 +84,10 @@ class ContainerSummary(object):
             The value to assign to the is_resource_principal_disabled property of this ContainerSummary.
         :type is_resource_principal_disabled: bool
 
+        :param security_context:
+            The value to assign to the security_context property of this ContainerSummary.
+        :type security_context: oci.container_instances.models.SecurityContext
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -101,7 +105,8 @@ class ContainerSummary(object):
             'container_instance_id': 'str',
             'resource_config': 'ContainerResourceConfig',
             'image_url': 'str',
-            'is_resource_principal_disabled': 'bool'
+            'is_resource_principal_disabled': 'bool',
+            'security_context': 'SecurityContext'
         }
 
         self.attribute_map = {
@@ -120,7 +125,8 @@ class ContainerSummary(object):
             'container_instance_id': 'containerInstanceId',
             'resource_config': 'resourceConfig',
             'image_url': 'imageUrl',
-            'is_resource_principal_disabled': 'isResourcePrincipalDisabled'
+            'is_resource_principal_disabled': 'isResourcePrincipalDisabled',
+            'security_context': 'securityContext'
         }
 
         self._id = None
@@ -139,6 +145,7 @@ class ContainerSummary(object):
         self._resource_config = None
         self._image_url = None
         self._is_resource_principal_disabled = None
+        self._security_context = None
 
     @property
     def id(self):
@@ -559,6 +566,26 @@ class ContainerSummary(object):
         :type: bool
         """
         self._is_resource_principal_disabled = is_resource_principal_disabled
+
+    @property
+    def security_context(self):
+        """
+        Gets the security_context of this ContainerSummary.
+
+        :return: The security_context of this ContainerSummary.
+        :rtype: oci.container_instances.models.SecurityContext
+        """
+        return self._security_context
+
+    @security_context.setter
+    def security_context(self, security_context):
+        """
+        Sets the security_context of this ContainerSummary.
+
+        :param security_context: The security_context of this ContainerSummary.
+        :type: oci.container_instances.models.SecurityContext
+        """
+        self._security_context = security_context
 
     def __repr__(self):
         return formatted_flat_dict(self)

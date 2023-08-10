@@ -66,6 +66,10 @@ class CreateContainerDetails(object):
             The value to assign to the health_checks property of this CreateContainerDetails.
         :type health_checks: list[oci.container_instances.models.CreateContainerHealthCheckDetails]
 
+        :param security_context:
+            The value to assign to the security_context property of this CreateContainerDetails.
+        :type security_context: oci.container_instances.models.CreateSecurityContextDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateContainerDetails.
         :type freeform_tags: dict(str, str)
@@ -86,6 +90,7 @@ class CreateContainerDetails(object):
             'is_resource_principal_disabled': 'bool',
             'resource_config': 'CreateContainerResourceConfigDetails',
             'health_checks': 'list[CreateContainerHealthCheckDetails]',
+            'security_context': 'CreateSecurityContextDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -101,6 +106,7 @@ class CreateContainerDetails(object):
             'is_resource_principal_disabled': 'isResourcePrincipalDisabled',
             'resource_config': 'resourceConfig',
             'health_checks': 'healthChecks',
+            'security_context': 'securityContext',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -115,6 +121,7 @@ class CreateContainerDetails(object):
         self._is_resource_principal_disabled = None
         self._resource_config = None
         self._health_checks = None
+        self._security_context = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -123,7 +130,6 @@ class CreateContainerDetails(object):
         """
         Gets the display_name of this CreateContainerDetails.
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-
         If you don't provide a name, a name is generated automatically.
 
 
@@ -137,7 +143,6 @@ class CreateContainerDetails(object):
         """
         Sets the display_name of this CreateContainerDetails.
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-
         If you don't provide a name, a name is generated automatically.
 
 
@@ -399,6 +404,26 @@ class CreateContainerDetails(object):
         :type: list[oci.container_instances.models.CreateContainerHealthCheckDetails]
         """
         self._health_checks = health_checks
+
+    @property
+    def security_context(self):
+        """
+        Gets the security_context of this CreateContainerDetails.
+
+        :return: The security_context of this CreateContainerDetails.
+        :rtype: oci.container_instances.models.CreateSecurityContextDetails
+        """
+        return self._security_context
+
+    @security_context.setter
+    def security_context(self, security_context):
+        """
+        Sets the security_context of this CreateContainerDetails.
+
+        :param security_context: The security_context of this CreateContainerDetails.
+        :type: oci.container_instances.models.CreateSecurityContextDetails
+        """
+        self._security_context = security_context
 
     @property
     def freeform_tags(self):
