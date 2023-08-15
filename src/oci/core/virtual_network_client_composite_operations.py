@@ -40,7 +40,7 @@ class VirtualNetworkClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.AddSubnetIpv6CidrDetails add_subnet_ipv6_cidr_details: (required)
-            Details object for adding an IPv6 CIDR to a subnet.
+            Details object for adding an IPv6 prefix to a subnet.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -3351,7 +3351,7 @@ class VirtualNetworkClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.RemoveSubnetIpv6CidrDetails remove_subnet_ipv6_cidr_details: (required)
-            Details object for removing an IPv6 SUBNET CIDR.
+            Details object for removing an IPv6 SUBNET prefix.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`

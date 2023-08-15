@@ -15,6 +15,14 @@ class OggDeployment(object):
     Deployment Data for an OggDeployment
     """
 
+    #: A constant which can be used with the credential_store property of a OggDeployment.
+    #: This constant has a value of "GOLDENGATE"
+    CREDENTIAL_STORE_GOLDENGATE = "GOLDENGATE"
+
+    #: A constant which can be used with the credential_store property of a OggDeployment.
+    #: This constant has a value of "IAM"
+    CREDENTIAL_STORE_IAM = "IAM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OggDeployment object with values from keyword arguments.
@@ -36,25 +44,48 @@ class OggDeployment(object):
             The value to assign to the certificate property of this OggDeployment.
         :type certificate: str
 
+        :param credential_store:
+            The value to assign to the credential_store property of this OggDeployment.
+            Allowed values for this property are: "GOLDENGATE", "IAM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type credential_store: str
+
+        :param identity_domain_id:
+            The value to assign to the identity_domain_id property of this OggDeployment.
+        :type identity_domain_id: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this OggDeployment.
+        :type password_secret_id: str
+
         """
         self.swagger_types = {
             'deployment_name': 'str',
             'admin_username': 'str',
             'ogg_version': 'str',
-            'certificate': 'str'
+            'certificate': 'str',
+            'credential_store': 'str',
+            'identity_domain_id': 'str',
+            'password_secret_id': 'str'
         }
 
         self.attribute_map = {
             'deployment_name': 'deploymentName',
             'admin_username': 'adminUsername',
             'ogg_version': 'oggVersion',
-            'certificate': 'certificate'
+            'certificate': 'certificate',
+            'credential_store': 'credentialStore',
+            'identity_domain_id': 'identityDomainId',
+            'password_secret_id': 'passwordSecretId'
         }
 
         self._deployment_name = None
         self._admin_username = None
         self._ogg_version = None
         self._certificate = None
+        self._credential_store = None
+        self._identity_domain_id = None
+        self._password_secret_id = None
 
     @property
     def deployment_name(self):
@@ -153,6 +184,92 @@ class OggDeployment(object):
         :type: str
         """
         self._certificate = certificate
+
+    @property
+    def credential_store(self):
+        """
+        Gets the credential_store of this OggDeployment.
+        The type of credential store for OGG.
+
+        Allowed values for this property are: "GOLDENGATE", "IAM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The credential_store of this OggDeployment.
+        :rtype: str
+        """
+        return self._credential_store
+
+    @credential_store.setter
+    def credential_store(self, credential_store):
+        """
+        Sets the credential_store of this OggDeployment.
+        The type of credential store for OGG.
+
+
+        :param credential_store: The credential_store of this OggDeployment.
+        :type: str
+        """
+        allowed_values = ["GOLDENGATE", "IAM"]
+        if not value_allowed_none_or_none_sentinel(credential_store, allowed_values):
+            credential_store = 'UNKNOWN_ENUM_VALUE'
+        self._credential_store = credential_store
+
+    @property
+    def identity_domain_id(self):
+        """
+        Gets the identity_domain_id of this OggDeployment.
+        The `OCID`__ of the Identity Domain when IAM credential store is used.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The identity_domain_id of this OggDeployment.
+        :rtype: str
+        """
+        return self._identity_domain_id
+
+    @identity_domain_id.setter
+    def identity_domain_id(self, identity_domain_id):
+        """
+        Sets the identity_domain_id of this OggDeployment.
+        The `OCID`__ of the Identity Domain when IAM credential store is used.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param identity_domain_id: The identity_domain_id of this OggDeployment.
+        :type: str
+        """
+        self._identity_domain_id = identity_domain_id
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this OggDeployment.
+        The `OCID`__ of the Secret where the deployment password is stored.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this OggDeployment.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this OggDeployment.
+        The `OCID`__ of the Secret where the deployment password is stored.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this OggDeployment.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

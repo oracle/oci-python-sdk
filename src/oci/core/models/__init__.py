@@ -117,6 +117,7 @@ from .change_volume_group_backup_compartment_details import ChangeVolumeGroupBac
 from .change_volume_group_compartment_details import ChangeVolumeGroupCompartmentDetails
 from .change_vtap_compartment_details import ChangeVtapCompartmentDetails
 from .cluster_config_details import ClusterConfigDetails
+from .cluster_configuration_details import ClusterConfigurationDetails
 from .cluster_network import ClusterNetwork
 from .cluster_network_placement_configuration_details import ClusterNetworkPlacementConfigurationDetails
 from .cluster_network_summary import ClusterNetworkSummary
@@ -660,6 +661,7 @@ core_type_mapping = {
     "ChangeVolumeGroupCompartmentDetails": ChangeVolumeGroupCompartmentDetails,
     "ChangeVtapCompartmentDetails": ChangeVtapCompartmentDetails,
     "ClusterConfigDetails": ClusterConfigDetails,
+    "ClusterConfigurationDetails": ClusterConfigurationDetails,
     "ClusterNetwork": ClusterNetwork,
     "ClusterNetworkPlacementConfigurationDetails": ClusterNetworkPlacementConfigurationDetails,
     "ClusterNetworkSummary": ClusterNetworkSummary,

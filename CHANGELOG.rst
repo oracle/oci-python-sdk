@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.110.1 - 2023-08-15
+====================
+
+Added
+-----
+* Support for credential stores, including Single Sign-On support, for deployments in the GoldenGate service
+* Support for container security contexts in the Container Instances service
+* Support for placement constraints and cluster configurations on cluster networks in the Compute service
 2.110.0 - 2023-08-08
 ====================
 

@@ -319,13 +319,13 @@ class UpdateSubnetDetails(object):
     def ipv6_cidr_block(self):
         """
         Gets the ipv6_cidr_block of this UpdateSubnetDetails.
-        This is the IPv6 CIDR block for the subnet's IP address space.
+        This is the IPv6 prefix for the subnet's IP address space.
         The subnet size is always /64.
         See `IPv6 Addresses`__.
-        The provided CIDR must maintain the following rules -
+        The provided prefix must maintain the following rules -
 
-        a. The IPv6 CIDR block is valid and correctly formatted.
-        b. The IPv6 CIDR is within the parent VCN IPv6 range.
+        a. The IPv6 prefix is valid and correctly formatted.
+        b. The IPv6 prefix is within the parent VCN IPv6 range.
 
         Example: `2001:0db8:0123:1111::/64`
 
@@ -341,13 +341,13 @@ class UpdateSubnetDetails(object):
     def ipv6_cidr_block(self, ipv6_cidr_block):
         """
         Sets the ipv6_cidr_block of this UpdateSubnetDetails.
-        This is the IPv6 CIDR block for the subnet's IP address space.
+        This is the IPv6 prefix for the subnet's IP address space.
         The subnet size is always /64.
         See `IPv6 Addresses`__.
-        The provided CIDR must maintain the following rules -
+        The provided prefix must maintain the following rules -
 
-        a. The IPv6 CIDR block is valid and correctly formatted.
-        b. The IPv6 CIDR is within the parent VCN IPv6 range.
+        a. The IPv6 prefix is valid and correctly formatted.
+        b. The IPv6 prefix is within the parent VCN IPv6 range.
 
         Example: `2001:0db8:0123:1111::/64`
 
@@ -363,10 +363,10 @@ class UpdateSubnetDetails(object):
     def ipv6_cidr_blocks(self):
         """
         Gets the ipv6_cidr_blocks of this UpdateSubnetDetails.
-        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-        - The CIDR blocks must be valid.
-        - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+        The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefix, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+        - The prefixes must be valid.
+        - Multiple prefixes must not overlap each other or the on-premises network prefix.
+        - The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
 
 
         :return: The ipv6_cidr_blocks of this UpdateSubnetDetails.
@@ -378,10 +378,10 @@ class UpdateSubnetDetails(object):
     def ipv6_cidr_blocks(self, ipv6_cidr_blocks):
         """
         Sets the ipv6_cidr_blocks of this UpdateSubnetDetails.
-        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-        - The CIDR blocks must be valid.
-        - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+        The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefix, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+        - The prefixes must be valid.
+        - Multiple prefixes must not overlap each other or the on-premises network prefix.
+        - The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
 
 
         :param ipv6_cidr_blocks: The ipv6_cidr_blocks of this UpdateSubnetDetails.

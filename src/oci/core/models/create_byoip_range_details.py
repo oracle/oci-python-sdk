@@ -128,7 +128,7 @@ class CreateByoipRangeDetails(object):
     def ipv6_cidr_block(self):
         """
         Gets the ipv6_cidr_block of this CreateByoipRangeDetails.
-        The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated.
+        The BYOIPv6 prefix. You can assign some or all of it to a VCN after it is validated.
 
 
         :return: The ipv6_cidr_block of this CreateByoipRangeDetails.
@@ -140,7 +140,7 @@ class CreateByoipRangeDetails(object):
     def ipv6_cidr_block(self, ipv6_cidr_block):
         """
         Sets the ipv6_cidr_block of this CreateByoipRangeDetails.
-        The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated.
+        The BYOIPv6 prefix. You can assign some or all of it to a VCN after it is validated.
 
 
         :param ipv6_cidr_block: The ipv6_cidr_block of this CreateByoipRangeDetails.

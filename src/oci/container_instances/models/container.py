@@ -153,6 +153,10 @@ class Container(object):
             The value to assign to the container_restart_attempt_count property of this Container.
         :type container_restart_attempt_count: int
 
+        :param security_context:
+            The value to assign to the security_context property of this Container.
+        :type security_context: oci.container_instances.models.SecurityContext
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -179,7 +183,8 @@ class Container(object):
             'health_checks': 'list[ContainerHealthCheck]',
             'is_resource_principal_disabled': 'bool',
             'resource_config': 'ContainerResourceConfig',
-            'container_restart_attempt_count': 'int'
+            'container_restart_attempt_count': 'int',
+            'security_context': 'SecurityContext'
         }
 
         self.attribute_map = {
@@ -207,7 +212,8 @@ class Container(object):
             'health_checks': 'healthChecks',
             'is_resource_principal_disabled': 'isResourcePrincipalDisabled',
             'resource_config': 'resourceConfig',
-            'container_restart_attempt_count': 'containerRestartAttemptCount'
+            'container_restart_attempt_count': 'containerRestartAttemptCount',
+            'security_context': 'securityContext'
         }
 
         self._id = None
@@ -235,6 +241,7 @@ class Container(object):
         self._is_resource_principal_disabled = None
         self._resource_config = None
         self._container_restart_attempt_count = None
+        self._security_context = None
 
     @property
     def id(self):
@@ -899,6 +906,26 @@ class Container(object):
         :type: int
         """
         self._container_restart_attempt_count = container_restart_attempt_count
+
+    @property
+    def security_context(self):
+        """
+        Gets the security_context of this Container.
+
+        :return: The security_context of this Container.
+        :rtype: oci.container_instances.models.SecurityContext
+        """
+        return self._security_context
+
+    @security_context.setter
+    def security_context(self, security_context):
+        """
+        Sets the security_context of this Container.
+
+        :param security_context: The security_context of this Container.
+        :type: oci.container_instances.models.SecurityContext
+        """
+        self._security_context = security_context
 
     def __repr__(self):
         return formatted_flat_dict(self)

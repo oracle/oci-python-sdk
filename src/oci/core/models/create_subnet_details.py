@@ -465,10 +465,10 @@ class CreateSubnetDetails(object):
     def ipv6_cidr_blocks(self):
         """
         Gets the ipv6_cidr_blocks of this CreateSubnetDetails.
-        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-        - The CIDR blocks must be valid.
-        - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+        The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+        - The prefixes must be valid.
+        - Multiple prefixes must not overlap each other or the on-premises network prefix.
+        - The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
 
 
         :return: The ipv6_cidr_blocks of this CreateSubnetDetails.
@@ -480,10 +480,10 @@ class CreateSubnetDetails(object):
     def ipv6_cidr_blocks(self, ipv6_cidr_blocks):
         """
         Sets the ipv6_cidr_blocks of this CreateSubnetDetails.
-        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
-        - The CIDR blocks must be valid.
-        - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
-        - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+        The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
+        - The prefixes must be valid.
+        - Multiple prefixes must not overlap each other or the on-premises network prefix.
+        - The number of prefixes must not exceed the limit of IPv6 prefixes allowed to a subnet.
 
 
         :param ipv6_cidr_blocks: The ipv6_cidr_blocks of this CreateSubnetDetails.
@@ -544,7 +544,7 @@ class CreateSubnetDetails(object):
         subnet cannot have public IP addresses (that is, it's a private
         subnet).
 
-        If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to
+        If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to
         specify ingress internet traffic behavior of the subnet.
 
         Example: `true`
@@ -568,7 +568,7 @@ class CreateSubnetDetails(object):
         subnet cannot have public IP addresses (that is, it's a private
         subnet).
 
-        If you intend to use an IPv6 CIDR block, you should use the flag `prohibitInternetIngress` to
+        If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to
         specify ingress internet traffic behavior of the subnet.
 
         Example: `true`

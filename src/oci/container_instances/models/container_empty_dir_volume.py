@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerEmptyDirVolume(ContainerVolume):
     """
-    The empty directory of container.
+    The empty directory volume of a container instance. You can create up to 64 EmptyDir per container instance.
     """
 
     #: A constant which can be used with the backing_store property of a ContainerEmptyDirVolume.
