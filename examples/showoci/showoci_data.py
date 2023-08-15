@@ -19,7 +19,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.07.26"
+    version = "23.08.15"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -147,6 +147,7 @@ class ShowOCIData(object):
             'datetime': start_time,
             'machine': self.service.flags.machine,
             'python': self.service.flags.python,
+            'threads': "False" if self.service.flags.skip_threads else "True with " + str(self.service.flags.threads) + " threads",
             'cmdline': cmdline,
             'oci_sdk_version': self.service.get_oci_version()
         }
@@ -3755,6 +3756,8 @@ class ShowOCIData(object):
                 for container in containers:
                     val = {'id': container['id'],
                            'name': container['name'],
+                           'sum_info': "OKE Clusters",
+                           'sum_size_gb': str("1"),
                            'lifecycle_state': container['lifecycle_state'],
                            'kubernetes_version': container['kubernetes_version'],
                            'compartment_name': container['compartment_name'],

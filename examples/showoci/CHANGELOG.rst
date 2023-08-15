@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.08.15 - 23.08.15
+=====================
+* Performance improvments using Thread enabled
+* Migrating the application to parallel execution using Threads
+* Added -noparallel to run serial and -threads for thread numbers
+* Combined PaaS Native and Data and AI to one group - Native Data and AI
+* Combined Monitoring, Security and Limits to one group
+* Combined OKE clusters with Compute
+* Combined Load Balanacers and Network to one group
+* Combined File Storage and Object Storage to one group
+* Added OKE Container Summary
+* Added NETWORK,LIMITS,QUOTAS,DNSZONE,VCIRCUITS to the -exclude
+
+=====================
 23.07.26 - 23.07.26
 =====================
 * Added support for identity domain password policies, can be skipped using -isc flag

@@ -21,7 +21,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.07.26"
+    version = "23.08.15"
 
     ##########################################################################
     # spaces for align
@@ -145,6 +145,8 @@ class ShowOCIOutput(object):
                     print("Override id     : " + data['override_tenant_id'])
             if 'joutfile' in data:
                 print("JSON Out        : " + data['joutfile'])
+            if 'threads' in data:
+                print("Running Threads : " + str(data['threads']))
 
             print("")
 
@@ -3027,6 +3029,31 @@ class ShowOCISummary(object):
             self.__print_error("__summary_object_storage_main", e)
 
     ##########################################################################
+    # Containers OKE
+    ##########################################################################
+    def __summary_container_main(self, objects):
+
+        try:
+            if len(objects) == 0:
+                return
+
+            self.__summary_core_size(objects)
+
+            for cn in objects:
+                if 'node_pools' in cn:
+                    for node in cn['node_pools']:
+                        ocpus = node['node_shape_ocpus']
+                        if ocpus:
+                            if type(ocpus) == int or type(ocpus) == float:
+                                self.summary_global_list.append({
+                                    'type': 'OKE Clusters OCPUs - ' + node['node_shape'],
+                                    'size': float(ocpus)
+                                })
+
+        except Exception as e:
+            self.__print_error("__summary_container_main", e)
+
+    ##########################################################################
     # paas services
     ##########################################################################
     def __summary_paas_services_main(self, paas_services):
@@ -3819,6 +3846,8 @@ class ShowOCISummary(object):
                     self.__summary_database_main(cdata['database'])
                 if 'object_storage' in cdata:
                     self.__summary_object_storage_main(cdata['object_storage'])
+                if 'containers' in cdata:
+                    self.__summary_container_main(cdata['containers'])
                 if 'file_storage' in cdata:
                     self.__summary_file_storage_main(cdata['file_storage'])
                 if 'load_balancer' in cdata:
@@ -3875,6 +3904,7 @@ class ShowOCICSV(object):
     ############################################
     # class variables
     ############################################
+    error = 0
     csv_tags_to_cols = False
     csv_file_header = ""
     csv_identity_compartments = []
@@ -3965,6 +3995,12 @@ class ShowOCICSV(object):
     ############################################
     def __init__(self, start_time):
         self.start_time = start_time
+
+    ##########################################################################
+    # get errors
+    ##########################################################################
+    def get_errors(self):
+        return self.error
 
     ##########################################################################
     # generate_csv
@@ -4170,7 +4206,7 @@ class ShowOCICSV(object):
     ##########################################################################
     def __print_error(self, msg, e):
         classname = type(self).__name__
-
+        self.error += 1
         if isinstance(e, KeyError):
             print("\nError in " + classname + ":" + msg + ": KeyError " + str(e.args))
         else:
@@ -6607,7 +6643,6 @@ class ShowOCICSV(object):
                             'availability_domain': instance['availability_domain'],
                             'compartment_name': bv['compartment_name'],
                             'compartment_path': bv['compartment_path'],
-                            'id': bv['id'],
                             'display_name': bv['display_name'],
                             'size': bv['size'],
                             'backup_policy': bv['backup_policy'],
@@ -6624,6 +6659,8 @@ class ShowOCICSV(object):
                             'is_multipath': "",
                             'iscsi_login_state': "",
                             'instance_id': instance['id'],
+                            'id': bv['id'] + ((":" + instance['id']) if instance['id'] else ""),
+                            'bv_id': bv['id'],
                             'freeform_tags': self.__get_freeform_tags(bv['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(bv['defined_tags'])
                         }
@@ -6637,7 +6674,6 @@ class ShowOCICSV(object):
                             'availability_domain': instance['availability_domain'],
                             'compartment_name': bv['compartment_name'],
                             'compartment_path': bv['compartment_path'],
-                            'id': bv['id'],
                             'display_name': bv['display_name'],
                             'size': bv['size'],
                             'backup_policy': bv['backup_policy'],
@@ -6654,6 +6690,8 @@ class ShowOCICSV(object):
                             'is_multipath': bv['is_multipath'],
                             'iscsi_login_state': bv['iscsi_login_state'],
                             'instance_id': instance['id'],
+                            'id': bv['id'] + ((":" + instance['id']) if instance['id'] else ""),
+                            'bv_id': bv['id'],
                             'freeform_tags': self.__get_freeform_tags(bv['freeform_tags']),
                             'defined_tags': self.__get_defined_tags(bv['defined_tags'])
                         }
@@ -7495,7 +7533,7 @@ class ShowOCICSV(object):
                         'time_created': ar['time_created'][0:16],
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags']),
-                        'id': ar['id']
+                        'id': ar['id'] + ":" + self.tenant_name + ":" + region_name
                     }
 
                     self.csv_edge_dns_steering_policies.append(data)
@@ -7533,7 +7571,7 @@ class ShowOCICSV(object):
                         'time_created': ar['time_created'][0:16],
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags']),
-                        'id': ar['id']
+                        'id': ar['id'] + ":" + self.tenant_name + ":" + region_name
                     }
 
                     self.csv_edge_healthcheck.append(data)
@@ -7562,7 +7600,7 @@ class ShowOCICSV(object):
                         'time_created': ar['time_created'][0:16],
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags']),
-                        'id': ar['id']
+                        'id': ar['id'] + ":" + self.tenant_name + ":" + region_name
                     }
 
                     self.csv_edge_healthcheck.append(data)
