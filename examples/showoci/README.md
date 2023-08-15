@@ -271,40 +271,32 @@ python3 -m pip install --upgrade oci oci-cli oracledb pip
 ```
 $ python3 showoci.py  
 
-usage: showoci.py [-h] [-a] [-ani] [-an] [-api] [-b] [-c] [-cn] [-d] [-e] [-edge] [-f] [-fun] [-i] [-ic] [-isc] [-l] [-lq] [-m]
-                  [-n] [-o] [-paas] [-dataai] [-rm] [-s] [-sec] [-nobackups] [-skipdbhomes] [-readtimeout READTIMEOUT]
-                  [-conntimeout CONNTIMEOUT] [-so] [-mc] [-nr] [-ip] [-is] [-dt] [-t PROFILE] [-p PROXY] [-pause] [-rg REGION]
+usage: showoci.py [-h] [-a] [-ani] [-an] [-c] [-d] [-edge] [-f] [-i] [-ic] [-isc] [-s] [-m] [-paas] [-n] [-exclude EXCLUDE]
+                  [-noparallel] [-threads THREADS] [-nobackups] [-skipdbhomes] [-readtimeout READTIMEOUT]
+                  [-conntimeout CONNTIMEOUT] [-so] [-mc] [-nr] [-ip] [-is] [-dt] [-t PROFILE] [-p PROXY] [-rg REGION]
                   [-rgn NOT_REGION] [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH] [-tenantid TENANTID] [-cf CONFIG]
                   [-csv CSV] [-csvcol CSVCOL] [-csv_nodate] [-csv_notagstocols] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE]
                   [-cachef SERVICEFILE] [-caches] [--version]
 
-optional arguments:
+options:
   -h, --help                show this help message and exit
   -a                        Print All Resources
   -ani                      Print All Resources but identity
   -an                       Print Announcements
-  -api                      Print API Gateways
-  -b                        Print Budgets
-  -c                        Print Compute
-  -cn                       Print Containers
+  -c, -cn                   Print Compute and Containers
   -d                        Print Database
-  -e                        Print EMail
-  -edge                     Print Edge, DNS Services and WAAS policies
-  -f                        Print File Storage
-  -fun                      Print Functions
+  -edge                     Print Edge, DNS Services and WAAS policies, DNS Zone is slow can be excluded using -exclude DNSZONE
+  -f, -o                    Print File and Object Storage
   -i                        Print Identity and Identity Domains
   -ic                       Print Identity Compartments only
   -isc                      Skip Identity User Credential extract
-  -l                        Print Load Balancer
-  -lq                       Print Limits and Quotas
-  -m                        Print Monitoring, Notifications, Events, Agents
-  -n                        Print Network
-  -o                        Print Object Storage
-  -paas                     Print PaaS Platform Services - OIC OAC OCE OCVS
-  -dataai                   Print - D.Science, D.Catalog, D.Flow, ODA, BDS, DI
-  -rm                       Print Resource management
-  -s                        Print Streams and Queues
-  -sec                      Print Security, Logging, Vaults
+  -s, -api, -rm, -fun       Print API, Functions, Resource management, Gateways, Streams and Queues
+  -m, -sec, -lq, -e, -b     Print Monitor, Events, Agents, Security, Quotas, E-Mail, Limits...
+  -paas, -dataai            Print Native, Data and AI
+  -n, -l                    Print Network
+  -exclude EXCLUDE          Exclude Services, Currently support NETWORK, QUOTAS, LIMITS, DNSZONE
+  -noparallel               Do not run in parallel processing (Threads)
+  -threads THREADS          Threads Processes when running with Threads (Default=8)
   -nobackups                Do not process backups
   -skipdbhomes              Do not process Database Homes and Below
   -readtimeout READTIMEOUT  Timeout for REST API Connection (Default=20)
@@ -317,7 +309,6 @@ optional arguments:
   -dt                       Use Delegation Token (Cloud shell)
   -t PROFILE                Config file section to use (tenancy profile)
   -p PROXY                  Set Proxy (i.e. www-proxy-server.com:80)
-  -pause                    Pause before Processing
   -rg REGION                Filter by Region, partial name or comma seperated
   -rgn NOT_REGION           Filter by Region, do not include region partial name or comma seperated
   -cp COMPART               Filter by Compartment Name or OCID
