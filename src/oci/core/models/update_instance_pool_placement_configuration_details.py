@@ -138,7 +138,7 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
     def primary_subnet_id(self):
         """
         **[Required]** Gets the primary_subnet_id of this UpdateInstancePoolPlacementConfigurationDetails.
-        The `OCID`__ of the primary subnet to place
+        The `OCID`__ of the primary subnet in which to place
         instances.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -153,7 +153,7 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
     def primary_subnet_id(self, primary_subnet_id):
         """
         Sets the primary_subnet_id of this UpdateInstancePoolPlacementConfigurationDetails.
-        The `OCID`__ of the primary subnet to place
+        The `OCID`__ of the primary subnet in which to place
         instances.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm

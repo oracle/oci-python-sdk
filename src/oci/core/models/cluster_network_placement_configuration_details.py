@@ -15,6 +15,18 @@ class ClusterNetworkPlacementConfigurationDetails(object):
     The location for where the instance pools in a cluster network will place instances.
     """
 
+    #: A constant which can be used with the placement_constraint property of a ClusterNetworkPlacementConfigurationDetails.
+    #: This constant has a value of "SINGLE_TIER"
+    PLACEMENT_CONSTRAINT_SINGLE_TIER = "SINGLE_TIER"
+
+    #: A constant which can be used with the placement_constraint property of a ClusterNetworkPlacementConfigurationDetails.
+    #: This constant has a value of "SINGLE_BLOCK"
+    PLACEMENT_CONSTRAINT_SINGLE_BLOCK = "SINGLE_BLOCK"
+
+    #: A constant which can be used with the placement_constraint property of a ClusterNetworkPlacementConfigurationDetails.
+    #: This constant has a value of "PACKED_DISTRIBUTION_MULTI_BLOCK"
+    PLACEMENT_CONSTRAINT_PACKED_DISTRIBUTION_MULTI_BLOCK = "PACKED_DISTRIBUTION_MULTI_BLOCK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ClusterNetworkPlacementConfigurationDetails object with values from keyword arguments.
@@ -23,6 +35,12 @@ class ClusterNetworkPlacementConfigurationDetails(object):
         :param availability_domain:
             The value to assign to the availability_domain property of this ClusterNetworkPlacementConfigurationDetails.
         :type availability_domain: str
+
+        :param placement_constraint:
+            The value to assign to the placement_constraint property of this ClusterNetworkPlacementConfigurationDetails.
+            Allowed values for this property are: "SINGLE_TIER", "SINGLE_BLOCK", "PACKED_DISTRIBUTION_MULTI_BLOCK", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type placement_constraint: str
 
         :param primary_subnet_id:
             The value to assign to the primary_subnet_id property of this ClusterNetworkPlacementConfigurationDetails.
@@ -35,17 +53,20 @@ class ClusterNetworkPlacementConfigurationDetails(object):
         """
         self.swagger_types = {
             'availability_domain': 'str',
+            'placement_constraint': 'str',
             'primary_subnet_id': 'str',
             'secondary_vnic_subnets': 'list[InstancePoolPlacementSecondaryVnicSubnet]'
         }
 
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
+            'placement_constraint': 'placementConstraint',
             'primary_subnet_id': 'primarySubnetId',
             'secondary_vnic_subnets': 'secondaryVnicSubnets'
         }
 
         self._availability_domain = None
+        self._placement_constraint = None
         self._primary_subnet_id = None
         self._secondary_vnic_subnets = None
 
@@ -76,6 +97,36 @@ class ClusterNetworkPlacementConfigurationDetails(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def placement_constraint(self):
+        """
+        Gets the placement_constraint of this ClusterNetworkPlacementConfigurationDetails.
+        The placement constraint when reserving hosts.
+
+        Allowed values for this property are: "SINGLE_TIER", "SINGLE_BLOCK", "PACKED_DISTRIBUTION_MULTI_BLOCK", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The placement_constraint of this ClusterNetworkPlacementConfigurationDetails.
+        :rtype: str
+        """
+        return self._placement_constraint
+
+    @placement_constraint.setter
+    def placement_constraint(self, placement_constraint):
+        """
+        Sets the placement_constraint of this ClusterNetworkPlacementConfigurationDetails.
+        The placement constraint when reserving hosts.
+
+
+        :param placement_constraint: The placement_constraint of this ClusterNetworkPlacementConfigurationDetails.
+        :type: str
+        """
+        allowed_values = ["SINGLE_TIER", "SINGLE_BLOCK", "PACKED_DISTRIBUTION_MULTI_BLOCK"]
+        if not value_allowed_none_or_none_sentinel(placement_constraint, allowed_values):
+            placement_constraint = 'UNKNOWN_ENUM_VALUE'
+        self._placement_constraint = placement_constraint
 
     @property
     def primary_subnet_id(self):

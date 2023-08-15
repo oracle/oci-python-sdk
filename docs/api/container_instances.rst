@@ -56,10 +56,14 @@ Container Instances
     oci.container_instances.models.CreateContainerVnicDetails
     oci.container_instances.models.CreateContainerVolumeDetails
     oci.container_instances.models.CreateImagePullSecretDetails
+    oci.container_instances.models.CreateLinuxSecurityContextDetails
+    oci.container_instances.models.CreateSecurityContextDetails
     oci.container_instances.models.CreateVaultImagePullSecretDetails
     oci.container_instances.models.CreateVolumeMountDetails
     oci.container_instances.models.HealthCheckHttpHeader
     oci.container_instances.models.ImagePullSecret
+    oci.container_instances.models.LinuxSecurityContext
+    oci.container_instances.models.SecurityContext
     oci.container_instances.models.ShapeMemoryOptions
     oci.container_instances.models.ShapeNetworkingBandwidthOptions
     oci.container_instances.models.ShapeOcpuOptions

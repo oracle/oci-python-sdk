@@ -135,6 +135,7 @@ Core Services
     oci.core.models.ChangeVolumeGroupCompartmentDetails
     oci.core.models.ChangeVtapCompartmentDetails
     oci.core.models.ClusterConfigDetails
+    oci.core.models.ClusterConfigurationDetails
     oci.core.models.ClusterNetwork
     oci.core.models.ClusterNetworkPlacementConfigurationDetails
     oci.core.models.ClusterNetworkSummary

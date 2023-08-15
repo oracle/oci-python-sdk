@@ -53,6 +53,10 @@ class CreateClusterNetworkDetails(object):
             The value to assign to the placement_configuration property of this CreateClusterNetworkDetails.
         :type placement_configuration: oci.core.models.ClusterNetworkPlacementConfigurationDetails
 
+        :param cluster_configuration:
+            The value to assign to the cluster_configuration property of this CreateClusterNetworkDetails.
+        :type cluster_configuration: oci.core.models.ClusterConfigurationDetails
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -60,7 +64,8 @@ class CreateClusterNetworkDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'instance_pools': 'list[CreateClusterNetworkInstancePoolDetails]',
-            'placement_configuration': 'ClusterNetworkPlacementConfigurationDetails'
+            'placement_configuration': 'ClusterNetworkPlacementConfigurationDetails',
+            'cluster_configuration': 'ClusterConfigurationDetails'
         }
 
         self.attribute_map = {
@@ -69,7 +74,8 @@ class CreateClusterNetworkDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'instance_pools': 'instancePools',
-            'placement_configuration': 'placementConfiguration'
+            'placement_configuration': 'placementConfiguration',
+            'cluster_configuration': 'clusterConfiguration'
         }
 
         self._compartment_id = None
@@ -78,6 +84,7 @@ class CreateClusterNetworkDetails(object):
         self._freeform_tags = None
         self._instance_pools = None
         self._placement_configuration = None
+        self._cluster_configuration = None
 
     @property
     def compartment_id(self):
@@ -250,6 +257,26 @@ class CreateClusterNetworkDetails(object):
         :type: oci.core.models.ClusterNetworkPlacementConfigurationDetails
         """
         self._placement_configuration = placement_configuration
+
+    @property
+    def cluster_configuration(self):
+        """
+        Gets the cluster_configuration of this CreateClusterNetworkDetails.
+
+        :return: The cluster_configuration of this CreateClusterNetworkDetails.
+        :rtype: oci.core.models.ClusterConfigurationDetails
+        """
+        return self._cluster_configuration
+
+    @cluster_configuration.setter
+    def cluster_configuration(self, cluster_configuration):
+        """
+        Sets the cluster_configuration of this CreateClusterNetworkDetails.
+
+        :param cluster_configuration: The cluster_configuration of this CreateClusterNetworkDetails.
+        :type: oci.core.models.ClusterConfigurationDetails
+        """
+        self._cluster_configuration = cluster_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -15,6 +15,14 @@ class CreateOggDeploymentDetails(object):
     Deployment Data for creating an OggDeployment
     """
 
+    #: A constant which can be used with the credential_store property of a CreateOggDeploymentDetails.
+    #: This constant has a value of "GOLDENGATE"
+    CREDENTIAL_STORE_GOLDENGATE = "GOLDENGATE"
+
+    #: A constant which can be used with the credential_store property of a CreateOggDeploymentDetails.
+    #: This constant has a value of "IAM"
+    CREDENTIAL_STORE_IAM = "IAM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateOggDeploymentDetails object with values from keyword arguments.
@@ -23,6 +31,19 @@ class CreateOggDeploymentDetails(object):
         :param deployment_name:
             The value to assign to the deployment_name property of this CreateOggDeploymentDetails.
         :type deployment_name: str
+
+        :param credential_store:
+            The value to assign to the credential_store property of this CreateOggDeploymentDetails.
+            Allowed values for this property are: "GOLDENGATE", "IAM"
+        :type credential_store: str
+
+        :param identity_domain_id:
+            The value to assign to the identity_domain_id property of this CreateOggDeploymentDetails.
+        :type identity_domain_id: str
+
+        :param password_secret_id:
+            The value to assign to the password_secret_id property of this CreateOggDeploymentDetails.
+        :type password_secret_id: str
 
         :param admin_username:
             The value to assign to the admin_username property of this CreateOggDeploymentDetails.
@@ -47,6 +68,9 @@ class CreateOggDeploymentDetails(object):
         """
         self.swagger_types = {
             'deployment_name': 'str',
+            'credential_store': 'str',
+            'identity_domain_id': 'str',
+            'password_secret_id': 'str',
             'admin_username': 'str',
             'admin_password': 'str',
             'certificate': 'str',
@@ -56,6 +80,9 @@ class CreateOggDeploymentDetails(object):
 
         self.attribute_map = {
             'deployment_name': 'deploymentName',
+            'credential_store': 'credentialStore',
+            'identity_domain_id': 'identityDomainId',
+            'password_secret_id': 'passwordSecretId',
             'admin_username': 'adminUsername',
             'admin_password': 'adminPassword',
             'certificate': 'certificate',
@@ -64,6 +91,9 @@ class CreateOggDeploymentDetails(object):
         }
 
         self._deployment_name = None
+        self._credential_store = None
+        self._identity_domain_id = None
+        self._password_secret_id = None
         self._admin_username = None
         self._admin_password = None
         self._certificate = None
@@ -97,9 +127,97 @@ class CreateOggDeploymentDetails(object):
         self._deployment_name = deployment_name
 
     @property
+    def credential_store(self):
+        """
+        Gets the credential_store of this CreateOggDeploymentDetails.
+        The type of credential store for OGG.
+
+        Allowed values for this property are: "GOLDENGATE", "IAM"
+
+
+        :return: The credential_store of this CreateOggDeploymentDetails.
+        :rtype: str
+        """
+        return self._credential_store
+
+    @credential_store.setter
+    def credential_store(self, credential_store):
+        """
+        Sets the credential_store of this CreateOggDeploymentDetails.
+        The type of credential store for OGG.
+
+
+        :param credential_store: The credential_store of this CreateOggDeploymentDetails.
+        :type: str
+        """
+        allowed_values = ["GOLDENGATE", "IAM"]
+        if not value_allowed_none_or_none_sentinel(credential_store, allowed_values):
+            raise ValueError(
+                "Invalid value for `credential_store`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._credential_store = credential_store
+
+    @property
+    def identity_domain_id(self):
+        """
+        Gets the identity_domain_id of this CreateOggDeploymentDetails.
+        The `OCID`__ of the Identity Domain when IAM credential store is used.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The identity_domain_id of this CreateOggDeploymentDetails.
+        :rtype: str
+        """
+        return self._identity_domain_id
+
+    @identity_domain_id.setter
+    def identity_domain_id(self, identity_domain_id):
+        """
+        Sets the identity_domain_id of this CreateOggDeploymentDetails.
+        The `OCID`__ of the Identity Domain when IAM credential store is used.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param identity_domain_id: The identity_domain_id of this CreateOggDeploymentDetails.
+        :type: str
+        """
+        self._identity_domain_id = identity_domain_id
+
+    @property
+    def password_secret_id(self):
+        """
+        Gets the password_secret_id of this CreateOggDeploymentDetails.
+        The `OCID`__ of the Secret where the deployment password is stored.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The password_secret_id of this CreateOggDeploymentDetails.
+        :rtype: str
+        """
+        return self._password_secret_id
+
+    @password_secret_id.setter
+    def password_secret_id(self, password_secret_id):
+        """
+        Sets the password_secret_id of this CreateOggDeploymentDetails.
+        The `OCID`__ of the Secret where the deployment password is stored.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param password_secret_id: The password_secret_id of this CreateOggDeploymentDetails.
+        :type: str
+        """
+        self._password_secret_id = password_secret_id
+
+    @property
     def admin_username(self):
         """
-        **[Required]** Gets the admin_username of this CreateOggDeploymentDetails.
+        Gets the admin_username of this CreateOggDeploymentDetails.
         The GoldenGate deployment console username.
 
 
@@ -123,10 +241,11 @@ class CreateOggDeploymentDetails(object):
     @property
     def admin_password(self):
         """
-        **[Required]** Gets the admin_password of this CreateOggDeploymentDetails.
+        Gets the admin_password of this CreateOggDeploymentDetails.
         The password associated with the GoldenGate deployment console username.
         The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
         and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+        This field will be deprecated and replaced by \"passwordSecretId\".
 
 
         :return: The admin_password of this CreateOggDeploymentDetails.
@@ -141,6 +260,7 @@ class CreateOggDeploymentDetails(object):
         The password associated with the GoldenGate deployment console username.
         The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
         and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+        This field will be deprecated and replaced by \"passwordSecretId\".
 
 
         :param admin_password: The admin_password of this CreateOggDeploymentDetails.

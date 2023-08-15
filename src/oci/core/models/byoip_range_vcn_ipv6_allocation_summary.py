@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ByoipRangeVcnIpv6AllocationSummary(object):
     """
-    A summary of IPv6 CIDR block subranges currently allocated to a VCN.
+    A summary of IPv6 prefix subranges currently allocated to a VCN.
     """
 
     def __init__(self, **kwargs):
@@ -116,7 +116,7 @@ class ByoipRangeVcnIpv6AllocationSummary(object):
     def ipv6_cidr_block(self):
         """
         Gets the ipv6_cidr_block of this ByoipRangeVcnIpv6AllocationSummary.
-        The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 CIDR block.
+        The BYOIPv6 prefix range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 prefix.
         Each VCN allocation must be /64 or larger.
 
 
@@ -129,7 +129,7 @@ class ByoipRangeVcnIpv6AllocationSummary(object):
     def ipv6_cidr_block(self, ipv6_cidr_block):
         """
         Sets the ipv6_cidr_block of this ByoipRangeVcnIpv6AllocationSummary.
-        The BYOIPv6 CIDR block range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 CIDR block.
+        The BYOIPv6 prefix range or subrange allocated to a VCN. This could be all or part of a BYOIPv6 prefix.
         Each VCN allocation must be /64 or larger.
 
 
