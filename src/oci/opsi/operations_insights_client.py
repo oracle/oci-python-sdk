@@ -12301,7 +12301,13 @@ class OperationsInsightsClient(object):
         :param str sort_by: (optional)
             OPSI data object list sort options.
 
-            Allowed values are: "displayName", "dataObjectType"
+            Allowed values are: "displayName", "dataObjectType", "name"
+
+        :param str group_name: (optional)
+            A filter to return only data objects that belongs to the group of the given group name. By default, no filtering will be applied on group name.
+
+        :param str name: (optional)
+            A filter to return only data objects that match the entire data object name. By default, no filtering will be applied on data object name.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -12342,6 +12348,8 @@ class OperationsInsightsClient(object):
             "page",
             "sort_order",
             "sort_by",
+            "group_name",
+            "name",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -12365,7 +12373,7 @@ class OperationsInsightsClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["displayName", "dataObjectType"]
+            sort_by_allowed_values = ["displayName", "dataObjectType", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -12378,7 +12386,9 @@ class OperationsInsightsClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "groupName": kwargs.get("group_name", missing),
+            "name": kwargs.get("name", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -12884,6 +12894,207 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="SqlTextCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_warehouse_data_objects(self, warehouse_type, warehouse_id, **kwargs):
+        """
+        Gets a list of Warehouse data objects (e.g: views, tables), based on the query parameters specified.
+
+
+        :param str warehouse_type: (required)
+            Type of the Warehouse.
+
+            Allowed values are: "awrHubs"
+
+        :param str warehouse_id: (required)
+            The `OCID`__ of a Warehouse.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] data_object_type: (optional)
+            A filter to return only data objects that match the data object type. By default, no filtering will be applied on data object type.
+
+            Allowed values are: "VIEW", "TABLE"
+
+        :param str name: (optional)
+            A filter to return only data objects that match the entire data object name. By default, no filtering will be applied on data object name.
+
+        :param str owner: (optional)
+            A filter to return only data objects that match the entire data object owner name.  By default, no filtering will be applied on data object owner name.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Sort options for Warehouse data objects list.
+
+            Allowed values are: "dataObjectType", "name", "owner"
+
+        :param list[str] summary_field: (optional)
+            Specifies the optional fields to return in a WarehouseDataObjectSummary. Unless requested, these fields are not returned by default.
+
+            Allowed values are: "details"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.WarehouseDataObjectCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/list_warehouse_data_objects.py.html>`__ to see an example of how to use list_warehouse_data_objects API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['warehouseType', 'warehouseId']
+        resource_path = "/{warehouseType}/{warehouseId}/dataObjects"
+        method = "GET"
+        operation_name = "list_warehouse_data_objects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiWarehouseDataObjects/ListWarehouseDataObjects"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "data_object_type",
+            "name",
+            "owner",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "summary_field",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_warehouse_data_objects got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "warehouseType": warehouse_type,
+            "warehouseId": warehouse_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'data_object_type' in kwargs:
+            data_object_type_allowed_values = ["VIEW", "TABLE"]
+            for data_object_type_item in kwargs['data_object_type']:
+                if data_object_type_item not in data_object_type_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `data_object_type`, must be one of {0}".format(data_object_type_allowed_values)
+                    )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["dataObjectType", "name", "owner"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'summary_field' in kwargs:
+            summary_field_allowed_values = ["details"]
+            for summary_field_item in kwargs['summary_field']:
+                if summary_field_item not in summary_field_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `summary_field`, must be one of {0}".format(summary_field_allowed_values)
+                    )
+
+        query_params = {
+            "dataObjectType": self.base_client.generate_collection_format_param(kwargs.get("data_object_type", missing), 'multi'),
+            "name": kwargs.get("name", missing),
+            "owner": kwargs.get("owner", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "summaryField": self.base_client.generate_collection_format_param(kwargs.get("summary_field", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="WarehouseDataObjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="WarehouseDataObjectCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -13485,6 +13696,145 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=query_opsi_data_object_data_details,
+                response_type="QueryDataObjectResultSetRowsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def query_warehouse_data_object_data(self, warehouse_type, warehouse_id, query_warehouse_data_object_data_details, **kwargs):
+        """
+        Queries Warehouse data objects (e.g: views, tables) with the inputs provided and sends the result set back.
+        Any data to which an OperationsInsightsWarehouseUser with a permission to the corresponding Warehouse can be queried.
+
+
+        :param str warehouse_type: (required)
+            Type of the Warehouse.
+
+            Allowed values are: "awrHubs"
+
+        :param str warehouse_id: (required)
+            The `OCID`__ of a Warehouse.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param oci.opsi.models.QueryWarehouseDataObjectDataDetails query_warehouse_data_object_data_details: (required)
+            The information to be used for querying a Warehouse.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.QueryDataObjectResultSetRowsCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/query_warehouse_data_object_data.py.html>`__ to see an example of how to use query_warehouse_data_object_data API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['warehouseType', 'warehouseId']
+        resource_path = "/{warehouseType}/{warehouseId}/actions/queryData"
+        method = "POST"
+        operation_name = "query_warehouse_data_object_data"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/OpsiWarehouseDataObjects/QueryWarehouseDataObjectData"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "query_warehouse_data_object_data got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "warehouseType": warehouse_type,
+            "warehouseId": warehouse_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=query_warehouse_data_object_data_details,
+                response_type="QueryDataObjectResultSetRowsCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=query_warehouse_data_object_data_details,
                 response_type="QueryDataObjectResultSetRowsCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,

@@ -27,6 +27,10 @@ class DataObjectColumnMetadata(object):
     #: This constant has a value of "TIME_DIMENSION"
     CATEGORY_TIME_DIMENSION = "TIME_DIMENSION"
 
+    #: A constant which can be used with the category property of a DataObjectColumnMetadata.
+    #: This constant has a value of "UNKNOWN"
+    CATEGORY_UNKNOWN = "UNKNOWN"
+
     #: A constant which can be used with the data_type_name property of a DataObjectColumnMetadata.
     #: This constant has a value of "NUMBER"
     DATA_TYPE_NAME_NUMBER = "NUMBER"
@@ -39,6 +43,10 @@ class DataObjectColumnMetadata(object):
     #: This constant has a value of "VARCHAR2"
     DATA_TYPE_NAME_VARCHAR2 = "VARCHAR2"
 
+    #: A constant which can be used with the data_type_name property of a DataObjectColumnMetadata.
+    #: This constant has a value of "OTHER"
+    DATA_TYPE_NAME_OTHER = "OTHER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataObjectColumnMetadata object with values from keyword arguments.
@@ -50,13 +58,17 @@ class DataObjectColumnMetadata(object):
 
         :param category:
             The value to assign to the category property of this DataObjectColumnMetadata.
-            Allowed values for this property are: "DIMENSION", "METRIC", "TIME_DIMENSION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DIMENSION", "METRIC", "TIME_DIMENSION", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type category: str
 
+        :param data_type:
+            The value to assign to the data_type property of this DataObjectColumnMetadata.
+        :type data_type: str
+
         :param data_type_name:
             The value to assign to the data_type_name property of this DataObjectColumnMetadata.
-            Allowed values for this property are: "NUMBER", "TIMESTAMP", "VARCHAR2", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NUMBER", "TIMESTAMP", "VARCHAR2", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_type_name: str
 
@@ -80,6 +92,7 @@ class DataObjectColumnMetadata(object):
         self.swagger_types = {
             'name': 'str',
             'category': 'str',
+            'data_type': 'str',
             'data_type_name': 'str',
             'display_name': 'str',
             'description': 'str',
@@ -90,6 +103,7 @@ class DataObjectColumnMetadata(object):
         self.attribute_map = {
             'name': 'name',
             'category': 'category',
+            'data_type': 'dataType',
             'data_type_name': 'dataTypeName',
             'display_name': 'displayName',
             'description': 'description',
@@ -99,6 +113,7 @@ class DataObjectColumnMetadata(object):
 
         self._name = None
         self._category = None
+        self._data_type = None
         self._data_type_name = None
         self._display_name = None
         self._description = None
@@ -135,7 +150,7 @@ class DataObjectColumnMetadata(object):
         Gets the category of this DataObjectColumnMetadata.
         Category of the column.
 
-        Allowed values for this property are: "DIMENSION", "METRIC", "TIME_DIMENSION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DIMENSION", "METRIC", "TIME_DIMENSION", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -154,10 +169,34 @@ class DataObjectColumnMetadata(object):
         :param category: The category of this DataObjectColumnMetadata.
         :type: str
         """
-        allowed_values = ["DIMENSION", "METRIC", "TIME_DIMENSION"]
+        allowed_values = ["DIMENSION", "METRIC", "TIME_DIMENSION", "UNKNOWN"]
         if not value_allowed_none_or_none_sentinel(category, allowed_values):
             category = 'UNKNOWN_ENUM_VALUE'
         self._category = category
+
+    @property
+    def data_type(self):
+        """
+        Gets the data_type of this DataObjectColumnMetadata.
+        Type of a data object column.
+
+
+        :return: The data_type of this DataObjectColumnMetadata.
+        :rtype: str
+        """
+        return self._data_type
+
+    @data_type.setter
+    def data_type(self, data_type):
+        """
+        Sets the data_type of this DataObjectColumnMetadata.
+        Type of a data object column.
+
+
+        :param data_type: The data_type of this DataObjectColumnMetadata.
+        :type: str
+        """
+        self._data_type = data_type
 
     @property
     def data_type_name(self):
@@ -165,7 +204,7 @@ class DataObjectColumnMetadata(object):
         Gets the data_type_name of this DataObjectColumnMetadata.
         Type name of a data object column.
 
-        Allowed values for this property are: "NUMBER", "TIMESTAMP", "VARCHAR2", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NUMBER", "TIMESTAMP", "VARCHAR2", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -184,7 +223,7 @@ class DataObjectColumnMetadata(object):
         :param data_type_name: The data_type_name of this DataObjectColumnMetadata.
         :type: str
         """
-        allowed_values = ["NUMBER", "TIMESTAMP", "VARCHAR2"]
+        allowed_values = ["NUMBER", "TIMESTAMP", "VARCHAR2", "OTHER"]
         if not value_allowed_none_or_none_sentinel(data_type_name, allowed_values):
             data_type_name = 'UNKNOWN_ENUM_VALUE'
         self._data_type_name = data_type_name

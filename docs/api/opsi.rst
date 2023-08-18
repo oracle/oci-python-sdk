@@ -132,6 +132,7 @@ Opsi
     oci.opsi.models.DBExternalProperties
     oci.opsi.models.DBOSConfigInstance
     oci.opsi.models.DBParameters
+    oci.opsi.models.DataObjectBindParameter
     oci.opsi.models.DataObjectColumnMetadata
     oci.opsi.models.DataObjectColumnUnit
     oci.opsi.models.DataObjectCoreColumnUnit
@@ -143,6 +144,7 @@ Opsi
     oci.opsi.models.DataObjectQuery
     oci.opsi.models.DataObjectQueryTimeFilters
     oci.opsi.models.DataObjectRateColumnUnit
+    oci.opsi.models.DataObjectStandardQuery
     oci.opsi.models.DataObjectTemperatureColumnUnit
     oci.opsi.models.DataObjectTemplatizedQuery
     oci.opsi.models.DataObjectTimeColumnUnit
@@ -247,6 +249,7 @@ Opsi
     oci.opsi.models.ImportableComputeEntitySummaryCollection
     oci.opsi.models.ImportableEnterpriseManagerEntity
     oci.opsi.models.ImportableEnterpriseManagerEntityCollection
+    oci.opsi.models.IndividualOpsiDataObjectDetailsInQuery
     oci.opsi.models.IngestAddmReportsDetails
     oci.opsi.models.IngestAddmReportsResponseDetails
     oci.opsi.models.IngestDatabaseConfigurationDetails
@@ -301,11 +304,16 @@ Opsi
     oci.opsi.models.OpsiConfigurations
     oci.opsi.models.OpsiConfigurationsCollection
     oci.opsi.models.OpsiDataObject
+    oci.opsi.models.OpsiDataObjectDetailsInQuery
+    oci.opsi.models.OpsiDataObjectQueryParam
     oci.opsi.models.OpsiDataObjectSummary
+    oci.opsi.models.OpsiDataObjectSupportedQueryParam
+    oci.opsi.models.OpsiDataObjectTypeOpsiDataObjectDetailsInQuery
     oci.opsi.models.OpsiDataObjects
     oci.opsi.models.OpsiDataObjectsCollection
     oci.opsi.models.OpsiUxConfiguration
     oci.opsi.models.OpsiUxConfigurationSummary
+    oci.opsi.models.OpsiWarehouseDataObjects
     oci.opsi.models.PeComanagedDatabaseConnectionDetails
     oci.opsi.models.PeComanagedDatabaseHostDetails
     oci.opsi.models.PeComanagedDatabaseInsight
@@ -321,6 +329,7 @@ Opsi
     oci.opsi.models.QueryDataObjectResultSetColumnMetadata
     oci.opsi.models.QueryDataObjectResultSetRowsCollection
     oci.opsi.models.QueryOpsiDataObjectDataDetails
+    oci.opsi.models.QueryWarehouseDataObjectDataDetails
     oci.opsi.models.RelatedObjectTypeDetails
     oci.opsi.models.ResourceCapacityTrendAggregation
     oci.opsi.models.ResourceFilters
@@ -420,6 +429,11 @@ Opsi
     oci.opsi.models.UpdatePeComanagedExadataInsightDetails
     oci.opsi.models.UxConfigurationItemsCollection
     oci.opsi.models.VmClusterSummary
+    oci.opsi.models.WarehouseDataObjectCollection
+    oci.opsi.models.WarehouseDataObjectDetails
+    oci.opsi.models.WarehouseDataObjectSummary
+    oci.opsi.models.WarehouseTableDataObjectDetails
+    oci.opsi.models.WarehouseViewDataObjectDetails
     oci.opsi.models.WorkRequest
     oci.opsi.models.WorkRequestCollection
     oci.opsi.models.WorkRequestError

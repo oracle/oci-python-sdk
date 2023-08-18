@@ -23,12 +23,24 @@ class DataObjectTemplatizedQuery(DataObjectQuery):
 
         :param query_type:
             The value to assign to the query_type property of this DataObjectTemplatizedQuery.
-            Allowed values for this property are: "TEMPLATIZED_QUERY"
+            Allowed values for this property are: "TEMPLATIZED_QUERY", "STANDARD_QUERY"
         :type query_type: str
+
+        :param bind_params:
+            The value to assign to the bind_params property of this DataObjectTemplatizedQuery.
+        :type bind_params: list[oci.opsi.models.DataObjectBindParameter]
+
+        :param query_execution_timeout_in_seconds:
+            The value to assign to the query_execution_timeout_in_seconds property of this DataObjectTemplatizedQuery.
+        :type query_execution_timeout_in_seconds: float
 
         :param select_list:
             The value to assign to the select_list property of this DataObjectTemplatizedQuery.
         :type select_list: list[str]
+
+        :param from_clause:
+            The value to assign to the from_clause property of this DataObjectTemplatizedQuery.
+        :type from_clause: str
 
         :param where_conditions_list:
             The value to assign to the where_conditions_list property of this DataObjectTemplatizedQuery.
@@ -53,7 +65,10 @@ class DataObjectTemplatizedQuery(DataObjectQuery):
         """
         self.swagger_types = {
             'query_type': 'str',
+            'bind_params': 'list[DataObjectBindParameter]',
+            'query_execution_timeout_in_seconds': 'float',
             'select_list': 'list[str]',
+            'from_clause': 'str',
             'where_conditions_list': 'list[str]',
             'group_by_list': 'list[str]',
             'having_conditions_list': 'list[str]',
@@ -63,7 +78,10 @@ class DataObjectTemplatizedQuery(DataObjectQuery):
 
         self.attribute_map = {
             'query_type': 'queryType',
+            'bind_params': 'bindParams',
+            'query_execution_timeout_in_seconds': 'queryExecutionTimeoutInSeconds',
             'select_list': 'selectList',
+            'from_clause': 'fromClause',
             'where_conditions_list': 'whereConditionsList',
             'group_by_list': 'groupByList',
             'having_conditions_list': 'havingConditionsList',
@@ -72,7 +90,10 @@ class DataObjectTemplatizedQuery(DataObjectQuery):
         }
 
         self._query_type = None
+        self._bind_params = None
+        self._query_execution_timeout_in_seconds = None
         self._select_list = None
+        self._from_clause = None
         self._where_conditions_list = None
         self._group_by_list = None
         self._having_conditions_list = None
@@ -103,6 +124,36 @@ class DataObjectTemplatizedQuery(DataObjectQuery):
         :type: list[str]
         """
         self._select_list = select_list
+
+    @property
+    def from_clause(self):
+        """
+        Gets the from_clause of this DataObjectTemplatizedQuery.
+        Unique data object name that will be added into the FROM clause of the query, just like a view name in FROM clause.
+        - Use actual name of the data objects (e.g: tables, views) in case of Warehouse (e.g: Awr hub) data objects query. SCHEMA.VIEW name syntax can also be used here.
+        e.g: SYS.DBA_HIST_SNAPSHOT or DBA_HIST_SNAPSHOT
+        - Use name of the data object (e.g: SQL_STATS_DO) in case of OPSI data objects. Identifier of the OPSI data object cannot be used here.
+
+
+        :return: The from_clause of this DataObjectTemplatizedQuery.
+        :rtype: str
+        """
+        return self._from_clause
+
+    @from_clause.setter
+    def from_clause(self, from_clause):
+        """
+        Sets the from_clause of this DataObjectTemplatizedQuery.
+        Unique data object name that will be added into the FROM clause of the query, just like a view name in FROM clause.
+        - Use actual name of the data objects (e.g: tables, views) in case of Warehouse (e.g: Awr hub) data objects query. SCHEMA.VIEW name syntax can also be used here.
+        e.g: SYS.DBA_HIST_SNAPSHOT or DBA_HIST_SNAPSHOT
+        - Use name of the data object (e.g: SQL_STATS_DO) in case of OPSI data objects. Identifier of the OPSI data object cannot be used here.
+
+
+        :param from_clause: The from_clause of this DataObjectTemplatizedQuery.
+        :type: str
+        """
+        self._from_clause = from_clause
 
     @property
     def where_conditions_list(self):
