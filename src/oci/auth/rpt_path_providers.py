@@ -6,8 +6,10 @@ from __future__ import absolute_import
 import abc
 import os
 import logging
+import time
 
 from oci._vendor import requests
+import oci._vendor.jwt as jwt
 
 from .signers.instance_principals_security_token_signer import InstancePrincipalsSecurityTokenSigner
 
@@ -15,6 +17,7 @@ OCI_RESOURCE_PRINCIPAL_RPT_PATH = "OCI_RESOURCE_PRINCIPAL_RPT_PATH"
 OCI_RESOURCE_PRINCIPAL_RPT_ID = "OCI_RESOURCE_PRINCIPAL_RPT_ID"
 IMDS_PATH_TEMPLATE = "/20180711/resourcePrincipalToken/{id}"
 METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
+OCI_KUBERNETES_SERVICE_ACCOUNT_TOKEN_PATH = "/var/run/secrets/kubernetes.io/serviceaccount/token"
 
 logger = logging.getLogger(__name__)
 
@@ -129,6 +132,34 @@ class DefaultRptPathProvider(AbstractRptPathProvider):
         return self.replacements
 
 
+class DefaultServiceAccountTokenProvider(object):
+    def __init__(self):
+        self.token_path = OCI_KUBERNETES_SERVICE_ACCOUNT_TOKEN_PATH
+
+    def override_sa_token_path(self, new_token_path):
+        self.token_path = new_token_path
+
+    def get_sa_token(self):
+        token_path = os.path.expanduser(self.token_path)
+        with open(token_path, mode="r", encoding="utf-8") as f:
+            sa_token = f.read().strip()
+        is_sa_token_valid = is_valid_sa_token(sa_token)
+        if is_sa_token_valid is False:
+            raise RuntimeError("Service account token at {} has expired".format(self.token_path))
+        return sa_token
+
+
+class SuppliedServiceAccountTokenProvider(object):
+    def __init__(self, token_string):
+        self.token_string = token_string
+
+    def get_sa_token(self):
+        is_sa_token_valid = is_valid_sa_token(self.token_string)
+        if is_sa_token_valid is False:
+            raise RuntimeError("The supplied service account token has expired.")
+        return self.token_string
+
+
 def get_instance_id_from_imds():
     # Get the instance id from the metadata service
     # TODO add error checks to ensure instance_id was retrieved.
@@ -137,3 +168,11 @@ def get_instance_id_from_imds():
     timeout = (10, 60)
     response = requests.get(endpoint, timeout=timeout, headers=METADATA_AUTH_HEADERS)
     return response.text.strip().lower()
+
+
+def is_valid_sa_token(token):
+    decoded_jwt = jwt.decode(jwt=token, verify=False)
+    time_now = int(time.time())
+    if decoded_jwt.get('exp') is None:
+        raise RuntimeError("Service account token does not have an 'exp' field.")
+    return time_now < decoded_jwt['exp']
