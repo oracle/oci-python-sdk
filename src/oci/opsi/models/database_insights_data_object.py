@@ -38,9 +38,25 @@ class DatabaseInsightsDataObject(OpsiDataObject):
             The value to assign to the description property of this DatabaseInsightsDataObject.
         :type description: str
 
+        :param name:
+            The value to assign to the name property of this DatabaseInsightsDataObject.
+        :type name: str
+
+        :param group_names:
+            The value to assign to the group_names property of this DatabaseInsightsDataObject.
+        :type group_names: list[str]
+
+        :param supported_query_time_period:
+            The value to assign to the supported_query_time_period property of this DatabaseInsightsDataObject.
+        :type supported_query_time_period: str
+
         :param columns_metadata:
             The value to assign to the columns_metadata property of this DatabaseInsightsDataObject.
         :type columns_metadata: list[oci.opsi.models.DataObjectColumnMetadata]
+
+        :param supported_query_params:
+            The value to assign to the supported_query_params property of this DatabaseInsightsDataObject.
+        :type supported_query_params: list[oci.opsi.models.OpsiDataObjectSupportedQueryParam]
 
         """
         self.swagger_types = {
@@ -48,7 +64,11 @@ class DatabaseInsightsDataObject(OpsiDataObject):
             'data_object_type': 'str',
             'display_name': 'str',
             'description': 'str',
-            'columns_metadata': 'list[DataObjectColumnMetadata]'
+            'name': 'str',
+            'group_names': 'list[str]',
+            'supported_query_time_period': 'str',
+            'columns_metadata': 'list[DataObjectColumnMetadata]',
+            'supported_query_params': 'list[OpsiDataObjectSupportedQueryParam]'
         }
 
         self.attribute_map = {
@@ -56,14 +76,22 @@ class DatabaseInsightsDataObject(OpsiDataObject):
             'data_object_type': 'dataObjectType',
             'display_name': 'displayName',
             'description': 'description',
-            'columns_metadata': 'columnsMetadata'
+            'name': 'name',
+            'group_names': 'groupNames',
+            'supported_query_time_period': 'supportedQueryTimePeriod',
+            'columns_metadata': 'columnsMetadata',
+            'supported_query_params': 'supportedQueryParams'
         }
 
         self._identifier = None
         self._data_object_type = None
         self._display_name = None
         self._description = None
+        self._name = None
+        self._group_names = None
+        self._supported_query_time_period = None
         self._columns_metadata = None
+        self._supported_query_params = None
         self._data_object_type = 'DATABASE_INSIGHTS_DATA_OBJECT'
 
     def __repr__(self):

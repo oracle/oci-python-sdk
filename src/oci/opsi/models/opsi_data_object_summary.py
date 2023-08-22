@@ -56,25 +56,39 @@ class OpsiDataObjectSummary(object):
             The value to assign to the description property of this OpsiDataObjectSummary.
         :type description: str
 
+        :param name:
+            The value to assign to the name property of this OpsiDataObjectSummary.
+        :type name: str
+
+        :param group_names:
+            The value to assign to the group_names property of this OpsiDataObjectSummary.
+        :type group_names: list[str]
+
         """
         self.swagger_types = {
             'identifier': 'str',
             'data_object_type': 'str',
             'display_name': 'str',
-            'description': 'str'
+            'description': 'str',
+            'name': 'str',
+            'group_names': 'list[str]'
         }
 
         self.attribute_map = {
             'identifier': 'identifier',
             'data_object_type': 'dataObjectType',
             'display_name': 'displayName',
-            'description': 'description'
+            'description': 'description',
+            'name': 'name',
+            'group_names': 'groupNames'
         }
 
         self._identifier = None
         self._data_object_type = None
         self._display_name = None
         self._description = None
+        self._name = None
+        self._group_names = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -196,6 +210,54 @@ class OpsiDataObjectSummary(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def name(self):
+        """
+        Gets the name of this OpsiDataObjectSummary.
+        Name of the data object, which can be used in data object queries just like how view names are used in a query.
+
+
+        :return: The name of this OpsiDataObjectSummary.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this OpsiDataObjectSummary.
+        Name of the data object, which can be used in data object queries just like how view names are used in a query.
+
+
+        :param name: The name of this OpsiDataObjectSummary.
+        :type: str
+        """
+        self._name = name
+
+    @property
+    def group_names(self):
+        """
+        Gets the group_names of this OpsiDataObjectSummary.
+        Names of all the groups to which the data object belongs to.
+
+
+        :return: The group_names of this OpsiDataObjectSummary.
+        :rtype: list[str]
+        """
+        return self._group_names
+
+    @group_names.setter
+    def group_names(self, group_names):
+        """
+        Sets the group_names of this OpsiDataObjectSummary.
+        Names of all the groups to which the data object belongs to.
+
+
+        :param group_names: The group_names of this OpsiDataObjectSummary.
+        :type: list[str]
+        """
+        self._group_names = group_names
 
     def __repr__(self):
         return formatted_flat_dict(self)

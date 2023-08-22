@@ -24,6 +24,10 @@ class QueryOpsiDataObjectDataDetails(object):
             The value to assign to the data_object_identifier property of this QueryOpsiDataObjectDataDetails.
         :type data_object_identifier: str
 
+        :param data_objects:
+            The value to assign to the data_objects property of this QueryOpsiDataObjectDataDetails.
+        :type data_objects: list[oci.opsi.models.OpsiDataObjectDetailsInQuery]
+
         :param query:
             The value to assign to the query property of this QueryOpsiDataObjectDataDetails.
         :type query: oci.opsi.models.DataObjectQuery
@@ -35,17 +39,20 @@ class QueryOpsiDataObjectDataDetails(object):
         """
         self.swagger_types = {
             'data_object_identifier': 'str',
+            'data_objects': 'list[OpsiDataObjectDetailsInQuery]',
             'query': 'DataObjectQuery',
             'resource_filters': 'ResourceFilters'
         }
 
         self.attribute_map = {
             'data_object_identifier': 'dataObjectIdentifier',
+            'data_objects': 'dataObjects',
             'query': 'query',
             'resource_filters': 'resourceFilters'
         }
 
         self._data_object_identifier = None
+        self._data_objects = None
         self._query = None
         self._resource_filters = None
 
@@ -72,6 +79,30 @@ class QueryOpsiDataObjectDataDetails(object):
         :type: str
         """
         self._data_object_identifier = data_object_identifier
+
+    @property
+    def data_objects(self):
+        """
+        Gets the data_objects of this QueryOpsiDataObjectDataDetails.
+        Details of OPSI data objects used in the query.
+
+
+        :return: The data_objects of this QueryOpsiDataObjectDataDetails.
+        :rtype: list[oci.opsi.models.OpsiDataObjectDetailsInQuery]
+        """
+        return self._data_objects
+
+    @data_objects.setter
+    def data_objects(self, data_objects):
+        """
+        Sets the data_objects of this QueryOpsiDataObjectDataDetails.
+        Details of OPSI data objects used in the query.
+
+
+        :param data_objects: The data_objects of this QueryOpsiDataObjectDataDetails.
+        :type: list[oci.opsi.models.OpsiDataObjectDetailsInQuery]
+        """
+        self._data_objects = data_objects
 
     @property
     def query(self):

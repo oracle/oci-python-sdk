@@ -42,6 +42,7 @@ API Reference
 * :doc:`Commitment <osub_subscription/client/oci.osub_subscription.CommitmentClient>`
 * :doc:`Common <cloud_bridge/client/oci.cloud_bridge.CommonClient>`
 * :doc:`Compute <core/client/oci.core.ComputeClient>`
+* :doc:`Compute Cloud At Customer <compute_cloud_at_customer/client/oci.compute_cloud_at_customer.ComputeCloudAtCustomerClient>`
 * :doc:`Compute Instance Agent <compute_instance_agent/client/oci.compute_instance_agent.ComputeInstanceAgentClient>`
 * :doc:`Compute Management <core/client/oci.core.ComputeManagementClient>`
 * :doc:`Computed Usage <osub_usage/client/oci.osub_usage.ComputedUsageClient>`
@@ -266,6 +267,7 @@ API Reference
     cloud_bridge
     cloud_guard
     cloud_migrations
+    compute_cloud_at_customer
     compute_instance_agent
     container_engine
     container_instances

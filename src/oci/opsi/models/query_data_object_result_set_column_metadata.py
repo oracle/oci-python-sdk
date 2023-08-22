@@ -27,6 +27,10 @@ class QueryDataObjectResultSetColumnMetadata(object):
     #: This constant has a value of "VARCHAR2"
     DATA_TYPE_NAME_VARCHAR2 = "VARCHAR2"
 
+    #: A constant which can be used with the data_type_name property of a QueryDataObjectResultSetColumnMetadata.
+    #: This constant has a value of "OTHER"
+    DATA_TYPE_NAME_OTHER = "OTHER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new QueryDataObjectResultSetColumnMetadata object with values from keyword arguments.
@@ -36,24 +40,31 @@ class QueryDataObjectResultSetColumnMetadata(object):
             The value to assign to the name property of this QueryDataObjectResultSetColumnMetadata.
         :type name: str
 
+        :param data_type:
+            The value to assign to the data_type property of this QueryDataObjectResultSetColumnMetadata.
+        :type data_type: str
+
         :param data_type_name:
             The value to assign to the data_type_name property of this QueryDataObjectResultSetColumnMetadata.
-            Allowed values for this property are: "NUMBER", "TIMESTAMP", "VARCHAR2", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NUMBER", "TIMESTAMP", "VARCHAR2", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_type_name: str
 
         """
         self.swagger_types = {
             'name': 'str',
+            'data_type': 'str',
             'data_type_name': 'str'
         }
 
         self.attribute_map = {
             'name': 'name',
+            'data_type': 'dataType',
             'data_type_name': 'dataTypeName'
         }
 
         self._name = None
+        self._data_type = None
         self._data_type_name = None
 
     @property
@@ -81,12 +92,36 @@ class QueryDataObjectResultSetColumnMetadata(object):
         self._name = name
 
     @property
+    def data_type(self):
+        """
+        Gets the data_type of this QueryDataObjectResultSetColumnMetadata.
+        Type of the column in a data object query result.
+
+
+        :return: The data_type of this QueryDataObjectResultSetColumnMetadata.
+        :rtype: str
+        """
+        return self._data_type
+
+    @data_type.setter
+    def data_type(self, data_type):
+        """
+        Sets the data_type of this QueryDataObjectResultSetColumnMetadata.
+        Type of the column in a data object query result.
+
+
+        :param data_type: The data_type of this QueryDataObjectResultSetColumnMetadata.
+        :type: str
+        """
+        self._data_type = data_type
+
+    @property
     def data_type_name(self):
         """
         Gets the data_type_name of this QueryDataObjectResultSetColumnMetadata.
         Type name of the column in a data object query result set.
 
-        Allowed values for this property are: "NUMBER", "TIMESTAMP", "VARCHAR2", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NUMBER", "TIMESTAMP", "VARCHAR2", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -105,7 +140,7 @@ class QueryDataObjectResultSetColumnMetadata(object):
         :param data_type_name: The data_type_name of this QueryDataObjectResultSetColumnMetadata.
         :type: str
         """
-        allowed_values = ["NUMBER", "TIMESTAMP", "VARCHAR2"]
+        allowed_values = ["NUMBER", "TIMESTAMP", "VARCHAR2", "OTHER"]
         if not value_allowed_none_or_none_sentinel(data_type_name, allowed_values):
             data_type_name = 'UNKNOWN_ENUM_VALUE'
         self._data_type_name = data_type_name

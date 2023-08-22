@@ -120,6 +120,10 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             The value to assign to the autonomous_container_database_id property of this CreateAutonomousDatabaseCloneDetails.
         :type autonomous_container_database_id: str
 
+        :param in_memory_percentage:
+            The value to assign to the in_memory_percentage property of this CreateAutonomousDatabaseCloneDetails.
+        :type in_memory_percentage: int
+
         :param is_access_control_enabled:
             The value to assign to the is_access_control_enabled property of this CreateAutonomousDatabaseCloneDetails.
         :type is_access_control_enabled: bool
@@ -251,6 +255,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'is_auto_scaling_enabled': 'bool',
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
+            'in_memory_percentage': 'int',
             'is_access_control_enabled': 'bool',
             'whitelisted_ips': 'list[str]',
             'are_primary_whitelisted_ips_used': 'bool',
@@ -302,6 +307,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
+            'in_memory_percentage': 'inMemoryPercentage',
             'is_access_control_enabled': 'isAccessControlEnabled',
             'whitelisted_ips': 'whitelistedIps',
             'are_primary_whitelisted_ips_used': 'arePrimaryWhitelistedIpsUsed',
@@ -352,6 +358,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
         self._is_auto_scaling_enabled = None
         self._is_dedicated = None
         self._autonomous_container_database_id = None
+        self._in_memory_percentage = None
         self._is_access_control_enabled = None
         self._whitelisted_ips = None
         self._are_primary_whitelisted_ips_used = None

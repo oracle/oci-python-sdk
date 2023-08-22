@@ -38,25 +38,39 @@ class ExadataInsightsDataObjectSummary(OpsiDataObjectSummary):
             The value to assign to the description property of this ExadataInsightsDataObjectSummary.
         :type description: str
 
+        :param name:
+            The value to assign to the name property of this ExadataInsightsDataObjectSummary.
+        :type name: str
+
+        :param group_names:
+            The value to assign to the group_names property of this ExadataInsightsDataObjectSummary.
+        :type group_names: list[str]
+
         """
         self.swagger_types = {
             'identifier': 'str',
             'data_object_type': 'str',
             'display_name': 'str',
-            'description': 'str'
+            'description': 'str',
+            'name': 'str',
+            'group_names': 'list[str]'
         }
 
         self.attribute_map = {
             'identifier': 'identifier',
             'data_object_type': 'dataObjectType',
             'display_name': 'displayName',
-            'description': 'description'
+            'description': 'description',
+            'name': 'name',
+            'group_names': 'groupNames'
         }
 
         self._identifier = None
         self._data_object_type = None
         self._display_name = None
         self._description = None
+        self._name = None
+        self._group_names = None
         self._data_object_type = 'EXADATA_INSIGHTS_DATA_OBJECT'
 
     def __repr__(self):

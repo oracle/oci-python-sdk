@@ -98,6 +98,10 @@ class AwrHub(object):
             The value to assign to the lifecycle_details property of this AwrHub.
         :type lifecycle_details: str
 
+        :param hub_dst_timezone_version:
+            The value to assign to the hub_dst_timezone_version property of this AwrHub.
+        :type hub_dst_timezone_version: str
+
         """
         self.swagger_types = {
             'operations_insights_warehouse_id': 'str',
@@ -112,7 +116,8 @@ class AwrHub(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'hub_dst_timezone_version': 'str'
         }
 
         self.attribute_map = {
@@ -128,7 +133,8 @@ class AwrHub(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'hub_dst_timezone_version': 'hubDstTimezoneVersion'
         }
 
         self._operations_insights_warehouse_id = None
@@ -144,6 +150,7 @@ class AwrHub(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._hub_dst_timezone_version = None
 
     @property
     def operations_insights_warehouse_id(self):
@@ -472,6 +479,30 @@ class AwrHub(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def hub_dst_timezone_version(self):
+        """
+        Gets the hub_dst_timezone_version of this AwrHub.
+        Dst Time Zone Version of the AWR Hub
+
+
+        :return: The hub_dst_timezone_version of this AwrHub.
+        :rtype: str
+        """
+        return self._hub_dst_timezone_version
+
+    @hub_dst_timezone_version.setter
+    def hub_dst_timezone_version(self, hub_dst_timezone_version):
+        """
+        Sets the hub_dst_timezone_version of this AwrHub.
+        Dst Time Zone Version of the AWR Hub
+
+
+        :param hub_dst_timezone_version: The hub_dst_timezone_version of this AwrHub.
+        :type: str
+        """
+        self._hub_dst_timezone_version = hub_dst_timezone_version
 
     def __repr__(self):
         return formatted_flat_dict(self)
