@@ -91,6 +91,10 @@ class UpdateAutonomousDatabaseDetails(object):
             Allowed values for this property are: "ECPU", "OCPU"
         :type compute_model: str
 
+        :param in_memory_percentage:
+            The value to assign to the in_memory_percentage property of this UpdateAutonomousDatabaseDetails.
+        :type in_memory_percentage: int
+
         :param local_adg_auto_failover_max_data_loss_limit:
             The value to assign to the local_adg_auto_failover_max_data_loss_limit property of this UpdateAutonomousDatabaseDetails.
         :type local_adg_auto_failover_max_data_loss_limit: int
@@ -264,6 +268,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self.swagger_types = {
             'backup_retention_period_in_days': 'int',
             'compute_model': 'str',
+            'in_memory_percentage': 'int',
             'local_adg_auto_failover_max_data_loss_limit': 'int',
             'cpu_core_count': 'int',
             'long_term_backup_schedule': 'LongTermBackUpScheduleDetails',
@@ -310,6 +315,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self.attribute_map = {
             'backup_retention_period_in_days': 'backupRetentionPeriodInDays',
             'compute_model': 'computeModel',
+            'in_memory_percentage': 'inMemoryPercentage',
             'local_adg_auto_failover_max_data_loss_limit': 'localAdgAutoFailoverMaxDataLossLimit',
             'cpu_core_count': 'cpuCoreCount',
             'long_term_backup_schedule': 'longTermBackupSchedule',
@@ -355,6 +361,7 @@ class UpdateAutonomousDatabaseDetails(object):
 
         self._backup_retention_period_in_days = None
         self._compute_model = None
+        self._in_memory_percentage = None
         self._local_adg_auto_failover_max_data_loss_limit = None
         self._cpu_core_count = None
         self._long_term_backup_schedule = None
@@ -452,6 +459,30 @@ class UpdateAutonomousDatabaseDetails(object):
                 .format(allowed_values)
             )
         self._compute_model = compute_model
+
+    @property
+    def in_memory_percentage(self):
+        """
+        Gets the in_memory_percentage of this UpdateAutonomousDatabaseDetails.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+
+
+        :return: The in_memory_percentage of this UpdateAutonomousDatabaseDetails.
+        :rtype: int
+        """
+        return self._in_memory_percentage
+
+    @in_memory_percentage.setter
+    def in_memory_percentage(self, in_memory_percentage):
+        """
+        Sets the in_memory_percentage of this UpdateAutonomousDatabaseDetails.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+
+
+        :param in_memory_percentage: The in_memory_percentage of this UpdateAutonomousDatabaseDetails.
+        :type: int
+        """
+        self._in_memory_percentage = in_memory_percentage
 
     @property
     def local_adg_auto_failover_max_data_loss_limit(self):

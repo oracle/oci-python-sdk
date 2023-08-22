@@ -34,22 +34,29 @@ class QueryDataObjectJsonResultSetRowsCollection(QueryDataObjectResultSetRowsCol
             The value to assign to the items_metadata property of this QueryDataObjectJsonResultSetRowsCollection.
         :type items_metadata: list[oci.opsi.models.QueryDataObjectResultSetColumnMetadata]
 
+        :param query_execution_time_in_seconds:
+            The value to assign to the query_execution_time_in_seconds property of this QueryDataObjectJsonResultSetRowsCollection.
+        :type query_execution_time_in_seconds: float
+
         """
         self.swagger_types = {
             'format': 'str',
             'items': 'list[object]',
-            'items_metadata': 'list[QueryDataObjectResultSetColumnMetadata]'
+            'items_metadata': 'list[QueryDataObjectResultSetColumnMetadata]',
+            'query_execution_time_in_seconds': 'float'
         }
 
         self.attribute_map = {
             'format': 'format',
             'items': 'items',
-            'items_metadata': 'itemsMetadata'
+            'items_metadata': 'itemsMetadata',
+            'query_execution_time_in_seconds': 'queryExecutionTimeInSeconds'
         }
 
         self._format = None
         self._items = None
         self._items_metadata = None
+        self._query_execution_time_in_seconds = None
         self._format = 'JSON'
 
     @property
@@ -99,6 +106,32 @@ class QueryDataObjectJsonResultSetRowsCollection(QueryDataObjectResultSetRowsCol
         :type: list[oci.opsi.models.QueryDataObjectResultSetColumnMetadata]
         """
         self._items_metadata = items_metadata
+
+    @property
+    def query_execution_time_in_seconds(self):
+        """
+        Gets the query_execution_time_in_seconds of this QueryDataObjectJsonResultSetRowsCollection.
+        Time taken for executing the data object query (in seconds).
+        Consider optimizing the query or reducing the target data range, if query execution time is longer.
+
+
+        :return: The query_execution_time_in_seconds of this QueryDataObjectJsonResultSetRowsCollection.
+        :rtype: float
+        """
+        return self._query_execution_time_in_seconds
+
+    @query_execution_time_in_seconds.setter
+    def query_execution_time_in_seconds(self, query_execution_time_in_seconds):
+        """
+        Sets the query_execution_time_in_seconds of this QueryDataObjectJsonResultSetRowsCollection.
+        Time taken for executing the data object query (in seconds).
+        Consider optimizing the query or reducing the target data range, if query execution time is longer.
+
+
+        :param query_execution_time_in_seconds: The query_execution_time_in_seconds of this QueryDataObjectJsonResultSetRowsCollection.
+        :type: float
+        """
+        self._query_execution_time_in_seconds = query_execution_time_in_seconds
 
     def __repr__(self):
         return formatted_flat_dict(self)

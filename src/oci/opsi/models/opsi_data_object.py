@@ -56,9 +56,25 @@ class OpsiDataObject(object):
             The value to assign to the description property of this OpsiDataObject.
         :type description: str
 
+        :param name:
+            The value to assign to the name property of this OpsiDataObject.
+        :type name: str
+
+        :param group_names:
+            The value to assign to the group_names property of this OpsiDataObject.
+        :type group_names: list[str]
+
+        :param supported_query_time_period:
+            The value to assign to the supported_query_time_period property of this OpsiDataObject.
+        :type supported_query_time_period: str
+
         :param columns_metadata:
             The value to assign to the columns_metadata property of this OpsiDataObject.
         :type columns_metadata: list[oci.opsi.models.DataObjectColumnMetadata]
+
+        :param supported_query_params:
+            The value to assign to the supported_query_params property of this OpsiDataObject.
+        :type supported_query_params: list[oci.opsi.models.OpsiDataObjectSupportedQueryParam]
 
         """
         self.swagger_types = {
@@ -66,7 +82,11 @@ class OpsiDataObject(object):
             'data_object_type': 'str',
             'display_name': 'str',
             'description': 'str',
-            'columns_metadata': 'list[DataObjectColumnMetadata]'
+            'name': 'str',
+            'group_names': 'list[str]',
+            'supported_query_time_period': 'str',
+            'columns_metadata': 'list[DataObjectColumnMetadata]',
+            'supported_query_params': 'list[OpsiDataObjectSupportedQueryParam]'
         }
 
         self.attribute_map = {
@@ -74,14 +94,22 @@ class OpsiDataObject(object):
             'data_object_type': 'dataObjectType',
             'display_name': 'displayName',
             'description': 'description',
-            'columns_metadata': 'columnsMetadata'
+            'name': 'name',
+            'group_names': 'groupNames',
+            'supported_query_time_period': 'supportedQueryTimePeriod',
+            'columns_metadata': 'columnsMetadata',
+            'supported_query_params': 'supportedQueryParams'
         }
 
         self._identifier = None
         self._data_object_type = None
         self._display_name = None
         self._description = None
+        self._name = None
+        self._group_names = None
+        self._supported_query_time_period = None
         self._columns_metadata = None
+        self._supported_query_params = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -205,6 +233,82 @@ class OpsiDataObject(object):
         self._description = description
 
     @property
+    def name(self):
+        """
+        Gets the name of this OpsiDataObject.
+        Name of the data object, which can be used in data object queries just like how view names are used in a query.
+
+
+        :return: The name of this OpsiDataObject.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this OpsiDataObject.
+        Name of the data object, which can be used in data object queries just like how view names are used in a query.
+
+
+        :param name: The name of this OpsiDataObject.
+        :type: str
+        """
+        self._name = name
+
+    @property
+    def group_names(self):
+        """
+        Gets the group_names of this OpsiDataObject.
+        Names of all the groups to which the data object belongs to.
+
+
+        :return: The group_names of this OpsiDataObject.
+        :rtype: list[str]
+        """
+        return self._group_names
+
+    @group_names.setter
+    def group_names(self, group_names):
+        """
+        Sets the group_names of this OpsiDataObject.
+        Names of all the groups to which the data object belongs to.
+
+
+        :param group_names: The group_names of this OpsiDataObject.
+        :type: list[str]
+        """
+        self._group_names = group_names
+
+    @property
+    def supported_query_time_period(self):
+        """
+        Gets the supported_query_time_period of this OpsiDataObject.
+        Time period supported by the data object for quering data.
+        Time period is in ISO 8601 format with respect to current time. Default is last 30 days represented by P30D.
+        Examples: P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months).
+
+
+        :return: The supported_query_time_period of this OpsiDataObject.
+        :rtype: str
+        """
+        return self._supported_query_time_period
+
+    @supported_query_time_period.setter
+    def supported_query_time_period(self, supported_query_time_period):
+        """
+        Sets the supported_query_time_period of this OpsiDataObject.
+        Time period supported by the data object for quering data.
+        Time period is in ISO 8601 format with respect to current time. Default is last 30 days represented by P30D.
+        Examples: P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months).
+
+
+        :param supported_query_time_period: The supported_query_time_period of this OpsiDataObject.
+        :type: str
+        """
+        self._supported_query_time_period = supported_query_time_period
+
+    @property
     def columns_metadata(self):
         """
         **[Required]** Gets the columns_metadata of this OpsiDataObject.
@@ -227,6 +331,30 @@ class OpsiDataObject(object):
         :type: list[oci.opsi.models.DataObjectColumnMetadata]
         """
         self._columns_metadata = columns_metadata
+
+    @property
+    def supported_query_params(self):
+        """
+        Gets the supported_query_params of this OpsiDataObject.
+        Supported query parameters by this OPSI data object that can be configured while a data object query involving this data object is executed.
+
+
+        :return: The supported_query_params of this OpsiDataObject.
+        :rtype: list[oci.opsi.models.OpsiDataObjectSupportedQueryParam]
+        """
+        return self._supported_query_params
+
+    @supported_query_params.setter
+    def supported_query_params(self, supported_query_params):
+        """
+        Sets the supported_query_params of this OpsiDataObject.
+        Supported query parameters by this OPSI data object that can be configured while a data object query involving this data object is executed.
+
+
+        :param supported_query_params: The supported_query_params of this OpsiDataObject.
+        :type: list[oci.opsi.models.OpsiDataObjectSupportedQueryParam]
+        """
+        self._supported_query_params = supported_query_params
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -28,6 +28,11 @@ download_file()
         echo "   -------> $file_download downloaded successfully" | tee -a $LOG
         echo "   -------> rename $file_download to $file" | tee -a $LOG
         mv -f ${APPDIR}/$file_download ${APPDIR}/$file
+        if echo $file | grep -q ".sh" 
+        then
+            chmod +x ${base_dir}/$file_dir
+            echo "   -------> change executable permission to $file_dir" | tee -a $LOG
+        fi
     fi
 }
 

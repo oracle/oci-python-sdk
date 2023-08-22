@@ -344,6 +344,14 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the ncharacter_set property of this AutonomousDatabaseSummary.
         :type ncharacter_set: str
 
+        :param in_memory_percentage:
+            The value to assign to the in_memory_percentage property of this AutonomousDatabaseSummary.
+        :type in_memory_percentage: int
+
+        :param in_memory_area_in_gbs:
+            The value to assign to the in_memory_area_in_gbs property of this AutonomousDatabaseSummary.
+        :type in_memory_area_in_gbs: int
+
         :param next_long_term_backup_time_stamp:
             The value to assign to the next_long_term_backup_time_stamp property of this AutonomousDatabaseSummary.
         :type next_long_term_backup_time_stamp: datetime
@@ -761,6 +769,8 @@ class AutonomousDatabaseSummary(object):
             'db_name': 'str',
             'character_set': 'str',
             'ncharacter_set': 'str',
+            'in_memory_percentage': 'int',
+            'in_memory_area_in_gbs': 'int',
             'next_long_term_backup_time_stamp': 'datetime',
             'long_term_backup_schedule': 'LongTermBackUpScheduleDetails',
             'is_free_tier': 'bool',
@@ -868,6 +878,8 @@ class AutonomousDatabaseSummary(object):
             'db_name': 'dbName',
             'character_set': 'characterSet',
             'ncharacter_set': 'ncharacterSet',
+            'in_memory_percentage': 'inMemoryPercentage',
+            'in_memory_area_in_gbs': 'inMemoryAreaInGBs',
             'next_long_term_backup_time_stamp': 'nextLongTermBackupTimeStamp',
             'long_term_backup_schedule': 'longTermBackupSchedule',
             'is_free_tier': 'isFreeTier',
@@ -974,6 +986,8 @@ class AutonomousDatabaseSummary(object):
         self._db_name = None
         self._character_set = None
         self._ncharacter_set = None
+        self._in_memory_percentage = None
+        self._in_memory_area_in_gbs = None
         self._next_long_term_backup_time_stamp = None
         self._long_term_backup_schedule = None
         self._is_free_tier = None
@@ -1357,6 +1371,54 @@ class AutonomousDatabaseSummary(object):
         :type: str
         """
         self._ncharacter_set = ncharacter_set
+
+    @property
+    def in_memory_percentage(self):
+        """
+        Gets the in_memory_percentage of this AutonomousDatabaseSummary.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+
+
+        :return: The in_memory_percentage of this AutonomousDatabaseSummary.
+        :rtype: int
+        """
+        return self._in_memory_percentage
+
+    @in_memory_percentage.setter
+    def in_memory_percentage(self, in_memory_percentage):
+        """
+        Sets the in_memory_percentage of this AutonomousDatabaseSummary.
+        The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database.
+
+
+        :param in_memory_percentage: The in_memory_percentage of this AutonomousDatabaseSummary.
+        :type: int
+        """
+        self._in_memory_percentage = in_memory_percentage
+
+    @property
+    def in_memory_area_in_gbs(self):
+        """
+        Gets the in_memory_area_in_gbs of this AutonomousDatabaseSummary.
+        The area assigned to In-Memory tables in Autonomous Database.
+
+
+        :return: The in_memory_area_in_gbs of this AutonomousDatabaseSummary.
+        :rtype: int
+        """
+        return self._in_memory_area_in_gbs
+
+    @in_memory_area_in_gbs.setter
+    def in_memory_area_in_gbs(self, in_memory_area_in_gbs):
+        """
+        Sets the in_memory_area_in_gbs of this AutonomousDatabaseSummary.
+        The area assigned to In-Memory tables in Autonomous Database.
+
+
+        :param in_memory_area_in_gbs: The in_memory_area_in_gbs of this AutonomousDatabaseSummary.
+        :type: int
+        """
+        self._in_memory_area_in_gbs = in_memory_area_in_gbs
 
     @property
     def next_long_term_backup_time_stamp(self):

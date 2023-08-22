@@ -55,6 +55,10 @@ class DataObjectTimeColumnUnit(DataObjectColumnUnit):
     #: This constant has a value of "YEAR"
     UNIT_YEAR = "YEAR"
 
+    #: A constant which can be used with the unit property of a DataObjectTimeColumnUnit.
+    #: This constant has a value of "MINUTE"
+    UNIT_MINUTE = "MINUTE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataObjectTimeColumnUnit object with values from keyword arguments. The default value of the :py:attr:`~oci.opsi.models.DataObjectTimeColumnUnit.unit_category` attribute
@@ -73,7 +77,7 @@ class DataObjectTimeColumnUnit(DataObjectColumnUnit):
 
         :param unit:
             The value to assign to the unit property of this DataObjectTimeColumnUnit.
-            Allowed values for this property are: "NANO_SECOND", "MICRO_SECOND", "MILLI_SECOND", "CENTI_SECOND", "SECOND", "HOUR", "DAY", "WEEK", "MONTH", "YEAR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NANO_SECOND", "MICRO_SECOND", "MILLI_SECOND", "CENTI_SECOND", "SECOND", "HOUR", "DAY", "WEEK", "MONTH", "YEAR", "MINUTE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type unit: str
 
@@ -101,7 +105,7 @@ class DataObjectTimeColumnUnit(DataObjectColumnUnit):
         Gets the unit of this DataObjectTimeColumnUnit.
         Time unit.
 
-        Allowed values for this property are: "NANO_SECOND", "MICRO_SECOND", "MILLI_SECOND", "CENTI_SECOND", "SECOND", "HOUR", "DAY", "WEEK", "MONTH", "YEAR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NANO_SECOND", "MICRO_SECOND", "MILLI_SECOND", "CENTI_SECOND", "SECOND", "HOUR", "DAY", "WEEK", "MONTH", "YEAR", "MINUTE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -120,7 +124,7 @@ class DataObjectTimeColumnUnit(DataObjectColumnUnit):
         :param unit: The unit of this DataObjectTimeColumnUnit.
         :type: str
         """
-        allowed_values = ["NANO_SECOND", "MICRO_SECOND", "MILLI_SECOND", "CENTI_SECOND", "SECOND", "HOUR", "DAY", "WEEK", "MONTH", "YEAR"]
+        allowed_values = ["NANO_SECOND", "MICRO_SECOND", "MILLI_SECOND", "CENTI_SECOND", "SECOND", "HOUR", "DAY", "WEEK", "MONTH", "YEAR", "MINUTE"]
         if not value_allowed_none_or_none_sentinel(unit, allowed_values):
             unit = 'UNKNOWN_ENUM_VALUE'
         self._unit = unit

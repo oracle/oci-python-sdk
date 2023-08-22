@@ -120,6 +120,7 @@ from .db_external_instance import DBExternalInstance
 from .db_external_properties import DBExternalProperties
 from .dbos_config_instance import DBOSConfigInstance
 from .db_parameters import DBParameters
+from .data_object_bind_parameter import DataObjectBindParameter
 from .data_object_column_metadata import DataObjectColumnMetadata
 from .data_object_column_unit import DataObjectColumnUnit
 from .data_object_core_column_unit import DataObjectCoreColumnUnit
@@ -131,6 +132,7 @@ from .data_object_power_column_unit import DataObjectPowerColumnUnit
 from .data_object_query import DataObjectQuery
 from .data_object_query_time_filters import DataObjectQueryTimeFilters
 from .data_object_rate_column_unit import DataObjectRateColumnUnit
+from .data_object_standard_query import DataObjectStandardQuery
 from .data_object_temperature_column_unit import DataObjectTemperatureColumnUnit
 from .data_object_templatized_query import DataObjectTemplatizedQuery
 from .data_object_time_column_unit import DataObjectTimeColumnUnit
@@ -235,6 +237,7 @@ from .importable_compute_entity_summary import ImportableComputeEntitySummary
 from .importable_compute_entity_summary_collection import ImportableComputeEntitySummaryCollection
 from .importable_enterprise_manager_entity import ImportableEnterpriseManagerEntity
 from .importable_enterprise_manager_entity_collection import ImportableEnterpriseManagerEntityCollection
+from .individual_opsi_data_object_details_in_query import IndividualOpsiDataObjectDetailsInQuery
 from .ingest_addm_reports_details import IngestAddmReportsDetails
 from .ingest_addm_reports_response_details import IngestAddmReportsResponseDetails
 from .ingest_database_configuration_details import IngestDatabaseConfigurationDetails
@@ -289,11 +292,16 @@ from .opsi_configuration_summary import OpsiConfigurationSummary
 from .opsi_configurations import OpsiConfigurations
 from .opsi_configurations_collection import OpsiConfigurationsCollection
 from .opsi_data_object import OpsiDataObject
+from .opsi_data_object_details_in_query import OpsiDataObjectDetailsInQuery
+from .opsi_data_object_query_param import OpsiDataObjectQueryParam
 from .opsi_data_object_summary import OpsiDataObjectSummary
+from .opsi_data_object_supported_query_param import OpsiDataObjectSupportedQueryParam
+from .opsi_data_object_type_opsi_data_object_details_in_query import OpsiDataObjectTypeOpsiDataObjectDetailsInQuery
 from .opsi_data_objects import OpsiDataObjects
 from .opsi_data_objects_collection import OpsiDataObjectsCollection
 from .opsi_ux_configuration import OpsiUxConfiguration
 from .opsi_ux_configuration_summary import OpsiUxConfigurationSummary
+from .opsi_warehouse_data_objects import OpsiWarehouseDataObjects
 from .pe_comanaged_database_connection_details import PeComanagedDatabaseConnectionDetails
 from .pe_comanaged_database_host_details import PeComanagedDatabaseHostDetails
 from .pe_comanaged_database_insight import PeComanagedDatabaseInsight
@@ -309,6 +317,7 @@ from .query_data_object_json_result_set_rows_collection import QueryDataObjectJs
 from .query_data_object_result_set_column_metadata import QueryDataObjectResultSetColumnMetadata
 from .query_data_object_result_set_rows_collection import QueryDataObjectResultSetRowsCollection
 from .query_opsi_data_object_data_details import QueryOpsiDataObjectDataDetails
+from .query_warehouse_data_object_data_details import QueryWarehouseDataObjectDataDetails
 from .related_object_type_details import RelatedObjectTypeDetails
 from .resource_capacity_trend_aggregation import ResourceCapacityTrendAggregation
 from .resource_filters import ResourceFilters
@@ -408,6 +417,11 @@ from .update_pe_comanaged_database_insight_details import UpdatePeComanagedDatab
 from .update_pe_comanaged_exadata_insight_details import UpdatePeComanagedExadataInsightDetails
 from .ux_configuration_items_collection import UxConfigurationItemsCollection
 from .vm_cluster_summary import VmClusterSummary
+from .warehouse_data_object_collection import WarehouseDataObjectCollection
+from .warehouse_data_object_details import WarehouseDataObjectDetails
+from .warehouse_data_object_summary import WarehouseDataObjectSummary
+from .warehouse_table_data_object_details import WarehouseTableDataObjectDetails
+from .warehouse_view_data_object_details import WarehouseViewDataObjectDetails
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
 from .work_request_error import WorkRequestError
@@ -533,6 +547,7 @@ opsi_type_mapping = {
     "DBExternalProperties": DBExternalProperties,
     "DBOSConfigInstance": DBOSConfigInstance,
     "DBParameters": DBParameters,
+    "DataObjectBindParameter": DataObjectBindParameter,
     "DataObjectColumnMetadata": DataObjectColumnMetadata,
     "DataObjectColumnUnit": DataObjectColumnUnit,
     "DataObjectCoreColumnUnit": DataObjectCoreColumnUnit,
@@ -544,6 +559,7 @@ opsi_type_mapping = {
     "DataObjectQuery": DataObjectQuery,
     "DataObjectQueryTimeFilters": DataObjectQueryTimeFilters,
     "DataObjectRateColumnUnit": DataObjectRateColumnUnit,
+    "DataObjectStandardQuery": DataObjectStandardQuery,
     "DataObjectTemperatureColumnUnit": DataObjectTemperatureColumnUnit,
     "DataObjectTemplatizedQuery": DataObjectTemplatizedQuery,
     "DataObjectTimeColumnUnit": DataObjectTimeColumnUnit,
@@ -648,6 +664,7 @@ opsi_type_mapping = {
     "ImportableComputeEntitySummaryCollection": ImportableComputeEntitySummaryCollection,
     "ImportableEnterpriseManagerEntity": ImportableEnterpriseManagerEntity,
     "ImportableEnterpriseManagerEntityCollection": ImportableEnterpriseManagerEntityCollection,
+    "IndividualOpsiDataObjectDetailsInQuery": IndividualOpsiDataObjectDetailsInQuery,
     "IngestAddmReportsDetails": IngestAddmReportsDetails,
     "IngestAddmReportsResponseDetails": IngestAddmReportsResponseDetails,
     "IngestDatabaseConfigurationDetails": IngestDatabaseConfigurationDetails,
@@ -702,11 +719,16 @@ opsi_type_mapping = {
     "OpsiConfigurations": OpsiConfigurations,
     "OpsiConfigurationsCollection": OpsiConfigurationsCollection,
     "OpsiDataObject": OpsiDataObject,
+    "OpsiDataObjectDetailsInQuery": OpsiDataObjectDetailsInQuery,
+    "OpsiDataObjectQueryParam": OpsiDataObjectQueryParam,
     "OpsiDataObjectSummary": OpsiDataObjectSummary,
+    "OpsiDataObjectSupportedQueryParam": OpsiDataObjectSupportedQueryParam,
+    "OpsiDataObjectTypeOpsiDataObjectDetailsInQuery": OpsiDataObjectTypeOpsiDataObjectDetailsInQuery,
     "OpsiDataObjects": OpsiDataObjects,
     "OpsiDataObjectsCollection": OpsiDataObjectsCollection,
     "OpsiUxConfiguration": OpsiUxConfiguration,
     "OpsiUxConfigurationSummary": OpsiUxConfigurationSummary,
+    "OpsiWarehouseDataObjects": OpsiWarehouseDataObjects,
     "PeComanagedDatabaseConnectionDetails": PeComanagedDatabaseConnectionDetails,
     "PeComanagedDatabaseHostDetails": PeComanagedDatabaseHostDetails,
     "PeComanagedDatabaseInsight": PeComanagedDatabaseInsight,
@@ -722,6 +744,7 @@ opsi_type_mapping = {
     "QueryDataObjectResultSetColumnMetadata": QueryDataObjectResultSetColumnMetadata,
     "QueryDataObjectResultSetRowsCollection": QueryDataObjectResultSetRowsCollection,
     "QueryOpsiDataObjectDataDetails": QueryOpsiDataObjectDataDetails,
+    "QueryWarehouseDataObjectDataDetails": QueryWarehouseDataObjectDataDetails,
     "RelatedObjectTypeDetails": RelatedObjectTypeDetails,
     "ResourceCapacityTrendAggregation": ResourceCapacityTrendAggregation,
     "ResourceFilters": ResourceFilters,
@@ -821,6 +844,11 @@ opsi_type_mapping = {
     "UpdatePeComanagedExadataInsightDetails": UpdatePeComanagedExadataInsightDetails,
     "UxConfigurationItemsCollection": UxConfigurationItemsCollection,
     "VmClusterSummary": VmClusterSummary,
+    "WarehouseDataObjectCollection": WarehouseDataObjectCollection,
+    "WarehouseDataObjectDetails": WarehouseDataObjectDetails,
+    "WarehouseDataObjectSummary": WarehouseDataObjectSummary,
+    "WarehouseTableDataObjectDetails": WarehouseTableDataObjectDetails,
+    "WarehouseViewDataObjectDetails": WarehouseViewDataObjectDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,
     "WorkRequestError": WorkRequestError,

@@ -116,8 +116,9 @@ import argparse
 import datetime
 import contextlib
 import os
+import time
 
-version = "23.07.26"
+version = "23.08.15"
 
 ##########################################################################
 # check OCI version
@@ -156,7 +157,8 @@ def execute_extract():
         return
 
     # Start time
-    start_time = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    start_time = time.time()
+    start_time_str = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
     # get flags object for calling cache
     flags = set_service_extract_flags(cmd)
@@ -171,13 +173,13 @@ def execute_extract():
     ############################################
     output = ShowOCIOutput()
     summary = ShowOCISummary()
-    csv = ShowOCICSV(start_time)
+    csv = ShowOCICSV(start_time_str)
 
     ############################################
     # print showoci config
     ############################################
     cmdline = ' '.join(x for x in sys.argv[1:])
-    showoci_config = data.get_showoci_config(cmdline, start_time)
+    showoci_config = data.get_showoci_config(cmdline, start_time_str)
     output.print_showoci_config(showoci_config['data'])
 
     ############################################
@@ -267,7 +269,7 @@ def execute_extract():
     ############################################
     service_errors = data.get_service_errors()
     service_warnings = data.get_service_warnings()
-    output_errors = output.get_errors() + summary.get_errors()
+    output_errors = output.get_errors() + summary.get_errors() + csv.get_errors()
     complete_message = return_error_message(service_errors, service_warnings, data.error, output_errors)
 
     # if reboot migration
@@ -280,8 +282,13 @@ def execute_extract():
         for alert in data.get_service_dbsystem_maintenance():
             print(alert)
 
+    # calculate elapsed
+    end_time_str = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    elapsed = time.time() - start_time
+    str_elapsed = " - Elapsed " + '{:02d}:{:02d}:{:02d}'.format(round(elapsed // 3600), (round(elapsed % 3600 // 60)), round(elapsed % 60))
+
     # print completion
-    output.print_header("Completed " + complete_message + " at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")), 0)
+    output.print_header("Completed " + complete_message + " at " + end_time_str + str_elapsed, 0)
 
 
 ##########################################################################
@@ -317,30 +324,23 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-a', action='store_true', default=False, dest='all', help='Print All Resources')
     parser.add_argument('-ani', action='store_true', default=False, dest='allnoiam', help='Print All Resources but identity')
     parser.add_argument('-an', action='store_true', default=False, dest='announcement', help='Print Announcements')
-    parser.add_argument('-api', action='store_true', default=False, dest='api', help='Print API Gateways')
-    parser.add_argument('-b', action='store_true', default=False, dest='budgets', help='Print Budgets')
-    parser.add_argument('-c', action='store_true', default=False, dest='compute', help='Print Compute')
-    parser.add_argument('-cn', action='store_true', default=False, dest='container', help='Print Containers')
+    parser.add_argument('-c', '-cn', action='store_true', default=False, dest='compute', help='Print Compute and Containers')
     parser.add_argument('-d', action='store_true', default=False, dest='database', help='Print Database')
-    parser.add_argument('-e', action='store_true', default=False, dest='email', help='Print EMail')
-    parser.add_argument('-exclude', default="", dest='exclude', help='Exclude Services, Currently support NETWORK')
-    parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge, DNS Services and WAAS policies')
-    parser.add_argument('-f', action='store_true', default=False, dest='file', help='Print File Storage')
-    parser.add_argument('-fun', action='store_true', default=False, dest='function', help='Print Functions')
+    parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge, DNS Services and WAAS policies, DNS Zone is slow can be excluded using -exclude DNSZONE')
+    parser.add_argument('-f', '-o', action='store_true', default=False, dest='file', help='Print File and Object Storage')
     parser.add_argument('-i', action='store_true', default=False, dest='identity', help='Print Identity and Identity Domains')
     parser.add_argument('-ic', action='store_true', default=False, dest='identity_compartments', help='Print Identity Compartments only')
     parser.add_argument('-isc', action='store_true', default=False, dest='skip_identity_user_credential', help='Skip Identity User Credential extract')
-    parser.add_argument('-l', action='store_true', default=False, dest='load', help='Print Load Balancer')
-    parser.add_argument('-lq', action='store_true', default=False, dest='limits', help='Print Limits and Quotas')
-    parser.add_argument('-m', action='store_true', default=False, dest='monitoring', help='Print Monitoring, Notifications, Events, Agents')
-    parser.add_argument('-n', action='store_true', default=False, dest='network', help='Print Network')
-    parser.add_argument('-o', action='store_true', default=False, dest='object', help='Print Object Storage')
-    parser.add_argument('-paas', action='store_true', default=False, dest='paas_native', help='Print PaaS Platform Services - OIC OAC OCE OCVS')
-    parser.add_argument('-dataai', action='store_true', default=False, dest='data_ai', help='Print - D.Science, D.Catalog, D.Flow, ODA, BDS, DI')
-    parser.add_argument('-rm', action='store_true', default=False, dest='orm', help='Print Resource management')
-    parser.add_argument('-s', action='store_true', default=False, dest='streams_queues', help='Print Streams and Queues')
-    parser.add_argument('-sec', action='store_true', default=False, dest='security', help='Print Security, Logging, Vaults')
 
+    parser.add_argument('-s', '-api', '-rm', '-fun', action='store_true', default=False, dest='streams_queues', help='Print API, Functions, Resource management, Gateways, Streams and Queues')
+
+    parser.add_argument('-m', '-sec', '-lq', '-e', '-b', action='store_true', default=False, dest='monitoring', help='Print Monitor, Events, Agents, Security, Quotas, E-Mail, Limits...')
+    parser.add_argument('-paas', '-dataai', action='store_true', default=False, dest='paas_native', help='Print Native, Data and AI')
+    parser.add_argument('-n', '-l', action='store_true', default=False, dest='network', help='Print Network')
+
+    parser.add_argument('-exclude', default="", dest='exclude', help='Exclude Services, Currently support NETWORK, QUOTAS, LIMITS, DNSZONE, VCIRCUITS')
+    parser.add_argument('-noparallel', action='store_true', default=False, dest='skip_threads', help='Do not run in parallel processing (Threads)')
+    parser.add_argument('-threads', default=8, dest='threads', type=int, help='Threads Processes when running with Threads (Default=8)')
     parser.add_argument('-nobackups', action='store_true', default=False, dest='skip_backups', help='Do not process backups')
     parser.add_argument('-skipdbhomes', action='store_true', default=False, dest='skip_dbhomes', help='Do not process Database Homes and Below')
     parser.add_argument('-readtimeout', default=20, dest='readtimeout', type=int, help='Timeout for REST API Connection (Default=20)')
@@ -388,10 +388,8 @@ def set_parser_arguments(argsList=[]):
         return None
 
     if not (result.all or result.allnoiam or result.network or result.identity or result.identity_compartments or
-            result.compute or result.object or
-            result.load or result.database or result.file or result.email or result.orm or result.container or
-            result.streams_queues or result.budgets or result.monitoring or result.edge or result.announcement or result.limits or result.paas_native or
-            result.api or result.function or result.data_ai or result.security):
+            result.compute or result.database or result.file or result.streams_queues or result.monitoring or
+            result.edge or result.announcement or result.paas_native):
 
         parser.print_help()
 
@@ -423,54 +421,35 @@ def set_service_extract_flags(cmd):
 
     if cmd.all or cmd.allnoiam or cmd.network:
         prm.read_network = True
+        prm.read_load_balancer = True
 
     if cmd.all or cmd.allnoiam or cmd.compute:
         prm.read_compute = True
+        prm.read_containers = True
 
     if cmd.all or cmd.allnoiam or cmd.database:
         prm.read_database = True
 
     if cmd.all or cmd.allnoiam or cmd.file:
         prm.read_file_storage = True
-
-    if cmd.all or cmd.allnoiam or cmd.object:
         prm.read_object_storage = True
-
-    if cmd.all or cmd.allnoiam or cmd.orm:
-        prm.read_resource_management = True
-
-    if cmd.all or cmd.allnoiam or cmd.load:
-        prm.read_load_balancer = True
-
-    if cmd.all or cmd.allnoiam or cmd.email:
-        prm.read_email_distribution = True
-
-    if cmd.all or cmd.allnoiam or cmd.container:
-        prm.read_containers = True
 
     if cmd.all or cmd.allnoiam or cmd.streams_queues:
         prm.read_streams_queues = True
-
-    if cmd.all or cmd.allnoiam or cmd.budgets:
-        prm.read_budgets = True
-
-    if cmd.all or cmd.allnoiam or cmd.function:
         prm.read_function = True
-
-    if cmd.all or cmd.allnoiam or cmd.api:
+        prm.read_resource_management = True
         prm.read_api = True
-
-    if cmd.all or cmd.allnoiam or cmd.limits:
-        prm.read_limits = True
 
     if cmd.all or cmd.allnoiam or cmd.paas_native:
         prm.read_paas_native = True
-
-    if cmd.all or cmd.allnoiam or cmd.data_ai:
         prm.read_data_ai = True
 
     if cmd.all or cmd.allnoiam or cmd.monitoring:
         prm.read_monitoring_notifications = True
+        prm.read_security = True
+        prm.read_limits = True
+        prm.read_email_distribution = True
+        prm.read_budgets = True
 
     if cmd.all or cmd.allnoiam or cmd.announcement:
         prm.read_announcement = True
@@ -478,14 +457,17 @@ def set_service_extract_flags(cmd):
     if cmd.all or cmd.allnoiam or cmd.edge:
         prm.read_edge = True
 
-    if cmd.all or cmd.allnoiam or cmd.security:
-        prm.read_security = True
-
     if cmd.noroot:
         prm.read_root_compartment = False
 
     if cmd.skip_backups:
         prm.skip_backups = True
+
+    if cmd.skip_threads:
+        prm.skip_threads = True
+
+    if cmd.threads:
+        prm.threads = cmd.threads
 
     if cmd.exclude:
         prm.exclude = str(cmd.exclude).split(",")
