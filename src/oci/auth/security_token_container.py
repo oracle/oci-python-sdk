@@ -23,6 +23,10 @@ class SecurityTokenContainer(object):
     def valid_with_jitter(self, jitter=DEFAULT_EXPIRY_JITTER_SECONDS):
         return not self._expired_with_jitter(jitter)
 
+    def valid_with_half_expiration_time(self):
+        valid_duration = self.jwt['exp'] - self.jwt['iat']
+        return not self._expired_with_jitter(valid_duration / 2)
+
     def _expired_with_jitter(self, jitter):
         """
         Checks expiry with some jitter to account for clock skews on the client and also, for

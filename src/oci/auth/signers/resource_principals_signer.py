@@ -8,6 +8,8 @@ from .resource_principals_delegation_token_signer import ResourcePrincipalsDeleg
 from .ephemeral_resource_principals_signer import EphemeralResourcePrincipalSigner
 from .ephemeral_resource_principals_delegation_token_signer import EphemeralResourcePrincipalsDelegationTokenSigner
 from .ephemeral_resource_principals_v21_signer import EphemeralResourcePrincipalV21Signer
+from .oke_workload_identity_resource_principal_signer import OkeWorkloadIdentityResourcePrincipalSigner
+from ..rpt_path_providers import DefaultServiceAccountTokenProvider, SuppliedServiceAccountTokenProvider
 
 OCI_RESOURCE_PRINCIPAL_VERSION = "OCI_RESOURCE_PRINCIPAL_VERSION"
 OCI_RESOURCE_PRINCIPAL_RPST = "OCI_RESOURCE_PRINCIPAL_RPST"
@@ -18,6 +20,12 @@ OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT = "OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT"
 OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT = "OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT"
 OCI_RESOURCE_PRINCIPAL_RESOURCE_ID = "OCI_RESOURCE_PRINCIPAL_RESOURCE_ID"
 OCI_RESOURCE_PRINCIPAL_TENANCY_ID = "OCI_RESOURCE_PRINCIPAL_TENANCY_ID"
+
+OCI_KUBERNETES_SERVICE_ACCOUNT_TOKEN_PATH = "/var/run/secrets/kubernetes.io/serviceaccount/token"
+DEFAULT_OCI_KUBERNETES_SERVICE_ACCOUNT_CERT_PATH = "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
+OCI_KUBERNETES_SERVICE_ACCOUNT_CERT_PATH = "OCI_KUBERNETES_SERVICE_ACCOUNT_CERT_PATH"
+OCI_KUBERNETES_PROXYMUX_SERVICE_PORT = "12250"
+KUBERNETES_SERVICE_HOST = "KUBERNETES_SERVICE_HOST"
 
 
 def get_resource_principals_signer(resource_principal_token_path_provider=None):
@@ -160,3 +168,25 @@ def get_resource_principal_delegation_token_signer(delegation_token, resource_pr
         raise EnvironmentError("{} is not defined".format(OCI_RESOURCE_PRINCIPAL_VERSION))
     else:
         raise EnvironmentError("Unsupported {}: {}".format(OCI_RESOURCE_PRINCIPAL_VERSION, rp_version))
+
+
+def get_oke_workload_identity_resource_principal_signer(service_account_token_path=None, service_account_token=None, **kwargs):
+    sa_cert_path = os.environ.get(OCI_KUBERNETES_SERVICE_ACCOUNT_CERT_PATH, None)
+    if sa_cert_path is None:
+        sa_cert_path = DEFAULT_OCI_KUBERNETES_SERVICE_ACCOUNT_CERT_PATH
+
+    if service_account_token is None:
+        sa_token_provider = DefaultServiceAccountTokenProvider()
+        if service_account_token_path is not None:
+            sa_token_provider.override_sa_token_path(service_account_token_path)
+    else:
+        sa_token_provider = SuppliedServiceAccountTokenProvider(token_string=service_account_token)
+    service_host = os.environ.get(KUBERNETES_SERVICE_HOST)
+    region = os.environ.get(OCI_RESOURCE_PRINCIPAL_REGION)
+
+    return OkeWorkloadIdentityResourcePrincipalSigner(sa_token_provider=sa_token_provider,
+                                                      sa_cert_path=sa_cert_path,
+                                                      service_host=service_host,
+                                                      service_port=OCI_KUBERNETES_PROXYMUX_SERVICE_PORT,
+                                                      region=region,
+                                                      **kwargs)
