@@ -62,6 +62,14 @@ class IPSecConnection(object):
     #: This constant has a value of "HOSTNAME"
     CPE_LOCAL_IDENTIFIER_TYPE_HOSTNAME = "HOSTNAME"
 
+    #: A constant which can be used with the transport_type property of a IPSecConnection.
+    #: This constant has a value of "INTERNET"
+    TRANSPORT_TYPE_INTERNET = "INTERNET"
+
+    #: A constant which can be used with the transport_type property of a IPSecConnection.
+    #: This constant has a value of "FASTCONNECT"
+    TRANSPORT_TYPE_FASTCONNECT = "FASTCONNECT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IPSecConnection object with values from keyword arguments.
@@ -117,6 +125,11 @@ class IPSecConnection(object):
             The value to assign to the time_created property of this IPSecConnection.
         :type time_created: datetime
 
+        :param transport_type:
+            The value to assign to the transport_type property of this IPSecConnection.
+            Allowed values for this property are: "INTERNET", "FASTCONNECT"
+        :type transport_type: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -130,7 +143,8 @@ class IPSecConnection(object):
             'cpe_local_identifier': 'str',
             'cpe_local_identifier_type': 'str',
             'static_routes': 'list[str]',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'transport_type': 'str'
         }
 
         self.attribute_map = {
@@ -145,7 +159,8 @@ class IPSecConnection(object):
             'cpe_local_identifier': 'cpeLocalIdentifier',
             'cpe_local_identifier_type': 'cpeLocalIdentifierType',
             'static_routes': 'staticRoutes',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'transport_type': 'transportType'
         }
 
         self._compartment_id = None
@@ -160,6 +175,7 @@ class IPSecConnection(object):
         self._cpe_local_identifier_type = None
         self._static_routes = None
         self._time_created = None
+        self._transport_type = None
 
     @property
     def compartment_id(self):
@@ -554,6 +570,38 @@ class IPSecConnection(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def transport_type(self):
+        """
+        Gets the transport_type of this IPSecConnection.
+        The transport type used for the IPSec connection.
+
+        Allowed values for this property are: "INTERNET", "FASTCONNECT"
+
+
+        :return: The transport_type of this IPSecConnection.
+        :rtype: str
+        """
+        return self._transport_type
+
+    @transport_type.setter
+    def transport_type(self, transport_type):
+        """
+        Sets the transport_type of this IPSecConnection.
+        The transport type used for the IPSec connection.
+
+
+        :param transport_type: The transport_type of this IPSecConnection.
+        :type: str
+        """
+        allowed_values = ["INTERNET", "FASTCONNECT"]
+        if not value_allowed_none_or_none_sentinel(transport_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `transport_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._transport_type = transport_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

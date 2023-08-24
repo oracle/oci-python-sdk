@@ -47,6 +47,7 @@ Apm Synthetics
     oci.apm_synthetics.models.MonitorStatusCountMap
     oci.apm_synthetics.models.MonitorSummary
     oci.apm_synthetics.models.NetworkConfiguration
+    oci.apm_synthetics.models.NetworkMonitorConfiguration
     oci.apm_synthetics.models.Node
     oci.apm_synthetics.models.OracleRMStack
     oci.apm_synthetics.models.PrivateKey

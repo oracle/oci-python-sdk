@@ -32,6 +32,10 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
             The value to assign to the primary_subnet_id property of this UpdateInstancePoolPlacementConfigurationDetails.
         :type primary_subnet_id: str
 
+        :param primary_vnic_subnets:
+            The value to assign to the primary_vnic_subnets property of this UpdateInstancePoolPlacementConfigurationDetails.
+        :type primary_vnic_subnets: oci.core.models.InstancePoolPlacementPrimarySubnet
+
         :param secondary_vnic_subnets:
             The value to assign to the secondary_vnic_subnets property of this UpdateInstancePoolPlacementConfigurationDetails.
         :type secondary_vnic_subnets: list[oci.core.models.InstancePoolPlacementSecondaryVnicSubnet]
@@ -41,6 +45,7 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
             'availability_domain': 'str',
             'fault_domains': 'list[str]',
             'primary_subnet_id': 'str',
+            'primary_vnic_subnets': 'InstancePoolPlacementPrimarySubnet',
             'secondary_vnic_subnets': 'list[InstancePoolPlacementSecondaryVnicSubnet]'
         }
 
@@ -48,12 +53,14 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
             'availability_domain': 'availabilityDomain',
             'fault_domains': 'faultDomains',
             'primary_subnet_id': 'primarySubnetId',
+            'primary_vnic_subnets': 'primaryVnicSubnets',
             'secondary_vnic_subnets': 'secondaryVnicSubnets'
         }
 
         self._availability_domain = None
         self._fault_domains = None
         self._primary_subnet_id = None
+        self._primary_vnic_subnets = None
         self._secondary_vnic_subnets = None
 
     @property
@@ -137,9 +144,9 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
     @property
     def primary_subnet_id(self):
         """
-        **[Required]** Gets the primary_subnet_id of this UpdateInstancePoolPlacementConfigurationDetails.
-        The `OCID`__ of the primary subnet in which to place
-        instances.
+        Gets the primary_subnet_id of this UpdateInstancePoolPlacementConfigurationDetails.
+        The `OCID`__ of the primary subnet in which to place instances. This field is deprecated.
+        Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -153,8 +160,8 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
     def primary_subnet_id(self, primary_subnet_id):
         """
         Sets the primary_subnet_id of this UpdateInstancePoolPlacementConfigurationDetails.
-        The `OCID`__ of the primary subnet in which to place
-        instances.
+        The `OCID`__ of the primary subnet in which to place instances. This field is deprecated.
+        Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -165,10 +172,30 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
         self._primary_subnet_id = primary_subnet_id
 
     @property
+    def primary_vnic_subnets(self):
+        """
+        Gets the primary_vnic_subnets of this UpdateInstancePoolPlacementConfigurationDetails.
+
+        :return: The primary_vnic_subnets of this UpdateInstancePoolPlacementConfigurationDetails.
+        :rtype: oci.core.models.InstancePoolPlacementPrimarySubnet
+        """
+        return self._primary_vnic_subnets
+
+    @primary_vnic_subnets.setter
+    def primary_vnic_subnets(self, primary_vnic_subnets):
+        """
+        Sets the primary_vnic_subnets of this UpdateInstancePoolPlacementConfigurationDetails.
+
+        :param primary_vnic_subnets: The primary_vnic_subnets of this UpdateInstancePoolPlacementConfigurationDetails.
+        :type: oci.core.models.InstancePoolPlacementPrimarySubnet
+        """
+        self._primary_vnic_subnets = primary_vnic_subnets
+
+    @property
     def secondary_vnic_subnets(self):
         """
         Gets the secondary_vnic_subnets of this UpdateInstancePoolPlacementConfigurationDetails.
-        The set of subnet OCIDs for secondary VNICs for instances in the pool.
+        The set of secondary VNIC data for instances in the pool.
 
 
         :return: The secondary_vnic_subnets of this UpdateInstancePoolPlacementConfigurationDetails.
@@ -180,7 +207,7 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
     def secondary_vnic_subnets(self, secondary_vnic_subnets):
         """
         Sets the secondary_vnic_subnets of this UpdateInstancePoolPlacementConfigurationDetails.
-        The set of subnet OCIDs for secondary VNICs for instances in the pool.
+        The set of secondary VNIC data for instances in the pool.
 
 
         :param secondary_vnic_subnets: The secondary_vnic_subnets of this UpdateInstancePoolPlacementConfigurationDetails.

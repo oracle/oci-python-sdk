@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateCaptureFilterDetails(object):
     """
-    These details can be included in a request to update a capture filter. A capture filter contains a set of rules governing what traffic a VTAP mirrors.
+    These details can be included in a request to update a capture filter. A capture filter contains a set of rules governing what traffic a VTAP mirrors or a VCN flow log collects.
     """
 
     def __init__(self, **kwargs):

@@ -32,7 +32,7 @@ class IntelIcelakeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
 
         :param type:
             The value to assign to the type property of this IntelIcelakeBmLaunchInstancePlatformConfig.
-            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
+            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "GENERIC_BM", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
         :type type: str
 
         :param is_secure_boot_enabled:
@@ -68,6 +68,10 @@ class IntelIcelakeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
             The value to assign to the percentage_of_cores_enabled property of this IntelIcelakeBmLaunchInstancePlatformConfig.
         :type percentage_of_cores_enabled: int
 
+        :param config_map:
+            The value to assign to the config_map property of this IntelIcelakeBmLaunchInstancePlatformConfig.
+        :type config_map: dict(str, str)
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -78,7 +82,8 @@ class IntelIcelakeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
             'numa_nodes_per_socket': 'str',
             'is_symmetric_multi_threading_enabled': 'bool',
             'is_input_output_memory_management_unit_enabled': 'bool',
-            'percentage_of_cores_enabled': 'int'
+            'percentage_of_cores_enabled': 'int',
+            'config_map': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -90,7 +95,8 @@ class IntelIcelakeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
             'numa_nodes_per_socket': 'numaNodesPerSocket',
             'is_symmetric_multi_threading_enabled': 'isSymmetricMultiThreadingEnabled',
             'is_input_output_memory_management_unit_enabled': 'isInputOutputMemoryManagementUnitEnabled',
-            'percentage_of_cores_enabled': 'percentageOfCoresEnabled'
+            'percentage_of_cores_enabled': 'percentageOfCoresEnabled',
+            'config_map': 'configMap'
         }
 
         self._type = None
@@ -102,6 +108,7 @@ class IntelIcelakeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
         self._is_symmetric_multi_threading_enabled = None
         self._is_input_output_memory_management_unit_enabled = None
         self._percentage_of_cores_enabled = None
+        self._config_map = None
         self._type = 'INTEL_ICELAKE_BM'
 
     @property
@@ -231,6 +238,30 @@ class IntelIcelakeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
         :type: int
         """
         self._percentage_of_cores_enabled = percentage_of_cores_enabled
+
+    @property
+    def config_map(self):
+        """
+        Gets the config_map of this IntelIcelakeBmLaunchInstancePlatformConfig.
+        Instance Platform Configuration Configuration Map for flexible setting input.
+
+
+        :return: The config_map of this IntelIcelakeBmLaunchInstancePlatformConfig.
+        :rtype: dict(str, str)
+        """
+        return self._config_map
+
+    @config_map.setter
+    def config_map(self, config_map):
+        """
+        Sets the config_map of this IntelIcelakeBmLaunchInstancePlatformConfig.
+        Instance Platform Configuration Configuration Map for flexible setting input.
+
+
+        :param config_map: The config_map of this IntelIcelakeBmLaunchInstancePlatformConfig.
+        :type: dict(str, str)
+        """
+        self._config_map = config_map
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ClientCertificate(object):
     """
-    Client certificate in pem format.
+    Client certificate in PEM format.
     """
 
     def __init__(self, **kwargs):

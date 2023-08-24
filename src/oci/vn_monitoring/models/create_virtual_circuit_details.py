@@ -86,6 +86,10 @@ class CreateVirtualCircuitDetails(object):
             The value to assign to the is_bfd_enabled property of this CreateVirtualCircuitDetails.
         :type is_bfd_enabled: bool
 
+        :param is_transport_mode:
+            The value to assign to the is_transport_mode property of this CreateVirtualCircuitDetails.
+        :type is_transport_mode: bool
+
         :param customer_bgp_asn:
             The value to assign to the customer_bgp_asn property of this CreateVirtualCircuitDetails.
         :type customer_bgp_asn: int
@@ -152,6 +156,7 @@ class CreateVirtualCircuitDetails(object):
             'routing_policy': 'list[str]',
             'bgp_admin_state': 'str',
             'is_bfd_enabled': 'bool',
+            'is_transport_mode': 'bool',
             'customer_bgp_asn': 'int',
             'customer_asn': 'int',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -175,6 +180,7 @@ class CreateVirtualCircuitDetails(object):
             'routing_policy': 'routingPolicy',
             'bgp_admin_state': 'bgpAdminState',
             'is_bfd_enabled': 'isBfdEnabled',
+            'is_transport_mode': 'isTransportMode',
             'customer_bgp_asn': 'customerBgpAsn',
             'customer_asn': 'customerAsn',
             'defined_tags': 'definedTags',
@@ -197,6 +203,7 @@ class CreateVirtualCircuitDetails(object):
         self._routing_policy = None
         self._bgp_admin_state = None
         self._is_bfd_enabled = None
+        self._is_transport_mode = None
         self._customer_bgp_asn = None
         self._customer_asn = None
         self._defined_tags = None
@@ -398,6 +405,30 @@ class CreateVirtualCircuitDetails(object):
         :type: bool
         """
         self._is_bfd_enabled = is_bfd_enabled
+
+    @property
+    def is_transport_mode(self):
+        """
+        Gets the is_transport_mode of this CreateVirtualCircuitDetails.
+        Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+
+
+        :return: The is_transport_mode of this CreateVirtualCircuitDetails.
+        :rtype: bool
+        """
+        return self._is_transport_mode
+
+    @is_transport_mode.setter
+    def is_transport_mode(self, is_transport_mode):
+        """
+        Sets the is_transport_mode of this CreateVirtualCircuitDetails.
+        Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+
+
+        :param is_transport_mode: The is_transport_mode of this CreateVirtualCircuitDetails.
+        :type: bool
+        """
+        self._is_transport_mode = is_transport_mode
 
     @property
     def customer_bgp_asn(self):

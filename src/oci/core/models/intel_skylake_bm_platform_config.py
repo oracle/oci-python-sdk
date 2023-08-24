@@ -16,6 +16,14 @@ class IntelSkylakeBmPlatformConfig(PlatformConfig):
     BM.Standard2.52, BM.GPU2.2, BM.GPU3.8, or BM.DenseIO2.52 (the Intel Skylake platform).
     """
 
+    #: A constant which can be used with the numa_nodes_per_socket property of a IntelSkylakeBmPlatformConfig.
+    #: This constant has a value of "NPS1"
+    NUMA_NODES_PER_SOCKET_NPS1 = "NPS1"
+
+    #: A constant which can be used with the numa_nodes_per_socket property of a IntelSkylakeBmPlatformConfig.
+    #: This constant has a value of "NPS2"
+    NUMA_NODES_PER_SOCKET_NPS2 = "NPS2"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IntelSkylakeBmPlatformConfig object with values from keyword arguments. The default value of the :py:attr:`~oci.core.models.IntelSkylakeBmPlatformConfig.type` attribute
@@ -24,7 +32,8 @@ class IntelSkylakeBmPlatformConfig(PlatformConfig):
 
         :param type:
             The value to assign to the type property of this IntelSkylakeBmPlatformConfig.
-            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
+            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "GENERIC_BM", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param is_secure_boot_enabled:
@@ -43,13 +52,40 @@ class IntelSkylakeBmPlatformConfig(PlatformConfig):
             The value to assign to the is_memory_encryption_enabled property of this IntelSkylakeBmPlatformConfig.
         :type is_memory_encryption_enabled: bool
 
+        :param numa_nodes_per_socket:
+            The value to assign to the numa_nodes_per_socket property of this IntelSkylakeBmPlatformConfig.
+            Allowed values for this property are: "NPS1", "NPS2", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type numa_nodes_per_socket: str
+
+        :param is_symmetric_multi_threading_enabled:
+            The value to assign to the is_symmetric_multi_threading_enabled property of this IntelSkylakeBmPlatformConfig.
+        :type is_symmetric_multi_threading_enabled: bool
+
+        :param is_input_output_memory_management_unit_enabled:
+            The value to assign to the is_input_output_memory_management_unit_enabled property of this IntelSkylakeBmPlatformConfig.
+        :type is_input_output_memory_management_unit_enabled: bool
+
+        :param percentage_of_cores_enabled:
+            The value to assign to the percentage_of_cores_enabled property of this IntelSkylakeBmPlatformConfig.
+        :type percentage_of_cores_enabled: int
+
+        :param config_map:
+            The value to assign to the config_map property of this IntelSkylakeBmPlatformConfig.
+        :type config_map: dict(str, str)
+
         """
         self.swagger_types = {
             'type': 'str',
             'is_secure_boot_enabled': 'bool',
             'is_trusted_platform_module_enabled': 'bool',
             'is_measured_boot_enabled': 'bool',
-            'is_memory_encryption_enabled': 'bool'
+            'is_memory_encryption_enabled': 'bool',
+            'numa_nodes_per_socket': 'str',
+            'is_symmetric_multi_threading_enabled': 'bool',
+            'is_input_output_memory_management_unit_enabled': 'bool',
+            'percentage_of_cores_enabled': 'int',
+            'config_map': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -57,7 +93,12 @@ class IntelSkylakeBmPlatformConfig(PlatformConfig):
             'is_secure_boot_enabled': 'isSecureBootEnabled',
             'is_trusted_platform_module_enabled': 'isTrustedPlatformModuleEnabled',
             'is_measured_boot_enabled': 'isMeasuredBootEnabled',
-            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled'
+            'is_memory_encryption_enabled': 'isMemoryEncryptionEnabled',
+            'numa_nodes_per_socket': 'numaNodesPerSocket',
+            'is_symmetric_multi_threading_enabled': 'isSymmetricMultiThreadingEnabled',
+            'is_input_output_memory_management_unit_enabled': 'isInputOutputMemoryManagementUnitEnabled',
+            'percentage_of_cores_enabled': 'percentageOfCoresEnabled',
+            'config_map': 'configMap'
         }
 
         self._type = None
@@ -65,7 +106,162 @@ class IntelSkylakeBmPlatformConfig(PlatformConfig):
         self._is_trusted_platform_module_enabled = None
         self._is_measured_boot_enabled = None
         self._is_memory_encryption_enabled = None
+        self._numa_nodes_per_socket = None
+        self._is_symmetric_multi_threading_enabled = None
+        self._is_input_output_memory_management_unit_enabled = None
+        self._percentage_of_cores_enabled = None
+        self._config_map = None
         self._type = 'INTEL_SKYLAKE_BM'
+
+    @property
+    def numa_nodes_per_socket(self):
+        """
+        Gets the numa_nodes_per_socket of this IntelSkylakeBmPlatformConfig.
+        The number of NUMA nodes per socket (NPS).
+
+        Allowed values for this property are: "NPS1", "NPS2", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The numa_nodes_per_socket of this IntelSkylakeBmPlatformConfig.
+        :rtype: str
+        """
+        return self._numa_nodes_per_socket
+
+    @numa_nodes_per_socket.setter
+    def numa_nodes_per_socket(self, numa_nodes_per_socket):
+        """
+        Sets the numa_nodes_per_socket of this IntelSkylakeBmPlatformConfig.
+        The number of NUMA nodes per socket (NPS).
+
+
+        :param numa_nodes_per_socket: The numa_nodes_per_socket of this IntelSkylakeBmPlatformConfig.
+        :type: str
+        """
+        allowed_values = ["NPS1", "NPS2"]
+        if not value_allowed_none_or_none_sentinel(numa_nodes_per_socket, allowed_values):
+            numa_nodes_per_socket = 'UNKNOWN_ENUM_VALUE'
+        self._numa_nodes_per_socket = numa_nodes_per_socket
+
+    @property
+    def is_symmetric_multi_threading_enabled(self):
+        """
+        Gets the is_symmetric_multi_threading_enabled of this IntelSkylakeBmPlatformConfig.
+        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+        called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+
+        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
+        independent threads of execution, to better use the resources and increase the efficiency
+        of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
+        can provide higher or more predictable performance for some workloads.
+
+
+        :return: The is_symmetric_multi_threading_enabled of this IntelSkylakeBmPlatformConfig.
+        :rtype: bool
+        """
+        return self._is_symmetric_multi_threading_enabled
+
+    @is_symmetric_multi_threading_enabled.setter
+    def is_symmetric_multi_threading_enabled(self, is_symmetric_multi_threading_enabled):
+        """
+        Sets the is_symmetric_multi_threading_enabled of this IntelSkylakeBmPlatformConfig.
+        Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also
+        called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+
+        Intel and AMD processors have two hardware execution threads per core (OCPU). SMT permits multiple
+        independent threads of execution, to better use the resources and increase the efficiency
+        of the CPU. When multithreading is disabled, only one thread is permitted to run on each core, which
+        can provide higher or more predictable performance for some workloads.
+
+
+        :param is_symmetric_multi_threading_enabled: The is_symmetric_multi_threading_enabled of this IntelSkylakeBmPlatformConfig.
+        :type: bool
+        """
+        self._is_symmetric_multi_threading_enabled = is_symmetric_multi_threading_enabled
+
+    @property
+    def is_input_output_memory_management_unit_enabled(self):
+        """
+        Gets the is_input_output_memory_management_unit_enabled of this IntelSkylakeBmPlatformConfig.
+        Whether the input-output memory management unit is enabled.
+
+
+        :return: The is_input_output_memory_management_unit_enabled of this IntelSkylakeBmPlatformConfig.
+        :rtype: bool
+        """
+        return self._is_input_output_memory_management_unit_enabled
+
+    @is_input_output_memory_management_unit_enabled.setter
+    def is_input_output_memory_management_unit_enabled(self, is_input_output_memory_management_unit_enabled):
+        """
+        Sets the is_input_output_memory_management_unit_enabled of this IntelSkylakeBmPlatformConfig.
+        Whether the input-output memory management unit is enabled.
+
+
+        :param is_input_output_memory_management_unit_enabled: The is_input_output_memory_management_unit_enabled of this IntelSkylakeBmPlatformConfig.
+        :type: bool
+        """
+        self._is_input_output_memory_management_unit_enabled = is_input_output_memory_management_unit_enabled
+
+    @property
+    def percentage_of_cores_enabled(self):
+        """
+        Gets the percentage_of_cores_enabled of this IntelSkylakeBmPlatformConfig.
+        The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage
+        results in a fractional number of cores, the system rounds up the number of cores across processors
+        and provisions an instance with a whole number of cores.
+
+        If the applications that you run on the instance use a core-based licensing model and need fewer cores
+        than the full size of the shape, you can disable cores to reduce your licensing costs. The instance
+        itself is billed for the full shape, regardless of whether all cores are enabled.
+
+
+        :return: The percentage_of_cores_enabled of this IntelSkylakeBmPlatformConfig.
+        :rtype: int
+        """
+        return self._percentage_of_cores_enabled
+
+    @percentage_of_cores_enabled.setter
+    def percentage_of_cores_enabled(self, percentage_of_cores_enabled):
+        """
+        Sets the percentage_of_cores_enabled of this IntelSkylakeBmPlatformConfig.
+        The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage
+        results in a fractional number of cores, the system rounds up the number of cores across processors
+        and provisions an instance with a whole number of cores.
+
+        If the applications that you run on the instance use a core-based licensing model and need fewer cores
+        than the full size of the shape, you can disable cores to reduce your licensing costs. The instance
+        itself is billed for the full shape, regardless of whether all cores are enabled.
+
+
+        :param percentage_of_cores_enabled: The percentage_of_cores_enabled of this IntelSkylakeBmPlatformConfig.
+        :type: int
+        """
+        self._percentage_of_cores_enabled = percentage_of_cores_enabled
+
+    @property
+    def config_map(self):
+        """
+        Gets the config_map of this IntelSkylakeBmPlatformConfig.
+        Instance Platform Configuration Configuration Map for flexible setting input.
+
+
+        :return: The config_map of this IntelSkylakeBmPlatformConfig.
+        :rtype: dict(str, str)
+        """
+        return self._config_map
+
+    @config_map.setter
+    def config_map(self, config_map):
+        """
+        Sets the config_map of this IntelSkylakeBmPlatformConfig.
+        Instance Platform Configuration Configuration Map for flexible setting input.
+
+
+        :param config_map: The config_map of this IntelSkylakeBmPlatformConfig.
+        :type: dict(str, str)
+        """
+        self._config_map = config_map
 
     def __repr__(self):
         return formatted_flat_dict(self)

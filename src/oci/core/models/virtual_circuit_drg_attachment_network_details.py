@@ -30,20 +30,55 @@ class VirtualCircuitDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
             The value to assign to the id property of this VirtualCircuitDrgAttachmentNetworkDetails.
         :type id: str
 
+        :param transport_only_mode:
+            The value to assign to the transport_only_mode property of this VirtualCircuitDrgAttachmentNetworkDetails.
+        :type transport_only_mode: bool
+
         """
         self.swagger_types = {
             'type': 'str',
-            'id': 'str'
+            'id': 'str',
+            'transport_only_mode': 'bool'
         }
 
         self.attribute_map = {
             'type': 'type',
-            'id': 'id'
+            'id': 'id',
+            'transport_only_mode': 'transportOnlyMode'
         }
 
         self._type = None
         self._id = None
+        self._transport_only_mode = None
         self._type = 'VIRTUAL_CIRCUIT'
+
+    @property
+    def transport_only_mode(self):
+        """
+        Gets the transport_only_mode of this VirtualCircuitDrgAttachmentNetworkDetails.
+        Boolean flag that determines wether all traffic over the virtual circuits is encrypted.
+
+        Example: `true`
+
+
+        :return: The transport_only_mode of this VirtualCircuitDrgAttachmentNetworkDetails.
+        :rtype: bool
+        """
+        return self._transport_only_mode
+
+    @transport_only_mode.setter
+    def transport_only_mode(self, transport_only_mode):
+        """
+        Sets the transport_only_mode of this VirtualCircuitDrgAttachmentNetworkDetails.
+        Boolean flag that determines wether all traffic over the virtual circuits is encrypted.
+
+        Example: `true`
+
+
+        :param transport_only_mode: The transport_only_mode of this VirtualCircuitDrgAttachmentNetworkDetails.
+        :type: bool
+        """
+        self._transport_only_mode = transport_only_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

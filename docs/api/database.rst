@@ -18,6 +18,7 @@ Database
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.database.models.AcdAvmResourceStats
     oci.database.models.ActivateExadataInfrastructureDetails
     oci.database.models.AddVirtualMachineToCloudVmClusterDetails
     oci.database.models.AddVirtualMachineToVmClusterDetails
@@ -29,6 +30,7 @@ Database
     oci.database.models.AutonomousContainerDatabase
     oci.database.models.AutonomousContainerDatabaseBackupConfig
     oci.database.models.AutonomousContainerDatabaseDataguardAssociation
+    oci.database.models.AutonomousContainerDatabaseResourceUsage
     oci.database.models.AutonomousContainerDatabaseSummary
     oci.database.models.AutonomousContainerDatabaseVersionSummary
     oci.database.models.AutonomousDataWarehouse
@@ -61,6 +63,8 @@ Database
     oci.database.models.AutonomousVmCluster
     oci.database.models.AutonomousVmClusterResourceDetails
     oci.database.models.AutonomousVmClusterSummary
+    oci.database.models.AutonomousVmResourceUsage
+    oci.database.models.AvmAcdResourceStats
     oci.database.models.Backup
     oci.database.models.BackupDestination
     oci.database.models.BackupDestinationDetails
@@ -79,6 +83,7 @@ Database
     oci.database.models.ChangeVmClusterCompartmentDetails
     oci.database.models.CloudAutonomousVmCluster
     oci.database.models.CloudAutonomousVmClusterResourceDetails
+    oci.database.models.CloudAutonomousVmClusterResourceUsage
     oci.database.models.CloudAutonomousVmClusterSummary
     oci.database.models.CloudDatabaseManagementConfig
     oci.database.models.CloudDbServerDetails

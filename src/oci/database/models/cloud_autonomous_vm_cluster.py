@@ -250,6 +250,42 @@ class CloudAutonomousVmCluster(object):
             The value to assign to the db_servers property of this CloudAutonomousVmCluster.
         :type db_servers: list[str]
 
+        :param cpu_percentage:
+            The value to assign to the cpu_percentage property of this CloudAutonomousVmCluster.
+        :type cpu_percentage: float
+
+        :param autonomous_data_storage_percentage:
+            The value to assign to the autonomous_data_storage_percentage property of this CloudAutonomousVmCluster.
+        :type autonomous_data_storage_percentage: float
+
+        :param provisioned_cpus:
+            The value to assign to the provisioned_cpus property of this CloudAutonomousVmCluster.
+        :type provisioned_cpus: float
+
+        :param total_cpus:
+            The value to assign to the total_cpus property of this CloudAutonomousVmCluster.
+        :type total_cpus: float
+
+        :param total_autonomous_data_storage_in_tbs:
+            The value to assign to the total_autonomous_data_storage_in_tbs property of this CloudAutonomousVmCluster.
+        :type total_autonomous_data_storage_in_tbs: float
+
+        :param reserved_cpus:
+            The value to assign to the reserved_cpus property of this CloudAutonomousVmCluster.
+        :type reserved_cpus: float
+
+        :param provisionable_autonomous_container_databases:
+            The value to assign to the provisionable_autonomous_container_databases property of this CloudAutonomousVmCluster.
+        :type provisionable_autonomous_container_databases: int
+
+        :param provisioned_autonomous_container_databases:
+            The value to assign to the provisioned_autonomous_container_databases property of this CloudAutonomousVmCluster.
+        :type provisioned_autonomous_container_databases: int
+
+        :param non_provisionable_autonomous_container_databases:
+            The value to assign to the non_provisionable_autonomous_container_databases property of this CloudAutonomousVmCluster.
+        :type non_provisionable_autonomous_container_databases: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -296,7 +332,16 @@ class CloudAutonomousVmCluster(object):
             'autonomous_data_storage_size_in_tbs': 'float',
             'db_node_storage_size_in_gbs': 'int',
             'memory_per_oracle_compute_unit_in_gbs': 'int',
-            'db_servers': 'list[str]'
+            'db_servers': 'list[str]',
+            'cpu_percentage': 'float',
+            'autonomous_data_storage_percentage': 'float',
+            'provisioned_cpus': 'float',
+            'total_cpus': 'float',
+            'total_autonomous_data_storage_in_tbs': 'float',
+            'reserved_cpus': 'float',
+            'provisionable_autonomous_container_databases': 'int',
+            'provisioned_autonomous_container_databases': 'int',
+            'non_provisionable_autonomous_container_databases': 'int'
         }
 
         self.attribute_map = {
@@ -344,7 +389,16 @@ class CloudAutonomousVmCluster(object):
             'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
             'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
-            'db_servers': 'dbServers'
+            'db_servers': 'dbServers',
+            'cpu_percentage': 'cpuPercentage',
+            'autonomous_data_storage_percentage': 'autonomousDataStoragePercentage',
+            'provisioned_cpus': 'provisionedCpus',
+            'total_cpus': 'totalCpus',
+            'total_autonomous_data_storage_in_tbs': 'totalAutonomousDataStorageInTBs',
+            'reserved_cpus': 'reservedCpus',
+            'provisionable_autonomous_container_databases': 'provisionableAutonomousContainerDatabases',
+            'provisioned_autonomous_container_databases': 'provisionedAutonomousContainerDatabases',
+            'non_provisionable_autonomous_container_databases': 'nonProvisionableAutonomousContainerDatabases'
         }
 
         self._id = None
@@ -392,6 +446,15 @@ class CloudAutonomousVmCluster(object):
         self._db_node_storage_size_in_gbs = None
         self._memory_per_oracle_compute_unit_in_gbs = None
         self._db_servers = None
+        self._cpu_percentage = None
+        self._autonomous_data_storage_percentage = None
+        self._provisioned_cpus = None
+        self._total_cpus = None
+        self._total_autonomous_data_storage_in_tbs = None
+        self._reserved_cpus = None
+        self._provisionable_autonomous_container_databases = None
+        self._provisioned_autonomous_container_databases = None
+        self._non_provisionable_autonomous_container_databases = None
 
     @property
     def id(self):
@@ -975,9 +1038,7 @@ class CloudAutonomousVmCluster(object):
     def compute_model(self):
         """
         Gets the compute_model of this CloudAutonomousVmCluster.
-        The compute model of the Cloud Autonomous VM Cluster. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The compute model of the Cloud Autonomous VM Cluster.
 
         Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -992,9 +1053,7 @@ class CloudAutonomousVmCluster(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this CloudAutonomousVmCluster.
-        The compute model of the Cloud Autonomous VM Cluster. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The compute model of the Cloud Autonomous VM Cluster.
 
 
         :param compute_model: The compute_model of this CloudAutonomousVmCluster.
@@ -1389,9 +1448,7 @@ class CloudAutonomousVmCluster(object):
         Gets the reclaimable_cpus of this CloudAutonomousVmCluster.
         For Autonomous Databases on Dedicated Exadata Infrastructure:
         - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
 
 
         :return: The reclaimable_cpus of this CloudAutonomousVmCluster.
@@ -1405,9 +1462,7 @@ class CloudAutonomousVmCluster(object):
         Sets the reclaimable_cpus of this CloudAutonomousVmCluster.
         For Autonomous Databases on Dedicated Exadata Infrastructure:
         - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
 
 
         :param reclaimable_cpus: The reclaimable_cpus of this CloudAutonomousVmCluster.
@@ -1539,9 +1594,7 @@ class CloudAutonomousVmCluster(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmCluster.
-        The amount of memory (in GBs) enabled per OCPU or ECPU. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The amount of memory (in GBs) enabled per OCPU or ECPU.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmCluster.
@@ -1553,9 +1606,7 @@ class CloudAutonomousVmCluster(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmCluster.
-        The amount of memory (in GBs) enabled per OCPU or ECPU. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The amount of memory (in GBs) enabled per OCPU or ECPU.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmCluster.
@@ -1590,6 +1641,222 @@ class CloudAutonomousVmCluster(object):
         :type: list[str]
         """
         self._db_servers = db_servers
+
+    @property
+    def cpu_percentage(self):
+        """
+        Gets the cpu_percentage of this CloudAutonomousVmCluster.
+        The percentage of total number of CPUs used in an Autonomous VM Cluster.
+
+
+        :return: The cpu_percentage of this CloudAutonomousVmCluster.
+        :rtype: float
+        """
+        return self._cpu_percentage
+
+    @cpu_percentage.setter
+    def cpu_percentage(self, cpu_percentage):
+        """
+        Sets the cpu_percentage of this CloudAutonomousVmCluster.
+        The percentage of total number of CPUs used in an Autonomous VM Cluster.
+
+
+        :param cpu_percentage: The cpu_percentage of this CloudAutonomousVmCluster.
+        :type: float
+        """
+        self._cpu_percentage = cpu_percentage
+
+    @property
+    def autonomous_data_storage_percentage(self):
+        """
+        Gets the autonomous_data_storage_percentage of this CloudAutonomousVmCluster.
+        The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+
+
+        :return: The autonomous_data_storage_percentage of this CloudAutonomousVmCluster.
+        :rtype: float
+        """
+        return self._autonomous_data_storage_percentage
+
+    @autonomous_data_storage_percentage.setter
+    def autonomous_data_storage_percentage(self, autonomous_data_storage_percentage):
+        """
+        Sets the autonomous_data_storage_percentage of this CloudAutonomousVmCluster.
+        The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+
+
+        :param autonomous_data_storage_percentage: The autonomous_data_storage_percentage of this CloudAutonomousVmCluster.
+        :type: float
+        """
+        self._autonomous_data_storage_percentage = autonomous_data_storage_percentage
+
+    @property
+    def provisioned_cpus(self):
+        """
+        Gets the provisioned_cpus of this CloudAutonomousVmCluster.
+        The number of CPUs provisioned in an Autonomous VM Cluster.
+
+
+        :return: The provisioned_cpus of this CloudAutonomousVmCluster.
+        :rtype: float
+        """
+        return self._provisioned_cpus
+
+    @provisioned_cpus.setter
+    def provisioned_cpus(self, provisioned_cpus):
+        """
+        Sets the provisioned_cpus of this CloudAutonomousVmCluster.
+        The number of CPUs provisioned in an Autonomous VM Cluster.
+
+
+        :param provisioned_cpus: The provisioned_cpus of this CloudAutonomousVmCluster.
+        :type: float
+        """
+        self._provisioned_cpus = provisioned_cpus
+
+    @property
+    def total_cpus(self):
+        """
+        Gets the total_cpus of this CloudAutonomousVmCluster.
+        The total number of CPUs in an Autonomous VM Cluster.
+
+
+        :return: The total_cpus of this CloudAutonomousVmCluster.
+        :rtype: float
+        """
+        return self._total_cpus
+
+    @total_cpus.setter
+    def total_cpus(self, total_cpus):
+        """
+        Sets the total_cpus of this CloudAutonomousVmCluster.
+        The total number of CPUs in an Autonomous VM Cluster.
+
+
+        :param total_cpus: The total_cpus of this CloudAutonomousVmCluster.
+        :type: float
+        """
+        self._total_cpus = total_cpus
+
+    @property
+    def total_autonomous_data_storage_in_tbs(self):
+        """
+        Gets the total_autonomous_data_storage_in_tbs of this CloudAutonomousVmCluster.
+        The total data disk group size for Autonomous Databases, in TBs.
+
+
+        :return: The total_autonomous_data_storage_in_tbs of this CloudAutonomousVmCluster.
+        :rtype: float
+        """
+        return self._total_autonomous_data_storage_in_tbs
+
+    @total_autonomous_data_storage_in_tbs.setter
+    def total_autonomous_data_storage_in_tbs(self, total_autonomous_data_storage_in_tbs):
+        """
+        Sets the total_autonomous_data_storage_in_tbs of this CloudAutonomousVmCluster.
+        The total data disk group size for Autonomous Databases, in TBs.
+
+
+        :param total_autonomous_data_storage_in_tbs: The total_autonomous_data_storage_in_tbs of this CloudAutonomousVmCluster.
+        :type: float
+        """
+        self._total_autonomous_data_storage_in_tbs = total_autonomous_data_storage_in_tbs
+
+    @property
+    def reserved_cpus(self):
+        """
+        Gets the reserved_cpus of this CloudAutonomousVmCluster.
+        The number of CPUs reserved in an Autonomous VM Cluster.
+
+
+        :return: The reserved_cpus of this CloudAutonomousVmCluster.
+        :rtype: float
+        """
+        return self._reserved_cpus
+
+    @reserved_cpus.setter
+    def reserved_cpus(self, reserved_cpus):
+        """
+        Sets the reserved_cpus of this CloudAutonomousVmCluster.
+        The number of CPUs reserved in an Autonomous VM Cluster.
+
+
+        :param reserved_cpus: The reserved_cpus of this CloudAutonomousVmCluster.
+        :type: float
+        """
+        self._reserved_cpus = reserved_cpus
+
+    @property
+    def provisionable_autonomous_container_databases(self):
+        """
+        Gets the provisionable_autonomous_container_databases of this CloudAutonomousVmCluster.
+        The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+
+
+        :return: The provisionable_autonomous_container_databases of this CloudAutonomousVmCluster.
+        :rtype: int
+        """
+        return self._provisionable_autonomous_container_databases
+
+    @provisionable_autonomous_container_databases.setter
+    def provisionable_autonomous_container_databases(self, provisionable_autonomous_container_databases):
+        """
+        Sets the provisionable_autonomous_container_databases of this CloudAutonomousVmCluster.
+        The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+
+
+        :param provisionable_autonomous_container_databases: The provisionable_autonomous_container_databases of this CloudAutonomousVmCluster.
+        :type: int
+        """
+        self._provisionable_autonomous_container_databases = provisionable_autonomous_container_databases
+
+    @property
+    def provisioned_autonomous_container_databases(self):
+        """
+        Gets the provisioned_autonomous_container_databases of this CloudAutonomousVmCluster.
+        The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+
+
+        :return: The provisioned_autonomous_container_databases of this CloudAutonomousVmCluster.
+        :rtype: int
+        """
+        return self._provisioned_autonomous_container_databases
+
+    @provisioned_autonomous_container_databases.setter
+    def provisioned_autonomous_container_databases(self, provisioned_autonomous_container_databases):
+        """
+        Sets the provisioned_autonomous_container_databases of this CloudAutonomousVmCluster.
+        The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+
+
+        :param provisioned_autonomous_container_databases: The provisioned_autonomous_container_databases of this CloudAutonomousVmCluster.
+        :type: int
+        """
+        self._provisioned_autonomous_container_databases = provisioned_autonomous_container_databases
+
+    @property
+    def non_provisionable_autonomous_container_databases(self):
+        """
+        Gets the non_provisionable_autonomous_container_databases of this CloudAutonomousVmCluster.
+        The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+
+
+        :return: The non_provisionable_autonomous_container_databases of this CloudAutonomousVmCluster.
+        :rtype: int
+        """
+        return self._non_provisionable_autonomous_container_databases
+
+    @non_provisionable_autonomous_container_databases.setter
+    def non_provisionable_autonomous_container_databases(self, non_provisionable_autonomous_container_databases):
+        """
+        Sets the non_provisionable_autonomous_container_databases of this CloudAutonomousVmCluster.
+        The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+
+
+        :param non_provisionable_autonomous_container_databases: The non_provisionable_autonomous_container_databases of this CloudAutonomousVmCluster.
+        :type: int
+        """
+        self._non_provisionable_autonomous_container_databases = non_provisionable_autonomous_container_databases
 
     def __repr__(self):
         return formatted_flat_dict(self)

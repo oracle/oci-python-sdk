@@ -44,6 +44,10 @@ class CreateCpeDetails(object):
             The value to assign to the cpe_device_shape_id property of this CreateCpeDetails.
         :type cpe_device_shape_id: str
 
+        :param is_private:
+            The value to assign to the is_private property of this CreateCpeDetails.
+        :type is_private: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -51,7 +55,8 @@ class CreateCpeDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'ip_address': 'str',
-            'cpe_device_shape_id': 'str'
+            'cpe_device_shape_id': 'str',
+            'is_private': 'bool'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class CreateCpeDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'ip_address': 'ipAddress',
-            'cpe_device_shape_id': 'cpeDeviceShapeId'
+            'cpe_device_shape_id': 'cpeDeviceShapeId',
+            'is_private': 'isPrivate'
         }
 
         self._compartment_id = None
@@ -69,6 +75,7 @@ class CreateCpeDetails(object):
         self._freeform_tags = None
         self._ip_address = None
         self._cpe_device_shape_id = None
+        self._is_private = None
 
     @property
     def compartment_id(self):
@@ -269,6 +276,30 @@ class CreateCpeDetails(object):
         :type: str
         """
         self._cpe_device_shape_id = cpe_device_shape_id
+
+    @property
+    def is_private(self):
+        """
+        Gets the is_private of this CreateCpeDetails.
+        Indicates whether this CPE is of type `private` or not.
+
+
+        :return: The is_private of this CreateCpeDetails.
+        :rtype: bool
+        """
+        return self._is_private
+
+    @is_private.setter
+    def is_private(self, is_private):
+        """
+        Sets the is_private of this CreateCpeDetails.
+        Indicates whether this CPE is of type `private` or not.
+
+
+        :param is_private: The is_private of this CreateCpeDetails.
+        :type: bool
+        """
+        self._is_private = is_private
 
     def __repr__(self):
         return formatted_flat_dict(self)

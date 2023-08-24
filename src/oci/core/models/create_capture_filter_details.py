@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateCaptureFilterDetails(object):
     """
-    A capture filter contains a set of rules governing what traffic a VTAP mirrors.
+    A capture filter contains a set of rules governing what traffic a VTAP mirrors or a VCN flow log collects.
     """
 
     #: A constant which can be used with the filter_type property of a CreateCaptureFilterDetails.

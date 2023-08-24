@@ -32,6 +32,10 @@ class ShapePlatformConfigOptions(object):
     TYPE_AMD_ROME_BM_GPU = "AMD_ROME_BM_GPU"
 
     #: A constant which can be used with the type property of a ShapePlatformConfigOptions.
+    #: This constant has a value of "GENERIC_BM"
+    TYPE_GENERIC_BM = "GENERIC_BM"
+
+    #: A constant which can be used with the type property of a ShapePlatformConfigOptions.
     #: This constant has a value of "INTEL_ICELAKE_BM"
     TYPE_INTEL_ICELAKE_BM = "INTEL_ICELAKE_BM"
 
@@ -54,7 +58,7 @@ class ShapePlatformConfigOptions(object):
 
         :param type:
             The value to assign to the type property of this ShapePlatformConfigOptions.
-            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "GENERIC_BM", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -145,7 +149,7 @@ class ShapePlatformConfigOptions(object):
         Gets the type of this ShapePlatformConfigOptions.
         The type of platform being configured.
 
-        Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "GENERIC_BM", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -164,7 +168,7 @@ class ShapePlatformConfigOptions(object):
         :param type: The type of this ShapePlatformConfigOptions.
         :type: str
         """
-        allowed_values = ["AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"]
+        allowed_values = ["AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "GENERIC_BM", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

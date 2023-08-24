@@ -52,14 +52,6 @@ class DbSystemSummary(object):
             The value to assign to the current_placement property of this DbSystemSummary.
         :type current_placement: oci.mysql.models.DbSystemPlacement
 
-        :param is_analytics_cluster_attached:
-            The value to assign to the is_analytics_cluster_attached property of this DbSystemSummary.
-        :type is_analytics_cluster_attached: bool
-
-        :param analytics_cluster:
-            The value to assign to the analytics_cluster property of this DbSystemSummary.
-        :type analytics_cluster: oci.mysql.models.AnalyticsClusterSummary
-
         :param is_heat_wave_cluster_attached:
             The value to assign to the is_heat_wave_cluster_attached property of this DbSystemSummary.
         :type is_heat_wave_cluster_attached: bool
@@ -130,8 +122,6 @@ class DbSystemSummary(object):
             'compartment_id': 'str',
             'is_highly_available': 'bool',
             'current_placement': 'DbSystemPlacement',
-            'is_analytics_cluster_attached': 'bool',
-            'analytics_cluster': 'AnalyticsClusterSummary',
             'is_heat_wave_cluster_attached': 'bool',
             'heat_wave_cluster': 'HeatWaveClusterSummary',
             'availability_domain': 'str',
@@ -156,8 +146,6 @@ class DbSystemSummary(object):
             'compartment_id': 'compartmentId',
             'is_highly_available': 'isHighlyAvailable',
             'current_placement': 'currentPlacement',
-            'is_analytics_cluster_attached': 'isAnalyticsClusterAttached',
-            'analytics_cluster': 'analyticsCluster',
             'is_heat_wave_cluster_attached': 'isHeatWaveClusterAttached',
             'heat_wave_cluster': 'heatWaveCluster',
             'availability_domain': 'availabilityDomain',
@@ -181,8 +169,6 @@ class DbSystemSummary(object):
         self._compartment_id = None
         self._is_highly_available = None
         self._current_placement = None
-        self._is_analytics_cluster_attached = None
-        self._analytics_cluster = None
         self._is_heat_wave_cluster_attached = None
         self._heat_wave_cluster = None
         self._availability_domain = None
@@ -338,52 +324,6 @@ class DbSystemSummary(object):
         :type: oci.mysql.models.DbSystemPlacement
         """
         self._current_placement = current_placement
-
-    @property
-    def is_analytics_cluster_attached(self):
-        """
-        Gets the is_analytics_cluster_attached of this DbSystemSummary.
-        DEPRECATED -- please use `isHeatWaveClusterAttached` instead.
-        If the DB System has an Analytics Cluster attached.
-
-
-        :return: The is_analytics_cluster_attached of this DbSystemSummary.
-        :rtype: bool
-        """
-        return self._is_analytics_cluster_attached
-
-    @is_analytics_cluster_attached.setter
-    def is_analytics_cluster_attached(self, is_analytics_cluster_attached):
-        """
-        Sets the is_analytics_cluster_attached of this DbSystemSummary.
-        DEPRECATED -- please use `isHeatWaveClusterAttached` instead.
-        If the DB System has an Analytics Cluster attached.
-
-
-        :param is_analytics_cluster_attached: The is_analytics_cluster_attached of this DbSystemSummary.
-        :type: bool
-        """
-        self._is_analytics_cluster_attached = is_analytics_cluster_attached
-
-    @property
-    def analytics_cluster(self):
-        """
-        Gets the analytics_cluster of this DbSystemSummary.
-
-        :return: The analytics_cluster of this DbSystemSummary.
-        :rtype: oci.mysql.models.AnalyticsClusterSummary
-        """
-        return self._analytics_cluster
-
-    @analytics_cluster.setter
-    def analytics_cluster(self, analytics_cluster):
-        """
-        Sets the analytics_cluster of this DbSystemSummary.
-
-        :param analytics_cluster: The analytics_cluster of this DbSystemSummary.
-        :type: oci.mysql.models.AnalyticsClusterSummary
-        """
-        self._analytics_cluster = analytics_cluster
 
     @property
     def is_heat_wave_cluster_attached(self):

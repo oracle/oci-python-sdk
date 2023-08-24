@@ -1,9 +1,9 @@
-AnalyticsClusterSchemaMemoryEstimate
+Ipv6AddressIpv6SubnetCidrPairDetails
 ====================================
 
-.. currentmodule:: oci.mysql.models
+.. currentmodule:: oci.core.models
 
-.. autoclass:: AnalyticsClusterSchemaMemoryEstimate
+.. autoclass:: Ipv6AddressIpv6SubnetCidrPairDetails
     :show-inheritance:
     :special-members: __init__
     :members:

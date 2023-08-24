@@ -31,6 +31,10 @@ class MonitorSummary(object):
     #: This constant has a value of "REST"
     MONITOR_TYPE_REST = "REST"
 
+    #: A constant which can be used with the monitor_type property of a MonitorSummary.
+    #: This constant has a value of "NETWORK"
+    MONITOR_TYPE_NETWORK = "NETWORK"
+
     #: A constant which can be used with the status property of a MonitorSummary.
     #: This constant has a value of "ENABLED"
     STATUS_ENABLED = "ENABLED"
@@ -70,7 +74,7 @@ class MonitorSummary(object):
 
         :param monitor_type:
             The value to assign to the monitor_type property of this MonitorSummary.
-            Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type monitor_type: str
 
@@ -272,7 +276,7 @@ class MonitorSummary(object):
         **[Required]** Gets the monitor_type of this MonitorSummary.
         The type of monitor.
 
-        Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -291,7 +295,7 @@ class MonitorSummary(object):
         :param monitor_type: The monitor_type of this MonitorSummary.
         :type: str
         """
-        allowed_values = ["SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST"]
+        allowed_values = ["SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK"]
         if not value_allowed_none_or_none_sentinel(monitor_type, allowed_values):
             monitor_type = 'UNKNOWN_ENUM_VALUE'
         self._monitor_type = monitor_type
@@ -516,6 +520,7 @@ class MonitorSummary(object):
         For BROWSER and REST monitor types, target is mandatory.
         If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
         If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
 
 
         :return: The target of this MonitorSummary.
@@ -531,6 +536,7 @@ class MonitorSummary(object):
         For BROWSER and REST monitor types, target is mandatory.
         If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
         If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
 
 
         :param target: The target of this MonitorSummary.

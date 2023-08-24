@@ -1,9 +1,9 @@
-AnalyticsClusterMemoryEstimate
+CreateGoldenGateServiceDetails
 ==============================
 
-.. currentmodule:: oci.mysql.models
+.. currentmodule:: oci.database_migration.models
 
-.. autoclass:: AnalyticsClusterMemoryEstimate
+.. autoclass:: CreateGoldenGateServiceDetails
     :show-inheritance:
     :special-members: __init__
     :members:

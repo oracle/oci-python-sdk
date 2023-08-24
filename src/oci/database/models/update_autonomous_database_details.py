@@ -514,14 +514,12 @@ class UpdateAutonomousDatabaseDetails(object):
         Gets the cpu_core_count of this UpdateAutonomousDatabaseDetails.
         The number of CPUs to be made available to the Autonomous Database.<br>
         For Autonomous Databases on Dedicated Exadata Infrastructure:
-        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         - It is suggested to use 'computeCount' parameter if you want to use fractional value to provision less than 1 core.
 
         **Note:** This parameter cannot be used with the `ocpuCount` or `computeCount` parameter.
 
         This cannot be updated in parallel with any of the following: licenseModel, databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :return: The cpu_core_count of this UpdateAutonomousDatabaseDetails.
@@ -535,14 +533,12 @@ class UpdateAutonomousDatabaseDetails(object):
         Sets the cpu_core_count of this UpdateAutonomousDatabaseDetails.
         The number of CPUs to be made available to the Autonomous Database.<br>
         For Autonomous Databases on Dedicated Exadata Infrastructure:
-        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
+        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         - It is suggested to use 'computeCount' parameter if you want to use fractional value to provision less than 1 core.
 
         **Note:** This parameter cannot be used with the `ocpuCount` or `computeCount` parameter.
 
         This cannot be updated in parallel with any of the following: licenseModel, databaseEdition, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
 
 
         :param cpu_core_count: The cpu_core_count of this UpdateAutonomousDatabaseDetails.

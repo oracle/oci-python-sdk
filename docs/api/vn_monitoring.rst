@@ -186,6 +186,7 @@ Vn Monitoring
     oci.vn_monitoring.models.LoadBalancerEndpoint
     oci.vn_monitoring.models.LoadBalancerListenerEndpoint
     oci.vn_monitoring.models.LocalPeeringGateway
+    oci.vn_monitoring.models.LoopBackDrgAttachmentNetworkDetails
     oci.vn_monitoring.models.MacsecKey
     oci.vn_monitoring.models.MacsecProperties
     oci.vn_monitoring.models.ModifyVcnCidrDetails
@@ -316,6 +317,7 @@ Vn Monitoring
     oci.vn_monitoring.models.VcnRoutingConfiguration
     oci.vn_monitoring.models.VcnTopology
     oci.vn_monitoring.models.VirtualCircuit
+    oci.vn_monitoring.models.VirtualCircuitAssociatedTunnelDetails
     oci.vn_monitoring.models.VirtualCircuitBandwidthShape
     oci.vn_monitoring.models.VirtualCircuitDrgAttachmentNetworkDetails
     oci.vn_monitoring.models.VirtualCircuitPublicPrefix

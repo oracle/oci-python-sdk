@@ -174,6 +174,7 @@ from .letter_of_authority import LetterOfAuthority
 from .load_balancer_endpoint import LoadBalancerEndpoint
 from .load_balancer_listener_endpoint import LoadBalancerListenerEndpoint
 from .local_peering_gateway import LocalPeeringGateway
+from .loop_back_drg_attachment_network_details import LoopBackDrgAttachmentNetworkDetails
 from .macsec_key import MacsecKey
 from .macsec_properties import MacsecProperties
 from .modify_vcn_cidr_details import ModifyVcnCidrDetails
@@ -304,6 +305,7 @@ from .vcn_drg_attachment_network_update_details import VcnDrgAttachmentNetworkUp
 from .vcn_routing_configuration import VcnRoutingConfiguration
 from .vcn_topology import VcnTopology
 from .virtual_circuit import VirtualCircuit
+from .virtual_circuit_associated_tunnel_details import VirtualCircuitAssociatedTunnelDetails
 from .virtual_circuit_bandwidth_shape import VirtualCircuitBandwidthShape
 from .virtual_circuit_drg_attachment_network_details import VirtualCircuitDrgAttachmentNetworkDetails
 from .virtual_circuit_public_prefix import VirtualCircuitPublicPrefix
@@ -495,6 +497,7 @@ vn_monitoring_type_mapping = {
     "LoadBalancerEndpoint": LoadBalancerEndpoint,
     "LoadBalancerListenerEndpoint": LoadBalancerListenerEndpoint,
     "LocalPeeringGateway": LocalPeeringGateway,
+    "LoopBackDrgAttachmentNetworkDetails": LoopBackDrgAttachmentNetworkDetails,
     "MacsecKey": MacsecKey,
     "MacsecProperties": MacsecProperties,
     "ModifyVcnCidrDetails": ModifyVcnCidrDetails,
@@ -625,6 +628,7 @@ vn_monitoring_type_mapping = {
     "VcnRoutingConfiguration": VcnRoutingConfiguration,
     "VcnTopology": VcnTopology,
     "VirtualCircuit": VirtualCircuit,
+    "VirtualCircuitAssociatedTunnelDetails": VirtualCircuitAssociatedTunnelDetails,
     "VirtualCircuitBandwidthShape": VirtualCircuitBandwidthShape,
     "VirtualCircuitDrgAttachmentNetworkDetails": VirtualCircuitDrgAttachmentNetworkDetails,
     "VirtualCircuitPublicPrefix": VirtualCircuitPublicPrefix,

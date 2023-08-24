@@ -107,7 +107,7 @@ class CreateGoldenGateHub(object):
     @property
     def source_db_admin_credentials(self):
         """
-        **[Required]** Gets the source_db_admin_credentials of this CreateGoldenGateHub.
+        Gets the source_db_admin_credentials of this CreateGoldenGateHub.
 
         :return: The source_db_admin_credentials of this CreateGoldenGateHub.
         :rtype: oci.database_migration.models.CreateAdminCredentials
@@ -147,7 +147,7 @@ class CreateGoldenGateHub(object):
     @property
     def target_db_admin_credentials(self):
         """
-        **[Required]** Gets the target_db_admin_credentials of this CreateGoldenGateHub.
+        Gets the target_db_admin_credentials of this CreateGoldenGateHub.
 
         :return: The target_db_admin_credentials of this CreateGoldenGateHub.
         :rtype: oci.database_migration.models.CreateAdminCredentials
@@ -193,7 +193,7 @@ class CreateGoldenGateHub(object):
     @property
     def source_microservices_deployment_name(self):
         """
-        **[Required]** Gets the source_microservices_deployment_name of this CreateGoldenGateHub.
+        Gets the source_microservices_deployment_name of this CreateGoldenGateHub.
         Name of GoldenGate Microservices deployment to operate on source database
 
 
@@ -217,7 +217,7 @@ class CreateGoldenGateHub(object):
     @property
     def target_microservices_deployment_name(self):
         """
-        **[Required]** Gets the target_microservices_deployment_name of this CreateGoldenGateHub.
+        Gets the target_microservices_deployment_name of this CreateGoldenGateHub.
         Name of GoldenGate Microservices deployment to operate on target database
 
 

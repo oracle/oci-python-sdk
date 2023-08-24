@@ -641,7 +641,7 @@ class MysqlaasClient(object):
         :param list[str] is_supported_for: (optional)
             Return shapes that are supported by the service feature.
 
-            Allowed values are: "DBSYSTEM", "ANALYTICSCLUSTER", "HEATWAVECLUSTER"
+            Allowed values are: "DBSYSTEM", "HEATWAVECLUSTER"
 
         :param str availability_domain: (optional)
             The name of the Availability Domain.
@@ -689,7 +689,7 @@ class MysqlaasClient(object):
                 "list_shapes got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'is_supported_for' in kwargs:
-            is_supported_for_allowed_values = ["DBSYSTEM", "ANALYTICSCLUSTER", "HEATWAVECLUSTER"]
+            is_supported_for_allowed_values = ["DBSYSTEM", "HEATWAVECLUSTER"]
             for is_supported_for_item in kwargs['is_supported_for']:
                 if is_supported_for_item not in is_supported_for_allowed_values:
                     raise ValueError(
