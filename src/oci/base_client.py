@@ -428,6 +428,7 @@ class BaseClient(object):
                 isinstance(self.signer, signers.ResourcePrincipalsFederationSigner) or
                 isinstance(self.signer, signers.EphemeralResourcePrincipalSigner) or
                 isinstance(self.signer, signers.EphemeralResourcePrincipalV21Signer) or
+                isinstance(self.signer, signers.NestedResourcePrincipals) or
                 isinstance(self.signer, signers.OkeWorkloadIdentityResourcePrincipalSigner)):
             return True
         else:

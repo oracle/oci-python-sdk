@@ -10,6 +10,8 @@ from cryptography.hazmat.primitives.serialization import Encoding, PublicFormat
 
 import oci
 import oci.signer
+from oci._vendor import requests
+
 from .ephemeral_resource_principals_signer import FixedSessionKeySupplier, FileBasedSessionKeySupplier
 from .key_pair_signer import KeyPairSigner
 from .security_token_signer import SecurityTokenSigner, SECURITY_TOKEN_FORMAT_STRING
@@ -17,11 +19,16 @@ from .. import auth_utils
 from ..security_token_container import SecurityTokenContainer
 
 
+METADATA_URL_BASE = 'http://169.254.169.254/opc/v2'
+GET_REGION_URL = '{}/instance/region'.format(METADATA_URL_BASE)
+METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
+
+
 class EphemeralResourcePrincipalV21Signer(SecurityTokenSigner):
 
     def __init__(self, resource_principal_token_endpoint=None, resource_principal_session_token_endpoint=None,
                  resource_id=None, private_key=None, private_key_passphrase=None, retry_strategy=None,
-                 log_requests=None, generic_headers=None, tenancy_id=None, rp_version=None, **kwargs):
+                 log_requests=None, generic_headers=None, tenancy_id=None, rp_version=None, region=None, **kwargs):
 
         if resource_principal_token_endpoint:
             self.resource_principal_token_endpoint = resource_principal_token_endpoint
@@ -43,6 +50,7 @@ class EphemeralResourcePrincipalV21Signer(SecurityTokenSigner):
             raise ValueError("tenancy_id should be provided")
 
         self._reset_signers_lock = threading.Lock()
+        self.region = self._initialize_and_return_region(region_raw=region)
 
         if retry_strategy:
             self.retry_strategy = retry_strategy
@@ -200,3 +208,25 @@ class EphemeralResourcePrincipalV21Signer(SecurityTokenSigner):
                 header_params=header_params,
                 body=body,
                 response_type=oci.base_client.BYTES_RESPONSE_TYPE)
+
+    def _initialize_and_return_region(self, region_raw=None):
+        if hasattr(self, 'region'):
+            return self.region
+
+        if region_raw is None:
+            try:
+                self.logger.debug("Requesting region information from :{}".format(GET_REGION_URL))
+                response = requests.get(GET_REGION_URL, timeout=(10, 60), headers=METADATA_AUTH_HEADERS)
+                region_raw = response.text.strip().lower()
+            except Exception as ex:
+                self.logger.debug("Got exception: {} while getting region from: {}, setting region as None".format(ex, GET_REGION_URL))
+                region_raw = None
+
+        # The region can be something like "phx" but internally we expect "us-phoenix-1", "us-ashburn-1" etc.
+        if region_raw in oci.regions.REGIONS_SHORT_NAMES:
+            region_to_use = oci.regions.REGIONS_SHORT_NAMES[region_raw]
+        else:
+            region_to_use = region_raw
+
+        self.logger.debug("Region is set to: {}".format(region_to_use))
+        return region_to_use
