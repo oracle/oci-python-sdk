@@ -319,14 +319,7 @@ def main():
                     )
                 )
             if cmd.file:
-                file.write(
-                    str(folder)
-                    + ","
-                    + "{:.2f}".format(round(f_size, 2))
-                    + ","
-                    + str(file_count[folder])
-                    + "\n"
-                )
+                file.write(str(folder) + "," + "{:.2f}".format(round(f_size, 2)) + "," + str(file_count[folder]) + "\n")
 
         if not next_starts_with:
             break
@@ -338,12 +331,7 @@ def main():
     print("Total Size   : " + str("{:20,.0f}".format(size)).rjust(20))
 
     if cmd.file:
-        file.write(
-            "Total Files : "
-            + str("{:10,.0f}".format(count)).rjust(10)
-            + "  Size : "
-            + str("{:20,.0f}".format(size)).rjust(20)
-        )
+        file.write("Total Files : " + str("{:10,.0f}".format(count)).rjust(10) + "  Size : " + str("{:20,.0f}".format(size)).rjust(20))
         file.close()
 
 
