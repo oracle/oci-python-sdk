@@ -4,13 +4,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.110.3 - TBD
+2.111.0 - 2023-08-29
 ====================
 
 Added
------
-* TBD
-
+----- 
+* Support for creating and updating network monitors in the Application Performance Monitoring Synthetics service
+* Support for integration of GoldenGate service for replication in the Database Migration Service
+* Support for displaying resource usage information on autonomous container database and cloud autonomous vm cluster get operations in the Database service
+* Support for FastConnect Media Access Control Security (MACSec) fail open option in the Network Monitoring service
+* Support for generic bare metal types and configuration maps in compute instance platform configuration in the Compute service
+* Support for encrypted FastConnect in the Network Monitoring service
+* Support for new parameters on customer premises equipment and virtual circuit create operations in the Network Monitoring service
+* Support for virtual circuit associated tunnels in the Network Monitoring service
+* Support for additional parameters on dynamic routing gateway create and update operations in the Network Monitoring service
+* Support for assigning an IPv6 address to a compute instance during instance launch or secondary VNIC attach in the Compute service
+* Support for Resource Principals v3.0
+ 
+Breaking
+--------
+* Models `AddAnalyticsClusterDetails`, `AddHeatWaveClusterDetails`, `AnalyticsCluster`, `AnalyticsClusterMemoryEstimate`, `AnalyticsClusterNode`, `AnalyticsClusterSchemaMemoryEstimate`, `AnalyticsClusterSummary`, `AnalyticsClusterTableMemoryEstimate`, `UpdateAnalyticsClusterDetails` were removed from MySQL Database Service
+* Parameters `is_analytics_cluster_attached` and `analytics_cluster` removed from models `DbSystemSummary` and `DbSystem`, in the MySQL Database Service
+* Allowed values `ADD_ANALYTICS_CLUSTER`, `UPDATE_ANALYTICS_CLUSTER`, `DELETE_ANALYTICS_CLUSTER`, `START_ANALYTICS_CLUSTER`, `STOP_ANALYTICS_CLUSTER`, `RESTART_ANALYTICS_CLUSTER`, `GENERATE_ANALYTICS_CLUSTER_MEMORY_ESTIMATE` were removed from parameter `operation_type` from model `WorkRequest`, `WorkRequestSummary` in the MySQL Database Service
+* Allowed value `ANALYTICSCLUSTER` was removed from parameter `is_supported_for` from model `ShapeSummary` in the MySQL Database Service
+* Allowed value `ANALYTICSCLUSTER` was removed from parameter `is_supported_for` from operation `list_shapes` in the `mysqlaas_client` in the MySQL Database Service
+* Operations `add_analytics_cluster`, `delete_analytics_cluster`, `generate_analytics_cluster_memory_estimate`, `get_analytics_cluster`, `get_analytics_cluster_memory_estimate`, `restart_analytics_cluster`, `start_analytics_cluster`, `stop_analytics_cluster`, `update_analytics_cluster` were removed from the `db_system_client` in the MySQL Database service
+* Operations `add_analytics_cluster_and_wait_for_state`, `delete_analytics_cluster_and_wait_for_state`, `generate_analytics_cluster_memory_estimate_and_wait_for_state`, `restart_analytics_cluster_and_wait_for_state`, `start_analytics_cluster_and_wait_for_state`, `stop_analytics_cluster_and_wait_for_state`, `update_analytics_cluster_and_wait_for_state` were removed from client `db_system_client_composite_operations` in the MySQL Database service
+ 
 ====================
 2.110.2 - 2023-08-22
 ====================
