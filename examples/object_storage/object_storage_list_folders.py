@@ -12,7 +12,7 @@
 # DISCLAIMER – This is not an official Oracle application,  It does not supported by Oracle Support, It should NOT be used for utilization calculation purposes
 ##########################################################################
 # Info:
-# count objects or list folders within buckets with option to filter by prefix and write to file
+# count objects and file size of folders within buckets with option to filter by prefix and write to file
 #
 ##########################################################################
 # Application Command line parameters
