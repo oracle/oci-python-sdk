@@ -31,6 +31,10 @@ class CreateMonitorDetails(object):
     #: This constant has a value of "REST"
     MONITOR_TYPE_REST = "REST"
 
+    #: A constant which can be used with the monitor_type property of a CreateMonitorDetails.
+    #: This constant has a value of "NETWORK"
+    MONITOR_TYPE_NETWORK = "NETWORK"
+
     #: A constant which can be used with the status property of a CreateMonitorDetails.
     #: This constant has a value of "ENABLED"
     STATUS_ENABLED = "ENABLED"
@@ -66,7 +70,7 @@ class CreateMonitorDetails(object):
 
         :param monitor_type:
             The value to assign to the monitor_type property of this CreateMonitorDetails.
-            Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST"
+            Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK"
         :type monitor_type: str
 
         :param vantage_points:
@@ -227,7 +231,7 @@ class CreateMonitorDetails(object):
         **[Required]** Gets the monitor_type of this CreateMonitorDetails.
         Type of monitor.
 
-        Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST"
+        Allowed values for this property are: "SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK"
 
 
         :return: The monitor_type of this CreateMonitorDetails.
@@ -245,7 +249,7 @@ class CreateMonitorDetails(object):
         :param monitor_type: The monitor_type of this CreateMonitorDetails.
         :type: str
         """
-        allowed_values = ["SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST"]
+        allowed_values = ["SCRIPTED_BROWSER", "BROWSER", "SCRIPTED_REST", "REST", "NETWORK"]
         if not value_allowed_none_or_none_sentinel(monitor_type, allowed_values):
             raise ValueError(
                 "Invalid value for `monitor_type`, must be None or one of {0}"
@@ -429,6 +433,7 @@ class CreateMonitorDetails(object):
         For BROWSER and REST monitor types, target is mandatory.
         If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
         If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
 
 
         :return: The target of this CreateMonitorDetails.
@@ -444,6 +449,7 @@ class CreateMonitorDetails(object):
         For BROWSER and REST monitor types, target is mandatory.
         If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
         If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
+        For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
 
 
         :param target: The target of this CreateMonitorDetails.

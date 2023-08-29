@@ -6,6 +6,7 @@
 
 from __future__ import absolute_import
 
+from .acd_avm_resource_stats import AcdAvmResourceStats
 from .activate_exadata_infrastructure_details import ActivateExadataInfrastructureDetails
 from .add_virtual_machine_to_cloud_vm_cluster_details import AddVirtualMachineToCloudVmClusterDetails
 from .add_virtual_machine_to_vm_cluster_details import AddVirtualMachineToVmClusterDetails
@@ -17,6 +18,7 @@ from .automated_mount_details import AutomatedMountDetails
 from .autonomous_container_database import AutonomousContainerDatabase
 from .autonomous_container_database_backup_config import AutonomousContainerDatabaseBackupConfig
 from .autonomous_container_database_dataguard_association import AutonomousContainerDatabaseDataguardAssociation
+from .autonomous_container_database_resource_usage import AutonomousContainerDatabaseResourceUsage
 from .autonomous_container_database_summary import AutonomousContainerDatabaseSummary
 from .autonomous_container_database_version_summary import AutonomousContainerDatabaseVersionSummary
 from .autonomous_data_warehouse import AutonomousDataWarehouse
@@ -49,6 +51,8 @@ from .autonomous_virtual_machine_summary import AutonomousVirtualMachineSummary
 from .autonomous_vm_cluster import AutonomousVmCluster
 from .autonomous_vm_cluster_resource_details import AutonomousVmClusterResourceDetails
 from .autonomous_vm_cluster_summary import AutonomousVmClusterSummary
+from .autonomous_vm_resource_usage import AutonomousVmResourceUsage
+from .avm_acd_resource_stats import AvmAcdResourceStats
 from .backup import Backup
 from .backup_destination import BackupDestination
 from .backup_destination_details import BackupDestinationDetails
@@ -67,6 +71,7 @@ from .change_key_store_type_details import ChangeKeyStoreTypeDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
 from .cloud_autonomous_vm_cluster import CloudAutonomousVmCluster
 from .cloud_autonomous_vm_cluster_resource_details import CloudAutonomousVmClusterResourceDetails
+from .cloud_autonomous_vm_cluster_resource_usage import CloudAutonomousVmClusterResourceUsage
 from .cloud_autonomous_vm_cluster_summary import CloudAutonomousVmClusterSummary
 from .cloud_database_management_config import CloudDatabaseManagementConfig
 from .cloud_db_server_details import CloudDbServerDetails
@@ -346,6 +351,7 @@ from .workload_type import WorkloadType
 
 # Maps type names to classes for database services.
 database_type_mapping = {
+    "AcdAvmResourceStats": AcdAvmResourceStats,
     "ActivateExadataInfrastructureDetails": ActivateExadataInfrastructureDetails,
     "AddVirtualMachineToCloudVmClusterDetails": AddVirtualMachineToCloudVmClusterDetails,
     "AddVirtualMachineToVmClusterDetails": AddVirtualMachineToVmClusterDetails,
@@ -357,6 +363,7 @@ database_type_mapping = {
     "AutonomousContainerDatabase": AutonomousContainerDatabase,
     "AutonomousContainerDatabaseBackupConfig": AutonomousContainerDatabaseBackupConfig,
     "AutonomousContainerDatabaseDataguardAssociation": AutonomousContainerDatabaseDataguardAssociation,
+    "AutonomousContainerDatabaseResourceUsage": AutonomousContainerDatabaseResourceUsage,
     "AutonomousContainerDatabaseSummary": AutonomousContainerDatabaseSummary,
     "AutonomousContainerDatabaseVersionSummary": AutonomousContainerDatabaseVersionSummary,
     "AutonomousDataWarehouse": AutonomousDataWarehouse,
@@ -389,6 +396,8 @@ database_type_mapping = {
     "AutonomousVmCluster": AutonomousVmCluster,
     "AutonomousVmClusterResourceDetails": AutonomousVmClusterResourceDetails,
     "AutonomousVmClusterSummary": AutonomousVmClusterSummary,
+    "AutonomousVmResourceUsage": AutonomousVmResourceUsage,
+    "AvmAcdResourceStats": AvmAcdResourceStats,
     "Backup": Backup,
     "BackupDestination": BackupDestination,
     "BackupDestinationDetails": BackupDestinationDetails,
@@ -407,6 +416,7 @@ database_type_mapping = {
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
     "CloudAutonomousVmCluster": CloudAutonomousVmCluster,
     "CloudAutonomousVmClusterResourceDetails": CloudAutonomousVmClusterResourceDetails,
+    "CloudAutonomousVmClusterResourceUsage": CloudAutonomousVmClusterResourceUsage,
     "CloudAutonomousVmClusterSummary": CloudAutonomousVmClusterSummary,
     "CloudDatabaseManagementConfig": CloudDatabaseManagementConfig,
     "CloudDbServerDetails": CloudDbServerDetails,

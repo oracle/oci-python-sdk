@@ -46,6 +46,10 @@ class ClusterNetworkPlacementConfigurationDetails(object):
             The value to assign to the primary_subnet_id property of this ClusterNetworkPlacementConfigurationDetails.
         :type primary_subnet_id: str
 
+        :param primary_vnic_subnets:
+            The value to assign to the primary_vnic_subnets property of this ClusterNetworkPlacementConfigurationDetails.
+        :type primary_vnic_subnets: oci.core.models.InstancePoolPlacementPrimarySubnet
+
         :param secondary_vnic_subnets:
             The value to assign to the secondary_vnic_subnets property of this ClusterNetworkPlacementConfigurationDetails.
         :type secondary_vnic_subnets: list[oci.core.models.InstancePoolPlacementSecondaryVnicSubnet]
@@ -55,6 +59,7 @@ class ClusterNetworkPlacementConfigurationDetails(object):
             'availability_domain': 'str',
             'placement_constraint': 'str',
             'primary_subnet_id': 'str',
+            'primary_vnic_subnets': 'InstancePoolPlacementPrimarySubnet',
             'secondary_vnic_subnets': 'list[InstancePoolPlacementSecondaryVnicSubnet]'
         }
 
@@ -62,12 +67,14 @@ class ClusterNetworkPlacementConfigurationDetails(object):
             'availability_domain': 'availabilityDomain',
             'placement_constraint': 'placementConstraint',
             'primary_subnet_id': 'primarySubnetId',
+            'primary_vnic_subnets': 'primaryVnicSubnets',
             'secondary_vnic_subnets': 'secondaryVnicSubnets'
         }
 
         self._availability_domain = None
         self._placement_constraint = None
         self._primary_subnet_id = None
+        self._primary_vnic_subnets = None
         self._secondary_vnic_subnets = None
 
     @property
@@ -131,9 +138,9 @@ class ClusterNetworkPlacementConfigurationDetails(object):
     @property
     def primary_subnet_id(self):
         """
-        **[Required]** Gets the primary_subnet_id of this ClusterNetworkPlacementConfigurationDetails.
-        The `OCID`__ of the primary subnet to place
-        instances.
+        Gets the primary_subnet_id of this ClusterNetworkPlacementConfigurationDetails.
+        The `OCID`__ of the primary subnet to place instances. This field is deprecated.
+        Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -147,8 +154,8 @@ class ClusterNetworkPlacementConfigurationDetails(object):
     def primary_subnet_id(self, primary_subnet_id):
         """
         Sets the primary_subnet_id of this ClusterNetworkPlacementConfigurationDetails.
-        The `OCID`__ of the primary subnet to place
-        instances.
+        The `OCID`__ of the primary subnet to place instances. This field is deprecated.
+        Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -157,6 +164,26 @@ class ClusterNetworkPlacementConfigurationDetails(object):
         :type: str
         """
         self._primary_subnet_id = primary_subnet_id
+
+    @property
+    def primary_vnic_subnets(self):
+        """
+        Gets the primary_vnic_subnets of this ClusterNetworkPlacementConfigurationDetails.
+
+        :return: The primary_vnic_subnets of this ClusterNetworkPlacementConfigurationDetails.
+        :rtype: oci.core.models.InstancePoolPlacementPrimarySubnet
+        """
+        return self._primary_vnic_subnets
+
+    @primary_vnic_subnets.setter
+    def primary_vnic_subnets(self, primary_vnic_subnets):
+        """
+        Sets the primary_vnic_subnets of this ClusterNetworkPlacementConfigurationDetails.
+
+        :param primary_vnic_subnets: The primary_vnic_subnets of this ClusterNetworkPlacementConfigurationDetails.
+        :type: oci.core.models.InstancePoolPlacementPrimarySubnet
+        """
+        self._primary_vnic_subnets = primary_vnic_subnets
 
     @property
     def secondary_vnic_subnets(self):

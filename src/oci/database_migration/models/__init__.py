@@ -46,6 +46,7 @@ from .create_dump_transfer_details import CreateDumpTransferDetails
 from .create_extract import CreateExtract
 from .create_golden_gate_details import CreateGoldenGateDetails
 from .create_golden_gate_hub import CreateGoldenGateHub
+from .create_golden_gate_service_details import CreateGoldenGateServiceDetails
 from .create_golden_gate_settings import CreateGoldenGateSettings
 from .create_host_dump_transfer_details import CreateHostDumpTransferDetails
 from .create_migration_details import CreateMigrationDetails
@@ -62,6 +63,7 @@ from .curl_transfer_details import CurlTransferDetails
 from .data_pump_parameters import DataPumpParameters
 from .data_pump_settings import DataPumpSettings
 from .data_transfer_medium_details import DataTransferMediumDetails
+from .database_credentials import DatabaseCredentials
 from .database_link_details import DatabaseLinkDetails
 from .database_object import DatabaseObject
 from .diagnostics_result import DiagnosticsResult
@@ -70,8 +72,10 @@ from .dump_transfer_details import DumpTransferDetails
 from .excluded_object_summary import ExcludedObjectSummary
 from .excluded_object_summary_collection import ExcludedObjectSummaryCollection
 from .extract import Extract
+from .ggs_deployment import GgsDeployment
 from .golden_gate_details import GoldenGateDetails
 from .golden_gate_hub import GoldenGateHub
+from .golden_gate_service_details import GoldenGateServiceDetails
 from .golden_gate_settings import GoldenGateSettings
 from .host_dump_transfer_details import HostDumpTransferDetails
 from .job import Job
@@ -125,6 +129,7 @@ from .update_dump_transfer_details import UpdateDumpTransferDetails
 from .update_extract import UpdateExtract
 from .update_golden_gate_details import UpdateGoldenGateDetails
 from .update_golden_gate_hub import UpdateGoldenGateHub
+from .update_golden_gate_service_details import UpdateGoldenGateServiceDetails
 from .update_golden_gate_settings import UpdateGoldenGateSettings
 from .update_host_dump_transfer_details import UpdateHostDumpTransferDetails
 from .update_job_details import UpdateJobDetails
@@ -192,6 +197,7 @@ database_migration_type_mapping = {
     "CreateExtract": CreateExtract,
     "CreateGoldenGateDetails": CreateGoldenGateDetails,
     "CreateGoldenGateHub": CreateGoldenGateHub,
+    "CreateGoldenGateServiceDetails": CreateGoldenGateServiceDetails,
     "CreateGoldenGateSettings": CreateGoldenGateSettings,
     "CreateHostDumpTransferDetails": CreateHostDumpTransferDetails,
     "CreateMigrationDetails": CreateMigrationDetails,
@@ -208,6 +214,7 @@ database_migration_type_mapping = {
     "DataPumpParameters": DataPumpParameters,
     "DataPumpSettings": DataPumpSettings,
     "DataTransferMediumDetails": DataTransferMediumDetails,
+    "DatabaseCredentials": DatabaseCredentials,
     "DatabaseLinkDetails": DatabaseLinkDetails,
     "DatabaseObject": DatabaseObject,
     "DiagnosticsResult": DiagnosticsResult,
@@ -216,8 +223,10 @@ database_migration_type_mapping = {
     "ExcludedObjectSummary": ExcludedObjectSummary,
     "ExcludedObjectSummaryCollection": ExcludedObjectSummaryCollection,
     "Extract": Extract,
+    "GgsDeployment": GgsDeployment,
     "GoldenGateDetails": GoldenGateDetails,
     "GoldenGateHub": GoldenGateHub,
+    "GoldenGateServiceDetails": GoldenGateServiceDetails,
     "GoldenGateSettings": GoldenGateSettings,
     "HostDumpTransferDetails": HostDumpTransferDetails,
     "Job": Job,
@@ -271,6 +280,7 @@ database_migration_type_mapping = {
     "UpdateExtract": UpdateExtract,
     "UpdateGoldenGateDetails": UpdateGoldenGateDetails,
     "UpdateGoldenGateHub": UpdateGoldenGateHub,
+    "UpdateGoldenGateServiceDetails": UpdateGoldenGateServiceDetails,
     "UpdateGoldenGateSettings": UpdateGoldenGateSettings,
     "UpdateHostDumpTransferDetails": UpdateHostDumpTransferDetails,
     "UpdateJobDetails": UpdateJobDetails,

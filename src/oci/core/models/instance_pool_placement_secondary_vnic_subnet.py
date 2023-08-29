@@ -24,6 +24,14 @@ class InstancePoolPlacementSecondaryVnicSubnet(object):
             The value to assign to the display_name property of this InstancePoolPlacementSecondaryVnicSubnet.
         :type display_name: str
 
+        :param is_assign_ipv6_ip:
+            The value to assign to the is_assign_ipv6_ip property of this InstancePoolPlacementSecondaryVnicSubnet.
+        :type is_assign_ipv6_ip: bool
+
+        :param ipv6_address_ipv6_subnet_cidr_pair_details:
+            The value to assign to the ipv6_address_ipv6_subnet_cidr_pair_details property of this InstancePoolPlacementSecondaryVnicSubnet.
+        :type ipv6_address_ipv6_subnet_cidr_pair_details: list[oci.core.models.InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails]
+
         :param subnet_id:
             The value to assign to the subnet_id property of this InstancePoolPlacementSecondaryVnicSubnet.
         :type subnet_id: str
@@ -31,15 +39,21 @@ class InstancePoolPlacementSecondaryVnicSubnet(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'is_assign_ipv6_ip': 'bool',
+            'ipv6_address_ipv6_subnet_cidr_pair_details': 'list[InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails]',
             'subnet_id': 'str'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'is_assign_ipv6_ip': 'isAssignIpv6Ip',
+            'ipv6_address_ipv6_subnet_cidr_pair_details': 'ipv6AddressIpv6SubnetCidrPairDetails',
             'subnet_id': 'subnetId'
         }
 
         self._display_name = None
+        self._is_assign_ipv6_ip = None
+        self._ipv6_address_ipv6_subnet_cidr_pair_details = None
         self._subnet_id = None
 
     @property
@@ -67,6 +81,68 @@ class InstancePoolPlacementSecondaryVnicSubnet(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def is_assign_ipv6_ip(self):
+        """
+        Gets the is_assign_ipv6_ip of this InstancePoolPlacementSecondaryVnicSubnet.
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled
+        subnet. Default: False. When provided you may optionally provide an IPv6 prefix
+        (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr`
+        is not provided then an IPv6 prefix is chosen
+        for you.
+
+
+        :return: The is_assign_ipv6_ip of this InstancePoolPlacementSecondaryVnicSubnet.
+        :rtype: bool
+        """
+        return self._is_assign_ipv6_ip
+
+    @is_assign_ipv6_ip.setter
+    def is_assign_ipv6_ip(self, is_assign_ipv6_ip):
+        """
+        Sets the is_assign_ipv6_ip of this InstancePoolPlacementSecondaryVnicSubnet.
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled
+        subnet. Default: False. When provided you may optionally provide an IPv6 prefix
+        (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr`
+        is not provided then an IPv6 prefix is chosen
+        for you.
+
+
+        :param is_assign_ipv6_ip: The is_assign_ipv6_ip of this InstancePoolPlacementSecondaryVnicSubnet.
+        :type: bool
+        """
+        self._is_assign_ipv6_ip = is_assign_ipv6_ip
+
+    @property
+    def ipv6_address_ipv6_subnet_cidr_pair_details(self):
+        """
+        Gets the ipv6_address_ipv6_subnet_cidr_pair_details of this InstancePoolPlacementSecondaryVnicSubnet.
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address.
+        You can provide only the prefix ranges and OCI will select an available
+        address from the range. You can optionally choose to leave the prefix range empty
+        and instead provide the specific IPv6 address that should be used from within that range.
+
+
+        :return: The ipv6_address_ipv6_subnet_cidr_pair_details of this InstancePoolPlacementSecondaryVnicSubnet.
+        :rtype: list[oci.core.models.InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails]
+        """
+        return self._ipv6_address_ipv6_subnet_cidr_pair_details
+
+    @ipv6_address_ipv6_subnet_cidr_pair_details.setter
+    def ipv6_address_ipv6_subnet_cidr_pair_details(self, ipv6_address_ipv6_subnet_cidr_pair_details):
+        """
+        Sets the ipv6_address_ipv6_subnet_cidr_pair_details of this InstancePoolPlacementSecondaryVnicSubnet.
+        A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address.
+        You can provide only the prefix ranges and OCI will select an available
+        address from the range. You can optionally choose to leave the prefix range empty
+        and instead provide the specific IPv6 address that should be used from within that range.
+
+
+        :param ipv6_address_ipv6_subnet_cidr_pair_details: The ipv6_address_ipv6_subnet_cidr_pair_details of this InstancePoolPlacementSecondaryVnicSubnet.
+        :type: list[oci.core.models.InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails]
+        """
+        self._ipv6_address_ipv6_subnet_cidr_pair_details = ipv6_address_ipv6_subnet_cidr_pair_details
 
     @property
     def subnet_id(self):

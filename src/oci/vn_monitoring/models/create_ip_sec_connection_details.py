@@ -69,6 +69,10 @@ class CreateIPSecConnectionDetails(object):
             The value to assign to the tunnel_configuration property of this CreateIPSecConnectionDetails.
         :type tunnel_configuration: list[oci.vn_monitoring.models.CreateIPSecConnectionTunnelDetails]
 
+        :param tunnel_count:
+            The value to assign to the tunnel_count property of this CreateIPSecConnectionDetails.
+        :type tunnel_count: int
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -80,7 +84,8 @@ class CreateIPSecConnectionDetails(object):
             'cpe_local_identifier': 'str',
             'cpe_local_identifier_type': 'str',
             'static_routes': 'list[str]',
-            'tunnel_configuration': 'list[CreateIPSecConnectionTunnelDetails]'
+            'tunnel_configuration': 'list[CreateIPSecConnectionTunnelDetails]',
+            'tunnel_count': 'int'
         }
 
         self.attribute_map = {
@@ -93,7 +98,8 @@ class CreateIPSecConnectionDetails(object):
             'cpe_local_identifier': 'cpeLocalIdentifier',
             'cpe_local_identifier_type': 'cpeLocalIdentifierType',
             'static_routes': 'staticRoutes',
-            'tunnel_configuration': 'tunnelConfiguration'
+            'tunnel_configuration': 'tunnelConfiguration',
+            'tunnel_count': 'tunnelCount'
         }
 
         self._compartment_id = None
@@ -106,6 +112,7 @@ class CreateIPSecConnectionDetails(object):
         self._cpe_local_identifier_type = None
         self._static_routes = None
         self._tunnel_configuration = None
+        self._tunnel_count = None
 
     @property
     def compartment_id(self):
@@ -438,6 +445,32 @@ class CreateIPSecConnectionDetails(object):
         :type: list[oci.vn_monitoring.models.CreateIPSecConnectionTunnelDetails]
         """
         self._tunnel_configuration = tunnel_configuration
+
+    @property
+    def tunnel_count(self):
+        """
+        Gets the tunnel_count of this CreateIPSecConnectionDetails.
+        The count of tunnels in the IPsec connection. This value should be equal to the number of
+        `tunnelConfiguration` objects specified in the `CreateIPSecConnection` request.
+
+
+        :return: The tunnel_count of this CreateIPSecConnectionDetails.
+        :rtype: int
+        """
+        return self._tunnel_count
+
+    @tunnel_count.setter
+    def tunnel_count(self, tunnel_count):
+        """
+        Sets the tunnel_count of this CreateIPSecConnectionDetails.
+        The count of tunnels in the IPsec connection. This value should be equal to the number of
+        `tunnelConfiguration` objects specified in the `CreateIPSecConnection` request.
+
+
+        :param tunnel_count: The tunnel_count of this CreateIPSecConnectionDetails.
+        :type: int
+        """
+        self._tunnel_count = tunnel_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

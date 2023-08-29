@@ -130,6 +130,10 @@ class Vnic(object):
             The value to assign to the time_created property of this Vnic.
         :type time_created: datetime
 
+        :param ipv6_addresses:
+            The value to assign to the ipv6_addresses property of this Vnic.
+        :type ipv6_addresses: list[str]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -148,7 +152,8 @@ class Vnic(object):
             'public_ip': 'str',
             'skip_source_dest_check': 'bool',
             'subnet_id': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'ipv6_addresses': 'list[str]'
         }
 
         self.attribute_map = {
@@ -168,7 +173,8 @@ class Vnic(object):
             'public_ip': 'publicIp',
             'skip_source_dest_check': 'skipSourceDestCheck',
             'subnet_id': 'subnetId',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'ipv6_addresses': 'ipv6Addresses'
         }
 
         self._availability_domain = None
@@ -188,6 +194,7 @@ class Vnic(object):
         self._skip_source_dest_check = None
         self._subnet_id = None
         self._time_created = None
+        self._ipv6_addresses = None
 
     @property
     def availability_domain(self):
@@ -742,6 +749,34 @@ class Vnic(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def ipv6_addresses(self):
+        """
+        Gets the ipv6_addresses of this Vnic.
+        List of IPv6 addresses assigned to the VNIC.
+
+        Example: `2001:DB8::`
+
+
+        :return: The ipv6_addresses of this Vnic.
+        :rtype: list[str]
+        """
+        return self._ipv6_addresses
+
+    @ipv6_addresses.setter
+    def ipv6_addresses(self, ipv6_addresses):
+        """
+        Sets the ipv6_addresses of this Vnic.
+        List of IPv6 addresses assigned to the VNIC.
+
+        Example: `2001:DB8::`
+
+
+        :param ipv6_addresses: The ipv6_addresses of this Vnic.
+        :type: list[str]
+        """
+        self._ipv6_addresses = ipv6_addresses
 
     def __repr__(self):
         return formatted_flat_dict(self)

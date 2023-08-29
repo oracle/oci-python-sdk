@@ -1,9 +1,9 @@
-AnalyticsClusterTableMemoryEstimate
+LoopBackDrgAttachmentNetworkDetails
 ===================================
 
-.. currentmodule:: oci.mysql.models
+.. currentmodule:: oci.vn_monitoring.models
 
-.. autoclass:: AnalyticsClusterTableMemoryEstimate
+.. autoclass:: LoopBackDrgAttachmentNetworkDetails
     :show-inheritance:
     :special-members: __init__
     :members:

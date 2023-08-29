@@ -35,6 +35,7 @@ from .monitor_script_parameter_info import MonitorScriptParameterInfo
 from .monitor_status_count_map import MonitorStatusCountMap
 from .monitor_summary import MonitorSummary
 from .network_configuration import NetworkConfiguration
+from .network_monitor_configuration import NetworkMonitorConfiguration
 from .node import Node
 from .oracle_rm_stack import OracleRMStack
 from .private_key import PrivateKey
@@ -89,6 +90,7 @@ apm_synthetics_type_mapping = {
     "MonitorStatusCountMap": MonitorStatusCountMap,
     "MonitorSummary": MonitorSummary,
     "NetworkConfiguration": NetworkConfiguration,
+    "NetworkMonitorConfiguration": NetworkMonitorConfiguration,
     "Node": Node,
     "OracleRMStack": OracleRMStack,
     "PrivateKey": PrivateKey,

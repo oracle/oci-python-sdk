@@ -63,6 +63,10 @@ class Cpe(object):
             The value to assign to the time_created property of this Cpe.
         :type time_created: datetime
 
+        :param is_private:
+            The value to assign to the is_private property of this Cpe.
+        :type is_private: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -72,7 +76,8 @@ class Cpe(object):
             'id': 'str',
             'ip_address': 'str',
             'cpe_device_shape_id': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'is_private': 'bool'
         }
 
         self.attribute_map = {
@@ -83,7 +88,8 @@ class Cpe(object):
             'id': 'id',
             'ip_address': 'ipAddress',
             'cpe_device_shape_id': 'cpeDeviceShapeId',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'is_private': 'isPrivate'
         }
 
         self._compartment_id = None
@@ -94,6 +100,7 @@ class Cpe(object):
         self._ip_address = None
         self._cpe_device_shape_id = None
         self._time_created = None
+        self._is_private = None
 
     @property
     def compartment_id(self):
@@ -336,6 +343,30 @@ class Cpe(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def is_private(self):
+        """
+        Gets the is_private of this Cpe.
+        Indicates whether this CPE is of type `private` or not.
+
+
+        :return: The is_private of this Cpe.
+        :rtype: bool
+        """
+        return self._is_private
+
+    @is_private.setter
+    def is_private(self, is_private):
+        """
+        Sets the is_private of this Cpe.
+        Indicates whether this CPE is of type `private` or not.
+
+
+        :param is_private: The is_private of this Cpe.
+        :type: bool
+        """
+        self._is_private = is_private
 
     def __repr__(self):
         return formatted_flat_dict(self)

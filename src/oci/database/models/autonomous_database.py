@@ -1868,9 +1868,7 @@ class AutonomousDatabase(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabase.
-        The amount of memory (in GBs) enabled per OCPU or ECPU. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The amount of memory (in GBs) enabled per OCPU or ECPU.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabase.
@@ -1882,9 +1880,7 @@ class AutonomousDatabase(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabase.
-        The amount of memory (in GBs) enabled per OCPU or ECPU. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The amount of memory (in GBs) enabled per OCPU or ECPU.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabase.

@@ -34,22 +34,29 @@ class IpsecTunnelDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
             The value to assign to the ipsec_connection_id property of this IpsecTunnelDrgAttachmentNetworkDetails.
         :type ipsec_connection_id: str
 
+        :param transport_attachment_id:
+            The value to assign to the transport_attachment_id property of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type transport_attachment_id: str
+
         """
         self.swagger_types = {
             'type': 'str',
             'id': 'str',
-            'ipsec_connection_id': 'str'
+            'ipsec_connection_id': 'str',
+            'transport_attachment_id': 'str'
         }
 
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
-            'ipsec_connection_id': 'ipsecConnectionId'
+            'ipsec_connection_id': 'ipsecConnectionId',
+            'transport_attachment_id': 'transportAttachmentId'
         }
 
         self._type = None
         self._id = None
         self._ipsec_connection_id = None
+        self._transport_attachment_id = None
         self._type = 'IPSEC_TUNNEL'
 
     @property
@@ -75,6 +82,34 @@ class IpsecTunnelDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
         :type: str
         """
         self._ipsec_connection_id = ipsec_connection_id
+
+    @property
+    def transport_attachment_id(self):
+        """
+        Gets the transport_attachment_id of this IpsecTunnelDrgAttachmentNetworkDetails.
+        The `OCID`__ of the virtual circuit's DRG attachment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The transport_attachment_id of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :rtype: str
+        """
+        return self._transport_attachment_id
+
+    @transport_attachment_id.setter
+    def transport_attachment_id(self, transport_attachment_id):
+        """
+        Sets the transport_attachment_id of this IpsecTunnelDrgAttachmentNetworkDetails.
+        The `OCID`__ of the virtual circuit's DRG attachment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param transport_attachment_id: The transport_attachment_id of this IpsecTunnelDrgAttachmentNetworkDetails.
+        :type: str
+        """
+        self._transport_attachment_id = transport_attachment_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

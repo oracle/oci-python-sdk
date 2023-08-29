@@ -40,6 +40,10 @@ class Migration(object):
     WAIT_AFTER_ODMS_VALIDATE_GG_HUB = "ODMS_VALIDATE_GG_HUB"
 
     #: A constant which can be used with the wait_after property of a Migration.
+    #: This constant has a value of "ODMS_VALIDATE_GG_SERVICE"
+    WAIT_AFTER_ODMS_VALIDATE_GG_SERVICE = "ODMS_VALIDATE_GG_SERVICE"
+
+    #: A constant which can be used with the wait_after property of a Migration.
     #: This constant has a value of "ODMS_VALIDATE_DATAPUMP_SETTINGS"
     WAIT_AFTER_ODMS_VALIDATE_DATAPUMP_SETTINGS = "ODMS_VALIDATE_DATAPUMP_SETTINGS"
 
@@ -58,6 +62,10 @@ class Migration(object):
     #: A constant which can be used with the wait_after property of a Migration.
     #: This constant has a value of "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC"
     WAIT_AFTER_ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC = "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC"
+
+    #: A constant which can be used with the wait_after property of a Migration.
+    #: This constant has a value of "ODMS_INITIALIZE_GGS"
+    WAIT_AFTER_ODMS_INITIALIZE_GGS = "ODMS_INITIALIZE_GGS"
 
     #: A constant which can be used with the wait_after property of a Migration.
     #: This constant has a value of "ODMS_VALIDATE"
@@ -204,7 +212,7 @@ class Migration(object):
 
         :param wait_after:
             The value to assign to the wait_after property of this Migration.
-            Allowed values for this property are: "ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_PREMIGRATION_ADVISOR", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE_DATAPUMP_SRC", "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_PREMIGRATION_ADVISOR", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_GG_SERVICE", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE_DATAPUMP_SRC", "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC", "ODMS_INITIALIZE_GGS", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type wait_after: str
 
@@ -255,6 +263,10 @@ class Migration(object):
         :param include_objects:
             The value to assign to the include_objects property of this Migration.
         :type include_objects: list[oci.database_migration.models.DatabaseObject]
+
+        :param golden_gate_service_details:
+            The value to assign to the golden_gate_service_details property of this Migration.
+        :type golden_gate_service_details: oci.database_migration.models.GoldenGateServiceDetails
 
         :param golden_gate_details:
             The value to assign to the golden_gate_details property of this Migration.
@@ -319,6 +331,7 @@ class Migration(object):
             'advisor_settings': 'AdvisorSettings',
             'exclude_objects': 'list[DatabaseObject]',
             'include_objects': 'list[DatabaseObject]',
+            'golden_gate_service_details': 'GoldenGateServiceDetails',
             'golden_gate_details': 'GoldenGateDetails',
             'vault_details': 'VaultDetails',
             'time_created': 'datetime',
@@ -349,6 +362,7 @@ class Migration(object):
             'advisor_settings': 'advisorSettings',
             'exclude_objects': 'excludeObjects',
             'include_objects': 'includeObjects',
+            'golden_gate_service_details': 'goldenGateServiceDetails',
             'golden_gate_details': 'goldenGateDetails',
             'vault_details': 'vaultDetails',
             'time_created': 'timeCreated',
@@ -378,6 +392,7 @@ class Migration(object):
         self._advisor_settings = None
         self._exclude_objects = None
         self._include_objects = None
+        self._golden_gate_service_details = None
         self._golden_gate_details = None
         self._vault_details = None
         self._time_created = None
@@ -498,7 +513,7 @@ class Migration(object):
         Name of a migration phase. The Job will wait after executing this
         phase until the Resume Job endpoint is called.
 
-        Allowed values for this property are: "ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_PREMIGRATION_ADVISOR", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE_DATAPUMP_SRC", "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_PREMIGRATION_ADVISOR", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_GG_SERVICE", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE_DATAPUMP_SRC", "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC", "ODMS_INITIALIZE_GGS", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -518,7 +533,7 @@ class Migration(object):
         :param wait_after: The wait_after of this Migration.
         :type: str
         """
-        allowed_values = ["ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_PREMIGRATION_ADVISOR", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE_DATAPUMP_SRC", "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP"]
+        allowed_values = ["ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_PREMIGRATION_ADVISOR", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_GG_SERVICE", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE_DATAPUMP_SRC", "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC", "ODMS_INITIALIZE_GGS", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP"]
         if not value_allowed_none_or_none_sentinel(wait_after, allowed_values):
             wait_after = 'UNKNOWN_ENUM_VALUE'
         self._wait_after = wait_after
@@ -796,6 +811,26 @@ class Migration(object):
         :type: list[oci.database_migration.models.DatabaseObject]
         """
         self._include_objects = include_objects
+
+    @property
+    def golden_gate_service_details(self):
+        """
+        Gets the golden_gate_service_details of this Migration.
+
+        :return: The golden_gate_service_details of this Migration.
+        :rtype: oci.database_migration.models.GoldenGateServiceDetails
+        """
+        return self._golden_gate_service_details
+
+    @golden_gate_service_details.setter
+    def golden_gate_service_details(self, golden_gate_service_details):
+        """
+        Sets the golden_gate_service_details of this Migration.
+
+        :param golden_gate_service_details: The golden_gate_service_details of this Migration.
+        :type: oci.database_migration.models.GoldenGateServiceDetails
+        """
+        self._golden_gate_service_details = golden_gate_service_details
 
     @property
     def golden_gate_details(self):

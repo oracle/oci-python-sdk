@@ -32,6 +32,10 @@ class PlatformConfig(object):
     TYPE_AMD_ROME_BM_GPU = "AMD_ROME_BM_GPU"
 
     #: A constant which can be used with the type property of a PlatformConfig.
+    #: This constant has a value of "GENERIC_BM"
+    TYPE_GENERIC_BM = "GENERIC_BM"
+
+    #: A constant which can be used with the type property of a PlatformConfig.
     #: This constant has a value of "INTEL_ICELAKE_BM"
     TYPE_INTEL_ICELAKE_BM = "INTEL_ICELAKE_BM"
 
@@ -59,13 +63,14 @@ class PlatformConfig(object):
         * :class:`~oci.core.models.IntelIcelakeBmPlatformConfig`
         * :class:`~oci.core.models.AmdVmPlatformConfig`
         * :class:`~oci.core.models.IntelVmPlatformConfig`
+        * :class:`~oci.core.models.GenericBmPlatformConfig`
         * :class:`~oci.core.models.AmdMilanBmGpuPlatformConfig`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param type:
             The value to assign to the type property of this PlatformConfig.
-            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "GENERIC_BM", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -137,6 +142,9 @@ class PlatformConfig(object):
         if type == 'INTEL_VM':
             return 'IntelVmPlatformConfig'
 
+        if type == 'GENERIC_BM':
+            return 'GenericBmPlatformConfig'
+
         if type == 'AMD_MILAN_BM_GPU':
             return 'AmdMilanBmGpuPlatformConfig'
         else:
@@ -148,7 +156,7 @@ class PlatformConfig(object):
         **[Required]** Gets the type of this PlatformConfig.
         The type of platform being configured.
 
-        Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "GENERIC_BM", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -167,7 +175,7 @@ class PlatformConfig(object):
         :param type: The type of this PlatformConfig.
         :type: str
         """
-        allowed_values = ["AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"]
+        allowed_values = ["AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "GENERIC_BM", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

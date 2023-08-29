@@ -31,6 +31,10 @@ class MonitorConfiguration(object):
     #: This constant has a value of "SCRIPTED_REST_CONFIG"
     CONFIG_TYPE_SCRIPTED_REST_CONFIG = "SCRIPTED_REST_CONFIG"
 
+    #: A constant which can be used with the config_type property of a MonitorConfiguration.
+    #: This constant has a value of "NETWORK_CONFIG"
+    CONFIG_TYPE_NETWORK_CONFIG = "NETWORK_CONFIG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MonitorConfiguration object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -40,12 +44,13 @@ class MonitorConfiguration(object):
         * :class:`~oci.apm_synthetics.models.ScriptedBrowserMonitorConfiguration`
         * :class:`~oci.apm_synthetics.models.RestMonitorConfiguration`
         * :class:`~oci.apm_synthetics.models.BrowserMonitorConfiguration`
+        * :class:`~oci.apm_synthetics.models.NetworkMonitorConfiguration`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param config_type:
             The value to assign to the config_type property of this MonitorConfiguration.
-            Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_type: str
 
@@ -93,6 +98,9 @@ class MonitorConfiguration(object):
 
         if type == 'BROWSER_CONFIG':
             return 'BrowserMonitorConfiguration'
+
+        if type == 'NETWORK_CONFIG':
+            return 'NetworkMonitorConfiguration'
         else:
             return 'MonitorConfiguration'
 
@@ -102,7 +110,7 @@ class MonitorConfiguration(object):
         Gets the config_type of this MonitorConfiguration.
         Type of configuration.
 
-        Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -121,7 +129,7 @@ class MonitorConfiguration(object):
         :param config_type: The config_type of this MonitorConfiguration.
         :type: str
         """
-        allowed_values = ["BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG"]
+        allowed_values = ["BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG"]
         if not value_allowed_none_or_none_sentinel(config_type, allowed_values):
             config_type = 'UNKNOWN_ENUM_VALUE'
         self._config_type = config_type

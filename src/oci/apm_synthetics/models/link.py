@@ -287,7 +287,7 @@ class Link(object):
     def paths(self):
         """
         Gets the paths of this Link.
-        List of all path ids of which this link is part of.
+        List of all path IDs of which this link is part of.
 
 
         :return: The paths of this Link.
@@ -299,7 +299,7 @@ class Link(object):
     def paths(self, paths):
         """
         Sets the paths of this Link.
-        List of all path ids of which this link is part of.
+        List of all path IDs of which this link is part of.
 
 
         :param paths: The paths of this Link.

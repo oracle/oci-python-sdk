@@ -77,6 +77,10 @@ class UpdateMigrationDetails(object):
             The value to assign to the include_objects property of this UpdateMigrationDetails.
         :type include_objects: list[oci.database_migration.models.DatabaseObject]
 
+        :param golden_gate_service_details:
+            The value to assign to the golden_gate_service_details property of this UpdateMigrationDetails.
+        :type golden_gate_service_details: oci.database_migration.models.UpdateGoldenGateServiceDetails
+
         :param golden_gate_details:
             The value to assign to the golden_gate_details property of this UpdateMigrationDetails.
         :type golden_gate_details: oci.database_migration.models.UpdateGoldenGateDetails
@@ -107,6 +111,7 @@ class UpdateMigrationDetails(object):
             'advisor_settings': 'UpdateAdvisorSettings',
             'exclude_objects': 'list[DatabaseObject]',
             'include_objects': 'list[DatabaseObject]',
+            'golden_gate_service_details': 'UpdateGoldenGateServiceDetails',
             'golden_gate_details': 'UpdateGoldenGateDetails',
             'vault_details': 'UpdateVaultDetails',
             'freeform_tags': 'dict(str, str)',
@@ -126,6 +131,7 @@ class UpdateMigrationDetails(object):
             'advisor_settings': 'advisorSettings',
             'exclude_objects': 'excludeObjects',
             'include_objects': 'includeObjects',
+            'golden_gate_service_details': 'goldenGateServiceDetails',
             'golden_gate_details': 'goldenGateDetails',
             'vault_details': 'vaultDetails',
             'freeform_tags': 'freeformTags',
@@ -144,6 +150,7 @@ class UpdateMigrationDetails(object):
         self._advisor_settings = None
         self._exclude_objects = None
         self._include_objects = None
+        self._golden_gate_service_details = None
         self._golden_gate_details = None
         self._vault_details = None
         self._freeform_tags = None
@@ -436,6 +443,26 @@ class UpdateMigrationDetails(object):
         :type: list[oci.database_migration.models.DatabaseObject]
         """
         self._include_objects = include_objects
+
+    @property
+    def golden_gate_service_details(self):
+        """
+        Gets the golden_gate_service_details of this UpdateMigrationDetails.
+
+        :return: The golden_gate_service_details of this UpdateMigrationDetails.
+        :rtype: oci.database_migration.models.UpdateGoldenGateServiceDetails
+        """
+        return self._golden_gate_service_details
+
+    @golden_gate_service_details.setter
+    def golden_gate_service_details(self, golden_gate_service_details):
+        """
+        Sets the golden_gate_service_details of this UpdateMigrationDetails.
+
+        :param golden_gate_service_details: The golden_gate_service_details of this UpdateMigrationDetails.
+        :type: oci.database_migration.models.UpdateGoldenGateServiceDetails
+        """
+        self._golden_gate_service_details = golden_gate_service_details
 
     @property
     def golden_gate_details(self):

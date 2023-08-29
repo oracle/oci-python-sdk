@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PrivateKey(object):
     """
-    The private key associated with the client certificate in pem format.
+    The private key associated with the client certificate in PEM format.
     """
 
     def __init__(self, **kwargs):

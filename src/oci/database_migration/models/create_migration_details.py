@@ -89,6 +89,10 @@ class CreateMigrationDetails(object):
             The value to assign to the golden_gate_details property of this CreateMigrationDetails.
         :type golden_gate_details: oci.database_migration.models.CreateGoldenGateDetails
 
+        :param golden_gate_service_details:
+            The value to assign to the golden_gate_service_details property of this CreateMigrationDetails.
+        :type golden_gate_service_details: oci.database_migration.models.CreateGoldenGateServiceDetails
+
         :param vault_details:
             The value to assign to the vault_details property of this CreateMigrationDetails.
         :type vault_details: oci.database_migration.models.CreateVaultDetails
@@ -118,6 +122,7 @@ class CreateMigrationDetails(object):
             'include_objects': 'list[DatabaseObject]',
             'csv_text': 'str',
             'golden_gate_details': 'CreateGoldenGateDetails',
+            'golden_gate_service_details': 'CreateGoldenGateServiceDetails',
             'vault_details': 'CreateVaultDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -139,6 +144,7 @@ class CreateMigrationDetails(object):
             'include_objects': 'includeObjects',
             'csv_text': 'csvText',
             'golden_gate_details': 'goldenGateDetails',
+            'golden_gate_service_details': 'goldenGateServiceDetails',
             'vault_details': 'vaultDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -159,6 +165,7 @@ class CreateMigrationDetails(object):
         self._include_objects = None
         self._csv_text = None
         self._golden_gate_details = None
+        self._golden_gate_service_details = None
         self._vault_details = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -512,6 +519,26 @@ class CreateMigrationDetails(object):
         :type: oci.database_migration.models.CreateGoldenGateDetails
         """
         self._golden_gate_details = golden_gate_details
+
+    @property
+    def golden_gate_service_details(self):
+        """
+        Gets the golden_gate_service_details of this CreateMigrationDetails.
+
+        :return: The golden_gate_service_details of this CreateMigrationDetails.
+        :rtype: oci.database_migration.models.CreateGoldenGateServiceDetails
+        """
+        return self._golden_gate_service_details
+
+    @golden_gate_service_details.setter
+    def golden_gate_service_details(self, golden_gate_service_details):
+        """
+        Sets the golden_gate_service_details of this CreateMigrationDetails.
+
+        :param golden_gate_service_details: The golden_gate_service_details of this CreateMigrationDetails.
+        :type: oci.database_migration.models.CreateGoldenGateServiceDetails
+        """
+        self._golden_gate_service_details = golden_gate_service_details
 
     @property
     def vault_details(self):

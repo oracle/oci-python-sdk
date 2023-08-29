@@ -120,6 +120,10 @@ class Connection(object):
             The value to assign to the admin_credentials property of this Connection.
         :type admin_credentials: oci.database_migration.models.AdminCredentials
 
+        :param replication_credentials:
+            The value to assign to the replication_credentials property of this Connection.
+        :type replication_credentials: oci.database_migration.models.AdminCredentials
+
         :param private_endpoint:
             The value to assign to the private_endpoint property of this Connection.
         :type private_endpoint: oci.database_migration.models.PrivateEndpointDetails
@@ -176,6 +180,7 @@ class Connection(object):
             'certificate_tdn': 'str',
             'ssh_details': 'SshDetails',
             'admin_credentials': 'AdminCredentials',
+            'replication_credentials': 'AdminCredentials',
             'private_endpoint': 'PrivateEndpointDetails',
             'vault_details': 'VaultDetails',
             'lifecycle_state': 'str',
@@ -201,6 +206,7 @@ class Connection(object):
             'certificate_tdn': 'certificateTdn',
             'ssh_details': 'sshDetails',
             'admin_credentials': 'adminCredentials',
+            'replication_credentials': 'replicationCredentials',
             'private_endpoint': 'privateEndpoint',
             'vault_details': 'vaultDetails',
             'lifecycle_state': 'lifecycleState',
@@ -225,6 +231,7 @@ class Connection(object):
         self._certificate_tdn = None
         self._ssh_details = None
         self._admin_credentials = None
+        self._replication_credentials = None
         self._private_endpoint = None
         self._vault_details = None
         self._lifecycle_state = None
@@ -523,6 +530,26 @@ class Connection(object):
         :type: oci.database_migration.models.AdminCredentials
         """
         self._admin_credentials = admin_credentials
+
+    @property
+    def replication_credentials(self):
+        """
+        Gets the replication_credentials of this Connection.
+
+        :return: The replication_credentials of this Connection.
+        :rtype: oci.database_migration.models.AdminCredentials
+        """
+        return self._replication_credentials
+
+    @replication_credentials.setter
+    def replication_credentials(self, replication_credentials):
+        """
+        Sets the replication_credentials of this Connection.
+
+        :param replication_credentials: The replication_credentials of this Connection.
+        :type: oci.database_migration.models.AdminCredentials
+        """
+        self._replication_credentials = replication_credentials
 
     @property
     def private_endpoint(self):

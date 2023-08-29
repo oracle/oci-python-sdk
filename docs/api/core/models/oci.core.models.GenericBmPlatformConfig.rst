@@ -1,9 +1,9 @@
-AnalyticsClusterSummary
+GenericBmPlatformConfig
 =======================
 
-.. currentmodule:: oci.mysql.models
+.. currentmodule:: oci.core.models
 
-.. autoclass:: AnalyticsClusterSummary
+.. autoclass:: GenericBmPlatformConfig
     :show-inheritance:
     :special-members: __init__
     :members:

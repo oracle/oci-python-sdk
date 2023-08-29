@@ -32,6 +32,10 @@ class CreateInstancePoolPlacementConfigurationDetails(object):
             The value to assign to the primary_subnet_id property of this CreateInstancePoolPlacementConfigurationDetails.
         :type primary_subnet_id: str
 
+        :param primary_vnic_subnets:
+            The value to assign to the primary_vnic_subnets property of this CreateInstancePoolPlacementConfigurationDetails.
+        :type primary_vnic_subnets: oci.core.models.InstancePoolPlacementPrimarySubnet
+
         :param secondary_vnic_subnets:
             The value to assign to the secondary_vnic_subnets property of this CreateInstancePoolPlacementConfigurationDetails.
         :type secondary_vnic_subnets: list[oci.core.models.InstancePoolPlacementSecondaryVnicSubnet]
@@ -41,6 +45,7 @@ class CreateInstancePoolPlacementConfigurationDetails(object):
             'availability_domain': 'str',
             'fault_domains': 'list[str]',
             'primary_subnet_id': 'str',
+            'primary_vnic_subnets': 'InstancePoolPlacementPrimarySubnet',
             'secondary_vnic_subnets': 'list[InstancePoolPlacementSecondaryVnicSubnet]'
         }
 
@@ -48,12 +53,14 @@ class CreateInstancePoolPlacementConfigurationDetails(object):
             'availability_domain': 'availabilityDomain',
             'fault_domains': 'faultDomains',
             'primary_subnet_id': 'primarySubnetId',
+            'primary_vnic_subnets': 'primaryVnicSubnets',
             'secondary_vnic_subnets': 'secondaryVnicSubnets'
         }
 
         self._availability_domain = None
         self._fault_domains = None
         self._primary_subnet_id = None
+        self._primary_vnic_subnets = None
         self._secondary_vnic_subnets = None
 
     @property
@@ -137,9 +144,9 @@ class CreateInstancePoolPlacementConfigurationDetails(object):
     @property
     def primary_subnet_id(self):
         """
-        **[Required]** Gets the primary_subnet_id of this CreateInstancePoolPlacementConfigurationDetails.
-        The `OCID`__ of the primary subnet in which to place
-        instances.
+        Gets the primary_subnet_id of this CreateInstancePoolPlacementConfigurationDetails.
+        The `OCID`__ of the primary subnet in which to place instances. This field is deprecated.
+        Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -153,8 +160,8 @@ class CreateInstancePoolPlacementConfigurationDetails(object):
     def primary_subnet_id(self, primary_subnet_id):
         """
         Sets the primary_subnet_id of this CreateInstancePoolPlacementConfigurationDetails.
-        The `OCID`__ of the primary subnet in which to place
-        instances.
+        The `OCID`__ of the primary subnet in which to place instances. This field is deprecated.
+        Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -163,6 +170,26 @@ class CreateInstancePoolPlacementConfigurationDetails(object):
         :type: str
         """
         self._primary_subnet_id = primary_subnet_id
+
+    @property
+    def primary_vnic_subnets(self):
+        """
+        Gets the primary_vnic_subnets of this CreateInstancePoolPlacementConfigurationDetails.
+
+        :return: The primary_vnic_subnets of this CreateInstancePoolPlacementConfigurationDetails.
+        :rtype: oci.core.models.InstancePoolPlacementPrimarySubnet
+        """
+        return self._primary_vnic_subnets
+
+    @primary_vnic_subnets.setter
+    def primary_vnic_subnets(self, primary_vnic_subnets):
+        """
+        Sets the primary_vnic_subnets of this CreateInstancePoolPlacementConfigurationDetails.
+
+        :param primary_vnic_subnets: The primary_vnic_subnets of this CreateInstancePoolPlacementConfigurationDetails.
+        :type: oci.core.models.InstancePoolPlacementPrimarySubnet
+        """
+        self._primary_vnic_subnets = primary_vnic_subnets
 
     @property
     def secondary_vnic_subnets(self):

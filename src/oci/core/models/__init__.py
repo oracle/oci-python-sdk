@@ -259,6 +259,8 @@ from .export_image_via_object_storage_tuple_details import ExportImageViaObjectS
 from .export_image_via_object_storage_uri_details import ExportImageViaObjectStorageUriDetails
 from .fast_connect_provider_service import FastConnectProviderService
 from .fast_connect_provider_service_key import FastConnectProviderServiceKey
+from .generic_bm_launch_instance_platform_config import GenericBmLaunchInstancePlatformConfig
+from .generic_bm_platform_config import GenericBmPlatformConfig
 from .get_public_ip_by_ip_address_details import GetPublicIpByIpAddressDetails
 from .get_public_ip_by_private_ip_id_details import GetPublicIpByPrivateIpIdDetails
 from .ip_sec_connection import IPSecConnection
@@ -299,6 +301,7 @@ from .instance_configuration_block_volume_replica_details import InstanceConfigu
 from .instance_configuration_create_vnic_details import InstanceConfigurationCreateVnicDetails
 from .instance_configuration_create_volume_details import InstanceConfigurationCreateVolumeDetails
 from .instance_configuration_detached_volume_autotune_policy import InstanceConfigurationDetachedVolumeAutotunePolicy
+from .instance_configuration_generic_bm_launch_instance_platform_config import InstanceConfigurationGenericBmLaunchInstancePlatformConfig
 from .instance_configuration_instance_details import InstanceConfigurationInstanceDetails
 from .instance_configuration_instance_options import InstanceConfigurationInstanceOptions
 from .instance_configuration_instance_source_details import InstanceConfigurationInstanceSourceDetails
@@ -308,6 +311,7 @@ from .instance_configuration_instance_source_via_image_details import InstanceCo
 from .instance_configuration_intel_icelake_bm_launch_instance_platform_config import InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
 from .instance_configuration_intel_skylake_bm_launch_instance_platform_config import InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig
 from .instance_configuration_intel_vm_launch_instance_platform_config import InstanceConfigurationIntelVmLaunchInstancePlatformConfig
+from .instance_configuration_ipv6_address_ipv6_subnet_cidr_pair_details import InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails
 from .instance_configuration_iscsi_attach_volume_details import InstanceConfigurationIscsiAttachVolumeDetails
 from .instance_configuration_launch_instance_agent_config_details import InstanceConfigurationLaunchInstanceAgentConfigDetails
 from .instance_configuration_launch_instance_details import InstanceConfigurationLaunchInstanceDetails
@@ -329,7 +333,10 @@ from .instance_pool_instance import InstancePoolInstance
 from .instance_pool_instance_load_balancer_backend import InstancePoolInstanceLoadBalancerBackend
 from .instance_pool_load_balancer_attachment import InstancePoolLoadBalancerAttachment
 from .instance_pool_placement_configuration import InstancePoolPlacementConfiguration
+from .instance_pool_placement_ipv6_address_ipv6_subnet_cidr_details import InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails
+from .instance_pool_placement_primary_subnet import InstancePoolPlacementPrimarySubnet
 from .instance_pool_placement_secondary_vnic_subnet import InstancePoolPlacementSecondaryVnicSubnet
+from .instance_pool_placement_subnet_details import InstancePoolPlacementSubnetDetails
 from .instance_pool_summary import InstancePoolSummary
 from .instance_power_action_details import InstancePowerActionDetails
 from .instance_reservation_config import InstanceReservationConfig
@@ -350,6 +357,7 @@ from .intel_vm_platform_config import IntelVmPlatformConfig
 from .internet_gateway import InternetGateway
 from .ipsec_tunnel_drg_attachment_network_details import IpsecTunnelDrgAttachmentNetworkDetails
 from .ipv6 import Ipv6
+from .ipv6_address_ipv6_subnet_cidr_pair_details import Ipv6AddressIpv6SubnetCidrPairDetails
 from .launch_instance_agent_config_details import LaunchInstanceAgentConfigDetails
 from .launch_instance_availability_config_details import LaunchInstanceAvailabilityConfigDetails
 from .launch_instance_details import LaunchInstanceDetails
@@ -358,6 +366,7 @@ from .launch_instance_shape_config_details import LaunchInstanceShapeConfigDetai
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
+from .loop_back_drg_attachment_network_details import LoopBackDrgAttachmentNetworkDetails
 from .macsec_key import MacsecKey
 from .macsec_properties import MacsecProperties
 from .measured_boot_entry import MeasuredBootEntry
@@ -518,6 +527,7 @@ from .vcn_drg_attachment_network_details import VcnDrgAttachmentNetworkDetails
 from .vcn_drg_attachment_network_update_details import VcnDrgAttachmentNetworkUpdateDetails
 from .vcn_topology import VcnTopology
 from .virtual_circuit import VirtualCircuit
+from .virtual_circuit_associated_tunnel_details import VirtualCircuitAssociatedTunnelDetails
 from .virtual_circuit_bandwidth_shape import VirtualCircuitBandwidthShape
 from .virtual_circuit_drg_attachment_network_details import VirtualCircuitDrgAttachmentNetworkDetails
 from .virtual_circuit_public_prefix import VirtualCircuitPublicPrefix
@@ -803,6 +813,8 @@ core_type_mapping = {
     "ExportImageViaObjectStorageUriDetails": ExportImageViaObjectStorageUriDetails,
     "FastConnectProviderService": FastConnectProviderService,
     "FastConnectProviderServiceKey": FastConnectProviderServiceKey,
+    "GenericBmLaunchInstancePlatformConfig": GenericBmLaunchInstancePlatformConfig,
+    "GenericBmPlatformConfig": GenericBmPlatformConfig,
     "GetPublicIpByIpAddressDetails": GetPublicIpByIpAddressDetails,
     "GetPublicIpByPrivateIpIdDetails": GetPublicIpByPrivateIpIdDetails,
     "IPSecConnection": IPSecConnection,
@@ -843,6 +855,7 @@ core_type_mapping = {
     "InstanceConfigurationCreateVnicDetails": InstanceConfigurationCreateVnicDetails,
     "InstanceConfigurationCreateVolumeDetails": InstanceConfigurationCreateVolumeDetails,
     "InstanceConfigurationDetachedVolumeAutotunePolicy": InstanceConfigurationDetachedVolumeAutotunePolicy,
+    "InstanceConfigurationGenericBmLaunchInstancePlatformConfig": InstanceConfigurationGenericBmLaunchInstancePlatformConfig,
     "InstanceConfigurationInstanceDetails": InstanceConfigurationInstanceDetails,
     "InstanceConfigurationInstanceOptions": InstanceConfigurationInstanceOptions,
     "InstanceConfigurationInstanceSourceDetails": InstanceConfigurationInstanceSourceDetails,
@@ -852,6 +865,7 @@ core_type_mapping = {
     "InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig": InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig,
     "InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig": InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig,
     "InstanceConfigurationIntelVmLaunchInstancePlatformConfig": InstanceConfigurationIntelVmLaunchInstancePlatformConfig,
+    "InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails": InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails,
     "InstanceConfigurationIscsiAttachVolumeDetails": InstanceConfigurationIscsiAttachVolumeDetails,
     "InstanceConfigurationLaunchInstanceAgentConfigDetails": InstanceConfigurationLaunchInstanceAgentConfigDetails,
     "InstanceConfigurationLaunchInstanceDetails": InstanceConfigurationLaunchInstanceDetails,
@@ -873,7 +887,10 @@ core_type_mapping = {
     "InstancePoolInstanceLoadBalancerBackend": InstancePoolInstanceLoadBalancerBackend,
     "InstancePoolLoadBalancerAttachment": InstancePoolLoadBalancerAttachment,
     "InstancePoolPlacementConfiguration": InstancePoolPlacementConfiguration,
+    "InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails": InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails,
+    "InstancePoolPlacementPrimarySubnet": InstancePoolPlacementPrimarySubnet,
     "InstancePoolPlacementSecondaryVnicSubnet": InstancePoolPlacementSecondaryVnicSubnet,
+    "InstancePoolPlacementSubnetDetails": InstancePoolPlacementSubnetDetails,
     "InstancePoolSummary": InstancePoolSummary,
     "InstancePowerActionDetails": InstancePowerActionDetails,
     "InstanceReservationConfig": InstanceReservationConfig,
@@ -894,6 +911,7 @@ core_type_mapping = {
     "InternetGateway": InternetGateway,
     "IpsecTunnelDrgAttachmentNetworkDetails": IpsecTunnelDrgAttachmentNetworkDetails,
     "Ipv6": Ipv6,
+    "Ipv6AddressIpv6SubnetCidrPairDetails": Ipv6AddressIpv6SubnetCidrPairDetails,
     "LaunchInstanceAgentConfigDetails": LaunchInstanceAgentConfigDetails,
     "LaunchInstanceAvailabilityConfigDetails": LaunchInstanceAvailabilityConfigDetails,
     "LaunchInstanceDetails": LaunchInstanceDetails,
@@ -902,6 +920,7 @@ core_type_mapping = {
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
     "LocalPeeringGateway": LocalPeeringGateway,
+    "LoopBackDrgAttachmentNetworkDetails": LoopBackDrgAttachmentNetworkDetails,
     "MacsecKey": MacsecKey,
     "MacsecProperties": MacsecProperties,
     "MeasuredBootEntry": MeasuredBootEntry,
@@ -1062,6 +1081,7 @@ core_type_mapping = {
     "VcnDrgAttachmentNetworkUpdateDetails": VcnDrgAttachmentNetworkUpdateDetails,
     "VcnTopology": VcnTopology,
     "VirtualCircuit": VirtualCircuit,
+    "VirtualCircuitAssociatedTunnelDetails": VirtualCircuitAssociatedTunnelDetails,
     "VirtualCircuitBandwidthShape": VirtualCircuitBandwidthShape,
     "VirtualCircuitDrgAttachmentNetworkDetails": VirtualCircuitDrgAttachmentNetworkDetails,
     "VirtualCircuitPublicPrefix": VirtualCircuitPublicPrefix,
