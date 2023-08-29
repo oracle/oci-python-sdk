@@ -51,7 +51,7 @@ class RestMonitorConfiguration(MonitorConfiguration):
 
         :param config_type:
             The value to assign to the config_type property of this RestMonitorConfiguration.
-            Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_type: str
 

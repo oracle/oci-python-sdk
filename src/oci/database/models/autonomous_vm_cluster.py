@@ -645,9 +645,7 @@ class AutonomousVmCluster(object):
     def compute_model(self):
         """
         Gets the compute_model of this AutonomousVmCluster.
-        The compute model of the Autonomous VM Cluster. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The compute model of the Autonomous VM Cluster.
 
         Allowed values for this property are: "ECPU", "OCPU", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -662,9 +660,7 @@ class AutonomousVmCluster(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this AutonomousVmCluster.
-        The compute model of the Autonomous VM Cluster. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The compute model of the Autonomous VM Cluster.
 
 
         :param compute_model: The compute_model of this AutonomousVmCluster.
@@ -751,9 +747,7 @@ class AutonomousVmCluster(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmCluster.
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmCluster.
@@ -765,9 +759,7 @@ class AutonomousVmCluster(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmCluster.
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmCluster.
@@ -1171,9 +1163,7 @@ class AutonomousVmCluster(object):
         Gets the reclaimable_cpus of this AutonomousVmCluster.
         For Autonomous Databases on Dedicated Exadata Infrastructure:
         - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
 
 
         :return: The reclaimable_cpus of this AutonomousVmCluster.
@@ -1187,9 +1177,7 @@ class AutonomousVmCluster(object):
         Sets the reclaimable_cpus of this AutonomousVmCluster.
         For Autonomous Databases on Dedicated Exadata Infrastructure:
         - These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        - The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
 
 
         :param reclaimable_cpus: The reclaimable_cpus of this AutonomousVmCluster.

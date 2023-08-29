@@ -37,6 +37,7 @@ class DrgAttachmentNetworkDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.core.models.VcnDrgAttachmentNetworkDetails`
+        * :class:`~oci.core.models.LoopBackDrgAttachmentNetworkDetails`
         * :class:`~oci.core.models.IpsecTunnelDrgAttachmentNetworkDetails`
         * :class:`~oci.core.models.VirtualCircuitDrgAttachmentNetworkDetails`
         * :class:`~oci.core.models.RemotePeeringConnectionDrgAttachmentNetworkDetails`
@@ -78,6 +79,9 @@ class DrgAttachmentNetworkDetails(object):
         if type == 'VCN':
             return 'VcnDrgAttachmentNetworkDetails'
 
+        if type == 'LOOPBACK':
+            return 'LoopBackDrgAttachmentNetworkDetails'
+
         if type == 'IPSEC_TUNNEL':
             return 'IpsecTunnelDrgAttachmentNetworkDetails'
 
@@ -118,7 +122,7 @@ class DrgAttachmentNetworkDetails(object):
     @property
     def id(self):
         """
-        **[Required]** Gets the id of this DrgAttachmentNetworkDetails.
+        Gets the id of this DrgAttachmentNetworkDetails.
         The `OCID`__ of the network attached to the DRG.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm

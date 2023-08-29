@@ -277,6 +277,8 @@ Core Services
     oci.core.models.ExportImageViaObjectStorageUriDetails
     oci.core.models.FastConnectProviderService
     oci.core.models.FastConnectProviderServiceKey
+    oci.core.models.GenericBmLaunchInstancePlatformConfig
+    oci.core.models.GenericBmPlatformConfig
     oci.core.models.GetPublicIpByIpAddressDetails
     oci.core.models.GetPublicIpByPrivateIpIdDetails
     oci.core.models.IPSecConnection
@@ -317,6 +319,7 @@ Core Services
     oci.core.models.InstanceConfigurationCreateVnicDetails
     oci.core.models.InstanceConfigurationCreateVolumeDetails
     oci.core.models.InstanceConfigurationDetachedVolumeAutotunePolicy
+    oci.core.models.InstanceConfigurationGenericBmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationInstanceDetails
     oci.core.models.InstanceConfigurationInstanceOptions
     oci.core.models.InstanceConfigurationInstanceSourceDetails
@@ -326,6 +329,7 @@ Core Services
     oci.core.models.InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationIntelVmLaunchInstancePlatformConfig
+    oci.core.models.InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails
     oci.core.models.InstanceConfigurationIscsiAttachVolumeDetails
     oci.core.models.InstanceConfigurationLaunchInstanceAgentConfigDetails
     oci.core.models.InstanceConfigurationLaunchInstanceDetails
@@ -347,7 +351,10 @@ Core Services
     oci.core.models.InstancePoolInstanceLoadBalancerBackend
     oci.core.models.InstancePoolLoadBalancerAttachment
     oci.core.models.InstancePoolPlacementConfiguration
+    oci.core.models.InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails
+    oci.core.models.InstancePoolPlacementPrimarySubnet
     oci.core.models.InstancePoolPlacementSecondaryVnicSubnet
+    oci.core.models.InstancePoolPlacementSubnetDetails
     oci.core.models.InstancePoolSummary
     oci.core.models.InstancePowerActionDetails
     oci.core.models.InstanceReservationConfig
@@ -368,6 +375,7 @@ Core Services
     oci.core.models.InternetGateway
     oci.core.models.IpsecTunnelDrgAttachmentNetworkDetails
     oci.core.models.Ipv6
+    oci.core.models.Ipv6AddressIpv6SubnetCidrPairDetails
     oci.core.models.LaunchInstanceAgentConfigDetails
     oci.core.models.LaunchInstanceAvailabilityConfigDetails
     oci.core.models.LaunchInstanceDetails
@@ -376,6 +384,7 @@ Core Services
     oci.core.models.LaunchOptions
     oci.core.models.LetterOfAuthority
     oci.core.models.LocalPeeringGateway
+    oci.core.models.LoopBackDrgAttachmentNetworkDetails
     oci.core.models.MacsecKey
     oci.core.models.MacsecProperties
     oci.core.models.MeasuredBootEntry
@@ -536,6 +545,7 @@ Core Services
     oci.core.models.VcnDrgAttachmentNetworkUpdateDetails
     oci.core.models.VcnTopology
     oci.core.models.VirtualCircuit
+    oci.core.models.VirtualCircuitAssociatedTunnelDetails
     oci.core.models.VirtualCircuitBandwidthShape
     oci.core.models.VirtualCircuitDrgAttachmentNetworkDetails
     oci.core.models.VirtualCircuitPublicPrefix

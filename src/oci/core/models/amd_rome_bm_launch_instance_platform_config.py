@@ -40,7 +40,7 @@ class AmdRomeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
 
         :param type:
             The value to assign to the type property of this AmdRomeBmLaunchInstancePlatformConfig.
-            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
+            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "GENERIC_BM", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
         :type type: str
 
         :param is_secure_boot_enabled:
@@ -84,6 +84,10 @@ class AmdRomeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
             The value to assign to the percentage_of_cores_enabled property of this AmdRomeBmLaunchInstancePlatformConfig.
         :type percentage_of_cores_enabled: int
 
+        :param config_map:
+            The value to assign to the config_map property of this AmdRomeBmLaunchInstancePlatformConfig.
+        :type config_map: dict(str, str)
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -96,7 +100,8 @@ class AmdRomeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
             'is_access_control_service_enabled': 'bool',
             'are_virtual_instructions_enabled': 'bool',
             'is_input_output_memory_management_unit_enabled': 'bool',
-            'percentage_of_cores_enabled': 'int'
+            'percentage_of_cores_enabled': 'int',
+            'config_map': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -110,7 +115,8 @@ class AmdRomeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
             'is_access_control_service_enabled': 'isAccessControlServiceEnabled',
             'are_virtual_instructions_enabled': 'areVirtualInstructionsEnabled',
             'is_input_output_memory_management_unit_enabled': 'isInputOutputMemoryManagementUnitEnabled',
-            'percentage_of_cores_enabled': 'percentageOfCoresEnabled'
+            'percentage_of_cores_enabled': 'percentageOfCoresEnabled',
+            'config_map': 'configMap'
         }
 
         self._type = None
@@ -124,6 +130,7 @@ class AmdRomeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
         self._are_virtual_instructions_enabled = None
         self._is_input_output_memory_management_unit_enabled = None
         self._percentage_of_cores_enabled = None
+        self._config_map = None
         self._type = 'AMD_ROME_BM'
 
     @property
@@ -305,6 +312,30 @@ class AmdRomeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
         :type: int
         """
         self._percentage_of_cores_enabled = percentage_of_cores_enabled
+
+    @property
+    def config_map(self):
+        """
+        Gets the config_map of this AmdRomeBmLaunchInstancePlatformConfig.
+        Instance Platform Configuration Configuration Map for flexible setting input.
+
+
+        :return: The config_map of this AmdRomeBmLaunchInstancePlatformConfig.
+        :rtype: dict(str, str)
+        """
+        return self._config_map
+
+    @config_map.setter
+    def config_map(self, config_map):
+        """
+        Sets the config_map of this AmdRomeBmLaunchInstancePlatformConfig.
+        Instance Platform Configuration Configuration Map for flexible setting input.
+
+
+        :param config_map: The config_map of this AmdRomeBmLaunchInstancePlatformConfig.
+        :type: dict(str, str)
+        """
+        self._config_map = config_map
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -23,7 +23,7 @@ class BrowserMonitorConfiguration(MonitorConfiguration):
 
         :param config_type:
             The value to assign to the config_type property of this BrowserMonitorConfiguration.
-            Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG"
+            Allowed values for this property are: "BROWSER_CONFIG", "SCRIPTED_BROWSER_CONFIG", "REST_CONFIG", "SCRIPTED_REST_CONFIG", "NETWORK_CONFIG"
         :type config_type: str
 
         :param is_failure_retried:
@@ -115,7 +115,7 @@ class BrowserMonitorConfiguration(MonitorConfiguration):
     def is_default_snapshot_enabled(self):
         """
         Gets the is_default_snapshot_enabled of this BrowserMonitorConfiguration.
-        If disabled then auto snapshots are not collected.
+        If disabled, auto snapshots are not collected.
 
 
         :return: The is_default_snapshot_enabled of this BrowserMonitorConfiguration.
@@ -127,7 +127,7 @@ class BrowserMonitorConfiguration(MonitorConfiguration):
     def is_default_snapshot_enabled(self, is_default_snapshot_enabled):
         """
         Sets the is_default_snapshot_enabled of this BrowserMonitorConfiguration.
-        If disabled then auto snapshots are not collected.
+        If disabled, auto snapshots are not collected.
 
 
         :param is_default_snapshot_enabled: The is_default_snapshot_enabled of this BrowserMonitorConfiguration.

@@ -104,6 +104,18 @@ class CreateIPSecConnectionTunnelDetails(object):
             The value to assign to the dpd_config property of this CreateIPSecConnectionTunnelDetails.
         :type dpd_config: oci.core.models.DpdConfig
 
+        :param oracle_tunnel_ip:
+            The value to assign to the oracle_tunnel_ip property of this CreateIPSecConnectionTunnelDetails.
+        :type oracle_tunnel_ip: str
+
+        :param associated_virtual_circuits:
+            The value to assign to the associated_virtual_circuits property of this CreateIPSecConnectionTunnelDetails.
+        :type associated_virtual_circuits: list[str]
+
+        :param drg_route_table_id:
+            The value to assign to the drg_route_table_id property of this CreateIPSecConnectionTunnelDetails.
+        :type drg_route_table_id: str
+
         :param encryption_domain_config:
             The value to assign to the encryption_domain_config property of this CreateIPSecConnectionTunnelDetails.
         :type encryption_domain_config: oci.core.models.CreateIPSecTunnelEncryptionDomainDetails
@@ -120,6 +132,9 @@ class CreateIPSecConnectionTunnelDetails(object):
             'phase_one_config': 'PhaseOneConfigDetails',
             'phase_two_config': 'PhaseTwoConfigDetails',
             'dpd_config': 'DpdConfig',
+            'oracle_tunnel_ip': 'str',
+            'associated_virtual_circuits': 'list[str]',
+            'drg_route_table_id': 'str',
             'encryption_domain_config': 'CreateIPSecTunnelEncryptionDomainDetails'
         }
 
@@ -134,6 +149,9 @@ class CreateIPSecConnectionTunnelDetails(object):
             'phase_one_config': 'phaseOneConfig',
             'phase_two_config': 'phaseTwoConfig',
             'dpd_config': 'dpdConfig',
+            'oracle_tunnel_ip': 'oracleTunnelIp',
+            'associated_virtual_circuits': 'associatedVirtualCircuits',
+            'drg_route_table_id': 'drgRouteTableId',
             'encryption_domain_config': 'encryptionDomainConfig'
         }
 
@@ -147,6 +165,9 @@ class CreateIPSecConnectionTunnelDetails(object):
         self._phase_one_config = None
         self._phase_two_config = None
         self._dpd_config = None
+        self._oracle_tunnel_ip = None
+        self._associated_virtual_circuits = None
+        self._drg_route_table_id = None
         self._encryption_domain_config = None
 
     @property
@@ -426,6 +447,90 @@ class CreateIPSecConnectionTunnelDetails(object):
         :type: oci.core.models.DpdConfig
         """
         self._dpd_config = dpd_config
+
+    @property
+    def oracle_tunnel_ip(self):
+        """
+        Gets the oracle_tunnel_ip of this CreateIPSecConnectionTunnelDetails.
+        The headend IP that you can choose on the Oracle side to terminate your private IPSec tunnel.
+
+
+        :return: The oracle_tunnel_ip of this CreateIPSecConnectionTunnelDetails.
+        :rtype: str
+        """
+        return self._oracle_tunnel_ip
+
+    @oracle_tunnel_ip.setter
+    def oracle_tunnel_ip(self, oracle_tunnel_ip):
+        """
+        Sets the oracle_tunnel_ip of this CreateIPSecConnectionTunnelDetails.
+        The headend IP that you can choose on the Oracle side to terminate your private IPSec tunnel.
+
+
+        :param oracle_tunnel_ip: The oracle_tunnel_ip of this CreateIPSecConnectionTunnelDetails.
+        :type: str
+        """
+        self._oracle_tunnel_ip = oracle_tunnel_ip
+
+    @property
+    def associated_virtual_circuits(self):
+        """
+        Gets the associated_virtual_circuits of this CreateIPSecConnectionTunnelDetails.
+        The list of virtual circuit `OCID`__s over which your network can reach this tunnel.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The associated_virtual_circuits of this CreateIPSecConnectionTunnelDetails.
+        :rtype: list[str]
+        """
+        return self._associated_virtual_circuits
+
+    @associated_virtual_circuits.setter
+    def associated_virtual_circuits(self, associated_virtual_circuits):
+        """
+        Sets the associated_virtual_circuits of this CreateIPSecConnectionTunnelDetails.
+        The list of virtual circuit `OCID`__s over which your network can reach this tunnel.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param associated_virtual_circuits: The associated_virtual_circuits of this CreateIPSecConnectionTunnelDetails.
+        :type: list[str]
+        """
+        self._associated_virtual_circuits = associated_virtual_circuits
+
+    @property
+    def drg_route_table_id(self):
+        """
+        Gets the drg_route_table_id of this CreateIPSecConnectionTunnelDetails.
+        The `OCID`__ of the DRG route table assigned to this attachment.
+
+        The DRG route table manages traffic inside the DRG.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The drg_route_table_id of this CreateIPSecConnectionTunnelDetails.
+        :rtype: str
+        """
+        return self._drg_route_table_id
+
+    @drg_route_table_id.setter
+    def drg_route_table_id(self, drg_route_table_id):
+        """
+        Sets the drg_route_table_id of this CreateIPSecConnectionTunnelDetails.
+        The `OCID`__ of the DRG route table assigned to this attachment.
+
+        The DRG route table manages traffic inside the DRG.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param drg_route_table_id: The drg_route_table_id of this CreateIPSecConnectionTunnelDetails.
+        :type: str
+        """
+        self._drg_route_table_id = drg_route_table_id
 
     @property
     def encryption_domain_config(self):

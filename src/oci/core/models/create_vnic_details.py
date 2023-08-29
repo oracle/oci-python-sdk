@@ -25,6 +25,10 @@ class CreateVnicDetails(object):
         Initializes a new CreateVnicDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param assign_ipv6_ip:
+            The value to assign to the assign_ipv6_ip property of this CreateVnicDetails.
+        :type assign_ipv6_ip: bool
+
         :param assign_public_ip:
             The value to assign to the assign_public_ip property of this CreateVnicDetails.
         :type assign_public_ip: bool
@@ -49,6 +53,10 @@ class CreateVnicDetails(object):
             The value to assign to the hostname_label property of this CreateVnicDetails.
         :type hostname_label: str
 
+        :param ipv6_address_ipv6_subnet_cidr_pair_details:
+            The value to assign to the ipv6_address_ipv6_subnet_cidr_pair_details property of this CreateVnicDetails.
+        :type ipv6_address_ipv6_subnet_cidr_pair_details: list[oci.core.models.Ipv6AddressIpv6SubnetCidrPairDetails]
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this CreateVnicDetails.
         :type nsg_ids: list[str]
@@ -71,12 +79,14 @@ class CreateVnicDetails(object):
 
         """
         self.swagger_types = {
+            'assign_ipv6_ip': 'bool',
             'assign_public_ip': 'bool',
             'assign_private_dns_record': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'hostname_label': 'str',
+            'ipv6_address_ipv6_subnet_cidr_pair_details': 'list[Ipv6AddressIpv6SubnetCidrPairDetails]',
             'nsg_ids': 'list[str]',
             'private_ip': 'str',
             'skip_source_dest_check': 'bool',
@@ -85,12 +95,14 @@ class CreateVnicDetails(object):
         }
 
         self.attribute_map = {
+            'assign_ipv6_ip': 'assignIpv6Ip',
             'assign_public_ip': 'assignPublicIp',
             'assign_private_dns_record': 'assignPrivateDnsRecord',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'hostname_label': 'hostnameLabel',
+            'ipv6_address_ipv6_subnet_cidr_pair_details': 'ipv6AddressIpv6SubnetCidrPairDetails',
             'nsg_ids': 'nsgIds',
             'private_ip': 'privateIp',
             'skip_source_dest_check': 'skipSourceDestCheck',
@@ -98,17 +110,51 @@ class CreateVnicDetails(object):
             'vlan_id': 'vlanId'
         }
 
+        self._assign_ipv6_ip = None
         self._assign_public_ip = None
         self._assign_private_dns_record = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
         self._hostname_label = None
+        self._ipv6_address_ipv6_subnet_cidr_pair_details = None
         self._nsg_ids = None
         self._private_ip = None
         self._skip_source_dest_check = None
         self._subnet_id = None
         self._vlan_id = None
+
+    @property
+    def assign_ipv6_ip(self):
+        """
+        Gets the assign_ipv6_ip of this CreateVnicDetails.
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled
+        subnet. Default: False. When provided you may optionally provide an IPv6 prefix
+        (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr`
+        is not provided then an IPv6 prefix is chosen
+        for you.
+
+
+        :return: The assign_ipv6_ip of this CreateVnicDetails.
+        :rtype: bool
+        """
+        return self._assign_ipv6_ip
+
+    @assign_ipv6_ip.setter
+    def assign_ipv6_ip(self, assign_ipv6_ip):
+        """
+        Sets the assign_ipv6_ip of this CreateVnicDetails.
+        Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled
+        subnet. Default: False. When provided you may optionally provide an IPv6 prefix
+        (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr`
+        is not provided then an IPv6 prefix is chosen
+        for you.
+
+
+        :param assign_ipv6_ip: The assign_ipv6_ip of this CreateVnicDetails.
+        :type: bool
+        """
+        self._assign_ipv6_ip = assign_ipv6_ip
 
     @property
     def assign_public_ip(self):
@@ -385,6 +431,36 @@ class CreateVnicDetails(object):
         :type: str
         """
         self._hostname_label = hostname_label
+
+    @property
+    def ipv6_address_ipv6_subnet_cidr_pair_details(self):
+        """
+        Gets the ipv6_address_ipv6_subnet_cidr_pair_details of this CreateVnicDetails.
+        A list of IPv6 prefix ranges from which the VNIC is assigned an IPv6 address.
+        You can provide only the prefix ranges from which OCI selects an available
+        address from the range. You can optionally choose to leave the prefix range empty
+        and instead provide the specific IPv6 address within that range to use.
+
+
+        :return: The ipv6_address_ipv6_subnet_cidr_pair_details of this CreateVnicDetails.
+        :rtype: list[oci.core.models.Ipv6AddressIpv6SubnetCidrPairDetails]
+        """
+        return self._ipv6_address_ipv6_subnet_cidr_pair_details
+
+    @ipv6_address_ipv6_subnet_cidr_pair_details.setter
+    def ipv6_address_ipv6_subnet_cidr_pair_details(self, ipv6_address_ipv6_subnet_cidr_pair_details):
+        """
+        Sets the ipv6_address_ipv6_subnet_cidr_pair_details of this CreateVnicDetails.
+        A list of IPv6 prefix ranges from which the VNIC is assigned an IPv6 address.
+        You can provide only the prefix ranges from which OCI selects an available
+        address from the range. You can optionally choose to leave the prefix range empty
+        and instead provide the specific IPv6 address within that range to use.
+
+
+        :param ipv6_address_ipv6_subnet_cidr_pair_details: The ipv6_address_ipv6_subnet_cidr_pair_details of this CreateVnicDetails.
+        :type: list[oci.core.models.Ipv6AddressIpv6SubnetCidrPairDetails]
+        """
+        self._ipv6_address_ipv6_subnet_cidr_pair_details = ipv6_address_ipv6_subnet_cidr_pair_details
 
     @property
     def nsg_ids(self):

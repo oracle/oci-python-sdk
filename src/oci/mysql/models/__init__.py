@@ -6,14 +6,7 @@
 
 from __future__ import absolute_import
 
-from .add_analytics_cluster_details import AddAnalyticsClusterDetails
 from .add_heat_wave_cluster_details import AddHeatWaveClusterDetails
-from .analytics_cluster import AnalyticsCluster
-from .analytics_cluster_memory_estimate import AnalyticsClusterMemoryEstimate
-from .analytics_cluster_node import AnalyticsClusterNode
-from .analytics_cluster_schema_memory_estimate import AnalyticsClusterSchemaMemoryEstimate
-from .analytics_cluster_summary import AnalyticsClusterSummary
-from .analytics_cluster_table_memory_estimate import AnalyticsClusterTableMemoryEstimate
 from .anonymous_transactions_handling import AnonymousTransactionsHandling
 from .assign_manual_uuid_handling import AssignManualUuidHandling
 from .assign_target_uuid_handling import AssignTargetUuidHandling
@@ -77,7 +70,6 @@ from .replica_summary import ReplicaSummary
 from .restart_db_system_details import RestartDbSystemDetails
 from .shape_summary import ShapeSummary
 from .stop_db_system_details import StopDbSystemDetails
-from .update_analytics_cluster_details import UpdateAnalyticsClusterDetails
 from .update_backup_details import UpdateBackupDetails
 from .update_backup_policy_details import UpdateBackupPolicyDetails
 from .update_channel_details import UpdateChannelDetails
@@ -101,14 +93,7 @@ from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for mysql services.
 mysql_type_mapping = {
-    "AddAnalyticsClusterDetails": AddAnalyticsClusterDetails,
     "AddHeatWaveClusterDetails": AddHeatWaveClusterDetails,
-    "AnalyticsCluster": AnalyticsCluster,
-    "AnalyticsClusterMemoryEstimate": AnalyticsClusterMemoryEstimate,
-    "AnalyticsClusterNode": AnalyticsClusterNode,
-    "AnalyticsClusterSchemaMemoryEstimate": AnalyticsClusterSchemaMemoryEstimate,
-    "AnalyticsClusterSummary": AnalyticsClusterSummary,
-    "AnalyticsClusterTableMemoryEstimate": AnalyticsClusterTableMemoryEstimate,
     "AnonymousTransactionsHandling": AnonymousTransactionsHandling,
     "AssignManualUuidHandling": AssignManualUuidHandling,
     "AssignTargetUuidHandling": AssignTargetUuidHandling,
@@ -172,7 +157,6 @@ mysql_type_mapping = {
     "RestartDbSystemDetails": RestartDbSystemDetails,
     "ShapeSummary": ShapeSummary,
     "StopDbSystemDetails": StopDbSystemDetails,
-    "UpdateAnalyticsClusterDetails": UpdateAnalyticsClusterDetails,
     "UpdateBackupDetails": UpdateBackupDetails,
     "UpdateBackupPolicyDetails": UpdateBackupPolicyDetails,
     "UpdateChannelDetails": UpdateChannelDetails,

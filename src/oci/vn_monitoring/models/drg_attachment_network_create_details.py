@@ -95,7 +95,7 @@ class DrgAttachmentNetworkCreateDetails(object):
     @property
     def id(self):
         """
-        **[Required]** Gets the id of this DrgAttachmentNetworkCreateDetails.
+        Gets the id of this DrgAttachmentNetworkCreateDetails.
         The `OCID`__ of the network attached to the DRG.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm

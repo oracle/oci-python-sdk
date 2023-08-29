@@ -40,7 +40,7 @@ class AmdRomeBmGpuLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
 
         :param type:
             The value to assign to the type property of this AmdRomeBmGpuLaunchInstancePlatformConfig.
-            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
+            Allowed values for this property are: "AMD_MILAN_BM", "AMD_MILAN_BM_GPU", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "GENERIC_BM", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
         :type type: str
 
         :param is_secure_boot_enabled:
@@ -80,6 +80,10 @@ class AmdRomeBmGpuLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
             The value to assign to the is_input_output_memory_management_unit_enabled property of this AmdRomeBmGpuLaunchInstancePlatformConfig.
         :type is_input_output_memory_management_unit_enabled: bool
 
+        :param config_map:
+            The value to assign to the config_map property of this AmdRomeBmGpuLaunchInstancePlatformConfig.
+        :type config_map: dict(str, str)
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -91,7 +95,8 @@ class AmdRomeBmGpuLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
             'is_symmetric_multi_threading_enabled': 'bool',
             'is_access_control_service_enabled': 'bool',
             'are_virtual_instructions_enabled': 'bool',
-            'is_input_output_memory_management_unit_enabled': 'bool'
+            'is_input_output_memory_management_unit_enabled': 'bool',
+            'config_map': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -104,7 +109,8 @@ class AmdRomeBmGpuLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
             'is_symmetric_multi_threading_enabled': 'isSymmetricMultiThreadingEnabled',
             'is_access_control_service_enabled': 'isAccessControlServiceEnabled',
             'are_virtual_instructions_enabled': 'areVirtualInstructionsEnabled',
-            'is_input_output_memory_management_unit_enabled': 'isInputOutputMemoryManagementUnitEnabled'
+            'is_input_output_memory_management_unit_enabled': 'isInputOutputMemoryManagementUnitEnabled',
+            'config_map': 'configMap'
         }
 
         self._type = None
@@ -117,6 +123,7 @@ class AmdRomeBmGpuLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
         self._is_access_control_service_enabled = None
         self._are_virtual_instructions_enabled = None
         self._is_input_output_memory_management_unit_enabled = None
+        self._config_map = None
         self._type = 'AMD_ROME_BM_GPU'
 
     @property
@@ -262,6 +269,30 @@ class AmdRomeBmGpuLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
         :type: bool
         """
         self._is_input_output_memory_management_unit_enabled = is_input_output_memory_management_unit_enabled
+
+    @property
+    def config_map(self):
+        """
+        Gets the config_map of this AmdRomeBmGpuLaunchInstancePlatformConfig.
+        Instance Platform Configuration Configuration Map for flexible setting input.
+
+
+        :return: The config_map of this AmdRomeBmGpuLaunchInstancePlatformConfig.
+        :rtype: dict(str, str)
+        """
+        return self._config_map
+
+    @config_map.setter
+    def config_map(self, config_map):
+        """
+        Sets the config_map of this AmdRomeBmGpuLaunchInstancePlatformConfig.
+        Instance Platform Configuration Configuration Map for flexible setting input.
+
+
+        :param config_map: The config_map of this AmdRomeBmGpuLaunchInstancePlatformConfig.
+        :type: dict(str, str)
+        """
+        self._config_map = config_map
 
     def __repr__(self):
         return formatted_flat_dict(self)

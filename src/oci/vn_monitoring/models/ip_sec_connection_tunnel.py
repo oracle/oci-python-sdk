@@ -185,6 +185,10 @@ class IPSecConnectionTunnel(object):
             The value to assign to the phase_two_details property of this IPSecConnectionTunnel.
         :type phase_two_details: oci.vn_monitoring.models.TunnelPhaseTwoDetails
 
+        :param associated_virtual_circuits:
+            The value to assign to the associated_virtual_circuits property of this IPSecConnectionTunnel.
+        :type associated_virtual_circuits: list[str]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -205,7 +209,8 @@ class IPSecConnectionTunnel(object):
             'dpd_mode': 'str',
             'dpd_timeout_in_sec': 'int',
             'phase_one_details': 'TunnelPhaseOneDetails',
-            'phase_two_details': 'TunnelPhaseTwoDetails'
+            'phase_two_details': 'TunnelPhaseTwoDetails',
+            'associated_virtual_circuits': 'list[str]'
         }
 
         self.attribute_map = {
@@ -227,7 +232,8 @@ class IPSecConnectionTunnel(object):
             'dpd_mode': 'dpdMode',
             'dpd_timeout_in_sec': 'dpdTimeoutInSec',
             'phase_one_details': 'phaseOneDetails',
-            'phase_two_details': 'phaseTwoDetails'
+            'phase_two_details': 'phaseTwoDetails',
+            'associated_virtual_circuits': 'associatedVirtualCircuits'
         }
 
         self._compartment_id = None
@@ -249,6 +255,7 @@ class IPSecConnectionTunnel(object):
         self._dpd_timeout_in_sec = None
         self._phase_one_details = None
         self._phase_two_details = None
+        self._associated_virtual_circuits = None
 
     @property
     def compartment_id(self):
@@ -803,6 +810,34 @@ class IPSecConnectionTunnel(object):
         :type: oci.vn_monitoring.models.TunnelPhaseTwoDetails
         """
         self._phase_two_details = phase_two_details
+
+    @property
+    def associated_virtual_circuits(self):
+        """
+        Gets the associated_virtual_circuits of this IPSecConnectionTunnel.
+        The list of virtual circuit `OCID`__s over which your network can reach this tunnel.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The associated_virtual_circuits of this IPSecConnectionTunnel.
+        :rtype: list[str]
+        """
+        return self._associated_virtual_circuits
+
+    @associated_virtual_circuits.setter
+    def associated_virtual_circuits(self, associated_virtual_circuits):
+        """
+        Sets the associated_virtual_circuits of this IPSecConnectionTunnel.
+        The list of virtual circuit `OCID`__s over which your network can reach this tunnel.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param associated_virtual_circuits: The associated_virtual_circuits of this IPSecConnectionTunnel.
+        :type: list[str]
+        """
+        self._associated_virtual_circuits = associated_virtual_circuits
 
     def __repr__(self):
         return formatted_flat_dict(self)

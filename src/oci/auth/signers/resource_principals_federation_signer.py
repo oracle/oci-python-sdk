@@ -29,7 +29,7 @@ class ResourcePrincipalsFederationSigner(SecurityTokenSigner):
                                                         path for resource principal token. If not set, use
                                                         DefaultRptPathProvider to determine the path
         """
-        self.resource_principal_token_path_provider = resource_principal_token_path_provider or DefaultRptPathProvider()
+        self.resource_principal_token_path_provider = resource_principal_token_path_provider or DefaultRptPathProvider(**kwargs)
         self.resource_principal_token_path = self.resource_principal_token_path_provider.get_path()
 
         self._reset_signers_lock = threading.Lock()

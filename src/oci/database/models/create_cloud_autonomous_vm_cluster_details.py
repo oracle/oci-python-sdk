@@ -370,9 +370,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
     def memory_per_oracle_compute_unit_in_gbs(self):
         """
         Gets the memory_per_oracle_compute_unit_in_gbs of this CreateCloudAutonomousVmClusterDetails.
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 
 
         :return: The memory_per_oracle_compute_unit_in_gbs of this CreateCloudAutonomousVmClusterDetails.
@@ -384,9 +382,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
     def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
         """
         Sets the memory_per_oracle_compute_unit_in_gbs of this CreateCloudAutonomousVmClusterDetails.
-        The amount of memory (in GBs) to be enabled per OCPU or ECPU. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 
 
         :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this CreateCloudAutonomousVmClusterDetails.
@@ -450,9 +446,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
     def compute_model(self):
         """
         Gets the compute_model of this CreateCloudAutonomousVmClusterDetails.
-        The compute model of the Cloud Autonomous VM Cluster. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The compute model of the Cloud Autonomous VM Cluster.
 
         Allowed values for this property are: "ECPU", "OCPU"
 
@@ -466,9 +460,7 @@ class CreateCloudAutonomousVmClusterDetails(object):
     def compute_model(self, compute_model):
         """
         Sets the compute_model of this CreateCloudAutonomousVmClusterDetails.
-        The compute model of the Cloud Autonomous VM Cluster. See `Compute Models in Autonomous Database on Dedicated Exadata Infrastructure`__ for more details.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak
+        The compute model of the Cloud Autonomous VM Cluster.
 
 
         :param compute_model: The compute_model of this CreateCloudAutonomousVmClusterDetails.

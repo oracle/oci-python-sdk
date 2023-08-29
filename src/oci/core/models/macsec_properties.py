@@ -60,22 +60,29 @@ class MacsecProperties(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type encryption_cipher: str
 
+        :param is_unprotected_traffic_allowed:
+            The value to assign to the is_unprotected_traffic_allowed property of this MacsecProperties.
+        :type is_unprotected_traffic_allowed: bool
+
         """
         self.swagger_types = {
             'state': 'str',
             'primary_key': 'MacsecKey',
-            'encryption_cipher': 'str'
+            'encryption_cipher': 'str',
+            'is_unprotected_traffic_allowed': 'bool'
         }
 
         self.attribute_map = {
             'state': 'state',
             'primary_key': 'primaryKey',
-            'encryption_cipher': 'encryptionCipher'
+            'encryption_cipher': 'encryptionCipher',
+            'is_unprotected_traffic_allowed': 'isUnprotectedTrafficAllowed'
         }
 
         self._state = None
         self._primary_key = None
         self._encryption_cipher = None
+        self._is_unprotected_traffic_allowed = None
 
     @property
     def state(self):
@@ -156,6 +163,30 @@ class MacsecProperties(object):
         if not value_allowed_none_or_none_sentinel(encryption_cipher, allowed_values):
             encryption_cipher = 'UNKNOWN_ENUM_VALUE'
         self._encryption_cipher = encryption_cipher
+
+    @property
+    def is_unprotected_traffic_allowed(self):
+        """
+        Gets the is_unprotected_traffic_allowed of this MacsecProperties.
+        Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+
+
+        :return: The is_unprotected_traffic_allowed of this MacsecProperties.
+        :rtype: bool
+        """
+        return self._is_unprotected_traffic_allowed
+
+    @is_unprotected_traffic_allowed.setter
+    def is_unprotected_traffic_allowed(self, is_unprotected_traffic_allowed):
+        """
+        Sets the is_unprotected_traffic_allowed of this MacsecProperties.
+        Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
+
+
+        :param is_unprotected_traffic_allowed: The is_unprotected_traffic_allowed of this MacsecProperties.
+        :type: bool
+        """
+        self._is_unprotected_traffic_allowed = is_unprotected_traffic_allowed
 
     def __repr__(self):
         return formatted_flat_dict(self)

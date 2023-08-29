@@ -1,9 +1,9 @@
-AnalyticsCluster
-================
+GgsDeployment
+=============
 
-.. currentmodule:: oci.mysql.models
+.. currentmodule:: oci.database_migration.models
 
-.. autoclass:: AnalyticsCluster
+.. autoclass:: GgsDeployment
     :show-inheritance:
     :special-members: __init__
     :members:
