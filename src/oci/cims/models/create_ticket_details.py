@@ -13,8 +13,6 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateTicketDetails(object):
     """
     Details relevant to the support ticket.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the severity property of a CreateTicketDetails.
@@ -29,6 +27,10 @@ class CreateTicketDetails(object):
     #: This constant has a value of "MEDIUM"
     SEVERITY_MEDIUM = "MEDIUM"
 
+    #: A constant which can be used with the severity property of a CreateTicketDetails.
+    #: This constant has a value of "LOW"
+    SEVERITY_LOW = "LOW"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateTicketDetails object with values from keyword arguments.
@@ -36,7 +38,7 @@ class CreateTicketDetails(object):
 
         :param severity:
             The value to assign to the severity property of this CreateTicketDetails.
-            Allowed values for this property are: "HIGHEST", "HIGH", "MEDIUM"
+            Allowed values for this property are: "HIGHEST", "HIGH", "MEDIUM", "LOW"
         :type severity: str
 
         :param resource_list:
@@ -84,7 +86,7 @@ class CreateTicketDetails(object):
         **[Required]** Gets the severity of this CreateTicketDetails.
         The severity of the support ticket.
 
-        Allowed values for this property are: "HIGHEST", "HIGH", "MEDIUM"
+        Allowed values for this property are: "HIGHEST", "HIGH", "MEDIUM", "LOW"
 
 
         :return: The severity of this CreateTicketDetails.
@@ -102,7 +104,7 @@ class CreateTicketDetails(object):
         :param severity: The severity of this CreateTicketDetails.
         :type: str
         """
-        allowed_values = ["HIGHEST", "HIGH", "MEDIUM"]
+        allowed_values = ["HIGHEST", "HIGH", "MEDIUM", "LOW"]
         if not value_allowed_none_or_none_sentinel(severity, allowed_values):
             raise ValueError(
                 "Invalid value for `severity`, must be None or one of {0}"
@@ -138,7 +140,7 @@ class CreateTicketDetails(object):
     def title(self):
         """
         **[Required]** Gets the title of this CreateTicketDetails.
-        The title of the support ticket.
+        The title of the support ticket. Avoid entering confidential information.
 
 
         :return: The title of this CreateTicketDetails.
@@ -150,7 +152,7 @@ class CreateTicketDetails(object):
     def title(self, title):
         """
         Sets the title of this CreateTicketDetails.
-        The title of the support ticket.
+        The title of the support ticket. Avoid entering confidential information.
 
 
         :param title: The title of this CreateTicketDetails.
@@ -162,7 +164,7 @@ class CreateTicketDetails(object):
     def description(self):
         """
         **[Required]** Gets the description of this CreateTicketDetails.
-        The description of the support ticket.
+        The description of the support ticket. Avoid entering confidential information.
 
 
         :return: The description of this CreateTicketDetails.
@@ -174,7 +176,7 @@ class CreateTicketDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateTicketDetails.
-        The description of the support ticket.
+        The description of the support ticket. Avoid entering confidential information.
 
 
         :param description: The description of this CreateTicketDetails.
@@ -186,8 +188,6 @@ class CreateTicketDetails(object):
     def contextual_data(self):
         """
         Gets the contextual_data of this CreateTicketDetails.
-        The context from where the ticket is getting created.
-
 
         :return: The contextual_data of this CreateTicketDetails.
         :rtype: oci.cims.models.ContextualData
@@ -198,8 +198,6 @@ class CreateTicketDetails(object):
     def contextual_data(self, contextual_data):
         """
         Sets the contextual_data of this CreateTicketDetails.
-        The context from where the ticket is getting created.
-
 
         :param contextual_data: The contextual_data of this CreateTicketDetails.
         :type: oci.cims.models.ContextualData

@@ -95,6 +95,14 @@ class Job(object):
     #: This constant has a value of "IMPORT_DATA_ASSET"
     JOB_TYPE_IMPORT_DATA_ASSET = "IMPORT_DATA_ASSET"
 
+    #: A constant which can be used with the job_type property of a Job.
+    #: This constant has a value of "CREATE_SCAN_PROXY"
+    JOB_TYPE_CREATE_SCAN_PROXY = "CREATE_SCAN_PROXY"
+
+    #: A constant which can be used with the job_type property of a Job.
+    #: This constant has a value of "ASYNC_EXPORT_GLOSSARY"
+    JOB_TYPE_ASYNC_EXPORT_GLOSSARY = "ASYNC_EXPORT_GLOSSARY"
+
     #: A constant which can be used with the schedule_type property of a Job.
     #: This constant has a value of "SCHEDULED"
     SCHEDULE_TYPE_SCHEDULED = "SCHEDULED"
@@ -140,7 +148,7 @@ class Job(object):
 
         :param job_type:
             The value to assign to the job_type property of this Job.
-            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type job_type: str
 
@@ -198,6 +206,10 @@ class Job(object):
             The value to assign to the data_asset_key property of this Job.
         :type data_asset_key: str
 
+        :param glossary_key:
+            The value to assign to the glossary_key property of this Job.
+        :type glossary_key: str
+
         :param error_code:
             The value to assign to the error_code property of this Job.
         :type error_code: str
@@ -233,6 +245,7 @@ class Job(object):
             'updated_by_id': 'str',
             'job_definition_name': 'str',
             'data_asset_key': 'str',
+            'glossary_key': 'str',
             'error_code': 'str',
             'error_message': 'str',
             'uri': 'str'
@@ -260,6 +273,7 @@ class Job(object):
             'updated_by_id': 'updatedById',
             'job_definition_name': 'jobDefinitionName',
             'data_asset_key': 'dataAssetKey',
+            'glossary_key': 'glossaryKey',
             'error_code': 'errorCode',
             'error_message': 'errorMessage',
             'uri': 'uri'
@@ -286,6 +300,7 @@ class Job(object):
         self._updated_by_id = None
         self._job_definition_name = None
         self._data_asset_key = None
+        self._glossary_key = None
         self._error_code = None
         self._error_message = None
         self._uri = None
@@ -482,7 +497,7 @@ class Job(object):
         Gets the job_type of this Job.
         Type of the job.
 
-        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -501,7 +516,7 @@ class Job(object):
         :param job_type: The job_type of this Job.
         :type: str
         """
-        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"]
+        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
         if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
             job_type = 'UNKNOWN_ENUM_VALUE'
         self._job_type = job_type
@@ -512,6 +527,7 @@ class Job(object):
         Gets the schedule_cron_expression of this Job.
         Interval on which the job will be run. Value is specified as a cron-supported time specification \"nickname\".
         The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+        For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
 
 
         :return: The schedule_cron_expression of this Job.
@@ -525,6 +541,7 @@ class Job(object):
         Sets the schedule_cron_expression of this Job.
         Interval on which the job will be run. Value is specified as a cron-supported time specification \"nickname\".
         The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+        For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
 
 
         :param schedule_cron_expression: The schedule_cron_expression of this Job.
@@ -841,6 +858,30 @@ class Job(object):
         :type: str
         """
         self._data_asset_key = data_asset_key
+
+    @property
+    def glossary_key(self):
+        """
+        Gets the glossary_key of this Job.
+        Unique key of the glossary to which this job applies.
+
+
+        :return: The glossary_key of this Job.
+        :rtype: str
+        """
+        return self._glossary_key
+
+    @glossary_key.setter
+    def glossary_key(self, glossary_key):
+        """
+        Sets the glossary_key of this Job.
+        Unique key of the glossary to which this job applies.
+
+
+        :param glossary_key: The glossary_key of this Job.
+        :type: str
+        """
+        self._glossary_key = glossary_key
 
     @property
     def error_code(self):

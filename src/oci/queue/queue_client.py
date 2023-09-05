@@ -20,7 +20,7 @@ missing = Sentinel("Missing")
 
 class QueueClient(object):
     """
-    A description of the Queue API
+    Use the Queue API to produce and consume messages, create queues, and manage related items. For more information, see [Queue](/iaas/Content/queue/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -113,17 +113,21 @@ class QueueClient(object):
 
     def delete_message(self, queue_id, message_receipt, **kwargs):
         """
-        Deletes from the queue the message represented by the receipt.
+        Deletes the message represented by the receipt from the queue.
+        You must use the `messages endpoint`__ to delete messages.
+        The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param str message_receipt: (required)
             The receipt of the message retrieved from a GetMessages call.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -214,16 +218,20 @@ class QueueClient(object):
     def delete_messages(self, queue_id, delete_messages_details, **kwargs):
         """
         Deletes multiple messages from the queue.
+        You must use the `messages endpoint`__ to delete messages.
+        The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param oci.queue.models.DeleteMessagesDetails delete_messages_details: (required)
             Details for the messages to delete.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -316,30 +324,40 @@ class QueueClient(object):
 
     def get_messages(self, queue_id, **kwargs):
         """
-        Consumes message from the queue.
+        Consumes messages from the queue.
+        You must use the `messages endpoint`__ to consume messages.
+        The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
+        GetMessages accepts optional channelFilter query parameter that can filter source channels of the messages.
+        When channelFilter is present, service will return available messages from the channel which ID exactly matched the filter.
+        When filter is not specified, messages will be returned from a random non-empty channel within a queue.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param int visibility_in_seconds: (optional)
-            If the visibilityInSeconds parameter is set, messages will be hidden for visibilityInSeconds seconds and won't be consumable by other consumers during that time.
-            If it isn't set it defaults to the value set at the queue level. The minimum is 0 and the maximum is 43,200 (12 hours).
-            Using a visibilityInSeconds of 0, effectively acts as a peek functionality.
-            Messages retrieved that way, aren't meant to be deleted because they will most likely be delivered to another consumer as their visibility won't change, but will still increase the delivery count by one.
+            If the `visibilityInSeconds` parameter is set, messages will be hidden for `visibilityInSeconds` seconds and won't be consumable by other consumers during that time.
+            If it isn't set it defaults to the value set at the queue level.
+
+            Using a `visibilityInSeconds` value of 0 effectively acts as a peek functionality.
+            Messages retrieved that way aren't meant to be deleted because they will most likely be delivered to another consumer as their visibility won't change, but will still increase the delivery count by one.
 
         :param int timeout_in_seconds: (optional)
-            If the timeoutInSeconds parameter isn't set or set to a value greater than zero, the request is using the long-polling mode and will only return when a message is available for consumption (it does not wait for limit messages but still only returns at-most limit messages) or after timeoutInSeconds seconds (in which case it will return an empty response) whichever comes first.
-            If the parameter is set to zero, the request is using the short-polling mode and immediately returns whether messages have been retrieved or not.
+            If the `timeoutInSeconds parameter` isn't set or it is set to a value greater than 0, the request is using the long-polling mode and will only return when a message is available for consumption (it does not wait for limit messages but still only returns at-most limit messages) or after `timeoutInSeconds` seconds (in which case it will return an empty response), whichever comes first.
+
+            If the parameter is set to 0, the request is using the short-polling mode and immediately returns whether messages have been retrieved or not.
             In same rare-cases a long-polling request could be interrupted (returned with empty response) before the end of the timeout.
-            The minimum is 0 (long polling disabled), the maximum is 30 seconds and default is 30 seconds.
 
         :param int limit: (optional)
             The limit parameter controls how many messages is returned at-most.
-            The default is 1, the minimum is 1 and the maximum is 32.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str channel_filter: (optional)
+            Optional parameter to filter the channels.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -373,7 +391,8 @@ class QueueClient(object):
             "visibility_in_seconds",
             "timeout_in_seconds",
             "limit",
-            "opc_request_id"
+            "opc_request_id",
+            "channel_filter"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -393,7 +412,8 @@ class QueueClient(object):
         query_params = {
             "visibilityInSeconds": kwargs.get("visibility_in_seconds", missing),
             "timeoutInSeconds": kwargs.get("timeout_in_seconds", missing),
-            "limit": kwargs.get("limit", missing)
+            "limit": kwargs.get("limit", missing),
+            "channelFilter": kwargs.get("channel_filter", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -441,13 +461,20 @@ class QueueClient(object):
     def get_stats(self, queue_id, **kwargs):
         """
         Gets the statistics for the queue and its dead letter queue.
+        You must use the `messages endpoint`__ to get a queue's statistics.
+        The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str channel_id: (optional)
+            Id to specify channel.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -478,7 +505,8 @@ class QueueClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "channel_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -494,6 +522,11 @@ class QueueClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "channelId": kwargs.get("channel_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -518,6 +551,7 @@ class QueueClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="QueueStats",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -529,6 +563,7 @@ class QueueClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="QueueStats",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -536,19 +571,149 @@ class QueueClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
-    def put_messages(self, queue_id, put_messages_details, **kwargs):
+    def list_channels(self, queue_id, **kwargs):
         """
-        Puts messages in the queue
+        Gets the list of IDs of non-empty channels.
+        It will return an approximate list of IDs of non-empty channels. That information is based on the queue level statistics.
+        API supports optional channelFilter parameter which will filter the returned results according to the specified filter.
+        List of channel IDs is approximate, because statistics is refreshed once per-second, and that list represents a snapshot of the past information. API is paginated.
 
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str channel_filter: (optional)
+            Optional parameter to filter the channels.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.queue.models.ChannelCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/queue/list_channels.py.html>`__ to see an example of how to use list_channels API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['queueId']
+        resource_path = "/queues/{queueId}/channels"
+        method = "GET"
+        operation_name = "list_channels"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/queue/20210201/ChannelCollection/ListChannels"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "limit",
+            "page",
+            "channel_filter"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_channels got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "queueId": queue_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "channelFilter": kwargs.get("channel_filter", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ChannelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ChannelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def put_messages(self, queue_id, put_messages_details, **kwargs):
+        """
+        Puts messages into the queue.
+        You must use the `messages endpoint`__ to produce messages.
+        The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
+
+
+        :param str queue_id: (required)
+            The unique queue identifier.
 
         :param oci.queue.models.PutMessagesDetails put_messages_details: (required)
             Details for the messages to publish.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -640,10 +805,14 @@ class QueueClient(object):
     def update_message(self, queue_id, message_receipt, update_message_details, **kwargs):
         """
         Updates the visibility of the message represented by the receipt.
+        You must use the `messages endpoint`__ to update messages.
+        The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param str message_receipt: (required)
             The receipt of the message retrieved from a GetMessages call.
@@ -652,7 +821,7 @@ class QueueClient(object):
             Details for the message to update.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -747,16 +916,20 @@ class QueueClient(object):
     def update_messages(self, queue_id, update_messages_details, **kwargs):
         """
         Updates multiple messages in the queue.
+        You must use the `messages endpoint`__ to update messages.
+        The messages endpoint may be different for different queues. Use :func:`get_queue` to find the queue's `messagesEndpoint`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint
 
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param oci.queue.models.UpdateMessagesDetails update_messages_details: (required)
             Details for the messages to update.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

@@ -12,9 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateItemDetails(object):
     """
-    Details for udpating an item.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
+    Details for updating an item.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +56,7 @@ class UpdateItemDetails(object):
     def type(self):
         """
         Gets the type of this UpdateItemDetails.
-        The type of the item.
+        The type of the ticket.
 
 
         :return: The type of this UpdateItemDetails.
@@ -70,7 +68,7 @@ class UpdateItemDetails(object):
     def type(self, type):
         """
         Sets the type of this UpdateItemDetails.
-        The type of the item.
+        The type of the ticket.
 
 
         :param type: The type of this UpdateItemDetails.

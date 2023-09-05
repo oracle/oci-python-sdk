@@ -4,6 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.112.0 - 2023-09-05
+====================
+
+Added
+-----
+* Support for queue channels in the Queue Service
+* Support for entity lineage retrieval and asynchronous glossary export in the Data Catalog service
+* Support for filtering and sorting while listing work requests in the Container Instances service
+* Support for the ability to create support requests for various support ticket types (TECH, LIMIT, ACCOUNT) in the Customer Incident Management Service
+* Endpoint changed from https://incidentmanagement.{region}.{domainAndTopLevelDomain} to https://incidentmanagement.{region}.oci.{domainAndTopLevelDomain} (e.g. https://incidentmanagement.us-phoenix-1.oraclecloud.com to https://incidentmanagement.us-phoenix-1.oci.oraclecloud.com) in the Customer Incident Management Service
+ 
+Breaking
+--------
+* The models `UserClient` and `UserClientCompositeOperations` were removed in the Customer Incident Management Service
+* The parameter `availability_domain` was removed from models `Resource` and `CreateResourceDetails` in the Customer Incident Management Service
+* The constants `REGION_DEV`, `REGION_SEA`, `REGION_INTEG_NEXT`, `REGION_INTEG_STABLE`, `REGION_PHX`, `REGION_IAD`, `REGION_FRA`, `REGION_EU_FRANKFURT_1`, `REGION_LHR`, `REGION_YYZ`, `REGION_NRT`, `REGION_ICN`, `REGION_BOM`, `REGION_GRU`, `REGION_SYD`, `REGION_ZRH`, `REGION_JED`, `REGION_AMS`, `REGION_KIX`, `REGION_MEL`, `REGION_YUL`, `REGION_HYD`, `REGION_YNY` were removed from the models `Resource` and `CreateResourceDetails` in the Customer Incident Management Service
+* The constants `AVAILABILITY_DOMAIN_DEV_1`, `AVAILABILITY_DOMAIN_DEV_2`, `AVAILABILITY_DOMAIN_DEV_3`, `AVAILABILITY_DOMAIN_INTEG_NEXT_1`, `AVAILABILITY_DOMAIN_INTEG_STABLE_1`, `AVAILABILITY_DOMAIN_SEA_AD_1`, `AVAILABILITY_DOMAIN_SEA_AD_2`, `AVAILABILITY_DOMAIN_SEA_AD_3`, `AVAILABILITY_DOMAIN_PHX_AD_1`, `AVAILABILITY_DOMAIN_PHX_AD_2`, `AVAILABILITY_DOMAIN_PHX_AD_3`, `AVAILABILITY_DOMAIN_US_ASHBURN_AD_1`, `AVAILABILITY_DOMAIN_US_ASHBURN_AD_2`, `AVAILABILITY_DOMAIN_US_ASHBURN_AD_3`, `AVAILABILITY_DOMAIN_US_ASHBURN_AD_4`, `AVAILABILITY_DOMAIN_EU_FRANKFURT_1_AD_1`, `AVAILABILITY_DOMAIN_EU_FRANKFURT_1_AD_2`, `AVAILABILITY_DOMAIN_EU_FRANKFURT_1_AD_3`, `AVAILABILITY_DOMAIN_UK_LONDON_1_AD_1`, `AVAILABILITY_DOMAIN_UK_LONDON_1_AD_2`, `AVAILABILITY_DOMAIN_UK_LONDON_1_AD_3`, `AVAILABILITY_DOMAIN_CA_TORONTO_1_AD_1`, `AVAILABILITY_DOMAIN_AP_TOKYO_1_AD_1`, `AVAILABILITY_DOMAIN_AP_SEOUL_1_AD_1`, `AVAILABILITY_DOMAIN_AP_MUMBAI_1_AD_1`, `AVAILABILITY_DOMAIN_SA_SAOPAULO_1_AD_1`, `AVAILABILITY_DOMAIN_ME_JEDDAH_1_AD_1`, `AVAILABILITY_DOMAIN_AP_OSAKA_1_AD_1`, `AVAILABILITY_DOMAIN_AP_SYDNEY_1_AD_1`, `AVAILABILITY_DOMAIN_EU_ZURICH_1_AD_1`, `AVAILABILITY_DOMAIN_EU_AMSTERDAM_1_AD_1`, `AVAILABILITY_DOMAIN_AP_MELBOURNE_1_AD_1`, `AVAILABILITY_DOMAIN_CA_MONTREAL_1_AD_1`, `AVAILABILITY_DOMAIN_AP_HYDERABAD_1_AD_1`, `AVAILABILITY_DOMAIN_AP_CHUNCHEON_1_AD_1`, `AVAILABILITY_DOMAIN_NO_AD` were removed from the models `Resource` and `CreateResourceDetails` in the Customer Incident Management Service
+* The parameter `region` was modified to accept any string in the models `Resource` and `CreateResourceDetails` in the Customer Incident Management Service
+* The parameter `country` was removed from the model `CreateUserDetails` in the Customer Incident Management Service
+* The parameter `source` was removed from the operation `get_status` in `IncidentClient` the Customer Incident Management Service
+ 
+====================
 2.111.0 - 2023-08-29
 ====================
 
@@ -20,6 +42,7 @@ Added
 * Support for additional parameters on dynamic routing gateway create and update operations in the Network Monitoring service
 * Support for assigning an IPv6 address to a compute instance during instance launch or secondary VNIC attach in the Compute service
 * Support for Resource Principals v3.0
+* Support for OKE Workload Auth Provider
  
 Breaking
 --------

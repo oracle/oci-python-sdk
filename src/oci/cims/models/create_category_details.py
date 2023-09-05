@@ -13,8 +13,6 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateCategoryDetails(object):
     """
     Details for creating the category of the support ticket.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -41,7 +39,7 @@ class CreateCategoryDetails(object):
     def category_key(self):
         """
         Gets the category_key of this CreateCategoryDetails.
-        Unique identifier for the category.
+        Unique identifier for the service category.
 
 
         :return: The category_key of this CreateCategoryDetails.
@@ -53,7 +51,7 @@ class CreateCategoryDetails(object):
     def category_key(self, category_key):
         """
         Sets the category_key of this CreateCategoryDetails.
-        Unique identifier for the category.
+        Unique identifier for the service category.
 
 
         :param category_key: The category_key of this CreateCategoryDetails.

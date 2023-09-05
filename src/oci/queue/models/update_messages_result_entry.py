@@ -62,7 +62,7 @@ class UpdateMessagesResultEntry(object):
     def id(self):
         """
         Gets the id of this UpdateMessagesResultEntry.
-        The id of the message that's been updated.
+        The ID of the message that's been updated.
 
 
         :return: The id of this UpdateMessagesResultEntry.
@@ -74,7 +74,7 @@ class UpdateMessagesResultEntry(object):
     def id(self, id):
         """
         Sets the id of this UpdateMessagesResultEntry.
-        The id of the message that's been updated.
+        The ID of the message that's been updated.
 
 
         :param id: The id of this UpdateMessagesResultEntry.
@@ -86,7 +86,11 @@ class UpdateMessagesResultEntry(object):
     def visible_after(self):
         """
         Gets the visible_after of this UpdateMessagesResultEntry.
-        The time after which the message will be visible to other consumers. An RFC3339 formatted datetime string
+        The time after which the message will be visible to other consumers, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The visible_after of this UpdateMessagesResultEntry.
@@ -98,7 +102,11 @@ class UpdateMessagesResultEntry(object):
     def visible_after(self, visible_after):
         """
         Sets the visible_after of this UpdateMessagesResultEntry.
-        The time after which the message will be visible to other consumers. An RFC3339 formatted datetime string
+        The time after which the message will be visible to other consumers, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param visible_after: The visible_after of this UpdateMessagesResultEntry.

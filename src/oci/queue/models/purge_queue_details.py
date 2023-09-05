@@ -37,25 +37,32 @@ class PurgeQueueDetails(object):
             Allowed values for this property are: "NORMAL", "DLQ", "BOTH"
         :type purge_type: str
 
+        :param channel_ids:
+            The value to assign to the channel_ids property of this PurgeQueueDetails.
+        :type channel_ids: list[str]
+
         """
         self.swagger_types = {
-            'purge_type': 'str'
+            'purge_type': 'str',
+            'channel_ids': 'list[str]'
         }
 
         self.attribute_map = {
-            'purge_type': 'purgeType'
+            'purge_type': 'purgeType',
+            'channel_ids': 'channelIds'
         }
 
         self._purge_type = None
+        self._channel_ids = None
 
     @property
     def purge_type(self):
         """
         **[Required]** Gets the purge_type of this PurgeQueueDetails.
         Type of the purge to perform:
-        - NORMAL - purge only normal queue
-        - DLQ - purge only DLQ
-        - BOTH - purge both normal queue and DLQ
+        - NORMAL - purge only the normal queue
+        - DLQ - purge only the dead letter queue
+        - BOTH - purge both the normal queue and the dead letter queue
 
         Allowed values for this property are: "NORMAL", "DLQ", "BOTH"
 
@@ -70,9 +77,9 @@ class PurgeQueueDetails(object):
         """
         Sets the purge_type of this PurgeQueueDetails.
         Type of the purge to perform:
-        - NORMAL - purge only normal queue
-        - DLQ - purge only DLQ
-        - BOTH - purge both normal queue and DLQ
+        - NORMAL - purge only the normal queue
+        - DLQ - purge only the dead letter queue
+        - BOTH - purge both the normal queue and the dead letter queue
 
 
         :param purge_type: The purge_type of this PurgeQueueDetails.
@@ -85,6 +92,34 @@ class PurgeQueueDetails(object):
                 .format(allowed_values)
             )
         self._purge_type = purge_type
+
+    @property
+    def channel_ids(self):
+        """
+        Gets the channel_ids of this PurgeQueueDetails.
+        Optional parameter to specify the destination of purge operation.
+        If the channel ID is specified, the purge operation will delete all the messages in the specific channels.
+        If the channel ID is not specified, the purge operation will delete all the messages in the queue and in the child channels.
+
+
+        :return: The channel_ids of this PurgeQueueDetails.
+        :rtype: list[str]
+        """
+        return self._channel_ids
+
+    @channel_ids.setter
+    def channel_ids(self, channel_ids):
+        """
+        Sets the channel_ids of this PurgeQueueDetails.
+        Optional parameter to specify the destination of purge operation.
+        If the channel ID is specified, the purge operation will delete all the messages in the specific channels.
+        If the channel ID is not specified, the purge operation will delete all the messages in the queue and in the child channels.
+
+
+        :param channel_ids: The channel_ids of this PurgeQueueDetails.
+        :type: list[str]
+        """
+        self._channel_ids = channel_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

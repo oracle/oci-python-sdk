@@ -32,6 +32,10 @@ class UpdateJobDefinitionDetails(object):
             The value to assign to the data_asset_key property of this UpdateJobDefinitionDetails.
         :type data_asset_key: str
 
+        :param glossary_key:
+            The value to assign to the glossary_key property of this UpdateJobDefinitionDetails.
+        :type glossary_key: str
+
         :param description:
             The value to assign to the description property of this UpdateJobDefinitionDetails.
         :type description: str
@@ -57,6 +61,7 @@ class UpdateJobDefinitionDetails(object):
             'display_name': 'str',
             'is_incremental': 'bool',
             'data_asset_key': 'str',
+            'glossary_key': 'str',
             'description': 'str',
             'connection_key': 'str',
             'is_sample_data_extracted': 'bool',
@@ -68,6 +73,7 @@ class UpdateJobDefinitionDetails(object):
             'display_name': 'displayName',
             'is_incremental': 'isIncremental',
             'data_asset_key': 'dataAssetKey',
+            'glossary_key': 'glossaryKey',
             'description': 'description',
             'connection_key': 'connectionKey',
             'is_sample_data_extracted': 'isSampleDataExtracted',
@@ -78,6 +84,7 @@ class UpdateJobDefinitionDetails(object):
         self._display_name = None
         self._is_incremental = None
         self._data_asset_key = None
+        self._glossary_key = None
         self._description = None
         self._connection_key = None
         self._is_sample_data_extracted = None
@@ -157,6 +164,30 @@ class UpdateJobDefinitionDetails(object):
         :type: str
         """
         self._data_asset_key = data_asset_key
+
+    @property
+    def glossary_key(self):
+        """
+        Gets the glossary_key of this UpdateJobDefinitionDetails.
+        Unique key of the glossary to which this job applies.
+
+
+        :return: The glossary_key of this UpdateJobDefinitionDetails.
+        :rtype: str
+        """
+        return self._glossary_key
+
+    @glossary_key.setter
+    def glossary_key(self, glossary_key):
+        """
+        Sets the glossary_key of this UpdateJobDefinitionDetails.
+        Unique key of the glossary to which this job applies.
+
+
+        :param glossary_key: The glossary_key of this UpdateJobDefinitionDetails.
+        :type: str
+        """
+        self._glossary_key = glossary_key
 
     @property
     def description(self):

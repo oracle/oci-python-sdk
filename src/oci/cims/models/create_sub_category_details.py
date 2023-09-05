@@ -12,9 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateSubCategoryDetails(object):
     """
-    Details for creating the subcategory of the support ticket.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
+    Details for creating the service subcategory of the support ticket.
     """
 
     def __init__(self, **kwargs):
@@ -41,7 +39,7 @@ class CreateSubCategoryDetails(object):
     def sub_category_key(self):
         """
         Gets the sub_category_key of this CreateSubCategoryDetails.
-        Unique identifier for the subcategory.
+        Unique identifier for the service subcategory.
 
 
         :return: The sub_category_key of this CreateSubCategoryDetails.
@@ -53,7 +51,7 @@ class CreateSubCategoryDetails(object):
     def sub_category_key(self, sub_category_key):
         """
         Sets the sub_category_key of this CreateSubCategoryDetails.
-        Unique identifier for the subcategory.
+        Unique identifier for the service subcategory.
 
 
         :param sub_category_key: The sub_category_key of this CreateSubCategoryDetails.

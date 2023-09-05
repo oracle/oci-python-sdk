@@ -91,6 +91,10 @@ class Attribute(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this Attribute.
+        :type lifecycle_details: str
+
         :param time_created:
             The value to assign to the time_created property of this Attribute.
         :type time_created: datetime
@@ -213,6 +217,7 @@ class Attribute(object):
             'description': 'str',
             'entity_key': 'str',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'created_by_id': 'str',
@@ -250,6 +255,7 @@ class Attribute(object):
             'description': 'description',
             'entity_key': 'entityKey',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'created_by_id': 'createdById',
@@ -286,6 +292,7 @@ class Attribute(object):
         self._description = None
         self._entity_key = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
         self._created_by_id = None
@@ -466,6 +473,32 @@ class Attribute(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this Attribute.
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+        see service documentation for details.
+
+
+        :return: The lifecycle_details of this Attribute.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this Attribute.
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+        see service documentation for details.
+
+
+        :param lifecycle_details: The lifecycle_details of this Attribute.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def time_created(self):

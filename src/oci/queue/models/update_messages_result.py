@@ -77,7 +77,7 @@ class UpdateMessagesResult(object):
     def client_failures(self):
         """
         **[Required]** Gets the client_failures of this UpdateMessagesResult.
-        The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid visibilityInSeconds.
+        The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid `visibilityInSeconds`.
 
 
         :return: The client_failures of this UpdateMessagesResult.
@@ -89,7 +89,7 @@ class UpdateMessagesResult(object):
     def client_failures(self, client_failures):
         """
         Sets the client_failures of this UpdateMessagesResult.
-        The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid visibilityInSeconds.
+        The number of messages that failed to be updated in the queue because of a client failure such as an invalid receipt or invalid `visibilityInSeconds`.
 
 
         :param client_failures: The client_failures of this UpdateMessagesResult.

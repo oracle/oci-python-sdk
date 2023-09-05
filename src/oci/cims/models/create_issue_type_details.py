@@ -13,8 +13,6 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateIssueTypeDetails(object):
     """
     Details for creating the issue type of the support ticket.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):

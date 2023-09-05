@@ -40,13 +40,23 @@ class IncidentResourceType(object):
             The value to assign to the service_category_list property of this IncidentResourceType.
         :type service_category_list: list[oci.cims.models.ServiceCategory]
 
+        :param service:
+            The value to assign to the service property of this IncidentResourceType.
+        :type service: dict(str, str)
+
+        :param service_categories:
+            The value to assign to the service_categories property of this IncidentResourceType.
+        :type service_categories: list[oci.cims.models.ServiceCategories]
+
         """
         self.swagger_types = {
             'resource_type_key': 'str',
             'name': 'str',
             'label': 'str',
             'description': 'str',
-            'service_category_list': 'list[ServiceCategory]'
+            'service_category_list': 'list[ServiceCategory]',
+            'service': 'dict(str, str)',
+            'service_categories': 'list[ServiceCategories]'
         }
 
         self.attribute_map = {
@@ -54,7 +64,9 @@ class IncidentResourceType(object):
             'name': 'name',
             'label': 'label',
             'description': 'description',
-            'service_category_list': 'serviceCategoryList'
+            'service_category_list': 'serviceCategoryList',
+            'service': 'service',
+            'service_categories': 'serviceCategories'
         }
 
         self._resource_type_key = None
@@ -62,12 +74,14 @@ class IncidentResourceType(object):
         self._label = None
         self._description = None
         self._service_category_list = None
+        self._service = None
+        self._service_categories = None
 
     @property
     def resource_type_key(self):
         """
         Gets the resource_type_key of this IncidentResourceType.
-        Unique identifier of the resource.
+        A unique identifier for the resource.
 
 
         :return: The resource_type_key of this IncidentResourceType.
@@ -79,7 +93,7 @@ class IncidentResourceType(object):
     def resource_type_key(self, resource_type_key):
         """
         Sets the resource_type_key of this IncidentResourceType.
-        Unique identifier of the resource.
+        A unique identifier for the resource.
 
 
         :param resource_type_key: The resource_type_key of this IncidentResourceType.
@@ -182,6 +196,54 @@ class IncidentResourceType(object):
         :type: list[oci.cims.models.ServiceCategory]
         """
         self._service_category_list = service_category_list
+
+    @property
+    def service(self):
+        """
+        Gets the service of this IncidentResourceType.
+        The map of services for MOS Taxonomy.
+
+
+        :return: The service of this IncidentResourceType.
+        :rtype: dict(str, str)
+        """
+        return self._service
+
+    @service.setter
+    def service(self, service):
+        """
+        Sets the service of this IncidentResourceType.
+        The map of services for MOS Taxonomy.
+
+
+        :param service: The service of this IncidentResourceType.
+        :type: dict(str, str)
+        """
+        self._service = service
+
+    @property
+    def service_categories(self):
+        """
+        Gets the service_categories of this IncidentResourceType.
+        The service categories list for MOS Taxonomy.
+
+
+        :return: The service_categories of this IncidentResourceType.
+        :rtype: list[oci.cims.models.ServiceCategories]
+        """
+        return self._service_categories
+
+    @service_categories.setter
+    def service_categories(self, service_categories):
+        """
+        Sets the service_categories of this IncidentResourceType.
+        The service categories list for MOS Taxonomy.
+
+
+        :param service_categories: The service_categories of this IncidentResourceType.
+        :type: list[oci.cims.models.ServiceCategories]
+        """
+        self._service_categories = service_categories
 
     def __repr__(self):
         return formatted_flat_dict(self)

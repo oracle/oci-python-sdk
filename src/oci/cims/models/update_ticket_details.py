@@ -13,8 +13,6 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateTicketDetails(object):
     """
     Details about the ticket updated.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):

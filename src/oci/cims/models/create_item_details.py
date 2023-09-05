@@ -12,9 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateItemDetails(object):
     """
-    Details gathered during item creation.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
+    Details gathered during ticket creation.
     """
 
     def __init__(self, **kwargs):
@@ -24,6 +22,7 @@ class CreateItemDetails(object):
 
         * :class:`~oci.cims.models.CreateTechSupportItemDetails`
         * :class:`~oci.cims.models.CreateLimitItemDetails`
+        * :class:`~oci.cims.models.CreateAccountItemDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -83,6 +82,9 @@ class CreateItemDetails(object):
 
         if type == 'limit':
             return 'CreateLimitItemDetails'
+
+        if type == 'account':
+            return 'CreateAccountItemDetails'
         else:
             return 'CreateItemDetails'
 
@@ -90,7 +92,7 @@ class CreateItemDetails(object):
     def type(self):
         """
         Gets the type of this CreateItemDetails.
-        The type of the item.
+        The type of the ticket.
 
 
         :return: The type of this CreateItemDetails.
@@ -102,7 +104,7 @@ class CreateItemDetails(object):
     def type(self, type):
         """
         Sets the type of this CreateItemDetails.
-        The type of the item.
+        The type of the ticket.
 
 
         :param type: The type of this CreateItemDetails.
@@ -174,7 +176,7 @@ class CreateItemDetails(object):
     def name(self):
         """
         Gets the name of this CreateItemDetails.
-        The display name of the item.
+        The display name of the ticket. Avoid entering confidential information.
 
 
         :return: The name of this CreateItemDetails.
@@ -186,7 +188,7 @@ class CreateItemDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateItemDetails.
-        The display name of the item.
+        The display name of the ticket. Avoid entering confidential information.
 
 
         :param name: The name of this CreateItemDetails.

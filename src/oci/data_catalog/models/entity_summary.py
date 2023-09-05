@@ -136,6 +136,10 @@ class EntitySummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this EntitySummary.
+        :type lifecycle_details: str
+
         :param properties:
             The value to assign to the properties property of this EntitySummary.
         :type properties: dict(str, dict(str, str))
@@ -162,6 +166,7 @@ class EntitySummary(object):
             'uri': 'str',
             'object_storage_url': 'str',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
 
@@ -186,6 +191,7 @@ class EntitySummary(object):
             'uri': 'uri',
             'object_storage_url': 'objectStorageUrl',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'properties': 'properties'
         }
 
@@ -209,6 +215,7 @@ class EntitySummary(object):
         self._uri = None
         self._object_storage_url = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._properties = None
 
     @property
@@ -710,6 +717,32 @@ class EntitySummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this EntitySummary.
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+        see service documentation for details.
+
+
+        :return: The lifecycle_details of this EntitySummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this EntitySummary.
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+        see service documentation for details.
+
+
+        :param lifecycle_details: The lifecycle_details of this EntitySummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def properties(self):

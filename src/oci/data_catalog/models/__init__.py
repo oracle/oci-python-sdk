@@ -6,6 +6,10 @@
 
 from __future__ import absolute_import
 
+from .asynchronous_export_glossary_details import AsynchronousExportGlossaryDetails
+from .asynchronous_export_glossary_result import AsynchronousExportGlossaryResult
+from .asynchronous_export_request_details import AsynchronousExportRequestDetails
+from .asynchronous_export_result import AsynchronousExportResult
 from .attach_catalog_private_endpoint_details import AttachCatalogPrivateEndpointDetails
 from .attribute import Attribute
 from .attribute_collection import AttributeCollection
@@ -65,6 +69,7 @@ from .derived_logical_entities import DerivedLogicalEntities
 from .detach_catalog_private_endpoint_details import DetachCatalogPrivateEndpointDetails
 from .entity import Entity
 from .entity_collection import EntityCollection
+from .entity_lineage import EntityLineage
 from .entity_summary import EntitySummary
 from .entity_tag import EntityTag
 from .entity_tag_collection import EntityTagCollection
@@ -77,6 +82,7 @@ from .faceted_search_date_filter_request import FacetedSearchDateFilterRequest
 from .faceted_search_filter_request import FacetedSearchFilterRequest
 from .faceted_search_sort_request import FacetedSearchSortRequest
 from .faceted_search_string_filter_request import FacetedSearchStringFilterRequest
+from .fetch_entity_lineage_details import FetchEntityLineageDetails
 from .folder import Folder
 from .folder_collection import FolderCollection
 from .folder_summary import FolderSummary
@@ -109,12 +115,17 @@ from .job_metric import JobMetric
 from .job_metric_collection import JobMetricCollection
 from .job_metric_summary import JobMetricSummary
 from .job_summary import JobSummary
+from .lineage_object import LineageObject
+from .lineage_relationship import LineageRelationship
 from .metastore import Metastore
 from .metastore_summary import MetastoreSummary
 from .namespace import Namespace
 from .namespace_collection import NamespaceCollection
 from .namespace_summary import NamespaceSummary
+from .object_lineage import ObjectLineage
+from .object_lineage_request_details import ObjectLineageRequestDetails
 from .object_relationship import ObjectRelationship
+from .object_storage_object_reference import ObjectStorageObjectReference
 from .parse_connection_details import ParseConnectionDetails
 from .pattern import Pattern
 from .pattern_collection import PatternCollection
@@ -172,6 +183,10 @@ from .work_request_resource import WorkRequestResource
 
 # Maps type names to classes for data_catalog services.
 data_catalog_type_mapping = {
+    "AsynchronousExportGlossaryDetails": AsynchronousExportGlossaryDetails,
+    "AsynchronousExportGlossaryResult": AsynchronousExportGlossaryResult,
+    "AsynchronousExportRequestDetails": AsynchronousExportRequestDetails,
+    "AsynchronousExportResult": AsynchronousExportResult,
     "AttachCatalogPrivateEndpointDetails": AttachCatalogPrivateEndpointDetails,
     "Attribute": Attribute,
     "AttributeCollection": AttributeCollection,
@@ -231,6 +246,7 @@ data_catalog_type_mapping = {
     "DetachCatalogPrivateEndpointDetails": DetachCatalogPrivateEndpointDetails,
     "Entity": Entity,
     "EntityCollection": EntityCollection,
+    "EntityLineage": EntityLineage,
     "EntitySummary": EntitySummary,
     "EntityTag": EntityTag,
     "EntityTagCollection": EntityTagCollection,
@@ -243,6 +259,7 @@ data_catalog_type_mapping = {
     "FacetedSearchFilterRequest": FacetedSearchFilterRequest,
     "FacetedSearchSortRequest": FacetedSearchSortRequest,
     "FacetedSearchStringFilterRequest": FacetedSearchStringFilterRequest,
+    "FetchEntityLineageDetails": FetchEntityLineageDetails,
     "Folder": Folder,
     "FolderCollection": FolderCollection,
     "FolderSummary": FolderSummary,
@@ -275,12 +292,17 @@ data_catalog_type_mapping = {
     "JobMetricCollection": JobMetricCollection,
     "JobMetricSummary": JobMetricSummary,
     "JobSummary": JobSummary,
+    "LineageObject": LineageObject,
+    "LineageRelationship": LineageRelationship,
     "Metastore": Metastore,
     "MetastoreSummary": MetastoreSummary,
     "Namespace": Namespace,
     "NamespaceCollection": NamespaceCollection,
     "NamespaceSummary": NamespaceSummary,
+    "ObjectLineage": ObjectLineage,
+    "ObjectLineageRequestDetails": ObjectLineageRequestDetails,
     "ObjectRelationship": ObjectRelationship,
+    "ObjectStorageObjectReference": ObjectStorageObjectReference,
     "ParseConnectionDetails": ParseConnectionDetails,
     "Pattern": Pattern,
     "PatternCollection": PatternCollection,

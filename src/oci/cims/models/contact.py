@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Contact(object):
     """
-    Contact details for the customer.
+    Contact details for the customer. Avoid entering confidential information.
     """
 
     #: A constant which can be used with the contact_type property of a Contact.
@@ -48,6 +48,10 @@ class Contact(object):
             The value to assign to the contact_email property of this Contact.
         :type contact_email: str
 
+        :param email:
+            The value to assign to the email property of this Contact.
+        :type email: str
+
         :param contact_phone:
             The value to assign to the contact_phone property of this Contact.
         :type contact_phone: str
@@ -62,6 +66,7 @@ class Contact(object):
         self.swagger_types = {
             'contact_name': 'str',
             'contact_email': 'str',
+            'email': 'str',
             'contact_phone': 'str',
             'contact_type': 'str'
         }
@@ -69,12 +74,14 @@ class Contact(object):
         self.attribute_map = {
             'contact_name': 'contactName',
             'contact_email': 'contactEmail',
+            'email': 'email',
             'contact_phone': 'contactPhone',
             'contact_type': 'contactType'
         }
 
         self._contact_name = None
         self._contact_email = None
+        self._email = None
         self._contact_phone = None
         self._contact_type = None
 
@@ -125,6 +132,30 @@ class Contact(object):
         :type: str
         """
         self._contact_email = contact_email
+
+    @property
+    def email(self):
+        """
+        Gets the email of this Contact.
+        The email of the contact person.
+
+
+        :return: The email of this Contact.
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """
+        Sets the email of this Contact.
+        The email of the contact person.
+
+
+        :param email: The email of this Contact.
+        :type: str
+        """
+        self._email = email
 
     @property
     def contact_phone(self):

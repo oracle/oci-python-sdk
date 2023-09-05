@@ -360,6 +360,121 @@ class DataCatalogClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def asynchronous_export_glossary(self, catalog_id, glossary_key, asynchronous_export_glossary_details, **kwargs):
+        """
+        Exports the contents of a glossary in Excel format. Returns details about the job which actually performs the export.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str glossary_key: (required)
+            Unique glossary key.
+
+        :param oci.data_catalog.models.AsynchronousExportGlossaryDetails asynchronous_export_glossary_details: (required)
+            Details needed by the glossary export request.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.AsynchronousExportGlossaryResult`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/asynchronous_export_glossary.py.html>`__ to see an example of how to use asynchronous_export_glossary API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'glossaryKey']
+        resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/actions/asynchronousExport"
+        method = "POST"
+        operation_name = "asynchronous_export_glossary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/AsynchronousExportGlossary"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "asynchronous_export_glossary got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "glossaryKey": glossary_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=asynchronous_export_glossary_details,
+                response_type="AsynchronousExportGlossaryResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=asynchronous_export_glossary_details,
+                response_type="AsynchronousExportGlossaryResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def attach_catalog_private_endpoint(self, attach_catalog_private_endpoint_details, catalog_id, **kwargs):
         """
         Attaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
@@ -5816,6 +5931,142 @@ class DataCatalogClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def fetch_entity_lineage(self, catalog_id, data_asset_key, entity_key, fetch_entity_lineage_details, **kwargs):
+        """
+        Returns lineage for a given entity object.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str data_asset_key: (required)
+            Unique data asset key.
+
+        :param str entity_key: (required)
+            Unique entity key.
+
+        :param oci.data_catalog.models.FetchEntityLineageDetails fetch_entity_lineage_details: (required)
+            The information needed to obtain desired lineage.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityLineage`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/datacatalog/fetch_entity_lineage.py.html>`__ to see an example of how to use fetch_entity_lineage API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['catalogId', 'dataAssetKey', 'entityKey']
+        resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/actions/fetchLineage"
+        method = "POST"
+        operation_name = "fetch_entity_lineage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/FetchEntityLineage"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "fetch_entity_lineage got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "dataAssetKey": data_asset_key,
+            "entityKey": entity_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=fetch_entity_lineage_details,
+                response_type="EntityLineage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=fetch_entity_lineage_details,
+                response_type="EntityLineage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_attribute(self, catalog_id, data_asset_key, entity_key, attribute_key, **kwargs):
         """
         Gets a specific entity attribute by key.
@@ -9752,9 +10003,10 @@ class DataCatalogClient(object):
             Allowed values are: "key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "externalDataType", "externalKey", "length", "precision", "scale", "isNullable", "uri", "path", "minCollectionCount", "maxCollectionCount", "datatypeEntityKey", "externalDatatypeEntityKey", "parentAttributeKey", "externalParentAttributeKey", "position", "typeKey"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for POSITION is ascending. If no value is specified POSITION is default.
+            The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+            Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME, POSITION and DISPLAYORBUSINESSNAME is ascending. If no order is specified, POSITION is the default.
 
-            Allowed values are: "TIMECREATED", "DISPLAYNAME", "POSITION"
+            Allowed values are: "TIMECREATED", "DISPLAYNAME", "POSITION", "DISPLAYORBUSINESSNAME"
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
@@ -9857,7 +10109,7 @@ class DataCatalogClient(object):
                     )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME", "POSITION"]
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME", "POSITION", "DISPLAYORBUSINESSNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -11391,9 +11643,10 @@ class DataCatalogClient(object):
             Allowed values are: "key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "updatedById", "lifecycleState", "folderKey", "folderName", "externalKey", "path", "uri"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+            The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+            Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME and DISPLAYORBUSINESSNAME is ascending. If no order is specified, TIMECREATED is the default.
 
-            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+            Allowed values are: "TIMECREATED", "DISPLAYNAME", "DISPLAYORBUSINESSNAME"
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
@@ -11504,7 +11757,7 @@ class DataCatalogClient(object):
                     )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME", "DISPLAYORBUSINESSNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -12071,10 +12324,14 @@ class DataCatalogClient(object):
 
             Allowed values are: "key", "displayName", "description", "parentFolderKey", "path", "dataAssetKey", "externalKey", "timeExternal", "timeCreated", "lifecycleState", "uri"
 
-        :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+        :param str type_key: (optional)
+            The key of the object type.
 
-            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. DISPLAYORBUSINESSNAME considers businessName of a given object if set, else its displayName is used.
+            Default sort order for TIMECREATED is descending and default sort order for DISPLAYNAME and DISPLAYORBUSINESSNAME is ascending. If no order is specified, TIMECREATED is the default.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME", "DISPLAYORBUSINESSNAME"
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
@@ -12134,6 +12391,7 @@ class DataCatalogClient(object):
             "harvest_status",
             "last_job_key",
             "fields",
+            "type_key",
             "sort_by",
             "sort_order",
             "limit",
@@ -12179,7 +12437,7 @@ class DataCatalogClient(object):
                     )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME", "DISPLAYORBUSINESSNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -12208,6 +12466,7 @@ class DataCatalogClient(object):
             "harvestStatus": kwargs.get("harvest_status", missing),
             "lastJobKey": kwargs.get("last_job_key", missing),
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "typeKey": kwargs.get("type_key", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "limit": kwargs.get("limit", missing),
@@ -12494,13 +12753,16 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"
 
         :param bool is_incremental: (optional)
             Whether job definition is an incremental harvest (true) or a full harvest (false).
 
         :param str data_asset_key: (optional)
             Unique data asset key.
+
+        :param str glossary_key: (optional)
+            Unique glossary key.
 
         :param str connection_key: (optional)
             Unique connection key.
@@ -12584,6 +12846,7 @@ class DataCatalogClient(object):
             "job_type",
             "is_incremental",
             "data_asset_key",
+            "glossary_key",
             "connection_key",
             "time_created",
             "time_updated",
@@ -12627,7 +12890,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
@@ -12663,6 +12926,7 @@ class DataCatalogClient(object):
             "jobType": kwargs.get("job_type", missing),
             "isIncremental": kwargs.get("is_incremental", missing),
             "dataAssetKey": kwargs.get("data_asset_key", missing),
+            "glossaryKey": kwargs.get("glossary_key", missing),
             "connectionKey": kwargs.get("connection_key", missing),
             "timeCreated": kwargs.get("time_created", missing),
             "timeUpdated": kwargs.get("time_updated", missing),
@@ -12755,7 +13019,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"
 
         :param str sub_type: (optional)
             Sub-type of this job execution.
@@ -12893,7 +13157,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
@@ -13471,7 +13735,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"
 
         :param str job_definition_key: (optional)
             Unique job definition key.
@@ -13479,9 +13743,13 @@ class DataCatalogClient(object):
         :param str data_asset_key: (optional)
             Unique data asset key.
 
+        :param str glossary_key: (optional)
+            Unique glossary key.
+
         :param str schedule_cron_expression: (optional)
             Interval on which the job will be run. Value is specified as a cron-supported time specification \"nickname\".
             The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+            For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
 
         :param datetime time_schedule_begin: (optional)
             Date that the schedule should be operational. An `RFC3339`__ formatted datetime string.
@@ -13573,6 +13841,7 @@ class DataCatalogClient(object):
             "job_type",
             "job_definition_key",
             "data_asset_key",
+            "glossary_key",
             "schedule_cron_expression",
             "time_schedule_begin",
             "time_schedule_end",
@@ -13610,7 +13879,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
@@ -13656,6 +13925,7 @@ class DataCatalogClient(object):
             "jobType": kwargs.get("job_type", missing),
             "jobDefinitionKey": kwargs.get("job_definition_key", missing),
             "dataAssetKey": kwargs.get("data_asset_key", missing),
+            "glossaryKey": kwargs.get("glossary_key", missing),
             "scheduleCronExpression": kwargs.get("schedule_cron_expression", missing),
             "timeScheduleBegin": kwargs.get("time_schedule_begin", missing),
             "timeScheduleEnd": kwargs.get("time_schedule_end", missing),

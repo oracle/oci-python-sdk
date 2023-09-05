@@ -12,8 +12,28 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateUserDetails(object):
     """
-    Details about creation of user.
+    Details for creating a new user.
     """
+
+    #: A constant which can be used with the problem_type property of a CreateUserDetails.
+    #: This constant has a value of "LIMIT"
+    PROBLEM_TYPE_LIMIT = "LIMIT"
+
+    #: A constant which can be used with the problem_type property of a CreateUserDetails.
+    #: This constant has a value of "LEGACY_LIMIT"
+    PROBLEM_TYPE_LEGACY_LIMIT = "LEGACY_LIMIT"
+
+    #: A constant which can be used with the problem_type property of a CreateUserDetails.
+    #: This constant has a value of "TECH"
+    PROBLEM_TYPE_TECH = "TECH"
+
+    #: A constant which can be used with the problem_type property of a CreateUserDetails.
+    #: This constant has a value of "ACCOUNT"
+    PROBLEM_TYPE_ACCOUNT = "ACCOUNT"
+
+    #: A constant which can be used with the problem_type property of a CreateUserDetails.
+    #: This constant has a value of "TAXONOMY"
+    PROBLEM_TYPE_TAXONOMY = "TAXONOMY"
 
     def __init__(self, **kwargs):
         """
@@ -32,10 +52,6 @@ class CreateUserDetails(object):
             The value to assign to the last_name property of this CreateUserDetails.
         :type last_name: str
 
-        :param country:
-            The value to assign to the country property of this CreateUserDetails.
-        :type country: str
-
         :param csi:
             The value to assign to the csi property of this CreateUserDetails.
         :type csi: str
@@ -52,37 +68,42 @@ class CreateUserDetails(object):
             The value to assign to the organization_name property of this CreateUserDetails.
         :type organization_name: str
 
+        :param problem_type:
+            The value to assign to the problem_type property of this CreateUserDetails.
+            Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY"
+        :type problem_type: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'first_name': 'str',
             'last_name': 'str',
-            'country': 'str',
             'csi': 'str',
             'phone': 'str',
             'timezone': 'str',
-            'organization_name': 'str'
+            'organization_name': 'str',
+            'problem_type': 'str'
         }
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'first_name': 'firstName',
             'last_name': 'lastName',
-            'country': 'country',
             'csi': 'csi',
             'phone': 'phone',
             'timezone': 'timezone',
-            'organization_name': 'organizationName'
+            'organization_name': 'organizationName',
+            'problem_type': 'problemType'
         }
 
         self._compartment_id = None
         self._first_name = None
         self._last_name = None
-        self._country = None
         self._csi = None
         self._phone = None
         self._timezone = None
         self._organization_name = None
+        self._problem_type = None
 
     @property
     def compartment_id(self):
@@ -157,34 +178,10 @@ class CreateUserDetails(object):
         self._last_name = last_name
 
     @property
-    def country(self):
-        """
-        **[Required]** Gets the country of this CreateUserDetails.
-        Country of the user.
-
-
-        :return: The country of this CreateUserDetails.
-        :rtype: str
-        """
-        return self._country
-
-    @country.setter
-    def country(self, country):
-        """
-        Sets the country of this CreateUserDetails.
-        Country of the user.
-
-
-        :param country: The country of this CreateUserDetails.
-        :type: str
-        """
-        self._country = country
-
-    @property
     def csi(self):
         """
         **[Required]** Gets the csi of this CreateUserDetails.
-        CSI to be associated to the user.
+        CSI associated with the user.
 
 
         :return: The csi of this CreateUserDetails.
@@ -196,7 +193,7 @@ class CreateUserDetails(object):
     def csi(self, csi):
         """
         Sets the csi of this CreateUserDetails.
-        CSI to be associated to the user.
+        CSI associated with the user.
 
 
         :param csi: The csi of this CreateUserDetails.
@@ -275,6 +272,38 @@ class CreateUserDetails(object):
         :type: str
         """
         self._organization_name = organization_name
+
+    @property
+    def problem_type(self):
+        """
+        **[Required]** Gets the problem_type of this CreateUserDetails.
+        The kind of support ticket, such as a technical support request or a limit increase request.
+
+        Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY"
+
+
+        :return: The problem_type of this CreateUserDetails.
+        :rtype: str
+        """
+        return self._problem_type
+
+    @problem_type.setter
+    def problem_type(self, problem_type):
+        """
+        Sets the problem_type of this CreateUserDetails.
+        The kind of support ticket, such as a technical support request or a limit increase request.
+
+
+        :param problem_type: The problem_type of this CreateUserDetails.
+        :type: str
+        """
+        allowed_values = ["LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY"]
+        if not value_allowed_none_or_none_sentinel(problem_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `problem_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._problem_type = problem_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

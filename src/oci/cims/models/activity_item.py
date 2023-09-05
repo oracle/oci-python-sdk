@@ -31,6 +31,10 @@ class ActivityItem(Item):
     #: This constant has a value of "CLOSE"
     ACTIVITY_TYPE_CLOSE = "CLOSE"
 
+    #: A constant which can be used with the activity_type property of a ActivityItem.
+    #: This constant has a value of "REOPEN"
+    ACTIVITY_TYPE_REOPEN = "REOPEN"
+
     #: A constant which can be used with the activity_author property of a ActivityItem.
     #: This constant has a value of "CUSTOMER"
     ACTIVITY_AUTHOR_CUSTOMER = "CUSTOMER"
@@ -38,6 +42,30 @@ class ActivityItem(Item):
     #: A constant which can be used with the activity_author property of a ActivityItem.
     #: This constant has a value of "ORACLE"
     ACTIVITY_AUTHOR_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the item_type property of a ActivityItem.
+    #: This constant has a value of "ATTACHMENTS"
+    ITEM_TYPE_ATTACHMENTS = "ATTACHMENTS"
+
+    #: A constant which can be used with the item_type property of a ActivityItem.
+    #: This constant has a value of "COMMENTS"
+    ITEM_TYPE_COMMENTS = "COMMENTS"
+
+    #: A constant which can be used with the item_status property of a ActivityItem.
+    #: This constant has a value of "PROCESSING"
+    ITEM_STATUS_PROCESSING = "PROCESSING"
+
+    #: A constant which can be used with the item_status property of a ActivityItem.
+    #: This constant has a value of "ATTACHED"
+    ITEM_STATUS_ATTACHED = "ATTACHED"
+
+    #: A constant which can be used with the item_status property of a ActivityItem.
+    #: This constant has a value of "REMOVED"
+    ITEM_STATUS_REMOVED = "REMOVED"
+
+    #: A constant which can be used with the item_status property of a ActivityItem.
+    #: This constant has a value of "FAILED"
+    ITEM_STATUS_FAILED = "FAILED"
 
     def __init__(self, **kwargs):
         """
@@ -83,7 +111,7 @@ class ActivityItem(Item):
 
         :param activity_type:
             The value to assign to the activity_type property of this ActivityItem.
-            Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type activity_type: str
 
@@ -92,6 +120,18 @@ class ActivityItem(Item):
             Allowed values for this property are: "CUSTOMER", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type activity_author: str
+
+        :param item_type:
+            The value to assign to the item_type property of this ActivityItem.
+            Allowed values for this property are: "ATTACHMENTS", "COMMENTS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type item_type: str
+
+        :param item_status:
+            The value to assign to the item_status property of this ActivityItem.
+            Allowed values for this property are: "PROCESSING", "ATTACHED", "REMOVED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type item_status: str
 
         """
         self.swagger_types = {
@@ -105,7 +145,9 @@ class ActivityItem(Item):
             'time_created': 'int',
             'time_updated': 'int',
             'activity_type': 'str',
-            'activity_author': 'str'
+            'activity_author': 'str',
+            'item_type': 'str',
+            'item_status': 'str'
         }
 
         self.attribute_map = {
@@ -119,7 +161,9 @@ class ActivityItem(Item):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'activity_type': 'activityType',
-            'activity_author': 'activityAuthor'
+            'activity_author': 'activityAuthor',
+            'item_type': 'itemType',
+            'item_status': 'itemStatus'
         }
 
         self._item_key = None
@@ -133,12 +177,14 @@ class ActivityItem(Item):
         self._time_updated = None
         self._activity_type = None
         self._activity_author = None
+        self._item_type = None
+        self._item_status = None
         self._type = 'activity'
 
     @property
     def comments(self):
         """
-        Gets the comments of this ActivityItem.
+        **[Required]** Gets the comments of this ActivityItem.
         Comments added with the activity on the support ticket.
 
 
@@ -162,7 +208,7 @@ class ActivityItem(Item):
     @property
     def time_created(self):
         """
-        Gets the time_created of this ActivityItem.
+        **[Required]** Gets the time_created of this ActivityItem.
         The time when the activity was created, in milliseconds since epoch time.
 
 
@@ -186,7 +232,7 @@ class ActivityItem(Item):
     @property
     def time_updated(self):
         """
-        Gets the time_updated of this ActivityItem.
+        **[Required]** Gets the time_updated of this ActivityItem.
         The time when the activity was updated, in milliseconds since epoch time.
 
 
@@ -210,10 +256,10 @@ class ActivityItem(Item):
     @property
     def activity_type(self):
         """
-        Gets the activity_type of this ActivityItem.
+        **[Required]** Gets the activity_type of this ActivityItem.
         The type of activity occuring on the support ticket.
 
-        Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -232,7 +278,7 @@ class ActivityItem(Item):
         :param activity_type: The activity_type of this ActivityItem.
         :type: str
         """
-        allowed_values = ["NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE"]
+        allowed_values = ["NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN"]
         if not value_allowed_none_or_none_sentinel(activity_type, allowed_values):
             activity_type = 'UNKNOWN_ENUM_VALUE'
         self._activity_type = activity_type
@@ -240,9 +286,7 @@ class ActivityItem(Item):
     @property
     def activity_author(self):
         """
-        Gets the activity_author of this ActivityItem.
-        The person who updates the activity on the support ticket.
-
+        **[Required]** Gets the activity_author of this ActivityItem.
         Allowed values for this property are: "CUSTOMER", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -256,8 +300,6 @@ class ActivityItem(Item):
     def activity_author(self, activity_author):
         """
         Sets the activity_author of this ActivityItem.
-        The person who updates the activity on the support ticket.
-
 
         :param activity_author: The activity_author of this ActivityItem.
         :type: str
@@ -266,6 +308,62 @@ class ActivityItem(Item):
         if not value_allowed_none_or_none_sentinel(activity_author, allowed_values):
             activity_author = 'UNKNOWN_ENUM_VALUE'
         self._activity_author = activity_author
+
+    @property
+    def item_type(self):
+        """
+        Gets the item_type of this ActivityItem.
+        Allowed values for this property are: "ATTACHMENTS", "COMMENTS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The item_type of this ActivityItem.
+        :rtype: str
+        """
+        return self._item_type
+
+    @item_type.setter
+    def item_type(self, item_type):
+        """
+        Sets the item_type of this ActivityItem.
+
+        :param item_type: The item_type of this ActivityItem.
+        :type: str
+        """
+        allowed_values = ["ATTACHMENTS", "COMMENTS"]
+        if not value_allowed_none_or_none_sentinel(item_type, allowed_values):
+            item_type = 'UNKNOWN_ENUM_VALUE'
+        self._item_type = item_type
+
+    @property
+    def item_status(self):
+        """
+        Gets the item_status of this ActivityItem.
+        Who updates the activity on the support ticket.
+
+        Allowed values for this property are: "PROCESSING", "ATTACHED", "REMOVED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The item_status of this ActivityItem.
+        :rtype: str
+        """
+        return self._item_status
+
+    @item_status.setter
+    def item_status(self, item_status):
+        """
+        Sets the item_status of this ActivityItem.
+        Who updates the activity on the support ticket.
+
+
+        :param item_status: The item_status of this ActivityItem.
+        :type: str
+        """
+        allowed_values = ["PROCESSING", "ATTACHED", "REMOVED", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(item_status, allowed_values):
+            item_status = 'UNKNOWN_ENUM_VALUE'
+        self._item_status = item_status
 
     def __repr__(self):
         return formatted_flat_dict(self)

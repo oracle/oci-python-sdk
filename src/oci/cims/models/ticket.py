@@ -27,6 +27,10 @@ class Ticket(object):
     #: This constant has a value of "MEDIUM"
     SEVERITY_MEDIUM = "MEDIUM"
 
+    #: A constant which can be used with the severity property of a Ticket.
+    #: This constant has a value of "LOW"
+    SEVERITY_LOW = "LOW"
+
     #: A constant which can be used with the lifecycle_state property of a Ticket.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -62,7 +66,7 @@ class Ticket(object):
 
         :param severity:
             The value to assign to the severity property of this Ticket.
-            Allowed values for this property are: "HIGHEST", "HIGH", "MEDIUM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HIGHEST", "HIGH", "MEDIUM", "LOW", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type severity: str
 
@@ -163,7 +167,7 @@ class Ticket(object):
         **[Required]** Gets the severity of this Ticket.
         The severity assigned to the ticket.
 
-        Allowed values for this property are: "HIGHEST", "HIGH", "MEDIUM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HIGHEST", "HIGH", "MEDIUM", "LOW", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -182,7 +186,7 @@ class Ticket(object):
         :param severity: The severity of this Ticket.
         :type: str
         """
-        allowed_values = ["HIGHEST", "HIGH", "MEDIUM"]
+        allowed_values = ["HIGHEST", "HIGH", "MEDIUM", "LOW"]
         if not value_allowed_none_or_none_sentinel(severity, allowed_values):
             severity = 'UNKNOWN_ENUM_VALUE'
         self._severity = severity

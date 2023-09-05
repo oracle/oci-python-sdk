@@ -44,6 +44,10 @@ class GetMessage(object):
             The value to assign to the expire_after property of this GetMessage.
         :type expire_after: datetime
 
+        :param metadata:
+            The value to assign to the metadata property of this GetMessage.
+        :type metadata: oci.queue.models.MessageMetadata
+
         """
         self.swagger_types = {
             'id': 'int',
@@ -51,7 +55,8 @@ class GetMessage(object):
             'receipt': 'str',
             'delivery_count': 'int',
             'visible_after': 'datetime',
-            'expire_after': 'datetime'
+            'expire_after': 'datetime',
+            'metadata': 'MessageMetadata'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class GetMessage(object):
             'receipt': 'receipt',
             'delivery_count': 'deliveryCount',
             'visible_after': 'visibleAfter',
-            'expire_after': 'expireAfter'
+            'expire_after': 'expireAfter',
+            'metadata': 'metadata'
         }
 
         self._id = None
@@ -69,12 +75,13 @@ class GetMessage(object):
         self._delivery_count = None
         self._visible_after = None
         self._expire_after = None
+        self._metadata = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this GetMessage.
-        The id of the message - this is only used for tracing and debugging purposes and isn't used as a parameter in any request.
+        The ID of the message. This ID is only used for tracing and debugging purposes and isn't used as a parameter in any request.
 
 
         :return: The id of this GetMessage.
@@ -86,7 +93,7 @@ class GetMessage(object):
     def id(self, id):
         """
         Sets the id of this GetMessage.
-        The id of the message - this is only used for tracing and debugging purposes and isn't used as a parameter in any request.
+        The ID of the message. This ID is only used for tracing and debugging purposes and isn't used as a parameter in any request.
 
 
         :param id: The id of this GetMessage.
@@ -98,7 +105,7 @@ class GetMessage(object):
     def content(self):
         """
         **[Required]** Gets the content of this GetMessage.
-        The content of the message
+        The content of the message.
 
 
         :return: The content of this GetMessage.
@@ -110,7 +117,7 @@ class GetMessage(object):
     def content(self, content):
         """
         Sets the content of this GetMessage.
-        The content of the message
+        The content of the message.
 
 
         :param content: The content of this GetMessage.
@@ -148,7 +155,7 @@ class GetMessage(object):
     def delivery_count(self):
         """
         **[Required]** Gets the delivery_count of this GetMessage.
-        The number of time the message has been delivered to a consumer.
+        The number of times that the message has been delivered to a consumer.
 
 
         :return: The delivery_count of this GetMessage.
@@ -160,7 +167,7 @@ class GetMessage(object):
     def delivery_count(self, delivery_count):
         """
         Sets the delivery_count of this GetMessage.
-        The number of time the message has been delivered to a consumer.
+        The number of times that the message has been delivered to a consumer.
 
 
         :param delivery_count: The delivery_count of this GetMessage.
@@ -172,7 +179,11 @@ class GetMessage(object):
     def visible_after(self):
         """
         **[Required]** Gets the visible_after of this GetMessage.
-        The time after which the message will be visible to other consumers. An RFC3339 formatted datetime string
+        The time after which the message will be visible to other consumers, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The visible_after of this GetMessage.
@@ -184,7 +195,11 @@ class GetMessage(object):
     def visible_after(self, visible_after):
         """
         Sets the visible_after of this GetMessage.
-        The time after which the message will be visible to other consumers. An RFC3339 formatted datetime string
+        The time after which the message will be visible to other consumers, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param visible_after: The visible_after of this GetMessage.
@@ -196,7 +211,11 @@ class GetMessage(object):
     def expire_after(self):
         """
         **[Required]** Gets the expire_after of this GetMessage.
-        The time after which the message will be automatically deleted. An RFC3339 formatted datetime string
+        The time after which the message will be automatically deleted, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The expire_after of this GetMessage.
@@ -208,13 +227,37 @@ class GetMessage(object):
     def expire_after(self, expire_after):
         """
         Sets the expire_after of this GetMessage.
-        The time after which the message will be automatically deleted. An RFC3339 formatted datetime string
+        The time after which the message will be automatically deleted, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param expire_after: The expire_after of this GetMessage.
         :type: datetime
         """
         self._expire_after = expire_after
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this GetMessage.
+
+        :return: The metadata of this GetMessage.
+        :rtype: oci.queue.models.MessageMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this GetMessage.
+
+        :param metadata: The metadata of this GetMessage.
+        :type: oci.queue.models.MessageMetadata
+        """
+        self._metadata = metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContextualData(object):
     """
-    ContextualData model.
+    Information collected from user context during ticket creation.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class ContextualData(object):
     def client_id(self):
         """
         **[Required]** Gets the client_id of this ContextualData.
-        The unique client identifier
+        The unique identifier for the client.
 
 
         :return: The client_id of this ContextualData.
@@ -72,7 +72,7 @@ class ContextualData(object):
     def client_id(self, client_id):
         """
         Sets the client_id of this ContextualData.
-        The unique client identifier
+        The unique identifier for the client.
 
 
         :param client_id: The client_id of this ContextualData.
@@ -84,7 +84,7 @@ class ContextualData(object):
     def schema_name(self):
         """
         **[Required]** Gets the schema_name of this ContextualData.
-        The schema name
+        The name assigned to the schema.
 
 
         :return: The schema_name of this ContextualData.
@@ -96,7 +96,7 @@ class ContextualData(object):
     def schema_name(self, schema_name):
         """
         Sets the schema_name of this ContextualData.
-        The schema name
+        The name assigned to the schema.
 
 
         :param schema_name: The schema_name of this ContextualData.
@@ -108,7 +108,7 @@ class ContextualData(object):
     def schema_version(self):
         """
         **[Required]** Gets the schema_version of this ContextualData.
-        The schema version
+        The version of the schema.
 
 
         :return: The schema_version of this ContextualData.
@@ -120,7 +120,7 @@ class ContextualData(object):
     def schema_version(self, schema_version):
         """
         Sets the schema_version of this ContextualData.
-        The schema version
+        The version of the schema.
 
 
         :param schema_version: The schema_version of this ContextualData.
@@ -132,7 +132,7 @@ class ContextualData(object):
     def payload(self):
         """
         **[Required]** Gets the payload of this ContextualData.
-        The context data payload
+        The payload for the contextual data.
 
 
         :return: The payload of this ContextualData.
@@ -144,7 +144,7 @@ class ContextualData(object):
     def payload(self, payload):
         """
         Sets the payload of this ContextualData.
-        The context data payload
+        The payload for the contextual data.
 
 
         :param payload: The payload of this ContextualData.

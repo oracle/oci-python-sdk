@@ -31,7 +31,7 @@ class QueueAdminClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param oci.queue.models.ChangeQueueCompartmentDetails change_queue_compartment_details: (required)
             The information to be updated.
@@ -110,7 +110,7 @@ class QueueAdminClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.queue.models.WorkRequest.status`
@@ -156,7 +156,7 @@ class QueueAdminClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param oci.queue.models.PurgeQueueDetails purge_queue_details: (required)
             The information to be updated.
@@ -197,7 +197,7 @@ class QueueAdminClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param oci.queue.models.UpdateQueueDetails update_queue_details: (required)
             The information to be updated.

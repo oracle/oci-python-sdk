@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateLimitItemDetails(CreateItemDetails):
     """
-    Reserved for future use.
+    Details about the service limit increase request. Avoid entering confidential information.
     """
 
     #: A constant which can be used with the limit_status property of a CreateLimitItemDetails.
@@ -158,7 +158,7 @@ class CreateLimitItemDetails(CreateItemDetails):
     def requested_limit(self):
         """
         Gets the requested_limit of this CreateLimitItemDetails.
-        Reserved for future use.
+        The new service limit being requested.
 
 
         :return: The requested_limit of this CreateLimitItemDetails.
@@ -170,7 +170,7 @@ class CreateLimitItemDetails(CreateItemDetails):
     def requested_limit(self, requested_limit):
         """
         Sets the requested_limit of this CreateLimitItemDetails.
-        Reserved for future use.
+        The new service limit being requested.
 
 
         :param requested_limit: The requested_limit of this CreateLimitItemDetails.

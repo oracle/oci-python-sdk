@@ -20,6 +20,7 @@ class Item(object):
         Initializes a new Item object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.cims.models.AccountItem`
         * :class:`~oci.cims.models.LimitItem`
         * :class:`~oci.cims.models.TechSupportItem`
         * :class:`~oci.cims.models.ActivityItem`
@@ -84,6 +85,9 @@ class Item(object):
         """
         type = object_dictionary['type']
 
+        if type == 'account':
+            return 'AccountItem'
+
         if type == 'limit':
             return 'LimitItem'
 
@@ -123,7 +127,7 @@ class Item(object):
     def name(self):
         """
         Gets the name of this Item.
-        The display name of the item.
+        The display name of the item. Avoid entering confidential information.
 
 
         :return: The name of this Item.
@@ -135,7 +139,7 @@ class Item(object):
     def name(self, name):
         """
         Sets the name of this Item.
-        The display name of the item.
+        The display name of the item. Avoid entering confidential information.
 
 
         :param name: The name of this Item.
@@ -147,7 +151,7 @@ class Item(object):
     def type(self):
         """
         Gets the type of this Item.
-        The type of the support request.
+        The type of the item.
 
 
         :return: The type of this Item.
@@ -159,7 +163,7 @@ class Item(object):
     def type(self, type):
         """
         Sets the type of this Item.
-        The type of the support request.
+        The type of the item.
 
 
         :param type: The type of this Item.

@@ -24,16 +24,23 @@ class PutMessagesDetailsEntry(object):
             The value to assign to the content property of this PutMessagesDetailsEntry.
         :type content: str
 
+        :param metadata:
+            The value to assign to the metadata property of this PutMessagesDetailsEntry.
+        :type metadata: oci.queue.models.MessageMetadata
+
         """
         self.swagger_types = {
-            'content': 'str'
+            'content': 'str',
+            'metadata': 'MessageMetadata'
         }
 
         self.attribute_map = {
-            'content': 'content'
+            'content': 'content',
+            'metadata': 'metadata'
         }
 
         self._content = None
+        self._metadata = None
 
     @property
     def content(self):
@@ -58,6 +65,26 @@ class PutMessagesDetailsEntry(object):
         :type: str
         """
         self._content = content
+
+    @property
+    def metadata(self):
+        """
+        Gets the metadata of this PutMessagesDetailsEntry.
+
+        :return: The metadata of this PutMessagesDetailsEntry.
+        :rtype: oci.queue.models.MessageMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata):
+        """
+        Sets the metadata of this PutMessagesDetailsEntry.
+
+        :param metadata: The metadata of this PutMessagesDetailsEntry.
+        :type: oci.queue.models.MessageMetadata
+        """
+        self._metadata = metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

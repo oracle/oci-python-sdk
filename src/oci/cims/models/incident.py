@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Incident(object):
     """
-    Details of about the incident object.
+    Details about the support ticket.
     """
 
     #: A constant which can be used with the problem_type property of a Incident.
@@ -30,6 +30,10 @@ class Incident(object):
     #: A constant which can be used with the problem_type property of a Incident.
     #: This constant has a value of "ACCOUNT"
     PROBLEM_TYPE_ACCOUNT = "ACCOUNT"
+
+    #: A constant which can be used with the problem_type property of a Incident.
+    #: This constant has a value of "TAXONOMY"
+    PROBLEM_TYPE_TAXONOMY = "TAXONOMY"
 
     def __init__(self, **kwargs):
         """
@@ -62,7 +66,7 @@ class Incident(object):
 
         :param problem_type:
             The value to assign to the problem_type property of this Incident.
-            Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type problem_type: str
 
@@ -234,9 +238,9 @@ class Incident(object):
     def problem_type(self):
         """
         Gets the problem_type of this Incident.
-        The kind of support ticket, such as a technical support request.
+        The kind of support ticket, such as a technical support request or a limit increase request.
 
-        Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -249,13 +253,13 @@ class Incident(object):
     def problem_type(self, problem_type):
         """
         Sets the problem_type of this Incident.
-        The kind of support ticket, such as a technical support request.
+        The kind of support ticket, such as a technical support request or a limit increase request.
 
 
         :param problem_type: The problem_type of this Incident.
         :type: str
         """
-        allowed_values = ["LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT"]
+        allowed_values = ["LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY"]
         if not value_allowed_none_or_none_sentinel(problem_type, allowed_values):
             problem_type = 'UNKNOWN_ENUM_VALUE'
         self._problem_type = problem_type

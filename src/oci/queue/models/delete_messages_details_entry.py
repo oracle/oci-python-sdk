@@ -39,7 +39,7 @@ class DeleteMessagesDetailsEntry(object):
     def receipt(self):
         """
         **[Required]** Gets the receipt of this DeleteMessagesDetailsEntry.
-        The receipt of the message to delete
+        The receipt of the message to delete.
 
 
         :return: The receipt of this DeleteMessagesDetailsEntry.
@@ -51,7 +51,7 @@ class DeleteMessagesDetailsEntry(object):
     def receipt(self, receipt):
         """
         Sets the receipt of this DeleteMessagesDetailsEntry.
-        The receipt of the message to delete
+        The receipt of the message to delete.
 
 
         :param receipt: The receipt of this DeleteMessagesDetailsEntry.
