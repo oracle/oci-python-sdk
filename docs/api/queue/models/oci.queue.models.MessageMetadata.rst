@@ -1,0 +1,11 @@
+MessageMetadata
+===============
+
+.. currentmodule:: oci.queue.models
+
+.. autoclass:: MessageMetadata
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

@@ -46,7 +46,8 @@ class FacetedSearchStringFilterRequest(object):
     def field(self):
         """
         Gets the field of this FacetedSearchStringFilterRequest.
-        String/boolean/numerical field name that needs to filtered with
+        String/boolean/numerical field name that needs to be filtered by.
+        Acceptable field names: CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag, DataAssetName, LifeCycleState.
 
 
         :return: The field of this FacetedSearchStringFilterRequest.
@@ -58,7 +59,8 @@ class FacetedSearchStringFilterRequest(object):
     def field(self, field):
         """
         Sets the field of this FacetedSearchStringFilterRequest.
-        String/boolean/numerical field name that needs to filtered with
+        String/boolean/numerical field name that needs to be filtered by.
+        Acceptable field names: CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag, DataAssetName, LifeCycleState.
 
 
         :param field: The field of this FacetedSearchStringFilterRequest.
@@ -71,6 +73,8 @@ class FacetedSearchStringFilterRequest(object):
         """
         Gets the values of this FacetedSearchStringFilterRequest.
         Array of values that the search results needs to be filtered by.
+        Acceptable values for field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern, Job, Schedule, CustomProperty.
+        For other fields, acceptable values can be derived by inspecting the data object.
 
 
         :return: The values of this FacetedSearchStringFilterRequest.
@@ -83,6 +87,8 @@ class FacetedSearchStringFilterRequest(object):
         """
         Sets the values of this FacetedSearchStringFilterRequest.
         Array of values that the search results needs to be filtered by.
+        Acceptable values for field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern, Job, Schedule, CustomProperty.
+        For other fields, acceptable values can be derived by inspecting the data object.
 
 
         :param values: The values of this FacetedSearchStringFilterRequest.

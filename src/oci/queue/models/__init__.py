@@ -7,6 +7,7 @@
 from __future__ import absolute_import
 
 from .change_queue_compartment_details import ChangeQueueCompartmentDetails
+from .channel_collection import ChannelCollection
 from .create_queue_details import CreateQueueDetails
 from .delete_messages_details import DeleteMessagesDetails
 from .delete_messages_details_entry import DeleteMessagesDetailsEntry
@@ -14,6 +15,7 @@ from .delete_messages_result import DeleteMessagesResult
 from .delete_messages_result_entry import DeleteMessagesResultEntry
 from .get_message import GetMessage
 from .get_messages import GetMessages
+from .message_metadata import MessageMetadata
 from .purge_queue_details import PurgeQueueDetails
 from .put_message import PutMessage
 from .put_messages import PutMessages
@@ -43,6 +45,7 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 # Maps type names to classes for queue services.
 queue_type_mapping = {
     "ChangeQueueCompartmentDetails": ChangeQueueCompartmentDetails,
+    "ChannelCollection": ChannelCollection,
     "CreateQueueDetails": CreateQueueDetails,
     "DeleteMessagesDetails": DeleteMessagesDetails,
     "DeleteMessagesDetailsEntry": DeleteMessagesDetailsEntry,
@@ -50,6 +53,7 @@ queue_type_mapping = {
     "DeleteMessagesResultEntry": DeleteMessagesResultEntry,
     "GetMessage": GetMessage,
     "GetMessages": GetMessages,
+    "MessageMetadata": MessageMetadata,
     "PurgeQueueDetails": PurgeQueueDetails,
     "PutMessage": PutMessage,
     "PutMessages": PutMessages,

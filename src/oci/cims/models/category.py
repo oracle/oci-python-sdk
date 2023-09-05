@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Category(object):
     """
-    Details about the category associated with the support ticket.
+    Details about the service category associated with the support ticket.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class Category(object):
     def category_key(self):
         """
         Gets the category_key of this Category.
-        Unique identifier for the category.
+        Unique identifier for the service category.
 
 
         :return: The category_key of this Category.
@@ -58,7 +58,7 @@ class Category(object):
     def category_key(self, category_key):
         """
         Sets the category_key of this Category.
-        Unique identifier for the category.
+        Unique identifier for the service category.
 
 
         :param category_key: The category_key of this Category.
@@ -70,7 +70,7 @@ class Category(object):
     def name(self):
         """
         Gets the name of this Category.
-        The name of the category. For example, `Compute` or `Identity`.
+        The name of the service category. For example, `Compute` or `Identity`.
 
 
         :return: The name of this Category.
@@ -82,7 +82,7 @@ class Category(object):
     def name(self, name):
         """
         Sets the name of this Category.
-        The name of the category. For example, `Compute` or `Identity`.
+        The name of the service category. For example, `Compute` or `Identity`.
 
 
         :param name: The name of this Category.

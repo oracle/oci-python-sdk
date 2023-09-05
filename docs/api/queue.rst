@@ -21,6 +21,7 @@ Queue
     :template: autosummary/model_class.rst
 
     oci.queue.models.ChangeQueueCompartmentDetails
+    oci.queue.models.ChannelCollection
     oci.queue.models.CreateQueueDetails
     oci.queue.models.DeleteMessagesDetails
     oci.queue.models.DeleteMessagesDetailsEntry
@@ -28,6 +29,7 @@ Queue
     oci.queue.models.DeleteMessagesResultEntry
     oci.queue.models.GetMessage
     oci.queue.models.GetMessages
+    oci.queue.models.MessageMetadata
     oci.queue.models.PurgeQueueDetails
     oci.queue.models.PutMessage
     oci.queue.models.PutMessages

@@ -18,6 +18,10 @@ Data Catalog
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.data_catalog.models.AsynchronousExportGlossaryDetails
+    oci.data_catalog.models.AsynchronousExportGlossaryResult
+    oci.data_catalog.models.AsynchronousExportRequestDetails
+    oci.data_catalog.models.AsynchronousExportResult
     oci.data_catalog.models.AttachCatalogPrivateEndpointDetails
     oci.data_catalog.models.Attribute
     oci.data_catalog.models.AttributeCollection
@@ -77,6 +81,7 @@ Data Catalog
     oci.data_catalog.models.DetachCatalogPrivateEndpointDetails
     oci.data_catalog.models.Entity
     oci.data_catalog.models.EntityCollection
+    oci.data_catalog.models.EntityLineage
     oci.data_catalog.models.EntitySummary
     oci.data_catalog.models.EntityTag
     oci.data_catalog.models.EntityTagCollection
@@ -89,6 +94,7 @@ Data Catalog
     oci.data_catalog.models.FacetedSearchFilterRequest
     oci.data_catalog.models.FacetedSearchSortRequest
     oci.data_catalog.models.FacetedSearchStringFilterRequest
+    oci.data_catalog.models.FetchEntityLineageDetails
     oci.data_catalog.models.Folder
     oci.data_catalog.models.FolderCollection
     oci.data_catalog.models.FolderSummary
@@ -121,12 +127,17 @@ Data Catalog
     oci.data_catalog.models.JobMetricCollection
     oci.data_catalog.models.JobMetricSummary
     oci.data_catalog.models.JobSummary
+    oci.data_catalog.models.LineageObject
+    oci.data_catalog.models.LineageRelationship
     oci.data_catalog.models.Metastore
     oci.data_catalog.models.MetastoreSummary
     oci.data_catalog.models.Namespace
     oci.data_catalog.models.NamespaceCollection
     oci.data_catalog.models.NamespaceSummary
+    oci.data_catalog.models.ObjectLineage
+    oci.data_catalog.models.ObjectLineageRequestDetails
     oci.data_catalog.models.ObjectRelationship
+    oci.data_catalog.models.ObjectStorageObjectReference
     oci.data_catalog.models.ParseConnectionDetails
     oci.data_catalog.models.Pattern
     oci.data_catalog.models.PatternCollection

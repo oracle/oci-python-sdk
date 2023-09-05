@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SubCategory(object):
     """
-    Details about the subcategory associated with the support ticket.
+    Details about the service subcategory associated with the support ticket.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class SubCategory(object):
     def sub_category_key(self):
         """
         Gets the sub_category_key of this SubCategory.
-        Unique identifier for the subcategory.
+        Unique identifier for the service subcategory.
 
 
         :return: The sub_category_key of this SubCategory.
@@ -58,7 +58,7 @@ class SubCategory(object):
     def sub_category_key(self, sub_category_key):
         """
         Sets the sub_category_key of this SubCategory.
-        Unique identifier for the subcategory.
+        Unique identifier for the service subcategory.
 
 
         :param sub_category_key: The sub_category_key of this SubCategory.
@@ -70,7 +70,7 @@ class SubCategory(object):
     def name(self):
         """
         Gets the name of this SubCategory.
-        The name of the subcategory. For example, `Backup Count` or `Custom Image Count`.
+        The name of the service subcategory. For example, `Backup Count` or `Custom Image Count`.
 
 
         :return: The name of this SubCategory.
@@ -82,7 +82,7 @@ class SubCategory(object):
     def name(self, name):
         """
         Sets the name of this SubCategory.
-        The name of the subcategory. For example, `Backup Count` or `Custom Image Count`.
+        The name of the service subcategory. For example, `Backup Count` or `Custom Image Count`.
 
 
         :param name: The name of this SubCategory.

@@ -12,9 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateTechSupportItemDetails(CreateItemDetails):
     """
-    Details about the issue that the technical support request relates to.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
+    Details about the issue that the technical support ticket relates to. Avoid entering confidential information.
     """
 
     def __init__(self, **kwargs):

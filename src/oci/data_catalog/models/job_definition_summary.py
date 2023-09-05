@@ -85,6 +85,14 @@ class JobDefinitionSummary(object):
     #: This constant has a value of "IMPORT_DATA_ASSET"
     JOB_TYPE_IMPORT_DATA_ASSET = "IMPORT_DATA_ASSET"
 
+    #: A constant which can be used with the job_type property of a JobDefinitionSummary.
+    #: This constant has a value of "CREATE_SCAN_PROXY"
+    JOB_TYPE_CREATE_SCAN_PROXY = "CREATE_SCAN_PROXY"
+
+    #: A constant which can be used with the job_type property of a JobDefinitionSummary.
+    #: This constant has a value of "ASYNC_EXPORT_GLOSSARY"
+    JOB_TYPE_ASYNC_EXPORT_GLOSSARY = "ASYNC_EXPORT_GLOSSARY"
+
     #: A constant which can be used with the lifecycle_state property of a JobDefinitionSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -180,7 +188,7 @@ class JobDefinitionSummary(object):
 
         :param job_type:
             The value to assign to the job_type property of this JobDefinitionSummary.
-            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type job_type: str
 
@@ -226,6 +234,10 @@ class JobDefinitionSummary(object):
             The value to assign to the data_asset_key property of this JobDefinitionSummary.
         :type data_asset_key: str
 
+        :param glossary_key:
+            The value to assign to the glossary_key property of this JobDefinitionSummary.
+        :type glossary_key: str
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -242,7 +254,8 @@ class JobDefinitionSummary(object):
             'time_latest_execution_ended': 'datetime',
             'job_execution_state': 'str',
             'schedule_type': 'str',
-            'data_asset_key': 'str'
+            'data_asset_key': 'str',
+            'glossary_key': 'str'
         }
 
         self.attribute_map = {
@@ -260,7 +273,8 @@ class JobDefinitionSummary(object):
             'time_latest_execution_ended': 'timeLatestExecutionEnded',
             'job_execution_state': 'jobExecutionState',
             'schedule_type': 'scheduleType',
-            'data_asset_key': 'dataAssetKey'
+            'data_asset_key': 'dataAssetKey',
+            'glossary_key': 'glossaryKey'
         }
 
         self._key = None
@@ -278,6 +292,7 @@ class JobDefinitionSummary(object):
         self._job_execution_state = None
         self._schedule_type = None
         self._data_asset_key = None
+        self._glossary_key = None
 
     @property
     def key(self):
@@ -407,7 +422,7 @@ class JobDefinitionSummary(object):
         Gets the job_type of this JobDefinitionSummary.
         Type of the job definition.
 
-        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -426,7 +441,7 @@ class JobDefinitionSummary(object):
         :param job_type: The job_type of this JobDefinitionSummary.
         :type: str
         """
-        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"]
+        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
         if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
             job_type = 'UNKNOWN_ENUM_VALUE'
         self._job_type = job_type
@@ -680,6 +695,30 @@ class JobDefinitionSummary(object):
         :type: str
         """
         self._data_asset_key = data_asset_key
+
+    @property
+    def glossary_key(self):
+        """
+        Gets the glossary_key of this JobDefinitionSummary.
+        Unique key of the glossary to which this job applies, if the job involves a glossary.
+
+
+        :return: The glossary_key of this JobDefinitionSummary.
+        :rtype: str
+        """
+        return self._glossary_key
+
+    @glossary_key.setter
+    def glossary_key(self, glossary_key):
+        """
+        Sets the glossary_key of this JobDefinitionSummary.
+        Unique key of the glossary to which this job applies, if the job involves a glossary.
+
+
+        :param glossary_key: The glossary_key of this JobDefinitionSummary.
+        :type: str
+        """
+        self._glossary_key = glossary_key
 
     def __repr__(self):
         return formatted_flat_dict(self)

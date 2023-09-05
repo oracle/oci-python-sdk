@@ -28,19 +28,26 @@ class IssueType(object):
             The value to assign to the label property of this IssueType.
         :type label: str
 
+        :param name:
+            The value to assign to the name property of this IssueType.
+        :type name: str
+
         """
         self.swagger_types = {
             'issue_type_key': 'str',
-            'label': 'str'
+            'label': 'str',
+            'name': 'str'
         }
 
         self.attribute_map = {
             'issue_type_key': 'issueTypeKey',
-            'label': 'label'
+            'label': 'label',
+            'name': 'name'
         }
 
         self._issue_type_key = None
         self._label = None
+        self._name = None
 
     @property
     def issue_type_key(self):
@@ -89,6 +96,30 @@ class IssueType(object):
         :type: str
         """
         self._label = label
+
+    @property
+    def name(self):
+        """
+        Gets the name of this IssueType.
+        The URL for the contextual documentation.
+
+
+        :return: The name of this IssueType.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this IssueType.
+        The URL for the contextual documentation.
+
+
+        :param name: The name of this IssueType.
+        :type: str
+        """
+        self._name = name
 
     def __repr__(self):
         return formatted_flat_dict(self)

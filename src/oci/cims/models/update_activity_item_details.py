@@ -12,9 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateActivityItemDetails(UpdateItemDetails):
     """
-    Details for udpating the support ticket activity.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
+    Details for updating the support ticket activity.
     """
 
     #: A constant which can be used with the activity_type property of a UpdateActivityItemDetails.
@@ -33,6 +31,10 @@ class UpdateActivityItemDetails(UpdateItemDetails):
     #: This constant has a value of "CLOSE"
     ACTIVITY_TYPE_CLOSE = "CLOSE"
 
+    #: A constant which can be used with the activity_type property of a UpdateActivityItemDetails.
+    #: This constant has a value of "REOPEN"
+    ACTIVITY_TYPE_REOPEN = "REOPEN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateActivityItemDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.cims.models.UpdateActivityItemDetails.type` attribute
@@ -49,7 +51,7 @@ class UpdateActivityItemDetails(UpdateItemDetails):
 
         :param activity_type:
             The value to assign to the activity_type property of this UpdateActivityItemDetails.
-            Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE"
+            Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN"
         :type activity_type: str
 
         """
@@ -100,7 +102,7 @@ class UpdateActivityItemDetails(UpdateItemDetails):
         Gets the activity_type of this UpdateActivityItemDetails.
         The type of activity occurring.
 
-        Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE"
+        Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN"
 
 
         :return: The activity_type of this UpdateActivityItemDetails.
@@ -118,7 +120,7 @@ class UpdateActivityItemDetails(UpdateItemDetails):
         :param activity_type: The activity_type of this UpdateActivityItemDetails.
         :type: str
         """
-        allowed_values = ["NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE"]
+        allowed_values = ["NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", "REOPEN"]
         if not value_allowed_none_or_none_sentinel(activity_type, allowed_values):
             raise ValueError(
                 "Invalid value for `activity_type`, must be None or one of {0}"

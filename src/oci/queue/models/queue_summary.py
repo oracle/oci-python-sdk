@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class QueueSummary(object):
     """
-    Summary of the Queue.
+    Summary of the queue.
     """
 
     def __init__(self, **kwargs):
@@ -109,7 +109,7 @@ class QueueSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this QueueSummary.
-        Unique identifier that is immutable on creation
+        A unique identifier for the queue that is immutable on creation.
 
 
         :return: The id of this QueueSummary.
@@ -121,7 +121,7 @@ class QueueSummary(object):
     def id(self, id):
         """
         Sets the id of this QueueSummary.
-        Unique identifier that is immutable on creation
+        A unique identifier for the queue that is immutable on creation.
 
 
         :param id: The id of this QueueSummary.
@@ -133,7 +133,7 @@ class QueueSummary(object):
     def display_name(self):
         """
         Gets the display_name of this QueueSummary.
-        Queue Identifier, can be renamed
+        A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this QueueSummary.
@@ -145,7 +145,7 @@ class QueueSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this QueueSummary.
-        Queue Identifier, can be renamed
+        A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this QueueSummary.
@@ -157,7 +157,9 @@ class QueueSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this QueueSummary.
-        Compartment Identifier
+        The `OCID`__ of the compartment containing the queue.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this QueueSummary.
@@ -169,7 +171,9 @@ class QueueSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this QueueSummary.
-        Compartment Identifier
+        The `OCID`__ of the compartment containing the queue.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this QueueSummary.
@@ -181,7 +185,11 @@ class QueueSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this QueueSummary.
-        The time the the Queue was created. An RFC3339 formatted datetime string
+        The time that the queue was created, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this QueueSummary.
@@ -193,7 +201,11 @@ class QueueSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this QueueSummary.
-        The time the the Queue was created. An RFC3339 formatted datetime string
+        The time that the queue was created, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this QueueSummary.
@@ -205,7 +217,11 @@ class QueueSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this QueueSummary.
-        The time the Queue was updated. An RFC3339 formatted datetime string
+        The time that the queue was updated, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_updated of this QueueSummary.
@@ -217,7 +233,11 @@ class QueueSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this QueueSummary.
-        The time the Queue was updated. An RFC3339 formatted datetime string
+        The time that the queue was updated, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_updated: The time_updated of this QueueSummary.
@@ -229,7 +249,7 @@ class QueueSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this QueueSummary.
-        The current state of the Queue.
+        The current state of the queue.
 
 
         :return: The lifecycle_state of this QueueSummary.
@@ -241,7 +261,7 @@ class QueueSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this QueueSummary.
-        The current state of the Queue.
+        The current state of the queue.
 
 
         :param lifecycle_state: The lifecycle_state of this QueueSummary.
@@ -253,7 +273,7 @@ class QueueSummary(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this QueueSummary.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        Any additional details about the current state of the queue.
 
 
         :return: The lifecycle_details of this QueueSummary.
@@ -265,7 +285,7 @@ class QueueSummary(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this QueueSummary.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        Any additional details about the current state of the queue.
 
 
         :param lifecycle_details: The lifecycle_details of this QueueSummary.
@@ -277,7 +297,7 @@ class QueueSummary(object):
     def messages_endpoint(self):
         """
         **[Required]** Gets the messages_endpoint of this QueueSummary.
-        The endpoint to use to get or put messages in the queue.
+        The endpoint to use to consume or publish messages in the queue.
 
 
         :return: The messages_endpoint of this QueueSummary.
@@ -289,7 +309,7 @@ class QueueSummary(object):
     def messages_endpoint(self, messages_endpoint):
         """
         Sets the messages_endpoint of this QueueSummary.
-        The endpoint to use to get or put messages in the queue.
+        The endpoint to use to consume or publish messages in the queue.
 
 
         :param messages_endpoint: The messages_endpoint of this QueueSummary.

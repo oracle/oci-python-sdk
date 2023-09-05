@@ -200,7 +200,6 @@ API Reference
 * :doc:`Usage Plans <apigateway/client/oci.apigateway.UsagePlansClient>`
 * :doc:`Usageapi <usage_api/client/oci.usage_api.UsageapiClient>`
 * :doc:`Usagelimits <usage/client/oci.usage.UsagelimitsClient>`
-* :doc:`User <cims/client/oci.cims.UserClient>`
 * :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
 * :doc:`Vb Instance <visual_builder/client/oci.visual_builder.VbInstanceClient>`
 * :doc:`Vbs Instance <vbs_inst/client/oci.vbs_inst.VbsInstanceClient>`

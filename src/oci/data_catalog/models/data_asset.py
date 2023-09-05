@@ -84,6 +84,10 @@ class DataAsset(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this DataAsset.
+        :type lifecycle_details: str
+
         :param time_created:
             The value to assign to the time_created property of this DataAsset.
         :type time_created: datetime
@@ -129,6 +133,7 @@ class DataAsset(object):
             'external_key': 'str',
             'type_key': 'str',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'time_harvested': 'datetime',
@@ -148,6 +153,7 @@ class DataAsset(object):
             'external_key': 'externalKey',
             'type_key': 'typeKey',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'time_harvested': 'timeHarvested',
@@ -166,6 +172,7 @@ class DataAsset(object):
         self._external_key = None
         self._type_key = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
         self._time_harvested = None
@@ -351,6 +358,32 @@ class DataAsset(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this DataAsset.
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+        see service documentation for details.
+
+
+        :return: The lifecycle_details of this DataAsset.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this DataAsset.
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+        see service documentation for details.
+
+
+        :param lifecycle_details: The lifecycle_details of this DataAsset.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def time_created(self):

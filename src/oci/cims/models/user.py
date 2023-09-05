@@ -12,8 +12,28 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class User(object):
     """
-    Details about the user object.
+    Details about the user.
     """
+
+    #: A constant which can be used with the problem_type property of a User.
+    #: This constant has a value of "LIMIT"
+    PROBLEM_TYPE_LIMIT = "LIMIT"
+
+    #: A constant which can be used with the problem_type property of a User.
+    #: This constant has a value of "LEGACY_LIMIT"
+    PROBLEM_TYPE_LEGACY_LIMIT = "LEGACY_LIMIT"
+
+    #: A constant which can be used with the problem_type property of a User.
+    #: This constant has a value of "TECH"
+    PROBLEM_TYPE_TECH = "TECH"
+
+    #: A constant which can be used with the problem_type property of a User.
+    #: This constant has a value of "ACCOUNT"
+    PROBLEM_TYPE_ACCOUNT = "ACCOUNT"
+
+    #: A constant which can be used with the problem_type property of a User.
+    #: This constant has a value of "TAXONOMY"
+    PROBLEM_TYPE_TAXONOMY = "TAXONOMY"
 
     def __init__(self, **kwargs):
         """
@@ -60,6 +80,11 @@ class User(object):
             The value to assign to the contact_email property of this User.
         :type contact_email: str
 
+        :param problem_type:
+            The value to assign to the problem_type property of this User.
+            Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY"
+        :type problem_type: str
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -71,7 +96,8 @@ class User(object):
             'timezone': 'str',
             'organization_name': 'str',
             'compartment_id': 'str',
-            'contact_email': 'str'
+            'contact_email': 'str',
+            'problem_type': 'str'
         }
 
         self.attribute_map = {
@@ -84,7 +110,8 @@ class User(object):
             'timezone': 'timezone',
             'organization_name': 'organizationName',
             'compartment_id': 'compartmentId',
-            'contact_email': 'contactEmail'
+            'contact_email': 'contactEmail',
+            'problem_type': 'problemType'
         }
 
         self._key = None
@@ -97,12 +124,13 @@ class User(object):
         self._organization_name = None
         self._compartment_id = None
         self._contact_email = None
+        self._problem_type = None
 
     @property
     def key(self):
         """
         **[Required]** Gets the key of this User.
-        Unique identifier for the user.
+        A unique identifier for the user.
 
 
         :return: The key of this User.
@@ -114,7 +142,7 @@ class User(object):
     def key(self, key):
         """
         Sets the key of this User.
-        Unique identifier for the user.
+        A unique identifier for the user.
 
 
         :param key: The key of this User.
@@ -126,7 +154,7 @@ class User(object):
     def first_name(self):
         """
         Gets the first_name of this User.
-        First name of the user.
+        The user's first name.
 
 
         :return: The first_name of this User.
@@ -138,7 +166,7 @@ class User(object):
     def first_name(self, first_name):
         """
         Sets the first_name of this User.
-        First name of the user.
+        The user's first name.
 
 
         :param first_name: The first_name of this User.
@@ -150,7 +178,7 @@ class User(object):
     def last_name(self):
         """
         Gets the last_name of this User.
-        Last name of the user.
+        The user's last name.
 
 
         :return: The last_name of this User.
@@ -162,7 +190,7 @@ class User(object):
     def last_name(self, last_name):
         """
         Sets the last_name of this User.
-        Last name of the user.
+        The user's last name.
 
 
         :param last_name: The last_name of this User.
@@ -174,7 +202,7 @@ class User(object):
     def country(self):
         """
         Gets the country of this User.
-        Country of the user.
+        The country of the user.
 
 
         :return: The country of this User.
@@ -186,7 +214,7 @@ class User(object):
     def country(self, country):
         """
         Sets the country of this User.
-        Country of the user.
+        The country of the user.
 
 
         :param country: The country of this User.
@@ -198,7 +226,7 @@ class User(object):
     def csi(self):
         """
         Gets the csi of this User.
-        CSI to be associated to the user.
+        The CSI associated with the user.
 
 
         :return: The csi of this User.
@@ -210,7 +238,7 @@ class User(object):
     def csi(self, csi):
         """
         Sets the csi of this User.
-        CSI to be associated to the user.
+        The CSI associated with the user.
 
 
         :param csi: The csi of this User.
@@ -222,7 +250,7 @@ class User(object):
     def phone(self):
         """
         Gets the phone of this User.
-        Contact number of the user.
+        The user's contact phone number.
 
 
         :return: The phone of this User.
@@ -234,7 +262,7 @@ class User(object):
     def phone(self, phone):
         """
         Sets the phone of this User.
-        Contact number of the user.
+        The user's contact phone number.
 
 
         :param phone: The phone of this User.
@@ -246,7 +274,7 @@ class User(object):
     def timezone(self):
         """
         Gets the timezone of this User.
-        Timezone of the user.
+        The timezone of the user.
 
 
         :return: The timezone of this User.
@@ -258,7 +286,7 @@ class User(object):
     def timezone(self, timezone):
         """
         Sets the timezone of this User.
-        Timezone of the user.
+        The timezone of the user.
 
 
         :param timezone: The timezone of this User.
@@ -270,7 +298,7 @@ class User(object):
     def organization_name(self):
         """
         Gets the organization_name of this User.
-        Organization of the user.
+        The company that the user belongs to.
 
 
         :return: The organization_name of this User.
@@ -282,7 +310,7 @@ class User(object):
     def organization_name(self, organization_name):
         """
         Sets the organization_name of this User.
-        Organization of the user.
+        The company that the user belongs to.
 
 
         :param organization_name: The organization_name of this User.
@@ -337,6 +365,38 @@ class User(object):
         :type: str
         """
         self._contact_email = contact_email
+
+    @property
+    def problem_type(self):
+        """
+        Gets the problem_type of this User.
+        The kind of support ticket, such as a technical support request or a limit increase request.
+
+        Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY"
+
+
+        :return: The problem_type of this User.
+        :rtype: str
+        """
+        return self._problem_type
+
+    @problem_type.setter
+    def problem_type(self, problem_type):
+        """
+        Sets the problem_type of this User.
+        The kind of support ticket, such as a technical support request or a limit increase request.
+
+
+        :param problem_type: The problem_type of this User.
+        :type: str
+        """
+        allowed_values = ["LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY"]
+        if not value_allowed_none_or_none_sentinel(problem_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `problem_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._problem_type = problem_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateMessagesDetails(object):
     """
-    The details of a UpdateMessages request.
+    The details of an UpdateMessages request.
     """
 
     def __init__(self, **kwargs):

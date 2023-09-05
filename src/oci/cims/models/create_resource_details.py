@@ -13,245 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateResourceDetails(object):
     """
     Details about the resource that the support ticket relates to.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "DEV"
-    REGION_DEV = "DEV"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "SEA"
-    REGION_SEA = "SEA"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "INTEG_NEXT"
-    REGION_INTEG_NEXT = "INTEG_NEXT"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "INTEG_STABLE"
-    REGION_INTEG_STABLE = "INTEG_STABLE"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "PHX"
-    REGION_PHX = "PHX"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "IAD"
-    REGION_IAD = "IAD"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "FRA"
-    REGION_FRA = "FRA"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "EU_FRANKFURT_1"
-    REGION_EU_FRANKFURT_1 = "EU_FRANKFURT_1"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "LHR"
-    REGION_LHR = "LHR"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "YYZ"
-    REGION_YYZ = "YYZ"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "NRT"
-    REGION_NRT = "NRT"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "ICN"
-    REGION_ICN = "ICN"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "BOM"
-    REGION_BOM = "BOM"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "GRU"
-    REGION_GRU = "GRU"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "SYD"
-    REGION_SYD = "SYD"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "ZRH"
-    REGION_ZRH = "ZRH"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "JED"
-    REGION_JED = "JED"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "AMS"
-    REGION_AMS = "AMS"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "KIX"
-    REGION_KIX = "KIX"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "MEL"
-    REGION_MEL = "MEL"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "YUL"
-    REGION_YUL = "YUL"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "HYD"
-    REGION_HYD = "HYD"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "YNY"
-    REGION_YNY = "YNY"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "DEV_1"
-    AVAILABILITY_DOMAIN_DEV_1 = "DEV_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "DEV_2"
-    AVAILABILITY_DOMAIN_DEV_2 = "DEV_2"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "DEV_3"
-    AVAILABILITY_DOMAIN_DEV_3 = "DEV_3"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "INTEG_NEXT_1"
-    AVAILABILITY_DOMAIN_INTEG_NEXT_1 = "INTEG_NEXT_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "INTEG_STABLE_1"
-    AVAILABILITY_DOMAIN_INTEG_STABLE_1 = "INTEG_STABLE_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "SEA_AD_1"
-    AVAILABILITY_DOMAIN_SEA_AD_1 = "SEA_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "SEA_AD_2"
-    AVAILABILITY_DOMAIN_SEA_AD_2 = "SEA_AD_2"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "SEA_AD_3"
-    AVAILABILITY_DOMAIN_SEA_AD_3 = "SEA_AD_3"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "PHX_AD_1"
-    AVAILABILITY_DOMAIN_PHX_AD_1 = "PHX_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "PHX_AD_2"
-    AVAILABILITY_DOMAIN_PHX_AD_2 = "PHX_AD_2"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "PHX_AD_3"
-    AVAILABILITY_DOMAIN_PHX_AD_3 = "PHX_AD_3"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "US_ASHBURN_AD_1"
-    AVAILABILITY_DOMAIN_US_ASHBURN_AD_1 = "US_ASHBURN_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "US_ASHBURN_AD_2"
-    AVAILABILITY_DOMAIN_US_ASHBURN_AD_2 = "US_ASHBURN_AD_2"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "US_ASHBURN_AD_3"
-    AVAILABILITY_DOMAIN_US_ASHBURN_AD_3 = "US_ASHBURN_AD_3"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "US_ASHBURN_AD_4"
-    AVAILABILITY_DOMAIN_US_ASHBURN_AD_4 = "US_ASHBURN_AD_4"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "EU_FRANKFURT_1_AD_1"
-    AVAILABILITY_DOMAIN_EU_FRANKFURT_1_AD_1 = "EU_FRANKFURT_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "EU_FRANKFURT_1_AD_2"
-    AVAILABILITY_DOMAIN_EU_FRANKFURT_1_AD_2 = "EU_FRANKFURT_1_AD_2"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "EU_FRANKFURT_1_AD_3"
-    AVAILABILITY_DOMAIN_EU_FRANKFURT_1_AD_3 = "EU_FRANKFURT_1_AD_3"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "UK_LONDON_1_AD_1"
-    AVAILABILITY_DOMAIN_UK_LONDON_1_AD_1 = "UK_LONDON_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "UK_LONDON_1_AD_2"
-    AVAILABILITY_DOMAIN_UK_LONDON_1_AD_2 = "UK_LONDON_1_AD_2"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "UK_LONDON_1_AD_3"
-    AVAILABILITY_DOMAIN_UK_LONDON_1_AD_3 = "UK_LONDON_1_AD_3"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "CA_TORONTO_1_AD_1"
-    AVAILABILITY_DOMAIN_CA_TORONTO_1_AD_1 = "CA_TORONTO_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "AP_TOKYO_1_AD_1"
-    AVAILABILITY_DOMAIN_AP_TOKYO_1_AD_1 = "AP_TOKYO_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "AP_SEOUL_1_AD_1"
-    AVAILABILITY_DOMAIN_AP_SEOUL_1_AD_1 = "AP_SEOUL_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "AP_MUMBAI_1_AD_1"
-    AVAILABILITY_DOMAIN_AP_MUMBAI_1_AD_1 = "AP_MUMBAI_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "SA_SAOPAULO_1_AD_1"
-    AVAILABILITY_DOMAIN_SA_SAOPAULO_1_AD_1 = "SA_SAOPAULO_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "ME_JEDDAH_1_AD_1"
-    AVAILABILITY_DOMAIN_ME_JEDDAH_1_AD_1 = "ME_JEDDAH_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "AP_OSAKA_1_AD_1"
-    AVAILABILITY_DOMAIN_AP_OSAKA_1_AD_1 = "AP_OSAKA_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "AP_SYDNEY_1_AD_1"
-    AVAILABILITY_DOMAIN_AP_SYDNEY_1_AD_1 = "AP_SYDNEY_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "EU_ZURICH_1_AD_1"
-    AVAILABILITY_DOMAIN_EU_ZURICH_1_AD_1 = "EU_ZURICH_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "EU_AMSTERDAM_1_AD_1"
-    AVAILABILITY_DOMAIN_EU_AMSTERDAM_1_AD_1 = "EU_AMSTERDAM_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "AP_MELBOURNE_1_AD_1"
-    AVAILABILITY_DOMAIN_AP_MELBOURNE_1_AD_1 = "AP_MELBOURNE_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "CA_MONTREAL_1_AD_1"
-    AVAILABILITY_DOMAIN_CA_MONTREAL_1_AD_1 = "CA_MONTREAL_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "AP_HYDERABAD_1_AD_1"
-    AVAILABILITY_DOMAIN_AP_HYDERABAD_1_AD_1 = "AP_HYDERABAD_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "AP_CHUNCHEON_1_AD_1"
-    AVAILABILITY_DOMAIN_AP_CHUNCHEON_1_AD_1 = "AP_CHUNCHEON_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "NO_AD"
-    AVAILABILITY_DOMAIN_NO_AD = "NO_AD"
 
     def __init__(self, **kwargs):
         """
@@ -264,30 +26,21 @@ class CreateResourceDetails(object):
 
         :param region:
             The value to assign to the region property of this CreateResourceDetails.
-            Allowed values for this property are: "DEV", "SEA", "INTEG_NEXT", "INTEG_STABLE", "PHX", "IAD", "FRA", "EU_FRANKFURT_1", "LHR", "YYZ", "NRT", "ICN", "BOM", "GRU", "SYD", "ZRH", "JED", "AMS", "KIX", "MEL", "YUL", "HYD", "YNY"
         :type region: str
-
-        :param availability_domain:
-            The value to assign to the availability_domain property of this CreateResourceDetails.
-            Allowed values for this property are: "DEV_1", "DEV_2", "DEV_3", "INTEG_NEXT_1", "INTEG_STABLE_1", "SEA_AD_1", "SEA_AD_2", "SEA_AD_3", "PHX_AD_1", "PHX_AD_2", "PHX_AD_3", "US_ASHBURN_AD_1", "US_ASHBURN_AD_2", "US_ASHBURN_AD_3", "US_ASHBURN_AD_4", "EU_FRANKFURT_1_AD_1", "EU_FRANKFURT_1_AD_2", "EU_FRANKFURT_1_AD_3", "UK_LONDON_1_AD_1", "UK_LONDON_1_AD_2", "UK_LONDON_1_AD_3", "CA_TORONTO_1_AD_1", "AP_TOKYO_1_AD_1", "AP_SEOUL_1_AD_1", "AP_MUMBAI_1_AD_1", "SA_SAOPAULO_1_AD_1", "ME_JEDDAH_1_AD_1", "AP_OSAKA_1_AD_1", "AP_SYDNEY_1_AD_1", "EU_ZURICH_1_AD_1", "EU_AMSTERDAM_1_AD_1", "AP_MELBOURNE_1_AD_1", "CA_MONTREAL_1_AD_1", "AP_HYDERABAD_1_AD_1", "AP_CHUNCHEON_1_AD_1", "NO_AD"
-        :type availability_domain: str
 
         """
         self.swagger_types = {
             'item': 'CreateItemDetails',
-            'region': 'str',
-            'availability_domain': 'str'
+            'region': 'str'
         }
 
         self.attribute_map = {
             'item': 'item',
-            'region': 'region',
-            'availability_domain': 'availabilityDomain'
+            'region': 'region'
         }
 
         self._item = None
         self._region = None
-        self._availability_domain = None
 
     @property
     def item(self):
@@ -315,8 +68,6 @@ class CreateResourceDetails(object):
         Gets the region of this CreateResourceDetails.
         The list of available Oracle Cloud Infrastructure regions.
 
-        Allowed values for this property are: "DEV", "SEA", "INTEG_NEXT", "INTEG_STABLE", "PHX", "IAD", "FRA", "EU_FRANKFURT_1", "LHR", "YYZ", "NRT", "ICN", "BOM", "GRU", "SYD", "ZRH", "JED", "AMS", "KIX", "MEL", "YUL", "HYD", "YNY"
-
 
         :return: The region of this CreateResourceDetails.
         :rtype: str
@@ -333,45 +84,7 @@ class CreateResourceDetails(object):
         :param region: The region of this CreateResourceDetails.
         :type: str
         """
-        allowed_values = ["DEV", "SEA", "INTEG_NEXT", "INTEG_STABLE", "PHX", "IAD", "FRA", "EU_FRANKFURT_1", "LHR", "YYZ", "NRT", "ICN", "BOM", "GRU", "SYD", "ZRH", "JED", "AMS", "KIX", "MEL", "YUL", "HYD", "YNY"]
-        if not value_allowed_none_or_none_sentinel(region, allowed_values):
-            raise ValueError(
-                "Invalid value for `region`, must be None or one of {0}"
-                .format(allowed_values)
-            )
         self._region = region
-
-    @property
-    def availability_domain(self):
-        """
-        Gets the availability_domain of this CreateResourceDetails.
-        The list of available Oracle Cloud Infrastructure availability domains.
-
-        Allowed values for this property are: "DEV_1", "DEV_2", "DEV_3", "INTEG_NEXT_1", "INTEG_STABLE_1", "SEA_AD_1", "SEA_AD_2", "SEA_AD_3", "PHX_AD_1", "PHX_AD_2", "PHX_AD_3", "US_ASHBURN_AD_1", "US_ASHBURN_AD_2", "US_ASHBURN_AD_3", "US_ASHBURN_AD_4", "EU_FRANKFURT_1_AD_1", "EU_FRANKFURT_1_AD_2", "EU_FRANKFURT_1_AD_3", "UK_LONDON_1_AD_1", "UK_LONDON_1_AD_2", "UK_LONDON_1_AD_3", "CA_TORONTO_1_AD_1", "AP_TOKYO_1_AD_1", "AP_SEOUL_1_AD_1", "AP_MUMBAI_1_AD_1", "SA_SAOPAULO_1_AD_1", "ME_JEDDAH_1_AD_1", "AP_OSAKA_1_AD_1", "AP_SYDNEY_1_AD_1", "EU_ZURICH_1_AD_1", "EU_AMSTERDAM_1_AD_1", "AP_MELBOURNE_1_AD_1", "CA_MONTREAL_1_AD_1", "AP_HYDERABAD_1_AD_1", "AP_CHUNCHEON_1_AD_1", "NO_AD"
-
-
-        :return: The availability_domain of this CreateResourceDetails.
-        :rtype: str
-        """
-        return self._availability_domain
-
-    @availability_domain.setter
-    def availability_domain(self, availability_domain):
-        """
-        Sets the availability_domain of this CreateResourceDetails.
-        The list of available Oracle Cloud Infrastructure availability domains.
-
-
-        :param availability_domain: The availability_domain of this CreateResourceDetails.
-        :type: str
-        """
-        allowed_values = ["DEV_1", "DEV_2", "DEV_3", "INTEG_NEXT_1", "INTEG_STABLE_1", "SEA_AD_1", "SEA_AD_2", "SEA_AD_3", "PHX_AD_1", "PHX_AD_2", "PHX_AD_3", "US_ASHBURN_AD_1", "US_ASHBURN_AD_2", "US_ASHBURN_AD_3", "US_ASHBURN_AD_4", "EU_FRANKFURT_1_AD_1", "EU_FRANKFURT_1_AD_2", "EU_FRANKFURT_1_AD_3", "UK_LONDON_1_AD_1", "UK_LONDON_1_AD_2", "UK_LONDON_1_AD_3", "CA_TORONTO_1_AD_1", "AP_TOKYO_1_AD_1", "AP_SEOUL_1_AD_1", "AP_MUMBAI_1_AD_1", "SA_SAOPAULO_1_AD_1", "ME_JEDDAH_1_AD_1", "AP_OSAKA_1_AD_1", "AP_SYDNEY_1_AD_1", "EU_ZURICH_1_AD_1", "EU_AMSTERDAM_1_AD_1", "AP_MELBOURNE_1_AD_1", "CA_MONTREAL_1_AD_1", "AP_HYDERABAD_1_AD_1", "AP_CHUNCHEON_1_AD_1", "NO_AD"]
-        if not value_allowed_none_or_none_sentinel(availability_domain, allowed_values):
-            raise ValueError(
-                "Invalid value for `availability_domain`, must be None or one of {0}"
-                .format(allowed_values)
-            )
-        self._availability_domain = availability_domain
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LimitItem(Item):
     """
-    Reserved for future use.
+    Details about the LimitItem object.
     """
 
     #: A constant which can be used with the limit_status property of a LimitItem.
@@ -118,7 +118,7 @@ class LimitItem(Item):
     def current_limit(self):
         """
         Gets the current_limit of this LimitItem.
-        The currently available limit of the resource.
+        The current service limit for the resource.
 
 
         :return: The current_limit of this LimitItem.
@@ -130,7 +130,7 @@ class LimitItem(Item):
     def current_limit(self, current_limit):
         """
         Sets the current_limit of this LimitItem.
-        The currently available limit of the resource.
+        The current service limit for the resource.
 
 
         :param current_limit: The current_limit of this LimitItem.
@@ -142,7 +142,7 @@ class LimitItem(Item):
     def current_usage(self):
         """
         Gets the current_usage of this LimitItem.
-        The current usage of the resource.
+        The current resource usage.
 
 
         :return: The current_usage of this LimitItem.
@@ -154,7 +154,7 @@ class LimitItem(Item):
     def current_usage(self, current_usage):
         """
         Sets the current_usage of this LimitItem.
-        The current usage of the resource.
+        The current resource usage.
 
 
         :param current_usage: The current_usage of this LimitItem.
@@ -166,7 +166,7 @@ class LimitItem(Item):
     def requested_limit(self):
         """
         Gets the requested_limit of this LimitItem.
-        The requested limit for the resource.
+        The new service limit being requested for the resource.
 
 
         :return: The requested_limit of this LimitItem.
@@ -178,7 +178,7 @@ class LimitItem(Item):
     def requested_limit(self, requested_limit):
         """
         Sets the requested_limit of this LimitItem.
-        The requested limit for the resource.
+        The new service limit being requested for the resource.
 
 
         :param requested_limit: The requested_limit of this LimitItem.

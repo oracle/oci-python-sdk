@@ -53,7 +53,7 @@ class FacetedSearchDateFilterRequest(object):
     def field_name(self):
         """
         Gets the field_name of this FacetedSearchDateFilterRequest.
-        Date field name that needs to be filtered by.
+        Date field name that needs to be filtered by. Acceptable fields include TimeCreated and TimeUpdated.
 
 
         :return: The field_name of this FacetedSearchDateFilterRequest.
@@ -65,7 +65,7 @@ class FacetedSearchDateFilterRequest(object):
     def field_name(self, field_name):
         """
         Sets the field_name of this FacetedSearchDateFilterRequest.
-        Date field name that needs to be filtered by.
+        Date field name that needs to be filtered by. Acceptable fields include TimeCreated and TimeUpdated.
 
 
         :param field_name: The field_name of this FacetedSearchDateFilterRequest.

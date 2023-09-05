@@ -46,7 +46,7 @@ class UpdateMessagesDetailsEntry(object):
     def receipt(self):
         """
         **[Required]** Gets the receipt of this UpdateMessagesDetailsEntry.
-        The receipt of the message to update
+        The receipt of the message to update.
 
 
         :return: The receipt of this UpdateMessagesDetailsEntry.
@@ -58,7 +58,7 @@ class UpdateMessagesDetailsEntry(object):
     def receipt(self, receipt):
         """
         Sets the receipt of this UpdateMessagesDetailsEntry.
-        The receipt of the message to update
+        The receipt of the message to update.
 
 
         :param receipt: The receipt of this UpdateMessagesDetailsEntry.

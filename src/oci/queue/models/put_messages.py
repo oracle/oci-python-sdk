@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PutMessages(object):
     """
-    A list of the messages published in a queue.
+    A list of the messages published to a queue.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class PutMessages(object):
     def messages(self):
         """
         **[Required]** Gets the messages of this PutMessages.
-        The messages that have been published in a queue.
+        The messages that have been published to a queue.
 
 
         :return: The messages of this PutMessages.
@@ -51,7 +51,7 @@ class PutMessages(object):
     def messages(self, messages):
         """
         Sets the messages of this PutMessages.
-        The messages that have been published in a queue.
+        The messages that have been published to a queue.
 
 
         :param messages: The messages of this PutMessages.

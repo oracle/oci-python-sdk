@@ -118,6 +118,10 @@ class AttributeSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this AttributeSummary.
+        :type lifecycle_details: str
+
         :param time_created:
             The value to assign to the time_created property of this AttributeSummary.
         :type time_created: datetime
@@ -195,6 +199,7 @@ class AttributeSummary(object):
             'is_nullable': 'bool',
             'uri': 'str',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'time_created': 'datetime',
             'external_data_type': 'str',
             'type_key': 'str',
@@ -226,6 +231,7 @@ class AttributeSummary(object):
             'is_nullable': 'isNullable',
             'uri': 'uri',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'external_data_type': 'externalDataType',
             'type_key': 'typeKey',
@@ -256,6 +262,7 @@ class AttributeSummary(object):
         self._is_nullable = None
         self._uri = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._time_created = None
         self._external_data_type = None
         self._type_key = None
@@ -591,6 +598,32 @@ class AttributeSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this AttributeSummary.
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+        see service documentation for details.
+
+
+        :return: The lifecycle_details of this AttributeSummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this AttributeSummary.
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+        see service documentation for details.
+
+
+        :param lifecycle_details: The lifecycle_details of this AttributeSummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def time_created(self):

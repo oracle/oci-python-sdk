@@ -32,6 +32,10 @@ class UpdateQueueDetails(object):
             The value to assign to the timeout_in_seconds property of this UpdateQueueDetails.
         :type timeout_in_seconds: int
 
+        :param channel_consumption_limit:
+            The value to assign to the channel_consumption_limit property of this UpdateQueueDetails.
+        :type channel_consumption_limit: int
+
         :param dead_letter_queue_delivery_count:
             The value to assign to the dead_letter_queue_delivery_count property of this UpdateQueueDetails.
         :type dead_letter_queue_delivery_count: int
@@ -53,6 +57,7 @@ class UpdateQueueDetails(object):
             'display_name': 'str',
             'visibility_in_seconds': 'int',
             'timeout_in_seconds': 'int',
+            'channel_consumption_limit': 'int',
             'dead_letter_queue_delivery_count': 'int',
             'custom_encryption_key_id': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -63,6 +68,7 @@ class UpdateQueueDetails(object):
             'display_name': 'displayName',
             'visibility_in_seconds': 'visibilityInSeconds',
             'timeout_in_seconds': 'timeoutInSeconds',
+            'channel_consumption_limit': 'channelConsumptionLimit',
             'dead_letter_queue_delivery_count': 'deadLetterQueueDeliveryCount',
             'custom_encryption_key_id': 'customEncryptionKeyId',
             'freeform_tags': 'freeformTags',
@@ -72,6 +78,7 @@ class UpdateQueueDetails(object):
         self._display_name = None
         self._visibility_in_seconds = None
         self._timeout_in_seconds = None
+        self._channel_consumption_limit = None
         self._dead_letter_queue_delivery_count = None
         self._custom_encryption_key_id = None
         self._freeform_tags = None
@@ -81,7 +88,9 @@ class UpdateQueueDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateQueueDetails.
-        Queue Identifier
+        The `OCID`__ of the queue.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The display_name of this UpdateQueueDetails.
@@ -93,7 +102,9 @@ class UpdateQueueDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateQueueDetails.
-        Queue Identifier
+        The `OCID`__ of the queue.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param display_name: The display_name of this UpdateQueueDetails.
@@ -105,7 +116,7 @@ class UpdateQueueDetails(object):
     def visibility_in_seconds(self):
         """
         Gets the visibility_in_seconds of this UpdateQueueDetails.
-        The default visibility of the messages consumed from the queue.
+        The default visibility timeout of the messages consumed from the queue, in seconds.
 
 
         :return: The visibility_in_seconds of this UpdateQueueDetails.
@@ -117,7 +128,7 @@ class UpdateQueueDetails(object):
     def visibility_in_seconds(self, visibility_in_seconds):
         """
         Sets the visibility_in_seconds of this UpdateQueueDetails.
-        The default visibility of the messages consumed from the queue.
+        The default visibility timeout of the messages consumed from the queue, in seconds.
 
 
         :param visibility_in_seconds: The visibility_in_seconds of this UpdateQueueDetails.
@@ -150,12 +161,36 @@ class UpdateQueueDetails(object):
         self._timeout_in_seconds = timeout_in_seconds
 
     @property
+    def channel_consumption_limit(self):
+        """
+        Gets the channel_consumption_limit of this UpdateQueueDetails.
+        The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+
+
+        :return: The channel_consumption_limit of this UpdateQueueDetails.
+        :rtype: int
+        """
+        return self._channel_consumption_limit
+
+    @channel_consumption_limit.setter
+    def channel_consumption_limit(self, channel_consumption_limit):
+        """
+        Sets the channel_consumption_limit of this UpdateQueueDetails.
+        The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+
+
+        :param channel_consumption_limit: The channel_consumption_limit of this UpdateQueueDetails.
+        :type: int
+        """
+        self._channel_consumption_limit = channel_consumption_limit
+
+    @property
     def dead_letter_queue_delivery_count(self):
         """
         Gets the dead_letter_queue_delivery_count of this UpdateQueueDetails.
         The number of times a message can be delivered to a consumer before being moved to the dead letter queue.
         A value of 0 indicates that the DLQ is not used.
-        Changing that value to a lower threshold does not retro-actively move in-flight messages in the dead letter queue.
+        Changing that value to a lower threshold does not retroactively move in-flight messages in the dead letter queue.
 
 
         :return: The dead_letter_queue_delivery_count of this UpdateQueueDetails.
@@ -169,7 +204,7 @@ class UpdateQueueDetails(object):
         Sets the dead_letter_queue_delivery_count of this UpdateQueueDetails.
         The number of times a message can be delivered to a consumer before being moved to the dead letter queue.
         A value of 0 indicates that the DLQ is not used.
-        Changing that value to a lower threshold does not retro-actively move in-flight messages in the dead letter queue.
+        Changing that value to a lower threshold does not retroactively move in-flight messages in the dead letter queue.
 
 
         :param dead_letter_queue_delivery_count: The dead_letter_queue_delivery_count of this UpdateQueueDetails.
@@ -181,7 +216,9 @@ class UpdateQueueDetails(object):
     def custom_encryption_key_id(self):
         """
         Gets the custom_encryption_key_id of this UpdateQueueDetails.
-        Id of the custom master encryption key which will be used to encrypt messages content. String of length 0 means the custom key should be removed from queue
+        The `OCID`__ of the custom encryption key to be used to encrypt messages content. A string with a length of 0 means the custom key should be removed from queue.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The custom_encryption_key_id of this UpdateQueueDetails.
@@ -193,7 +230,9 @@ class UpdateQueueDetails(object):
     def custom_encryption_key_id(self, custom_encryption_key_id):
         """
         Sets the custom_encryption_key_id of this UpdateQueueDetails.
-        Id of the custom master encryption key which will be used to encrypt messages content. String of length 0 means the custom key should be removed from queue
+        The `OCID`__ of the custom encryption key to be used to encrypt messages content. A string with a length of 0 means the custom key should be removed from queue.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param custom_encryption_key_id: The custom_encryption_key_id of this UpdateQueueDetails.

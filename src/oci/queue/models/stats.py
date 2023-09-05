@@ -101,7 +101,7 @@ class Stats(object):
     def size_in_bytes(self):
         """
         **[Required]** Gets the size_in_bytes of this Stats.
-        The approximate size of the queue in bytes. Sum of the size of visible of in-flight messages.
+        The approximate size of the queue in bytes. Sum of the size of visible and in-flight messages.
 
 
         :return: The size_in_bytes of this Stats.
@@ -113,7 +113,7 @@ class Stats(object):
     def size_in_bytes(self, size_in_bytes):
         """
         Sets the size_in_bytes of this Stats.
-        The approximate size of the queue in bytes. Sum of the size of visible of in-flight messages.
+        The approximate size of the queue in bytes. Sum of the size of visible and in-flight messages.
 
 
         :param size_in_bytes: The size_in_bytes of this Stats.

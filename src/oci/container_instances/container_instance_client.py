@@ -1196,6 +1196,16 @@ class ContainerInstanceClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
+
+            Allowed values are: "timestamp"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1227,7 +1237,9 @@ class ContainerInstanceClient(object):
             "retry_strategy",
             "opc_request_id",
             "page",
-            "limit"
+            "limit",
+            "sort_by",
+            "sort_order"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1244,9 +1256,25 @@ class ContainerInstanceClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timestamp"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
         query_params = {
             "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing)
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1314,6 +1342,16 @@ class ContainerInstanceClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
+
+            Allowed values are: "timestamp"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1345,7 +1383,9 @@ class ContainerInstanceClient(object):
             "retry_strategy",
             "opc_request_id",
             "page",
-            "limit"
+            "limit",
+            "sort_by",
+            "sort_order"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1362,9 +1402,25 @@ class ContainerInstanceClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timestamp"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
         query_params = {
             "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing)
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1437,6 +1493,26 @@ class ContainerInstanceClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
+        :param str availability_domain: (optional)
+            The name of the availability domain.
+
+            Example: `Uocm:PHX-AD-1`
+
+        :param str status: (optional)
+            A filter to return only resources their lifecycleState matches the given OperationStatus.
+
+            Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+
+            Allowed values are: "timeAccepted"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1469,18 +1545,47 @@ class ContainerInstanceClient(object):
             "work_request_id",
             "opc_request_id",
             "page",
-            "limit"
+            "limit",
+            "availability_domain",
+            "status",
+            "sort_by",
+            "sort_order"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
 
+        if 'status' in kwargs:
+            status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+            if kwargs['status'] not in status_allowed_values:
+                raise ValueError(
+                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeAccepted"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "workRequestId": kwargs.get("work_request_id", missing),
             "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing)
+            "limit": kwargs.get("limit", missing),
+            "availabilityDomain": kwargs.get("availability_domain", missing),
+            "status": kwargs.get("status", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

@@ -13,8 +13,6 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateIncident(object):
     """
     Details gathered during the creation of the support ticket.
-
-    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the problem_type property of a CreateIncident.
@@ -32,6 +30,10 @@ class CreateIncident(object):
     #: A constant which can be used with the problem_type property of a CreateIncident.
     #: This constant has a value of "ACCOUNT"
     PROBLEM_TYPE_ACCOUNT = "ACCOUNT"
+
+    #: A constant which can be used with the problem_type property of a CreateIncident.
+    #: This constant has a value of "TAXONOMY"
+    PROBLEM_TYPE_TAXONOMY = "TAXONOMY"
 
     def __init__(self, **kwargs):
         """
@@ -52,7 +54,7 @@ class CreateIncident(object):
 
         :param problem_type:
             The value to assign to the problem_type property of this CreateIncident.
-            Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT"
+            Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY"
         :type problem_type: str
 
         :param contacts:
@@ -137,7 +139,8 @@ class CreateIncident(object):
     def csi(self):
         """
         Gets the csi of this CreateIncident.
-        The Customer Support Identifier number for the support account.
+        The Customer Support Identifier (CSI) number associated with the support account.
+        The CSI is required for technical support tickets and optional for limits and billing tickets.
 
 
         :return: The csi of this CreateIncident.
@@ -149,7 +152,8 @@ class CreateIncident(object):
     def csi(self, csi):
         """
         Sets the csi of this CreateIncident.
-        The Customer Support Identifier number for the support account.
+        The Customer Support Identifier (CSI) number associated with the support account.
+        The CSI is required for technical support tickets and optional for limits and billing tickets.
 
 
         :param csi: The csi of this CreateIncident.
@@ -161,9 +165,9 @@ class CreateIncident(object):
     def problem_type(self):
         """
         **[Required]** Gets the problem_type of this CreateIncident.
-        The kind of support ticket, such as a technical issue request.
+        The kind of support ticket, such as a technical support request or a limit increase request.
 
-        Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT"
+        Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY"
 
 
         :return: The problem_type of this CreateIncident.
@@ -175,13 +179,13 @@ class CreateIncident(object):
     def problem_type(self, problem_type):
         """
         Sets the problem_type of this CreateIncident.
-        The kind of support ticket, such as a technical issue request.
+        The kind of support ticket, such as a technical support request or a limit increase request.
 
 
         :param problem_type: The problem_type of this CreateIncident.
         :type: str
         """
-        allowed_values = ["LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT"]
+        allowed_values = ["LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", "TAXONOMY"]
         if not value_allowed_none_or_none_sentinel(problem_type, allowed_values):
             raise ValueError(
                 "Invalid value for `problem_type`, must be None or one of {0}"

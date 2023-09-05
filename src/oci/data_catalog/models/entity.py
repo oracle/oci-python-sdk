@@ -108,6 +108,10 @@ class Entity(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this Entity.
+        :type lifecycle_details: str
+
         :param external_key:
             The value to assign to the external_key property of this Entity.
         :type external_key: str
@@ -201,6 +205,7 @@ class Entity(object):
             'created_by_id': 'str',
             'updated_by_id': 'str',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'external_key': 'str',
             'pattern_key': 'str',
             'realized_expression': 'str',
@@ -233,6 +238,7 @@ class Entity(object):
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'external_key': 'externalKey',
             'pattern_key': 'patternKey',
             'realized_expression': 'realizedExpression',
@@ -264,6 +270,7 @@ class Entity(object):
         self._created_by_id = None
         self._updated_by_id = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._external_key = None
         self._pattern_key = None
         self._realized_expression = None
@@ -518,6 +525,32 @@ class Entity(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this Entity.
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+        see service documentation for details.
+
+
+        :return: The lifecycle_details of this Entity.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this Entity.
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+        see service documentation for details.
+
+
+        :param lifecycle_details: The lifecycle_details of this Entity.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def external_key(self):

@@ -20,7 +20,7 @@ missing = Sentinel("Missing")
 
 class QueueAdminClient(object):
     """
-    A description of the Queue API
+    Use the Queue API to produce and consume messages, create queues, and manage related items. For more information, see [Queue](/iaas/Content/queue/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -113,11 +113,11 @@ class QueueAdminClient(object):
 
     def change_queue_compartment(self, queue_id, change_queue_compartment_details, **kwargs):
         """
-        Moves a Queue resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+        Moves a queue from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
 
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param oci.queue.models.ChangeQueueCompartmentDetails change_queue_compartment_details: (required)
             The information to be updated.
@@ -130,7 +130,7 @@ class QueueAdminClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -223,7 +223,7 @@ class QueueAdminClient(object):
 
     def create_queue(self, create_queue_details, **kwargs):
         """
-        Creates a new Queue.
+        Creates a new queue.
 
 
         :param oci.queue.models.CreateQueueDetails create_queue_details: (required)
@@ -237,7 +237,7 @@ class QueueAdminClient(object):
             might be rejected.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -319,11 +319,11 @@ class QueueAdminClient(object):
 
     def delete_queue(self, queue_id, **kwargs):
         """
-        Deletes a Queue resource by identifier
+        Deletes a queue resource by identifier.
 
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -333,7 +333,7 @@ class QueueAdminClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -424,14 +424,14 @@ class QueueAdminClient(object):
 
     def get_queue(self, queue_id, **kwargs):
         """
-        Gets a Queue by identifier
+        Gets a queue by identifier.
 
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -529,7 +529,7 @@ class QueueAdminClient(object):
             The ID of the asynchronous request.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -620,11 +620,13 @@ class QueueAdminClient(object):
 
     def list_queues(self, **kwargs):
         """
-        Returns a list of Queues.
+        Returns a list of queues.
 
 
         :param str compartment_id: (optional)
-            The ID of the compartment in which to list resources.
+            The `OCID`__ of the compartment in which to list resources.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter to return only resources their lifecycleState matches the given lifecycleState.
@@ -635,13 +637,17 @@ class QueueAdminClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str id: (optional)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
@@ -654,7 +660,7 @@ class QueueAdminClient(object):
             Allowed values are: "timeCreated", "displayName"
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -783,13 +789,17 @@ class QueueAdminClient(object):
             The ID of the asynchronous request.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -897,13 +907,17 @@ class QueueAdminClient(object):
             The ID of the asynchronous request.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1008,19 +1022,25 @@ class QueueAdminClient(object):
 
 
         :param str compartment_id: (optional)
-            The ID of the compartment in which to list resources.
+            The `OCID`__ of the compartment in which to list resources.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str work_request_id: (optional)
             The ID of the asynchronous work request.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1113,12 +1133,13 @@ class QueueAdminClient(object):
 
     def purge_queue(self, queue_id, purge_queue_details, **kwargs):
         """
-        Deletes all messages present in the queue at the time of invocation. Only one concurrent purge operation is supported for any given queue.
+        Deletes all messages present in the queue, or deletes all the messages in the specific channel at the time of invocation. Only one concurrent purge operation is supported for any given queue.
         However multiple concurrent purge operations are supported for different queues.
+        Purge request without specification of target channels will clean up all messages in the queue and in the child channels.
 
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param oci.queue.models.PurgeQueueDetails purge_queue_details: (required)
             The information to be updated.
@@ -1131,7 +1152,7 @@ class QueueAdminClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1224,11 +1245,11 @@ class QueueAdminClient(object):
 
     def update_queue(self, queue_id, update_queue_details, **kwargs):
         """
-        Updates the Queue
+        Updates the specified queue.
 
 
         :param str queue_id: (required)
-            unique Queue identifier
+            The unique queue identifier.
 
         :param oci.queue.models.UpdateQueueDetails update_queue_details: (required)
             The information to be updated.
@@ -1241,7 +1262,7 @@ class QueueAdminClient(object):
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
-            The client request ID for tracing.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

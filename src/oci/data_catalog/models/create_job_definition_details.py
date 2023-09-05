@@ -85,6 +85,14 @@ class CreateJobDefinitionDetails(object):
     #: This constant has a value of "IMPORT_DATA_ASSET"
     JOB_TYPE_IMPORT_DATA_ASSET = "IMPORT_DATA_ASSET"
 
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "CREATE_SCAN_PROXY"
+    JOB_TYPE_CREATE_SCAN_PROXY = "CREATE_SCAN_PROXY"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "ASYNC_EXPORT_GLOSSARY"
+    JOB_TYPE_ASYNC_EXPORT_GLOSSARY = "ASYNC_EXPORT_GLOSSARY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateJobDefinitionDetails object with values from keyword arguments.
@@ -100,7 +108,7 @@ class CreateJobDefinitionDetails(object):
 
         :param job_type:
             The value to assign to the job_type property of this CreateJobDefinitionDetails.
-            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"
+            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"
         :type job_type: str
 
         :param is_incremental:
@@ -110,6 +118,10 @@ class CreateJobDefinitionDetails(object):
         :param data_asset_key:
             The value to assign to the data_asset_key property of this CreateJobDefinitionDetails.
         :type data_asset_key: str
+
+        :param glossary_key:
+            The value to assign to the glossary_key property of this CreateJobDefinitionDetails.
+        :type glossary_key: str
 
         :param connection_key:
             The value to assign to the connection_key property of this CreateJobDefinitionDetails.
@@ -134,6 +146,7 @@ class CreateJobDefinitionDetails(object):
             'job_type': 'str',
             'is_incremental': 'bool',
             'data_asset_key': 'str',
+            'glossary_key': 'str',
             'connection_key': 'str',
             'is_sample_data_extracted': 'bool',
             'sample_data_size_in_mbs': 'int',
@@ -146,6 +159,7 @@ class CreateJobDefinitionDetails(object):
             'job_type': 'jobType',
             'is_incremental': 'isIncremental',
             'data_asset_key': 'dataAssetKey',
+            'glossary_key': 'glossaryKey',
             'connection_key': 'connectionKey',
             'is_sample_data_extracted': 'isSampleDataExtracted',
             'sample_data_size_in_mbs': 'sampleDataSizeInMBs',
@@ -157,6 +171,7 @@ class CreateJobDefinitionDetails(object):
         self._job_type = None
         self._is_incremental = None
         self._data_asset_key = None
+        self._glossary_key = None
         self._connection_key = None
         self._is_sample_data_extracted = None
         self._sample_data_size_in_mbs = None
@@ -218,7 +233,7 @@ class CreateJobDefinitionDetails(object):
         **[Required]** Gets the job_type of this CreateJobDefinitionDetails.
         Type of the job definition.
 
-        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"
+        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"
 
 
         :return: The job_type of this CreateJobDefinitionDetails.
@@ -236,7 +251,7 @@ class CreateJobDefinitionDetails(object):
         :param job_type: The job_type of this CreateJobDefinitionDetails.
         :type: str
         """
-        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET"]
+        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
         if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
             raise ValueError(
                 "Invalid value for `job_type`, must be None or one of {0}"
@@ -291,6 +306,30 @@ class CreateJobDefinitionDetails(object):
         :type: str
         """
         self._data_asset_key = data_asset_key
+
+    @property
+    def glossary_key(self):
+        """
+        Gets the glossary_key of this CreateJobDefinitionDetails.
+        Unique key of the glossary to which this job applies.
+
+
+        :return: The glossary_key of this CreateJobDefinitionDetails.
+        :rtype: str
+        """
+        return self._glossary_key
+
+    @glossary_key.setter
+    def glossary_key(self, glossary_key):
+        """
+        Sets the glossary_key of this CreateJobDefinitionDetails.
+        Unique key of the glossary to which this job applies.
+
+
+        :param glossary_key: The glossary_key of this CreateJobDefinitionDetails.
+        :type: str
+        """
+        self._glossary_key = glossary_key
 
     @property
     def connection_key(self):

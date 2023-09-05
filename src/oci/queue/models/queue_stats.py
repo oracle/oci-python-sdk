@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class QueueStats(object):
     """
-    The stats for a queue and its dead letter queue.
+    The stats for a queue and its dead letter queue. If channelId is specified in request field, it will return channel specific stats response.
     """
 
     def __init__(self, **kwargs):
@@ -28,19 +28,26 @@ class QueueStats(object):
             The value to assign to the dlq property of this QueueStats.
         :type dlq: oci.queue.models.Stats
 
+        :param channel_id:
+            The value to assign to the channel_id property of this QueueStats.
+        :type channel_id: str
+
         """
         self.swagger_types = {
             'queue': 'Stats',
-            'dlq': 'Stats'
+            'dlq': 'Stats',
+            'channel_id': 'str'
         }
 
         self.attribute_map = {
             'queue': 'queue',
-            'dlq': 'dlq'
+            'dlq': 'dlq',
+            'channel_id': 'channelId'
         }
 
         self._queue = None
         self._dlq = None
+        self._channel_id = None
 
     @property
     def queue(self):
@@ -81,6 +88,30 @@ class QueueStats(object):
         :type: oci.queue.models.Stats
         """
         self._dlq = dlq
+
+    @property
+    def channel_id(self):
+        """
+        Gets the channel_id of this QueueStats.
+        If channelId is presented in GetStats call, the channel id will be returned in the GetStats response.
+
+
+        :return: The channel_id of this QueueStats.
+        :rtype: str
+        """
+        return self._channel_id
+
+    @channel_id.setter
+    def channel_id(self, channel_id):
+        """
+        Sets the channel_id of this QueueStats.
+        If channelId is presented in GetStats call, the channel id will be returned in the GetStats response.
+
+
+        :param channel_id: The channel_id of this QueueStats.
+        :type: str
+        """
+        self._channel_id = channel_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

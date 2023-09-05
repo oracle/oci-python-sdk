@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Queue(object):
     """
-    Description of Queue.
+    A detailed representation of a queue and its configuration.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Queue.
@@ -110,6 +110,10 @@ class Queue(object):
             The value to assign to the system_tags property of this Queue.
         :type system_tags: dict(str, dict(str, object))
 
+        :param channel_consumption_limit:
+            The value to assign to the channel_consumption_limit property of this Queue.
+        :type channel_consumption_limit: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -127,7 +131,8 @@ class Queue(object):
             'custom_encryption_key_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'system_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'channel_consumption_limit': 'int'
         }
 
         self.attribute_map = {
@@ -146,7 +151,8 @@ class Queue(object):
             'custom_encryption_key_id': 'customEncryptionKeyId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'system_tags': 'systemTags'
+            'system_tags': 'systemTags',
+            'channel_consumption_limit': 'channelConsumptionLimit'
         }
 
         self._id = None
@@ -165,12 +171,13 @@ class Queue(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
+        self._channel_consumption_limit = None
 
     @property
     def id(self):
         """
         **[Required]** Gets the id of this Queue.
-        Unique identifier that is immutable on creation
+        A unique identifier for the queue that is immutable on creation.
 
 
         :return: The id of this Queue.
@@ -182,7 +189,7 @@ class Queue(object):
     def id(self, id):
         """
         Sets the id of this Queue.
-        Unique identifier that is immutable on creation
+        A unique identifier for the queue that is immutable on creation.
 
 
         :param id: The id of this Queue.
@@ -194,7 +201,7 @@ class Queue(object):
     def display_name(self):
         """
         Gets the display_name of this Queue.
-        Queue Identifier, can be renamed
+        A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this Queue.
@@ -206,7 +213,7 @@ class Queue(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Queue.
-        Queue Identifier, can be renamed
+        A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this Queue.
@@ -218,7 +225,9 @@ class Queue(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Queue.
-        Compartment Identifier
+        The `OCID`__ of the compartment containing the queue.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Queue.
@@ -230,7 +239,9 @@ class Queue(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Queue.
-        Compartment Identifier
+        The `OCID`__ of the compartment containing the queue.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Queue.
@@ -242,7 +253,11 @@ class Queue(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Queue.
-        The time the the Queue was created. An RFC3339 formatted datetime string
+        The time that the queue was created, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this Queue.
@@ -254,7 +269,11 @@ class Queue(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Queue.
-        The time the the Queue was created. An RFC3339 formatted datetime string
+        The time that the queue was created, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this Queue.
@@ -266,7 +285,11 @@ class Queue(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this Queue.
-        The time the Queue was updated. An RFC3339 formatted datetime string
+        The time that the queue was updated, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_updated of this Queue.
@@ -278,7 +301,11 @@ class Queue(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Queue.
-        The time the Queue was updated. An RFC3339 formatted datetime string
+        The time that the queue was updated, expressed in `RFC 3339`__ timestamp format.
+
+        Example: `2018-04-20T00:00:07.405Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_updated: The time_updated of this Queue.
@@ -290,7 +317,7 @@ class Queue(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Queue.
-        The current state of the Queue.
+        The current state of the queue.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -305,7 +332,7 @@ class Queue(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Queue.
-        The current state of the Queue.
+        The current state of the queue.
 
 
         :param lifecycle_state: The lifecycle_state of this Queue.
@@ -320,7 +347,7 @@ class Queue(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this Queue.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        Any additional details about the current state of the queue.
 
 
         :return: The lifecycle_details of this Queue.
@@ -332,7 +359,7 @@ class Queue(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this Queue.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        Any additional details about the current state of the queue.
 
 
         :param lifecycle_details: The lifecycle_details of this Queue.
@@ -392,7 +419,7 @@ class Queue(object):
     def visibility_in_seconds(self):
         """
         **[Required]** Gets the visibility_in_seconds of this Queue.
-        The default visibility of the messages consumed from the queue.
+        The default visibility timeout of the messages consumed from the queue, in seconds.
 
 
         :return: The visibility_in_seconds of this Queue.
@@ -404,7 +431,7 @@ class Queue(object):
     def visibility_in_seconds(self, visibility_in_seconds):
         """
         Sets the visibility_in_seconds of this Queue.
-        The default visibility of the messages consumed from the queue.
+        The default visibility timeout of the messages consumed from the queue, in seconds.
 
 
         :param visibility_in_seconds: The visibility_in_seconds of this Queue.
@@ -464,7 +491,9 @@ class Queue(object):
     def custom_encryption_key_id(self):
         """
         Gets the custom_encryption_key_id of this Queue.
-        Id of the custom master encryption key which will be used to encrypt messages content
+        The `OCID`__ of the custom encryption key to be used to encrypt messages content.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The custom_encryption_key_id of this Queue.
@@ -476,7 +505,9 @@ class Queue(object):
     def custom_encryption_key_id(self, custom_encryption_key_id):
         """
         Sets the custom_encryption_key_id of this Queue.
-        Id of the custom master encryption key which will be used to encrypt messages content
+        The `OCID`__ of the custom encryption key to be used to encrypt messages content.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param custom_encryption_key_id: The custom_encryption_key_id of this Queue.
@@ -561,6 +592,30 @@ class Queue(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def channel_consumption_limit(self):
+        """
+        Gets the channel_consumption_limit of this Queue.
+        The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+
+
+        :return: The channel_consumption_limit of this Queue.
+        :rtype: int
+        """
+        return self._channel_consumption_limit
+
+    @channel_consumption_limit.setter
+    def channel_consumption_limit(self, channel_consumption_limit):
+        """
+        Sets the channel_consumption_limit of this Queue.
+        The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+
+
+        :param channel_consumption_limit: The channel_consumption_limit of this Queue.
+        :type: int
+        """
+        self._channel_consumption_limit = channel_consumption_limit
 
     def __repr__(self):
         return formatted_flat_dict(self)

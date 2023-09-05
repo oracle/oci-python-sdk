@@ -133,6 +133,7 @@ class CreateJobDetails(object):
         Gets the schedule_cron_expression of this CreateJobDetails.
         Interval on which the job will be run. Value is specified as a cron-supported time specification \"nickname\".
         The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+        For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
 
 
         :return: The schedule_cron_expression of this CreateJobDetails.
@@ -146,6 +147,7 @@ class CreateJobDetails(object):
         Sets the schedule_cron_expression of this CreateJobDetails.
         Interval on which the job will be run. Value is specified as a cron-supported time specification \"nickname\".
         The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+        For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
 
 
         :param schedule_cron_expression: The schedule_cron_expression of this CreateJobDetails.

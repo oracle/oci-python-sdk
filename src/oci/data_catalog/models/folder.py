@@ -149,6 +149,10 @@ class Folder(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this Folder.
+        :type lifecycle_details: str
+
         :param harvest_status:
             The value to assign to the harvest_status property of this Folder.
             Allowed values for this property are: "COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED", 'UNKNOWN_ENUM_VALUE'.
@@ -188,6 +192,7 @@ class Folder(object):
             'updated_by_id': 'str',
             'time_external': 'datetime',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'harvest_status': 'str',
             'last_job_key': 'str',
             'uri': 'str',
@@ -214,6 +219,7 @@ class Folder(object):
             'updated_by_id': 'updatedById',
             'time_external': 'timeExternal',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'harvest_status': 'harvestStatus',
             'last_job_key': 'lastJobKey',
             'uri': 'uri',
@@ -239,6 +245,7 @@ class Folder(object):
         self._updated_by_id = None
         self._time_external = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._harvest_status = None
         self._last_job_key = None
         self._uri = None
@@ -729,6 +736,32 @@ class Folder(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this Folder.
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+        see service documentation for details.
+
+
+        :return: The lifecycle_details of this Folder.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this Folder.
+        A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations,
+        see service documentation for details.
+
+
+        :param lifecycle_details: The lifecycle_details of this Folder.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def harvest_status(self):

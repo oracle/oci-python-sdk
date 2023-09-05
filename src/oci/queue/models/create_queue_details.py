@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateQueueDetails(object):
     """
-    The information about new Queue.
+    The information about a new queue.
     """
 
     def __init__(self, **kwargs):
@@ -40,6 +40,10 @@ class CreateQueueDetails(object):
             The value to assign to the timeout_in_seconds property of this CreateQueueDetails.
         :type timeout_in_seconds: int
 
+        :param channel_consumption_limit:
+            The value to assign to the channel_consumption_limit property of this CreateQueueDetails.
+        :type channel_consumption_limit: int
+
         :param dead_letter_queue_delivery_count:
             The value to assign to the dead_letter_queue_delivery_count property of this CreateQueueDetails.
         :type dead_letter_queue_delivery_count: int
@@ -63,6 +67,7 @@ class CreateQueueDetails(object):
             'retention_in_seconds': 'int',
             'visibility_in_seconds': 'int',
             'timeout_in_seconds': 'int',
+            'channel_consumption_limit': 'int',
             'dead_letter_queue_delivery_count': 'int',
             'custom_encryption_key_id': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -75,6 +80,7 @@ class CreateQueueDetails(object):
             'retention_in_seconds': 'retentionInSeconds',
             'visibility_in_seconds': 'visibilityInSeconds',
             'timeout_in_seconds': 'timeoutInSeconds',
+            'channel_consumption_limit': 'channelConsumptionLimit',
             'dead_letter_queue_delivery_count': 'deadLetterQueueDeliveryCount',
             'custom_encryption_key_id': 'customEncryptionKeyId',
             'freeform_tags': 'freeformTags',
@@ -86,6 +92,7 @@ class CreateQueueDetails(object):
         self._retention_in_seconds = None
         self._visibility_in_seconds = None
         self._timeout_in_seconds = None
+        self._channel_consumption_limit = None
         self._dead_letter_queue_delivery_count = None
         self._custom_encryption_key_id = None
         self._freeform_tags = None
@@ -95,7 +102,7 @@ class CreateQueueDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateQueueDetails.
-        Queue Identifier
+        The user-friendly name of the queue.
 
 
         :return: The display_name of this CreateQueueDetails.
@@ -107,7 +114,7 @@ class CreateQueueDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateQueueDetails.
-        Queue Identifier
+        The user-friendly name of the queue.
 
 
         :param display_name: The display_name of this CreateQueueDetails.
@@ -119,7 +126,9 @@ class CreateQueueDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateQueueDetails.
-        Compartment Identifier
+        The `OCID`__ of the compartment containing the queue.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateQueueDetails.
@@ -131,7 +140,9 @@ class CreateQueueDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateQueueDetails.
-        Compartment Identifier
+        The `OCID`__ of the compartment containing the queue.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateQueueDetails.
@@ -143,7 +154,7 @@ class CreateQueueDetails(object):
     def retention_in_seconds(self):
         """
         Gets the retention_in_seconds of this CreateQueueDetails.
-        The retention period of the messages in the queue, in seconds.
+        The retention period of messages in the queue, in seconds.
 
 
         :return: The retention_in_seconds of this CreateQueueDetails.
@@ -155,7 +166,7 @@ class CreateQueueDetails(object):
     def retention_in_seconds(self, retention_in_seconds):
         """
         Sets the retention_in_seconds of this CreateQueueDetails.
-        The retention period of the messages in the queue, in seconds.
+        The retention period of messages in the queue, in seconds.
 
 
         :param retention_in_seconds: The retention_in_seconds of this CreateQueueDetails.
@@ -167,7 +178,7 @@ class CreateQueueDetails(object):
     def visibility_in_seconds(self):
         """
         Gets the visibility_in_seconds of this CreateQueueDetails.
-        The default visibility of the messages consumed from the queue.
+        The default visibility timeout of the messages consumed from the queue, in seconds.
 
 
         :return: The visibility_in_seconds of this CreateQueueDetails.
@@ -179,7 +190,7 @@ class CreateQueueDetails(object):
     def visibility_in_seconds(self, visibility_in_seconds):
         """
         Sets the visibility_in_seconds of this CreateQueueDetails.
-        The default visibility of the messages consumed from the queue.
+        The default visibility timeout of the messages consumed from the queue, in seconds.
 
 
         :param visibility_in_seconds: The visibility_in_seconds of this CreateQueueDetails.
@@ -212,6 +223,30 @@ class CreateQueueDetails(object):
         self._timeout_in_seconds = timeout_in_seconds
 
     @property
+    def channel_consumption_limit(self):
+        """
+        Gets the channel_consumption_limit of this CreateQueueDetails.
+        The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+
+
+        :return: The channel_consumption_limit of this CreateQueueDetails.
+        :rtype: int
+        """
+        return self._channel_consumption_limit
+
+    @channel_consumption_limit.setter
+    def channel_consumption_limit(self, channel_consumption_limit):
+        """
+        Sets the channel_consumption_limit of this CreateQueueDetails.
+        The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can't exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue's resources.
+
+
+        :param channel_consumption_limit: The channel_consumption_limit of this CreateQueueDetails.
+        :type: int
+        """
+        self._channel_consumption_limit = channel_consumption_limit
+
+    @property
     def dead_letter_queue_delivery_count(self):
         """
         Gets the dead_letter_queue_delivery_count of this CreateQueueDetails.
@@ -239,7 +274,9 @@ class CreateQueueDetails(object):
     def custom_encryption_key_id(self):
         """
         Gets the custom_encryption_key_id of this CreateQueueDetails.
-        Id of the custom master encryption key which will be used to encrypt messages content
+        The `OCID`__ of the custom encryption key to be used to encrypt messages content.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The custom_encryption_key_id of this CreateQueueDetails.
@@ -251,7 +288,9 @@ class CreateQueueDetails(object):
     def custom_encryption_key_id(self, custom_encryption_key_id):
         """
         Sets the custom_encryption_key_id of this CreateQueueDetails.
-        Id of the custom master encryption key which will be used to encrypt messages content
+        The `OCID`__ of the custom encryption key to be used to encrypt messages content.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param custom_encryption_key_id: The custom_encryption_key_id of this CreateQueueDetails.
