@@ -14,6 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.exceptions import InvalidAlloyConfig
+from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
 from .models import announcements_service_type_mapping
 missing = Sentinel("Missing")
 
@@ -74,6 +76,9 @@ class AnnouncementClient(object):
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
         """
+        if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("announcements_service"):
+            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
             signer = kwargs['signer']
@@ -366,6 +371,12 @@ class AnnouncementClient(object):
         :param list[str] exclude_announcement_types: (optional)
             Exclude The type of announcement.
 
+        :param bool should_show_only_latest_in_chain: (optional)
+            A filter to display only the latest announcement in a chain.
+
+        :param str chain_id: (optional)
+            A filter to return only announcements belonging to the specified announcement chain ID.
+
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
             a particular request, please provide the complete request ID.
@@ -412,6 +423,8 @@ class AnnouncementClient(object):
             "service",
             "platform_type",
             "exclude_announcement_types",
+            "should_show_only_latest_in_chain",
+            "chain_id",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -461,7 +474,9 @@ class AnnouncementClient(object):
             "environmentName": kwargs.get("environment_name", missing),
             "service": kwargs.get("service", missing),
             "platformType": kwargs.get("platform_type", missing),
-            "excludeAnnouncementTypes": self.base_client.generate_collection_format_param(kwargs.get("exclude_announcement_types", missing), 'multi')
+            "excludeAnnouncementTypes": self.base_client.generate_collection_format_param(kwargs.get("exclude_announcement_types", missing), 'multi'),
+            "shouldShowOnlyLatestInChain": kwargs.get("should_show_only_latest_in_chain", missing),
+            "chainId": kwargs.get("chain_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

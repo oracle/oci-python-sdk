@@ -27,12 +27,17 @@ class ImageFeature(object):
     #: This constant has a value of "TEXT_DETECTION"
     FEATURE_TYPE_TEXT_DETECTION = "TEXT_DETECTION"
 
+    #: A constant which can be used with the feature_type property of a ImageFeature.
+    #: This constant has a value of "FACE_DETECTION"
+    FEATURE_TYPE_FACE_DETECTION = "FACE_DETECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ImageFeature object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.ai_vision.models.ImageTextDetectionFeature`
+        * :class:`~oci.ai_vision.models.FaceDetectionFeature`
         * :class:`~oci.ai_vision.models.ImageObjectDetectionFeature`
         * :class:`~oci.ai_vision.models.ImageClassificationFeature`
 
@@ -40,7 +45,7 @@ class ImageFeature(object):
 
         :param feature_type:
             The value to assign to the feature_type property of this ImageFeature.
-            Allowed values for this property are: "IMAGE_CLASSIFICATION", "OBJECT_DETECTION", "TEXT_DETECTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IMAGE_CLASSIFICATION", "OBJECT_DETECTION", "TEXT_DETECTION", "FACE_DETECTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type feature_type: str
 
@@ -66,6 +71,9 @@ class ImageFeature(object):
         if type == 'TEXT_DETECTION':
             return 'ImageTextDetectionFeature'
 
+        if type == 'FACE_DETECTION':
+            return 'FaceDetectionFeature'
+
         if type == 'OBJECT_DETECTION':
             return 'ImageObjectDetectionFeature'
 
@@ -82,9 +90,10 @@ class ImageFeature(object):
         The allowed values are:
         - `IMAGE_CLASSIFICATION`: Label the image.
         - `OBJECT_DETECTION`: Identify objects in the image with bounding boxes.
-        - `TEXT_DETECTION`: Recognize text in the image.
+        - `TEXT_DETECTION`: Recognize text at the word and line level.
+        - `FACE_DETECTION`: Identify faces in the image with bounding boxes and face landmarks.
 
-        Allowed values for this property are: "IMAGE_CLASSIFICATION", "OBJECT_DETECTION", "TEXT_DETECTION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IMAGE_CLASSIFICATION", "OBJECT_DETECTION", "TEXT_DETECTION", "FACE_DETECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -101,13 +110,14 @@ class ImageFeature(object):
         The allowed values are:
         - `IMAGE_CLASSIFICATION`: Label the image.
         - `OBJECT_DETECTION`: Identify objects in the image with bounding boxes.
-        - `TEXT_DETECTION`: Recognize text in the image.
+        - `TEXT_DETECTION`: Recognize text at the word and line level.
+        - `FACE_DETECTION`: Identify faces in the image with bounding boxes and face landmarks.
 
 
         :param feature_type: The feature_type of this ImageFeature.
         :type: str
         """
-        allowed_values = ["IMAGE_CLASSIFICATION", "OBJECT_DETECTION", "TEXT_DETECTION"]
+        allowed_values = ["IMAGE_CLASSIFICATION", "OBJECT_DETECTION", "TEXT_DETECTION", "FACE_DETECTION"]
         if not value_allowed_none_or_none_sentinel(feature_type, allowed_values):
             feature_type = 'UNKNOWN_ENUM_VALUE'
         self._feature_type = feature_type

@@ -450,7 +450,7 @@ class CreateCrossRegionDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
     def remote_disaster_recovery_type(self):
         """
         **[Required]** Gets the remote_disaster_recovery_type of this CreateCrossRegionDisasterRecoveryDetails.
-        Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database.
+        Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
         Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
         Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
 
@@ -464,7 +464,7 @@ class CreateCrossRegionDisasterRecoveryDetails(CreateAutonomousDatabaseBase):
     def remote_disaster_recovery_type(self, remote_disaster_recovery_type):
         """
         Sets the remote_disaster_recovery_type of this CreateCrossRegionDisasterRecoveryDetails.
-        Indicates the cross-region disaster recovery (DR) type of the standby Shared Autonomous Database.
+        Indicates the cross-region disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
         Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
         Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
 

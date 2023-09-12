@@ -48,7 +48,7 @@ class DataScienceLabelingDataset(Dataset):
     @property
     def dataset_id(self):
         """
-        Gets the dataset_id of this DataScienceLabelingDataset.
+        **[Required]** Gets the dataset_id of this DataScienceLabelingDataset.
         OCID of the Data Labeling dataset.
 
 

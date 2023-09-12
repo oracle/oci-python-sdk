@@ -149,6 +149,7 @@ API Reference
 * :doc:`Organization Subscription <osub_organization_subscription/client/oci.osub_organization_subscription.OrganizationSubscriptionClient>`
 * :doc:`Organization Subscription <osub_organization_subscription/client/oci.osub_organization_subscription.OrganizationSubscriptionClient>`
 * :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
+* :doc:`Perfhub <database_management/client/oci.database_management.PerfhubClient>`
 * :doc:`Plugin <compute_instance_agent/client/oci.compute_instance_agent.PluginClient>`
 * :doc:`Pluginconfig <compute_instance_agent/client/oci.compute_instance_agent.PluginconfigClient>`
 * :doc:`Query <apm_traces/client/oci.apm_traces.QueryClient>`

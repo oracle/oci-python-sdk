@@ -76,12 +76,12 @@ class ImdsRptPathProvider(AbstractRptPathProvider):
 
 class EnvRptPathProvider(AbstractRptPathProvider):
     def __init__(self, **kwargs):
-        super(EnvRptPathProvider, self).__init__(self.get_path_template())
-        self.replacements = self.build_replacements()
         if kwargs.get("child_resource", False):
             self.child_resource = True
         else:
             self.child_resource = False
+        super(EnvRptPathProvider, self).__init__(self.get_path_template())
+        self.replacements = self.build_replacements()
 
     def get_replacements(self):
         return self.replacements

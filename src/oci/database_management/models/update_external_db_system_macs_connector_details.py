@@ -51,7 +51,7 @@ class UpdateExternalDbSystemMacsConnectorDetails(UpdateExternalDbSystemConnector
     @property
     def connection_info(self):
         """
-        **[Required]** Gets the connection_info of this UpdateExternalDbSystemMacsConnectorDetails.
+        Gets the connection_info of this UpdateExternalDbSystemMacsConnectorDetails.
 
         :return: The connection_info of this UpdateExternalDbSystemMacsConnectorDetails.
         :rtype: oci.database_management.models.ExternalDbSystemConnectionInfo

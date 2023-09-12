@@ -19,7 +19,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.08.15"
+    version = "23.09.03"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -993,7 +993,7 @@ class ShowOCIData(object):
                     'id': vcn['id'],
                     'name': vcn['name'],
                     'display_name': vcn['display_name'],
-                    'cidr_block': vcn['cidr_block'],
+                    'cidr_block': "",
                     'cidr_blocks': vcn['cidr_blocks'],
                     'ipv6_private_cidr_blocks': vcn['ipv6_private_cidr_blocks'],
                     'ipv6_cidr_blocks': vcn['ipv6_cidr_blocks'],
@@ -2665,6 +2665,7 @@ class ShowOCIData(object):
                     'is_mtls_enabled': vm['is_mtls_enabled'],
                     'defined_tags': vm['defined_tags'],
                     'freeform_tags': vm['freeform_tags'],
+                    'compute_model': vm['compute_model'],
                     'sum_info': 'Database ExaCC ADB VM ' + vm['license_model'],
                     'sum_info_storage': 'Database - Storage (GB)',
                     'sum_size_gb': vm['db_node_storage_size_in_gbs'],
@@ -2684,8 +2685,7 @@ class ShowOCIData(object):
                     databases = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_DATABASE, 'autonomous_container_database_id', ct['id'])
                     for arr in databases:
                         db = self.__get_database_adb_database_info(arr)
-                        db['name'] = str(db['db_name'] + " (" + db['display_name'] + ") - " + vm['license_model'] + " - " + db['lifecycle_state'] + " (" + str(db['sum_count']) + " OCPUs" + (" AutoScale" if db['is_auto_scaling_enabled'] else "") + ") - " + db['db_workload'])
-                        db['sum_info'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (OCPUs) - " + vm['license_model']
+                        db['sum_info'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (" + db['compute_model'] + "s) - " + vm['license_model']
                         db['sum_info_stopped'] = "Stopped Autonomous Database Dedicated " + str(db['db_workload']) + " (Count) - " + vm['license_model']
                         db['sum_info_count'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (Count) - " + vm['license_model']
                         db['sum_info_storage'] = "Autonomous Database Dedicated (TB)"
@@ -2860,9 +2860,14 @@ class ShowOCIData(object):
         try:
             freemsg = ",  FreeTier" if dbs['is_free_tier'] else ""
             freesum = "Free " if dbs['is_free_tier'] else ""
+            role = (" - " + dbs['role']) if dbs['role'] else ""
+            open_mode = (" - " + dbs['open_mode']) if dbs['open_mode'] else ""
+            lifecycle = (" - " + dbs['lifecycle_state']) if dbs['lifecycle_state'] else ""
+            autoscale = (" AutoScale" if dbs['is_auto_scaling_enabled'] else "")
+            compute_count = str(dbs['compute_count']) + " " + dbs['compute_model']
             value = {
                 'id': str(dbs['id']),
-                'name': str(dbs['db_name']) + " (" + (str(dbs['display_name']) + ") - " + str(dbs['license_model']) + " - " + str(dbs['role']) + " - " + str(dbs['lifecycle_state']) + " (" + str(dbs['sum_count']) + " OCPUs" + (" AutoScale" if dbs['is_auto_scaling_enabled'] else "") + ") - " + dbs['db_workload'] + " - " + dbs['db_type'] + freemsg),
+                'name': str(dbs['db_name']) + " (" + (str(dbs['display_name']) + ") - " + str(dbs['license_model']) + open_mode + role + lifecycle + " (" + compute_count + autoscale + ") - " + dbs['db_workload'] + " - " + dbs['db_type'] + freemsg),
                 'display_name': dbs['display_name'],
                 'license_model': dbs['license_model'],
                 'lifecycle_state': dbs['lifecycle_state'],
@@ -2876,10 +2881,10 @@ class ShowOCIData(object):
                 'time_created': str(dbs['time_created'])[0:16],
                 'connection_strings': str(dbs['connection_strings']),
                 'connection_urls': str(dbs['connection_urls']),
-                'sum_info': "Autonomous Database " + freesum + str(dbs['db_workload']) + " (OCPUs) - " + dbs['license_model'],
+                'sum_info': "Autonomous Database " + freesum + str(dbs['db_workload']) + " " + dbs['compute_model'] + " - " + dbs['license_model'],
                 'sum_info_stopped': "Stopped Autonomous Database " + freesum + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
                 'sum_info_count': "Autonomous Database " + freesum + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
-                'sum_count': str(dbs['sum_count']),
+                'sum_count': str(dbs['compute_count']),
                 'sum_info_storage': "Autonomous Database " + freesum + "(TB)",
                 'sum_size_tb': str(dbs['data_storage_size_in_tbs']),
                 'whitelisted_ips': dbs['whitelisted_ips'],
@@ -2922,7 +2927,52 @@ class ShowOCIData(object):
                 'vault_id': dbs['vault_id'],
                 'key_store_wallet_name': dbs['key_store_wallet_name'],
                 'key_store_id': dbs['key_store_id'],
+                'in_memory_percentage': dbs['in_memory_percentage'],
                 'role': dbs['role'],
+                'in_memory_area_in_gbs': dbs['in_memory_area_in_gbs'],
+                'memory_per_oracle_compute_unit_in_gbs': dbs['memory_per_oracle_compute_unit_in_gbs'],
+                'next_long_term_backup_time_stamp': dbs['next_long_term_backup_time_stamp'],
+                'compute_model': dbs['compute_model'],
+                'compute_count': dbs['compute_count'],
+                'backup_retention_period_in_days': dbs['backup_retention_period_in_days'],
+                'total_backup_storage_size_in_gbs': dbs['total_backup_storage_size_in_gbs'],
+                'data_storage_size_in_gbs': dbs['data_storage_size_in_gbs'],
+                'used_data_storage_size_in_gbs': dbs['used_data_storage_size_in_gbs'],
+                'used_data_storage_size_in_tbs': dbs['used_data_storage_size_in_tbs'],
+                'is_refreshable_clone': dbs['is_refreshable_clone'],
+                'time_of_last_refresh': dbs['time_of_last_refresh'],
+                'time_of_last_refresh_point': dbs['time_of_last_refresh_point'],
+                'time_of_next_refresh': dbs['time_of_next_refresh'],
+                'open_mode': dbs['open_mode'],
+                'refreshable_status': dbs['refreshable_status'],
+                'refreshable_mode': dbs['refreshable_mode'],
+                'permission_level': dbs['permission_level'],
+                'is_local_data_guard_enabled': dbs['is_local_data_guard_enabled'],
+                'is_remote_data_guard_enabled': dbs['is_remote_data_guard_enabled'],
+                'is_mtls_connection_required': dbs['is_mtls_connection_required'],
+                'time_until_reconnect_clone_enabled': dbs['time_until_reconnect_clone_enabled'],
+                'is_auto_scaling_for_storage_enabled': dbs['is_auto_scaling_for_storage_enabled'],
+                'allocated_storage_size_in_tbs': dbs['allocated_storage_size_in_tbs'],
+                'actual_used_data_storage_size_in_tbs': dbs['actual_used_data_storage_size_in_tbs'],
+                'max_cpu_core_count': dbs['max_cpu_core_count'],
+                'database_edition': dbs['database_edition'],
+                'local_disaster_recovery_type': dbs['local_disaster_recovery_type'],
+                'disaster_recovery_region_type': dbs['disaster_recovery_region_type'],
+                'time_disaster_recovery_role_changed': dbs['time_disaster_recovery_role_changed'],
+                'are_primary_whitelisted_ips_used': dbs['are_primary_whitelisted_ips_used'],
+                'autonomous_maintenance_schedule_type': dbs['autonomous_maintenance_schedule_type'],
+                'character_set': dbs['character_set'],
+                'ncharacter_set': dbs['ncharacter_set'],
+                'database_management_status': dbs['database_management_status'],
+                'is_access_control_enabled': dbs['is_access_control_enabled'],
+                'is_reconnect_clone_enabled': dbs['is_reconnect_clone_enabled'],
+                'kms_key_lifecycle_details': dbs['kms_key_lifecycle_details'],
+                'kms_key_version_id': dbs['kms_key_version_id'],
+                'local_adg_auto_failover_max_data_loss_limit': dbs['local_adg_auto_failover_max_data_loss_limit'],
+                'operations_insights_status': dbs['operations_insights_status'],
+                'provisionable_cpus': dbs['provisionable_cpus'],
+                'source_id': dbs['source_id'],
+                'standby_whitelisted_ips': dbs['standby_whitelisted_ips'],
                 'backups': self.__get_database_adb_databases_backups(dbs['backups'])
             }
 
@@ -3020,6 +3070,12 @@ class ShowOCIData(object):
                     'compartment_path': vm['compartment_path'],
                     'compartment_id': vm['compartment_id'],
                     'region_name': vm['region_name'],
+                    'compute_model': vm['compute_model'],
+                    'is_mtls_enabled_vm_cluster': vm['is_mtls_enabled_vm_cluster'],
+                    'scan_listener_port_tls': vm['scan_listener_port_tls'],
+                    'scan_listener_port_non_tls': vm['scan_listener_port_non_tls'],
+                    'time_database_ssl_certificate_expires': vm['time_database_ssl_certificate_expires'],
+                    'time_ords_certificate_expires': vm['time_ords_certificate_expires'],
                     'containers': []}
 
                 # fetch the containers
@@ -3032,8 +3088,7 @@ class ShowOCIData(object):
                     databases = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_ADB_DATABASE, 'autonomous_container_database_id', ct['id'])
                     for arr in databases:
                         db = self.__get_database_adb_database_info(arr)
-                        db['name'] = str(db['db_name'] + " (" + db['display_name'] + ") - " + vm['license_model'] + " - " + db['lifecycle_state'] + " (" + str(db['sum_count']) + " OCPUs" + (" AutoScale" if db['is_auto_scaling_enabled'] else "") + ") - " + db['db_workload'])
-                        db['sum_info'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (OCPUs) - " + vm['license_model']
+                        db['sum_info'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (" + db['compute_model'] + "s) - " + vm['license_model']
                         db['sum_info_stopped'] = "Stopped Autonomous Database Dedicated " + str(db['db_workload']) + " (Count) - " + vm['license_model']
                         db['sum_info_count'] = "Autonomous Database Dedicated " + str(db['db_workload']) + " (Count) - " + vm['license_model']
                         db['sum_info_storage'] = "Autonomous Database Dedicated (TB)"

@@ -57,7 +57,7 @@ class GenerateAutonomousDatabaseWalletDetails(object):
         Gets the generate_type of this GenerateAutonomousDatabaseWalletDetails.
         The type of wallet to generate.
 
-        **Shared Exadata infrastructure usage:**
+        **Serverless instance usage:**
         * `SINGLE` - used to generate a wallet for a single database
         * `ALL` - used to generate wallet for all databases in the region
 
@@ -77,7 +77,7 @@ class GenerateAutonomousDatabaseWalletDetails(object):
         Sets the generate_type of this GenerateAutonomousDatabaseWalletDetails.
         The type of wallet to generate.
 
-        **Shared Exadata infrastructure usage:**
+        **Serverless instance usage:**
         * `SINGLE` - used to generate a wallet for a single database
         * `ALL` - used to generate wallet for all databases in the region
 

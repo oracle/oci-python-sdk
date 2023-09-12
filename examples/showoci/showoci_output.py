@@ -21,7 +21,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.08.15"
+    version = "23.09.03"
 
     ##########################################################################
     # spaces for align
@@ -1646,14 +1646,14 @@ class ShowOCIOutput(object):
             for db in dbs:
                 print(self.taba + "ADB-S      : " + db['name'])
                 if 'cpu_core_count' in db:
-                    print(self.tabs + "Size       : " + str(db['cpu_core_count']) + " OCPUs, " + str(db['data_storage_size_in_tbs']) + "TB Storage")
+                    print(self.tabs + "Size       : " + str(db['compute_count']) + " " + db['compute_model'] + ", " + str(db['data_storage_size_in_tbs']) + "TB Storage")
                 if 'time_created' in db:
                     print(self.tabs + "Created    : " + db['time_created'])
                 if 'whitelisted_ips' in db:
                     if db['whitelisted_ips']:
                         print(self.tabs + "Allowed IPs: " + db['whitelisted_ips'])
                 if 'private_endpoint' in db:
-                    if db['private_endpoint'] != 'None':
+                    if db['private_endpoint']:
                         print(self.tabs + "Private EP : " + db['private_endpoint'] + ", Subnet: " + db['subnet_name'])
                 if 'nsg_names' in db:
                     for nsg in db['nsg_names']:
@@ -4991,8 +4991,8 @@ class ShowOCICSV(object):
             for subnet in subnets:
                 data = {'region_name': region_name,
                         'vcn_name': vcn['display_name'],
-                        'vcn_cidr': vcn['cidr_block'],
-                        'vcn_cidrs': vcn['cidr_blocks'],
+                        'vcn_cidr': "",
+                        'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
                         'vcn_compartment': vcn['compartment_name'],
                         'vcn_compartment_path': vcn['compartment_path'],
                         'internet_gateway': igw,
@@ -5021,8 +5021,8 @@ class ShowOCICSV(object):
                 for ip in subnet['private_ips']:
                     data = {'region_name': region_name,
                             'vcn_name': vcn['display_name'],
-                            'vcn_cidr': vcn['cidr_block'],
-                            'vcn_cidrs': vcn['cidr_blocks'],
+                            'vcn_cidr': "",
+                            'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
                             'vcn_compartment': vcn['compartment_name'],
                             'vcn_compartment_path': vcn['compartment_path'],
                             'subnet_name': subnet['name'],
@@ -5062,8 +5062,8 @@ class ShowOCICSV(object):
                 if len(sl['sec_rules']) == 0:
                     data = {'region_name': region_name,
                             'vcn_name': vcn['display_name'],
-                            'vcn_cidr': vcn['cidr_block'],
-                            'vcn_cidrs': vcn['cidr_blocks'],
+                            'vcn_cidr': "",
+                            'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
                             'vcn_compartment': vcn['compartment_name'],
                             'vcn_compartment_path': vcn['compartment_path'],
                             'sec_name': sl['name'],
@@ -5083,8 +5083,8 @@ class ShowOCICSV(object):
                     for slr in sl['sec_rules']:
                         data = {'region_name': region_name,
                                 'vcn_name': vcn['display_name'],
-                                'vcn_cidr': vcn['cidr_block'],
-                                'vcn_cidrs': vcn['cidr_blocks'],
+                                'vcn_cidr': "",
+                                'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
                                 'vcn_compartment': vcn['compartment_name'],
                                 'vcn_compartment_path': vcn['compartment_path'],
                                 'sec_name': sl['name'],
@@ -5311,8 +5311,8 @@ class ShowOCICSV(object):
                 if len(sl['sec_rules']) == 0:
                     data = {'region_name': region_name,
                             'vcn_name': vcn['display_name'],
-                            'vcn_cidr': vcn['cidr_block'],
-                            'vcn_cidrs': vcn['cidr_blocks'],
+                            'vcn_cidr': "",
+                            'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
                             'vcn_compartment': vcn['compartment_name'],
                             'vcn_compartment_path': vcn['compartment_path'],
                             'sec_name': sl['name'],
@@ -5332,8 +5332,8 @@ class ShowOCICSV(object):
                     for slr in sl['sec_rules']:
                         data = {'region_name': region_name,
                                 'vcn_name': vcn['display_name'],
-                                'vcn_cidr': vcn['cidr_block'],
-                                'vcn_cidrs': vcn['cidr_blocks'],
+                                'vcn_cidr': "",
+                                'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
                                 'vcn_compartment': vcn['compartment_name'],
                                 'vcn_compartment_path': vcn['compartment_path'],
                                 'sec_name': sl['name'],
@@ -5370,8 +5370,8 @@ class ShowOCICSV(object):
             for dhcp in dhcp_options:
                 data = {'region_name': region_name,
                         'vcn_name': vcn['display_name'],
-                        'vcn_cidr': vcn['cidr_block'],
-                        'vcn_cidrs': vcn['cidr_blocks'],
+                        'vcn_cidr': "",
+                        'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
                         'vcn_compartment': vcn['compartment_name'],
                         'vcn_compartment_path': vcn['compartment_path'],
                         'dhcp_name': dhcp['name'],
@@ -5408,8 +5408,8 @@ class ShowOCICSV(object):
                 if len(rt['route_rules']) == 0:
                     data = {'region_name': region_name,
                             'vcn_name': vcn['display_name'],
-                            'vcn_cidr': vcn['cidr_block'],
-                            'vcn_cidrs': vcn['cidr_blocks'],
+                            'vcn_cidr': "",
+                            'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
                             'vcn_compartment': vcn['compartment_name'],
                             'vcn_compartment_path': vcn['compartment_path'],
                             'route_name': rt['name'],
@@ -5428,8 +5428,8 @@ class ShowOCICSV(object):
                     for rl in rt['route_rules']:
                         data = {'region_name': region_name,
                                 'vcn_name': vcn['display_name'],
-                                'vcn_cidr': vcn['cidr_block'],
-                                'vcn_cidrs': vcn['cidr_blocks'],
+                                'vcn_cidr': "",
+                                'vcn_cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
                                 'vcn_compartment': vcn['compartment_name'],
                                 'vcn_compartment_path': vcn['compartment_path'],
                                 'route_name': rt['name'],
@@ -5516,8 +5516,8 @@ class ShowOCICSV(object):
                         'compartment': vcn['compartment_name'],
                         'compartment_path': vcn['compartment_path'],
                         'name': vcn['display_name'],
-                        'cidr': vcn['cidr_block'],
-                        'cidrs': vcn['cidr_blocks'],
+                        'cidr': "",
+                        'cidrs': str(','.join(x for x in vcn['cidr_blocks'])),
                         'internet_gateway': igw,
                         'service_gateway': sgw,
                         'nat': nat,
@@ -5633,6 +5633,8 @@ class ShowOCICSV(object):
                             'type': "DB System",
                             'name': dbs['display_name'],
                             'shape': dbs['shape'],
+                            'compute_model': 'OCPU',
+                            'compute_count': dbs['cpu_core_count'],
                             'cpu_core_count': dbs['cpu_core_count'],
                             'db_storage_gb': dbs['sum_size_gb'],
                             'shape_ocpus': dbs['shape_ocpu'],
@@ -5810,6 +5812,8 @@ class ShowOCICSV(object):
                                     'type': "ExaCS",
                                     'name': dbs['display_name'],
                                     'shape': dbs['shape'],
+                                    'compute_model': 'OCPU',
+                                    'compute_count': vm['cpu_core_count'],
                                     'cpu_core_count': vm['cpu_core_count'],
                                     'db_storage_gb': dbs['sum_size_gb'],
                                     'shape_ocpus': dbs['shape_ocpu'],
@@ -5957,6 +5961,8 @@ class ShowOCICSV(object):
                                     'type': "ExaCC",
                                     'name': dbs['display_name'],
                                     'shape': dbs['shape'],
+                                    'compute_model': 'OCPU',
+                                    'compute_count': vm['cpus_enabled'],
                                     'cpu_core_count': vm['cpus_enabled'],
                                     'db_storage_gb': "",
                                     'shape_ocpus': "",
@@ -6014,6 +6020,8 @@ class ShowOCICSV(object):
                                     'type': "Autonomous Dedicated " + str(db['db_workload']),
                                     'name': db['display_name'],
                                     'shape': vm['shape'],
+                                    'compute_model': db['compute_model'],
+                                    'compute_count': db['compute_count'],
                                     'cpu_core_count': db['cpu_core_count'],
                                     'db_storage_gb': str(int(db['data_storage_size_in_tbs']) * 1024),
                                     'shape_ocpus': vm['ocpu_count'],
@@ -6059,6 +6067,8 @@ class ShowOCICSV(object):
                         'status': dbs['lifecycle_state'],
                         'type': "Autonomous " + dbs['db_workload'],
                         'name': dbs['display_name'], 'shape': "",
+                        'compute_model': dbs['compute_model'],
+                        'compute_count': dbs['compute_count'],
                         'cpu_core_count': dbs['cpu_core_count'],
                         'db_storage_gb': str(int(dbs['data_storage_size_in_tbs']) * 1024),
                         'shape_ocpus': "",
@@ -6101,6 +6111,8 @@ class ShowOCICSV(object):
                         'cluster_name': "",
                         'container_name': "",
                         'cpu_core_count': dbs['cpu_core_count'],
+                        'compute_model': dbs['compute_model'],
+                        'compute_count': dbs['compute_count'],
                         'db_storage_tb': dbs['data_storage_size_in_tbs'],
                         'db_version': dbs['db_version'],
                         'db_name': dbs['db_name'],
@@ -6182,6 +6194,8 @@ class ShowOCICSV(object):
                                     'name': db['display_name'],
                                     'shape': dbs['shape'],
                                     'cpu_core_count': db['cpu_core_count'],
+                                    'compute_model': db['compute_model'],
+                                    'compute_count': db['compute_count'],
                                     'db_storage_gb': str(int(db['data_storage_size_in_tbs']) * 1024),
                                     'shape_ocpus': vm['ocpu_count'],
                                     'memory_gb': vm['memory_size_in_gbs'],
@@ -6231,6 +6245,8 @@ class ShowOCICSV(object):
                                     'infra_name': dbs['display_name'],
                                     'cluster_name': vm['display_name'],
                                     'container_name': ct['display_name'],
+                                    'compute_model': db['compute_model'],
+                                    'compute_count': db['compute_count'],
                                     'cpu_core_count': db['cpu_core_count'],
                                     'db_storage_tb': db['data_storage_size_in_tbs'],
                                     'db_version': db['db_version'],

@@ -14,6 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.exceptions import InvalidAlloyConfig
+from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
 from .models import database_type_mapping
 missing = Sentinel("Missing")
 
@@ -74,6 +76,9 @@ class DatabaseClient(object):
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
         """
+        if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("database"):
+            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
             signer = kwargs['signer']
@@ -2269,7 +2274,7 @@ class DatabaseClient(object):
 
     def change_disaster_recovery_configuration(self, autonomous_database_id, change_disaster_recovery_configuration_details, **kwargs):
         """
-        This operation updates the cross-region disaster recovery (DR) details of the standby Shared Autonomous Database, and must be run on the standby side.
+        This operation updates the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database, and must be run on the standby side.
 
 
         :param str autonomous_database_id: (required)
@@ -2278,7 +2283,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ChangeDisasterRecoveryConfigurationDetails change_disaster_recovery_configuration_details: (required)
-            Request to update the cross-region disaster recovery (DR) details of the standby Shared Autonomous Database.
+            Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -19454,7 +19459,10 @@ class DatabaseClient(object):
             Unique identifier for the request.
 
         :param bool is_shared: (optional)
-            Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+            Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+
+        :param bool is_dedicated: (optional)
+            Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
 
         :param str character_set_type: (optional)
             Specifies whether this request pertains to database character sets or national character sets.
@@ -19492,6 +19500,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_request_id",
             "is_shared",
+            "is_dedicated",
             "character_set_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -19508,6 +19517,7 @@ class DatabaseClient(object):
 
         query_params = {
             "isShared": kwargs.get("is_shared", missing),
+            "isDedicated": kwargs.get("is_dedicated", missing),
             "characterSetType": kwargs.get("character_set_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -20168,9 +20178,7 @@ class DatabaseClient(object):
     def list_autonomous_db_preview_versions(self, compartment_id, **kwargs):
         """
         Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
-        databases with `shared Exadata infrastructure`__.
-
-        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
+        Autonomous Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
 
 
         :param str compartment_id: (required)

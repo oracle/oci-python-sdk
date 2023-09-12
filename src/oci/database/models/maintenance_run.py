@@ -460,7 +460,7 @@ class MaintenanceRun(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this MaintenanceRun.
-        The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 
         Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -475,7 +475,7 @@ class MaintenanceRun(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this MaintenanceRun.
-        The current state of the maintenance run. For Autonomous Database on shared Exadata infrastructure, valid states are IN_PROGRESS, SUCCEEDED and FAILED.
+        The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 
 
         :param lifecycle_state: The lifecycle_state of this MaintenanceRun.

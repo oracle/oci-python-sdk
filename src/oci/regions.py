@@ -10,6 +10,7 @@ from enum import Enum
 
 from . import regions_definitions
 from . import service_endpoints
+from oci.exceptions import InvalidAlloyConfig
 from oci._vendor import six
 from oci._vendor import requests
 from oci._vendor.requests.exceptions import HTTPError, ConnectionError, RetryError
@@ -64,6 +65,13 @@ _has_been_read_external_sources = {
     ExternalSources.IMDS: True,
     ExternalSources.SECOND_LEVEL_DOMAIN_FALLBACK: False
 }
+
+# Alloy config
+_IS_ALLOY_MODE = False
+OCI_ALLOY_REGION_COEXIST_ENV_VAR_NAME = "OCI_ALLOY_REGION_COEXIST"
+_IS_ALLOY_REGION_COEXIST = False
+
+ALLOY_PROVIDER_NAME = None
 
 logger = logging.getLogger(__name__)
 
@@ -145,7 +153,12 @@ def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=
         "regionIdentifier" : "ap-sydney-1"
      }
 
-    If the region still cannot be resolved, we fall back to OC1 realm
+     If the region still cannot be resolved, we fall back to OC1 realm.
+
+     If alloy mode is enabled, and OCI_ALLOY_REGION_COEXIST is not set, only the alloy regions are available. If you want
+     to access OCI and alloy regions at the same time, please set OCI_ALLOY_REGION_COEXIST to True. Fallback to OC1 realm
+     is not available when OCI_ALLOY_REGION_COEXIST is not set.
+
     """
     if not (endpoint or region):
         raise ValueError("Must supply either a region or an endpoint.")
@@ -171,12 +184,79 @@ def enable_instance_metadata_service():
     _set_source_has_been_read(ExternalSources.IMDS, False)
 
 
+def add_region_schema_for_alloy(region_metadata):
+    """
+    This method is called from the alloy_config.py file to register an alloy region.
+    Args:
+        region_metadata: dict
+    """
+    # If we are here, then alloy-config.json has already been processed by _process_region_metadata_from_alloy_config,
+    # since that method is called while initialization. It also processes _IS_ALLOY_REGION_COEXIST and resets region info
+    # and external sources accordingly, except for regions added through alloy-config.json file. Check coexists and
+    # reset accordingly
+    if not _IS_ALLOY_REGION_COEXIST:
+        _reset_region_info()
+    _add_alloy_regions(region_metadata)
+
+
 def _set_source_has_been_read(source, value=True):
     _has_been_read_external_sources[source] = value
 
 
 def _get_source_has_been_read(source):
     return _has_been_read_external_sources[source]
+
+
+def _reset_region_info():
+    logger.debug("Resetting regions information")
+    global REGIONS_SHORT_NAMES, REGION_REALMS, REALMS, REGIONS
+    REGIONS_SHORT_NAMES = {}
+    REGION_REALMS = {}
+    REALMS = {}
+    REGIONS = []
+
+
+def _add_region_information_to_override(region_metadata):
+    if _check_valid_schema(region_metadata):
+        region_metadata = {k: v.lower() for k, v in six.iteritems(region_metadata)}
+        REGIONS_SHORT_NAMES[region_metadata[REGION_KEY_PROPERTY_NAME]] = region_metadata[
+            REGION_IDENTIFIER_PROPERTY_NAME]
+        REGION_REALMS[region_metadata[REGION_IDENTIFIER_PROPERTY_NAME]] = region_metadata[REALM_KEY_PROPERTY_NAME]
+        REALMS[region_metadata[REALM_KEY_PROPERTY_NAME]] = region_metadata[REALM_DOMAIN_COMPONENT_PROPERTY_NAME]
+        REGIONS.append(region_metadata[REGION_IDENTIFIER_PROPERTY_NAME])
+
+
+def _add_alloy_regions(alloy_regions):
+    logger.debug("Adding alloy regions from {}".format(alloy_regions))
+    if isinstance(alloy_regions, list):
+        for region_metadata in alloy_regions:
+            _add_region_information_to_override(region_metadata)
+    elif isinstance(alloy_regions, dict):
+        _add_region_information_to_override(alloy_regions)
+    else:
+        raise TypeError("Invalid type for alloy regions. Please use a dictionary or a list of dictionaries")
+
+
+def _process_region_metadata_from_alloy_config(alloy_regions_list):
+    global _IS_ALLOY_REGION_COEXIST
+    _IS_ALLOY_REGION_COEXIST = os.getenv(OCI_ALLOY_REGION_COEXIST_ENV_VAR_NAME)
+    if _IS_ALLOY_REGION_COEXIST and _IS_ALLOY_REGION_COEXIST.lower() in ["true", "1"]:
+        _IS_ALLOY_REGION_COEXIST = True
+    else:
+        _IS_ALLOY_REGION_COEXIST = False
+
+    # If IS_ALLOY_REGION_COEXIST is false and alloy is true then set all sources except OCI_DEFAULT_REALM has been read,
+    # reset regions data structures, add alloy regions
+    if _IS_ALLOY_MODE and not _IS_ALLOY_REGION_COEXIST:
+        _reset_region_info()
+        for source in _has_been_read_external_sources:
+            _set_source_has_been_read(source)
+        _set_source_has_been_read(ExternalSources.SECOND_LEVEL_DOMAIN_FALLBACK, False)
+        _add_alloy_regions(alloy_regions_list)
+
+    # If coexist is true and alloy is true, add alloy regions and override existing regions with alloy config
+    if _IS_ALLOY_MODE and _IS_ALLOY_REGION_COEXIST:
+        _add_alloy_regions(alloy_regions_list)
 
 
 def _check_and_add_region_metadata(region):
@@ -201,7 +281,14 @@ def _check_and_add_region_metadata(region):
     elif second_level_domain_fallback:
         logger.debug("Unknown regionId '{}', default realm is defined, will fallback to '{}'".format(region, second_level_domain_fallback))
         return False
-    logger.debug("Unknown regionId '{}', will assume it's in Realm OC1".format(region))
+    elif _IS_ALLOY_MODE and not _IS_ALLOY_REGION_COEXIST:
+        logger.debug("You're using the {provider} Alloy configuration file, the region you're targeting is not declared"
+                     " in this config file. Please check if this is the correct region you're targeting or contact the {provider} "
+                     "cloud provider for help. If you want to target both OCI regions and {provider} regions, please set the "
+                     "OCI_ALLOY_REGION_COEXIST env var to True.".format(provider=ALLOY_PROVIDER_NAME))
+
+    else:
+        logger.debug("Unknown regionId '{}', will assume it's in Realm OC1".format(region))
     return False
 
 
@@ -332,7 +419,7 @@ def _check_valid_schema(region_metadata):
     return True
 
 
-def _add_region_information_to_lookup(region_metadata, region):
+def _add_region_information_to_lookup(region_metadata, region=None):
     # Check if the region metadata has information about the requested region
     # Add the region information from region_metadata to the existing lookups
     region_metadata = {k: v.lower() for k, v in six.iteritems(region_metadata)}
@@ -398,9 +485,12 @@ def _second_level_domain(region):
         REALMS["unknown"] = second_level_domain_fallback
         realm = "unknown"
     else:
-        # default realm to OC1
+        # default realm to OC1 when available
+        if 'oc1' not in REALMS:
+            raise InvalidAlloyConfig("Fallback to default OCI region is blocked. This is likely happening if you are "
+                                     "trying to access an alloy region not defined in the alloy region sources, and "
+                                     "the env var OCI_ALLOY_REGION_COEXIST is not set to True.")
         realm = 'oc1'
-
     return REALMS[realm]
 
 
