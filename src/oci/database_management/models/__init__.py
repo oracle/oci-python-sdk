@@ -88,6 +88,7 @@ from .create_external_exadata_storage_connector_details import CreateExternalExa
 from .create_job_details import CreateJobDetails
 from .create_managed_database_group_details import CreateManagedDatabaseGroupDetails
 from .create_sql_job_details import CreateSqlJobDetails
+from .create_sql_tuning_set_details import CreateSqlTuningSetDetails
 from .create_tablespace_details import CreateTablespaceDetails
 from .cursor_cache_statement_collection import CursorCacheStatementCollection
 from .cursor_cache_statement_summary import CursorCacheStatementSummary
@@ -135,7 +136,9 @@ from .discovered_external_db_system_component import DiscoveredExternalDbSystemC
 from .discovered_external_listener import DiscoveredExternalListener
 from .discovered_external_pluggable_database import DiscoveredExternalPluggableDatabase
 from .drop_sql_plan_baselines_details import DropSqlPlanBaselinesDetails
+from .drop_sql_tuning_set_details import DropSqlTuningSetDetails
 from .drop_sql_tuning_task_details import DropSqlTuningTaskDetails
+from .drop_sqls_in_sql_tuning_set_details import DropSqlsInSqlTuningSetDetails
 from .drop_tablespace_details import DropTablespaceDetails
 from .enable_automatic_initial_plan_capture_details import EnableAutomaticInitialPlanCaptureDetails
 from .enable_automatic_spm_evolve_advisor_task_details import EnableAutomaticSpmEvolveAdvisorTaskDetails
@@ -227,6 +230,7 @@ from .external_serviced_database import ExternalServicedDatabase
 from .external_storage_grid_discovery_summary import ExternalStorageGridDiscoverySummary
 from .external_storage_server_discovery_summary import ExternalStorageServerDiscoverySummary
 from .failed_connections_aggregate_metrics import FailedConnectionsAggregateMetrics
+from .fetch_sql_tuning_set_details import FetchSqlTuningSetDetails
 from .finding_schema_or_operation import FindingSchemaOrOperation
 from .fleet_metric_definition import FleetMetricDefinition
 from .fleet_metric_summary_definition import FleetMetricSummaryDefinition
@@ -258,6 +262,7 @@ from .job_schedule_details import JobScheduleDetails
 from .job_summary import JobSummary
 from .load_sql_plan_baselines_from_awr_details import LoadSqlPlanBaselinesFromAwrDetails
 from .load_sql_plan_baselines_from_cursor_cache_details import LoadSqlPlanBaselinesFromCursorCacheDetails
+from .load_sql_tuning_set_details import LoadSqlTuningSetDetails
 from .managed_database import ManagedDatabase
 from .managed_database_collection import ManagedDatabaseCollection
 from .managed_database_credential import ManagedDatabaseCredential
@@ -273,6 +278,7 @@ from .metric_dimension_definition import MetricDimensionDefinition
 from .metric_statistics_definition import MetricStatisticsDefinition
 from .metrics_aggregation_range import MetricsAggregationRange
 from .metrics_aggregation_range_collection import MetricsAggregationRangeCollection
+from .modify_snapshot_settings_details import ModifySnapshotSettingsDetails
 from .object_privilege_collection import ObjectPrivilegeCollection
 from .object_privilege_summary import ObjectPrivilegeSummary
 from .object_storage_job_execution_result_details import ObjectStorageJobExecutionResultDetails
@@ -317,11 +323,14 @@ from .role_collection import RoleCollection
 from .role_summary import RoleSummary
 from .rule_finding import RuleFinding
 from .run_historic_addm_details import RunHistoricAddmDetails
+from .save_sql_tuning_set_as_details import SaveSqlTuningSetAsDetails
 from .schema_definition import SchemaDefinition
 from .snapshot_details import SnapshotDetails
 from .spm_evolve_task_parameters import SpmEvolveTaskParameters
 from .sql_cpu_activity import SqlCpuActivity
+from .sql_in_sql_tuning_set import SqlInSqlTuningSet
 from .sql_job import SqlJob
+from .sql_metrics import SqlMetrics
 from .sql_plan_baseline import SqlPlanBaseline
 from .sql_plan_baseline_aggregation import SqlPlanBaselineAggregation
 from .sql_plan_baseline_aggregation_collection import SqlPlanBaselineAggregationCollection
@@ -347,6 +356,11 @@ from .sql_tuning_advisor_task_summary_report_object_stat_finding_summary import 
 from .sql_tuning_advisor_task_summary_report_statement_counts import SqlTuningAdvisorTaskSummaryReportStatementCounts
 from .sql_tuning_advisor_task_summary_report_statistics import SqlTuningAdvisorTaskSummaryReportStatistics
 from .sql_tuning_advisor_task_summary_report_task_info import SqlTuningAdvisorTaskSummaryReportTaskInfo
+from .sql_tuning_set import SqlTuningSet
+from .sql_tuning_set_admin_action_status import SqlTuningSetAdminActionStatus
+from .sql_tuning_set_admin_credential_details import SqlTuningSetAdminCredentialDetails
+from .sql_tuning_set_admin_password_credential_details import SqlTuningSetAdminPasswordCredentialDetails
+from .sql_tuning_set_admin_secret_credential_details import SqlTuningSetAdminSecretCredentialDetails
 from .sql_tuning_set_collection import SqlTuningSetCollection
 from .sql_tuning_set_input import SqlTuningSetInput
 from .sql_tuning_set_summary import SqlTuningSetSummary
@@ -399,6 +413,7 @@ from .update_tablespace_details import UpdateTablespaceDetails
 from .user import User
 from .user_collection import UserCollection
 from .user_summary import UserSummary
+from .validate_basic_filter_details import ValidateBasicFilterDetails
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
 from .work_request_error import WorkRequestError
@@ -493,6 +508,7 @@ database_management_type_mapping = {
     "CreateJobDetails": CreateJobDetails,
     "CreateManagedDatabaseGroupDetails": CreateManagedDatabaseGroupDetails,
     "CreateSqlJobDetails": CreateSqlJobDetails,
+    "CreateSqlTuningSetDetails": CreateSqlTuningSetDetails,
     "CreateTablespaceDetails": CreateTablespaceDetails,
     "CursorCacheStatementCollection": CursorCacheStatementCollection,
     "CursorCacheStatementSummary": CursorCacheStatementSummary,
@@ -540,7 +556,9 @@ database_management_type_mapping = {
     "DiscoveredExternalListener": DiscoveredExternalListener,
     "DiscoveredExternalPluggableDatabase": DiscoveredExternalPluggableDatabase,
     "DropSqlPlanBaselinesDetails": DropSqlPlanBaselinesDetails,
+    "DropSqlTuningSetDetails": DropSqlTuningSetDetails,
     "DropSqlTuningTaskDetails": DropSqlTuningTaskDetails,
+    "DropSqlsInSqlTuningSetDetails": DropSqlsInSqlTuningSetDetails,
     "DropTablespaceDetails": DropTablespaceDetails,
     "EnableAutomaticInitialPlanCaptureDetails": EnableAutomaticInitialPlanCaptureDetails,
     "EnableAutomaticSpmEvolveAdvisorTaskDetails": EnableAutomaticSpmEvolveAdvisorTaskDetails,
@@ -632,6 +650,7 @@ database_management_type_mapping = {
     "ExternalStorageGridDiscoverySummary": ExternalStorageGridDiscoverySummary,
     "ExternalStorageServerDiscoverySummary": ExternalStorageServerDiscoverySummary,
     "FailedConnectionsAggregateMetrics": FailedConnectionsAggregateMetrics,
+    "FetchSqlTuningSetDetails": FetchSqlTuningSetDetails,
     "FindingSchemaOrOperation": FindingSchemaOrOperation,
     "FleetMetricDefinition": FleetMetricDefinition,
     "FleetMetricSummaryDefinition": FleetMetricSummaryDefinition,
@@ -663,6 +682,7 @@ database_management_type_mapping = {
     "JobSummary": JobSummary,
     "LoadSqlPlanBaselinesFromAwrDetails": LoadSqlPlanBaselinesFromAwrDetails,
     "LoadSqlPlanBaselinesFromCursorCacheDetails": LoadSqlPlanBaselinesFromCursorCacheDetails,
+    "LoadSqlTuningSetDetails": LoadSqlTuningSetDetails,
     "ManagedDatabase": ManagedDatabase,
     "ManagedDatabaseCollection": ManagedDatabaseCollection,
     "ManagedDatabaseCredential": ManagedDatabaseCredential,
@@ -678,6 +698,7 @@ database_management_type_mapping = {
     "MetricStatisticsDefinition": MetricStatisticsDefinition,
     "MetricsAggregationRange": MetricsAggregationRange,
     "MetricsAggregationRangeCollection": MetricsAggregationRangeCollection,
+    "ModifySnapshotSettingsDetails": ModifySnapshotSettingsDetails,
     "ObjectPrivilegeCollection": ObjectPrivilegeCollection,
     "ObjectPrivilegeSummary": ObjectPrivilegeSummary,
     "ObjectStorageJobExecutionResultDetails": ObjectStorageJobExecutionResultDetails,
@@ -722,11 +743,14 @@ database_management_type_mapping = {
     "RoleSummary": RoleSummary,
     "RuleFinding": RuleFinding,
     "RunHistoricAddmDetails": RunHistoricAddmDetails,
+    "SaveSqlTuningSetAsDetails": SaveSqlTuningSetAsDetails,
     "SchemaDefinition": SchemaDefinition,
     "SnapshotDetails": SnapshotDetails,
     "SpmEvolveTaskParameters": SpmEvolveTaskParameters,
     "SqlCpuActivity": SqlCpuActivity,
+    "SqlInSqlTuningSet": SqlInSqlTuningSet,
     "SqlJob": SqlJob,
+    "SqlMetrics": SqlMetrics,
     "SqlPlanBaseline": SqlPlanBaseline,
     "SqlPlanBaselineAggregation": SqlPlanBaselineAggregation,
     "SqlPlanBaselineAggregationCollection": SqlPlanBaselineAggregationCollection,
@@ -752,6 +776,11 @@ database_management_type_mapping = {
     "SqlTuningAdvisorTaskSummaryReportStatementCounts": SqlTuningAdvisorTaskSummaryReportStatementCounts,
     "SqlTuningAdvisorTaskSummaryReportStatistics": SqlTuningAdvisorTaskSummaryReportStatistics,
     "SqlTuningAdvisorTaskSummaryReportTaskInfo": SqlTuningAdvisorTaskSummaryReportTaskInfo,
+    "SqlTuningSet": SqlTuningSet,
+    "SqlTuningSetAdminActionStatus": SqlTuningSetAdminActionStatus,
+    "SqlTuningSetAdminCredentialDetails": SqlTuningSetAdminCredentialDetails,
+    "SqlTuningSetAdminPasswordCredentialDetails": SqlTuningSetAdminPasswordCredentialDetails,
+    "SqlTuningSetAdminSecretCredentialDetails": SqlTuningSetAdminSecretCredentialDetails,
     "SqlTuningSetCollection": SqlTuningSetCollection,
     "SqlTuningSetInput": SqlTuningSetInput,
     "SqlTuningSetSummary": SqlTuningSetSummary,
@@ -804,6 +833,7 @@ database_management_type_mapping = {
     "User": User,
     "UserCollection": UserCollection,
     "UserSummary": UserSummary,
+    "ValidateBasicFilterDetails": ValidateBasicFilterDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,
     "WorkRequestError": WorkRequestError,

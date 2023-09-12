@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeDisasterRecoveryConfigurationDetails(object):
     """
-    Details to update the cross-region Disaster Recovery (DR) details of the Standby Autonomous Database on shared Exadata infrastructure.
+    Details to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless instance.
     """
 
     #: A constant which can be used with the disaster_recovery_type property of a ChangeDisasterRecoveryConfigurationDetails.
@@ -62,7 +62,7 @@ class ChangeDisasterRecoveryConfigurationDetails(object):
     def disaster_recovery_type(self):
         """
         Gets the disaster_recovery_type of this ChangeDisasterRecoveryConfigurationDetails.
-        Indicates the disaster recovery (DR) type of the Shared Autonomous Database.
+        Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
         Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
         Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
 
@@ -78,7 +78,7 @@ class ChangeDisasterRecoveryConfigurationDetails(object):
     def disaster_recovery_type(self, disaster_recovery_type):
         """
         Sets the disaster_recovery_type of this ChangeDisasterRecoveryConfigurationDetails.
-        Indicates the disaster recovery (DR) type of the Shared Autonomous Database.
+        Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
         Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
         Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
 

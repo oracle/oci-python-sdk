@@ -329,7 +329,7 @@ class ExponentialBackoffRetryStrategyBase(object):
                             raise
 
                     if log_info["logger"] and log_info["debug"]:
-                        log_info["logger"].debug("Retry attempt: {}, Http Status Code: {}, Error Code: {}".format(attempt, status_code, error_code))
+                        log_info["logger"].debug("Retry attempt: {}, Http Status Code: {}, Error Code: {}, Exception: {}".format(attempt, status_code, error_code, e))
                 else:
                     raise
 

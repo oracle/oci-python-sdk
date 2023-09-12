@@ -214,6 +214,10 @@ class BaseAnnouncement(object):
             Allowed values for this property are: "IAAS", "SAAS"
         :type platform_type: str
 
+        :param chain_id:
+            The value to assign to the chain_id property of this BaseAnnouncement.
+        :type chain_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -234,7 +238,8 @@ class BaseAnnouncement(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'environment_name': 'str',
-            'platform_type': 'str'
+            'platform_type': 'str',
+            'chain_id': 'str'
         }
 
         self.attribute_map = {
@@ -256,7 +261,8 @@ class BaseAnnouncement(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'environment_name': 'environmentName',
-            'platform_type': 'platformType'
+            'platform_type': 'platformType',
+            'chain_id': 'chainId'
         }
 
         self._id = None
@@ -278,6 +284,7 @@ class BaseAnnouncement(object):
         self._time_updated = None
         self._environment_name = None
         self._platform_type = None
+        self._chain_id = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -816,6 +823,30 @@ class BaseAnnouncement(object):
                 .format(allowed_values)
             )
         self._platform_type = platform_type
+
+    @property
+    def chain_id(self):
+        """
+        Gets the chain_id of this BaseAnnouncement.
+        The sequence of connected announcements, or announcement chain, that this announcement belongs to. Related announcements share the same chain ID.
+
+
+        :return: The chain_id of this BaseAnnouncement.
+        :rtype: str
+        """
+        return self._chain_id
+
+    @chain_id.setter
+    def chain_id(self, chain_id):
+        """
+        Sets the chain_id of this BaseAnnouncement.
+        The sequence of connected announcements, or announcement chain, that this announcement belongs to. Related announcements share the same chain ID.
+
+
+        :param chain_id: The chain_id of this BaseAnnouncement.
+        :type: str
+        """
+        self._chain_id = chain_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

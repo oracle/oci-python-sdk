@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.112.1 - 2023-09-12
+====================
+
+Added
+------
+* Support for SQL tuning sets in Database Management service
+* Support for announcement chaining in Announcements service
+* Support for automatic promotion of hosts in Stack Monitoring service
+* Support for face detection in AI Vision service
+* Support for change parameters on list character sets operation in Database Management service
+* Support for displaying software sources attached to a managed instance group in OS Management service
+* Support for Alloy configuration
+ 
+Fixed
+-----
+* Fixed a bug in `EnvRptPathProvider` introduced after adding support for Resource Principals v3
+ 
+====================
 2.112.0 - 2023-09-05
 ====================
 

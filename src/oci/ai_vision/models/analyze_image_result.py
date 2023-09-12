@@ -36,6 +36,10 @@ class AnalyzeImageResult(object):
             The value to assign to the image_text property of this AnalyzeImageResult.
         :type image_text: oci.ai_vision.models.ImageText
 
+        :param detected_faces:
+            The value to assign to the detected_faces property of this AnalyzeImageResult.
+        :type detected_faces: list[oci.ai_vision.models.Face]
+
         :param image_classification_model_version:
             The value to assign to the image_classification_model_version property of this AnalyzeImageResult.
         :type image_classification_model_version: str
@@ -48,6 +52,10 @@ class AnalyzeImageResult(object):
             The value to assign to the text_detection_model_version property of this AnalyzeImageResult.
         :type text_detection_model_version: str
 
+        :param face_detection_model_version:
+            The value to assign to the face_detection_model_version property of this AnalyzeImageResult.
+        :type face_detection_model_version: str
+
         :param errors:
             The value to assign to the errors property of this AnalyzeImageResult.
         :type errors: list[oci.ai_vision.models.ProcessingError]
@@ -58,9 +66,11 @@ class AnalyzeImageResult(object):
             'labels': 'list[Label]',
             'ontology_classes': 'list[OntologyClass]',
             'image_text': 'ImageText',
+            'detected_faces': 'list[Face]',
             'image_classification_model_version': 'str',
             'object_detection_model_version': 'str',
             'text_detection_model_version': 'str',
+            'face_detection_model_version': 'str',
             'errors': 'list[ProcessingError]'
         }
 
@@ -69,9 +79,11 @@ class AnalyzeImageResult(object):
             'labels': 'labels',
             'ontology_classes': 'ontologyClasses',
             'image_text': 'imageText',
+            'detected_faces': 'detectedFaces',
             'image_classification_model_version': 'imageClassificationModelVersion',
             'object_detection_model_version': 'objectDetectionModelVersion',
             'text_detection_model_version': 'textDetectionModelVersion',
+            'face_detection_model_version': 'faceDetectionModelVersion',
             'errors': 'errors'
         }
 
@@ -79,9 +91,11 @@ class AnalyzeImageResult(object):
         self._labels = None
         self._ontology_classes = None
         self._image_text = None
+        self._detected_faces = None
         self._image_classification_model_version = None
         self._object_detection_model_version = None
         self._text_detection_model_version = None
+        self._face_detection_model_version = None
         self._errors = None
 
     @property
@@ -177,6 +191,30 @@ class AnalyzeImageResult(object):
         self._image_text = image_text
 
     @property
+    def detected_faces(self):
+        """
+        Gets the detected_faces of this AnalyzeImageResult.
+        The detected faces.
+
+
+        :return: The detected_faces of this AnalyzeImageResult.
+        :rtype: list[oci.ai_vision.models.Face]
+        """
+        return self._detected_faces
+
+    @detected_faces.setter
+    def detected_faces(self, detected_faces):
+        """
+        Sets the detected_faces of this AnalyzeImageResult.
+        The detected faces.
+
+
+        :param detected_faces: The detected_faces of this AnalyzeImageResult.
+        :type: list[oci.ai_vision.models.Face]
+        """
+        self._detected_faces = detected_faces
+
+    @property
     def image_classification_model_version(self):
         """
         Gets the image_classification_model_version of this AnalyzeImageResult.
@@ -247,6 +285,30 @@ class AnalyzeImageResult(object):
         :type: str
         """
         self._text_detection_model_version = text_detection_model_version
+
+    @property
+    def face_detection_model_version(self):
+        """
+        Gets the face_detection_model_version of this AnalyzeImageResult.
+        The face detection model version.
+
+
+        :return: The face_detection_model_version of this AnalyzeImageResult.
+        :rtype: str
+        """
+        return self._face_detection_model_version
+
+    @face_detection_model_version.setter
+    def face_detection_model_version(self, face_detection_model_version):
+        """
+        Sets the face_detection_model_version of this AnalyzeImageResult.
+        The face detection model version.
+
+
+        :param face_detection_model_version: The face_detection_model_version of this AnalyzeImageResult.
+        :type: str
+        """
+        self._face_detection_model_version = face_detection_model_version
 
     @property
     def errors(self):

@@ -209,7 +209,7 @@ class BaseCreateAnnouncementsPreferencesDetails(object):
     def preferred_time_zone(self):
         """
         Gets the preferred_time_zone of this BaseCreateAnnouncementsPreferencesDetails.
-        The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 
 
         :return: The preferred_time_zone of this BaseCreateAnnouncementsPreferencesDetails.
@@ -221,7 +221,7 @@ class BaseCreateAnnouncementsPreferencesDetails(object):
     def preferred_time_zone(self, preferred_time_zone):
         """
         Sets the preferred_time_zone of this BaseCreateAnnouncementsPreferencesDetails.
-        The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
 
 
         :param preferred_time_zone: The preferred_time_zone of this BaseCreateAnnouncementsPreferencesDetails.

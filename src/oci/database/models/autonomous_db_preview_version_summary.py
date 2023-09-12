@@ -12,9 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDbPreviewVersionSummary(object):
     """
-    The Autonomous Database preview version. Note that preview version software is only available for databases on `shared Exadata infrastructure`__.
+    The Autonomous Database preview version. Note that preview version software is only available for `Autonomous Database Serverless instances`__.
 
-    __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
+    __ https://docs.oracle.com/en/cloud/paas/autonomous-database/shared/index.html
     """
 
     #: A constant which can be used with the db_workload property of a AutonomousDbPreviewVersionSummary.

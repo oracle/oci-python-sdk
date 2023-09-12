@@ -33,6 +33,8 @@ from .document_language_classification_feature import DocumentLanguageClassifica
 from .document_metadata import DocumentMetadata
 from .document_table_detection_feature import DocumentTableDetectionFeature
 from .document_text_detection_feature import DocumentTextDetectionFeature
+from .face import Face
+from .face_detection_feature import FaceDetectionFeature
 from .field_label import FieldLabel
 from .field_name import FieldName
 from .field_value import FieldValue
@@ -48,6 +50,7 @@ from .inline_document_details import InlineDocumentDetails
 from .inline_image_details import InlineImageDetails
 from .input_location import InputLocation
 from .label import Label
+from .landmark import Landmark
 from .line import Line
 from .model import Model
 from .model_collection import ModelCollection
@@ -115,6 +118,8 @@ ai_vision_type_mapping = {
     "DocumentMetadata": DocumentMetadata,
     "DocumentTableDetectionFeature": DocumentTableDetectionFeature,
     "DocumentTextDetectionFeature": DocumentTextDetectionFeature,
+    "Face": Face,
+    "FaceDetectionFeature": FaceDetectionFeature,
     "FieldLabel": FieldLabel,
     "FieldName": FieldName,
     "FieldValue": FieldValue,
@@ -130,6 +135,7 @@ ai_vision_type_mapping = {
     "InlineImageDetails": InlineImageDetails,
     "InputLocation": InputLocation,
     "Label": Label,
+    "Landmark": Landmark,
     "Line": Line,
     "Model": Model,
     "ModelCollection": ModelCollection,

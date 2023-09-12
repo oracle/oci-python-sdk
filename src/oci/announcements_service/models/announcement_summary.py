@@ -107,6 +107,10 @@ class AnnouncementSummary(BaseAnnouncement):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
+        :param chain_id:
+            The value to assign to the chain_id property of this AnnouncementSummary.
+        :type chain_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -127,7 +131,8 @@ class AnnouncementSummary(BaseAnnouncement):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'environment_name': 'str',
-            'platform_type': 'str'
+            'platform_type': 'str',
+            'chain_id': 'str'
         }
 
         self.attribute_map = {
@@ -149,7 +154,8 @@ class AnnouncementSummary(BaseAnnouncement):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'environment_name': 'environmentName',
-            'platform_type': 'platformType'
+            'platform_type': 'platformType',
+            'chain_id': 'chainId'
         }
 
         self._id = None
@@ -171,6 +177,7 @@ class AnnouncementSummary(BaseAnnouncement):
         self._time_updated = None
         self._environment_name = None
         self._platform_type = None
+        self._chain_id = None
         self._type = 'AnnouncementSummary'
 
     def __repr__(self):

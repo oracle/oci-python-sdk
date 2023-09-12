@@ -107,6 +107,10 @@ class Announcement(BaseAnnouncement):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
+        :param chain_id:
+            The value to assign to the chain_id property of this Announcement.
+        :type chain_id: str
+
         :param description:
             The value to assign to the description property of this Announcement.
         :type description: str
@@ -140,6 +144,7 @@ class Announcement(BaseAnnouncement):
             'time_updated': 'datetime',
             'environment_name': 'str',
             'platform_type': 'str',
+            'chain_id': 'str',
             'description': 'str',
             'additional_information': 'str',
             'affected_resources': 'list[AffectedResource]'
@@ -165,6 +170,7 @@ class Announcement(BaseAnnouncement):
             'time_updated': 'timeUpdated',
             'environment_name': 'environmentName',
             'platform_type': 'platformType',
+            'chain_id': 'chainId',
             'description': 'description',
             'additional_information': 'additionalInformation',
             'affected_resources': 'affectedResources'
@@ -189,6 +195,7 @@ class Announcement(BaseAnnouncement):
         self._time_updated = None
         self._environment_name = None
         self._platform_type = None
+        self._chain_id = None
         self._description = None
         self._additional_information = None
         self._affected_resources = None

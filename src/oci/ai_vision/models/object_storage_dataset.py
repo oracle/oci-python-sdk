@@ -62,7 +62,7 @@ class ObjectStorageDataset(Dataset):
     @property
     def namespace_name(self):
         """
-        Gets the namespace_name of this ObjectStorageDataset.
+        **[Required]** Gets the namespace_name of this ObjectStorageDataset.
         The namespace name of the Object Storage bucket that contains the input data file.
 
 
@@ -86,7 +86,7 @@ class ObjectStorageDataset(Dataset):
     @property
     def bucket_name(self):
         """
-        Gets the bucket_name of this ObjectStorageDataset.
+        **[Required]** Gets the bucket_name of this ObjectStorageDataset.
         The name of the Object Storage bucket that contains the input data file.
 
 
@@ -110,7 +110,7 @@ class ObjectStorageDataset(Dataset):
     @property
     def object_name(self):
         """
-        Gets the object_name of this ObjectStorageDataset.
+        **[Required]** Gets the object_name of this ObjectStorageDataset.
         The object name of the input data file.
 
 

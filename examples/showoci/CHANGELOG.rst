@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.09.05 - 23.09.05
+=====================
+* Added Autonomous database ECPU
+* emptied vcn_cidr in csv files, vcn_cidrs should be used
+
+=====================
 23.08.15 - 23.08.15
 =====================
 * Performance improvments using Thread enabled

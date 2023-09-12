@@ -14,6 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.exceptions import InvalidAlloyConfig
+from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
 from .models import vbs_inst_type_mapping
 missing = Sentinel("Missing")
 
@@ -74,6 +76,9 @@ class VbsInstanceClient(object):
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
         """
+        if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("vbs_inst"):
+            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
             signer = kwargs['signer']

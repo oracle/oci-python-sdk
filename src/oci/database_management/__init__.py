@@ -11,8 +11,10 @@ from .db_management_client import DbManagementClient
 from .db_management_client_composite_operations import DbManagementClientCompositeOperations
 from .diagnosability_client import DiagnosabilityClient
 from .diagnosability_client_composite_operations import DiagnosabilityClientCompositeOperations
+from .perfhub_client import PerfhubClient
+from .perfhub_client_composite_operations import PerfhubClientCompositeOperations
 from .sql_tuning_client import SqlTuningClient
 from .sql_tuning_client_composite_operations import SqlTuningClientCompositeOperations
 from . import models
 
-__all__ = ["DbManagementClient", "DbManagementClientCompositeOperations", "DiagnosabilityClient", "DiagnosabilityClientCompositeOperations", "SqlTuningClient", "SqlTuningClientCompositeOperations", "models"]
+__all__ = ["DbManagementClient", "DbManagementClientCompositeOperations", "DiagnosabilityClient", "DiagnosabilityClientCompositeOperations", "PerfhubClient", "PerfhubClientCompositeOperations", "SqlTuningClient", "SqlTuningClientCompositeOperations", "models"]

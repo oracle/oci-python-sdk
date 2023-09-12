@@ -24,8 +24,16 @@ Stack Monitoring
     oci.stack_monitoring.models.AssociatedResourcesSummary
     oci.stack_monitoring.models.AssociationDetails
     oci.stack_monitoring.models.AssociationResourceDetails
+    oci.stack_monitoring.models.AutoPromoteConfigDetails
+    oci.stack_monitoring.models.AutoPromoteConfigSummary
+    oci.stack_monitoring.models.ChangeConfigCompartmentDetails
     oci.stack_monitoring.models.ChangeMonitoredResourceCompartmentDetails
+    oci.stack_monitoring.models.Config
+    oci.stack_monitoring.models.ConfigCollection
+    oci.stack_monitoring.models.ConfigSummary
     oci.stack_monitoring.models.ConnectionDetails
+    oci.stack_monitoring.models.CreateAutoPromoteConfigDetails
+    oci.stack_monitoring.models.CreateConfigDetails
     oci.stack_monitoring.models.CreateDiscoveryJobDetails
     oci.stack_monitoring.models.CreateMonitoredResourceDetails
     oci.stack_monitoring.models.CredentialCollection
@@ -59,6 +67,8 @@ Stack Monitoring
     oci.stack_monitoring.models.SearchMonitoredResourceMembersDetails
     oci.stack_monitoring.models.SearchMonitoredResourcesDetails
     oci.stack_monitoring.models.UpdateAndPropagateTagsDetails
+    oci.stack_monitoring.models.UpdateAutoPromoteConfigDetails
+    oci.stack_monitoring.models.UpdateConfigDetails
     oci.stack_monitoring.models.UpdateMonitoredResourceDetails
     oci.stack_monitoring.models.WorkRequest
     oci.stack_monitoring.models.WorkRequestError

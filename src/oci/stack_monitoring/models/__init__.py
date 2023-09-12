@@ -12,8 +12,16 @@ from .associated_resources_collection import AssociatedResourcesCollection
 from .associated_resources_summary import AssociatedResourcesSummary
 from .association_details import AssociationDetails
 from .association_resource_details import AssociationResourceDetails
+from .auto_promote_config_details import AutoPromoteConfigDetails
+from .auto_promote_config_summary import AutoPromoteConfigSummary
+from .change_config_compartment_details import ChangeConfigCompartmentDetails
 from .change_monitored_resource_compartment_details import ChangeMonitoredResourceCompartmentDetails
+from .config import Config
+from .config_collection import ConfigCollection
+from .config_summary import ConfigSummary
 from .connection_details import ConnectionDetails
+from .create_auto_promote_config_details import CreateAutoPromoteConfigDetails
+from .create_config_details import CreateConfigDetails
 from .create_discovery_job_details import CreateDiscoveryJobDetails
 from .create_monitored_resource_details import CreateMonitoredResourceDetails
 from .credential_collection import CredentialCollection
@@ -47,6 +55,8 @@ from .search_monitored_resource_associations_details import SearchMonitoredResou
 from .search_monitored_resource_members_details import SearchMonitoredResourceMembersDetails
 from .search_monitored_resources_details import SearchMonitoredResourcesDetails
 from .update_and_propagate_tags_details import UpdateAndPropagateTagsDetails
+from .update_auto_promote_config_details import UpdateAutoPromoteConfigDetails
+from .update_config_details import UpdateConfigDetails
 from .update_monitored_resource_details import UpdateMonitoredResourceDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -65,8 +75,16 @@ stack_monitoring_type_mapping = {
     "AssociatedResourcesSummary": AssociatedResourcesSummary,
     "AssociationDetails": AssociationDetails,
     "AssociationResourceDetails": AssociationResourceDetails,
+    "AutoPromoteConfigDetails": AutoPromoteConfigDetails,
+    "AutoPromoteConfigSummary": AutoPromoteConfigSummary,
+    "ChangeConfigCompartmentDetails": ChangeConfigCompartmentDetails,
     "ChangeMonitoredResourceCompartmentDetails": ChangeMonitoredResourceCompartmentDetails,
+    "Config": Config,
+    "ConfigCollection": ConfigCollection,
+    "ConfigSummary": ConfigSummary,
     "ConnectionDetails": ConnectionDetails,
+    "CreateAutoPromoteConfigDetails": CreateAutoPromoteConfigDetails,
+    "CreateConfigDetails": CreateConfigDetails,
     "CreateDiscoveryJobDetails": CreateDiscoveryJobDetails,
     "CreateMonitoredResourceDetails": CreateMonitoredResourceDetails,
     "CredentialCollection": CredentialCollection,
@@ -100,6 +118,8 @@ stack_monitoring_type_mapping = {
     "SearchMonitoredResourceMembersDetails": SearchMonitoredResourceMembersDetails,
     "SearchMonitoredResourcesDetails": SearchMonitoredResourcesDetails,
     "UpdateAndPropagateTagsDetails": UpdateAndPropagateTagsDetails,
+    "UpdateAutoPromoteConfigDetails": UpdateAutoPromoteConfigDetails,
+    "UpdateConfigDetails": UpdateConfigDetails,
     "UpdateMonitoredResourceDetails": UpdateMonitoredResourceDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

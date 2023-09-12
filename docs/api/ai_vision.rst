@@ -45,6 +45,8 @@ Ai Vision
     oci.ai_vision.models.DocumentMetadata
     oci.ai_vision.models.DocumentTableDetectionFeature
     oci.ai_vision.models.DocumentTextDetectionFeature
+    oci.ai_vision.models.Face
+    oci.ai_vision.models.FaceDetectionFeature
     oci.ai_vision.models.FieldLabel
     oci.ai_vision.models.FieldName
     oci.ai_vision.models.FieldValue
@@ -60,6 +62,7 @@ Ai Vision
     oci.ai_vision.models.InlineImageDetails
     oci.ai_vision.models.InputLocation
     oci.ai_vision.models.Label
+    oci.ai_vision.models.Landmark
     oci.ai_vision.models.Line
     oci.ai_vision.models.Model
     oci.ai_vision.models.ModelCollection

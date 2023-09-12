@@ -215,7 +215,7 @@ class Update(object):
     def last_action(self):
         """
         Gets the last_action of this Update.
-        The update action.
+        The previous update action performed.
 
         Allowed values for this property are: "ROLLING_APPLY", "NON_ROLLING_APPLY", "PRECHECK", "ROLLBACK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -230,7 +230,7 @@ class Update(object):
     def last_action(self, last_action):
         """
         Sets the last_action of this Update.
-        The update action.
+        The previous update action performed.
 
 
         :param last_action: The last_action of this Update.

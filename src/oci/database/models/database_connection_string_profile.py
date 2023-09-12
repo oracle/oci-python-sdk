@@ -363,7 +363,7 @@ class DatabaseConnectionStringProfile(object):
         """
         **[Required]** Gets the syntax_format of this DatabaseConnectionStringProfile.
         Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format.
-        Autonomous Databases on shared Exadata infrastructure always use the long format.
+        Autonomous Database Serverless instances always use the long format.
 
         Allowed values for this property are: "LONG", "EZCONNECT", "EZCONNECTPLUS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -379,7 +379,7 @@ class DatabaseConnectionStringProfile(object):
         """
         Sets the syntax_format of this DatabaseConnectionStringProfile.
         Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format.
-        Autonomous Databases on shared Exadata infrastructure always use the long format.
+        Autonomous Database Serverless instances always use the long format.
 
 
         :param syntax_format: The syntax_format of this DatabaseConnectionStringProfile.

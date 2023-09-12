@@ -1088,7 +1088,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ChangeDisasterRecoveryConfigurationDetails change_disaster_recovery_configuration_details: (required)
-            Request to update the cross-region disaster recovery (DR) details of the standby Shared Autonomous Database.
+            Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1128,7 +1128,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database.models.ChangeDisasterRecoveryConfigurationDetails change_disaster_recovery_configuration_details: (required)
-            Request to update the cross-region disaster recovery (DR) details of the standby Shared Autonomous Database.
+            Request to update the cross-region disaster recovery (DR) details of the standby Autonomous Database Serverless database.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`

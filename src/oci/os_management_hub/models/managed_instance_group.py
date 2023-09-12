@@ -132,6 +132,10 @@ class ManagedInstanceGroup(object):
             The value to assign to the software_source_ids property of this ManagedInstanceGroup.
         :type software_source_ids: list[oci.os_management_hub.models.SoftwareSourceDetails]
 
+        :param software_sources:
+            The value to assign to the software_sources property of this ManagedInstanceGroup.
+        :type software_sources: list[oci.os_management_hub.models.SoftwareSourceDetails]
+
         :param managed_instance_ids:
             The value to assign to the managed_instance_ids property of this ManagedInstanceGroup.
         :type managed_instance_ids: list[str]
@@ -169,6 +173,7 @@ class ManagedInstanceGroup(object):
             'arch_type': 'str',
             'vendor_name': 'str',
             'software_source_ids': 'list[SoftwareSourceDetails]',
+            'software_sources': 'list[SoftwareSourceDetails]',
             'managed_instance_ids': 'list[str]',
             'managed_instance_count': 'int',
             'pending_job_count': 'int',
@@ -189,6 +194,7 @@ class ManagedInstanceGroup(object):
             'arch_type': 'archType',
             'vendor_name': 'vendorName',
             'software_source_ids': 'softwareSourceIds',
+            'software_sources': 'softwareSources',
             'managed_instance_ids': 'managedInstanceIds',
             'managed_instance_count': 'managedInstanceCount',
             'pending_job_count': 'pendingJobCount',
@@ -208,6 +214,7 @@ class ManagedInstanceGroup(object):
         self._arch_type = None
         self._vendor_name = None
         self._software_source_ids = None
+        self._software_sources = None
         self._managed_instance_ids = None
         self._managed_instance_count = None
         self._pending_job_count = None
@@ -502,6 +509,30 @@ class ManagedInstanceGroup(object):
         :type: list[oci.os_management_hub.models.SoftwareSourceDetails]
         """
         self._software_source_ids = software_source_ids
+
+    @property
+    def software_sources(self):
+        """
+        Gets the software_sources of this ManagedInstanceGroup.
+        The list of software sources that the managed instance group will use.
+
+
+        :return: The software_sources of this ManagedInstanceGroup.
+        :rtype: list[oci.os_management_hub.models.SoftwareSourceDetails]
+        """
+        return self._software_sources
+
+    @software_sources.setter
+    def software_sources(self, software_sources):
+        """
+        Sets the software_sources of this ManagedInstanceGroup.
+        The list of software sources that the managed instance group will use.
+
+
+        :param software_sources: The software_sources of this ManagedInstanceGroup.
+        :type: list[oci.os_management_hub.models.SoftwareSourceDetails]
+        """
+        self._software_sources = software_sources
 
     @property
     def managed_instance_ids(self):

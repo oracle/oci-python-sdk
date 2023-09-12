@@ -29,7 +29,7 @@ class ServiceError(Exception):
         self.client_version = kwargs.get('client_version')
         self.timestamp = kwargs.get('timestamp')
 
-        api_errors_info = "See https://docs.oracle.com/iaas/Content/API/References/apierrors.htm#apierrors_{}__{}_{} for more information about resolving this error.".format(str(self.status), str(self.status), str(self.code).lower())
+        api_errors_info = "See https://docs.oracle.com/iaas/Content/API/References/apierrors.htm#apierrors_{}__{}_{} for more information about resolving this error.".format(str(self.status), str(self.status), str(code).lower())
         contact_info = "If you are unable to resolve this {} issue, please contact Oracle support and provide them this full error message.".format(self.target_service)
 
         if not message:
@@ -102,6 +102,10 @@ class InvalidConfig(ClientError):
 
     def __str__(self):
         return str(self.errors)
+
+
+class InvalidAlloyConfig(ClientError):
+    """Alloy config is invalid, or is blocking a service"""
 
 
 class InvalidResourcePrincipalArguments(ClientError):

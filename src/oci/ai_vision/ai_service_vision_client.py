@@ -14,6 +14,8 @@ from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
 from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.exceptions import InvalidAlloyConfig
+from oci.alloy import OCI_SDK_ENABLED_SERVICES_SET
 from .models import ai_vision_type_mapping
 missing = Sentinel("Missing")
 
@@ -74,6 +76,9 @@ class AIServiceVisionClient(object):
             allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
             allow control characters to be in the response object.
         """
+        if not OCI_SDK_ENABLED_SERVICES_SET.is_service_enabled("ai_vision"):
+            raise InvalidAlloyConfig("The Alloy configuration has disabled this service, this behavior is controlled by OCI_SDK_ENABLED_SERVICES_SET variable. Please check if your local alloy-config file configured the service you're targeting or contact the cloud provider on the availability of this service")
+
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
             signer = kwargs['signer']
@@ -293,7 +298,7 @@ class AIServiceVisionClient(object):
 
 
         :param str document_job_id: (required)
-            Document job id.
+            The document job ID.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -396,7 +401,7 @@ class AIServiceVisionClient(object):
 
 
         :param str image_job_id: (required)
-            Image job id.
+            The image job ID.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1408,7 +1413,7 @@ class AIServiceVisionClient(object):
 
 
         :param str document_job_id: (required)
-            Document job id.
+            The document job ID.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1504,7 +1509,7 @@ class AIServiceVisionClient(object):
 
 
         :param str image_job_id: (required)
-            Image job id.
+            The image job ID.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.

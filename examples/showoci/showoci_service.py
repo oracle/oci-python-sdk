@@ -38,8 +38,8 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.08.15"
-    oci_compatible_version = "2.106.0"
+    version = "23.09.03"
+    oci_compatible_version = "2.110.2"
     thread_lock = threading.Lock()
 
     ##########################################################################
@@ -2566,7 +2566,7 @@ class ShowOCIService(object):
                         'id': str(vcn.id),
                         'name': str(', '.join(x for x in vcn.cidr_blocks)) + " - " + str(vcn.display_name) + " - " + str(vcn.vcn_domain_name),
                         'display_name': str(vcn.display_name),
-                        'cidr_block': self.get_value(vcn.cidr_block),
+                        'cidr_block': '',
                         'cidr_blocks': vcn.cidr_blocks,
                         'ipv6_private_cidr_blocks': vcn.ipv6_private_cidr_blocks,
                         'ipv6_cidr_blocks': vcn.ipv6_cidr_blocks,
@@ -9588,6 +9588,12 @@ class ShowOCIService(object):
                         'compartment_name': str(compartment['name']),
                         'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
+                        'compute_model': str(dbs.compute_model),
+                        'is_mtls_enabled_vm_cluster': str(dbs.is_mtls_enabled_vm_cluster),
+                        'scan_listener_port_tls': str(dbs.scan_listener_port_tls),
+                        'scan_listener_port_non_tls': str(dbs.scan_listener_port_non_tls),
+                        'time_database_ssl_certificate_expires': str(dbs.time_database_ssl_certificate_expires),
+                        'time_ords_certificate_expires': str(dbs.time_ords_certificate_expires),
                         'region_name': str(self.config['region'])}
 
                     # license model
@@ -9693,6 +9699,7 @@ class ShowOCIService(object):
                         'db_version': str(arr.db_version),
                         'key_store_id': str(arr.key_store_id),
                         'key_store_wallet_name': str(arr.key_store_wallet_name),
+                        'compute_model': str(arr.compute_model),
                         'compartment_name': str(compartment['name']),
                         'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
@@ -9768,13 +9775,13 @@ class ShowOCIService(object):
                              'lifecycle_state': str(dbs.lifecycle_state),
                              'data_storage_size_in_tbs': str(dbs.data_storage_size_in_tbs),
                              'db_name': str(dbs.db_name),
-                             'cpu_core_count': str(dbs.cpu_core_count),
+                             'cpu_core_count': self.get_value(dbs.cpu_core_count),
                              'sum_count': ("0" if dbs.lifecycle_state == oci.database.models.AutonomousDatabaseSummary.LIFECYCLE_STATE_STOPPED else str(dbs.cpu_core_count)),
-                             'db_version': str(dbs.db_version),
-                             'service_console_url': str(dbs.service_console_url),
+                             'db_version': self.get_value(dbs.db_version),
+                             'service_console_url': self.get_value(dbs.service_console_url),
                              'connection_strings': "",
-                             'connection_urls': str(dbs.connection_urls),
-                             'time_created': str(dbs.time_created),
+                             'connection_urls': self.get_value(dbs.connection_urls),
+                             'time_created': self.get_value(dbs.time_created),
                              'compartment_name': str(compartment['name']),
                              'compartment_path': str(compartment['path']),
                              'compartment_id': str(compartment['id']),
@@ -9786,40 +9793,96 @@ class ShowOCIService(object):
                              'db_type': ("ATP" if str(dbs.db_workload) == "OLTP" else "ADWC"),
                              'is_auto_scaling_enabled': dbs.is_auto_scaling_enabled,
                              'is_dedicated': dbs.is_dedicated,
-                             'subnet_id': str(dbs.subnet_id),
-                             'data_safe_status': str(dbs.data_safe_status),
-                             'time_maintenance_begin': str(dbs.time_maintenance_begin),
-                             'time_maintenance_end': str(dbs.time_maintenance_end),
+                             'subnet_id': self.get_value(dbs.subnet_id),
+                             'data_safe_status': self.get_value(dbs.data_safe_status),
+                             'time_maintenance_begin': self.get_value(dbs.time_maintenance_begin),
+                             'time_maintenance_end': self.get_value(dbs.time_maintenance_end),
                              'nsg_ids': dbs.nsg_ids,
-                             'private_endpoint': str(dbs.private_endpoint),
-                             'private_endpoint_label': str(dbs.private_endpoint_label),
+                             'private_endpoint': self.get_value(dbs.private_endpoint),
+                             'private_endpoint_label': self.get_value(dbs.private_endpoint_label),
                              'backups': [],
-                             'autonomous_container_database_id': str(dbs.autonomous_container_database_id),
+                             'autonomous_container_database_id': self.get_value(dbs.autonomous_container_database_id),
                              'is_data_guard_enabled': dbs.is_data_guard_enabled,
                              'is_free_tier': dbs.is_free_tier,
                              'is_preview': dbs.is_preview,
-                             'infrastructure_type': str(dbs.infrastructure_type),
-                             'time_deletion_of_free_autonomous_database': str(dbs.time_deletion_of_free_autonomous_database),
-                             'time_reclamation_of_free_autonomous_database': str(dbs.time_reclamation_of_free_autonomous_database),
+                             'infrastructure_type': self.get_value(dbs.infrastructure_type),
+                             'time_deletion_of_free_autonomous_database': self.get_value(dbs.time_deletion_of_free_autonomous_database),
+                             'time_reclamation_of_free_autonomous_database': self.get_value(dbs.time_reclamation_of_free_autonomous_database),
                              'system_tags': dbs.system_tags,
-                             'time_of_last_switchover': str(dbs.time_of_last_switchover),
-                             'time_of_last_failover': str(dbs.time_of_last_failover),
-                             'failed_data_recovery_in_seconds': str(dbs.failed_data_recovery_in_seconds),
+                             'time_of_last_switchover': self.get_value(dbs.time_of_last_switchover),
+                             'time_of_last_failover': self.get_value(dbs.time_of_last_failover),
+                             'failed_data_recovery_in_seconds': self.get_value(dbs.failed_data_recovery_in_seconds),
                              'standby_lag_time_in_seconds': "",
                              'standby_lifecycle_state': "",
                              'peer_db_ids': dbs.peer_db_ids,
-                             'time_data_guard_role_changed': str(dbs.time_data_guard_role_changed),
-                             'time_local_data_guard_enabled': str(dbs.time_local_data_guard_enabled),
-                             'dataguard_region_type': str(dbs.dataguard_region_type),
+                             'time_data_guard_role_changed': self.get_value(dbs.time_data_guard_role_changed),
+                             'time_local_data_guard_enabled': self.get_value(dbs.time_local_data_guard_enabled),
+                             'dataguard_region_type': self.get_value(dbs.dataguard_region_type),
                              'customer_contacts': "" if dbs.customer_contacts is None else str(', '.join(x.email for x in dbs.customer_contacts)),
                              'supported_regions_to_clone_to': dbs.supported_regions_to_clone_to,
-                             'kms_key_id': str(dbs.kms_key_id),
-                             'vault_id': str(dbs.vault_id),
-                             'key_store_wallet_name': str(dbs.key_store_wallet_name),
-                             'key_store_id': str(dbs.key_store_id),
-                             'available_upgrade_versions': str(dbs.available_upgrade_versions),
-                             'role': str(dbs.role)
+                             'kms_key_id': self.get_value(dbs.kms_key_id),
+                             'vault_id': self.get_value(dbs.vault_id),
+                             'key_store_wallet_name': self.get_value(dbs.key_store_wallet_name),
+                             'key_store_id': self.get_value(dbs.key_store_id),
+                             'available_upgrade_versions': self.get_value(dbs.available_upgrade_versions),
+                             'role': self.get_value(dbs.role),
+                             'in_memory_percentage': self.get_value(dbs.in_memory_percentage),
+                             'in_memory_area_in_gbs': self.get_value(dbs.in_memory_area_in_gbs),
+                             'memory_per_oracle_compute_unit_in_gbs': self.get_value(dbs.memory_per_oracle_compute_unit_in_gbs),
+                             'next_long_term_backup_time_stamp': self.get_value(dbs.next_long_term_backup_time_stamp),
+                             'compute_model': self.get_value(dbs.compute_model),
+                             'compute_count': self.get_value(dbs.compute_count),
+                             'backup_retention_period_in_days': self.get_value(dbs.backup_retention_period_in_days),
+                             'total_backup_storage_size_in_gbs': self.get_value(dbs.total_backup_storage_size_in_gbs),
+                             'data_storage_size_in_gbs': self.get_value(dbs.data_storage_size_in_gbs),
+                             'used_data_storage_size_in_gbs': self.get_value(dbs.used_data_storage_size_in_gbs),
+                             'is_refreshable_clone': self.get_value(dbs.is_refreshable_clone),
+                             'time_of_last_refresh': self.get_value(dbs.time_of_last_refresh),
+                             'time_of_last_refresh_point': self.get_value(dbs.time_of_last_refresh_point),
+                             'time_of_next_refresh': self.get_value(dbs.time_of_next_refresh),
+                             'open_mode': self.get_value(dbs.open_mode),
+                             'refreshable_status': self.get_value(dbs.refreshable_status),
+                             'refreshable_mode': self.get_value(dbs.refreshable_mode),
+                             'permission_level': self.get_value(dbs.permission_level),
+                             'is_local_data_guard_enabled': self.get_value(dbs.is_local_data_guard_enabled),
+                             'is_remote_data_guard_enabled': self.get_value(dbs.is_remote_data_guard_enabled),
+                             'is_mtls_connection_required': self.get_value(dbs.is_mtls_connection_required),
+                             'time_until_reconnect_clone_enabled': self.get_value(dbs.time_until_reconnect_clone_enabled),
+                             'is_auto_scaling_for_storage_enabled': self.get_value(dbs.is_auto_scaling_for_storage_enabled),
+                             'allocated_storage_size_in_tbs': self.get_value(dbs.allocated_storage_size_in_tbs),
+                             'actual_used_data_storage_size_in_tbs': self.get_value(dbs.actual_used_data_storage_size_in_tbs),
+                             'max_cpu_core_count': self.get_value(dbs.max_cpu_core_count),
+                             'database_edition': self.get_value(dbs.database_edition),
+                             'local_disaster_recovery_type': self.get_value(dbs.local_disaster_recovery_type),
+                             'disaster_recovery_region_type': self.get_value(dbs.disaster_recovery_region_type),
+                             'time_disaster_recovery_role_changed': self.get_value(dbs.time_disaster_recovery_role_changed),
+                             'are_primary_whitelisted_ips_used': self.get_value(dbs.are_primary_whitelisted_ips_used),
+                             'autonomous_maintenance_schedule_type': self.get_value(dbs.autonomous_maintenance_schedule_type),
+                             'character_set': self.get_value(dbs.character_set),
+                             'ncharacter_set': self.get_value(dbs.ncharacter_set),
+                             'database_management_status': self.get_value(dbs.database_management_status),
+                             'is_access_control_enabled': self.get_value(dbs.is_access_control_enabled),
+                             'is_reconnect_clone_enabled': self.get_value(dbs.is_reconnect_clone_enabled),
+                             'kms_key_lifecycle_details': self.get_value(dbs.kms_key_lifecycle_details),
+                             'kms_key_version_id': self.get_value(dbs.kms_key_version_id),
+                             'license_model': self.get_value(dbs.license_model),
+                             'local_adg_auto_failover_max_data_loss_limit': self.get_value(dbs.local_adg_auto_failover_max_data_loss_limit),
+                             'operations_insights_status': self.get_value(dbs.operations_insights_status),
+                             'provisionable_cpus': dbs.provisionable_cpus,
+                             'source_id': self.get_value(dbs.source_id),
+                             'standby_whitelisted_ips': self.get_value(dbs.standby_whitelisted_ips),
+                             'used_data_storage_size_in_tbs': self.get_value(dbs.used_data_storage_size_in_tbs)
                              }
+
+                    # Not included:
+                    # apex_details (oci.database.models.AutonomousDatabaseApex)
+                    # db_tools_details (list[oci.database.models.DatabaseTool])
+                    # key_history_entry (list[oci.database.models.AutonomousDatabaseKeyHistoryEntry])
+                    # local_standby_db (oci.database.models.AutonomousDatabaseStandbySummary)
+                    # long_term_backup_schedule (oci.database.models.LongTermBackUpScheduleDetails)
+                    # remote_disaster_recovery_configuration (oci.database.models.DisasterRecoveryConfiguration)
+                    # scheduled_operations (list[oci.database.models.ScheduledOperationDetails])
+                    # standby_db (oci.database.models.AutonomousDatabaseStandbySummary)
 
                     # connection string
                     if dbs.connection_strings:
@@ -16404,8 +16467,8 @@ class ShowOCIDomains(object):
                 if self.skip_threads:
                     print(".", end="")
 
-                ext_third_party_auth_factor = var.urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings
-                ext_fido_auth_factor = var.urnietfparamsscimschemasoracleidcsextensionfido_authentication_factor_settings
+                ext_third_party_auth_factor = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_third_party_authentication_factor_settings
+                ext_fido_auth_factor = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_fido_authentication_factor_settings
 
                 data.append({
                     'id': self.get_value(var.id),
