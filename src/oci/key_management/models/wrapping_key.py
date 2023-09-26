@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WrappingKey(object):
     """
-    WrappingKey model.
+    The public RSA wrapping key associated with the vault
     """
 
     #: A constant which can be used with the lifecycle_state property of a WrappingKey.

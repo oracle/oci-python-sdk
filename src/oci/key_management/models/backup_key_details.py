@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BackupKeyDetails(object):
     """
-    BackupKeyDetails model.
+    The details of the Key that you wish to backup.
     """
 
     def __init__(self, **kwargs):

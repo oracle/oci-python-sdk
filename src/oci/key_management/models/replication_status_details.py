@@ -39,6 +39,8 @@ class ReplicationStatusDetails(object):
     def replica_details(self):
         """
         Gets the replica_details of this ReplicationStatusDetails.
+        Replica Details.
+
 
         :return: The replica_details of this ReplicationStatusDetails.
         :rtype: list[oci.key_management.models.ReplicaDetails]
@@ -49,6 +51,8 @@ class ReplicationStatusDetails(object):
     def replica_details(self, replica_details):
         """
         Sets the replica_details of this ReplicationStatusDetails.
+        Replica Details.
+
 
         :param replica_details: The replica_details of this ReplicationStatusDetails.
         :type: list[oci.key_management.models.ReplicaDetails]

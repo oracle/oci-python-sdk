@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VaultUsage(object):
     """
-    VaultUsage model.
+    The details of the number of Keys and KeyVersions usage in a Vault.
     """
 
     def __init__(self, **kwargs):

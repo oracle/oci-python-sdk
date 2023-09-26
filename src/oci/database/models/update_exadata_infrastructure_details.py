@@ -32,6 +32,10 @@ class UpdateExadataInfrastructureDetails(object):
     #: This constant has a value of "X9M"
     ADDITIONAL_COMPUTE_SYSTEM_MODEL_X9_M = "X9M"
 
+    #: A constant which can be used with the additional_compute_system_model property of a UpdateExadataInfrastructureDetails.
+    #: This constant has a value of "X10M"
+    ADDITIONAL_COMPUTE_SYSTEM_MODEL_X10_M = "X10M"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateExadataInfrastructureDetails object with values from keyword arguments.
@@ -91,7 +95,7 @@ class UpdateExadataInfrastructureDetails(object):
 
         :param additional_compute_system_model:
             The value to assign to the additional_compute_system_model property of this UpdateExadataInfrastructureDetails.
-            Allowed values for this property are: "X7", "X8", "X8M", "X9M"
+            Allowed values for this property are: "X7", "X8", "X8M", "X9M", "X10M"
         :type additional_compute_system_model: str
 
         :param dns_server:
@@ -509,7 +513,7 @@ class UpdateExadataInfrastructureDetails(object):
         server resources available for use. For more information, please see [System and Shape Configuration Options]
         (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
 
-        Allowed values for this property are: "X7", "X8", "X8M", "X9M"
+        Allowed values for this property are: "X7", "X8", "X8M", "X9M", "X10M"
 
 
         :return: The additional_compute_system_model of this UpdateExadataInfrastructureDetails.
@@ -529,7 +533,7 @@ class UpdateExadataInfrastructureDetails(object):
         :param additional_compute_system_model: The additional_compute_system_model of this UpdateExadataInfrastructureDetails.
         :type: str
         """
-        allowed_values = ["X7", "X8", "X8M", "X9M"]
+        allowed_values = ["X7", "X8", "X8M", "X9M", "X10M"]
         if not value_allowed_none_or_none_sentinel(additional_compute_system_model, allowed_values):
             raise ValueError(
                 "Invalid value for `additional_compute_system_model`, must be None or one of {0}"

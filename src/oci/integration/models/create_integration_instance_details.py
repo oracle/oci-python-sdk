@@ -124,6 +124,10 @@ class CreateIntegrationInstanceDetails(object):
             Allowed values for this property are: "DEVELOPMENT", "PRODUCTION"
         :type shape: str
 
+        :param domain_id:
+            The value to assign to the domain_id property of this CreateIntegrationInstanceDetails.
+        :type domain_id: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -140,7 +144,8 @@ class CreateIntegrationInstanceDetails(object):
             'consumption_model': 'str',
             'is_file_server_enabled': 'bool',
             'network_endpoint_details': 'NetworkEndpointDetails',
-            'shape': 'str'
+            'shape': 'str',
+            'domain_id': 'str'
         }
 
         self.attribute_map = {
@@ -158,7 +163,8 @@ class CreateIntegrationInstanceDetails(object):
             'consumption_model': 'consumptionModel',
             'is_file_server_enabled': 'isFileServerEnabled',
             'network_endpoint_details': 'networkEndpointDetails',
-            'shape': 'shape'
+            'shape': 'shape',
+            'domain_id': 'domainId'
         }
 
         self._display_name = None
@@ -176,6 +182,7 @@ class CreateIntegrationInstanceDetails(object):
         self._is_file_server_enabled = None
         self._network_endpoint_details = None
         self._shape = None
+        self._domain_id = None
 
     @property
     def display_name(self):
@@ -566,6 +573,36 @@ class CreateIntegrationInstanceDetails(object):
                 .format(allowed_values)
             )
         self._shape = shape
+
+    @property
+    def domain_id(self):
+        """
+        Gets the domain_id of this CreateIntegrationInstanceDetails.
+        The OCID of the identity domain, that will be used to determine the
+        corresponding Idcs Stripe and create an Idcs application within the stripe.
+        This parameter is mutually exclusive with parameter: idcsAt, i.e only one of
+        two parameters should be specified.
+
+
+        :return: The domain_id of this CreateIntegrationInstanceDetails.
+        :rtype: str
+        """
+        return self._domain_id
+
+    @domain_id.setter
+    def domain_id(self, domain_id):
+        """
+        Sets the domain_id of this CreateIntegrationInstanceDetails.
+        The OCID of the identity domain, that will be used to determine the
+        corresponding Idcs Stripe and create an Idcs application within the stripe.
+        This parameter is mutually exclusive with parameter: idcsAt, i.e only one of
+        two parameters should be specified.
+
+
+        :param domain_id: The domain_id of this CreateIntegrationInstanceDetails.
+        :type: str
+        """
+        self._domain_id = domain_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

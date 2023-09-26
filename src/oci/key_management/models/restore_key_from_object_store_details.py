@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RestoreKeyFromObjectStoreDetails(object):
     """
-    RestoreKeyFromObjectStoreDetails model.
+    The details of the backup location from which you want to restore the Key.
     """
 
     def __init__(self, **kwargs):

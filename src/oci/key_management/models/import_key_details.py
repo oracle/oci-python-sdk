@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImportKeyDetails(object):
     """
-    ImportKeyDetails model.
+    The details of the Key that you wish to import.
     """
 
     #: A constant which can be used with the protection_mode property of a ImportKeyDetails.

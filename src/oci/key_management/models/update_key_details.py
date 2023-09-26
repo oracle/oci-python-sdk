@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateKeyDetails(object):
     """
-    UpdateKeyDetails model.
+    The details of the Key that you wish to update.
     """
 
     def __init__(self, **kwargs):

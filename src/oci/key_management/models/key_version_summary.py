@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class KeyVersionSummary(object):
     """
-    KeyVersionSummary model.
+    The details of the KeyVersion.
     """
 
     #: A constant which can be used with the lifecycle_state property of a KeyVersionSummary.
@@ -104,6 +104,10 @@ class KeyVersionSummary(object):
             The value to assign to the vault_id property of this KeyVersionSummary.
         :type vault_id: str
 
+        :param external_key_reference_details:
+            The value to assign to the external_key_reference_details property of this KeyVersionSummary.
+        :type external_key_reference_details: oci.key_management.models.ExternalKeyReferenceDetails
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -113,7 +117,8 @@ class KeyVersionSummary(object):
             'origin': 'str',
             'time_created': 'datetime',
             'time_of_deletion': 'datetime',
-            'vault_id': 'str'
+            'vault_id': 'str',
+            'external_key_reference_details': 'ExternalKeyReferenceDetails'
         }
 
         self.attribute_map = {
@@ -124,7 +129,8 @@ class KeyVersionSummary(object):
             'origin': 'origin',
             'time_created': 'timeCreated',
             'time_of_deletion': 'timeOfDeletion',
-            'vault_id': 'vaultId'
+            'vault_id': 'vaultId',
+            'external_key_reference_details': 'externalKeyReferenceDetails'
         }
 
         self._compartment_id = None
@@ -135,6 +141,7 @@ class KeyVersionSummary(object):
         self._time_created = None
         self._time_of_deletion = None
         self._vault_id = None
+        self._external_key_reference_details = None
 
     @property
     def compartment_id(self):
@@ -357,6 +364,26 @@ class KeyVersionSummary(object):
         :type: str
         """
         self._vault_id = vault_id
+
+    @property
+    def external_key_reference_details(self):
+        """
+        Gets the external_key_reference_details of this KeyVersionSummary.
+
+        :return: The external_key_reference_details of this KeyVersionSummary.
+        :rtype: oci.key_management.models.ExternalKeyReferenceDetails
+        """
+        return self._external_key_reference_details
+
+    @external_key_reference_details.setter
+    def external_key_reference_details(self, external_key_reference_details):
+        """
+        Sets the external_key_reference_details of this KeyVersionSummary.
+
+        :param external_key_reference_details: The external_key_reference_details of this KeyVersionSummary.
+        :type: oci.key_management.models.ExternalKeyReferenceDetails
+        """
+        self._external_key_reference_details = external_key_reference_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

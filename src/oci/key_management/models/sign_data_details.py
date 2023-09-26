@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SignDataDetails(object):
     """
-    SignDataDetails model.
+    The details of the message that you want to sign.
     """
 
     #: A constant which can be used with the message_type property of a SignDataDetails.

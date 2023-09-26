@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VaultSummary(object):
     """
-    VaultSummary model.
+    The details of the Vault.
     """
 
     #: A constant which can be used with the lifecycle_state property of a VaultSummary.
@@ -58,6 +58,10 @@ class VaultSummary(object):
     #: A constant which can be used with the vault_type property of a VaultSummary.
     #: This constant has a value of "VIRTUAL_PRIVATE"
     VAULT_TYPE_VIRTUAL_PRIVATE = "VIRTUAL_PRIVATE"
+
+    #: A constant which can be used with the vault_type property of a VaultSummary.
+    #: This constant has a value of "EXTERNAL"
+    VAULT_TYPE_EXTERNAL = "EXTERNAL"
 
     #: A constant which can be used with the vault_type property of a VaultSummary.
     #: This constant has a value of "DEFAULT"
@@ -108,9 +112,13 @@ class VaultSummary(object):
 
         :param vault_type:
             The value to assign to the vault_type property of this VaultSummary.
-            Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VIRTUAL_PRIVATE", "EXTERNAL", "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vault_type: str
+
+        :param external_key_manager_metadata_summary:
+            The value to assign to the external_key_manager_metadata_summary property of this VaultSummary.
+        :type external_key_manager_metadata_summary: oci.key_management.models.ExternalKeyManagerMetadataSummary
 
         """
         self.swagger_types = {
@@ -123,7 +131,8 @@ class VaultSummary(object):
             'lifecycle_state': 'str',
             'management_endpoint': 'str',
             'time_created': 'datetime',
-            'vault_type': 'str'
+            'vault_type': 'str',
+            'external_key_manager_metadata_summary': 'ExternalKeyManagerMetadataSummary'
         }
 
         self.attribute_map = {
@@ -136,7 +145,8 @@ class VaultSummary(object):
             'lifecycle_state': 'lifecycleState',
             'management_endpoint': 'managementEndpoint',
             'time_created': 'timeCreated',
-            'vault_type': 'vaultType'
+            'vault_type': 'vaultType',
+            'external_key_manager_metadata_summary': 'externalKeyManagerMetadataSummary'
         }
 
         self._compartment_id = None
@@ -149,6 +159,7 @@ class VaultSummary(object):
         self._management_endpoint = None
         self._time_created = None
         self._vault_type = None
+        self._external_key_manager_metadata_summary = None
 
     @property
     def compartment_id(self):
@@ -421,7 +432,7 @@ class VaultSummary(object):
         The type of vault. Each type of vault stores keys with different
         degrees of isolation and has different options and pricing.
 
-        Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VIRTUAL_PRIVATE", "EXTERNAL", "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -441,10 +452,30 @@ class VaultSummary(object):
         :param vault_type: The vault_type of this VaultSummary.
         :type: str
         """
-        allowed_values = ["VIRTUAL_PRIVATE", "DEFAULT"]
+        allowed_values = ["VIRTUAL_PRIVATE", "EXTERNAL", "DEFAULT"]
         if not value_allowed_none_or_none_sentinel(vault_type, allowed_values):
             vault_type = 'UNKNOWN_ENUM_VALUE'
         self._vault_type = vault_type
+
+    @property
+    def external_key_manager_metadata_summary(self):
+        """
+        Gets the external_key_manager_metadata_summary of this VaultSummary.
+
+        :return: The external_key_manager_metadata_summary of this VaultSummary.
+        :rtype: oci.key_management.models.ExternalKeyManagerMetadataSummary
+        """
+        return self._external_key_manager_metadata_summary
+
+    @external_key_manager_metadata_summary.setter
+    def external_key_manager_metadata_summary(self, external_key_manager_metadata_summary):
+        """
+        Sets the external_key_manager_metadata_summary of this VaultSummary.
+
+        :param external_key_manager_metadata_summary: The external_key_manager_metadata_summary of this VaultSummary.
+        :type: oci.key_management.models.ExternalKeyManagerMetadataSummary
+        """
+        self._external_key_manager_metadata_summary = external_key_manager_metadata_summary
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeVaultCompartmentDetails(object):
     """
-    ChangeVaultCompartmentDetails model.
+    The details of the compartment you wish to move the Vault.
     """
 
     def __init__(self, **kwargs):

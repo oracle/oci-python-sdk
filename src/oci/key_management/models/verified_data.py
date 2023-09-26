@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VerifiedData(object):
     """
-    VerifiedData model.
+    The response to a request to verify the message.
     """
 
     def __init__(self, **kwargs):

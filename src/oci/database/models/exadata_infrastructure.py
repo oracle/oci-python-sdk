@@ -79,6 +79,10 @@ class ExadataInfrastructure(object):
     #: This constant has a value of "X9M"
     ADDITIONAL_COMPUTE_SYSTEM_MODEL_X9_M = "X9M"
 
+    #: A constant which can be used with the additional_compute_system_model property of a ExadataInfrastructure.
+    #: This constant has a value of "X10M"
+    ADDITIONAL_COMPUTE_SYSTEM_MODEL_X10_M = "X10M"
+
     #: A constant which can be used with the maintenance_slo_status property of a ExadataInfrastructure.
     #: This constant has a value of "OK"
     MAINTENANCE_SLO_STATUS_OK = "OK"
@@ -184,7 +188,7 @@ class ExadataInfrastructure(object):
 
         :param additional_compute_system_model:
             The value to assign to the additional_compute_system_model property of this ExadataInfrastructure.
-            Allowed values for this property are: "X7", "X8", "X8M", "X9M", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "X7", "X8", "X8M", "X9M", "X10M", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type additional_compute_system_model: str
 
@@ -996,7 +1000,7 @@ class ExadataInfrastructure(object):
         server resources available for use. For more information, please see [System and Shape Configuration Options]
         (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
 
-        Allowed values for this property are: "X7", "X8", "X8M", "X9M", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "X7", "X8", "X8M", "X9M", "X10M", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1017,7 +1021,7 @@ class ExadataInfrastructure(object):
         :param additional_compute_system_model: The additional_compute_system_model of this ExadataInfrastructure.
         :type: str
         """
-        allowed_values = ["X7", "X8", "X8M", "X9M"]
+        allowed_values = ["X7", "X8", "X8M", "X9M", "X10M"]
         if not value_allowed_none_or_none_sentinel(additional_compute_system_model, allowed_values):
             additional_compute_system_model = 'UNKNOWN_ENUM_VALUE'
         self._additional_compute_system_model = additional_compute_system_model

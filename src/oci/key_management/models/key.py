@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Key(object):
     """
-    Key model.
+    The logical entities that represent one or more key versions, each of which contains cryptographic material.
     """
 
     #: A constant which can be used with the protection_mode property of a Key.
@@ -22,6 +22,10 @@ class Key(object):
     #: A constant which can be used with the protection_mode property of a Key.
     #: This constant has a value of "SOFTWARE"
     PROTECTION_MODE_SOFTWARE = "SOFTWARE"
+
+    #: A constant which can be used with the protection_mode property of a Key.
+    #: This constant has a value of "EXTERNAL"
+    PROTECTION_MODE_EXTERNAL = "EXTERNAL"
 
     #: A constant which can be used with the lifecycle_state property of a Key.
     #: This constant has a value of "CREATING"
@@ -110,7 +114,7 @@ class Key(object):
 
         :param protection_mode:
             The value to assign to the protection_mode property of this Key.
-            Allowed values for this property are: "HSM", "SOFTWARE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HSM", "SOFTWARE", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type protection_mode: str
 
@@ -144,6 +148,10 @@ class Key(object):
             The value to assign to the is_primary property of this Key.
         :type is_primary: bool
 
+        :param external_key_reference_details:
+            The value to assign to the external_key_reference_details property of this Key.
+        :type external_key_reference_details: oci.key_management.models.ExternalKeyReferenceDetails
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -160,7 +168,8 @@ class Key(object):
             'vault_id': 'str',
             'restored_from_key_id': 'str',
             'replica_details': 'KeyReplicaDetails',
-            'is_primary': 'bool'
+            'is_primary': 'bool',
+            'external_key_reference_details': 'ExternalKeyReferenceDetails'
         }
 
         self.attribute_map = {
@@ -178,7 +187,8 @@ class Key(object):
             'vault_id': 'vaultId',
             'restored_from_key_id': 'restoredFromKeyId',
             'replica_details': 'replicaDetails',
-            'is_primary': 'isPrimary'
+            'is_primary': 'isPrimary',
+            'external_key_reference_details': 'externalKeyReferenceDetails'
         }
 
         self._compartment_id = None
@@ -196,6 +206,7 @@ class Key(object):
         self._restored_from_key_id = None
         self._replica_details = None
         self._is_primary = None
+        self._external_key_reference_details = None
 
     @property
     def compartment_id(self):
@@ -392,8 +403,11 @@ class Key(object):
         the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
         on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
         a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle.
+        Oracle only hold a reference to that key.
+        All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 
-        Allowed values for this property are: "HSM", "SOFTWARE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HSM", "SOFTWARE", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -411,12 +425,15 @@ class Key(object):
         the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
         on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
         a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle.
+        Oracle only hold a reference to that key.
+        All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 
 
         :param protection_mode: The protection_mode of this Key.
         :type: str
         """
-        allowed_values = ["HSM", "SOFTWARE"]
+        allowed_values = ["HSM", "SOFTWARE", "EXTERNAL"]
         if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
             protection_mode = 'UNKNOWN_ENUM_VALUE'
         self._protection_mode = protection_mode
@@ -589,6 +606,8 @@ class Key(object):
     def is_primary(self):
         """
         Gets the is_primary of this Key.
+        A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
+
 
         :return: The is_primary of this Key.
         :rtype: bool
@@ -599,11 +618,33 @@ class Key(object):
     def is_primary(self, is_primary):
         """
         Sets the is_primary of this Key.
+        A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
+
 
         :param is_primary: The is_primary of this Key.
         :type: bool
         """
         self._is_primary = is_primary
+
+    @property
+    def external_key_reference_details(self):
+        """
+        Gets the external_key_reference_details of this Key.
+
+        :return: The external_key_reference_details of this Key.
+        :rtype: oci.key_management.models.ExternalKeyReferenceDetails
+        """
+        return self._external_key_reference_details
+
+    @external_key_reference_details.setter
+    def external_key_reference_details(self, external_key_reference_details):
+        """
+        Sets the external_key_reference_details of this Key.
+
+        :param external_key_reference_details: The external_key_reference_details of this Key.
+        :type: oci.key_management.models.ExternalKeyReferenceDetails
+        """
+        self._external_key_reference_details = external_key_reference_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

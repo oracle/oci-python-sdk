@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DecryptedData(object):
     """
-    DecryptedData model.
+    The response to a request to decrypt the encrypted data.
     """
 
     #: A constant which can be used with the encryption_algorithm property of a DecryptedData.

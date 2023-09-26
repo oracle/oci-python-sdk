@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BackupVaultDetails(object):
     """
-    BackupVaultDetails model.
+    The details of the Vault that you wish to backup.
     """
 
     def __init__(self, **kwargs):
@@ -66,6 +66,8 @@ class BackupVaultDetails(object):
     def is_include_keys(self):
         """
         Gets the is_include_keys of this BackupVaultDetails.
+        A Boolean value that indicates whether the Keys should be included during backing up the Vault.
+
 
         :return: The is_include_keys of this BackupVaultDetails.
         :rtype: bool
@@ -76,6 +78,8 @@ class BackupVaultDetails(object):
     def is_include_keys(self, is_include_keys):
         """
         Sets the is_include_keys of this BackupVaultDetails.
+        A Boolean value that indicates whether the Keys should be included during backing up the Vault.
+
 
         :param is_include_keys: The is_include_keys of this BackupVaultDetails.
         :type: bool

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Vault(object):
     """
-    Vault model.
+    The logical entity where the Vault service creates and durably stores keys.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Vault.
@@ -63,6 +63,10 @@ class Vault(object):
     #: This constant has a value of "DEFAULT"
     VAULT_TYPE_DEFAULT = "DEFAULT"
 
+    #: A constant which can be used with the vault_type property of a Vault.
+    #: This constant has a value of "EXTERNAL"
+    VAULT_TYPE_EXTERNAL = "EXTERNAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Vault object with values from keyword arguments.
@@ -112,7 +116,7 @@ class Vault(object):
 
         :param vault_type:
             The value to assign to the vault_type property of this Vault.
-            Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vault_type: str
 
@@ -132,6 +136,10 @@ class Vault(object):
             The value to assign to the is_primary property of this Vault.
         :type is_primary: bool
 
+        :param external_key_manager_metadata_summary:
+            The value to assign to the external_key_manager_metadata_summary property of this Vault.
+        :type external_key_manager_metadata_summary: oci.key_management.models.ExternalKeyManagerMetadataSummary
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -148,7 +156,8 @@ class Vault(object):
             'restored_from_vault_id': 'str',
             'wrappingkey_id': 'str',
             'replica_details': 'VaultReplicaDetails',
-            'is_primary': 'bool'
+            'is_primary': 'bool',
+            'external_key_manager_metadata_summary': 'ExternalKeyManagerMetadataSummary'
         }
 
         self.attribute_map = {
@@ -166,7 +175,8 @@ class Vault(object):
             'restored_from_vault_id': 'restoredFromVaultId',
             'wrappingkey_id': 'wrappingkeyId',
             'replica_details': 'replicaDetails',
-            'is_primary': 'isPrimary'
+            'is_primary': 'isPrimary',
+            'external_key_manager_metadata_summary': 'externalKeyManagerMetadataSummary'
         }
 
         self._compartment_id = None
@@ -184,6 +194,7 @@ class Vault(object):
         self._wrappingkey_id = None
         self._replica_details = None
         self._is_primary = None
+        self._external_key_manager_metadata_summary = None
 
     @property
     def compartment_id(self):
@@ -486,7 +497,7 @@ class Vault(object):
         The type of vault. Each type of vault stores the key with different
         degrees of isolation and has different options and pricing.
 
-        Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -506,7 +517,7 @@ class Vault(object):
         :param vault_type: The vault_type of this Vault.
         :type: str
         """
-        allowed_values = ["VIRTUAL_PRIVATE", "DEFAULT"]
+        allowed_values = ["VIRTUAL_PRIVATE", "DEFAULT", "EXTERNAL"]
         if not value_allowed_none_or_none_sentinel(vault_type, allowed_values):
             vault_type = 'UNKNOWN_ENUM_VALUE'
         self._vault_type = vault_type
@@ -587,6 +598,8 @@ class Vault(object):
     def is_primary(self):
         """
         Gets the is_primary of this Vault.
+        A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
+
 
         :return: The is_primary of this Vault.
         :rtype: bool
@@ -597,11 +610,33 @@ class Vault(object):
     def is_primary(self, is_primary):
         """
         Sets the is_primary of this Vault.
+        A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
+
 
         :param is_primary: The is_primary of this Vault.
         :type: bool
         """
         self._is_primary = is_primary
+
+    @property
+    def external_key_manager_metadata_summary(self):
+        """
+        Gets the external_key_manager_metadata_summary of this Vault.
+
+        :return: The external_key_manager_metadata_summary of this Vault.
+        :rtype: oci.key_management.models.ExternalKeyManagerMetadataSummary
+        """
+        return self._external_key_manager_metadata_summary
+
+    @external_key_manager_metadata_summary.setter
+    def external_key_manager_metadata_summary(self, external_key_manager_metadata_summary):
+        """
+        Sets the external_key_manager_metadata_summary of this Vault.
+
+        :param external_key_manager_metadata_summary: The external_key_manager_metadata_summary of this Vault.
+        :type: oci.key_management.models.ExternalKeyManagerMetadataSummary
+        """
+        self._external_key_manager_metadata_summary = external_key_manager_metadata_summary
 
     def __repr__(self):
         return formatted_flat_dict(self)

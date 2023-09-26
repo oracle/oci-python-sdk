@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class KeySummary(object):
     """
-    KeySummary model.
+    The details of the Key.
     """
 
     #: A constant which can be used with the lifecycle_state property of a KeySummary.
@@ -75,6 +75,10 @@ class KeySummary(object):
     #: This constant has a value of "SOFTWARE"
     PROTECTION_MODE_SOFTWARE = "SOFTWARE"
 
+    #: A constant which can be used with the protection_mode property of a KeySummary.
+    #: This constant has a value of "EXTERNAL"
+    PROTECTION_MODE_EXTERNAL = "EXTERNAL"
+
     #: A constant which can be used with the algorithm property of a KeySummary.
     #: This constant has a value of "AES"
     ALGORITHM_AES = "AES"
@@ -128,7 +132,7 @@ class KeySummary(object):
 
         :param protection_mode:
             The value to assign to the protection_mode property of this KeySummary.
-            Allowed values for this property are: "HSM", "SOFTWARE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HSM", "SOFTWARE", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type protection_mode: str
 
@@ -137,6 +141,10 @@ class KeySummary(object):
             Allowed values for this property are: "AES", "RSA", "ECDSA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type algorithm: str
+
+        :param external_key_reference_details:
+            The value to assign to the external_key_reference_details property of this KeySummary.
+        :type external_key_reference_details: oci.key_management.models.ExternalKeyReferenceDetails
 
         """
         self.swagger_types = {
@@ -149,7 +157,8 @@ class KeySummary(object):
             'time_created': 'datetime',
             'vault_id': 'str',
             'protection_mode': 'str',
-            'algorithm': 'str'
+            'algorithm': 'str',
+            'external_key_reference_details': 'ExternalKeyReferenceDetails'
         }
 
         self.attribute_map = {
@@ -162,7 +171,8 @@ class KeySummary(object):
             'time_created': 'timeCreated',
             'vault_id': 'vaultId',
             'protection_mode': 'protectionMode',
-            'algorithm': 'algorithm'
+            'algorithm': 'algorithm',
+            'external_key_reference_details': 'externalKeyReferenceDetails'
         }
 
         self._compartment_id = None
@@ -175,6 +185,7 @@ class KeySummary(object):
         self._vault_id = None
         self._protection_mode = None
         self._algorithm = None
+        self._external_key_reference_details = None
 
     @property
     def compartment_id(self):
@@ -413,8 +424,11 @@ class KeySummary(object):
         the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
         on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
         a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle.
+        Oracle only hold a reference to that key.
+        All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 
-        Allowed values for this property are: "HSM", "SOFTWARE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HSM", "SOFTWARE", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -432,12 +446,15 @@ class KeySummary(object):
         the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
         on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
         a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle.
+        Oracle only hold a reference to that key.
+        All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 
 
         :param protection_mode: The protection_mode of this KeySummary.
         :type: str
         """
-        allowed_values = ["HSM", "SOFTWARE"]
+        allowed_values = ["HSM", "SOFTWARE", "EXTERNAL"]
         if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
             protection_mode = 'UNKNOWN_ENUM_VALUE'
         self._protection_mode = protection_mode
@@ -471,6 +488,26 @@ class KeySummary(object):
         if not value_allowed_none_or_none_sentinel(algorithm, allowed_values):
             algorithm = 'UNKNOWN_ENUM_VALUE'
         self._algorithm = algorithm
+
+    @property
+    def external_key_reference_details(self):
+        """
+        Gets the external_key_reference_details of this KeySummary.
+
+        :return: The external_key_reference_details of this KeySummary.
+        :rtype: oci.key_management.models.ExternalKeyReferenceDetails
+        """
+        return self._external_key_reference_details
+
+    @external_key_reference_details.setter
+    def external_key_reference_details(self, external_key_reference_details):
+        """
+        Sets the external_key_reference_details of this KeySummary.
+
+        :param external_key_reference_details: The external_key_reference_details of this KeySummary.
+        :type: oci.key_management.models.ExternalKeyReferenceDetails
+        """
+        self._external_key_reference_details = external_key_reference_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

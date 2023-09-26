@@ -15,6 +15,7 @@ SERVICE_ENDPOINTS = {
     "container_engine": "https://containerengine.{domain}",
     "database": "https://database.{domain}",
     "dns": "https://dns.{domain}",
+    "ekm": "https://kms.{domain}",
     "email": "https://email.{domain}",
     "file_storage": "https://filestorage.{domain}",
     "health_checks": "https://healthchecks.{domain}",

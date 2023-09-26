@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.112.2 - 2023-09-26
+====================
+
+Added
+-----
+* Support for listing compute performances and storage performances in Database service
+* Support for private endpoints for external key managers in Key Management service
+* Support for additional parameters in vaults and keys for external key managers in Key Management service
+* Support for domains while creating integration instances in Oracle Integration Cloud service
 2.112.1 - 2023-09-12
 ====================
 
