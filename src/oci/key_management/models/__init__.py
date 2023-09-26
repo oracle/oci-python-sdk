@@ -13,16 +13,24 @@ from .backup_location_uri import BackupLocationURI
 from .backup_vault_details import BackupVaultDetails
 from .change_key_compartment_details import ChangeKeyCompartmentDetails
 from .change_vault_compartment_details import ChangeVaultCompartmentDetails
+from .create_ekms_private_endpoint_details import CreateEkmsPrivateEndpointDetails
 from .create_key_details import CreateKeyDetails
 from .create_vault_details import CreateVaultDetails
 from .create_vault_replica_details import CreateVaultReplicaDetails
 from .decrypt_data_details import DecryptDataDetails
 from .decrypted_data import DecryptedData
 from .delete_vault_replica_details import DeleteVaultReplicaDetails
+from .ekms_private_endpoint import EkmsPrivateEndpoint
+from .ekms_private_endpoint_summary import EkmsPrivateEndpointSummary
 from .encrypt_data_details import EncryptDataDetails
 from .encrypted_data import EncryptedData
 from .export_key_details import ExportKeyDetails
 from .exported_key_data import ExportedKeyData
+from .external_key_manager_metadata import ExternalKeyManagerMetadata
+from .external_key_manager_metadata_summary import ExternalKeyManagerMetadataSummary
+from .external_key_reference import ExternalKeyReference
+from .external_key_reference_details import ExternalKeyReferenceDetails
+from .external_key_version_reference import ExternalKeyVersionReference
 from .generate_key_details import GenerateKeyDetails
 from .generated_key import GeneratedKey
 from .import_key_details import ImportKeyDetails
@@ -34,6 +42,8 @@ from .key_summary import KeySummary
 from .key_version import KeyVersion
 from .key_version_replica_details import KeyVersionReplicaDetails
 from .key_version_summary import KeyVersionSummary
+from .oauth_metadata import OauthMetadata
+from .oauth_metadata_summary import OauthMetadataSummary
 from .replica_details import ReplicaDetails
 from .replication_status_details import ReplicationStatusDetails
 from .restore_key_from_object_store_details import RestoreKeyFromObjectStoreDetails
@@ -43,6 +53,7 @@ from .schedule_key_version_deletion_details import ScheduleKeyVersionDeletionDet
 from .schedule_vault_deletion_details import ScheduleVaultDeletionDetails
 from .sign_data_details import SignDataDetails
 from .signed_data import SignedData
+from .update_ekms_private_endpoint_details import UpdateEkmsPrivateEndpointDetails
 from .update_key_details import UpdateKeyDetails
 from .update_vault_details import UpdateVaultDetails
 from .vault import Vault
@@ -64,16 +75,24 @@ key_management_type_mapping = {
     "BackupVaultDetails": BackupVaultDetails,
     "ChangeKeyCompartmentDetails": ChangeKeyCompartmentDetails,
     "ChangeVaultCompartmentDetails": ChangeVaultCompartmentDetails,
+    "CreateEkmsPrivateEndpointDetails": CreateEkmsPrivateEndpointDetails,
     "CreateKeyDetails": CreateKeyDetails,
     "CreateVaultDetails": CreateVaultDetails,
     "CreateVaultReplicaDetails": CreateVaultReplicaDetails,
     "DecryptDataDetails": DecryptDataDetails,
     "DecryptedData": DecryptedData,
     "DeleteVaultReplicaDetails": DeleteVaultReplicaDetails,
+    "EkmsPrivateEndpoint": EkmsPrivateEndpoint,
+    "EkmsPrivateEndpointSummary": EkmsPrivateEndpointSummary,
     "EncryptDataDetails": EncryptDataDetails,
     "EncryptedData": EncryptedData,
     "ExportKeyDetails": ExportKeyDetails,
     "ExportedKeyData": ExportedKeyData,
+    "ExternalKeyManagerMetadata": ExternalKeyManagerMetadata,
+    "ExternalKeyManagerMetadataSummary": ExternalKeyManagerMetadataSummary,
+    "ExternalKeyReference": ExternalKeyReference,
+    "ExternalKeyReferenceDetails": ExternalKeyReferenceDetails,
+    "ExternalKeyVersionReference": ExternalKeyVersionReference,
     "GenerateKeyDetails": GenerateKeyDetails,
     "GeneratedKey": GeneratedKey,
     "ImportKeyDetails": ImportKeyDetails,
@@ -85,6 +104,8 @@ key_management_type_mapping = {
     "KeyVersion": KeyVersion,
     "KeyVersionReplicaDetails": KeyVersionReplicaDetails,
     "KeyVersionSummary": KeyVersionSummary,
+    "OauthMetadata": OauthMetadata,
+    "OauthMetadataSummary": OauthMetadataSummary,
     "ReplicaDetails": ReplicaDetails,
     "ReplicationStatusDetails": ReplicationStatusDetails,
     "RestoreKeyFromObjectStoreDetails": RestoreKeyFromObjectStoreDetails,
@@ -94,6 +115,7 @@ key_management_type_mapping = {
     "ScheduleVaultDeletionDetails": ScheduleVaultDeletionDetails,
     "SignDataDetails": SignDataDetails,
     "SignedData": SignedData,
+    "UpdateEkmsPrivateEndpointDetails": UpdateEkmsPrivateEndpointDetails,
     "UpdateKeyDetails": UpdateKeyDetails,
     "UpdateVaultDetails": UpdateVaultDetails,
     "Vault": Vault,

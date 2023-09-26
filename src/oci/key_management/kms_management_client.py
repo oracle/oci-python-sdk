@@ -23,8 +23,7 @@ missing = Sentinel("Missing")
 
 class KmsManagementClient(object):
     """
-    API for managing and performing operations with keys and vaults. (For the API for managing secrets, see the Vault Service
-    Secret Management API. For the API for retrieving secrets, see the Vault Service Secret Retrieval API.)
+    Use the Key Management API to manage vaults and keys. For more information, see [Managing Vaults](/Content/KeyManagement/Tasks/managingvaults.htm) and [Managing Keys](/Content/KeyManagement/Tasks/managingkeys.htm).
     """
 
     def __init__(self, config, service_endpoint, **kwargs):
@@ -171,7 +170,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}/actions/backup"
         method = "POST"
         operation_name = "backup_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Key/BackupKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -299,7 +298,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}/actions/cancelDeletion"
         method = "POST"
         operation_name = "cancel_key_deletion"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Key/CancelKeyDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -427,7 +426,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}/actions/cancelDeletion"
         method = "POST"
         operation_name = "cancel_key_version_deletion"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/CancelKeyVersionDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -514,6 +513,7 @@ class KmsManagementClient(object):
             The OCID of the key.
 
         :param oci.key_management.models.ChangeKeyCompartmentDetails change_key_compartment_details: (required)
+            Details of change key compartment.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a
@@ -558,7 +558,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_key_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Key/ChangeKeyCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -674,7 +674,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys"
         method = "POST"
         operation_name = "create_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Key/CreateKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -758,6 +758,9 @@ class KmsManagementClient(object):
             deleted and purged from the system, then a retry of the original
             creation request may be rejected).
 
+        :param oci.key_management.models.ExternalKeyVersionReference create_key_metadata_details: (optional)
+            CreateKeyMetadataDetails
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -781,14 +784,15 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}/keyVersions"
         method = "POST"
         operation_name = "create_key_version"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/CreateKeyVersion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token"
+            "opc_retry_token",
+            "create_key_metadata_details"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -829,6 +833,7 @@ class KmsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('create_key_metadata_details'),
                 response_type="KeyVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -840,6 +845,7 @@ class KmsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                body=kwargs.get('create_key_metadata_details'),
                 response_type="KeyVersion",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -903,7 +909,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}/actions/disable"
         method = "POST"
         operation_name = "disable_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Key/DisableKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1027,7 +1033,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}/actions/enable"
         method = "POST"
         operation_name = "enable_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Key/EnableKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1135,7 +1141,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}"
         method = "GET"
         operation_name = "get_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Key/GetKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1241,7 +1247,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}"
         method = "GET"
         operation_name = "get_key_version"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/GetKeyVersion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1343,7 +1349,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/replicaOperations/{replicationId}/status"
         method = "GET"
         operation_name = "get_replication_status"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/ReplicationStatusDetails/GetReplicationStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1439,7 +1445,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/wrappingKeys"
         method = "GET"
         operation_name = "get_wrapping_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/WrappingKey/GetWrappingKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1491,9 +1497,12 @@ class KmsManagementClient(object):
 
     def import_key(self, import_key_details, **kwargs):
         """
-        Imports AES key material to create a new key with. The key material must be base64-encoded and
-        wrapped by the vault's public RSA wrapping key before you can import it. Key Management supports AES symmetric keys
-        that are exactly 16, 24, or 32 bytes. Furthermore, the key length must match what you specify at the time of import.
+        Imports AES and RSA keys to create a new key. The key material must be base64-encoded
+        and wrapped by the vault's public RSA wrapping key before you can import it.
+        Key Management supports both RSA and AES keys. The AES keys are symmetric keys
+        of length 128 bits (16 bytes), 192 bits (24 bytes), or 256 bits (32 bytes), and the RSA keys are asymmetric keys of length 2048 bits (256 bytes), 3072 bits (384 bytes), and 4096 bits (512 bytes).
+        Furthermore, the key length must match what you specify at the time of import. When importing an asymmetric key,
+        only private key must be wrapped in PKCS8 format while the corresponding public key is generated internally by KMS.
 
 
         :param oci.key_management.models.ImportKeyDetails import_key_details: (required)
@@ -1535,7 +1544,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/import"
         method = "POST"
         operation_name = "import_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Key/ImportKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1592,11 +1601,12 @@ class KmsManagementClient(object):
 
     def import_key_version(self, key_id, import_key_version_details, **kwargs):
         """
-        Imports AES key material to create a new key version with, and then rotates the key to begin using the new
+        Imports AES key material to create a new key version and then rotate the key to begin using the new
         key version. The key material must be base64-encoded and wrapped by the vault's public RSA wrapping key
         before you can import it. Key Management supports AES symmetric keys that are exactly 16, 24, or 32 bytes.
         Furthermore, the key length must match the length of the specified key and what you specify as the length
-        at the time of import.
+        at the time of import. When importing an asymmetric key, only the private key must be wrapped in PKCS8 format
+        while the corresponding public key is generated internally by KMS.
 
 
         :param str key_id: (required)
@@ -1641,7 +1651,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}/keyVersions/import"
         method = "POST"
         operation_name = "import_key_version"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/ImportKeyVersion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1771,7 +1781,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}/keyVersions"
         method = "GET"
         operation_name = "list_key_versions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersionSummary/ListKeyVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1904,8 +1914,10 @@ class KmsManagementClient(object):
             performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's
             RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of
             `SOFTWARE` are performed on the server.
+            A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle.
+            Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 
-            Allowed values are: "HSM", "SOFTWARE"
+            Allowed values are: "HSM", "SOFTWARE", "EXTERNAL"
 
         :param str algorithm: (optional)
             The algorithm used by a key's key versions to encrypt or decrypt data. Currently, support includes AES, RSA, and ECDSA algorithms.
@@ -1943,7 +1955,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys"
         method = "GET"
         operation_name = "list_keys"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/KeySummary/ListKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1979,7 +1991,7 @@ class KmsManagementClient(object):
                 )
 
         if 'protection_mode' in kwargs:
-            protection_mode_allowed_values = ["HSM", "SOFTWARE"]
+            protection_mode_allowed_values = ["HSM", "SOFTWARE", "EXTERNAL"]
             if kwargs['protection_mode'] not in protection_mode_allowed_values:
                 raise ValueError(
                     "Invalid value for `protection_mode`, must be one of {0}".format(protection_mode_allowed_values)
@@ -2123,7 +2135,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/actions/restoreFromFile"
         method = "POST"
         operation_name = "restore_key_from_file"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Key/RestoreKeyFromFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2258,7 +2270,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/actions/restoreFromObjectStore"
         method = "POST"
         operation_name = "restore_key_from_object_store"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Key/RestoreKeyFromObjectStore"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2376,7 +2388,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}/actions/scheduleDeletion"
         method = "POST"
         operation_name = "schedule_key_deletion"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Key/ScheduleKeyDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2508,7 +2520,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}/actions/scheduleDeletion"
         method = "POST"
         operation_name = "schedule_key_version_deletion"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/KeyVersion/ScheduleKeyVersionDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2631,7 +2643,7 @@ class KmsManagementClient(object):
         resource_path = "/20180608/keys/{keyId}"
         method = "PUT"
         operation_name = "update_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Key/UpdateKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

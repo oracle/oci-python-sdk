@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EncryptDataDetails(object):
     """
-    EncryptDataDetails model.
+    The details of the plaintext data that you want to encrypt.
     """
 
     #: A constant which can be used with the encryption_algorithm property of a EncryptDataDetails.

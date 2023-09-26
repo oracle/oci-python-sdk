@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateKeyDetails(object):
     """
-    CreateKeyDetails model.
+    The details of the key that you want to create.
     """
 
     #: A constant which can be used with the protection_mode property of a CreateKeyDetails.
@@ -22,6 +22,10 @@ class CreateKeyDetails(object):
     #: A constant which can be used with the protection_mode property of a CreateKeyDetails.
     #: This constant has a value of "SOFTWARE"
     PROTECTION_MODE_SOFTWARE = "SOFTWARE"
+
+    #: A constant which can be used with the protection_mode property of a CreateKeyDetails.
+    #: This constant has a value of "EXTERNAL"
+    PROTECTION_MODE_EXTERNAL = "EXTERNAL"
 
     def __init__(self, **kwargs):
         """
@@ -50,8 +54,12 @@ class CreateKeyDetails(object):
 
         :param protection_mode:
             The value to assign to the protection_mode property of this CreateKeyDetails.
-            Allowed values for this property are: "HSM", "SOFTWARE"
+            Allowed values for this property are: "HSM", "SOFTWARE", "EXTERNAL"
         :type protection_mode: str
+
+        :param external_key_reference:
+            The value to assign to the external_key_reference property of this CreateKeyDetails.
+        :type external_key_reference: oci.key_management.models.ExternalKeyReference
 
         """
         self.swagger_types = {
@@ -60,7 +68,8 @@ class CreateKeyDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'key_shape': 'KeyShape',
-            'protection_mode': 'str'
+            'protection_mode': 'str',
+            'external_key_reference': 'ExternalKeyReference'
         }
 
         self.attribute_map = {
@@ -69,7 +78,8 @@ class CreateKeyDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'key_shape': 'keyShape',
-            'protection_mode': 'protectionMode'
+            'protection_mode': 'protectionMode',
+            'external_key_reference': 'externalKeyReference'
         }
 
         self._compartment_id = None
@@ -78,6 +88,7 @@ class CreateKeyDetails(object):
         self._freeform_tags = None
         self._key_shape = None
         self._protection_mode = None
+        self._external_key_reference = None
 
     @property
     def compartment_id(self):
@@ -222,8 +233,11 @@ class CreateKeyDetails(object):
         the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
         on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
         a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle.
+        Oracle only hold a reference to that key.
+        All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 
-        Allowed values for this property are: "HSM", "SOFTWARE"
+        Allowed values for this property are: "HSM", "SOFTWARE", "EXTERNAL"
 
 
         :return: The protection_mode of this CreateKeyDetails.
@@ -240,18 +254,41 @@ class CreateKeyDetails(object):
         the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
         on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
         a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+        A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle.
+        Oracle only hold a reference to that key.
+        All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
 
 
         :param protection_mode: The protection_mode of this CreateKeyDetails.
         :type: str
         """
-        allowed_values = ["HSM", "SOFTWARE"]
+        allowed_values = ["HSM", "SOFTWARE", "EXTERNAL"]
         if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
             raise ValueError(
                 "Invalid value for `protection_mode`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._protection_mode = protection_mode
+
+    @property
+    def external_key_reference(self):
+        """
+        Gets the external_key_reference of this CreateKeyDetails.
+
+        :return: The external_key_reference of this CreateKeyDetails.
+        :rtype: oci.key_management.models.ExternalKeyReference
+        """
+        return self._external_key_reference
+
+    @external_key_reference.setter
+    def external_key_reference(self, external_key_reference):
+        """
+        Sets the external_key_reference of this CreateKeyDetails.
+
+        :param external_key_reference: The external_key_reference of this CreateKeyDetails.
+        :type: oci.key_management.models.ExternalKeyReference
+        """
+        self._external_key_reference = external_key_reference
 
     def __repr__(self):
         return formatted_flat_dict(self)

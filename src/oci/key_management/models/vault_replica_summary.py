@@ -150,6 +150,8 @@ class VaultReplicaSummary(object):
     def status(self):
         """
         Gets the status of this VaultReplicaSummary.
+        Status of the Vault
+
         Allowed values for this property are: "CREATING", "CREATED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -163,6 +165,8 @@ class VaultReplicaSummary(object):
     def status(self, status):
         """
         Sets the status of this VaultReplicaSummary.
+        Status of the Vault
+
 
         :param status: The status of this VaultReplicaSummary.
         :type: str

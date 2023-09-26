@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SignedData(object):
     """
-    SignedData model.
+    The response to a request to sign the message.
     """
 
     #: A constant which can be used with the signing_algorithm property of a SignedData.

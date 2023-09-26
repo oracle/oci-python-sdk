@@ -23,8 +23,7 @@ missing = Sentinel("Missing")
 
 class KmsVaultClient(object):
     """
-    API for managing and performing operations with keys and vaults. (For the API for managing secrets, see the Vault Service
-    Secret Management API. For the API for retrieving secrets, see the Vault Service Secret Retrieval API.)
+    Use the Key Management API to manage vaults and keys. For more information, see [Managing Vaults](/Content/KeyManagement/Tasks/managingvaults.htm) and [Managing Keys](/Content/KeyManagement/Tasks/managingkeys.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -174,7 +173,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults/{vaultId}/actions/backup"
         method = "POST"
         operation_name = "backup_vault"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/BackupVault"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -303,7 +302,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults/{vaultId}/actions/cancelDeletion"
         method = "POST"
         operation_name = "cancel_vault_deletion"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/CancelVaultDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -389,6 +388,7 @@ class KmsVaultClient(object):
             The OCID of the vault.
 
         :param oci.key_management.models.ChangeVaultCompartmentDetails change_vault_compartment_details: (required)
+            ChangeVaultCompartmentDetails
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a
@@ -433,7 +433,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults/{vaultId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_vault_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/ChangeVaultCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -552,7 +552,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults"
         method = "POST"
         operation_name = "create_vault"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/CreateVault"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -670,7 +670,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults/{vaultId}/actions/createReplica"
         method = "POST"
         operation_name = "create_vault_replica"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/CreateVaultReplica"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -796,7 +796,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults/{vaultId}/actions/deleteReplica"
         method = "POST"
         operation_name = "delete_vault_replica"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/DeleteVaultReplica"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -904,7 +904,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults/{vaultId}"
         method = "GET"
         operation_name = "get_vault"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/GetVault"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1002,7 +1002,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults/{vaultId}/usage"
         method = "GET"
         operation_name = "get_vault_usage"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/VaultUsage/GetVaultUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1139,7 +1139,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults/{vaultId}/actions/listReplicas"
         method = "GET"
         operation_name = "list_vault_replicas"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/ListVaultReplicas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1294,7 +1294,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults"
         method = "GET"
         operation_name = "list_vaults"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/VaultSummary/ListVaults"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1448,7 +1448,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults/actions/restoreFromFile"
         method = "POST"
         operation_name = "restore_vault_from_file"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/RestoreVaultFromFile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1593,7 +1593,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults/actions/restoreFromObjectStore"
         method = "POST"
         operation_name = "restore_vault_from_object_store"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/RestoreVaultFromObjectStore"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1721,7 +1721,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults/{vaultId}/actions/scheduleDeletion"
         method = "POST"
         operation_name = "schedule_vault_deletion"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/ScheduleVaultDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1843,7 +1843,7 @@ class KmsVaultClient(object):
         resource_path = "/20180608/vaults/{vaultId}"
         method = "PUT"
         operation_name = "update_vault"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/key/release/Vault/UpdateVault"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

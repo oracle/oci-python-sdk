@@ -81,7 +81,7 @@ class KeyShape(object):
     def algorithm(self):
         """
         **[Required]** Gets the algorithm of this KeyShape.
-        The algorithm used by a key's key versions to encrypt or decrypt.
+        The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 
         Allowed values for this property are: "AES", "RSA", "ECDSA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -96,7 +96,7 @@ class KeyShape(object):
     def algorithm(self, algorithm):
         """
         Sets the algorithm of this KeyShape.
-        The algorithm used by a key's key versions to encrypt or decrypt.
+        The algorithm used by a key's key versions to encrypt or decrypt. Only AES algorithm is supported for `External` keys.
 
 
         :param algorithm: The algorithm of this KeyShape.

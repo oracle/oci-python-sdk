@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WrappedImportKey(object):
     """
-    WrappedImportKey model.
+    The details of the wrapped import Key.
     """
 
     #: A constant which can be used with the wrapping_algorithm property of a WrappedImportKey.

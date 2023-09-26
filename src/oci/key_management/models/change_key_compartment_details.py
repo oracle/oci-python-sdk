@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeKeyCompartmentDetails(object):
     """
-    ChangeKeyCompartmentDetails model.
+    The deatils of the compartment that you wish to move the Key.
     """
 
     def __init__(self, **kwargs):

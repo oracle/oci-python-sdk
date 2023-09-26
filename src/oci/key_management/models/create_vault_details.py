@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateVaultDetails(object):
     """
-    CreateVaultDetails model.
+    The details of the vault that you want to create.
     """
 
     #: A constant which can be used with the vault_type property of a CreateVaultDetails.
@@ -22,6 +22,10 @@ class CreateVaultDetails(object):
     #: A constant which can be used with the vault_type property of a CreateVaultDetails.
     #: This constant has a value of "DEFAULT"
     VAULT_TYPE_DEFAULT = "DEFAULT"
+
+    #: A constant which can be used with the vault_type property of a CreateVaultDetails.
+    #: This constant has a value of "EXTERNAL"
+    VAULT_TYPE_EXTERNAL = "EXTERNAL"
 
     def __init__(self, **kwargs):
         """
@@ -44,9 +48,13 @@ class CreateVaultDetails(object):
             The value to assign to the freeform_tags property of this CreateVaultDetails.
         :type freeform_tags: dict(str, str)
 
+        :param external_key_manager_metadata:
+            The value to assign to the external_key_manager_metadata property of this CreateVaultDetails.
+        :type external_key_manager_metadata: oci.key_management.models.ExternalKeyManagerMetadata
+
         :param vault_type:
             The value to assign to the vault_type property of this CreateVaultDetails.
-            Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT"
+            Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT", "EXTERNAL"
         :type vault_type: str
 
         """
@@ -55,6 +63,7 @@ class CreateVaultDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'external_key_manager_metadata': 'ExternalKeyManagerMetadata',
             'vault_type': 'str'
         }
 
@@ -63,6 +72,7 @@ class CreateVaultDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'external_key_manager_metadata': 'externalKeyManagerMetadata',
             'vault_type': 'vaultType'
         }
 
@@ -70,6 +80,7 @@ class CreateVaultDetails(object):
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._external_key_manager_metadata = None
         self._vault_type = None
 
     @property
@@ -187,12 +198,32 @@ class CreateVaultDetails(object):
         self._freeform_tags = freeform_tags
 
     @property
+    def external_key_manager_metadata(self):
+        """
+        Gets the external_key_manager_metadata of this CreateVaultDetails.
+
+        :return: The external_key_manager_metadata of this CreateVaultDetails.
+        :rtype: oci.key_management.models.ExternalKeyManagerMetadata
+        """
+        return self._external_key_manager_metadata
+
+    @external_key_manager_metadata.setter
+    def external_key_manager_metadata(self, external_key_manager_metadata):
+        """
+        Sets the external_key_manager_metadata of this CreateVaultDetails.
+
+        :param external_key_manager_metadata: The external_key_manager_metadata of this CreateVaultDetails.
+        :type: oci.key_management.models.ExternalKeyManagerMetadata
+        """
+        self._external_key_manager_metadata = external_key_manager_metadata
+
+    @property
     def vault_type(self):
         """
         **[Required]** Gets the vault_type of this CreateVaultDetails.
         The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
 
-        Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT"
+        Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT", "EXTERNAL"
 
 
         :return: The vault_type of this CreateVaultDetails.
@@ -210,7 +241,7 @@ class CreateVaultDetails(object):
         :param vault_type: The vault_type of this CreateVaultDetails.
         :type: str
         """
-        allowed_values = ["VIRTUAL_PRIVATE", "DEFAULT"]
+        allowed_values = ["VIRTUAL_PRIVATE", "DEFAULT", "EXTERNAL"]
         if not value_allowed_none_or_none_sentinel(vault_type, allowed_values):
             raise ValueError(
                 "Invalid value for `vault_type`, must be None or one of {0}"

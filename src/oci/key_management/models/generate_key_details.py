@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GenerateKeyDetails(object):
     """
-    GenerateKeyDetails model.
+    The details of the key that you want to encrypt or decrypt data.
     """
 
     def __init__(self, **kwargs):

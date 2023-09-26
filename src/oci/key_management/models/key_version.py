@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class KeyVersion(object):
     """
-    KeyVersion model.
+    The details of the KeyVersion associated with the Key.
     """
 
     #: A constant which can be used with the lifecycle_state property of a KeyVersion.
@@ -120,6 +120,10 @@ class KeyVersion(object):
             The value to assign to the is_primary property of this KeyVersion.
         :type is_primary: bool
 
+        :param external_key_reference_details:
+            The value to assign to the external_key_reference_details property of this KeyVersion.
+        :type external_key_reference_details: oci.key_management.models.ExternalKeyReferenceDetails
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -133,7 +137,8 @@ class KeyVersion(object):
             'vault_id': 'str',
             'restored_from_key_version_id': 'str',
             'replica_details': 'KeyVersionReplicaDetails',
-            'is_primary': 'bool'
+            'is_primary': 'bool',
+            'external_key_reference_details': 'ExternalKeyReferenceDetails'
         }
 
         self.attribute_map = {
@@ -148,7 +153,8 @@ class KeyVersion(object):
             'vault_id': 'vaultId',
             'restored_from_key_version_id': 'restoredFromKeyVersionId',
             'replica_details': 'replicaDetails',
-            'is_primary': 'isPrimary'
+            'is_primary': 'isPrimary',
+            'external_key_reference_details': 'externalKeyReferenceDetails'
         }
 
         self._compartment_id = None
@@ -163,6 +169,7 @@ class KeyVersion(object):
         self._restored_from_key_version_id = None
         self._replica_details = None
         self._is_primary = None
+        self._external_key_reference_details = None
 
     @property
     def compartment_id(self):
@@ -462,6 +469,8 @@ class KeyVersion(object):
     def is_primary(self):
         """
         Gets the is_primary of this KeyVersion.
+        A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
+
 
         :return: The is_primary of this KeyVersion.
         :rtype: bool
@@ -472,11 +481,33 @@ class KeyVersion(object):
     def is_primary(self, is_primary):
         """
         Sets the is_primary of this KeyVersion.
+        A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
+
 
         :param is_primary: The is_primary of this KeyVersion.
         :type: bool
         """
         self._is_primary = is_primary
+
+    @property
+    def external_key_reference_details(self):
+        """
+        Gets the external_key_reference_details of this KeyVersion.
+
+        :return: The external_key_reference_details of this KeyVersion.
+        :rtype: oci.key_management.models.ExternalKeyReferenceDetails
+        """
+        return self._external_key_reference_details
+
+    @external_key_reference_details.setter
+    def external_key_reference_details(self, external_key_reference_details):
+        """
+        Sets the external_key_reference_details of this KeyVersion.
+
+        :param external_key_reference_details: The external_key_reference_details of this KeyVersion.
+        :type: oci.key_management.models.ExternalKeyReferenceDetails
+        """
+        self._external_key_reference_details = external_key_reference_details
 
     def __repr__(self):
         return formatted_flat_dict(self)
