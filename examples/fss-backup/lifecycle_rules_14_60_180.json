@@ -1,0 +1,117 @@
+{
+  "items": [
+    {
+      "action": "INFREQUENT_ACCESS",
+      "is-enabled": true,
+      "name": "move-weekly-to-infrequent",
+      "object-name-filter": {
+        "exclusion-patterns": null,
+        "inclusion-patterns": null,
+        "inclusion-prefixes": [
+          "FSS-weekly"
+        ]
+      },
+      "target": "objects",
+      "time-amount": 1,
+      "time-unit": "DAYS"
+    },
+    {
+      "action": "DELETE",
+      "is-enabled": true,
+      "name": "delete-daily-older-versions",
+      "object-name-filter": {
+        "exclusion-patterns": null,
+        "inclusion-patterns": null,
+        "inclusion-prefixes": [
+          "FSS-daily"
+        ]
+      },
+      "target": "previous-object-versions",
+      "time-amount": 14,
+      "time-unit": "DAYS"
+    },
+    {
+      "action": "DELETE",
+      "is-enabled": true,
+      "name": "delete-older-weekly",
+      "object-name-filter": {
+        "exclusion-patterns": null,
+        "inclusion-patterns": null,
+        "inclusion-prefixes": [
+          "FSS-weekly"
+        ]
+      },
+      "target": "objects",
+      "time-amount": 60,
+      "time-unit": "DAYS"
+    },
+    {
+      "action": "ABORT",
+      "is-enabled": true,
+      "name": "delete-uncommitted-multipart",
+      "object-name-filter": null,
+      "target": "multipart-uploads",
+      "time-amount": 2,
+      "time-unit": "DAYS"
+    },
+    {
+      "action": "ARCHIVE",
+      "is-enabled": true,
+      "name": "move-monthly-to-archive",
+      "object-name-filter": {
+        "exclusion-patterns": null,
+        "inclusion-patterns": null,
+        "inclusion-prefixes": [
+          "FSS-monthly"
+        ]
+      },
+      "target": "objects",
+      "time-amount": 1,
+      "time-unit": "DAYS"
+    },
+    {
+      "action": "DELETE",
+      "is-enabled": true,
+      "name": "non-daily-keep-only-latest-versions",
+      "object-name-filter": {
+        "exclusion-patterns": null,
+        "inclusion-patterns": null,
+        "inclusion-prefixes": [
+          "FSS-monthly",
+          "FSS-weekly"
+        ]
+      },
+      "target": "previous-object-versions",
+      "time-amount": 1,
+      "time-unit": "DAYS"
+    },
+    {
+      "action": "DELETE",
+      "is-enabled": true,
+      "name": "delete-catchall-previous-180",
+      "object-name-filter": {
+        "exclusion-patterns": null,
+        "inclusion-patterns": null,
+        "inclusion-prefixes": null
+      },
+      "target": "previous-object-versions",
+      "time-amount": 180,
+      "time-unit": "DAYS"
+    },
+    {
+      "action": "DELETE",
+      "is-enabled": true,
+      "name": "delete-older-monthly",
+      "object-name-filter": {
+        "exclusion-patterns": null,
+        "inclusion-patterns": null,
+        "inclusion-prefixes": [
+          "FSS-monthly"
+        ]
+      },
+      "target": "objects",
+      "time-amount": 180,
+      "time-unit": "DAYS"
+    }
+  ]
+}
