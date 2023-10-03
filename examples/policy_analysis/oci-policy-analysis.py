@@ -113,7 +113,7 @@ def getNestedCompartment(identity_client, comp_ocid, level, max_level, comp_stri
             if str.startswith(statement, "endorse") or str.startswith(statement, "admit") or str.startswith(statement, "define"):
                 # Special statement tuple
                 statement_tuple = (statement,
-                       f"{comp_string}", policy.name, policy.id, policy.compartment_id)
+                                   f"{comp_string}", policy.name, policy.id, policy.compartment_id)
 
                 special_statements.append(statement_tuple)
                 continue
@@ -173,6 +173,7 @@ def getNestedCompartment(identity_client, comp_ocid, level, max_level, comp_stri
 
 ########################################
 # Main Code
+
 
 if __name__ == "__main__":
     # Parse Arguments
@@ -249,11 +250,11 @@ if __name__ == "__main__":
         logging.info("Loading policies recursively. Be patient (or run again with -v)...")
         logging.debug("========Enter Recursion==============")
         getNestedCompartment(identity_client=identity_client,
-                            comp_ocid=ocid,
-                            level=level,
-                            max_level=max_level,
-                            comp_string="",
-                            verbose=verbose)
+                             comp_ocid=ocid,
+                             level=level,
+                             max_level=max_level,
+                             comp_string="",
+                             verbose=verbose)
         logging.debug("========Exit Recursion==============")
 
     # Write to local cache (per type)
@@ -306,9 +307,9 @@ if __name__ == "__main__":
 
     # Create Log Batch
     special_batch = LogEntryBatch(defaultlogentrytime=datetime.datetime.utcnow(),
-                                source="oci-policy-analysis",
-                                type="special-statement",
-                                entries=entries)
+                                  source="oci-policy-analysis",
+                                  type="special-statement",
+                                  entries=entries)
 
     # Print Dynamic Groups
     entries = []
@@ -321,9 +322,9 @@ if __name__ == "__main__":
 
     # Create Log Batch
     dg_batch = LogEntryBatch(defaultlogentrytime=datetime.datetime.utcnow(),
-                            source="oci-policy-analysis",
-                            type="dynamic-group-statement",
-                            entries=entries)
+                             source="oci-policy-analysis",
+                             type="dynamic-group-statement",
+                             entries=entries)
 
     # Print Service
     entries = []
@@ -336,9 +337,9 @@ if __name__ == "__main__":
 
     # Create Log Batch
     service_batch = LogEntryBatch(defaultlogentrytime=datetime.datetime.utcnow(),
-                                source="oci-policy-analysis",
-                                type="service-statement",
-                                entries=entries)
+                                  source="oci-policy-analysis",
+                                  type="service-statement",
+                                  entries=entries)
 
     # Print Regular
     entries = []
@@ -351,9 +352,9 @@ if __name__ == "__main__":
 
     # Create Log Batch
     regular_batch = LogEntryBatch(defaultlogentrytime=datetime.datetime.utcnow(),
-                                source="oci-policy-analysis",
-                                type="regular-statement",
-                                entries=entries)
+                                  source="oci-policy-analysis",
+                                  type="regular-statement",
+                                  entries=entries)
 
     # Write batches to OCI Logging
     if log_ocid:
