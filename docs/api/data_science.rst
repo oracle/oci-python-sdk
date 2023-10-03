@@ -23,6 +23,7 @@ Data Science
     oci.data_science.models.ArtifactImportDetails
     oci.data_science.models.ArtifactImportDetailsObjectStorage
     oci.data_science.models.CategoryLogDetails
+    oci.data_science.models.ChangeDataSciencePrivateEndpointCompartmentDetails
     oci.data_science.models.ChangeJobCompartmentDetails
     oci.data_science.models.ChangeJobRunCompartmentDetails
     oci.data_science.models.ChangeModelCompartmentDetails
@@ -32,6 +33,7 @@ Data Science
     oci.data_science.models.ChangePipelineCompartmentDetails
     oci.data_science.models.ChangePipelineRunCompartmentDetails
     oci.data_science.models.ChangeProjectCompartmentDetails
+    oci.data_science.models.CreateDataSciencePrivateEndpointDetails
     oci.data_science.models.CreateJobDetails
     oci.data_science.models.CreateJobRunDetails
     oci.data_science.models.CreateModelDeploymentDetails
@@ -42,6 +44,8 @@ Data Science
     oci.data_science.models.CreatePipelineDetails
     oci.data_science.models.CreatePipelineRunDetails
     oci.data_science.models.CreateProjectDetails
+    oci.data_science.models.DataSciencePrivateEndpoint
+    oci.data_science.models.DataSciencePrivateEndpointSummary
     oci.data_science.models.DefaultJobConfigurationDetails
     oci.data_science.models.DefaultModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.ExportModelArtifactDetails
@@ -111,6 +115,7 @@ Data Science
     oci.data_science.models.SingleModelDeploymentConfigurationDetails
     oci.data_science.models.StandaloneJobInfrastructureConfigurationDetails
     oci.data_science.models.UpdateCategoryLogDetails
+    oci.data_science.models.UpdateDataSciencePrivateEndpointDetails
     oci.data_science.models.UpdateDefaultModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.UpdateJobDetails
     oci.data_science.models.UpdateJobRunDetails

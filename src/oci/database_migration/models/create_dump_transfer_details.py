@@ -28,19 +28,26 @@ class CreateDumpTransferDetails(object):
             The value to assign to the target property of this CreateDumpTransferDetails.
         :type target: oci.database_migration.models.CreateHostDumpTransferDetails
 
+        :param shared_storage_mount_target_id:
+            The value to assign to the shared_storage_mount_target_id property of this CreateDumpTransferDetails.
+        :type shared_storage_mount_target_id: str
+
         """
         self.swagger_types = {
             'source': 'CreateHostDumpTransferDetails',
-            'target': 'CreateHostDumpTransferDetails'
+            'target': 'CreateHostDumpTransferDetails',
+            'shared_storage_mount_target_id': 'str'
         }
 
         self.attribute_map = {
             'source': 'source',
-            'target': 'target'
+            'target': 'target',
+            'shared_storage_mount_target_id': 'sharedStorageMountTargetId'
         }
 
         self._source = None
         self._target = None
+        self._shared_storage_mount_target_id = None
 
     @property
     def source(self):
@@ -81,6 +88,30 @@ class CreateDumpTransferDetails(object):
         :type: oci.database_migration.models.CreateHostDumpTransferDetails
         """
         self._target = target
+
+    @property
+    def shared_storage_mount_target_id(self):
+        """
+        Gets the shared_storage_mount_target_id of this CreateDumpTransferDetails.
+        OCID of the shared storage mount target
+
+
+        :return: The shared_storage_mount_target_id of this CreateDumpTransferDetails.
+        :rtype: str
+        """
+        return self._shared_storage_mount_target_id
+
+    @shared_storage_mount_target_id.setter
+    def shared_storage_mount_target_id(self, shared_storage_mount_target_id):
+        """
+        Sets the shared_storage_mount_target_id of this CreateDumpTransferDetails.
+        OCID of the shared storage mount target
+
+
+        :param shared_storage_mount_target_id: The shared_storage_mount_target_id of this CreateDumpTransferDetails.
+        :type: str
+        """
+        self._shared_storage_mount_target_id = shared_storage_mount_target_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

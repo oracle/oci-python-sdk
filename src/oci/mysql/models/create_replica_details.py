@@ -44,6 +44,10 @@ class CreateReplicaDetails(object):
             The value to assign to the is_delete_protected property of this CreateReplicaDetails.
         :type is_delete_protected: bool
 
+        :param replica_overrides:
+            The value to assign to the replica_overrides property of this CreateReplicaDetails.
+        :type replica_overrides: oci.mysql.models.ReplicaOverrides
+
         """
         self.swagger_types = {
             'db_system_id': 'str',
@@ -51,7 +55,8 @@ class CreateReplicaDetails(object):
             'description': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'is_delete_protected': 'bool'
+            'is_delete_protected': 'bool',
+            'replica_overrides': 'ReplicaOverrides'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class CreateReplicaDetails(object):
             'description': 'description',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'is_delete_protected': 'isDeleteProtected'
+            'is_delete_protected': 'isDeleteProtected',
+            'replica_overrides': 'replicaOverrides'
         }
 
         self._db_system_id = None
@@ -69,6 +75,7 @@ class CreateReplicaDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._is_delete_protected = None
+        self._replica_overrides = None
 
     @property
     def db_system_id(self):
@@ -223,6 +230,26 @@ class CreateReplicaDetails(object):
         :type: bool
         """
         self._is_delete_protected = is_delete_protected
+
+    @property
+    def replica_overrides(self):
+        """
+        Gets the replica_overrides of this CreateReplicaDetails.
+
+        :return: The replica_overrides of this CreateReplicaDetails.
+        :rtype: oci.mysql.models.ReplicaOverrides
+        """
+        return self._replica_overrides
+
+    @replica_overrides.setter
+    def replica_overrides(self, replica_overrides):
+        """
+        Sets the replica_overrides of this CreateReplicaDetails.
+
+        :param replica_overrides: The replica_overrides of this CreateReplicaDetails.
+        :type: oci.mysql.models.ReplicaOverrides
+        """
+        self._replica_overrides = replica_overrides
 
     def __repr__(self):
         return formatted_flat_dict(self)

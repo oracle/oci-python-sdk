@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.09.26 - 23.09.26
+=====================
+* Added network load balancers to the CSV
+
+=====================
+23.09.19 - 23.09.19
+=====================
+* Added resource principle authenticion with -rp
+* Added log unified agents configuration
+
+=====================
 23.09.05 - 23.09.05
 =====================
 * Added Autonomous database ECPU

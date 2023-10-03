@@ -31,6 +31,7 @@ Database Migration
     oci.database_migration.models.AgentImageCollection
     oci.database_migration.models.AgentImageSummary
     oci.database_migration.models.AgentSummary
+    oci.database_migration.models.AwsS3DataTransferMediumDetails
     oci.database_migration.models.AwsS3Details
     oci.database_migration.models.ChangeAgentCompartmentDetails
     oci.database_migration.models.ChangeConnectionCompartmentDetails
@@ -75,9 +76,11 @@ Database Migration
     oci.database_migration.models.DataPumpParameters
     oci.database_migration.models.DataPumpSettings
     oci.database_migration.models.DataTransferMediumDetails
+    oci.database_migration.models.DataTransferMediumDetailsV2
     oci.database_migration.models.DatabaseCredentials
     oci.database_migration.models.DatabaseLinkDetails
     oci.database_migration.models.DatabaseObject
+    oci.database_migration.models.DbLinkDataTransferMediumDetails
     oci.database_migration.models.DiagnosticsResult
     oci.database_migration.models.DirectoryObject
     oci.database_migration.models.DumpTransferDetails
@@ -108,8 +111,10 @@ Database Migration
     oci.database_migration.models.MigrationPhaseCollection
     oci.database_migration.models.MigrationPhaseSummary
     oci.database_migration.models.MigrationSummary
+    oci.database_migration.models.NfsDataTransferMediumDetails
     oci.database_migration.models.NonADBAutoCreateTablespaceDetails
     oci.database_migration.models.NonADBRemapTablespaceDetails
+    oci.database_migration.models.ObjectStorageDataTransferMediumDetails
     oci.database_migration.models.ObjectStoreBucket
     oci.database_migration.models.OciCliDumpTransferDetails
     oci.database_migration.models.PhaseExtractEntry

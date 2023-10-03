@@ -19,7 +19,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.09.03"
+    version = "23.09.26"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -3459,6 +3459,8 @@ class ShowOCIData(object):
                          'id': bucket['id'],
                          'defined_tags': bucket['defined_tags'],
                          'freeform_tags': bucket['freeform_tags'],
+                         'error_message': bucket['error_message'],
+                         'archival_state': bucket['archival_state'],
                          'logs': self.service.get_logging_log(bucket['name'])
                          }
 
@@ -3680,6 +3682,9 @@ class ShowOCIData(object):
             data['name'] = str(lb['display_name']) + " - " + str(lb['shape_name']) + " - " + ("(Private)" if lb['is_private'] else "(Public)")
             data['status'] = lb['status']
             data['display_name'] = lb['display_name']
+            data['time_created'] = lb['time_created']
+            data['time_updated'] = lb['time_updated']
+            data['is_preserve_source_destination'] = lb['is_preserve_source_destination']
             data['is_private'] = lb['is_private']
             data['ips'] = lb['ip_addresses']
             data['nsg_ids'] = lb['nsg_ids']
@@ -3697,8 +3702,10 @@ class ShowOCIData(object):
             for lo in lb['listeners']:
                 value = {
                     'port': str(lo['port']) + "/" + str(lo['protocol']),
+                    'id': str(lo['id']),
                     'default_backend_set_name': str(lo['default_backend_set_name']),
-                    'desc': (lo['id'].ljust(20) + " - " + str(lo['port']) + "/" + str(lo['protocol']) + " - BS: " + str(lo['default_backend_set_name']))
+                    'desc': (lo['id'].ljust(20) + " - " + str(lo['port']) + "/" + str(lo['protocol']) + " - BS: " + str(lo['default_backend_set_name'])),
+                    'csvname': (lo['id'] + " - " + str(lo['port']) + "/" + str(lo['protocol']) + " - BS: " + str(lo['default_backend_set_name']))
                 }
                 datalis.append(value)
             data['listeners'] = datalis
@@ -4230,6 +4237,11 @@ class ShowOCIData(object):
             log = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_LOGGING, 'region_name', region_name, 'compartment_id', compartment['id'])
             if log:
                 security_services['logging'] = log
+
+            # logging unified agenets
+            logua = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_LOGGING_UA, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if log:
+                security_services['logging_unified_agenets'] = logua
 
             # kms_vaults
             vaults = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_VAULTS, 'region_name', region_name, 'compartment_id', compartment['id'])

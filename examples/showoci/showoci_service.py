@@ -38,7 +38,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.09.03"
+    version = "23.09.26"
     oci_compatible_version = "2.110.2"
     thread_lock = threading.Lock()
 
@@ -243,6 +243,7 @@ class ShowOCIService(object):
     C_SECURITY_VAULTS = "vaults"
     C_SECURITY_BASTION = "bastion"
     C_SECURITY_LOGGING = "logging"
+    C_SECURITY_LOGGING_UA = "unified_agents"
 
     # Security Scores
     C_SECURITY_SCORES = "security_scores"
@@ -519,6 +520,10 @@ class ShowOCIService(object):
         if flags.use_instance_principals:
             self.generate_signer_from_instance_principals()
 
+        # if resource pricipals - generate signer from token or config
+        if flags.use_resource_principals:
+            self.generate_signer_from_resource_principals()
+
         # if delegation token for cloud shell
         elif flags.use_delegation_token:
             self.generate_signer_from_delegation_token()
@@ -598,6 +603,26 @@ class ShowOCIService(object):
         except Exception:
             print("*********************************************************************")
             print("* Error obtaining instance principals certificate.                  *")
+            print("* Aborting.                                                         *")
+            print("*********************************************************************")
+            print("")
+            raise SystemExit
+
+        # generate config info from signer
+        self.config = {'region': self.signer.region, 'tenancy': self.signer.tenancy_id}
+
+    ##########################################################################
+    # Generate Signer from resource_principals
+    ###########################################################################
+    def generate_signer_from_resource_principals(self):
+
+        try:
+            # get signer from instance principals token
+            self.signer = oci.auth.signers.get_resource_principals_signer()
+
+        except Exception:
+            print("*********************************************************************")
+            print("* Error obtaining resource principals certificate.                  *")
             print("* Aborting.                                                         *")
             print("*********************************************************************")
             print("")
@@ -1097,6 +1122,7 @@ class ShowOCIService(object):
                 'notfound' in str(code).lower() or
                 'closed connection' in str(code).lower() or
                 code == 'Forbidden' or
+                code == 'KmsKeyDisabled' or
                 code == 'TooManyRequests' or
                 code == 'NotAuthorizedOrNotFound' or
                 code == 'IncorrectState' or
@@ -6880,8 +6906,8 @@ class ShowOCIService(object):
                            'display_name': str(arr.display_name),
                            'lifecycle_state': self.get_value(arr.lifecycle_state),
                            'lifecycle_details': self.get_value(arr.lifecycle_details),
-                           'time_created': self.get_value(arr.time_created),
-                           'time_updated': self.get_value(arr.time_updated),
+                           'time_created': self.get_value(arr.time_created)[0:16],
+                           'time_updated': self.get_value(arr.time_updated)[0:16],
                            'is_private': self.get_value(arr.is_private),
                            'is_preserve_source_destination': self.get_value(arr.is_preserve_source_destination),
                            'subnet_id': self.get_value(arr.subnet_id),
@@ -7278,6 +7304,7 @@ class ShowOCIService(object):
 
                             # add details
                             bval = {'name': str(backend.name),
+                                    'id': str(backend.name),
                                     'ip_address': str(backend.ip_address),
                                     'status': str(bh_status),
                                     'target_id': str(backend.target_id),
@@ -7430,38 +7457,54 @@ class ShowOCIService(object):
                 # loop on array
                 # arr = oci.object_storage.models.BucketSummary
                 for arr in buckets:
+                    val = {
+                        'name': str(arr.name),
+                        'time_created': str(arr.time_created)[0:16],
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region']),
+                        'namespace_name': namespace_name,
+                        'storage_tier': '',
+                        'archival_state': '',
+                        'public_access_type': '',
+                        'object_events_enabled': '',
+                        'defined_tags': [],
+                        'freeform_tags': [],
+                        'kms_key_id': '',
+                        'object_lifecycle_policy_etag': '',
+                        'replication_enabled': '',
+                        'is_read_only': '',
+                        'versioning': '',
+                        'auto_tiering': '',
+                        'id': '',
+                        'size_gb': "",
+                        'count': "",
+                        'approximate_count': "",
+                        'approximate_size': "",
+                        'object_lifecycle': "",
+                        'preauthenticated_requests': "",
+                        'error_message': ""
+                    }
+
                     try:
                         # bucket = oci.object_storage.models.Bucket
                         bucket = object_storage.get_bucket(namespace_name, str(arr.name), fields=['approximateCount', 'approximateSize', 'autoTiering']).data
 
                         if bucket:
-                            val = {
-                                'name': str(arr.name),
-                                'time_created': str(arr.time_created)[0:16],
-                                'compartment_name': str(compartment['name']),
-                                'compartment_path': str(compartment['path']),
-                                'compartment_id': str(compartment['id']),
-                                'region_name': str(self.config['region']),
-                                'public_access_type': self.get_value(bucket.public_access_type),
-                                'storage_tier': self.get_value(bucket.storage_tier),
-                                'object_events_enabled': self.get_value(bucket.object_events_enabled),
-                                'defined_tags': [] if bucket.defined_tags is None else bucket.defined_tags,
-                                'freeform_tags': [] if bucket.freeform_tags is None else bucket.freeform_tags,
-                                'kms_key_id': self.get_value(bucket.kms_key_id),
-                                'object_lifecycle_policy_etag': str(bucket.object_lifecycle_policy_etag),
-                                'replication_enabled': self.get_value(bucket.replication_enabled),
-                                'is_read_only': self.get_value(bucket.is_read_only),
-                                'versioning': self.get_value(bucket.versioning),
-                                'auto_tiering': self.get_value(bucket.auto_tiering),
-                                'id': str(bucket.id),
-                                'size_gb': "",
-                                'count': "",
-                                'approximate_count': "",
-                                'approximate_size': "",
-                                'object_lifecycle': "",
-                                'preauthenticated_requests': "",
-                                'namespace_name': namespace_name
-                            }
+                            val['storage_tier'] = self.get_value(bucket.storage_tier)
+                            val['archival_state'] = self.get_value(bucket.archival_state)
+                            val['public_access_type'] = self.get_value(bucket.public_access_type)
+                            val['object_events_enabled'] = self.get_value(bucket.object_events_enabled)
+                            val['defined_tags'] = [] if bucket.defined_tags is None else bucket.defined_tags
+                            val['freeform_tags'] = [] if bucket.freeform_tags is None else bucket.freeform_tags
+                            val['kms_key_id'] = self.get_value(bucket.kms_key_id)
+                            val['object_lifecycle_policy_etag'] = str(bucket.object_lifecycle_policy_etag)
+                            val['replication_enabled'] = self.get_value(bucket.replication_enabled)
+                            val['is_read_only'] = self.get_value(bucket.is_read_only)
+                            val['versioning'] = self.get_value(bucket.versioning)
+                            val['auto_tiering'] = self.get_value(bucket.auto_tiering)
+                            val['id'] = str(bucket.id)
                             objcnt = bucket.approximate_count
                             size = bucket.approximate_size
 
@@ -7473,12 +7516,16 @@ class ShowOCIService(object):
                                 val['count'] = objcnt
 
                     except oci.exceptions.ServiceError as e:
+                        val['error_message'] = str(e)
                         if self.__check_service_error(e.code):
                             self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                            errstr += "Issue with " + arr.name + " "
+
+                    except Exception as e:
+                        val['error_message'] = str(e)
+                        if 'KmsKeyDisabled' in str(e):
+                            self.__load_print_auth_warning(to_print=self.flags.skip_threads)
                             errstr += "a"
-                            continue
-                        else:
-                            raise
 
                     ###############################
                     # get object lifecycle
@@ -7495,7 +7542,7 @@ class ShowOCIService(object):
                         if e.code == "LifecyclePolicyNotFound":
                             pass
                         elif self.__check_service_error(e.code):
-                            self.__load_print_auth_warning()
+                            self.__load_print_auth_warning(to_print=self.flags.skip_threads)
                         else:
                             raise
 
@@ -8092,36 +8139,36 @@ class ShowOCIService(object):
                     if not self.check_lifecycle_state_active(dbs.lifecycle_state):
                         continue
 
-                    value = {'id': str(dbs.id),
-                             'display_name': str(dbs.display_name),
-                             'shape': str(dbs.shape),
-                             'time_zone': str(dbs.time_zone),
-                             'cpus_enabled': str(dbs.cpus_enabled),
-                             'max_cpu_count': str(dbs.max_cpu_count),
-                             'memory_size_in_gbs': str(dbs.memory_size_in_gbs),
-                             'max_memory_in_gbs': str(dbs.max_memory_in_gbs),
-                             'db_node_storage_size_in_gbs': str(dbs.db_node_storage_size_in_gbs),
-                             'max_db_node_storage_in_g_bs': str(dbs.max_db_node_storage_in_g_bs),
-                             'data_storage_size_in_tbs': str(dbs.data_storage_size_in_tbs),
-                             'max_data_storage_in_t_bs': str(dbs.max_data_storage_in_t_bs),
-                             'storage_count': str(dbs.storage_count) if dbs.storage_count else "",
-                             'compute_count': str(dbs.compute_count) if dbs.compute_count else "",
-                             'additional_storage_count': str(dbs.additional_storage_count),
-                             'activated_storage_count': str(dbs.activated_storage_count),
-                             'cloud_control_plane_server1': str(dbs.cloud_control_plane_server1),
-                             'cloud_control_plane_server2': str(dbs.cloud_control_plane_server2),
-                             'netmask': str(dbs.netmask),
-                             'gateway': str(dbs.gateway),
-                             'admin_network_cidr': str(dbs.admin_network_cidr),
-                             'infini_band_network_cidr': str(dbs.infini_band_network_cidr),
-                             'corporate_proxy': str(dbs.corporate_proxy),
-                             'dns_server': str(dbs.dns_server),
-                             'ntp_server': str(dbs.ntp_server),
-                             'time_created': str(dbs.time_created),
-                             'lifecycle_state': str(dbs.lifecycle_state),
-                             'lifecycle_details': str(dbs.lifecycle_details),
-                             'csi_number': str(dbs.csi_number),
-                             'maintenance_slo_status': str(dbs.maintenance_slo_status),
+                    value = {'id': self.get_value(dbs.id),
+                             'display_name': self.get_value(dbs.display_name),
+                             'shape': self.get_value(dbs.shape),
+                             'time_zone': self.get_value(dbs.time_zone),
+                             'cpus_enabled': self.get_value(dbs.cpus_enabled),
+                             'max_cpu_count': self.get_value(dbs.max_cpu_count),
+                             'memory_size_in_gbs': self.get_value(dbs.memory_size_in_gbs),
+                             'max_memory_in_gbs': self.get_value(dbs.max_memory_in_gbs),
+                             'db_node_storage_size_in_gbs': self.get_value(dbs.db_node_storage_size_in_gbs),
+                             'max_db_node_storage_in_g_bs': self.get_value(dbs.max_db_node_storage_in_g_bs),
+                             'data_storage_size_in_tbs': self.get_value(str(dbs.data_storage_size_in_tbs)),
+                             'max_data_storage_in_t_bs': self.get_value(dbs.max_data_storage_in_t_bs),
+                             'storage_count': self.get_value(dbs.storage_count),
+                             'compute_count': self.get_value(dbs.compute_count),
+                             'additional_storage_count': self.get_value(dbs.additional_storage_count),
+                             'activated_storage_count': self.get_value(dbs.activated_storage_count),
+                             'cloud_control_plane_server1': self.get_value(dbs.cloud_control_plane_server1),
+                             'cloud_control_plane_server2': self.get_value(dbs.cloud_control_plane_server2),
+                             'netmask': self.get_value(dbs.netmask),
+                             'gateway': self.get_value(dbs.gateway),
+                             'admin_network_cidr': self.get_value(dbs.admin_network_cidr),
+                             'infini_band_network_cidr': self.get_value(dbs.infini_band_network_cidr),
+                             'corporate_proxy': self.get_value(dbs.corporate_proxy),
+                             'dns_server': self.get_value(dbs.dns_server),
+                             'ntp_server': self.get_value(dbs.ntp_server),
+                             'time_created': self.get_value(dbs.time_created),
+                             'lifecycle_state': self.get_value(dbs.lifecycle_state),
+                             'lifecycle_details': self.get_value(dbs.lifecycle_details),
+                             'csi_number': self.get_value(dbs.csi_number),
+                             'maintenance_slo_status': self.get_value(dbs.maintenance_slo_status),
                              'maintenance_window': self.__load_database_maintatance_windows(dbs.maintenance_window),
                              'last_maintenance_run': self.__load_database_maintatance(database_client, dbs.last_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
                              'next_maintenance_run': self.__load_database_maintatance(database_client, dbs.next_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
@@ -10364,8 +10411,6 @@ class ShowOCIService(object):
                         'description': str(mysqls.description),
                         'is_highly_available': str(mysqls.is_highly_available),
                         'current_placement': str(mysqls.current_placement.availability_domain) if mysqls.current_placement else "",
-                        'is_analytics_cluster_attached': str(mysqls.is_analytics_cluster_attached),
-                        'analytics_cluster': str(mysqls.analytics_cluster.shape_name) + "-" + str(mysqls.analytics_cluster.cluster_size) if mysqls.analytics_cluster else "",
                         'is_heat_wave_cluster_attached': str(mysqls.is_heat_wave_cluster_attached),
                         'heat_wave_cluster': str(mysqls.heat_wave_cluster.shape_name) + "-" + str(mysqls.heat_wave_cluster.cluster_size) if mysqls.heat_wave_cluster else "",
                         'availability_domain': str(mysqls.availability_domain),
@@ -11890,6 +11935,7 @@ class ShowOCIService(object):
             # add the key if not exists
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_BASTION)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_CLOUD_GUARD)
+            self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_LOGGING_UA)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_LOGGING)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_VAULTS)
             self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_ALARMS)
@@ -11924,6 +11970,7 @@ class ShowOCIService(object):
                 notifications[self.C_NOTIFICATIONS_SUBSCRIPTIONS] += self.__load_notifications_subscriptions(ons_dp_client, compartments)
 
                 sec[self.C_SECURITY_BASTION] += self.__load_security_bastions(bs_client, compartments)
+                sec[self.C_SECURITY_LOGGING_UA] += self.__load_security_log_unified_agents(bs_client, compartments)
                 sec[self.C_SECURITY_LOGGING] += self.__load_security_log_groups(log_client, compartments)
                 sec[self.C_SECURITY_VAULTS] += self.__load_security_kms_vaults(kms_client, compartments)
                 sec[self.C_SECURITY_CLOUD_GUARD] += self.__load_security_cloud_guard(cg_client, compartments)
@@ -11948,6 +11995,7 @@ class ShowOCIService(object):
                     future_NOTIFICATIONS_SUBSCRIPTIONS = executor.submit(self.__load_notifications_subscriptions, ons_dp_client, compartments)
                     future_SECURITY_BASTION = executor.submit(self.__load_security_bastions, bs_client, compartments)
                     future_SECURITY_LOGGING = executor.submit(self.__load_security_log_groups, log_client, compartments)
+                    future_SECURITY_LOGGING_UA = executor.submit(self.__load_security_log_unified_agents, log_client, compartments)
                     future_SECURITY_VAULTS = executor.submit(self.__load_security_kms_vaults, kms_client, compartments)
                     future_SECURITY_CLOUD_GUARD = executor.submit(self.__load_security_cloud_guard, cg_client, compartments)
                     future_EMAIL_SENDERS = executor.submit(self.__load_email_senders, email_client, compartments)
@@ -11964,6 +12012,7 @@ class ShowOCIService(object):
                     notifications[self.C_NOTIFICATIONS_SUBSCRIPTIONS] += next(as_completed([future_NOTIFICATIONS_SUBSCRIPTIONS])).result()
                     sec[self.C_SECURITY_BASTION] += next(as_completed([future_SECURITY_BASTION])).result()
                     sec[self.C_SECURITY_LOGGING] += next(as_completed([future_SECURITY_LOGGING])).result()
+                    sec[self.C_SECURITY_LOGGING_UA] += next(as_completed([future_SECURITY_LOGGING_UA])).result()
                     sec[self.C_SECURITY_VAULTS] += next(as_completed([future_SECURITY_VAULTS])).result()
                     sec[self.C_SECURITY_CLOUD_GUARD] += next(as_completed([future_SECURITY_CLOUD_GUARD])).result()
                     email[self.C_EMAIL_SENDERS] += next(as_completed([future_EMAIL_SENDERS])).result()
@@ -15188,6 +15237,126 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
+    # __load_security_log_unified_agents
+    ##########################################################################
+    def __load_security_log_unified_agents(self, log_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "Logging Unified Agenets"
+            self.__load_print_status_with_threads(header)
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                array = []
+                try:
+                    array = oci.pagination.list_call_get_all_results(
+                        log_client.list_unified_agent_configurations,
+                        compartment['id'],
+                        sort_by="displayName",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                    errstr += "a"
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                # item = oci.logging.models.UnifiedAgentConfigurationSummary
+                for item in array:
+                    val = {
+                        'id': str(item.id),
+                        'display_name': self.get_value(item.display_name),
+                        'description': self.get_value(item.description),
+                        'time_created': self.get_value(item.time_created),
+                        'time_last_modified': self.get_value(item.time_last_modified),
+                        'is_enabled': self.get_value(item.is_enabled),
+                        'configuration_type': self.get_value(item.configuration_type),
+                        'configuration_state': self.get_value(item.configuration_state),
+                        'sum_info': "Log Unified Agents",
+                        'sum_size_gb': str(1),
+                        'defined_tags': [] if item.defined_tags is None else item.defined_tags,
+                        'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
+                        'service_configuration_source': [],
+                        'service_configuration_dest': '',
+                        'group_association': [],
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region'])
+                    }
+
+                    # item2 = oci.logging.models.UnifiedAgentConfiguration
+                    try:
+                        item2 = log_client.get_unified_agent_configuration(
+                            item.id,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
+
+                        # service_configuration
+                        if item2.service_configuration.configuration_type:
+                            if item2.service_configuration.configuration_type == 'LOGGING':
+                                for src in item2.service_configuration.sources:
+                                    if src.source_type == "LOG_TAIL":
+                                        val['service_configuration_source'].append({
+                                            'name': src.name,
+                                            'source_type': src.source_type,
+                                            'paths': src.paths,
+                                            'parser_type': src.parser.parser_type if src.parser else ""})
+                                    elif src.source_type == "WINDOWS_EVENT_LOG":
+                                        val['service_configuration_source'].append({
+                                            'name': src.name,
+                                            'source_type': src.source_type,
+                                            'channels': src.channels})
+                                    else:
+                                        val['service_configuration_source'].append({'name': src.name, 'source_type': src.source_type})
+
+                                if item2.service_configuration.destination:
+                                    val['service_configuration_dest'] = item2.service_configuration.destination.log_object_id
+
+                        # group_association
+                        if item2.group_association:
+                            val['service_configuration_dest'] = item2.group_association.group_list
+
+                    except oci.exceptions.ServiceError:
+                        errstr += "a"
+                    except oci.exceptions.ConnectTimeout:
+                        errstr += "a"
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_security_log_unified_agents", e)
+            return data
+
+    ##########################################################################
     # __load_security_bastions
     ##########################################################################
     def __load_security_bastions(self, bs_client, compartments):
@@ -15426,6 +15595,7 @@ class ShowOCIFlags(object):
     config_file = oci.config.DEFAULT_LOCATION
     config_section = oci.config.DEFAULT_PROFILE
     use_instance_principals = False
+    use_resource_principals = False
     use_delegation_token = False
     use_security_token = False
 

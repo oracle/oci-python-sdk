@@ -126,6 +126,18 @@ class Replica(object):
             The value to assign to the is_delete_protected property of this Replica.
         :type is_delete_protected: bool
 
+        :param shape_name:
+            The value to assign to the shape_name property of this Replica.
+        :type shape_name: str
+
+        :param configuration_id:
+            The value to assign to the configuration_id property of this Replica.
+        :type configuration_id: str
+
+        :param replica_overrides:
+            The value to assign to the replica_overrides property of this Replica.
+        :type replica_overrides: oci.mysql.models.ReplicaOverrides
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -145,7 +157,10 @@ class Replica(object):
             'port_x': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'is_delete_protected': 'bool'
+            'is_delete_protected': 'bool',
+            'shape_name': 'str',
+            'configuration_id': 'str',
+            'replica_overrides': 'ReplicaOverrides'
         }
 
         self.attribute_map = {
@@ -166,7 +181,10 @@ class Replica(object):
             'port_x': 'portX',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'is_delete_protected': 'isDeleteProtected'
+            'is_delete_protected': 'isDeleteProtected',
+            'shape_name': 'shapeName',
+            'configuration_id': 'configurationId',
+            'replica_overrides': 'replicaOverrides'
         }
 
         self._id = None
@@ -187,6 +205,9 @@ class Replica(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._is_delete_protected = None
+        self._shape_name = None
+        self._configuration_id = None
+        self._replica_overrides = None
 
     @property
     def id(self):
@@ -422,7 +443,7 @@ class Replica(object):
     def mysql_version(self):
         """
         **[Required]** Gets the mysql_version of this Replica.
-        The MySQL version used by the read replica.
+        The MySQL version currently in use by the read replica.
 
 
         :return: The mysql_version of this Replica.
@@ -434,7 +455,7 @@ class Replica(object):
     def mysql_version(self, mysql_version):
         """
         Sets the mysql_version of this Replica.
-        The MySQL version used by the read replica.
+        The MySQL version currently in use by the read replica.
 
 
         :param mysql_version: The mysql_version of this Replica.
@@ -643,6 +664,78 @@ class Replica(object):
         :type: bool
         """
         self._is_delete_protected = is_delete_protected
+
+    @property
+    def shape_name(self):
+        """
+        Gets the shape_name of this Replica.
+        The shape currently in use by the read replica. The shape determines the resources allocated:
+        CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.
+        To get a list of shapes, use the :func:`list_shapes` operation.
+
+
+        :return: The shape_name of this Replica.
+        :rtype: str
+        """
+        return self._shape_name
+
+    @shape_name.setter
+    def shape_name(self, shape_name):
+        """
+        Sets the shape_name of this Replica.
+        The shape currently in use by the read replica. The shape determines the resources allocated:
+        CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.
+        To get a list of shapes, use the :func:`list_shapes` operation.
+
+
+        :param shape_name: The shape_name of this Replica.
+        :type: str
+        """
+        self._shape_name = shape_name
+
+    @property
+    def configuration_id(self):
+        """
+        Gets the configuration_id of this Replica.
+        The OCID of the Configuration currently in use by the read replica.
+
+
+        :return: The configuration_id of this Replica.
+        :rtype: str
+        """
+        return self._configuration_id
+
+    @configuration_id.setter
+    def configuration_id(self, configuration_id):
+        """
+        Sets the configuration_id of this Replica.
+        The OCID of the Configuration currently in use by the read replica.
+
+
+        :param configuration_id: The configuration_id of this Replica.
+        :type: str
+        """
+        self._configuration_id = configuration_id
+
+    @property
+    def replica_overrides(self):
+        """
+        Gets the replica_overrides of this Replica.
+
+        :return: The replica_overrides of this Replica.
+        :rtype: oci.mysql.models.ReplicaOverrides
+        """
+        return self._replica_overrides
+
+    @replica_overrides.setter
+    def replica_overrides(self, replica_overrides):
+        """
+        Sets the replica_overrides of this Replica.
+
+        :param replica_overrides: The replica_overrides of this Replica.
+        :type: oci.mysql.models.ReplicaOverrides
+        """
+        self._replica_overrides = replica_overrides
 
     def __repr__(self):
         return formatted_flat_dict(self)

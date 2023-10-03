@@ -124,7 +124,7 @@ class ModelConfigurationDetails(object):
     def bandwidth_mbps(self):
         """
         Gets the bandwidth_mbps of this ModelConfigurationDetails.
-        The network bandwidth for the model.
+        The minimum network bandwidth for the model deployment.
 
 
         :return: The bandwidth_mbps of this ModelConfigurationDetails.
@@ -136,7 +136,7 @@ class ModelConfigurationDetails(object):
     def bandwidth_mbps(self, bandwidth_mbps):
         """
         Sets the bandwidth_mbps of this ModelConfigurationDetails.
-        The network bandwidth for the model.
+        The minimum network bandwidth for the model deployment.
 
 
         :param bandwidth_mbps: The bandwidth_mbps of this ModelConfigurationDetails.

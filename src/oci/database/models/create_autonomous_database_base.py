@@ -265,6 +265,14 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the is_mtls_connection_required property of this CreateAutonomousDatabaseBase.
         :type is_mtls_connection_required: bool
 
+        :param resource_pool_leader_id:
+            The value to assign to the resource_pool_leader_id property of this CreateAutonomousDatabaseBase.
+        :type resource_pool_leader_id: str
+
+        :param resource_pool_summary:
+            The value to assign to the resource_pool_summary property of this CreateAutonomousDatabaseBase.
+        :type resource_pool_summary: oci.database.models.ResourcePoolSummary
+
         :param autonomous_maintenance_schedule_type:
             The value to assign to the autonomous_maintenance_schedule_type property of this CreateAutonomousDatabaseBase.
             Allowed values for this property are: "EARLY", "REGULAR"
@@ -339,6 +347,8 @@ class CreateAutonomousDatabaseBase(object):
             'source': 'str',
             'customer_contacts': 'list[CustomerContact]',
             'is_mtls_connection_required': 'bool',
+            'resource_pool_leader_id': 'str',
+            'resource_pool_summary': 'ResourcePoolSummary',
             'autonomous_maintenance_schedule_type': 'str',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
             'is_auto_scaling_for_storage_enabled': 'bool',
@@ -389,6 +399,8 @@ class CreateAutonomousDatabaseBase(object):
             'source': 'source',
             'customer_contacts': 'customerContacts',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
+            'resource_pool_leader_id': 'resourcePoolLeaderId',
+            'resource_pool_summary': 'resourcePoolSummary',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'scheduled_operations': 'scheduledOperations',
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
@@ -438,6 +450,8 @@ class CreateAutonomousDatabaseBase(object):
         self._source = None
         self._customer_contacts = None
         self._is_mtls_connection_required = None
+        self._resource_pool_leader_id = None
+        self._resource_pool_summary = None
         self._autonomous_maintenance_schedule_type = None
         self._scheduled_operations = None
         self._is_auto_scaling_for_storage_enabled = None
@@ -1721,6 +1735,54 @@ class CreateAutonomousDatabaseBase(object):
         :type: bool
         """
         self._is_mtls_connection_required = is_mtls_connection_required
+
+    @property
+    def resource_pool_leader_id(self):
+        """
+        Gets the resource_pool_leader_id of this CreateAutonomousDatabaseBase.
+        The unique identifier for leader autonomous database OCID `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The resource_pool_leader_id of this CreateAutonomousDatabaseBase.
+        :rtype: str
+        """
+        return self._resource_pool_leader_id
+
+    @resource_pool_leader_id.setter
+    def resource_pool_leader_id(self, resource_pool_leader_id):
+        """
+        Sets the resource_pool_leader_id of this CreateAutonomousDatabaseBase.
+        The unique identifier for leader autonomous database OCID `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param resource_pool_leader_id: The resource_pool_leader_id of this CreateAutonomousDatabaseBase.
+        :type: str
+        """
+        self._resource_pool_leader_id = resource_pool_leader_id
+
+    @property
+    def resource_pool_summary(self):
+        """
+        Gets the resource_pool_summary of this CreateAutonomousDatabaseBase.
+
+        :return: The resource_pool_summary of this CreateAutonomousDatabaseBase.
+        :rtype: oci.database.models.ResourcePoolSummary
+        """
+        return self._resource_pool_summary
+
+    @resource_pool_summary.setter
+    def resource_pool_summary(self, resource_pool_summary):
+        """
+        Sets the resource_pool_summary of this CreateAutonomousDatabaseBase.
+
+        :param resource_pool_summary: The resource_pool_summary of this CreateAutonomousDatabaseBase.
+        :type: oci.database.models.ResourcePoolSummary
+        """
+        self._resource_pool_summary = resource_pool_summary
 
     @property
     def autonomous_maintenance_schedule_type(self):

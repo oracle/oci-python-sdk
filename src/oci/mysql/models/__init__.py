@@ -66,6 +66,7 @@ from .pem_ca_certificate import PemCaCertificate
 from .pitr_policy import PitrPolicy
 from .point_in_time_recovery_details import PointInTimeRecoveryDetails
 from .replica import Replica
+from .replica_overrides import ReplicaOverrides
 from .replica_summary import ReplicaSummary
 from .restart_db_system_details import RestartDbSystemDetails
 from .shape_summary import ShapeSummary
@@ -153,6 +154,7 @@ mysql_type_mapping = {
     "PitrPolicy": PitrPolicy,
     "PointInTimeRecoveryDetails": PointInTimeRecoveryDetails,
     "Replica": Replica,
+    "ReplicaOverrides": ReplicaOverrides,
     "ReplicaSummary": ReplicaSummary,
     "RestartDbSystemDetails": RestartDbSystemDetails,
     "ShapeSummary": ShapeSummary,
