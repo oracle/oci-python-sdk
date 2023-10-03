@@ -15,10 +15,11 @@ fss_backup.py: error: the following arguments are required: -fc/--fsscompartment
 or
 ```
 /fss_backup.py -h
-usage: fss_backup.py [-h] [-v] [-fs FSSOCID] -fc FSSCOMPARTMENT -oc OSSCOMPARTMENT -r REMOTE -ad AVAILABILITYDOMAIN -m MOUNTIP [-pr PROFILE]
-                     [-ty TYPE] [--dryrun] [--serversidecopy] [-t THRESHOLD]
+usage: fss_backup.py [-h] [-v] [-fs FSSOCID] -fc FSSCOMPARTMENT -oc OSSCOMPARTMENT -r REMOTE -ad
+                     AVAILABILITYDOMAIN -m MOUNTOCID [-pr PROFILE] [-ty TYPE] [--dryrun] [-ssc] [-s]
+                     [-t THRESHOLD] [-su]
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -v, --verbose         increase output verbosity
   -fs FSSOCID, --fssocid FSSOCID
@@ -31,29 +32,34 @@ optional arguments:
                         Named rclone remote for that user. ie oci:
   -ad AVAILABILITYDOMAIN, --availabilitydomain AVAILABILITYDOMAIN
                         AD for FSS usage. Such as dDzb:US-ASHBURN-AD-1
-  -m MOUNTIP, --mountip MOUNTIP
-                        Mount Point IP to use.
+  -m MOUNTOCID, --mountocid MOUNTOCID
+                        Mount Point OCID to use.
   -pr PROFILE, --profile PROFILE
                         OCI Profile name (if not default)
   -ty TYPE, --type TYPE
                         Type: daily(def), weekly, monthly
   --dryrun              Dry Run - print what it would do
-  --serversidecopy      For weekly/monthly only - copies directly from latest daily backup, not source FSS
+  -ssc, --serversidecopy
+                        For weekly/monthly only - copies directly from latest daily backup, not source FSS
+  -s, --sortbytes       Sort by byte size of FSS, smallest to largest (smaller FS backed up first
   -t THRESHOLD, --threshold THRESHOLD
                         GB threshold - do not back up share if more than this
+  -su, --usesudo        Attempt to run mount/umount with sudo - requires /etc/sudoers
+  -ip, --instanceprincipal
+                        Use Instance Principal Auth - negates --profile
 ```
 
 The script using rclone internally, which is fully documented at rclone.org
 
-All output is given to the local shell, and in the case of cron, it is best to collect all output from STDERR and STDOUT to a single file 
+All output is given to the local shell vbia python logging module, and in the case of cron, it is best to collect all output from STDERR and STDOUT to a single file.  Use `-v` for additional output. 
 
 ## About OSS Object Storage
 
-Using OSS is great - nearly unlimited cheap storage.  By using a versioned bucket, the script ensures that the daily incremental backups are simply maintaned and only new and changed files are added.  rclone uses a checksum to determine if it needs to copy anything, so if you run daily incrementals, they will not take up more space unless anything is changed.  The versioned bucket will then keep track of previous file versions to choos from, in the case of a single file restore.
+Using OSS is great - nearly unlimited cheap storage.  By using a versioned bucket, the script ensures that the daily incremental backups are simply maintained and only new and changed files are added.  rclone uses a checksum to determine if it needs to copy anything, so if you run daily incrementals, they will not take up more space unless anything is changed.  The versioned bucket will then keep track of previous file versions to choos from, in the case of a single file restore.
 
-For weekly and monthly backups, the folder created is unique using a timestamp, which results in a full copy being sent up (takes much longer)
+For weekly and monthly backups, the folder created is unique using a timestamp, which results in a full copy being sent up (takes much longer).  See the [server side copy](#server-side-copy) parameter for additional details.
 
-Finally, this process enables Object Lifecycle Policies to delete older copies, based on retention rules.  See below.
+Finally, this process enables Object Lifecycle Policies to delete older copies, based on retention rules.  See [Object Lifecycle](#object-lifecycle)
 
 ## About rclone
 
@@ -61,9 +67,10 @@ It's amazing.  All of the logic around "to copy or not copy" is there.  This scr
 
 ## Script Pseudocode
 
-List FSS - for each
-- Create FSS Snapshot based on type of backup
-- Mount it read only to be safe
+List FSS - for each filesystem:
+- Ensure or create OSS Bucket that corresponds to share (OCI API)
+- Mount FSS in read only mode to be safe (temporary mountpoint)
+- Create FSS Snapshot based on type of backup (OCI API)
 - Rclone the contents of the share out to OSS with metadata (inlcudes ACL and owner/group info)
 - Delete FSS Snapshot (clean up)
 - Unmount the share (clean up)
@@ -78,7 +85,7 @@ If you specify `-fs` then the loop is a single iteration.
 - OCI CLI (latest)
 - python3 (latest)
 
-## Configuring
+### Configuring OCI
 
 Set up the OCI command line with an API Key that has access to an OCI user in a group, where that group can access both File Shares (FSS) and Object Storage(OSS) in the compartments you want to operate in.  Tenancy Admin will always be able to run it.
 
@@ -89,6 +96,10 @@ root prompt:>> oci os ns get
   "data": "tenancy01"
 }
 ```
+
+If the script is running on an OCI instance, you can utilize Instance Principals.  To set this up, set up a dynamic group for the instance, then set up a policy with statements that allow the dynamic group manage access for the OSS bucket compartment and at manage access on filesystems for the filesystem compartment.
+
+### Configuring rclone
 
 Set up rclone with an S3 Remote (OCI OSS tested, but others may work).  Use `rclone config show` to see what you have, and note that the trailing `:` character is going to be needed to run the command.  
 
@@ -105,11 +116,17 @@ acl = private
 ```
 In this case, use the script with `-r oci-oss:`
 
-Finally, you must be running as root or sudo with no password.
-Create the following directory, to be used a temporary local mount:
+### Root or Sudo access 
+You must be running as root or sudo with no password.
+Create the following directory (as root), to be used a temporary local mount:
 ```bash
 root prompt:>> mkdir /mnt/temp-backup
 ``` 
+If you would like to run without root access, ensure that the mount point directory is created ahead of time and that /etc/sudoers contains the following (for user opc):
+```
+opc ALL=(root) NOPASSWD:/usr/bin/mount, /usr/bin/umount
+```
+Now, the script can take `-su` in order to run the required mount commands using sudo, which when coupled with sudo NOPASSWD, allows the `opc` user to mount and unmount the temporary mountpoint.
 
 ## Listing the File Systems
 Since the OCI CLI is set up as it must be, to test it before the script runs, Run an FSS List to see if you get results.  Grab the OCID for the compartment where the FSS Filesystems live.
@@ -124,7 +141,7 @@ oci fs file-system list -c ocid1.compartment.oc1..xxx --availability-domain UWQV
 +----------------------+------------------+---------------------------------------------------------------------------+-----------+
 ```
 
-These OCIDs can be used later on, if you want to run a single File System.
+These OCIDs can be used later on, if you want to run a single File System backup.
 
 ## Running the Script
 
@@ -147,15 +164,14 @@ To run in verbose mode, pass in `-v`
 
 Most helpful, before running for real, add `--dryrun` to have it print what it would do, while doing nothing.
 
-To change the Backup type to Full and do a weekly or monthly, add `--type weekly` or `--type monthly`.  In these cases, a full backups is created of the File System in the object store.  Both weekly and monthly imply a daily backup as well, so they are used in lieu of daily.
+To change the Backup type to Full and do a weekly or monthly, add `--type weekly` or `--type monthly`.  In these cases, a full backup is created of the File System in the object store.  Both weekly and monthly imply a daily backup as well, so they are used in lieu of daily.
 
 Example with weekly backup of single File System, verbose mode:
 ```bash
-prompt:>> ./fss_backup.py -fc ocid1.compartment.oc1..xxxxxxfss.comp.ocid -oc ocid1.compartment.oc1..xxxxxoss.comp.ocid -r oci-oss:  -m 10.0.1.83 -ad UWQV:US-ASHBURN-AD-3 -fs ocid1.filesystem.oc1.iad.xxxxxfss.filesystem.ocid --type weekly -v
+prompt:>> ./fss_backup.py -fc ocid1.compartment.oc1..xxxxxxfss.comp.ocid -oc ocid1.compartment.oc1..xxxxxoss.comp.ocid -r oci-oss: -m 10.0.1.83 -ad UWQV:US-ASHBURN-AD-3 -fs ocid1.filesystem.oc1.iad.xxxxxfss.filesystem.ocid --type weekly -v
 ```
 
 ## Optional Parameters 
-
 
 This section covers the options that can be added to the script.
 

@@ -52,8 +52,10 @@ import subprocess
 import multiprocessing
 import argparse
 import sys
-import oci
 import logging
+
+import oci
+from oci.auth.signers import InstancePrincipalsSecurityTokenSigner
 
 #######################################
 # CONSTANTS
@@ -199,7 +201,7 @@ parser.add_argument("-ad", "--availabilitydomain",
                     help="AD for FSS usage.  Such as dDzb:US-ASHBURN-AD-1",
                     required=True)
 parser.add_argument("-m", "--mountocid", help="Mount Point OCID to use.", required=True)
-parser.add_argument("-pr", "--profile", type=str, help="OCI Profile name (if not default)")
+parser.add_argument("-pr", "--profile", type=str, help="OCI Profile name (if not default)", default="DEFAULT")
 parser.add_argument("-ty", "--type", type=str, help="Type: daily(def), weekly, monthly", default="daily")
 parser.add_argument("--dryrun", help="Dry Run - print what it would do", action="store_true")
 parser.add_argument("-ssc", "--serversidecopy",
@@ -210,6 +212,7 @@ parser.add_argument("-s", "--sortbytes",
                     action="store_true")
 parser.add_argument("-t", "--threshold", help="GB threshold - do not back up share if more than this", type=int)
 parser.add_argument("-su", "--usesudo", help="Attempt to run mount/umount with sudo - requires /etc/sudoers", action="store_true")
+parser.add_argument("-ip", "--instanceprincipal", help="Use Instance Principal Auth - negates --profile", action="store_true")
 args = parser.parse_args()
 
 # Process arguments
@@ -218,6 +221,7 @@ use_sudo = args.usesudo
 dry_run = args.dryrun
 server_side_copy = args.serversidecopy
 sort_bytes = args.sortbytes
+use_instance_principals = args.instanceprincipal
 
 # Default(None) or named
 profile = args.profile
@@ -252,33 +256,37 @@ if verbose:
 else:
     logging.getLogger().setLevel(logging.INFO)
 
-# Define OSS client and Namespace
-if profile:
-    config = oci.config.from_file(profile_name=profile)
+# Define OSS clients
+if use_instance_principals:
+    logging.info("Using Instance Principal Authentication")
+    signer = InstancePrincipalsSecurityTokenSigner()
+    object_storage_client = oci.object_storage.ObjectStorageClient(config={}, signer=signer)
+    file_storage_client = oci.file_storage.FileStorageClient(config={}, signer=signer)
+    virtual_network_client = oci.core.VirtualNetworkClient(config={}, signer=signer)
 else:
-    config = oci.config.from_file()
+    # Use a profile (must be defined)
+    logging.info(f"Using Profile Authentication: {profile}")
+    config = oci.config.from_file(profile_name=profile)
+
+    object_storage_client = oci.object_storage.ObjectStorageClient(config)
+    file_storage_client = oci.file_storage.FileStorageClient(config)
+    virtual_network_client = oci.core.VirtualNetworkClient(config)
 
 # Sleep for a few seconds before beginning
 time.sleep(5)
 
-# Create Clients and prepare
-
-object_storage_client = oci.object_storage.ObjectStorageClient(config)
-file_storage_client = oci.file_storage.FileStorageClient(config)
-virtual_network_client = oci.core.VirtualNetworkClient(config)
+# Get Object namespace
 namespace_name = object_storage_client.get_namespace().data
 
 # Try to see if mount is there and clean - die if not (raise unchecked)
-
-# If we can't have the mount, die
 try:
+    # If we can't have the mount, kill the script
     ensure_temporary_mount()
+    # Now clean it up if it is mounted
+    cleanup_temporary_mount(None)
 except FileExistsError as exc:
     logging.critical(f"FATAL: No way to use mount point {TEMP_MOUNT}: {exc}")
     exit(1)
-
-# Now clean it up if it is mounted
-cleanup_temporary_mount(None)
 
 # Explain what we are doing
 if backup_type in ['weekly', 'monthly']:
@@ -360,7 +368,7 @@ for share in shares.data:
             logging.debug(exc)
             continue
 
-        # FSS Snapshot (for clean backup) - only do it is the mount was successful
+        # FSS Snapshot (for clean backup) - only do if is the mount was successful
         try:    # Catch API Error
             if not dry_run:
                 # Try to delete FSS Snapshot - ok if it fails
