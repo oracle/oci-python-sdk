@@ -236,6 +236,14 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the is_mtls_connection_required property of this UpdateAutonomousDatabaseDetails.
         :type is_mtls_connection_required: bool
 
+        :param resource_pool_leader_id:
+            The value to assign to the resource_pool_leader_id property of this UpdateAutonomousDatabaseDetails.
+        :type resource_pool_leader_id: str
+
+        :param resource_pool_summary:
+            The value to assign to the resource_pool_summary property of this UpdateAutonomousDatabaseDetails.
+        :type resource_pool_summary: oci.database.models.ResourcePoolSummary
+
         :param scheduled_operations:
             The value to assign to the scheduled_operations property of this UpdateAutonomousDatabaseDetails.
         :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
@@ -303,6 +311,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'nsg_ids': 'list[str]',
             'customer_contacts': 'list[CustomerContact]',
             'is_mtls_connection_required': 'bool',
+            'resource_pool_leader_id': 'str',
+            'resource_pool_summary': 'ResourcePoolSummary',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
             'is_auto_scaling_for_storage_enabled': 'bool',
             'max_cpu_core_count': 'int',
@@ -350,6 +360,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'nsg_ids': 'nsgIds',
             'customer_contacts': 'customerContacts',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
+            'resource_pool_leader_id': 'resourcePoolLeaderId',
+            'resource_pool_summary': 'resourcePoolSummary',
             'scheduled_operations': 'scheduledOperations',
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
             'max_cpu_core_count': 'maxCpuCoreCount',
@@ -396,6 +408,8 @@ class UpdateAutonomousDatabaseDetails(object):
         self._nsg_ids = None
         self._customer_contacts = None
         self._is_mtls_connection_required = None
+        self._resource_pool_leader_id = None
+        self._resource_pool_summary = None
         self._scheduled_operations = None
         self._is_auto_scaling_for_storage_enabled = None
         self._max_cpu_core_count = None
@@ -1653,6 +1667,54 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: bool
         """
         self._is_mtls_connection_required = is_mtls_connection_required
+
+    @property
+    def resource_pool_leader_id(self):
+        """
+        Gets the resource_pool_leader_id of this UpdateAutonomousDatabaseDetails.
+        The unique identifier for leader autonomous database OCID `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The resource_pool_leader_id of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._resource_pool_leader_id
+
+    @resource_pool_leader_id.setter
+    def resource_pool_leader_id(self, resource_pool_leader_id):
+        """
+        Sets the resource_pool_leader_id of this UpdateAutonomousDatabaseDetails.
+        The unique identifier for leader autonomous database OCID `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param resource_pool_leader_id: The resource_pool_leader_id of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        self._resource_pool_leader_id = resource_pool_leader_id
+
+    @property
+    def resource_pool_summary(self):
+        """
+        Gets the resource_pool_summary of this UpdateAutonomousDatabaseDetails.
+
+        :return: The resource_pool_summary of this UpdateAutonomousDatabaseDetails.
+        :rtype: oci.database.models.ResourcePoolSummary
+        """
+        return self._resource_pool_summary
+
+    @resource_pool_summary.setter
+    def resource_pool_summary(self, resource_pool_summary):
+        """
+        Sets the resource_pool_summary of this UpdateAutonomousDatabaseDetails.
+
+        :param resource_pool_summary: The resource_pool_summary of this UpdateAutonomousDatabaseDetails.
+        :type: oci.database.models.ResourcePoolSummary
+        """
+        self._resource_pool_summary = resource_pool_summary
 
     @property
     def scheduled_operations(self):

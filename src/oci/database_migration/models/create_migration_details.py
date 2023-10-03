@@ -57,6 +57,10 @@ class CreateMigrationDetails(object):
             The value to assign to the target_database_connection_id property of this CreateMigrationDetails.
         :type target_database_connection_id: str
 
+        :param data_transfer_medium_details_v2:
+            The value to assign to the data_transfer_medium_details_v2 property of this CreateMigrationDetails.
+        :type data_transfer_medium_details_v2: oci.database_migration.models.DataTransferMediumDetailsV2
+
         :param data_transfer_medium_details:
             The value to assign to the data_transfer_medium_details property of this CreateMigrationDetails.
         :type data_transfer_medium_details: oci.database_migration.models.CreateDataTransferMediumDetails
@@ -114,6 +118,7 @@ class CreateMigrationDetails(object):
             'source_database_connection_id': 'str',
             'source_container_database_connection_id': 'str',
             'target_database_connection_id': 'str',
+            'data_transfer_medium_details_v2': 'DataTransferMediumDetailsV2',
             'data_transfer_medium_details': 'CreateDataTransferMediumDetails',
             'dump_transfer_details': 'CreateDumpTransferDetails',
             'datapump_settings': 'CreateDataPumpSettings',
@@ -136,6 +141,7 @@ class CreateMigrationDetails(object):
             'source_database_connection_id': 'sourceDatabaseConnectionId',
             'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId',
             'target_database_connection_id': 'targetDatabaseConnectionId',
+            'data_transfer_medium_details_v2': 'dataTransferMediumDetailsV2',
             'data_transfer_medium_details': 'dataTransferMediumDetails',
             'dump_transfer_details': 'dumpTransferDetails',
             'datapump_settings': 'datapumpSettings',
@@ -157,6 +163,7 @@ class CreateMigrationDetails(object):
         self._source_database_connection_id = None
         self._source_container_database_connection_id = None
         self._target_database_connection_id = None
+        self._data_transfer_medium_details_v2 = None
         self._data_transfer_medium_details = None
         self._dump_transfer_details = None
         self._datapump_settings = None
@@ -347,6 +354,26 @@ class CreateMigrationDetails(object):
         :type: str
         """
         self._target_database_connection_id = target_database_connection_id
+
+    @property
+    def data_transfer_medium_details_v2(self):
+        """
+        Gets the data_transfer_medium_details_v2 of this CreateMigrationDetails.
+
+        :return: The data_transfer_medium_details_v2 of this CreateMigrationDetails.
+        :rtype: oci.database_migration.models.DataTransferMediumDetailsV2
+        """
+        return self._data_transfer_medium_details_v2
+
+    @data_transfer_medium_details_v2.setter
+    def data_transfer_medium_details_v2(self, data_transfer_medium_details_v2):
+        """
+        Sets the data_transfer_medium_details_v2 of this CreateMigrationDetails.
+
+        :param data_transfer_medium_details_v2: The data_transfer_medium_details_v2 of this CreateMigrationDetails.
+        :type: oci.database_migration.models.DataTransferMediumDetailsV2
+        """
+        self._data_transfer_medium_details_v2 = data_transfer_medium_details_v2
 
     @property
     def data_transfer_medium_details(self):

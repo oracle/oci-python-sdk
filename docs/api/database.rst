@@ -298,6 +298,9 @@ Database
     oci.database.models.RemoveVirtualMachineFromCloudVmClusterDetails
     oci.database.models.RemoveVirtualMachineFromVmClusterDetails
     oci.database.models.ResizeVmClusterNetworkDetails
+    oci.database.models.ResourcePoolShapeCollection
+    oci.database.models.ResourcePoolShapeSummary
+    oci.database.models.ResourcePoolSummary
     oci.database.models.RestoreAutonomousDatabaseDetails
     oci.database.models.RestoreDatabaseDetails
     oci.database.models.RotateAutonomousVmClusterOrdsCertsDetails

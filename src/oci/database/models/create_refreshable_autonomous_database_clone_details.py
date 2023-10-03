@@ -189,6 +189,14 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             The value to assign to the is_mtls_connection_required property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type is_mtls_connection_required: bool
 
+        :param resource_pool_leader_id:
+            The value to assign to the resource_pool_leader_id property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type resource_pool_leader_id: str
+
+        :param resource_pool_summary:
+            The value to assign to the resource_pool_summary property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type resource_pool_summary: oci.database.models.ResourcePoolSummary
+
         :param autonomous_maintenance_schedule_type:
             The value to assign to the autonomous_maintenance_schedule_type property of this CreateRefreshableAutonomousDatabaseCloneDetails.
             Allowed values for this property are: "EARLY", "REGULAR"
@@ -272,6 +280,8 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'source': 'str',
             'customer_contacts': 'list[CustomerContact]',
             'is_mtls_connection_required': 'bool',
+            'resource_pool_leader_id': 'str',
+            'resource_pool_summary': 'ResourcePoolSummary',
             'autonomous_maintenance_schedule_type': 'str',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
             'is_auto_scaling_for_storage_enabled': 'bool',
@@ -324,6 +334,8 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'source': 'source',
             'customer_contacts': 'customerContacts',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
+            'resource_pool_leader_id': 'resourcePoolLeaderId',
+            'resource_pool_summary': 'resourcePoolSummary',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'scheduled_operations': 'scheduledOperations',
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
@@ -375,6 +387,8 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
         self._source = None
         self._customer_contacts = None
         self._is_mtls_connection_required = None
+        self._resource_pool_leader_id = None
+        self._resource_pool_summary = None
         self._autonomous_maintenance_schedule_type = None
         self._scheduled_operations = None
         self._is_auto_scaling_for_storage_enabled = None

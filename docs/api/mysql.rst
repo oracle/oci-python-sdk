@@ -88,6 +88,7 @@ Mysql
     oci.mysql.models.PitrPolicy
     oci.mysql.models.PointInTimeRecoveryDetails
     oci.mysql.models.Replica
+    oci.mysql.models.ReplicaOverrides
     oci.mysql.models.ReplicaSummary
     oci.mysql.models.RestartDbSystemDetails
     oci.mysql.models.ShapeSummary

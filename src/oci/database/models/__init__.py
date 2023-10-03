@@ -286,6 +286,9 @@ from .remote_clone_pluggable_database_details import RemoteClonePluggableDatabas
 from .remove_virtual_machine_from_cloud_vm_cluster_details import RemoveVirtualMachineFromCloudVmClusterDetails
 from .remove_virtual_machine_from_vm_cluster_details import RemoveVirtualMachineFromVmClusterDetails
 from .resize_vm_cluster_network_details import ResizeVmClusterNetworkDetails
+from .resource_pool_shape_collection import ResourcePoolShapeCollection
+from .resource_pool_shape_summary import ResourcePoolShapeSummary
+from .resource_pool_summary import ResourcePoolSummary
 from .restore_autonomous_database_details import RestoreAutonomousDatabaseDetails
 from .restore_database_details import RestoreDatabaseDetails
 from .rotate_autonomous_vm_cluster_ords_certs_details import RotateAutonomousVmClusterOrdsCertsDetails
@@ -631,6 +634,9 @@ database_type_mapping = {
     "RemoveVirtualMachineFromCloudVmClusterDetails": RemoveVirtualMachineFromCloudVmClusterDetails,
     "RemoveVirtualMachineFromVmClusterDetails": RemoveVirtualMachineFromVmClusterDetails,
     "ResizeVmClusterNetworkDetails": ResizeVmClusterNetworkDetails,
+    "ResourcePoolShapeCollection": ResourcePoolShapeCollection,
+    "ResourcePoolShapeSummary": ResourcePoolShapeSummary,
+    "ResourcePoolSummary": ResourcePoolSummary,
     "RestoreAutonomousDatabaseDetails": RestoreAutonomousDatabaseDetails,
     "RestoreDatabaseDetails": RestoreDatabaseDetails,
     "RotateAutonomousVmClusterOrdsCertsDetails": RotateAutonomousVmClusterOrdsCertsDetails,

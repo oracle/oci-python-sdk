@@ -21,7 +21,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.09.03"
+    version = "23.09.26"
 
     ##########################################################################
     # spaces for align
@@ -2410,6 +2410,13 @@ class ShowOCIOutput(object):
                               ", Created: " + log['time_created'][0:16])
                     print("")
 
+            # Logging unified agenets
+            if 'logging_unified_agenets' in security:
+                self.print_header("Logging Unified Agents Configuration", 2)
+                for val in security['logging_unified_agenets']:
+                    print(self.taba + val['display_name'] + ", (" + val['description'] + "), Is Enabled: " + val['is_enabled'] + ", Type: " + val['configuration_type'] + ", Created: " + val['time_created'][0:16])
+                    print("")
+
         except Exception as e:
             self.__print_error("__print_security_main", e)
 
@@ -3044,7 +3051,7 @@ class ShowOCISummary(object):
                     for node in cn['node_pools']:
                         ocpus = node['node_shape_ocpus']
                         if ocpus:
-                            if type(ocpus) == int or type(ocpus) == float:
+                            if isinstance(ocpus, int) or isinstance(ocpus, float):
                                 self.summary_global_list.append({
                                     'type': 'OKE Clusters OCPUs - ' + node['node_shape'],
                                     'size': float(ocpus)
@@ -3120,6 +3127,8 @@ class ShowOCISummary(object):
                 self.__summary_core_size(security['cloud_guard'])
             if 'logging' in security:
                 self.__summary_core_size(security['logging'])
+            if 'logging_unified_agenets' in security:
+                self.__summary_core_size(security['logging_unified_agenets'])
             if 'bastions' in security:
                 self.__summary_core_size(security['bastions'])
             if 'kms_vaults' in security:
@@ -3292,15 +3301,19 @@ class ShowOCISummary(object):
         try:
             for db in dbs:
                 if 'sum_info' in db and 'sum_count' in db:
-                    self.summary_global_list.append({'type': "Total OCPUs - Autonomous Database", 'size': float(db['sum_count'])})
-                    if float(db['sum_count']) == 0:
-                        self.summary_global_list.append({'type': db['sum_info_stopped'], 'size': 1})
-                    else:
-                        self.summary_global_list.append({'type': db['sum_info_count'], 'size': 1})
-                        self.summary_global_list.append({'type': db['sum_info'], 'size': float(db['sum_count'])})
+
+                    if db['sum_count'].isdigit():
+                        self.summary_global_list.append({'type': "Total OCPUs - Autonomous Database", 'size': float(db['sum_count'])})
+
+                        if float(db['sum_count']) == 0:
+                            self.summary_global_list.append({'type': db['sum_info_stopped'], 'size': 1})
+                        else:
+                            self.summary_global_list.append({'type': db['sum_info_count'], 'size': 1})
+                            self.summary_global_list.append({'type': db['sum_info'], 'size': float(db['sum_count'])})
 
                 if 'sum_info_storage' in db and 'sum_size_tb' in db:
-                    self.summary_global_list.append({'type': db['sum_info_storage'], 'size': float(db['sum_size_tb'])})
+                    if db['sum_size_tb'].isdigit():
+                        self.summary_global_list.append({'type': db['sum_info_storage'], 'size': float(db['sum_size_tb'])})
 
         except Exception as e:
             self.__print_error("__summary_database_db_autonomous", e)
@@ -3949,10 +3962,12 @@ class ShowOCICSV(object):
     csv_network_firewall_policies = []
     csv_file_storage = []
     csv_load_balancer = []
+    csv_load_balancer_listeners = []
     csv_load_balancer_bs = []
     csv_object_storage_buckets = []
     csv_security_bastions = []
     csv_security_logging = []
+    csv_security_log_unified_agents = []
     csv_security_kms_vault = []
     csv_security_cloud_guard = []
     csv_container = []
@@ -4071,7 +4086,8 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("database_goldengate_deployments", self.csv_db_goldengate_deployments)
             self.__export_to_csv_file("database_mysql", self.csv_db_mysql)
             self.__export_to_csv_file("database_nosql", self.csv_db_nosql)
-            self.__export_to_csv_file("load_balancer_listeners", self.csv_load_balancer)
+            self.__export_to_csv_file("load_balancers", self.csv_load_balancer)
+            self.__export_to_csv_file("load_balancer_listeners", self.csv_load_balancer_listeners)
             self.__export_to_csv_file("load_balancer_backendset", self.csv_load_balancer_bs)
             self.__export_to_csv_file("file_storage", self.csv_file_storage)
             self.__export_to_csv_file("api_gateways", self.csv_apigw)
@@ -4080,6 +4096,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("object_storage_buckets", self.csv_object_storage_buckets)
             self.__export_to_csv_file("security_bastions", self.csv_security_bastions)
             self.__export_to_csv_file("security_loggings", self.csv_security_logging)
+            self.__export_to_csv_file("security_log_unified_agents", self.csv_security_log_unified_agents)
             self.__export_to_csv_file("security_cloud_guards", self.csv_security_cloud_guard)
             self.__export_to_csv_file("security_kms_vaults", self.csv_security_kms_vault)
             self.__export_to_csv_file("containers", self.csv_container)
@@ -4196,7 +4213,7 @@ class ShowOCICSV(object):
                 for row in result:
                     writer.writerow(row)
 
-            print("CSV: " + file_subject.ljust(30) + " --> " + file_name)
+            print("CSV: " + file_subject.ljust(34) + " --> " + file_name)
 
         except Exception as e:
             raise Exception("Error in __export_to_csv_file: " + str(e.args))
@@ -6070,7 +6087,7 @@ class ShowOCICSV(object):
                         'compute_model': dbs['compute_model'],
                         'compute_count': dbs['compute_count'],
                         'cpu_core_count': dbs['cpu_core_count'],
-                        'db_storage_gb': str(int(dbs['data_storage_size_in_tbs']) * 1024),
+                        'db_storage_gb': str(int(dbs['data_storage_size_in_tbs']) * 1024) if str(dbs['data_storage_size_in_tbs']).isdigit() else '',
                         'shape_ocpus': "",
                         'memory_gb': "",
                         'local_storage_tb': "",
@@ -6361,8 +6378,8 @@ class ShowOCICSV(object):
                     'description': db['description'],
                     'is_highly_available': db['is_highly_available'],
                     'current_placement': db['current_placement'],
-                    'is_analytics_cluster_attached': db['is_analytics_cluster_attached'],
-                    'analytics_cluster': db['analytics_cluster'],
+                    'is_analytics_cluster_attached': '',
+                    'analytics_cluster': '',
                     'is_heat_wave_cluster_attached': db['is_heat_wave_cluster_attached'],
                     'heat_wave_cluster': db['heat_wave_cluster'],
                     'availability_domain': db['availability_domain'],
@@ -6868,39 +6885,34 @@ class ShowOCICSV(object):
                     if 'access' in log['name']:
                         log_access = log['name']
 
-                # if no listener
-                if not lb['listeners']:
-                    data = {'region_name': region_name,
-                            'compartment_name': lb['compartment_name'],
-                            'compartment_path': lb['compartment_path'],
-                            'name': lb['display_name'],
-                            'status': lb['status'],
-                            'shape': lb['shape_name'],
-                            'type': ("Private" if lb['is_private'] else "Public"),
-                            'ip_addresses': str(', '.join(x for x in lb['ips'])),
-                            'log_errors': log_errors,
-                            'log_access': log_access,
-                            'logs': str(', '.join(x['name'] for x in load_balance_obj['logs'])),
-                            'subnets': str(', '.join(x for x in lb['subnets'])),
-                            'listener_name': "No Listener",
-                            'listener_port': "No Listener",
-                            'listener_def_bs': "",
-                            'listener_ssl': "",
-                            'listener_path': "",
-                            'listener_rule': "",
-                            'listener_host': "",
-                            'time_created': lb['time_created'],
-                            'lb_certificates': lb['certificates'],
-                            'ssl_cipher_suites': str(', '.join(x for x in lb['ssl_cipher_suites'])),
-                            'routing_policies': str(', '.join(x for x in lb['routing_policies'])),
-                            'freeform_tags': self.__get_freeform_tags(lb['freeform_tags']),
-                            'defined_tags': self.__get_defined_tags(lb['defined_tags']),
-                            'loadbalancer_id': lb['id'],
-                            'id': lb['id']
-                            }
-                    self.csv_load_balancer.append(data)
+                # load balancers
+                data = {'region_name': region_name,
+                        'compartment_name': lb['compartment_name'],
+                        'compartment_path': lb['compartment_path'],
+                        'name': lb['display_name'],
+                        'status': lb['status'],
+                        'shape': lb['shape_name'],
+                        'type': ("Private" if lb['is_private'] else "Public"),
+                        'is_preserve_source_destination': "",
+                        'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                        'listeners': str(', '.join(x['desc'] for x in lb['listeners'])),
+                        'log_errors': log_errors,
+                        'log_access': log_access,
+                        'logs': str(', '.join(x['name'] for x in load_balance_obj['logs'])),
+                        'subnets': str(', '.join(x for x in lb['subnets'])),
+                        'nsg_names': lb['nsg_names'],
+                        'time_created': lb['time_created'],
+                        'lb_certificates': lb['certificates'],
+                        'ssl_cipher_suites': str(', '.join(x for x in lb['ssl_cipher_suites'])),
+                        'routing_policies': str(', '.join(x for x in lb['routing_policies'])),
+                        'freeform_tags': self.__get_freeform_tags(lb['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(lb['defined_tags']),
+                        'loadbalancer_id': lb['id'],
+                        'id': lb['id']
+                        }
+                self.csv_load_balancer.append(data)
 
-                # look over the listeners
+                # listeners
                 for listener in lb['listeners']:
                     data = {'region_name': region_name,
                             'compartment_name': lb['compartment_name'],
@@ -6930,10 +6942,93 @@ class ShowOCICSV(object):
                             'loadbalancer_id': lb['id'],
                             'id': lb['id'] + ":" + listener['id']
                             }
-                    self.csv_load_balancer.append(data)
+                    self.csv_load_balancer_listeners.append(data)
 
         except Exception as e:
             self.__print_error("__csv_load_balancer_details", e)
+
+    ##########################################################################
+    # csv load balancer config
+    ##########################################################################
+    def __csv_network_load_balancer_main(self, region_name, network_load_balancers):
+        try:
+            if len(network_load_balancers) == 0:
+                return
+
+            for lbs in network_load_balancers:
+                if 'details' in lbs:
+                    lb = lbs['details']
+
+                    # Load Balancers
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': lb['compartment_name'],
+                        'compartment_path': lb['compartment_path'],
+                        'name': lb['display_name'],
+                        'shape': 'Network',
+                        'status': lb['status'],
+                        'time_created': lb['time_created'],
+                        'time_updated': lb['time_updated'],
+                        'type': ("Private" if lb['is_private'] else "Public"),
+                        'is_preserve_source_destination': lb['is_preserve_source_destination'],
+                        'subnets': lb['subnet_name'],
+                        'nsg_names': lb['nsg_names'],
+                        'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                        'loadbalancer_id': lb['id'],
+                        'listeners': str(', '.join(x['csvname'] for x in lb['listeners'])),
+                        'freeform_tags': self.__get_freeform_tags(lb['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(lb['defined_tags']),
+                        'id': lb['id']
+                    }
+                    self.csv_load_balancer.append(data)
+
+                    # Listeners
+                    for listener in lb['listeners']:
+                        data = {
+                            'region_name': region_name,
+                            'compartment_name': lb['compartment_name'],
+                            'compartment_path': lb['compartment_path'],
+                            'name': lb['display_name'],
+                            'status': lb['status'],
+                            'shape': 'Network',
+                            'type': ("Private" if lb['is_private'] else "Public"),
+                            'subnets': lb['subnet_name'],
+                            'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                            'listener_name': listener['id'],
+                            'listener_port': listener['port'],
+                            'listener_def_bs': listener['default_backend_set_name'],
+                            'freeform_tags': self.__get_freeform_tags(lb['freeform_tags']),
+                            'defined_tags': self.__get_defined_tags(lb['defined_tags']),
+                            'loadbalancer_id': lb['id'],
+                            'time_created': lb['time_created'][0:16],
+                            'id': lb['id'] + ":" + listener['id']}
+
+                    self.csv_load_balancer_listeners.append(data)
+
+                    for bs in lbs['backendset']:
+                        for backend in bs['backends']:
+                            data = {'region_name': region_name,
+                                    'compartment_name': lb['compartment_name'],
+                                    'compartment_path': lb['compartment_path'],
+                                    'name': lb['display_name'],
+                                    'status': lb['status'],
+                                    'shape': 'Network Load Balancer',
+                                    'type': ("Private" if lb['is_private'] else "Public"),
+                                    'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                                    'subnets': lb['subnet_name'],
+                                    'bs_name': bs['name'],
+                                    'bs_desc': bs['name'],
+                                    'bs_status': bs['status'],
+                                    'backend_name': backend['name'],
+                                    'backend': backend['desc'],
+                                    'backend_ip': backend['ip_address'] + ":" + backend['port'],
+                                    'loadbalancer_id': lb['id'],
+                                    'id': lb['id'] + ":" + bs['name'] + ":" + backend['name'] + ":" + backend['ip_address'] + ":" + backend['port']
+                                    }
+                            self.csv_load_balancer_bs.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_network_load_balancer_main", e)
 
     ##########################################################################
     # __csv_apigw
@@ -7172,6 +7267,9 @@ class ShowOCICSV(object):
             if 'logging' in data:
                 self.__csv_security_logging(region_name, data['logging'])
 
+            if 'logging_unified_agenets' in data:
+                self.__csv_security_logging_unified_agents(region_name, data['logging_unified_agenets'])
+
             if 'cloud_guard' in data:
                 self.__csv_security_cloud_guard(region_name, data['cloud_guard'])
 
@@ -7310,7 +7408,7 @@ class ShowOCICSV(object):
             self.__print_error("__csv_security_kms_vaults", e)
 
     ##########################################################################
-    # Bastions
+    # Logging
     ##########################################################################
     def __csv_security_logging(self, region_name, log_groups):
         try:
@@ -7351,6 +7449,37 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_security_logging", e)
+
+    ##########################################################################
+    # Logging unified agenets
+    ##########################################################################
+    def __csv_security_logging_unified_agents(self, region_name, logging_unified_agenets):
+        try:
+
+            if len(logging_unified_agenets) == 0:
+                return
+
+            if logging_unified_agenets:
+                for ar in logging_unified_agenets:
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'compartment_path': ar['compartment_path'],
+                        'display_name': ar['display_name'],
+                        'description': ar['description'],
+                        'time_created': ar['time_created'][0:16],
+                        'time_last_modified': ar['time_last_modified'][0:16],
+                        'is_enabled': ar['is_enabled'],
+                        'configuration_type': ar['configuration_type'],
+                        'configuration_state': ar['configuration_state'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags'])
+                    }
+
+                    self.csv_security_log_unified_agents.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_security_logging_unified_agents", e)
 
     ##########################################################################
     # Container
@@ -8464,6 +8593,8 @@ class ShowOCICSV(object):
                     self.__csv_database_main(region_name, cdata['database'])
                 if 'load_balancer' in cdata:
                     self.__csv_load_balancer_main(region_name, cdata['load_balancer'])
+                if 'network_load_balancer' in cdata:
+                    self.__csv_network_load_balancer_main(region_name, cdata['network_load_balancer'])
                 if 'file_storage' in cdata:
                     self.__csv_file_storage_main(region_name, cdata['file_storage'])
                 if 'apigateways' in cdata:

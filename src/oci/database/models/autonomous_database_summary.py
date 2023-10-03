@@ -694,6 +694,18 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the is_mtls_connection_required property of this AutonomousDatabaseSummary.
         :type is_mtls_connection_required: bool
 
+        :param time_of_joining_resource_pool:
+            The value to assign to the time_of_joining_resource_pool property of this AutonomousDatabaseSummary.
+        :type time_of_joining_resource_pool: datetime
+
+        :param resource_pool_leader_id:
+            The value to assign to the resource_pool_leader_id property of this AutonomousDatabaseSummary.
+        :type resource_pool_leader_id: str
+
+        :param resource_pool_summary:
+            The value to assign to the resource_pool_summary property of this AutonomousDatabaseSummary.
+        :type resource_pool_summary: oci.database.models.ResourcePoolSummary
+
         :param is_reconnect_clone_enabled:
             The value to assign to the is_reconnect_clone_enabled property of this AutonomousDatabaseSummary.
         :type is_reconnect_clone_enabled: bool
@@ -850,6 +862,9 @@ class AutonomousDatabaseSummary(object):
             'time_data_guard_role_changed': 'datetime',
             'peer_db_ids': 'list[str]',
             'is_mtls_connection_required': 'bool',
+            'time_of_joining_resource_pool': 'datetime',
+            'resource_pool_leader_id': 'str',
+            'resource_pool_summary': 'ResourcePoolSummary',
             'is_reconnect_clone_enabled': 'bool',
             'time_until_reconnect_clone_enabled': 'datetime',
             'autonomous_maintenance_schedule_type': 'str',
@@ -959,6 +974,9 @@ class AutonomousDatabaseSummary(object):
             'time_data_guard_role_changed': 'timeDataGuardRoleChanged',
             'peer_db_ids': 'peerDbIds',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
+            'time_of_joining_resource_pool': 'timeOfJoiningResourcePool',
+            'resource_pool_leader_id': 'resourcePoolLeaderId',
+            'resource_pool_summary': 'resourcePoolSummary',
             'is_reconnect_clone_enabled': 'isReconnectCloneEnabled',
             'time_until_reconnect_clone_enabled': 'timeUntilReconnectCloneEnabled',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
@@ -1067,6 +1085,9 @@ class AutonomousDatabaseSummary(object):
         self._time_data_guard_role_changed = None
         self._peer_db_ids = None
         self._is_mtls_connection_required = None
+        self._time_of_joining_resource_pool = None
+        self._resource_pool_leader_id = None
+        self._resource_pool_summary = None
         self._is_reconnect_clone_enabled = None
         self._time_until_reconnect_clone_enabled = None
         self._autonomous_maintenance_schedule_type = None
@@ -3619,6 +3640,78 @@ class AutonomousDatabaseSummary(object):
         :type: bool
         """
         self._is_mtls_connection_required = is_mtls_connection_required
+
+    @property
+    def time_of_joining_resource_pool(self):
+        """
+        Gets the time_of_joining_resource_pool of this AutonomousDatabaseSummary.
+        The time the member joined the resource pool.
+
+
+        :return: The time_of_joining_resource_pool of this AutonomousDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_of_joining_resource_pool
+
+    @time_of_joining_resource_pool.setter
+    def time_of_joining_resource_pool(self, time_of_joining_resource_pool):
+        """
+        Sets the time_of_joining_resource_pool of this AutonomousDatabaseSummary.
+        The time the member joined the resource pool.
+
+
+        :param time_of_joining_resource_pool: The time_of_joining_resource_pool of this AutonomousDatabaseSummary.
+        :type: datetime
+        """
+        self._time_of_joining_resource_pool = time_of_joining_resource_pool
+
+    @property
+    def resource_pool_leader_id(self):
+        """
+        Gets the resource_pool_leader_id of this AutonomousDatabaseSummary.
+        The unique identifier for leader autonomous database OCID `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The resource_pool_leader_id of this AutonomousDatabaseSummary.
+        :rtype: str
+        """
+        return self._resource_pool_leader_id
+
+    @resource_pool_leader_id.setter
+    def resource_pool_leader_id(self, resource_pool_leader_id):
+        """
+        Sets the resource_pool_leader_id of this AutonomousDatabaseSummary.
+        The unique identifier for leader autonomous database OCID `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param resource_pool_leader_id: The resource_pool_leader_id of this AutonomousDatabaseSummary.
+        :type: str
+        """
+        self._resource_pool_leader_id = resource_pool_leader_id
+
+    @property
+    def resource_pool_summary(self):
+        """
+        Gets the resource_pool_summary of this AutonomousDatabaseSummary.
+
+        :return: The resource_pool_summary of this AutonomousDatabaseSummary.
+        :rtype: oci.database.models.ResourcePoolSummary
+        """
+        return self._resource_pool_summary
+
+    @resource_pool_summary.setter
+    def resource_pool_summary(self, resource_pool_summary):
+        """
+        Sets the resource_pool_summary of this AutonomousDatabaseSummary.
+
+        :param resource_pool_summary: The resource_pool_summary of this AutonomousDatabaseSummary.
+        :type: oci.database.models.ResourcePoolSummary
+        """
+        self._resource_pool_summary = resource_pool_summary
 
     @property
     def is_reconnect_clone_enabled(self):

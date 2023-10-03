@@ -483,6 +483,13 @@ class ReplicasClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
+        :param str configuration_id: (optional)
+            The requested Configuration instance.
+
+        :param bool is_up_to_date: (optional)
+            Filter instances if they are using the latest revision of the
+            Configuration they are associated with.
+
         :param str sort_by: (optional)
             The field to sort by. You can sort by one field only. By default, the Time field is sorted in descending order and the Display Name field in ascending order.
 
@@ -529,6 +536,8 @@ class ReplicasClient(object):
             "db_system_id",
             "lifecycle_state",
             "replica_id",
+            "configuration_id",
+            "is_up_to_date",
             "sort_by",
             "sort_order"
         ]
@@ -566,6 +575,8 @@ class ReplicasClient(object):
             "compartmentId": compartment_id,
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "replicaId": kwargs.get("replica_id", missing),
+            "configurationId": kwargs.get("configuration_id", missing),
+            "isUpToDate": kwargs.get("is_up_to_date", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing)
         }

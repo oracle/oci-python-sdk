@@ -32,6 +32,10 @@ class NotebookSessionConfigDetails(object):
             The value to assign to the subnet_id property of this NotebookSessionConfigDetails.
         :type subnet_id: str
 
+        :param private_endpoint_id:
+            The value to assign to the private_endpoint_id property of this NotebookSessionConfigDetails.
+        :type private_endpoint_id: str
+
         :param notebook_session_shape_config_details:
             The value to assign to the notebook_session_shape_config_details property of this NotebookSessionConfigDetails.
         :type notebook_session_shape_config_details: oci.data_science.models.NotebookSessionShapeConfigDetails
@@ -41,6 +45,7 @@ class NotebookSessionConfigDetails(object):
             'shape': 'str',
             'block_storage_size_in_gbs': 'int',
             'subnet_id': 'str',
+            'private_endpoint_id': 'str',
             'notebook_session_shape_config_details': 'NotebookSessionShapeConfigDetails'
         }
 
@@ -48,12 +53,14 @@ class NotebookSessionConfigDetails(object):
             'shape': 'shape',
             'block_storage_size_in_gbs': 'blockStorageSizeInGBs',
             'subnet_id': 'subnetId',
+            'private_endpoint_id': 'privateEndpointId',
             'notebook_session_shape_config_details': 'notebookSessionShapeConfigDetails'
         }
 
         self._shape = None
         self._block_storage_size_in_gbs = None
         self._subnet_id = None
+        self._private_endpoint_id = None
         self._notebook_session_shape_config_details = None
 
     @property
@@ -131,6 +138,30 @@ class NotebookSessionConfigDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def private_endpoint_id(self):
+        """
+        Gets the private_endpoint_id of this NotebookSessionConfigDetails.
+        The OCID of a Data Science private endpoint.
+
+
+        :return: The private_endpoint_id of this NotebookSessionConfigDetails.
+        :rtype: str
+        """
+        return self._private_endpoint_id
+
+    @private_endpoint_id.setter
+    def private_endpoint_id(self, private_endpoint_id):
+        """
+        Sets the private_endpoint_id of this NotebookSessionConfigDetails.
+        The OCID of a Data Science private endpoint.
+
+
+        :param private_endpoint_id: The private_endpoint_id of this NotebookSessionConfigDetails.
+        :type: str
+        """
+        self._private_endpoint_id = private_endpoint_id
 
     @property
     def notebook_session_shape_config_details(self):

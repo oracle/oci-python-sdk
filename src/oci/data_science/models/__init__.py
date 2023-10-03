@@ -11,6 +11,7 @@ from .artifact_export_details_object_storage import ArtifactExportDetailsObjectS
 from .artifact_import_details import ArtifactImportDetails
 from .artifact_import_details_object_storage import ArtifactImportDetailsObjectStorage
 from .category_log_details import CategoryLogDetails
+from .change_data_science_private_endpoint_compartment_details import ChangeDataSciencePrivateEndpointCompartmentDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_job_run_compartment_details import ChangeJobRunCompartmentDetails
 from .change_model_compartment_details import ChangeModelCompartmentDetails
@@ -20,6 +21,7 @@ from .change_notebook_session_compartment_details import ChangeNotebookSessionCo
 from .change_pipeline_compartment_details import ChangePipelineCompartmentDetails
 from .change_pipeline_run_compartment_details import ChangePipelineRunCompartmentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
+from .create_data_science_private_endpoint_details import CreateDataSciencePrivateEndpointDetails
 from .create_job_details import CreateJobDetails
 from .create_job_run_details import CreateJobRunDetails
 from .create_model_deployment_details import CreateModelDeploymentDetails
@@ -30,6 +32,8 @@ from .create_notebook_session_details import CreateNotebookSessionDetails
 from .create_pipeline_details import CreatePipelineDetails
 from .create_pipeline_run_details import CreatePipelineRunDetails
 from .create_project_details import CreateProjectDetails
+from .data_science_private_endpoint import DataSciencePrivateEndpoint
+from .data_science_private_endpoint_summary import DataSciencePrivateEndpointSummary
 from .default_job_configuration_details import DefaultJobConfigurationDetails
 from .default_model_deployment_environment_configuration_details import DefaultModelDeploymentEnvironmentConfigurationDetails
 from .export_model_artifact_details import ExportModelArtifactDetails
@@ -99,6 +103,7 @@ from .scaling_policy import ScalingPolicy
 from .single_model_deployment_configuration_details import SingleModelDeploymentConfigurationDetails
 from .standalone_job_infrastructure_configuration_details import StandaloneJobInfrastructureConfigurationDetails
 from .update_category_log_details import UpdateCategoryLogDetails
+from .update_data_science_private_endpoint_details import UpdateDataSciencePrivateEndpointDetails
 from .update_default_model_deployment_environment_configuration_details import UpdateDefaultModelDeploymentEnvironmentConfigurationDetails
 from .update_job_details import UpdateJobDetails
 from .update_job_run_details import UpdateJobRunDetails
@@ -128,6 +133,7 @@ data_science_type_mapping = {
     "ArtifactImportDetails": ArtifactImportDetails,
     "ArtifactImportDetailsObjectStorage": ArtifactImportDetailsObjectStorage,
     "CategoryLogDetails": CategoryLogDetails,
+    "ChangeDataSciencePrivateEndpointCompartmentDetails": ChangeDataSciencePrivateEndpointCompartmentDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeJobRunCompartmentDetails": ChangeJobRunCompartmentDetails,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
@@ -137,6 +143,7 @@ data_science_type_mapping = {
     "ChangePipelineCompartmentDetails": ChangePipelineCompartmentDetails,
     "ChangePipelineRunCompartmentDetails": ChangePipelineRunCompartmentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
+    "CreateDataSciencePrivateEndpointDetails": CreateDataSciencePrivateEndpointDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateJobRunDetails": CreateJobRunDetails,
     "CreateModelDeploymentDetails": CreateModelDeploymentDetails,
@@ -147,6 +154,8 @@ data_science_type_mapping = {
     "CreatePipelineDetails": CreatePipelineDetails,
     "CreatePipelineRunDetails": CreatePipelineRunDetails,
     "CreateProjectDetails": CreateProjectDetails,
+    "DataSciencePrivateEndpoint": DataSciencePrivateEndpoint,
+    "DataSciencePrivateEndpointSummary": DataSciencePrivateEndpointSummary,
     "DefaultJobConfigurationDetails": DefaultJobConfigurationDetails,
     "DefaultModelDeploymentEnvironmentConfigurationDetails": DefaultModelDeploymentEnvironmentConfigurationDetails,
     "ExportModelArtifactDetails": ExportModelArtifactDetails,
@@ -216,6 +225,7 @@ data_science_type_mapping = {
     "SingleModelDeploymentConfigurationDetails": SingleModelDeploymentConfigurationDetails,
     "StandaloneJobInfrastructureConfigurationDetails": StandaloneJobInfrastructureConfigurationDetails,
     "UpdateCategoryLogDetails": UpdateCategoryLogDetails,
+    "UpdateDataSciencePrivateEndpointDetails": UpdateDataSciencePrivateEndpointDetails,
     "UpdateDefaultModelDeploymentEnvironmentConfigurationDetails": UpdateDefaultModelDeploymentEnvironmentConfigurationDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateJobRunDetails": UpdateJobRunDetails,

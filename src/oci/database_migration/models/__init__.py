@@ -19,6 +19,7 @@ from .agent_collection import AgentCollection
 from .agent_image_collection import AgentImageCollection
 from .agent_image_summary import AgentImageSummary
 from .agent_summary import AgentSummary
+from .aws_s3_data_transfer_medium_details import AwsS3DataTransferMediumDetails
 from .aws_s3_details import AwsS3Details
 from .change_agent_compartment_details import ChangeAgentCompartmentDetails
 from .change_connection_compartment_details import ChangeConnectionCompartmentDetails
@@ -63,9 +64,11 @@ from .curl_transfer_details import CurlTransferDetails
 from .data_pump_parameters import DataPumpParameters
 from .data_pump_settings import DataPumpSettings
 from .data_transfer_medium_details import DataTransferMediumDetails
+from .data_transfer_medium_details_v2 import DataTransferMediumDetailsV2
 from .database_credentials import DatabaseCredentials
 from .database_link_details import DatabaseLinkDetails
 from .database_object import DatabaseObject
+from .db_link_data_transfer_medium_details import DbLinkDataTransferMediumDetails
 from .diagnostics_result import DiagnosticsResult
 from .directory_object import DirectoryObject
 from .dump_transfer_details import DumpTransferDetails
@@ -96,8 +99,10 @@ from .migration_object_type_summary_collection import MigrationObjectTypeSummary
 from .migration_phase_collection import MigrationPhaseCollection
 from .migration_phase_summary import MigrationPhaseSummary
 from .migration_summary import MigrationSummary
+from .nfs_data_transfer_medium_details import NfsDataTransferMediumDetails
 from .non_adb_auto_create_tablespace_details import NonADBAutoCreateTablespaceDetails
 from .non_adb_remap_tablespace_details import NonADBRemapTablespaceDetails
+from .object_storage_data_transfer_medium_details import ObjectStorageDataTransferMediumDetails
 from .object_store_bucket import ObjectStoreBucket
 from .oci_cli_dump_transfer_details import OciCliDumpTransferDetails
 from .phase_extract_entry import PhaseExtractEntry
@@ -170,6 +175,7 @@ database_migration_type_mapping = {
     "AgentImageCollection": AgentImageCollection,
     "AgentImageSummary": AgentImageSummary,
     "AgentSummary": AgentSummary,
+    "AwsS3DataTransferMediumDetails": AwsS3DataTransferMediumDetails,
     "AwsS3Details": AwsS3Details,
     "ChangeAgentCompartmentDetails": ChangeAgentCompartmentDetails,
     "ChangeConnectionCompartmentDetails": ChangeConnectionCompartmentDetails,
@@ -214,9 +220,11 @@ database_migration_type_mapping = {
     "DataPumpParameters": DataPumpParameters,
     "DataPumpSettings": DataPumpSettings,
     "DataTransferMediumDetails": DataTransferMediumDetails,
+    "DataTransferMediumDetailsV2": DataTransferMediumDetailsV2,
     "DatabaseCredentials": DatabaseCredentials,
     "DatabaseLinkDetails": DatabaseLinkDetails,
     "DatabaseObject": DatabaseObject,
+    "DbLinkDataTransferMediumDetails": DbLinkDataTransferMediumDetails,
     "DiagnosticsResult": DiagnosticsResult,
     "DirectoryObject": DirectoryObject,
     "DumpTransferDetails": DumpTransferDetails,
@@ -247,8 +255,10 @@ database_migration_type_mapping = {
     "MigrationPhaseCollection": MigrationPhaseCollection,
     "MigrationPhaseSummary": MigrationPhaseSummary,
     "MigrationSummary": MigrationSummary,
+    "NfsDataTransferMediumDetails": NfsDataTransferMediumDetails,
     "NonADBAutoCreateTablespaceDetails": NonADBAutoCreateTablespaceDetails,
     "NonADBRemapTablespaceDetails": NonADBRemapTablespaceDetails,
+    "ObjectStorageDataTransferMediumDetails": ObjectStorageDataTransferMediumDetails,
     "ObjectStoreBucket": ObjectStoreBucket,
     "OciCliDumpTransferDetails": OciCliDumpTransferDetails,
     "PhaseExtractEntry": PhaseExtractEntry,

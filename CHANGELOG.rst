@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.112.3 - 2023-10-03
+====================
+
+Added
+----- 
+* Support for elastic resource pools in the Database service
+* Support for private endpoints in the Data Science service
+* Support for File System Service (FSS) as transfer medium for data export and import in the Database Migration service
+* Support for new optional parameters on replica create, update and list operations in the MySQL Heatwave service  
+ 
+====================
 2.112.2 - 2023-09-26
 ====================
 
@@ -13,6 +24,8 @@ Added
 * Support for private endpoints for external key managers in Key Management service
 * Support for additional parameters in vaults and keys for external key managers in Key Management service
 * Support for domains while creating integration instances in Oracle Integration Cloud service
+
+====================
 2.112.1 - 2023-09-12
 ====================
 
