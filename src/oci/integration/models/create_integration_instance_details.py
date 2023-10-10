@@ -263,8 +263,7 @@ class CreateIntegrationInstanceDetails(object):
         allowed_values = ["STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"]
         if not value_allowed_none_or_none_sentinel(integration_instance_type, allowed_values):
             raise ValueError(
-                "Invalid value for `integration_instance_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `integration_instance_type`, must be None or one of {allowed_values}"
             )
         self._integration_instance_type = integration_instance_type
 
@@ -493,8 +492,7 @@ class CreateIntegrationInstanceDetails(object):
         allowed_values = ["UCM", "GOV", "OIC4SAAS"]
         if not value_allowed_none_or_none_sentinel(consumption_model, allowed_values):
             raise ValueError(
-                "Invalid value for `consumption_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `consumption_model`, must be None or one of {allowed_values}"
             )
         self._consumption_model = consumption_model
 
@@ -569,8 +567,7 @@ class CreateIntegrationInstanceDetails(object):
         allowed_values = ["DEVELOPMENT", "PRODUCTION"]
         if not value_allowed_none_or_none_sentinel(shape, allowed_values):
             raise ValueError(
-                "Invalid value for `shape`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `shape`, must be None or one of {allowed_values}"
             )
         self._shape = shape
 

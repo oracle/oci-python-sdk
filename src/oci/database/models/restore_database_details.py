@@ -32,28 +32,36 @@ class RestoreDatabaseDetails(object):
             The value to assign to the latest property of this RestoreDatabaseDetails.
         :type latest: bool
 
+        :param pluggable_database_name:
+            The value to assign to the pluggable_database_name property of this RestoreDatabaseDetails.
+        :type pluggable_database_name: str
+
         """
         self.swagger_types = {
             'database_scn': 'str',
             'timestamp': 'datetime',
-            'latest': 'bool'
+            'latest': 'bool',
+            'pluggable_database_name': 'str'
         }
 
         self.attribute_map = {
             'database_scn': 'databaseSCN',
             'timestamp': 'timestamp',
-            'latest': 'latest'
+            'latest': 'latest',
+            'pluggable_database_name': 'pluggableDatabaseName'
         }
 
         self._database_scn = None
         self._timestamp = None
         self._latest = None
+        self._pluggable_database_name = None
 
     @property
     def database_scn(self):
         """
         Gets the database_scn of this RestoreDatabaseDetails.
         Restores using the backup with the System Change Number (SCN) specified.
+        This field is applicable for both use cases - Restoring Container Database or Restoring specific Pluggable Database.
 
 
         :return: The database_scn of this RestoreDatabaseDetails.
@@ -66,6 +74,7 @@ class RestoreDatabaseDetails(object):
         """
         Sets the database_scn of this RestoreDatabaseDetails.
         Restores using the backup with the System Change Number (SCN) specified.
+        This field is applicable for both use cases - Restoring Container Database or Restoring specific Pluggable Database.
 
 
         :param database_scn: The database_scn of this RestoreDatabaseDetails.
@@ -120,6 +129,30 @@ class RestoreDatabaseDetails(object):
         :type: bool
         """
         self._latest = latest
+
+    @property
+    def pluggable_database_name(self):
+        """
+        Gets the pluggable_database_name of this RestoreDatabaseDetails.
+        Restores only the Pluggable Database (if specified) using the inputs provided in request.
+
+
+        :return: The pluggable_database_name of this RestoreDatabaseDetails.
+        :rtype: str
+        """
+        return self._pluggable_database_name
+
+    @pluggable_database_name.setter
+    def pluggable_database_name(self, pluggable_database_name):
+        """
+        Sets the pluggable_database_name of this RestoreDatabaseDetails.
+        Restores only the Pluggable Database (if specified) using the inputs provided in request.
+
+
+        :param pluggable_database_name: The pluggable_database_name of this RestoreDatabaseDetails.
+        :type: str
+        """
+        self._pluggable_database_name = pluggable_database_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

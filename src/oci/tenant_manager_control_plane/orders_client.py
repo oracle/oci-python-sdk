@@ -172,7 +172,7 @@ class OrdersClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "activate_order got unknown kwargs: {!r}".format(extra_kwargs))
+                f"activate_order got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "activationToken": activation_token
@@ -182,7 +182,7 @@ class OrdersClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -270,7 +270,7 @@ class OrdersClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_order got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_order got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "activationToken": activation_token
@@ -280,7 +280,7 @@ class OrdersClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

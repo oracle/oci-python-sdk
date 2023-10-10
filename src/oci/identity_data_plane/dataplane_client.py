@@ -153,7 +153,7 @@ class DataplaneClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_scoped_access_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_scoped_access_token got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -240,7 +240,7 @@ class DataplaneClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_user_security_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_user_security_token got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",

@@ -141,8 +141,7 @@ class CreateClusterKubeconfigContentDetails(object):
         allowed_values = ["LEGACY_KUBERNETES", "PUBLIC_ENDPOINT", "PRIVATE_ENDPOINT", "VCN_HOSTNAME"]
         if not value_allowed_none_or_none_sentinel(endpoint, allowed_values):
             raise ValueError(
-                "Invalid value for `endpoint`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `endpoint`, must be None or one of {allowed_values}"
             )
         self._endpoint = endpoint
 

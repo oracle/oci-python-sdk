@@ -169,7 +169,7 @@ class ScheduledJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_scheduled_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_scheduled_job got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -267,7 +267,7 @@ class ScheduledJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_scheduled_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_scheduled_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "scheduledJobId": scheduled_job_id
@@ -277,7 +277,7 @@ class ScheduledJobClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -364,7 +364,7 @@ class ScheduledJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_scheduled_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_scheduled_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "scheduledJobId": scheduled_job_id
@@ -374,7 +374,7 @@ class ScheduledJobClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -563,41 +563,41 @@ class ScheduledJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_scheduled_jobs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_scheduled_jobs got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'operation_type' in kwargs:
             operation_type_allowed_values = ["INSTALL_PACKAGES", "UPDATE_PACKAGES", "REMOVE_PACKAGES", "UPDATE_ALL", "UPDATE_SECURITY", "UPDATE_BUGFIX", "UPDATE_ENHANCEMENT", "UPDATE_OTHER", "UPDATE_KSPLICE_USERSPACE", "UPDATE_KSPLICE_KERNEL", "MANAGE_MODULE_STREAMS", "SWITCH_MODULE_STREAM", "ATTACH_SOFTWARE_SOURCES", "DETACH_SOFTWARE_SOURCES", "SYNC_MANAGEMENT_STATION_MIRROR", "PROMOTE_LIFECYCLE"]
             if kwargs['operation_type'] not in operation_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `operation_type`, must be one of {0}".format(operation_type_allowed_values)
+                    f"Invalid value for `operation_type`, must be one of { operation_type_allowed_values }"
                 )
 
         if 'schedule_type' in kwargs:
             schedule_type_allowed_values = ["ONETIME", "RECURRING"]
             if kwargs['schedule_type'] not in schedule_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `schedule_type`, must be one of {0}".format(schedule_type_allowed_values)
+                    f"Invalid value for `schedule_type`, must be one of { schedule_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -726,7 +726,7 @@ class ScheduledJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "run_scheduled_job_now got unknown kwargs: {!r}".format(extra_kwargs))
+                f"run_scheduled_job_now got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "scheduledJobId": scheduled_job_id
@@ -736,7 +736,7 @@ class ScheduledJobClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -836,7 +836,7 @@ class ScheduledJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_scheduled_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_scheduled_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "scheduledJobId": scheduled_job_id
@@ -846,7 +846,7 @@ class ScheduledJobClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

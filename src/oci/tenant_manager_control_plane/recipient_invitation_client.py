@@ -177,7 +177,7 @@ class RecipientInvitationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "accept_recipient_invitation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"accept_recipient_invitation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "recipientInvitationId": recipient_invitation_id
@@ -187,7 +187,7 @@ class RecipientInvitationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -274,7 +274,7 @@ class RecipientInvitationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_recipient_invitation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_recipient_invitation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "recipientInvitationId": recipient_invitation_id
@@ -284,7 +284,7 @@ class RecipientInvitationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -386,7 +386,7 @@ class RecipientInvitationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "ignore_recipient_invitation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"ignore_recipient_invitation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "recipientInvitationId": recipient_invitation_id
@@ -396,7 +396,7 @@ class RecipientInvitationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -505,20 +505,20 @@ class RecipientInvitationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_recipient_invitations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_recipient_invitations got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "FAILED", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'status' in kwargs:
             status_allowed_values = ["PENDING", "CANCELED", "ACCEPTED", "IGNORED", "EXPIRED", "FAILED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         query_params = {
@@ -625,7 +625,7 @@ class RecipientInvitationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_recipient_invitation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_recipient_invitation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "recipientInvitationId": recipient_invitation_id
@@ -635,7 +635,7 @@ class RecipientInvitationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

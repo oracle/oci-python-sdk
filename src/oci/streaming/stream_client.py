@@ -162,7 +162,7 @@ class StreamClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "consumer_commit got unknown kwargs: {!r}".format(extra_kwargs))
+                f"consumer_commit got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamId": stream_id
@@ -172,7 +172,7 @@ class StreamClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "cursor": cursor
@@ -271,7 +271,7 @@ class StreamClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "consumer_heartbeat got unknown kwargs: {!r}".format(extra_kwargs))
+                f"consumer_heartbeat got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamId": stream_id
@@ -281,7 +281,7 @@ class StreamClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "cursor": cursor
@@ -384,7 +384,7 @@ class StreamClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_cursor got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_cursor got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamId": stream_id
@@ -394,7 +394,7 @@ class StreamClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -488,7 +488,7 @@ class StreamClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_group_cursor got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_group_cursor got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamId": stream_id
@@ -498,7 +498,7 @@ class StreamClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -592,7 +592,7 @@ class StreamClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamId": stream_id,
@@ -603,7 +603,7 @@ class StreamClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -702,7 +702,7 @@ class StreamClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_messages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_messages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamId": stream_id
@@ -712,7 +712,7 @@ class StreamClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "cursor": cursor,
@@ -815,7 +815,7 @@ class StreamClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_messages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_messages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamId": stream_id
@@ -825,7 +825,7 @@ class StreamClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -922,7 +922,7 @@ class StreamClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamId": stream_id,
@@ -933,7 +933,7 @@ class StreamClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

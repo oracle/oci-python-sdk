@@ -180,7 +180,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "activate_target_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"activate_target_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetDatabaseId": target_database_id
@@ -190,7 +190,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -292,7 +292,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_masking_columns_from_sdm got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_masking_columns_from_sdm got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -302,7 +302,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -418,13 +418,13 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "alerts_update got unknown kwargs: {!r}".format(extra_kwargs))
+                f"alerts_update got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -536,7 +536,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "apply_discovery_job_results got unknown kwargs: {!r}".format(extra_kwargs))
+                f"apply_discovery_job_results got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -546,7 +546,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -658,7 +658,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "apply_sdm_masking_policy_difference got unknown kwargs: {!r}".format(extra_kwargs))
+                f"apply_sdm_masking_policy_difference got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -668,7 +668,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -777,7 +777,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "calculate_audit_volume_available got unknown kwargs: {!r}".format(extra_kwargs))
+                f"calculate_audit_volume_available got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditProfileId": audit_profile_id
@@ -787,7 +787,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -896,7 +896,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "calculate_audit_volume_collected got unknown kwargs: {!r}".format(extra_kwargs))
+                f"calculate_audit_volume_collected got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditProfileId": audit_profile_id
@@ -906,7 +906,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1012,7 +1012,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -1022,7 +1022,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1129,7 +1129,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_alert_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_alert_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "alertId": alert_id
@@ -1139,7 +1139,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1248,7 +1248,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_audit_archive_retrieval_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_audit_archive_retrieval_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditArchiveRetrievalId": audit_archive_retrieval_id
@@ -1258,7 +1258,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1367,7 +1367,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_audit_policy_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_audit_policy_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditPolicyId": audit_policy_id
@@ -1377,7 +1377,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1486,7 +1486,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_audit_profile_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_audit_profile_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditProfileId": audit_profile_id
@@ -1496,7 +1496,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1598,7 +1598,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_data_safe_private_endpoint_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_data_safe_private_endpoint_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dataSafePrivateEndpointId": data_safe_private_endpoint_id
@@ -1608,7 +1608,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1715,7 +1715,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_discovery_job_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_discovery_job_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "discoveryJobId": discovery_job_id
@@ -1725,7 +1725,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1834,7 +1834,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_library_masking_format_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_library_masking_format_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "libraryMaskingFormatId": library_masking_format_id
@@ -1844,7 +1844,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1953,7 +1953,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_masking_policy_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_masking_policy_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -1963,7 +1963,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2072,7 +2072,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_on_prem_connector_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_on_prem_connector_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "onPremConnectorId": on_prem_connector_id
@@ -2082,7 +2082,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2191,7 +2191,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_report_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_report_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "reportId": report_id
@@ -2201,7 +2201,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2310,7 +2310,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_report_definition_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_report_definition_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "reportDefinitionId": report_definition_id
@@ -2320,7 +2320,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2429,7 +2429,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_retention got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_retention got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditProfileId": audit_profile_id
@@ -2439,7 +2439,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2548,7 +2548,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_sdm_masking_policy_difference_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_sdm_masking_policy_difference_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id
@@ -2558,7 +2558,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2671,7 +2671,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_security_assessment_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_security_assessment_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityAssessmentId": security_assessment_id
@@ -2681,7 +2681,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2790,7 +2790,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_sensitive_data_model_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_sensitive_data_model_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -2800,7 +2800,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2909,7 +2909,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_sensitive_type_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_sensitive_type_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveTypeId": sensitive_type_id
@@ -2919,7 +2919,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3028,7 +3028,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_target_alert_policy_association_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_target_alert_policy_association_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetAlertPolicyAssociationId": target_alert_policy_association_id
@@ -3038,7 +3038,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3147,7 +3147,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_target_database_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_target_database_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetDatabaseId": target_database_id
@@ -3157,7 +3157,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3270,7 +3270,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_user_assessment_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_user_assessment_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -3280,7 +3280,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3390,7 +3390,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "compare_security_assessment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"compare_security_assessment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityAssessmentId": security_assessment_id
@@ -3400,7 +3400,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3510,7 +3510,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "compare_user_assessment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"compare_user_assessment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -3520,7 +3520,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3620,7 +3620,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_audit_archive_retrieval got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_audit_archive_retrieval got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -3717,7 +3717,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_data_safe_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_data_safe_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -3818,7 +3818,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_discovery_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_discovery_job got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -3919,7 +3919,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_library_masking_format got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_library_masking_format got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4038,7 +4038,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_masking_column got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_masking_column got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -4048,7 +4048,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4161,7 +4161,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_masking_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_masking_policy got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4258,7 +4258,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_on_prem_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_on_prem_connector got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4355,7 +4355,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_report_definition got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_report_definition got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4456,7 +4456,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_sdm_masking_policy_difference got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_sdm_masking_policy_difference got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4557,7 +4557,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_security_assessment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_security_assessment got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4657,7 +4657,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_sensitive_column got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_sensitive_column got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -4667,7 +4667,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4766,7 +4766,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_sensitive_data_model got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_sensitive_data_model got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4865,7 +4865,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_sensitive_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_sensitive_type got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4962,7 +4962,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_target_alert_policy_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_target_alert_policy_association got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5059,7 +5059,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_target_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_target_database got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5160,7 +5160,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_user_assessment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_user_assessment got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5265,7 +5265,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "deactivate_target_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"deactivate_target_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetDatabaseId": target_database_id
@@ -5275,7 +5275,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5373,7 +5373,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_audit_archive_retrieval got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_audit_archive_retrieval got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditArchiveRetrievalId": audit_archive_retrieval_id
@@ -5383,7 +5383,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5478,7 +5478,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_audit_trail got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_audit_trail got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditTrailId": audit_trail_id
@@ -5488,7 +5488,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5583,7 +5583,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_data_safe_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_data_safe_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dataSafePrivateEndpointId": data_safe_private_endpoint_id
@@ -5593,7 +5593,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5688,7 +5688,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_discovery_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_discovery_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "discoveryJobId": discovery_job_id
@@ -5698,7 +5698,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5796,7 +5796,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_discovery_job_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_discovery_job_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "discoveryJobId": discovery_job_id,
@@ -5807,7 +5807,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5902,7 +5902,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_library_masking_format got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_library_masking_format got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "libraryMaskingFormatId": library_masking_format_id
@@ -5912,7 +5912,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6010,7 +6010,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_masking_column got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_masking_column got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingColumnKey": masking_column_key,
@@ -6021,7 +6021,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6116,7 +6116,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_masking_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_masking_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -6126,7 +6126,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6221,7 +6221,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_on_prem_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_on_prem_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "onPremConnectorId": on_prem_connector_id
@@ -6231,7 +6231,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6326,7 +6326,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_report_definition got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_report_definition got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "reportDefinitionId": report_definition_id
@@ -6336,7 +6336,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6431,7 +6431,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_sdm_masking_policy_difference got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_sdm_masking_policy_difference got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id
@@ -6441,7 +6441,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6539,7 +6539,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_security_assessment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_security_assessment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityAssessmentId": security_assessment_id
@@ -6549,7 +6549,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6647,7 +6647,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_sensitive_column got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_sensitive_column got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id,
@@ -6658,7 +6658,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6753,7 +6753,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_sensitive_data_model got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_sensitive_data_model got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -6763,7 +6763,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6858,7 +6858,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_sensitive_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_sensitive_type got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveTypeId": sensitive_type_id
@@ -6868,7 +6868,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6963,7 +6963,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_target_alert_policy_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_target_alert_policy_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetAlertPolicyAssociationId": target_alert_policy_association_id
@@ -6973,7 +6973,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7068,7 +7068,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_target_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_target_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetDatabaseId": target_database_id
@@ -7078,7 +7078,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7176,7 +7176,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_user_assessment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_user_assessment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -7186,7 +7186,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7291,7 +7291,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "discover_audit_trails got unknown kwargs: {!r}".format(extra_kwargs))
+                f"discover_audit_trails got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditProfileId": audit_profile_id
@@ -7301,7 +7301,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7396,7 +7396,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_discovery_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_discovery_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -7406,7 +7406,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7499,7 +7499,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_masking_log got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_masking_log got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -7509,7 +7509,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -7605,7 +7605,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_masking_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_masking_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -7615,7 +7615,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -7710,7 +7710,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_masking_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_masking_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -7720,7 +7720,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7822,7 +7822,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_privilege_script got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_privilege_script got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/octet-stream",
@@ -7930,7 +7930,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_security_assessment_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_security_assessment_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityAssessmentId": security_assessment_id
@@ -7940,7 +7940,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8039,7 +8039,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_sensitive_data_model got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_sensitive_data_model got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -8049,7 +8049,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -8158,7 +8158,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_user_assessment_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_user_assessment_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -8168,7 +8168,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8273,7 +8273,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_data_safe_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_data_safe_configuration got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing)
@@ -8373,7 +8373,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_discovery_report_for_download got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_discovery_report_for_download got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -8383,7 +8383,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8478,7 +8478,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_masking_policy_for_download got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_masking_policy_for_download got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -8488,7 +8488,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8582,7 +8582,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_masking_report_for_download got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_masking_report_for_download got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -8592,7 +8592,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8698,7 +8698,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_on_prem_connector_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_on_prem_connector_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "onPremConnectorId": on_prem_connector_id
@@ -8708,7 +8708,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -8831,7 +8831,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "reportDefinitionId": report_definition_id
@@ -8841,7 +8841,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "scimQuery": kwargs.get("scim_query", missing)
@@ -8958,7 +8958,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_security_assessment_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_security_assessment_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityAssessmentId": security_assessment_id
@@ -8968,7 +8968,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9065,7 +9065,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_sensitive_data_model_for_download got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_sensitive_data_model_for_download got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -9075,7 +9075,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9182,7 +9182,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_user_assessment_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_user_assessment_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -9192,7 +9192,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9283,7 +9283,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_alert got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_alert got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "alertId": alert_id
@@ -9293,7 +9293,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9381,7 +9381,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_alert_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_alert_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "alertPolicyId": alert_policy_id
@@ -9391,7 +9391,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9487,7 +9487,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_audit_archive_retrieval got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_audit_archive_retrieval got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditArchiveRetrievalId": audit_archive_retrieval_id
@@ -9497,7 +9497,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9586,7 +9586,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_audit_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_audit_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditPolicyId": audit_policy_id
@@ -9596,7 +9596,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9684,7 +9684,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_audit_profile got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_audit_profile got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditProfileId": audit_profile_id
@@ -9694,7 +9694,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9782,7 +9782,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_audit_trail got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_audit_trail got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditTrailId": audit_trail_id
@@ -9792,7 +9792,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9895,7 +9895,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_compatible_formats_for_data_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_compatible_formats_for_data_types got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -10018,13 +10018,13 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_compatible_formats_for_sensitive_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_compatible_formats_for_sensitive_types got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -10123,7 +10123,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_data_safe_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_data_safe_configuration got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing)
@@ -10216,7 +10216,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_data_safe_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_data_safe_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dataSafePrivateEndpointId": data_safe_private_endpoint_id
@@ -10226,7 +10226,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10317,7 +10317,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_difference_column got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_difference_column got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id,
@@ -10328,7 +10328,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10416,7 +10416,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_discovery_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_discovery_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "discoveryJobId": discovery_job_id
@@ -10426,7 +10426,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10517,7 +10517,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_discovery_job_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_discovery_job_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "discoveryJobId": discovery_job_id,
@@ -10528,7 +10528,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10616,7 +10616,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_library_masking_format got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_library_masking_format got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "libraryMaskingFormatId": library_masking_format_id
@@ -10626,7 +10626,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10717,7 +10717,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_masking_column got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_masking_column got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id,
@@ -10728,7 +10728,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10816,7 +10816,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_masking_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_masking_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -10826,7 +10826,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10914,7 +10914,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_masking_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_masking_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingReportId": masking_report_id
@@ -10924,7 +10924,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11012,7 +11012,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_on_prem_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_on_prem_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "onPremConnectorId": on_prem_connector_id
@@ -11022,7 +11022,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11116,7 +11116,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_profile got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_profile got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id,
@@ -11127,7 +11127,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11215,7 +11215,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "reportId": report_id
@@ -11225,7 +11225,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11313,7 +11313,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_report_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_report_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "reportId": report_id
@@ -11323,7 +11323,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11411,7 +11411,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_report_definition got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_report_definition got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "reportDefinitionId": report_definition_id
@@ -11421,7 +11421,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11509,7 +11509,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_sdm_masking_policy_difference got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_sdm_masking_policy_difference got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id
@@ -11519,7 +11519,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11607,7 +11607,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_security_assessment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_security_assessment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityAssessmentId": security_assessment_id
@@ -11617,7 +11617,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11708,7 +11708,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_security_assessment_comparison got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_security_assessment_comparison got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityAssessmentId": security_assessment_id,
@@ -11719,7 +11719,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11810,7 +11810,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_sensitive_column got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_sensitive_column got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id,
@@ -11821,7 +11821,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11909,7 +11909,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_sensitive_data_model got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_sensitive_data_model got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -11919,7 +11919,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12007,7 +12007,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_sensitive_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_sensitive_type got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveTypeId": sensitive_type_id
@@ -12017,7 +12017,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12105,7 +12105,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_target_alert_policy_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_target_alert_policy_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetAlertPolicyAssociationId": target_alert_policy_association_id
@@ -12115,7 +12115,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12203,7 +12203,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_target_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_target_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetDatabaseId": target_database_id
@@ -12213,7 +12213,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12301,7 +12301,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_user_assessment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_user_assessment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -12311,7 +12311,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12402,7 +12402,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_user_assessment_comparison got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_user_assessment_comparison got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id,
@@ -12413,7 +12413,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12501,7 +12501,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -12511,7 +12511,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12710,27 +12710,27 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_alert_analytics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_alert_analytics got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'summary_field' in kwargs:
@@ -12738,7 +12738,7 @@ class DataSafeClient(object):
             for summary_field_item in kwargs['summary_field']:
                 if summary_field_item not in summary_field_allowed_values:
                     raise ValueError(
-                        "Invalid value for `summary_field`, must be one of {0}".format(summary_field_allowed_values)
+                        f"Invalid value for `summary_field`, must be one of { summary_field_allowed_values }"
                     )
 
         if 'group_by' in kwargs:
@@ -12746,7 +12746,7 @@ class DataSafeClient(object):
             for group_by_item in kwargs['group_by']:
                 if group_by_item not in group_by_allowed_values:
                     raise ValueError(
-                        "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                        f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
                     )
 
         query_params = {
@@ -12936,41 +12936,41 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_alert_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_alert_policies got unknown kwargs: {extra_kwargs!r}")
 
         if 'type' in kwargs:
             type_allowed_values = ["AUDITING", "SECURITY_ASSESSMENT", "USER_ASSESSMENT"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                    f"Invalid value for `type`, must be one of { type_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -13090,7 +13090,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_alert_policy_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_alert_policy_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "alertPolicyId": alert_policy_id
@@ -13100,7 +13100,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -13271,27 +13271,27 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_alerts got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_alerts got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'field' in kwargs:
@@ -13299,7 +13299,7 @@ class DataSafeClient(object):
             for field_item in kwargs['field']:
                 if field_item not in field_allowed_values:
                     raise ValueError(
-                        "Invalid value for `field`, must be one of {0}".format(field_allowed_values)
+                        f"Invalid value for `field`, must be one of { field_allowed_values }"
                     )
 
         query_params = {
@@ -13464,34 +13464,34 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_audit_archive_retrievals got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_audit_archive_retrievals got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13705,13 +13705,13 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_audit_event_analytics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_audit_event_analytics got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'summary_field' in kwargs:
@@ -13719,7 +13719,7 @@ class DataSafeClient(object):
             for summary_field_item in kwargs['summary_field']:
                 if summary_field_item not in summary_field_allowed_values:
                     raise ValueError(
-                        "Invalid value for `summary_field`, must be one of {0}".format(summary_field_allowed_values)
+                        f"Invalid value for `summary_field`, must be one of { summary_field_allowed_values }"
                     )
 
         if 'group_by' in kwargs:
@@ -13727,21 +13727,21 @@ class DataSafeClient(object):
             for group_by_item in kwargs['group_by']:
                 if group_by_item not in group_by_allowed_values:
                     raise ValueError(
-                        "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                        f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["targetId", "targetClass", "targetName", "objectType", "dbUserName", "eventName", "auditEventTime", "clientHostname", "clientProgram", "clientId", "auditType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13913,27 +13913,27 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_audit_events got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_audit_events got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["dbUserName", "targetName", "databaseType", "targetClass", "auditEventTime", "timeCollected", "osUserName", "operation", "operationStatus", "eventName", "errorCode", "errorMessage", "objectType", "objectName", "objectOwner", "clientHostname", "clientIp", "isAlerted", "actionTaken", "clientProgram", "commandText", "commandParam", "extendedEventAttributes", "auditLocation", "osTerminal", "clientId", "auditPolicies", "auditType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -14106,34 +14106,34 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_audit_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_audit_policies got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "FAILED", "NEEDS_ATTENTION", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -14306,13 +14306,13 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_audit_policy_analytics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_audit_policy_analytics got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'group_by' in kwargs:
@@ -14320,21 +14320,21 @@ class DataSafeClient(object):
             for group_by_item in kwargs['group_by']:
                 if group_by_item not in group_by_allowed_values:
                     raise ValueError(
-                        "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                        f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
                     )
 
         if 'audit_policy_category' in kwargs:
             audit_policy_category_allowed_values = ["BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM"]
             if kwargs['audit_policy_category'] not in audit_policy_category_allowed_values:
                 raise ValueError(
-                    "Invalid value for `audit_policy_category`, must be one of {0}".format(audit_policy_category_allowed_values)
+                    f"Invalid value for `audit_policy_category`, must be one of { audit_policy_category_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "FAILED", "NEEDS_ATTENTION", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -14481,13 +14481,13 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_audit_profile_analytics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_audit_profile_analytics got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'group_by' in kwargs:
@@ -14495,7 +14495,7 @@ class DataSafeClient(object):
             for group_by_item in kwargs['group_by']:
                 if group_by_item not in group_by_allowed_values:
                     raise ValueError(
-                        "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                        f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
                     )
 
         query_params = {
@@ -14681,34 +14681,34 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_audit_profiles got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_audit_profiles got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "FAILED", "NEEDS_ATTENTION", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -14863,13 +14863,13 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_audit_trail_analytics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_audit_trail_analytics got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'group_by' in kwargs:
@@ -14877,7 +14877,7 @@ class DataSafeClient(object):
             for group_by_item in kwargs['group_by']:
                 if group_by_item not in group_by_allowed_values:
                     raise ValueError(
-                        "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                        f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
                     )
 
         query_params = {
@@ -15054,41 +15054,41 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_audit_trails got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_audit_trails got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["INACTIVE", "UPDATING", "ACTIVE", "DELETING", "FAILED", "NEEDS_ATTENTION"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'status' in kwargs:
             status_allowed_values = ["STARTING", "COLLECTING", "RECOVERING", "IDLE", "STOPPING", "STOPPED", "RESUMING", "RETRYING", "NOT_STARTED", "STOPPED_NEEDS_ATTN", "STOPPED_FAILED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -15246,7 +15246,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_available_audit_volumes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_available_audit_volumes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditProfileId": audit_profile_id
@@ -15256,20 +15256,20 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["monthInConsideration", "volume", "trailLocation"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -15421,7 +15421,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_collected_audit_volumes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_collected_audit_volumes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditProfileId": audit_profile_id
@@ -15431,20 +15431,20 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["monthInConsideration", "onlineVolume", "archivedVolume"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -15598,7 +15598,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_columns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_columns got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetDatabaseId": target_database_id
@@ -15608,20 +15608,20 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["SCHEMANAME", "TABLENAME", "COLUMNNAME", "DATATYPE"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -15781,34 +15781,34 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_data_safe_private_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_data_safe_private_endpoints got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NA"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -15966,7 +15966,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_difference_columns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_difference_columns got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id
@@ -15976,41 +15976,41 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'difference_type' in kwargs:
             difference_type_allowed_values = ["ALL", "NEW", "MODIFIED", "DELETED"]
             if kwargs['difference_type'] not in difference_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `difference_type`, must be one of {0}".format(difference_type_allowed_values)
+                    f"Invalid value for `difference_type`, must be one of { difference_type_allowed_values }"
                 )
 
         if 'planned_action' in kwargs:
             planned_action_allowed_values = ["SYNC", "NO_SYNC"]
             if kwargs['planned_action'] not in planned_action_allowed_values:
                 raise ValueError(
-                    "Invalid value for `planned_action`, must be one of {0}".format(planned_action_allowed_values)
+                    f"Invalid value for `planned_action`, must be one of { planned_action_allowed_values }"
                 )
 
         if 'sync_status' in kwargs:
             sync_status_allowed_values = ["SYNCED", "NOT_SYNCED"]
             if kwargs['sync_status'] not in sync_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sync_status`, must be one of {0}".format(sync_status_allowed_values)
+                    f"Invalid value for `sync_status`, must be one of { sync_status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["differenceType", "schemaName", "objectName", "columnName", "plannedAction"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -16148,13 +16148,13 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_discovery_analytics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_discovery_analytics got unknown kwargs: {extra_kwargs!r}")
 
         if 'group_by' in kwargs:
             group_by_allowed_values = ["targetId", "sensitiveDataModelId"]
             if kwargs['group_by'] not in group_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                    f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
                 )
 
         query_params = {
@@ -16307,7 +16307,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_discovery_job_results got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_discovery_job_results got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "discoveryJobId": discovery_job_id
@@ -16317,34 +16317,34 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'discovery_type' in kwargs:
             discovery_type_allowed_values = ["ALL", "NEW", "MODIFIED", "DELETED"]
             if kwargs['discovery_type'] not in discovery_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `discovery_type`, must be one of {0}".format(discovery_type_allowed_values)
+                    f"Invalid value for `discovery_type`, must be one of { discovery_type_allowed_values }"
                 )
 
         if 'planned_action' in kwargs:
             planned_action_allowed_values = ["NONE", "ACCEPT", "INVALIDATE", "REJECT"]
             if kwargs['planned_action'] not in planned_action_allowed_values:
                 raise ValueError(
-                    "Invalid value for `planned_action`, must be one of {0}".format(planned_action_allowed_values)
+                    f"Invalid value for `planned_action`, must be one of { planned_action_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["discoveryType", "timeFinished", "schemaName", "objectName", "columnName", "plannedAction"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -16510,34 +16510,34 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_discovery_jobs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_discovery_jobs got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeStarted", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -16684,7 +16684,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_findings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_findings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityAssessmentId": security_assessment_id
@@ -16694,27 +16694,27 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'severity' in kwargs:
             severity_allowed_values = ["HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS"]
             if kwargs['severity'] not in severity_allowed_values:
                 raise ValueError(
-                    "Invalid value for `severity`, must be one of {0}".format(severity_allowed_values)
+                    f"Invalid value for `severity`, must be one of { severity_allowed_values }"
                 )
 
         if 'references' in kwargs:
             references_allowed_values = ["STIG", "CIS", "GDPR"]
             if kwargs['references'] not in references_allowed_values:
                 raise ValueError(
-                    "Invalid value for `references`, must be one of {0}".format(references_allowed_values)
+                    f"Invalid value for `references`, must be one of { references_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -16874,7 +16874,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_grants got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_grants got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id,
@@ -16885,20 +16885,20 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["grantName", "grantType", "privilegeCategory", "depthLevel", "key"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -17082,41 +17082,41 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_library_masking_formats got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_library_masking_formats got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "NEEDS_ATTENTION", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'library_masking_format_source' in kwargs:
             library_masking_format_source_allowed_values = ["ORACLE", "USER"]
             if kwargs['library_masking_format_source'] not in library_masking_format_source_allowed_values:
                 raise ValueError(
-                    "Invalid value for `library_masking_format_source`, must be one of {0}".format(library_masking_format_source_allowed_values)
+                    f"Invalid value for `library_masking_format_source`, must be one of { library_masking_format_source_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -17272,7 +17272,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_masked_columns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_masked_columns got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingReportId": masking_report_id
@@ -17282,20 +17282,20 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["schemaName", "objectName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'object_type' in kwargs:
@@ -17303,7 +17303,7 @@ class DataSafeClient(object):
             for object_type_item in kwargs['object_type']:
                 if object_type_item not in object_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `object_type`, must be one of {0}".format(object_type_allowed_values)
+                        f"Invalid value for `object_type`, must be one of { object_type_allowed_values }"
                     )
 
         query_params = {
@@ -17441,13 +17441,13 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_masking_analytics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_masking_analytics got unknown kwargs: {extra_kwargs!r}")
 
         if 'group_by' in kwargs:
             group_by_allowed_values = ["targetId", "policyId"]
             if kwargs['group_by'] not in group_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                    f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
                 )
 
         query_params = {
@@ -17657,7 +17657,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_masking_columns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_masking_columns got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -17667,27 +17667,27 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "schemaName", "objectName", "dataType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'masking_column_lifecycle_state' in kwargs:
             masking_column_lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "NEEDS_ATTENTION", "FAILED"]
             if kwargs['masking_column_lifecycle_state'] not in masking_column_lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `masking_column_lifecycle_state`, must be one of {0}".format(masking_column_lifecycle_state_allowed_values)
+                    f"Invalid value for `masking_column_lifecycle_state`, must be one of { masking_column_lifecycle_state_allowed_values }"
                 )
 
         if 'data_type' in kwargs:
@@ -17695,7 +17695,7 @@ class DataSafeClient(object):
             for data_type_item in kwargs['data_type']:
                 if data_type_item not in data_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `data_type`, must be one of {0}".format(data_type_allowed_values)
+                        f"Invalid value for `data_type`, must be one of { data_type_allowed_values }"
                     )
 
         if 'object_type' in kwargs:
@@ -17703,7 +17703,7 @@ class DataSafeClient(object):
             for object_type_item in kwargs['object_type']:
                 if object_type_item not in object_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `object_type`, must be one of {0}".format(object_type_allowed_values)
+                        f"Invalid value for `object_type`, must be one of { object_type_allowed_values }"
                     )
 
         query_params = {
@@ -17855,7 +17855,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_masking_objects got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_masking_objects got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -17865,20 +17865,20 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["schemaName", "objectName", "objectType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'object_type' in kwargs:
@@ -17886,7 +17886,7 @@ class DataSafeClient(object):
             for object_type_item in kwargs['object_type']:
                 if object_type_item not in object_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `object_type`, must be one of {0}".format(object_type_allowed_values)
+                        f"Invalid value for `object_type`, must be one of { object_type_allowed_values }"
                     )
 
         query_params = {
@@ -18068,34 +18068,34 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_masking_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_masking_policies got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "NEEDS_ATTENTION", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -18248,27 +18248,27 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_masking_reports got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_masking_reports got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeMaskingFinished"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -18399,7 +18399,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_masking_schemas got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_masking_schemas got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -18409,20 +18409,20 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["schemaName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -18576,34 +18576,34 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_on_prem_connectors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_on_prem_connectors got unknown kwargs: {extra_kwargs!r}")
 
         if 'on_prem_connector_lifecycle_state' in kwargs:
             on_prem_connector_lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
             if kwargs['on_prem_connector_lifecycle_state'] not in on_prem_connector_lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `on_prem_connector_lifecycle_state`, must be one of {0}".format(on_prem_connector_lifecycle_state_allowed_values)
+                    f"Invalid value for `on_prem_connector_lifecycle_state`, must be one of { on_prem_connector_lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -18771,7 +18771,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_profile_analytics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_profile_analytics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -18781,27 +18781,27 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -19024,7 +19024,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_profile_summaries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_profile_summaries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -19034,27 +19034,27 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["profileName", "targetId", "isUserCreated", "passwordVerificationFunction", "userCount", "sessionsPerUser", "inactiveAccountTime", "failedLoginAttempts"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -19238,48 +19238,48 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_report_definitions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_report_definitions got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME", "DISPLAYORDER"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'data_source' in kwargs:
             data_source_allowed_values = ["EVENTS", "ALERTS"]
             if kwargs['data_source'] not in data_source_allowed_values:
                 raise ValueError(
-                    "Invalid value for `data_source`, must be one of {0}".format(data_source_allowed_values)
+                    f"Invalid value for `data_source`, must be one of { data_source_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'category' in kwargs:
             category_allowed_values = ["CUSTOM_REPORTS", "SUMMARY", "ACTIVITY_AUDITING"]
             if kwargs['category'] not in category_allowed_values:
                 raise ValueError(
-                    "Invalid value for `category`, must be one of {0}".format(category_allowed_values)
+                    f"Invalid value for `category`, must be one of { category_allowed_values }"
                 )
 
         query_params = {
@@ -19442,41 +19442,41 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_reports got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_reports got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeGenerated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["UPDATING", "ACTIVE"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'type' in kwargs:
             type_allowed_values = ["GENERATED", "SCHEDULED"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                    f"Invalid value for `type`, must be one of { type_allowed_values }"
                 )
 
         query_params = {
@@ -19620,7 +19620,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_roles got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_roles got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetDatabaseId": target_database_id
@@ -19630,20 +19630,20 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["ROLENAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -19782,7 +19782,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_schemas got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_schemas got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetDatabaseId": target_database_id
@@ -19792,20 +19792,20 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["SCHEMANAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -19964,34 +19964,34 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sdm_masking_policy_differences got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sdm_masking_policy_differences got unknown kwargs: {extra_kwargs!r}")
 
         if 'difference_access_level' in kwargs:
             difference_access_level_allowed_values = ["ACCESSIBLE"]
             if kwargs['difference_access_level'] not in difference_access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `difference_access_level`, must be one of {0}".format(difference_access_level_allowed_values)
+                    f"Invalid value for `difference_access_level`, must be one of { difference_access_level_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreationStarted", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -20204,48 +20204,48 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_security_assessments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_security_assessments got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'type' in kwargs:
             type_allowed_values = ["LATEST", "SAVED", "SAVE_SCHEDULE", "COMPARTMENT"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                    f"Invalid value for `type`, must be one of { type_allowed_values }"
                 )
 
         if 'triggered_by' in kwargs:
             triggered_by_allowed_values = ["USER", "SYSTEM"]
             if kwargs['triggered_by'] not in triggered_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `triggered_by`, must be one of {0}".format(triggered_by_allowed_values)
+                    f"Invalid value for `triggered_by`, must be one of { triggered_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "SUCCEEDED", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -20476,7 +20476,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sensitive_columns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sensitive_columns got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -20486,13 +20486,13 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sensitive_column_lifecycle_state' in kwargs:
             sensitive_column_lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "FAILED"]
             if kwargs['sensitive_column_lifecycle_state'] not in sensitive_column_lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sensitive_column_lifecycle_state`, must be one of {0}".format(sensitive_column_lifecycle_state_allowed_values)
+                    f"Invalid value for `sensitive_column_lifecycle_state`, must be one of { sensitive_column_lifecycle_state_allowed_values }"
                 )
 
         if 'object_type' in kwargs:
@@ -20500,7 +20500,7 @@ class DataSafeClient(object):
             for object_type_item in kwargs['object_type']:
                 if object_type_item not in object_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `object_type`, must be one of {0}".format(object_type_allowed_values)
+                        f"Invalid value for `object_type`, must be one of { object_type_allowed_values }"
                     )
 
         if 'status' in kwargs:
@@ -20508,7 +20508,7 @@ class DataSafeClient(object):
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         if 'relation_type' in kwargs:
@@ -20516,21 +20516,21 @@ class DataSafeClient(object):
             for relation_type_item in kwargs['relation_type']:
                 if relation_type_item not in relation_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `relation_type`, must be one of {0}".format(relation_type_allowed_values)
+                        f"Invalid value for `relation_type`, must be one of { relation_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "schemaName", "objectName", "columnName", "dataType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -20721,34 +20721,34 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sensitive_data_models got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sensitive_data_models got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -20893,7 +20893,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sensitive_objects got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sensitive_objects got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -20903,28 +20903,28 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'object_type' in kwargs:
             object_type_allowed_values = ["ALL", "TABLE", "EDITIONING_VIEW"]
             for object_type_item in kwargs['object_type']:
                 if object_type_item not in object_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `object_type`, must be one of {0}".format(object_type_allowed_values)
+                        f"Invalid value for `object_type`, must be one of { object_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["schemaName", "objectName", "objectType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -21055,7 +21055,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sensitive_schemas got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sensitive_schemas got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -21065,20 +21065,20 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["schemaName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -21270,48 +21270,48 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sensitive_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sensitive_types got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sensitive_type_source' in kwargs:
             sensitive_type_source_allowed_values = ["ORACLE", "USER"]
             if kwargs['sensitive_type_source'] not in sensitive_type_source_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sensitive_type_source`, must be one of {0}".format(sensitive_type_source_allowed_values)
+                    f"Invalid value for `sensitive_type_source`, must be one of { sensitive_type_source_allowed_values }"
                 )
 
         if 'entity_type' in kwargs:
             entity_type_allowed_values = ["SENSITIVE_TYPE", "SENSITIVE_CATEGORY"]
             if kwargs['entity_type'] not in entity_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `entity_type`, must be one of {0}".format(entity_type_allowed_values)
+                    f"Invalid value for `entity_type`, must be one of { entity_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -21460,7 +21460,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tables got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tables got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetDatabaseId": target_database_id
@@ -21470,20 +21470,20 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["SCHEMANAME", "TABLENAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -21661,34 +21661,34 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_target_alert_policy_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_target_alert_policy_associations got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["DISPLAYNAME", "TIMECREATED", "TIMEUPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -21864,48 +21864,48 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_target_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_target_databases got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "NEEDS_ATTENTION", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'database_type' in kwargs:
             database_type_allowed_values = ["DATABASE_CLOUD_SERVICE", "AUTONOMOUS_DATABASE", "INSTALLED_DATABASE"]
             if kwargs['database_type'] not in database_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `database_type`, must be one of {0}".format(database_type_allowed_values)
+                    f"Invalid value for `database_type`, must be one of { database_type_allowed_values }"
                 )
 
         if 'infrastructure_type' in kwargs:
             infrastructure_type_allowed_values = ["ORACLE_CLOUD", "CLOUD_AT_CUSTOMER", "ON_PREMISES", "NON_ORACLE_CLOUD"]
             if kwargs['infrastructure_type'] not in infrastructure_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `infrastructure_type`, must be one of {0}".format(infrastructure_type_allowed_values)
+                    f"Invalid value for `infrastructure_type`, must be one of { infrastructure_type_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -22132,7 +22132,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_user_analytics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_user_analytics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -22142,27 +22142,27 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["userName", "userCategory", "accountStatus", "timeLastLogin", "targetId", "timeUserCreated", "authenticationType", "timePasswordChanged"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -22384,48 +22384,48 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_user_assessments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_user_assessments got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'type' in kwargs:
             type_allowed_values = ["LATEST", "SAVED", "COMPARTMENT", "SAVE_SCHEDULE"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                    f"Invalid value for `type`, must be one of { type_allowed_values }"
                 )
 
         if 'triggered_by' in kwargs:
             triggered_by_allowed_values = ["USER", "SYSTEM"]
             if kwargs['triggered_by'] not in triggered_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `triggered_by`, must be one of {0}".format(triggered_by_allowed_values)
+                    f"Invalid value for `triggered_by`, must be one of { triggered_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "SUCCEEDED", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -22663,7 +22663,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_users got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_users got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -22673,27 +22673,27 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["userName", "userCategory", "accountStatus", "timeLastLogin", "targetId", "timeUserCreated", "authenticationType", "timePasswordChanged"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -22821,7 +22821,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -22831,7 +22831,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -22939,7 +22939,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -22949,7 +22949,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -23082,20 +23082,20 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["STARTTIME", "FINISHTIME", "ACCEPTEDTIME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -23199,7 +23199,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "mask_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"mask_data got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -23209,7 +23209,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23315,7 +23315,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "modify_global_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"modify_global_settings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "compartmentId": compartment_id
@@ -23325,7 +23325,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23438,13 +23438,13 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_alerts got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_alerts got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -23552,7 +23552,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_discovery_job_results got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_discovery_job_results got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "discoveryJobId": discovery_job_id
@@ -23562,7 +23562,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23664,7 +23664,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_masking_columns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_masking_columns got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -23674,7 +23674,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23775,7 +23775,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_sdm_masking_policy_difference_columns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_sdm_masking_policy_difference_columns got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id
@@ -23785,7 +23785,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23887,7 +23887,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_sensitive_columns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_sensitive_columns got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -23897,7 +23897,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23994,7 +23994,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_target_alert_policy_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_target_alert_policy_association got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -24099,7 +24099,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "provision_audit_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"provision_audit_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditPolicyId": audit_policy_id
@@ -24109,7 +24109,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24219,7 +24219,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "refresh_security_assessment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"refresh_security_assessment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityAssessmentId": security_assessment_id
@@ -24229,7 +24229,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24340,7 +24340,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "refresh_user_assessment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"refresh_user_assessment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -24350,7 +24350,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24456,7 +24456,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_schedule_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_schedule_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "reportDefinitionId": report_definition_id
@@ -24466,7 +24466,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24563,7 +24563,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "resume_audit_trail got unknown kwargs: {!r}".format(extra_kwargs))
+                f"resume_audit_trail got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditTrailId": audit_trail_id
@@ -24573,7 +24573,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24675,7 +24675,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "resume_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"resume_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -24685,7 +24685,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24789,7 +24789,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "retrieve_audit_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"retrieve_audit_policies got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditPolicyId": audit_policy_id
@@ -24799,7 +24799,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24906,7 +24906,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "schedule_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"schedule_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "reportDefinitionId": report_definition_id
@@ -24916,7 +24916,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25026,7 +25026,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "set_security_assessment_baseline got unknown kwargs: {!r}".format(extra_kwargs))
+                f"set_security_assessment_baseline got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityAssessmentId": security_assessment_id
@@ -25036,7 +25036,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25146,7 +25146,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "set_user_assessment_baseline got unknown kwargs: {!r}".format(extra_kwargs))
+                f"set_user_assessment_baseline got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -25156,7 +25156,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25265,7 +25265,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_audit_trail got unknown kwargs: {!r}".format(extra_kwargs))
+                f"start_audit_trail got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditTrailId": audit_trail_id
@@ -25275,7 +25275,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25374,7 +25374,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "stop_audit_trail got unknown kwargs: {!r}".format(extra_kwargs))
+                f"stop_audit_trail got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditTrailId": audit_trail_id
@@ -25384,7 +25384,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25486,7 +25486,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "suspend_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"suspend_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -25496,7 +25496,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25601,7 +25601,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "unset_security_assessment_baseline got unknown kwargs: {!r}".format(extra_kwargs))
+                f"unset_security_assessment_baseline got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityAssessmentId": security_assessment_id
@@ -25611,7 +25611,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25716,7 +25716,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "unset_user_assessment_baseline got unknown kwargs: {!r}".format(extra_kwargs))
+                f"unset_user_assessment_baseline got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -25726,7 +25726,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25826,7 +25826,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_alert got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_alert got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "alertId": alert_id
@@ -25836,7 +25836,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25938,7 +25938,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_audit_archive_retrieval got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_audit_archive_retrieval got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditArchiveRetrievalId": audit_archive_retrieval_id
@@ -25948,7 +25948,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26048,7 +26048,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_audit_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_audit_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditPolicyId": audit_policy_id
@@ -26058,7 +26058,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26158,7 +26158,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_audit_profile got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_audit_profile got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditProfileId": audit_profile_id
@@ -26168,7 +26168,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26268,7 +26268,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_audit_trail got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_audit_trail got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "auditTrailId": audit_trail_id
@@ -26278,7 +26278,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26378,7 +26378,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_data_safe_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_data_safe_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dataSafePrivateEndpointId": data_safe_private_endpoint_id
@@ -26388,7 +26388,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26488,7 +26488,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_library_masking_format got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_library_masking_format got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "libraryMaskingFormatId": library_masking_format_id
@@ -26498,7 +26498,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26602,7 +26602,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_masking_column got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_masking_column got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingColumnKey": masking_column_key,
@@ -26613,7 +26613,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26713,7 +26713,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_masking_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_masking_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -26723,7 +26723,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26823,7 +26823,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_on_prem_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_on_prem_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "onPremConnectorId": on_prem_connector_id
@@ -26833,7 +26833,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26940,7 +26940,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_on_prem_connector_wallet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_on_prem_connector_wallet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "onPremConnectorId": on_prem_connector_id
@@ -26950,7 +26950,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27059,7 +27059,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_report_definition got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_report_definition got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "reportDefinitionId": report_definition_id
@@ -27069,7 +27069,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27171,7 +27171,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_sdm_masking_policy_difference got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_sdm_masking_policy_difference got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sdmMaskingPolicyDifferenceId": sdm_masking_policy_difference_id
@@ -27181,7 +27181,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27281,7 +27281,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_security_assessment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_security_assessment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityAssessmentId": security_assessment_id
@@ -27291,7 +27291,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27394,7 +27394,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_sensitive_column got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_sensitive_column got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id,
@@ -27405,7 +27405,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27506,7 +27506,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_sensitive_data_model got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_sensitive_data_model got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -27516,7 +27516,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27616,7 +27616,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_sensitive_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_sensitive_type got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveTypeId": sensitive_type_id
@@ -27626,7 +27626,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27726,7 +27726,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_target_alert_policy_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_target_alert_policy_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetAlertPolicyAssociationId": target_alert_policy_association_id
@@ -27736,7 +27736,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27843,7 +27843,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_target_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_target_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetDatabaseId": target_database_id
@@ -27853,7 +27853,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27955,7 +27955,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_user_assessment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_user_assessment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAssessmentId": user_assessment_id
@@ -27965,7 +27965,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -28077,7 +28077,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upload_masking_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upload_masking_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maskingPolicyId": masking_policy_id
@@ -28087,7 +28087,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -28218,7 +28218,7 @@ class DataSafeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upload_sensitive_data_model got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upload_sensitive_data_model got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sensitiveDataModelId": sensitive_data_model_id
@@ -28228,7 +28228,7 @@ class DataSafeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

@@ -479,8 +479,7 @@ class LoadSqlTuningSetDetails(object):
         allowed_values = ["INCREMENTAL_CURSOR_CACHE", "CURRENT_CURSOR_CACHE", "AWR"]
         if not value_allowed_none_or_none_sentinel(load_type, allowed_values):
             raise ValueError(
-                "Invalid value for `load_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `load_type`, must be None or one of {allowed_values}"
             )
         self._load_type = load_type
 
@@ -539,8 +538,7 @@ class LoadSqlTuningSetDetails(object):
         allowed_values = ["HAS_RECURSIVE_SQL", "NO_RECURSIVE_SQL"]
         if not value_allowed_none_or_none_sentinel(recursive_sql, allowed_values):
             raise ValueError(
-                "Invalid value for `recursive_sql`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `recursive_sql`, must be None or one of {allowed_values}"
             )
         self._recursive_sql = recursive_sql
 
@@ -621,8 +619,7 @@ class LoadSqlTuningSetDetails(object):
         allowed_values = ["ELAPSED_TIME", "CPU_TIME", "OPTIMIZER_COST", "BUFFER_GETS", "DISK_READS", "DIRECT_WRITES"]
         if not value_allowed_none_or_none_sentinel(ranking_measure1, allowed_values):
             raise ValueError(
-                "Invalid value for `ranking_measure1`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ranking_measure1`, must be None or one of {allowed_values}"
             )
         self._ranking_measure1 = ranking_measure1
 
@@ -653,8 +650,7 @@ class LoadSqlTuningSetDetails(object):
         allowed_values = ["ELAPSED_TIME", "CPU_TIME", "OPTIMIZER_COST", "BUFFER_GETS", "DISK_READS", "DIRECT_WRITES"]
         if not value_allowed_none_or_none_sentinel(ranking_measure2, allowed_values):
             raise ValueError(
-                "Invalid value for `ranking_measure2`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ranking_measure2`, must be None or one of {allowed_values}"
             )
         self._ranking_measure2 = ranking_measure2
 
@@ -685,8 +681,7 @@ class LoadSqlTuningSetDetails(object):
         allowed_values = ["ELAPSED_TIME", "CPU_TIME", "OPTIMIZER_COST", "BUFFER_GETS", "DISK_READS", "DIRECT_WRITES"]
         if not value_allowed_none_or_none_sentinel(ranking_measure3, allowed_values):
             raise ValueError(
-                "Invalid value for `ranking_measure3`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ranking_measure3`, must be None or one of {allowed_values}"
             )
         self._ranking_measure3 = ranking_measure3
 
@@ -765,8 +760,7 @@ class LoadSqlTuningSetDetails(object):
         allowed_values = ["INSERT", "UPDATE", "MERGE"]
         if not value_allowed_none_or_none_sentinel(capture_option, allowed_values):
             raise ValueError(
-                "Invalid value for `capture_option`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `capture_option`, must be None or one of {allowed_values}"
             )
         self._capture_option = capture_option
 
@@ -809,8 +803,7 @@ class LoadSqlTuningSetDetails(object):
         allowed_values = ["MODE_REPLACE_OLD_STATS", "MODE_ACCUMULATE_STATS"]
         if not value_allowed_none_or_none_sentinel(capture_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `capture_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `capture_mode`, must be None or one of {allowed_values}"
             )
         self._capture_mode = capture_mode
 
@@ -909,8 +902,7 @@ class LoadSqlTuningSetDetails(object):
         allowed_values = ["INSERT", "UPDATE", "MERGE"]
         if not value_allowed_none_or_none_sentinel(load_option, allowed_values):
             raise ValueError(
-                "Invalid value for `load_option`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `load_option`, must be None or one of {allowed_values}"
             )
         self._load_option = load_option
 
@@ -971,8 +963,7 @@ class LoadSqlTuningSetDetails(object):
         allowed_values = ["REPLACE", "ACCUMULATE"]
         if not value_allowed_none_or_none_sentinel(update_option, allowed_values):
             raise ValueError(
-                "Invalid value for `update_option`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `update_option`, must be None or one of {allowed_values}"
             )
         self._update_option = update_option
 
@@ -1073,8 +1064,7 @@ class LoadSqlTuningSetDetails(object):
         allowed_values = ["OLD", "NEW"]
         if not value_allowed_none_or_none_sentinel(update_condition, allowed_values):
             raise ValueError(
-                "Invalid value for `update_condition`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `update_condition`, must be None or one of {allowed_values}"
             )
         self._update_condition = update_condition
 

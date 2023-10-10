@@ -176,7 +176,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "abort_multipart_upload got unknown kwargs: {!r}".format(extra_kwargs))
+                f"abort_multipart_upload got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -188,7 +188,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "uploadId": upload_id
@@ -281,7 +281,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -291,7 +291,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -402,7 +402,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "commit_multipart_upload got unknown kwargs: {!r}".format(extra_kwargs))
+                f"commit_multipart_upload got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -414,7 +414,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "uploadId": upload_id
@@ -578,7 +578,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "copy_object got unknown kwargs: {!r}".format(extra_kwargs))
+                f"copy_object got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -589,7 +589,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -688,7 +688,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_bucket got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_bucket got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -698,7 +698,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -841,7 +841,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_multipart_upload got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_multipart_upload got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -852,7 +852,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -955,7 +955,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_preauthenticated_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_preauthenticated_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -966,7 +966,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1063,7 +1063,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_replication_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_replication_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1074,7 +1074,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1172,7 +1172,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_retention_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_retention_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1183,7 +1183,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1286,7 +1286,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_bucket got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_bucket got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1297,7 +1297,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1402,7 +1402,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_object got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_object got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1414,7 +1414,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "versionId": kwargs.get("version_id", missing)
@@ -1518,7 +1518,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_object_lifecycle_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_object_lifecycle_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1529,7 +1529,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1624,7 +1624,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_preauthenticated_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_preauthenticated_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1636,7 +1636,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1729,7 +1729,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_replication_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_replication_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1741,7 +1741,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1840,7 +1840,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_retention_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_retention_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1852,7 +1852,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1964,7 +1964,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_bucket got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_bucket got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1975,14 +1975,14 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["approximateCount", "approximateSize", "autoTiering"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -2091,7 +2091,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_namespace got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing)
@@ -2192,7 +2192,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_namespace_metadata got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_namespace_metadata got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -2202,7 +2202,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2368,7 +2368,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_object got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_object got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -2380,7 +2380,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "versionId": kwargs.get("version_id", missing),
@@ -2491,7 +2491,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_object_lifecycle_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_object_lifecycle_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -2502,7 +2502,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2598,7 +2598,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_preauthenticated_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_preauthenticated_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -2610,7 +2610,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2705,7 +2705,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_replication_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_replication_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -2717,7 +2717,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2812,7 +2812,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_retention_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_retention_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -2824,7 +2824,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2912,7 +2912,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2922,7 +2922,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3026,7 +3026,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "head_bucket got unknown kwargs: {!r}".format(extra_kwargs))
+                f"head_bucket got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3037,7 +3037,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3172,7 +3172,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "head_object got unknown kwargs: {!r}".format(extra_kwargs))
+                f"head_object got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3184,7 +3184,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "versionId": kwargs.get("version_id", missing)
@@ -3317,7 +3317,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_buckets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_buckets got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -3327,14 +3327,14 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["tags"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -3459,7 +3459,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_multipart_upload_parts got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_multipart_upload_parts got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3471,7 +3471,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "uploadId": upload_id,
@@ -3587,7 +3587,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_multipart_uploads got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_multipart_uploads got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3598,7 +3598,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -3756,7 +3756,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_object_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_object_versions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3767,7 +3767,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "prefix": kwargs.get("prefix", missing),
@@ -3926,7 +3926,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_objects got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_objects got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3937,7 +3937,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "prefix": kwargs.get("prefix", missing),
@@ -4061,7 +4061,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_preauthenticated_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_preauthenticated_requests got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4072,7 +4072,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "objectNamePrefix": kwargs.get("object_name_prefix", missing),
@@ -4188,7 +4188,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_replication_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_replication_policies got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4199,7 +4199,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -4314,7 +4314,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_replication_sources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_replication_sources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4325,7 +4325,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -4429,7 +4429,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_retention_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_retention_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4440,7 +4440,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing)
@@ -4548,7 +4548,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -4558,7 +4558,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -4669,7 +4669,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -4679,7 +4679,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -4790,7 +4790,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -4892,7 +4892,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "make_bucket_writable got unknown kwargs: {!r}".format(extra_kwargs))
+                f"make_bucket_writable got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4903,7 +4903,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5127,7 +5127,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_object got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_object got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -5139,7 +5139,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5162,7 +5162,7 @@ class ObjectStorageClient(object):
 
         }
         for key, value in six.iteritems(kwargs.get("opc_meta", {})):
-            header_params["opc-meta-" + key] = value
+            header_params[f"opc-meta-{key}"] = value
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
         # Set default value for expect header if user has not overridden it
         lowercase_header_params_keys = [k.lower() for k in header_params]
@@ -5289,7 +5289,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_object_lifecycle_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_object_lifecycle_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -5300,7 +5300,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5410,7 +5410,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "reencrypt_bucket got unknown kwargs: {!r}".format(extra_kwargs))
+                f"reencrypt_bucket got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -5421,7 +5421,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5530,7 +5530,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "reencrypt_object got unknown kwargs: {!r}".format(extra_kwargs))
+                f"reencrypt_object got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -5542,7 +5542,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "versionId": kwargs.get("version_id", missing)
@@ -5649,7 +5649,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rename_object got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rename_object got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -5660,7 +5660,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5756,7 +5756,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restore_objects got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restore_objects got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -5767,7 +5767,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5874,7 +5874,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_bucket got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_bucket got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -5885,7 +5885,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5985,7 +5985,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_namespace_metadata got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_namespace_metadata got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -5995,7 +5995,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6092,7 +6092,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_object_storage_tier got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_object_storage_tier got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -6103,7 +6103,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6207,7 +6207,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_retention_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_retention_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -6219,7 +6219,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6395,7 +6395,7 @@ class ObjectStorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upload_part got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upload_part got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -6407,7 +6407,7 @@ class ObjectStorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "uploadId": upload_id,

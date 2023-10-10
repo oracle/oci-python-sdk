@@ -154,8 +154,7 @@ class CreateWebhookChannelDetails(CreateChannelDetails):
         allowed_values = ["1.0", "1.1"]
         if not value_allowed_none_or_none_sentinel(payload_version, allowed_values):
             raise ValueError(
-                "Invalid value for `payload_version`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `payload_version`, must be None or one of {allowed_values}"
             )
         self._payload_version = payload_version
 

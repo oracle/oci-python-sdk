@@ -345,8 +345,7 @@ class CreateVirtualCircuitDetails(object):
             for value in routing_policy:
                 if not value_allowed_none_or_none_sentinel(value, allowed_values):
                     raise ValueError(
-                        "Invalid value for `routing_policy`, must be None or one of {0}"
-                        .format(allowed_values)
+                        f"Invalid value for `routing_policy`, must be None or one of {allowed_values}"
                     )
         self._routing_policy = routing_policy
 
@@ -377,8 +376,7 @@ class CreateVirtualCircuitDetails(object):
         allowed_values = ["ENABLED", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(bgp_admin_state, allowed_values):
             raise ValueError(
-                "Invalid value for `bgp_admin_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `bgp_admin_state`, must be None or one of {allowed_values}"
             )
         self._bgp_admin_state = bgp_admin_state
 
@@ -799,8 +797,7 @@ class CreateVirtualCircuitDetails(object):
         allowed_values = ["PUBLIC", "PRIVATE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
-                "Invalid value for `type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `type`, must be None or one of {allowed_values}"
             )
         self._type = type
 
@@ -831,8 +828,7 @@ class CreateVirtualCircuitDetails(object):
         allowed_values = ["MTU_1500", "MTU_9000"]
         if not value_allowed_none_or_none_sentinel(ip_mtu, allowed_values):
             raise ValueError(
-                "Invalid value for `ip_mtu`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ip_mtu`, must be None or one of {allowed_values}"
             )
         self._ip_mtu = ip_mtu
 

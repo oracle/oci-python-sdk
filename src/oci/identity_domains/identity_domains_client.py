@@ -191,14 +191,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_api_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_api_key got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -327,14 +327,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_app got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_app got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -463,14 +463,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_app_role got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_app_role got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -599,14 +599,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_auth_token got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -725,7 +725,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_authentication_factors_remover got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_authentication_factors_remover got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -845,14 +845,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_customer_secret_key got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -981,14 +981,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_dynamic_resource_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_dynamic_resource_group got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -1117,14 +1117,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_grant got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_grant got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -1253,14 +1253,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_group got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -1389,14 +1389,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_identity_provider got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -1525,14 +1525,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_me got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_me got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -1651,7 +1651,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_my_api_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_my_api_key got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -1761,7 +1761,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_my_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_my_auth_token got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -1871,7 +1871,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_my_authentication_factor_initiator got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_my_authentication_factor_initiator got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -1981,7 +1981,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_my_authentication_factor_validator got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_my_authentication_factor_validator got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -2091,7 +2091,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_my_authentication_factors_remover got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_my_authentication_factors_remover got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -2201,7 +2201,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_my_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_my_customer_secret_key got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -2311,7 +2311,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_my_o_auth2_client_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_my_o_auth2_client_credential got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -2431,14 +2431,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_my_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_my_request got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -2557,7 +2557,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_my_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_my_smtp_credential got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -2667,7 +2667,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_my_support_account got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_my_support_account got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -2777,7 +2777,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_my_user_db_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_my_user_db_credential got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -2897,14 +2897,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_o_auth2_client_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_o_auth2_client_credential got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -3033,14 +3033,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_password_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_password_policy got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -3169,14 +3169,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_security_question got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_security_question got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -3305,14 +3305,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_smtp_credential got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -3441,14 +3441,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_user got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -3577,14 +3577,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_user_db_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_user_db_credential got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -3698,7 +3698,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_api_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_api_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "apiKeyId": api_key_id
@@ -3708,7 +3708,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -3819,7 +3819,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_app got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_app got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "appId": app_id
@@ -3829,7 +3829,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -3940,7 +3940,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_app_role got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_app_role got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "appRoleId": app_role_id
@@ -3950,7 +3950,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -4061,7 +4061,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_auth_token got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "authTokenId": auth_token_id
@@ -4071,7 +4071,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -4182,7 +4182,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_customer_secret_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "customerSecretKeyId": customer_secret_key_id
@@ -4192,7 +4192,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -4303,7 +4303,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_dynamic_resource_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_dynamic_resource_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dynamicResourceGroupId": dynamic_resource_group_id
@@ -4313,7 +4313,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -4424,7 +4424,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_grant got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_grant got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "grantId": grant_id
@@ -4434,7 +4434,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -4545,7 +4545,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "groupId": group_id
@@ -4555,7 +4555,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -4666,7 +4666,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_identity_provider got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id
@@ -4676,7 +4676,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -4787,7 +4787,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_my_api_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_my_api_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myApiKeyId": my_api_key_id
@@ -4797,7 +4797,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -4908,7 +4908,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_my_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_my_auth_token got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myAuthTokenId": my_auth_token_id
@@ -4918,7 +4918,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -5029,7 +5029,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_my_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_my_customer_secret_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myCustomerSecretKeyId": my_customer_secret_key_id
@@ -5039,7 +5039,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -5150,7 +5150,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_my_device got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_my_device got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myDeviceId": my_device_id
@@ -5160,7 +5160,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -5271,7 +5271,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_my_o_auth2_client_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_my_o_auth2_client_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myOAuth2ClientCredentialId": my_o_auth2_client_credential_id
@@ -5281,7 +5281,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -5392,7 +5392,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_my_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_my_smtp_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mySmtpCredentialId": my_smtp_credential_id
@@ -5402,7 +5402,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -5513,7 +5513,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_my_support_account got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_my_support_account got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mySupportAccountId": my_support_account_id
@@ -5523,7 +5523,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -5634,7 +5634,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_my_trusted_user_agent got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_my_trusted_user_agent got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myTrustedUserAgentId": my_trusted_user_agent_id
@@ -5644,7 +5644,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -5755,7 +5755,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_my_user_db_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_my_user_db_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myUserDbCredentialId": my_user_db_credential_id
@@ -5765,7 +5765,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -5876,7 +5876,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_o_auth2_client_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_o_auth2_client_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "oAuth2ClientCredentialId": o_auth2_client_credential_id
@@ -5886,7 +5886,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -5997,7 +5997,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_password_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_password_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "passwordPolicyId": password_policy_id
@@ -6007,7 +6007,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -6118,7 +6118,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_security_question got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_security_question got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityQuestionId": security_question_id
@@ -6128,7 +6128,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -6239,7 +6239,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_smtp_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "smtpCredentialId": smtp_credential_id
@@ -6249,7 +6249,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -6360,7 +6360,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -6370,7 +6370,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -6481,7 +6481,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_user_db_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_user_db_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userDbCredentialId": user_db_credential_id
@@ -6491,7 +6491,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "forceDelete": kwargs.get("force_delete", missing)
@@ -6604,7 +6604,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_account_mgmt_info got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_account_mgmt_info got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "accountMgmtInfoId": account_mgmt_info_id
@@ -6614,14 +6614,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -6737,7 +6737,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_account_recovery_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_account_recovery_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "accountRecoverySettingId": account_recovery_setting_id
@@ -6747,14 +6747,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -6870,7 +6870,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_api_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_api_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "apiKeyId": api_key_id
@@ -6880,14 +6880,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -7003,7 +7003,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_app got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_app got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "appId": app_id
@@ -7013,14 +7013,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -7136,7 +7136,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_app_role got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_app_role got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "appRoleId": app_role_id
@@ -7146,14 +7146,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -7269,7 +7269,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_auth_token got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "authTokenId": auth_token_id
@@ -7279,14 +7279,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -7402,7 +7402,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_authentication_factor_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_authentication_factor_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "authenticationFactorSettingId": authentication_factor_setting_id
@@ -7412,14 +7412,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -7535,7 +7535,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_customer_secret_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "customerSecretKeyId": customer_secret_key_id
@@ -7545,14 +7545,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -7668,7 +7668,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_dynamic_resource_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_dynamic_resource_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dynamicResourceGroupId": dynamic_resource_group_id
@@ -7678,14 +7678,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -7801,7 +7801,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_grant got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_grant got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "grantId": grant_id
@@ -7811,14 +7811,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -7934,7 +7934,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "groupId": group_id
@@ -7944,14 +7944,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -8067,7 +8067,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_identity_provider got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id
@@ -8077,14 +8077,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -8200,7 +8200,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_identity_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_identity_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identitySettingId": identity_setting_id
@@ -8210,14 +8210,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -8333,7 +8333,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_kmsi_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_kmsi_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "kmsiSettingId": kmsi_setting_id
@@ -8343,14 +8343,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -8463,14 +8463,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_me got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_me got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -8574,7 +8574,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_my_api_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_my_api_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myApiKeyId": my_api_key_id
@@ -8584,7 +8584,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -8681,7 +8681,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_my_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_my_auth_token got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myAuthTokenId": my_auth_token_id
@@ -8691,7 +8691,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -8788,7 +8788,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_my_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_my_customer_secret_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myCustomerSecretKeyId": my_customer_secret_key_id
@@ -8798,7 +8798,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -8905,7 +8905,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_my_device got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_my_device got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myDeviceId": my_device_id
@@ -8915,14 +8915,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -9028,7 +9028,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_my_o_auth2_client_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_my_o_auth2_client_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myOAuth2ClientCredentialId": my_o_auth2_client_credential_id
@@ -9038,7 +9038,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -9135,7 +9135,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_my_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_my_smtp_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mySmtpCredentialId": my_smtp_credential_id
@@ -9145,7 +9145,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -9242,7 +9242,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_my_support_account got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_my_support_account got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mySupportAccountId": my_support_account_id
@@ -9252,7 +9252,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -9359,7 +9359,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_my_trusted_user_agent got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_my_trusted_user_agent got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myTrustedUserAgentId": my_trusted_user_agent_id
@@ -9369,14 +9369,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -9482,7 +9482,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_my_user_db_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_my_user_db_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myUserDbCredentialId": my_user_db_credential_id
@@ -9492,7 +9492,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -9599,7 +9599,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_o_auth2_client_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_o_auth2_client_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "oAuth2ClientCredentialId": o_auth2_client_credential_id
@@ -9609,14 +9609,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -9732,7 +9732,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_password_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_password_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "passwordPolicyId": password_policy_id
@@ -9742,14 +9742,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -9865,7 +9865,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_security_question got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_security_question got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityQuestionId": security_question_id
@@ -9875,14 +9875,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -9998,7 +9998,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_security_question_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_security_question_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityQuestionSettingId": security_question_setting_id
@@ -10008,14 +10008,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -10131,7 +10131,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_smtp_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "smtpCredentialId": smtp_credential_id
@@ -10141,14 +10141,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -10264,7 +10264,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -10274,14 +10274,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -10397,7 +10397,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_user_attributes_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_user_attributes_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAttributesSettingId": user_attributes_setting_id
@@ -10407,14 +10407,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -10530,7 +10530,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_user_db_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_user_db_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userDbCredentialId": user_db_credential_id
@@ -10540,14 +10540,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -10692,13 +10692,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_account_mgmt_infos got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_account_mgmt_infos got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -10706,7 +10706,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -10832,14 +10832,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_account_recovery_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_account_recovery_settings got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -10984,13 +10984,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_api_keys got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_api_keys got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -10998,7 +10998,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -11148,13 +11148,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_app_roles got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_app_roles got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -11162,7 +11162,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -11312,13 +11312,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_apps got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_apps got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -11326,7 +11326,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -11476,13 +11476,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_auth_tokens got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_auth_tokens got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -11490,7 +11490,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -11616,14 +11616,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_authentication_factor_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_authentication_factor_settings got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -11768,13 +11768,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_customer_secret_keys got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_customer_secret_keys got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -11782,7 +11782,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -11932,13 +11932,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_dynamic_resource_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_dynamic_resource_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -11946,7 +11946,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -12096,13 +12096,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_grants got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_grants got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -12110,7 +12110,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -12260,13 +12260,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -12274,7 +12274,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -12424,13 +12424,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_identity_providers got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_identity_providers got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -12438,7 +12438,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -12564,14 +12564,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_identity_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_identity_settings got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -12692,14 +12692,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_kmsi_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_kmsi_settings got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -12834,13 +12834,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_api_keys got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_api_keys got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12978,13 +12978,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_apps got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_apps got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13122,13 +13122,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_auth_tokens got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_auth_tokens got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13266,13 +13266,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_customer_secret_keys got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_customer_secret_keys got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13420,13 +13420,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_devices got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_devices got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -13434,7 +13434,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -13584,13 +13584,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -13598,7 +13598,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -13738,13 +13738,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_o_auth2_client_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_o_auth2_client_credentials got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13882,13 +13882,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_requestable_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_requestable_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14036,13 +14036,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -14050,7 +14050,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -14190,13 +14190,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_smtp_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_smtp_credentials got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14334,13 +14334,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_support_accounts got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_support_accounts got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14488,13 +14488,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_trusted_user_agents got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_trusted_user_agents got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -14502,7 +14502,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -14642,13 +14642,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_my_user_db_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_my_user_db_credentials got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14796,13 +14796,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_o_auth2_client_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_o_auth2_client_credentials got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -14810,7 +14810,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -14960,13 +14960,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_password_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_password_policies got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -14974,7 +14974,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -15124,13 +15124,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_resource_type_schema_attributes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_resource_type_schema_attributes got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -15138,7 +15138,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -15264,14 +15264,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_security_question_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_security_question_settings got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -15416,13 +15416,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_security_questions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_security_questions got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -15430,7 +15430,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -15580,13 +15580,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_smtp_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_smtp_credentials got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -15594,7 +15594,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -15720,14 +15720,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_user_attributes_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_user_attributes_settings got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -15872,13 +15872,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_user_db_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_user_db_credentials got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -15886,7 +15886,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -16036,13 +16036,13 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_users got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_users got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASCENDING", "DESCENDING"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'attribute_sets' in kwargs:
@@ -16050,7 +16050,7 @@ class IdentityDomainsClient(object):
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -16191,7 +16191,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_account_recovery_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_account_recovery_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "accountRecoverySettingId": account_recovery_setting_id
@@ -16201,14 +16201,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -16347,7 +16347,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_api_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_api_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "apiKeyId": api_key_id
@@ -16357,14 +16357,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -16503,7 +16503,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_app got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_app got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "appId": app_id
@@ -16513,14 +16513,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -16659,7 +16659,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_app_role got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_app_role got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "appRoleId": app_role_id
@@ -16669,14 +16669,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -16815,7 +16815,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_auth_token got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "authTokenId": auth_token_id
@@ -16825,14 +16825,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -16971,7 +16971,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_customer_secret_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "customerSecretKeyId": customer_secret_key_id
@@ -16981,14 +16981,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -17127,7 +17127,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_dynamic_resource_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_dynamic_resource_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dynamicResourceGroupId": dynamic_resource_group_id
@@ -17137,14 +17137,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -17283,7 +17283,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_grant got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_grant got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "grantId": grant_id
@@ -17293,14 +17293,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -17439,7 +17439,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "groupId": group_id
@@ -17449,14 +17449,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -17595,7 +17595,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_identity_provider got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id
@@ -17605,14 +17605,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -17751,7 +17751,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_identity_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_identity_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identitySettingId": identity_setting_id
@@ -17761,14 +17761,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -17907,7 +17907,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_kmsi_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_kmsi_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "kmsiSettingId": kmsi_setting_id
@@ -17917,14 +17917,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -18060,14 +18060,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_me got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_me got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -18194,7 +18194,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_my_api_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_my_api_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myApiKeyId": my_api_key_id
@@ -18204,7 +18204,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -18324,7 +18324,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_my_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_my_auth_token got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myAuthTokenId": my_auth_token_id
@@ -18334,7 +18334,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -18454,7 +18454,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_my_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_my_customer_secret_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myCustomerSecretKeyId": my_customer_secret_key_id
@@ -18464,7 +18464,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -18594,7 +18594,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_my_device got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_my_device got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myDeviceId": my_device_id
@@ -18604,14 +18604,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -18740,7 +18740,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_my_o_auth2_client_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_my_o_auth2_client_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "myOAuth2ClientCredentialId": my_o_auth2_client_credential_id
@@ -18750,7 +18750,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -18870,7 +18870,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_my_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_my_smtp_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mySmtpCredentialId": my_smtp_credential_id
@@ -18880,7 +18880,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -19010,7 +19010,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_o_auth2_client_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_o_auth2_client_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "oAuth2ClientCredentialId": o_auth2_client_credential_id
@@ -19020,14 +19020,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -19166,7 +19166,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_password_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_password_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "passwordPolicyId": password_policy_id
@@ -19176,14 +19176,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -19322,7 +19322,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_security_question got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_security_question got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityQuestionId": security_question_id
@@ -19332,14 +19332,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -19478,7 +19478,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_security_question_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_security_question_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityQuestionSettingId": security_question_setting_id
@@ -19488,14 +19488,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -19634,7 +19634,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_smtp_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "smtpCredentialId": smtp_credential_id
@@ -19644,14 +19644,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -19790,7 +19790,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -19800,14 +19800,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -19946,7 +19946,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_user_attributes_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_user_attributes_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userAttributesSettingId": user_attributes_setting_id
@@ -19956,14 +19956,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -20102,7 +20102,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_account_recovery_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_account_recovery_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "accountRecoverySettingId": account_recovery_setting_id
@@ -20112,14 +20112,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -20258,7 +20258,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_app got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_app got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "appId": app_id
@@ -20268,14 +20268,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -20414,7 +20414,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_app_status_changer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_app_status_changer got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "appStatusChangerId": app_status_changer_id
@@ -20424,14 +20424,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -20570,7 +20570,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_authentication_factor_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_authentication_factor_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "authenticationFactorSettingId": authentication_factor_setting_id
@@ -20580,14 +20580,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -20726,7 +20726,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_dynamic_resource_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_dynamic_resource_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dynamicResourceGroupId": dynamic_resource_group_id
@@ -20736,14 +20736,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -20882,7 +20882,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "groupId": group_id
@@ -20892,14 +20892,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -21038,7 +21038,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_identity_provider got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id
@@ -21048,14 +21048,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -21194,7 +21194,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_identity_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_identity_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identitySettingId": identity_setting_id
@@ -21204,14 +21204,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -21350,7 +21350,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_kmsi_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_kmsi_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "kmsiSettingId": kmsi_setting_id
@@ -21360,14 +21360,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -21503,14 +21503,14 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_me got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_me got unknown kwargs: {extra_kwargs!r}")
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -21634,7 +21634,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_me_password_changer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_me_password_changer got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -21762,7 +21762,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_password_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_password_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "passwordPolicyId": password_policy_id
@@ -21772,14 +21772,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -21918,7 +21918,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_security_question_setting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_security_question_setting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityQuestionSettingId": security_question_setting_id
@@ -21928,14 +21928,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -22074,7 +22074,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -22084,14 +22084,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -22220,7 +22220,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_user_capabilities_changer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_user_capabilities_changer got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userCapabilitiesChangerId": user_capabilities_changer_id
@@ -22230,7 +22230,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -22350,7 +22350,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_user_password_changer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_user_password_changer got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userPasswordChangerId": user_password_changer_id
@@ -22360,7 +22360,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -22480,7 +22480,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_user_password_resetter got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_user_password_resetter got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userPasswordResetterId": user_password_resetter_id
@@ -22490,7 +22490,7 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, application/scim+json",
@@ -22620,7 +22620,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_user_status_changer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_user_status_changer got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userStatusChangerId": user_status_changer_id
@@ -22630,14 +22630,14 @@ class IdentityDomainsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attribute_sets' in kwargs:
             attribute_sets_allowed_values = ["all", "always", "never", "request", "default"]
             for attribute_sets_item in kwargs['attribute_sets']:
                 if attribute_sets_item not in attribute_sets_allowed_values:
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be one of {0}".format(attribute_sets_allowed_values)
+                        f"Invalid value for `attribute_sets`, must be one of { attribute_sets_allowed_values }"
                     )
 
         query_params = {
@@ -22755,7 +22755,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_account_mgmt_infos got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_account_mgmt_infos got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -22869,7 +22869,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_api_keys got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_api_keys got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -22983,7 +22983,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_app_roles got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_app_roles got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -23097,7 +23097,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_apps got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_apps got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -23211,7 +23211,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_auth_tokens got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_auth_tokens got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -23325,7 +23325,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_authentication_factor_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_authentication_factor_settings got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -23439,7 +23439,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_customer_secret_keys got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_customer_secret_keys got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -23553,7 +23553,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_dynamic_resource_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_dynamic_resource_groups got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -23667,7 +23667,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_grants got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_grants got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -23781,7 +23781,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_groups got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -23895,7 +23895,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_identity_providers got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_identity_providers got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -24009,7 +24009,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_identity_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_identity_settings got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -24123,7 +24123,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_kmsi_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_kmsi_settings got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -24237,7 +24237,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_my_apps got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_my_apps got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -24351,7 +24351,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_my_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_my_groups got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -24465,7 +24465,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_my_requestable_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_my_requestable_groups got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -24579,7 +24579,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_my_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_my_requests got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -24693,7 +24693,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_o_auth2_client_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_o_auth2_client_credentials got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -24807,7 +24807,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_password_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_password_policies got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -24921,7 +24921,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_resource_type_schema_attributes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_resource_type_schema_attributes got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -25035,7 +25035,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_security_question_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_security_question_settings got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -25149,7 +25149,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_security_questions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_security_questions got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -25263,7 +25263,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_smtp_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_smtp_credentials got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -25377,7 +25377,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_user_attributes_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_user_attributes_settings got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -25491,7 +25491,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_user_db_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_user_db_credentials got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -25605,7 +25605,7 @@ class IdentityDomainsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_users got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_users got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),

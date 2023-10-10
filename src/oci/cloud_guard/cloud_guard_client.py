@@ -182,7 +182,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityZoneId": security_zone_id
@@ -192,7 +192,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -291,7 +291,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -301,7 +301,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -405,7 +405,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_data_source_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_data_source_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dataSourceId": data_source_id
@@ -415,7 +415,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -523,7 +523,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_detector_recipe_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_detector_recipe_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorRecipeId": detector_recipe_id
@@ -533,7 +533,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -641,7 +641,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_managed_list_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_managed_list_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedListId": managed_list_id
@@ -651,7 +651,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -759,7 +759,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_responder_recipe_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_responder_recipe_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "responderRecipeId": responder_recipe_id
@@ -769,7 +769,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -877,7 +877,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_security_recipe_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_security_recipe_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityRecipeId": security_recipe_id
@@ -887,7 +887,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -995,7 +995,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_security_zone_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_security_zone_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityZoneId": security_zone_id
@@ -1005,7 +1005,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1102,7 +1102,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_data_mask_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_data_mask_rule got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1198,7 +1198,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_data_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_data_source got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1292,7 +1292,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_detector_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_detector_recipe got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1391,7 +1391,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_detector_recipe_detector_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_detector_recipe_detector_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorRecipeId": detector_recipe_id
@@ -1401,7 +1401,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1499,7 +1499,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_managed_list got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_managed_list got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1595,7 +1595,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_responder_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_responder_recipe got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1691,7 +1691,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_security_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_security_recipe got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1787,7 +1787,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_security_zone got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_security_zone got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1883,7 +1883,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_target got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_target got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1982,7 +1982,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_target_detector_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_target_detector_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id
@@ -1992,7 +1992,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2093,7 +2093,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_target_responder_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_target_responder_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id
@@ -2103,7 +2103,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2201,7 +2201,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_data_mask_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_data_mask_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dataMaskRuleId": data_mask_rule_id
@@ -2211,7 +2211,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2312,7 +2312,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_data_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_data_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dataSourceId": data_source_id
@@ -2322,7 +2322,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2425,7 +2425,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_detector_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_detector_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorRecipeId": detector_recipe_id
@@ -2435,7 +2435,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2533,7 +2533,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_detector_recipe_detector_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_detector_recipe_detector_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorRecipeId": detector_recipe_id,
@@ -2544,7 +2544,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2643,7 +2643,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_detector_recipe_detector_rule_data_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_detector_recipe_detector_rule_data_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorRecipeId": detector_recipe_id,
@@ -2655,7 +2655,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2756,7 +2756,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_managed_list got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_managed_list got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedListId": managed_list_id
@@ -2766,7 +2766,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2861,7 +2861,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_responder_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_responder_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "responderRecipeId": responder_recipe_id
@@ -2871,7 +2871,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2964,7 +2964,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_security_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_security_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityRecipeId": security_recipe_id
@@ -2974,7 +2974,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3067,7 +3067,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_security_zone got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_security_zone got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityZoneId": security_zone_id
@@ -3077,7 +3077,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3170,7 +3170,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_target got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_target got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id
@@ -3180,7 +3180,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3276,7 +3276,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_target_detector_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_target_detector_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id,
@@ -3287,7 +3287,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3383,7 +3383,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_target_responder_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_target_responder_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id,
@@ -3394,7 +3394,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3502,7 +3502,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "execute_responder_execution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"execute_responder_execution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "responderExecutionId": responder_execution_id
@@ -3512,7 +3512,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -3618,7 +3618,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_condition_metadata_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_condition_metadata_type got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "conditionMetadataTypeId": condition_metadata_type_id
@@ -3628,7 +3628,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "serviceType": kwargs.get("service_type", missing),
@@ -3722,7 +3722,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_configuration got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id
@@ -3813,7 +3813,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_data_mask_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_data_mask_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dataMaskRuleId": data_mask_rule_id
@@ -3823,7 +3823,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3909,7 +3909,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_data_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_data_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dataSourceId": data_source_id
@@ -3919,7 +3919,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4005,7 +4005,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_detector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_detector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorId": detector_id
@@ -4015,7 +4015,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4101,7 +4101,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_detector_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_detector_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorRecipeId": detector_recipe_id
@@ -4111,7 +4111,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4200,7 +4200,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_detector_recipe_detector_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_detector_recipe_detector_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorRecipeId": detector_recipe_id,
@@ -4211,7 +4211,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4300,7 +4300,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_detector_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_detector_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorId": detector_id,
@@ -4311,7 +4311,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4397,7 +4397,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_managed_list got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_managed_list got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedListId": managed_list_id
@@ -4407,7 +4407,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4493,7 +4493,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_problem got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_problem got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "problemId": problem_id
@@ -4503,7 +4503,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4589,7 +4589,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_resource_profile got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_resource_profile got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "resourceProfileId": resource_profile_id
@@ -4599,7 +4599,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4685,7 +4685,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_responder_execution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_responder_execution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "responderExecutionId": responder_execution_id
@@ -4695,7 +4695,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4781,7 +4781,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_responder_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_responder_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "responderRecipeId": responder_recipe_id
@@ -4791,7 +4791,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4880,7 +4880,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_responder_recipe_responder_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_responder_recipe_responder_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "responderRecipeId": responder_recipe_id,
@@ -4891,7 +4891,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4977,7 +4977,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_responder_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_responder_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "responderRuleId": responder_rule_id
@@ -4987,7 +4987,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5073,7 +5073,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_security_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_security_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityPolicyId": security_policy_id
@@ -5083,7 +5083,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5169,7 +5169,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_security_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_security_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityRecipeId": security_recipe_id
@@ -5179,7 +5179,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5265,7 +5265,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_security_zone got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_security_zone got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityZoneId": security_zone_id
@@ -5275,7 +5275,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5361,7 +5361,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_sighting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_sighting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sightingId": sighting_id
@@ -5371,7 +5371,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5457,7 +5457,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_target got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_target got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id
@@ -5467,7 +5467,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5556,7 +5556,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_target_detector_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_target_detector_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id,
@@ -5567,7 +5567,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5659,7 +5659,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_target_detector_recipe_detector_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_target_detector_recipe_detector_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id,
@@ -5671,7 +5671,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5760,7 +5760,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_target_responder_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_target_responder_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id,
@@ -5771,7 +5771,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5863,7 +5863,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_target_responder_recipe_responder_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_target_responder_recipe_responder_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id,
@@ -5875,7 +5875,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5961,7 +5961,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -5971,7 +5971,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6083,27 +6083,27 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_condition_metadata_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_condition_metadata_types got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -6258,41 +6258,41 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_data_mask_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_data_mask_rules got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'data_mask_rule_status' in kwargs:
             data_mask_rule_status_allowed_values = ["ENABLED", "DISABLED"]
             if kwargs['data_mask_rule_status'] not in data_mask_rule_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `data_mask_rule_status`, must be one of {0}".format(data_mask_rule_status_allowed_values)
+                    f"Invalid value for `data_mask_rule_status`, must be one of { data_mask_rule_status_allowed_values }"
                 )
 
         query_params = {
@@ -6419,7 +6419,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_data_source_events got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_data_source_events got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dataSourceId": data_source_id
@@ -6429,20 +6429,20 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -6613,48 +6613,48 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_data_sources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_data_sources got unknown kwargs: {extra_kwargs!r}")
 
         if 'data_source_feed_provider' in kwargs:
             data_source_feed_provider_allowed_values = ["LOGGINGQUERY"]
             if kwargs['data_source_feed_provider'] not in data_source_feed_provider_allowed_values:
                 raise ValueError(
-                    "Invalid value for `data_source_feed_provider`, must be one of {0}".format(data_source_feed_provider_allowed_values)
+                    f"Invalid value for `data_source_feed_provider`, must be one of { data_source_feed_provider_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'logging_query_type' in kwargs:
             logging_query_type_allowed_values = ["INSIGHT"]
             if kwargs['logging_query_type'] not in logging_query_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `logging_query_type`, must be one of {0}".format(logging_query_type_allowed_values)
+                    f"Invalid value for `logging_query_type`, must be one of { logging_query_type_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -6789,7 +6789,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_detector_recipe_detector_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_detector_recipe_detector_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorRecipeId": detector_recipe_id
@@ -6799,27 +6799,27 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "riskLevel"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -6986,34 +6986,34 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_detector_recipes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_detector_recipes got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -7147,7 +7147,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_detector_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_detector_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorId": detector_id
@@ -7157,27 +7157,27 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -7303,27 +7303,27 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_detectors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_detectors got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -7440,7 +7440,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_impacted_resources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_impacted_resources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "problemId": problem_id
@@ -7450,20 +7450,20 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -7586,27 +7586,27 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_list_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_list_types got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "riskLevel"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -7775,41 +7775,41 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_lists got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_lists got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'list_type' in kwargs:
             list_type_allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC"]
             if kwargs['list_type'] not in list_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `list_type`, must be one of {0}".format(list_type_allowed_values)
+                    f"Invalid value for `list_type`, must be one of { list_type_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -7931,20 +7931,20 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_policies got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -8060,7 +8060,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_problem_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_problem_endpoints got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "problemId": problem_id
@@ -8070,20 +8070,20 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -8200,7 +8200,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_problem_entities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_problem_entities got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "problemId": problem_id
@@ -8210,20 +8210,20 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -8343,7 +8343,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_problem_histories got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_problem_histories got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "problemId": problem_id
@@ -8353,20 +8353,20 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -8595,55 +8595,55 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_problems got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_problems got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_detail' in kwargs:
             lifecycle_detail_allowed_values = ["OPEN", "RESOLVED", "DISMISSED", "DELETED"]
             if kwargs['lifecycle_detail'] not in lifecycle_detail_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_detail`, must be one of {0}".format(lifecycle_detail_allowed_values)
+                    f"Invalid value for `lifecycle_detail`, must be one of { lifecycle_detail_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "INACTIVE"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'detector_type' in kwargs:
             detector_type_allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
             if kwargs['detector_type'] not in detector_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `detector_type`, must be one of {0}".format(detector_type_allowed_values)
+                    f"Invalid value for `detector_type`, must be one of { detector_type_allowed_values }"
                 )
 
         if 'problem_category' in kwargs:
             problem_category_allowed_values = ["SECURITY_ZONE"]
             if kwargs['problem_category'] not in problem_category_allowed_values:
                 raise ValueError(
-                    "Invalid value for `problem_category`, must be one of {0}".format(problem_category_allowed_values)
+                    f"Invalid value for `problem_category`, must be one of { problem_category_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["riskLevel", "timeLastDetected", "resourceName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -8812,41 +8812,41 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_recommendations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_recommendations got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["riskLevel", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'lifecycle_detail' in kwargs:
             lifecycle_detail_allowed_values = ["OPEN", "RESOLVED", "DISMISSED"]
             if kwargs['lifecycle_detail'] not in lifecycle_detail_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_detail`, must be one of {0}".format(lifecycle_detail_allowed_values)
+                    f"Invalid value for `lifecycle_detail`, must be one of { lifecycle_detail_allowed_values }"
                 )
 
         query_params = {
@@ -8967,7 +8967,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_resource_profile_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_resource_profile_endpoints got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "resourceProfileId": resource_profile_id
@@ -8977,20 +8977,20 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -9107,7 +9107,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_resource_profile_impacted_resources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_resource_profile_impacted_resources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "resourceProfileId": resource_profile_id
@@ -9117,20 +9117,20 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -9313,27 +9313,27 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_resource_profiles got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_resource_profiles got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["riskScore", "riskScoreGrowth", "timeFirstDetected", "timeLastDetected", "sightingsCount", "displayName", "type"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -9472,34 +9472,34 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_resource_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_resource_types got unknown kwargs: {extra_kwargs!r}")
 
         if 'detector_id' in kwargs:
             detector_id_allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
             if kwargs['detector_id'] not in detector_id_allowed_values:
                 raise ValueError(
-                    "Invalid value for `detector_id`, must be one of {0}".format(detector_id_allowed_values)
+                    f"Invalid value for `detector_id`, must be one of { detector_id_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "riskLevel"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -9617,7 +9617,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_responder_activities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_responder_activities got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "problemId": problem_id
@@ -9627,20 +9627,20 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "responderRuleName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -9820,48 +9820,48 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_responder_executions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_responder_executions got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'responder_type' in kwargs:
             responder_type_allowed_values = ["REMEDIATION", "NOTIFICATION"]
             if kwargs['responder_type'] not in responder_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `responder_type`, must be one of {0}".format(responder_type_allowed_values)
+                    f"Invalid value for `responder_type`, must be one of { responder_type_allowed_values }"
                 )
 
         if 'responder_execution_status' in kwargs:
             responder_execution_status_allowed_values = ["STARTED", "AWAITING_CONFIRMATION", "AWAITING_INPUT", "SUCCEEDED", "FAILED", "SKIPPED", "ALL"]
             if kwargs['responder_execution_status'] not in responder_execution_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `responder_execution_status`, must be one of {0}".format(responder_execution_status_allowed_values)
+                    f"Invalid value for `responder_execution_status`, must be one of { responder_execution_status_allowed_values }"
                 )
 
         if 'responder_execution_mode' in kwargs:
             responder_execution_mode_allowed_values = ["MANUAL", "AUTOMATED", "ALL"]
             if kwargs['responder_execution_mode'] not in responder_execution_mode_allowed_values:
                 raise ValueError(
-                    "Invalid value for `responder_execution_mode`, must be one of {0}".format(responder_execution_mode_allowed_values)
+                    f"Invalid value for `responder_execution_mode`, must be one of { responder_execution_mode_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "responderRuleName", "resourceName", "timeCompleted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10002,7 +10002,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_responder_recipe_responder_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_responder_recipe_responder_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "responderRecipeId": responder_recipe_id
@@ -10012,27 +10012,27 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "riskLevel"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10198,34 +10198,34 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_responder_recipes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_responder_recipes got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10356,27 +10356,27 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_responder_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_responder_rules got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10508,27 +10508,27 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_security_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_security_policies got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10661,27 +10661,27 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_security_recipes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_security_recipes got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10822,27 +10822,27 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_security_zones got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_security_zones got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10963,7 +10963,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sighting_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sighting_endpoints got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sightingId": sighting_id
@@ -10973,20 +10973,20 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11103,7 +11103,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sighting_impacted_resources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sighting_impacted_resources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sightingId": sighting_id
@@ -11113,20 +11113,20 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11288,27 +11288,27 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sightings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sightings got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11436,27 +11436,27 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tactics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tactics got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11589,7 +11589,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_target_detector_recipe_detector_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_target_detector_recipe_detector_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id,
@@ -11600,27 +11600,27 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "riskLevel"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11753,7 +11753,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_target_detector_recipes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_target_detector_recipes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id
@@ -11763,27 +11763,27 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11919,7 +11919,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_target_responder_recipe_responder_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_target_responder_recipe_responder_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id,
@@ -11930,27 +11930,27 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "riskLevel"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12083,7 +12083,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_target_responder_recipes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_target_responder_recipes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id
@@ -12093,27 +12093,27 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12279,34 +12279,34 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_targets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_targets got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12437,27 +12437,27 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_techniques got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_techniques got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12575,7 +12575,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -12585,20 +12585,20 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12715,7 +12715,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -12725,20 +12725,20 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12865,27 +12865,27 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13002,7 +13002,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityZoneId": security_zone_id
@@ -13012,7 +13012,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13111,7 +13111,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_risk_scores got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_risk_scores got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -13221,7 +13221,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_security_score_summarized_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_security_score_summarized_trend got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -13324,7 +13324,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_security_scores got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_security_scores got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -13462,13 +13462,13 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_summarized_activity_problems got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_summarized_activity_problems got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -13606,20 +13606,20 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_summarized_problems got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_summarized_problems got unknown kwargs: {extra_kwargs!r}")
 
         list_dimensions_allowed_values = ["RESOURCE_TYPE", "REGION", "COMPARTMENT_ID", "RISK_LEVEL"]
         for list_dimensions_item in list_dimensions:
             if list_dimensions_item not in list_dimensions_allowed_values:
                 raise ValueError(
-                    "Invalid value for `list_dimensions`, must be one of {0}".format(list_dimensions_allowed_values)
+                    f"Invalid value for `list_dimensions`, must be one of { list_dimensions_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -13771,13 +13771,13 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_summarized_responder_executions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_summarized_responder_executions got unknown kwargs: {extra_kwargs!r}")
 
         responder_executions_dimensions_allowed_values = ["RESPONDER_RULE_TYPE", "RESPONDER_EXECUTION_STATUS"]
         for responder_executions_dimensions_item in responder_executions_dimensions:
             if responder_executions_dimensions_item not in responder_executions_dimensions_allowed_values:
                 raise ValueError(
-                    "Invalid value for `responder_executions_dimensions`, must be one of {0}".format(responder_executions_dimensions_allowed_values)
+                    f"Invalid value for `responder_executions_dimensions`, must be one of { responder_executions_dimensions_allowed_values }"
                 )
 
         if 'responder_type_filter' in kwargs:
@@ -13785,7 +13785,7 @@ class CloudGuardClient(object):
             for responder_type_filter_item in kwargs['responder_type_filter']:
                 if responder_type_filter_item not in responder_type_filter_allowed_values:
                     raise ValueError(
-                        "Invalid value for `responder_type_filter`, must be one of {0}".format(responder_type_filter_allowed_values)
+                        f"Invalid value for `responder_type_filter`, must be one of { responder_type_filter_allowed_values }"
                     )
 
         if 'responder_execution_status_filter' in kwargs:
@@ -13793,14 +13793,14 @@ class CloudGuardClient(object):
             for responder_execution_status_filter_item in kwargs['responder_execution_status_filter']:
                 if responder_execution_status_filter_item not in responder_execution_status_filter_allowed_values:
                     raise ValueError(
-                        "Invalid value for `responder_execution_status_filter`, must be one of {0}".format(responder_execution_status_filter_allowed_values)
+                        f"Invalid value for `responder_execution_status_filter`, must be one of { responder_execution_status_filter_allowed_values }"
                     )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -13907,7 +13907,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_summarized_risk_scores got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_summarized_risk_scores got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -14008,7 +14008,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_summarized_security_scores got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_summarized_security_scores got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -14144,20 +14144,20 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_summarized_top_trend_resource_profile_risk_scores got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_summarized_top_trend_resource_profile_risk_scores got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["riskScore", "riskScoreGrowth", "timeFirstDetected", "timeLastDetected"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -14301,13 +14301,13 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_summarized_trend_problems got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_summarized_trend_problems got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -14441,13 +14441,13 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_summarized_trend_resource_risk_scores got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_summarized_trend_resource_risk_scores got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -14591,13 +14591,13 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_summarized_trend_responder_executions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_summarized_trend_responder_executions got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -14711,7 +14711,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_summarized_trend_security_scores got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_summarized_trend_security_scores got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -14807,7 +14807,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "skip_bulk_responder_execution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"skip_bulk_responder_execution got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -14910,7 +14910,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "skip_responder_execution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"skip_responder_execution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "responderExecutionId": responder_execution_id
@@ -14920,7 +14920,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -15033,7 +15033,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "trigger_responder got unknown kwargs: {!r}".format(extra_kwargs))
+                f"trigger_responder got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "problemId": problem_id
@@ -15043,7 +15043,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15133,7 +15133,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_bulk_problem_status got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_bulk_problem_status got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -15236,7 +15236,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_configuration got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id
@@ -15343,7 +15343,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_data_mask_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_data_mask_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dataMaskRuleId": data_mask_rule_id
@@ -15353,7 +15353,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15461,7 +15461,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_data_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_data_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dataSourceId": data_source_id
@@ -15471,7 +15471,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15579,7 +15579,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_detector_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_detector_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorRecipeId": detector_recipe_id
@@ -15589,7 +15589,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15694,7 +15694,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_detector_recipe_detector_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_detector_recipe_detector_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "detectorRecipeId": detector_recipe_id,
@@ -15705,7 +15705,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15813,7 +15813,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_managed_list got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_managed_list got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedListId": managed_list_id
@@ -15823,7 +15823,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15933,7 +15933,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_problem_status got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_problem_status got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "problemId": problem_id
@@ -15943,7 +15943,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16045,7 +16045,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_responder_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_responder_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "responderRecipeId": responder_recipe_id
@@ -16055,7 +16055,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16158,7 +16158,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_responder_recipe_responder_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_responder_recipe_responder_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "responderRecipeId": responder_recipe_id,
@@ -16169,7 +16169,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16269,7 +16269,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_security_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_security_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityRecipeId": security_recipe_id
@@ -16279,7 +16279,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16379,7 +16379,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_security_zone got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_security_zone got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityZoneId": security_zone_id
@@ -16389,7 +16389,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16489,7 +16489,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_target got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_target got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id
@@ -16499,7 +16499,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16602,7 +16602,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_target_detector_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_target_detector_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id,
@@ -16613,7 +16613,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16719,7 +16719,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_target_detector_recipe_detector_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_target_detector_recipe_detector_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id,
@@ -16731,7 +16731,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16834,7 +16834,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_target_responder_recipe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_target_responder_recipe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id,
@@ -16845,7 +16845,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16951,7 +16951,7 @@ class CloudGuardClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_target_responder_recipe_responder_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_target_responder_recipe_responder_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "targetId": target_id,
@@ -16963,7 +16963,7 @@ class CloudGuardClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

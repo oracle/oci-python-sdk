@@ -365,8 +365,7 @@ class CreateDocumentJobDetails(object):
         allowed_values = ["ENG", "CES", "DAN", "NLD", "FIN", "FRA", "DEU", "ELL", "HUN", "ITA", "NOR", "POL", "POR", "RON", "RUS", "SLK", "SPA", "SWE", "TUR", "ARA", "CHI_SIM", "HIN", "JPN", "KOR", "OTHERS"]
         if not value_allowed_none_or_none_sentinel(language, allowed_values):
             raise ValueError(
-                "Invalid value for `language`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `language`, must be None or one of {allowed_values}"
             )
         self._language = language
 
@@ -397,8 +396,7 @@ class CreateDocumentJobDetails(object):
         allowed_values = ["INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS"]
         if not value_allowed_none_or_none_sentinel(document_type, allowed_values):
             raise ValueError(
-                "Invalid value for `document_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `document_type`, must be None or one of {allowed_values}"
             )
         self._document_type = document_type
 

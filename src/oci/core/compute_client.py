@@ -184,7 +184,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "accept_shielded_integrity_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"accept_shielded_integrity_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceId": instance_id
@@ -194,7 +194,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -286,7 +286,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_image_shape_compatibility_entry got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_image_shape_compatibility_entry got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "imageId": image_id,
@@ -297,7 +297,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -387,7 +387,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "attach_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
+                f"attach_boot_volume got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -482,7 +482,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "attach_vnic got unknown kwargs: {!r}".format(extra_kwargs))
+                f"attach_vnic got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -573,7 +573,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "attach_volume got unknown kwargs: {!r}".format(extra_kwargs))
+                f"attach_volume got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -680,7 +680,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "capture_console_history got unknown kwargs: {!r}".format(extra_kwargs))
+                f"capture_console_history got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -789,7 +789,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_compute_capacity_reservation_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_compute_capacity_reservation_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "capacityReservationId": capacity_reservation_id
@@ -799,7 +799,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -918,7 +918,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_compute_cluster_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_compute_cluster_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "computeClusterId": compute_cluster_id
@@ -928,7 +928,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1039,7 +1039,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_compute_image_capability_schema_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_compute_image_capability_schema_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "computeImageCapabilitySchemaId": compute_image_capability_schema_id
@@ -1049,7 +1049,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1158,7 +1158,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_dedicated_vm_host_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_dedicated_vm_host_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dedicatedVmHostId": dedicated_vm_host_id
@@ -1168,7 +1168,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1281,7 +1281,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_image_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_image_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "imageId": image_id
@@ -1291,7 +1291,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1409,7 +1409,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_instance_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_instance_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceId": instance_id
@@ -1419,7 +1419,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1512,7 +1512,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_app_catalog_subscription got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_app_catalog_subscription got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1615,7 +1615,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_compute_capacity_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_compute_capacity_report got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1722,7 +1722,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_compute_capacity_reservation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_compute_capacity_reservation got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1846,7 +1846,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_compute_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_compute_cluster got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1938,7 +1938,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_compute_image_capability_schema got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_compute_image_capability_schema got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2041,7 +2041,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_dedicated_vm_host got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_dedicated_vm_host got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2160,7 +2160,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_image got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_image got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2259,7 +2259,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_instance_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_instance_console_connection got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2346,7 +2346,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_app_catalog_subscription got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_app_catalog_subscription got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "listingId": listing_id,
@@ -2442,7 +2442,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_compute_capacity_reservation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_compute_capacity_reservation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "capacityReservationId": capacity_reservation_id
@@ -2452,7 +2452,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2555,7 +2555,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_compute_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_compute_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "computeClusterId": compute_cluster_id
@@ -2565,7 +2565,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2652,7 +2652,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_compute_image_capability_schema got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_compute_image_capability_schema got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "computeImageCapabilitySchemaId": compute_image_capability_schema_id
@@ -2662,7 +2662,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2748,7 +2748,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_console_history got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_console_history got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceConsoleHistoryId": instance_console_history_id
@@ -2758,7 +2758,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2846,7 +2846,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_dedicated_vm_host got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_dedicated_vm_host got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dedicatedVmHostId": dedicated_vm_host_id
@@ -2856,7 +2856,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2944,7 +2944,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_image got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_image got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "imageId": image_id
@@ -2954,7 +2954,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3040,7 +3040,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_instance_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_instance_console_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceConsoleConnectionId": instance_console_connection_id
@@ -3050,7 +3050,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3139,7 +3139,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "detach_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
+                f"detach_boot_volume got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeAttachmentId": boot_volume_attachment_id
@@ -3149,7 +3149,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3246,7 +3246,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "detach_vnic got unknown kwargs: {!r}".format(extra_kwargs))
+                f"detach_vnic got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vnicAttachmentId": vnic_attachment_id
@@ -3256,7 +3256,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3345,7 +3345,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "detach_volume got unknown kwargs: {!r}".format(extra_kwargs))
+                f"detach_volume got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeAttachmentId": volume_attachment_id
@@ -3355,7 +3355,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3468,7 +3468,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "export_image got unknown kwargs: {!r}".format(extra_kwargs))
+                f"export_image got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "imageId": image_id
@@ -3478,7 +3478,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3562,7 +3562,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_app_catalog_listing got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_app_catalog_listing got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "listingId": listing_id
@@ -3572,7 +3572,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3653,7 +3653,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_app_catalog_listing_agreements got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_app_catalog_listing_agreements got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "listingId": listing_id,
@@ -3664,7 +3664,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3745,7 +3745,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_app_catalog_listing_resource_version got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_app_catalog_listing_resource_version got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "listingId": listing_id,
@@ -3756,7 +3756,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3834,7 +3834,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_boot_volume_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_boot_volume_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeAttachmentId": boot_volume_attachment_id
@@ -3844,7 +3844,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3929,7 +3929,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_compute_capacity_reservation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_compute_capacity_reservation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "capacityReservationId": capacity_reservation_id
@@ -3939,7 +3939,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4034,7 +4034,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_compute_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_compute_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "computeClusterId": compute_cluster_id
@@ -4044,7 +4044,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4124,7 +4124,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_compute_global_image_capability_schema got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_compute_global_image_capability_schema got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "computeGlobalImageCapabilitySchemaId": compute_global_image_capability_schema_id
@@ -4134,7 +4134,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4217,7 +4217,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_compute_global_image_capability_schema_version got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_compute_global_image_capability_schema_version got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "computeGlobalImageCapabilitySchemaId": compute_global_image_capability_schema_id,
@@ -4228,7 +4228,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4314,7 +4314,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_compute_image_capability_schema got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_compute_image_capability_schema got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "computeImageCapabilitySchemaId": compute_image_capability_schema_id
@@ -4324,7 +4324,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isMergeEnabled": kwargs.get("is_merge_enabled", missing)
@@ -4411,7 +4411,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_console_history got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_console_history got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceConsoleHistoryId": instance_console_history_id
@@ -4421,7 +4421,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4511,7 +4511,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_console_history_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_console_history_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceConsoleHistoryId": instance_console_history_id
@@ -4521,7 +4521,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "offset": kwargs.get("offset", missing),
@@ -4614,7 +4614,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_dedicated_vm_host got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_dedicated_vm_host got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dedicatedVmHostId": dedicated_vm_host_id
@@ -4624,7 +4624,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4704,7 +4704,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_image got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_image got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "imageId": image_id
@@ -4714,7 +4714,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4806,7 +4806,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_image_shape_compatibility_entry got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_image_shape_compatibility_entry got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "imageId": image_id,
@@ -4817,7 +4817,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4902,7 +4902,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceId": instance_id
@@ -4912,7 +4912,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4988,7 +4988,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_instance_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_instance_console_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceConsoleConnectionId": instance_console_connection_id
@@ -4998,7 +4998,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5088,7 +5088,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_instance_maintenance_reboot got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_instance_maintenance_reboot got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceId": instance_id
@@ -5098,7 +5098,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5187,7 +5187,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_measured_boot_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_measured_boot_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceId": instance_id
@@ -5197,7 +5197,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5275,7 +5275,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vnic_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vnic_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vnicAttachmentId": vnic_attachment_id
@@ -5285,7 +5285,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5361,7 +5361,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_volume_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_volume_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeAttachmentId": volume_attachment_id
@@ -5371,7 +5371,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5450,7 +5450,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_windows_instance_initial_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_windows_instance_initial_credentials got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceId": instance_id
@@ -5460,7 +5460,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5611,7 +5611,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "instance_action got unknown kwargs: {!r}".format(extra_kwargs))
+                f"instance_action got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceId": instance_id
@@ -5621,7 +5621,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "action": action
@@ -5769,7 +5769,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "launch_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"launch_instance got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5877,7 +5877,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_app_catalog_listing_resource_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_app_catalog_listing_resource_versions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "listingId": listing_id
@@ -5887,13 +5887,13 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -6019,13 +6019,13 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_app_catalog_listings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_app_catalog_listings got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -6162,20 +6162,20 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_app_catalog_subscriptions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_app_catalog_subscriptions got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -6302,7 +6302,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_boot_volume_attachments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_boot_volume_attachments got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "availabilityDomain": availability_domain,
@@ -6447,20 +6447,20 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_compute_capacity_reservation_instance_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_compute_capacity_reservation_instance_shapes got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -6609,7 +6609,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_compute_capacity_reservation_instances got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_compute_capacity_reservation_instances got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "capacityReservationId": capacity_reservation_id
@@ -6619,20 +6619,20 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -6791,27 +6791,27 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_compute_capacity_reservations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_compute_capacity_reservations got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "UPDATING", "MOVING", "DELETED", "DELETING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -6964,20 +6964,20 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_compute_clusters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_compute_clusters got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -7115,7 +7115,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_compute_global_image_capability_schema_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_compute_global_image_capability_schema_versions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "computeGlobalImageCapabilitySchemaId": compute_global_image_capability_schema_id
@@ -7125,20 +7125,20 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -7275,20 +7275,20 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_compute_global_image_capability_schemas got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_compute_global_image_capability_schemas got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -7430,20 +7430,20 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_compute_image_capability_schemas got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_compute_image_capability_schemas got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -7594,27 +7594,27 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_console_histories got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_console_histories got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["REQUESTED", "GETTING-HISTORY", "SUCCEEDED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -7743,7 +7743,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_dedicated_vm_host_instance_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_dedicated_vm_host_instance_shapes got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
@@ -7888,7 +7888,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_dedicated_vm_host_instances got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_dedicated_vm_host_instances got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dedicatedVmHostId": dedicated_vm_host_id
@@ -7898,20 +7898,20 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -8041,7 +8041,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_dedicated_vm_host_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_dedicated_vm_host_shapes got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
@@ -8208,27 +8208,27 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_dedicated_vm_hosts got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_dedicated_vm_hosts got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -8351,7 +8351,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_image_shape_compatibility_entries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_image_shape_compatibility_entries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "imageId": image_id
@@ -8361,7 +8361,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -8533,27 +8533,27 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_images got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_images got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "IMPORTING", "AVAILABLE", "EXPORTING", "DISABLED", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -8678,7 +8678,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_instance_console_connections got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_instance_console_connections got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -8819,7 +8819,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_instance_devices got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_instance_devices got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceId": instance_id
@@ -8829,20 +8829,20 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -9012,27 +9012,27 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_instances got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_instances got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["MOVING", "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -9160,7 +9160,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_shapes got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
@@ -9285,7 +9285,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_vnic_attachments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_vnic_attachments got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
@@ -9413,7 +9413,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_volume_attachments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_volume_attachments got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
@@ -9504,7 +9504,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_image_shape_compatibility_entry got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_image_shape_compatibility_entry got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "imageId": image_id,
@@ -9515,7 +9515,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9614,7 +9614,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "terminate_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"terminate_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceId": instance_id
@@ -9624,7 +9624,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "preserveBootVolume": kwargs.get("preserve_boot_volume", missing)
@@ -9727,7 +9727,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_compute_capacity_reservation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_compute_capacity_reservation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "capacityReservationId": capacity_reservation_id
@@ -9737,7 +9737,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9856,7 +9856,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_compute_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_compute_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "computeClusterId": compute_cluster_id
@@ -9866,7 +9866,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9962,7 +9962,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_compute_image_capability_schema got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_compute_image_capability_schema got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "computeImageCapabilitySchemaId": compute_image_capability_schema_id
@@ -9972,7 +9972,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10065,7 +10065,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_console_history got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_console_history got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceConsoleHistoryId": instance_console_history_id
@@ -10075,7 +10075,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10182,7 +10182,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_dedicated_vm_host got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_dedicated_vm_host got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dedicatedVmHostId": dedicated_vm_host_id
@@ -10192,7 +10192,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10298,7 +10298,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_image got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_image got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "imageId": image_id
@@ -10308,7 +10308,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10419,7 +10419,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceId": instance_id
@@ -10429,7 +10429,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10529,7 +10529,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_instance_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_instance_console_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceConsoleConnectionId": instance_console_connection_id
@@ -10539,7 +10539,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10638,7 +10638,7 @@ class ComputeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_volume_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_volume_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeAttachmentId": volume_attachment_id
@@ -10648,7 +10648,7 @@ class ComputeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

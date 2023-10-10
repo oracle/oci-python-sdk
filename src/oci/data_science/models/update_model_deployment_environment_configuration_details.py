@@ -92,8 +92,7 @@ class UpdateModelDeploymentEnvironmentConfigurationDetails(object):
         allowed_values = ["DEFAULT", "OCIR_CONTAINER"]
         if not value_allowed_none_or_none_sentinel(environment_configuration_type, allowed_values):
             raise ValueError(
-                "Invalid value for `environment_configuration_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `environment_configuration_type`, must be None or one of {allowed_values}"
             )
         self._environment_configuration_type = environment_configuration_type
 

@@ -328,8 +328,7 @@ class UpdateApplicationDetails(object):
         allowed_values = ["SCALA", "JAVA", "PYTHON", "SQL"]
         if not value_allowed_none_or_none_sentinel(language, allowed_values):
             raise ValueError(
-                "Invalid value for `language`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `language`, must be None or one of {allowed_values}"
             )
         self._language = language
 

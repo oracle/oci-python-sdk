@@ -116,8 +116,7 @@ class PostMetricDataDetails(object):
         allowed_values = ["ATOMIC", "NON_ATOMIC"]
         if not value_allowed_none_or_none_sentinel(batch_atomicity, allowed_values):
             raise ValueError(
-                "Invalid value for `batch_atomicity`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `batch_atomicity`, must be None or one of {allowed_values}"
             )
         self._batch_atomicity = batch_atomicity
 

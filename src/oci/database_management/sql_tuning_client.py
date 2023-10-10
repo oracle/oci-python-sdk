@@ -176,7 +176,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "clone_sql_tuning_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"clone_sql_tuning_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -186,7 +186,7 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -289,7 +289,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_sql_tuning_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_sql_tuning_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -299,7 +299,7 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -407,7 +407,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "drop_sql_tuning_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"drop_sql_tuning_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -418,7 +418,7 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -523,7 +523,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "drop_sql_tuning_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"drop_sql_tuning_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -533,7 +533,7 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -638,7 +638,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "drop_sqls_in_sql_tuning_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"drop_sqls_in_sql_tuning_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -649,7 +649,7 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -757,7 +757,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "fetch_sql_tuning_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"fetch_sql_tuning_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -768,7 +768,7 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -879,7 +879,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_execution_plan_stats_comparision got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_execution_plan_stats_comparision got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -890,7 +890,7 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "sqlObjectId": sql_object_id,
@@ -1001,7 +1001,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_sql_execution_plan got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_sql_execution_plan got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -1012,12 +1012,12 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         attribute_allowed_values = ["ORIGINAL", "ORIGINAL_WITH_ADJUSTED_COST", "USING_SQL_PROFILE", "USING_NEW_INDICES", "USING_PARALLEL_EXECUTION"]
         if attribute not in attribute_allowed_values:
             raise ValueError(
-                "Invalid value for `attribute`, must be one of {0}".format(attribute_allowed_values)
+                f"Invalid value for `attribute`, must be one of { attribute_allowed_values }"
             )
 
         query_params = {
@@ -1141,7 +1141,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_sql_tuning_advisor_task_summary_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_sql_tuning_advisor_task_summary_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -1152,13 +1152,13 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'search_period' in kwargs:
             search_period_allowed_values = ["LAST_24HR", "LAST_7DAY", "LAST_31DAY", "SINCE_LAST", "ALL"]
             if kwargs['search_period'] not in search_period_allowed_values:
                 raise ValueError(
-                    "Invalid value for `search_period`, must be one of {0}".format(search_period_allowed_values)
+                    f"Invalid value for `search_period`, must be one of { search_period_allowed_values }"
                 )
 
         query_params = {
@@ -1313,7 +1313,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sql_tuning_advisor_task_findings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sql_tuning_advisor_task_findings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -1324,34 +1324,34 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'search_period' in kwargs:
             search_period_allowed_values = ["LAST_24HR", "LAST_7DAY", "LAST_31DAY", "SINCE_LAST", "ALL"]
             if kwargs['search_period'] not in search_period_allowed_values:
                 raise ValueError(
-                    "Invalid value for `search_period`, must be one of {0}".format(search_period_allowed_values)
+                    f"Invalid value for `search_period`, must be one of { search_period_allowed_values }"
                 )
 
         if 'finding_filter' in kwargs:
             finding_filter_allowed_values = ["none", "FINDINGS", "NOFINDINGS", "ERRORS", "PROFILES", "INDICES", "STATS", "RESTRUCTURE", "ALTERNATIVE", "AUTO_PROFILES", "OTHER_PROFILES"]
             if kwargs['finding_filter'] not in finding_filter_allowed_values:
                 raise ValueError(
-                    "Invalid value for `finding_filter`, must be one of {0}".format(finding_filter_allowed_values)
+                    f"Invalid value for `finding_filter`, must be one of { finding_filter_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["DBTIME_BENEFIT", "PARSING_SCHEMA", "SQL_ID", "STATS", "PROFILES", "SQL_BENEFIT", "DATE", "INDICES", "RESTRUCTURE", "ALTERNATIVE", "MISC", "ERROR", "TIMEOUTS"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -1493,7 +1493,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sql_tuning_advisor_task_recommendations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sql_tuning_advisor_task_recommendations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -1504,20 +1504,20 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["RECOMMENDATION_TYPE", "BENEFIT"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -1657,7 +1657,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sql_tuning_advisor_tasks got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sql_tuning_advisor_tasks got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -1667,27 +1667,27 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'status' in kwargs:
             status_allowed_values = ["INITIAL", "EXECUTING", "INTERRUPTED", "COMPLETED", "ERROR"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME", "START_TIME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -1819,7 +1819,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sql_tuning_sets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sql_tuning_sets got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -1829,20 +1829,20 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -1957,7 +1957,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "load_sql_tuning_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"load_sql_tuning_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -1968,7 +1968,7 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2076,7 +2076,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "save_sql_tuning_set_as got unknown kwargs: {!r}".format(extra_kwargs))
+                f"save_sql_tuning_set_as got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -2087,7 +2087,7 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2192,7 +2192,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_sql_tuning_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"start_sql_tuning_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -2202,7 +2202,7 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2308,7 +2308,7 @@ class SqlTuningClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_basic_filter got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_basic_filter got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -2319,7 +2319,7 @@ class SqlTuningClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

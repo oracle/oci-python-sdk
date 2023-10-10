@@ -44,6 +44,10 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
             The value to assign to the time_stamp_for_point_in_time_recovery property of this CreateDatabaseFromAnotherDatabaseDetails.
         :type time_stamp_for_point_in_time_recovery: datetime
 
+        :param pluggable_databases:
+            The value to assign to the pluggable_databases property of this CreateDatabaseFromAnotherDatabaseDetails.
+        :type pluggable_databases: list[str]
+
         """
         self.swagger_types = {
             'database_id': 'str',
@@ -51,7 +55,8 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
             'admin_password': 'str',
             'db_unique_name': 'str',
             'db_name': 'str',
-            'time_stamp_for_point_in_time_recovery': 'datetime'
+            'time_stamp_for_point_in_time_recovery': 'datetime',
+            'pluggable_databases': 'list[str]'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
             'admin_password': 'adminPassword',
             'db_unique_name': 'dbUniqueName',
             'db_name': 'dbName',
-            'time_stamp_for_point_in_time_recovery': 'timeStampForPointInTimeRecovery'
+            'time_stamp_for_point_in_time_recovery': 'timeStampForPointInTimeRecovery',
+            'pluggable_databases': 'pluggableDatabases'
         }
 
         self._database_id = None
@@ -69,6 +75,7 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
         self._db_unique_name = None
         self._db_name = None
         self._time_stamp_for_point_in_time_recovery = None
+        self._pluggable_databases = None
 
     @property
     def database_id(self):
@@ -217,6 +224,30 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
         :type: datetime
         """
         self._time_stamp_for_point_in_time_recovery = time_stamp_for_point_in_time_recovery
+
+    @property
+    def pluggable_databases(self):
+        """
+        Gets the pluggable_databases of this CreateDatabaseFromAnotherDatabaseDetails.
+        The list of pluggable databases that needs to be restored into new database.
+
+
+        :return: The pluggable_databases of this CreateDatabaseFromAnotherDatabaseDetails.
+        :rtype: list[str]
+        """
+        return self._pluggable_databases
+
+    @pluggable_databases.setter
+    def pluggable_databases(self, pluggable_databases):
+        """
+        Sets the pluggable_databases of this CreateDatabaseFromAnotherDatabaseDetails.
+        The list of pluggable databases that needs to be restored into new database.
+
+
+        :param pluggable_databases: The pluggable_databases of this CreateDatabaseFromAnotherDatabaseDetails.
+        :type: list[str]
+        """
+        self._pluggable_databases = pluggable_databases
 
     def __repr__(self):
         return formatted_flat_dict(self)

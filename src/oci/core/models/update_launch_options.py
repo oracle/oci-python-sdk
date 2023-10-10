@@ -118,8 +118,7 @@ class UpdateLaunchOptions(object):
         allowed_values = ["ISCSI", "PARAVIRTUALIZED"]
         if not value_allowed_none_or_none_sentinel(boot_volume_type, allowed_values):
             raise ValueError(
-                "Invalid value for `boot_volume_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `boot_volume_type`, must be None or one of {allowed_values}"
             )
         self._boot_volume_type = boot_volume_type
 
@@ -184,8 +183,7 @@ class UpdateLaunchOptions(object):
         allowed_values = ["VFIO", "PARAVIRTUALIZED"]
         if not value_allowed_none_or_none_sentinel(network_type, allowed_values):
             raise ValueError(
-                "Invalid value for `network_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `network_type`, must be None or one of {allowed_values}"
             )
         self._network_type = network_type
 

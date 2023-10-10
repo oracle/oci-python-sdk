@@ -383,8 +383,7 @@ class EntityDiscovered(object):
         allowed_values = ["PREV_DISCOVERED", "NEW_DISCOVERED", "NOT_FOUND", "DISCOVERING"]
         if not value_allowed_none_or_none_sentinel(discover_status, allowed_values):
             raise ValueError(
-                "Invalid value for `discover_status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `discover_status`, must be None or one of {allowed_values}"
             )
         self._discover_status = discover_status
 
@@ -463,8 +462,7 @@ class EntityDiscovered(object):
         allowed_values = ["STORAGE_SERVER_DISCOVER_SUMMARY", "STORAGE_GRID_DISCOVER_SUMMARY", "DATABASE_SYSTEM_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER_SUMMARY", "INFRASTRUCTURE_DISCOVER"]
         if not value_allowed_none_or_none_sentinel(entity_type, allowed_values):
             raise ValueError(
-                "Invalid value for `entity_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `entity_type`, must be None or one of {allowed_values}"
             )
         self._entity_type = entity_type
 

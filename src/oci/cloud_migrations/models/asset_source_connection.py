@@ -120,8 +120,7 @@ class AssetSourceConnection(object):
         allowed_values = ["DISCOVERY", "REPLICATION"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
-                "Invalid value for `connection_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `connection_type`, must be None or one of {allowed_values}"
             )
         self._connection_type = connection_type
 
@@ -204,8 +203,7 @@ class AssetSourceConnection(object):
         allowed_values = ["ACTIVE", "UPDATING", "NEEDS_ATTENTION", "DELETED", "CREATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 

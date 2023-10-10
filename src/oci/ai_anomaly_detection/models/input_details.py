@@ -102,8 +102,7 @@ class InputDetails(object):
         allowed_values = ["INLINE", "BASE64_ENCODED", "OBJECT_LIST"]
         if not value_allowed_none_or_none_sentinel(input_type, allowed_values):
             raise ValueError(
-                "Invalid value for `input_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `input_type`, must be None or one of {allowed_values}"
             )
         self._input_type = input_type
 

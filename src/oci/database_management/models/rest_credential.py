@@ -147,8 +147,7 @@ class RestCredential(object):
         allowed_values = ["JKS", "BCFKS"]
         if not value_allowed_none_or_none_sentinel(ssl_trust_store_type, allowed_values):
             raise ValueError(
-                "Invalid value for `ssl_trust_store_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ssl_trust_store_type`, must be None or one of {allowed_values}"
             )
         self._ssl_trust_store_type = ssl_trust_store_type
 

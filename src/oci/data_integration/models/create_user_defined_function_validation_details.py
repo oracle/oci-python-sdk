@@ -175,8 +175,7 @@ class CreateUserDefinedFunctionValidationDetails(object):
         allowed_values = ["DIS_USER_DEFINED_FUNCTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
-                "Invalid value for `model_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `model_type`, must be None or one of {allowed_values}"
             )
         self._model_type = model_type
 

@@ -150,8 +150,7 @@ class CreateZoneDetails(CreateZoneBaseDetails):
         allowed_values = ["PRIMARY", "SECONDARY"]
         if not value_allowed_none_or_none_sentinel(zone_type, allowed_values):
             raise ValueError(
-                "Invalid value for `zone_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `zone_type`, must be None or one of {allowed_values}"
             )
         self._zone_type = zone_type
 
@@ -206,8 +205,7 @@ class CreateZoneDetails(CreateZoneBaseDetails):
         allowed_values = ["GLOBAL", "PRIVATE"]
         if not value_allowed_none_or_none_sentinel(scope, allowed_values):
             raise ValueError(
-                "Invalid value for `scope`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `scope`, must be None or one of {allowed_values}"
             )
         self._scope = scope
 

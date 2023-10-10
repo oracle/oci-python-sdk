@@ -187,7 +187,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "backup_vault got unknown kwargs: {!r}".format(extra_kwargs))
+                f"backup_vault got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vaultId": vault_id
@@ -197,7 +197,7 @@ class KmsVaultClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -315,7 +315,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_vault_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_vault_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vaultId": vault_id
@@ -325,7 +325,7 @@ class KmsVaultClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -446,7 +446,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_vault_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_vault_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vaultId": vault_id
@@ -456,7 +456,7 @@ class KmsVaultClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -564,7 +564,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_vault got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_vault got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -683,7 +683,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_vault_replica got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_vault_replica got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vaultId": vault_id
@@ -693,7 +693,7 @@ class KmsVaultClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -809,7 +809,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_vault_replica got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_vault_replica got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vaultId": vault_id
@@ -819,7 +819,7 @@ class KmsVaultClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -915,7 +915,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vault got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vault got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vaultId": vault_id
@@ -925,7 +925,7 @@ class KmsVaultClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1013,7 +1013,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vault_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vault_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vaultId": vault_id
@@ -1023,7 +1023,7 @@ class KmsVaultClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1156,7 +1156,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_vault_replicas got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_vault_replicas got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vaultId": vault_id
@@ -1166,20 +1166,20 @@ class KmsVaultClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -1309,20 +1309,20 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_vaults got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_vaults got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -1464,7 +1464,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restore_vault_from_file got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restore_vault_from_file got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id
@@ -1607,7 +1607,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restore_vault_from_object_store got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restore_vault_from_object_store got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id
@@ -1734,7 +1734,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "schedule_vault_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"schedule_vault_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vaultId": vault_id
@@ -1744,7 +1744,7 @@ class KmsVaultClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1855,7 +1855,7 @@ class KmsVaultClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_vault got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_vault got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vaultId": vault_id
@@ -1865,7 +1865,7 @@ class KmsVaultClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

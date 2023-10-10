@@ -426,8 +426,7 @@ class TaskRunLineageDetails(object):
         allowed_values = ["SUCCESS", "ERROR", "TERMINATED"]
         if not value_allowed_none_or_none_sentinel(task_execution_status, allowed_values):
             raise ValueError(
-                "Invalid value for `task_execution_status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `task_execution_status`, must be None or one of {allowed_values}"
             )
         self._task_execution_status = task_execution_status
 

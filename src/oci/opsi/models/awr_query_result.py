@@ -273,8 +273,7 @@ class AwrQueryResult(object):
         allowed_values = ["AWRDB_SET", "AWRDB_SNAPSHOT_RANGE_SET", "AWRDB_SNAPSHOT_SET", "AWRDB_METRICS_SET", "AWRDB_SYSSTAT_SET", "AWRDB_TOP_EVENT_SET", "AWRDB_EVENT_SET", "AWRDB_EVENT_HISTOGRAM", "AWRDB_DB_PARAMETER_SET", "AWRDB_DB_PARAMETER_CHANGE", "AWRDB_ASH_CPU_USAGE_SET", "AWRDB_DB_REPORT", "AWRDB_SQL_REPORT"]
         if not value_allowed_none_or_none_sentinel(awr_result_type, allowed_values):
             raise ValueError(
-                "Invalid value for `awr_result_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `awr_result_type`, must be None or one of {allowed_values}"
             )
         self._awr_result_type = awr_result_type
 

@@ -121,8 +121,7 @@ class DomainReplicationStates(object):
         allowed_values = ["ENABLING_REPLICATION", "REPLICATION_ENABLED", "DISABLING_REPLICATION", "REPLICATION_DISABLED", "DELETED"]
         if not value_allowed_none_or_none_sentinel(state, allowed_values):
             raise ValueError(
-                "Invalid value for `state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `state`, must be None or one of {allowed_values}"
             )
         self._state = state
 

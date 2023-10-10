@@ -209,8 +209,7 @@ class CreateTranscriptionJobDetails(object):
             for value in additional_transcription_formats:
                 if not value_allowed_none_or_none_sentinel(value, allowed_values):
                     raise ValueError(
-                        "Invalid value for `additional_transcription_formats`, must be None or one of {0}"
-                        .format(allowed_values)
+                        f"Invalid value for `additional_transcription_formats`, must be None or one of {allowed_values}"
                     )
         self._additional_transcription_formats = additional_transcription_formats
 

@@ -232,8 +232,7 @@ class ManagementAgentImage(object):
         allowed_values = ["LINUX", "WINDOWS", "SOLARIS", "MACOSX"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             raise ValueError(
-                "Invalid value for `platform_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `platform_type`, must be None or one of {allowed_values}"
             )
         self._platform_type = platform_type
 
@@ -288,8 +287,7 @@ class ManagementAgentImage(object):
         allowed_values = ["RPM", "ZIP"]
         if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
             raise ValueError(
-                "Invalid value for `package_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `package_type`, must be None or one of {allowed_values}"
             )
         self._package_type = package_type
 
@@ -320,8 +318,7 @@ class ManagementAgentImage(object):
         allowed_values = ["X86_64", "SPARC", "X86", "M1"]
         if not value_allowed_none_or_none_sentinel(package_architecture_type, allowed_values):
             raise ValueError(
-                "Invalid value for `package_architecture_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `package_architecture_type`, must be None or one of {allowed_values}"
             )
         self._package_architecture_type = package_architecture_type
 
@@ -468,8 +465,7 @@ class ManagementAgentImage(object):
         allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "TERMINATED", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 

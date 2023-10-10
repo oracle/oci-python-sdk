@@ -173,7 +173,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "accept_recommendations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"accept_recommendations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -183,7 +183,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -281,7 +281,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -291,7 +291,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -395,7 +395,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_address_list_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_address_list_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "addressListId": address_list_id
@@ -405,7 +405,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -510,7 +510,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_certificate_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_certificate_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id
@@ -520,7 +520,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -624,7 +624,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_custom_protection_rule_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_custom_protection_rule_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "customProtectionRuleId": custom_protection_rule_id
@@ -634,7 +634,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -739,7 +739,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_waas_policy_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_waas_policy_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -749,7 +749,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -843,7 +843,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_address_list got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_address_list got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -940,7 +940,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_certificate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_certificate got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1038,7 +1038,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_custom_protection_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_custom_protection_rule got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1146,7 +1146,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_waas_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_waas_policy got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1243,7 +1243,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_address_list got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_address_list got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "addressListId": address_list_id
@@ -1253,7 +1253,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1351,7 +1351,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_certificate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_certificate got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id
@@ -1361,7 +1361,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1459,7 +1459,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_custom_protection_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_custom_protection_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "customProtectionRuleId": custom_protection_rule_id
@@ -1469,7 +1469,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1567,7 +1567,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_waas_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_waas_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -1577,7 +1577,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1666,7 +1666,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_address_list got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_address_list got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "addressListId": address_list_id
@@ -1676,7 +1676,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1766,7 +1766,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_certificate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_certificate got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id
@@ -1776,7 +1776,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1866,7 +1866,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_custom_protection_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_custom_protection_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "customProtectionRuleId": custom_protection_rule_id
@@ -1876,7 +1876,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1966,7 +1966,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_device_fingerprint_challenge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_device_fingerprint_challenge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -1976,7 +1976,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2066,7 +2066,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_human_interaction_challenge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_human_interaction_challenge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -2076,7 +2076,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2166,7 +2166,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_js_challenge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_js_challenge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -2176,7 +2176,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2266,7 +2266,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_policy_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_policy_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -2276,7 +2276,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2369,7 +2369,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_protection_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_protection_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id,
@@ -2380,7 +2380,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2470,7 +2470,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_protection_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_protection_settings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -2480,7 +2480,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2570,7 +2570,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_waas_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_waas_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -2580,7 +2580,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2670,7 +2670,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_waf_address_rate_limiting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_waf_address_rate_limiting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -2680,7 +2680,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2770,7 +2770,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_waf_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_waf_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -2780,7 +2780,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2870,7 +2870,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2880,7 +2880,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2979,7 +2979,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_access_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_access_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -2989,7 +2989,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -3129,20 +3129,20 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_address_lists got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_address_lists got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["id", "name", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
@@ -3150,7 +3150,7 @@ class WaasClient(object):
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         query_params = {
@@ -3264,7 +3264,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_caching_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_caching_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -3274,7 +3274,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -3384,7 +3384,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_captchas got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_captchas got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -3394,7 +3394,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -3534,20 +3534,20 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_certificates got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_certificates got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["id", "compartmentId", "displayName", "notValidAfter", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
@@ -3555,7 +3555,7 @@ class WaasClient(object):
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         query_params = {
@@ -3702,20 +3702,20 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_custom_protection_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_custom_protection_rules got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["id", "compartmentId", "displayName", "modSecurityRuleId", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
@@ -3723,7 +3723,7 @@ class WaasClient(object):
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         query_params = {
@@ -3843,20 +3843,20 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_edge_subnets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_edge_subnets got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["cidr", "region", "timeModified"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -3965,7 +3965,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_good_bots got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_good_bots got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -3975,7 +3975,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -4092,7 +4092,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_protection_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_protection_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -4102,14 +4102,14 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'action' in kwargs:
             action_allowed_values = ["OFF", "DETECT", "BLOCK"]
             for action_item in kwargs['action']:
                 if action_item not in action_allowed_values:
                     raise ValueError(
-                        "Invalid value for `action`, must be one of {0}".format(action_allowed_values)
+                        f"Invalid value for `action`, must be one of { action_allowed_values }"
                     )
 
         query_params = {
@@ -4229,7 +4229,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_recommendations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_recommendations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -4239,13 +4239,13 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'recommended_action' in kwargs:
             recommended_action_allowed_values = ["DETECT", "BLOCK"]
             if kwargs['recommended_action'] not in recommended_action_allowed_values:
                 raise ValueError(
-                    "Invalid value for `recommended_action`, must be one of {0}".format(recommended_action_allowed_values)
+                    f"Invalid value for `recommended_action`, must be one of { recommended_action_allowed_values }"
                 )
 
         query_params = {
@@ -4355,7 +4355,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_threat_feeds got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_threat_feeds got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -4365,7 +4365,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -4505,20 +4505,20 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_waas_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_waas_policies got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["id", "displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
@@ -4526,7 +4526,7 @@ class WaasClient(object):
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         query_params = {
@@ -4649,7 +4649,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_waas_policy_custom_protection_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_waas_policy_custom_protection_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -4659,14 +4659,14 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'action' in kwargs:
             action_allowed_values = ["DETECT", "BLOCK"]
             for action_item in kwargs['action']:
                 if action_item not in action_allowed_values:
                     raise ValueError(
-                        "Invalid value for `action`, must be one of {0}".format(action_allowed_values)
+                        f"Invalid value for `action`, must be one of { action_allowed_values }"
                     )
 
         query_params = {
@@ -4789,7 +4789,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_waf_blocked_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_waf_blocked_requests got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -4799,14 +4799,14 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'waf_feature' in kwargs:
             waf_feature_allowed_values = ["PROTECTION_RULES", "JS_CHALLENGE", "ACCESS_RULES", "THREAT_FEEDS", "HUMAN_INTERACTION_CHALLENGE", "DEVICE_FINGERPRINT_CHALLENGE", "CAPTCHA", "ADDRESS_RATE_LIMITING"]
             for waf_feature_item in kwargs['waf_feature']:
                 if waf_feature_item not in waf_feature_allowed_values:
                     raise ValueError(
-                        "Invalid value for `waf_feature`, must be one of {0}".format(waf_feature_allowed_values)
+                        f"Invalid value for `waf_feature`, must be one of { waf_feature_allowed_values }"
                     )
 
         query_params = {
@@ -5004,7 +5004,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_waf_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_waf_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -5014,14 +5014,14 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'action' in kwargs:
             action_allowed_values = ["BLOCK", "DETECT", "BYPASS", "LOG", "REDIRECTED"]
             for action_item in kwargs['action']:
                 if action_item not in action_allowed_values:
                     raise ValueError(
-                        "Invalid value for `action`, must be one of {0}".format(action_allowed_values)
+                        f"Invalid value for `action`, must be one of { action_allowed_values }"
                     )
 
         if 'http_method' in kwargs:
@@ -5029,7 +5029,7 @@ class WaasClient(object):
             for http_method_item in kwargs['http_method']:
                 if http_method_item not in http_method_allowed_values:
                     raise ValueError(
-                        "Invalid value for `http_method`, must be one of {0}".format(http_method_allowed_values)
+                        f"Invalid value for `http_method`, must be one of { http_method_allowed_values }"
                     )
 
         if 'log_type' in kwargs:
@@ -5037,7 +5037,7 @@ class WaasClient(object):
             for log_type_item in kwargs['log_type']:
                 if log_type_item not in log_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `log_type`, must be one of {0}".format(log_type_allowed_values)
+                        f"Invalid value for `log_type`, must be one of { log_type_allowed_values }"
                     )
 
         query_params = {
@@ -5173,7 +5173,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_waf_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_waf_requests got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -5183,7 +5183,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "timeObservedGreaterThanOrEqualTo": kwargs.get("time_observed_greater_than_or_equal_to", missing),
@@ -5300,7 +5300,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_waf_traffic got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_waf_traffic got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -5310,7 +5310,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "timeObservedGreaterThanOrEqualTo": kwargs.get("time_observed_greater_than_or_equal_to", missing),
@@ -5418,7 +5418,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_whitelists got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_whitelists got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -5428,7 +5428,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -5551,20 +5551,20 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["id", "status", "timeAccepted", "timeStarted", "timeFinished", "operationType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -5675,7 +5675,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "purge_cache got unknown kwargs: {!r}".format(extra_kwargs))
+                f"purge_cache got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -5685,7 +5685,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5793,7 +5793,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_access_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_access_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -5803,7 +5803,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5902,7 +5902,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_address_list got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_address_list got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "addressListId": address_list_id
@@ -5912,7 +5912,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6022,7 +6022,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_caching_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_caching_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -6032,7 +6032,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6143,7 +6143,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_captchas got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_captchas got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -6153,7 +6153,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6252,7 +6252,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_certificate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_certificate got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id
@@ -6262,7 +6262,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6365,7 +6365,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_custom_protection_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_custom_protection_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "customProtectionRuleId": custom_protection_rule_id
@@ -6375,7 +6375,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6484,7 +6484,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_device_fingerprint_challenge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_device_fingerprint_challenge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -6494,7 +6494,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6600,7 +6600,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_good_bots got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_good_bots got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -6610,7 +6610,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6713,7 +6713,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_human_interaction_challenge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_human_interaction_challenge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -6723,7 +6723,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6828,7 +6828,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_js_challenge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_js_challenge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -6838,7 +6838,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6941,7 +6941,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_policy_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_policy_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -6951,7 +6951,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7052,7 +7052,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_protection_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_protection_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -7062,7 +7062,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7163,7 +7163,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_protection_settings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_protection_settings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -7173,7 +7173,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7271,7 +7271,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_threat_feeds got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_threat_feeds got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -7281,7 +7281,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7384,7 +7384,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_waas_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_waas_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -7394,7 +7394,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7498,7 +7498,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_waas_policy_custom_protection_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_waas_policy_custom_protection_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -7508,7 +7508,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7611,7 +7611,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_waf_address_rate_limiting got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_waf_address_rate_limiting got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -7621,7 +7621,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7731,7 +7731,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_waf_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_waf_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -7741,7 +7741,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7851,7 +7851,7 @@ class WaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_whitelists got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_whitelists got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "waasPolicyId": waas_policy_id
@@ -7861,7 +7861,7 @@ class WaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

@@ -23,6 +23,14 @@ class PublicationSummary(object):
     #: This constant has a value of "IMAGE"
     PACKAGE_TYPE_IMAGE = "IMAGE"
 
+    #: A constant which can be used with the package_type property of a PublicationSummary.
+    #: This constant has a value of "CONTAINER"
+    PACKAGE_TYPE_CONTAINER = "CONTAINER"
+
+    #: A constant which can be used with the package_type property of a PublicationSummary.
+    #: This constant has a value of "KUBERNETES"
+    PACKAGE_TYPE_KUBERNETES = "KUBERNETES"
+
     #: A constant which can be used with the listing_type property of a PublicationSummary.
     #: This constant has a value of "COMMUNITY"
     LISTING_TYPE_COMMUNITY = "COMMUNITY"
@@ -66,7 +74,7 @@ class PublicationSummary(object):
 
         :param package_type:
             The value to assign to the package_type property of this PublicationSummary.
-            Allowed values for this property are: "ORCHESTRATION", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type package_type: str
 
@@ -272,7 +280,7 @@ class PublicationSummary(object):
         Gets the package_type of this PublicationSummary.
         The listing's package type.
 
-        Allowed values for this property are: "ORCHESTRATION", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -291,7 +299,7 @@ class PublicationSummary(object):
         :param package_type: The package_type of this PublicationSummary.
         :type: str
         """
-        allowed_values = ["ORCHESTRATION", "IMAGE"]
+        allowed_values = ["ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES"]
         if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
             package_type = 'UNKNOWN_ENUM_VALUE'
         self._package_type = package_type

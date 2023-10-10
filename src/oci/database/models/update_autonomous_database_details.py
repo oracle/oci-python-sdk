@@ -469,8 +469,7 @@ class UpdateAutonomousDatabaseDetails(object):
         allowed_values = ["ECPU", "OCPU"]
         if not value_allowed_none_or_none_sentinel(compute_model, allowed_values):
             raise ValueError(
-                "Invalid value for `compute_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `compute_model`, must be None or one of {allowed_values}"
             )
         self._compute_model = compute_model
 
@@ -943,8 +942,7 @@ class UpdateAutonomousDatabaseDetails(object):
         allowed_values = ["OLTP", "DW", "AJD", "APEX"]
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             raise ValueError(
-                "Invalid value for `db_workload`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `db_workload`, must be None or one of {allowed_values}"
             )
         self._db_workload = db_workload
 
@@ -991,8 +989,7 @@ class UpdateAutonomousDatabaseDetails(object):
         allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             raise ValueError(
-                "Invalid value for `license_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
 
@@ -1243,8 +1240,7 @@ class UpdateAutonomousDatabaseDetails(object):
         allowed_values = ["AUTOMATIC", "MANUAL"]
         if not value_allowed_none_or_none_sentinel(refreshable_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `refreshable_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `refreshable_mode`, must be None or one of {allowed_values}"
             )
         self._refreshable_mode = refreshable_mode
 
@@ -1423,8 +1419,7 @@ class UpdateAutonomousDatabaseDetails(object):
         allowed_values = ["READ_ONLY", "READ_WRITE"]
         if not value_allowed_none_or_none_sentinel(open_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `open_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `open_mode`, must be None or one of {allowed_values}"
             )
         self._open_mode = open_mode
 
@@ -1459,8 +1454,7 @@ class UpdateAutonomousDatabaseDetails(object):
         allowed_values = ["RESTRICTED", "UNRESTRICTED"]
         if not value_allowed_none_or_none_sentinel(permission_level, allowed_values):
             raise ValueError(
-                "Invalid value for `permission_level`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `permission_level`, must be None or one of {allowed_values}"
             )
         self._permission_level = permission_level
 

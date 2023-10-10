@@ -180,8 +180,7 @@ class PhaseTwoConfigDetails(object):
         allowed_values = ["HMAC_SHA2_256_128", "HMAC_SHA1_128"]
         if not value_allowed_none_or_none_sentinel(authentication_algorithm, allowed_values):
             raise ValueError(
-                "Invalid value for `authentication_algorithm`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `authentication_algorithm`, must be None or one of {allowed_values}"
             )
         self._authentication_algorithm = authentication_algorithm
 
@@ -212,8 +211,7 @@ class PhaseTwoConfigDetails(object):
         allowed_values = ["AES_256_GCM", "AES_192_GCM", "AES_128_GCM", "AES_256_CBC", "AES_192_CBC", "AES_128_CBC"]
         if not value_allowed_none_or_none_sentinel(encryption_algorithm, allowed_values):
             raise ValueError(
-                "Invalid value for `encryption_algorithm`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `encryption_algorithm`, must be None or one of {allowed_values}"
             )
         self._encryption_algorithm = encryption_algorithm
 
@@ -292,8 +290,7 @@ class PhaseTwoConfigDetails(object):
         allowed_values = ["GROUP2", "GROUP5", "GROUP14", "GROUP19", "GROUP20", "GROUP24"]
         if not value_allowed_none_or_none_sentinel(pfs_dh_group, allowed_values):
             raise ValueError(
-                "Invalid value for `pfs_dh_group`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `pfs_dh_group`, must be None or one of {allowed_values}"
             )
         self._pfs_dh_group = pfs_dh_group
 

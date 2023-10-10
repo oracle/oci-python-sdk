@@ -217,8 +217,7 @@ class UpdateDhcpDetails(object):
         allowed_values = ["SUBNET_DOMAIN", "VCN_DOMAIN", "CUSTOM_DOMAIN"]
         if not value_allowed_none_or_none_sentinel(domain_name_type, allowed_values):
             raise ValueError(
-                "Invalid value for `domain_name_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `domain_name_type`, must be None or one of {allowed_values}"
             )
         self._domain_name_type = domain_name_type
 

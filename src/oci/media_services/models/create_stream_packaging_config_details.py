@@ -161,8 +161,7 @@ class CreateStreamPackagingConfigDetails(object):
         allowed_values = ["HLS", "DASH"]
         if not value_allowed_none_or_none_sentinel(stream_packaging_format, allowed_values):
             raise ValueError(
-                "Invalid value for `stream_packaging_format`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `stream_packaging_format`, must be None or one of {allowed_values}"
             )
         self._stream_packaging_format = stream_packaging_format
 

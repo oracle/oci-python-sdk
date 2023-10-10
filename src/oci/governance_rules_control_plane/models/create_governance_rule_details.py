@@ -220,8 +220,7 @@ class CreateGovernanceRuleDetails(object):
         allowed_values = ["QUOTA", "TAG", "ALLOWED_REGIONS"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
-                "Invalid value for `type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `type`, must be None or one of {allowed_values}"
             )
         self._type = type
 
@@ -256,8 +255,7 @@ class CreateGovernanceRuleDetails(object):
         allowed_values = ["TEMPLATE", "CLONE"]
         if not value_allowed_none_or_none_sentinel(creation_option, allowed_values):
             raise ValueError(
-                "Invalid value for `creation_option`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `creation_option`, must be None or one of {allowed_values}"
             )
         self._creation_option = creation_option
 

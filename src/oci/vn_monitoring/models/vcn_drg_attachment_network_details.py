@@ -139,8 +139,7 @@ class VcnDrgAttachmentNetworkDetails(DrgAttachmentNetworkDetails):
         allowed_values = ["VCN_CIDRS", "SUBNET_CIDRS"]
         if not value_allowed_none_or_none_sentinel(vcn_route_type, allowed_values):
             raise ValueError(
-                "Invalid value for `vcn_route_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `vcn_route_type`, must be None or one of {allowed_values}"
             )
         self._vcn_route_type = vcn_route_type
 

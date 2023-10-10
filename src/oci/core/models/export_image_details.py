@@ -163,8 +163,7 @@ class ExportImageDetails(object):
         allowed_values = ["QCOW2", "VMDK", "OCI", "VHD", "VDI"]
         if not value_allowed_none_or_none_sentinel(export_format, allowed_values):
             raise ValueError(
-                "Invalid value for `export_format`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `export_format`, must be None or one of {allowed_values}"
             )
         self._export_format = export_format
 

@@ -229,8 +229,7 @@ class ExportDetails(object):
         allowed_values = ["LOG"]
         if not value_allowed_none_or_none_sentinel(sub_system, allowed_values):
             raise ValueError(
-                "Invalid value for `sub_system`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `sub_system`, must be None or one of {allowed_values}"
             )
         self._sub_system = sub_system
 
@@ -393,8 +392,7 @@ class ExportDetails(object):
         allowed_values = ["CSV", "JSON"]
         if not value_allowed_none_or_none_sentinel(output_format, allowed_values):
             raise ValueError(
-                "Invalid value for `output_format`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `output_format`, must be None or one of {allowed_values}"
             )
         self._output_format = output_format
 

@@ -407,8 +407,7 @@ class CopyObjectDetails(object):
         allowed_values = ["Standard", "InfrequentAccess", "Archive"]
         if not value_allowed_none_or_none_sentinel(destination_object_storage_tier, allowed_values):
             raise ValueError(
-                "Invalid value for `destination_object_storage_tier`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `destination_object_storage_tier`, must be None or one of {allowed_values}"
             )
         self._destination_object_storage_tier = destination_object_storage_tier
 

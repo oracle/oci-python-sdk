@@ -173,7 +173,7 @@ class OccMetricsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_metric_properties got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_metric_properties got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -183,7 +183,7 @@ class OccMetricsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -289,7 +289,7 @@ class OccMetricsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_namespaces got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_namespaces got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -395,7 +395,7 @@ class OccMetricsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_summarized_metric_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_summarized_metric_data got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),

@@ -186,8 +186,7 @@ class EnableDatabaseManagementDetails(object):
         allowed_values = ["BASIC", "ADVANCED"]
         if not value_allowed_none_or_none_sentinel(management_type, allowed_values):
             raise ValueError(
-                "Invalid value for `management_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `management_type`, must be None or one of {allowed_values}"
             )
         self._management_type = management_type
 
@@ -242,8 +241,7 @@ class EnableDatabaseManagementDetails(object):
         allowed_values = ["TCP", "TCPS"]
         if not value_allowed_none_or_none_sentinel(protocol, allowed_values):
             raise ValueError(
-                "Invalid value for `protocol`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `protocol`, must be None or one of {allowed_values}"
             )
         self._protocol = protocol
 
@@ -328,8 +326,7 @@ class EnableDatabaseManagementDetails(object):
         allowed_values = ["SYSDBA", "NORMAL"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             raise ValueError(
-                "Invalid value for `role`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `role`, must be None or one of {allowed_values}"
             )
         self._role = role
 

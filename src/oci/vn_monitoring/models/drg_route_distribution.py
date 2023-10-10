@@ -326,8 +326,7 @@ class DrgRouteDistribution(object):
         allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 
@@ -390,8 +389,7 @@ class DrgRouteDistribution(object):
         allowed_values = ["IMPORT", "EXPORT"]
         if not value_allowed_none_or_none_sentinel(distribution_type, allowed_values):
             raise ValueError(
-                "Invalid value for `distribution_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `distribution_type`, must be None or one of {allowed_values}"
             )
         self._distribution_type = distribution_type
 

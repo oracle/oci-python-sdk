@@ -284,8 +284,7 @@ class UpdateSecurityRuleDetails(object):
         allowed_values = ["CIDR_BLOCK", "SERVICE_CIDR_BLOCK", "NETWORK_SECURITY_GROUP"]
         if not value_allowed_none_or_none_sentinel(destination_type, allowed_values):
             raise ValueError(
-                "Invalid value for `destination_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `destination_type`, must be None or one of {allowed_values}"
             )
         self._destination_type = destination_type
 
@@ -318,8 +317,7 @@ class UpdateSecurityRuleDetails(object):
         allowed_values = ["EGRESS", "INGRESS"]
         if not value_allowed_none_or_none_sentinel(direction, allowed_values):
             raise ValueError(
-                "Invalid value for `direction`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `direction`, must be None or one of {allowed_values}"
             )
         self._direction = direction
 
@@ -546,8 +544,7 @@ class UpdateSecurityRuleDetails(object):
         allowed_values = ["CIDR_BLOCK", "SERVICE_CIDR_BLOCK", "NETWORK_SECURITY_GROUP"]
         if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
             raise ValueError(
-                "Invalid value for `source_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `source_type`, must be None or one of {allowed_values}"
             )
         self._source_type = source_type
 

@@ -225,8 +225,7 @@ class CreateIdentityProviderDetails(object):
         allowed_values = ["IDCS", "ADFS"]
         if not value_allowed_none_or_none_sentinel(product_type, allowed_values):
             raise ValueError(
-                "Invalid value for `product_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `product_type`, must be None or one of {allowed_values}"
             )
         self._product_type = product_type
 
@@ -261,8 +260,7 @@ class CreateIdentityProviderDetails(object):
         allowed_values = ["SAML2", "ADFS"]
         if not value_allowed_none_or_none_sentinel(protocol, allowed_values):
             raise ValueError(
-                "Invalid value for `protocol`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `protocol`, must be None or one of {allowed_values}"
             )
         self._protocol = protocol
 

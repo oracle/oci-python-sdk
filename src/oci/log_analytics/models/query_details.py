@@ -275,8 +275,7 @@ class QueryDetails(object):
         allowed_values = ["LOG"]
         if not value_allowed_none_or_none_sentinel(sub_system, allowed_values):
             raise ValueError(
-                "Invalid value for `sub_system`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `sub_system`, must be None or one of {allowed_values}"
             )
         self._sub_system = sub_system
 
@@ -423,8 +422,7 @@ class QueryDetails(object):
         allowed_values = ["FOREGROUND", "BACKGROUND"]
         if not value_allowed_none_or_none_sentinel(async_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `async_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `async_mode`, must be None or one of {allowed_values}"
             )
         self._async_mode = async_mode
 

@@ -163,7 +163,7 @@ class KmsCryptoClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "decrypt got unknown kwargs: {!r}".format(extra_kwargs))
+                f"decrypt got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -254,7 +254,7 @@ class KmsCryptoClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "encrypt got unknown kwargs: {!r}".format(extra_kwargs))
+                f"encrypt got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -335,7 +335,7 @@ class KmsCryptoClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "export_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"export_key got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -421,7 +421,7 @@ class KmsCryptoClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_data_encryption_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_data_encryption_key got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -514,7 +514,7 @@ class KmsCryptoClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "sign got unknown kwargs: {!r}".format(extra_kwargs))
+                f"sign got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -607,7 +607,7 @@ class KmsCryptoClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "verify got unknown kwargs: {!r}".format(extra_kwargs))
+                f"verify got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",

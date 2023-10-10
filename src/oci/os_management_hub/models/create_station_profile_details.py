@@ -167,8 +167,7 @@ class CreateStationProfileDetails(CreateProfileDetails):
         allowed_values = ["ORACLE"]
         if not value_allowed_none_or_none_sentinel(vendor_name, allowed_values):
             raise ValueError(
-                "Invalid value for `vendor_name`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `vendor_name`, must be None or one of {allowed_values}"
             )
         self._vendor_name = vendor_name
 
@@ -199,8 +198,7 @@ class CreateStationProfileDetails(CreateProfileDetails):
         allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             raise ValueError(
-                "Invalid value for `os_family`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `os_family`, must be None or one of {allowed_values}"
             )
         self._os_family = os_family
 
@@ -231,8 +229,7 @@ class CreateStationProfileDetails(CreateProfileDetails):
         allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             raise ValueError(
-                "Invalid value for `arch_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `arch_type`, must be None or one of {allowed_values}"
             )
         self._arch_type = arch_type
 

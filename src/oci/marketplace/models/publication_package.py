@@ -23,6 +23,14 @@ class PublicationPackage(object):
     #: This constant has a value of "IMAGE"
     PACKAGE_TYPE_IMAGE = "IMAGE"
 
+    #: A constant which can be used with the package_type property of a PublicationPackage.
+    #: This constant has a value of "CONTAINER"
+    PACKAGE_TYPE_CONTAINER = "CONTAINER"
+
+    #: A constant which can be used with the package_type property of a PublicationPackage.
+    #: This constant has a value of "KUBERNETES"
+    PACKAGE_TYPE_KUBERNETES = "KUBERNETES"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PublicationPackage object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -47,7 +55,7 @@ class PublicationPackage(object):
 
         :param package_type:
             The value to assign to the package_type property of this PublicationPackage.
-            Allowed values for this property are: "ORCHESTRATION", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type package_type: str
 
@@ -186,7 +194,7 @@ class PublicationPackage(object):
         **[Required]** Gets the package_type of this PublicationPackage.
         The specified package's type.
 
-        Allowed values for this property are: "ORCHESTRATION", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -205,7 +213,7 @@ class PublicationPackage(object):
         :param package_type: The package_type of this PublicationPackage.
         :type: str
         """
-        allowed_values = ["ORCHESTRATION", "IMAGE"]
+        allowed_values = ["ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES"]
         if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
             package_type = 'UNKNOWN_ENUM_VALUE'
         self._package_type = package_type

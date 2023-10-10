@@ -26,6 +26,7 @@ Marketplace
     oci.marketplace.models.AgreementSummary
     oci.marketplace.models.CategorySummary
     oci.marketplace.models.ChangePublicationCompartmentDetails
+    oci.marketplace.models.ContainerListingPackage
     oci.marketplace.models.CreateAcceptedAgreementDetails
     oci.marketplace.models.CreateImagePublicationPackage
     oci.marketplace.models.CreatePublicationDetails
@@ -33,11 +34,13 @@ Marketplace
     oci.marketplace.models.DocumentationLink
     oci.marketplace.models.ErrorEntity
     oci.marketplace.models.Eula
+    oci.marketplace.models.ExportPackageDetails
     oci.marketplace.models.FreeTextSearchDetails
     oci.marketplace.models.ImageListingPackage
     oci.marketplace.models.ImagePublicationPackage
     oci.marketplace.models.InternationalMarketPrice
     oci.marketplace.models.Item
+    oci.marketplace.models.KubernetesListingPackage
     oci.marketplace.models.LaunchEligibility
     oci.marketplace.models.Link
     oci.marketplace.models.Listing
@@ -71,3 +74,11 @@ Marketplace
     oci.marketplace.models.UpdateAcceptedAgreementDetails
     oci.marketplace.models.UpdatePublicationDetails
     oci.marketplace.models.UploadData
+    oci.marketplace.models.WorkRequest
+    oci.marketplace.models.WorkRequestCollection
+    oci.marketplace.models.WorkRequestError
+    oci.marketplace.models.WorkRequestErrorCollection
+    oci.marketplace.models.WorkRequestLogEntry
+    oci.marketplace.models.WorkRequestLogEntryCollection
+    oci.marketplace.models.WorkRequestResource
+    oci.marketplace.models.WorkRequestSummary

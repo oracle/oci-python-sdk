@@ -211,21 +211,21 @@ class ReportingManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_managed_instance_analytic_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_managed_instance_analytic_content got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR"]
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         if 'instance_location' in kwargs:
             instance_location_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2"]
             if kwargs['instance_location'] not in instance_location_allowed_values:
                 raise ValueError(
-                    "Invalid value for `instance_location`, must be one of {0}".format(instance_location_allowed_values)
+                    f"Invalid value for `instance_location`, must be one of { instance_location_allowed_values }"
                 )
 
         query_params = {
@@ -346,7 +346,7 @@ class ReportingManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_managed_instance_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_managed_instance_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -356,14 +356,14 @@ class ReportingManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'advisory_type' in kwargs:
             advisory_type_allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT"]
             for advisory_type_item in kwargs['advisory_type']:
                 if advisory_type_item not in advisory_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `advisory_type`, must be one of {0}".format(advisory_type_allowed_values)
+                        f"Invalid value for `advisory_type`, must be one of { advisory_type_allowed_values }"
                     )
 
         query_params = {
@@ -530,13 +530,13 @@ class ReportingManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_managed_instance_analytics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_managed_instance_analytics got unknown kwargs: {extra_kwargs!r}")
 
         metric_names_allowed_values = ["TOTAL_INSTANCE_COUNT", "INSTANCE_WITH_AVAILABLE_SECURITY_UPDATES_COUNT", "INSTANCE_WITH_AVAILABLE_BUGFIX_UPDATES_COUNT", "NORMAL_INSTANCE_COUNT", "ERROR_INSTANCE_COUNT", "WARNING_INSTANCE_COUNT", "UNREACHABLE_INSTANCE_COUNT", "REGISTRATION_FAILED_INSTANCE_COUNT", "INSTANCE_SECURITY_UPDATES_COUNT", "INSTANCE_BUGFIX_UPDATES_COUNT"]
         for metric_names_item in metric_names:
             if metric_names_item not in metric_names_allowed_values:
                 raise ValueError(
-                    "Invalid value for `metric_names`, must be one of {0}".format(metric_names_allowed_values)
+                    f"Invalid value for `metric_names`, must be one of { metric_names_allowed_values }"
                 )
 
         if 'status' in kwargs:
@@ -544,28 +544,28 @@ class ReportingManagedInstanceClient(object):
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         if 'instance_location' in kwargs:
             instance_location_allowed_values = ["ON_PREMISE", "OCI_COMPUTE", "AZURE", "EC2"]
             if kwargs['instance_location'] not in instance_location_allowed_values:
                 raise ValueError(
-                    "Invalid value for `instance_location`, must be one of {0}".format(instance_location_allowed_values)
+                    f"Invalid value for `instance_location`, must be one of { instance_location_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {

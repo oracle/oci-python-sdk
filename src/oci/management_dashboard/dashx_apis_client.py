@@ -180,7 +180,7 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_management_dashboards_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_management_dashboards_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementDashboardId": management_dashboard_id
@@ -190,7 +190,7 @@ class DashxApisClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -300,7 +300,7 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_management_saved_searches_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_management_saved_searches_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementSavedSearchId": management_saved_search_id
@@ -310,7 +310,7 @@ class DashxApisClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -412,7 +412,7 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_management_dashboard got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_management_dashboard got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -511,7 +511,7 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_management_saved_search got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_management_saved_search got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -607,7 +607,7 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_management_dashboard got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_management_dashboard got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementDashboardId": management_dashboard_id
@@ -617,7 +617,7 @@ class DashxApisClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -710,7 +710,7 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_management_saved_search got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_management_saved_search got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementSavedSearchId": management_saved_search_id
@@ -720,7 +720,7 @@ class DashxApisClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -815,7 +815,7 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "export_dashboard got unknown kwargs: {!r}".format(extra_kwargs))
+                f"export_dashboard got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exportDashboardId": export_dashboard_id
@@ -825,7 +825,7 @@ class DashxApisClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -921,7 +921,7 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_management_dashboard got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_management_dashboard got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementDashboardId": management_dashboard_id
@@ -931,7 +931,7 @@ class DashxApisClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1027,7 +1027,7 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_management_saved_search got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_management_saved_search got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementSavedSearchId": management_saved_search_id
@@ -1037,7 +1037,7 @@ class DashxApisClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1146,7 +1146,7 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "import_dashboard got unknown kwargs: {!r}".format(extra_kwargs))
+                f"import_dashboard got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1257,20 +1257,20 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_management_dashboards got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_management_dashboards got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1391,20 +1391,20 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_management_saved_searches got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_management_saved_searches got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1520,7 +1520,7 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_management_dashboard got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_management_dashboard got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementDashboardId": management_dashboard_id
@@ -1530,7 +1530,7 @@ class DashxApisClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1640,7 +1640,7 @@ class DashxApisClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_management_saved_search got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_management_saved_search got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementSavedSearchId": management_saved_search_id
@@ -1650,7 +1650,7 @@ class DashxApisClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

@@ -126,8 +126,7 @@ class UpdateTransferApplianceDetails(object):
         allowed_values = ["PREPARING", "FINALIZED", "RETURN_LABEL_REQUESTED", "RETURN_LABEL_GENERATING", "RETURN_LABEL_AVAILABLE", "DELETED", "CUSTOMER_NEVER_RECEIVED", "CANCELLED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 

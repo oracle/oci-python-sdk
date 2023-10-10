@@ -182,7 +182,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "attach_instance_pool_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"attach_instance_pool_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -192,7 +192,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -296,7 +296,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "attach_load_balancer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"attach_load_balancer got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -306,7 +306,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -425,7 +425,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_cluster_network_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_cluster_network_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterNetworkId": cluster_network_id
@@ -435,7 +435,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -557,7 +557,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_instance_configuration_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_instance_configuration_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceConfigurationId": instance_configuration_id
@@ -567,7 +567,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -683,7 +683,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_instance_pool_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_instance_pool_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -693,7 +693,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -802,7 +802,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_cluster_network got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -894,7 +894,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_instance_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_instance_configuration got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -989,7 +989,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_instance_pool got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1078,7 +1078,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_instance_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_instance_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceConfigurationId": instance_configuration_id
@@ -1088,7 +1088,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1181,7 +1181,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "detach_instance_pool_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"detach_instance_pool_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -1191,7 +1191,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1293,7 +1293,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "detach_load_balancer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"detach_load_balancer got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -1303,7 +1303,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1389,7 +1389,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cluster_network got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterNetworkId": cluster_network_id
@@ -1399,7 +1399,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1475,7 +1475,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_instance_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_instance_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceConfigurationId": instance_configuration_id
@@ -1485,7 +1485,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1563,7 +1563,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_instance_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -1573,7 +1573,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1656,7 +1656,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_instance_pool_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_instance_pool_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id,
@@ -1667,7 +1667,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1748,7 +1748,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_instance_pool_load_balancer_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_instance_pool_load_balancer_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id,
@@ -1759,7 +1759,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1860,7 +1860,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "launch_instance_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"launch_instance_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceConfigurationId": instance_configuration_id
@@ -1870,7 +1870,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2006,7 +2006,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cluster_network_instances got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cluster_network_instances got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterNetworkId": cluster_network_id
@@ -2016,20 +2016,20 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2176,27 +2176,27 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cluster_networks got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cluster_networks got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "SCALING", "STARTING", "STOPPING", "TERMINATING", "STOPPED", "TERMINATED", "RUNNING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -2328,20 +2328,20 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_instance_configurations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_instance_configurations got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2480,7 +2480,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_instance_pool_instances got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_instance_pool_instances got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -2490,20 +2490,20 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2647,27 +2647,27 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_instance_pools got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_instance_pools got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "SCALING", "STARTING", "STOPPING", "TERMINATING", "STOPPED", "TERMINATED", "RUNNING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -2776,7 +2776,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "reset_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"reset_instance_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -2786,7 +2786,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2890,7 +2890,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "softreset_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"softreset_instance_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -2900,7 +2900,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3004,7 +3004,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "softstop_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"softstop_instance_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -3014,7 +3014,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3115,7 +3115,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"start_instance_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -3125,7 +3125,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3226,7 +3226,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "stop_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"stop_instance_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -3236,7 +3236,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3333,7 +3333,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "terminate_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
+                f"terminate_cluster_network got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterNetworkId": cluster_network_id
@@ -3343,7 +3343,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3438,7 +3438,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "terminate_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"terminate_instance_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -3448,7 +3448,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3550,7 +3550,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_cluster_network got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterNetworkId": cluster_network_id
@@ -3560,7 +3560,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3663,7 +3663,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_instance_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_instance_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceConfigurationId": instance_configuration_id
@@ -3673,7 +3673,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3780,7 +3780,7 @@ class ComputeManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_instance_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instancePoolId": instance_pool_id
@@ -3790,7 +3790,7 @@ class ComputeManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

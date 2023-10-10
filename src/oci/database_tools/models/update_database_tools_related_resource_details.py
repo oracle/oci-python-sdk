@@ -82,8 +82,7 @@ class UpdateDatabaseToolsRelatedResourceDetails(object):
         allowed_values = ["AUTONOMOUSDATABASE", "DATABASE", "PLUGGABLEDATABASE"]
         if not value_allowed_none_or_none_sentinel(entity_type, allowed_values):
             raise ValueError(
-                "Invalid value for `entity_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `entity_type`, must be None or one of {allowed_values}"
             )
         self._entity_type = entity_type
 

@@ -166,8 +166,7 @@ class CreateDigitalAssistantDetails(object):
         allowed_values = ["NEW", "CLONE", "VERSION", "EXTEND"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             raise ValueError(
-                "Invalid value for `kind`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `kind`, must be None or one of {allowed_values}"
             )
         self._kind = kind
 
@@ -270,8 +269,7 @@ class CreateDigitalAssistantDetails(object):
         allowed_values = ["NATIVE", "TRANSLATION"]
         if not value_allowed_none_or_none_sentinel(multilingual_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `multilingual_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `multilingual_mode`, must be None or one of {allowed_values}"
             )
         self._multilingual_mode = multilingual_mode
 

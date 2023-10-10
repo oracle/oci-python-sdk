@@ -84,8 +84,7 @@ class UpdateExternalDbSystemConnectorDetails(object):
         allowed_values = ["MACS"]
         if not value_allowed_none_or_none_sentinel(connector_type, allowed_values):
             raise ValueError(
-                "Invalid value for `connector_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `connector_type`, must be None or one of {allowed_values}"
             )
         self._connector_type = connector_type
 

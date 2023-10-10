@@ -394,8 +394,7 @@ class IPSecConnection(object):
         allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 
@@ -480,8 +479,7 @@ class IPSecConnection(object):
         allowed_values = ["IP_ADDRESS", "HOSTNAME"]
         if not value_allowed_none_or_none_sentinel(cpe_local_identifier_type, allowed_values):
             raise ValueError(
-                "Invalid value for `cpe_local_identifier_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `cpe_local_identifier_type`, must be None or one of {allowed_values}"
             )
         self._cpe_local_identifier_type = cpe_local_identifier_type
 
@@ -598,8 +596,7 @@ class IPSecConnection(object):
         allowed_values = ["INTERNET", "FASTCONNECT"]
         if not value_allowed_none_or_none_sentinel(transport_type, allowed_values):
             raise ValueError(
-                "Invalid value for `transport_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `transport_type`, must be None or one of {allowed_values}"
             )
         self._transport_type = transport_type
 

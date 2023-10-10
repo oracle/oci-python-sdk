@@ -173,7 +173,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cluster_migrate_to_native_vcn got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cluster_migrate_to_native_vcn got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -183,7 +183,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -284,7 +284,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "complete_credential_rotation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"complete_credential_rotation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -294,7 +294,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -389,7 +389,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_cluster got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -482,7 +482,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_kubeconfig got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_kubeconfig got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -492,7 +492,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/x-yaml",
@@ -588,7 +588,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_node_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_node_pool got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -682,7 +682,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_virtual_node_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_virtual_node_pool got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -779,7 +779,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_workload_mapping got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_workload_mapping got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -789,7 +789,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -888,7 +888,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -898,7 +898,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1008,7 +1008,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_node got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "nodePoolId": node_pool_id,
@@ -1019,7 +1019,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isDecrementSize": kwargs.get("is_decrement_size", missing),
@@ -1131,7 +1131,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_node_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_node_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "nodePoolId": node_pool_id
@@ -1141,7 +1141,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "overrideEvictionGraceDuration": kwargs.get("override_eviction_grace_duration", missing),
@@ -1252,7 +1252,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_virtual_node_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_virtual_node_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualNodePoolId": virtual_node_pool_id
@@ -1262,7 +1262,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "overrideEvictionGraceDurationVnp": kwargs.get("override_eviction_grace_duration_vnp", missing),
@@ -1364,7 +1364,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -1374,7 +1374,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1471,7 +1471,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_workload_mapping got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_workload_mapping got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id,
@@ -1482,7 +1482,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1582,7 +1582,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_addon got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_addon got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id,
@@ -1593,7 +1593,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isRemoveExistingAddOn": is_remove_existing_add_on
@@ -1691,7 +1691,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_addon got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_addon got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id,
@@ -1702,7 +1702,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1791,7 +1791,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -1801,7 +1801,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1890,7 +1890,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cluster_migrate_to_native_vcn_status got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cluster_migrate_to_native_vcn_status got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -1900,7 +1900,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1993,7 +1993,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cluster_options got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cluster_options got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterOptionId": cluster_option_id
@@ -2003,7 +2003,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing)
@@ -2099,7 +2099,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_credential_rotation_status got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_credential_rotation_status got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -2109,7 +2109,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2198,7 +2198,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_node_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_node_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "nodePoolId": node_pool_id
@@ -2208,7 +2208,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2301,7 +2301,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_node_pool_options got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_node_pool_options got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "nodePoolOptionId": node_pool_option_id
@@ -2311,7 +2311,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing)
@@ -2410,7 +2410,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_virtual_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_virtual_node got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualNodePoolId": virtual_node_pool_id,
@@ -2421,7 +2421,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2510,7 +2510,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_virtual_node_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_virtual_node_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualNodePoolId": virtual_node_pool_id
@@ -2520,7 +2520,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2609,7 +2609,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2619,7 +2619,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2711,7 +2711,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_workload_mapping got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_workload_mapping got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id,
@@ -2722,7 +2722,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2825,7 +2825,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "install_addon got unknown kwargs: {!r}".format(extra_kwargs))
+                f"install_addon got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -2835,7 +2835,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2958,20 +2958,20 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_addon_options got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_addon_options got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME", "TIME_CREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3098,7 +3098,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_addons got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_addons got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -3108,20 +3108,20 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME", "TIME_CREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3258,28 +3258,28 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_clusters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_clusters got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "FAILED", "DELETING", "DELETED", "UPDATING"]
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["ID", "NAME", "TIME_CREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3421,20 +3421,20 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_node_pools got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_node_pools got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["ID", "NAME", "TIME_CREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
@@ -3442,7 +3442,7 @@ class ContainerEngineClient(object):
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         query_params = {
@@ -3579,20 +3579,20 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_pod_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_pod_shapes got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["ID", "NAME", "TIME_CREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3734,20 +3734,20 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_virtual_node_pools got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_virtual_node_pools got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["ID", "NAME", "TIME_CREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
@@ -3755,7 +3755,7 @@ class ContainerEngineClient(object):
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         query_params = {
@@ -3888,7 +3888,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_virtual_nodes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_virtual_nodes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualNodePoolId": virtual_node_pool_id
@@ -3898,20 +3898,20 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["ID", "NAME", "TIME_CREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4015,7 +4015,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -4025,7 +4025,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -4124,7 +4124,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -4134,7 +4134,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -4275,27 +4275,27 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'resource_type' in kwargs:
             resource_type_allowed_values = ["CLUSTER", "NODEPOOL"]
             if kwargs['resource_type'] not in resource_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `resource_type`, must be one of {0}".format(resource_type_allowed_values)
+                    f"Invalid value for `resource_type`, must be one of { resource_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["ID", "OPERATION_TYPE", "STATUS", "TIME_ACCEPTED", "TIME_STARTED", "TIME_FINISHED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4425,7 +4425,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_workload_mappings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_workload_mappings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -4435,20 +4435,20 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAMESPACE", "TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4562,7 +4562,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_credential_rotation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"start_credential_rotation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -4572,7 +4572,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4676,7 +4676,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_addon got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_addon got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id,
@@ -4687,7 +4687,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4786,7 +4786,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -4796,7 +4796,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4895,7 +4895,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_cluster_endpoint_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_cluster_endpoint_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id
@@ -4905,7 +4905,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5013,7 +5013,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_node_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_node_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "nodePoolId": node_pool_id
@@ -5023,7 +5023,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "overrideEvictionGraceDuration": kwargs.get("override_eviction_grace_duration", missing),
@@ -5130,7 +5130,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_virtual_node_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_virtual_node_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualNodePoolId": virtual_node_pool_id
@@ -5140,7 +5140,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5242,7 +5242,7 @@ class ContainerEngineClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_workload_mapping got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_workload_mapping got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "clusterId": cluster_id,
@@ -5253,7 +5253,7 @@ class ContainerEngineClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

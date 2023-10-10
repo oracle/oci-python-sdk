@@ -246,8 +246,7 @@ class CreateProfileDetails(object):
         allowed_values = ["SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION"]
         if not value_allowed_none_or_none_sentinel(profile_type, allowed_values):
             raise ValueError(
-                "Invalid value for `profile_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `profile_type`, must be None or one of {allowed_values}"
             )
         self._profile_type = profile_type
 

@@ -138,8 +138,7 @@ class CreatePublicationDetails(object):
         allowed_values = ["COMMUNITY", "PARTNER", "PRIVATE"]
         if not value_allowed_none_or_none_sentinel(listing_type, allowed_values):
             raise ValueError(
-                "Invalid value for `listing_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `listing_type`, must be None or one of {allowed_values}"
             )
         self._listing_type = listing_type
 

@@ -23,6 +23,14 @@ class ListingSummary(object):
     #: This constant has a value of "IMAGE"
     PACKAGE_TYPE_IMAGE = "IMAGE"
 
+    #: A constant which can be used with the package_type property of a ListingSummary.
+    #: This constant has a value of "CONTAINER"
+    PACKAGE_TYPE_CONTAINER = "CONTAINER"
+
+    #: A constant which can be used with the package_type property of a ListingSummary.
+    #: This constant has a value of "KUBERNETES"
+    PACKAGE_TYPE_KUBERNETES = "KUBERNETES"
+
     #: A constant which can be used with the pricing_types property of a ListingSummary.
     #: This constant has a value of "FREE"
     PRICING_TYPES_FREE = "FREE"
@@ -86,7 +94,7 @@ class ListingSummary(object):
 
         :param package_type:
             The value to assign to the package_type property of this ListingSummary.
-            Allowed values for this property are: "ORCHESTRATION", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type package_type: str
 
@@ -327,7 +335,7 @@ class ListingSummary(object):
         Gets the package_type of this ListingSummary.
         The listing's package type.
 
-        Allowed values for this property are: "ORCHESTRATION", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -346,7 +354,7 @@ class ListingSummary(object):
         :param package_type: The package_type of this ListingSummary.
         :type: str
         """
-        allowed_values = ["ORCHESTRATION", "IMAGE"]
+        allowed_values = ["ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES"]
         if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
             package_type = 'UNKNOWN_ENUM_VALUE'
         self._package_type = package_type

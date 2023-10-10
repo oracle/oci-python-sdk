@@ -159,8 +159,7 @@ class CreateDrProtectionGroupMemberDetails(object):
         allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             raise ValueError(
-                "Invalid value for `member_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `member_type`, must be None or one of {allowed_values}"
             )
         self._member_type = member_type
 

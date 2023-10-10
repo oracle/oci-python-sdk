@@ -214,7 +214,7 @@ class DiagnosabilityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_alert_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_alert_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -224,34 +224,34 @@ class DiagnosabilityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'level_filter' in kwargs:
             level_filter_allowed_values = ["CRITICAL", "SEVERE", "IMPORTANT", "NORMAL", "ALL"]
             if kwargs['level_filter'] not in level_filter_allowed_values:
                 raise ValueError(
-                    "Invalid value for `level_filter`, must be one of {0}".format(level_filter_allowed_values)
+                    f"Invalid value for `level_filter`, must be one of { level_filter_allowed_values }"
                 )
 
         if 'type_filter' in kwargs:
             type_filter_allowed_values = ["UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", "ALL"]
             if kwargs['type_filter'] not in type_filter_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type_filter`, must be one of {0}".format(type_filter_allowed_values)
+                    f"Invalid value for `type_filter`, must be one of { type_filter_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["LEVEL", "TYPE", "MESSAGE", "TIMESTAMP"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -405,7 +405,7 @@ class DiagnosabilityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_attention_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_attention_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -415,34 +415,34 @@ class DiagnosabilityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'urgency_filter' in kwargs:
             urgency_filter_allowed_values = ["IMMEDIATE", "SOON", "DEFERRABLE", "INFO", "ALL"]
             if kwargs['urgency_filter'] not in urgency_filter_allowed_values:
                 raise ValueError(
-                    "Invalid value for `urgency_filter`, must be one of {0}".format(urgency_filter_allowed_values)
+                    f"Invalid value for `urgency_filter`, must be one of { urgency_filter_allowed_values }"
                 )
 
         if 'type_filter' in kwargs:
             type_filter_allowed_values = ["UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", "ALL"]
             if kwargs['type_filter'] not in type_filter_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type_filter`, must be one of {0}".format(type_filter_allowed_values)
+                    f"Invalid value for `type_filter`, must be one of { type_filter_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["URGENCY", "TYPE", "MESSAGE", "TIMESTAMP", "SCOPE", "TARGET_USER"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -590,7 +590,7 @@ class DiagnosabilityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_alert_log_counts got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_alert_log_counts got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -600,27 +600,27 @@ class DiagnosabilityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'level_filter' in kwargs:
             level_filter_allowed_values = ["CRITICAL", "SEVERE", "IMPORTANT", "NORMAL", "ALL"]
             if kwargs['level_filter'] not in level_filter_allowed_values:
                 raise ValueError(
-                    "Invalid value for `level_filter`, must be one of {0}".format(level_filter_allowed_values)
+                    f"Invalid value for `level_filter`, must be one of { level_filter_allowed_values }"
                 )
 
         if 'group_by' in kwargs:
             group_by_allowed_values = ["LEVEL", "TYPE"]
             if kwargs['group_by'] not in group_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                    f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
                 )
 
         if 'type_filter' in kwargs:
             type_filter_allowed_values = ["UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", "ALL"]
             if kwargs['type_filter'] not in type_filter_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type_filter`, must be one of {0}".format(type_filter_allowed_values)
+                    f"Invalid value for `type_filter`, must be one of { type_filter_allowed_values }"
                 )
 
         query_params = {
@@ -767,7 +767,7 @@ class DiagnosabilityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_attention_log_counts got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_attention_log_counts got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -777,27 +777,27 @@ class DiagnosabilityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'urgency_filter' in kwargs:
             urgency_filter_allowed_values = ["IMMEDIATE", "SOON", "DEFERRABLE", "INFO", "ALL"]
             if kwargs['urgency_filter'] not in urgency_filter_allowed_values:
                 raise ValueError(
-                    "Invalid value for `urgency_filter`, must be one of {0}".format(urgency_filter_allowed_values)
+                    f"Invalid value for `urgency_filter`, must be one of { urgency_filter_allowed_values }"
                 )
 
         if 'group_by' in kwargs:
             group_by_allowed_values = ["URGENCY", "TYPE"]
             if kwargs['group_by'] not in group_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                    f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
                 )
 
         if 'type_filter' in kwargs:
             type_filter_allowed_values = ["UNKNOWN", "INCIDENT_ERROR", "ERROR", "WARNING", "NOTIFICATION", "TRACE", "ALL"]
             if kwargs['type_filter'] not in type_filter_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type_filter`, must be one of {0}".format(type_filter_allowed_values)
+                    f"Invalid value for `type_filter`, must be one of { type_filter_allowed_values }"
                 )
 
         query_params = {

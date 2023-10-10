@@ -121,8 +121,7 @@ class ThinAssociationAuthorizationResponse(object):
         allowed_values = ["FAIL_UNKNOWN", "FAIL_BAD_REQUEST", "FAIL_MISSING_ENDORSE", "FAIL_MISSING_ADMIT", "SUCCESS"]
         if not value_allowed_none_or_none_sentinel(association_result, allowed_values):
             raise ValueError(
-                "Invalid value for `association_result`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `association_result`, must be None or one of {allowed_values}"
             )
         self._association_result = association_result
 

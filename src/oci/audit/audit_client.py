@@ -156,7 +156,7 @@ class AuditClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_configuration got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id
@@ -279,7 +279,7 @@ class AuditClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_events got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_events got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -368,7 +368,7 @@ class AuditClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_configuration got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id

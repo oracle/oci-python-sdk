@@ -333,8 +333,7 @@ class CreateBastionDetails(object):
         allowed_values = ["DISABLED", "ENABLED"]
         if not value_allowed_none_or_none_sentinel(dns_proxy_status, allowed_values):
             raise ValueError(
-                "Invalid value for `dns_proxy_status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `dns_proxy_status`, must be None or one of {allowed_values}"
             )
         self._dns_proxy_status = dns_proxy_status
 

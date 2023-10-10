@@ -376,8 +376,7 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
         allowed_values = ["GET", "POST", "PATCH", "DELETE", "PUT"]
         if not value_allowed_none_or_none_sentinel(method_type, allowed_values):
             raise ValueError(
-                "Invalid value for `method_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `method_type`, must be None or one of {allowed_values}"
             )
         self._method_type = method_type
 
@@ -480,8 +479,7 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
         allowed_values = ["SYNCHRONOUS", "ASYNC_OCI_WORKREQUEST", "ASYNC_GENERIC"]
         if not value_allowed_none_or_none_sentinel(api_call_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `api_call_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `api_call_mode`, must be None or one of {allowed_values}"
             )
         self._api_call_mode = api_call_mode
 
@@ -532,8 +530,7 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
         allowed_values = ["GET", "POST", "PATCH", "DELETE", "PUT"]
         if not value_allowed_none_or_none_sentinel(cancel_method_type, allowed_values):
             raise ValueError(
-                "Invalid value for `cancel_method_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `cancel_method_type`, must be None or one of {allowed_values}"
             )
         self._cancel_method_type = cancel_method_type
 

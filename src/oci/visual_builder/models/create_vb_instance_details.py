@@ -360,8 +360,7 @@ class CreateVbInstanceDetails(object):
         allowed_values = ["UCM", "GOV", "VB4SAAS"]
         if not value_allowed_none_or_none_sentinel(consumption_model, allowed_values):
             raise ValueError(
-                "Invalid value for `consumption_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `consumption_model`, must be None or one of {allowed_values}"
             )
         self._consumption_model = consumption_model
 

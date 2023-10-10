@@ -176,7 +176,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -186,7 +186,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -293,7 +293,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_dis_application_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_dis_application_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -304,7 +304,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -402,7 +402,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -412,7 +412,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -514,7 +514,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_application_detailed_description got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_application_detailed_description got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -525,7 +525,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -624,7 +624,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -634,7 +634,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -733,7 +733,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_connection_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_connection_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -743,7 +743,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -842,7 +842,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_copy_object_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_copy_object_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -852,7 +852,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -951,7 +951,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_data_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_data_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -961,7 +961,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1060,7 +1060,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_data_flow got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_data_flow got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -1070,7 +1070,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1169,7 +1169,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_data_flow_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_data_flow_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -1179,7 +1179,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1278,7 +1278,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_dis_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_dis_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -1288,7 +1288,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1390,7 +1390,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_dis_application_detailed_description got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_dis_application_detailed_description got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -1401,7 +1401,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1512,7 +1512,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_entity_shape got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_entity_shape got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -1524,7 +1524,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1624,7 +1624,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_export_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_export_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -1634,7 +1634,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1736,7 +1736,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_external_publication got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_external_publication got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -1747,7 +1747,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1849,7 +1849,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_external_publication_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_external_publication_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -1860,7 +1860,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1960,7 +1960,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_folder got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_folder got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -1970,7 +1970,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2070,7 +2070,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_function_library got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_function_library got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -2080,7 +2080,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2179,7 +2179,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_import_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_import_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -2189,7 +2189,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2291,7 +2291,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_patch got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_patch got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -2302,7 +2302,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2401,7 +2401,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_pipeline got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_pipeline got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -2411,7 +2411,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2510,7 +2510,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_pipeline_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_pipeline_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -2520,7 +2520,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2619,7 +2619,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_project got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_project got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -2629,7 +2629,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2731,7 +2731,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_schedule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_schedule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -2742,7 +2742,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2841,7 +2841,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -2851,7 +2851,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2953,7 +2953,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_task_run got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_task_run got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -2964,7 +2964,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3066,7 +3066,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_task_schedule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_task_schedule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -3077,7 +3077,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3176,7 +3176,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_task_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_task_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -3186,7 +3186,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3285,7 +3285,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_user_defined_function got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_user_defined_function got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -3295,7 +3295,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3394,7 +3394,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_user_defined_function_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_user_defined_function_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -3404,7 +3404,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3500,7 +3500,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_workspace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_workspace got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -3597,7 +3597,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -3608,7 +3608,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3704,7 +3704,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_application_detailed_description got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_application_detailed_description got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -3715,7 +3715,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3811,7 +3811,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -3822,7 +3822,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3918,7 +3918,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_connection_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_connection_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -3929,7 +3929,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4025,7 +4025,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_copy_object_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_copy_object_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -4036,7 +4036,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4132,7 +4132,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_data_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_data_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -4143,7 +4143,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4239,7 +4239,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_data_flow got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_data_flow got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -4250,7 +4250,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4346,7 +4346,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_data_flow_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_data_flow_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -4357,7 +4357,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4453,7 +4453,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_dis_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_dis_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -4464,7 +4464,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4560,7 +4560,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_dis_application_detailed_description got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_dis_application_detailed_description got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -4571,7 +4571,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4667,7 +4667,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_export_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_export_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -4678,7 +4678,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4777,7 +4777,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_external_publication got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_external_publication got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -4789,7 +4789,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4888,7 +4888,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_external_publication_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_external_publication_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -4900,7 +4900,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4996,7 +4996,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_folder got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_folder got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -5007,7 +5007,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5103,7 +5103,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_function_library got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_function_library got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -5114,7 +5114,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5210,7 +5210,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_import_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_import_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "importRequestKey": import_request_key,
@@ -5221,7 +5221,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5320,7 +5320,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_patch got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_patch got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -5332,7 +5332,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5428,7 +5428,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_pipeline got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_pipeline got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -5439,7 +5439,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5535,7 +5535,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_pipeline_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_pipeline_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -5546,7 +5546,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5642,7 +5642,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_project got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_project got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -5653,7 +5653,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5752,7 +5752,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_schedule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_schedule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -5764,7 +5764,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5860,7 +5860,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -5871,7 +5871,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5970,7 +5970,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_task_run got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_task_run got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -5982,7 +5982,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6081,7 +6081,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_task_schedule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_task_schedule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -6093,7 +6093,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6189,7 +6189,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_task_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_task_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -6200,7 +6200,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6296,7 +6296,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_user_defined_function got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_user_defined_function got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -6307,7 +6307,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6403,7 +6403,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_user_defined_function_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_user_defined_function_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -6414,7 +6414,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6515,7 +6515,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_workspace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_workspace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -6525,7 +6525,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "quiesceTimeout": kwargs.get("quiesce_timeout", missing),
@@ -6623,7 +6623,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -6634,7 +6634,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6725,7 +6725,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_application_detailed_description got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_application_detailed_description got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -6736,7 +6736,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6830,7 +6830,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_composite_state got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_composite_state got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -6841,7 +6841,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "aggregatorKey": aggregator_key
@@ -6939,7 +6939,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -6950,7 +6950,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7041,7 +7041,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_connection_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_connection_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -7052,7 +7052,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7143,7 +7143,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_copy_object_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_copy_object_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -7154,7 +7154,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7246,7 +7246,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_count_statistic got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_count_statistic got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -7257,7 +7257,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7348,7 +7348,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_data_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_data_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -7359,7 +7359,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7456,7 +7456,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_data_entity got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_data_entity got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -7469,7 +7469,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7564,7 +7564,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_data_flow got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_data_flow got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -7575,7 +7575,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "expandReferences": kwargs.get("expand_references", missing)
@@ -7673,7 +7673,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_data_flow_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_data_flow_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -7684,7 +7684,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7778,7 +7778,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_dependent_object got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_dependent_object got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -7790,7 +7790,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7881,7 +7881,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_dis_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_dis_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -7892,7 +7892,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7983,7 +7983,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_dis_application_detailed_description got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_dis_application_detailed_description got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -7994,7 +7994,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8085,7 +8085,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_export_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_export_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -8096,7 +8096,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8190,7 +8190,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_publication got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_publication got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -8202,7 +8202,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8296,7 +8296,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_publication_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_publication_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -8308,7 +8308,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8405,7 +8405,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_folder got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_folder got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -8416,14 +8416,14 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'projection' in kwargs:
             projection_allowed_values = ["CHILD_COUNT_STATISTICS"]
             for projection_item in kwargs['projection']:
                 if projection_item not in projection_allowed_values:
                     raise ValueError(
-                        "Invalid value for `projection`, must be one of {0}".format(projection_allowed_values)
+                        f"Invalid value for `projection`, must be one of { projection_allowed_values }"
                     )
 
         query_params = {
@@ -8528,7 +8528,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_function_library got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_function_library got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -8539,14 +8539,14 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'projection' in kwargs:
             projection_allowed_values = ["CHILD_COUNT_STATISTICS"]
             for projection_item in kwargs['projection']:
                 if projection_item not in projection_allowed_values:
                     raise ValueError(
-                        "Invalid value for `projection`, must be one of {0}".format(projection_allowed_values)
+                        f"Invalid value for `projection`, must be one of { projection_allowed_values }"
                     )
 
         query_params = {
@@ -8657,7 +8657,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_import_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_import_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -8668,7 +8668,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -8770,7 +8770,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_patch got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_patch got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -8782,7 +8782,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8877,7 +8877,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_pipeline got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_pipeline got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -8888,7 +8888,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "expandReferences": kwargs.get("expand_references", missing)
@@ -8986,7 +8986,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_pipeline_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_pipeline_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -8997,7 +8997,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9094,7 +9094,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_project got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_project got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -9105,14 +9105,14 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'projection' in kwargs:
             projection_allowed_values = ["CHILD_COUNT_STATISTICS"]
             for projection_item in kwargs['projection']:
                 if projection_item not in projection_allowed_values:
                     raise ValueError(
-                        "Invalid value for `projection`, must be one of {0}".format(projection_allowed_values)
+                        f"Invalid value for `projection`, must be one of { projection_allowed_values }"
                     )
 
         query_params = {
@@ -9218,7 +9218,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_published_object got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_published_object got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -9230,7 +9230,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "expandReferences": kwargs.get("expand_references", missing)
@@ -9331,7 +9331,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_reference got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_reference got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -9343,7 +9343,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9440,7 +9440,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_runtime_operator got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_runtime_operator got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -9453,7 +9453,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9551,7 +9551,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_runtime_pipeline got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_runtime_pipeline got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -9563,7 +9563,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "expandReferences": kwargs.get("expand_references", missing)
@@ -9664,7 +9664,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_schedule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_schedule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -9676,7 +9676,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9770,7 +9770,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_schema got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_schema got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -9782,7 +9782,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9877,7 +9877,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -9888,7 +9888,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "expandReferences": kwargs.get("expand_references", missing)
@@ -9989,7 +9989,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_task_run got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_task_run got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -10001,7 +10001,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10095,7 +10095,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_task_schedule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_task_schedule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -10107,7 +10107,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10198,7 +10198,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_task_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_task_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -10209,7 +10209,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10300,7 +10300,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_template got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_template got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -10311,7 +10311,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10402,7 +10402,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_user_defined_function got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_user_defined_function got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -10413,7 +10413,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10504,7 +10504,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_user_defined_function_validation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_user_defined_function_validation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -10515,7 +10515,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10603,7 +10603,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -10613,7 +10613,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10701,7 +10701,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_workspace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_workspace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -10711,7 +10711,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10839,7 +10839,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_applications got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_applications got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -10849,20 +10849,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11005,7 +11005,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_connection_validations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_connection_validations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -11015,20 +11015,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11170,7 +11170,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_connections got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_connections got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -11180,20 +11180,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11344,7 +11344,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_copy_object_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_copy_object_requests got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -11354,34 +11354,34 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'copy_status' in kwargs:
             copy_status_allowed_values = ["IN_PROGRESS", "SUCCESSFUL", "QUEUED", "TERMINATING", "TERMINATED", "FAILED", "ALL"]
             if kwargs['copy_status'] not in copy_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `copy_status`, must be one of {0}".format(copy_status_allowed_values)
+                    f"Invalid value for `copy_status`, must be one of { copy_status_allowed_values }"
                 )
 
         if 'projection' in kwargs:
             projection_allowed_values = ["SUMMARY", "DETAILS"]
             if kwargs['projection'] not in projection_allowed_values:
                 raise ValueError(
-                    "Invalid value for `projection`, must be one of {0}".format(projection_allowed_values)
+                    f"Invalid value for `projection`, must be one of { projection_allowed_values }"
                 )
 
         query_params = {
@@ -11521,7 +11521,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_data_assets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_data_assets got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -11531,20 +11531,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11700,7 +11700,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_data_entities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_data_entities got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -11712,20 +11712,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11870,7 +11870,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_data_flow_validations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_data_flow_validations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -11880,20 +11880,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12036,7 +12036,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_data_flows got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_data_flows got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -12046,20 +12046,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12217,7 +12217,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_dependent_objects got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_dependent_objects got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -12228,20 +12228,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12397,7 +12397,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_dis_application_task_run_lineages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_dis_application_task_run_lineages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -12408,20 +12408,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12569,7 +12569,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_dis_applications got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_dis_applications got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -12579,20 +12579,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12744,7 +12744,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_export_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_export_requests got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -12754,34 +12754,34 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'export_status' in kwargs:
             export_status_allowed_values = ["IN_PROGRESS", "SUCCESSFUL", "QUEUED", "TERMINATING", "TERMINATED", "FAILED"]
             if kwargs['export_status'] not in export_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `export_status`, must be one of {0}".format(export_status_allowed_values)
+                    f"Invalid value for `export_status`, must be one of { export_status_allowed_values }"
                 )
 
         if 'projection' in kwargs:
             projection_allowed_values = ["SUMMARY", "DETAILS"]
             if kwargs['projection'] not in projection_allowed_values:
                 raise ValueError(
-                    "Invalid value for `projection`, must be one of {0}".format(projection_allowed_values)
+                    f"Invalid value for `projection`, must be one of { projection_allowed_values }"
                 )
 
         query_params = {
@@ -12924,7 +12924,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_publication_validations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_publication_validations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -12935,20 +12935,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13085,7 +13085,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_publications got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_publications got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -13096,20 +13096,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13254,7 +13254,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_folders got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_folders got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -13264,20 +13264,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13421,7 +13421,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_function_libraries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_function_libraries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -13431,20 +13431,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13595,7 +13595,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_import_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_import_requests got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -13605,34 +13605,34 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'import_status' in kwargs:
             import_status_allowed_values = ["IN_PROGRESS", "SUCCESSFUL", "QUEUED", "TERMINATING", "TERMINATED", "FAILED"]
             if kwargs['import_status'] not in import_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `import_status`, must be one of {0}".format(import_status_allowed_values)
+                    f"Invalid value for `import_status`, must be one of { import_status_allowed_values }"
                 )
 
         if 'projection' in kwargs:
             projection_allowed_values = ["SUMMARY", "DETAILS"]
             if kwargs['projection'] not in projection_allowed_values:
                 raise ValueError(
-                    "Invalid value for `projection`, must be one of {0}".format(projection_allowed_values)
+                    f"Invalid value for `projection`, must be one of { projection_allowed_values }"
                 )
 
         query_params = {
@@ -13775,7 +13775,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_patch_changes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_patch_changes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -13786,20 +13786,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13940,7 +13940,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_patches got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_patches got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -13951,20 +13951,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -14106,7 +14106,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_pipeline_validations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_pipeline_validations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -14116,20 +14116,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14272,7 +14272,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_pipelines got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_pipelines got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -14282,20 +14282,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -14438,7 +14438,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_projects got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_projects got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -14448,20 +14448,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -14623,7 +14623,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_published_objects got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_published_objects got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -14634,20 +14634,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -14784,7 +14784,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_references got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_references got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -14795,20 +14795,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -14958,7 +14958,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_runtime_operators got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_runtime_operators got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -14970,20 +14970,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -15142,7 +15142,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_runtime_pipelines got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_runtime_pipelines got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -15153,20 +15153,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -15315,7 +15315,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_schedules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_schedules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -15326,20 +15326,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15488,7 +15488,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_schemas got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_schemas got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -15499,20 +15499,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15667,7 +15667,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_task_run_lineages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_task_run_lineages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -15678,20 +15678,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -15826,7 +15826,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_task_run_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_task_run_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -15838,20 +15838,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -16009,7 +16009,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_task_runs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_task_runs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -16020,20 +16020,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -16187,7 +16187,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_task_schedules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_task_schedules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -16198,20 +16198,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16355,7 +16355,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_task_validations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_task_validations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -16365,20 +16365,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16529,7 +16529,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tasks got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tasks got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -16539,20 +16539,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -16693,7 +16693,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_templates got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_templates got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -16703,20 +16703,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -16858,7 +16858,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_user_defined_function_validations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_user_defined_function_validations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -16868,20 +16868,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -17024,7 +17024,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_user_defined_functions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_user_defined_functions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -17034,20 +17034,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -17174,7 +17174,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -17184,20 +17184,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -17320,7 +17320,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -17330,20 +17330,20 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -17476,27 +17476,27 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'work_request_status' in kwargs:
             work_request_status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
             if kwargs['work_request_status'] not in work_request_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `work_request_status`, must be one of {0}".format(work_request_status_allowed_values)
+                    f"Invalid value for `work_request_status`, must be one of { work_request_status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -17630,27 +17630,27 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_workspaces got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_workspaces got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "STARTING", "STOPPING", "STOPPED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME", "TIME_UPDATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -17760,7 +17760,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_workspace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"start_workspace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -17770,7 +17770,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17877,7 +17877,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "stop_workspace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"stop_workspace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -17887,7 +17887,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "quiesceTimeout": kwargs.get("quiesce_timeout", missing),
@@ -17996,7 +17996,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -18007,7 +18007,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18110,7 +18110,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_application_detailed_description got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_application_detailed_description got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -18121,7 +18121,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18224,7 +18224,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -18235,7 +18235,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18338,7 +18338,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_copy_object_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_copy_object_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -18349,7 +18349,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18452,7 +18452,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_data_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_data_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -18463,7 +18463,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18566,7 +18566,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_data_flow got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_data_flow got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -18577,7 +18577,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18680,7 +18680,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_dis_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_dis_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -18691,7 +18691,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18794,7 +18794,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_dis_application_detailed_description got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_dis_application_detailed_description got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -18805,7 +18805,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18908,7 +18908,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_export_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_export_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -18919,7 +18919,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19025,7 +19025,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_publication got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_publication got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -19037,7 +19037,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19140,7 +19140,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_folder got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_folder got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -19151,7 +19151,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19254,7 +19254,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_function_library got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_function_library got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -19265,7 +19265,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19368,7 +19368,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_import_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_import_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -19379,7 +19379,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19482,7 +19482,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_pipeline got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_pipeline got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -19493,7 +19493,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19596,7 +19596,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_project got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_project got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -19607,7 +19607,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19717,7 +19717,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_reference got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_reference got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -19729,7 +19729,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19837,7 +19837,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_schedule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_schedule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -19849,7 +19849,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19952,7 +19952,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -19963,7 +19963,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -20069,7 +20069,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_task_run got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_task_run got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -20081,7 +20081,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -20187,7 +20187,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_task_schedule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_task_schedule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -20199,7 +20199,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -20302,7 +20302,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_user_defined_function got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_user_defined_function got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id,
@@ -20313,7 +20313,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -20413,7 +20413,7 @@ class DataIntegrationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_workspace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_workspace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workspaceId": workspace_id
@@ -20423,7 +20423,7 @@ class DataIntegrationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

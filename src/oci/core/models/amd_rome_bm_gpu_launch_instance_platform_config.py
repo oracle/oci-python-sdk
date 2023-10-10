@@ -153,8 +153,7 @@ class AmdRomeBmGpuLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
         allowed_values = ["NPS0", "NPS1", "NPS2", "NPS4"]
         if not value_allowed_none_or_none_sentinel(numa_nodes_per_socket, allowed_values):
             raise ValueError(
-                "Invalid value for `numa_nodes_per_socket`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `numa_nodes_per_socket`, must be None or one of {allowed_values}"
             )
         self._numa_nodes_per_socket = numa_nodes_per_socket
 

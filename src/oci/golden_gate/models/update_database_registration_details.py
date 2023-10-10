@@ -355,8 +355,7 @@ class UpdateDatabaseRegistrationDetails(object):
         allowed_values = ["DIRECT", "REDIRECT"]
         if not value_allowed_none_or_none_sentinel(session_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `session_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `session_mode`, must be None or one of {allowed_values}"
             )
         self._session_mode = session_mode
 

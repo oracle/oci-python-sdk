@@ -166,7 +166,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_drg_route_distribution_statements got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_drg_route_distribution_statements got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteDistributionId": drg_route_distribution_id
@@ -176,7 +176,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -271,7 +271,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_drg_route_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_drg_route_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteTableId": drg_route_table_id
@@ -281,7 +281,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -390,7 +390,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_ipv6_subnet_cidr got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_ipv6_subnet_cidr got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subnetId": subnet_id
@@ -400,7 +400,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -511,7 +511,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_ipv6_vcn_cidr got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_ipv6_vcn_cidr got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vcnId": vcn_id
@@ -521,7 +521,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -607,7 +607,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_network_security_group_security_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_network_security_group_security_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkSecurityGroupId": network_security_group_id
@@ -617,7 +617,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -719,7 +719,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_public_ip_pool_capacity got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_public_ip_pool_capacity got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "publicIpPoolId": public_ip_pool_id
@@ -729,7 +729,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -845,7 +845,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_vcn_cidr got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_vcn_cidr got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vcnId": vcn_id
@@ -855,7 +855,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -948,7 +948,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "advertise_byoip_range got unknown kwargs: {!r}".format(extra_kwargs))
+                f"advertise_byoip_range got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "byoipRangeId": byoip_range_id
@@ -958,7 +958,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1058,7 +1058,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "attach_service_id got unknown kwargs: {!r}".format(extra_kwargs))
+                f"attach_service_id got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceGatewayId": service_gateway_id
@@ -1068,7 +1068,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1156,7 +1156,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "bulk_add_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"bulk_add_virtual_circuit_public_prefixes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualCircuitId": virtual_circuit_id
@@ -1166,7 +1166,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1252,7 +1252,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "bulk_delete_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"bulk_delete_virtual_circuit_public_prefixes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualCircuitId": virtual_circuit_id
@@ -1262,7 +1262,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1366,7 +1366,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_byoip_range_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_byoip_range_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "byoipRangeId": byoip_range_id
@@ -1376,7 +1376,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1488,7 +1488,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_capture_filter_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_capture_filter_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "captureFilterId": capture_filter_id
@@ -1498,7 +1498,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1605,7 +1605,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_cpe_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_cpe_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cpeId": cpe_id
@@ -1615,7 +1615,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1723,7 +1723,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_cross_connect_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_cross_connect_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "crossConnectId": cross_connect_id
@@ -1733,7 +1733,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1841,7 +1841,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_cross_connect_group_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_cross_connect_group_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "crossConnectGroupId": cross_connect_group_id
@@ -1851,7 +1851,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1959,7 +1959,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_dhcp_options_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_dhcp_options_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dhcpId": dhcp_id
@@ -1969,7 +1969,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2075,7 +2075,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_drg_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_drg_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgId": drg_id
@@ -2085,7 +2085,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2191,7 +2191,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_internet_gateway_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_internet_gateway_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "igId": ig_id
@@ -2201,7 +2201,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2307,7 +2307,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_ip_sec_connection_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_ip_sec_connection_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id
@@ -2317,7 +2317,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2425,7 +2425,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_local_peering_gateway_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_local_peering_gateway_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "localPeeringGatewayId": local_peering_gateway_id
@@ -2435,7 +2435,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2541,7 +2541,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_nat_gateway_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_nat_gateway_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "natGatewayId": nat_gateway_id
@@ -2551,7 +2551,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2656,7 +2656,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_network_security_group_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_network_security_group_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkSecurityGroupId": network_security_group_id
@@ -2666,7 +2666,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2775,7 +2775,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_public_ip_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_public_ip_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "publicIpId": public_ip_id
@@ -2785,7 +2785,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2891,7 +2891,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_public_ip_pool_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_public_ip_pool_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "publicIpPoolId": public_ip_pool_id
@@ -2901,7 +2901,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3007,7 +3007,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_remote_peering_connection_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_remote_peering_connection_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "remotePeeringConnectionId": remote_peering_connection_id
@@ -3017,7 +3017,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3125,7 +3125,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_route_table_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_route_table_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "rtId": rt_id
@@ -3135,7 +3135,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3241,7 +3241,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_security_list_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_security_list_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityListId": security_list_id
@@ -3251,7 +3251,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3357,7 +3357,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_service_gateway_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_service_gateway_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceGatewayId": service_gateway_id
@@ -3367,7 +3367,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3473,7 +3473,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_subnet_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_subnet_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subnetId": subnet_id
@@ -3483,7 +3483,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3589,7 +3589,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_vcn_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_vcn_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vcnId": vcn_id
@@ -3599,7 +3599,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3705,7 +3705,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_virtual_circuit_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_virtual_circuit_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualCircuitId": virtual_circuit_id
@@ -3715,7 +3715,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3829,7 +3829,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_vlan_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_vlan_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vlanId": vlan_id
@@ -3839,7 +3839,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3952,7 +3952,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_vtap_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_vtap_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vtapId": vtap_id
@@ -3962,7 +3962,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4057,7 +4057,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "connect_local_peering_gateways got unknown kwargs: {!r}".format(extra_kwargs))
+                f"connect_local_peering_gateways got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "localPeeringGatewayId": local_peering_gateway_id
@@ -4067,7 +4067,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4157,7 +4157,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "connect_remote_peering_connections got unknown kwargs: {!r}".format(extra_kwargs))
+                f"connect_remote_peering_connections got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "remotePeeringConnectionId": remote_peering_connection_id
@@ -4167,7 +4167,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4262,7 +4262,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_byoip_range got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_byoip_range got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4371,7 +4371,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_capture_filter got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_capture_filter got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4483,7 +4483,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_cpe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_cpe got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4599,7 +4599,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_cross_connect got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_cross_connect got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4711,7 +4711,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_cross_connect_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_cross_connect_group got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4819,7 +4819,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_dhcp_options got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4926,7 +4926,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_drg got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_drg got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5031,7 +5031,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_drg_attachment got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5125,7 +5125,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_drg_route_distribution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_drg_route_distribution got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5217,7 +5217,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_drg_route_table got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_drg_route_table got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5331,7 +5331,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_internet_gateway got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5454,7 +5454,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_ip_sec_connection got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5552,7 +5552,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_ipv6 got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_ipv6 got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5644,7 +5644,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_local_peering_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_local_peering_gateway got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5736,7 +5736,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_nat_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_nat_gateway got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5827,7 +5827,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_network_security_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_network_security_group got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5922,7 +5922,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_private_ip got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_private_ip got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -6036,7 +6036,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_public_ip got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_public_ip got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -6132,7 +6132,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_public_ip_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_public_ip_pool got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -6224,7 +6224,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_remote_peering_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_remote_peering_connection got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -6337,7 +6337,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_route_table got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_route_table got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -6447,7 +6447,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_security_list got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_security_list got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -6550,7 +6550,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_service_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_service_gateway got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -6681,7 +6681,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_subnet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_subnet got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -6813,7 +6813,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_vcn got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_vcn got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -6930,7 +6930,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_virtual_circuit got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_virtual_circuit got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -7028,7 +7028,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_vlan got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_vlan got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -7137,7 +7137,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_vtap got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_vtap got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -7240,7 +7240,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_byoip_range got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_byoip_range got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "byoipRangeId": byoip_range_id
@@ -7250,7 +7250,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7345,7 +7345,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_capture_filter got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_capture_filter got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "captureFilterId": capture_filter_id
@@ -7355,7 +7355,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7446,7 +7446,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_cpe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_cpe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cpeId": cpe_id
@@ -7456,7 +7456,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7547,7 +7547,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_cross_connect got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_cross_connect got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "crossConnectId": cross_connect_id
@@ -7557,7 +7557,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7649,7 +7649,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_cross_connect_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_cross_connect_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "crossConnectGroupId": cross_connect_group_id
@@ -7659,7 +7659,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7753,7 +7753,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_dhcp_options got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dhcpId": dhcp_id
@@ -7763,7 +7763,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7854,7 +7854,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_drg got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_drg got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgId": drg_id
@@ -7864,7 +7864,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7954,7 +7954,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_drg_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgAttachmentId": drg_attachment_id
@@ -7964,7 +7964,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8054,7 +8054,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_drg_route_distribution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_drg_route_distribution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteDistributionId": drg_route_distribution_id
@@ -8064,7 +8064,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8152,7 +8152,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_drg_route_table got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_drg_route_table got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteTableId": drg_route_table_id
@@ -8162,7 +8162,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8254,7 +8254,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_internet_gateway got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "igId": ig_id
@@ -8264,7 +8264,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8359,7 +8359,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_ip_sec_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id
@@ -8369,7 +8369,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8467,7 +8467,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_ipv6 got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_ipv6 got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipv6Id": ipv6_id
@@ -8477,7 +8477,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8569,7 +8569,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_local_peering_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_local_peering_gateway got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "localPeeringGatewayId": local_peering_gateway_id
@@ -8579,7 +8579,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8671,7 +8671,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_nat_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_nat_gateway got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "natGatewayId": nat_gateway_id
@@ -8681,7 +8681,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8778,7 +8778,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_network_security_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_network_security_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkSecurityGroupId": network_security_group_id
@@ -8788,7 +8788,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8889,7 +8889,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_private_ip got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_private_ip got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateIpId": private_ip_id
@@ -8899,7 +8899,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9003,7 +9003,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_public_ip got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_public_ip got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "publicIpId": public_ip_id
@@ -9013,7 +9013,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9110,7 +9110,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_public_ip_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_public_ip_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "publicIpPoolId": public_ip_pool_id
@@ -9120,7 +9120,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9212,7 +9212,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_remote_peering_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_remote_peering_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "remotePeeringConnectionId": remote_peering_connection_id
@@ -9222,7 +9222,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9316,7 +9316,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_route_table got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_route_table got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "rtId": rt_id
@@ -9326,7 +9326,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9418,7 +9418,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_security_list got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_security_list got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityListId": security_list_id
@@ -9428,7 +9428,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9517,7 +9517,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_service_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_service_gateway got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceGatewayId": service_gateway_id
@@ -9527,7 +9527,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9617,7 +9617,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_subnet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_subnet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subnetId": subnet_id
@@ -9627,7 +9627,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9720,7 +9720,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_vcn got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_vcn got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vcnId": vcn_id
@@ -9730,7 +9730,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9822,7 +9822,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_virtual_circuit got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_virtual_circuit got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualCircuitId": virtual_circuit_id
@@ -9832,7 +9832,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9927,7 +9927,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_vlan got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_vlan got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vlanId": vlan_id
@@ -9937,7 +9937,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10032,7 +10032,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_vtap got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_vtap got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vtapId": vtap_id
@@ -10042,7 +10042,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10145,7 +10145,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "detach_service_id got unknown kwargs: {!r}".format(extra_kwargs))
+                f"detach_service_id got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceGatewayId": service_gateway_id
@@ -10155,7 +10155,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10274,7 +10274,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_all_drg_attachments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_all_drg_attachments got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgId": drg_id
@@ -10284,13 +10284,13 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'attachment_type' in kwargs:
             attachment_type_allowed_values = ["VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "ALL"]
             if kwargs['attachment_type'] not in attachment_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `attachment_type`, must be one of {0}".format(attachment_type_allowed_values)
+                    f"Invalid value for `attachment_type`, must be one of { attachment_type_allowed_values }"
                 )
 
         query_params = {
@@ -10385,7 +10385,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_allowed_ike_ip_sec_parameters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_allowed_ike_ip_sec_parameters got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -10476,7 +10476,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_byoip_range got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_byoip_range got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "byoipRangeId": byoip_range_id
@@ -10486,7 +10486,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10575,7 +10575,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_capture_filter got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_capture_filter got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "captureFilterId": capture_filter_id
@@ -10585,7 +10585,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10665,7 +10665,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cpe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cpe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cpeId": cpe_id
@@ -10675,7 +10675,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10781,7 +10781,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cpe_device_config_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cpe_device_config_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cpeId": cpe_id
@@ -10791,7 +10791,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "text/plain; charset&#x3D;utf-8",
@@ -10890,7 +10890,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cpe_device_shape got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cpe_device_shape got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cpeDeviceShapeId": cpe_device_shape_id
@@ -10900,7 +10900,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10982,7 +10982,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cross_connect got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cross_connect got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "crossConnectId": cross_connect_id
@@ -10992,7 +10992,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11072,7 +11072,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cross_connect_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cross_connect_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "crossConnectGroupId": cross_connect_group_id
@@ -11082,7 +11082,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11162,7 +11162,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cross_connect_letter_of_authority got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cross_connect_letter_of_authority got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "crossConnectId": cross_connect_id
@@ -11172,7 +11172,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json, text/html",
@@ -11252,7 +11252,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cross_connect_status got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cross_connect_status got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "crossConnectId": cross_connect_id
@@ -11262,7 +11262,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11342,7 +11342,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_dhcp_options got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dhcpId": dhcp_id
@@ -11352,7 +11352,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11430,7 +11430,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_drg got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_drg got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgId": drg_id
@@ -11440,7 +11440,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11518,7 +11518,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_drg_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgAttachmentId": drg_attachment_id
@@ -11528,7 +11528,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11618,7 +11618,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_drg_redundancy_status got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_drg_redundancy_status got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgId": drg_id
@@ -11628,7 +11628,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11710,7 +11710,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_drg_route_distribution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_drg_route_distribution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteDistributionId": drg_route_distribution_id
@@ -11720,7 +11720,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11798,7 +11798,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_drg_route_table got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_drg_route_table got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteTableId": drg_route_table_id
@@ -11808,7 +11808,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11889,7 +11889,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fast_connect_provider_service got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fast_connect_provider_service got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "providerServiceId": provider_service_id
@@ -11899,7 +11899,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11986,7 +11986,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fast_connect_provider_service_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fast_connect_provider_service_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "providerServiceId": provider_service_id,
@@ -11997,7 +11997,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12077,7 +12077,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_internet_gateway got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "igId": ig_id
@@ -12087,7 +12087,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12167,7 +12167,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_ip_sec_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id
@@ -12177,7 +12177,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12260,7 +12260,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_ip_sec_connection_device_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_ip_sec_connection_device_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id
@@ -12270,7 +12270,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12351,7 +12351,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_ip_sec_connection_device_status got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_ip_sec_connection_device_status got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id
@@ -12361,7 +12361,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12448,7 +12448,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_ip_sec_connection_tunnel got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_ip_sec_connection_tunnel got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id,
@@ -12459,7 +12459,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12544,7 +12544,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_ip_sec_connection_tunnel_error got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_ip_sec_connection_tunnel_error got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id,
@@ -12555,7 +12555,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12641,7 +12641,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_ip_sec_connection_tunnel_shared_secret got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_ip_sec_connection_tunnel_shared_secret got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id,
@@ -12652,7 +12652,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12759,7 +12759,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_ipsec_cpe_device_config_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_ipsec_cpe_device_config_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id
@@ -12769,7 +12769,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "text/plain; charset&#x3D;utf-8",
@@ -12866,7 +12866,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_ipv6 got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_ipv6 got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipv6Id": ipv6_id
@@ -12876,7 +12876,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12956,7 +12956,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_local_peering_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_local_peering_gateway got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "localPeeringGatewayId": local_peering_gateway_id
@@ -12966,7 +12966,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13044,7 +13044,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_nat_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_nat_gateway got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "natGatewayId": nat_gateway_id
@@ -13054,7 +13054,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13138,7 +13138,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_network_security_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_network_security_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkSecurityGroupId": network_security_group_id
@@ -13148,7 +13148,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13267,13 +13267,13 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_networking_topology got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_networking_topology got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["ANY", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -13369,7 +13369,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_private_ip got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_private_ip got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateIpId": private_ip_id
@@ -13379,7 +13379,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13471,7 +13471,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_public_ip got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_public_ip got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "publicIpId": public_ip_id
@@ -13481,7 +13481,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13563,7 +13563,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_public_ip_by_ip_address got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_public_ip_by_ip_address got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -13653,7 +13653,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_public_ip_by_private_ip_id got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_public_ip_by_private_ip_id got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -13742,7 +13742,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_public_ip_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_public_ip_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "publicIpPoolId": public_ip_pool_id
@@ -13752,7 +13752,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13832,7 +13832,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_remote_peering_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_remote_peering_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "remotePeeringConnectionId": remote_peering_connection_id
@@ -13842,7 +13842,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13922,7 +13922,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_route_table got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_route_table got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "rtId": rt_id
@@ -13932,7 +13932,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14010,7 +14010,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_security_list got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_security_list got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityListId": security_list_id
@@ -14020,7 +14020,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14098,7 +14098,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_service got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_service got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceId": service_id
@@ -14108,7 +14108,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14186,7 +14186,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_service_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_service_gateway got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceGatewayId": service_gateway_id
@@ -14196,7 +14196,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14274,7 +14274,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_subnet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_subnet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subnetId": subnet_id
@@ -14284,7 +14284,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14408,13 +14408,13 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_subnet_topology got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_subnet_topology got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["ANY", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -14523,7 +14523,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_tunnel_cpe_device_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_tunnel_cpe_device_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id,
@@ -14534,7 +14534,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14647,7 +14647,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_tunnel_cpe_device_config_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_tunnel_cpe_device_config_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id,
@@ -14658,7 +14658,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "text/plain; charset&#x3D;utf-8",
@@ -14749,7 +14749,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_upgrade_status got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_upgrade_status got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgId": drg_id
@@ -14759,7 +14759,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14839,7 +14839,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vcn got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vcn got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vcnId": vcn_id
@@ -14849,7 +14849,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14936,7 +14936,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vcn_dns_resolver_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vcn_dns_resolver_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vcnId": vcn_id
@@ -14946,7 +14946,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15072,13 +15072,13 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vcn_topology got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vcn_topology got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["ANY", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         query_params = {
@@ -15169,7 +15169,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_virtual_circuit got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_virtual_circuit got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualCircuitId": virtual_circuit_id
@@ -15179,7 +15179,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15268,7 +15268,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vlan got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vlan got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vlanId": vlan_id
@@ -15278,7 +15278,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15363,7 +15363,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vnic got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vnic got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vnicId": vnic_id
@@ -15373,7 +15373,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15460,7 +15460,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vtap got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vtap got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vtapId": vtap_id
@@ -15470,7 +15470,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15548,7 +15548,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_allowed_peer_regions_for_remote_peering got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_allowed_peer_regions_for_remote_peering got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -15654,7 +15654,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_byoip_allocated_ranges got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_byoip_allocated_ranges got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "byoipRangeId": byoip_range_id
@@ -15664,7 +15664,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -15808,20 +15808,20 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_byoip_ranges got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_byoip_ranges got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15931,6 +15931,11 @@ class VirtualNetworkClient(object):
 
             Allowed values are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED"
 
+        :param str filter_type: (optional)
+            A filter to only return resources that match the given capture `filterType`. The `filterType` value is the string representation of enum - `VTAP`, `FLOWLOG`.
+
+            Allowed values are: "VTAP", "FLOWLOG"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -15966,32 +15971,40 @@ class VirtualNetworkClient(object):
             "sort_by",
             "sort_order",
             "display_name",
-            "lifecycle_state"
+            "lifecycle_state",
+            "filter_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_capture_filters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_capture_filters got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        if 'filter_type' in kwargs:
+            filter_type_allowed_values = ["VTAP", "FLOWLOG"]
+            if kwargs['filter_type'] not in filter_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `filter_type`, must be one of { filter_type_allowed_values }"
                 )
 
         query_params = {
@@ -16001,7 +16014,8 @@ class VirtualNetworkClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "displayName": kwargs.get("display_name", missing),
-            "lifecycleState": kwargs.get("lifecycle_state", missing)
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "filterType": kwargs.get("filter_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -16119,7 +16133,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cpe_device_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cpe_device_shapes got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -16229,7 +16243,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cpes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cpes got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -16369,27 +16383,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cross_connect_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cross_connect_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "PROVISIONED", "INACTIVE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -16504,7 +16518,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cross_connect_locations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cross_connect_locations got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -16601,7 +16615,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cross_connect_mappings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cross_connect_mappings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualCircuitId": virtual_circuit_id
@@ -16611,7 +16625,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16755,27 +16769,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cross_connects got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cross_connects got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PENDING_CUSTOMER", "PROVISIONING", "PROVISIONED", "INACTIVE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -16892,7 +16906,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_crossconnect_port_speed_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_crossconnect_port_speed_shapes got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -17041,27 +17055,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_dhcp_options got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -17240,34 +17254,34 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_drg_attachments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_drg_attachments got unknown kwargs: {extra_kwargs!r}")
 
         if 'attachment_type' in kwargs:
             attachment_type_allowed_values = ["VCN", "VIRTUAL_CIRCUIT", "REMOTE_PEERING_CONNECTION", "IPSEC_TUNNEL", "ALL"]
             if kwargs['attachment_type'] not in attachment_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `attachment_type`, must be one of {0}".format(attachment_type_allowed_values)
+                    f"Invalid value for `attachment_type`, must be one of { attachment_type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ATTACHING", "ATTACHED", "DETACHING", "DETACHED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -17397,7 +17411,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_drg_route_distribution_statements got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_drg_route_distribution_statements got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteDistributionId": drg_route_distribution_id
@@ -17407,20 +17421,20 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -17565,27 +17579,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_drg_route_distributions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_drg_route_distributions got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -17704,7 +17718,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_drg_route_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_drg_route_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteTableId": drg_route_table_id
@@ -17714,13 +17728,13 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'route_type' in kwargs:
             route_type_allowed_values = ["STATIC", "DYNAMIC"]
             if kwargs['route_type'] not in route_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `route_type`, must be one of {0}".format(route_type_allowed_values)
+                    f"Invalid value for `route_type`, must be one of { route_type_allowed_values }"
                 )
 
         query_params = {
@@ -17869,27 +17883,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_drg_route_tables got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_drg_route_tables got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -18002,7 +18016,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_drgs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_drgs got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -18118,7 +18132,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fast_connect_provider_services got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fast_connect_provider_services got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -18232,7 +18246,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fast_connect_provider_virtual_circuit_bandwidth_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fast_connect_provider_virtual_circuit_bandwidth_shapes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "providerServiceId": provider_service_id
@@ -18242,7 +18256,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -18390,27 +18404,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_internet_gateways got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_internet_gateways got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -18536,7 +18550,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_ip_sec_connection_tunnel_routes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_ip_sec_connection_tunnel_routes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id,
@@ -18547,13 +18561,13 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'advertiser' in kwargs:
             advertiser_allowed_values = ["CUSTOMER", "ORACLE"]
             if kwargs['advertiser'] not in advertiser_allowed_values:
                 raise ValueError(
-                    "Invalid value for `advertiser`, must be one of {0}".format(advertiser_allowed_values)
+                    f"Invalid value for `advertiser`, must be one of { advertiser_allowed_values }"
                 )
 
         query_params = {
@@ -18670,7 +18684,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_ip_sec_connection_tunnel_security_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_ip_sec_connection_tunnel_security_associations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id,
@@ -18681,7 +18695,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -18791,7 +18805,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_ip_sec_connection_tunnels got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_ip_sec_connection_tunnels got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id
@@ -18801,7 +18815,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -18924,7 +18938,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_ip_sec_connections got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_ip_sec_connections got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -19062,7 +19076,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_ipv6s got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_ipv6s got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -19180,7 +19194,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_local_peering_gateways got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_local_peering_gateways got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -19326,27 +19340,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_nat_gateways got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_nat_gateways got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -19479,7 +19493,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_network_security_group_security_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_network_security_group_security_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkSecurityGroupId": network_security_group_id
@@ -19489,27 +19503,27 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'direction' in kwargs:
             direction_allowed_values = ["EGRESS", "INGRESS"]
             if kwargs['direction'] not in direction_allowed_values:
                 raise ValueError(
-                    "Invalid value for `direction`, must be one of {0}".format(direction_allowed_values)
+                    f"Invalid value for `direction`, must be one of { direction_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -19634,7 +19648,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_network_security_group_vnics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_network_security_group_vnics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkSecurityGroupId": network_security_group_id
@@ -19644,20 +19658,20 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMEASSOCIATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -19813,27 +19827,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_network_security_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_network_security_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -19984,7 +19998,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_private_ips got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_private_ips got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -20128,20 +20142,20 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_public_ip_pools got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_public_ip_pools got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -20304,19 +20318,19 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_public_ips got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_public_ips got unknown kwargs: {extra_kwargs!r}")
 
         scope_allowed_values = ["REGION", "AVAILABILITY_DOMAIN"]
         if scope not in scope_allowed_values:
             raise ValueError(
-                "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                f"Invalid value for `scope`, must be one of { scope_allowed_values }"
             )
 
         if 'lifetime' in kwargs:
             lifetime_allowed_values = ["EPHEMERAL", "RESERVED"]
             if kwargs['lifetime'] not in lifetime_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifetime`, must be one of {0}".format(lifetime_allowed_values)
+                    f"Invalid value for `lifetime`, must be one of { lifetime_allowed_values }"
                 )
 
         query_params = {
@@ -20435,7 +20449,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_remote_peering_connections got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_remote_peering_connections got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -20585,27 +20599,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_route_tables got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_route_tables got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -20756,27 +20770,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_security_lists got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_security_lists got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -20923,27 +20937,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_service_gateways got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_service_gateways got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -21051,7 +21065,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_services got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_services got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -21195,27 +21209,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_subnets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_subnets got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -21359,27 +21373,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_vcns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_vcns got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -21491,7 +21505,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_virtual_circuit_associated_tunnels got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_virtual_circuit_associated_tunnels got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualCircuitId": virtual_circuit_id
@@ -21501,7 +21515,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -21613,7 +21627,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_virtual_circuit_bandwidth_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_virtual_circuit_bandwidth_shapes got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -21714,7 +21728,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_virtual_circuit_public_prefixes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualCircuitId": virtual_circuit_id
@@ -21724,13 +21738,13 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'verification_state' in kwargs:
             verification_state_allowed_values = ["IN_PROGRESS", "COMPLETED", "FAILED"]
             if kwargs['verification_state'] not in verification_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `verification_state`, must be one of {0}".format(verification_state_allowed_values)
+                    f"Invalid value for `verification_state`, must be one of { verification_state_allowed_values }"
                 )
 
         query_params = {
@@ -21871,27 +21885,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_virtual_circuits got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_virtual_circuits got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PENDING_PROVIDER", "VERIFYING", "PROVISIONING", "PROVISIONED", "FAILED", "INACTIVE", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -22047,27 +22061,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_vlans got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_vlans got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -22247,27 +22261,27 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_vtaps got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_vtaps got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -22398,7 +22412,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "modify_vcn_cidr got unknown kwargs: {!r}".format(extra_kwargs))
+                f"modify_vcn_cidr got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vcnId": vcn_id
@@ -22408,7 +22422,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22494,7 +22508,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_drg_route_distribution_statements got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_drg_route_distribution_statements got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteDistributionId": drg_route_distribution_id
@@ -22504,7 +22518,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22585,7 +22599,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_drg_route_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_drg_route_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteTableId": drg_route_table_id
@@ -22595,7 +22609,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22688,7 +22702,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_export_drg_route_distribution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_export_drg_route_distribution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgAttachmentId": drg_attachment_id
@@ -22698,7 +22712,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22795,7 +22809,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_import_drg_route_distribution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_import_drg_route_distribution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteTableId": drg_route_table_id
@@ -22805,7 +22819,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22912,7 +22926,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_ipv6_subnet_cidr got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_ipv6_subnet_cidr got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subnetId": subnet_id
@@ -22922,7 +22936,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23032,7 +23046,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_ipv6_vcn_cidr got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_ipv6_vcn_cidr got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vcnId": vcn_id
@@ -23042,7 +23056,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23129,7 +23143,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_network_security_group_security_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_network_security_group_security_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkSecurityGroupId": network_security_group_id
@@ -23139,7 +23153,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23237,7 +23251,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_public_ip_pool_capacity got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_public_ip_pool_capacity got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "publicIpPoolId": public_ip_pool_id
@@ -23247,7 +23261,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23361,7 +23375,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_vcn_cidr got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_vcn_cidr got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vcnId": vcn_id
@@ -23371,7 +23385,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23472,7 +23486,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_byoip_range got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_byoip_range got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "byoipRangeId": byoip_range_id
@@ -23482,7 +23496,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23583,7 +23597,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_capture_filter got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_capture_filter got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "captureFilterId": capture_filter_id
@@ -23593,7 +23607,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23690,7 +23704,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_cpe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_cpe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cpeId": cpe_id
@@ -23700,7 +23714,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23797,7 +23811,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_cross_connect got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_cross_connect got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "crossConnectId": cross_connect_id
@@ -23807,7 +23821,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23905,7 +23919,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_cross_connect_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_cross_connect_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "crossConnectGroupId": cross_connect_group_id
@@ -23915,7 +23929,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24015,7 +24029,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_dhcp_options got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dhcpId": dhcp_id
@@ -24025,7 +24039,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24120,7 +24134,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_drg got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_drg got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgId": drg_id
@@ -24130,7 +24144,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24226,7 +24240,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_drg_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgAttachmentId": drg_attachment_id
@@ -24236,7 +24250,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24331,7 +24345,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_drg_route_distribution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_drg_route_distribution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteDistributionId": drg_route_distribution_id
@@ -24341,7 +24355,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24426,7 +24440,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_drg_route_distribution_statements got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_drg_route_distribution_statements got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteDistributionId": drg_route_distribution_id
@@ -24436,7 +24450,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24519,7 +24533,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_drg_route_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_drg_route_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteTableId": drg_route_table_id
@@ -24529,7 +24543,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24622,7 +24636,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_drg_route_table got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_drg_route_table got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgRouteTableId": drg_route_table_id
@@ -24632,7 +24646,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24731,7 +24745,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_internet_gateway got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "igId": ig_id
@@ -24741,7 +24755,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24839,7 +24853,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_ip_sec_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id
@@ -24849,7 +24863,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24967,7 +24981,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_ip_sec_connection_tunnel got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_ip_sec_connection_tunnel got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id,
@@ -24978,7 +24992,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25083,7 +25097,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_ip_sec_connection_tunnel_shared_secret got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_ip_sec_connection_tunnel_shared_secret got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id,
@@ -25094,7 +25108,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25204,7 +25218,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_ipv6 got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_ipv6 got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipv6Id": ipv6_id
@@ -25214,7 +25228,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25310,7 +25324,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_local_peering_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_local_peering_gateway got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "localPeeringGatewayId": local_peering_gateway_id
@@ -25320,7 +25334,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25415,7 +25429,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_nat_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_nat_gateway got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "natGatewayId": nat_gateway_id
@@ -25425,7 +25439,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25536,7 +25550,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_network_security_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_network_security_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkSecurityGroupId": network_security_group_id
@@ -25546,7 +25560,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25632,7 +25646,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_network_security_group_security_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_network_security_group_security_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkSecurityGroupId": network_security_group_id
@@ -25642,7 +25656,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25746,7 +25760,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_private_ip got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_private_ip got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateIpId": private_ip_id
@@ -25756,7 +25770,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25892,7 +25906,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_public_ip got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_public_ip got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "publicIpId": public_ip_id
@@ -25902,7 +25916,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26002,7 +26016,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_public_ip_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_public_ip_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "publicIpPoolId": public_ip_pool_id
@@ -26012,7 +26026,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26108,7 +26122,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_remote_peering_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_remote_peering_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "remotePeeringConnectionId": remote_peering_connection_id
@@ -26118,7 +26132,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26218,7 +26232,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_route_table got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_route_table got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "rtId": rt_id
@@ -26228,7 +26242,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26327,7 +26341,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_security_list got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_security_list got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "securityListId": security_list_id
@@ -26337,7 +26351,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26433,7 +26447,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_service_gateway got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_service_gateway got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceGatewayId": service_gateway_id
@@ -26443,7 +26457,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26538,7 +26552,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_subnet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_subnet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subnetId": subnet_id
@@ -26548,7 +26562,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26663,7 +26677,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_tunnel_cpe_device_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_tunnel_cpe_device_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ipscId": ipsc_id,
@@ -26674,7 +26688,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26774,7 +26788,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_vcn got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_vcn got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vcnId": vcn_id
@@ -26784,7 +26798,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -26904,7 +26918,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_virtual_circuit got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_virtual_circuit got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "virtualCircuitId": virtual_circuit_id
@@ -26914,7 +26928,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27017,7 +27031,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_vlan got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_vlan got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vlanId": vlan_id
@@ -27027,7 +27041,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27123,7 +27137,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_vnic got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_vnic got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vnicId": vnic_id
@@ -27133,7 +27147,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27233,7 +27247,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_vtap got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_vtap got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vtapId": vtap_id
@@ -27243,7 +27257,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27344,7 +27358,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upgrade_drg got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upgrade_drg got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "drgId": drg_id
@@ -27354,7 +27368,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27446,7 +27460,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_byoip_range got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_byoip_range got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "byoipRangeId": byoip_range_id
@@ -27456,7 +27470,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27543,7 +27557,7 @@ class VirtualNetworkClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "withdraw_byoip_range got unknown kwargs: {!r}".format(extra_kwargs))
+                f"withdraw_byoip_range got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "byoipRangeId": byoip_range_id
@@ -27553,7 +27567,7 @@ class VirtualNetworkClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

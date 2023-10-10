@@ -163,8 +163,7 @@ class TunnelSecurityAssociationSummary(object):
         allowed_values = ["INITIATING", "LISTENING", "UP", "DOWN", "ERROR", "UNKNOWN"]
         if not value_allowed_none_or_none_sentinel(tunnel_sa_status, allowed_values):
             raise ValueError(
-                "Invalid value for `tunnel_sa_status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `tunnel_sa_status`, must be None or one of {allowed_values}"
             )
         self._tunnel_sa_status = tunnel_sa_status
 

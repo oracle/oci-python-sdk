@@ -126,8 +126,7 @@ class CreateGiFsuCollectionDetails(CreateFsuCollectionDetails):
         allowed_values = ["GI_18", "GI_19"]
         if not value_allowed_none_or_none_sentinel(source_major_version, allowed_values):
             raise ValueError(
-                "Invalid value for `source_major_version`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `source_major_version`, must be None or one of {allowed_values}"
             )
         self._source_major_version = source_major_version
 

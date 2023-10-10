@@ -78,8 +78,7 @@ class DpdConfig(object):
         allowed_values = ["INITIATE_AND_RESPOND", "RESPOND_ONLY"]
         if not value_allowed_none_or_none_sentinel(dpd_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `dpd_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `dpd_mode`, must be None or one of {allowed_values}"
             )
         self._dpd_mode = dpd_mode
 

@@ -462,8 +462,7 @@ class CreateSddcDetails(object):
         allowed_values = ["HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"]
         if not value_allowed_none_or_none_sentinel(initial_sku, allowed_values):
             raise ValueError(
-                "Invalid value for `initial_sku`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `initial_sku`, must be None or one of {allowed_values}"
             )
         self._initial_sku = initial_sku
 

@@ -197,8 +197,7 @@ class Filter(object):
         allowed_values = ["CLEAR", "REPLACE", "EQUALS", "NOT_EQUALS", "STARTS_WITH", "DOES_NOT_START_WITH", "ENDS_WITH", "DOES_NOT_END_WITH", "CONTAINS", "DOES_NOT_CONTAIN", "IS_LESS_THAN", "IS_LESS_THAN_OR_EQUAL_TO", "IS_GREATER_THAN", "IS_GREATER_THAN_OR_EQUAL_TO", "IS_BETWEEN", "IS_NOT_BETWEEN", "ADD_SUBQUERY", "CLEAR_SUBQUERY"]
         if not value_allowed_none_or_none_sentinel(operator, allowed_values):
             raise ValueError(
-                "Invalid value for `operator`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `operator`, must be None or one of {allowed_values}"
             )
         self._operator = operator
 

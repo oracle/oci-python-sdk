@@ -107,8 +107,7 @@ class CreateTicketDetails(object):
         allowed_values = ["HIGHEST", "HIGH", "MEDIUM", "LOW"]
         if not value_allowed_none_or_none_sentinel(severity, allowed_values):
             raise ValueError(
-                "Invalid value for `severity`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `severity`, must be None or one of {allowed_values}"
             )
         self._severity = severity
 

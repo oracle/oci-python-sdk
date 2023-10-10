@@ -180,8 +180,7 @@ class CreateCertificateIssuedByInternalCaConfigDetails(CreateCertificateConfigDe
         allowed_values = ["TLS_SERVER_OR_CLIENT", "TLS_SERVER", "TLS_CLIENT", "TLS_CODE_SIGN"]
         if not value_allowed_none_or_none_sentinel(certificate_profile_type, allowed_values):
             raise ValueError(
-                "Invalid value for `certificate_profile_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `certificate_profile_type`, must be None or one of {allowed_values}"
             )
         self._certificate_profile_type = certificate_profile_type
 
@@ -300,8 +299,7 @@ class CreateCertificateIssuedByInternalCaConfigDetails(CreateCertificateConfigDe
         allowed_values = ["RSA2048", "RSA4096", "ECDSA_P256", "ECDSA_P384"]
         if not value_allowed_none_or_none_sentinel(key_algorithm, allowed_values):
             raise ValueError(
-                "Invalid value for `key_algorithm`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `key_algorithm`, must be None or one of {allowed_values}"
             )
         self._key_algorithm = key_algorithm
 
@@ -332,8 +330,7 @@ class CreateCertificateIssuedByInternalCaConfigDetails(CreateCertificateConfigDe
         allowed_values = ["SHA256_WITH_RSA", "SHA384_WITH_RSA", "SHA512_WITH_RSA", "SHA256_WITH_ECDSA", "SHA384_WITH_ECDSA", "SHA512_WITH_ECDSA"]
         if not value_allowed_none_or_none_sentinel(signature_algorithm, allowed_values):
             raise ValueError(
-                "Invalid value for `signature_algorithm`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `signature_algorithm`, must be None or one of {allowed_values}"
             )
         self._signature_algorithm = signature_algorithm
 

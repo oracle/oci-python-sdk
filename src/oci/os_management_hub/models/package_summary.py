@@ -259,8 +259,7 @@ class PackageSummary(object):
         allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
         if not value_allowed_none_or_none_sentinel(architecture, allowed_values):
             raise ValueError(
-                "Invalid value for `architecture`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `architecture`, must be None or one of {allowed_values}"
             )
         self._architecture = architecture
 
@@ -315,8 +314,7 @@ class PackageSummary(object):
         allowed_values = ["INSTALLED", "AVAILABLE", "UPDATABLE"]
         if not value_allowed_none_or_none_sentinel(package_classification, allowed_values):
             raise ValueError(
-                "Invalid value for `package_classification`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `package_classification`, must be None or one of {allowed_values}"
             )
         self._package_classification = package_classification
 

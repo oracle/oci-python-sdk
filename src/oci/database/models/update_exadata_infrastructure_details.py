@@ -536,8 +536,7 @@ class UpdateExadataInfrastructureDetails(object):
         allowed_values = ["X7", "X8", "X8M", "X9M", "X10M"]
         if not value_allowed_none_or_none_sentinel(additional_compute_system_model, allowed_values):
             raise ValueError(
-                "Invalid value for `additional_compute_system_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `additional_compute_system_model`, must be None or one of {allowed_values}"
             )
         self._additional_compute_system_model = additional_compute_system_model
 

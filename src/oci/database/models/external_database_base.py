@@ -411,8 +411,7 @@ class ExternalDatabaseBase(object):
         allowed_values = ["PROVISIONING", "NOT_CONNECTED", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 
@@ -539,8 +538,7 @@ class ExternalDatabaseBase(object):
         allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
         if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
             raise ValueError(
-                "Invalid value for `database_edition`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `database_edition`, must be None or one of {allowed_values}"
             )
         self._database_edition = database_edition
 
@@ -671,8 +669,7 @@ class ExternalDatabaseBase(object):
         allowed_values = ["RAC", "SINGLE_INSTANCE"]
         if not value_allowed_none_or_none_sentinel(database_configuration, allowed_values):
             raise ValueError(
-                "Invalid value for `database_configuration`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `database_configuration`, must be None or one of {allowed_values}"
             )
         self._database_configuration = database_configuration
 

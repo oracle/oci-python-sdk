@@ -134,8 +134,7 @@ class CreateMediaWorkflowJobDetails(object):
         allowed_values = ["ID", "NAME"]
         if not value_allowed_none_or_none_sentinel(workflow_identifier_type, allowed_values):
             raise ValueError(
-                "Invalid value for `workflow_identifier_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `workflow_identifier_type`, must be None or one of {allowed_values}"
             )
         self._workflow_identifier_type = workflow_identifier_type
 

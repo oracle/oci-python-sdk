@@ -84,8 +84,7 @@ class IngestStreamDistributionChannelDetails(object):
         allowed_values = ["ASSET_METADATA_MEDIA_ASSET"]
         if not value_allowed_none_or_none_sentinel(ingest_payload_type, allowed_values):
             raise ValueError(
-                "Invalid value for `ingest_payload_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ingest_payload_type`, must be None or one of {allowed_values}"
             )
         self._ingest_payload_type = ingest_payload_type
 

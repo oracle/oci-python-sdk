@@ -163,8 +163,7 @@ class UpdateDetectorRuleDetails(object):
         allowed_values = ["CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR"]
         if not value_allowed_none_or_none_sentinel(risk_level, allowed_values):
             raise ValueError(
-                "Invalid value for `risk_level`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `risk_level`, must be None or one of {allowed_values}"
             )
         self._risk_level = risk_level
 

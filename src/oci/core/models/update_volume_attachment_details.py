@@ -93,8 +93,7 @@ class UpdateVolumeAttachmentDetails(object):
         allowed_values = ["UNKNOWN", "LOGGING_IN", "LOGIN_SUCCEEDED", "LOGIN_FAILED", "LOGGING_OUT", "LOGOUT_SUCCEEDED", "LOGOUT_FAILED"]
         if not value_allowed_none_or_none_sentinel(iscsi_login_state, allowed_values):
             raise ValueError(
-                "Invalid value for `iscsi_login_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `iscsi_login_state`, must be None or one of {allowed_values}"
             )
         self._iscsi_login_state = iscsi_login_state
 

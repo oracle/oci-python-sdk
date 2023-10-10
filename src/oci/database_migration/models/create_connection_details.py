@@ -244,8 +244,7 @@ class CreateConnectionDetails(object):
         allowed_values = ["MANUAL", "AUTONOMOUS", "USER_MANAGED_OCI"]
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
             raise ValueError(
-                "Invalid value for `database_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `database_type`, must be None or one of {allowed_values}"
             )
         self._database_type = database_type
 
@@ -276,8 +275,7 @@ class CreateConnectionDetails(object):
         allowed_values = ["ORACLE", "RDS_ORACLE"]
         if not value_allowed_none_or_none_sentinel(manual_database_sub_type, allowed_values):
             raise ValueError(
-                "Invalid value for `manual_database_sub_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `manual_database_sub_type`, must be None or one of {allowed_values}"
             )
         self._manual_database_sub_type = manual_database_sub_type
 

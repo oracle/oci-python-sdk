@@ -124,8 +124,7 @@ class CreateDataPumpSettings(object):
         allowed_values = ["FULL", "SCHEMA", "TABLE", "TABLESPACE", "TRANSPORTABLE"]
         if not value_allowed_none_or_none_sentinel(job_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `job_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `job_mode`, must be None or one of {allowed_values}"
             )
         self._job_mode = job_mode
 

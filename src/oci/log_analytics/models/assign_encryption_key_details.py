@@ -106,8 +106,7 @@ class AssignEncryptionKeyDetails(object):
         allowed_values = ["ACTIVE_DATA", "ARCHIVAL_DATA", "ALL"]
         if not value_allowed_none_or_none_sentinel(key_type, allowed_values):
             raise ValueError(
-                "Invalid value for `key_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `key_type`, must be None or one of {allowed_values}"
             )
         self._key_type = key_type
 

@@ -162,8 +162,7 @@ class UpdateDrPlanStepDetails(object):
         allowed_values = ["STOP_ON_ERROR", "CONTINUE_ON_ERROR"]
         if not value_allowed_none_or_none_sentinel(error_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `error_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `error_mode`, must be None or one of {allowed_values}"
             )
         self._error_mode = error_mode
 

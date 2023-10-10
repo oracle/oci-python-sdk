@@ -163,8 +163,7 @@ class CreateBackendSetDetails(object):
         allowed_values = ["TWO_TUPLE", "THREE_TUPLE", "FIVE_TUPLE"]
         if not value_allowed_none_or_none_sentinel(policy, allowed_values):
             raise ValueError(
-                "Invalid value for `policy`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `policy`, must be None or one of {allowed_values}"
             )
         self._policy = policy
 
@@ -223,8 +222,7 @@ class CreateBackendSetDetails(object):
         allowed_values = ["IPV4", "IPV6"]
         if not value_allowed_none_or_none_sentinel(ip_version, allowed_values):
             raise ValueError(
-                "Invalid value for `ip_version`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ip_version`, must be None or one of {allowed_values}"
             )
         self._ip_version = ip_version
 
