@@ -251,8 +251,7 @@ class CreateTargetDetails(object):
         allowed_values = ["COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE"]
         if not value_allowed_none_or_none_sentinel(target_resource_type, allowed_values):
             raise ValueError(
-                "Invalid value for `target_resource_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `target_resource_type`, must be None or one of {allowed_values}"
             )
         self._target_resource_type = target_resource_type
 
@@ -355,8 +354,7 @@ class CreateTargetDetails(object):
         allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 

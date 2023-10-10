@@ -78,8 +78,7 @@ class RequestSummarizedTrendResourceRiskScoresDetails(object):
         allowed_values = ["PROBLEM_ID", "RESOURCE_PROFILE_ID"]
         if not value_allowed_none_or_none_sentinel(filter, allowed_values):
             raise ValueError(
-                "Invalid value for `filter`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `filter`, must be None or one of {allowed_values}"
             )
         self._filter = filter
 

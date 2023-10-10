@@ -104,8 +104,7 @@ class AutomaticCaptureFilterDetails(object):
         allowed_values = ["AUTO_CAPTURE_SQL_TEXT", "AUTO_CAPTURE_PARSING_SCHEMA_NAME", "AUTO_CAPTURE_MODULE", "AUTO_CAPTURE_ACTION"]
         if not value_allowed_none_or_none_sentinel(name, allowed_values):
             raise ValueError(
-                "Invalid value for `name`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `name`, must be None or one of {allowed_values}"
             )
         self._name = name
 

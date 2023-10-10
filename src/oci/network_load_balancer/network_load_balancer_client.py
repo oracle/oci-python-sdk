@@ -186,7 +186,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_network_load_balancer_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_network_load_balancer_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id
@@ -196,7 +196,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -312,7 +312,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_backend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_backend got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -323,7 +323,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -434,7 +434,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_backend_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_backend_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id
@@ -444,7 +444,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -555,7 +555,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_listener got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_listener got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id
@@ -565,7 +565,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -663,7 +663,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_network_load_balancer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_network_load_balancer got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -775,7 +775,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_backend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_backend got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -787,7 +787,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -890,7 +890,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_backend_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_backend_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -901,7 +901,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1002,7 +1002,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_listener got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_listener got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -1013,7 +1013,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1109,7 +1109,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_network_load_balancer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_network_load_balancer got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id
@@ -1119,7 +1119,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1228,7 +1228,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_backend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_backend got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -1240,7 +1240,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1343,7 +1343,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_backend_health got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_backend_health got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -1355,7 +1355,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1457,7 +1457,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_backend_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_backend_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -1468,7 +1468,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1563,7 +1563,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_backend_set_health got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_backend_set_health got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -1574,7 +1574,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1684,7 +1684,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_health_checker got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_health_checker got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -1695,7 +1695,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1800,7 +1800,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_listener got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_listener got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -1811,7 +1811,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1909,7 +1909,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_network_load_balancer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_network_load_balancer got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id
@@ -1919,7 +1919,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2009,7 +2009,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_network_load_balancer_health got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_network_load_balancer_health got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id
@@ -2019,7 +2019,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2106,7 +2106,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2116,7 +2116,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2241,7 +2241,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_backend_sets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_backend_sets got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id
@@ -2251,20 +2251,20 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2406,7 +2406,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_backends got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_backends got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -2417,20 +2417,20 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2567,7 +2567,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_listeners got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_listeners got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id
@@ -2577,20 +2577,20 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2719,20 +2719,20 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_network_load_balancer_healths got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_network_load_balancer_healths got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2869,27 +2869,27 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_network_load_balancers got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_network_load_balancers got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3013,20 +3013,20 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_network_load_balancers_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_network_load_balancers_policies got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3148,20 +3148,20 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_network_load_balancers_protocols got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_network_load_balancers_protocols got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3277,7 +3277,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -3287,7 +3287,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id,
@@ -3403,7 +3403,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -3413,7 +3413,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id,
@@ -3526,7 +3526,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -3654,7 +3654,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_backend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_backend got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -3666,7 +3666,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3782,7 +3782,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_backend_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_backend_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -3793,7 +3793,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3909,7 +3909,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_health_checker got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_health_checker got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -3920,7 +3920,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4036,7 +4036,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_listener got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_listener got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id,
@@ -4047,7 +4047,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4150,7 +4150,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_network_load_balancer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_network_load_balancer got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id
@@ -4160,7 +4160,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4269,7 +4269,7 @@ class NetworkLoadBalancerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_network_security_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_network_security_groups got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkLoadBalancerId": network_load_balancer_id
@@ -4279,7 +4279,7 @@ class NetworkLoadBalancerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

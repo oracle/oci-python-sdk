@@ -84,8 +84,7 @@ class ArtifactExportDetails(object):
         allowed_values = ["ORACLE_OBJECT_STORAGE"]
         if not value_allowed_none_or_none_sentinel(artifact_source_type, allowed_values):
             raise ValueError(
-                "Invalid value for `artifact_source_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `artifact_source_type`, must be None or one of {allowed_values}"
             )
         self._artifact_source_type = artifact_source_type
 

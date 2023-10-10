@@ -503,8 +503,7 @@ class UpdateInstanceDetails(object):
         allowed_values = ["ALLOW_DOWNTIME", "AVOID_DOWNTIME"]
         if not value_allowed_none_or_none_sentinel(update_operation_constraint, allowed_values):
             raise ValueError(
-                "Invalid value for `update_operation_constraint`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `update_operation_constraint`, must be None or one of {allowed_values}"
             )
         self._update_operation_constraint = update_operation_constraint
 

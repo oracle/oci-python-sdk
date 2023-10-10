@@ -140,8 +140,7 @@ class CreateDbFsuCollectionDetails(CreateFsuCollectionDetails):
         allowed_values = ["DB_11204", "DB_121", "DB_122", "DB_18", "DB_19"]
         if not value_allowed_none_or_none_sentinel(source_major_version, allowed_values):
             raise ValueError(
-                "Invalid value for `source_major_version`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `source_major_version`, must be None or one of {allowed_values}"
             )
         self._source_major_version = source_major_version
 

@@ -187,7 +187,7 @@ class RewardsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_redeemable_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_redeemable_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subscriptionId": subscription_id
@@ -197,7 +197,7 @@ class RewardsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "tenancyId": tenancy_id,
@@ -310,7 +310,7 @@ class RewardsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_redeemable_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_redeemable_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subscriptionId": subscription_id
@@ -320,7 +320,7 @@ class RewardsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "emailId": email_id,
@@ -445,7 +445,7 @@ class RewardsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_products got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_products got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subscriptionId": subscription_id
@@ -455,27 +455,27 @@ class RewardsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "TIMESTART"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'producttype' in kwargs:
             producttype_allowed_values = ["ALL", "ELIGIBLE", "INELIGIBLE"]
             if kwargs['producttype'] not in producttype_allowed_values:
                 raise ValueError(
-                    "Invalid value for `producttype`, must be one of {0}".format(producttype_allowed_values)
+                    f"Invalid value for `producttype`, must be one of { producttype_allowed_values }"
                 )
 
         query_params = {
@@ -598,7 +598,7 @@ class RewardsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_redeemable_users got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_redeemable_users got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subscriptionId": subscription_id
@@ -608,20 +608,20 @@ class RewardsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "TIMESTART"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -750,7 +750,7 @@ class RewardsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_redemptions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_redemptions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subscriptionId": subscription_id
@@ -760,20 +760,20 @@ class RewardsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMEREDEEMED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -876,7 +876,7 @@ class RewardsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_rewards got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_rewards got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subscriptionId": subscription_id
@@ -886,7 +886,7 @@ class RewardsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "tenancyId": tenancy_id

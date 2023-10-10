@@ -587,8 +587,7 @@ class UpdateTaskScheduleDetails(object):
         allowed_values = ["SECONDS", "MINUTES", "HOURS", "DAYS"]
         if not value_allowed_none_or_none_sentinel(retry_delay_unit, allowed_values):
             raise ValueError(
-                "Invalid value for `retry_delay_unit`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `retry_delay_unit`, must be None or one of {allowed_values}"
             )
         self._retry_delay_unit = retry_delay_unit
 
@@ -715,8 +714,7 @@ class UpdateTaskScheduleDetails(object):
         allowed_values = ["OBO", "RESOURCE_PRINCIPAL", "USER_CERTIFICATE"]
         if not value_allowed_none_or_none_sentinel(auth_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `auth_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `auth_mode`, must be None or one of {allowed_values}"
             )
         self._auth_mode = auth_mode
 
@@ -771,8 +769,7 @@ class UpdateTaskScheduleDetails(object):
         allowed_values = ["SECONDS", "MINUTES", "HOURS", "DAYS"]
         if not value_allowed_none_or_none_sentinel(expected_duration_unit, allowed_values):
             raise ValueError(
-                "Invalid value for `expected_duration_unit`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `expected_duration_unit`, must be None or one of {allowed_values}"
             )
         self._expected_duration_unit = expected_duration_unit
 

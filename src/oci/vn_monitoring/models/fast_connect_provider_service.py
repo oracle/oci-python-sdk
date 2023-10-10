@@ -285,8 +285,7 @@ class FastConnectProviderService(object):
         allowed_values = ["CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED"]
         if not value_allowed_none_or_none_sentinel(private_peering_bgp_management, allowed_values):
             raise ValueError(
-                "Invalid value for `private_peering_bgp_management`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `private_peering_bgp_management`, must be None or one of {allowed_values}"
             )
         self._private_peering_bgp_management = private_peering_bgp_management
 
@@ -365,8 +364,7 @@ class FastConnectProviderService(object):
         allowed_values = ["CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED"]
         if not value_allowed_none_or_none_sentinel(public_peering_bgp_management, allowed_values):
             raise ValueError(
-                "Invalid value for `public_peering_bgp_management`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `public_peering_bgp_management`, must be None or one of {allowed_values}"
             )
         self._public_peering_bgp_management = public_peering_bgp_management
 
@@ -400,8 +398,7 @@ class FastConnectProviderService(object):
             for value in supported_virtual_circuit_types:
                 if not value_allowed_none_or_none_sentinel(value, allowed_values):
                     raise ValueError(
-                        "Invalid value for `supported_virtual_circuit_types`, must be None or one of {0}"
-                        .format(allowed_values)
+                        f"Invalid value for `supported_virtual_circuit_types`, must be None or one of {allowed_values}"
                     )
         self._supported_virtual_circuit_types = supported_virtual_circuit_types
 
@@ -434,8 +431,7 @@ class FastConnectProviderService(object):
         allowed_values = ["CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED"]
         if not value_allowed_none_or_none_sentinel(customer_asn_management, allowed_values):
             raise ValueError(
-                "Invalid value for `customer_asn_management`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `customer_asn_management`, must be None or one of {allowed_values}"
             )
         self._customer_asn_management = customer_asn_management
 
@@ -466,8 +462,7 @@ class FastConnectProviderService(object):
         allowed_values = ["CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED"]
         if not value_allowed_none_or_none_sentinel(provider_service_key_management, allowed_values):
             raise ValueError(
-                "Invalid value for `provider_service_key_management`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `provider_service_key_management`, must be None or one of {allowed_values}"
             )
         self._provider_service_key_management = provider_service_key_management
 
@@ -498,8 +493,7 @@ class FastConnectProviderService(object):
         allowed_values = ["CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED"]
         if not value_allowed_none_or_none_sentinel(bandwith_shape_management, allowed_values):
             raise ValueError(
-                "Invalid value for `bandwith_shape_management`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `bandwith_shape_management`, must be None or one of {allowed_values}"
             )
         self._bandwith_shape_management = bandwith_shape_management
 
@@ -554,8 +548,7 @@ class FastConnectProviderService(object):
         allowed_values = ["LAYER2", "LAYER3"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
-                "Invalid value for `type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `type`, must be None or one of {allowed_values}"
             )
         self._type = type
 

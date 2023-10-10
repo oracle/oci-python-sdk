@@ -800,8 +800,7 @@ class UpdateDbSystemDetails(object):
         allowed_values = ["ENABLED", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(crash_recovery, allowed_values):
             raise ValueError(
-                "Invalid value for `crash_recovery`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `crash_recovery`, must be None or one of {allowed_values}"
             )
         self._crash_recovery = crash_recovery
 

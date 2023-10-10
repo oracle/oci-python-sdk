@@ -291,8 +291,7 @@ class CreateTablespaceDetails(object):
         allowed_values = ["PERMANENT", "TEMPORARY"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
-                "Invalid value for `type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `type`, must be None or one of {allowed_values}"
             )
         self._type = type
 
@@ -615,8 +614,7 @@ class CreateTablespaceDetails(object):
         allowed_values = ["NO_COMPRESS", "BASIC_COMPRESS"]
         if not value_allowed_none_or_none_sentinel(default_compress, allowed_values):
             raise ValueError(
-                "Invalid value for `default_compress`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `default_compress`, must be None or one of {allowed_values}"
             )
         self._default_compress = default_compress
 
@@ -647,8 +645,7 @@ class CreateTablespaceDetails(object):
         allowed_values = ["READ_ONLY", "READ_WRITE"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             raise ValueError(
-                "Invalid value for `status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `status`, must be None or one of {allowed_values}"
             )
         self._status = status
 
@@ -679,8 +676,7 @@ class CreateTablespaceDetails(object):
         allowed_values = ["AUTOALLOCATE", "UNIFORM"]
         if not value_allowed_none_or_none_sentinel(extent_management, allowed_values):
             raise ValueError(
-                "Invalid value for `extent_management`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `extent_management`, must be None or one of {allowed_values}"
             )
         self._extent_management = extent_management
 
@@ -735,8 +731,7 @@ class CreateTablespaceDetails(object):
         allowed_values = ["AUTO", "MANUAL"]
         if not value_allowed_none_or_none_sentinel(segment_management, allowed_values):
             raise ValueError(
-                "Invalid value for `segment_management`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `segment_management`, must be None or one of {allowed_values}"
             )
         self._segment_management = segment_management
 

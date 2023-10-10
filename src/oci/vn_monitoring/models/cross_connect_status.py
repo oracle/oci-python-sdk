@@ -176,8 +176,7 @@ class CrossConnectStatus(object):
         allowed_values = ["UP", "DOWN"]
         if not value_allowed_none_or_none_sentinel(interface_state, allowed_values):
             raise ValueError(
-                "Invalid value for `interface_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `interface_state`, must be None or one of {allowed_values}"
             )
         self._interface_state = interface_state
 
@@ -248,8 +247,7 @@ class CrossConnectStatus(object):
         allowed_values = ["NO_LIGHT", "LOW_WARN", "HIGH_WARN", "BAD", "GOOD"]
         if not value_allowed_none_or_none_sentinel(light_level_indicator, allowed_values):
             raise ValueError(
-                "Invalid value for `light_level_indicator`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `light_level_indicator`, must be None or one of {allowed_values}"
             )
         self._light_level_indicator = light_level_indicator
 
@@ -294,8 +292,7 @@ class CrossConnectStatus(object):
         allowed_values = ["UP", "DOWN", "CIPHER_MISMATCH", "CKN_MISMATCH", "CAK_MISMATCH"]
         if not value_allowed_none_or_none_sentinel(encryption_status, allowed_values):
             raise ValueError(
-                "Invalid value for `encryption_status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `encryption_status`, must be None or one of {allowed_values}"
             )
         self._encryption_status = encryption_status
 

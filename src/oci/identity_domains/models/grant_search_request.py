@@ -198,8 +198,7 @@ class GrantSearchRequest(object):
             for value in attribute_sets:
                 if not value_allowed_none_or_none_sentinel(value, allowed_values):
                     raise ValueError(
-                        "Invalid value for `attribute_sets`, must be None or one of {0}"
-                        .format(allowed_values)
+                        f"Invalid value for `attribute_sets`, must be None or one of {allowed_values}"
                     )
         self._attribute_sets = attribute_sets
 
@@ -292,8 +291,7 @@ class GrantSearchRequest(object):
         allowed_values = ["ASCENDING", "DESCENDING"]
         if not value_allowed_none_or_none_sentinel(sort_order, allowed_values):
             raise ValueError(
-                "Invalid value for `sort_order`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `sort_order`, must be None or one of {allowed_values}"
             )
         self._sort_order = sort_order
 

@@ -23,6 +23,14 @@ class CreatePublicationPackage(object):
     #: This constant has a value of "IMAGE"
     PACKAGE_TYPE_IMAGE = "IMAGE"
 
+    #: A constant which can be used with the package_type property of a CreatePublicationPackage.
+    #: This constant has a value of "CONTAINER"
+    PACKAGE_TYPE_CONTAINER = "CONTAINER"
+
+    #: A constant which can be used with the package_type property of a CreatePublicationPackage.
+    #: This constant has a value of "KUBERNETES"
+    PACKAGE_TYPE_KUBERNETES = "KUBERNETES"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreatePublicationPackage object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -38,7 +46,7 @@ class CreatePublicationPackage(object):
 
         :param package_type:
             The value to assign to the package_type property of this CreatePublicationPackage.
-            Allowed values for this property are: "ORCHESTRATION", "IMAGE"
+            Allowed values for this property are: "ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES"
         :type package_type: str
 
         :param operating_system:
@@ -112,7 +120,7 @@ class CreatePublicationPackage(object):
         **[Required]** Gets the package_type of this CreatePublicationPackage.
         The package's type.
 
-        Allowed values for this property are: "ORCHESTRATION", "IMAGE"
+        Allowed values for this property are: "ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES"
 
 
         :return: The package_type of this CreatePublicationPackage.
@@ -130,11 +138,10 @@ class CreatePublicationPackage(object):
         :param package_type: The package_type of this CreatePublicationPackage.
         :type: str
         """
-        allowed_values = ["ORCHESTRATION", "IMAGE"]
+        allowed_values = ["ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES"]
         if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
             raise ValueError(
-                "Invalid value for `package_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `package_type`, must be None or one of {allowed_values}"
             )
         self._package_type = package_type
 

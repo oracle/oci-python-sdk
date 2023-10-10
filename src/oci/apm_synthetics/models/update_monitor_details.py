@@ -280,8 +280,7 @@ class UpdateMonitorDetails(object):
         allowed_values = ["ENABLED", "DISABLED", "INVALID"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             raise ValueError(
-                "Invalid value for `status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `status`, must be None or one of {allowed_values}"
             )
         self._status = status
 
@@ -588,8 +587,7 @@ class UpdateMonitorDetails(object):
         allowed_values = ["ALL", "ROUND_ROBIN", "BATCHED_ROUND_ROBIN"]
         if not value_allowed_none_or_none_sentinel(scheduling_policy, allowed_values):
             raise ValueError(
-                "Invalid value for `scheduling_policy`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `scheduling_policy`, must be None or one of {allowed_values}"
             )
         self._scheduling_policy = scheduling_policy
 

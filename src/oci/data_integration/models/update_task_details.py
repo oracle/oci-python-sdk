@@ -222,8 +222,7 @@ class UpdateTaskDetails(object):
         allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
-                "Invalid value for `model_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `model_type`, must be None or one of {allowed_values}"
             )
         self._model_type = model_type
 

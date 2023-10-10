@@ -149,8 +149,7 @@ class CreateBlocklistDetails(object):
         allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"]
         if not value_allowed_none_or_none_sentinel(operation, allowed_values):
             raise ValueError(
-                "Invalid value for `operation`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `operation`, must be None or one of {allowed_values}"
             )
         self._operation = operation
 

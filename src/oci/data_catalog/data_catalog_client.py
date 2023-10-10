@@ -184,7 +184,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_data_selector_patterns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_data_selector_patterns got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -195,7 +195,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -308,7 +308,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "associate_custom_property got unknown kwargs: {!r}".format(extra_kwargs))
+                f"associate_custom_property got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -319,7 +319,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -424,7 +424,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "asynchronous_export_glossary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"asynchronous_export_glossary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -435,7 +435,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -544,7 +544,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "attach_catalog_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"attach_catalog_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -554,7 +554,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -654,7 +654,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_catalog_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_catalog_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -664,7 +664,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -762,7 +762,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_catalog_private_endpoint_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_catalog_private_endpoint_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogPrivateEndpointId": catalog_private_endpoint_id
@@ -772,7 +772,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -870,7 +870,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_metastore_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_metastore_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "metastoreId": metastore_id
@@ -880,7 +880,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -984,7 +984,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_attribute got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_attribute got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -996,7 +996,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1106,7 +1106,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_attribute_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_attribute_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -1119,7 +1119,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1218,7 +1218,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_catalog got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_catalog got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1312,7 +1312,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_catalog_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_catalog_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1412,7 +1412,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -1423,7 +1423,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1527,7 +1527,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_custom_property got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_custom_property got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -1538,7 +1538,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1639,7 +1639,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_data_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_data_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -1649,7 +1649,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1753,7 +1753,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_data_asset_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_data_asset_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -1764,7 +1764,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1868,7 +1868,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_entity got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_entity got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -1879,7 +1879,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1986,7 +1986,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_entity_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_entity_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -1998,7 +1998,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2102,7 +2102,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_folder got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_folder got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -2113,7 +2113,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2220,7 +2220,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_folder_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_folder_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -2232,7 +2232,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2333,7 +2333,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_glossary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_glossary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -2343,7 +2343,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2444,7 +2444,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -2454,7 +2454,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2555,7 +2555,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_job_definition got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_job_definition got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -2565,7 +2565,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2669,7 +2669,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_job_execution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_job_execution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -2680,7 +2680,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2778,7 +2778,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_metastore got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_metastore got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2875,7 +2875,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_namespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -2885,7 +2885,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2986,7 +2986,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_pattern got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_pattern got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -2996,7 +2996,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3100,7 +3100,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_term got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_term got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -3111,7 +3111,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3218,7 +3218,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_term_relationship got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_term_relationship got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -3230,7 +3230,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3337,7 +3337,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_attribute got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_attribute got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -3350,7 +3350,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3455,7 +3455,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_attribute_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_attribute_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -3469,7 +3469,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3562,7 +3562,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_catalog got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_catalog got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -3572,7 +3572,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3665,7 +3665,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_catalog_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_catalog_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogPrivateEndpointId": catalog_private_endpoint_id
@@ -3675,7 +3675,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3774,7 +3774,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -3786,7 +3786,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3885,7 +3885,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_custom_property got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_custom_property got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -3897,7 +3897,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3993,7 +3993,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_data_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_data_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -4004,7 +4004,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4103,7 +4103,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_data_asset_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_data_asset_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -4115,7 +4115,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4214,7 +4214,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_entity got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_entity got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -4226,7 +4226,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4328,7 +4328,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_entity_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_entity_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -4341,7 +4341,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4440,7 +4440,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_folder got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_folder got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -4452,7 +4452,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4554,7 +4554,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_folder_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_folder_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -4567,7 +4567,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4663,7 +4663,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_glossary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_glossary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -4674,7 +4674,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4770,7 +4770,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -4781,7 +4781,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4877,7 +4877,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_job_definition got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_job_definition got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -4888,7 +4888,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4981,7 +4981,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_metastore got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_metastore got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "metastoreId": metastore_id
@@ -4991,7 +4991,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5087,7 +5087,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_namespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -5098,7 +5098,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5194,7 +5194,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_pattern got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_pattern got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -5205,7 +5205,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5304,7 +5304,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_term got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_term got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -5316,7 +5316,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5418,7 +5418,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_term_relationship got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_term_relationship got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -5431,7 +5431,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5527,7 +5527,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "detach_catalog_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"detach_catalog_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -5537,7 +5537,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5646,7 +5646,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disassociate_custom_property got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disassociate_custom_property got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -5657,7 +5657,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5759,7 +5759,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "expand_tree_for_glossary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"expand_tree_for_glossary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -5770,7 +5770,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5875,7 +5875,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "export_glossary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"export_glossary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -5886,7 +5886,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isRelationshipExported": kwargs.get("is_relationship_exported", missing)
@@ -6006,7 +6006,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "fetch_entity_lineage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"fetch_entity_lineage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -6018,7 +6018,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -6136,7 +6136,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_attribute got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_attribute got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -6149,14 +6149,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "externalDataType", "externalKey", "isIncrementalData", "isNullable", "length", "position", "precision", "scale", "timeExternal", "uri", "properties", "path", "minCollectionCount", "maxCollectionCount", "datatypeEntityKey", "externalDatatypeEntityKey", "parentAttributeKey", "externalParentAttributeKey", "typeKey"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -6271,7 +6271,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_attribute_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_attribute_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -6285,14 +6285,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "name", "termKey", "termPath", "termDescription", "lifecycleState", "timeCreated", "createdById", "uri", "attributeKey"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -6388,7 +6388,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_catalog got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_catalog got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -6398,7 +6398,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6486,7 +6486,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_catalog_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_catalog_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogPrivateEndpointId": catalog_private_endpoint_id
@@ -6496,7 +6496,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6596,7 +6596,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -6608,14 +6608,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "dataAssetKey", "typeKey", "timeCreated", "timeUpdated", "createdById", "updatedById", "properties", "externalKey", "timeStatusUpdated", "lifecycleState", "isDefault", "uri"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -6723,7 +6723,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_custom_property got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_custom_property got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -6735,14 +6735,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "dataType", "namespaceName", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "properties"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -6847,7 +6847,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_data_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_data_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -6858,14 +6858,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "catalogId", "externalKey", "typeKey", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "uri", "properties"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -6973,7 +6973,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_data_asset_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_data_asset_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -6985,14 +6985,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "name", "termKey", "termPath", "termDescription", "lifecycleState", "timeCreated", "createdById", "uri", "dataAssetKey"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -7104,7 +7104,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_entity got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_entity got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -7116,14 +7116,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "createdById", "updatedById", "lifecycleState", "externalKey", "timeExternal", "timeStatusUpdated", "isLogical", "isPartition", "folderKey", "folderName", "typeKey", "path", "harvestStatus", "lastJobKey", "uri", "properties"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -7235,7 +7235,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_entity_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_entity_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -7248,14 +7248,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "name", "termKey", "termPath", "termDescription", "lifecycleState", "timeCreated", "createdById", "uri", "entityKey"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -7367,7 +7367,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_folder got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_folder got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -7379,14 +7379,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "parentFolderKey", "path", "dataAssetKey", "properties", "externalKey", "timeCreated", "timeUpdated", "createdById", "updatedById", "timeExternal", "lifecycleState", "harvestStatus", "lastJobKey", "uri"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -7498,7 +7498,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_folder_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_folder_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -7511,14 +7511,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "name", "termKey", "termPath", "termDescription", "lifecycleState", "timeCreated", "createdById", "uri", "folderKey"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -7623,7 +7623,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_glossary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_glossary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -7634,14 +7634,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "catalogId", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "owner", "workflowStatus", "uri"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -7746,7 +7746,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -7757,14 +7757,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "catalogId", "lifecycleState", "timeCreated", "timeUpdated", "jobType", "scheduleCronExpression", "timeScheduleBegin", "timeScheduleEnd", "scheduleType", "connectionKey", "jobDefinitionKey", "internalVersion", "executionCount", "timeOfLatestExecution", "executions", "createdById", "updatedById", "uri", "jobDefinitionName", "errorCode", "errorMessage"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -7869,7 +7869,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job_definition got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job_definition got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -7880,14 +7880,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "catalogId", "jobType", "isIncremental", "dataAssetKey", "connectionKey", "internalVersion", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "uri", "isSampleDataExtracted", "sampleDataSizeInMBs", "timeLatestExecutionStarted", "timeLatestExecutionEnded", "jobExecutionState", "scheduleType", "properties"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -7995,7 +7995,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job_execution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job_execution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -8007,14 +8007,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "jobKey", "jobType", "subType", "parentKey", "scheduleInstanceKey", "lifecycleState", "timeCreated", "timeStarted", "timeEnded", "errorCode", "errorMessage", "processKey", "externalUrl", "eventKey", "dataEntityKey", "createdById", "updatedById", "properties", "uri"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -8125,7 +8125,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job_log got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job_log got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -8138,14 +8138,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "jobExecutionKey", "createdById", "updatedById", "timeUpdated", "timeCreated", "severity", "logMessage", "uri"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -8256,7 +8256,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job_metrics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -8269,14 +8269,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "description", "displayName", "timeInserted", "category", "subCategory", "unit", "value", "batchKey", "jobExecutionKey", "createdById", "updatedById", "timeUpdated", "timeCreated", "uri"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -8372,7 +8372,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_metastore got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_metastore got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "metastoreId": metastore_id
@@ -8382,7 +8382,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8479,7 +8479,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_namespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -8490,14 +8490,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "properties"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -8602,7 +8602,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_pattern got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_pattern got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -8613,14 +8613,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "catalogId", "expression", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "properties"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -8728,7 +8728,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_term got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_term got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -8740,14 +8740,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "glossaryKey", "parentTermKey", "isAllowedToHaveChildTerms", "path", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "owner", "workflowStatus", "uri", "relatedTerms", "associatedObjectCount", "associatedObjects"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -8858,7 +8858,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_term_relationship got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_term_relationship got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -8871,14 +8871,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "relatedTermKey", "relatedTermDisplayName", "parentTermKey", "parentTermDisplayName", "lifecycleState", "timeCreated", "uri"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -8983,7 +8983,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_type got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -8994,14 +8994,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "description", "name", "catalogId", "properties", "isInternal", "isTag", "isApproved", "typeCategory", "externalTypeName", "lifecycleState", "uri"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -9097,7 +9097,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -9107,7 +9107,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9217,7 +9217,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "import_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"import_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -9228,7 +9228,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9342,7 +9342,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "import_data_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"import_data_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -9353,13 +9353,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         import_type_allowed_values = ["CUSTOM_PROPERTY_VALUES", "ALL"]
         for import_type_item in import_type:
             if import_type_item not in import_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `import_type`, must be one of {0}".format(import_type_allowed_values)
+                    f"Invalid value for `import_type`, must be one of { import_type_allowed_values }"
                 )
 
         query_params = {
@@ -9476,7 +9476,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "import_glossary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"import_glossary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -9487,7 +9487,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isRelationshipImported": kwargs.get("is_relationship_imported", missing)
@@ -9624,7 +9624,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_aggregated_physical_entities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_aggregated_physical_entities got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -9636,28 +9636,28 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "createdById", "updatedById", "lifecycleState", "externalKey", "timeExternal", "timeStatusUpdated", "isLogical", "isPartition", "folderKey", "folderName", "typeKey", "path", "harvestStatus", "lastJobKey", "uri", "properties"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -9822,7 +9822,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_attribute_tags got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_attribute_tags got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -9835,13 +9835,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -9849,21 +9849,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -10084,7 +10084,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_attributes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_attributes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -10096,13 +10096,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -10110,21 +10110,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME", "POSITION", "DISPLAYORBUSINESSNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -10272,27 +10272,27 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_catalog_private_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_catalog_private_endpoints got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10422,27 +10422,27 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_catalogs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_catalogs got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10621,7 +10621,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_connections got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_connections got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -10632,13 +10632,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -10646,21 +10646,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -10847,7 +10847,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_custom_properties got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_custom_properties got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -10858,14 +10858,14 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'data_types' in kwargs:
             data_types_allowed_values = ["TEXT", "RICH_TEXT", "BOOLEAN", "NUMBER", "DATE"]
             for data_types_item in kwargs['data_types']:
                 if data_types_item not in data_types_allowed_values:
                     raise ValueError(
-                        "Invalid value for `data_types`, must be one of {0}".format(data_types_allowed_values)
+                        f"Invalid value for `data_types`, must be one of { data_types_allowed_values }"
                     )
 
         if 'type_name' in kwargs:
@@ -10873,14 +10873,14 @@ class DataCatalogClient(object):
             for type_name_item in kwargs['type_name']:
                 if type_name_item not in type_name_allowed_values:
                     raise ValueError(
-                        "Invalid value for `type_name`, must be one of {0}".format(type_name_allowed_values)
+                        f"Invalid value for `type_name`, must be one of { type_name_allowed_values }"
                     )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -10888,21 +10888,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["DISPLAYNAME", "USAGECOUNT"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11068,7 +11068,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_data_asset_tags got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_data_asset_tags got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -11079,13 +11079,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -11093,21 +11093,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11283,7 +11283,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_data_assets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_data_assets got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -11293,13 +11293,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -11307,21 +11307,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11475,7 +11475,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_derived_logical_entities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_derived_logical_entities got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -11486,20 +11486,20 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11726,7 +11726,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_entities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_entities got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -11737,20 +11737,20 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'harvest_status' in kwargs:
             harvest_status_allowed_values = ["COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"]
             if kwargs['harvest_status'] not in harvest_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `harvest_status`, must be one of {0}".format(harvest_status_allowed_values)
+                    f"Invalid value for `harvest_status`, must be one of { harvest_status_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -11758,21 +11758,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME", "DISPLAYORBUSINESSNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11952,7 +11952,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_entity_tags got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_entity_tags got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -11964,13 +11964,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -11978,21 +11978,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12158,7 +12158,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_folder_tags got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_folder_tags got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -12170,13 +12170,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -12184,21 +12184,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12406,7 +12406,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_folders got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_folders got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -12417,20 +12417,20 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'harvest_status' in kwargs:
             harvest_status_allowed_values = ["COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"]
             if kwargs['harvest_status'] not in harvest_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `harvest_status`, must be one of {0}".format(harvest_status_allowed_values)
+                    f"Invalid value for `harvest_status`, must be one of { harvest_status_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -12438,21 +12438,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME", "DISPLAYORBUSINESSNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12629,7 +12629,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_glossaries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_glossaries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -12639,13 +12639,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -12653,21 +12653,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12868,7 +12868,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_job_definitions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_job_definitions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -12878,27 +12878,27 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'job_execution_state' in kwargs:
             job_execution_state_allowed_values = ["CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", "SUCCEEDED_WITH_WARNINGS"]
             if kwargs['job_execution_state'] not in job_execution_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `job_execution_state`, must be one of {0}".format(job_execution_state_allowed_values)
+                    f"Invalid value for `job_execution_state`, must be one of { job_execution_state_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'job_type' in kwargs:
             job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
+                    f"Invalid value for `job_type`, must be one of { job_type_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -12906,21 +12906,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME", "TIMELATESTEXECUTIONSTARTED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13141,7 +13141,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_job_executions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_job_executions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -13152,20 +13152,20 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", "SUCCEEDED_WITH_WARNINGS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'job_type' in kwargs:
             job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
+                    f"Invalid value for `job_type`, must be one of { job_type_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -13173,21 +13173,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13365,7 +13365,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_job_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_job_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -13377,13 +13377,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -13391,21 +13391,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13600,7 +13600,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_job_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_job_metrics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -13612,28 +13612,28 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "description", "displayName", "timeInserted", "category", "subCategory", "unit", "value", "batchKey", "jobExecutionKey", "timeCreated", "uri"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13864,7 +13864,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_jobs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_jobs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -13874,27 +13874,27 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "INACTIVE", "EXPIRED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'job_type' in kwargs:
             job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
+                    f"Invalid value for `job_type`, must be one of { job_type_allowed_values }"
                 )
 
         if 'schedule_type' in kwargs:
             schedule_type_allowed_values = ["SCHEDULED", "IMMEDIATE"]
             if kwargs['schedule_type'] not in schedule_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `schedule_type`, must be one of {0}".format(schedule_type_allowed_values)
+                    f"Invalid value for `schedule_type`, must be one of { schedule_type_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -13902,21 +13902,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14064,27 +14064,27 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_metastores got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_metastores got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -14246,7 +14246,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_namespaces got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_namespaces got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -14256,27 +14256,27 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -14284,7 +14284,7 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         query_params = {
@@ -14453,7 +14453,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_patterns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_patterns got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -14463,13 +14463,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -14477,21 +14477,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14682,7 +14682,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -14694,27 +14694,27 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'rule_type' in kwargs:
             rule_type_allowed_values = ["PRIMARYKEY", "FOREIGNKEY", "UNIQUEKEY"]
             if kwargs['rule_type'] not in rule_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `rule_type`, must be one of {0}".format(rule_type_allowed_values)
+                    f"Invalid value for `rule_type`, must be one of { rule_type_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'origin_type' in kwargs:
             origin_type_allowed_values = ["SOURCE", "USER", "PROFILING"]
             if kwargs['origin_type'] not in origin_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `origin_type`, must be one of {0}".format(origin_type_allowed_values)
+                    f"Invalid value for `origin_type`, must be one of { origin_type_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -14722,21 +14722,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14888,7 +14888,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tags got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tags got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -14898,13 +14898,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -14912,21 +14912,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15077,7 +15077,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_term_relationships got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_term_relationships got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -15089,13 +15089,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -15103,21 +15103,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15283,7 +15283,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_terms got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_terms got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -15294,20 +15294,20 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'workflow_status' in kwargs:
             workflow_status_allowed_values = ["NEW", "APPROVED", "UNDER_REVIEW", "ESCALATED"]
             if kwargs['workflow_status'] not in workflow_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `workflow_status`, must be one of {0}".format(workflow_status_allowed_values)
+                    f"Invalid value for `workflow_status`, must be one of { workflow_status_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -15315,21 +15315,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15492,7 +15492,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_types got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -15502,13 +15502,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -15516,21 +15516,21 @@ class DataCatalogClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15657,7 +15657,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -15667,20 +15667,20 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["CODE", "TIMESTAMP"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15799,7 +15799,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -15809,20 +15809,20 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["MESSAGE", "TIMESTAMP"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15929,7 +15929,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -16044,7 +16044,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "object_stats got unknown kwargs: {!r}".format(extra_kwargs))
+                f"object_stats got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -16054,20 +16054,20 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16184,7 +16184,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "parse_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"parse_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -16195,7 +16195,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "connectionKey": kwargs.get("connection_key", missing)
@@ -16304,7 +16304,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "process_recommendation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"process_recommendation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -16314,7 +16314,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16424,7 +16424,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "recommendations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"recommendations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -16434,26 +16434,26 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         recommendation_type_allowed_values = ["LINK_GLOSSARY_TERM"]
         for recommendation_type_item in recommendation_type:
             if recommendation_type_item not in recommendation_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `recommendation_type`, must be one of {0}".format(recommendation_type_allowed_values)
+                    f"Invalid value for `recommendation_type`, must be one of { recommendation_type_allowed_values }"
                 )
 
         source_object_type_allowed_values = ["DATA_ENTITY", "ATTRIBUTE", "TERM", "CATEGORY"]
         if source_object_type not in source_object_type_allowed_values:
             raise ValueError(
-                "Invalid value for `source_object_type`, must be one of {0}".format(source_object_type_allowed_values)
+                f"Invalid value for `source_object_type`, must be one of { source_object_type_allowed_values }"
             )
 
         if 'recommendation_status' in kwargs:
             recommendation_status_allowed_values = ["ACCEPTED", "REJECTED", "INFERRED"]
             if kwargs['recommendation_status'] not in recommendation_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `recommendation_status`, must be one of {0}".format(recommendation_status_allowed_values)
+                    f"Invalid value for `recommendation_status`, must be one of { recommendation_status_allowed_values }"
                 )
 
         query_params = {
@@ -16572,7 +16572,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_data_selector_patterns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_data_selector_patterns got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -16583,7 +16583,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16718,7 +16718,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_criteria got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_criteria got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -16728,27 +16728,27 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16866,7 +16866,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "suggest_matches got unknown kwargs: {!r}".format(extra_kwargs))
+                f"suggest_matches got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -16876,7 +16876,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "timeout": kwargs.get("timeout", missing),
@@ -16992,7 +16992,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "synchronous_export_data_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"synchronous_export_data_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -17003,13 +17003,13 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         export_type_allowed_values = ["CUSTOM_PROPERTY_VALUES", "ALL"]
         for export_type_item in export_type:
             if export_type_item not in export_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `export_type`, must be one of {0}".format(export_type_allowed_values)
+                    f"Invalid value for `export_type`, must be one of { export_type_allowed_values }"
                 )
 
         query_params = {
@@ -17121,7 +17121,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "test_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"test_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -17133,7 +17133,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17243,7 +17243,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_attribute got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_attribute got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -17256,7 +17256,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17356,7 +17356,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_catalog got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_catalog got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -17366,7 +17366,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17466,7 +17466,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_catalog_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_catalog_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogPrivateEndpointId": catalog_private_endpoint_id
@@ -17476,7 +17476,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17580,7 +17580,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -17592,7 +17592,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17698,7 +17698,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_custom_property got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_custom_property got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -17710,7 +17710,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17813,7 +17813,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_data_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_data_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -17824,7 +17824,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17930,7 +17930,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_entity got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_entity got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -17942,7 +17942,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18048,7 +18048,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_folder got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_folder got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -18060,7 +18060,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18163,7 +18163,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_glossary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_glossary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -18174,7 +18174,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18277,7 +18277,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -18288,7 +18288,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18391,7 +18391,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_job_definition got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_job_definition got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -18402,7 +18402,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18502,7 +18502,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_metastore got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_metastore got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "metastoreId": metastore_id
@@ -18512,7 +18512,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18615,7 +18615,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_namespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -18626,7 +18626,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18729,7 +18729,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_pattern got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_pattern got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -18740,7 +18740,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18846,7 +18846,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_term got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_term got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -18858,7 +18858,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18967,7 +18967,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_term_relationship got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_term_relationship got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -18980,7 +18980,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19094,7 +19094,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upload_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upload_credentials got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -19106,7 +19106,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19217,7 +19217,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "users got unknown kwargs: {!r}".format(extra_kwargs))
+                f"users got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id
@@ -19227,20 +19227,20 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -19353,7 +19353,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -19364,7 +19364,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19470,7 +19470,7 @@ class DataCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_pattern got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_pattern got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "catalogId": catalog_id,
@@ -19481,7 +19481,7 @@ class DataCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

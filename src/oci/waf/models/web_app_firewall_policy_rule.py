@@ -133,8 +133,7 @@ class WebAppFirewallPolicyRule(object):
         allowed_values = ["ACCESS_CONTROL", "PROTECTION", "REQUEST_RATE_LIMITING"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
-                "Invalid value for `type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `type`, must be None or one of {allowed_values}"
             )
         self._type = type
 
@@ -193,8 +192,7 @@ class WebAppFirewallPolicyRule(object):
         allowed_values = ["JMESPATH"]
         if not value_allowed_none_or_none_sentinel(condition_language, allowed_values):
             raise ValueError(
-                "Invalid value for `condition_language`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `condition_language`, must be None or one of {allowed_values}"
             )
         self._condition_language = condition_language
 

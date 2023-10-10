@@ -212,8 +212,7 @@ class UpdateTermDetails(object):
         allowed_values = ["NEW", "APPROVED", "UNDER_REVIEW", "ESCALATED"]
         if not value_allowed_none_or_none_sentinel(workflow_status, allowed_values):
             raise ValueError(
-                "Invalid value for `workflow_status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `workflow_status`, must be None or one of {allowed_values}"
             )
         self._workflow_status = workflow_status
 

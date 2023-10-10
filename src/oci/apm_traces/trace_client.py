@@ -165,7 +165,7 @@ class TraceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_aggregated_snapshot got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_aggregated_snapshot got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "traceKey": trace_key
@@ -175,7 +175,7 @@ class TraceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -275,7 +275,7 @@ class TraceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_span got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_span got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "spanKey": span_key,
@@ -286,7 +286,7 @@ class TraceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -383,7 +383,7 @@ class TraceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_trace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_trace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "traceKey": trace_key
@@ -393,7 +393,7 @@ class TraceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -502,7 +502,7 @@ class TraceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_trace_snapshot got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_trace_snapshot got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "traceKey": trace_key
@@ -512,7 +512,7 @@ class TraceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id,

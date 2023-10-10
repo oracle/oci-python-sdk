@@ -98,8 +98,7 @@ class BulkEditOperationDetails(object):
         allowed_values = ["ADD_WHERE_ABSENT", "SET_WHERE_PRESENT", "ADD_OR_SET", "REMOVE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             raise ValueError(
-                "Invalid value for `operation_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `operation_type`, must be None or one of {allowed_values}"
             )
         self._operation_type = operation_type
 

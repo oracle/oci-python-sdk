@@ -205,8 +205,7 @@ class CreateLimitItemDetails(CreateItemDetails):
         allowed_values = ["APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED"]
         if not value_allowed_none_or_none_sentinel(limit_status, allowed_values):
             raise ValueError(
-                "Invalid value for `limit_status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `limit_status`, must be None or one of {allowed_values}"
             )
         self._limit_status = limit_status
 

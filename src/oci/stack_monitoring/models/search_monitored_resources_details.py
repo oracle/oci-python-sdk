@@ -423,8 +423,7 @@ class SearchMonitoredResourcesDetails(object):
         allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 
@@ -651,8 +650,7 @@ class SearchMonitoredResourcesDetails(object):
         allowed_values = ["ASC", "DESC"]
         if not value_allowed_none_or_none_sentinel(sort_order, allowed_values):
             raise ValueError(
-                "Invalid value for `sort_order`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `sort_order`, must be None or one of {allowed_values}"
             )
         self._sort_order = sort_order
 
@@ -685,8 +683,7 @@ class SearchMonitoredResourcesDetails(object):
         allowed_values = ["TIME_CREATED", "RESOURCE_NAME"]
         if not value_allowed_none_or_none_sentinel(sort_by, allowed_values):
             raise ValueError(
-                "Invalid value for `sort_by`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `sort_by`, must be None or one of {allowed_values}"
             )
         self._sort_by = sort_by
 

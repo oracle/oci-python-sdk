@@ -184,7 +184,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -194,7 +194,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isForced": kwargs.get("is_forced", missing)
@@ -312,7 +312,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_configuration_source_provider_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_configuration_source_provider_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "configurationSourceProviderId": configuration_source_provider_id
@@ -322,7 +322,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -437,7 +437,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_private_endpoint_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_private_endpoint_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateEndpointId": private_endpoint_id
@@ -447,7 +447,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -562,7 +562,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_stack_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_stack_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "stackId": stack_id
@@ -572,7 +572,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -687,7 +687,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_template_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_template_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "templateId": template_id
@@ -697,7 +697,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -801,7 +801,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_configuration_source_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_configuration_source_provider got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -900,7 +900,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_job got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -999,7 +999,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1106,7 +1106,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_stack got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_stack got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1205,7 +1205,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_template got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_template got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1304,7 +1304,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_configuration_source_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_configuration_source_provider got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "configurationSourceProviderId": configuration_source_provider_id
@@ -1314,7 +1314,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1410,7 +1410,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateEndpointId": private_endpoint_id
@@ -1420,7 +1420,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1516,7 +1516,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_stack got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_stack got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "stackId": stack_id
@@ -1526,7 +1526,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1622,7 +1622,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_template got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_template got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "templateId": template_id
@@ -1632,7 +1632,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1740,7 +1740,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "detect_stack_drift got unknown kwargs: {!r}".format(extra_kwargs))
+                f"detect_stack_drift got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "stackId": stack_id
@@ -1750,7 +1750,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1844,7 +1844,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_configuration_source_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_configuration_source_provider got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "configurationSourceProviderId": configuration_source_provider_id
@@ -1854,7 +1854,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1945,7 +1945,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -1955,7 +1955,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2048,7 +2048,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job_detailed_log_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job_detailed_log_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -2058,7 +2058,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "text/plain; charset=utf-8",
@@ -2191,7 +2191,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -2201,20 +2201,20 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'level_greater_than_or_equal_to' in kwargs:
             level_greater_than_or_equal_to_allowed_values = ["TRACE", "DEBUG", "INFO", "WARN", "ERROR", "FATAL"]
             if kwargs['level_greater_than_or_equal_to'] not in level_greater_than_or_equal_to_allowed_values:
                 raise ValueError(
-                    "Invalid value for `level_greater_than_or_equal_to`, must be one of {0}".format(level_greater_than_or_equal_to_allowed_values)
+                    f"Invalid value for `level_greater_than_or_equal_to`, must be one of { level_greater_than_or_equal_to_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2320,7 +2320,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job_logs_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job_logs_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -2330,7 +2330,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "text/plain; charset=utf-8",
@@ -2422,7 +2422,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job_tf_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job_tf_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -2432,7 +2432,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/zip",
@@ -2533,7 +2533,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job_tf_plan got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job_tf_plan got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -2543,13 +2543,13 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'tf_plan_format' in kwargs:
             tf_plan_format_allowed_values = ["BINARY", "JSON"]
             if kwargs['tf_plan_format'] not in tf_plan_format_allowed_values:
                 raise ValueError(
-                    "Invalid value for `tf_plan_format`, must be one of {0}".format(tf_plan_format_allowed_values)
+                    f"Invalid value for `tf_plan_format`, must be one of { tf_plan_format_allowed_values }"
                 )
 
         query_params = {
@@ -2648,7 +2648,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job_tf_state got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job_tf_state got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -2658,7 +2658,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -2749,7 +2749,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateEndpointId": private_endpoint_id
@@ -2759,7 +2759,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2862,7 +2862,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_reachable_ip got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_reachable_ip got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateEndpointId": private_endpoint_id
@@ -2872,7 +2872,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "privateIp": private_ip
@@ -2972,7 +2972,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_stack got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_stack got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "stackId": stack_id
@@ -2982,7 +2982,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3074,7 +3074,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_stack_tf_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_stack_tf_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "stackId": stack_id
@@ -3084,7 +3084,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/zip",
@@ -3175,7 +3175,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_stack_tf_state got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_stack_tf_state got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "stackId": stack_id
@@ -3185,7 +3185,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -3276,7 +3276,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_template got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_template got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "templateId": template_id
@@ -3286,7 +3286,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3378,7 +3378,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_template_logo got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_template_logo got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "templateId": template_id
@@ -3388,7 +3388,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "image/png",
@@ -3480,7 +3480,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_template_tf_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_template_tf_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "templateId": template_id
@@ -3490,7 +3490,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/zip",
@@ -3581,7 +3581,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -3591,7 +3591,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3730,20 +3730,20 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_configuration_source_providers got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_configuration_source_providers got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -3874,7 +3874,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_job_associated_resources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_job_associated_resources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -3884,7 +3884,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -4005,7 +4005,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_job_outputs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_job_outputs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -4015,7 +4015,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -4186,27 +4186,27 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_jobs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_jobs got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -4361,20 +4361,20 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_private_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_private_endpoints got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -4483,7 +4483,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_resource_discovery_services got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_resource_discovery_services got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing)
@@ -4606,7 +4606,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_stack_associated_resources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_stack_associated_resources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "stackId": stack_id
@@ -4616,7 +4616,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "terraformResourceType": kwargs.get("terraform_resource_type", missing),
@@ -4750,7 +4750,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_stack_resource_drift_details got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_stack_resource_drift_details got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "stackId": stack_id
@@ -4760,7 +4760,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "workRequestId": kwargs.get("work_request_id", missing),
@@ -4923,27 +4923,27 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_stacks got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_stacks got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -5042,7 +5042,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_template_categories got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_template_categories got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5182,20 +5182,20 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_templates got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_templates got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -5300,7 +5300,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_terraform_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_terraform_versions got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing)
@@ -5422,7 +5422,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -5432,13 +5432,13 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -5566,7 +5566,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -5576,13 +5576,13 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -5704,7 +5704,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -5816,7 +5816,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_configuration_source_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_configuration_source_provider got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "configurationSourceProviderId": configuration_source_provider_id
@@ -5826,7 +5826,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5929,7 +5929,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -5939,7 +5939,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6042,7 +6042,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateEndpointId": private_endpoint_id
@@ -6052,7 +6052,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6161,7 +6161,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_stack got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_stack got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "stackId": stack_id
@@ -6171,7 +6171,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6274,7 +6274,7 @@ class ResourceManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_template got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_template got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "templateId": template_id
@@ -6284,7 +6284,7 @@ class ResourceManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

@@ -110,8 +110,7 @@ class WrappedImportKey(object):
         allowed_values = ["RSA_OAEP_SHA256", "RSA_OAEP_AES_SHA256"]
         if not value_allowed_none_or_none_sentinel(wrapping_algorithm, allowed_values):
             raise ValueError(
-                "Invalid value for `wrapping_algorithm`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `wrapping_algorithm`, must be None or one of {allowed_values}"
             )
         self._wrapping_algorithm = wrapping_algorithm
 

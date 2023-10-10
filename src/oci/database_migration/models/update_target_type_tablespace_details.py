@@ -132,8 +132,7 @@ class UpdateTargetTypeTablespaceDetails(object):
         allowed_values = ["ADB_S_REMAP", "ADB_D_REMAP", "ADB_D_AUTOCREATE", "NON_ADB_REMAP", "NON_ADB_AUTOCREATE", "TARGET_DEFAULTS_REMAP", "TARGET_DEFAULTS_AUTOCREATE"]
         if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
             raise ValueError(
-                "Invalid value for `target_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `target_type`, must be None or one of {allowed_values}"
             )
         self._target_type = target_type
 

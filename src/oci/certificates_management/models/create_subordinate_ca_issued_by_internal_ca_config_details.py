@@ -169,8 +169,7 @@ class CreateSubordinateCaIssuedByInternalCaConfigDetails(CreateCertificateAuthor
         allowed_values = ["SHA256_WITH_RSA", "SHA384_WITH_RSA", "SHA512_WITH_RSA", "SHA256_WITH_ECDSA", "SHA384_WITH_ECDSA", "SHA512_WITH_ECDSA"]
         if not value_allowed_none_or_none_sentinel(signing_algorithm, allowed_values):
             raise ValueError(
-                "Invalid value for `signing_algorithm`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `signing_algorithm`, must be None or one of {allowed_values}"
             )
         self._signing_algorithm = signing_algorithm
 

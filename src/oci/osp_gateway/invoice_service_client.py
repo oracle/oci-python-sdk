@@ -170,7 +170,7 @@ class InvoiceServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_pdf_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_pdf_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "internalInvoiceId": internal_invoice_id
@@ -180,7 +180,7 @@ class InvoiceServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "ospHomeRegion": osp_home_region,
@@ -285,7 +285,7 @@ class InvoiceServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_invoice got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_invoice got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "internalInvoiceId": internal_invoice_id
@@ -295,7 +295,7 @@ class InvoiceServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "ospHomeRegion": osp_home_region,
@@ -408,7 +408,7 @@ class InvoiceServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_invoice_lines got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_invoice_lines got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "internalInvoiceId": internal_invoice_id
@@ -418,7 +418,7 @@ class InvoiceServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "ospHomeRegion": osp_home_region,
@@ -581,14 +581,14 @@ class InvoiceServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_invoices got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_invoices got unknown kwargs: {extra_kwargs!r}")
 
         if 'type' in kwargs:
             type_allowed_values = ["HARDWARE", "SUBSCRIPTION", "SUPPORT", "LICENSE", "EDUCATION", "CONSULTING", "SERVICE", "USAGE"]
             for type_item in kwargs['type']:
                 if type_item not in type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                        f"Invalid value for `type`, must be one of { type_allowed_values }"
                     )
 
         if 'status' in kwargs:
@@ -596,21 +596,21 @@ class InvoiceServiceClient(object):
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["INVOICE_NO", "REF_NO", "STATUS", "TYPE", "INVOICE_DATE", "DUE_DATE", "PAYM_REF", "TOTAL_AMOUNT", "BALANCE_DUE"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -742,7 +742,7 @@ class InvoiceServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "pay_invoice got unknown kwargs: {!r}".format(extra_kwargs))
+                f"pay_invoice got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "internalInvoiceId": internal_invoice_id
@@ -752,7 +752,7 @@ class InvoiceServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "ospHomeRegion": osp_home_region,

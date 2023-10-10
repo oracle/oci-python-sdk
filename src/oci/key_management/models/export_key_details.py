@@ -157,8 +157,7 @@ class ExportKeyDetails(object):
         allowed_values = ["RSA_OAEP_AES_SHA256", "RSA_OAEP_SHA256"]
         if not value_allowed_none_or_none_sentinel(algorithm, allowed_values):
             raise ValueError(
-                "Invalid value for `algorithm`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `algorithm`, must be None or one of {allowed_values}"
             )
         self._algorithm = algorithm
 

@@ -254,8 +254,7 @@ class ExternalServicedDatabase(object):
         allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED"]
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
             raise ValueError(
-                "Invalid value for `database_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `database_type`, must be None or one of {allowed_values}"
             )
         self._database_type = database_type
 
@@ -288,8 +287,7 @@ class ExternalServicedDatabase(object):
         allowed_values = ["CDB", "PDB", "NON_CDB", "ACD", "ADB"]
         if not value_allowed_none_or_none_sentinel(database_sub_type, allowed_values):
             raise ValueError(
-                "Invalid value for `database_sub_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `database_sub_type`, must be None or one of {allowed_values}"
             )
         self._database_sub_type = database_sub_type
 

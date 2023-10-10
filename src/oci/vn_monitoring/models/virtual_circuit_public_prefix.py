@@ -118,8 +118,7 @@ class VirtualCircuitPublicPrefix(object):
         allowed_values = ["IN_PROGRESS", "COMPLETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(verification_state, allowed_values):
             raise ValueError(
-                "Invalid value for `verification_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `verification_state`, must be None or one of {allowed_values}"
             )
         self._verification_state = verification_state
 

@@ -155,8 +155,7 @@ class ImageSourceDetails(object):
         allowed_values = ["QCOW2", "VMDK"]
         if not value_allowed_none_or_none_sentinel(source_image_type, allowed_values):
             raise ValueError(
-                "Invalid value for `source_image_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `source_image_type`, must be None or one of {allowed_values}"
             )
         self._source_image_type = source_image_type
 

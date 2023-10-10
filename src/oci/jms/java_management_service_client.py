@@ -182,7 +182,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_fleet_installation_sites got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_fleet_installation_sites got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -192,7 +192,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -293,7 +293,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -303,7 +303,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -411,7 +411,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_fleet_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_fleet_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -421,7 +421,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -525,7 +525,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_blocklist got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_blocklist got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -535,7 +535,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -643,7 +643,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_fleet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_fleet got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -744,7 +744,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_blocklist got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_blocklist got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -755,7 +755,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -855,7 +855,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_crypto_analysis_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_crypto_analysis_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -866,7 +866,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -963,7 +963,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_fleet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_fleet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -973,7 +973,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1073,7 +1073,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_java_migration_analysis_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_java_migration_analysis_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -1084,7 +1084,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1184,7 +1184,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_performance_tuning_analysis_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_performance_tuning_analysis_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -1195,7 +1195,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1287,7 +1287,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_agent_deploy_script got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_agent_deploy_script got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -1297,7 +1297,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "text/plain",
@@ -1392,7 +1392,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_crypto_analysis_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_crypto_analysis_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -1403,7 +1403,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1493,7 +1493,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fleet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fleet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -1503,7 +1503,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1601,7 +1601,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fleet_advanced_feature_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fleet_advanced_feature_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -1611,7 +1611,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1702,7 +1702,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fleet_agent_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fleet_agent_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -1712,7 +1712,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1800,7 +1800,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_java_family got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_java_family got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "familyVersion": family_version
@@ -1810,7 +1810,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1903,7 +1903,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_java_migration_analysis_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_java_migration_analysis_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -1914,7 +1914,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2002,7 +2002,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_java_release got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_java_release got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "releaseVersion": release_version
@@ -2012,7 +2012,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2105,7 +2105,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_performance_tuning_analysis_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_performance_tuning_analysis_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -2116,7 +2116,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2206,7 +2206,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2216,7 +2216,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2338,20 +2338,20 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_announcements got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_announcements got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeReleased", "summary"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2485,7 +2485,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_blocklists got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_blocklists got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -2495,27 +2495,27 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'operation' in kwargs:
             operation_allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"]
             if kwargs['operation'] not in operation_allowed_values:
                 raise ValueError(
-                    "Invalid value for `operation`, must be one of {0}".format(operation_allowed_values)
+                    f"Invalid value for `operation`, must be one of { operation_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["operation"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2663,7 +2663,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_crypto_analysis_results got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_crypto_analysis_results got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -2673,27 +2673,27 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'aggregation_mode' in kwargs:
             aggregation_mode_allowed_values = ["JFR", "MANAGED_INSTANCE"]
             if kwargs['aggregation_mode'] not in aggregation_mode_allowed_values:
                 raise ValueError(
-                    "Invalid value for `aggregation_mode`, must be one of {0}".format(aggregation_mode_allowed_values)
+                    f"Invalid value for `aggregation_mode`, must be one of { aggregation_mode_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "managedInstanceId", "workRequestId"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2806,7 +2806,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fleet_diagnoses got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fleet_diagnoses got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -2816,7 +2816,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -2958,27 +2958,27 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fleets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fleets got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "NEEDS_ATTENTION", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3157,7 +3157,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_installation_sites got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_installation_sites got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -3167,20 +3167,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["managedInstanceId", "jreDistribution", "jreVendor", "jreVersion", "path", "approximateApplicationCount", "osName", "securityStatus"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
@@ -3188,14 +3188,14 @@ class JavaManagementServiceClient(object):
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         if 'jre_security_status' in kwargs:
             jre_security_status_allowed_values = ["EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
             if kwargs['jre_security_status'] not in jre_security_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `jre_security_status`, must be one of {0}".format(jre_security_status_allowed_values)
+                    f"Invalid value for `jre_security_status`, must be one of { jre_security_status_allowed_values }"
                 )
 
         query_params = {
@@ -3331,20 +3331,20 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_java_families got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_java_families got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["familyVersion", "endOfSupportLifeDate", "supportType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3483,7 +3483,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_java_migration_analysis_results got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_java_migration_analysis_results got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -3493,20 +3493,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "managedInstanceId", "workRequestId"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3651,41 +3651,41 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_java_releases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_java_releases got unknown kwargs: {extra_kwargs!r}")
 
         if 'release_type' in kwargs:
             release_type_allowed_values = ["CPU", "FEATURE", "BPR", "PATCH_RELEASE"]
             if kwargs['release_type'] not in release_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `release_type`, must be one of {0}".format(release_type_allowed_values)
+                    f"Invalid value for `release_type`, must be one of { release_type_allowed_values }"
                 )
 
         if 'jre_security_status' in kwargs:
             jre_security_status_allowed_values = ["EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
             if kwargs['jre_security_status'] not in jre_security_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `jre_security_status`, must be one of {0}".format(jre_security_status_allowed_values)
+                    f"Invalid value for `jre_security_status`, must be one of { jre_security_status_allowed_values }"
                 )
 
         if 'license_type' in kwargs:
             license_type_allowed_values = ["OTN", "NFTC", "RESTRICTED"]
             if kwargs['license_type'] not in license_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `license_type`, must be one of {0}".format(license_type_allowed_values)
+                    f"Invalid value for `license_type`, must be one of { license_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["releaseDate", "releaseVersion", "familyVersion", "licenseType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3841,20 +3841,20 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_jre_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_jre_usage got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["distribution", "timeFirstSeen", "timeLastSeen", "vendor", "version", "approximateInstallationCount", "approximateApplicationCount", "approximateManagedInstanceCount", "osName", "securityStatus"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4002,7 +4002,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_performance_tuning_analysis_results got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_performance_tuning_analysis_results got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -4012,20 +4012,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "managedInstanceId", "workRequestId"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4138,7 +4138,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_items got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_items got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -4148,7 +4148,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -4254,7 +4254,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -4264,7 +4264,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -4370,7 +4370,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -4380,7 +4380,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -4497,7 +4497,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -4615,7 +4615,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_fleet_installation_sites got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_fleet_installation_sites got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -4625,7 +4625,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4721,7 +4721,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_crypto_analyses got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_crypto_analyses got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -4731,7 +4731,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4825,7 +4825,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_java_migration_analyses got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_java_migration_analyses got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -4835,7 +4835,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4928,7 +4928,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_jfr_recordings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_jfr_recordings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -4938,7 +4938,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5032,7 +5032,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_performance_tuning_analyses got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_performance_tuning_analyses got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -5042,7 +5042,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5151,7 +5151,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "scan_java_server_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"scan_java_server_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -5161,7 +5161,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5273,7 +5273,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "scan_library_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"scan_library_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -5283,7 +5283,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5466,7 +5466,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_application_installation_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_application_installation_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -5476,28 +5476,28 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'os_family' in kwargs:
             os_family_allowed_values = ["LINUX", "WINDOWS", "MACOS", "UNKNOWN"]
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeFirstSeen", "timeLastSeen", "displayName", "installationPath", "osName", "approximateJreCount", "approximateInstallationCount", "approximateManagedInstanceCount"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -5703,7 +5703,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_application_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_application_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -5713,28 +5713,28 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["approximateJreCount", "approximateInstallationCount", "approximateManagedInstanceCount"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeFirstSeen", "timeLastSeen", "displayName", "approximateJreCount", "approximateInstallationCount", "approximateManagedInstanceCount", "osName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
@@ -5742,7 +5742,7 @@ class JavaManagementServiceClient(object):
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         query_params = {
@@ -5926,7 +5926,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_deployed_application_installation_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_deployed_application_installation_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -5936,20 +5936,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["applicationName", "applicationType", "applicationSourcePath", "isClustered", "javaServerInstanceCount", "timeFirstSeen", "timeLastSeen"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -6122,7 +6122,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_deployed_application_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_deployed_application_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -6132,20 +6132,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["applicationName", "applicationType", "isClustered", "javaServerInstanceCount", "timeFirstSeen", "timeLastSeen"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -6332,7 +6332,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_installation_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_installation_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -6342,28 +6342,28 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["approximateApplicationCount", "approximateManagedInstanceCount"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["jreDistribution", "jreVendor", "jreVersion", "path", "timeFirstSeen", "timeLastSeen", "approximateApplicationCount", "approximateManagedInstanceCount", "osName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
@@ -6371,7 +6371,7 @@ class JavaManagementServiceClient(object):
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         query_params = {
@@ -6544,7 +6544,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_java_server_instance_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_java_server_instance_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -6554,20 +6554,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["serverInstanceName", "managedInstanceName", "approximateDeployedApplicationCount", "timeFirstSeen", "timeLastSeen"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -6726,7 +6726,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_java_server_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_java_server_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -6736,20 +6736,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["serverName", "serverVersion", "serverInstanceCount", "approximateDeployedApplicationCount", "timeFirstSeen", "timeLastSeen"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -6937,7 +6937,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_jre_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_jre_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -6947,28 +6947,28 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["approximateInstallationCount", "approximateApplicationCount", "approximateManagedInstanceCount"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["distribution", "timeFirstSeen", "timeLastSeen", "vendor", "version", "approximateInstallationCount", "approximateApplicationCount", "approximateManagedInstanceCount", "osName", "securityStatus"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
@@ -6976,14 +6976,14 @@ class JavaManagementServiceClient(object):
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         if 'jre_security_status' in kwargs:
             jre_security_status_allowed_values = ["EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
             if kwargs['jre_security_status'] not in jre_security_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `jre_security_status`, must be one of {0}".format(jre_security_status_allowed_values)
+                    f"Invalid value for `jre_security_status`, must be one of { jre_security_status_allowed_values }"
                 )
 
         query_params = {
@@ -7152,7 +7152,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_library_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_library_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -7162,20 +7162,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["applicationCount", "javaServerInstanceCount", "cvssScore", "deployedApplicationCount", "libraryName", "libraryVersion", "managedInstanceCount", "timeFirstSeen", "timeLastSeen"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -7372,7 +7372,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_managed_instance_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_managed_instance_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -7382,13 +7382,13 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'managed_instance_type' in kwargs:
             managed_instance_type_allowed_values = ["ORACLE_MANAGEMENT_AGENT"]
             if kwargs['managed_instance_type'] not in managed_instance_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `managed_instance_type`, must be one of {0}".format(managed_instance_type_allowed_values)
+                    f"Invalid value for `managed_instance_type`, must be one of { managed_instance_type_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -7396,21 +7396,21 @@ class JavaManagementServiceClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeFirstSeen", "timeLastSeen", "approximateJreCount", "approximateInstallationCount", "approximateApplicationCount", "osName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
@@ -7418,7 +7418,7 @@ class JavaManagementServiceClient(object):
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         query_params = {
@@ -7545,7 +7545,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_resource_inventory got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_resource_inventory got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -7653,7 +7653,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_fleet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_fleet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -7663,7 +7663,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7774,7 +7774,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_fleet_advanced_feature_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_fleet_advanced_feature_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -7784,7 +7784,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7890,7 +7890,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_fleet_agent_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_fleet_agent_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -7900,7 +7900,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

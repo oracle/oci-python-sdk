@@ -181,7 +181,7 @@ class RoverBundleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_rover_cluster_rover_bundle_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_rover_cluster_rover_bundle_requests got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverClusterId": rover_cluster_id
@@ -191,20 +191,20 @@ class RoverBundleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeTaskCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -323,7 +323,7 @@ class RoverBundleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_rover_node_rover_bundle_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_rover_node_rover_bundle_requests got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -333,20 +333,20 @@ class RoverBundleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeTaskCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -448,7 +448,7 @@ class RoverBundleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_bundle_rover_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_bundle_rover_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverClusterId": rover_cluster_id
@@ -458,7 +458,7 @@ class RoverBundleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -549,7 +549,7 @@ class RoverBundleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_bundle_rover_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_bundle_rover_node got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -559,7 +559,7 @@ class RoverBundleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -650,7 +650,7 @@ class RoverBundleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "retrieve_available_bundle_versions_rover_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"retrieve_available_bundle_versions_rover_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverClusterId": rover_cluster_id
@@ -660,7 +660,7 @@ class RoverBundleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -753,7 +753,7 @@ class RoverBundleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "retrieve_available_bundle_versions_rover_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"retrieve_available_bundle_versions_rover_node got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -763,7 +763,7 @@ class RoverBundleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -856,7 +856,7 @@ class RoverBundleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "retrieve_bundle_status_rover_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"retrieve_bundle_status_rover_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverClusterId": rover_cluster_id
@@ -866,7 +866,7 @@ class RoverBundleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -959,7 +959,7 @@ class RoverBundleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "retrieve_bundle_status_rover_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"retrieve_bundle_status_rover_node got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -969,7 +969,7 @@ class RoverBundleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

@@ -184,7 +184,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_entity_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_entity_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -195,7 +195,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -304,7 +304,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_source_event_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_source_event_types got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -315,7 +315,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -453,7 +453,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "append_lookup_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"append_lookup_data got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -464,7 +464,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isForce": kwargs.get("is_force", missing),
@@ -607,7 +607,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "assign_encryption_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"assign_encryption_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -617,7 +617,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -736,7 +736,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "batch_get_basic_info got unknown kwargs: {!r}".format(extra_kwargs))
+                f"batch_get_basic_info got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -746,20 +746,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'basic_label_sort_by' in kwargs:
             basic_label_sort_by_allowed_values = ["name", "priority"]
             if kwargs['basic_label_sort_by'] not in basic_label_sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `basic_label_sort_by`, must be one of {0}".format(basic_label_sort_by_allowed_values)
+                    f"Invalid value for `basic_label_sort_by`, must be one of { basic_label_sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -878,7 +878,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_query_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_query_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -889,7 +889,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -998,7 +998,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_ingest_time_rule_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_ingest_time_rule_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1009,7 +1009,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1126,7 +1126,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_log_analytics_em_bridge_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_log_analytics_em_bridge_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1137,7 +1137,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1254,7 +1254,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_log_analytics_entity_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_log_analytics_entity_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1265,7 +1265,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1382,7 +1382,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_log_analytics_log_group_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_log_analytics_log_group_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1393,7 +1393,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1504,7 +1504,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_log_analytics_object_collection_rule_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_log_analytics_object_collection_rule_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1515,7 +1515,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1629,7 +1629,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_scheduled_task_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_scheduled_task_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1640,7 +1640,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1756,7 +1756,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "clean got unknown kwargs: {!r}".format(extra_kwargs))
+                f"clean got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -1767,7 +1767,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "timeStart": kwargs.get("time_start", missing),
@@ -1866,7 +1866,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "compare_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"compare_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -1876,7 +1876,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -1981,7 +1981,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_ingest_time_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_ingest_time_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -1991,7 +1991,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2098,7 +2098,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_log_analytics_em_bridge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_log_analytics_em_bridge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -2108,7 +2108,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2215,7 +2215,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_log_analytics_entity got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_log_analytics_entity got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -2225,7 +2225,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2332,7 +2332,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_log_analytics_entity_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_log_analytics_entity_type got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -2342,7 +2342,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2447,7 +2447,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_log_analytics_log_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_log_analytics_log_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -2457,7 +2457,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2556,7 +2556,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_log_analytics_object_collection_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_log_analytics_object_collection_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -2566,7 +2566,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2669,7 +2669,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_scheduled_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_scheduled_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -2679,7 +2679,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2784,7 +2784,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_associations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -2794,7 +2794,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -2907,7 +2907,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_field got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_field got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -2918,7 +2918,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3018,7 +3018,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_ingest_time_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_ingest_time_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3029,7 +3029,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3135,7 +3135,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_label got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_label got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3146,7 +3146,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -3250,7 +3250,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_log_analytics_em_bridge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_log_analytics_em_bridge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3261,7 +3261,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isDeleteEntities": kwargs.get("is_delete_entities", missing)
@@ -3364,7 +3364,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_log_analytics_entity got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_log_analytics_entity got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3375,7 +3375,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3471,7 +3471,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_log_analytics_entity_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_log_analytics_entity_type got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3482,7 +3482,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3578,7 +3578,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_log_analytics_log_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_log_analytics_log_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3589,7 +3589,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3690,7 +3690,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_log_analytics_object_collection_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_log_analytics_object_collection_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3701,7 +3701,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3809,7 +3809,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_lookup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_lookup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3820,7 +3820,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isForce": kwargs.get("is_force", missing)
@@ -3935,7 +3935,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_parser got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_parser got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -3946,7 +3946,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -4047,7 +4047,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_scheduled_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_scheduled_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4058,7 +4058,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4164,7 +4164,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4175,7 +4175,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4276,7 +4276,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_upload got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_upload got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4287,7 +4287,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4379,7 +4379,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_upload_file got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_upload_file got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4391,7 +4391,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4481,7 +4481,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_upload_warning got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_upload_warning got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4493,7 +4493,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4585,7 +4585,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_archiving got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_archiving got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -4595,7 +4595,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4700,7 +4700,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_auto_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_auto_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4711,7 +4711,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4816,7 +4816,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_ingest_time_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_ingest_time_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4827,7 +4827,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4928,7 +4928,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_source_event_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_source_event_types got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -4939,7 +4939,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5041,7 +5041,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_archiving got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_archiving got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -5051,7 +5051,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5156,7 +5156,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_auto_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_auto_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -5167,7 +5167,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5272,7 +5272,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_ingest_time_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_ingest_time_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -5283,7 +5283,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5384,7 +5384,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_source_event_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_source_event_types got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -5395,7 +5395,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5508,7 +5508,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "estimate_purge_data_size got unknown kwargs: {!r}".format(extra_kwargs))
+                f"estimate_purge_data_size got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -5518,7 +5518,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5618,7 +5618,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "estimate_recall_data_size got unknown kwargs: {!r}".format(extra_kwargs))
+                f"estimate_recall_data_size got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -5628,7 +5628,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5725,7 +5725,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "estimate_release_data_size got unknown kwargs: {!r}".format(extra_kwargs))
+                f"estimate_release_data_size got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -5735,7 +5735,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5840,7 +5840,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "export_custom_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"export_custom_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -5850,7 +5850,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -5949,7 +5949,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "export_query_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"export_query_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -5959,7 +5959,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -6070,7 +6070,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "extract_structured_log_field_paths got unknown kwargs: {!r}".format(extra_kwargs))
+                f"extract_structured_log_field_paths got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -6080,13 +6080,13 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'parser_type' in kwargs:
             parser_type_allowed_values = ["XML", "JSON", "DELIMITED"]
             if kwargs['parser_type'] not in parser_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `parser_type`, must be one of {0}".format(parser_type_allowed_values)
+                    f"Invalid value for `parser_type`, must be one of { parser_type_allowed_values }"
                 )
 
         query_params = {
@@ -6207,7 +6207,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "extract_structured_log_header_paths got unknown kwargs: {!r}".format(extra_kwargs))
+                f"extract_structured_log_header_paths got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -6217,13 +6217,13 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'parser_type' in kwargs:
             parser_type_allowed_values = ["XML", "JSON", "DELIMITED"]
             if kwargs['parser_type'] not in parser_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `parser_type`, must be one of {0}".format(parser_type_allowed_values)
+                    f"Invalid value for `parser_type`, must be one of { parser_type_allowed_values }"
                 )
 
         query_params = {
@@ -6330,7 +6330,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "filter got unknown kwargs: {!r}".format(extra_kwargs))
+                f"filter got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -6340,7 +6340,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6437,7 +6437,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_association_summary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_association_summary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -6447,7 +6447,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -6545,7 +6545,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_category got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_category got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -6556,7 +6556,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -6655,7 +6655,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_column_names got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_column_names got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -6665,7 +6665,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "sqlQuery": sql_query
@@ -6767,7 +6767,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_config_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_config_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -6778,7 +6778,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -6869,7 +6869,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_field got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_field got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -6880,7 +6880,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -6972,7 +6972,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fields_summary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fields_summary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -6982,7 +6982,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isShowDetail": kwargs.get("is_show_detail", missing)
@@ -7080,7 +7080,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_ingest_time_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_ingest_time_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -7091,7 +7091,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7182,7 +7182,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_label got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_label got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -7193,7 +7193,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -7281,7 +7281,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_label_summary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_label_summary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -7291,7 +7291,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -7382,7 +7382,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_log_analytics_em_bridge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_log_analytics_em_bridge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -7393,7 +7393,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7482,7 +7482,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_log_analytics_em_bridge_summary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_log_analytics_em_bridge_summary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -7492,7 +7492,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -7588,7 +7588,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_log_analytics_entities_summary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_log_analytics_entities_summary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -7598,7 +7598,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -7694,7 +7694,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_log_analytics_entity got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_log_analytics_entity got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -7705,7 +7705,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7794,7 +7794,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_log_analytics_entity_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_log_analytics_entity_type got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -7805,7 +7805,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7894,7 +7894,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_log_analytics_log_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_log_analytics_log_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -7905,7 +7905,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7996,7 +7996,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_log_analytics_log_groups_summary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_log_analytics_log_groups_summary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -8006,7 +8006,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -8106,7 +8106,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_log_analytics_object_collection_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_log_analytics_object_collection_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -8117,7 +8117,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8205,7 +8205,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_log_sets_count got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_log_sets_count got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -8215,7 +8215,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8306,7 +8306,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_lookup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_lookup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -8317,7 +8317,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8405,7 +8405,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_lookup_summary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_lookup_summary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -8415,7 +8415,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8503,7 +8503,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_namespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -8513,7 +8513,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8604,7 +8604,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_parser got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_parser got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -8615,7 +8615,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -8703,7 +8703,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_parser_summary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_parser_summary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -8713,7 +8713,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -8821,7 +8821,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_preferences got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_preferences got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -8831,20 +8831,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -8971,7 +8971,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_query_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_query_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -8981,13 +8981,13 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'output_mode' in kwargs:
             output_mode_allowed_values = ["JSON_ROWS"]
             if kwargs['output_mode'] not in output_mode_allowed_values:
                 raise ValueError(
-                    "Invalid value for `output_mode`, must be one of {0}".format(output_mode_allowed_values)
+                    f"Invalid value for `output_mode`, must be one of { output_mode_allowed_values }"
                 )
 
         query_params = {
@@ -9093,7 +9093,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_query_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_query_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -9104,7 +9104,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9192,7 +9192,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_recall_count got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_recall_count got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -9202,7 +9202,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9298,7 +9298,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_recalled_data_size got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_recalled_data_size got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -9308,7 +9308,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "timeDataStarted": kwargs.get("time_data_started", missing),
@@ -9407,7 +9407,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_rules_summary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_rules_summary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -9417,7 +9417,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -9516,7 +9516,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_scheduled_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_scheduled_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -9527,7 +9527,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9621,7 +9621,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -9632,7 +9632,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -9727,7 +9727,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_source_summary got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_source_summary got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -9737,7 +9737,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -9825,7 +9825,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_storage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_storage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -9835,7 +9835,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9924,7 +9924,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_storage_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_storage_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -9934,7 +9934,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10028,7 +10028,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_storage_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_storage_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id,
@@ -10039,7 +10039,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10127,7 +10127,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_unprocessed_data_bucket got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_unprocessed_data_bucket got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -10137,7 +10137,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10228,7 +10228,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_upload got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_upload got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -10239,7 +10239,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10332,7 +10332,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -10343,7 +10343,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10459,7 +10459,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "import_custom_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"import_custom_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -10469,7 +10469,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isOverwrite": kwargs.get("is_overwrite", missing)
@@ -10630,7 +10630,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_associable_entities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_associable_entities got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -10641,27 +10641,27 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'type' in kwargs:
             type_allowed_values = ["ELIGIBLE", "INELIGIBLE"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                    f"Invalid value for `type`, must be one of { type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["entityName", "entityTypeName", "host", "agentId"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -10800,7 +10800,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_associated_entities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_associated_entities got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -10810,20 +10810,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["entityName", "entityTypeDisplayName", "associationCount"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10949,7 +10949,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_auto_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_auto_associations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -10960,20 +10960,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["isEnabled"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11107,7 +11107,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_categories got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_categories got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -11117,20 +11117,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "type"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11251,7 +11251,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_config_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_config_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -11261,20 +11261,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11416,7 +11416,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_effective_properties got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_effective_properties got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -11426,20 +11426,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11544,7 +11544,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_encryption_key_info got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_encryption_key_info got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -11554,7 +11554,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11672,7 +11672,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_entity_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_entity_associations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -11683,27 +11683,27 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'direct_or_all_associations' in kwargs:
             direct_or_all_associations_allowed_values = ["DIRECT", "ALL"]
             if kwargs['direct_or_all_associations'] not in direct_or_all_associations_allowed_values:
                 raise ValueError(
-                    "Invalid value for `direct_or_all_associations`, must be one of {0}".format(direct_or_all_associations_allowed_values)
+                    f"Invalid value for `direct_or_all_associations`, must be one of { direct_or_all_associations_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "timeUpdated", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11849,7 +11849,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_entity_source_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_entity_source_associations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -11859,27 +11859,27 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'life_cycle_state' in kwargs:
             life_cycle_state_allowed_values = ["ALL", "ACCEPTED", "IN_PROGRESS", "SUCCEEDED", "FAILED"]
             if kwargs['life_cycle_state'] not in life_cycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `life_cycle_state`, must be one of {0}".format(life_cycle_state_allowed_values)
+                    f"Invalid value for `life_cycle_state`, must be one of { life_cycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["sourceDisplayName", "timeLastAttempted", "status"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12047,7 +12047,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fields got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fields got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -12057,27 +12057,27 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'parser_type' in kwargs:
             parser_type_allowed_values = ["ALL", "REGEX", "XML", "JSON", "ODL", "DELIMITED"]
             if kwargs['parser_type'] not in parser_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `parser_type`, must be one of {0}".format(parser_type_allowed_values)
+                    f"Invalid value for `parser_type`, must be one of { parser_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name", "dataType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12236,7 +12236,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_ingest_time_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_ingest_time_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -12246,34 +12246,34 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'condition_kind' in kwargs:
             condition_kind_allowed_values = ["FIELD"]
             if kwargs['condition_kind'] not in condition_kind_allowed_values:
                 raise ValueError(
-                    "Invalid value for `condition_kind`, must be one of {0}".format(condition_kind_allowed_values)
+                    f"Invalid value for `condition_kind`, must be one of { condition_kind_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "timeUpdated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12386,7 +12386,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_label_priorities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_label_priorities got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -12396,7 +12396,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -12517,7 +12517,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_label_source_details got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_label_source_details got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -12527,20 +12527,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'label_source_sort_by' in kwargs:
             label_source_sort_by_allowed_values = ["sourceDisplayName", "labelFieldDisplayName"]
             if kwargs['label_source_sort_by'] not in label_source_sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `label_source_sort_by`, must be one of {0}".format(label_source_sort_by_allowed_values)
+                    f"Invalid value for `label_source_sort_by`, must be one of { label_source_sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12693,7 +12693,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_labels got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_labels got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -12703,34 +12703,34 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'is_system' in kwargs:
             is_system_allowed_values = ["ALL", "CUSTOM", "BUILT_IN"]
             if kwargs['is_system'] not in is_system_allowed_values:
                 raise ValueError(
-                    "Invalid value for `is_system`, must be one of {0}".format(is_system_allowed_values)
+                    f"Invalid value for `is_system`, must be one of { is_system_allowed_values }"
                 )
 
         if 'label_priority' in kwargs:
             label_priority_allowed_values = ["NONE", "LOW", "MEDIUM", "HIGH"]
             if kwargs['label_priority'] not in label_priority_allowed_values:
                 raise ValueError(
-                    "Invalid value for `label_priority`, must be one of {0}".format(label_priority_allowed_values)
+                    f"Invalid value for `label_priority`, must be one of { label_priority_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'label_sort_by' in kwargs:
             label_sort_by_allowed_values = ["name", "priority", "sourceUsing"]
             if kwargs['label_sort_by'] not in label_sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `label_sort_by`, must be one of {0}".format(label_sort_by_allowed_values)
+                    f"Invalid value for `label_sort_by`, must be one of { label_sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12880,7 +12880,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_log_analytics_em_bridges got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_log_analytics_em_bridges got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -12890,14 +12890,14 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETED", "NEEDS_ATTENTION"]
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         if 'import_status' in kwargs:
@@ -12905,21 +12905,21 @@ class LogAnalyticsClient(object):
             for import_status_item in kwargs['import_status']:
                 if import_status_item not in import_status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `import_status`, must be one of {0}".format(import_status_allowed_values)
+                        f"Invalid value for `import_status`, must be one of { import_status_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "timeUpdated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13104,7 +13104,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_log_analytics_entities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_log_analytics_entities got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -13114,20 +13114,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'is_management_agent_id_null' in kwargs:
             is_management_agent_id_null_allowed_values = ["true", "false"]
             if kwargs['is_management_agent_id_null'] not in is_management_agent_id_null_allowed_values:
                 raise ValueError(
-                    "Invalid value for `is_management_agent_id_null`, must be one of {0}".format(is_management_agent_id_null_allowed_values)
+                    f"Invalid value for `is_management_agent_id_null`, must be one of { is_management_agent_id_null_allowed_values }"
                 )
 
         if 'creation_source_type' in kwargs:
@@ -13135,21 +13135,21 @@ class LogAnalyticsClient(object):
             for creation_source_type_item in kwargs['creation_source_type']:
                 if creation_source_type_item not in creation_source_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `creation_source_type`, must be one of {0}".format(creation_source_type_allowed_values)
+                        f"Invalid value for `creation_source_type`, must be one of { creation_source_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "timeUpdated", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13290,7 +13290,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_log_analytics_entity_topology got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_log_analytics_entity_topology got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -13301,27 +13301,27 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "timeUpdated", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13463,7 +13463,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_log_analytics_entity_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_log_analytics_entity_types got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -13473,34 +13473,34 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'cloud_type' in kwargs:
             cloud_type_allowed_values = ["CLOUD", "NON_CLOUD", "ALL"]
             if kwargs['cloud_type'] not in cloud_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `cloud_type`, must be one of {0}".format(cloud_type_allowed_values)
+                    f"Invalid value for `cloud_type`, must be one of { cloud_type_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "timeUpdated", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13629,7 +13629,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_log_analytics_log_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_log_analytics_log_groups got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -13639,20 +13639,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "timeUpdated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13787,7 +13787,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_log_analytics_object_collection_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_log_analytics_object_collection_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -13797,27 +13797,27 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeUpdated", "timeCreated", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13937,7 +13937,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_log_sets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_log_sets got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -13947,13 +13947,13 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14104,7 +14104,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_lookups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_lookups got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -14114,40 +14114,40 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         type_allowed_values = ["Lookup", "Dictionary"]
         if type not in type_allowed_values:
             raise ValueError(
-                "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                f"Invalid value for `type`, must be one of { type_allowed_values }"
             )
 
         if 'is_system' in kwargs:
             is_system_allowed_values = ["ALL", "CUSTOM", "BUILT_IN"]
             if kwargs['is_system'] not in is_system_allowed_values:
                 raise ValueError(
-                    "Invalid value for `is_system`, must be one of {0}".format(is_system_allowed_values)
+                    f"Invalid value for `is_system`, must be one of { is_system_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "status", "type", "updatedTime", "creationType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'status' in kwargs:
             status_allowed_values = ["ALL", "SUCCESSFUL", "FAILED", "INPROGRESS"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14272,7 +14272,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_meta_source_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_meta_source_types got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -14282,20 +14282,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14395,7 +14395,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_namespaces got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_namespaces got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id
@@ -14517,7 +14517,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_overlapping_recalls got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_overlapping_recalls got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -14527,20 +14527,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeStarted", "timeDataStarted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14665,7 +14665,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_parser_functions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_parser_functions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -14675,20 +14675,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14808,7 +14808,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_parser_meta_plugins got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_parser_meta_plugins got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -14818,20 +14818,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14993,7 +14993,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_parsers got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_parsers got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -15003,41 +15003,41 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'source_type' in kwargs:
             source_type_allowed_values = ["OS_FILE", "SYSLOG", "ODL", "OS_WINDOWS_SYS"]
             if kwargs['source_type'] not in source_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `source_type`, must be one of {0}".format(source_type_allowed_values)
+                    f"Invalid value for `source_type`, must be one of { source_type_allowed_values }"
                 )
 
         if 'parser_type' in kwargs:
             parser_type_allowed_values = ["ALL", "REGEX", "XML", "JSON", "ODL", "DELIMITED"]
             if kwargs['parser_type'] not in parser_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `parser_type`, must be one of {0}".format(parser_type_allowed_values)
+                    f"Invalid value for `parser_type`, must be one of { parser_type_allowed_values }"
                 )
 
         if 'is_system' in kwargs:
             is_system_allowed_values = ["ALL", "CUSTOM", "BUILT_IN"]
             if kwargs['is_system'] not in is_system_allowed_values:
                 raise ValueError(
-                    "Invalid value for `is_system`, must be one of {0}".format(is_system_allowed_values)
+                    f"Invalid value for `is_system`, must be one of { is_system_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name", "type", "sourcesCount", "timeUpdated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -15180,7 +15180,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_properties_metadata got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_properties_metadata got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -15190,20 +15190,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -15335,7 +15335,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_query_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_query_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -15345,27 +15345,27 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'mode' in kwargs:
             mode_allowed_values = ["ALL", "FOREGROUND", "BACKGROUND"]
             if kwargs['mode'] not in mode_allowed_values:
                 raise ValueError(
-                    "Invalid value for `mode`, must be one of {0}".format(mode_allowed_values)
+                    f"Invalid value for `mode`, must be one of { mode_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeStarted", "timeExpires"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -15495,7 +15495,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_recalled_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_recalled_data got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -15505,20 +15505,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeStarted", "timeDataStarted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15654,7 +15654,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_resource_categories got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_resource_categories got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -15664,20 +15664,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["resourceType", "categoryName", "resourceId"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -15821,7 +15821,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_rules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -15831,34 +15831,34 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'kind' in kwargs:
             kind_allowed_values = ["INGEST_TIME", "SAVED_SEARCH", "ALL"]
             if kwargs['kind'] not in kind_allowed_values:
                 raise ValueError(
-                    "Invalid value for `kind`, must be one of {0}".format(kind_allowed_values)
+                    f"Invalid value for `kind`, must be one of { kind_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "timeUpdated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -16002,7 +16002,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_scheduled_tasks got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_scheduled_tasks got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -16012,26 +16012,26 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         task_type_allowed_values = ["SAVED_SEARCH", "ACCELERATION", "PURGE"]
         if task_type not in task_type_allowed_values:
             raise ValueError(
-                "Invalid value for `task_type`, must be one of {0}".format(task_type_allowed_values)
+                f"Invalid value for `task_type`, must be one of { task_type_allowed_values }"
             )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "timeUpdated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -16176,7 +16176,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_source_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_source_associations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -16186,27 +16186,27 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'life_cycle_state' in kwargs:
             life_cycle_state_allowed_values = ["ALL", "ACCEPTED", "IN_PROGRESS", "SUCCEEDED", "FAILED"]
             if kwargs['life_cycle_state'] not in life_cycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `life_cycle_state`, must be one of {0}".format(life_cycle_state_allowed_values)
+                    f"Invalid value for `life_cycle_state`, must be one of { life_cycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["entityName", "timeLastAttempted", "status"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -16350,7 +16350,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_source_event_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_source_event_types got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -16361,27 +16361,27 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'is_system' in kwargs:
             is_system_allowed_values = ["ALL", "CUSTOM", "BUILT_IN"]
             if kwargs['is_system'] not in is_system_allowed_values:
                 raise ValueError(
-                    "Invalid value for `is_system`, must be one of {0}".format(is_system_allowed_values)
+                    f"Invalid value for `is_system`, must be one of { is_system_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["eventType", "timeUpdated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16506,7 +16506,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_source_extended_field_definitions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_source_extended_field_definitions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -16517,20 +16517,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["baseFieldName", "regularExpression"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16649,7 +16649,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_source_label_operators got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_source_label_operators got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -16659,20 +16659,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16791,7 +16791,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_source_meta_functions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_source_meta_functions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -16801,20 +16801,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16940,7 +16940,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_source_patterns got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_source_patterns got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -16951,20 +16951,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["patternText"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -17126,7 +17126,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -17136,27 +17136,27 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'is_system' in kwargs:
             is_system_allowed_values = ["ALL", "CUSTOM", "BUILT_IN"]
             if kwargs['is_system'] not in is_system_allowed_values:
                 raise ValueError(
-                    "Invalid value for `is_system`, must be one of {0}".format(is_system_allowed_values)
+                    f"Invalid value for `is_system`, must be one of { is_system_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name", "timeUpdated", "associationCount", "sourceType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -17291,7 +17291,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_storage_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_storage_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id,
@@ -17302,20 +17302,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -17467,7 +17467,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_storage_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_storage_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -17477,34 +17477,34 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted", "timeExpires", "timeFinished"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'operation_type' in kwargs:
             operation_type_allowed_values = ["OFFBOARD_TENANCY", "PURGE_STORAGE_DATA", "RECALL_ARCHIVED_STORAGE_DATA", "RELEASE_RECALLED_STORAGE_DATA", "PURGE_ARCHIVAL_DATA", "ARCHIVE_STORAGE_DATA", "CLEANUP_ARCHIVAL_STORAGE_DATA", "ENCRYPT_ACTIVE_DATA", "ENCRYPT_ARCHIVAL_DATA"]
             if kwargs['operation_type'] not in operation_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `operation_type`, must be one of {0}".format(operation_type_allowed_values)
+                    f"Invalid value for `operation_type`, must be one of { operation_type_allowed_values }"
                 )
 
         if 'status' in kwargs:
             status_allowed_values = ["ACCEPTED", "CANCELED", "FAILED", "IN_PROGRESS", "SUCCEEDED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         query_params = {
@@ -17618,7 +17618,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_supported_char_encodings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_supported_char_encodings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -17628,7 +17628,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -17732,7 +17732,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_supported_timezones got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_supported_timezones got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -17742,7 +17742,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -17872,7 +17872,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_upload_files got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_upload_files got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -17883,20 +17883,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeStarted", "name", "logGroupName", "sourceName", "status", "timeCreated", "fileName", "logGroup"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'status' in kwargs:
@@ -17904,7 +17904,7 @@ class LogAnalyticsClient(object):
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         query_params = {
@@ -18016,7 +18016,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_upload_warnings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_upload_warnings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -18027,7 +18027,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -18160,7 +18160,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_uploads got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_uploads got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -18170,27 +18170,27 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeUpdated", "timeCreated", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'warnings_filter' in kwargs:
             warnings_filter_allowed_values = ["WITH_WARNINGS", "WITHOUT_WARNINGS", "ALL"]
             if kwargs['warnings_filter'] not in warnings_filter_allowed_values:
                 raise ValueError(
-                    "Invalid value for `warnings_filter`, must be one of {0}".format(warnings_filter_allowed_values)
+                    f"Invalid value for `warnings_filter`, must be one of { warnings_filter_allowed_values }"
                 )
 
         query_params = {
@@ -18365,7 +18365,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_warnings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_warnings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -18375,27 +18375,27 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'warning_state' in kwargs:
             warning_state_allowed_values = ["ALL", "SUPPRESSED", "UNSUPPRESSED"]
             if kwargs['warning_state'] not in warning_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `warning_state`, must be one of {0}".format(warning_state_allowed_values)
+                    f"Invalid value for `warning_state`, must be one of { warning_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["EntityType", "SourceName", "PatternText", "FirstReported", "WarningMessage", "Host", "EntityName", "InitialWarningDate"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -18518,7 +18518,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -18529,7 +18529,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -18636,7 +18636,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -18647,7 +18647,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -18752,7 +18752,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -18762,7 +18762,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id,
@@ -18865,7 +18865,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "offboard_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"offboard_namespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -18875,7 +18875,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18969,7 +18969,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "onboard_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"onboard_namespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -18979,7 +18979,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19068,7 +19068,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "parse_query got unknown kwargs: {!r}".format(extra_kwargs))
+                f"parse_query got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -19078,7 +19078,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19184,7 +19184,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "pause_scheduled_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"pause_scheduled_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -19195,7 +19195,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19304,7 +19304,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "purge_storage_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"purge_storage_data got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -19314,7 +19314,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19420,7 +19420,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_query_work_request_background got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_query_work_request_background got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -19431,7 +19431,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19529,7 +19529,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "query got unknown kwargs: {!r}".format(extra_kwargs))
+                f"query got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -19539,7 +19539,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -19660,7 +19660,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "recall_archived_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"recall_archived_data got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -19670,7 +19670,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -19812,7 +19812,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "register_lookup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"register_lookup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -19822,12 +19822,12 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         type_allowed_values = ["Lookup", "Dictionary"]
         if type not in type_allowed_values:
             raise ValueError(
-                "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                f"Invalid value for `type`, must be one of { type_allowed_values }"
             )
 
         query_params = {
@@ -19975,7 +19975,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "release_recalled_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"release_recalled_data got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -19985,7 +19985,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -20100,7 +20100,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_entity_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_entity_associations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -20111,7 +20111,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -20217,7 +20217,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_preferences got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_preferences got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -20227,7 +20227,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -20324,7 +20324,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_resource_categories got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_resource_categories got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -20334,7 +20334,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -20440,7 +20440,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_source_event_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_source_event_types got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -20451,7 +20451,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -20557,7 +20557,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "resume_scheduled_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"resume_scheduled_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -20568,7 +20568,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -20681,7 +20681,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "run got unknown kwargs: {!r}".format(extra_kwargs))
+                f"run got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -20692,7 +20692,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "timeStart": kwargs.get("time_start", missing),
@@ -20796,7 +20796,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "set_unprocessed_data_bucket got unknown kwargs: {!r}".format(extra_kwargs))
+                f"set_unprocessed_data_bucket got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -20806,7 +20806,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "bucketName": bucket_name,
@@ -20903,7 +20903,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "suggest got unknown kwargs: {!r}".format(extra_kwargs))
+                f"suggest got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -20913,7 +20913,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -21021,7 +21021,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "suppress_warning got unknown kwargs: {!r}".format(extra_kwargs))
+                f"suppress_warning got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -21031,7 +21031,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -21154,7 +21154,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "test_parser got unknown kwargs: {!r}".format(extra_kwargs))
+                f"test_parser got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -21164,13 +21164,13 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["LOG_LINES", "LOG_ENTRIES", "LOG_LINES_LOG_ENTRIES"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -21289,7 +21289,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "unsuppress_warning got unknown kwargs: {!r}".format(extra_kwargs))
+                f"unsuppress_warning got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -21299,7 +21299,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -21414,7 +21414,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_ingest_time_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_ingest_time_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -21425,7 +21425,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -21534,7 +21534,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_log_analytics_em_bridge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_log_analytics_em_bridge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -21545,7 +21545,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -21652,7 +21652,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_log_analytics_entity got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_log_analytics_entity got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -21663,7 +21663,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -21770,7 +21770,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_log_analytics_entity_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_log_analytics_entity_type got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -21781,7 +21781,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -21886,7 +21886,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_log_analytics_log_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_log_analytics_log_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -21897,7 +21897,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22008,7 +22008,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_log_analytics_object_collection_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_log_analytics_object_collection_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -22019,7 +22019,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22134,7 +22134,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_lookup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_lookup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -22145,7 +22145,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22286,7 +22286,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_lookup_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_lookup_data got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -22297,7 +22297,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isForce": kwargs.get("is_force", missing),
@@ -22432,7 +22432,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_preferences got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_preferences got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -22442,7 +22442,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22539,7 +22539,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_resource_categories got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_resource_categories got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -22549,7 +22549,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -22657,7 +22657,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_scheduled_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_scheduled_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -22668,7 +22668,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22774,7 +22774,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_storage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_storage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -22784,7 +22784,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22925,7 +22925,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upload_log_events_file got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upload_log_events_file got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -22935,13 +22935,13 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'payload_type' in kwargs:
             payload_type_allowed_values = ["JSON", "GZIP", "ZIP"]
             if kwargs['payload_type'] not in payload_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `payload_type`, must be one of {0}".format(payload_type_allowed_values)
+                    f"Invalid value for `payload_type`, must be one of { payload_type_allowed_values }"
                 )
 
         query_params = {
@@ -23147,7 +23147,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upload_log_file got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upload_log_file got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -23157,7 +23157,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "uploadName": upload_name,
@@ -23310,7 +23310,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upsert_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upsert_associations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -23320,7 +23320,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isFromRepublish": kwargs.get("is_from_republish", missing)
@@ -23440,7 +23440,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upsert_field got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upsert_field got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -23450,7 +23450,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23566,7 +23566,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upsert_label got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upsert_label got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -23576,7 +23576,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23692,7 +23692,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upsert_parser got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upsert_parser got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -23702,7 +23702,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23832,7 +23832,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upsert_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upsert_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -23842,7 +23842,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "createLikeSourceId": kwargs.get("create_like_source_id", missing),
@@ -23979,7 +23979,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_association_parameters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_association_parameters got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -23989,20 +23989,20 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["sourceDisplayName", "status"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -24112,7 +24112,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -24122,7 +24122,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24222,7 +24222,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_file got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_file got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -24232,7 +24232,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "objectLocation": object_location,
@@ -24335,7 +24335,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_label_condition got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_label_condition got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -24345,7 +24345,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24464,7 +24464,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -24474,7 +24474,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "createLikeSourceId": kwargs.get("create_like_source_id", missing),
@@ -24590,7 +24590,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_source_extended_field_details got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_source_extended_field_details got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -24600,7 +24600,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json;charset=UTF-8",
@@ -24705,7 +24705,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_source_mapping got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_source_mapping got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name
@@ -24715,7 +24715,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "objectLocation": object_location,
@@ -24832,7 +24832,7 @@ class LogAnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "verify got unknown kwargs: {!r}".format(extra_kwargs))
+                f"verify got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "namespaceName": namespace_name,
@@ -24843,7 +24843,7 @@ class LogAnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "shouldIncludeResults": kwargs.get("should_include_results", missing)

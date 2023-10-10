@@ -402,8 +402,7 @@ class CrossConnectMappingDetails(object):
         allowed_values = ["UP", "DOWN"]
         if not value_allowed_none_or_none_sentinel(ipv4_bgp_status, allowed_values):
             raise ValueError(
-                "Invalid value for `ipv4_bgp_status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ipv4_bgp_status`, must be None or one of {allowed_values}"
             )
         self._ipv4_bgp_status = ipv4_bgp_status
 
@@ -434,8 +433,7 @@ class CrossConnectMappingDetails(object):
         allowed_values = ["UP", "DOWN"]
         if not value_allowed_none_or_none_sentinel(ipv6_bgp_status, allowed_values):
             raise ValueError(
-                "Invalid value for `ipv6_bgp_status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ipv6_bgp_status`, must be None or one of {allowed_values}"
             )
         self._ipv6_bgp_status = ipv6_bgp_status
 

@@ -312,8 +312,7 @@ class LoadSqlPlanBaselinesFromCursorCacheDetails(object):
         allowed_values = ["SQL_TEXT", "PARSING_SCHEMA_NAME", "MODULE", "ACTION"]
         if not value_allowed_none_or_none_sentinel(filter_name, allowed_values):
             raise ValueError(
-                "Invalid value for `filter_name`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `filter_name`, must be None or one of {allowed_values}"
             )
         self._filter_name = filter_name
 

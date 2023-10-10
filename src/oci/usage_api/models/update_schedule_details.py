@@ -123,8 +123,7 @@ class UpdateScheduleDetails(object):
         allowed_values = ["CSV", "PDF"]
         if not value_allowed_none_or_none_sentinel(output_file_format, allowed_values):
             raise ValueError(
-                "Invalid value for `output_file_format`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `output_file_format`, must be None or one of {allowed_values}"
             )
         self._output_file_format = output_file_format
 

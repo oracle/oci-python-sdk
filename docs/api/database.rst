@@ -62,6 +62,7 @@ Database
     oci.database.models.AutonomousVirtualMachineSummary
     oci.database.models.AutonomousVmCluster
     oci.database.models.AutonomousVmClusterResourceDetails
+    oci.database.models.AutonomousVmClusterResourceUsage
     oci.database.models.AutonomousVmClusterSummary
     oci.database.models.AutonomousVmResourceUsage
     oci.database.models.AvmAcdResourceStats
@@ -99,6 +100,7 @@ Database
     oci.database.models.ConsoleConnectionSummary
     oci.database.models.ConvertToPdbDetails
     oci.database.models.ConvertToPdbTargetBase
+    oci.database.models.ConvertToRegularPluggableDatabaseDetails
     oci.database.models.CreateApplicationVipDetails
     oci.database.models.CreateAutonomousContainerDatabaseDetails
     oci.database.models.CreateAutonomousDatabaseBackupDetails
@@ -149,7 +151,12 @@ Database
     oci.database.models.CreateNFSBackupDestinationDetails
     oci.database.models.CreateNewDatabaseDetails
     oci.database.models.CreateOneoffPatchDetails
+    oci.database.models.CreatePluggableDatabaseCreationTypeDetails
     oci.database.models.CreatePluggableDatabaseDetails
+    oci.database.models.CreatePluggableDatabaseFromLocalCloneDetails
+    oci.database.models.CreatePluggableDatabaseFromRelocateDetails
+    oci.database.models.CreatePluggableDatabaseFromRemoteCloneDetails
+    oci.database.models.CreatePluggableDatabaseRefreshableCloneDetails
     oci.database.models.CreateRecoveryApplianceBackupDestinationDetails
     oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails
     oci.database.models.CreateVmClusterDetails
@@ -289,6 +296,8 @@ Database
     oci.database.models.PluggableDatabase
     oci.database.models.PluggableDatabaseConnectionStrings
     oci.database.models.PluggableDatabaseManagementConfig
+    oci.database.models.PluggableDatabaseNodeLevelDetails
+    oci.database.models.PluggableDatabaseRefreshableCloneConfig
     oci.database.models.PluggableDatabaseSummary
     oci.database.models.RefreshableCloneCollection
     oci.database.models.RefreshableCloneSummary

@@ -455,8 +455,7 @@ class BaseAnnouncement(object):
         allowed_values = ["ACTION_REQUIRED_BY", "NEW_START_TIME", "ORIGINAL_END_TIME", "REPORT_DATE", "START_TIME", "TIME_DETECTED"]
         if not value_allowed_none_or_none_sentinel(time_one_type, allowed_values):
             raise ValueError(
-                "Invalid value for `time_one_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `time_one_type`, must be None or one of {allowed_values}"
             )
         self._time_one_type = time_one_type
 
@@ -541,8 +540,7 @@ class BaseAnnouncement(object):
         allowed_values = ["END_TIME", "NEW_END_TIME", "ESTIMATED_END_TIME"]
         if not value_allowed_none_or_none_sentinel(time_two_type, allowed_values):
             raise ValueError(
-                "Invalid value for `time_two_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `time_two_type`, must be None or one of {allowed_values}"
             )
         self._time_two_type = time_two_type
 
@@ -647,8 +645,7 @@ class BaseAnnouncement(object):
         allowed_values = ["ACTION_RECOMMENDED", "ACTION_REQUIRED", "EMERGENCY_CHANGE", "EMERGENCY_MAINTENANCE", "EMERGENCY_MAINTENANCE_COMPLETE", "EMERGENCY_MAINTENANCE_EXTENDED", "EMERGENCY_MAINTENANCE_RESCHEDULED", "INFORMATION", "PLANNED_CHANGE", "PLANNED_CHANGE_COMPLETE", "PLANNED_CHANGE_EXTENDED", "PLANNED_CHANGE_RESCHEDULED", "PRODUCTION_EVENT_NOTIFICATION", "SCHEDULED_MAINTENANCE"]
         if not value_allowed_none_or_none_sentinel(announcement_type, allowed_values):
             raise ValueError(
-                "Invalid value for `announcement_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `announcement_type`, must be None or one of {allowed_values}"
             )
         self._announcement_type = announcement_type
 
@@ -679,8 +676,7 @@ class BaseAnnouncement(object):
         allowed_values = ["ACTIVE", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 
@@ -819,8 +815,7 @@ class BaseAnnouncement(object):
         allowed_values = ["IAAS", "SAAS"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             raise ValueError(
-                "Invalid value for `platform_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `platform_type`, must be None or one of {allowed_values}"
             )
         self._platform_type = platform_type
 

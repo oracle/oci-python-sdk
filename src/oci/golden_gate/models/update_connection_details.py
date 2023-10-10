@@ -253,8 +253,7 @@ class UpdateConnectionDetails(object):
         allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
-                "Invalid value for `connection_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `connection_type`, must be None or one of {allowed_values}"
             )
         self._connection_type = connection_type
 

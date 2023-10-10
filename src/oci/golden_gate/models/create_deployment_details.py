@@ -232,8 +232,7 @@ class CreateDeploymentDetails(object):
         allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             raise ValueError(
-                "Invalid value for `license_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
 
@@ -554,8 +553,7 @@ class CreateDeploymentDetails(object):
         allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             raise ValueError(
-                "Invalid value for `deployment_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `deployment_type`, must be None or one of {allowed_values}"
             )
         self._deployment_type = deployment_type
 

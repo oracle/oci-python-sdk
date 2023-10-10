@@ -182,7 +182,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_media_asset_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_media_asset_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaAssetId": media_asset_id
@@ -192,7 +192,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -302,7 +302,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_media_workflow_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_media_workflow_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowId": media_workflow_id
@@ -312,7 +312,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -422,7 +422,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_media_workflow_configuration_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_media_workflow_configuration_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowConfigurationId": media_workflow_configuration_id
@@ -432,7 +432,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -542,7 +542,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_media_workflow_job_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_media_workflow_job_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowJobId": media_workflow_job_id
@@ -552,7 +552,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -662,7 +662,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_stream_distribution_channel_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_stream_distribution_channel_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamDistributionChannelId": stream_distribution_channel_id
@@ -672,7 +672,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -771,7 +771,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_media_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_media_asset got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -869,7 +869,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_media_workflow got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_media_workflow got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -967,7 +967,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_media_workflow_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_media_workflow_configuration got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1065,7 +1065,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_media_workflow_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_media_workflow_job got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1163,7 +1163,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_stream_cdn_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_stream_cdn_config got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1261,7 +1261,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_stream_distribution_channel got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_stream_distribution_channel got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1359,7 +1359,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_stream_packaging_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_stream_packaging_config got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1463,7 +1463,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_media_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_media_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaAssetId": media_asset_id
@@ -1473,13 +1473,13 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'delete_mode' in kwargs:
             delete_mode_allowed_values = ["DELETE_CHILDREN", "DELETE_DERIVATIONS"]
             if kwargs['delete_mode'] not in delete_mode_allowed_values:
                 raise ValueError(
-                    "Invalid value for `delete_mode`, must be one of {0}".format(delete_mode_allowed_values)
+                    f"Invalid value for `delete_mode`, must be one of { delete_mode_allowed_values }"
                 )
 
         query_params = {
@@ -1589,7 +1589,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_media_asset_distribution_channel_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_media_asset_distribution_channel_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaAssetId": media_asset_id,
@@ -1600,7 +1600,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "version": kwargs.get("version", missing)
@@ -1702,7 +1702,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_media_workflow got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_media_workflow got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowId": media_workflow_id
@@ -1712,7 +1712,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1807,7 +1807,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_media_workflow_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_media_workflow_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowConfigurationId": media_workflow_configuration_id
@@ -1817,7 +1817,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1912,7 +1912,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_media_workflow_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_media_workflow_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowJobId": media_workflow_job_id
@@ -1922,7 +1922,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2017,7 +2017,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_stream_cdn_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_stream_cdn_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamCdnConfigId": stream_cdn_config_id
@@ -2027,7 +2027,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2122,7 +2122,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_stream_distribution_channel got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_stream_distribution_channel got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamDistributionChannelId": stream_distribution_channel_id
@@ -2132,7 +2132,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2227,7 +2227,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_stream_packaging_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_stream_packaging_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamPackagingConfigId": stream_packaging_config_id
@@ -2237,7 +2237,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2324,7 +2324,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_media_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_media_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaAssetId": media_asset_id
@@ -2334,7 +2334,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2429,7 +2429,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_media_asset_distribution_channel_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_media_asset_distribution_channel_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaAssetId": media_asset_id,
@@ -2440,7 +2440,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "version": kwargs.get("version", missing)
@@ -2535,7 +2535,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_media_workflow got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_media_workflow got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowId": media_workflow_id
@@ -2545,7 +2545,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2633,7 +2633,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_media_workflow_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_media_workflow_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowConfigurationId": media_workflow_configuration_id
@@ -2643,7 +2643,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2731,7 +2731,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_media_workflow_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_media_workflow_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowJobId": media_workflow_job_id
@@ -2741,7 +2741,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2832,7 +2832,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_media_workflow_job_fact got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_media_workflow_job_fact got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowJobId": media_workflow_job_id,
@@ -2843,7 +2843,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2931,7 +2931,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_stream_cdn_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_stream_cdn_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamCdnConfigId": stream_cdn_config_id
@@ -2941,7 +2941,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3029,7 +3029,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_stream_distribution_channel got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_stream_distribution_channel got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamDistributionChannelId": stream_distribution_channel_id
@@ -3039,7 +3039,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3127,7 +3127,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_stream_packaging_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_stream_packaging_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamPackagingConfigId": stream_packaging_config_id
@@ -3137,7 +3137,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3236,7 +3236,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "ingest_stream_distribution_channel got unknown kwargs: {!r}".format(extra_kwargs))
+                f"ingest_stream_distribution_channel got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamDistributionChannelId": stream_distribution_channel_id
@@ -3246,7 +3246,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3367,7 +3367,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_media_asset_distribution_channel_attachments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_media_asset_distribution_channel_attachments got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaAssetId": media_asset_id
@@ -3377,20 +3377,20 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["mediaAssetId", "distributionChannelId", "displayName", "version"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3561,34 +3561,34 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_media_assets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_media_assets got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["compartmentId", "type", "lifecycleState", "parentMediaAssetId", "masterMediaAssetId", "displayName", "timeCreated", "timeUpdated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'type' in kwargs:
             type_allowed_values = ["AUDIO", "VIDEO", "PLAYLIST", "IMAGE", "CAPTION_FILE", "UNKNOWN"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                    f"Invalid value for `type`, must be one of { type_allowed_values }"
                 )
 
         query_params = {
@@ -3734,27 +3734,27 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_media_workflow_configurations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_media_workflow_configurations got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "NEEDS_ATTENTION", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3886,7 +3886,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_media_workflow_job_facts got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_media_workflow_job_facts got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowJobId": media_workflow_job_id
@@ -3896,27 +3896,27 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'type' in kwargs:
             type_allowed_values = ["runnableJob", "taskDeclaration", "workflow", "configuration", "parameterResolutionEvent"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                    f"Invalid value for `type`, must be one of { type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["key"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -4057,27 +4057,27 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_media_workflow_jobs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_media_workflow_jobs got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "workflowId", "lifecycleState"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -4213,20 +4213,20 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_media_workflow_task_declarations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_media_workflow_task_declarations got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name", "version"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -4364,27 +4364,27 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_media_workflows got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_media_workflows got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "NEEDS_ATTENTION", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4521,27 +4521,27 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_stream_cdn_configs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_stream_cdn_configs got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "NEEDS_ATTENTION", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4679,27 +4679,27 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_stream_distribution_channels got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_stream_distribution_channels got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "NEEDS_ATTENTION", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4836,27 +4836,27 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_stream_packaging_configs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_stream_packaging_configs got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "NEEDS_ATTENTION", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4977,13 +4977,13 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_system_media_workflows got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_system_media_workflows got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -5092,7 +5092,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_media_asset got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_media_asset got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaAssetId": media_asset_id
@@ -5102,7 +5102,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5204,7 +5204,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_media_workflow got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_media_workflow got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowId": media_workflow_id
@@ -5214,7 +5214,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5316,7 +5316,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_media_workflow_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_media_workflow_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowConfigurationId": media_workflow_configuration_id
@@ -5326,7 +5326,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5428,7 +5428,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_media_workflow_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_media_workflow_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "mediaWorkflowJobId": media_workflow_job_id
@@ -5438,7 +5438,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5540,7 +5540,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_stream_cdn_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_stream_cdn_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamCdnConfigId": stream_cdn_config_id
@@ -5550,7 +5550,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5652,7 +5652,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_stream_distribution_channel got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_stream_distribution_channel got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamDistributionChannelId": stream_distribution_channel_id
@@ -5662,7 +5662,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5764,7 +5764,7 @@ class MediaServicesClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_stream_packaging_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_stream_packaging_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "streamPackagingConfigId": stream_packaging_config_id
@@ -5774,7 +5774,7 @@ class MediaServicesClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

@@ -129,8 +129,7 @@ class VtapCaptureFilterRuleDetails(object):
         allowed_values = ["INGRESS", "EGRESS"]
         if not value_allowed_none_or_none_sentinel(traffic_direction, allowed_values):
             raise ValueError(
-                "Invalid value for `traffic_direction`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `traffic_direction`, must be None or one of {allowed_values}"
             )
         self._traffic_direction = traffic_direction
 
@@ -161,8 +160,7 @@ class VtapCaptureFilterRuleDetails(object):
         allowed_values = ["INCLUDE", "EXCLUDE"]
         if not value_allowed_none_or_none_sentinel(rule_action, allowed_values):
             raise ValueError(
-                "Invalid value for `rule_action`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `rule_action`, must be None or one of {allowed_values}"
             )
         self._rule_action = rule_action
 

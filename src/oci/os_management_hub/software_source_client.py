@@ -169,7 +169,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_availability_of_software_sources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_availability_of_software_sources got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -265,7 +265,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_entitlement got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_entitlement got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -361,7 +361,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_software_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_software_source got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -459,7 +459,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_software_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_software_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "softwareSourceId": software_source_id
@@ -469,7 +469,7 @@ class SoftwareSourceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -559,7 +559,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_erratum got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_erratum got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "name": name
@@ -569,7 +569,7 @@ class SoftwareSourceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -670,7 +670,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_module_stream got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_module_stream got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "softwareSourceId": software_source_id,
@@ -681,7 +681,7 @@ class SoftwareSourceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "streamName": stream_name
@@ -785,7 +785,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_module_stream_profile got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_module_stream_profile got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "softwareSourceId": software_source_id,
@@ -796,7 +796,7 @@ class SoftwareSourceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "moduleName": module_name,
@@ -895,7 +895,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_package_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_package_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "softwareSourceId": software_source_id,
@@ -906,7 +906,7 @@ class SoftwareSourceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -997,7 +997,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_software_package got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_software_package got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "softwareSourceId": software_source_id,
@@ -1008,7 +1008,7 @@ class SoftwareSourceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1096,7 +1096,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_software_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_software_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "softwareSourceId": software_source_id
@@ -1106,7 +1106,7 @@ class SoftwareSourceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1235,27 +1235,27 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_entitlements got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_entitlements got unknown kwargs: {extra_kwargs!r}")
 
         if 'vendor_name' in kwargs:
             vendor_name_allowed_values = ["ORACLE"]
             if kwargs['vendor_name'] not in vendor_name_allowed_values:
                 raise ValueError(
-                    "Invalid value for `vendor_name`, must be one of {0}".format(vendor_name_allowed_values)
+                    f"Invalid value for `vendor_name`, must be one of { vendor_name_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["csi", "vendorName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1426,21 +1426,21 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_errata got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_errata got unknown kwargs: {extra_kwargs!r}")
 
         if 'classification_type' in kwargs:
             classification_type_allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER"]
             for classification_type_item in kwargs['classification_type']:
                 if classification_type_item not in classification_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `classification_type`, must be one of {0}".format(classification_type_allowed_values)
+                        f"Invalid value for `classification_type`, must be one of { classification_type_allowed_values }"
                     )
 
         if 'os_family' in kwargs:
             os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
             if kwargs['os_family'] not in os_family_allowed_values:
                 raise ValueError(
-                    "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                    f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                 )
 
         if 'advisory_severity' in kwargs:
@@ -1448,21 +1448,21 @@ class SoftwareSourceClient(object):
             for advisory_severity_item in kwargs['advisory_severity']:
                 if advisory_severity_item not in advisory_severity_allowed_values:
                     raise ValueError(
-                        "Invalid value for `advisory_severity`, must be one of {0}".format(advisory_severity_allowed_values)
+                        f"Invalid value for `advisory_severity`, must be one of { advisory_severity_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeIssued", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1612,7 +1612,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_module_stream_profiles got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_module_stream_profiles got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "softwareSourceId": software_source_id
@@ -1622,20 +1622,20 @@ class SoftwareSourceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["moduleName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1787,7 +1787,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_module_streams got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_module_streams got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "softwareSourceId": software_source_id
@@ -1797,20 +1797,20 @@ class SoftwareSourceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["moduleName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1960,7 +1960,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_package_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_package_groups got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "softwareSourceId": software_source_id
@@ -1970,20 +1970,20 @@ class SoftwareSourceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2133,7 +2133,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_software_packages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_software_packages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "softwareSourceId": software_source_id
@@ -2143,20 +2143,20 @@ class SoftwareSourceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2275,20 +2275,20 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_software_source_vendors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_software_source_vendors got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2469,21 +2469,21 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_software_sources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_software_sources got unknown kwargs: {extra_kwargs!r}")
 
         if 'software_source_type' in kwargs:
             software_source_type_allowed_values = ["VENDOR", "CUSTOM", "VERSIONED"]
             for software_source_type_item in kwargs['software_source_type']:
                 if software_source_type_item not in software_source_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `software_source_type`, must be one of {0}".format(software_source_type_allowed_values)
+                        f"Invalid value for `software_source_type`, must be one of { software_source_type_allowed_values }"
                     )
 
         if 'vendor_name' in kwargs:
             vendor_name_allowed_values = ["ORACLE"]
             if kwargs['vendor_name'] not in vendor_name_allowed_values:
                 raise ValueError(
-                    "Invalid value for `vendor_name`, must be one of {0}".format(vendor_name_allowed_values)
+                    f"Invalid value for `vendor_name`, must be one of { vendor_name_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
@@ -2491,7 +2491,7 @@ class SoftwareSourceClient(object):
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         if 'arch_type' in kwargs:
@@ -2499,7 +2499,7 @@ class SoftwareSourceClient(object):
             for arch_type_item in kwargs['arch_type']:
                 if arch_type_item not in arch_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `arch_type`, must be one of {0}".format(arch_type_allowed_values)
+                        f"Invalid value for `arch_type`, must be one of { arch_type_allowed_values }"
                     )
 
         if 'availability' in kwargs:
@@ -2507,21 +2507,21 @@ class SoftwareSourceClient(object):
             for availability_item in kwargs['availability']:
                 if availability_item not in availability_allowed_values:
                     raise ValueError(
-                        "Invalid value for `availability`, must be one of {0}".format(availability_allowed_values)
+                        f"Invalid value for `availability`, must be one of { availability_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2648,7 +2648,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_software_source_module_streams got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_software_source_module_streams got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -2763,7 +2763,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_software_source_modules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_software_source_modules got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -2878,7 +2878,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_software_source_package_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_software_source_package_groups got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -2985,7 +2985,7 @@ class SoftwareSourceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_software_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_software_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "softwareSourceId": software_source_id
@@ -2995,7 +2995,7 @@ class SoftwareSourceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

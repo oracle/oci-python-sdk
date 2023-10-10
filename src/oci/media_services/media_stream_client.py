@@ -170,7 +170,7 @@ class MediaStreamClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_playlist got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_playlist got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "streamPackagingConfigId": stream_packaging_config_id,
@@ -265,7 +265,7 @@ class MediaStreamClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_session_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_session_token got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",

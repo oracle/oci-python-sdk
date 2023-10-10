@@ -209,8 +209,7 @@ class UpdateOceInstanceDetails(object):
         allowed_values = ["NEW", "BYOL", "PREMIUM", "STARTER"]
         if not value_allowed_none_or_none_sentinel(instance_license_type, allowed_values):
             raise ValueError(
-                "Invalid value for `instance_license_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `instance_license_type`, must be None or one of {allowed_values}"
             )
         self._instance_license_type = instance_license_type
 
@@ -241,8 +240,7 @@ class UpdateOceInstanceDetails(object):
         allowed_values = ["PRIMARY", "NONPRIMARY"]
         if not value_allowed_none_or_none_sentinel(instance_usage_type, allowed_values):
             raise ValueError(
-                "Invalid value for `instance_usage_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `instance_usage_type`, must be None or one of {allowed_values}"
             )
         self._instance_usage_type = instance_usage_type
 
@@ -297,8 +295,7 @@ class UpdateOceInstanceDetails(object):
         allowed_values = ["STANDBY", "FAILOVER", "DOWN", "PRIMARY"]
         if not value_allowed_none_or_none_sentinel(lifecycle_details, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_details`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_details`, must be None or one of {allowed_values}"
             )
         self._lifecycle_details = lifecycle_details
 

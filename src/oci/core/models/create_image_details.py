@@ -299,8 +299,7 @@ class CreateImageDetails(object):
         allowed_values = ["NATIVE", "EMULATED", "PARAVIRTUALIZED", "CUSTOM"]
         if not value_allowed_none_or_none_sentinel(launch_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `launch_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `launch_mode`, must be None or one of {allowed_values}"
             )
         self._launch_mode = launch_mode
 

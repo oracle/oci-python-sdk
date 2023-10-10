@@ -106,8 +106,7 @@ class DataObjectQuery(object):
         allowed_values = ["TEMPLATIZED_QUERY", "STANDARD_QUERY"]
         if not value_allowed_none_or_none_sentinel(query_type, allowed_values):
             raise ValueError(
-                "Invalid value for `query_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `query_type`, must be None or one of {allowed_values}"
             )
         self._query_type = query_type
 

@@ -351,8 +351,7 @@ class Rule(object):
         allowed_values = ["ACTIVE", "DELETED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 
@@ -383,8 +382,7 @@ class Rule(object):
         allowed_values = ["INGEST_TIME", "SAVED_SEARCH"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             raise ValueError(
-                "Invalid value for `kind`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `kind`, must be None or one of {allowed_values}"
             )
         self._kind = kind
 
@@ -463,8 +461,7 @@ class Rule(object):
         allowed_values = ["FAILED", "SUCCEEDED"]
         if not value_allowed_none_or_none_sentinel(last_execution_status, allowed_values):
             raise ValueError(
-                "Invalid value for `last_execution_status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `last_execution_status`, must be None or one of {allowed_values}"
             )
         self._last_execution_status = last_execution_status
 

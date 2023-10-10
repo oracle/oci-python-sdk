@@ -180,7 +180,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_analytics_instance_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_analytics_instance_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id
@@ -190,7 +190,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -300,7 +300,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_analytics_instance_network_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_analytics_instance_network_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id
@@ -310,7 +310,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -411,7 +411,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_analytics_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_analytics_instance got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -514,7 +514,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_private_access_channel got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_private_access_channel got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id
@@ -524,7 +524,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -627,7 +627,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_vanity_url got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_vanity_url got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id
@@ -637,7 +637,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -743,7 +743,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_analytics_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_analytics_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id
@@ -753,7 +753,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -860,7 +860,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_private_access_channel got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_private_access_channel got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateAccessChannelKey": private_access_channel_key,
@@ -871,7 +871,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -978,7 +978,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_vanity_url got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_vanity_url got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id,
@@ -989,7 +989,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1085,7 +1085,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -1095,7 +1095,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1181,7 +1181,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_analytics_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_analytics_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id
@@ -1191,7 +1191,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1283,7 +1283,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_private_access_channel got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_private_access_channel got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateAccessChannelKey": private_access_channel_key,
@@ -1294,7 +1294,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1383,7 +1383,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -1393,7 +1393,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1538,41 +1538,41 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_analytics_instances got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_analytics_instances got unknown kwargs: {extra_kwargs!r}")
 
         if 'capacity_type' in kwargs:
             capacity_type_allowed_values = ["OLPU_COUNT", "USER_COUNT"]
             if kwargs['capacity_type'] not in capacity_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `capacity_type`, must be one of {0}".format(capacity_type_allowed_values)
+                    f"Invalid value for `capacity_type`, must be one of { capacity_type_allowed_values }"
                 )
 
         if 'feature_set' in kwargs:
             feature_set_allowed_values = ["SELF_SERVICE_ANALYTICS", "ENTERPRISE_ANALYTICS"]
             if kwargs['feature_set'] not in feature_set_allowed_values:
                 raise ValueError(
-                    "Invalid value for `feature_set`, must be one of {0}".format(feature_set_allowed_values)
+                    f"Invalid value for `feature_set`, must be one of { feature_set_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "INACTIVE", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["capacityType", "capacityValue", "featureSet", "lifecycleState", "name", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -1693,7 +1693,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -1703,7 +1703,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -1818,7 +1818,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -1828,7 +1828,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -1971,13 +1971,13 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'resource_type' in kwargs:
             resource_type_allowed_values = ["ANALYTICS_INSTANCE"]
             if kwargs['resource_type'] not in resource_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `resource_type`, must be one of {0}".format(resource_type_allowed_values)
+                    f"Invalid value for `resource_type`, must be one of { resource_type_allowed_values }"
                 )
 
         if 'status' in kwargs:
@@ -1985,21 +1985,21 @@ class AnalyticsClient(object):
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["id", "operationType", "status", "timeAccepted", "timeStarted", "timeFinished"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2119,7 +2119,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "scale_analytics_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"scale_analytics_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id
@@ -2129,7 +2129,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2238,7 +2238,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "set_kms_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"set_kms_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id
@@ -2248,7 +2248,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2355,7 +2355,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_analytics_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"start_analytics_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id
@@ -2365,7 +2365,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2470,7 +2470,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "stop_analytics_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"stop_analytics_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id
@@ -2480,7 +2480,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2581,7 +2581,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_analytics_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_analytics_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id
@@ -2591,7 +2591,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2701,7 +2701,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_private_access_channel got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_private_access_channel got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateAccessChannelKey": private_access_channel_key,
@@ -2712,7 +2712,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2824,7 +2824,7 @@ class AnalyticsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_vanity_url got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_vanity_url got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "analyticsInstanceId": analytics_instance_id,
@@ -2835,7 +2835,7 @@ class AnalyticsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

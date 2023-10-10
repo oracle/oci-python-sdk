@@ -226,8 +226,7 @@ class CreateChildTenancyDetails(object):
         allowed_values = ["OPTED_IN", "OPTED_OUT"]
         if not value_allowed_none_or_none_sentinel(governance_status, allowed_values):
             raise ValueError(
-                "Invalid value for `governance_status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `governance_status`, must be None or one of {allowed_values}"
             )
         self._governance_status = governance_status
 

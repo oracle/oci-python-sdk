@@ -178,7 +178,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_deployment_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_deployment_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentBackupId": deployment_backup_id
@@ -188,7 +188,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -296,7 +296,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_deployment_upgrade got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_deployment_upgrade got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentUpgradeId": deployment_upgrade_id
@@ -306,7 +306,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -416,7 +416,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_snooze_deployment_upgrade got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_snooze_deployment_upgrade got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentUpgradeId": deployment_upgrade_id
@@ -426,7 +426,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -534,7 +534,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_connection_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_connection_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "connectionId": connection_id
@@ -544,7 +544,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -656,7 +656,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_database_registration_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_database_registration_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseRegistrationId": database_registration_id
@@ -666,7 +666,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -779,7 +779,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_deployment_backup_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_deployment_backup_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentBackupId": deployment_backup_id
@@ -789,7 +789,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -902,7 +902,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_deployment_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_deployment_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentId": deployment_id
@@ -912,7 +912,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1020,7 +1020,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "collect_deployment_diagnostic got unknown kwargs: {!r}".format(extra_kwargs))
+                f"collect_deployment_diagnostic got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentId": deployment_id
@@ -1030,7 +1030,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1138,7 +1138,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "copy_deployment_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"copy_deployment_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentBackupId": deployment_backup_id
@@ -1148,7 +1148,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1246,7 +1246,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_connection got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1343,7 +1343,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_connection_assignment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_connection_assignment got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1441,7 +1441,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_database_registration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_database_registration got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1538,7 +1538,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_deployment got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1635,7 +1635,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_deployment_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_deployment_backup got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1732,7 +1732,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "connectionId": connection_id
@@ -1742,7 +1742,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1838,7 +1838,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_connection_assignment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_connection_assignment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "connectionAssignmentId": connection_assignment_id
@@ -1848,7 +1848,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1943,7 +1943,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_database_registration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_database_registration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseRegistrationId": database_registration_id
@@ -1953,7 +1953,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2047,7 +2047,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_deployment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentId": deployment_id
@@ -2057,7 +2057,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2151,7 +2151,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_deployment_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_deployment_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentBackupId": deployment_backup_id
@@ -2161,7 +2161,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2265,7 +2265,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "deployment_wallet_exists got unknown kwargs: {!r}".format(extra_kwargs))
+                f"deployment_wallet_exists got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentId": deployment_id
@@ -2275,7 +2275,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2385,7 +2385,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "export_deployment_wallet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"export_deployment_wallet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentId": deployment_id
@@ -2395,7 +2395,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2488,7 +2488,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "connectionId": connection_id
@@ -2498,7 +2498,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2588,7 +2588,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_connection_assignment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_connection_assignment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "connectionAssignmentId": connection_assignment_id
@@ -2598,7 +2598,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2687,7 +2687,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_database_registration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_database_registration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseRegistrationId": database_registration_id
@@ -2697,7 +2697,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2785,7 +2785,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_deployment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentId": deployment_id
@@ -2795,7 +2795,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2883,7 +2883,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_deployment_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_deployment_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentBackupId": deployment_backup_id
@@ -2893,7 +2893,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2981,7 +2981,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_deployment_upgrade got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_deployment_upgrade got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentUpgradeId": deployment_upgrade_id
@@ -2991,7 +2991,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3081,7 +3081,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -3091,7 +3091,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3196,7 +3196,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "import_deployment_wallet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"import_deployment_wallet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentId": deployment_id
@@ -3206,7 +3206,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3345,27 +3345,27 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_connection_assignments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_connection_assignments got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3529,14 +3529,14 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_connections got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_connections got unknown kwargs: {extra_kwargs!r}")
 
         if 'technology_type' in kwargs:
             technology_type_allowed_values = ["GOLDENGATE", "OCI_AUTONOMOUS_DATABASE", "OCI_AUTONOMOUS_JSON_DATABASE", "OCI_MYSQL", "OCI_OBJECT_STORAGE", "OCI_STREAMING", "ORACLE_DATABASE", "ORACLE_EXADATA", "ORACLE_NOSQL", "ORACLE_WEBLOGIC_JMS", "AMAZON_RDS_ORACLE", "AMAZON_RDS_SQLSERVER", "AMAZON_S3", "AMAZON_AURORA_MYSQL", "AMAZON_AURORA_POSTGRESQL", "AMAZON_RDS_MARIADB", "AMAZON_RDS_MYSQL", "AMAZON_RDS_POSTGRESQL", "APACHE_KAFKA", "AZURE_COSMOS_DB_FOR_MONGODB", "AZURE_DATA_LAKE_STORAGE", "AZURE_EVENT_HUBS", "AZURE_MYSQL", "AZURE_POSTGRESQL", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "AZURE_SYNAPSE_ANALYTICS", "CONFLUENT_KAFKA", "CONFLUENT_SCHEMA_REGISTRY", "GOOGLE_CLOUD_SQL_MYSQL", "GOOGLE_CLOUD_SQL_POSTGRESQL", "HDFS", "MARIADB", "MICROSOFT_SQLSERVER", "MONGODB", "MYSQL_SERVER", "POSTGRESQL_SERVER", "SINGLESTOREDB", "SINGLESTOREDB_CLOUD", "SNOWFLAKE"]
             for technology_type_item in kwargs['technology_type']:
                 if technology_type_item not in technology_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `technology_type`, must be one of {0}".format(technology_type_allowed_values)
+                        f"Invalid value for `technology_type`, must be one of { technology_type_allowed_values }"
                     )
 
         if 'connection_type' in kwargs:
@@ -3544,35 +3544,35 @@ class GoldenGateClient(object):
             for connection_type_item in kwargs['connection_type']:
                 if connection_type_item not in connection_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `connection_type`, must be one of {0}".format(connection_type_allowed_values)
+                        f"Invalid value for `connection_type`, must be one of { connection_type_allowed_values }"
                     )
 
         if 'assignable_deployment_type' in kwargs:
             assignable_deployment_type_allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
             if kwargs['assignable_deployment_type'] not in assignable_deployment_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `assignable_deployment_type`, must be one of {0}".format(assignable_deployment_type_allowed_values)
+                    f"Invalid value for `assignable_deployment_type`, must be one of { assignable_deployment_type_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3714,27 +3714,27 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_database_registrations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_database_registrations got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3876,27 +3876,27 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_deployment_backups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_deployment_backups got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4037,27 +4037,27 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_deployment_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_deployment_types got unknown kwargs: {extra_kwargs!r}")
 
         if 'deployment_type' in kwargs:
             deployment_type_allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
             if kwargs['deployment_type'] not in deployment_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `deployment_type`, must be one of {0}".format(deployment_type_allowed_values)
+                    f"Invalid value for `deployment_type`, must be one of { deployment_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4200,27 +4200,27 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_deployment_upgrades got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_deployment_upgrades got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4359,27 +4359,27 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_deployment_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_deployment_versions got unknown kwargs: {extra_kwargs!r}")
 
         if 'deployment_type' in kwargs:
             deployment_type_allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
             if kwargs['deployment_type'] not in deployment_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `deployment_type`, must be one of {0}".format(deployment_type_allowed_values)
+                    f"Invalid value for `deployment_type`, must be one of { deployment_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4505,7 +4505,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_deployment_wallets_operations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_deployment_wallets_operations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentId": deployment_id
@@ -4515,20 +4515,20 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeStarted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -4688,41 +4688,41 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_deployments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_deployments got unknown kwargs: {extra_kwargs!r}")
 
         if 'supported_connection_type' in kwargs:
             supported_connection_type_allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"]
             if kwargs['supported_connection_type'] not in supported_connection_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `supported_connection_type`, must be one of {0}".format(supported_connection_type_allowed_values)
+                    f"Invalid value for `supported_connection_type`, must be one of { supported_connection_type_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", "WAITING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'lifecycle_sub_state' in kwargs:
             lifecycle_sub_state_allowed_values = ["RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", "ROLLBACK_IN_PROGRESS"]
             if kwargs['lifecycle_sub_state'] not in lifecycle_sub_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_sub_state`, must be one of {0}".format(lifecycle_sub_state_allowed_values)
+                    f"Invalid value for `lifecycle_sub_state`, must be one of { lifecycle_sub_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4836,7 +4836,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_messages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_messages got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "deploymentId": deployment_id,
@@ -4962,20 +4962,20 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_trail_files got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_trail_files got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeLastUpdated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -5109,20 +5109,20 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_trail_sequences got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_trail_sequences got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeLastUpdated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -5234,7 +5234,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -5244,7 +5244,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -5351,7 +5351,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -5361,7 +5361,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -5475,7 +5475,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -5588,7 +5588,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "reschedule_deployment_upgrade got unknown kwargs: {!r}".format(extra_kwargs))
+                f"reschedule_deployment_upgrade got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentUpgradeId": deployment_upgrade_id
@@ -5598,7 +5598,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5708,7 +5708,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restore_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restore_deployment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentBackupId": deployment_backup_id
@@ -5718,7 +5718,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5826,7 +5826,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rollback_deployment_upgrade got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rollback_deployment_upgrade got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentUpgradeId": deployment_upgrade_id
@@ -5836,7 +5836,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5944,7 +5944,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "snooze_deployment_upgrade got unknown kwargs: {!r}".format(extra_kwargs))
+                f"snooze_deployment_upgrade got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentUpgradeId": deployment_upgrade_id
@@ -5954,7 +5954,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6062,7 +6062,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"start_deployment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentId": deployment_id
@@ -6072,7 +6072,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6180,7 +6180,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "stop_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"stop_deployment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentId": deployment_id
@@ -6190,7 +6190,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6301,7 +6301,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "test_connection_assignment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"test_connection_assignment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "connectionAssignmentId": connection_assignment_id
@@ -6311,7 +6311,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6416,7 +6416,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "connectionId": connection_id
@@ -6426,7 +6426,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6526,7 +6526,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_database_registration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_database_registration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseRegistrationId": database_registration_id
@@ -6536,7 +6536,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6635,7 +6635,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_deployment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentId": deployment_id
@@ -6645,7 +6645,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6744,7 +6744,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_deployment_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_deployment_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentBackupId": deployment_backup_id
@@ -6754,7 +6754,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6862,7 +6862,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upgrade_deployment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upgrade_deployment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentId": deployment_id
@@ -6872,7 +6872,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6980,7 +6980,7 @@ class GoldenGateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upgrade_deployment_upgrade got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upgrade_deployment_upgrade got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "deploymentUpgradeId": deployment_upgrade_id
@@ -6990,7 +6990,7 @@ class GoldenGateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

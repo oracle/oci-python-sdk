@@ -305,8 +305,7 @@ class FetchSqlTuningSetDetails(object):
         allowed_values = ["HAS_RECURSIVE_SQL", "NO_RECURSIVE_SQL"]
         if not value_allowed_none_or_none_sentinel(recursive_sql, allowed_values):
             raise ValueError(
-                "Invalid value for `recursive_sql`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `recursive_sql`, must be None or one of {allowed_values}"
             )
         self._recursive_sql = recursive_sql
 
@@ -387,8 +386,7 @@ class FetchSqlTuningSetDetails(object):
         allowed_values = ["ELAPSED_TIME", "CPU_TIME", "OPTIMIZER_COST", "BUFFER_GETS", "DISK_READS", "DIRECT_WRITES"]
         if not value_allowed_none_or_none_sentinel(ranking_measure1, allowed_values):
             raise ValueError(
-                "Invalid value for `ranking_measure1`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ranking_measure1`, must be None or one of {allowed_values}"
             )
         self._ranking_measure1 = ranking_measure1
 
@@ -419,8 +417,7 @@ class FetchSqlTuningSetDetails(object):
         allowed_values = ["ELAPSED_TIME", "CPU_TIME", "OPTIMIZER_COST", "BUFFER_GETS", "DISK_READS", "DIRECT_WRITES"]
         if not value_allowed_none_or_none_sentinel(ranking_measure2, allowed_values):
             raise ValueError(
-                "Invalid value for `ranking_measure2`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ranking_measure2`, must be None or one of {allowed_values}"
             )
         self._ranking_measure2 = ranking_measure2
 
@@ -451,8 +448,7 @@ class FetchSqlTuningSetDetails(object):
         allowed_values = ["ELAPSED_TIME", "CPU_TIME", "OPTIMIZER_COST", "BUFFER_GETS", "DISK_READS", "DIRECT_WRITES"]
         if not value_allowed_none_or_none_sentinel(ranking_measure3, allowed_values):
             raise ValueError(
-                "Invalid value for `ranking_measure3`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ranking_measure3`, must be None or one of {allowed_values}"
             )
         self._ranking_measure3 = ranking_measure3
 

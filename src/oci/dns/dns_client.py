@@ -195,7 +195,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_resolver_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_resolver_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "resolverId": resolver_id
@@ -205,13 +205,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -338,7 +338,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_steering_policy_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_steering_policy_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "steeringPolicyId": steering_policy_id
@@ -348,13 +348,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -481,7 +481,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_tsig_key_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_tsig_key_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tsigKeyId": tsig_key_id
@@ -491,13 +491,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -626,7 +626,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_view_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_view_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "viewId": view_id
@@ -636,13 +636,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -776,7 +776,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_zone_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_zone_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneId": zone_id
@@ -786,13 +786,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -911,7 +911,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_resolver_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_resolver_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "resolverId": resolver_id
@@ -921,13 +921,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -1047,13 +1047,13 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_steering_policy got unknown kwargs: {extra_kwargs!r}")
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -1173,13 +1173,13 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_steering_policy_attachment got unknown kwargs: {extra_kwargs!r}")
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -1286,13 +1286,13 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_tsig_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_tsig_key got unknown kwargs: {extra_kwargs!r}")
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -1405,13 +1405,13 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_view got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_view got unknown kwargs: {extra_kwargs!r}")
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -1530,13 +1530,13 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_zone got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_zone got unknown kwargs: {extra_kwargs!r}")
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -1655,13 +1655,13 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_zone_from_zone_file got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_zone_from_zone_file got unknown kwargs: {extra_kwargs!r}")
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -1817,7 +1817,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_domain_records got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_domain_records got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id,
@@ -1828,13 +1828,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -1963,7 +1963,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_resolver_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_resolver_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "resolverId": resolver_id,
@@ -1974,13 +1974,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -2119,7 +2119,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_rr_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_rr_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id,
@@ -2131,13 +2131,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -2263,7 +2263,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_steering_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "steeringPolicyId": steering_policy_id
@@ -2273,13 +2273,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -2400,7 +2400,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_steering_policy_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "steeringPolicyAttachmentId": steering_policy_attachment_id
@@ -2410,13 +2410,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -2536,7 +2536,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_tsig_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_tsig_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tsigKeyId": tsig_key_id
@@ -2546,13 +2546,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -2677,7 +2677,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_view got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_view got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "viewId": view_id
@@ -2687,13 +2687,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -2827,7 +2827,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_zone got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_zone got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id
@@ -2837,13 +2837,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -3009,7 +3009,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_domain_records got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_domain_records got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id,
@@ -3020,27 +3020,27 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["rtype", "ttl"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -3171,7 +3171,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_resolver got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_resolver got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "resolverId": resolver_id
@@ -3181,13 +3181,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -3313,7 +3313,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_resolver_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_resolver_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "resolverId": resolver_id,
@@ -3324,13 +3324,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -3481,7 +3481,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_rr_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_rr_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id,
@@ -3493,13 +3493,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -3624,7 +3624,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_steering_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "steeringPolicyId": steering_policy_id
@@ -3634,13 +3634,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -3760,7 +3760,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_steering_policy_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "steeringPolicyAttachmentId": steering_policy_attachment_id
@@ -3770,13 +3770,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -3896,7 +3896,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_tsig_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_tsig_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tsigKeyId": tsig_key_id
@@ -3906,13 +3906,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -4036,7 +4036,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_view got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_view got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "viewId": view_id
@@ -4046,13 +4046,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -4185,7 +4185,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_zone got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_zone got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id
@@ -4195,13 +4195,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -4327,7 +4327,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_zone_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_zone_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id
@@ -4337,13 +4337,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -4522,7 +4522,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_zone_records got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_zone_records got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id
@@ -4532,27 +4532,27 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["domain", "rtype", "ttl"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -4701,7 +4701,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_resolver_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_resolver_endpoints got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "resolverId": resolver_id
@@ -4711,34 +4711,34 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -4887,34 +4887,34 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_resolvers got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_resolvers got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -5087,34 +5087,34 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_steering_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_steering_policies got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated", "template"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -5297,34 +5297,34 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_steering_policy_attachments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_steering_policy_attachments got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated", "domainName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -5474,34 +5474,34 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tsig_keys got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tsig_keys got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -5650,34 +5650,34 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_views got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_views got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "DELETED", "DELETING", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -5793,13 +5793,13 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_zone_transfer_servers got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_zone_transfer_servers got unknown kwargs: {extra_kwargs!r}")
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -5971,41 +5971,41 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_zones got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_zones got unknown kwargs: {extra_kwargs!r}")
 
         if 'zone_type' in kwargs:
             zone_type_allowed_values = ["PRIMARY", "SECONDARY"]
             if kwargs['zone_type'] not in zone_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `zone_type`, must be one of {0}".format(zone_type_allowed_values)
+                    f"Invalid value for `zone_type`, must be one of { zone_type_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name", "zoneType", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -6157,7 +6157,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_domain_records got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_domain_records got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id,
@@ -6168,13 +6168,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -6322,7 +6322,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_rr_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_rr_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id,
@@ -6334,13 +6334,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -6484,7 +6484,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_zone_records got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_zone_records got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id
@@ -6494,13 +6494,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -6647,7 +6647,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_domain_records got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_domain_records got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id,
@@ -6658,13 +6658,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -6793,7 +6793,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_resolver got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_resolver got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "resolverId": resolver_id
@@ -6803,13 +6803,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -6939,7 +6939,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_resolver_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_resolver_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "resolverId": resolver_id,
@@ -6950,13 +6950,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -7102,7 +7102,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_rr_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_rr_set got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id,
@@ -7114,13 +7114,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -7249,7 +7249,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_steering_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "steeringPolicyId": steering_policy_id
@@ -7259,13 +7259,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -7392,7 +7392,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_steering_policy_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "steeringPolicyAttachmentId": steering_policy_attachment_id
@@ -7402,13 +7402,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -7535,7 +7535,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_tsig_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_tsig_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tsigKeyId": tsig_key_id
@@ -7545,13 +7545,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -7678,7 +7678,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_view got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_view got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "viewId": view_id
@@ -7688,13 +7688,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -7838,7 +7838,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_zone got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_zone got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id
@@ -7848,13 +7848,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {
@@ -7999,7 +7999,7 @@ class DnsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_zone_records got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_zone_records got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "zoneNameOrId": zone_name_or_id
@@ -8009,13 +8009,13 @@ class DnsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'scope' in kwargs:
             scope_allowed_values = ["GLOBAL", "PRIVATE"]
             if kwargs['scope'] not in scope_allowed_values:
                 raise ValueError(
-                    "Invalid value for `scope`, must be one of {0}".format(scope_allowed_values)
+                    f"Invalid value for `scope`, must be one of { scope_allowed_values }"
                 )
 
         query_params = {

@@ -180,7 +180,7 @@ class OrganizationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "approve_organization_tenancy_for_transfer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"approve_organization_tenancy_for_transfer got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "organizationTenancyId": organization_tenancy_id
@@ -190,7 +190,7 @@ class OrganizationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -294,7 +294,7 @@ class OrganizationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_child_tenancy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_child_tenancy got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -396,7 +396,7 @@ class OrganizationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_organization_tenancy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_organization_tenancy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "organizationTenancyId": organization_tenancy_id
@@ -406,7 +406,7 @@ class OrganizationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -493,7 +493,7 @@ class OrganizationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_organization got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_organization got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "organizationId": organization_id
@@ -503,7 +503,7 @@ class OrganizationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -592,7 +592,7 @@ class OrganizationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_organization_tenancy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_organization_tenancy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "organizationId": organization_id,
@@ -603,7 +603,7 @@ class OrganizationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -697,7 +697,7 @@ class OrganizationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_organization_tenancies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_organization_tenancies got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "organizationId": organization_id
@@ -707,7 +707,7 @@ class OrganizationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -809,7 +809,7 @@ class OrganizationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_organizations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_organizations got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -910,7 +910,7 @@ class OrganizationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restore_organization_tenancy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restore_organization_tenancy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "organizationTenancyId": organization_tenancy_id
@@ -920,7 +920,7 @@ class OrganizationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1024,7 +1024,7 @@ class OrganizationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "unapprove_organization_tenancy_for_transfer got unknown kwargs: {!r}".format(extra_kwargs))
+                f"unapprove_organization_tenancy_for_transfer got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "organizationTenancyId": organization_tenancy_id
@@ -1034,7 +1034,7 @@ class OrganizationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -1149,7 +1149,7 @@ class OrganizationClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_organization got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_organization got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "organizationId": organization_id
@@ -1159,7 +1159,7 @@ class OrganizationClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

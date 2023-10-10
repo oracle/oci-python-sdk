@@ -217,8 +217,7 @@ class CreateCustomPropertyDetails(object):
         allowed_values = ["TEXT", "RICH_TEXT", "BOOLEAN", "NUMBER", "DATE"]
         if not value_allowed_none_or_none_sentinel(data_type, allowed_values):
             raise ValueError(
-                "Invalid value for `data_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `data_type`, must be None or one of {allowed_values}"
             )
         self._data_type = data_type
 

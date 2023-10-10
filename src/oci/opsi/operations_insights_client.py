@@ -182,7 +182,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_exadata_insight_members got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_exadata_insight_members got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInsightId": exadata_insight_id
@@ -192,7 +192,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -302,7 +302,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_autonomous_database_insight_advanced_features got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_autonomous_database_insight_advanced_features got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseInsightId": database_insight_id
@@ -312,7 +312,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -422,7 +422,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_database_insight_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_database_insight_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseInsightId": database_insight_id
@@ -432,7 +432,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -533,7 +533,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_enterprise_manager_bridge_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_enterprise_manager_bridge_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "enterpriseManagerBridgeId": enterprise_manager_bridge_id
@@ -543,7 +543,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -651,7 +651,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_exadata_insight_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_exadata_insight_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInsightId": exadata_insight_id
@@ -661,7 +661,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -771,7 +771,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_host_insight_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_host_insight_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "hostInsightId": host_insight_id
@@ -781,7 +781,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -891,7 +891,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_news_report_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_news_report_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "newsReportId": news_report_id
@@ -901,7 +901,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1013,7 +1013,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_operations_insights_private_endpoint_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_operations_insights_private_endpoint_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsPrivateEndpointId": operations_insights_private_endpoint_id
@@ -1023,7 +1023,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1135,7 +1135,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_opsi_configuration_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_opsi_configuration_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "opsiConfigurationId": opsi_configuration_id
@@ -1145,7 +1145,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1255,7 +1255,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_pe_comanaged_database_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_pe_comanaged_database_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseInsightId": database_insight_id
@@ -1265,7 +1265,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1367,7 +1367,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_awr_hub got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_awr_hub got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1467,7 +1467,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_database_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_database_insight got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1567,7 +1567,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_enterprise_manager_bridge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_enterprise_manager_bridge got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1667,7 +1667,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_exadata_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_exadata_insight got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1767,7 +1767,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_host_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_host_insight got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1867,7 +1867,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_news_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_news_report got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1968,7 +1968,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_operations_insights_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_operations_insights_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2070,7 +2070,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_operations_insights_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_operations_insights_warehouse got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2171,7 +2171,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_operations_insights_warehouse_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_operations_insights_warehouse_user got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2294,14 +2294,14 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_opsi_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_opsi_configuration got unknown kwargs: {extra_kwargs!r}")
 
         if 'opsi_config_field' in kwargs:
             opsi_config_field_allowed_values = ["configItems"]
             for opsi_config_field_item in kwargs['opsi_config_field']:
                 if opsi_config_field_item not in opsi_config_field_allowed_values:
                     raise ValueError(
-                        "Invalid value for `opsi_config_field`, must be one of {0}".format(opsi_config_field_allowed_values)
+                        f"Invalid value for `opsi_config_field`, must be one of { opsi_config_field_allowed_values }"
                     )
 
         if 'config_item_custom_status' in kwargs:
@@ -2309,7 +2309,7 @@ class OperationsInsightsClient(object):
             for config_item_custom_status_item in kwargs['config_item_custom_status']:
                 if config_item_custom_status_item not in config_item_custom_status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `config_item_custom_status`, must be one of {0}".format(config_item_custom_status_allowed_values)
+                        f"Invalid value for `config_item_custom_status`, must be one of { config_item_custom_status_allowed_values }"
                     )
 
         if 'config_item_field' in kwargs:
@@ -2317,7 +2317,7 @@ class OperationsInsightsClient(object):
             for config_item_field_item in kwargs['config_item_field']:
                 if config_item_field_item not in config_item_field_allowed_values:
                     raise ValueError(
-                        "Invalid value for `config_item_field`, must be one of {0}".format(config_item_field_allowed_values)
+                        f"Invalid value for `config_item_field`, must be one of { config_item_field_allowed_values }"
                     )
 
         query_params = {
@@ -2425,7 +2425,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_awr_hub got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_awr_hub got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -2435,7 +2435,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2529,7 +2529,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_database_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_database_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseInsightId": database_insight_id
@@ -2539,7 +2539,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2633,7 +2633,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_enterprise_manager_bridge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_enterprise_manager_bridge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "enterpriseManagerBridgeId": enterprise_manager_bridge_id
@@ -2643,7 +2643,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2737,7 +2737,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_exadata_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_exadata_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInsightId": exadata_insight_id
@@ -2747,7 +2747,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2841,7 +2841,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_host_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_host_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "hostInsightId": host_insight_id
@@ -2851,7 +2851,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2945,7 +2945,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_news_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_news_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "newsReportId": news_report_id
@@ -2955,7 +2955,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3051,7 +3051,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_operations_insights_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_operations_insights_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsPrivateEndpointId": operations_insights_private_endpoint_id
@@ -3061,7 +3061,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3158,7 +3158,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_operations_insights_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_operations_insights_warehouse got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsWarehouseId": operations_insights_warehouse_id
@@ -3168,7 +3168,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3262,7 +3262,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_operations_insights_warehouse_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_operations_insights_warehouse_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsWarehouseUserId": operations_insights_warehouse_user_id
@@ -3272,7 +3272,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3368,7 +3368,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_opsi_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_opsi_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "opsiConfigurationId": opsi_configuration_id
@@ -3378,7 +3378,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3481,7 +3481,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_autonomous_database_insight_advanced_features got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_autonomous_database_insight_advanced_features got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseInsightId": database_insight_id
@@ -3491,7 +3491,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3596,7 +3596,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_database_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_database_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseInsightId": database_insight_id
@@ -3606,7 +3606,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3711,7 +3711,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_exadata_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_exadata_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInsightId": exadata_insight_id
@@ -3721,7 +3721,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3826,7 +3826,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_host_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_host_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "hostInsightId": host_insight_id
@@ -3836,7 +3836,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3938,7 +3938,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_operations_insights_warehouse_wallet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_operations_insights_warehouse_wallet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsWarehouseId": operations_insights_warehouse_id
@@ -3948,7 +3948,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -4059,7 +4059,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_autonomous_database_insight_advanced_features got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_autonomous_database_insight_advanced_features got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseInsightId": database_insight_id
@@ -4069,7 +4069,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4179,7 +4179,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_database_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_database_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseInsightId": database_insight_id
@@ -4189,7 +4189,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4299,7 +4299,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_exadata_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_exadata_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInsightId": exadata_insight_id
@@ -4309,7 +4309,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4419,7 +4419,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_host_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_host_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "hostInsightId": host_insight_id
@@ -4429,7 +4429,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4560,7 +4560,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_awr_database_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_awr_database_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -4570,20 +4570,20 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'report_type' in kwargs:
             report_type_allowed_values = ["AWR", "ASH"]
             if kwargs['report_type'] not in report_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `report_type`, must be one of {0}".format(report_type_allowed_values)
+                    f"Invalid value for `report_type`, must be one of { report_type_allowed_values }"
                 )
 
         if 'report_format' in kwargs:
             report_format_allowed_values = ["HTML", "TEXT"]
             if kwargs['report_format'] not in report_format_allowed_values:
                 raise ValueError(
-                    "Invalid value for `report_format`, must be one of {0}".format(report_format_allowed_values)
+                    f"Invalid value for `report_format`, must be one of { report_format_allowed_values }"
                 )
 
         query_params = {
@@ -4723,7 +4723,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_awr_database_sql_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_awr_database_sql_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -4733,13 +4733,13 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'report_format' in kwargs:
             report_format_allowed_values = ["HTML", "TEXT"]
             if kwargs['report_format'] not in report_format_allowed_values:
                 raise ValueError(
-                    "Invalid value for `report_format`, must be one of {0}".format(report_format_allowed_values)
+                    f"Invalid value for `report_format`, must be one of { report_format_allowed_values }"
                 )
 
         query_params = {
@@ -4843,7 +4843,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_awr_hub got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_awr_hub got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -4853,7 +4853,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4972,7 +4972,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_awr_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_awr_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -4982,13 +4982,13 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'report_format' in kwargs:
             report_format_allowed_values = ["HTML", "TEXT"]
             if kwargs['report_format'] not in report_format_allowed_values:
                 raise ValueError(
-                    "Invalid value for `report_format`, must be one of {0}".format(report_format_allowed_values)
+                    f"Invalid value for `report_format`, must be one of { report_format_allowed_values }"
                 )
 
         query_params = {
@@ -5091,7 +5091,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_database_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_database_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseInsightId": database_insight_id
@@ -5101,7 +5101,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5190,7 +5190,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_enterprise_manager_bridge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_enterprise_manager_bridge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "enterpriseManagerBridgeId": enterprise_manager_bridge_id
@@ -5200,7 +5200,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5289,7 +5289,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_exadata_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_exadata_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInsightId": exadata_insight_id
@@ -5299,7 +5299,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5388,7 +5388,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_host_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_host_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "hostInsightId": host_insight_id
@@ -5398,7 +5398,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5487,7 +5487,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_news_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_news_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "newsReportId": news_report_id
@@ -5497,7 +5497,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5588,7 +5588,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_operations_insights_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_operations_insights_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsPrivateEndpointId": operations_insights_private_endpoint_id
@@ -5598,7 +5598,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5688,7 +5688,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_operations_insights_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_operations_insights_warehouse got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsWarehouseId": operations_insights_warehouse_id
@@ -5698,7 +5698,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5787,7 +5787,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_operations_insights_warehouse_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_operations_insights_warehouse_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsWarehouseUserId": operations_insights_warehouse_user_id
@@ -5797,7 +5797,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5913,7 +5913,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_opsi_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_opsi_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "opsiConfigurationId": opsi_configuration_id
@@ -5923,14 +5923,14 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'opsi_config_field' in kwargs:
             opsi_config_field_allowed_values = ["configItems"]
             for opsi_config_field_item in kwargs['opsi_config_field']:
                 if opsi_config_field_item not in opsi_config_field_allowed_values:
                     raise ValueError(
-                        "Invalid value for `opsi_config_field`, must be one of {0}".format(opsi_config_field_allowed_values)
+                        f"Invalid value for `opsi_config_field`, must be one of { opsi_config_field_allowed_values }"
                     )
 
         if 'config_item_custom_status' in kwargs:
@@ -5938,7 +5938,7 @@ class OperationsInsightsClient(object):
             for config_item_custom_status_item in kwargs['config_item_custom_status']:
                 if config_item_custom_status_item not in config_item_custom_status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `config_item_custom_status`, must be one of {0}".format(config_item_custom_status_allowed_values)
+                        f"Invalid value for `config_item_custom_status`, must be one of { config_item_custom_status_allowed_values }"
                     )
 
         if 'config_item_field' in kwargs:
@@ -5946,7 +5946,7 @@ class OperationsInsightsClient(object):
             for config_item_field_item in kwargs['config_item_field']:
                 if config_item_field_item not in config_item_field_allowed_values:
                     raise ValueError(
-                        "Invalid value for `config_item_field`, must be one of {0}".format(config_item_field_allowed_values)
+                        f"Invalid value for `config_item_field`, must be one of { config_item_field_allowed_values }"
                     )
 
         query_params = {
@@ -6051,7 +6051,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_opsi_data_object got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_opsi_data_object got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "opsiDataObjectIdentifier": opsi_data_object_identifier
@@ -6061,7 +6061,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -6157,7 +6157,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -6167,7 +6167,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6284,7 +6284,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "ingest_addm_reports got unknown kwargs: {!r}".format(extra_kwargs))
+                f"ingest_addm_reports got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "databaseId": kwargs.get("database_id", missing),
@@ -6411,7 +6411,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "ingest_database_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"ingest_database_configuration got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "databaseId": kwargs.get("database_id", missing),
@@ -6531,7 +6531,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "ingest_host_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"ingest_host_configuration got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "id": id
@@ -6650,7 +6650,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "ingest_host_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"ingest_host_metrics got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "id": id
@@ -6783,7 +6783,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "ingest_sql_bucket got unknown kwargs: {!r}".format(extra_kwargs))
+                f"ingest_sql_bucket got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -6918,7 +6918,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "ingest_sql_plan_lines got unknown kwargs: {!r}".format(extra_kwargs))
+                f"ingest_sql_plan_lines got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -7047,7 +7047,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "ingest_sql_stats got unknown kwargs: {!r}".format(extra_kwargs))
+                f"ingest_sql_stats got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "databaseId": kwargs.get("database_id", missing),
@@ -7182,7 +7182,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "ingest_sql_text got unknown kwargs: {!r}".format(extra_kwargs))
+                f"ingest_sql_text got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -7360,20 +7360,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_addm_db_finding_categories got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_addm_db_finding_categories got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -7579,20 +7579,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_addm_db_findings_time_series got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_addm_db_findings_time_series got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timestamp"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -7779,20 +7779,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_addm_db_parameter_categories got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_addm_db_parameter_categories got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -7975,20 +7975,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_addm_db_recommendation_categories got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_addm_db_recommendation_categories got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -8214,20 +8214,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_addm_db_recommendations_time_series got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_addm_db_recommendations_time_series got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timestamp"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -8433,20 +8433,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_addm_dbs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_addm_dbs got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["databaseName", "numberOfFindings"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -8611,7 +8611,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_awr_database_snapshots got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_awr_database_snapshots got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -8621,20 +8621,20 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_BEGIN", "SNAPSHOT_ID"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -8782,7 +8782,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_awr_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_awr_databases got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -8792,20 +8792,20 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["END_INTERVAL_TIME", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -8958,28 +8958,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_awr_hubs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_awr_hubs got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -9124,7 +9124,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_awr_snapshots got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_awr_snapshots got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -9134,20 +9134,20 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeBegin", "snapshotId"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -9358,28 +9358,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_database_configurations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_database_configurations got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
             database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `database_type`, must be one of {0}".format(database_type_allowed_values)
+                        f"Invalid value for `database_type`, must be one of { database_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["databaseName", "databaseDisplayName", "databaseType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -9580,14 +9580,14 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_database_insights got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_database_insights got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         if 'lifecycle_state' in kwargs:
@@ -9595,7 +9595,7 @@ class OperationsInsightsClient(object):
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         if 'database_type' in kwargs:
@@ -9603,7 +9603,7 @@ class OperationsInsightsClient(object):
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `database_type`, must be one of {0}".format(database_type_allowed_values)
+                        f"Invalid value for `database_type`, must be one of { database_type_allowed_values }"
                     )
 
         if 'fields' in kwargs:
@@ -9611,21 +9611,21 @@ class OperationsInsightsClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["databaseName", "databaseDisplayName", "databaseType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -9786,28 +9786,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_enterprise_manager_bridges got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_enterprise_manager_bridges got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -9983,20 +9983,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_exadata_configurations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_exadata_configurations got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["exadataName", "exadataDisplayName", "exadataType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10166,14 +10166,14 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_exadata_insights got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_exadata_insights got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         if 'lifecycle_state' in kwargs:
@@ -10181,21 +10181,21 @@ class OperationsInsightsClient(object):
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "exadataName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10407,28 +10407,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_host_configurations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_host_configurations got unknown kwargs: {extra_kwargs!r}")
 
         if 'platform_type' in kwargs:
             platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                        f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["hostName", "platformType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10619,14 +10619,14 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_host_insights got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_host_insights got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         if 'lifecycle_state' in kwargs:
@@ -10634,7 +10634,7 @@ class OperationsInsightsClient(object):
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         if 'platform_type' in kwargs:
@@ -10642,21 +10642,21 @@ class OperationsInsightsClient(object):
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                        f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["hostName", "hostType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10848,28 +10848,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_hosted_entities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_hosted_entities got unknown kwargs: {extra_kwargs!r}")
 
         if 'platform_type' in kwargs:
             platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                        f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["entityName", "entityType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11012,20 +11012,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_importable_agent_entities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_importable_agent_entities got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["entityName", "entityType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11162,20 +11162,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_importable_compute_entities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_importable_compute_entities got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["computeId", "computeDisplayName", "platformType", "hostName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11304,7 +11304,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_importable_enterprise_manager_entities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_importable_enterprise_manager_entities got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "enterpriseManagerBridgeId": enterprise_manager_bridge_id
@@ -11314,7 +11314,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -11467,14 +11467,14 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_news_reports got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_news_reports got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         if 'lifecycle_state' in kwargs:
@@ -11482,21 +11482,21 @@ class OperationsInsightsClient(object):
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name", "newsFrequency"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11660,28 +11660,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_operations_insights_private_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_operations_insights_private_endpoints got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "id", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11836,28 +11836,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_operations_insights_warehouse_users got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_operations_insights_warehouse_users got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12008,28 +12008,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_operations_insights_warehouses got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_operations_insights_warehouses got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12179,14 +12179,14 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_opsi_configurations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_opsi_configurations got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             for lifecycle_state_item in kwargs['lifecycle_state']:
                 if lifecycle_state_item not in lifecycle_state_allowed_values:
                     raise ValueError(
-                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                        f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                     )
 
         if 'opsi_config_type' in kwargs:
@@ -12194,21 +12194,21 @@ class OperationsInsightsClient(object):
             for opsi_config_type_item in kwargs['opsi_config_type']:
                 if opsi_config_type_item not in opsi_config_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `opsi_config_type`, must be one of {0}".format(opsi_config_type_allowed_values)
+                        f"Invalid value for `opsi_config_type`, must be one of { opsi_config_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12360,28 +12360,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_opsi_data_objects got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_opsi_data_objects got unknown kwargs: {extra_kwargs!r}")
 
         if 'data_object_type' in kwargs:
             data_object_type_allowed_values = ["DATABASE_INSIGHTS_DATA_OBJECT", "HOST_INSIGHTS_DATA_OBJECT", "EXADATA_INSIGHTS_DATA_OBJECT"]
             for data_object_type_item in kwargs['data_object_type']:
                 if data_object_type_item not in data_object_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `data_object_type`, must be one of {0}".format(data_object_type_allowed_values)
+                        f"Invalid value for `data_object_type`, must be one of { data_object_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "dataObjectType", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -12515,7 +12515,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sql_plans got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sql_plans got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -12684,7 +12684,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sql_searches got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sql_searches got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -12847,7 +12847,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sql_texts got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sql_texts got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -13007,7 +13007,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_warehouse_data_objects got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_warehouse_data_objects got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "warehouseType": warehouse_type,
@@ -13018,28 +13018,28 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'data_object_type' in kwargs:
             data_object_type_allowed_values = ["VIEW", "TABLE"]
             for data_object_type_item in kwargs['data_object_type']:
                 if data_object_type_item not in data_object_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `data_object_type`, must be one of {0}".format(data_object_type_allowed_values)
+                        f"Invalid value for `data_object_type`, must be one of { data_object_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["dataObjectType", "name", "owner"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'summary_field' in kwargs:
@@ -13047,7 +13047,7 @@ class OperationsInsightsClient(object):
             for summary_field_item in kwargs['summary_field']:
                 if summary_field_item not in summary_field_allowed_values:
                     raise ValueError(
-                        "Invalid value for `summary_field`, must be one of {0}".format(summary_field_allowed_values)
+                        f"Invalid value for `summary_field`, must be one of { summary_field_allowed_values }"
                     )
 
         query_params = {
@@ -13181,7 +13181,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -13191,20 +13191,20 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13334,7 +13334,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -13344,20 +13344,20 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13508,27 +13508,27 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -13655,7 +13655,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "query_opsi_data_object_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"query_opsi_data_object_data got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -13782,7 +13782,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "query_warehouse_data_object_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"query_warehouse_data_object_data got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "warehouseType": warehouse_type,
@@ -13793,7 +13793,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -13898,7 +13898,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rotate_operations_insights_warehouse_wallet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rotate_operations_insights_warehouse_wallet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsWarehouseId": operations_insights_warehouse_id
@@ -13908,7 +13908,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14096,20 +14096,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_addm_db_findings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_addm_db_findings got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["impactOverallPercent", "impactMaxPercent", "impactAvgActiveSessions", "frequencyCount"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -14326,20 +14326,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_addm_db_parameter_changes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_addm_db_parameter_changes got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["isChanged", "beginSnapId"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -14581,41 +14581,41 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_addm_db_parameters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_addm_db_parameters got unknown kwargs: {extra_kwargs!r}")
 
         if 'is_changed' in kwargs:
             is_changed_allowed_values = ["true", "false"]
             if kwargs['is_changed'] not in is_changed_allowed_values:
                 raise ValueError(
-                    "Invalid value for `is_changed`, must be one of {0}".format(is_changed_allowed_values)
+                    f"Invalid value for `is_changed`, must be one of { is_changed_allowed_values }"
                 )
 
         if 'is_default' in kwargs:
             is_default_allowed_values = ["true", "false"]
             if kwargs['is_default'] not in is_default_allowed_values:
                 raise ValueError(
-                    "Invalid value for `is_default`, must be one of {0}".format(is_default_allowed_values)
+                    f"Invalid value for `is_default`, must be one of { is_default_allowed_values }"
                 )
 
         if 'has_recommendations' in kwargs:
             has_recommendations_allowed_values = ["true", "false"]
             if kwargs['has_recommendations'] not in has_recommendations_allowed_values:
                 raise ValueError(
-                    "Invalid value for `has_recommendations`, must be one of {0}".format(has_recommendations_allowed_values)
+                    f"Invalid value for `has_recommendations`, must be one of { has_recommendations_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["isChanged", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -14853,20 +14853,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_addm_db_recommendations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_addm_db_recommendations got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["maxBenefitPercent", "maxBenefitAvgActiveSessions", "frequencyCount"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -15064,7 +15064,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_addm_db_schema_objects got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_addm_db_schema_objects got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -15254,7 +15254,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_addm_db_sql_statements got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_addm_db_sql_statements got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -15427,7 +15427,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_database_cpu_usages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_database_cpu_usages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -15437,27 +15437,27 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'session_type' in kwargs:
             session_type_allowed_values = ["FOREGROUND", "BACKGROUND", "ALL"]
             if kwargs['session_type'] not in session_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `session_type`, must be one of {0}".format(session_type_allowed_values)
+                    f"Invalid value for `session_type`, must be one of { session_type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_SAMPLED", "AVG_VALUE"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15624,7 +15624,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_database_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_database_metrics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -15634,20 +15634,20 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMESTAMP", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15818,7 +15818,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_database_parameter_changes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_database_parameter_changes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -15828,20 +15828,20 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["IS_CHANGED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16041,7 +16041,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_database_parameters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_database_parameters got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -16051,41 +16051,41 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'value_changed' in kwargs:
             value_changed_allowed_values = ["Y", "N"]
             if kwargs['value_changed'] not in value_changed_allowed_values:
                 raise ValueError(
-                    "Invalid value for `value_changed`, must be one of {0}".format(value_changed_allowed_values)
+                    f"Invalid value for `value_changed`, must be one of { value_changed_allowed_values }"
                 )
 
         if 'value_default' in kwargs:
             value_default_allowed_values = ["TRUE", "FALSE"]
             if kwargs['value_default'] not in value_default_allowed_values:
                 raise ValueError(
-                    "Invalid value for `value_default`, must be one of {0}".format(value_default_allowed_values)
+                    f"Invalid value for `value_default`, must be one of { value_default_allowed_values }"
                 )
 
         if 'value_modified' in kwargs:
             value_modified_allowed_values = ["MODIFIED", "SYSTEM_MOD", "FALSE"]
             if kwargs['value_modified'] not in value_modified_allowed_values:
                 raise ValueError(
-                    "Invalid value for `value_modified`, must be one of {0}".format(value_modified_allowed_values)
+                    f"Invalid value for `value_modified`, must be one of { value_modified_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["IS_CHANGED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16238,7 +16238,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_database_snapshot_ranges got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_database_snapshot_ranges got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -16248,20 +16248,20 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["END_INTERVAL_TIME", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16424,7 +16424,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_database_sysstats got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_database_sysstats got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -16434,20 +16434,20 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_BEGIN", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16603,7 +16603,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_database_top_wait_events got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_database_top_wait_events got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -16613,27 +16613,27 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'session_type' in kwargs:
             session_type_allowed_values = ["FOREGROUND", "BACKGROUND", "ALL"]
             if kwargs['session_type'] not in session_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `session_type`, must be one of {0}".format(session_type_allowed_values)
+                    f"Invalid value for `session_type`, must be one of { session_type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["WAITS_PERSEC", "AVG_WAIT_TIME_PERSEC"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16811,7 +16811,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_database_wait_event_buckets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_database_wait_event_buckets got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -16821,20 +16821,20 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["CATEGORY", "PERCENTAGE"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -17011,7 +17011,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_database_wait_events got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_database_wait_events got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -17021,27 +17021,27 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'session_type' in kwargs:
             session_type_allowed_values = ["FOREGROUND", "BACKGROUND", "ALL"]
             if kwargs['session_type'] not in session_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `session_type`, must be one of {0}".format(session_type_allowed_values)
+                    f"Invalid value for `session_type`, must be one of { session_type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_BEGIN", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -17189,7 +17189,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_sources_summaries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_sources_summaries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -17199,20 +17199,20 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["snapshotsUploaded", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -17356,13 +17356,13 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_configuration_items got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_configuration_items got unknown kwargs: {extra_kwargs!r}")
 
         if 'opsi_config_type' in kwargs:
             opsi_config_type_allowed_values = ["UX_CONFIGURATION"]
             if kwargs['opsi_config_type'] not in opsi_config_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `opsi_config_type`, must be one of {0}".format(opsi_config_type_allowed_values)
+                    f"Invalid value for `opsi_config_type`, must be one of { opsi_config_type_allowed_values }"
                 )
 
         if 'config_item_field' in kwargs:
@@ -17370,7 +17370,7 @@ class OperationsInsightsClient(object):
             for config_item_field_item in kwargs['config_item_field']:
                 if config_item_field_item not in config_item_field_allowed_values:
                     raise ValueError(
-                        "Invalid value for `config_item_field`, must be one of {0}".format(config_item_field_allowed_values)
+                        f"Invalid value for `config_item_field`, must be one of { config_item_field_allowed_values }"
                     )
 
         query_params = {
@@ -17619,35 +17619,35 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_database_insight_resource_capacity_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_database_insight_resource_capacity_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
             database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `database_type`, must be one of {0}".format(database_type_allowed_values)
+                        f"Invalid value for `database_type`, must be one of { database_type_allowed_values }"
                     )
 
         if 'utilization_level' in kwargs:
             utilization_level_allowed_values = ["HIGH_UTILIZATION", "LOW_UTILIZATION", "MEDIUM_HIGH_UTILIZATION", "MEDIUM_LOW_UTILIZATION"]
             if kwargs['utilization_level'] not in utilization_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `utilization_level`, must be one of {0}".format(utilization_level_allowed_values)
+                    f"Invalid value for `utilization_level`, must be one of { utilization_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["endTimestamp", "capacity", "baseCapacity"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -17929,35 +17929,35 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_database_insight_resource_forecast_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_database_insight_resource_forecast_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
             database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `database_type`, must be one of {0}".format(database_type_allowed_values)
+                        f"Invalid value for `database_type`, must be one of { database_type_allowed_values }"
                     )
 
         if 'statistic' in kwargs:
             statistic_allowed_values = ["AVG", "MAX"]
             if kwargs['statistic'] not in statistic_allowed_values:
                 raise ValueError(
-                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                    f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
         if 'forecast_model' in kwargs:
             forecast_model_allowed_values = ["LINEAR", "ML_AUTO", "ML_NO_AUTO"]
             if kwargs['forecast_model'] not in forecast_model_allowed_values:
                 raise ValueError(
-                    "Invalid value for `forecast_model`, must be one of {0}".format(forecast_model_allowed_values)
+                    f"Invalid value for `forecast_model`, must be one of { forecast_model_allowed_values }"
                 )
 
         if 'utilization_level' in kwargs:
             utilization_level_allowed_values = ["HIGH_UTILIZATION", "LOW_UTILIZATION", "MEDIUM_HIGH_UTILIZATION", "MEDIUM_LOW_UTILIZATION"]
             if kwargs['utilization_level'] not in utilization_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `utilization_level`, must be one of {0}".format(utilization_level_allowed_values)
+                    f"Invalid value for `utilization_level`, must be one of { utilization_level_allowed_values }"
                 )
 
         query_params = {
@@ -18235,28 +18235,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_database_insight_resource_statistics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_database_insight_resource_statistics got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
             database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `database_type`, must be one of {0}".format(database_type_allowed_values)
+                        f"Invalid value for `database_type`, must be one of { database_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["utilizationPercent", "usage", "usageChangePercent", "databaseName", "databaseType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -18496,14 +18496,14 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_database_insight_resource_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_database_insight_resource_usage got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
             database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `database_type`, must be one of {0}".format(database_type_allowed_values)
+                        f"Invalid value for `database_type`, must be one of { database_type_allowed_values }"
                     )
 
         query_params = {
@@ -18743,28 +18743,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_database_insight_resource_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_database_insight_resource_usage_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
             database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `database_type`, must be one of {0}".format(database_type_allowed_values)
+                        f"Invalid value for `database_type`, must be one of { database_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["endTimestamp", "usage", "capacity"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -19004,14 +19004,14 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_database_insight_resource_utilization_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_database_insight_resource_utilization_insight got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
             database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `database_type`, must be one of {0}".format(database_type_allowed_values)
+                        f"Invalid value for `database_type`, must be one of { database_type_allowed_values }"
                     )
 
         query_params = {
@@ -19183,7 +19183,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_database_insight_tablespace_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_database_insight_tablespace_usage_trend got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -19388,20 +19388,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_exadata_insight_resource_capacity_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_exadata_insight_resource_capacity_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["id", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -19617,20 +19617,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_exadata_insight_resource_capacity_trend_aggregated got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_exadata_insight_resource_capacity_trend_aggregated got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["endTimestamp", "capacity"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -19871,34 +19871,34 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_exadata_insight_resource_forecast_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_exadata_insight_resource_forecast_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'statistic' in kwargs:
             statistic_allowed_values = ["AVG", "MAX"]
             if kwargs['statistic'] not in statistic_allowed_values:
                 raise ValueError(
-                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                    f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
         if 'forecast_model' in kwargs:
             forecast_model_allowed_values = ["LINEAR", "ML_AUTO", "ML_NO_AUTO"]
             if kwargs['forecast_model'] not in forecast_model_allowed_values:
                 raise ValueError(
-                    "Invalid value for `forecast_model`, must be one of {0}".format(forecast_model_allowed_values)
+                    f"Invalid value for `forecast_model`, must be one of { forecast_model_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["id", "name", "daysToReachCapacity"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -20137,20 +20137,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_exadata_insight_resource_forecast_trend_aggregated got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_exadata_insight_resource_forecast_trend_aggregated got unknown kwargs: {extra_kwargs!r}")
 
         if 'statistic' in kwargs:
             statistic_allowed_values = ["AVG", "MAX"]
             if kwargs['statistic'] not in statistic_allowed_values:
                 raise ValueError(
-                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                    f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
         if 'forecast_model' in kwargs:
             forecast_model_allowed_values = ["LINEAR", "ML_AUTO", "ML_NO_AUTO"]
             if kwargs['forecast_model'] not in forecast_model_allowed_values:
                 raise ValueError(
-                    "Invalid value for `forecast_model`, must be one of {0}".format(forecast_model_allowed_values)
+                    f"Invalid value for `forecast_model`, must be one of { forecast_model_allowed_values }"
                 )
 
         query_params = {
@@ -20347,20 +20347,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_exadata_insight_resource_statistics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_exadata_insight_resource_statistics got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["utilizationPercent", "usage", "usageChangePercent"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -20587,20 +20587,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_exadata_insight_resource_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_exadata_insight_resource_usage got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["utilizationPercent", "usage", "capacity", "usageChangePercent"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -20810,7 +20810,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_exadata_insight_resource_usage_aggregated got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_exadata_insight_resource_usage_aggregated got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -21025,7 +21025,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_exadata_insight_resource_utilization_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_exadata_insight_resource_utilization_insight got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -21173,20 +21173,20 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_exadata_members got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_exadata_members got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name", "displayName", "entityType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -21345,13 +21345,13 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_host_insight_network_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_host_insight_network_usage_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'statistic' in kwargs:
             statistic_allowed_values = ["AVG", "MAX"]
             if kwargs['statistic'] not in statistic_allowed_values:
                 raise ValueError(
-                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                    f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
         query_params = {
@@ -21591,35 +21591,35 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_host_insight_resource_capacity_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_host_insight_resource_capacity_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'platform_type' in kwargs:
             platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                        f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
                     )
 
         if 'utilization_level' in kwargs:
             utilization_level_allowed_values = ["HIGH_UTILIZATION", "LOW_UTILIZATION", "MEDIUM_HIGH_UTILIZATION", "MEDIUM_LOW_UTILIZATION"]
             if kwargs['utilization_level'] not in utilization_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `utilization_level`, must be one of {0}".format(utilization_level_allowed_values)
+                    f"Invalid value for `utilization_level`, must be one of { utilization_level_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["endTimestamp", "capacity"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -21895,35 +21895,35 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_host_insight_resource_forecast_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_host_insight_resource_forecast_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'platform_type' in kwargs:
             platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                        f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
                     )
 
         if 'statistic' in kwargs:
             statistic_allowed_values = ["AVG", "MAX"]
             if kwargs['statistic'] not in statistic_allowed_values:
                 raise ValueError(
-                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                    f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
         if 'forecast_model' in kwargs:
             forecast_model_allowed_values = ["LINEAR", "ML_AUTO", "ML_NO_AUTO"]
             if kwargs['forecast_model'] not in forecast_model_allowed_values:
                 raise ValueError(
-                    "Invalid value for `forecast_model`, must be one of {0}".format(forecast_model_allowed_values)
+                    f"Invalid value for `forecast_model`, must be one of { forecast_model_allowed_values }"
                 )
 
         if 'utilization_level' in kwargs:
             utilization_level_allowed_values = ["HIGH_UTILIZATION", "LOW_UTILIZATION", "MEDIUM_HIGH_UTILIZATION", "MEDIUM_LOW_UTILIZATION"]
             if kwargs['utilization_level'] not in utilization_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `utilization_level`, must be one of {0}".format(utilization_level_allowed_values)
+                    f"Invalid value for `utilization_level`, must be one of { utilization_level_allowed_values }"
                 )
 
         query_params = {
@@ -22193,28 +22193,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_host_insight_resource_statistics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_host_insight_resource_statistics got unknown kwargs: {extra_kwargs!r}")
 
         if 'platform_type' in kwargs:
             platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                        f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["utilizationPercent", "usage", "usageChangePercent", "hostName", "platformType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -22445,14 +22445,14 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_host_insight_resource_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_host_insight_resource_usage got unknown kwargs: {extra_kwargs!r}")
 
         if 'platform_type' in kwargs:
             platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                        f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
                     )
 
         query_params = {
@@ -22683,28 +22683,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_host_insight_resource_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_host_insight_resource_usage_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'platform_type' in kwargs:
             platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                        f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["endTimestamp", "usage", "capacity"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -22935,14 +22935,14 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_host_insight_resource_utilization_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_host_insight_resource_utilization_insight got unknown kwargs: {extra_kwargs!r}")
 
         if 'platform_type' in kwargs:
             platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX", "WINDOWS", "AIX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                        f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
                     )
 
         query_params = {
@@ -23115,13 +23115,13 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_host_insight_storage_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_host_insight_storage_usage_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'statistic' in kwargs:
             statistic_allowed_values = ["AVG", "MAX"]
             if kwargs['statistic'] not in statistic_allowed_values:
                 raise ValueError(
-                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                    f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
         query_params = {
@@ -23298,13 +23298,13 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_host_insight_top_processes_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_host_insight_top_processes_usage got unknown kwargs: {extra_kwargs!r}")
 
         if 'statistic' in kwargs:
             statistic_allowed_values = ["AVG", "MAX"]
             if kwargs['statistic'] not in statistic_allowed_values:
                 raise ValueError(
-                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                    f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
         query_params = {
@@ -23484,13 +23484,13 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_host_insight_top_processes_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_host_insight_top_processes_usage_trend got unknown kwargs: {extra_kwargs!r}")
 
         if 'statistic' in kwargs:
             statistic_allowed_values = ["AVG", "MAX"]
             if kwargs['statistic'] not in statistic_allowed_values:
                 raise ValueError(
-                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                    f"Invalid value for `statistic`, must be one of { statistic_allowed_values }"
                 )
 
         query_params = {
@@ -23597,7 +23597,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_operations_insights_warehouse_resource_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_operations_insights_warehouse_resource_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsWarehouseId": operations_insights_warehouse_id
@@ -23607,7 +23607,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23803,14 +23803,14 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_sql_insights got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_sql_insights got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
             database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `database_type`, must be one of {0}".format(database_type_allowed_values)
+                        f"Invalid value for `database_type`, must be one of { database_type_allowed_values }"
                     )
 
         query_params = {
@@ -23971,7 +23971,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_sql_plan_insights got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_sql_plan_insights got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -24121,7 +24121,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_sql_response_time_distributions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_sql_response_time_distributions got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -24363,28 +24363,28 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_sql_statistics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_sql_statistics got unknown kwargs: {extra_kwargs!r}")
 
         if 'database_type' in kwargs:
             database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `database_type`, must be one of {0}".format(database_type_allowed_values)
+                        f"Invalid value for `database_type`, must be one of { database_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["databaseTimeInSec", "executionsPerHour", "executionsCount", "cpuTimeInSec", "ioTimeInSec", "inefficientWaitTimeInSec", "responseTimeInSec", "planCount", "variability", "averageActiveSessions", "databaseTimePct", "inefficiencyInPct", "changeInCpuTimeInPct", "changeInIoTimeInPct", "changeInInefficientWaitTimeInPct", "changeInResponseTimeInPct", "changeInAverageActiveSessionsInPct", "changeInExecutionsPerHourInPct", "changeInInefficiencyInPct"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'category' in kwargs:
@@ -24392,7 +24392,7 @@ class OperationsInsightsClient(object):
             for category_item in kwargs['category']:
                 if category_item not in category_allowed_values:
                     raise ValueError(
-                        "Invalid value for `category`, must be one of {0}".format(category_allowed_values)
+                        f"Invalid value for `category`, must be one of { category_allowed_values }"
                     )
 
         query_params = {
@@ -24609,7 +24609,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_sql_statistics_time_series got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_sql_statistics_time_series got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -24768,7 +24768,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_sql_statistics_time_series_by_plan got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_sql_statistics_time_series_by_plan got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -24878,7 +24878,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_awr_hub got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_awr_hub got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "awrHubId": awr_hub_id
@@ -24888,7 +24888,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -24987,7 +24987,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_database_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_database_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseInsightId": database_insight_id
@@ -24997,7 +24997,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25096,7 +25096,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_enterprise_manager_bridge got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_enterprise_manager_bridge got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "enterpriseManagerBridgeId": enterprise_manager_bridge_id
@@ -25106,7 +25106,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25205,7 +25205,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_exadata_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_exadata_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInsightId": exadata_insight_id
@@ -25215,7 +25215,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25314,7 +25314,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_host_insight got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_host_insight got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "hostInsightId": host_insight_id
@@ -25324,7 +25324,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25423,7 +25423,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_news_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_news_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "newsReportId": news_report_id
@@ -25433,7 +25433,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25534,7 +25534,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_operations_insights_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_operations_insights_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsPrivateEndpointId": operations_insights_private_endpoint_id
@@ -25544,7 +25544,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25644,7 +25644,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_operations_insights_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_operations_insights_warehouse got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsWarehouseId": operations_insights_warehouse_id
@@ -25654,7 +25654,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25753,7 +25753,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_operations_insights_warehouse_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_operations_insights_warehouse_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "operationsInsightsWarehouseUserId": operations_insights_warehouse_user_id
@@ -25763,7 +25763,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -25864,7 +25864,7 @@ class OperationsInsightsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_opsi_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_opsi_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "opsiConfigurationId": opsi_configuration_id
@@ -25874,7 +25874,7 @@ class OperationsInsightsClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

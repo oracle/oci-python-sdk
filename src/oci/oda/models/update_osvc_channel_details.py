@@ -299,8 +299,7 @@ class UpdateOsvcChannelDetails(UpdateChannelDetails):
         allowed_values = ["OSVC", "FUSION"]
         if not value_allowed_none_or_none_sentinel(channel_service, allowed_values):
             raise ValueError(
-                "Invalid value for `channel_service`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `channel_service`, must be None or one of {allowed_values}"
             )
         self._channel_service = channel_service
 

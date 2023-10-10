@@ -99,8 +99,7 @@ class OpsiDataObjectDetailsInQuery(object):
         allowed_values = ["INDIVIDUAL_OPSIDATAOBJECT", "OPSIDATAOBJECTTYPE_OPSIDATAOBJECTS"]
         if not value_allowed_none_or_none_sentinel(data_object_details_target, allowed_values):
             raise ValueError(
-                "Invalid value for `data_object_details_target`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `data_object_details_target`, must be None or one of {allowed_values}"
             )
         self._data_object_details_target = data_object_details_target
 

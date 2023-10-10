@@ -174,8 +174,7 @@ class UpdateNonADBAutoCreateTablespaceDetails(UpdateTargetTypeTablespaceDetails)
         allowed_values = ["SIZE_8K", "SIZE_16K"]
         if not value_allowed_none_or_none_sentinel(block_size_in_kbs, allowed_values):
             raise ValueError(
-                "Invalid value for `block_size_in_kbs`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `block_size_in_kbs`, must be None or one of {allowed_values}"
             )
         self._block_size_in_kbs = block_size_in_kbs
 

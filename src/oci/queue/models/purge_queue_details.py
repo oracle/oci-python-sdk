@@ -88,8 +88,7 @@ class PurgeQueueDetails(object):
         allowed_values = ["NORMAL", "DLQ", "BOTH"]
         if not value_allowed_none_or_none_sentinel(purge_type, allowed_values):
             raise ValueError(
-                "Invalid value for `purge_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `purge_type`, must be None or one of {allowed_values}"
             )
         self._purge_type = purge_type
 

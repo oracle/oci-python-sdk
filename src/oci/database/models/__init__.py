@@ -50,6 +50,7 @@ from .autonomous_virtual_machine import AutonomousVirtualMachine
 from .autonomous_virtual_machine_summary import AutonomousVirtualMachineSummary
 from .autonomous_vm_cluster import AutonomousVmCluster
 from .autonomous_vm_cluster_resource_details import AutonomousVmClusterResourceDetails
+from .autonomous_vm_cluster_resource_usage import AutonomousVmClusterResourceUsage
 from .autonomous_vm_cluster_summary import AutonomousVmClusterSummary
 from .autonomous_vm_resource_usage import AutonomousVmResourceUsage
 from .avm_acd_resource_stats import AvmAcdResourceStats
@@ -87,6 +88,7 @@ from .console_connection import ConsoleConnection
 from .console_connection_summary import ConsoleConnectionSummary
 from .convert_to_pdb_details import ConvertToPdbDetails
 from .convert_to_pdb_target_base import ConvertToPdbTargetBase
+from .convert_to_regular_pluggable_database_details import ConvertToRegularPluggableDatabaseDetails
 from .create_application_vip_details import CreateApplicationVipDetails
 from .create_autonomous_container_database_details import CreateAutonomousContainerDatabaseDetails
 from .create_autonomous_database_backup_details import CreateAutonomousDatabaseBackupDetails
@@ -137,7 +139,12 @@ from .create_key_store_details import CreateKeyStoreDetails
 from .create_nfs_backup_destination_details import CreateNFSBackupDestinationDetails
 from .create_new_database_details import CreateNewDatabaseDetails
 from .create_oneoff_patch_details import CreateOneoffPatchDetails
+from .create_pluggable_database_creation_type_details import CreatePluggableDatabaseCreationTypeDetails
 from .create_pluggable_database_details import CreatePluggableDatabaseDetails
+from .create_pluggable_database_from_local_clone_details import CreatePluggableDatabaseFromLocalCloneDetails
+from .create_pluggable_database_from_relocate_details import CreatePluggableDatabaseFromRelocateDetails
+from .create_pluggable_database_from_remote_clone_details import CreatePluggableDatabaseFromRemoteCloneDetails
+from .create_pluggable_database_refreshable_clone_details import CreatePluggableDatabaseRefreshableCloneDetails
 from .create_recovery_appliance_backup_destination_details import CreateRecoveryApplianceBackupDestinationDetails
 from .create_refreshable_autonomous_database_clone_details import CreateRefreshableAutonomousDatabaseCloneDetails
 from .create_vm_cluster_details import CreateVmClusterDetails
@@ -277,6 +284,8 @@ from .peer_autonomous_container_database_backup_config import PeerAutonomousCont
 from .pluggable_database import PluggableDatabase
 from .pluggable_database_connection_strings import PluggableDatabaseConnectionStrings
 from .pluggable_database_management_config import PluggableDatabaseManagementConfig
+from .pluggable_database_node_level_details import PluggableDatabaseNodeLevelDetails
+from .pluggable_database_refreshable_clone_config import PluggableDatabaseRefreshableCloneConfig
 from .pluggable_database_summary import PluggableDatabaseSummary
 from .refreshable_clone_collection import RefreshableCloneCollection
 from .refreshable_clone_summary import RefreshableCloneSummary
@@ -398,6 +407,7 @@ database_type_mapping = {
     "AutonomousVirtualMachineSummary": AutonomousVirtualMachineSummary,
     "AutonomousVmCluster": AutonomousVmCluster,
     "AutonomousVmClusterResourceDetails": AutonomousVmClusterResourceDetails,
+    "AutonomousVmClusterResourceUsage": AutonomousVmClusterResourceUsage,
     "AutonomousVmClusterSummary": AutonomousVmClusterSummary,
     "AutonomousVmResourceUsage": AutonomousVmResourceUsage,
     "AvmAcdResourceStats": AvmAcdResourceStats,
@@ -435,6 +445,7 @@ database_type_mapping = {
     "ConsoleConnectionSummary": ConsoleConnectionSummary,
     "ConvertToPdbDetails": ConvertToPdbDetails,
     "ConvertToPdbTargetBase": ConvertToPdbTargetBase,
+    "ConvertToRegularPluggableDatabaseDetails": ConvertToRegularPluggableDatabaseDetails,
     "CreateApplicationVipDetails": CreateApplicationVipDetails,
     "CreateAutonomousContainerDatabaseDetails": CreateAutonomousContainerDatabaseDetails,
     "CreateAutonomousDatabaseBackupDetails": CreateAutonomousDatabaseBackupDetails,
@@ -485,7 +496,12 @@ database_type_mapping = {
     "CreateNFSBackupDestinationDetails": CreateNFSBackupDestinationDetails,
     "CreateNewDatabaseDetails": CreateNewDatabaseDetails,
     "CreateOneoffPatchDetails": CreateOneoffPatchDetails,
+    "CreatePluggableDatabaseCreationTypeDetails": CreatePluggableDatabaseCreationTypeDetails,
     "CreatePluggableDatabaseDetails": CreatePluggableDatabaseDetails,
+    "CreatePluggableDatabaseFromLocalCloneDetails": CreatePluggableDatabaseFromLocalCloneDetails,
+    "CreatePluggableDatabaseFromRelocateDetails": CreatePluggableDatabaseFromRelocateDetails,
+    "CreatePluggableDatabaseFromRemoteCloneDetails": CreatePluggableDatabaseFromRemoteCloneDetails,
+    "CreatePluggableDatabaseRefreshableCloneDetails": CreatePluggableDatabaseRefreshableCloneDetails,
     "CreateRecoveryApplianceBackupDestinationDetails": CreateRecoveryApplianceBackupDestinationDetails,
     "CreateRefreshableAutonomousDatabaseCloneDetails": CreateRefreshableAutonomousDatabaseCloneDetails,
     "CreateVmClusterDetails": CreateVmClusterDetails,
@@ -625,6 +641,8 @@ database_type_mapping = {
     "PluggableDatabase": PluggableDatabase,
     "PluggableDatabaseConnectionStrings": PluggableDatabaseConnectionStrings,
     "PluggableDatabaseManagementConfig": PluggableDatabaseManagementConfig,
+    "PluggableDatabaseNodeLevelDetails": PluggableDatabaseNodeLevelDetails,
+    "PluggableDatabaseRefreshableCloneConfig": PluggableDatabaseRefreshableCloneConfig,
     "PluggableDatabaseSummary": PluggableDatabaseSummary,
     "RefreshableCloneCollection": RefreshableCloneCollection,
     "RefreshableCloneSummary": RefreshableCloneSummary,

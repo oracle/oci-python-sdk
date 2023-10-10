@@ -178,7 +178,7 @@ class ApplianceExportJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_appliance_export_job_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_appliance_export_job_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "applianceExportJobId": appliance_export_job_id
@@ -188,7 +188,7 @@ class ApplianceExportJobClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -286,7 +286,7 @@ class ApplianceExportJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_appliance_export_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_appliance_export_job got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -388,7 +388,7 @@ class ApplianceExportJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_appliance_export_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_appliance_export_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "applianceExportJobId": appliance_export_job_id
@@ -398,7 +398,7 @@ class ApplianceExportJobClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -486,7 +486,7 @@ class ApplianceExportJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_appliance_export_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_appliance_export_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "applianceExportJobId": appliance_export_job_id
@@ -496,7 +496,7 @@ class ApplianceExportJobClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -611,13 +611,13 @@ class ApplianceExportJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_appliance_export_jobs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_appliance_export_jobs got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INPROGRESS", "SUCCEEDED", "FAILED", "CANCELLED", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -722,7 +722,7 @@ class ApplianceExportJobClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_appliance_export_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_appliance_export_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "applianceExportJobId": appliance_export_job_id
@@ -732,7 +732,7 @@ class ApplianceExportJobClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

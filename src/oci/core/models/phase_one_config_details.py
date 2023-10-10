@@ -165,8 +165,7 @@ class PhaseOneConfigDetails(object):
         allowed_values = ["SHA2_384", "SHA2_256", "SHA1_96"]
         if not value_allowed_none_or_none_sentinel(authentication_algorithm, allowed_values):
             raise ValueError(
-                "Invalid value for `authentication_algorithm`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `authentication_algorithm`, must be None or one of {allowed_values}"
             )
         self._authentication_algorithm = authentication_algorithm
 
@@ -197,8 +196,7 @@ class PhaseOneConfigDetails(object):
         allowed_values = ["AES_256_CBC", "AES_192_CBC", "AES_128_CBC"]
         if not value_allowed_none_or_none_sentinel(encryption_algorithm, allowed_values):
             raise ValueError(
-                "Invalid value for `encryption_algorithm`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `encryption_algorithm`, must be None or one of {allowed_values}"
             )
         self._encryption_algorithm = encryption_algorithm
 
@@ -229,8 +227,7 @@ class PhaseOneConfigDetails(object):
         allowed_values = ["GROUP2", "GROUP5", "GROUP14", "GROUP19", "GROUP20", "GROUP24"]
         if not value_allowed_none_or_none_sentinel(diffie_helman_group, allowed_values):
             raise ValueError(
-                "Invalid value for `diffie_helman_group`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `diffie_helman_group`, must be None or one of {allowed_values}"
             )
         self._diffie_helman_group = diffie_helman_group
 

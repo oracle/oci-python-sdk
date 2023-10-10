@@ -185,7 +185,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_heat_wave_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_heat_wave_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -195,7 +195,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -299,7 +299,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_db_system got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -402,7 +402,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -412,7 +412,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -512,7 +512,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_heat_wave_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_heat_wave_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -522,7 +522,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -622,7 +622,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_heat_wave_cluster_memory_estimate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_heat_wave_cluster_memory_estimate got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -632,7 +632,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -734,7 +734,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -744,7 +744,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -845,7 +845,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_heat_wave_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_heat_wave_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -855,7 +855,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -949,7 +949,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_heat_wave_cluster_memory_estimate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_heat_wave_cluster_memory_estimate got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -959,7 +959,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1110,27 +1110,27 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_systems got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_systems got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -1258,7 +1258,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restart_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restart_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -1268,7 +1268,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1380,7 +1380,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restart_heat_wave_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restart_heat_wave_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -1390,7 +1390,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1500,7 +1500,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"start_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -1510,7 +1510,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1620,7 +1620,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_heat_wave_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"start_heat_wave_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -1630,7 +1630,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1745,7 +1745,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "stop_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"stop_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -1755,7 +1755,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1867,7 +1867,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "stop_heat_wave_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"stop_heat_wave_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -1877,7 +1877,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1988,7 +1988,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -1998,7 +1998,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2102,7 +2102,7 @@ class DbSystemClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_heat_wave_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_heat_wave_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -2112,7 +2112,7 @@ class DbSystemClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

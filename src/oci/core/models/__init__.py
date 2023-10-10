@@ -259,6 +259,7 @@ from .export_image_via_object_storage_tuple_details import ExportImageViaObjectS
 from .export_image_via_object_storage_uri_details import ExportImageViaObjectStorageUriDetails
 from .fast_connect_provider_service import FastConnectProviderService
 from .fast_connect_provider_service_key import FastConnectProviderServiceKey
+from .flow_log_capture_filter_rule_details import FlowLogCaptureFilterRuleDetails
 from .generic_bm_launch_instance_platform_config import GenericBmLaunchInstancePlatformConfig
 from .generic_bm_platform_config import GenericBmPlatformConfig
 from .get_public_ip_by_ip_address_details import GetPublicIpByIpAddressDetails
@@ -813,6 +814,7 @@ core_type_mapping = {
     "ExportImageViaObjectStorageUriDetails": ExportImageViaObjectStorageUriDetails,
     "FastConnectProviderService": FastConnectProviderService,
     "FastConnectProviderServiceKey": FastConnectProviderServiceKey,
+    "FlowLogCaptureFilterRuleDetails": FlowLogCaptureFilterRuleDetails,
     "GenericBmLaunchInstancePlatformConfig": GenericBmLaunchInstancePlatformConfig,
     "GenericBmPlatformConfig": GenericBmPlatformConfig,
     "GetPublicIpByIpAddressDetails": GetPublicIpByIpAddressDetails,

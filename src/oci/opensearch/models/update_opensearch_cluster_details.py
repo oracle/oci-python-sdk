@@ -162,8 +162,7 @@ class UpdateOpensearchClusterDetails(object):
         allowed_values = ["DISABLED", "PERMISSIVE", "ENFORCING"]
         if not value_allowed_none_or_none_sentinel(security_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `security_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `security_mode`, must be None or one of {allowed_values}"
             )
         self._security_mode = security_mode
 

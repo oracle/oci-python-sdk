@@ -172,7 +172,7 @@ class MysqlaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_configuration got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -271,7 +271,7 @@ class MysqlaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "configurationId": configuration_id
@@ -281,7 +281,7 @@ class MysqlaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -378,7 +378,7 @@ class MysqlaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "configurationId": configuration_id
@@ -388,7 +388,7 @@ class MysqlaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -539,13 +539,13 @@ class MysqlaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_configurations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_configurations got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'type' in kwargs:
@@ -553,21 +553,21 @@ class MysqlaasClient(object):
             for type_item in kwargs['type']:
                 if type_item not in type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                        f"Invalid value for `type`, must be one of { type_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "shapeName", "timeCreated", "timeUpdated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -691,14 +691,14 @@ class MysqlaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_shapes got unknown kwargs: {extra_kwargs!r}")
 
         if 'is_supported_for' in kwargs:
             is_supported_for_allowed_values = ["DBSYSTEM", "HEATWAVECLUSTER"]
             for is_supported_for_item in kwargs['is_supported_for']:
                 if is_supported_for_item not in is_supported_for_allowed_values:
                     raise ValueError(
-                        "Invalid value for `is_supported_for`, must be one of {0}".format(is_supported_for_allowed_values)
+                        f"Invalid value for `is_supported_for`, must be one of { is_supported_for_allowed_values }"
                     )
 
         query_params = {
@@ -801,7 +801,7 @@ class MysqlaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_versions got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id
@@ -907,7 +907,7 @@ class MysqlaasClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "configurationId": configuration_id
@@ -917,7 +917,7 @@ class MysqlaasClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

@@ -372,8 +372,7 @@ class CreateLoadBalancerDetails(object):
         allowed_values = ["IPV4", "IPV6"]
         if not value_allowed_none_or_none_sentinel(ip_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `ip_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ip_mode`, must be None or one of {allowed_values}"
             )
         self._ip_mode = ip_mode
 

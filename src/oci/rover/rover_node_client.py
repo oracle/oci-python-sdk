@@ -180,7 +180,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_rover_node_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_rover_node_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -190,7 +190,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -289,7 +289,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_rover_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_rover_node got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -395,7 +395,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_rover_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_rover_node got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -405,7 +405,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -494,7 +494,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_rover_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_rover_node got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -504,7 +504,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -592,7 +592,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_rover_node_certificate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_rover_node_certificate got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -602,7 +602,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -690,7 +690,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_rover_node_encryption_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_rover_node_encryption_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -700,7 +700,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -792,7 +792,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_rover_node_get_rpt got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_rover_node_get_rpt got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -802,7 +802,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -931,34 +931,34 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_rover_nodes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_rover_nodes got unknown kwargs: {extra_kwargs!r}")
 
         if 'node_type' in kwargs:
             node_type_allowed_values = ["STANDALONE", "CLUSTERED", "STATION"]
             if kwargs['node_type'] not in node_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `node_type`, must be one of {0}".format(node_type_allowed_values)
+                    f"Invalid value for `node_type`, must be one of { node_type_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1076,7 +1076,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rover_node_action_retrieve_ca_bundle got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rover_node_action_retrieve_ca_bundle got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -1086,7 +1086,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1200,7 +1200,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rover_node_action_set_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rover_node_action_set_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -1210,7 +1210,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1323,7 +1323,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rover_node_generate_certificate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rover_node_generate_certificate got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -1333,7 +1333,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1445,7 +1445,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rover_node_renew_certificate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rover_node_renew_certificate got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -1455,7 +1455,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1567,7 +1567,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rover_node_replace_certificate_authority got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rover_node_replace_certificate_authority got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -1577,7 +1577,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1686,7 +1686,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rover_node_retrieve_leaf_certificate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rover_node_retrieve_leaf_certificate got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -1696,7 +1696,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1798,7 +1798,7 @@ class RoverNodeClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_rover_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_rover_node got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "roverNodeId": rover_node_id
@@ -1808,7 +1808,7 @@ class RoverNodeClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

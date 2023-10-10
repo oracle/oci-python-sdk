@@ -200,8 +200,7 @@ class CreateProductLicenseDetails(object):
         allowed_values = ["OCPU", "NAMED_USER_PLUS", "PROCESSORS"]
         if not value_allowed_none_or_none_sentinel(license_unit, allowed_values):
             raise ValueError(
-                "Invalid value for `license_unit`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `license_unit`, must be None or one of {allowed_values}"
             )
         self._license_unit = license_unit
 

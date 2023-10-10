@@ -184,7 +184,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "backup_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"backup_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id
@@ -194,7 +194,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -311,7 +311,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_key_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_key_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id
@@ -321,7 +321,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -439,7 +439,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_key_version_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_key_version_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id,
@@ -450,7 +450,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -571,7 +571,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_key_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_key_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id
@@ -581,7 +581,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -686,7 +686,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_key got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -797,7 +797,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_key_version got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_key_version got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id
@@ -807,7 +807,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -922,7 +922,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id
@@ -932,7 +932,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1046,7 +1046,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id
@@ -1056,7 +1056,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1152,7 +1152,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id
@@ -1162,7 +1162,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1258,7 +1258,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_key_version got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_key_version got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id,
@@ -1269,7 +1269,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1360,7 +1360,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_replication_status got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_replication_status got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "replicationId": replication_id
@@ -1370,7 +1370,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1456,7 +1456,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_wrapping_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_wrapping_key got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1556,7 +1556,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "import_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"import_key got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1663,7 +1663,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "import_key_version got unknown kwargs: {!r}".format(extra_kwargs))
+                f"import_key_version got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id
@@ -1673,7 +1673,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1796,7 +1796,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_key_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_key_versions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id
@@ -1806,20 +1806,20 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -1974,41 +1974,41 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_keys got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_keys got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'protection_mode' in kwargs:
             protection_mode_allowed_values = ["HSM", "SOFTWARE", "EXTERNAL"]
             if kwargs['protection_mode'] not in protection_mode_allowed_values:
                 raise ValueError(
-                    "Invalid value for `protection_mode`, must be one of {0}".format(protection_mode_allowed_values)
+                    f"Invalid value for `protection_mode`, must be one of { protection_mode_allowed_values }"
                 )
 
         if 'algorithm' in kwargs:
             algorithm_allowed_values = ["AES", "RSA", "ECDSA"]
             if kwargs['algorithm'] not in algorithm_allowed_values:
                 raise ValueError(
-                    "Invalid value for `algorithm`, must be one of {0}".format(algorithm_allowed_values)
+                    f"Invalid value for `algorithm`, must be one of { algorithm_allowed_values }"
                 )
 
         if 'curve_id' in kwargs:
             curve_id_allowed_values = ["NIST_P256", "NIST_P384", "NIST_P521"]
             if kwargs['curve_id'] not in curve_id_allowed_values:
                 raise ValueError(
-                    "Invalid value for `curve_id`, must be one of {0}".format(curve_id_allowed_values)
+                    f"Invalid value for `curve_id`, must be one of { curve_id_allowed_values }"
                 )
 
         query_params = {
@@ -2151,7 +2151,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restore_key_from_file got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restore_key_from_file got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2284,7 +2284,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restore_key_from_object_store got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restore_key_from_object_store got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2401,7 +2401,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "schedule_key_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"schedule_key_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id
@@ -2411,7 +2411,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2533,7 +2533,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "schedule_key_version_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"schedule_key_version_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id,
@@ -2544,7 +2544,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2655,7 +2655,7 @@ class KmsManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyId": key_id
@@ -2665,7 +2665,7 @@ class KmsManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

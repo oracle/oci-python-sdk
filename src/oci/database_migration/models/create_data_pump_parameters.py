@@ -149,8 +149,7 @@ class CreateDataPumpParameters(object):
         allowed_values = ["BLOCKS", "STATISTICS"]
         if not value_allowed_none_or_none_sentinel(estimate, allowed_values):
             raise ValueError(
-                "Invalid value for `estimate`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `estimate`, must be None or one of {allowed_values}"
             )
         self._estimate = estimate
 
@@ -181,8 +180,7 @@ class CreateDataPumpParameters(object):
         allowed_values = ["TRUNCATE", "REPLACE", "APPEND", "SKIP"]
         if not value_allowed_none_or_none_sentinel(table_exists_action, allowed_values):
             raise ValueError(
-                "Invalid value for `table_exists_action`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `table_exists_action`, must be None or one of {allowed_values}"
             )
         self._table_exists_action = table_exists_action
 

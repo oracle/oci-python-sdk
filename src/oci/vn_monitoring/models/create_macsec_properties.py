@@ -102,8 +102,7 @@ class CreateMacsecProperties(object):
         allowed_values = ["ENABLED", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(state, allowed_values):
             raise ValueError(
-                "Invalid value for `state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `state`, must be None or one of {allowed_values}"
             )
         self._state = state
 
@@ -154,8 +153,7 @@ class CreateMacsecProperties(object):
         allowed_values = ["AES128_GCM", "AES128_GCM_XPN", "AES256_GCM", "AES256_GCM_XPN"]
         if not value_allowed_none_or_none_sentinel(encryption_cipher, allowed_values):
             raise ValueError(
-                "Invalid value for `encryption_cipher`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `encryption_cipher`, must be None or one of {allowed_values}"
             )
         self._encryption_cipher = encryption_cipher
 

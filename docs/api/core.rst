@@ -277,6 +277,7 @@ Core Services
     oci.core.models.ExportImageViaObjectStorageUriDetails
     oci.core.models.FastConnectProviderService
     oci.core.models.FastConnectProviderServiceKey
+    oci.core.models.FlowLogCaptureFilterRuleDetails
     oci.core.models.GenericBmLaunchInstancePlatformConfig
     oci.core.models.GenericBmPlatformConfig
     oci.core.models.GetPublicIpByIpAddressDetails

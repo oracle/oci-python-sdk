@@ -171,7 +171,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_certificate_authority_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_certificate_authority_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateAuthorityId": certificate_authority_id
@@ -181,7 +181,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -281,7 +281,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_certificate_authority_version_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_certificate_authority_version_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateAuthorityId": certificate_authority_id,
@@ -292,7 +292,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -389,7 +389,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_certificate_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_certificate_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id
@@ -399,7 +399,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -497,7 +497,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_certificate_version_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_certificate_version_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id,
@@ -508,7 +508,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -620,7 +620,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_ca_bundle_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_ca_bundle_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "caBundleId": ca_bundle_id
@@ -630,7 +630,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -746,7 +746,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_certificate_authority_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_certificate_authority_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateAuthorityId": certificate_authority_id
@@ -756,7 +756,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -872,7 +872,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_certificate_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_certificate_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id
@@ -882,7 +882,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -982,7 +982,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_ca_bundle got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_ca_bundle got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1081,7 +1081,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_certificate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_certificate got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1180,7 +1180,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_certificate_authority got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_certificate_authority got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1278,7 +1278,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_ca_bundle got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_ca_bundle got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "caBundleId": ca_bundle_id
@@ -1288,7 +1288,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1375,7 +1375,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "associationId": association_id
@@ -1385,7 +1385,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1473,7 +1473,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_ca_bundle got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_ca_bundle got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "caBundleId": ca_bundle_id
@@ -1483,7 +1483,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1571,7 +1571,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_certificate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_certificate got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id
@@ -1581,7 +1581,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1669,7 +1669,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_certificate_authority got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_certificate_authority got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateAuthorityId": certificate_authority_id
@@ -1679,7 +1679,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1770,7 +1770,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_certificate_authority_version got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_certificate_authority_version got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateAuthorityId": certificate_authority_id,
@@ -1781,7 +1781,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1872,7 +1872,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_certificate_version got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_certificate_version got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id,
@@ -1883,7 +1883,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2017,27 +2017,27 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_associations got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME", "TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'association_type' in kwargs:
             association_type_allowed_values = ["CERTIFICATE", "CERTIFICATE_AUTHORITY", "CA_BUNDLE"]
             if kwargs['association_type'] not in association_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `association_type`, must be one of {0}".format(association_type_allowed_values)
+                    f"Invalid value for `association_type`, must be one of { association_type_allowed_values }"
                 )
 
         query_params = {
@@ -2178,27 +2178,27 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_ca_bundles got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_ca_bundles got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME", "TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2342,27 +2342,27 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_certificate_authorities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_certificate_authorities got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "SCHEDULING_DELETION", "PENDING_DELETION", "CANCELLING_DELETION", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME", "EXPIRATIONDATE", "TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2490,7 +2490,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_certificate_authority_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_certificate_authority_versions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateAuthorityId": certificate_authority_id
@@ -2500,20 +2500,20 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["VERSION_NUMBER"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2639,7 +2639,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_certificate_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_certificate_versions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id
@@ -2649,20 +2649,20 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["VERSION_NUMBER"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2805,27 +2805,27 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_certificates got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_certificates got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "SCHEDULING_DELETION", "PENDING_DELETION", "CANCELLING_DELETION", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME", "EXPIRATIONDATE", "TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2950,7 +2950,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "revoke_certificate_authority_version got unknown kwargs: {!r}".format(extra_kwargs))
+                f"revoke_certificate_authority_version got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateAuthorityId": certificate_authority_id,
@@ -2961,7 +2961,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3075,7 +3075,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "revoke_certificate_version got unknown kwargs: {!r}".format(extra_kwargs))
+                f"revoke_certificate_version got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id,
@@ -3086,7 +3086,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3188,7 +3188,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "schedule_certificate_authority_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"schedule_certificate_authority_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateAuthorityId": certificate_authority_id
@@ -3198,7 +3198,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3303,7 +3303,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "schedule_certificate_authority_version_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"schedule_certificate_authority_version_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateAuthorityId": certificate_authority_id,
@@ -3314,7 +3314,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3419,7 +3419,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "schedule_certificate_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"schedule_certificate_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id
@@ -3429,7 +3429,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3535,7 +3535,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "schedule_certificate_version_deletion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"schedule_certificate_version_deletion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id,
@@ -3546,7 +3546,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3646,7 +3646,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_ca_bundle got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_ca_bundle got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "caBundleId": ca_bundle_id
@@ -3656,7 +3656,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3758,7 +3758,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_certificate got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_certificate got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateId": certificate_id
@@ -3768,7 +3768,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3870,7 +3870,7 @@ class CertificatesManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_certificate_authority got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_certificate_authority got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "certificateAuthorityId": certificate_authority_id
@@ -3880,7 +3880,7 @@ class CertificatesManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

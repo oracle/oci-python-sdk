@@ -176,8 +176,7 @@ class UpdateIntegrationInstanceDetails(object):
         allowed_values = ["STANDARD", "ENTERPRISE", "STANDARDX", "ENTERPRISEX"]
         if not value_allowed_none_or_none_sentinel(integration_instance_type, allowed_values):
             raise ValueError(
-                "Invalid value for `integration_instance_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `integration_instance_type`, must be None or one of {allowed_values}"
             )
         self._integration_instance_type = integration_instance_type
 

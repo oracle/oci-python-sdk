@@ -396,8 +396,7 @@ class Bot(object):
         allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 
@@ -428,8 +427,7 @@ class Bot(object):
         allowed_values = ["PUBLISHED", "DRAFT"]
         if not value_allowed_none_or_none_sentinel(lifecycle_details, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_details`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_details`, must be None or one of {allowed_values}"
             )
         self._lifecycle_details = lifecycle_details
 
@@ -508,8 +506,7 @@ class Bot(object):
         allowed_values = ["NATIVE", "TRANSLATION"]
         if not value_allowed_none_or_none_sentinel(multilingual_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `multilingual_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `multilingual_mode`, must be None or one of {allowed_values}"
             )
         self._multilingual_mode = multilingual_mode
 

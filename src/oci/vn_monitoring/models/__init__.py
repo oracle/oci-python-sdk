@@ -148,6 +148,7 @@ from .encryption_domain_config import EncryptionDomainConfig
 from .endpoint import Endpoint
 from .fast_connect_provider_service import FastConnectProviderService
 from .fast_connect_provider_service_key import FastConnectProviderServiceKey
+from .flow_log_capture_filter_rule_details import FlowLogCaptureFilterRuleDetails
 from .forwarded_routing_action import ForwardedRoutingAction
 from .forwarded_routing_action_details import ForwardedRoutingActionDetails
 from .forwarded_routing_configuration import ForwardedRoutingConfiguration
@@ -471,6 +472,7 @@ vn_monitoring_type_mapping = {
     "Endpoint": Endpoint,
     "FastConnectProviderService": FastConnectProviderService,
     "FastConnectProviderServiceKey": FastConnectProviderServiceKey,
+    "FlowLogCaptureFilterRuleDetails": FlowLogCaptureFilterRuleDetails,
     "ForwardedRoutingAction": ForwardedRoutingAction,
     "ForwardedRoutingActionDetails": ForwardedRoutingActionDetails,
     "ForwardedRoutingConfiguration": ForwardedRoutingConfiguration,

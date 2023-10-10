@@ -44,6 +44,34 @@ class PluggableDatabase(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a PluggableDatabase.
+    #: This constant has a value of "RELOCATING"
+    LIFECYCLE_STATE_RELOCATING = "RELOCATING"
+
+    #: A constant which can be used with the lifecycle_state property of a PluggableDatabase.
+    #: This constant has a value of "RELOCATED"
+    LIFECYCLE_STATE_RELOCATED = "RELOCATED"
+
+    #: A constant which can be used with the lifecycle_state property of a PluggableDatabase.
+    #: This constant has a value of "REFRESHING"
+    LIFECYCLE_STATE_REFRESHING = "REFRESHING"
+
+    #: A constant which can be used with the lifecycle_state property of a PluggableDatabase.
+    #: This constant has a value of "RESTORE_IN_PROGRESS"
+    LIFECYCLE_STATE_RESTORE_IN_PROGRESS = "RESTORE_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a PluggableDatabase.
+    #: This constant has a value of "RESTORE_FAILED"
+    LIFECYCLE_STATE_RESTORE_FAILED = "RESTORE_FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a PluggableDatabase.
+    #: This constant has a value of "BACKUP_IN_PROGRESS"
+    LIFECYCLE_STATE_BACKUP_IN_PROGRESS = "BACKUP_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a PluggableDatabase.
+    #: This constant has a value of "DISABLED"
+    LIFECYCLE_STATE_DISABLED = "DISABLED"
+
     #: A constant which can be used with the open_mode property of a PluggableDatabase.
     #: This constant has a value of "READ_ONLY"
     OPEN_MODE_READ_ONLY = "READ_ONLY"
@@ -79,7 +107,7 @@ class PluggableDatabase(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this PluggableDatabase.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", "FAILED", "RELOCATING", "RELOCATED", "REFRESHING", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -121,6 +149,14 @@ class PluggableDatabase(object):
             The value to assign to the pluggable_database_management_config property of this PluggableDatabase.
         :type pluggable_database_management_config: oci.database.models.PluggableDatabaseManagementConfig
 
+        :param refreshable_clone_config:
+            The value to assign to the refreshable_clone_config property of this PluggableDatabase.
+        :type refreshable_clone_config: oci.database.models.PluggableDatabaseRefreshableCloneConfig
+
+        :param pdb_node_level_details:
+            The value to assign to the pdb_node_level_details property of this PluggableDatabase.
+        :type pdb_node_level_details: list[oci.database.models.PluggableDatabaseNodeLevelDetails]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -135,7 +171,9 @@ class PluggableDatabase(object):
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'pluggable_database_management_config': 'PluggableDatabaseManagementConfig'
+            'pluggable_database_management_config': 'PluggableDatabaseManagementConfig',
+            'refreshable_clone_config': 'PluggableDatabaseRefreshableCloneConfig',
+            'pdb_node_level_details': 'list[PluggableDatabaseNodeLevelDetails]'
         }
 
         self.attribute_map = {
@@ -151,7 +189,9 @@ class PluggableDatabase(object):
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'pluggable_database_management_config': 'pluggableDatabaseManagementConfig'
+            'pluggable_database_management_config': 'pluggableDatabaseManagementConfig',
+            'refreshable_clone_config': 'refreshableCloneConfig',
+            'pdb_node_level_details': 'pdbNodeLevelDetails'
         }
 
         self._id = None
@@ -167,6 +207,8 @@ class PluggableDatabase(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._pluggable_database_management_config = None
+        self._refreshable_clone_config = None
+        self._pdb_node_level_details = None
 
     @property
     def id(self):
@@ -254,7 +296,7 @@ class PluggableDatabase(object):
         **[Required]** Gets the lifecycle_state of this PluggableDatabase.
         The current state of the pluggable database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", "FAILED", "RELOCATING", "RELOCATED", "REFRESHING", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -273,7 +315,7 @@ class PluggableDatabase(object):
         :param lifecycle_state: The lifecycle_state of this PluggableDatabase.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", "FAILED"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", "FAILED", "RELOCATING", "RELOCATED", "REFRESHING", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -350,6 +392,7 @@ class PluggableDatabase(object):
     def open_mode(self):
         """
         **[Required]** Gets the open_mode of this PluggableDatabase.
+        **Deprecated.** Use :func:`pluggable_database_node_level_details` for OpenMode details.
         The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
 
         Allowed values for this property are: "READ_ONLY", "READ_WRITE", "MOUNTED", "MIGRATE", 'UNKNOWN_ENUM_VALUE'.
@@ -365,6 +408,7 @@ class PluggableDatabase(object):
     def open_mode(self, open_mode):
         """
         Sets the open_mode of this PluggableDatabase.
+        **Deprecated.** Use :func:`pluggable_database_node_level_details` for OpenMode details.
         The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
 
 
@@ -513,6 +557,52 @@ class PluggableDatabase(object):
         :type: oci.database.models.PluggableDatabaseManagementConfig
         """
         self._pluggable_database_management_config = pluggable_database_management_config
+
+    @property
+    def refreshable_clone_config(self):
+        """
+        Gets the refreshable_clone_config of this PluggableDatabase.
+
+        :return: The refreshable_clone_config of this PluggableDatabase.
+        :rtype: oci.database.models.PluggableDatabaseRefreshableCloneConfig
+        """
+        return self._refreshable_clone_config
+
+    @refreshable_clone_config.setter
+    def refreshable_clone_config(self, refreshable_clone_config):
+        """
+        Sets the refreshable_clone_config of this PluggableDatabase.
+
+        :param refreshable_clone_config: The refreshable_clone_config of this PluggableDatabase.
+        :type: oci.database.models.PluggableDatabaseRefreshableCloneConfig
+        """
+        self._refreshable_clone_config = refreshable_clone_config
+
+    @property
+    def pdb_node_level_details(self):
+        """
+        Gets the pdb_node_level_details of this PluggableDatabase.
+        Pluggable Database Node Level Details.
+        Example: [{\"nodeName\" : \"node1\", \"openMode\" : \"READ_WRITE\"}, {\"nodeName\" : \"node2\", \"openMode\" : \"READ_ONLY\"}]
+
+
+        :return: The pdb_node_level_details of this PluggableDatabase.
+        :rtype: list[oci.database.models.PluggableDatabaseNodeLevelDetails]
+        """
+        return self._pdb_node_level_details
+
+    @pdb_node_level_details.setter
+    def pdb_node_level_details(self, pdb_node_level_details):
+        """
+        Sets the pdb_node_level_details of this PluggableDatabase.
+        Pluggable Database Node Level Details.
+        Example: [{\"nodeName\" : \"node1\", \"openMode\" : \"READ_WRITE\"}, {\"nodeName\" : \"node2\", \"openMode\" : \"READ_ONLY\"}]
+
+
+        :param pdb_node_level_details: The pdb_node_level_details of this PluggableDatabase.
+        :type: list[oci.database.models.PluggableDatabaseNodeLevelDetails]
+        """
+        self._pdb_node_level_details = pdb_node_level_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

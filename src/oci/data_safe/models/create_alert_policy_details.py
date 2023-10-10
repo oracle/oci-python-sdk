@@ -138,8 +138,7 @@ class CreateAlertPolicyDetails(object):
         allowed_values = ["AUDITING", "SECURITY_ASSESSMENT", "USER_ASSESSMENT"]
         if not value_allowed_none_or_none_sentinel(alert_policy_type, allowed_values):
             raise ValueError(
-                "Invalid value for `alert_policy_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `alert_policy_type`, must be None or one of {allowed_values}"
             )
         self._alert_policy_type = alert_policy_type
 
@@ -218,8 +217,7 @@ class CreateAlertPolicyDetails(object):
         allowed_values = ["CRITICAL", "HIGH", "MEDIUM", "LOW", "EVALUATE"]
         if not value_allowed_none_or_none_sentinel(severity, allowed_values):
             raise ValueError(
-                "Invalid value for `severity`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `severity`, must be None or one of {allowed_values}"
             )
         self._severity = severity
 

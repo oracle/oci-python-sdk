@@ -282,8 +282,7 @@ class UpdateConnectionDetails(object):
         allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", "LAKE_CONNECTION", "ORACLE_PEOPLESOFT_CONNECTION", "ORACLE_EBS_CONNECTION", "ORACLE_SIEBEL_CONNECTION", "HDFS_CONNECTION", "MYSQL_HEATWAVE_CONNECTION", "REST_NO_AUTH_CONNECTION", "REST_BASIC_AUTH_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
-                "Invalid value for `model_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `model_type`, must be None or one of {allowed_values}"
             )
         self._model_type = model_type
 

@@ -150,8 +150,7 @@ class HttpIngressGatewayTrafficRouteRuleDetails(IngressGatewayTrafficRouteRuleDe
         allowed_values = ["PREFIX"]
         if not value_allowed_none_or_none_sentinel(path_type, allowed_values):
             raise ValueError(
-                "Invalid value for `path_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `path_type`, must be None or one of {allowed_values}"
             )
         self._path_type = path_type
 

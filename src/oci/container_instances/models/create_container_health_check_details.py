@@ -182,8 +182,7 @@ class CreateContainerHealthCheckDetails(object):
         allowed_values = ["HTTP", "TCP", "COMMAND"]
         if not value_allowed_none_or_none_sentinel(health_check_type, allowed_values):
             raise ValueError(
-                "Invalid value for `health_check_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `health_check_type`, must be None or one of {allowed_values}"
             )
         self._health_check_type = health_check_type
 
@@ -336,8 +335,7 @@ class CreateContainerHealthCheckDetails(object):
         allowed_values = ["KILL", "NONE"]
         if not value_allowed_none_or_none_sentinel(failure_action, allowed_values):
             raise ValueError(
-                "Invalid value for `failure_action`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `failure_action`, must be None or one of {allowed_values}"
             )
         self._failure_action = failure_action
 

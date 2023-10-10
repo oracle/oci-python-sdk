@@ -218,8 +218,7 @@ class SignDataDetails(object):
         allowed_values = ["RAW", "DIGEST"]
         if not value_allowed_none_or_none_sentinel(message_type, allowed_values):
             raise ValueError(
-                "Invalid value for `message_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `message_type`, must be None or one of {allowed_values}"
             )
         self._message_type = message_type
 
@@ -260,8 +259,7 @@ class SignDataDetails(object):
         allowed_values = ["SHA_224_RSA_PKCS_PSS", "SHA_256_RSA_PKCS_PSS", "SHA_384_RSA_PKCS_PSS", "SHA_512_RSA_PKCS_PSS", "SHA_224_RSA_PKCS1_V1_5", "SHA_256_RSA_PKCS1_V1_5", "SHA_384_RSA_PKCS1_V1_5", "SHA_512_RSA_PKCS1_V1_5", "ECDSA_SHA_256", "ECDSA_SHA_384", "ECDSA_SHA_512"]
         if not value_allowed_none_or_none_sentinel(signing_algorithm, allowed_values):
             raise ValueError(
-                "Invalid value for `signing_algorithm`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `signing_algorithm`, must be None or one of {allowed_values}"
             )
         self._signing_algorithm = signing_algorithm
 

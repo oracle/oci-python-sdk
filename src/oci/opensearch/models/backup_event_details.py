@@ -134,8 +134,7 @@ class BackupEventDetails(object):
         allowed_values = ["DELETED", "SUCCESS", "FAILED"]
         if not value_allowed_none_or_none_sentinel(backup_state, allowed_values):
             raise ValueError(
-                "Invalid value for `backup_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `backup_state`, must be None or one of {allowed_values}"
             )
         self._backup_state = backup_state
 

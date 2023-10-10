@@ -192,8 +192,7 @@ class CreateOdaInstanceDetails(object):
         allowed_values = ["DEVELOPMENT", "PRODUCTION"]
         if not value_allowed_none_or_none_sentinel(shape_name, allowed_values):
             raise ValueError(
-                "Invalid value for `shape_name`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `shape_name`, must be None or one of {allowed_values}"
             )
         self._shape_name = shape_name
 

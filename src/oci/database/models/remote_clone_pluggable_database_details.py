@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemoteClonePluggableDatabaseDetails(object):
     """
+    **Deprecated.** Use :func:`create_pluggable_database_details` for Pluggable Database RemoteClone Operation.
     Parameters for cloning a pluggable database (PDB) in a remote database (CDB). A remote CDB is one that does not contain the source PDB.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.

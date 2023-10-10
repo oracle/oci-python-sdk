@@ -89,8 +89,7 @@ class DatabaseToolsKeyStoreMySqlDetails(object):
         allowed_values = ["CLIENT_CERTIFICATE_PEM", "CLIENT_PRIVATE_KEY_PEM", "CA_CERTIFICATE_PEM"]
         if not value_allowed_none_or_none_sentinel(key_store_type, allowed_values):
             raise ValueError(
-                "Invalid value for `key_store_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `key_store_type`, must be None or one of {allowed_values}"
             )
         self._key_store_type = key_store_type
 

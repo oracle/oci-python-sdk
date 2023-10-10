@@ -162,7 +162,7 @@ class ResourceSearchClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_resource_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_resource_type got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "name": name
@@ -172,7 +172,7 @@ class ResourceSearchClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -266,7 +266,7 @@ class ResourceSearchClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_resource_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_resource_types got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -375,7 +375,7 @@ class ResourceSearchClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_resources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_resources got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),

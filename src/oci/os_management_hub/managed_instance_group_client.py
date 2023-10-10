@@ -183,7 +183,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "attach_managed_instances_to_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"attach_managed_instances_to_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -193,7 +193,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -303,7 +303,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "attach_software_sources_to_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"attach_software_sources_to_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -313,7 +313,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -412,7 +412,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -510,7 +510,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -520,7 +520,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -626,7 +626,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "detach_managed_instances_from_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"detach_managed_instances_from_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -636,7 +636,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -746,7 +746,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "detach_software_sources_from_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"detach_software_sources_from_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -756,7 +756,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -869,7 +869,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_module_stream_on_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_module_stream_on_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -879,7 +879,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -993,7 +993,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_module_stream_on_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_module_stream_on_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -1003,7 +1003,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1094,7 +1094,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -1104,7 +1104,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1213,7 +1213,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "install_module_stream_profile_on_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"install_module_stream_profile_on_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -1223,7 +1223,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1334,7 +1334,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "install_packages_on_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"install_packages_on_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -1344,7 +1344,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1478,7 +1478,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instance_group_available_modules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instance_group_available_modules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -1488,20 +1488,20 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1652,7 +1652,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instance_group_available_packages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instance_group_available_packages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -1662,20 +1662,20 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1821,7 +1821,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instance_group_available_software_sources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instance_group_available_software_sources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -1831,20 +1831,20 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2001,7 +2001,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instance_group_installed_packages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instance_group_installed_packages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -2011,20 +2011,20 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeInstalled", "timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2195,7 +2195,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instance_group_modules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instance_group_modules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -2205,20 +2205,20 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2387,41 +2387,41 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instance_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instance_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'arch_type' in kwargs:
             arch_type_allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
             if kwargs['arch_type'] not in arch_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `arch_type`, must be one of {0}".format(arch_type_allowed_values)
+                    f"Invalid value for `arch_type`, must be one of { arch_type_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
             os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
             if kwargs['os_family'] not in os_family_allowed_values:
                 raise ValueError(
-                    "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                    f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2604,7 +2604,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "manage_module_streams_on_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"manage_module_streams_on_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -2614,7 +2614,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2726,7 +2726,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_module_stream_profile_from_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_module_stream_profile_from_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -2736,7 +2736,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2846,7 +2846,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_packages_from_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_packages_from_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -2856,7 +2856,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2966,7 +2966,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_all_packages_on_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_all_packages_on_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -2976,7 +2976,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3078,7 +3078,7 @@ class ManagedInstanceGroupClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_managed_instance_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceGroupId": managed_instance_group_id
@@ -3088,7 +3088,7 @@ class ManagedInstanceGroupClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

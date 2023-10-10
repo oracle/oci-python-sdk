@@ -150,8 +150,7 @@ class InfrastructureTargetVersionSummary(object):
         allowed_values = ["EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE"]
         if not value_allowed_none_or_none_sentinel(target_resource_type, allowed_values):
             raise ValueError(
-                "Invalid value for `target_resource_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `target_resource_type`, must be None or one of {allowed_values}"
             )
         self._target_resource_type = target_resource_type
 

@@ -12,6 +12,7 @@ from .agreement import Agreement
 from .agreement_summary import AgreementSummary
 from .category_summary import CategorySummary
 from .change_publication_compartment_details import ChangePublicationCompartmentDetails
+from .container_listing_package import ContainerListingPackage
 from .create_accepted_agreement_details import CreateAcceptedAgreementDetails
 from .create_image_publication_package import CreateImagePublicationPackage
 from .create_publication_details import CreatePublicationDetails
@@ -19,11 +20,13 @@ from .create_publication_package import CreatePublicationPackage
 from .documentation_link import DocumentationLink
 from .error_entity import ErrorEntity
 from .eula import Eula
+from .export_package_details import ExportPackageDetails
 from .free_text_search_details import FreeTextSearchDetails
 from .image_listing_package import ImageListingPackage
 from .image_publication_package import ImagePublicationPackage
 from .international_market_price import InternationalMarketPrice
 from .item import Item
+from .kubernetes_listing_package import KubernetesListingPackage
 from .launch_eligibility import LaunchEligibility
 from .link import Link
 from .listing import Listing
@@ -57,6 +60,14 @@ from .third_party_paid_listing_eligibility import ThirdPartyPaidListingEligibili
 from .update_accepted_agreement_details import UpdateAcceptedAgreementDetails
 from .update_publication_details import UpdatePublicationDetails
 from .upload_data import UploadData
+from .work_request import WorkRequest
+from .work_request_collection import WorkRequestCollection
+from .work_request_error import WorkRequestError
+from .work_request_error_collection import WorkRequestErrorCollection
+from .work_request_log_entry import WorkRequestLogEntry
+from .work_request_log_entry_collection import WorkRequestLogEntryCollection
+from .work_request_resource import WorkRequestResource
+from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for marketplace services.
 marketplace_type_mapping = {
@@ -66,6 +77,7 @@ marketplace_type_mapping = {
     "AgreementSummary": AgreementSummary,
     "CategorySummary": CategorySummary,
     "ChangePublicationCompartmentDetails": ChangePublicationCompartmentDetails,
+    "ContainerListingPackage": ContainerListingPackage,
     "CreateAcceptedAgreementDetails": CreateAcceptedAgreementDetails,
     "CreateImagePublicationPackage": CreateImagePublicationPackage,
     "CreatePublicationDetails": CreatePublicationDetails,
@@ -73,11 +85,13 @@ marketplace_type_mapping = {
     "DocumentationLink": DocumentationLink,
     "ErrorEntity": ErrorEntity,
     "Eula": Eula,
+    "ExportPackageDetails": ExportPackageDetails,
     "FreeTextSearchDetails": FreeTextSearchDetails,
     "ImageListingPackage": ImageListingPackage,
     "ImagePublicationPackage": ImagePublicationPackage,
     "InternationalMarketPrice": InternationalMarketPrice,
     "Item": Item,
+    "KubernetesListingPackage": KubernetesListingPackage,
     "LaunchEligibility": LaunchEligibility,
     "Link": Link,
     "Listing": Listing,
@@ -110,5 +124,13 @@ marketplace_type_mapping = {
     "ThirdPartyPaidListingEligibility": ThirdPartyPaidListingEligibility,
     "UpdateAcceptedAgreementDetails": UpdateAcceptedAgreementDetails,
     "UpdatePublicationDetails": UpdatePublicationDetails,
-    "UploadData": UploadData
+    "UploadData": UploadData,
+    "WorkRequest": WorkRequest,
+    "WorkRequestCollection": WorkRequestCollection,
+    "WorkRequestError": WorkRequestError,
+    "WorkRequestErrorCollection": WorkRequestErrorCollection,
+    "WorkRequestLogEntry": WorkRequestLogEntry,
+    "WorkRequestLogEntryCollection": WorkRequestLogEntryCollection,
+    "WorkRequestResource": WorkRequestResource,
+    "WorkRequestSummary": WorkRequestSummary
 }

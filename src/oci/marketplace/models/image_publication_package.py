@@ -35,7 +35,7 @@ class ImagePublicationPackage(PublicationPackage):
 
         :param package_type:
             The value to assign to the package_type property of this ImagePublicationPackage.
-            Allowed values for this property are: "ORCHESTRATION", "IMAGE"
+            Allowed values for this property are: "ORCHESTRATION", "IMAGE", "CONTAINER", "KUBERNETES"
         :type package_type: str
 
         :param resource_id:

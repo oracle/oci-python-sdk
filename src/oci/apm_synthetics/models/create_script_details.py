@@ -138,8 +138,7 @@ class CreateScriptDetails(object):
         allowed_values = ["SIDE", "JS"]
         if not value_allowed_none_or_none_sentinel(content_type, allowed_values):
             raise ValueError(
-                "Invalid value for `content_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `content_type`, must be None or one of {allowed_values}"
             )
         self._content_type = content_type
 
