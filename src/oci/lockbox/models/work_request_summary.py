@@ -59,6 +59,18 @@ class WorkRequestSummary(object):
     #: This constant has a value of "DELETE_APPROVAL_TEMPLATE"
     OPERATION_TYPE_DELETE_APPROVAL_TEMPLATE = "DELETE_APPROVAL_TEMPLATE"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_PARTNER"
+    OPERATION_TYPE_CREATE_PARTNER = "CREATE_PARTNER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "REMIND_ACCESS_REQUEST"
+    OPERATION_TYPE_REMIND_ACCESS_REQUEST = "REMIND_ACCESS_REQUEST"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_ACCESSCONTEXTATTRIBUTE"
+    OPERATION_TYPE_CREATE_ACCESSCONTEXTATTRIBUTE = "CREATE_ACCESSCONTEXTATTRIBUTE"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -87,6 +99,10 @@ class WorkRequestSummary(object):
     #: This constant has a value of "CANCELED"
     STATUS_CANCELED = "CANCELED"
 
+    #: A constant which can be used with the status property of a WorkRequestSummary.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    STATUS_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkRequestSummary object with values from keyword arguments.
@@ -94,13 +110,13 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_LOCKBOX", "UPDATE_LOCKBOX", "DELETE_LOCKBOX", "MOVE_LOCKBOX", "CREATE_ACCESS_REQUEST", "APPROVE_ACCESS_REQUEST", "REVOKE_ACCESS_REQUEST", "CREATE_APPROVAL_TEMPLATE", "MOVE_APPROVAL_TEMPLATE", "UPDATE_APPROVAL_TEMPLATE", "DELETE_APPROVAL_TEMPLATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_LOCKBOX", "UPDATE_LOCKBOX", "DELETE_LOCKBOX", "MOVE_LOCKBOX", "CREATE_ACCESS_REQUEST", "APPROVE_ACCESS_REQUEST", "REVOKE_ACCESS_REQUEST", "CREATE_APPROVAL_TEMPLATE", "MOVE_APPROVAL_TEMPLATE", "UPDATE_APPROVAL_TEMPLATE", "DELETE_APPROVAL_TEMPLATE", "CREATE_PARTNER", "REMIND_ACCESS_REQUEST", "CREATE_ACCESSCONTEXTATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
         :param status:
             The value to assign to the status property of this WorkRequestSummary.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -173,7 +189,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request
 
-        Allowed values for this property are: "CREATE_LOCKBOX", "UPDATE_LOCKBOX", "DELETE_LOCKBOX", "MOVE_LOCKBOX", "CREATE_ACCESS_REQUEST", "APPROVE_ACCESS_REQUEST", "REVOKE_ACCESS_REQUEST", "CREATE_APPROVAL_TEMPLATE", "MOVE_APPROVAL_TEMPLATE", "UPDATE_APPROVAL_TEMPLATE", "DELETE_APPROVAL_TEMPLATE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_LOCKBOX", "UPDATE_LOCKBOX", "DELETE_LOCKBOX", "MOVE_LOCKBOX", "CREATE_ACCESS_REQUEST", "APPROVE_ACCESS_REQUEST", "REVOKE_ACCESS_REQUEST", "CREATE_APPROVAL_TEMPLATE", "MOVE_APPROVAL_TEMPLATE", "UPDATE_APPROVAL_TEMPLATE", "DELETE_APPROVAL_TEMPLATE", "CREATE_PARTNER", "REMIND_ACCESS_REQUEST", "CREATE_ACCESSCONTEXTATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -192,7 +208,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_LOCKBOX", "UPDATE_LOCKBOX", "DELETE_LOCKBOX", "MOVE_LOCKBOX", "CREATE_ACCESS_REQUEST", "APPROVE_ACCESS_REQUEST", "REVOKE_ACCESS_REQUEST", "CREATE_APPROVAL_TEMPLATE", "MOVE_APPROVAL_TEMPLATE", "UPDATE_APPROVAL_TEMPLATE", "DELETE_APPROVAL_TEMPLATE"]
+        allowed_values = ["CREATE_LOCKBOX", "UPDATE_LOCKBOX", "DELETE_LOCKBOX", "MOVE_LOCKBOX", "CREATE_ACCESS_REQUEST", "APPROVE_ACCESS_REQUEST", "REVOKE_ACCESS_REQUEST", "CREATE_APPROVAL_TEMPLATE", "MOVE_APPROVAL_TEMPLATE", "UPDATE_APPROVAL_TEMPLATE", "DELETE_APPROVAL_TEMPLATE", "CREATE_PARTNER", "REMIND_ACCESS_REQUEST", "CREATE_ACCESSCONTEXTATTRIBUTE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -203,7 +219,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the status of this WorkRequestSummary.
         Status of current work request.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -222,7 +238,7 @@ class WorkRequestSummary(object):
         :param status: The status of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status

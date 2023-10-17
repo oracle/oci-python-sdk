@@ -32,6 +32,10 @@ class UpdateJobDetails(object):
             The value to assign to the job_infrastructure_configuration_details property of this UpdateJobDetails.
         :type job_infrastructure_configuration_details: oci.data_science.models.JobInfrastructureConfigurationDetails
 
+        :param job_storage_mount_configuration_details_list:
+            The value to assign to the job_storage_mount_configuration_details_list property of this UpdateJobDetails.
+        :type job_storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateJobDetails.
         :type freeform_tags: dict(str, str)
@@ -45,6 +49,7 @@ class UpdateJobDetails(object):
             'display_name': 'str',
             'description': 'str',
             'job_infrastructure_configuration_details': 'JobInfrastructureConfigurationDetails',
+            'job_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -53,6 +58,7 @@ class UpdateJobDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'job_infrastructure_configuration_details': 'jobInfrastructureConfigurationDetails',
+            'job_storage_mount_configuration_details_list': 'jobStorageMountConfigurationDetailsList',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -60,6 +66,7 @@ class UpdateJobDetails(object):
         self._display_name = None
         self._description = None
         self._job_infrastructure_configuration_details = None
+        self._job_storage_mount_configuration_details_list = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -130,6 +137,30 @@ class UpdateJobDetails(object):
         :type: oci.data_science.models.JobInfrastructureConfigurationDetails
         """
         self._job_infrastructure_configuration_details = job_infrastructure_configuration_details
+
+    @property
+    def job_storage_mount_configuration_details_list(self):
+        """
+        Gets the job_storage_mount_configuration_details_list of this UpdateJobDetails.
+        Collection of JobStorageMountConfigurationDetails.
+
+
+        :return: The job_storage_mount_configuration_details_list of this UpdateJobDetails.
+        :rtype: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        return self._job_storage_mount_configuration_details_list
+
+    @job_storage_mount_configuration_details_list.setter
+    def job_storage_mount_configuration_details_list(self, job_storage_mount_configuration_details_list):
+        """
+        Sets the job_storage_mount_configuration_details_list of this UpdateJobDetails.
+        Collection of JobStorageMountConfigurationDetails.
+
+
+        :param job_storage_mount_configuration_details_list: The job_storage_mount_configuration_details_list of this UpdateJobDetails.
+        :type: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        self._job_storage_mount_configuration_details_list = job_storage_mount_configuration_details_list
 
     @property
     def freeform_tags(self):

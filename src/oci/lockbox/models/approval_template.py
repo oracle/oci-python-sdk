@@ -222,7 +222,7 @@ class ApprovalTemplate(object):
     @property
     def approver_levels(self):
         """
-        **[Required]** Gets the approver_levels of this ApprovalTemplate.
+        Gets the approver_levels of this ApprovalTemplate.
 
         :return: The approver_levels of this ApprovalTemplate.
         :rtype: oci.lockbox.models.ApproverLevels

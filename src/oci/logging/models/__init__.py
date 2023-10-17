@@ -27,6 +27,10 @@ from .log_saved_search_summary import LogSavedSearchSummary
 from .log_saved_search_summary_collection import LogSavedSearchSummaryCollection
 from .log_summary import LogSummary
 from .oci_service import OciService
+from .operational_metrics_configuration import OperationalMetricsConfiguration
+from .operational_metrics_destination import OperationalMetricsDestination
+from .operational_metrics_record_input import OperationalMetricsRecordInput
+from .operational_metrics_source import OperationalMetricsSource
 from .parameter import Parameter
 from .resource_type import ResourceType
 from .service_summary import ServiceSummary
@@ -90,6 +94,10 @@ logging_type_mapping = {
     "LogSavedSearchSummaryCollection": LogSavedSearchSummaryCollection,
     "LogSummary": LogSummary,
     "OciService": OciService,
+    "OperationalMetricsConfiguration": OperationalMetricsConfiguration,
+    "OperationalMetricsDestination": OperationalMetricsDestination,
+    "OperationalMetricsRecordInput": OperationalMetricsRecordInput,
+    "OperationalMetricsSource": OperationalMetricsSource,
     "Parameter": Parameter,
     "ResourceType": ResourceType,
     "ServiceSummary": ServiceSummary,

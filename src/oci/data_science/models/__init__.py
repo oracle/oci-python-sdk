@@ -38,6 +38,7 @@ from .default_job_configuration_details import DefaultJobConfigurationDetails
 from .default_model_deployment_environment_configuration_details import DefaultModelDeploymentEnvironmentConfigurationDetails
 from .export_model_artifact_details import ExportModelArtifactDetails
 from .fast_launch_job_config_summary import FastLaunchJobConfigSummary
+from .file_storage_mount_configuration_details import FileStorageMountConfigurationDetails
 from .fixed_size_scaling_policy import FixedSizeScalingPolicy
 from .import_model_artifact_details import ImportModelArtifactDetails
 from .instance_configuration import InstanceConfiguration
@@ -75,6 +76,7 @@ from .notebook_session_runtime_config_details import NotebookSessionRuntimeConfi
 from .notebook_session_shape_config_details import NotebookSessionShapeConfigDetails
 from .notebook_session_shape_summary import NotebookSessionShapeSummary
 from .notebook_session_summary import NotebookSessionSummary
+from .object_storage_mount_configuration_details import ObjectStorageMountConfigurationDetails
 from .ocir_model_deployment_environment_configuration_details import OcirModelDeploymentEnvironmentConfigurationDetails
 from .pipeline import Pipeline
 from .pipeline_configuration_details import PipelineConfigurationDetails
@@ -102,6 +104,7 @@ from .project_summary import ProjectSummary
 from .scaling_policy import ScalingPolicy
 from .single_model_deployment_configuration_details import SingleModelDeploymentConfigurationDetails
 from .standalone_job_infrastructure_configuration_details import StandaloneJobInfrastructureConfigurationDetails
+from .storage_mount_configuration_details import StorageMountConfigurationDetails
 from .update_category_log_details import UpdateCategoryLogDetails
 from .update_data_science_private_endpoint_details import UpdateDataSciencePrivateEndpointDetails
 from .update_default_model_deployment_environment_configuration_details import UpdateDefaultModelDeploymentEnvironmentConfigurationDetails
@@ -160,6 +163,7 @@ data_science_type_mapping = {
     "DefaultModelDeploymentEnvironmentConfigurationDetails": DefaultModelDeploymentEnvironmentConfigurationDetails,
     "ExportModelArtifactDetails": ExportModelArtifactDetails,
     "FastLaunchJobConfigSummary": FastLaunchJobConfigSummary,
+    "FileStorageMountConfigurationDetails": FileStorageMountConfigurationDetails,
     "FixedSizeScalingPolicy": FixedSizeScalingPolicy,
     "ImportModelArtifactDetails": ImportModelArtifactDetails,
     "InstanceConfiguration": InstanceConfiguration,
@@ -197,6 +201,7 @@ data_science_type_mapping = {
     "NotebookSessionShapeConfigDetails": NotebookSessionShapeConfigDetails,
     "NotebookSessionShapeSummary": NotebookSessionShapeSummary,
     "NotebookSessionSummary": NotebookSessionSummary,
+    "ObjectStorageMountConfigurationDetails": ObjectStorageMountConfigurationDetails,
     "OcirModelDeploymentEnvironmentConfigurationDetails": OcirModelDeploymentEnvironmentConfigurationDetails,
     "Pipeline": Pipeline,
     "PipelineConfigurationDetails": PipelineConfigurationDetails,
@@ -224,6 +229,7 @@ data_science_type_mapping = {
     "ScalingPolicy": ScalingPolicy,
     "SingleModelDeploymentConfigurationDetails": SingleModelDeploymentConfigurationDetails,
     "StandaloneJobInfrastructureConfigurationDetails": StandaloneJobInfrastructureConfigurationDetails,
+    "StorageMountConfigurationDetails": StorageMountConfigurationDetails,
     "UpdateCategoryLogDetails": UpdateCategoryLogDetails,
     "UpdateDataSciencePrivateEndpointDetails": UpdateDataSciencePrivateEndpointDetails,
     "UpdateDefaultModelDeploymentEnvironmentConfigurationDetails": UpdateDefaultModelDeploymentEnvironmentConfigurationDetails,

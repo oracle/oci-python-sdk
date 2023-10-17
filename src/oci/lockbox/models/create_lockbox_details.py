@@ -45,6 +45,10 @@ class CreateLockboxDetails(object):
             The value to assign to the compartment_id property of this CreateLockboxDetails.
         :type compartment_id: str
 
+        :param partner_id:
+            The value to assign to the partner_id property of this CreateLockboxDetails.
+        :type partner_id: str
+
         :param partner_compartment_id:
             The value to assign to the partner_compartment_id property of this CreateLockboxDetails.
         :type partner_compartment_id: str
@@ -75,6 +79,7 @@ class CreateLockboxDetails(object):
             'resource_id': 'str',
             'lockbox_partner': 'str',
             'compartment_id': 'str',
+            'partner_id': 'str',
             'partner_compartment_id': 'str',
             'approval_template_id': 'str',
             'max_access_duration': 'str',
@@ -88,6 +93,7 @@ class CreateLockboxDetails(object):
             'resource_id': 'resourceId',
             'lockbox_partner': 'lockboxPartner',
             'compartment_id': 'compartmentId',
+            'partner_id': 'partnerId',
             'partner_compartment_id': 'partnerCompartmentId',
             'approval_template_id': 'approvalTemplateId',
             'max_access_duration': 'maxAccessDuration',
@@ -100,6 +106,7 @@ class CreateLockboxDetails(object):
         self._resource_id = None
         self._lockbox_partner = None
         self._compartment_id = None
+        self._partner_id = None
         self._partner_compartment_id = None
         self._approval_template_id = None
         self._max_access_duration = None
@@ -158,7 +165,7 @@ class CreateLockboxDetails(object):
     @property
     def lockbox_partner(self):
         """
-        **[Required]** Gets the lockbox_partner of this CreateLockboxDetails.
+        Gets the lockbox_partner of this CreateLockboxDetails.
         The partner using this lockbox to lock a resource.
 
         Allowed values for this property are: "FAAAS", "CANARY"
@@ -211,9 +218,33 @@ class CreateLockboxDetails(object):
         self._compartment_id = compartment_id
 
     @property
+    def partner_id(self):
+        """
+        Gets the partner_id of this CreateLockboxDetails.
+        The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+
+
+        :return: The partner_id of this CreateLockboxDetails.
+        :rtype: str
+        """
+        return self._partner_id
+
+    @partner_id.setter
+    def partner_id(self, partner_id):
+        """
+        Sets the partner_id of this CreateLockboxDetails.
+        The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+
+
+        :param partner_id: The partner_id of this CreateLockboxDetails.
+        :type: str
+        """
+        self._partner_id = partner_id
+
+    @property
     def partner_compartment_id(self):
         """
-        **[Required]** Gets the partner_compartment_id of this CreateLockboxDetails.
+        Gets the partner_compartment_id of this CreateLockboxDetails.
         Compartment Identifier
 
 

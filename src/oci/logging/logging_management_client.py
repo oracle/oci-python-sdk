@@ -23,8 +23,7 @@ missing = Sentinel("Missing")
 class LoggingManagementClient(object):
     """
     Use the Logging Management API to create, read, list, update, move and delete
-    log groups, log objects, log saved searches, agent configurations, log data models,
-    continuous queries, and managed continuous queries.
+    log groups, log objects, log saved searches, and agent configurations.
 
     For more information, see [Logging Overview](/iaas/Content/Logging/Concepts/loggingoverview.htm).
     """
@@ -2490,9 +2489,6 @@ class LoggingManagementClient(object):
         Lists all services that support logging.
 
 
-        :param str service_stage: (optional)
-            Service stage of a service. The allowed values are \"ProductionStage\", \"DevStage\" and \"LAStage\".
-
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
             a particular request, please provide the request ID.
@@ -2526,18 +2522,12 @@ class LoggingManagementClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "service_stage",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 f"list_services got unknown kwargs: {extra_kwargs!r}")
-
-        query_params = {
-            "serviceStage": kwargs.get("service_stage", missing)
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2559,7 +2549,6 @@ class LoggingManagementClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
-                query_params=query_params,
                 header_params=header_params,
                 response_type="list[ServiceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -2570,7 +2559,6 @@ class LoggingManagementClient(object):
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
-                query_params=query_params,
                 header_params=header_params,
                 response_type="list[ServiceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),

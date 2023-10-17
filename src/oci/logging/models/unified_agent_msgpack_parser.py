@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UnifiedAgentMsgpackParser(UnifiedAgentParser):
     """
-    msgpack parser.
+    Msgpack parser.
     """
 
     def __init__(self, **kwargs):

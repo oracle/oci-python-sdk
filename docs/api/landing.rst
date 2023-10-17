@@ -120,6 +120,7 @@ API Reference
 * :doc:`Management Agent <management_agent/client/oci.management_agent.ManagementAgentClient>`
 * :doc:`Management Station <os_management_hub/client/oci.os_management_hub.ManagementStationClient>`
 * :doc:`Marketplace <marketplace/client/oci.marketplace.MarketplaceClient>`
+* :doc:`Marketplace Publisher <marketplace_publisher/client/oci.marketplace_publisher.MarketplacePublisherClient>`
 * :doc:`Media Services <media_services/client/oci.media_services.MediaServicesClient>`
 * :doc:`Media Stream <media_services/client/oci.media_services.MediaStreamClient>`
 * :doc:`Migration <cloud_migrations/client/oci.cloud_migrations.MigrationClient>`
@@ -161,6 +162,7 @@ API Reference
 * :doc:`Ratecard <osub_subscription/client/oci.osub_subscription.RatecardClient>`
 * :doc:`Recipient Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.RecipientInvitationClient>`
 * :doc:`Redirect <waas/client/oci.waas.RedirectClient>`
+* :doc:`Redis Cluster <redis/client/oci.redis.RedisClusterClient>`
 * :doc:`Replicas <mysql/client/oci.mysql.ReplicasClient>`
 * :doc:`Reporting Managed Instance <os_management_hub/client/oci.os_management_hub.ReportingManagedInstanceClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
@@ -317,6 +319,7 @@ API Reference
     management_agent
     management_dashboard
     marketplace
+    marketplace_publisher
     media_services
     monitoring
     mysql
@@ -344,6 +347,7 @@ API Reference
     osub_usage
     queue
     recovery
+    redis
     resource_manager
     resource_search
     rover

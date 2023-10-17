@@ -100,6 +100,10 @@ class JobRun(object):
             The value to assign to the job_log_configuration_override_details property of this JobRun.
         :type job_log_configuration_override_details: oci.data_science.models.JobLogConfigurationDetails
 
+        :param job_storage_mount_configuration_details_list:
+            The value to assign to the job_storage_mount_configuration_details_list property of this JobRun.
+        :type job_storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
+
         :param log_details:
             The value to assign to the log_details property of this JobRun.
         :type log_details: oci.data_science.models.JobRunLogDetails
@@ -136,6 +140,7 @@ class JobRun(object):
             'job_configuration_override_details': 'JobConfigurationDetails',
             'job_infrastructure_configuration_details': 'JobInfrastructureConfigurationDetails',
             'job_log_configuration_override_details': 'JobLogConfigurationDetails',
+            'job_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
             'log_details': 'JobRunLogDetails',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -156,6 +161,7 @@ class JobRun(object):
             'job_configuration_override_details': 'jobConfigurationOverrideDetails',
             'job_infrastructure_configuration_details': 'jobInfrastructureConfigurationDetails',
             'job_log_configuration_override_details': 'jobLogConfigurationOverrideDetails',
+            'job_storage_mount_configuration_details_list': 'jobStorageMountConfigurationDetailsList',
             'log_details': 'logDetails',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -175,6 +181,7 @@ class JobRun(object):
         self._job_configuration_override_details = None
         self._job_infrastructure_configuration_details = None
         self._job_log_configuration_override_details = None
+        self._job_storage_mount_configuration_details_list = None
         self._log_details = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -488,6 +495,30 @@ class JobRun(object):
         :type: oci.data_science.models.JobLogConfigurationDetails
         """
         self._job_log_configuration_override_details = job_log_configuration_override_details
+
+    @property
+    def job_storage_mount_configuration_details_list(self):
+        """
+        Gets the job_storage_mount_configuration_details_list of this JobRun.
+        Collection of JobStorageMountConfigurationDetails.
+
+
+        :return: The job_storage_mount_configuration_details_list of this JobRun.
+        :rtype: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        return self._job_storage_mount_configuration_details_list
+
+    @job_storage_mount_configuration_details_list.setter
+    def job_storage_mount_configuration_details_list(self, job_storage_mount_configuration_details_list):
+        """
+        Sets the job_storage_mount_configuration_details_list of this JobRun.
+        Collection of JobStorageMountConfigurationDetails.
+
+
+        :param job_storage_mount_configuration_details_list: The job_storage_mount_configuration_details_list of this JobRun.
+        :type: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        self._job_storage_mount_configuration_details_list = job_storage_mount_configuration_details_list
 
     @property
     def log_details(self):

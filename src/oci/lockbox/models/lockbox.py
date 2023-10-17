@@ -64,6 +64,14 @@ class Lockbox(object):
             The value to assign to the compartment_id property of this Lockbox.
         :type compartment_id: str
 
+        :param partner_id:
+            The value to assign to the partner_id property of this Lockbox.
+        :type partner_id: str
+
+        :param parent_lockbox_id:
+            The value to assign to the parent_lockbox_id property of this Lockbox.
+        :type parent_lockbox_id: str
+
         :param partner_compartment_id:
             The value to assign to the partner_compartment_id property of this Lockbox.
         :type partner_compartment_id: str
@@ -125,6 +133,8 @@ class Lockbox(object):
             'id': 'str',
             'display_name': 'str',
             'compartment_id': 'str',
+            'partner_id': 'str',
+            'parent_lockbox_id': 'str',
             'partner_compartment_id': 'str',
             'resource_id': 'str',
             'lockbox_partner': 'str',
@@ -144,6 +154,8 @@ class Lockbox(object):
             'id': 'id',
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
+            'partner_id': 'partnerId',
+            'parent_lockbox_id': 'parentLockboxId',
             'partner_compartment_id': 'partnerCompartmentId',
             'resource_id': 'resourceId',
             'lockbox_partner': 'lockboxPartner',
@@ -162,6 +174,8 @@ class Lockbox(object):
         self._id = None
         self._display_name = None
         self._compartment_id = None
+        self._partner_id = None
+        self._parent_lockbox_id = None
         self._partner_compartment_id = None
         self._resource_id = None
         self._lockbox_partner = None
@@ -249,9 +263,57 @@ class Lockbox(object):
         self._compartment_id = compartment_id
 
     @property
+    def partner_id(self):
+        """
+        Gets the partner_id of this Lockbox.
+        The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+
+
+        :return: The partner_id of this Lockbox.
+        :rtype: str
+        """
+        return self._partner_id
+
+    @partner_id.setter
+    def partner_id(self, partner_id):
+        """
+        Sets the partner_id of this Lockbox.
+        The unique identifier (OCID) of partner resource using this lockbox to lock a resource
+
+
+        :param partner_id: The partner_id of this Lockbox.
+        :type: str
+        """
+        self._partner_id = partner_id
+
+    @property
+    def parent_lockbox_id(self):
+        """
+        Gets the parent_lockbox_id of this Lockbox.
+        The unique identifier (OCID) of lockbox resource using to reference parent lockbox in hybrid oma setup
+
+
+        :return: The parent_lockbox_id of this Lockbox.
+        :rtype: str
+        """
+        return self._parent_lockbox_id
+
+    @parent_lockbox_id.setter
+    def parent_lockbox_id(self, parent_lockbox_id):
+        """
+        Sets the parent_lockbox_id of this Lockbox.
+        The unique identifier (OCID) of lockbox resource using to reference parent lockbox in hybrid oma setup
+
+
+        :param parent_lockbox_id: The parent_lockbox_id of this Lockbox.
+        :type: str
+        """
+        self._parent_lockbox_id = parent_lockbox_id
+
+    @property
     def partner_compartment_id(self):
         """
-        **[Required]** Gets the partner_compartment_id of this Lockbox.
+        Gets the partner_compartment_id of this Lockbox.
         Compartment Identifier
 
 
@@ -299,7 +361,7 @@ class Lockbox(object):
     @property
     def lockbox_partner(self):
         """
-        **[Required]** Gets the lockbox_partner of this Lockbox.
+        Gets the lockbox_partner of this Lockbox.
         The partner using this lockbox to lock a resource.
 
         Allowed values for this property are: "FAAAS", "CANARY", 'UNKNOWN_ENUM_VALUE'.

@@ -6918,10 +6918,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -7103,10 +7103,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -7238,10 +7238,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -7409,10 +7409,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -7547,10 +7547,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -7715,10 +7715,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -7853,10 +7853,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -8042,10 +8042,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -8235,10 +8235,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -8406,10 +8406,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -8544,10 +8544,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -8732,10 +8732,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -8920,10 +8920,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -9104,10 +9104,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -9270,10 +9270,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -9398,10 +9398,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 
@@ -9538,10 +9538,10 @@ class DataScienceClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
             See `List Pagination`__.
 
-            Example: `500`
+            Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine
 

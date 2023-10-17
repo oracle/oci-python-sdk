@@ -1,0 +1,11 @@
+UpdateListingRevisionPackageDetails
+===================================
+
+.. currentmodule:: oci.marketplace_publisher.models
+
+.. autoclass:: UpdateListingRevisionPackageDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

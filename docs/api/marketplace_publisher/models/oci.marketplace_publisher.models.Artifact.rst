@@ -1,9 +1,9 @@
-TcpApplication
-==============
+Artifact
+========
 
-.. currentmodule:: oci.network_firewall.models
+.. currentmodule:: oci.marketplace_publisher.models
 
-.. autoclass:: TcpApplication
+.. autoclass:: Artifact
     :show-inheritance:
     :special-members: __init__
     :members:

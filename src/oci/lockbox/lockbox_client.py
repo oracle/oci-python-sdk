@@ -22,7 +22,7 @@ missing = Sentinel("Missing")
 
 class LockboxClient(object):
     """
-    Use the Managed Access API to approve access requests, create and manage templates, and manage resource approval settings. For more information, see [Managed Access Overview](https://docs.oracle.com/en-us/iaas/managed-access/overview.htm).
+    Use the Managed Access API to approve access requests, create and manage templates, and manage resource approval settings. For more information, see [Managed Access Overview](https://docs.oracle.com/iaas/Content/managed-access/home.htm).
 
     Use the table of contents and search tool to explore the Managed Access API.
     """
@@ -961,6 +961,183 @@ class LockboxClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def export_access_requests(self, export_access_requests_details, **kwargs):
+        """
+        Exports a list of AccessRequestSummary objects within a compartment and during a specified time range in text format. You can filter the results by problem severity.
+
+
+        :param oci.lockbox.models.ExportAccessRequestsDetails export_access_requests_details: (required)
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str id: (optional)
+            A generic Id query param used to filter lockbox, access request and approval template by Id.
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name given.
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources their lifecycleState matches the given lifecycleState.
+
+            Allowed values are: "IN_PROGRESS", "WAITING", "SUCCEEDED", "CANCELING", "CANCELED", "FAILED"
+
+        :param str lockbox_partner: (optional)
+            The name of the lockbox partner.
+
+            Allowed values are: "FAAAS", "CANARY"
+
+        :param str partner_id: (optional)
+            The ID of the partner.
+
+        :param str requestor_id: (optional)
+            The unique identifier (OCID) of the requestor in which to list resources.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            A token representing the position at which to start retrieving results. This must come from the `opc-next-page` header field of a previous response.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'ASC' or 'DESC'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+
+            Allowed values are: "timeCreated", "displayName", "id"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type stream
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/lockbox/export_access_requests.py.html>`__ to see an example of how to use export_access_requests API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/accessRequests/actions/export"
+        method = "POST"
+        operation_name = "export_access_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/managed-access/20220126/AccessRequestCollection/ExportAccessRequests"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "id",
+            "display_name",
+            "lifecycle_state",
+            "lockbox_partner",
+            "partner_id",
+            "requestor_id",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"export_access_requests got unknown kwargs: {extra_kwargs!r}")
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["IN_PROGRESS", "WAITING", "SUCCEEDED", "CANCELING", "CANCELED", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        if 'lockbox_partner' in kwargs:
+            lockbox_partner_allowed_values = ["FAAAS", "CANARY"]
+            if kwargs['lockbox_partner'] not in lockbox_partner_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lockbox_partner`, must be one of { lockbox_partner_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName", "id"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "id": kwargs.get("id", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "lockboxPartner": kwargs.get("lockbox_partner", missing),
+            "partnerId": kwargs.get("partner_id", missing),
+            "requestorId": kwargs.get("requestor_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "text/csv",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=export_access_requests_details,
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=export_access_requests_details,
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def get_access_materials(self, access_request_id, **kwargs):
         """
         Retrieves the access credential/material associated with the access request.
@@ -1586,6 +1763,9 @@ class LockboxClient(object):
 
             Allowed values are: "FAAAS", "CANARY"
 
+        :param str partner_id: (optional)
+            The ID of the partner.
+
         :param str requestor_id: (optional)
             The unique identifier (OCID) of the requestor in which to list resources.
 
@@ -1604,6 +1784,16 @@ class LockboxClient(object):
             The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
 
             Allowed values are: "timeCreated", "displayName", "id"
+
+        :param datetime time_created_after: (optional)
+            Date and time on or after which Access Requests were created, as described in `RFC 3339`__
+
+            __ https://tools.ietf.org/rfc/rfc3339
+
+        :param datetime time_created_before: (optional)
+            Date and time on or before which Access requests were created, as described in `RFC 3339`__
+
+            __ https://tools.ietf.org/rfc/rfc3339
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1640,11 +1830,14 @@ class LockboxClient(object):
             "display_name",
             "lifecycle_state",
             "lockbox_partner",
+            "partner_id",
             "requestor_id",
             "limit",
             "page",
             "sort_order",
-            "sort_by"
+            "sort_by",
+            "time_created_after",
+            "time_created_before"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1685,11 +1878,14 @@ class LockboxClient(object):
             "displayName": kwargs.get("display_name", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "lockboxPartner": kwargs.get("lockbox_partner", missing),
+            "partnerId": kwargs.get("partner_id", missing),
             "requestorId": kwargs.get("requestor_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "timeCreatedAfter": kwargs.get("time_created_after", missing),
+            "timeCreatedBefore": kwargs.get("time_created_before", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1913,6 +2109,9 @@ class LockboxClient(object):
 
             Allowed values are: "FAAAS", "CANARY"
 
+        :param str partner_id: (optional)
+            The ID of the partner.
+
         :param int limit: (optional)
             The maximum number of items to return.
 
@@ -1967,6 +2166,7 @@ class LockboxClient(object):
             "id",
             "resource_id",
             "lockbox_partner",
+            "partner_id",
             "limit",
             "page",
             "sort_order",
@@ -2013,6 +2213,7 @@ class LockboxClient(object):
             "id": kwargs.get("id", missing),
             "resourceId": kwargs.get("resource_id", missing),
             "lockboxPartner": kwargs.get("lockbox_partner", missing),
+            "partnerId": kwargs.get("partner_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -2353,7 +2554,7 @@ class LockboxClient(object):
         :param str status: (optional)
             A filter to return only resources their lifecycleState matches the given OperationStatus.
 
-            Allowed values are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
+            Allowed values are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "NEEDS_ATTENTION"
 
         :param str resource_id: (optional)
             The ID of the resource affected by the work request.
@@ -2422,7 +2623,7 @@ class LockboxClient(object):
                 f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
-            status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+            status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "NEEDS_ATTENTION"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
                     f"Invalid value for `status`, must be one of { status_allowed_values }"

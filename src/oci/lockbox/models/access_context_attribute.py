@@ -32,22 +32,29 @@ class AccessContextAttribute(object):
             The value to assign to the default_value property of this AccessContextAttribute.
         :type default_value: str
 
+        :param values:
+            The value to assign to the values property of this AccessContextAttribute.
+        :type values: list[str]
+
         """
         self.swagger_types = {
             'name': 'str',
             'description': 'str',
-            'default_value': 'str'
+            'default_value': 'str',
+            'values': 'list[str]'
         }
 
         self.attribute_map = {
             'name': 'name',
             'description': 'description',
-            'default_value': 'defaultValue'
+            'default_value': 'defaultValue',
+            'values': 'values'
         }
 
         self._name = None
         self._description = None
         self._default_value = None
+        self._values = None
 
     @property
     def name(self):
@@ -120,6 +127,30 @@ class AccessContextAttribute(object):
         :type: str
         """
         self._default_value = default_value
+
+    @property
+    def values(self):
+        """
+        Gets the values of this AccessContextAttribute.
+        List of context attribute values.
+
+
+        :return: The values of this AccessContextAttribute.
+        :rtype: list[str]
+        """
+        return self._values
+
+    @values.setter
+    def values(self, values):
+        """
+        Sets the values of this AccessContextAttribute.
+        List of context attribute values.
+
+
+        :param values: The values of this AccessContextAttribute.
+        :type: list[str]
+        """
+        self._values = values
 
     def __repr__(self):
         return formatted_flat_dict(self)
