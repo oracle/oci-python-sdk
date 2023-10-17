@@ -1,9 +1,9 @@
-UdpApplication
-==============
+RedisClusterSummary
+===================
 
-.. currentmodule:: oci.network_firewall.models
+.. currentmodule:: oci.redis.models
 
-.. autoclass:: UdpApplication
+.. autoclass:: RedisClusterSummary
     :show-inheritance:
     :special-members: __init__
     :members:

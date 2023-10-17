@@ -24,16 +24,23 @@ class UnifiedAgentLoggingDestination(object):
             The value to assign to the log_object_id property of this UnifiedAgentLoggingDestination.
         :type log_object_id: str
 
+        :param operational_metrics_configuration:
+            The value to assign to the operational_metrics_configuration property of this UnifiedAgentLoggingDestination.
+        :type operational_metrics_configuration: oci.logging.models.OperationalMetricsConfiguration
+
         """
         self.swagger_types = {
-            'log_object_id': 'str'
+            'log_object_id': 'str',
+            'operational_metrics_configuration': 'OperationalMetricsConfiguration'
         }
 
         self.attribute_map = {
-            'log_object_id': 'logObjectId'
+            'log_object_id': 'logObjectId',
+            'operational_metrics_configuration': 'operationalMetricsConfiguration'
         }
 
         self._log_object_id = None
+        self._operational_metrics_configuration = None
 
     @property
     def log_object_id(self):
@@ -58,6 +65,26 @@ class UnifiedAgentLoggingDestination(object):
         :type: str
         """
         self._log_object_id = log_object_id
+
+    @property
+    def operational_metrics_configuration(self):
+        """
+        Gets the operational_metrics_configuration of this UnifiedAgentLoggingDestination.
+
+        :return: The operational_metrics_configuration of this UnifiedAgentLoggingDestination.
+        :rtype: oci.logging.models.OperationalMetricsConfiguration
+        """
+        return self._operational_metrics_configuration
+
+    @operational_metrics_configuration.setter
+    def operational_metrics_configuration(self, operational_metrics_configuration):
+        """
+        Sets the operational_metrics_configuration of this UnifiedAgentLoggingDestination.
+
+        :param operational_metrics_configuration: The operational_metrics_configuration of this UnifiedAgentLoggingDestination.
+        :type: oci.logging.models.OperationalMetricsConfiguration
+        """
+        self._operational_metrics_configuration = operational_metrics_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

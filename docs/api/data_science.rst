@@ -50,6 +50,7 @@ Data Science
     oci.data_science.models.DefaultModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.ExportModelArtifactDetails
     oci.data_science.models.FastLaunchJobConfigSummary
+    oci.data_science.models.FileStorageMountConfigurationDetails
     oci.data_science.models.FixedSizeScalingPolicy
     oci.data_science.models.ImportModelArtifactDetails
     oci.data_science.models.InstanceConfiguration
@@ -87,6 +88,7 @@ Data Science
     oci.data_science.models.NotebookSessionShapeConfigDetails
     oci.data_science.models.NotebookSessionShapeSummary
     oci.data_science.models.NotebookSessionSummary
+    oci.data_science.models.ObjectStorageMountConfigurationDetails
     oci.data_science.models.OcirModelDeploymentEnvironmentConfigurationDetails
     oci.data_science.models.Pipeline
     oci.data_science.models.PipelineConfigurationDetails
@@ -114,6 +116,7 @@ Data Science
     oci.data_science.models.ScalingPolicy
     oci.data_science.models.SingleModelDeploymentConfigurationDetails
     oci.data_science.models.StandaloneJobInfrastructureConfigurationDetails
+    oci.data_science.models.StorageMountConfigurationDetails
     oci.data_science.models.UpdateCategoryLogDetails
     oci.data_science.models.UpdateDataSciencePrivateEndpointDetails
     oci.data_science.models.UpdateDefaultModelDeploymentEnvironmentConfigurationDetails

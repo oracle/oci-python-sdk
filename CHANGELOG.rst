@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.113.0 - 2023-10-17
+====================
+
+Added
+-----
+* Support for the Caching Service
+* Support for the Marketplace Publisher service
+* Support for higher limits for network firewalls in the Network Firewall service
+* Support for exporting access request reports in the Lockbox service
+* Support for storage mounts for jobs and notebooks in the Data Science service
+* Support for unified agent operational metrics for the service configurations in the Logging Management service
+ 
+Breaking
+--------
+* Property `approver_levels` in models `ApprovalTemplateSummary` changed from required to optional in the Lockbox service
+* Properties `lockbox_partner` and `partner_compartment_id` in models `LockboxSummary` changed from required to optional in the Lockbox service
+* Allowed values `ENUM_STRING` and `RQS_FILTER` were removed from the property `type` in model `Parameter` in the Logging service
+* Properties `rqs_type` and `display_name` were removed from model `Parameter` in the Logging service
+* Parameter `service_stage` was removed from operation `list_services` from the logging management client in the Logging service
+* Properties `mapped_secrets`, `application_lists`, `url_lists`, `ip_address_lists`, `security_rules`, `decryption_rules` and `decryption_profiles` were removed from models `CreateNetworkFirewallPolicyDetails`, `NetworkFirewallPolicy` and `UpdateNetworkFirewallPolicyDetails` in the Network Firewall Service
+* Property `sources` is replaced by `source_address` and property `destinations` is replaced by `destination_address` in models `DecryptionRuleMatchCriteria` and `SecurityRuleMatchCriteria` in the Network Firewall Service
+* Property `applications` is replaced by `application` and property `urls` is replaced by `url` in model `SecurityRuleMatchCriteria`in the Network Firewall Service
+ 
+====================
 2.112.4 - 2023-10-10
 ====================
 

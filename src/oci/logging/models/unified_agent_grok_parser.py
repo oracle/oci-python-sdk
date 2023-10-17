@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UnifiedAgentGrokParser(UnifiedAgentParser):
     """
-    grok parser.
+    Grok parser.
     """
 
     def __init__(self, **kwargs):
@@ -112,7 +112,7 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
     def grok_name_key(self):
         """
         Gets the grok_name_key of this UnifiedAgentGrokParser.
-        grok name key.
+        Grok name key.
 
 
         :return: The grok_name_key of this UnifiedAgentGrokParser.
@@ -124,7 +124,7 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
     def grok_name_key(self, grok_name_key):
         """
         Sets the grok_name_key of this UnifiedAgentGrokParser.
-        grok name key.
+        Grok name key.
 
 
         :param grok_name_key: The grok_name_key of this UnifiedAgentGrokParser.
@@ -136,7 +136,7 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
     def grok_failure_key(self):
         """
         Gets the grok_failure_key of this UnifiedAgentGrokParser.
-        grok failure key.
+        Grok failure key.
 
 
         :return: The grok_failure_key of this UnifiedAgentGrokParser.
@@ -148,7 +148,7 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
     def grok_failure_key(self, grok_failure_key):
         """
         Sets the grok_failure_key of this UnifiedAgentGrokParser.
-        grok failure key.
+        Grok failure key.
 
 
         :param grok_failure_key: The grok_failure_key of this UnifiedAgentGrokParser.
@@ -160,7 +160,7 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
     def patterns(self):
         """
         **[Required]** Gets the patterns of this UnifiedAgentGrokParser.
-        grok pattern object.
+        Grok pattern object.
 
 
         :return: The patterns of this UnifiedAgentGrokParser.
@@ -172,7 +172,7 @@ class UnifiedAgentGrokParser(UnifiedAgentParser):
     def patterns(self, patterns):
         """
         Sets the patterns of this UnifiedAgentGrokParser.
-        grok pattern object.
+        Grok pattern object.
 
 
         :param patterns: The patterns of this UnifiedAgentGrokParser.

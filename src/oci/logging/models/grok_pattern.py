@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GrokPattern(object):
     """
-    grok pattern object.
+    Grok pattern object.
     """
 
     def __init__(self, **kwargs):
@@ -67,7 +67,7 @@ class GrokPattern(object):
     def pattern(self):
         """
         **[Required]** Gets the pattern of this GrokPattern.
-        The grok pattern.
+        The Grok pattern.
 
 
         :return: The pattern of this GrokPattern.
@@ -79,7 +79,7 @@ class GrokPattern(object):
     def pattern(self, pattern):
         """
         Sets the pattern of this GrokPattern.
-        The grok pattern.
+        The Grok pattern.
 
 
         :param pattern: The pattern of this GrokPattern.
@@ -91,7 +91,7 @@ class GrokPattern(object):
     def name(self):
         """
         Gets the name of this GrokPattern.
-        The name key to tag this grok pattern.
+        The name key to tag this Grok pattern.
 
 
         :return: The name of this GrokPattern.
@@ -103,7 +103,7 @@ class GrokPattern(object):
     def name(self, name):
         """
         Sets the name of this GrokPattern.
-        The name key to tag this grok pattern.
+        The name key to tag this Grok pattern.
 
 
         :param name: The name of this GrokPattern.
