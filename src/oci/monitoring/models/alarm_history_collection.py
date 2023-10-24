@@ -53,7 +53,7 @@ class AlarmHistoryCollection(object):
     def alarm_id(self):
         """
         **[Required]** Gets the alarm_id of this AlarmHistoryCollection.
-        The `OCID`__ of the alarm for which to retrieve history.
+        The `OCID`__ of the alarm to retrieve history for.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -67,7 +67,7 @@ class AlarmHistoryCollection(object):
     def alarm_id(self, alarm_id):
         """
         Sets the alarm_id of this AlarmHistoryCollection.
-        The `OCID`__ of the alarm for which to retrieve history.
+        The `OCID`__ of the alarm to retrieve history for.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

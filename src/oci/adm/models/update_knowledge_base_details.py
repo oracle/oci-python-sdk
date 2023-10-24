@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateKnowledgeBaseDetails(object):
     """
-    Details to update an existing Knowledge Base.
+    Details to update an existing knowledge base.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class UpdateKnowledgeBaseDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateKnowledgeBaseDetails.
-        The name of the Knowledge Base.
+        The name of the knowledge base.
 
 
         :return: The display_name of this UpdateKnowledgeBaseDetails.
@@ -65,7 +65,7 @@ class UpdateKnowledgeBaseDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateKnowledgeBaseDetails.
-        The name of the Knowledge Base.
+        The name of the knowledge base.
 
 
         :param display_name: The display_name of this UpdateKnowledgeBaseDetails.

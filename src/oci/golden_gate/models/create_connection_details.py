@@ -79,6 +79,34 @@ class CreateConnectionDetails(object):
     #: This constant has a value of "MONGODB"
     CONNECTION_TYPE_MONGODB = "MONGODB"
 
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "AMAZON_KINESIS"
+    CONNECTION_TYPE_AMAZON_KINESIS = "AMAZON_KINESIS"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "AMAZON_REDSHIFT"
+    CONNECTION_TYPE_AMAZON_REDSHIFT = "AMAZON_REDSHIFT"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "REDIS"
+    CONNECTION_TYPE_REDIS = "REDIS"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "ELASTICSEARCH"
+    CONNECTION_TYPE_ELASTICSEARCH = "ELASTICSEARCH"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "GENERIC"
+    CONNECTION_TYPE_GENERIC = "GENERIC"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "GOOGLE_CLOUD_STORAGE"
+    CONNECTION_TYPE_GOOGLE_CLOUD_STORAGE = "GOOGLE_CLOUD_STORAGE"
+
+    #: A constant which can be used with the connection_type property of a CreateConnectionDetails.
+    #: This constant has a value of "GOOGLE_BIGQUERY"
+    CONNECTION_TYPE_GOOGLE_BIGQUERY = "GOOGLE_BIGQUERY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -88,24 +116,31 @@ class CreateConnectionDetails(object):
         * :class:`~oci.golden_gate.models.CreateKafkaSchemaRegistryConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateMicrosoftSqlserverConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateJavaMessageServiceConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateGoogleBigQueryConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateAmazonKinesisConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateSnowflakeConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateAzureDataLakeStorageConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateMongoDbConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateAmazonS3ConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateHdfsConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateOciObjectStorageConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateElasticsearchConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateAzureSynapseConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateRedisConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateMysqlConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateGenericConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateGoogleCloudStorageConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateKafkaConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateOracleConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateGoldenGateConnectionDetails`
+        * :class:`~oci.golden_gate.models.CreateAmazonRedshiftConnectionDetails`
         * :class:`~oci.golden_gate.models.CreateOracleNosqlConnectionDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -136,13 +171,13 @@ class CreateConnectionDetails(object):
             The value to assign to the key_id property of this CreateConnectionDetails.
         :type key_id: str
 
-        :param subnet_id:
-            The value to assign to the subnet_id property of this CreateConnectionDetails.
-        :type subnet_id: str
-
         :param nsg_ids:
             The value to assign to the nsg_ids property of this CreateConnectionDetails.
         :type nsg_ids: list[str]
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this CreateConnectionDetails.
+        :type subnet_id: str
 
         """
         self.swagger_types = {
@@ -154,8 +189,8 @@ class CreateConnectionDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'vault_id': 'str',
             'key_id': 'str',
-            'subnet_id': 'str',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'subnet_id': 'str'
         }
 
         self.attribute_map = {
@@ -167,8 +202,8 @@ class CreateConnectionDetails(object):
             'defined_tags': 'definedTags',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'subnet_id': 'subnetId',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId'
         }
 
         self._connection_type = None
@@ -179,8 +214,8 @@ class CreateConnectionDetails(object):
         self._defined_tags = None
         self._vault_id = None
         self._key_id = None
-        self._subnet_id = None
         self._nsg_ids = None
+        self._subnet_id = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -202,6 +237,12 @@ class CreateConnectionDetails(object):
         if type == 'JAVA_MESSAGE_SERVICE':
             return 'CreateJavaMessageServiceConnectionDetails'
 
+        if type == 'GOOGLE_BIGQUERY':
+            return 'CreateGoogleBigQueryConnectionDetails'
+
+        if type == 'AMAZON_KINESIS':
+            return 'CreateAmazonKinesisConnectionDetails'
+
         if type == 'SNOWFLAKE':
             return 'CreateSnowflakeConnectionDetails'
 
@@ -220,11 +261,23 @@ class CreateConnectionDetails(object):
         if type == 'OCI_OBJECT_STORAGE':
             return 'CreateOciObjectStorageConnectionDetails'
 
+        if type == 'ELASTICSEARCH':
+            return 'CreateElasticsearchConnectionDetails'
+
         if type == 'AZURE_SYNAPSE_ANALYTICS':
             return 'CreateAzureSynapseConnectionDetails'
 
+        if type == 'REDIS':
+            return 'CreateRedisConnectionDetails'
+
         if type == 'MYSQL':
             return 'CreateMysqlConnectionDetails'
+
+        if type == 'GENERIC':
+            return 'CreateGenericConnectionDetails'
+
+        if type == 'GOOGLE_CLOUD_STORAGE':
+            return 'CreateGoogleCloudStorageConnectionDetails'
 
         if type == 'KAFKA':
             return 'CreateKafkaConnectionDetails'
@@ -234,6 +287,9 @@ class CreateConnectionDetails(object):
 
         if type == 'GOLDENGATE':
             return 'CreateGoldenGateConnectionDetails'
+
+        if type == 'AMAZON_REDSHIFT':
+            return 'CreateAmazonRedshiftConnectionDetails'
 
         if type == 'ORACLE_NOSQL':
             return 'CreateOracleNosqlConnectionDetails'
@@ -246,7 +302,7 @@ class CreateConnectionDetails(object):
         **[Required]** Gets the connection_type of this CreateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
 
 
         :return: The connection_type of this CreateConnectionDetails.
@@ -264,7 +320,7 @@ class CreateConnectionDetails(object):
         :param connection_type: The connection_type of this CreateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `connection_type`, must be None or one of {allowed_values}"
@@ -460,6 +516,30 @@ class CreateConnectionDetails(object):
         self._key_id = key_id
 
     @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this CreateConnectionDetails.
+        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
+
+
+        :return: The nsg_ids of this CreateConnectionDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this CreateConnectionDetails.
+        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
+
+
+        :param nsg_ids: The nsg_ids of this CreateConnectionDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
+
+    @property
     def subnet_id(self):
         """
         Gets the subnet_id of this CreateConnectionDetails.
@@ -486,30 +566,6 @@ class CreateConnectionDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
-
-    @property
-    def nsg_ids(self):
-        """
-        Gets the nsg_ids of this CreateConnectionDetails.
-        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-
-
-        :return: The nsg_ids of this CreateConnectionDetails.
-        :rtype: list[str]
-        """
-        return self._nsg_ids
-
-    @nsg_ids.setter
-    def nsg_ids(self, nsg_ids):
-        """
-        Sets the nsg_ids of this CreateConnectionDetails.
-        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-
-
-        :param nsg_ids: The nsg_ids of this CreateConnectionDetails.
-        :type: list[str]
-        """
-        self._nsg_ids = nsg_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -13,7 +13,8 @@ from oci.decorators import init_model_state_from_kwargs
 class Suppression(object):
     """
     The configuration details for suppressing an alarm.
-    For information about alarms, see `Alarms Overview`__.
+    For information about alarms, see
+    `Alarms Overview`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview
     """

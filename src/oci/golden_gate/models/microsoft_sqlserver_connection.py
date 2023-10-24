@@ -28,6 +28,10 @@ class MicrosoftSqlserverConnection(Connection):
     TECHNOLOGY_TYPE_AZURE_SQLSERVER_NON_MANAGED_INSTANCE = "AZURE_SQLSERVER_NON_MANAGED_INSTANCE"
 
     #: A constant which can be used with the technology_type property of a MicrosoftSqlserverConnection.
+    #: This constant has a value of "GOOGLE_CLOUD_SQL_SQLSERVER"
+    TECHNOLOGY_TYPE_GOOGLE_CLOUD_SQL_SQLSERVER = "GOOGLE_CLOUD_SQL_SQLSERVER"
+
+    #: A constant which can be used with the technology_type property of a MicrosoftSqlserverConnection.
     #: This constant has a value of "MICROSOFT_SQLSERVER"
     TECHNOLOGY_TYPE_MICROSOFT_SQLSERVER = "MICROSOFT_SQLSERVER"
 
@@ -47,7 +51,7 @@ class MicrosoftSqlserverConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this MicrosoftSqlserverConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -105,10 +109,6 @@ class MicrosoftSqlserverConnection(Connection):
             The value to assign to the key_id property of this MicrosoftSqlserverConnection.
         :type key_id: str
 
-        :param subnet_id:
-            The value to assign to the subnet_id property of this MicrosoftSqlserverConnection.
-        :type subnet_id: str
-
         :param ingress_ips:
             The value to assign to the ingress_ips property of this MicrosoftSqlserverConnection.
         :type ingress_ips: list[oci.golden_gate.models.IngressIpDetails]
@@ -117,9 +117,13 @@ class MicrosoftSqlserverConnection(Connection):
             The value to assign to the nsg_ids property of this MicrosoftSqlserverConnection.
         :type nsg_ids: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this MicrosoftSqlserverConnection.
+        :type subnet_id: str
+
         :param technology_type:
             The value to assign to the technology_type property of this MicrosoftSqlserverConnection.
-            Allowed values for this property are: "AMAZON_RDS_SQLSERVER", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "MICROSOFT_SQLSERVER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMAZON_RDS_SQLSERVER", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "GOOGLE_CLOUD_SQL_SQLSERVER", "MICROSOFT_SQLSERVER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type technology_type: str
 
@@ -177,9 +181,9 @@ class MicrosoftSqlserverConnection(Connection):
             'time_updated': 'datetime',
             'vault_id': 'str',
             'key_id': 'str',
-            'subnet_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
             'technology_type': 'str',
             'username': 'str',
             'host': 'str',
@@ -207,9 +211,9 @@ class MicrosoftSqlserverConnection(Connection):
             'time_updated': 'timeUpdated',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'subnet_id': 'subnetId',
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
             'technology_type': 'technologyType',
             'username': 'username',
             'host': 'host',
@@ -236,9 +240,9 @@ class MicrosoftSqlserverConnection(Connection):
         self._time_updated = None
         self._vault_id = None
         self._key_id = None
-        self._subnet_id = None
         self._ingress_ips = None
         self._nsg_ids = None
+        self._subnet_id = None
         self._technology_type = None
         self._username = None
         self._host = None
@@ -257,7 +261,7 @@ class MicrosoftSqlserverConnection(Connection):
         **[Required]** Gets the technology_type of this MicrosoftSqlserverConnection.
         The Microsoft SQL Server technology type.
 
-        Allowed values for this property are: "AMAZON_RDS_SQLSERVER", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "MICROSOFT_SQLSERVER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMAZON_RDS_SQLSERVER", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "GOOGLE_CLOUD_SQL_SQLSERVER", "MICROSOFT_SQLSERVER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -276,7 +280,7 @@ class MicrosoftSqlserverConnection(Connection):
         :param technology_type: The technology_type of this MicrosoftSqlserverConnection.
         :type: str
         """
-        allowed_values = ["AMAZON_RDS_SQLSERVER", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "MICROSOFT_SQLSERVER"]
+        allowed_values = ["AMAZON_RDS_SQLSERVER", "AZURE_SQLSERVER_MANAGED_INSTANCE", "AZURE_SQLSERVER_NON_MANAGED_INSTANCE", "GOOGLE_CLOUD_SQL_SQLSERVER", "MICROSOFT_SQLSERVER"]
         if not value_allowed_none_or_none_sentinel(technology_type, allowed_values):
             technology_type = 'UNKNOWN_ENUM_VALUE'
         self._technology_type = technology_type

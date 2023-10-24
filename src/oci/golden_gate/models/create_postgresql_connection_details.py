@@ -23,7 +23,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreatePostgresqlConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -54,13 +54,13 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             The value to assign to the key_id property of this CreatePostgresqlConnectionDetails.
         :type key_id: str
 
-        :param subnet_id:
-            The value to assign to the subnet_id property of this CreatePostgresqlConnectionDetails.
-        :type subnet_id: str
-
         :param nsg_ids:
             The value to assign to the nsg_ids property of this CreatePostgresqlConnectionDetails.
         :type nsg_ids: list[str]
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this CreatePostgresqlConnectionDetails.
+        :type subnet_id: str
 
         :param technology_type:
             The value to assign to the technology_type property of this CreatePostgresqlConnectionDetails.
@@ -128,8 +128,8 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'vault_id': 'str',
             'key_id': 'str',
-            'subnet_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
             'technology_type': 'str',
             'database_name': 'str',
             'host': 'str',
@@ -155,8 +155,8 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'defined_tags': 'definedTags',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
             'technology_type': 'technologyType',
             'database_name': 'databaseName',
             'host': 'host',
@@ -181,8 +181,8 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         self._defined_tags = None
         self._vault_id = None
         self._key_id = None
-        self._subnet_id = None
         self._nsg_ids = None
+        self._subnet_id = None
         self._technology_type = None
         self._database_name = None
         self._host = None

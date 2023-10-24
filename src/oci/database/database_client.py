@@ -6070,6 +6070,105 @@ class DatabaseClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def create_maintenance_run(self, create_maintenance_run_details, **kwargs):
+        """
+        Creates a maintenance run with one of the following:
+        The latest available release update patch (RUP) for the Autonomous Container Database.
+        The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
+        Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
+
+
+        :param oci.database.models.CreateMaintenanceRunDetails create_maintenance_run_details: (required)
+            Request to create a Maintenance Run for the resource.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.MaintenanceRun`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_maintenance_run.py.html>`__ to see an example of how to use create_maintenance_run API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/maintenanceRuns"
+        method = "POST"
+        operation_name = "create_maintenance_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/CreateMaintenanceRun"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_maintenance_run got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_maintenance_run_details,
+                response_type="MaintenanceRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_maintenance_run_details,
+                response_type="MaintenanceRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def create_oneoff_patch(self, create_oneoff_patch_details, **kwargs):
         """
         Creates one-off patch for specified database version to download.
@@ -22494,6 +22593,11 @@ class DatabaseClient(object):
         :param str page: (optional)
             The pagination token to continue listing from.
 
+        :param str autonomous_patch_type: (optional)
+            Autonomous patch type, either \"QUARTERLY\" or \"TIMEZONE\".
+
+            Allowed values are: "QUARTERLY", "TIMEZONE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -22524,7 +22628,8 @@ class DatabaseClient(object):
             "allow_control_chars",
             "retry_strategy",
             "limit",
-            "page"
+            "page",
+            "autonomous_patch_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -22541,10 +22646,18 @@ class DatabaseClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
+        if 'autonomous_patch_type' in kwargs:
+            autonomous_patch_type_allowed_values = ["QUARTERLY", "TIMEZONE"]
+            if kwargs['autonomous_patch_type'] not in autonomous_patch_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `autonomous_patch_type`, must be one of { autonomous_patch_type_allowed_values }"
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "compartmentId": compartment_id
+            "compartmentId": compartment_id,
+            "autonomousPatchType": kwargs.get("autonomous_patch_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -26081,7 +26194,7 @@ class DatabaseClient(object):
         :param str maintenance_subtype: (optional)
             The sub-type of the maintenance run.
 
-            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY"
+            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -26164,7 +26277,7 @@ class DatabaseClient(object):
                 )
 
         if 'maintenance_subtype' in kwargs:
-            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY"]
+            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"]
             if kwargs['maintenance_subtype'] not in maintenance_subtype_allowed_values:
                 raise ValueError(
                     f"Invalid value for `maintenance_subtype`, must be one of { maintenance_subtype_allowed_values }"
@@ -26274,7 +26387,7 @@ class DatabaseClient(object):
         :param str maintenance_subtype: (optional)
             The sub-type of the maintenance run.
 
-            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY"
+            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -26357,7 +26470,7 @@ class DatabaseClient(object):
                 )
 
         if 'maintenance_subtype' in kwargs:
-            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY"]
+            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"]
             if kwargs['maintenance_subtype'] not in maintenance_subtype_allowed_values:
                 raise ValueError(
                     f"Invalid value for `maintenance_subtype`, must be one of { maintenance_subtype_allowed_values }"

@@ -136,6 +136,7 @@ from .create_external_macs_connector_details import CreateExternalMacsConnectorD
 from .create_external_non_container_database_details import CreateExternalNonContainerDatabaseDetails
 from .create_external_pluggable_database_details import CreateExternalPluggableDatabaseDetails
 from .create_key_store_details import CreateKeyStoreDetails
+from .create_maintenance_run_details import CreateMaintenanceRunDetails
 from .create_nfs_backup_destination_details import CreateNFSBackupDestinationDetails
 from .create_new_database_details import CreateNewDatabaseDetails
 from .create_oneoff_patch_details import CreateOneoffPatchDetails
@@ -493,6 +494,7 @@ database_type_mapping = {
     "CreateExternalNonContainerDatabaseDetails": CreateExternalNonContainerDatabaseDetails,
     "CreateExternalPluggableDatabaseDetails": CreateExternalPluggableDatabaseDetails,
     "CreateKeyStoreDetails": CreateKeyStoreDetails,
+    "CreateMaintenanceRunDetails": CreateMaintenanceRunDetails,
     "CreateNFSBackupDestinationDetails": CreateNFSBackupDestinationDetails,
     "CreateNewDatabaseDetails": CreateNewDatabaseDetails,
     "CreateOneoffPatchDetails": CreateOneoffPatchDetails,

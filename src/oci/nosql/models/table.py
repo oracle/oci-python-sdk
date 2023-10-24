@@ -43,6 +43,14 @@ class Table(object):
     #: This constant has a value of "INACTIVE"
     LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
+    #: A constant which can be used with the schema_state property of a Table.
+    #: This constant has a value of "MUTABLE"
+    SCHEMA_STATE_MUTABLE = "MUTABLE"
+
+    #: A constant which can be used with the schema_state property of a Table.
+    #: This constant has a value of "FROZEN"
+    SCHEMA_STATE_FROZEN = "FROZEN"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Table object with values from keyword arguments.
@@ -98,6 +106,24 @@ class Table(object):
             The value to assign to the ddl_statement property of this Table.
         :type ddl_statement: str
 
+        :param schema_state:
+            The value to assign to the schema_state property of this Table.
+            Allowed values for this property are: "MUTABLE", "FROZEN", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type schema_state: str
+
+        :param is_multi_region:
+            The value to assign to the is_multi_region property of this Table.
+        :type is_multi_region: bool
+
+        :param local_replica_initialization_in_percent:
+            The value to assign to the local_replica_initialization_in_percent property of this Table.
+        :type local_replica_initialization_in_percent: int
+
+        :param replicas:
+            The value to assign to the replicas property of this Table.
+        :type replicas: list[oci.nosql.models.Replica]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Table.
         :type freeform_tags: dict(str, str)
@@ -124,6 +150,10 @@ class Table(object):
             'lifecycle_details': 'str',
             'schema': 'Schema',
             'ddl_statement': 'str',
+            'schema_state': 'str',
+            'is_multi_region': 'bool',
+            'local_replica_initialization_in_percent': 'int',
+            'replicas': 'list[Replica]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -142,6 +172,10 @@ class Table(object):
             'lifecycle_details': 'lifecycleDetails',
             'schema': 'schema',
             'ddl_statement': 'ddlStatement',
+            'schema_state': 'schemaState',
+            'is_multi_region': 'isMultiRegion',
+            'local_replica_initialization_in_percent': 'localReplicaInitializationInPercent',
+            'replicas': 'replicas',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -159,6 +193,10 @@ class Table(object):
         self._lifecycle_details = None
         self._schema = None
         self._ddl_statement = None
+        self._schema_state = None
+        self._is_multi_region = None
+        self._local_replica_initialization_in_percent = None
+        self._replicas = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -456,6 +494,116 @@ class Table(object):
         :type: str
         """
         self._ddl_statement = ddl_statement
+
+    @property
+    def schema_state(self):
+        """
+        Gets the schema_state of this Table.
+        The current state of this table's schema. Available states are
+        MUTABLE - The schema can be changed. The table is not eligible for replication.
+        FROZEN - The schema is immutable. The table is eligible for replication.
+
+        Allowed values for this property are: "MUTABLE", "FROZEN", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The schema_state of this Table.
+        :rtype: str
+        """
+        return self._schema_state
+
+    @schema_state.setter
+    def schema_state(self, schema_state):
+        """
+        Sets the schema_state of this Table.
+        The current state of this table's schema. Available states are
+        MUTABLE - The schema can be changed. The table is not eligible for replication.
+        FROZEN - The schema is immutable. The table is eligible for replication.
+
+
+        :param schema_state: The schema_state of this Table.
+        :type: str
+        """
+        allowed_values = ["MUTABLE", "FROZEN"]
+        if not value_allowed_none_or_none_sentinel(schema_state, allowed_values):
+            schema_state = 'UNKNOWN_ENUM_VALUE'
+        self._schema_state = schema_state
+
+    @property
+    def is_multi_region(self):
+        """
+        Gets the is_multi_region of this Table.
+        True if this table is currently a member of a replication set.
+
+
+        :return: The is_multi_region of this Table.
+        :rtype: bool
+        """
+        return self._is_multi_region
+
+    @is_multi_region.setter
+    def is_multi_region(self, is_multi_region):
+        """
+        Sets the is_multi_region of this Table.
+        True if this table is currently a member of a replication set.
+
+
+        :param is_multi_region: The is_multi_region of this Table.
+        :type: bool
+        """
+        self._is_multi_region = is_multi_region
+
+    @property
+    def local_replica_initialization_in_percent(self):
+        """
+        Gets the local_replica_initialization_in_percent of this Table.
+        If this table is in a replication set, this value represents
+        the progress of the initialization of the replica's data.  A
+        value of 100 indicates that initialization has completed.
+
+
+        :return: The local_replica_initialization_in_percent of this Table.
+        :rtype: int
+        """
+        return self._local_replica_initialization_in_percent
+
+    @local_replica_initialization_in_percent.setter
+    def local_replica_initialization_in_percent(self, local_replica_initialization_in_percent):
+        """
+        Sets the local_replica_initialization_in_percent of this Table.
+        If this table is in a replication set, this value represents
+        the progress of the initialization of the replica's data.  A
+        value of 100 indicates that initialization has completed.
+
+
+        :param local_replica_initialization_in_percent: The local_replica_initialization_in_percent of this Table.
+        :type: int
+        """
+        self._local_replica_initialization_in_percent = local_replica_initialization_in_percent
+
+    @property
+    def replicas(self):
+        """
+        Gets the replicas of this Table.
+        An array of Replica listing this table's replicas, if any
+
+
+        :return: The replicas of this Table.
+        :rtype: list[oci.nosql.models.Replica]
+        """
+        return self._replicas
+
+    @replicas.setter
+    def replicas(self, replicas):
+        """
+        Sets the replicas of this Table.
+        An array of Replica listing this table's replicas, if any
+
+
+        :param replicas: The replicas of this Table.
+        :type: list[oci.nosql.models.Replica]
+        """
+        self._replicas = replicas
 
     @property
     def freeform_tags(self):

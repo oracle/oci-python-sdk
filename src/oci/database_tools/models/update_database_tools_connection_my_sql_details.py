@@ -35,7 +35,7 @@ class UpdateDatabaseToolsConnectionMySqlDetails(UpdateDatabaseToolsConnectionDet
 
         :param type:
             The value to assign to the type property of this UpdateDatabaseToolsConnectionMySqlDetails.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
         :type type: str
 
         :param related_resource:

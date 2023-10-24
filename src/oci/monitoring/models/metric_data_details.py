@@ -276,6 +276,7 @@ class MetricDataDetails(object):
         """
         **[Required]** Gets the datapoints of this MetricDataDetails.
         A list of metric values with timestamps. At least one data point is required per call.
+        For a data point to be posted, its timestamp must be near current time (less than two hours in the past and less than 10 minutes in the future).
 
 
         :return: The datapoints of this MetricDataDetails.
@@ -288,6 +289,7 @@ class MetricDataDetails(object):
         """
         Sets the datapoints of this MetricDataDetails.
         A list of metric values with timestamps. At least one data point is required per call.
+        For a data point to be posted, its timestamp must be near current time (less than two hours in the past and less than 10 minutes in the future).
 
 
         :param datapoints: The datapoints of this MetricDataDetails.

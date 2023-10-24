@@ -16,6 +16,30 @@ class WorkRequestSummary(object):
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_REMEDIATION_RECIPE"
+    OPERATION_TYPE_CREATE_REMEDIATION_RECIPE = "CREATE_REMEDIATION_RECIPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_REMEDIATION_RECIPE"
+    OPERATION_TYPE_DELETE_REMEDIATION_RECIPE = "DELETE_REMEDIATION_RECIPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "MOVE_REMEDIATION_RECIPE"
+    OPERATION_TYPE_MOVE_REMEDIATION_RECIPE = "MOVE_REMEDIATION_RECIPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_REMEDIATION_RECIPE"
+    OPERATION_TYPE_UPDATE_REMEDIATION_RECIPE = "UPDATE_REMEDIATION_RECIPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "ACTIVATE_REMEDIATION_RECIPE"
+    OPERATION_TYPE_ACTIVATE_REMEDIATION_RECIPE = "ACTIVATE_REMEDIATION_RECIPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DEACTIVATE_REMEDIATION_RECIPE"
+    OPERATION_TYPE_DEACTIVATE_REMEDIATION_RECIPE = "DEACTIVATE_REMEDIATION_RECIPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
     #: This constant has a value of "CREATE_KNOWLEDGE_BASE"
     OPERATION_TYPE_CREATE_KNOWLEDGE_BASE = "CREATE_KNOWLEDGE_BASE"
 
@@ -66,7 +90,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_REMEDIATION_RECIPE", "DELETE_REMEDIATION_RECIPE", "MOVE_REMEDIATION_RECIPE", "UPDATE_REMEDIATION_RECIPE", "ACTIVATE_REMEDIATION_RECIPE", "DEACTIVATE_REMEDIATION_RECIPE", "CREATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -159,7 +183,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request
 
-        Allowed values for this property are: "CREATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_REMEDIATION_RECIPE", "DELETE_REMEDIATION_RECIPE", "MOVE_REMEDIATION_RECIPE", "UPDATE_REMEDIATION_RECIPE", "ACTIVATE_REMEDIATION_RECIPE", "DEACTIVATE_REMEDIATION_RECIPE", "CREATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -178,7 +202,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE"]
+        allowed_values = ["CREATE_REMEDIATION_RECIPE", "DELETE_REMEDIATION_RECIPE", "MOVE_REMEDIATION_RECIPE", "UPDATE_REMEDIATION_RECIPE", "ACTIVATE_REMEDIATION_RECIPE", "DEACTIVATE_REMEDIATION_RECIPE", "CREATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

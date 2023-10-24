@@ -13,7 +13,8 @@ from oci.decorators import init_model_state_from_kwargs
 class MetricData(object):
     """
     The set of aggregated data returned for a metric.
-    For information about metrics, see `Metrics Overview`__.
+    For information about metrics, see
+    `Metrics Overview`__.
 
     Limits information for returned data follows.
 
@@ -27,7 +28,8 @@ class MetricData(object):
     *A metric stream is an individual set of aggregated data for a metric with zero or more dimension values.
     Metric streams cannot be aggregated across metric groups.
     A metric group is the combination of a given metric, metric namespace, and tenancy for the purpose of determining limits.
-    For more information about metric-related concepts, see `Monitoring Concepts`__.
+    For more information about metric-related concepts, see
+    `Monitoring Concepts`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview
     __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts
@@ -167,7 +169,7 @@ class MetricData(object):
         """
         **[Required]** Gets the compartment_id of this MetricData.
         The `OCID`__ of the compartment containing the
-        resources from which the aggregated data was returned.
+        resources that the aggregated data was returned from.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -182,7 +184,7 @@ class MetricData(object):
         """
         Sets the compartment_id of this MetricData.
         The `OCID`__ of the compartment containing the
-        resources from which the aggregated data was returned.
+        resources that the aggregated data was returned from.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -283,7 +285,7 @@ class MetricData(object):
         """
         Gets the resolution of this MetricData.
         The time between calculated aggregation windows. Use with the query interval to vary the
-        frequency at which aggregated data points are returned. For example, use a query interval of
+        frequency for returning aggregated data points. For example, use a query interval of
         5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
         frequency. The resolution must be equal or less than the interval in the query. The default
         resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.
@@ -301,7 +303,7 @@ class MetricData(object):
         """
         Sets the resolution of this MetricData.
         The time between calculated aggregation windows. Use with the query interval to vary the
-        frequency at which aggregated data points are returned. For example, use a query interval of
+        frequency for returning aggregated data points. For example, use a query interval of
         5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
         frequency. The resolution must be equal or less than the interval in the query. The default
         resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.

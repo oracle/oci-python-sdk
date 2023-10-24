@@ -37,10 +37,19 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
             The value to assign to the freeform_tags property of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
         :type freeform_tags: dict(str, str)
 
+        :param locks:
+            The value to assign to the locks property of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        :type locks: list[oci.database_tools.models.ResourceLock]
+
         :param type:
             The value to assign to the type property of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
         :type type: str
+
+        :param runtime_support:
+            The value to assign to the runtime_support property of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+            Allowed values for this property are: "SUPPORTED", "UNSUPPORTED"
+        :type runtime_support: str
 
         :param related_resource:
             The value to assign to the related_resource property of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
@@ -70,20 +79,27 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
             The value to assign to the private_endpoint_id property of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
         :type private_endpoint_id: str
 
+        :param proxy_client:
+            The value to assign to the proxy_client property of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        :type proxy_client: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'locks': 'list[ResourceLock]',
             'type': 'str',
+            'runtime_support': 'str',
             'related_resource': 'CreateDatabaseToolsRelatedResourceDetails',
             'connection_string': 'str',
             'user_name': 'str',
             'user_password': 'DatabaseToolsUserPasswordDetails',
             'advanced_properties': 'dict(str, str)',
             'key_stores': 'list[DatabaseToolsKeyStoreDetails]',
-            'private_endpoint_id': 'str'
+            'private_endpoint_id': 'str',
+            'proxy_client': 'DatabaseToolsConnectionOracleDatabaseProxyClientDetails'
         }
 
         self.attribute_map = {
@@ -91,21 +107,26 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'locks': 'locks',
             'type': 'type',
+            'runtime_support': 'runtimeSupport',
             'related_resource': 'relatedResource',
             'connection_string': 'connectionString',
             'user_name': 'userName',
             'user_password': 'userPassword',
             'advanced_properties': 'advancedProperties',
             'key_stores': 'keyStores',
-            'private_endpoint_id': 'privateEndpointId'
+            'private_endpoint_id': 'privateEndpointId',
+            'proxy_client': 'proxyClient'
         }
 
         self._display_name = None
         self._compartment_id = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._locks = None
         self._type = None
+        self._runtime_support = None
         self._related_resource = None
         self._connection_string = None
         self._user_name = None
@@ -113,6 +134,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
         self._advanced_properties = None
         self._key_stores = None
         self._private_endpoint_id = None
+        self._proxy_client = None
         self._type = 'ORACLE_DATABASE'
 
     @property
@@ -138,7 +160,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     @property
     def connection_string(self):
         """
-        Gets the connection_string of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        **[Required]** Gets the connection_string of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
         The connect descriptor or Easy Connect Naming method use to connect to the database.
 
 
@@ -162,7 +184,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     @property
     def user_name(self):
         """
-        Gets the user_name of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        **[Required]** Gets the user_name of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
         The database user name.
 
 
@@ -186,7 +208,7 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
     @property
     def user_password(self):
         """
-        Gets the user_password of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        **[Required]** Gets the user_password of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
 
         :return: The user_password of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
         :rtype: oci.database_tools.models.DatabaseToolsUserPasswordDetails
@@ -280,6 +302,26 @@ class CreateDatabaseToolsConnectionOracleDatabaseDetails(CreateDatabaseToolsConn
         :type: str
         """
         self._private_endpoint_id = private_endpoint_id
+
+    @property
+    def proxy_client(self):
+        """
+        Gets the proxy_client of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+
+        :return: The proxy_client of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        :rtype: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientDetails
+        """
+        return self._proxy_client
+
+    @proxy_client.setter
+    def proxy_client(self, proxy_client):
+        """
+        Sets the proxy_client of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+
+        :param proxy_client: The proxy_client of this CreateDatabaseToolsConnectionOracleDatabaseDetails.
+        :type: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientDetails
+        """
+        self._proxy_client = proxy_client
 
     def __repr__(self):
         return formatted_flat_dict(self)

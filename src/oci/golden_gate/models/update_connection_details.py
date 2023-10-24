@@ -79,15 +79,49 @@ class UpdateConnectionDetails(object):
     #: This constant has a value of "MONGODB"
     CONNECTION_TYPE_MONGODB = "MONGODB"
 
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "AMAZON_KINESIS"
+    CONNECTION_TYPE_AMAZON_KINESIS = "AMAZON_KINESIS"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "AMAZON_REDSHIFT"
+    CONNECTION_TYPE_AMAZON_REDSHIFT = "AMAZON_REDSHIFT"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "REDIS"
+    CONNECTION_TYPE_REDIS = "REDIS"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "ELASTICSEARCH"
+    CONNECTION_TYPE_ELASTICSEARCH = "ELASTICSEARCH"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "GENERIC"
+    CONNECTION_TYPE_GENERIC = "GENERIC"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "GOOGLE_CLOUD_STORAGE"
+    CONNECTION_TYPE_GOOGLE_CLOUD_STORAGE = "GOOGLE_CLOUD_STORAGE"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "GOOGLE_BIGQUERY"
+    CONNECTION_TYPE_GOOGLE_BIGQUERY = "GOOGLE_BIGQUERY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.golden_gate.models.UpdateElasticsearchConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateGoogleBigQueryConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateOracleConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateAmazonRedshiftConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateOciObjectStorageConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateRedisConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateMongoDbConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateGoogleCloudStorageConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateAzureDataLakeStorageConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateAmazonKinesisConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateJavaMessageServiceConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateGoldenGateConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdatePostgresqlConnectionDetails`
@@ -99,13 +133,14 @@ class UpdateConnectionDetails(object):
         * :class:`~oci.golden_gate.models.UpdateHdfsConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateMysqlConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateKafkaConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateGenericConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateAzureSynapseConnectionDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -176,17 +211,35 @@ class UpdateConnectionDetails(object):
         """
         type = object_dictionary['connectionType']
 
+        if type == 'ELASTICSEARCH':
+            return 'UpdateElasticsearchConnectionDetails'
+
+        if type == 'GOOGLE_BIGQUERY':
+            return 'UpdateGoogleBigQueryConnectionDetails'
+
         if type == 'ORACLE':
             return 'UpdateOracleConnectionDetails'
+
+        if type == 'AMAZON_REDSHIFT':
+            return 'UpdateAmazonRedshiftConnectionDetails'
 
         if type == 'OCI_OBJECT_STORAGE':
             return 'UpdateOciObjectStorageConnectionDetails'
 
+        if type == 'REDIS':
+            return 'UpdateRedisConnectionDetails'
+
         if type == 'MONGODB':
             return 'UpdateMongoDbConnectionDetails'
 
+        if type == 'GOOGLE_CLOUD_STORAGE':
+            return 'UpdateGoogleCloudStorageConnectionDetails'
+
         if type == 'AZURE_DATA_LAKE_STORAGE':
             return 'UpdateAzureDataLakeStorageConnectionDetails'
+
+        if type == 'AMAZON_KINESIS':
+            return 'UpdateAmazonKinesisConnectionDetails'
 
         if type == 'JAVA_MESSAGE_SERVICE':
             return 'UpdateJavaMessageServiceConnectionDetails'
@@ -221,6 +274,9 @@ class UpdateConnectionDetails(object):
         if type == 'KAFKA':
             return 'UpdateKafkaConnectionDetails'
 
+        if type == 'GENERIC':
+            return 'UpdateGenericConnectionDetails'
+
         if type == 'AZURE_SYNAPSE_ANALYTICS':
             return 'UpdateAzureSynapseConnectionDetails'
         else:
@@ -232,7 +288,7 @@ class UpdateConnectionDetails(object):
         Gets the connection_type of this UpdateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
 
 
         :return: The connection_type of this UpdateConnectionDetails.
@@ -250,7 +306,7 @@ class UpdateConnectionDetails(object):
         :param connection_type: The connection_type of this UpdateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `connection_type`, must be None or one of {allowed_values}"

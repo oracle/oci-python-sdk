@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class KnowledgeBaseSummary(object):
     """
-    The summary of a Knowledge Base.
+    The summary of a knowledge base.
     """
 
     def __init__(self, **kwargs):
@@ -95,7 +95,7 @@ class KnowledgeBaseSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this KnowledgeBaseSummary.
-        The Oracle Cloud Identifier (`OCID`__) of the Knowledge Base.
+        The Oracle Cloud Identifier (`OCID`__) of the knowledge base.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -109,7 +109,7 @@ class KnowledgeBaseSummary(object):
     def id(self, id):
         """
         Sets the id of this KnowledgeBaseSummary.
-        The Oracle Cloud Identifier (`OCID`__) of the Knowledge Base.
+        The Oracle Cloud Identifier (`OCID`__) of the knowledge base.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -123,7 +123,7 @@ class KnowledgeBaseSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this KnowledgeBaseSummary.
-        The name of the Knowledge Base.
+        The name of the knowledge base.
 
 
         :return: The display_name of this KnowledgeBaseSummary.
@@ -135,7 +135,7 @@ class KnowledgeBaseSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this KnowledgeBaseSummary.
-        The name of the Knowledge Base.
+        The name of the knowledge base.
 
 
         :param display_name: The display_name of this KnowledgeBaseSummary.
@@ -147,7 +147,7 @@ class KnowledgeBaseSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this KnowledgeBaseSummary.
-        The creation date and time of the Knowledge Base (formatted according to `RFC3339`__).
+        The creation date and time of the knowledge base (formatted according to `RFC3339`__).
 
         __ https://datatracker.ietf.org/doc/html/rfc3339
 
@@ -161,7 +161,7 @@ class KnowledgeBaseSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this KnowledgeBaseSummary.
-        The creation date and time of the Knowledge Base (formatted according to `RFC3339`__).
+        The creation date and time of the knowledge base (formatted according to `RFC3339`__).
 
         __ https://datatracker.ietf.org/doc/html/rfc3339
 
@@ -175,7 +175,7 @@ class KnowledgeBaseSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this KnowledgeBaseSummary.
-        The date and time the Knowledge Base was last updated (formatted according to `RFC3339`__).
+        The date and time the knowledge base was last updated (formatted according to `RFC3339`__).
 
         __ https://datatracker.ietf.org/doc/html/rfc3339
 
@@ -189,7 +189,7 @@ class KnowledgeBaseSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this KnowledgeBaseSummary.
-        The date and time the Knowledge Base was last updated (formatted according to `RFC3339`__).
+        The date and time the knowledge base was last updated (formatted according to `RFC3339`__).
 
         __ https://datatracker.ietf.org/doc/html/rfc3339
 
@@ -203,7 +203,7 @@ class KnowledgeBaseSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this KnowledgeBaseSummary.
-        The Oracle Cloud Identifier (`OCID`__) of the Knowledge Base's compartment.
+        The compartment Oracle Cloud Identifier (`OCID`__) of the knowledge base.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -217,7 +217,7 @@ class KnowledgeBaseSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this KnowledgeBaseSummary.
-        The Oracle Cloud Identifier (`OCID`__) of the Knowledge Base's compartment.
+        The compartment Oracle Cloud Identifier (`OCID`__) of the knowledge base.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -231,7 +231,7 @@ class KnowledgeBaseSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this KnowledgeBaseSummary.
-        The current lifecycle state of the Knowledge Base.
+        The current lifecycle state of the knowledge base.
 
 
         :return: The lifecycle_state of this KnowledgeBaseSummary.
@@ -243,7 +243,7 @@ class KnowledgeBaseSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this KnowledgeBaseSummary.
-        The current lifecycle state of the Knowledge Base.
+        The current lifecycle state of the knowledge base.
 
 
         :param lifecycle_state: The lifecycle_state of this KnowledgeBaseSummary.

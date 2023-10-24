@@ -9,6 +9,7 @@ from __future__ import absolute_import
 from .change_table_compartment_details import ChangeTableCompartmentDetails
 from .column import Column
 from .create_index_details import CreateIndexDetails
+from .create_replica_details import CreateReplicaDetails
 from .create_table_details import CreateTableDetails
 from .delete_row_result import DeleteRowResult
 from .identity import Identity
@@ -19,6 +20,7 @@ from .index_summary import IndexSummary
 from .prepared_statement import PreparedStatement
 from .query_details import QueryDetails
 from .query_result_collection import QueryResultCollection
+from .replica import Replica
 from .request_usage import RequestUsage
 from .row import Row
 from .schema import Schema
@@ -46,6 +48,7 @@ nosql_type_mapping = {
     "ChangeTableCompartmentDetails": ChangeTableCompartmentDetails,
     "Column": Column,
     "CreateIndexDetails": CreateIndexDetails,
+    "CreateReplicaDetails": CreateReplicaDetails,
     "CreateTableDetails": CreateTableDetails,
     "DeleteRowResult": DeleteRowResult,
     "Identity": Identity,
@@ -56,6 +59,7 @@ nosql_type_mapping = {
     "PreparedStatement": PreparedStatement,
     "QueryDetails": QueryDetails,
     "QueryResultCollection": QueryResultCollection,
+    "Replica": Replica,
     "RequestUsage": RequestUsage,
     "Row": Row,
     "Schema": Schema,

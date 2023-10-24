@@ -246,6 +246,14 @@ class AutonomousContainerDatabase(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type version_preference: str
 
+        :param is_dst_file_update_enabled:
+            The value to assign to the is_dst_file_update_enabled property of this AutonomousContainerDatabase.
+        :type is_dst_file_update_enabled: bool
+
+        :param dst_file_version:
+            The value to assign to the dst_file_version property of this AutonomousContainerDatabase.
+        :type dst_file_version: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AutonomousContainerDatabase.
         :type freeform_tags: dict(str, str)
@@ -345,6 +353,8 @@ class AutonomousContainerDatabase(object):
             'maintenance_window': 'MaintenanceWindow',
             'standby_maintenance_buffer_in_days': 'int',
             'version_preference': 'str',
+            'is_dst_file_update_enabled': 'bool',
+            'dst_file_version': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'role': 'str',
@@ -390,6 +400,8 @@ class AutonomousContainerDatabase(object):
             'maintenance_window': 'maintenanceWindow',
             'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays',
             'version_preference': 'versionPreference',
+            'is_dst_file_update_enabled': 'isDstFileUpdateEnabled',
+            'dst_file_version': 'dstFileVersion',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'role': 'role',
@@ -434,6 +446,8 @@ class AutonomousContainerDatabase(object):
         self._maintenance_window = None
         self._standby_maintenance_buffer_in_days = None
         self._version_preference = None
+        self._is_dst_file_update_enabled = None
+        self._dst_file_version = None
         self._freeform_tags = None
         self._defined_tags = None
         self._role = None
@@ -1101,6 +1115,54 @@ class AutonomousContainerDatabase(object):
         if not value_allowed_none_or_none_sentinel(version_preference, allowed_values):
             version_preference = 'UNKNOWN_ENUM_VALUE'
         self._version_preference = version_preference
+
+    @property
+    def is_dst_file_update_enabled(self):
+        """
+        Gets the is_dst_file_update_enabled of this AutonomousContainerDatabase.
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+
+
+        :return: The is_dst_file_update_enabled of this AutonomousContainerDatabase.
+        :rtype: bool
+        """
+        return self._is_dst_file_update_enabled
+
+    @is_dst_file_update_enabled.setter
+    def is_dst_file_update_enabled(self, is_dst_file_update_enabled):
+        """
+        Sets the is_dst_file_update_enabled of this AutonomousContainerDatabase.
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+
+
+        :param is_dst_file_update_enabled: The is_dst_file_update_enabled of this AutonomousContainerDatabase.
+        :type: bool
+        """
+        self._is_dst_file_update_enabled = is_dst_file_update_enabled
+
+    @property
+    def dst_file_version(self):
+        """
+        Gets the dst_file_version of this AutonomousContainerDatabase.
+        DST Time Zone File version of the Autonomous Container Database.
+
+
+        :return: The dst_file_version of this AutonomousContainerDatabase.
+        :rtype: str
+        """
+        return self._dst_file_version
+
+    @dst_file_version.setter
+    def dst_file_version(self, dst_file_version):
+        """
+        Sets the dst_file_version of this AutonomousContainerDatabase.
+        DST Time Zone File version of the Autonomous Container Database.
+
+
+        :param dst_file_version: The dst_file_version of this AutonomousContainerDatabase.
+        :type: str
+        """
+        self._dst_file_version = dst_file_version
 
     @property
     def freeform_tags(self):

@@ -1,0 +1,11 @@
+RemediationRun
+==============
+
+.. currentmodule:: oci.adm.models
+
+.. autoclass:: RemediationRun
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

@@ -45,6 +45,14 @@ class AutonomousPatchSummary(object):
     #: This constant has a value of "RELEASE_UPDATE_REVISIONS"
     PATCH_MODEL_RELEASE_UPDATE_REVISIONS = "RELEASE_UPDATE_REVISIONS"
 
+    #: A constant which can be used with the autonomous_patch_type property of a AutonomousPatchSummary.
+    #: This constant has a value of "QUARTERLY"
+    AUTONOMOUS_PATCH_TYPE_QUARTERLY = "QUARTERLY"
+
+    #: A constant which can be used with the autonomous_patch_type property of a AutonomousPatchSummary.
+    #: This constant has a value of "TIMEZONE"
+    AUTONOMOUS_PATCH_TYPE_TIMEZONE = "TIMEZONE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousPatchSummary object with values from keyword arguments.
@@ -94,6 +102,12 @@ class AutonomousPatchSummary(object):
             The value to assign to the year property of this AutonomousPatchSummary.
         :type year: str
 
+        :param autonomous_patch_type:
+            The value to assign to the autonomous_patch_type property of this AutonomousPatchSummary.
+            Allowed values for this property are: "QUARTERLY", "TIMEZONE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type autonomous_patch_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -105,7 +119,8 @@ class AutonomousPatchSummary(object):
             'version': 'str',
             'patch_model': 'str',
             'quarter': 'str',
-            'year': 'str'
+            'year': 'str',
+            'autonomous_patch_type': 'str'
         }
 
         self.attribute_map = {
@@ -118,7 +133,8 @@ class AutonomousPatchSummary(object):
             'version': 'version',
             'patch_model': 'patchModel',
             'quarter': 'quarter',
-            'year': 'year'
+            'year': 'year',
+            'autonomous_patch_type': 'autonomousPatchType'
         }
 
         self._id = None
@@ -131,6 +147,7 @@ class AutonomousPatchSummary(object):
         self._patch_model = None
         self._quarter = None
         self._year = None
+        self._autonomous_patch_type = None
 
     @property
     def id(self):
@@ -393,6 +410,36 @@ class AutonomousPatchSummary(object):
         :type: str
         """
         self._year = year
+
+    @property
+    def autonomous_patch_type(self):
+        """
+        Gets the autonomous_patch_type of this AutonomousPatchSummary.
+        Maintenance run type, either \"QUARTERLY\" or \"TIMEZONE\".
+
+        Allowed values for this property are: "QUARTERLY", "TIMEZONE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The autonomous_patch_type of this AutonomousPatchSummary.
+        :rtype: str
+        """
+        return self._autonomous_patch_type
+
+    @autonomous_patch_type.setter
+    def autonomous_patch_type(self, autonomous_patch_type):
+        """
+        Sets the autonomous_patch_type of this AutonomousPatchSummary.
+        Maintenance run type, either \"QUARTERLY\" or \"TIMEZONE\".
+
+
+        :param autonomous_patch_type: The autonomous_patch_type of this AutonomousPatchSummary.
+        :type: str
+        """
+        allowed_values = ["QUARTERLY", "TIMEZONE"]
+        if not value_allowed_none_or_none_sentinel(autonomous_patch_type, allowed_values):
+            autonomous_patch_type = 'UNKNOWN_ENUM_VALUE'
+        self._autonomous_patch_type = autonomous_patch_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

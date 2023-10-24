@@ -148,6 +148,7 @@ Database
     oci.database.models.CreateExternalNonContainerDatabaseDetails
     oci.database.models.CreateExternalPluggableDatabaseDetails
     oci.database.models.CreateKeyStoreDetails
+    oci.database.models.CreateMaintenanceRunDetails
     oci.database.models.CreateNFSBackupDestinationDetails
     oci.database.models.CreateNewDatabaseDetails
     oci.database.models.CreateOneoffPatchDetails
