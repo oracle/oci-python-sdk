@@ -7,20 +7,55 @@
 from __future__ import absolute_import
 
 from .application_dependency import ApplicationDependency
+from .application_dependency_recommendation_collection import ApplicationDependencyRecommendationCollection
+from .application_dependency_recommendation_summary import ApplicationDependencyRecommendationSummary
 from .application_dependency_vulnerability_collection import ApplicationDependencyVulnerabilityCollection
 from .application_dependency_vulnerability_summary import ApplicationDependencyVulnerabilitySummary
+from .apply_stage import ApplyStage
 from .change_knowledge_base_compartment_details import ChangeKnowledgeBaseCompartmentDetails
+from .change_remediation_recipe_compartment_details import ChangeRemediationRecipeCompartmentDetails
+from .change_remediation_run_compartment_details import ChangeRemediationRunCompartmentDetails
 from .change_vulnerability_audit_compartment_details import ChangeVulnerabilityAuditCompartmentDetails
 from .create_knowledge_base_details import CreateKnowledgeBaseDetails
+from .create_remediation_recipe_details import CreateRemediationRecipeDetails
+from .create_remediation_run_details import CreateRemediationRunDetails
 from .create_vulnerability_audit_details import CreateVulnerabilityAuditDetails
+from .detect_configuration import DetectConfiguration
+from .detect_stage import DetectStage
 from .external_resource_vulnerability_audit_source import ExternalResourceVulnerabilityAuditSource
+from .external_scm_configuration import ExternalScmConfiguration
+from .git_hub_actions_configuration import GitHubActionsConfiguration
+from .git_lab_pipeline_configuration import GitLabPipelineConfiguration
+from .jenkins_pipeline_configuration import JenkinsPipelineConfiguration
 from .knowledge_base import KnowledgeBase
 from .knowledge_base_collection import KnowledgeBaseCollection
 from .knowledge_base_summary import KnowledgeBaseSummary
+from .network_configuration import NetworkConfiguration
+from .none_verify_configuration import NoneVerifyConfiguration
+from .oci_code_repository_configuration import OciCodeRepositoryConfiguration
+from .oci_dev_ops_build_configuration import OciDevOpsBuildConfiguration
 from .oci_resource_vulnerability_audit_source import OciResourceVulnerabilityAuditSource
+from .pipeline_properties import PipelineProperties
+from .pull_request_properties import PullRequestProperties
+from .recommend_stage import RecommendStage
+from .remediation_recipe import RemediationRecipe
+from .remediation_recipe_collection import RemediationRecipeCollection
+from .remediation_recipe_summary import RemediationRecipeSummary
+from .remediation_run import RemediationRun
+from .remediation_run_collection import RemediationRunCollection
+from .remediation_run_stage import RemediationRunStage
+from .remediation_run_stage_collection import RemediationRunStageCollection
+from .remediation_run_stage_summary import RemediationRunStageSummary
+from .remediation_run_summary import RemediationRunSummary
+from .scm_configuration import ScmConfiguration
+from .stage_summary import StageSummary
 from .unknown_source_vulnerability_audit_source import UnknownSourceVulnerabilityAuditSource
 from .update_knowledge_base_details import UpdateKnowledgeBaseDetails
+from .update_remediation_recipe_details import UpdateRemediationRecipeDetails
+from .update_remediation_run_details import UpdateRemediationRunDetails
 from .update_vulnerability_audit_details import UpdateVulnerabilityAuditDetails
+from .verify_configuration import VerifyConfiguration
+from .verify_stage import VerifyStage
 from .vulnerability import Vulnerability
 from .vulnerability_audit import VulnerabilityAudit
 from .vulnerability_audit_collection import VulnerabilityAuditCollection
@@ -39,20 +74,55 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 # Maps type names to classes for adm services.
 adm_type_mapping = {
     "ApplicationDependency": ApplicationDependency,
+    "ApplicationDependencyRecommendationCollection": ApplicationDependencyRecommendationCollection,
+    "ApplicationDependencyRecommendationSummary": ApplicationDependencyRecommendationSummary,
     "ApplicationDependencyVulnerabilityCollection": ApplicationDependencyVulnerabilityCollection,
     "ApplicationDependencyVulnerabilitySummary": ApplicationDependencyVulnerabilitySummary,
+    "ApplyStage": ApplyStage,
     "ChangeKnowledgeBaseCompartmentDetails": ChangeKnowledgeBaseCompartmentDetails,
+    "ChangeRemediationRecipeCompartmentDetails": ChangeRemediationRecipeCompartmentDetails,
+    "ChangeRemediationRunCompartmentDetails": ChangeRemediationRunCompartmentDetails,
     "ChangeVulnerabilityAuditCompartmentDetails": ChangeVulnerabilityAuditCompartmentDetails,
     "CreateKnowledgeBaseDetails": CreateKnowledgeBaseDetails,
+    "CreateRemediationRecipeDetails": CreateRemediationRecipeDetails,
+    "CreateRemediationRunDetails": CreateRemediationRunDetails,
     "CreateVulnerabilityAuditDetails": CreateVulnerabilityAuditDetails,
+    "DetectConfiguration": DetectConfiguration,
+    "DetectStage": DetectStage,
     "ExternalResourceVulnerabilityAuditSource": ExternalResourceVulnerabilityAuditSource,
+    "ExternalScmConfiguration": ExternalScmConfiguration,
+    "GitHubActionsConfiguration": GitHubActionsConfiguration,
+    "GitLabPipelineConfiguration": GitLabPipelineConfiguration,
+    "JenkinsPipelineConfiguration": JenkinsPipelineConfiguration,
     "KnowledgeBase": KnowledgeBase,
     "KnowledgeBaseCollection": KnowledgeBaseCollection,
     "KnowledgeBaseSummary": KnowledgeBaseSummary,
+    "NetworkConfiguration": NetworkConfiguration,
+    "NoneVerifyConfiguration": NoneVerifyConfiguration,
+    "OciCodeRepositoryConfiguration": OciCodeRepositoryConfiguration,
+    "OciDevOpsBuildConfiguration": OciDevOpsBuildConfiguration,
     "OciResourceVulnerabilityAuditSource": OciResourceVulnerabilityAuditSource,
+    "PipelineProperties": PipelineProperties,
+    "PullRequestProperties": PullRequestProperties,
+    "RecommendStage": RecommendStage,
+    "RemediationRecipe": RemediationRecipe,
+    "RemediationRecipeCollection": RemediationRecipeCollection,
+    "RemediationRecipeSummary": RemediationRecipeSummary,
+    "RemediationRun": RemediationRun,
+    "RemediationRunCollection": RemediationRunCollection,
+    "RemediationRunStage": RemediationRunStage,
+    "RemediationRunStageCollection": RemediationRunStageCollection,
+    "RemediationRunStageSummary": RemediationRunStageSummary,
+    "RemediationRunSummary": RemediationRunSummary,
+    "ScmConfiguration": ScmConfiguration,
+    "StageSummary": StageSummary,
     "UnknownSourceVulnerabilityAuditSource": UnknownSourceVulnerabilityAuditSource,
     "UpdateKnowledgeBaseDetails": UpdateKnowledgeBaseDetails,
+    "UpdateRemediationRecipeDetails": UpdateRemediationRecipeDetails,
+    "UpdateRemediationRunDetails": UpdateRemediationRunDetails,
     "UpdateVulnerabilityAuditDetails": UpdateVulnerabilityAuditDetails,
+    "VerifyConfiguration": VerifyConfiguration,
+    "VerifyStage": VerifyStage,
     "Vulnerability": Vulnerability,
     "VulnerabilityAudit": VulnerabilityAudit,
     "VulnerabilityAuditCollection": VulnerabilityAuditCollection,

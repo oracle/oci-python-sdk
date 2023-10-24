@@ -32,6 +32,10 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
             The value to assign to the freeform_tags property of this CreateDatabaseToolsPrivateEndpointDetails.
         :type freeform_tags: dict(str, str)
 
+        :param locks:
+            The value to assign to the locks property of this CreateDatabaseToolsPrivateEndpointDetails.
+        :type locks: list[oci.database_tools.models.ResourceLock]
+
         :param display_name:
             The value to assign to the display_name property of this CreateDatabaseToolsPrivateEndpointDetails.
         :type display_name: str
@@ -61,6 +65,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'locks': 'list[ResourceLock]',
             'display_name': 'str',
             'description': 'str',
             'endpoint_service_id': 'str',
@@ -73,6 +78,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'locks': 'locks',
             'display_name': 'displayName',
             'description': 'description',
             'endpoint_service_id': 'endpointServiceId',
@@ -84,6 +90,7 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
         self._compartment_id = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._locks = None
         self._display_name = None
         self._description = None
         self._endpoint_service_id = None
@@ -170,6 +177,30 @@ class CreateDatabaseToolsPrivateEndpointDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CreateDatabaseToolsPrivateEndpointDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateDatabaseToolsPrivateEndpointDetails.
+        :rtype: list[oci.database_tools.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateDatabaseToolsPrivateEndpointDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateDatabaseToolsPrivateEndpointDetails.
+        :type: list[oci.database_tools.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def display_name(self):

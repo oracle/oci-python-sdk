@@ -13,7 +13,8 @@ from oci.decorators import init_model_state_from_kwargs
 class Metric(object):
     """
     The properties that define a metric.
-    For information about metrics, see `Metrics Overview`__.
+    For information about metrics, see
+    `Metrics Overview`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview
     """

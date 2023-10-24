@@ -6,6 +6,10 @@
 
 from __future__ import absolute_import
 
+from .amazon_kinesis_connection import AmazonKinesisConnection
+from .amazon_kinesis_connection_summary import AmazonKinesisConnectionSummary
+from .amazon_redshift_connection import AmazonRedshiftConnection
+from .amazon_redshift_connection_summary import AmazonRedshiftConnectionSummary
 from .amazon_s3_connection import AmazonS3Connection
 from .amazon_s3_connection_summary import AmazonS3ConnectionSummary
 from .azure_data_lake_storage_connection import AzureDataLakeStorageConnection
@@ -27,6 +31,8 @@ from .connection_assignment_summary import ConnectionAssignmentSummary
 from .connection_collection import ConnectionCollection
 from .connection_summary import ConnectionSummary
 from .copy_deployment_backup_details import CopyDeploymentBackupDetails
+from .create_amazon_kinesis_connection_details import CreateAmazonKinesisConnectionDetails
+from .create_amazon_redshift_connection_details import CreateAmazonRedshiftConnectionDetails
 from .create_amazon_s3_connection_details import CreateAmazonS3ConnectionDetails
 from .create_azure_data_lake_storage_connection_details import CreateAzureDataLakeStorageConnectionDetails
 from .create_azure_synapse_connection_details import CreateAzureSynapseConnectionDetails
@@ -35,7 +41,11 @@ from .create_connection_details import CreateConnectionDetails
 from .create_database_registration_details import CreateDatabaseRegistrationDetails
 from .create_deployment_backup_details import CreateDeploymentBackupDetails
 from .create_deployment_details import CreateDeploymentDetails
+from .create_elasticsearch_connection_details import CreateElasticsearchConnectionDetails
+from .create_generic_connection_details import CreateGenericConnectionDetails
 from .create_golden_gate_connection_details import CreateGoldenGateConnectionDetails
+from .create_google_big_query_connection_details import CreateGoogleBigQueryConnectionDetails
+from .create_google_cloud_storage_connection_details import CreateGoogleCloudStorageConnectionDetails
 from .create_hdfs_connection_details import CreateHdfsConnectionDetails
 from .create_java_message_service_connection_details import CreateJavaMessageServiceConnectionDetails
 from .create_kafka_connection_details import CreateKafkaConnectionDetails
@@ -50,6 +60,7 @@ from .create_ogg_deployment_details import CreateOggDeploymentDetails
 from .create_oracle_connection_details import CreateOracleConnectionDetails
 from .create_oracle_nosql_connection_details import CreateOracleNosqlConnectionDetails
 from .create_postgresql_connection_details import CreatePostgresqlConnectionDetails
+from .create_redis_connection_details import CreateRedisConnectionDetails
 from .create_snowflake_connection_details import CreateSnowflakeConnectionDetails
 from .database_registration import DatabaseRegistration
 from .database_registration_collection import DatabaseRegistrationCollection
@@ -84,9 +95,17 @@ from .deployment_wallet_exists_details import DeploymentWalletExistsDetails
 from .deployment_wallet_exists_response_details import DeploymentWalletExistsResponseDetails
 from .deployment_wallets_operation_collection import DeploymentWalletsOperationCollection
 from .deployment_wallets_operation_summary import DeploymentWalletsOperationSummary
+from .elasticsearch_connection import ElasticsearchConnection
+from .elasticsearch_connection_summary import ElasticsearchConnectionSummary
 from .export_deployment_wallet_details import ExportDeploymentWalletDetails
+from .generic_connection import GenericConnection
+from .generic_connection_summary import GenericConnectionSummary
 from .golden_gate_connection import GoldenGateConnection
 from .golden_gate_connection_summary import GoldenGateConnectionSummary
+from .google_big_query_connection import GoogleBigQueryConnection
+from .google_big_query_connection_summary import GoogleBigQueryConnectionSummary
+from .google_cloud_storage_connection import GoogleCloudStorageConnection
+from .google_cloud_storage_connection_summary import GoogleCloudStorageConnectionSummary
 from .hdfs_connection import HdfsConnection
 from .hdfs_connection_summary import HdfsConnectionSummary
 from .import_deployment_wallet_details import ImportDeploymentWalletDetails
@@ -117,6 +136,8 @@ from .oracle_nosql_connection import OracleNosqlConnection
 from .oracle_nosql_connection_summary import OracleNosqlConnectionSummary
 from .postgresql_connection import PostgresqlConnection
 from .postgresql_connection_summary import PostgresqlConnectionSummary
+from .redis_connection import RedisConnection
+from .redis_connection_summary import RedisConnectionSummary
 from .reschedule_deployment_upgrade_details import RescheduleDeploymentUpgradeDetails
 from .reschedule_deployment_upgrade_to_date_details import RescheduleDeploymentUpgradeToDateDetails
 from .restore_deployment_details import RestoreDeploymentDetails
@@ -133,6 +154,8 @@ from .trail_file_collection import TrailFileCollection
 from .trail_file_summary import TrailFileSummary
 from .trail_sequence_collection import TrailSequenceCollection
 from .trail_sequence_summary import TrailSequenceSummary
+from .update_amazon_kinesis_connection_details import UpdateAmazonKinesisConnectionDetails
+from .update_amazon_redshift_connection_details import UpdateAmazonRedshiftConnectionDetails
 from .update_amazon_s3_connection_details import UpdateAmazonS3ConnectionDetails
 from .update_azure_data_lake_storage_connection_details import UpdateAzureDataLakeStorageConnectionDetails
 from .update_azure_synapse_connection_details import UpdateAzureSynapseConnectionDetails
@@ -140,7 +163,11 @@ from .update_connection_details import UpdateConnectionDetails
 from .update_database_registration_details import UpdateDatabaseRegistrationDetails
 from .update_deployment_backup_details import UpdateDeploymentBackupDetails
 from .update_deployment_details import UpdateDeploymentDetails
+from .update_elasticsearch_connection_details import UpdateElasticsearchConnectionDetails
+from .update_generic_connection_details import UpdateGenericConnectionDetails
 from .update_golden_gate_connection_details import UpdateGoldenGateConnectionDetails
+from .update_google_big_query_connection_details import UpdateGoogleBigQueryConnectionDetails
+from .update_google_cloud_storage_connection_details import UpdateGoogleCloudStorageConnectionDetails
 from .update_hdfs_connection_details import UpdateHdfsConnectionDetails
 from .update_java_message_service_connection_details import UpdateJavaMessageServiceConnectionDetails
 from .update_kafka_connection_details import UpdateKafkaConnectionDetails
@@ -155,6 +182,7 @@ from .update_ogg_deployment_details import UpdateOggDeploymentDetails
 from .update_oracle_connection_details import UpdateOracleConnectionDetails
 from .update_oracle_nosql_connection_details import UpdateOracleNosqlConnectionDetails
 from .update_postgresql_connection_details import UpdatePostgresqlConnectionDetails
+from .update_redis_connection_details import UpdateRedisConnectionDetails
 from .update_snowflake_connection_details import UpdateSnowflakeConnectionDetails
 from .upgrade_deployment_current_release_details import UpgradeDeploymentCurrentReleaseDetails
 from .upgrade_deployment_details import UpgradeDeploymentDetails
@@ -167,6 +195,10 @@ from .work_request_resource import WorkRequestResource
 
 # Maps type names to classes for golden_gate services.
 golden_gate_type_mapping = {
+    "AmazonKinesisConnection": AmazonKinesisConnection,
+    "AmazonKinesisConnectionSummary": AmazonKinesisConnectionSummary,
+    "AmazonRedshiftConnection": AmazonRedshiftConnection,
+    "AmazonRedshiftConnectionSummary": AmazonRedshiftConnectionSummary,
     "AmazonS3Connection": AmazonS3Connection,
     "AmazonS3ConnectionSummary": AmazonS3ConnectionSummary,
     "AzureDataLakeStorageConnection": AzureDataLakeStorageConnection,
@@ -188,6 +220,8 @@ golden_gate_type_mapping = {
     "ConnectionCollection": ConnectionCollection,
     "ConnectionSummary": ConnectionSummary,
     "CopyDeploymentBackupDetails": CopyDeploymentBackupDetails,
+    "CreateAmazonKinesisConnectionDetails": CreateAmazonKinesisConnectionDetails,
+    "CreateAmazonRedshiftConnectionDetails": CreateAmazonRedshiftConnectionDetails,
     "CreateAmazonS3ConnectionDetails": CreateAmazonS3ConnectionDetails,
     "CreateAzureDataLakeStorageConnectionDetails": CreateAzureDataLakeStorageConnectionDetails,
     "CreateAzureSynapseConnectionDetails": CreateAzureSynapseConnectionDetails,
@@ -196,7 +230,11 @@ golden_gate_type_mapping = {
     "CreateDatabaseRegistrationDetails": CreateDatabaseRegistrationDetails,
     "CreateDeploymentBackupDetails": CreateDeploymentBackupDetails,
     "CreateDeploymentDetails": CreateDeploymentDetails,
+    "CreateElasticsearchConnectionDetails": CreateElasticsearchConnectionDetails,
+    "CreateGenericConnectionDetails": CreateGenericConnectionDetails,
     "CreateGoldenGateConnectionDetails": CreateGoldenGateConnectionDetails,
+    "CreateGoogleBigQueryConnectionDetails": CreateGoogleBigQueryConnectionDetails,
+    "CreateGoogleCloudStorageConnectionDetails": CreateGoogleCloudStorageConnectionDetails,
     "CreateHdfsConnectionDetails": CreateHdfsConnectionDetails,
     "CreateJavaMessageServiceConnectionDetails": CreateJavaMessageServiceConnectionDetails,
     "CreateKafkaConnectionDetails": CreateKafkaConnectionDetails,
@@ -211,6 +249,7 @@ golden_gate_type_mapping = {
     "CreateOracleConnectionDetails": CreateOracleConnectionDetails,
     "CreateOracleNosqlConnectionDetails": CreateOracleNosqlConnectionDetails,
     "CreatePostgresqlConnectionDetails": CreatePostgresqlConnectionDetails,
+    "CreateRedisConnectionDetails": CreateRedisConnectionDetails,
     "CreateSnowflakeConnectionDetails": CreateSnowflakeConnectionDetails,
     "DatabaseRegistration": DatabaseRegistration,
     "DatabaseRegistrationCollection": DatabaseRegistrationCollection,
@@ -245,9 +284,17 @@ golden_gate_type_mapping = {
     "DeploymentWalletExistsResponseDetails": DeploymentWalletExistsResponseDetails,
     "DeploymentWalletsOperationCollection": DeploymentWalletsOperationCollection,
     "DeploymentWalletsOperationSummary": DeploymentWalletsOperationSummary,
+    "ElasticsearchConnection": ElasticsearchConnection,
+    "ElasticsearchConnectionSummary": ElasticsearchConnectionSummary,
     "ExportDeploymentWalletDetails": ExportDeploymentWalletDetails,
+    "GenericConnection": GenericConnection,
+    "GenericConnectionSummary": GenericConnectionSummary,
     "GoldenGateConnection": GoldenGateConnection,
     "GoldenGateConnectionSummary": GoldenGateConnectionSummary,
+    "GoogleBigQueryConnection": GoogleBigQueryConnection,
+    "GoogleBigQueryConnectionSummary": GoogleBigQueryConnectionSummary,
+    "GoogleCloudStorageConnection": GoogleCloudStorageConnection,
+    "GoogleCloudStorageConnectionSummary": GoogleCloudStorageConnectionSummary,
     "HdfsConnection": HdfsConnection,
     "HdfsConnectionSummary": HdfsConnectionSummary,
     "ImportDeploymentWalletDetails": ImportDeploymentWalletDetails,
@@ -278,6 +325,8 @@ golden_gate_type_mapping = {
     "OracleNosqlConnectionSummary": OracleNosqlConnectionSummary,
     "PostgresqlConnection": PostgresqlConnection,
     "PostgresqlConnectionSummary": PostgresqlConnectionSummary,
+    "RedisConnection": RedisConnection,
+    "RedisConnectionSummary": RedisConnectionSummary,
     "RescheduleDeploymentUpgradeDetails": RescheduleDeploymentUpgradeDetails,
     "RescheduleDeploymentUpgradeToDateDetails": RescheduleDeploymentUpgradeToDateDetails,
     "RestoreDeploymentDetails": RestoreDeploymentDetails,
@@ -294,6 +343,8 @@ golden_gate_type_mapping = {
     "TrailFileSummary": TrailFileSummary,
     "TrailSequenceCollection": TrailSequenceCollection,
     "TrailSequenceSummary": TrailSequenceSummary,
+    "UpdateAmazonKinesisConnectionDetails": UpdateAmazonKinesisConnectionDetails,
+    "UpdateAmazonRedshiftConnectionDetails": UpdateAmazonRedshiftConnectionDetails,
     "UpdateAmazonS3ConnectionDetails": UpdateAmazonS3ConnectionDetails,
     "UpdateAzureDataLakeStorageConnectionDetails": UpdateAzureDataLakeStorageConnectionDetails,
     "UpdateAzureSynapseConnectionDetails": UpdateAzureSynapseConnectionDetails,
@@ -301,7 +352,11 @@ golden_gate_type_mapping = {
     "UpdateDatabaseRegistrationDetails": UpdateDatabaseRegistrationDetails,
     "UpdateDeploymentBackupDetails": UpdateDeploymentBackupDetails,
     "UpdateDeploymentDetails": UpdateDeploymentDetails,
+    "UpdateElasticsearchConnectionDetails": UpdateElasticsearchConnectionDetails,
+    "UpdateGenericConnectionDetails": UpdateGenericConnectionDetails,
     "UpdateGoldenGateConnectionDetails": UpdateGoldenGateConnectionDetails,
+    "UpdateGoogleBigQueryConnectionDetails": UpdateGoogleBigQueryConnectionDetails,
+    "UpdateGoogleCloudStorageConnectionDetails": UpdateGoogleCloudStorageConnectionDetails,
     "UpdateHdfsConnectionDetails": UpdateHdfsConnectionDetails,
     "UpdateJavaMessageServiceConnectionDetails": UpdateJavaMessageServiceConnectionDetails,
     "UpdateKafkaConnectionDetails": UpdateKafkaConnectionDetails,
@@ -316,6 +371,7 @@ golden_gate_type_mapping = {
     "UpdateOracleConnectionDetails": UpdateOracleConnectionDetails,
     "UpdateOracleNosqlConnectionDetails": UpdateOracleNosqlConnectionDetails,
     "UpdatePostgresqlConnectionDetails": UpdatePostgresqlConnectionDetails,
+    "UpdateRedisConnectionDetails": UpdateRedisConnectionDetails,
     "UpdateSnowflakeConnectionDetails": UpdateSnowflakeConnectionDetails,
     "UpgradeDeploymentCurrentReleaseDetails": UpgradeDeploymentCurrentReleaseDetails,
     "UpgradeDeploymentDetails": UpgradeDeploymentDetails,

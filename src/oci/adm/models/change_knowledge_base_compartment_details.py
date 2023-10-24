@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeKnowledgeBaseCompartmentDetails(object):
     """
-    Details for moving a Knowledge Base.
+    Details for moving a knowledge base.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ChangeKnowledgeBaseCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeKnowledgeBaseCompartmentDetails.
-        The `OCID`__ of the compartment to which the resource must be moved.
+        The compartment Oracle Cloud Identifier (`OCID`__) to which the resource must be moved.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -53,7 +53,7 @@ class ChangeKnowledgeBaseCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeKnowledgeBaseCompartmentDetails.
-        The `OCID`__ of the compartment to which the resource must be moved.
+        The compartment Oracle Cloud Identifier (`OCID`__) to which the resource must be moved.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

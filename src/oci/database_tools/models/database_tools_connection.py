@@ -39,6 +39,10 @@ class DatabaseToolsConnection(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a DatabaseToolsConnection.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
     #: A constant which can be used with the type property of a DatabaseToolsConnection.
     #: This constant has a value of "ORACLE_DATABASE"
     TYPE_ORACLE_DATABASE = "ORACLE_DATABASE"
@@ -47,13 +51,31 @@ class DatabaseToolsConnection(object):
     #: This constant has a value of "MYSQL"
     TYPE_MYSQL = "MYSQL"
 
+    #: A constant which can be used with the type property of a DatabaseToolsConnection.
+    #: This constant has a value of "POSTGRESQL"
+    TYPE_POSTGRESQL = "POSTGRESQL"
+
+    #: A constant which can be used with the type property of a DatabaseToolsConnection.
+    #: This constant has a value of "GENERIC_JDBC"
+    TYPE_GENERIC_JDBC = "GENERIC_JDBC"
+
+    #: A constant which can be used with the runtime_support property of a DatabaseToolsConnection.
+    #: This constant has a value of "SUPPORTED"
+    RUNTIME_SUPPORT_SUPPORTED = "SUPPORTED"
+
+    #: A constant which can be used with the runtime_support property of a DatabaseToolsConnection.
+    #: This constant has a value of "UNSUPPORTED"
+    RUNTIME_SUPPORT_UNSUPPORTED = "UNSUPPORTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseToolsConnection object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database_tools.models.DatabaseToolsConnectionOracleDatabase`
+        * :class:`~oci.database_tools.models.DatabaseToolsConnectionPostgresql`
         * :class:`~oci.database_tools.models.DatabaseToolsConnectionMySql`
+        * :class:`~oci.database_tools.models.DatabaseToolsConnectionGenericJdbc`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -71,7 +93,7 @@ class DatabaseToolsConnection(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DatabaseToolsConnection.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -99,11 +121,21 @@ class DatabaseToolsConnection(object):
             The value to assign to the system_tags property of this DatabaseToolsConnection.
         :type system_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this DatabaseToolsConnection.
+        :type locks: list[oci.database_tools.models.ResourceLock]
+
         :param type:
             The value to assign to the type property of this DatabaseToolsConnection.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
+
+        :param runtime_support:
+            The value to assign to the runtime_support property of this DatabaseToolsConnection.
+            Allowed values for this property are: "SUPPORTED", "UNSUPPORTED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type runtime_support: str
 
         """
         self.swagger_types = {
@@ -117,7 +149,9 @@ class DatabaseToolsConnection(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'system_tags': 'dict(str, dict(str, object))',
-            'type': 'str'
+            'locks': 'list[ResourceLock]',
+            'type': 'str',
+            'runtime_support': 'str'
         }
 
         self.attribute_map = {
@@ -131,7 +165,9 @@ class DatabaseToolsConnection(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'system_tags': 'systemTags',
-            'type': 'type'
+            'locks': 'locks',
+            'type': 'type',
+            'runtime_support': 'runtimeSupport'
         }
 
         self._id = None
@@ -144,7 +180,9 @@ class DatabaseToolsConnection(object):
         self._defined_tags = None
         self._freeform_tags = None
         self._system_tags = None
+        self._locks = None
         self._type = None
+        self._runtime_support = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -157,8 +195,14 @@ class DatabaseToolsConnection(object):
         if type == 'ORACLE_DATABASE':
             return 'DatabaseToolsConnectionOracleDatabase'
 
+        if type == 'POSTGRESQL':
+            return 'DatabaseToolsConnectionPostgresql'
+
         if type == 'MYSQL':
             return 'DatabaseToolsConnectionMySql'
+
+        if type == 'GENERIC_JDBC':
+            return 'DatabaseToolsConnectionGenericJdbc'
         else:
             return 'DatabaseToolsConnection'
 
@@ -248,7 +292,7 @@ class DatabaseToolsConnection(object):
         **[Required]** Gets the lifecycle_state of this DatabaseToolsConnection.
         The current state of the Database Tools connection.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -267,7 +311,7 @@ class DatabaseToolsConnection(object):
         :param lifecycle_state: The lifecycle_state of this DatabaseToolsConnection.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -423,12 +467,36 @@ class DatabaseToolsConnection(object):
         self._system_tags = system_tags
 
     @property
+    def locks(self):
+        """
+        Gets the locks of this DatabaseToolsConnection.
+        Locks associated with this resource.
+
+
+        :return: The locks of this DatabaseToolsConnection.
+        :rtype: list[oci.database_tools.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this DatabaseToolsConnection.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this DatabaseToolsConnection.
+        :type: list[oci.database_tools.models.ResourceLock]
+        """
+        self._locks = locks
+
+    @property
     def type(self):
         """
         **[Required]** Gets the type of this DatabaseToolsConnection.
         The Database Tools connection type.
 
-        Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -447,10 +515,40 @@ class DatabaseToolsConnection(object):
         :param type: The type of this DatabaseToolsConnection.
         :type: str
         """
-        allowed_values = ["ORACLE_DATABASE", "MYSQL"]
+        allowed_values = ["ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
+
+    @property
+    def runtime_support(self):
+        """
+        **[Required]** Gets the runtime_support of this DatabaseToolsConnection.
+        Specifies whether this connection is supported by the Database Tools Runtime.
+
+        Allowed values for this property are: "SUPPORTED", "UNSUPPORTED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The runtime_support of this DatabaseToolsConnection.
+        :rtype: str
+        """
+        return self._runtime_support
+
+    @runtime_support.setter
+    def runtime_support(self, runtime_support):
+        """
+        Sets the runtime_support of this DatabaseToolsConnection.
+        Specifies whether this connection is supported by the Database Tools Runtime.
+
+
+        :param runtime_support: The runtime_support of this DatabaseToolsConnection.
+        :type: str
+        """
+        allowed_values = ["SUPPORTED", "UNSUPPORTED"]
+        if not value_allowed_none_or_none_sentinel(runtime_support, allowed_values):
+            runtime_support = 'UNKNOWN_ENUM_VALUE'
+        self._runtime_support = runtime_support
 
     def __repr__(self):
         return formatted_flat_dict(self)

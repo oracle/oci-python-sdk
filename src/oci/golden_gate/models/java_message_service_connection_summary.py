@@ -23,7 +23,7 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this JavaMessageServiceConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param id:
@@ -78,10 +78,6 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
             The value to assign to the key_id property of this JavaMessageServiceConnectionSummary.
         :type key_id: str
 
-        :param subnet_id:
-            The value to assign to the subnet_id property of this JavaMessageServiceConnectionSummary.
-        :type subnet_id: str
-
         :param ingress_ips:
             The value to assign to the ingress_ips property of this JavaMessageServiceConnectionSummary.
         :type ingress_ips: list[oci.golden_gate.models.IngressIpDetails]
@@ -89,6 +85,10 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         :param nsg_ids:
             The value to assign to the nsg_ids property of this JavaMessageServiceConnectionSummary.
         :type nsg_ids: list[str]
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this JavaMessageServiceConnectionSummary.
+        :type subnet_id: str
 
         :param technology_type:
             The value to assign to the technology_type property of this JavaMessageServiceConnectionSummary.
@@ -122,6 +122,14 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
             The value to assign to the connection_factory property of this JavaMessageServiceConnectionSummary.
         :type connection_factory: str
 
+        :param security_protocol:
+            The value to assign to the security_protocol property of this JavaMessageServiceConnectionSummary.
+        :type security_protocol: str
+
+        :param authentication_type:
+            The value to assign to the authentication_type property of this JavaMessageServiceConnectionSummary.
+        :type authentication_type: str
+
         :param username:
             The value to assign to the username property of this JavaMessageServiceConnectionSummary.
         :type username: str
@@ -146,9 +154,9 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
             'time_updated': 'datetime',
             'vault_id': 'str',
             'key_id': 'str',
-            'subnet_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
             'technology_type': 'str',
             'should_use_jndi': 'bool',
             'jndi_connection_factory': 'str',
@@ -157,6 +165,8 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
             'jndi_security_principal': 'str',
             'connection_url': 'str',
             'connection_factory': 'str',
+            'security_protocol': 'str',
+            'authentication_type': 'str',
             'username': 'str',
             'private_ip': 'str'
         }
@@ -176,9 +186,9 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
             'time_updated': 'timeUpdated',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'subnet_id': 'subnetId',
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
             'technology_type': 'technologyType',
             'should_use_jndi': 'shouldUseJndi',
             'jndi_connection_factory': 'jndiConnectionFactory',
@@ -187,6 +197,8 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
             'jndi_security_principal': 'jndiSecurityPrincipal',
             'connection_url': 'connectionUrl',
             'connection_factory': 'connectionFactory',
+            'security_protocol': 'securityProtocol',
+            'authentication_type': 'authenticationType',
             'username': 'username',
             'private_ip': 'privateIp'
         }
@@ -205,9 +217,9 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         self._time_updated = None
         self._vault_id = None
         self._key_id = None
-        self._subnet_id = None
         self._ingress_ips = None
         self._nsg_ids = None
+        self._subnet_id = None
         self._technology_type = None
         self._should_use_jndi = None
         self._jndi_connection_factory = None
@@ -216,6 +228,8 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         self._jndi_security_principal = None
         self._connection_url = None
         self._connection_factory = None
+        self._security_protocol = None
+        self._authentication_type = None
         self._username = None
         self._private_ip = None
         self._connection_type = 'JAVA_MESSAGE_SERVICE'
@@ -427,6 +441,58 @@ class JavaMessageServiceConnectionSummary(ConnectionSummary):
         :type: str
         """
         self._connection_factory = connection_factory
+
+    @property
+    def security_protocol(self):
+        """
+        Gets the security_protocol of this JavaMessageServiceConnectionSummary.
+        Security protocol for Java Message Service. If not provided, default is PLAIN.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :return: The security_protocol of this JavaMessageServiceConnectionSummary.
+        :rtype: str
+        """
+        return self._security_protocol
+
+    @security_protocol.setter
+    def security_protocol(self, security_protocol):
+        """
+        Sets the security_protocol of this JavaMessageServiceConnectionSummary.
+        Security protocol for Java Message Service. If not provided, default is PLAIN.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :param security_protocol: The security_protocol of this JavaMessageServiceConnectionSummary.
+        :type: str
+        """
+        self._security_protocol = security_protocol
+
+    @property
+    def authentication_type(self):
+        """
+        Gets the authentication_type of this JavaMessageServiceConnectionSummary.
+        Authentication type for Java Message Service.  If not provided, default is NONE.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :return: The authentication_type of this JavaMessageServiceConnectionSummary.
+        :rtype: str
+        """
+        return self._authentication_type
+
+    @authentication_type.setter
+    def authentication_type(self, authentication_type):
+        """
+        Sets the authentication_type of this JavaMessageServiceConnectionSummary.
+        Authentication type for Java Message Service.  If not provided, default is NONE.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :param authentication_type: The authentication_type of this JavaMessageServiceConnectionSummary.
+        :type: str
+        """
+        self._authentication_type = authentication_type
 
     @property
     def username(self):

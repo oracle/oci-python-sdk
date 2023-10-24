@@ -35,7 +35,7 @@ class DatabaseToolsConnectionOracleDatabaseSummary(DatabaseToolsConnectionSummar
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DatabaseToolsConnectionOracleDatabaseSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE"
         :type lifecycle_state: str
 
         :param lifecycle_details:
@@ -62,10 +62,19 @@ class DatabaseToolsConnectionOracleDatabaseSummary(DatabaseToolsConnectionSummar
             The value to assign to the system_tags property of this DatabaseToolsConnectionOracleDatabaseSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this DatabaseToolsConnectionOracleDatabaseSummary.
+        :type locks: list[oci.database_tools.models.ResourceLock]
+
         :param type:
             The value to assign to the type property of this DatabaseToolsConnectionOracleDatabaseSummary.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
         :type type: str
+
+        :param runtime_support:
+            The value to assign to the runtime_support property of this DatabaseToolsConnectionOracleDatabaseSummary.
+            Allowed values for this property are: "SUPPORTED", "UNSUPPORTED"
+        :type runtime_support: str
 
         :param related_resource:
             The value to assign to the related_resource property of this DatabaseToolsConnectionOracleDatabaseSummary.
@@ -95,6 +104,10 @@ class DatabaseToolsConnectionOracleDatabaseSummary(DatabaseToolsConnectionSummar
             The value to assign to the private_endpoint_id property of this DatabaseToolsConnectionOracleDatabaseSummary.
         :type private_endpoint_id: str
 
+        :param proxy_client:
+            The value to assign to the proxy_client property of this DatabaseToolsConnectionOracleDatabaseSummary.
+        :type proxy_client: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientSummary
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -107,14 +120,17 @@ class DatabaseToolsConnectionOracleDatabaseSummary(DatabaseToolsConnectionSummar
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'system_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]',
             'type': 'str',
+            'runtime_support': 'str',
             'related_resource': 'DatabaseToolsRelatedResource',
             'connection_string': 'str',
             'user_name': 'str',
             'user_password': 'DatabaseToolsUserPasswordSummary',
             'advanced_properties': 'dict(str, str)',
             'key_stores': 'list[DatabaseToolsKeyStoreSummary]',
-            'private_endpoint_id': 'str'
+            'private_endpoint_id': 'str',
+            'proxy_client': 'DatabaseToolsConnectionOracleDatabaseProxyClientSummary'
         }
 
         self.attribute_map = {
@@ -128,14 +144,17 @@ class DatabaseToolsConnectionOracleDatabaseSummary(DatabaseToolsConnectionSummar
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'system_tags': 'systemTags',
+            'locks': 'locks',
             'type': 'type',
+            'runtime_support': 'runtimeSupport',
             'related_resource': 'relatedResource',
             'connection_string': 'connectionString',
             'user_name': 'userName',
             'user_password': 'userPassword',
             'advanced_properties': 'advancedProperties',
             'key_stores': 'keyStores',
-            'private_endpoint_id': 'privateEndpointId'
+            'private_endpoint_id': 'privateEndpointId',
+            'proxy_client': 'proxyClient'
         }
 
         self._id = None
@@ -148,7 +167,9 @@ class DatabaseToolsConnectionOracleDatabaseSummary(DatabaseToolsConnectionSummar
         self._defined_tags = None
         self._freeform_tags = None
         self._system_tags = None
+        self._locks = None
         self._type = None
+        self._runtime_support = None
         self._related_resource = None
         self._connection_string = None
         self._user_name = None
@@ -156,6 +177,7 @@ class DatabaseToolsConnectionOracleDatabaseSummary(DatabaseToolsConnectionSummar
         self._advanced_properties = None
         self._key_stores = None
         self._private_endpoint_id = None
+        self._proxy_client = None
         self._type = 'ORACLE_DATABASE'
 
     @property
@@ -181,7 +203,7 @@ class DatabaseToolsConnectionOracleDatabaseSummary(DatabaseToolsConnectionSummar
     @property
     def connection_string(self):
         """
-        Gets the connection_string of this DatabaseToolsConnectionOracleDatabaseSummary.
+        **[Required]** Gets the connection_string of this DatabaseToolsConnectionOracleDatabaseSummary.
         The connect descriptor or Easy Connect Naming method used to connect to the database.
 
 
@@ -323,6 +345,26 @@ class DatabaseToolsConnectionOracleDatabaseSummary(DatabaseToolsConnectionSummar
         :type: str
         """
         self._private_endpoint_id = private_endpoint_id
+
+    @property
+    def proxy_client(self):
+        """
+        Gets the proxy_client of this DatabaseToolsConnectionOracleDatabaseSummary.
+
+        :return: The proxy_client of this DatabaseToolsConnectionOracleDatabaseSummary.
+        :rtype: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientSummary
+        """
+        return self._proxy_client
+
+    @proxy_client.setter
+    def proxy_client(self, proxy_client):
+        """
+        Sets the proxy_client of this DatabaseToolsConnectionOracleDatabaseSummary.
+
+        :param proxy_client: The proxy_client of this DatabaseToolsConnectionOracleDatabaseSummary.
+        :type: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientSummary
+        """
+        self._proxy_client = proxy_client
 
     def __repr__(self):
         return formatted_flat_dict(self)

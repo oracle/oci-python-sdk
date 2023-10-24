@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class KnowledgeBaseCollection(object):
     """
-    Collection of Knowledge Base summaries.
+    Collection of knowledge base summaries.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class KnowledgeBaseCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this KnowledgeBaseCollection.
-        List of Knowledge Base summaries.
+        List of knowledge base summaries.
 
 
         :return: The items of this KnowledgeBaseCollection.
@@ -51,7 +51,7 @@ class KnowledgeBaseCollection(object):
     def items(self, items):
         """
         Sets the items of this KnowledgeBaseCollection.
-        List of Knowledge Base summaries.
+        List of knowledge base summaries.
 
 
         :param items: The items of this KnowledgeBaseCollection.

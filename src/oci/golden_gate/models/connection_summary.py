@@ -79,6 +79,34 @@ class ConnectionSummary(object):
     #: This constant has a value of "MONGODB"
     CONNECTION_TYPE_MONGODB = "MONGODB"
 
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "AMAZON_KINESIS"
+    CONNECTION_TYPE_AMAZON_KINESIS = "AMAZON_KINESIS"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "AMAZON_REDSHIFT"
+    CONNECTION_TYPE_AMAZON_REDSHIFT = "AMAZON_REDSHIFT"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "REDIS"
+    CONNECTION_TYPE_REDIS = "REDIS"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "ELASTICSEARCH"
+    CONNECTION_TYPE_ELASTICSEARCH = "ELASTICSEARCH"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "GENERIC"
+    CONNECTION_TYPE_GENERIC = "GENERIC"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "GOOGLE_CLOUD_STORAGE"
+    CONNECTION_TYPE_GOOGLE_CLOUD_STORAGE = "GOOGLE_CLOUD_STORAGE"
+
+    #: A constant which can be used with the connection_type property of a ConnectionSummary.
+    #: This constant has a value of "GOOGLE_BIGQUERY"
+    CONNECTION_TYPE_GOOGLE_BIGQUERY = "GOOGLE_BIGQUERY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConnectionSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -91,21 +119,28 @@ class ConnectionSummary(object):
         * :class:`~oci.golden_gate.models.OracleNosqlConnectionSummary`
         * :class:`~oci.golden_gate.models.OracleConnectionSummary`
         * :class:`~oci.golden_gate.models.SnowflakeConnectionSummary`
+        * :class:`~oci.golden_gate.models.AmazonKinesisConnectionSummary`
+        * :class:`~oci.golden_gate.models.RedisConnectionSummary`
         * :class:`~oci.golden_gate.models.OciObjectStorageConnectionSummary`
         * :class:`~oci.golden_gate.models.AzureDataLakeStorageConnectionSummary`
         * :class:`~oci.golden_gate.models.AzureSynapseConnectionSummary`
         * :class:`~oci.golden_gate.models.MongoDbConnectionSummary`
+        * :class:`~oci.golden_gate.models.GoogleBigQueryConnectionSummary`
         * :class:`~oci.golden_gate.models.AmazonS3ConnectionSummary`
         * :class:`~oci.golden_gate.models.PostgresqlConnectionSummary`
         * :class:`~oci.golden_gate.models.MysqlConnectionSummary`
+        * :class:`~oci.golden_gate.models.GenericConnectionSummary`
         * :class:`~oci.golden_gate.models.KafkaConnectionSummary`
+        * :class:`~oci.golden_gate.models.ElasticsearchConnectionSummary`
+        * :class:`~oci.golden_gate.models.AmazonRedshiftConnectionSummary`
         * :class:`~oci.golden_gate.models.HdfsConnectionSummary`
+        * :class:`~oci.golden_gate.models.GoogleCloudStorageConnectionSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this ConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -161,10 +196,6 @@ class ConnectionSummary(object):
             The value to assign to the key_id property of this ConnectionSummary.
         :type key_id: str
 
-        :param subnet_id:
-            The value to assign to the subnet_id property of this ConnectionSummary.
-        :type subnet_id: str
-
         :param ingress_ips:
             The value to assign to the ingress_ips property of this ConnectionSummary.
         :type ingress_ips: list[oci.golden_gate.models.IngressIpDetails]
@@ -172,6 +203,10 @@ class ConnectionSummary(object):
         :param nsg_ids:
             The value to assign to the nsg_ids property of this ConnectionSummary.
         :type nsg_ids: list[str]
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this ConnectionSummary.
+        :type subnet_id: str
 
         """
         self.swagger_types = {
@@ -189,9 +224,9 @@ class ConnectionSummary(object):
             'time_updated': 'datetime',
             'vault_id': 'str',
             'key_id': 'str',
-            'subnet_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'subnet_id': 'str'
         }
 
         self.attribute_map = {
@@ -209,9 +244,9 @@ class ConnectionSummary(object):
             'time_updated': 'timeUpdated',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'subnet_id': 'subnetId',
             'ingress_ips': 'ingressIps',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId'
         }
 
         self._connection_type = None
@@ -228,9 +263,9 @@ class ConnectionSummary(object):
         self._time_updated = None
         self._vault_id = None
         self._key_id = None
-        self._subnet_id = None
         self._ingress_ips = None
         self._nsg_ids = None
+        self._subnet_id = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -261,6 +296,12 @@ class ConnectionSummary(object):
         if type == 'SNOWFLAKE':
             return 'SnowflakeConnectionSummary'
 
+        if type == 'AMAZON_KINESIS':
+            return 'AmazonKinesisConnectionSummary'
+
+        if type == 'REDIS':
+            return 'RedisConnectionSummary'
+
         if type == 'OCI_OBJECT_STORAGE':
             return 'OciObjectStorageConnectionSummary'
 
@@ -273,6 +314,9 @@ class ConnectionSummary(object):
         if type == 'MONGODB':
             return 'MongoDbConnectionSummary'
 
+        if type == 'GOOGLE_BIGQUERY':
+            return 'GoogleBigQueryConnectionSummary'
+
         if type == 'AMAZON_S3':
             return 'AmazonS3ConnectionSummary'
 
@@ -282,11 +326,23 @@ class ConnectionSummary(object):
         if type == 'MYSQL':
             return 'MysqlConnectionSummary'
 
+        if type == 'GENERIC':
+            return 'GenericConnectionSummary'
+
         if type == 'KAFKA':
             return 'KafkaConnectionSummary'
 
+        if type == 'ELASTICSEARCH':
+            return 'ElasticsearchConnectionSummary'
+
+        if type == 'AMAZON_REDSHIFT':
+            return 'AmazonRedshiftConnectionSummary'
+
         if type == 'HDFS':
             return 'HdfsConnectionSummary'
+
+        if type == 'GOOGLE_CLOUD_STORAGE':
+            return 'GoogleCloudStorageConnectionSummary'
         else:
             return 'ConnectionSummary'
 
@@ -296,7 +352,7 @@ class ConnectionSummary(object):
         **[Required]** Gets the connection_type of this ConnectionSummary.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -315,7 +371,7 @@ class ConnectionSummary(object):
         :param connection_type: The connection_type of this ConnectionSummary.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type
@@ -685,34 +741,6 @@ class ConnectionSummary(object):
         self._key_id = key_id
 
     @property
-    def subnet_id(self):
-        """
-        Gets the subnet_id of this ConnectionSummary.
-        The `OCID`__ of the subnet being referenced.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The subnet_id of this ConnectionSummary.
-        :rtype: str
-        """
-        return self._subnet_id
-
-    @subnet_id.setter
-    def subnet_id(self, subnet_id):
-        """
-        Sets the subnet_id of this ConnectionSummary.
-        The `OCID`__ of the subnet being referenced.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-
-        :param subnet_id: The subnet_id of this ConnectionSummary.
-        :type: str
-        """
-        self._subnet_id = subnet_id
-
-    @property
     def ingress_ips(self):
         """
         Gets the ingress_ips of this ConnectionSummary.
@@ -761,6 +789,34 @@ class ConnectionSummary(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this ConnectionSummary.
+        The `OCID`__ of the subnet being referenced.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this ConnectionSummary.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this ConnectionSummary.
+        The `OCID`__ of the subnet being referenced.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this ConnectionSummary.
+        :type: str
+        """
+        self._subnet_id = subnet_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

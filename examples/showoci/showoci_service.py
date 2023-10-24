@@ -1,4 +1,4 @@
-##########################################################################
+#########################################################################
 # Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
@@ -38,7 +38,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.09.26"
+    version = "23.10.24"
     oci_compatible_version = "2.110.2"
     thread_lock = threading.Lock()
 
@@ -521,7 +521,7 @@ class ShowOCIService(object):
             self.generate_signer_from_instance_principals()
 
         # if resource pricipals - generate signer from token or config
-        if flags.use_resource_principals:
+        elif flags.use_resource_principals:
             self.generate_signer_from_resource_principals()
 
         # if delegation token for cloud shell
@@ -1099,17 +1099,27 @@ class ShowOCIService(object):
     ##########################################################################
     # print print error
     ##########################################################################
-    def __print_error(self, msg, e):
-        classname = type(self).__name__
+    def __print_error(self, msg, e, compartment=[]):
 
-        if 'TooManyRequests' in str(e):
-            print(" - TooManyRequests Err in " + msg)
-        elif isinstance(e, KeyError):
-            print("\nError in " + classname + ":" + msg + ": KeyError " + str(e.args))
-        else:
-            print("\nError in " + classname + ":" + msg + ": " + str(e))
+        try:
+            classname = type(self).__name__
+            compartment_info = ""
 
-        self.error += 1
+            if compartment:
+                if 'name' in compartment:
+                    compartment_info = " in compartment " + compartment['name']
+
+            if 'TooManyRequests' in str(e):
+                print(" - TooManyRequests Err in " + msg + compartment_info)
+            elif isinstance(e, KeyError):
+                print("\nError in " + classname + ":" + msg + ": KeyError " + str(e.args) + compartment_info)
+            else:
+                print("\nError in " + classname + ":" + msg + ": " + str(e) + compartment_info)
+
+            self.error += 1
+
+        except Exception as e:
+            print("\nError in __print_error " + str(e))
 
     ##########################################################################
     # check service error to warn instead of error
@@ -2622,7 +2632,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_vcn", e)
+            self.__print_error("__load_core_network_vcn", e, compartment)
             return data
 
     ##########################################################################
@@ -2698,7 +2708,7 @@ class ShowOCIService(object):
         except Exception as e:
             if 'NotAuthorizedOrNotFound' in str(e.message):
                 return data
-            self.__print_error("__load_core_network_vlan", e)
+            self.__print_error("__load_core_network_vlan", e, compartment)
             return data
 
     ##########################################################################
@@ -2762,7 +2772,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_igw", e)
+            self.__print_error("__load_core_network_igw", e, compartment)
             return data
 
     ##########################################################################
@@ -2839,7 +2849,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_lpg", e)
+            self.__print_error("__load_core_network_lpg", e, compartment)
             return data
 
     ##########################################################################
@@ -2917,7 +2927,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_rpc", e)
+            self.__print_error("__load_core_network_rpc", e, compartment)
             return data
 
     ##########################################################################
@@ -2987,7 +2997,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_route", e)
+            self.__print_error("__load_core_network_route", e, compartment)
             return data
 
     ##########################################################################
@@ -3090,7 +3100,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_dhcpop", e)
+            self.__print_error("__load_core_network_dhcpop", e, compartment)
             return data
 
     ##########################################################################
@@ -3317,7 +3327,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_seclst", e)
+            self.__print_error("__load_core_network_seclst", e, compartment)
             return data
 
     ##########################################################################
@@ -3576,7 +3586,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_nsg", e)
+            self.__print_error("__load_core_network_nsg", e, compartment)
             return data
 
     ##########################################################################
@@ -3656,7 +3666,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_slist", e)
+            self.__print_error("__load_core_network_slist", e, compartment)
             return data
 
     ##########################################################################
@@ -3829,7 +3839,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_sgw", e)
+            self.__print_error("__load_core_network_sgw", e, compartment)
             return data
 
     ##########################################################################
@@ -3902,7 +3912,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_nat", e)
+            self.__print_error("__load_core_network_nat", e, compartment)
             return data
 
     ##########################################################################
@@ -3993,7 +4003,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_dra", e)
+            self.__print_error("__load_core_network_dra", e, compartment)
             return data
 
     ##########################################################################
@@ -4105,7 +4115,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_drg", e)
+            self.__print_error("__load_core_network_drg", e, compartment)
             return data
 
     ##########################################################################
@@ -4226,7 +4236,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_cpe", e)
+            self.__print_error("__load_core_network_cpe", e, compartment)
             return data
 
     ##########################################################################
@@ -4311,7 +4321,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_firewall", e)
+            self.__print_error("__load_core_network_firewall", e, compartment)
             return data
 
     ##########################################################################
@@ -4423,7 +4433,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_firewall_policy", e)
+            self.__print_error("__load_core_network_firewall_policy", e, compartment)
             return data
 
     ##########################################################################
@@ -4655,7 +4665,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_vc", e)
+            self.__print_error("__load_core_network_vc", e, compartment)
             return data
 
     ##########################################################################
@@ -4815,7 +4825,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_ips", e)
+            self.__print_error("__load_core_network_ips", e, compartment)
             return data
 
     ##########################################################################
@@ -4938,7 +4948,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_core_network_dns_resolvers", e)
+            self.__print_error("__load_core_network_dns_resolvers", e, compartment)
             return data
 
     ##########################################################################
@@ -5308,7 +5318,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_compute_instances", e)
+            self.__print_error("__load_core_compute_instances", e, compartment)
             return data
 
     ##########################################################################
@@ -5380,7 +5390,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_compute_images", e)
+            self.__print_error("__load_core_compute_images", e, compartment)
             return data
 
     ##########################################################################
@@ -5499,7 +5509,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_compute_capacity_reservation", e)
+            self.__print_error("__load_core_compute_capacity_reservation", e, compartment)
             return data
 
     ##########################################################################
@@ -5641,7 +5651,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_compute_autoscaling", e)
+            self.__print_error("__load_core_compute_autoscaling", e, compartment)
             return data
 
     ##########################################################################
@@ -5688,22 +5698,38 @@ class ShowOCIService(object):
 
                 # config = oci.core.models.InstanceConfigurationSummary
                 for config in configs:
-                    val = {'id': str(config.id), 'time_created': str(config.time_created),
-                           'name': str(config.display_name), 'compute_shape': "", 'compute_source': "",
-                           'compute_display_name': "", 'block_volumes': "", 'secondary_vnics': "",
-                           'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
+                    val = {
+                        'id': str(config.id),
+                        'time_created': str(config.time_created),
+                        'name': str(config.display_name),
+                        'compute_shape': "",
+                        'compute_source': "",
+                        'compute_display_name': "",
+                        'block_volumes': "",
+                        'secondary_vnics': "",
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region'])}
 
                     arr = []
                     try:
                         # get info on the instance details
                         # arr = oci.core.models.InstanceConfiguration
-                        arr = compute_manage.get_instance_configuration(config.id).data
+                        arr = compute_manage.get_instance_configuration(config.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
 
                     except oci.exceptions.ServiceError as e:
+                        errstr += "Error for " + str(config.display_name)
                         if self.__check_service_error(e.code):
                             continue
+                        continue
+
+                    except Exception:
+                        errstr += "Error for " + str(config.display_name)
+                        continue
 
                     # instance_detail = oci.core.models.ComputeInstanceDetails
+                    if not arr:
+                        continue
+
                     if arr.instance_details:
                         instance_detail = arr.instance_details
 
@@ -5741,12 +5767,13 @@ class ShowOCIService(object):
                                         if isinstance(source_details, oci.core.models.InstanceConfigurationInstanceSourceViaBootVolumeDetails):
                                             if source_details.boot_volume_id:
                                                 try:
-                                                    bootvol = block_storage.get_boot_volume(source_details.boot_volume_id)
+                                                    bootvol = block_storage.get_boot_volume(source_details.boot_volume_id).data
                                                     if bootvol:
-                                                        val['compute_source'] = "Boot Volume: " + bootvol['display_name']
+                                                        val['compute_source'] = "Boot Volume: " + str(bootvol.display_name)
                                                 except oci.exceptions.ServiceError as e:
                                                     if self.__check_service_error(e.code):
                                                         val['compute_source'] = "Boot Volume"
+
                         data.append(val)
                         cnt += 1
 
@@ -5754,13 +5781,11 @@ class ShowOCIService(object):
             return data
 
         except oci.exceptions.RequestException as e:
-
             if self.__check_request_error(e):
                 return data
-
             raise
         except Exception as e:
-            self.__print_error("__load_core_compute_inst_config", e)
+            self.__print_error("__load_core_compute_inst_config", e, compartment)
             return data
 
     ##########################################################################
@@ -5832,7 +5857,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_compute_inst_pool", e)
+            self.__print_error("__load_core_compute_inst_pool", e, compartment)
             return data
 
     ##########################################################################
@@ -5903,7 +5928,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_compute_boot_vol_attach", e)
+            self.__print_error("__load_core_compute_boot_vol_attach", e, compartment)
             return data
 
     ##########################################################################
@@ -5974,7 +5999,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_compute_vol_attach", e)
+            self.__print_error("__load_core_compute_vol_attach", e, compartment)
             return data
 
     ##########################################################################
@@ -6128,7 +6153,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_compute_vnic_attach", e)
+            self.__print_error("__load_core_compute_vnic_attach", e, compartment)
             return data
 
     ##########################################################################
@@ -6244,7 +6269,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_block_boot", e)
+            self.__print_error("__load_core_block_boot", e, compartment)
             return data
 
     ##########################################################################
@@ -6328,7 +6353,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_core_block_volume", e)
+            self.__print_error("__load_core_block_volume", e, compartment)
             return data
 
     ##########################################################################
@@ -6405,7 +6430,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_block_volume_group", e)
+            self.__print_error("__load_core_block_volume_group", e, compartment)
             return data
 
     ##########################################################################
@@ -6492,7 +6517,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_block_boot_backup", e)
+            self.__print_error("__load_core_block_boot_backup", e, compartment)
             return data
 
     ##########################################################################
@@ -6574,7 +6599,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_block_volume_backup", e)
+            self.__print_error("__load_core_block_volume_backup", e, compartment)
             return data
 
     ##########################################################################
@@ -6658,7 +6683,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_core_block_volume_group_backup", e)
+            self.__print_error("__load_core_block_volume_group_backup", e, compartment)
             return data
 
     ##########################################################################
@@ -6845,7 +6870,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_load_balancers", e)
+            self.__print_error("__load_load_balancers", e, compartment)
             return data
 
     ##########################################################################
@@ -6961,7 +6986,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_network_load_balancers", e)
+            self.__print_error("__load_network_load_balancers", e, compartment)
             return data
 
     ##########################################################################
@@ -7489,11 +7514,14 @@ class ShowOCIService(object):
 
                     try:
                         # bucket = oci.object_storage.models.Bucket
-                        bucket = object_storage.get_bucket(namespace_name, str(arr.name), fields=['approximateCount', 'approximateSize', 'autoTiering']).data
+                        bucket = object_storage.get_bucket(
+                            namespace_name=namespace_name,
+                            bucket_name=str(arr.name),
+                            fields=['approximateCount', 'approximateSize', 'autoTiering'],
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
 
                         if bucket:
                             val['storage_tier'] = self.get_value(bucket.storage_tier)
-                            val['archival_state'] = self.get_value(bucket.archival_state)
                             val['public_access_type'] = self.get_value(bucket.public_access_type)
                             val['object_events_enabled'] = self.get_value(bucket.object_events_enabled)
                             val['defined_tags'] = [] if bucket.defined_tags is None else bucket.defined_tags
@@ -7516,12 +7544,13 @@ class ShowOCIService(object):
                                 val['count'] = objcnt
 
                     except oci.exceptions.ServiceError as e:
+                        errstr += "Issue with " + arr.name + " "
                         val['error_message'] = str(e)
                         if self.__check_service_error(e.code):
                             self.__load_print_auth_warning(to_print=self.flags.skip_threads)
-                            errstr += "Issue with " + arr.name + " "
 
                     except Exception as e:
+                        errstr += "Issue with " + arr.name + " "
                         val['error_message'] = str(e)
                         if 'KmsKeyDisabled' in str(e):
                             self.__load_print_auth_warning(to_print=self.flags.skip_threads)
@@ -8299,7 +8328,7 @@ class ShowOCIService(object):
             raise
 
         except Exception as e:
-            self.__print_error("__load_database_exacc_vm_clusters", e)
+            self.__print_error("__load_database_exacc_vm_clusters", e, compartment)
             return data
 
     ##########################################################################
@@ -8418,7 +8447,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_exacc_adb_vmclusters", e)
+            self.__print_error("__load_database_exacc_adb_vmclusters", e, compartment)
             return data
 
     ##########################################################################
@@ -8596,7 +8625,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_exadata_infrastructure", e)
+            self.__print_error("__load_database_exadata_infrastructure", e, compartment)
             return data
 
     ##########################################################################
@@ -8747,7 +8776,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_exadata_vm_clusters", e)
+            self.__print_error("__load_database_exadata_vm_clusters", e, compartment)
             return data
 
     ##########################################################################
@@ -8840,7 +8869,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_db_homes", e)
+            self.__print_error("__load_database_db_homes", e, compartment)
             return data
 
     ##########################################################################
@@ -8933,7 +8962,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_standalone_backups", e)
+            self.__print_error("__load_database_standalone_backups", e, compartment)
             return data
 
     ##########################################################################
@@ -9105,7 +9134,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_dbsystems", e)
+            self.__print_error("__load_database_dbsystems", e, compartment)
             return data
 
     ##########################################################################
@@ -9671,7 +9700,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_adb_d_vmclusters", e)
+            self.__print_error("__load_database_adb_d_vmclusters", e, compartment)
             return data
 
     ##########################################################################
@@ -9765,7 +9794,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_adb_d_containers", e)
+            self.__print_error("__load_database_adb_d_containers", e, compartment)
             return data
 
     ##########################################################################
@@ -9966,7 +9995,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_autonomouns", e)
+            self.__print_error("__load_database_autonomouns", e, compartment)
             return data
 
     ##########################################################################
@@ -10065,7 +10094,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_external_cdb", e)
+            self.__print_error("__load_database_external_cdb", e, compartment)
             return data
 
     ##########################################################################
@@ -10166,7 +10195,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_external_pdb", e)
+            self.__print_error("__load_database_external_pdb", e, compartment)
             return data
 
     ##########################################################################
@@ -10264,7 +10293,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_external_nonpdb", e)
+            self.__print_error("__load_database_external_nonpdb", e, compartment)
             return data
 
     ##########################################################################
@@ -10350,7 +10379,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_nosql", e)
+            self.__print_error("__load_database_nosql", e, compartment)
             return data
 
     ##########################################################################
@@ -10504,7 +10533,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_mysql", e)
+            self.__print_error("__load_database_mysql", e, compartment)
             return data
 
     ##########################################################################
@@ -10590,7 +10619,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_software_images", e)
+            self.__print_error("__load_database_software_images", e, compartment)
             return data
 
     ##########################################################################
@@ -10684,7 +10713,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_gg_deployments", e)
+            self.__print_error("__load_database_gg_deployments", e, compartment)
             return data
 
     ##########################################################################
@@ -10772,7 +10801,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_database_gg_deployments", e)
+            self.__print_error("__load_database_gg_deployments", e, compartment)
             return data
 
     ##########################################################################
@@ -10904,7 +10933,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_container_node_pools", e)
+            self.__print_error("__load_container_node_pools", e, compartment)
             return data
 
     ##########################################################################
@@ -11033,7 +11062,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_container_clusters", e)
+            self.__print_error("__load_container_clusters", e, compartment)
             return data
 
     ##########################################################################
@@ -11195,7 +11224,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_streams_streams", e)
+            self.__print_error("__load_streams_streams", e, compartment)
             return data
 
     ##########################################################################
@@ -11271,7 +11300,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_streams_queues", e)
+            self.__print_error("__load_streams_queues", e, compartment)
             return data
 
     ##########################################################################
@@ -11354,7 +11383,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_api_gateways", e)
+            self.__print_error("__load_api_gateways", e, compartment)
             return data
 
     ##########################################################################
@@ -11431,7 +11460,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_api_deployments", e)
+            self.__print_error("__load_api_deployments", e, compartment)
             return data
 
     ##########################################################################
@@ -11499,7 +11528,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_functions_applications", e)
+            self.__print_error("__load_functions_applications", e, compartment)
             return data
 
     ##########################################################################
@@ -11676,7 +11705,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_resource_management_stacks", e)
+            self.__print_error("__load_resource_management_stacks", e, compartment)
             return data
 
     ##########################################################################
@@ -11742,7 +11771,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_email_senders", e)
+            self.__print_error("__load_email_senders", e, compartment)
             return data
 
     ##########################################################################
@@ -11808,7 +11837,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_email_suppressions", e)
+            self.__print_error("__load_email_suppressions", e, compartment)
             return data
 
     ##########################################################################
@@ -12128,7 +12157,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_monitoring_events", e)
+            self.__print_error("__load_monitoring_events", e, compartment)
             return data
 
     ##########################################################################
@@ -12211,7 +12240,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_monitoring_agents", e)
+            self.__print_error("__load_monitoring_agents", e, compartment)
             return data
 
     ##########################################################################
@@ -12288,7 +12317,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_monitoring_database_management", e)
+            self.__print_error("__load_monitoring_database_management", e, compartment)
             return data
 
     ##########################################################################
@@ -12363,7 +12392,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_monitoring_alarms", e)
+            self.__print_error("__load_monitoring_alarms", e, compartment)
             return data
 
     ##########################################################################
@@ -12436,7 +12465,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_notifications_topics", e)
+            self.__print_error("__load_notifications_topics", e, compartment)
             return data
 
     ##########################################################################
@@ -12510,7 +12539,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_notifications_subscriptions", e)
+            self.__print_error("__load_notifications_subscriptions", e, compartment)
             return data
 
     ##########################################################################
@@ -12684,7 +12713,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_edge_healthchecks_ping", e)
+            self.__print_error("__load_edge_healthchecks_ping", e, compartment)
             return data
 
     ##########################################################################
@@ -12779,7 +12808,7 @@ class ShowOCIService(object):
 
             raise
         except Exception as e:
-            self.__print_error("__load_edge_healthchecks_http", e)
+            self.__print_error("__load_edge_healthchecks_http", e, compartment)
             return data
 
     ##########################################################################
@@ -12856,7 +12885,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_edge_dns_zone", e)
+            self.__print_error("__load_edge_dns_zone", e, compartment)
             return data
 
     ##########################################################################
@@ -12933,7 +12962,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_edge_dns_zone", e)
+            self.__print_error("__load_edge_dns_zone", e, compartment)
             return data
 
     ##########################################################################
@@ -13011,7 +13040,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_edge_waas_policies", e)
+            self.__print_error("__load_edge_waas_policies", e, compartment)
             return data
 
     ##########################################################################
@@ -13091,7 +13120,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_edge_waf", e)
+            self.__print_error("__load_edge_waf", e, compartment)
             return data
 
     ##########################################################################
@@ -13305,7 +13334,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_data_ai_catalog", e)
+            self.__print_error("__load_data_ai_catalog", e, compartment)
             return data
 
     ##########################################################################
@@ -13385,7 +13414,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_data_ai_science", e)
+            self.__print_error("__load_data_ai_science", e, compartment)
             return data
 
     ##########################################################################
@@ -13469,7 +13498,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_data_ai_flow", e)
+            self.__print_error("__load_data_ai_flow", e, compartment)
             return data
 
     ##########################################################################
@@ -13554,7 +13583,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_data_ai_oda", e)
+            self.__print_error("__load_data_ai_oda", e, compartment)
             return data
 
     ##########################################################################
@@ -13638,7 +13667,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_data_ai_bds", e)
+            self.__print_error("__load_data_ai_bds", e, compartment)
             return data
 
     ##########################################################################
@@ -13717,7 +13746,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_data_ai_data_integration", e)
+            self.__print_error("__load_data_ai_data_integration", e, compartment)
             return data
 
     ##########################################################################
@@ -13810,7 +13839,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_paas_oic", e)
+            self.__print_error("__load_paas_oic", e, compartment)
             return data
 
     ##########################################################################
@@ -13970,7 +13999,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_paas_ocvs", e)
+            self.__print_error("__load_paas_ocvs", e, compartment)
             return data
 
     ##########################################################################
@@ -14072,7 +14101,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_paas_oac", e)
+            self.__print_error("__load_paas_oac", e, compartment)
             return data
 
     ##########################################################################
@@ -14159,7 +14188,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_paas_oce", e)
+            self.__print_error("__load_paas_oce", e, compartment)
             return data
 
     ##########################################################################
@@ -14243,7 +14272,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_paas_visualbuilder", e)
+            self.__print_error("__load_paas_visualbuilder", e, compartment)
             return data
 
     ##########################################################################
@@ -14391,7 +14420,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_paas_open_search", e)
+            self.__print_error("__load_paas_open_search", e, compartment)
             return data
 
     ##########################################################################
@@ -15233,7 +15262,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_security_log_groups", e)
+            self.__print_error("__load_security_log_groups", e, compartment)
             return data
 
     ##########################################################################
@@ -15353,7 +15382,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_security_log_unified_agents", e)
+            self.__print_error("__load_security_log_unified_agents", e, compartment)
             return data
 
     ##########################################################################
@@ -15434,7 +15463,7 @@ class ShowOCIService(object):
                 return data
             raise
         except Exception as e:
-            self.__print_error("__load_security_bastions", e)
+            self.__print_error("__load_security_bastions", e, compartment)
             return data
 
     ##########################################################################

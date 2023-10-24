@@ -40,13 +40,18 @@ class TableCollection(object):
             The value to assign to the max_on_demand_capacity_tables property of this TableCollection.
         :type max_on_demand_capacity_tables: int
 
+        :param available_replication_regions:
+            The value to assign to the available_replication_regions property of this TableCollection.
+        :type available_replication_regions: list[str]
+
         """
         self.swagger_types = {
             'items': 'list[TableSummary]',
             'max_auto_reclaimable_tables': 'int',
             'auto_reclaimable_tables': 'int',
             'on_demand_capacity_tables': 'int',
-            'max_on_demand_capacity_tables': 'int'
+            'max_on_demand_capacity_tables': 'int',
+            'available_replication_regions': 'list[str]'
         }
 
         self.attribute_map = {
@@ -54,7 +59,8 @@ class TableCollection(object):
             'max_auto_reclaimable_tables': 'maxAutoReclaimableTables',
             'auto_reclaimable_tables': 'autoReclaimableTables',
             'on_demand_capacity_tables': 'onDemandCapacityTables',
-            'max_on_demand_capacity_tables': 'maxOnDemandCapacityTables'
+            'max_on_demand_capacity_tables': 'maxOnDemandCapacityTables',
+            'available_replication_regions': 'availableReplicationRegions'
         }
 
         self._items = None
@@ -62,6 +68,7 @@ class TableCollection(object):
         self._auto_reclaimable_tables = None
         self._on_demand_capacity_tables = None
         self._max_on_demand_capacity_tables = None
+        self._available_replication_regions = None
 
     @property
     def items(self):
@@ -182,6 +189,30 @@ class TableCollection(object):
         :type: int
         """
         self._max_on_demand_capacity_tables = max_on_demand_capacity_tables
+
+    @property
+    def available_replication_regions(self):
+        """
+        Gets the available_replication_regions of this TableCollection.
+        An array of regions that are available for replication.
+
+
+        :return: The available_replication_regions of this TableCollection.
+        :rtype: list[str]
+        """
+        return self._available_replication_regions
+
+    @available_replication_regions.setter
+    def available_replication_regions(self, available_replication_regions):
+        """
+        Sets the available_replication_regions of this TableCollection.
+        An array of regions that are available for replication.
+
+
+        :param available_replication_regions: The available_replication_regions of this TableCollection.
+        :type: list[str]
+        """
+        self._available_replication_regions = available_replication_regions
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -19,6 +19,26 @@ class JavaMessageServiceConnection(Connection):
     #: This constant has a value of "ORACLE_WEBLOGIC_JMS"
     TECHNOLOGY_TYPE_ORACLE_WEBLOGIC_JMS = "ORACLE_WEBLOGIC_JMS"
 
+    #: A constant which can be used with the security_protocol property of a JavaMessageServiceConnection.
+    #: This constant has a value of "PLAIN"
+    SECURITY_PROTOCOL_PLAIN = "PLAIN"
+
+    #: A constant which can be used with the security_protocol property of a JavaMessageServiceConnection.
+    #: This constant has a value of "TLS"
+    SECURITY_PROTOCOL_TLS = "TLS"
+
+    #: A constant which can be used with the security_protocol property of a JavaMessageServiceConnection.
+    #: This constant has a value of "MTLS"
+    SECURITY_PROTOCOL_MTLS = "MTLS"
+
+    #: A constant which can be used with the authentication_type property of a JavaMessageServiceConnection.
+    #: This constant has a value of "NONE"
+    AUTHENTICATION_TYPE_NONE = "NONE"
+
+    #: A constant which can be used with the authentication_type property of a JavaMessageServiceConnection.
+    #: This constant has a value of "BASIC"
+    AUTHENTICATION_TYPE_BASIC = "BASIC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new JavaMessageServiceConnection object with values from keyword arguments. The default value of the :py:attr:`~oci.golden_gate.models.JavaMessageServiceConnection.connection_type` attribute
@@ -27,7 +47,7 @@ class JavaMessageServiceConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this JavaMessageServiceConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -85,10 +105,6 @@ class JavaMessageServiceConnection(Connection):
             The value to assign to the key_id property of this JavaMessageServiceConnection.
         :type key_id: str
 
-        :param subnet_id:
-            The value to assign to the subnet_id property of this JavaMessageServiceConnection.
-        :type subnet_id: str
-
         :param ingress_ips:
             The value to assign to the ingress_ips property of this JavaMessageServiceConnection.
         :type ingress_ips: list[oci.golden_gate.models.IngressIpDetails]
@@ -96,6 +112,10 @@ class JavaMessageServiceConnection(Connection):
         :param nsg_ids:
             The value to assign to the nsg_ids property of this JavaMessageServiceConnection.
         :type nsg_ids: list[str]
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this JavaMessageServiceConnection.
+        :type subnet_id: str
 
         :param technology_type:
             The value to assign to the technology_type property of this JavaMessageServiceConnection.
@@ -131,6 +151,18 @@ class JavaMessageServiceConnection(Connection):
             The value to assign to the connection_factory property of this JavaMessageServiceConnection.
         :type connection_factory: str
 
+        :param security_protocol:
+            The value to assign to the security_protocol property of this JavaMessageServiceConnection.
+            Allowed values for this property are: "PLAIN", "TLS", "MTLS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type security_protocol: str
+
+        :param authentication_type:
+            The value to assign to the authentication_type property of this JavaMessageServiceConnection.
+            Allowed values for this property are: "NONE", "BASIC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type authentication_type: str
+
         :param username:
             The value to assign to the username property of this JavaMessageServiceConnection.
         :type username: str
@@ -155,9 +187,9 @@ class JavaMessageServiceConnection(Connection):
             'time_updated': 'datetime',
             'vault_id': 'str',
             'key_id': 'str',
-            'subnet_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
             'technology_type': 'str',
             'should_use_jndi': 'bool',
             'jndi_connection_factory': 'str',
@@ -166,6 +198,8 @@ class JavaMessageServiceConnection(Connection):
             'jndi_security_principal': 'str',
             'connection_url': 'str',
             'connection_factory': 'str',
+            'security_protocol': 'str',
+            'authentication_type': 'str',
             'username': 'str',
             'private_ip': 'str'
         }
@@ -185,9 +219,9 @@ class JavaMessageServiceConnection(Connection):
             'time_updated': 'timeUpdated',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'subnet_id': 'subnetId',
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
             'technology_type': 'technologyType',
             'should_use_jndi': 'shouldUseJndi',
             'jndi_connection_factory': 'jndiConnectionFactory',
@@ -196,6 +230,8 @@ class JavaMessageServiceConnection(Connection):
             'jndi_security_principal': 'jndiSecurityPrincipal',
             'connection_url': 'connectionUrl',
             'connection_factory': 'connectionFactory',
+            'security_protocol': 'securityProtocol',
+            'authentication_type': 'authenticationType',
             'username': 'username',
             'private_ip': 'privateIp'
         }
@@ -214,9 +250,9 @@ class JavaMessageServiceConnection(Connection):
         self._time_updated = None
         self._vault_id = None
         self._key_id = None
-        self._subnet_id = None
         self._ingress_ips = None
         self._nsg_ids = None
+        self._subnet_id = None
         self._technology_type = None
         self._should_use_jndi = None
         self._jndi_connection_factory = None
@@ -225,6 +261,8 @@ class JavaMessageServiceConnection(Connection):
         self._jndi_security_principal = None
         self._connection_url = None
         self._connection_factory = None
+        self._security_protocol = None
+        self._authentication_type = None
         self._username = None
         self._private_ip = None
         self._connection_type = 'JAVA_MESSAGE_SERVICE'
@@ -442,6 +480,70 @@ class JavaMessageServiceConnection(Connection):
         :type: str
         """
         self._connection_factory = connection_factory
+
+    @property
+    def security_protocol(self):
+        """
+        Gets the security_protocol of this JavaMessageServiceConnection.
+        Security protocol for Java Message Service. If not provided, default is PLAIN.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+        Allowed values for this property are: "PLAIN", "TLS", "MTLS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The security_protocol of this JavaMessageServiceConnection.
+        :rtype: str
+        """
+        return self._security_protocol
+
+    @security_protocol.setter
+    def security_protocol(self, security_protocol):
+        """
+        Sets the security_protocol of this JavaMessageServiceConnection.
+        Security protocol for Java Message Service. If not provided, default is PLAIN.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :param security_protocol: The security_protocol of this JavaMessageServiceConnection.
+        :type: str
+        """
+        allowed_values = ["PLAIN", "TLS", "MTLS"]
+        if not value_allowed_none_or_none_sentinel(security_protocol, allowed_values):
+            security_protocol = 'UNKNOWN_ENUM_VALUE'
+        self._security_protocol = security_protocol
+
+    @property
+    def authentication_type(self):
+        """
+        Gets the authentication_type of this JavaMessageServiceConnection.
+        Authentication type for Java Message Service.  If not provided, default is NONE.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+        Allowed values for this property are: "NONE", "BASIC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The authentication_type of this JavaMessageServiceConnection.
+        :rtype: str
+        """
+        return self._authentication_type
+
+    @authentication_type.setter
+    def authentication_type(self, authentication_type):
+        """
+        Sets the authentication_type of this JavaMessageServiceConnection.
+        Authentication type for Java Message Service.  If not provided, default is NONE.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :param authentication_type: The authentication_type of this JavaMessageServiceConnection.
+        :type: str
+        """
+        allowed_values = ["NONE", "BASIC"]
+        if not value_allowed_none_or_none_sentinel(authentication_type, allowed_values):
+            authentication_type = 'UNKNOWN_ENUM_VALUE'
+        self._authentication_type = authentication_type
 
     @property
     def username(self):

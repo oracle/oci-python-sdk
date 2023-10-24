@@ -21,6 +21,7 @@ Nosql
     oci.nosql.models.ChangeTableCompartmentDetails
     oci.nosql.models.Column
     oci.nosql.models.CreateIndexDetails
+    oci.nosql.models.CreateReplicaDetails
     oci.nosql.models.CreateTableDetails
     oci.nosql.models.DeleteRowResult
     oci.nosql.models.Identity
@@ -31,6 +32,7 @@ Nosql
     oci.nosql.models.PreparedStatement
     oci.nosql.models.QueryDetails
     oci.nosql.models.QueryResultCollection
+    oci.nosql.models.Replica
     oci.nosql.models.RequestUsage
     oci.nosql.models.Row
     oci.nosql.models.Schema

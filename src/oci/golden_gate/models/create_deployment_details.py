@@ -47,6 +47,14 @@ class CreateDeploymentDetails(object):
     #: This constant has a value of "DATABASE_POSTGRESQL"
     DEPLOYMENT_TYPE_DATABASE_POSTGRESQL = "DATABASE_POSTGRESQL"
 
+    #: A constant which can be used with the deployment_type property of a CreateDeploymentDetails.
+    #: This constant has a value of "DATABASE_DB2ZOS"
+    DEPLOYMENT_TYPE_DATABASE_DB2_ZOS = "DATABASE_DB2ZOS"
+
+    #: A constant which can be used with the deployment_type property of a CreateDeploymentDetails.
+    #: This constant has a value of "DATA_TRANSFORMS"
+    DEPLOYMENT_TYPE_DATA_TRANSFORMS = "DATA_TRANSFORMS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDeploymentDetails object with values from keyword arguments.
@@ -107,7 +115,7 @@ class CreateDeploymentDetails(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this CreateDeploymentDetails.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATA_TRANSFORMS"
         :type deployment_type: str
 
         :param ogg_data:
@@ -530,7 +538,7 @@ class CreateDeploymentDetails(object):
         NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
             Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATA_TRANSFORMS"
 
 
         :return: The deployment_type of this CreateDeploymentDetails.
@@ -550,7 +558,7 @@ class CreateDeploymentDetails(object):
         :param deployment_type: The deployment_type of this CreateDeploymentDetails.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATA_TRANSFORMS"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `deployment_type`, must be None or one of {allowed_values}"

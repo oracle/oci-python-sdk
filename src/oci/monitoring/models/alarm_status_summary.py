@@ -13,14 +13,16 @@ from oci.decorators import init_model_state_from_kwargs
 class AlarmStatusSummary(object):
     """
     A summary of properties for the specified alarm and its current evaluation status.
-    For information about alarms, see `Alarms Overview`__.
+    For information about alarms, see
+    `Alarms Overview`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
     For information about endpoints and signing API requests, see
-    `About the API`__. For information about available SDKs and tools, see
+    `About the API`__.
+    For information about available SDKs and tools, see
     `SDKS and Other Tools`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview
@@ -243,8 +245,6 @@ class AlarmStatusSummary(object):
         The status of this alarm.
         Status is collective, across all metric streams in the alarm.
         To list alarm status for each metric stream, use :func:`retrieve_dimension_states`.
-        The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
-
         Example: `FIRING`
 
         Allowed values for this property are: "FIRING", "OK", "SUSPENDED", 'UNKNOWN_ENUM_VALUE'.
@@ -263,8 +263,6 @@ class AlarmStatusSummary(object):
         The status of this alarm.
         Status is collective, across all metric streams in the alarm.
         To list alarm status for each metric stream, use :func:`retrieve_dimension_states`.
-        The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
-
         Example: `FIRING`
 
 

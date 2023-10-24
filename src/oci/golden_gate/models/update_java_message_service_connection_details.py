@@ -23,7 +23,7 @@ class UpdateJavaMessageServiceConnectionDetails(UpdateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateJavaMessageServiceConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -94,6 +94,34 @@ class UpdateJavaMessageServiceConnectionDetails(UpdateConnectionDetails):
             The value to assign to the password property of this UpdateJavaMessageServiceConnectionDetails.
         :type password: str
 
+        :param security_protocol:
+            The value to assign to the security_protocol property of this UpdateJavaMessageServiceConnectionDetails.
+        :type security_protocol: str
+
+        :param authentication_type:
+            The value to assign to the authentication_type property of this UpdateJavaMessageServiceConnectionDetails.
+        :type authentication_type: str
+
+        :param trust_store:
+            The value to assign to the trust_store property of this UpdateJavaMessageServiceConnectionDetails.
+        :type trust_store: str
+
+        :param trust_store_password:
+            The value to assign to the trust_store_password property of this UpdateJavaMessageServiceConnectionDetails.
+        :type trust_store_password: str
+
+        :param key_store:
+            The value to assign to the key_store property of this UpdateJavaMessageServiceConnectionDetails.
+        :type key_store: str
+
+        :param key_store_password:
+            The value to assign to the key_store_password property of this UpdateJavaMessageServiceConnectionDetails.
+        :type key_store_password: str
+
+        :param ssl_key_password:
+            The value to assign to the ssl_key_password property of this UpdateJavaMessageServiceConnectionDetails.
+        :type ssl_key_password: str
+
         :param private_ip:
             The value to assign to the private_ip property of this UpdateJavaMessageServiceConnectionDetails.
         :type private_ip: str
@@ -118,6 +146,13 @@ class UpdateJavaMessageServiceConnectionDetails(UpdateConnectionDetails):
             'connection_factory': 'str',
             'username': 'str',
             'password': 'str',
+            'security_protocol': 'str',
+            'authentication_type': 'str',
+            'trust_store': 'str',
+            'trust_store_password': 'str',
+            'key_store': 'str',
+            'key_store_password': 'str',
+            'ssl_key_password': 'str',
             'private_ip': 'str'
         }
 
@@ -140,6 +175,13 @@ class UpdateJavaMessageServiceConnectionDetails(UpdateConnectionDetails):
             'connection_factory': 'connectionFactory',
             'username': 'username',
             'password': 'password',
+            'security_protocol': 'securityProtocol',
+            'authentication_type': 'authenticationType',
+            'trust_store': 'trustStore',
+            'trust_store_password': 'trustStorePassword',
+            'key_store': 'keyStore',
+            'key_store_password': 'keyStorePassword',
+            'ssl_key_password': 'sslKeyPassword',
             'private_ip': 'privateIp'
         }
 
@@ -161,6 +203,13 @@ class UpdateJavaMessageServiceConnectionDetails(UpdateConnectionDetails):
         self._connection_factory = None
         self._username = None
         self._password = None
+        self._security_protocol = None
+        self._authentication_type = None
+        self._trust_store = None
+        self._trust_store_password = None
+        self._key_store = None
+        self._key_store_password = None
+        self._ssl_key_password = None
         self._private_ip = None
         self._connection_type = 'JAVA_MESSAGE_SERVICE'
 
@@ -421,6 +470,180 @@ class UpdateJavaMessageServiceConnectionDetails(UpdateConnectionDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def security_protocol(self):
+        """
+        Gets the security_protocol of this UpdateJavaMessageServiceConnectionDetails.
+        Security protocol for Java Message Service. If not provided, default is PLAIN.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :return: The security_protocol of this UpdateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._security_protocol
+
+    @security_protocol.setter
+    def security_protocol(self, security_protocol):
+        """
+        Sets the security_protocol of this UpdateJavaMessageServiceConnectionDetails.
+        Security protocol for Java Message Service. If not provided, default is PLAIN.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :param security_protocol: The security_protocol of this UpdateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._security_protocol = security_protocol
+
+    @property
+    def authentication_type(self):
+        """
+        Gets the authentication_type of this UpdateJavaMessageServiceConnectionDetails.
+        Authentication type for Java Message Service.  If not provided, default is NONE.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :return: The authentication_type of this UpdateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._authentication_type
+
+    @authentication_type.setter
+    def authentication_type(self, authentication_type):
+        """
+        Sets the authentication_type of this UpdateJavaMessageServiceConnectionDetails.
+        Authentication type for Java Message Service.  If not provided, default is NONE.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :param authentication_type: The authentication_type of this UpdateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._authentication_type = authentication_type
+
+    @property
+    def trust_store(self):
+        """
+        Gets the trust_store of this UpdateJavaMessageServiceConnectionDetails.
+        The base64 encoded content of the TrustStore file.
+
+
+        :return: The trust_store of this UpdateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._trust_store
+
+    @trust_store.setter
+    def trust_store(self, trust_store):
+        """
+        Sets the trust_store of this UpdateJavaMessageServiceConnectionDetails.
+        The base64 encoded content of the TrustStore file.
+
+
+        :param trust_store: The trust_store of this UpdateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._trust_store = trust_store
+
+    @property
+    def trust_store_password(self):
+        """
+        Gets the trust_store_password of this UpdateJavaMessageServiceConnectionDetails.
+        The TrustStore password.
+
+
+        :return: The trust_store_password of this UpdateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._trust_store_password
+
+    @trust_store_password.setter
+    def trust_store_password(self, trust_store_password):
+        """
+        Sets the trust_store_password of this UpdateJavaMessageServiceConnectionDetails.
+        The TrustStore password.
+
+
+        :param trust_store_password: The trust_store_password of this UpdateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._trust_store_password = trust_store_password
+
+    @property
+    def key_store(self):
+        """
+        Gets the key_store of this UpdateJavaMessageServiceConnectionDetails.
+        The base64 encoded content of the KeyStore file.
+
+
+        :return: The key_store of this UpdateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._key_store
+
+    @key_store.setter
+    def key_store(self, key_store):
+        """
+        Sets the key_store of this UpdateJavaMessageServiceConnectionDetails.
+        The base64 encoded content of the KeyStore file.
+
+
+        :param key_store: The key_store of this UpdateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._key_store = key_store
+
+    @property
+    def key_store_password(self):
+        """
+        Gets the key_store_password of this UpdateJavaMessageServiceConnectionDetails.
+        The KeyStore password.
+
+
+        :return: The key_store_password of this UpdateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._key_store_password
+
+    @key_store_password.setter
+    def key_store_password(self, key_store_password):
+        """
+        Sets the key_store_password of this UpdateJavaMessageServiceConnectionDetails.
+        The KeyStore password.
+
+
+        :param key_store_password: The key_store_password of this UpdateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._key_store_password = key_store_password
+
+    @property
+    def ssl_key_password(self):
+        """
+        Gets the ssl_key_password of this UpdateJavaMessageServiceConnectionDetails.
+        The password for the cert inside of the KeyStore.
+        In case it differs from the KeyStore password, it should be provided.
+
+
+        :return: The ssl_key_password of this UpdateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._ssl_key_password
+
+    @ssl_key_password.setter
+    def ssl_key_password(self, ssl_key_password):
+        """
+        Sets the ssl_key_password of this UpdateJavaMessageServiceConnectionDetails.
+        The password for the cert inside of the KeyStore.
+        In case it differs from the KeyStore password, it should be provided.
+
+
+        :param ssl_key_password: The ssl_key_password of this UpdateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._ssl_key_password = ssl_key_password
 
     @property
     def private_ip(self):

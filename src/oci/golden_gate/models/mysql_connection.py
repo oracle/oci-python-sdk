@@ -95,7 +95,7 @@ class MysqlConnection(Connection):
 
         :param connection_type:
             The value to assign to the connection_type property of this MysqlConnection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -153,10 +153,6 @@ class MysqlConnection(Connection):
             The value to assign to the key_id property of this MysqlConnection.
         :type key_id: str
 
-        :param subnet_id:
-            The value to assign to the subnet_id property of this MysqlConnection.
-        :type subnet_id: str
-
         :param ingress_ips:
             The value to assign to the ingress_ips property of this MysqlConnection.
         :type ingress_ips: list[oci.golden_gate.models.IngressIpDetails]
@@ -164,6 +160,10 @@ class MysqlConnection(Connection):
         :param nsg_ids:
             The value to assign to the nsg_ids property of this MysqlConnection.
         :type nsg_ids: list[str]
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this MysqlConnection.
+        :type subnet_id: str
 
         :param technology_type:
             The value to assign to the technology_type property of this MysqlConnection.
@@ -227,9 +227,9 @@ class MysqlConnection(Connection):
             'time_updated': 'datetime',
             'vault_id': 'str',
             'key_id': 'str',
-            'subnet_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
             'technology_type': 'str',
             'username': 'str',
             'host': 'str',
@@ -257,9 +257,9 @@ class MysqlConnection(Connection):
             'time_updated': 'timeUpdated',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'subnet_id': 'subnetId',
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
             'technology_type': 'technologyType',
             'username': 'username',
             'host': 'host',
@@ -286,9 +286,9 @@ class MysqlConnection(Connection):
         self._time_updated = None
         self._vault_id = None
         self._key_id = None
-        self._subnet_id = None
         self._ingress_ips = None
         self._nsg_ids = None
+        self._subnet_id = None
         self._technology_type = None
         self._username = None
         self._host = None

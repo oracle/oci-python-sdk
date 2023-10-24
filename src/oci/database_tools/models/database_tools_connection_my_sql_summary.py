@@ -35,7 +35,7 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DatabaseToolsConnectionMySqlSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE"
         :type lifecycle_state: str
 
         :param lifecycle_details:
@@ -62,10 +62,19 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
             The value to assign to the system_tags property of this DatabaseToolsConnectionMySqlSummary.
         :type system_tags: dict(str, dict(str, object))
 
+        :param locks:
+            The value to assign to the locks property of this DatabaseToolsConnectionMySqlSummary.
+        :type locks: list[oci.database_tools.models.ResourceLock]
+
         :param type:
             The value to assign to the type property of this DatabaseToolsConnectionMySqlSummary.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
         :type type: str
+
+        :param runtime_support:
+            The value to assign to the runtime_support property of this DatabaseToolsConnectionMySqlSummary.
+            Allowed values for this property are: "SUPPORTED", "UNSUPPORTED"
+        :type runtime_support: str
 
         :param related_resource:
             The value to assign to the related_resource property of this DatabaseToolsConnectionMySqlSummary.
@@ -107,7 +116,9 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'system_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]',
             'type': 'str',
+            'runtime_support': 'str',
             'related_resource': 'DatabaseToolsRelatedResourceMySql',
             'connection_string': 'str',
             'user_name': 'str',
@@ -128,7 +139,9 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'system_tags': 'systemTags',
+            'locks': 'locks',
             'type': 'type',
+            'runtime_support': 'runtimeSupport',
             'related_resource': 'relatedResource',
             'connection_string': 'connectionString',
             'user_name': 'userName',
@@ -148,7 +161,9 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
         self._defined_tags = None
         self._freeform_tags = None
         self._system_tags = None
+        self._locks = None
         self._type = None
+        self._runtime_support = None
         self._related_resource = None
         self._connection_string = None
         self._user_name = None
@@ -181,7 +196,7 @@ class DatabaseToolsConnectionMySqlSummary(DatabaseToolsConnectionSummary):
     @property
     def connection_string(self):
         """
-        Gets the connection_string of this DatabaseToolsConnectionMySqlSummary.
+        **[Required]** Gets the connection_string of this DatabaseToolsConnectionMySqlSummary.
         The connection string used to connect to the MySQL Server.
 
 
