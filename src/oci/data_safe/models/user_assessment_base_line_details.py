@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UserAssessmentBaseLineDetails(object):
     """
-    The details reqired to set baseline assessment.
+    The details required to set the baseline for the assessment.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class UserAssessmentBaseLineDetails(object):
     def assessment_ids(self):
         """
         Gets the assessment_ids of this UserAssessmentBaseLineDetails.
-        The list of user assessment OCIDs that need to be updated while setting the baseline.
+        The list of OCIDs for the user assessments that need to be updated while setting the baseline.
 
 
         :return: The assessment_ids of this UserAssessmentBaseLineDetails.
@@ -51,7 +51,7 @@ class UserAssessmentBaseLineDetails(object):
     def assessment_ids(self, assessment_ids):
         """
         Sets the assessment_ids of this UserAssessmentBaseLineDetails.
-        The list of user assessment OCIDs that need to be updated while setting the baseline.
+        The list of OCIDs for the user assessments that need to be updated while setting the baseline.
 
 
         :param assessment_ids: The assessment_ids of this UserAssessmentBaseLineDetails.

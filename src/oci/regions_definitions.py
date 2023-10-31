@@ -38,6 +38,7 @@ REGIONS_SHORT_NAMES = {
     'mad': 'eu-madrid-1',
     'ord': 'us-chicago-1',
     'mty': 'mx-monterrey-1',
+    'aga': 'us-saltlake-2',
     'lfi': 'us-langley-1',
     'luf': 'us-luke-1',
     'ric': 'us-gov-ashburn-1',
@@ -95,6 +96,7 @@ REGION_REALMS = {
     'eu-madrid-1': 'oc1',
     'us-chicago-1': 'oc1',
     'mx-monterrey-1': 'oc1',
+    'us-saltlake-2': 'oc1',
 
     'us-langley-1': 'oc2',
     'us-luke-1': 'oc2',
@@ -173,6 +175,7 @@ REGIONS = [
     'eu-madrid-1',
     'us-chicago-1',
     'mx-monterrey-1',
+    'us-saltlake-2',
     'us-langley-1',
     'us-luke-1',
     'us-gov-ashburn-1',

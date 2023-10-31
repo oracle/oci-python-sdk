@@ -165,7 +165,7 @@ class UpdateMaskingColumnDetails(object):
     def is_masking_enabled(self):
         """
         Gets the is_masking_enabled of this UpdateMaskingColumnDetails.
-        Indicates if data masking is enabled for the masking column. Set it to false
+        Indicates whether data masking is enabled for the masking column. Set it to false
         if you don't want to mask the column.
 
 
@@ -178,7 +178,7 @@ class UpdateMaskingColumnDetails(object):
     def is_masking_enabled(self, is_masking_enabled):
         """
         Sets the is_masking_enabled of this UpdateMaskingColumnDetails.
-        Indicates if data masking is enabled for the masking column. Set it to false
+        Indicates whether data masking is enabled for the masking column. Set it to false
         if you don't want to mask the column.
 
 

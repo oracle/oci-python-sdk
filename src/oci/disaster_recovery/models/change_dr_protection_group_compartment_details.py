@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeDrProtectionGroupCompartmentDetails(object):
     """
-    The details for moving a DR Protection Group to another compartment.
+    The details for moving a DR protection group to another compartment.
     """
 
     def __init__(self, **kwargs):
@@ -39,9 +39,9 @@ class ChangeDrProtectionGroupCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeDrProtectionGroupCompartmentDetails.
-        The OCID of the compartment to which the DR Protection Group should be moved.
+        The OCID of the compartment to which the DR protection group should be moved.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :return: The compartment_id of this ChangeDrProtectionGroupCompartmentDetails.
@@ -53,9 +53,9 @@ class ChangeDrProtectionGroupCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeDrProtectionGroupCompartmentDetails.
-        The OCID of the compartment to which the DR Protection Group should be moved.
+        The OCID of the compartment to which the DR protection group should be moved.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :param compartment_id: The compartment_id of this ChangeDrProtectionGroupCompartmentDetails.

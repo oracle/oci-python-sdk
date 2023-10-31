@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrPlanCollection(object):
     """
-    Contains a list of DR Plans.
+    A list of DR plan summaries.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class DrPlanCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DrPlanCollection.
-        A list of DR Plan objects.
+        A list of DR plan summaries.
 
 
         :return: The items of this DrPlanCollection.
@@ -51,7 +51,7 @@ class DrPlanCollection(object):
     def items(self, items):
         """
         Sets the items of this DrPlanCollection.
-        A list of DR Plan objects.
+        A list of DR plan summaries.
 
 
         :param items: The items of this DrPlanCollection.

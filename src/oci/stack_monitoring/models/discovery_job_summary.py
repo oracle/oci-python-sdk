@@ -59,6 +59,14 @@ class DiscoveryJobSummary(object):
     #: This constant has a value of "ORACLE_MFT"
     RESOURCE_TYPE_ORACLE_MFT = "ORACLE_MFT"
 
+    #: A constant which can be used with the license property of a DiscoveryJobSummary.
+    #: This constant has a value of "STANDARD_EDITION"
+    LICENSE_STANDARD_EDITION = "STANDARD_EDITION"
+
+    #: A constant which can be used with the license property of a DiscoveryJobSummary.
+    #: This constant has a value of "ENTERPRISE_EDITION"
+    LICENSE_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
     #: A constant which can be used with the discovery_type property of a DiscoveryJobSummary.
     #: This constant has a value of "ADD"
     DISCOVERY_TYPE_ADD = "ADD"
@@ -138,6 +146,12 @@ class DiscoveryJobSummary(object):
             The value to assign to the resource_name property of this DiscoveryJobSummary.
         :type resource_name: str
 
+        :param license:
+            The value to assign to the license property of this DiscoveryJobSummary.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type license: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this DiscoveryJobSummary.
         :type compartment_id: str
@@ -193,6 +207,7 @@ class DiscoveryJobSummary(object):
             'id': 'str',
             'resource_type': 'str',
             'resource_name': 'str',
+            'license': 'str',
             'compartment_id': 'str',
             'discovery_type': 'str',
             'status': 'str',
@@ -210,6 +225,7 @@ class DiscoveryJobSummary(object):
             'id': 'id',
             'resource_type': 'resourceType',
             'resource_name': 'resourceName',
+            'license': 'license',
             'compartment_id': 'compartmentId',
             'discovery_type': 'discoveryType',
             'status': 'status',
@@ -226,6 +242,7 @@ class DiscoveryJobSummary(object):
         self._id = None
         self._resource_type = None
         self._resource_name = None
+        self._license = None
         self._compartment_id = None
         self._discovery_type = None
         self._status = None
@@ -315,6 +332,36 @@ class DiscoveryJobSummary(object):
         :type: str
         """
         self._resource_name = resource_name
+
+    @property
+    def license(self):
+        """
+        Gets the license of this DiscoveryJobSummary.
+        License edition of the monitored resource.
+
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The license of this DiscoveryJobSummary.
+        :rtype: str
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """
+        Sets the license of this DiscoveryJobSummary.
+        License edition of the monitored resource.
+
+
+        :param license: The license of this DiscoveryJobSummary.
+        :type: str
+        """
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION"]
+        if not value_allowed_none_or_none_sentinel(license, allowed_values):
+            license = 'UNKNOWN_ENUM_VALUE'
+        self._license = license
 
     @property
     def compartment_id(self):

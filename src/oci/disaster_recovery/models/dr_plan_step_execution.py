@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrPlanStepExecution(object):
     """
-    Summary information about a step execution.
+    The details of a step execution in a DR plan execution.
     """
 
     #: A constant which can be used with the type property of a DrPlanStepExecution.
@@ -120,6 +120,162 @@ class DrPlanStepExecution(object):
     TYPE_USER_DEFINED = "USER_DEFINED"
 
     #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "VOLUME_GROUP_RESTORE_START_DRILL_PRECHECK"
+    TYPE_VOLUME_GROUP_RESTORE_START_DRILL_PRECHECK = "VOLUME_GROUP_RESTORE_START_DRILL_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "VOLUME_GROUP_REMOVE_PRECHECK"
+    TYPE_VOLUME_GROUP_REMOVE_PRECHECK = "VOLUME_GROUP_REMOVE_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "VOLUME_GROUP_TERMINATE_PRECHECK"
+    TYPE_VOLUME_GROUP_TERMINATE_PRECHECK = "VOLUME_GROUP_TERMINATE_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "VOLUME_GROUP_RESTORE_START_DRILL"
+    TYPE_VOLUME_GROUP_RESTORE_START_DRILL = "VOLUME_GROUP_RESTORE_START_DRILL"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "AUTONOMOUS_DATABASE_CREATE_CLONE_PRECHECK"
+    TYPE_AUTONOMOUS_DATABASE_CREATE_CLONE_PRECHECK = "AUTONOMOUS_DATABASE_CREATE_CLONE_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "AUTONOMOUS_DATABASE_DELETE_CLONE_PRECHECK"
+    TYPE_AUTONOMOUS_DATABASE_DELETE_CLONE_PRECHECK = "AUTONOMOUS_DATABASE_DELETE_CLONE_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET_PRECHECK"
+    TYPE_LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET_PRECHECK = "LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET_PRECHECK"
+    TYPE_LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET_PRECHECK = "LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_SWITCHOVER_PRECHECK"
+    TYPE_FILE_SYSTEM_SWITCHOVER_PRECHECK = "FILE_SYSTEM_SWITCHOVER_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_FAILOVER_PRECHECK"
+    TYPE_FILE_SYSTEM_FAILOVER_PRECHECK = "FILE_SYSTEM_FAILOVER_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_START_DRILL_PRECHECK"
+    TYPE_FILE_SYSTEM_START_DRILL_PRECHECK = "FILE_SYSTEM_START_DRILL_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_STOP_DRILL_PRECHECK"
+    TYPE_FILE_SYSTEM_STOP_DRILL_PRECHECK = "FILE_SYSTEM_STOP_DRILL_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_REMOVE_PRECHECK"
+    TYPE_FILE_SYSTEM_REMOVE_PRECHECK = "FILE_SYSTEM_REMOVE_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_TERMINATE_PRECHECK"
+    TYPE_FILE_SYSTEM_TERMINATE_PRECHECK = "FILE_SYSTEM_TERMINATE_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_MOUNT_PRECHECK"
+    TYPE_FILE_SYSTEM_MOUNT_PRECHECK = "FILE_SYSTEM_MOUNT_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_UNMOUNT_PRECHECK"
+    TYPE_FILE_SYSTEM_UNMOUNT_PRECHECK = "FILE_SYSTEM_UNMOUNT_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "COMPUTE_INSTANCE_START_PRECHECK"
+    TYPE_COMPUTE_INSTANCE_START_PRECHECK = "COMPUTE_INSTANCE_START_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "COMPUTE_INSTANCE_ATTACH_BLOCK_VOLUMES_PRECHECK"
+    TYPE_COMPUTE_INSTANCE_ATTACH_BLOCK_VOLUMES_PRECHECK = "COMPUTE_INSTANCE_ATTACH_BLOCK_VOLUMES_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "COMPUTE_INSTANCE_DETACH_BLOCK_VOLUMES_PRECHECK"
+    TYPE_COMPUTE_INSTANCE_DETACH_BLOCK_VOLUMES_PRECHECK = "COMPUTE_INSTANCE_DETACH_BLOCK_VOLUMES_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "COMPUTE_INSTANCE_MOUNT_BLOCK_VOLUMES_PRECHECK"
+    TYPE_COMPUTE_INSTANCE_MOUNT_BLOCK_VOLUMES_PRECHECK = "COMPUTE_INSTANCE_MOUNT_BLOCK_VOLUMES_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "COMPUTE_INSTANCE_UNMOUNT_BLOCK_VOLUMES_PRECHECK"
+    TYPE_COMPUTE_INSTANCE_UNMOUNT_BLOCK_VOLUMES_PRECHECK = "COMPUTE_INSTANCE_UNMOUNT_BLOCK_VOLUMES_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "COMPUTE_CAPACITY_RESERVATION_START_DRILL_PRECHECK"
+    TYPE_COMPUTE_CAPACITY_RESERVATION_START_DRILL_PRECHECK = "COMPUTE_CAPACITY_RESERVATION_START_DRILL_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "COMPUTE_CAPACITY_AVAILABILITY_START_DRILL_PRECHECK"
+    TYPE_COMPUTE_CAPACITY_AVAILABILITY_START_DRILL_PRECHECK = "COMPUTE_CAPACITY_AVAILABILITY_START_DRILL_PRECHECK"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "AUTONOMOUS_DATABASE_CREATE_CLONE"
+    TYPE_AUTONOMOUS_DATABASE_CREATE_CLONE = "AUTONOMOUS_DATABASE_CREATE_CLONE"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "AUTONOMOUS_DATABASE_DELETE_CLONE"
+    TYPE_AUTONOMOUS_DATABASE_DELETE_CLONE = "AUTONOMOUS_DATABASE_DELETE_CLONE"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET"
+    TYPE_LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET = "LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET"
+    TYPE_LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET = "LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_SWITCHOVER"
+    TYPE_FILE_SYSTEM_SWITCHOVER = "FILE_SYSTEM_SWITCHOVER"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_FAILOVER"
+    TYPE_FILE_SYSTEM_FAILOVER = "FILE_SYSTEM_FAILOVER"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_REMOVE"
+    TYPE_FILE_SYSTEM_REMOVE = "FILE_SYSTEM_REMOVE"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_REVERSE"
+    TYPE_FILE_SYSTEM_REVERSE = "FILE_SYSTEM_REVERSE"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_TERMINATE"
+    TYPE_FILE_SYSTEM_TERMINATE = "FILE_SYSTEM_TERMINATE"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_START_DRILL"
+    TYPE_FILE_SYSTEM_START_DRILL = "FILE_SYSTEM_START_DRILL"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_STOP_DRILL"
+    TYPE_FILE_SYSTEM_STOP_DRILL = "FILE_SYSTEM_STOP_DRILL"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "COMPUTE_INSTANCE_START"
+    TYPE_COMPUTE_INSTANCE_START = "COMPUTE_INSTANCE_START"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "COMPUTE_INSTANCE_ATTACH_BLOCK_VOLUMES"
+    TYPE_COMPUTE_INSTANCE_ATTACH_BLOCK_VOLUMES = "COMPUTE_INSTANCE_ATTACH_BLOCK_VOLUMES"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "COMPUTE_INSTANCE_DETACH_BLOCK_VOLUMES"
+    TYPE_COMPUTE_INSTANCE_DETACH_BLOCK_VOLUMES = "COMPUTE_INSTANCE_DETACH_BLOCK_VOLUMES"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_MOUNT"
+    TYPE_FILE_SYSTEM_MOUNT = "FILE_SYSTEM_MOUNT"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
+    #: This constant has a value of "FILE_SYSTEM_UNMOUNT"
+    TYPE_FILE_SYSTEM_UNMOUNT = "FILE_SYSTEM_UNMOUNT"
+
+    #: A constant which can be used with the type property of a DrPlanStepExecution.
     #: This constant has a value of "COMPUTE_CAPACITY_RESERVATION_SWITCHOVER_PRECHECK"
     TYPE_COMPUTE_CAPACITY_RESERVATION_SWITCHOVER_PRECHECK = "COMPUTE_CAPACITY_RESERVATION_SWITCHOVER_PRECHECK"
 
@@ -186,7 +342,7 @@ class DrPlanStepExecution(object):
 
         :param type:
             The value to assign to the type property of this DrPlanStepExecution.
-            Allowed values for this property are: "COMPUTE_INSTANCE_STOP_PRECHECK", "COMPUTE_INSTANCE_LAUNCH_PRECHECK", "COMPUTE_INSTANCE_TERMINATE_PRECHECK", "COMPUTE_INSTANCE_REMOVE_PRECHECK", "VOLUME_GROUP_RESTORE_SWITCHOVER_PRECHECK", "VOLUME_GROUP_RESTORE_FAILOVER_PRECHECK", "DATABASE_SWITCHOVER_PRECHECK", "DATABASE_FAILOVER_PRECHECK", "AUTONOMOUS_DATABASE_SWITCHOVER_PRECHECK", "AUTONOMOUS_DATABASE_FAILOVER_PRECHECK", "USER_DEFINED_PRECHECK", "COMPUTE_INSTANCE_LAUNCH", "COMPUTE_INSTANCE_STOP", "COMPUTE_INSTANCE_TERMINATE", "COMPUTE_INSTANCE_REMOVE", "DATABASE_SWITCHOVER", "DATABASE_FAILOVER", "AUTONOMOUS_DATABASE_SWITCHOVER", "AUTONOMOUS_DATABASE_FAILOVER", "VOLUME_GROUP_RESTORE_SWITCHOVER", "VOLUME_GROUP_RESTORE_FAILOVER", "VOLUME_GROUP_REVERSE", "VOLUME_GROUP_DELETE", "VOLUME_GROUP_REMOVE", "VOLUME_GROUP_TERMINATE", "USER_DEFINED", "COMPUTE_CAPACITY_RESERVATION_SWITCHOVER_PRECHECK", "COMPUTE_CAPACITY_RESERVATION_FAILOVER_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_SWITCHOVER_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_FAILOVER_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMPUTE_INSTANCE_STOP_PRECHECK", "COMPUTE_INSTANCE_LAUNCH_PRECHECK", "COMPUTE_INSTANCE_TERMINATE_PRECHECK", "COMPUTE_INSTANCE_REMOVE_PRECHECK", "VOLUME_GROUP_RESTORE_SWITCHOVER_PRECHECK", "VOLUME_GROUP_RESTORE_FAILOVER_PRECHECK", "DATABASE_SWITCHOVER_PRECHECK", "DATABASE_FAILOVER_PRECHECK", "AUTONOMOUS_DATABASE_SWITCHOVER_PRECHECK", "AUTONOMOUS_DATABASE_FAILOVER_PRECHECK", "USER_DEFINED_PRECHECK", "COMPUTE_INSTANCE_LAUNCH", "COMPUTE_INSTANCE_STOP", "COMPUTE_INSTANCE_TERMINATE", "COMPUTE_INSTANCE_REMOVE", "DATABASE_SWITCHOVER", "DATABASE_FAILOVER", "AUTONOMOUS_DATABASE_SWITCHOVER", "AUTONOMOUS_DATABASE_FAILOVER", "VOLUME_GROUP_RESTORE_SWITCHOVER", "VOLUME_GROUP_RESTORE_FAILOVER", "VOLUME_GROUP_REVERSE", "VOLUME_GROUP_DELETE", "VOLUME_GROUP_REMOVE", "VOLUME_GROUP_TERMINATE", "USER_DEFINED", "VOLUME_GROUP_RESTORE_START_DRILL_PRECHECK", "VOLUME_GROUP_REMOVE_PRECHECK", "VOLUME_GROUP_TERMINATE_PRECHECK", "VOLUME_GROUP_RESTORE_START_DRILL", "AUTONOMOUS_DATABASE_CREATE_CLONE_PRECHECK", "AUTONOMOUS_DATABASE_DELETE_CLONE_PRECHECK", "LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET_PRECHECK", "LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET_PRECHECK", "FILE_SYSTEM_SWITCHOVER_PRECHECK", "FILE_SYSTEM_FAILOVER_PRECHECK", "FILE_SYSTEM_START_DRILL_PRECHECK", "FILE_SYSTEM_STOP_DRILL_PRECHECK", "FILE_SYSTEM_REMOVE_PRECHECK", "FILE_SYSTEM_TERMINATE_PRECHECK", "FILE_SYSTEM_MOUNT_PRECHECK", "FILE_SYSTEM_UNMOUNT_PRECHECK", "COMPUTE_INSTANCE_START_PRECHECK", "COMPUTE_INSTANCE_ATTACH_BLOCK_VOLUMES_PRECHECK", "COMPUTE_INSTANCE_DETACH_BLOCK_VOLUMES_PRECHECK", "COMPUTE_INSTANCE_MOUNT_BLOCK_VOLUMES_PRECHECK", "COMPUTE_INSTANCE_UNMOUNT_BLOCK_VOLUMES_PRECHECK", "COMPUTE_CAPACITY_RESERVATION_START_DRILL_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_START_DRILL_PRECHECK", "AUTONOMOUS_DATABASE_CREATE_CLONE", "AUTONOMOUS_DATABASE_DELETE_CLONE", "LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET", "LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET", "FILE_SYSTEM_SWITCHOVER", "FILE_SYSTEM_FAILOVER", "FILE_SYSTEM_REMOVE", "FILE_SYSTEM_REVERSE", "FILE_SYSTEM_TERMINATE", "FILE_SYSTEM_START_DRILL", "FILE_SYSTEM_STOP_DRILL", "COMPUTE_INSTANCE_START", "COMPUTE_INSTANCE_ATTACH_BLOCK_VOLUMES", "COMPUTE_INSTANCE_DETACH_BLOCK_VOLUMES", "FILE_SYSTEM_MOUNT", "FILE_SYSTEM_UNMOUNT", "COMPUTE_CAPACITY_RESERVATION_SWITCHOVER_PRECHECK", "COMPUTE_CAPACITY_RESERVATION_FAILOVER_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_SWITCHOVER_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_FAILOVER_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -266,9 +422,9 @@ class DrPlanStepExecution(object):
     def step_id(self):
         """
         **[Required]** Gets the step_id of this DrPlanStepExecution.
-        The unique id of this step. Must not be modified by user.
+        The unique id of the step. Must not be modified by user.
 
-        Example: `sgid1.step..&lt;unique_id&gt;`
+        Example: `sgid1.step..uniqueID`
 
 
         :return: The step_id of this DrPlanStepExecution.
@@ -280,9 +436,9 @@ class DrPlanStepExecution(object):
     def step_id(self, step_id):
         """
         Sets the step_id of this DrPlanStepExecution.
-        The unique id of this step. Must not be modified by user.
+        The unique id of the step. Must not be modified by user.
 
-        Example: `sgid1.step..&lt;unique_id&gt;`
+        Example: `sgid1.step..uniqueID`
 
 
         :param step_id: The step_id of this DrPlanStepExecution.
@@ -294,9 +450,9 @@ class DrPlanStepExecution(object):
     def type(self):
         """
         **[Required]** Gets the type of this DrPlanStepExecution.
-        The plan step type.
+        The step type.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE_STOP_PRECHECK", "COMPUTE_INSTANCE_LAUNCH_PRECHECK", "COMPUTE_INSTANCE_TERMINATE_PRECHECK", "COMPUTE_INSTANCE_REMOVE_PRECHECK", "VOLUME_GROUP_RESTORE_SWITCHOVER_PRECHECK", "VOLUME_GROUP_RESTORE_FAILOVER_PRECHECK", "DATABASE_SWITCHOVER_PRECHECK", "DATABASE_FAILOVER_PRECHECK", "AUTONOMOUS_DATABASE_SWITCHOVER_PRECHECK", "AUTONOMOUS_DATABASE_FAILOVER_PRECHECK", "USER_DEFINED_PRECHECK", "COMPUTE_INSTANCE_LAUNCH", "COMPUTE_INSTANCE_STOP", "COMPUTE_INSTANCE_TERMINATE", "COMPUTE_INSTANCE_REMOVE", "DATABASE_SWITCHOVER", "DATABASE_FAILOVER", "AUTONOMOUS_DATABASE_SWITCHOVER", "AUTONOMOUS_DATABASE_FAILOVER", "VOLUME_GROUP_RESTORE_SWITCHOVER", "VOLUME_GROUP_RESTORE_FAILOVER", "VOLUME_GROUP_REVERSE", "VOLUME_GROUP_DELETE", "VOLUME_GROUP_REMOVE", "VOLUME_GROUP_TERMINATE", "USER_DEFINED", "COMPUTE_CAPACITY_RESERVATION_SWITCHOVER_PRECHECK", "COMPUTE_CAPACITY_RESERVATION_FAILOVER_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_SWITCHOVER_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_FAILOVER_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMPUTE_INSTANCE_STOP_PRECHECK", "COMPUTE_INSTANCE_LAUNCH_PRECHECK", "COMPUTE_INSTANCE_TERMINATE_PRECHECK", "COMPUTE_INSTANCE_REMOVE_PRECHECK", "VOLUME_GROUP_RESTORE_SWITCHOVER_PRECHECK", "VOLUME_GROUP_RESTORE_FAILOVER_PRECHECK", "DATABASE_SWITCHOVER_PRECHECK", "DATABASE_FAILOVER_PRECHECK", "AUTONOMOUS_DATABASE_SWITCHOVER_PRECHECK", "AUTONOMOUS_DATABASE_FAILOVER_PRECHECK", "USER_DEFINED_PRECHECK", "COMPUTE_INSTANCE_LAUNCH", "COMPUTE_INSTANCE_STOP", "COMPUTE_INSTANCE_TERMINATE", "COMPUTE_INSTANCE_REMOVE", "DATABASE_SWITCHOVER", "DATABASE_FAILOVER", "AUTONOMOUS_DATABASE_SWITCHOVER", "AUTONOMOUS_DATABASE_FAILOVER", "VOLUME_GROUP_RESTORE_SWITCHOVER", "VOLUME_GROUP_RESTORE_FAILOVER", "VOLUME_GROUP_REVERSE", "VOLUME_GROUP_DELETE", "VOLUME_GROUP_REMOVE", "VOLUME_GROUP_TERMINATE", "USER_DEFINED", "VOLUME_GROUP_RESTORE_START_DRILL_PRECHECK", "VOLUME_GROUP_REMOVE_PRECHECK", "VOLUME_GROUP_TERMINATE_PRECHECK", "VOLUME_GROUP_RESTORE_START_DRILL", "AUTONOMOUS_DATABASE_CREATE_CLONE_PRECHECK", "AUTONOMOUS_DATABASE_DELETE_CLONE_PRECHECK", "LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET_PRECHECK", "LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET_PRECHECK", "FILE_SYSTEM_SWITCHOVER_PRECHECK", "FILE_SYSTEM_FAILOVER_PRECHECK", "FILE_SYSTEM_START_DRILL_PRECHECK", "FILE_SYSTEM_STOP_DRILL_PRECHECK", "FILE_SYSTEM_REMOVE_PRECHECK", "FILE_SYSTEM_TERMINATE_PRECHECK", "FILE_SYSTEM_MOUNT_PRECHECK", "FILE_SYSTEM_UNMOUNT_PRECHECK", "COMPUTE_INSTANCE_START_PRECHECK", "COMPUTE_INSTANCE_ATTACH_BLOCK_VOLUMES_PRECHECK", "COMPUTE_INSTANCE_DETACH_BLOCK_VOLUMES_PRECHECK", "COMPUTE_INSTANCE_MOUNT_BLOCK_VOLUMES_PRECHECK", "COMPUTE_INSTANCE_UNMOUNT_BLOCK_VOLUMES_PRECHECK", "COMPUTE_CAPACITY_RESERVATION_START_DRILL_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_START_DRILL_PRECHECK", "AUTONOMOUS_DATABASE_CREATE_CLONE", "AUTONOMOUS_DATABASE_DELETE_CLONE", "LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET", "LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET", "FILE_SYSTEM_SWITCHOVER", "FILE_SYSTEM_FAILOVER", "FILE_SYSTEM_REMOVE", "FILE_SYSTEM_REVERSE", "FILE_SYSTEM_TERMINATE", "FILE_SYSTEM_START_DRILL", "FILE_SYSTEM_STOP_DRILL", "COMPUTE_INSTANCE_START", "COMPUTE_INSTANCE_ATTACH_BLOCK_VOLUMES", "COMPUTE_INSTANCE_DETACH_BLOCK_VOLUMES", "FILE_SYSTEM_MOUNT", "FILE_SYSTEM_UNMOUNT", "COMPUTE_CAPACITY_RESERVATION_SWITCHOVER_PRECHECK", "COMPUTE_CAPACITY_RESERVATION_FAILOVER_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_SWITCHOVER_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_FAILOVER_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -309,13 +465,13 @@ class DrPlanStepExecution(object):
     def type(self, type):
         """
         Sets the type of this DrPlanStepExecution.
-        The plan step type.
+        The step type.
 
 
         :param type: The type of this DrPlanStepExecution.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE_STOP_PRECHECK", "COMPUTE_INSTANCE_LAUNCH_PRECHECK", "COMPUTE_INSTANCE_TERMINATE_PRECHECK", "COMPUTE_INSTANCE_REMOVE_PRECHECK", "VOLUME_GROUP_RESTORE_SWITCHOVER_PRECHECK", "VOLUME_GROUP_RESTORE_FAILOVER_PRECHECK", "DATABASE_SWITCHOVER_PRECHECK", "DATABASE_FAILOVER_PRECHECK", "AUTONOMOUS_DATABASE_SWITCHOVER_PRECHECK", "AUTONOMOUS_DATABASE_FAILOVER_PRECHECK", "USER_DEFINED_PRECHECK", "COMPUTE_INSTANCE_LAUNCH", "COMPUTE_INSTANCE_STOP", "COMPUTE_INSTANCE_TERMINATE", "COMPUTE_INSTANCE_REMOVE", "DATABASE_SWITCHOVER", "DATABASE_FAILOVER", "AUTONOMOUS_DATABASE_SWITCHOVER", "AUTONOMOUS_DATABASE_FAILOVER", "VOLUME_GROUP_RESTORE_SWITCHOVER", "VOLUME_GROUP_RESTORE_FAILOVER", "VOLUME_GROUP_REVERSE", "VOLUME_GROUP_DELETE", "VOLUME_GROUP_REMOVE", "VOLUME_GROUP_TERMINATE", "USER_DEFINED", "COMPUTE_CAPACITY_RESERVATION_SWITCHOVER_PRECHECK", "COMPUTE_CAPACITY_RESERVATION_FAILOVER_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_SWITCHOVER_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_FAILOVER_PRECHECK"]
+        allowed_values = ["COMPUTE_INSTANCE_STOP_PRECHECK", "COMPUTE_INSTANCE_LAUNCH_PRECHECK", "COMPUTE_INSTANCE_TERMINATE_PRECHECK", "COMPUTE_INSTANCE_REMOVE_PRECHECK", "VOLUME_GROUP_RESTORE_SWITCHOVER_PRECHECK", "VOLUME_GROUP_RESTORE_FAILOVER_PRECHECK", "DATABASE_SWITCHOVER_PRECHECK", "DATABASE_FAILOVER_PRECHECK", "AUTONOMOUS_DATABASE_SWITCHOVER_PRECHECK", "AUTONOMOUS_DATABASE_FAILOVER_PRECHECK", "USER_DEFINED_PRECHECK", "COMPUTE_INSTANCE_LAUNCH", "COMPUTE_INSTANCE_STOP", "COMPUTE_INSTANCE_TERMINATE", "COMPUTE_INSTANCE_REMOVE", "DATABASE_SWITCHOVER", "DATABASE_FAILOVER", "AUTONOMOUS_DATABASE_SWITCHOVER", "AUTONOMOUS_DATABASE_FAILOVER", "VOLUME_GROUP_RESTORE_SWITCHOVER", "VOLUME_GROUP_RESTORE_FAILOVER", "VOLUME_GROUP_REVERSE", "VOLUME_GROUP_DELETE", "VOLUME_GROUP_REMOVE", "VOLUME_GROUP_TERMINATE", "USER_DEFINED", "VOLUME_GROUP_RESTORE_START_DRILL_PRECHECK", "VOLUME_GROUP_REMOVE_PRECHECK", "VOLUME_GROUP_TERMINATE_PRECHECK", "VOLUME_GROUP_RESTORE_START_DRILL", "AUTONOMOUS_DATABASE_CREATE_CLONE_PRECHECK", "AUTONOMOUS_DATABASE_DELETE_CLONE_PRECHECK", "LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET_PRECHECK", "LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET_PRECHECK", "FILE_SYSTEM_SWITCHOVER_PRECHECK", "FILE_SYSTEM_FAILOVER_PRECHECK", "FILE_SYSTEM_START_DRILL_PRECHECK", "FILE_SYSTEM_STOP_DRILL_PRECHECK", "FILE_SYSTEM_REMOVE_PRECHECK", "FILE_SYSTEM_TERMINATE_PRECHECK", "FILE_SYSTEM_MOUNT_PRECHECK", "FILE_SYSTEM_UNMOUNT_PRECHECK", "COMPUTE_INSTANCE_START_PRECHECK", "COMPUTE_INSTANCE_ATTACH_BLOCK_VOLUMES_PRECHECK", "COMPUTE_INSTANCE_DETACH_BLOCK_VOLUMES_PRECHECK", "COMPUTE_INSTANCE_MOUNT_BLOCK_VOLUMES_PRECHECK", "COMPUTE_INSTANCE_UNMOUNT_BLOCK_VOLUMES_PRECHECK", "COMPUTE_CAPACITY_RESERVATION_START_DRILL_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_START_DRILL_PRECHECK", "AUTONOMOUS_DATABASE_CREATE_CLONE", "AUTONOMOUS_DATABASE_DELETE_CLONE", "LOAD_BALANCER_UPDATE_PRIMARY_BACKEND_SET", "LOAD_BALANCER_UPDATE_STANDBY_BACKEND_SET", "FILE_SYSTEM_SWITCHOVER", "FILE_SYSTEM_FAILOVER", "FILE_SYSTEM_REMOVE", "FILE_SYSTEM_REVERSE", "FILE_SYSTEM_TERMINATE", "FILE_SYSTEM_START_DRILL", "FILE_SYSTEM_STOP_DRILL", "COMPUTE_INSTANCE_START", "COMPUTE_INSTANCE_ATTACH_BLOCK_VOLUMES", "COMPUTE_INSTANCE_DETACH_BLOCK_VOLUMES", "FILE_SYSTEM_MOUNT", "FILE_SYSTEM_UNMOUNT", "COMPUTE_CAPACITY_RESERVATION_SWITCHOVER_PRECHECK", "COMPUTE_CAPACITY_RESERVATION_FAILOVER_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_SWITCHOVER_PRECHECK", "COMPUTE_CAPACITY_AVAILABILITY_FAILOVER_PRECHECK"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -326,7 +482,7 @@ class DrPlanStepExecution(object):
         **[Required]** Gets the group_id of this DrPlanStepExecution.
         The unique id of the group to which this step belongs. Must not be modified by user.
 
-        Example: `sgid1.group..&lt;unique_id&gt;`
+        Example: `sgid1.group..uniqueID`
 
 
         :return: The group_id of this DrPlanStepExecution.
@@ -340,7 +496,7 @@ class DrPlanStepExecution(object):
         Sets the group_id of this DrPlanStepExecution.
         The unique id of the group to which this step belongs. Must not be modified by user.
 
-        Example: `sgid1.group..&lt;unique_id&gt;`
+        Example: `sgid1.group..uniqueID`
 
 
         :param group_id: The group_id of this DrPlanStepExecution.
@@ -352,7 +508,7 @@ class DrPlanStepExecution(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DrPlanStepExecution.
-        The display name of the step.
+        The display name of the step execution.
 
         Example: `DATABASE_SWITCHOVER`
 
@@ -366,7 +522,7 @@ class DrPlanStepExecution(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DrPlanStepExecution.
-        The display name of the step.
+        The display name of the step execution.
 
         Example: `DATABASE_SWITCHOVER`
 
@@ -430,7 +586,7 @@ class DrPlanStepExecution(object):
     def status_details(self):
         """
         Gets the status_details of this DrPlanStepExecution.
-        Additional details about the step execution status.
+        Additional details on the step execution status.
 
         Example: `This step failed to complete due to a timeout`
 
@@ -444,7 +600,7 @@ class DrPlanStepExecution(object):
     def status_details(self, status_details):
         """
         Sets the status_details of this DrPlanStepExecution.
-        Additional details about the step execution status.
+        Additional details on the step execution status.
 
         Example: `This step failed to complete due to a timeout`
 
@@ -458,7 +614,7 @@ class DrPlanStepExecution(object):
     def time_started(self):
         """
         Gets the time_started of this DrPlanStepExecution.
-        The time at which step execution began. An RFC3339 formatted datetime string.
+        The time when step execution began. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -472,7 +628,7 @@ class DrPlanStepExecution(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this DrPlanStepExecution.
-        The time at which step execution began. An RFC3339 formatted datetime string.
+        The time when step execution began. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -486,7 +642,7 @@ class DrPlanStepExecution(object):
     def time_ended(self):
         """
         Gets the time_ended of this DrPlanStepExecution.
-        The time at which step execution ended. An RFC3339 formatted datetime string.
+        The time when execution ended. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -500,7 +656,7 @@ class DrPlanStepExecution(object):
     def time_ended(self, time_ended):
         """
         Sets the time_ended of this DrPlanStepExecution.
-        The time at which step execution ended. An RFC3339 formatted datetime string.
+        The time when execution ended. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -514,7 +670,7 @@ class DrPlanStepExecution(object):
     def execution_duration_in_sec(self):
         """
         Gets the execution_duration_in_sec of this DrPlanStepExecution.
-        The total duration in seconds taken to complete step execution.
+        The total duration in seconds taken to complete the step execution.
 
         Example: `35`
 
@@ -528,7 +684,7 @@ class DrPlanStepExecution(object):
     def execution_duration_in_sec(self, execution_duration_in_sec):
         """
         Sets the execution_duration_in_sec of this DrPlanStepExecution.
-        The total duration in seconds taken to complete step execution.
+        The total duration in seconds taken to complete the step execution.
 
         Example: `35`
 

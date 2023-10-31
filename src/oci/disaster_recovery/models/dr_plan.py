@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrPlan(object):
     """
-    The details of a DR Plan.
+    The details of a DR plan.
     """
 
     #: A constant which can be used with the type property of a DrPlan.
@@ -22,6 +22,14 @@ class DrPlan(object):
     #: A constant which can be used with the type property of a DrPlan.
     #: This constant has a value of "FAILOVER"
     TYPE_FAILOVER = "FAILOVER"
+
+    #: A constant which can be used with the type property of a DrPlan.
+    #: This constant has a value of "START_DRILL"
+    TYPE_START_DRILL = "START_DRILL"
+
+    #: A constant which can be used with the type property of a DrPlan.
+    #: This constant has a value of "STOP_DRILL"
+    TYPE_STOP_DRILL = "STOP_DRILL"
 
     #: A constant which can be used with the lifecycle_state property of a DrPlan.
     #: This constant has a value of "CREATING"
@@ -74,7 +82,7 @@ class DrPlan(object):
 
         :param type:
             The value to assign to the type property of this DrPlan.
-            Allowed values for this property are: "SWITCHOVER", "FAILOVER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SWITCHOVER", "FAILOVER", "START_DRILL", "STOP_DRILL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -181,9 +189,9 @@ class DrPlan(object):
     def id(self):
         """
         **[Required]** Gets the id of this DrPlan.
-        The OCID of this DR Plan.
+        The OCID of the DR plan.
 
-        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drplan.oc1..uniqueID`
 
 
         :return: The id of this DrPlan.
@@ -195,9 +203,9 @@ class DrPlan(object):
     def id(self, id):
         """
         Sets the id of this DrPlan.
-        The OCID of this DR Plan.
+        The OCID of the DR plan.
 
-        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drplan.oc1..uniqueID`
 
 
         :param id: The id of this DrPlan.
@@ -209,7 +217,7 @@ class DrPlan(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DrPlan.
-        The display name of this DR Plan.
+        The display name of the DR plan.
 
         Example: `EBS Switchover PHX to IAD`
 
@@ -223,7 +231,7 @@ class DrPlan(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DrPlan.
-        The display name of this DR Plan.
+        The display name of the DR plan.
 
         Example: `EBS Switchover PHX to IAD`
 
@@ -237,9 +245,9 @@ class DrPlan(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DrPlan.
-        The OCID of the compartment containing the DR Plan.
+        The OCID of the compartment containing the DR plan.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :return: The compartment_id of this DrPlan.
@@ -251,9 +259,9 @@ class DrPlan(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DrPlan.
-        The OCID of the compartment containing the DR Plan.
+        The OCID of the compartment containing the DR plan.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :param compartment_id: The compartment_id of this DrPlan.
@@ -265,9 +273,9 @@ class DrPlan(object):
     def type(self):
         """
         **[Required]** Gets the type of this DrPlan.
-        The type of this DR Plan.
+        The type of the DR plan.
 
-        Allowed values for this property are: "SWITCHOVER", "FAILOVER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SWITCHOVER", "FAILOVER", "START_DRILL", "STOP_DRILL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -280,13 +288,13 @@ class DrPlan(object):
     def type(self, type):
         """
         Sets the type of this DrPlan.
-        The type of this DR Plan.
+        The type of the DR plan.
 
 
         :param type: The type of this DrPlan.
         :type: str
         """
-        allowed_values = ["SWITCHOVER", "FAILOVER"]
+        allowed_values = ["SWITCHOVER", "FAILOVER", "START_DRILL", "STOP_DRILL"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -295,7 +303,7 @@ class DrPlan(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this DrPlan.
-        The date and time the DR Plan was created. An RFC3339 formatted datetime string.
+        The date and time the DR plan was created. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -309,7 +317,7 @@ class DrPlan(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DrPlan.
-        The date and time the DR Plan was created. An RFC3339 formatted datetime string.
+        The date and time the DR plan was created. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -323,7 +331,7 @@ class DrPlan(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this DrPlan.
-        The date and time the DR Plan was updated. An RFC3339 formatted datetime string.
+        The date and time the DR plan was updated. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -337,7 +345,7 @@ class DrPlan(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DrPlan.
-        The date and time the DR Plan was updated. An RFC3339 formatted datetime string.
+        The date and time the DR plan was updated. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -351,9 +359,9 @@ class DrPlan(object):
     def dr_protection_group_id(self):
         """
         **[Required]** Gets the dr_protection_group_id of this DrPlan.
-        The OCID of the DR Protection Group with which this DR Plan is associated.
+        The OCID of the DR protection group to which this DR plan belongs.
 
-        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drplan.oc1..uniqueID`
 
 
         :return: The dr_protection_group_id of this DrPlan.
@@ -365,9 +373,9 @@ class DrPlan(object):
     def dr_protection_group_id(self, dr_protection_group_id):
         """
         Sets the dr_protection_group_id of this DrPlan.
-        The OCID of the DR Protection Group with which this DR Plan is associated.
+        The OCID of the DR protection group to which this DR plan belongs.
 
-        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drplan.oc1..uniqueID`
 
 
         :param dr_protection_group_id: The dr_protection_group_id of this DrPlan.
@@ -379,10 +387,10 @@ class DrPlan(object):
     def peer_dr_protection_group_id(self):
         """
         **[Required]** Gets the peer_dr_protection_group_id of this DrPlan.
-        The OCID of the peer (remote) DR Protection Group associated with this plan's
-        DR Protection Group.
+        The OCID of the peer DR protection group associated with this plan's
+        DR protection group.
 
-        Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :return: The peer_dr_protection_group_id of this DrPlan.
@@ -394,10 +402,10 @@ class DrPlan(object):
     def peer_dr_protection_group_id(self, peer_dr_protection_group_id):
         """
         Sets the peer_dr_protection_group_id of this DrPlan.
-        The OCID of the peer (remote) DR Protection Group associated with this plan's
-        DR Protection Group.
+        The OCID of the peer DR protection group associated with this plan's
+        DR protection group.
 
-        Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :param peer_dr_protection_group_id: The peer_dr_protection_group_id of this DrPlan.
@@ -409,10 +417,10 @@ class DrPlan(object):
     def peer_region(self):
         """
         **[Required]** Gets the peer_region of this DrPlan.
-        The region of the peer (remote) DR Protection Group associated with this plan's
-        DR Protection Group.
+        The region of the peer DR protection group associated with this plan's
+        DR protection group.
 
-        Example: `us-phoenix-1`
+        Example: `us-ashburn-1`
 
 
         :return: The peer_region of this DrPlan.
@@ -424,10 +432,10 @@ class DrPlan(object):
     def peer_region(self, peer_region):
         """
         Sets the peer_region of this DrPlan.
-        The region of the peer (remote) DR Protection Group associated with this plan's
-        DR Protection Group.
+        The region of the peer DR protection group associated with this plan's
+        DR protection group.
 
-        Example: `us-phoenix-1`
+        Example: `us-ashburn-1`
 
 
         :param peer_region: The peer_region of this DrPlan.
@@ -439,7 +447,7 @@ class DrPlan(object):
     def plan_groups(self):
         """
         **[Required]** Gets the plan_groups of this DrPlan.
-        The list of groups in this DR Plan.
+        The list of groups in this DR plan.
 
 
         :return: The plan_groups of this DrPlan.
@@ -451,7 +459,7 @@ class DrPlan(object):
     def plan_groups(self, plan_groups):
         """
         Sets the plan_groups of this DrPlan.
-        The list of groups in this DR Plan.
+        The list of groups in this DR plan.
 
 
         :param plan_groups: The plan_groups of this DrPlan.
@@ -463,7 +471,7 @@ class DrPlan(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DrPlan.
-        The current state of the DR Plan.
+        The current state of the DR plan.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -478,7 +486,7 @@ class DrPlan(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DrPlan.
-        The current state of the DR Plan.
+        The current state of the DR plan.
 
 
         :param lifecycle_state: The lifecycle_state of this DrPlan.
@@ -493,7 +501,7 @@ class DrPlan(object):
     def life_cycle_details(self):
         """
         Gets the life_cycle_details of this DrPlan.
-        A message describing the DR Plan's current state in more detail.
+        A message describing the DR plan's current state in more detail.
 
 
         :return: The life_cycle_details of this DrPlan.
@@ -505,7 +513,7 @@ class DrPlan(object):
     def life_cycle_details(self, life_cycle_details):
         """
         Sets the life_cycle_details of this DrPlan.
-        A message describing the DR Plan's current state in more detail.
+        A message describing the DR plan's current state in more detail.
 
 
         :param life_cycle_details: The life_cycle_details of this DrPlan.
@@ -518,6 +526,7 @@ class DrPlan(object):
         """
         Gets the freeform_tags of this DrPlan.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -531,6 +540,7 @@ class DrPlan(object):
         """
         Sets the freeform_tags of this DrPlan.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -544,6 +554,7 @@ class DrPlan(object):
         """
         Gets the defined_tags of this DrPlan.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
@@ -557,6 +568,7 @@ class DrPlan(object):
         """
         Sets the defined_tags of this DrPlan.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
@@ -570,6 +582,7 @@ class DrPlan(object):
         """
         Gets the system_tags of this DrPlan.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
+
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 
@@ -583,6 +596,7 @@ class DrPlan(object):
         """
         Sets the system_tags of this DrPlan.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
+
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseDetails(DatabaseDetails):
     """
-    The details of the Oracle Autonomous Database to be registered as a target database in Data Safe.
+    The details of the Autonomous Database to be registered as a target database in Data Safe.
     """
 
     def __init__(self, **kwargs):
@@ -57,7 +57,7 @@ class AutonomousDatabaseDetails(DatabaseDetails):
     def autonomous_database_id(self):
         """
         **[Required]** Gets the autonomous_database_id of this AutonomousDatabaseDetails.
-        The OCID of the autonomous database registered as a target database in Data Safe.
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
 
 
         :return: The autonomous_database_id of this AutonomousDatabaseDetails.
@@ -69,7 +69,7 @@ class AutonomousDatabaseDetails(DatabaseDetails):
     def autonomous_database_id(self, autonomous_database_id):
         """
         Sets the autonomous_database_id of this AutonomousDatabaseDetails.
-        The OCID of the autonomous database registered as a target database in Data Safe.
+        The OCID of the Autonomous Database registered as a target database in Data Safe.
 
 
         :param autonomous_database_id: The autonomous_database_id of this AutonomousDatabaseDetails.

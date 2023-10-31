@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGroupMemberDetails):
     """
-    Update properties for a Compute Instance member.
+    Deprecated. Update properties for a compute instance member.
     """
 
     def __init__(self, **kwargs):
@@ -27,7 +27,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"
         :type member_type: str
 
         :param is_movable:
@@ -77,7 +77,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
     def is_movable(self):
         """
         Gets the is_movable of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
-        A flag indicating if this compute instance should be moved during DR operations.
+        A flag indicating if the compute instance should be moved during DR operations.
 
         Example: `false`
 
@@ -91,7 +91,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
     def is_movable(self, is_movable):
         """
         Sets the is_movable of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
-        A flag indicating if this compute instance should be moved during DR operations.
+        A flag indicating if the compute instance should be moved during DR operations.
 
         Example: `false`
 
@@ -105,7 +105,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
     def vnic_mapping(self):
         """
         Gets the vnic_mapping of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
-        A list of Compute Instance VNIC mappings.
+        A list of compute instance VNIC mappings.
 
 
         :return: The vnic_mapping of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
@@ -117,7 +117,7 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
     def vnic_mapping(self, vnic_mapping):
         """
         Sets the vnic_mapping of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
-        A list of Compute Instance VNIC mappings.
+        A list of compute instance VNIC mappings.
 
 
         :param vnic_mapping: The vnic_mapping of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
@@ -129,9 +129,10 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
     def destination_compartment_id(self):
         """
         Gets the destination_compartment_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
-        The OCID of the compartment for this compute instance in the destination region.
+        The OCID of a compartment in the destination region in which the compute instance
+        should be launched.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :return: The destination_compartment_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
@@ -143,9 +144,10 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
     def destination_compartment_id(self, destination_compartment_id):
         """
         Sets the destination_compartment_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
-        The OCID of the compartment for this compute instance in the destination region.
+        The OCID of a compartment in the destination region in which the compute instance
+        should be launched.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :param destination_compartment_id: The destination_compartment_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
@@ -157,10 +159,10 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
     def destination_dedicated_vm_host_id(self):
         """
         Gets the destination_dedicated_vm_host_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
-        The OCID of the dedicated VM Host in the destination region where this compute instance
-        should be launched
+        The OCID of a dedicated VM host in the destination region on which the compute instance
+        should be launched.
 
-        Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 
 
         :return: The destination_dedicated_vm_host_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
@@ -172,10 +174,10 @@ class UpdateDrProtectionGroupMemberComputeInstanceDetails(UpdateDrProtectionGrou
     def destination_dedicated_vm_host_id(self, destination_dedicated_vm_host_id):
         """
         Sets the destination_dedicated_vm_host_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.
-        The OCID of the dedicated VM Host in the destination region where this compute instance
-        should be launched
+        The OCID of a dedicated VM host in the destination region on which the compute instance
+        should be launched.
 
-        Example: `ocid1.dedicatedvmhost.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 
 
         :param destination_dedicated_vm_host_id: The destination_dedicated_vm_host_id of this UpdateDrProtectionGroupMemberComputeInstanceDetails.

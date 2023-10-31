@@ -269,7 +269,7 @@ class TargetAlertPolicyAssociation(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this TargetAlertPolicyAssociation.
-        Indicates if the target-alert policy association is enabled or disabled.
+        Indicates if the target-alert policy association is enabled or disabled by user.
 
 
         :return: The is_enabled of this TargetAlertPolicyAssociation.
@@ -281,7 +281,7 @@ class TargetAlertPolicyAssociation(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this TargetAlertPolicyAssociation.
-        Indicates if the target-alert policy association is enabled or disabled.
+        Indicates if the target-alert policy association is enabled or disabled by user.
 
 
         :param is_enabled: The is_enabled of this TargetAlertPolicyAssociation.

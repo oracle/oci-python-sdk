@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDrPlanDetails(object):
     """
-    The details for creating a DR Plan.
+    The details for creating a DR plan.
     """
 
     #: A constant which can be used with the type property of a CreateDrPlanDetails.
@@ -22,6 +22,14 @@ class CreateDrPlanDetails(object):
     #: A constant which can be used with the type property of a CreateDrPlanDetails.
     #: This constant has a value of "FAILOVER"
     TYPE_FAILOVER = "FAILOVER"
+
+    #: A constant which can be used with the type property of a CreateDrPlanDetails.
+    #: This constant has a value of "START_DRILL"
+    TYPE_START_DRILL = "START_DRILL"
+
+    #: A constant which can be used with the type property of a CreateDrPlanDetails.
+    #: This constant has a value of "STOP_DRILL"
+    TYPE_STOP_DRILL = "STOP_DRILL"
 
     def __init__(self, **kwargs):
         """
@@ -34,7 +42,7 @@ class CreateDrPlanDetails(object):
 
         :param type:
             The value to assign to the type property of this CreateDrPlanDetails.
-            Allowed values for this property are: "SWITCHOVER", "FAILOVER"
+            Allowed values for this property are: "SWITCHOVER", "FAILOVER", "START_DRILL", "STOP_DRILL"
         :type type: str
 
         :param dr_protection_group_id:
@@ -76,7 +84,7 @@ class CreateDrPlanDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateDrPlanDetails.
-        The display name of the DR Plan being created.
+        The display name of the DR plan being created.
 
         Example: `EBS Switchover PHX to IAD`
 
@@ -90,7 +98,7 @@ class CreateDrPlanDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDrPlanDetails.
-        The display name of the DR Plan being created.
+        The display name of the DR plan being created.
 
         Example: `EBS Switchover PHX to IAD`
 
@@ -104,9 +112,9 @@ class CreateDrPlanDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this CreateDrPlanDetails.
-        The type of DR Plan to be created.
+        The type of DR plan to be created.
 
-        Allowed values for this property are: "SWITCHOVER", "FAILOVER"
+        Allowed values for this property are: "SWITCHOVER", "FAILOVER", "START_DRILL", "STOP_DRILL"
 
 
         :return: The type of this CreateDrPlanDetails.
@@ -118,13 +126,13 @@ class CreateDrPlanDetails(object):
     def type(self, type):
         """
         Sets the type of this CreateDrPlanDetails.
-        The type of DR Plan to be created.
+        The type of DR plan to be created.
 
 
         :param type: The type of this CreateDrPlanDetails.
         :type: str
         """
-        allowed_values = ["SWITCHOVER", "FAILOVER"]
+        allowed_values = ["SWITCHOVER", "FAILOVER", "START_DRILL", "STOP_DRILL"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 f"Invalid value for `type`, must be None or one of {allowed_values}"
@@ -135,9 +143,9 @@ class CreateDrPlanDetails(object):
     def dr_protection_group_id(self):
         """
         **[Required]** Gets the dr_protection_group_id of this CreateDrPlanDetails.
-        The OCID of the DR Protection Group to which this DR Plan belongs.
+        The OCID of the DR protection group to which this DR plan belongs.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :return: The dr_protection_group_id of this CreateDrPlanDetails.
@@ -149,9 +157,9 @@ class CreateDrPlanDetails(object):
     def dr_protection_group_id(self, dr_protection_group_id):
         """
         Sets the dr_protection_group_id of this CreateDrPlanDetails.
-        The OCID of the DR Protection Group to which this DR Plan belongs.
+        The OCID of the DR protection group to which this DR plan belongs.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :param dr_protection_group_id: The dr_protection_group_id of this CreateDrPlanDetails.
@@ -164,6 +172,7 @@ class CreateDrPlanDetails(object):
         """
         Gets the freeform_tags of this CreateDrPlanDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -177,6 +186,7 @@ class CreateDrPlanDetails(object):
         """
         Sets the freeform_tags of this CreateDrPlanDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -190,6 +200,7 @@ class CreateDrPlanDetails(object):
         """
         Gets the defined_tags of this CreateDrPlanDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
@@ -203,6 +214,7 @@ class CreateDrPlanDetails(object):
         """
         Sets the defined_tags of this CreateDrPlanDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 

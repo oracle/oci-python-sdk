@@ -39,7 +39,7 @@ class ChangeTargetDatabaseCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeTargetDatabaseCompartmentDetails.
-        The OCID of the new compartment to where you want to move the Data Safe target database.
+        The OCID of the compartment you want to move the Data Safe target database to.
 
 
         :return: The compartment_id of this ChangeTargetDatabaseCompartmentDetails.
@@ -51,7 +51,7 @@ class ChangeTargetDatabaseCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeTargetDatabaseCompartmentDetails.
-        The OCID of the new compartment to where you want to move the Data Safe target database.
+        The OCID of the compartment you want to move the Data Safe target database to.
 
 
         :param compartment_id: The compartment_id of this ChangeTargetDatabaseCompartmentDetails.

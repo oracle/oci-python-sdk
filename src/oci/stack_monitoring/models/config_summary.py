@@ -21,6 +21,8 @@ class ConfigSummary(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.stack_monitoring.models.AutoPromoteConfigSummary`
+        * :class:`~oci.stack_monitoring.models.LicenseAutoAssignConfigSummary`
+        * :class:`~oci.stack_monitoring.models.LicenseEnterpriseExtensibilityConfigSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -112,6 +114,12 @@ class ConfigSummary(object):
 
         if type == 'AUTO_PROMOTE':
             return 'AutoPromoteConfigSummary'
+
+        if type == 'LICENSE_AUTO_ASSIGN':
+            return 'LicenseAutoAssignConfigSummary'
+
+        if type == 'LICENSE_ENTERPRISE_EXTENSIBILITY':
+            return 'LicenseEnterpriseExtensibilityConfigSummary'
         else:
             return 'ConfigSummary'
 

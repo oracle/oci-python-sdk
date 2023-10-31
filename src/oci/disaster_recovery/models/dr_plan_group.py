@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrPlanGroup(object):
     """
-    Details of a plan group in a DR Plan.
+    Details of a group in a DR plan.
     """
 
     #: A constant which can be used with the type property of a DrPlanGroup.
@@ -74,9 +74,9 @@ class DrPlanGroup(object):
     def id(self):
         """
         **[Required]** Gets the id of this DrPlanGroup.
-        The unique id of this group. Must not be modified by user.
+        The unique id of the group. Must not be modified by user.
 
-        Example: `sgid1.group..&lt;unique_id&gt;`
+        Example: `sgid1.group..uniqueID`
 
 
         :return: The id of this DrPlanGroup.
@@ -88,9 +88,9 @@ class DrPlanGroup(object):
     def id(self, id):
         """
         Sets the id of this DrPlanGroup.
-        The unique id of this group. Must not be modified by user.
+        The unique id of the group. Must not be modified by user.
 
-        Example: `sgid1.group..&lt;unique_id&gt;`
+        Example: `sgid1.group..uniqueID`
 
 
         :param id: The id of this DrPlanGroup.
@@ -102,7 +102,9 @@ class DrPlanGroup(object):
     def type(self):
         """
         **[Required]** Gets the type of this DrPlanGroup.
-        The plan group type.
+        The group type.
+
+        Example: `BUILT_IN`
 
         Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -117,7 +119,9 @@ class DrPlanGroup(object):
     def type(self, type):
         """
         Sets the type of this DrPlanGroup.
-        The plan group type.
+        The group type.
+
+        Example: `BUILT_IN`
 
 
         :param type: The type of this DrPlanGroup.
@@ -132,7 +136,7 @@ class DrPlanGroup(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DrPlanGroup.
-        The display name of this DR Plan Group.
+        The display name of the group.
 
         Example: `DATABASE_SWITCHOVER`
 
@@ -146,7 +150,7 @@ class DrPlanGroup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DrPlanGroup.
-        The display name of this DR Plan Group.
+        The display name of the group.
 
         Example: `DATABASE_SWITCHOVER`
 
@@ -160,7 +164,7 @@ class DrPlanGroup(object):
     def steps(self):
         """
         **[Required]** Gets the steps of this DrPlanGroup.
-        The list of steps in this plan group.
+        The list of steps in the group.
 
 
         :return: The steps of this DrPlanGroup.
@@ -172,7 +176,7 @@ class DrPlanGroup(object):
     def steps(self, steps):
         """
         Sets the steps of this DrPlanGroup.
-        The list of steps in this plan group.
+        The list of steps in the group.
 
 
         :param steps: The steps of this DrPlanGroup.

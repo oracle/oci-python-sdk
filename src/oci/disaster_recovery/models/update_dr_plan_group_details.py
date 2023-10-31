@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDrPlanGroupDetails(object):
     """
-    The details for updating a DR Plan group.
+    The details for updating a group in a DR plan.
     """
 
     #: A constant which can be used with the type property of a UpdateDrPlanGroupDetails.
@@ -73,9 +73,9 @@ class UpdateDrPlanGroupDetails(object):
     def id(self):
         """
         Gets the id of this UpdateDrPlanGroupDetails.
-        The unique id of this group. Must not be modified by user.
+        The unique id of the group. Must not be modified by user.
 
-        Example: `sgid1.group..&lt;unique_id&gt;`
+        Example: `sgid1.group..uniqueID`
 
 
         :return: The id of this UpdateDrPlanGroupDetails.
@@ -87,9 +87,9 @@ class UpdateDrPlanGroupDetails(object):
     def id(self, id):
         """
         Sets the id of this UpdateDrPlanGroupDetails.
-        The unique id of this group. Must not be modified by user.
+        The unique id of the group. Must not be modified by user.
 
-        Example: `sgid1.group..&lt;unique_id&gt;`
+        Example: `sgid1.group..uniqueID`
 
 
         :param id: The id of this UpdateDrPlanGroupDetails.
@@ -101,7 +101,7 @@ class UpdateDrPlanGroupDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateDrPlanGroupDetails.
-        The display name of this group.
+        The display name of the group.
 
         Example: `My_GROUP_3 - EBS Start`
 
@@ -115,7 +115,7 @@ class UpdateDrPlanGroupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateDrPlanGroupDetails.
-        The display name of this group.
+        The display name of the group.
 
         Example: `My_GROUP_3 - EBS Start`
 
@@ -131,6 +131,8 @@ class UpdateDrPlanGroupDetails(object):
         Gets the type of this UpdateDrPlanGroupDetails.
         The group type.
 
+        Example: `BUILT_IN`
+
         Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK"
 
 
@@ -144,6 +146,8 @@ class UpdateDrPlanGroupDetails(object):
         """
         Sets the type of this UpdateDrPlanGroupDetails.
         The group type.
+
+        Example: `BUILT_IN`
 
 
         :param type: The type of this UpdateDrPlanGroupDetails.

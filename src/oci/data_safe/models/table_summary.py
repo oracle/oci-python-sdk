@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TableSummary(object):
     """
-    Details of a table fetched from the database.
+    The details of a table fetched from the database.
     """
 
     def __init__(self, **kwargs):

@@ -349,7 +349,7 @@ class SecurityAssessmentSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this SecurityAssessmentSummary.
-        The date and time when the security assessment was created. Conforms to the format defined by `RFC3339`__.
+        The date and time the security assessment was created, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -363,7 +363,7 @@ class SecurityAssessmentSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SecurityAssessmentSummary.
-        The date and time when the security assessment was created. Conforms to the format defined by `RFC3339`__.
+        The date and time the security assessment was created, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -377,7 +377,7 @@ class SecurityAssessmentSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this SecurityAssessmentSummary.
-        The date and time when the security assessment was last updated. Conforms to the format defined by `RFC3339`__.
+        The date and time the security assessment was last updated, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -391,7 +391,7 @@ class SecurityAssessmentSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this SecurityAssessmentSummary.
-        The date and time when the security assessment was last updated. Conforms to the format defined by `RFC3339`__.
+        The date and time the security assessment was last updated, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -405,7 +405,7 @@ class SecurityAssessmentSummary(object):
     def time_last_assessed(self):
         """
         Gets the time_last_assessed of this SecurityAssessmentSummary.
-        The date and time when the security assessment was last run. Conforms to the format defined by `RFC3339`__.
+        The date and time the security assessment was last executed, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -419,7 +419,7 @@ class SecurityAssessmentSummary(object):
     def time_last_assessed(self, time_last_assessed):
         """
         Sets the time_last_assessed of this SecurityAssessmentSummary.
-        The date and time when the security assessment was last run. Conforms to the format defined by `RFC3339`__.
+        The date and time the security assessment was last executed, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 

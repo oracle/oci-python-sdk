@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SchemaSummary(object):
     """
-    Details of a schema fetched from the database.
+    The details of a schema fetched from the database.
     """
 
     def __init__(self, **kwargs):

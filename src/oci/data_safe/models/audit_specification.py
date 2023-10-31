@@ -45,6 +45,10 @@ class AuditSpecification(object):
     #: This constant has a value of "CUSTOM"
     AUDIT_POLICY_CATEGORY_CUSTOM = "CUSTOM"
 
+    #: A constant which can be used with the audit_policy_category property of a AuditSpecification.
+    #: This constant has a value of "SQL_FIREWALL_AUDITING"
+    AUDIT_POLICY_CATEGORY_SQL_FIREWALL_AUDITING = "SQL_FIREWALL_AUDITING"
+
     #: A constant which can be used with the enable_status property of a AuditSpecification.
     #: This constant has a value of "ENABLED"
     ENABLE_STATUS_ENABLED = "ENABLED"
@@ -96,7 +100,7 @@ class AuditSpecification(object):
 
         :param audit_policy_category:
             The value to assign to the audit_policy_category property of this AuditSpecification.
-            Allowed values for this property are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM", "SQL_FIREWALL_AUDITING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type audit_policy_category: str
 
@@ -235,7 +239,7 @@ class AuditSpecification(object):
         **[Required]** Gets the audit_policy_category of this AuditSpecification.
         The category to which the audit policy belongs.
 
-        Allowed values for this property are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM", "SQL_FIREWALL_AUDITING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -254,7 +258,7 @@ class AuditSpecification(object):
         :param audit_policy_category: The audit_policy_category of this AuditSpecification.
         :type: str
         """
-        allowed_values = ["BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM"]
+        allowed_values = ["BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM", "SQL_FIREWALL_AUDITING"]
         if not value_allowed_none_or_none_sentinel(audit_policy_category, allowed_values):
             audit_policy_category = 'UNKNOWN_ENUM_VALUE'
         self._audit_policy_category = audit_policy_category

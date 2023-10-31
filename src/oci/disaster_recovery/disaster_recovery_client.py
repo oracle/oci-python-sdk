@@ -22,9 +22,10 @@ missing = Sentinel("Missing")
 
 class DisasterRecoveryClient(object):
     """
-    Use the Full Stack Disaster Recovery (FSDR) API to manage disaster recovery for business applications.
-    FSDR is an OCI disaster recovery orchestration and management service that provides comprehensive disaster recovery
-    capabilities for all layers of an application stack, including infrastructure, middleware, database, and application.
+    Use the Full Stack Disaster Recovery (DR) API to manage disaster recovery for business applications.
+    Full Stack DR is an OCI disaster recovery orchestration and management service that provides comprehensive disaster
+    recovery capabilities for all layers of an application stack, including infrastructure, middleware, database,
+    and application.
     """
 
     def __init__(self, config, **kwargs):
@@ -120,17 +121,17 @@ class DisasterRecoveryClient(object):
 
     def associate_dr_protection_group(self, associate_dr_protection_group_details, dr_protection_group_id, **kwargs):
         """
-        Create an association between the DR Protection Group identified by *drProtectionGroupId* and
-        another DR Protection Group in a different region.
+        Create an association between the DR protection group identified by *drProtectionGroupId* and
+        another DR protection group.
 
 
         :param oci.disaster_recovery.models.AssociateDrProtectionGroupDetails associate_dr_protection_group_details: (required)
-            Details for creating an association between two DR Protection Groups.
+            Details for creating an association between two DR protection groups.
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -243,16 +244,16 @@ class DisasterRecoveryClient(object):
 
     def cancel_dr_plan_execution(self, cancel_dr_plan_execution_details, dr_plan_execution_id, **kwargs):
         """
-        Cancel the DR Plan Execution indentified by *drPlanExecutionId*.
+        Cancel the DR plan execution identified by *drPlanExecutionId*.
 
 
         :param oci.disaster_recovery.models.CancelDrPlanExecutionDetails cancel_dr_plan_execution_details: (required)
-            Details for canceling a DR Plan Execution.
+            Details for canceling the DR plan execution.
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -371,7 +372,7 @@ class DisasterRecoveryClient(object):
         :param str work_request_id: (required)
             The ID (OCID) of the asynchronous request.
 
-            Example: `ocid1.workrequest.oc1.phx.exampleocid`
+            Example: `ocid1.workrequest.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -472,16 +473,16 @@ class DisasterRecoveryClient(object):
 
     def change_dr_protection_group_compartment(self, change_dr_protection_group_compartment_details, dr_protection_group_id, **kwargs):
         """
-        Move the DR Protection Group identified by *drProtectionGroupId* to a different compartment.
+        Move the DR protection group identified by *drProtectionGroupId* to a different compartment.
 
 
         :param oci.disaster_recovery.models.ChangeDrProtectionGroupCompartmentDetails change_dr_protection_group_compartment_details: (required)
-            Details of DR Protection Group compartment to change.
+            Details for changing the DR protection group compartment.
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -594,11 +595,11 @@ class DisasterRecoveryClient(object):
 
     def create_dr_plan(self, create_dr_plan_details, **kwargs):
         """
-        Creates a new DR Plan of the specified DR Plan type.
+        Create a DR plan of the specified DR plan type.
 
 
         :param oci.disaster_recovery.models.CreateDrPlanDetails create_dr_plan_details: (required)
-            Details for creating the new DR Plan.
+            Details for creating the new DR plan.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -692,11 +693,11 @@ class DisasterRecoveryClient(object):
 
     def create_dr_plan_execution(self, create_dr_plan_execution_details, **kwargs):
         """
-        Execute a DR Plan for a DR Protection Group.
+        Execute a DR plan for a DR protection group.
 
 
         :param oci.disaster_recovery.models.CreateDrPlanExecutionDetails create_dr_plan_execution_details: (required)
-            Details for the new DR Plan Execution.
+            Details for creating the DR plan execution.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -790,11 +791,11 @@ class DisasterRecoveryClient(object):
 
     def create_dr_protection_group(self, create_dr_protection_group_details, **kwargs):
         """
-        Create a new DR Protection Group.
+        Create a DR protection group.
 
 
         :param oci.disaster_recovery.models.CreateDrProtectionGroupDetails create_dr_protection_group_details: (required)
-            Details for the new DR Protection Group.
+            Details for creating the DR protection group.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -888,13 +889,13 @@ class DisasterRecoveryClient(object):
 
     def delete_dr_plan(self, dr_plan_id, **kwargs):
         """
-        Delete the DR Plan identified by *drPlanId*.
+        Delete the DR plan identified by *drPlanId*.
 
 
         :param str dr_plan_id: (required)
-            The OCID of the DR Plan.
+            The OCID of the DR plan.
 
-            Example: `ocid1.drplan.oc1.iad.exampleocid`
+            Example: `ocid1.drplan.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -995,13 +996,13 @@ class DisasterRecoveryClient(object):
 
     def delete_dr_plan_execution(self, dr_plan_execution_id, **kwargs):
         """
-        Delete the DR Plan Execution identified by *drPlanExecutionId*.
+        Delete the DR plan execution identified by *drPlanExecutionId*.
 
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1102,13 +1103,13 @@ class DisasterRecoveryClient(object):
 
     def delete_dr_protection_group(self, dr_protection_group_id, **kwargs):
         """
-        Delete the DR Protection Group identified by *drProtectionGroupId*.
+        Delete the DR protection group identified by *drProtectionGroupId*.
 
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1209,17 +1210,17 @@ class DisasterRecoveryClient(object):
 
     def disassociate_dr_protection_group(self, disassociate_dr_protection_group_details, dr_protection_group_id, **kwargs):
         """
-        Delete the association between the DR Protection Group identified by *drProtectionGroupId*.
-        and its peer DR Protection Group.
+        Delete the association between the DR protection group identified by *drProtectionGroupId*.
+        and its peer DR protection group.
 
 
         :param oci.disaster_recovery.models.DisassociateDrProtectionGroupDetails disassociate_dr_protection_group_details: (required)
-            Details for removing an association between two DR Protection Groups.
+            Details for deleting the association between two DR protection groups.
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1332,13 +1333,13 @@ class DisasterRecoveryClient(object):
 
     def get_dr_plan(self, dr_plan_id, **kwargs):
         """
-        Get details for the DR Plan identified by *drPlanId*.
+        Get details for the DR plan identified by *drPlanId*.
 
 
         :param str dr_plan_id: (required)
-            The OCID of the DR Plan.
+            The OCID of the DR plan.
 
-            Example: `ocid1.drplan.oc1.iad.exampleocid`
+            Example: `ocid1.drplan.oc1..uniqueID`
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1432,13 +1433,13 @@ class DisasterRecoveryClient(object):
 
     def get_dr_plan_execution(self, dr_plan_execution_id, **kwargs):
         """
-        Get details for the DR Plan Execution identified by *drPlanExecutionId*.
+        Get details for the DR plan execution identified by *drPlanExecutionId*.
 
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1532,13 +1533,13 @@ class DisasterRecoveryClient(object):
 
     def get_dr_protection_group(self, dr_protection_group_id, **kwargs):
         """
-        Get the DR Protection Group identified by *drProtectionGroupId*.
+        Get the DR protection group identified by *drProtectionGroupId*.
 
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1638,7 +1639,7 @@ class DisasterRecoveryClient(object):
         :param str work_request_id: (required)
             The ID (OCID) of the asynchronous request.
 
-            Example: `ocid1.workrequest.oc1.phx.exampleocid`
+            Example: `ocid1.workrequest.oc1..uniqueID`
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1732,16 +1733,16 @@ class DisasterRecoveryClient(object):
 
     def ignore_dr_plan_execution(self, ignore_dr_plan_execution_details, dr_plan_execution_id, **kwargs):
         """
-        Ignore failed group or step in DR Plan Execution identified by *drPlanExecutionId* and resume execution.
+        Ignore the failed group or step in DR plan execution identified by *drPlanExecutionId* and resume execution.
 
 
         :param oci.disaster_recovery.models.IgnoreDrPlanExecutionDetails ignore_dr_plan_execution_details: (required)
-            Details of the failed group or step to ignore.
+            Details for ignoring the failed group or step and resuming execution.
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1854,33 +1855,33 @@ class DisasterRecoveryClient(object):
 
     def list_dr_plan_executions(self, dr_protection_group_id, **kwargs):
         """
-        Get a summary list of all DR Plan Executions for a DR Protection Group.
+        Get a summary list of all DR plan executions for a DR protection group.
 
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group. Mandatory query param.
+            The OCID of the DR protection group. Mandatory query param.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param str lifecycle_state: (optional)
-            A filter to return only DR Plan Executions that match the given lifecycleState.
+            A filter to return only DR plan executions that match the given lifecycle state.
 
             Allowed values are: "ACCEPTED", "IN_PROGRESS", "WAITING", "CANCELING", "CANCELED", "SUCCEEDED", "FAILED", "DELETING", "DELETED", "PAUSING", "PAUSED", "RESUMING"
 
         :param str dr_plan_execution_id: (optional)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param str dr_plan_execution_type: (optional)
-            The DR Plan Execution type.
+            The DR plan execution type.
 
-            Allowed values are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK"
+            Allowed values are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL", "START_DRILL_PRECHECK", "STOP_DRILL", "STOP_DRILL_PRECHECK"
 
         :param str display_name: (optional)
-            A filter to return only resources that match the entire display name given.
+            A filter to return only resources that match the given display name.
 
-            Example: `MY UNIQUE DISPLAY NAME`
+            Example: `MyResourceDisplayName`
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -1912,7 +1913,7 @@ class DisasterRecoveryClient(object):
             The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
             Default order for displayName is ascending. If no value is specified timeCreated is default.
 
-            Example: `displayName`
+            Example: `MyResourceDisplayName`
 
             Allowed values are: "timeCreated", "displayName"
 
@@ -1971,7 +1972,7 @@ class DisasterRecoveryClient(object):
                 )
 
         if 'dr_plan_execution_type' in kwargs:
-            dr_plan_execution_type_allowed_values = ["SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK"]
+            dr_plan_execution_type_allowed_values = ["SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL", "START_DRILL_PRECHECK", "STOP_DRILL", "STOP_DRILL_PRECHECK"]
             if kwargs['dr_plan_execution_type'] not in dr_plan_execution_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `dr_plan_execution_type`, must be one of { dr_plan_execution_type_allowed_values }"
@@ -2047,33 +2048,33 @@ class DisasterRecoveryClient(object):
 
     def list_dr_plans(self, dr_protection_group_id, **kwargs):
         """
-        Gets a summary list of all DR Plans for a DR Protection Group.
+        Get a summary list of all DR plans for a DR protection group.
 
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group. Mandatory query param.
+            The OCID of the DR protection group. Mandatory query param.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param str lifecycle_state: (optional)
-            A filter to return only DR Plans that match the given lifecycleState.
+            A filter to return only DR plans that match the given lifecycle state.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
 
         :param str dr_plan_id: (optional)
-            The OCID of the DR Plan.
+            The OCID of the DR plan.
 
-            Example: `ocid1.drplan.oc1.iad.exampleocid`
+            Example: `ocid1.drplan.oc1..uniqueID`
 
         :param str dr_plan_type: (optional)
-            The DR Plan type.
+            The DR plan type.
 
-            Allowed values are: "SWITCHOVER", "FAILOVER"
+            Allowed values are: "SWITCHOVER", "FAILOVER", "START_DRILL", "STOP_DRILL"
 
         :param str display_name: (optional)
-            A filter to return only resources that match the entire display name given.
+            A filter to return only resources that match the given display name.
 
-            Example: `MY UNIQUE DISPLAY NAME`
+            Example: `MyResourceDisplayName`
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -2105,7 +2106,7 @@ class DisasterRecoveryClient(object):
             The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
             Default order for displayName is ascending. If no value is specified timeCreated is default.
 
-            Example: `displayName`
+            Example: `MyResourceDisplayName`
 
             Allowed values are: "timeCreated", "displayName"
 
@@ -2164,7 +2165,7 @@ class DisasterRecoveryClient(object):
                 )
 
         if 'dr_plan_type' in kwargs:
-            dr_plan_type_allowed_values = ["SWITCHOVER", "FAILOVER"]
+            dr_plan_type_allowed_values = ["SWITCHOVER", "FAILOVER", "START_DRILL", "STOP_DRILL"]
             if kwargs['dr_plan_type'] not in dr_plan_type_allowed_values:
                 raise ValueError(
                     f"Invalid value for `dr_plan_type`, must be one of { dr_plan_type_allowed_values }"
@@ -2240,28 +2241,28 @@ class DisasterRecoveryClient(object):
 
     def list_dr_protection_groups(self, compartment_id, **kwargs):
         """
-        Gets a summary list of all DR Protection Groups in a compartment.
+        Get a summary list of all DR protection groups in a compartment.
 
 
         :param str compartment_id: (required)
             The ID (OCID) of the compartment in which to list resources.
 
-            Example: `ocid1.compartment.oc1..exampleocid1`
+            Example: `ocid1.compartment.oc1..uniqueID`
 
         :param str lifecycle_state: (optional)
-            A filter to return only DR Protection Groups that match the given lifecycleState.
+            A filter to return only DR protection groups that match the given lifecycle state.
 
-            Allowed values are: "CREATING", "ACTIVE", "UPDATING", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"
 
         :param str dr_protection_group_id: (optional)
-            The OCID of the DR Protection Group. Optional query param.
+            The OCID of the DR protection group. Optional query param.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param str display_name: (optional)
-            A filter to return only resources that match the entire display name given.
+            A filter to return only resources that match the given display name.
 
-            Example: `MY UNIQUE DISPLAY NAME`
+            Example: `MyResourceDisplayName`
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
@@ -2293,7 +2294,7 @@ class DisasterRecoveryClient(object):
             The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
             Default order for displayName is ascending. If no value is specified timeCreated is default.
 
-            Example: `displayName`
+            Example: `MyResourceDisplayName`
 
             Allowed values are: "timeCreated", "displayName"
 
@@ -2301,9 +2302,14 @@ class DisasterRecoveryClient(object):
             The client request ID for tracing.
 
         :param str role: (optional)
-            The DR Protection Group Role.
+            The DR protection group Role.
 
             Allowed values are: "PRIMARY", "STANDBY", "UNCONFIGURED"
+
+        :param str lifecycle_sub_state: (optional)
+            A filter to return only DR protection groups that match the given lifecycle sub-state.
+
+            Allowed values are: "DR_DRILL_IN_PROGRESS"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2342,7 +2348,8 @@ class DisasterRecoveryClient(object):
             "sort_order",
             "sort_by",
             "opc_request_id",
-            "role"
+            "role",
+            "lifecycle_sub_state"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2350,7 +2357,7 @@ class DisasterRecoveryClient(object):
                 f"list_dr_protection_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "INACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
@@ -2377,6 +2384,13 @@ class DisasterRecoveryClient(object):
                     f"Invalid value for `role`, must be one of { role_allowed_values }"
                 )
 
+        if 'lifecycle_sub_state' in kwargs:
+            lifecycle_sub_state_allowed_values = ["DR_DRILL_IN_PROGRESS"]
+            if kwargs['lifecycle_sub_state'] not in lifecycle_sub_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lifecycle_sub_state`, must be one of { lifecycle_sub_state_allowed_values }"
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "lifecycleState": kwargs.get("lifecycle_state", missing),
@@ -2386,7 +2400,8 @@ class DisasterRecoveryClient(object):
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "role": kwargs.get("role", missing)
+            "role": kwargs.get("role", missing),
+            "lifecycleSubState": kwargs.get("lifecycle_sub_state", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2433,13 +2448,13 @@ class DisasterRecoveryClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of errors for a given work request.
+        Get a list of work request errors for the work request identified by *workRequestId*.
 
 
         :param str work_request_id: (required)
             The ID (OCID) of the asynchronous request.
 
-            Example: `ocid1.workrequest.oc1.phx.exampleocid`
+            Example: `ocid1.workrequest.oc1..uniqueID`
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2593,13 +2608,13 @@ class DisasterRecoveryClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of logs for the work request identified by *workRequestId*.
+        Get a list of logs for the work request identified by *workRequestId*.
 
 
         :param str work_request_id: (required)
             The ID (OCID) of the asynchronous request.
 
-            Example: `ocid1.workrequest.oc1.phx.exampleocid`
+            Example: `ocid1.workrequest.oc1..uniqueID`
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2759,12 +2774,12 @@ class DisasterRecoveryClient(object):
         :param str compartment_id: (optional)
             The ID (OCID) of the compartment in which to list resources.
 
-            Example: `ocid1.compartment.oc1..exampleocid1`
+            Example: `ocid1.compartment.oc1..uniqueID`
 
         :param str work_request_id: (optional)
             The ID (OCID) of the asynchronous work request.
 
-            Example: `ocid1.workrequest.oc1.phx.exampleocid1`
+            Example: `ocid1.workrequest.oc1..uniqueID`
 
         :param str status: (optional)
             A filter to return only resources whose lifecycleState matches the given OperationStatus.
@@ -2773,7 +2788,8 @@ class DisasterRecoveryClient(object):
 
         :param str resource_id: (optional)
             The ID (OCID) of the resource affected by the work request.
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2930,16 +2946,16 @@ class DisasterRecoveryClient(object):
 
     def pause_dr_plan_execution(self, pause_dr_plan_execution_details, dr_plan_execution_id, **kwargs):
         """
-        Pause the DR Plan Execution identified by *drPlanExecutionId*.
+        Pause the DR plan execution identified by *drPlanExecutionId*.
 
 
         :param oci.disaster_recovery.models.PauseDrPlanExecutionDetails pause_dr_plan_execution_details: (required)
-            Details for pausing a DR Plan Execution.
+            Details for pausing the DR plan execution.
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3052,16 +3068,16 @@ class DisasterRecoveryClient(object):
 
     def resume_dr_plan_execution(self, resume_dr_plan_execution_details, dr_plan_execution_id, **kwargs):
         """
-        Resume the DR Plan Execution identified by *drPlanExecutionId*.
+        Resume the DR plan execution identified by *drPlanExecutionId*.
 
 
         :param oci.disaster_recovery.models.ResumeDrPlanExecutionDetails resume_dr_plan_execution_details: (required)
-            Details for resuming a DR Plan Execution.
+            Details for resuming the DR plan execution.
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3174,16 +3190,16 @@ class DisasterRecoveryClient(object):
 
     def retry_dr_plan_execution(self, retry_dr_plan_execution_details, dr_plan_execution_id, **kwargs):
         """
-        Retry failed group or step in DR Plan Execution identified by *drPlanExecutionId* and resume execution.
+        Retry the failed group or step in DR plan execution identified by *drPlanExecutionId* and resume execution.
 
 
         :param oci.disaster_recovery.models.RetryDrPlanExecutionDetails retry_dr_plan_execution_details: (required)
-            Details of the failed group or step to retry.
+            Details for retrying execution of the failed group or step.
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3296,16 +3312,16 @@ class DisasterRecoveryClient(object):
 
     def update_dr_plan(self, update_dr_plan_details, dr_plan_id, **kwargs):
         """
-        Update the DR Plan identified by *drPlanId*.
+        Update the DR plan identified by *drPlanId*.
 
 
         :param oci.disaster_recovery.models.UpdateDrPlanDetails update_dr_plan_details: (required)
-            Details of DR Plan to update.
+            Details for updating the DR plan.
 
         :param str dr_plan_id: (required)
-            The OCID of the DR Plan.
+            The OCID of the DR plan.
 
-            Example: `ocid1.drplan.oc1.iad.exampleocid`
+            Example: `ocid1.drplan.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3408,16 +3424,16 @@ class DisasterRecoveryClient(object):
 
     def update_dr_plan_execution(self, update_dr_plan_execution_details, dr_plan_execution_id, **kwargs):
         """
-        Update the DR Plan Execution identified by *drPlanExecutionId*.
+        Update the DR plan execution identified by *drPlanExecutionId*.
 
 
         :param oci.disaster_recovery.models.UpdateDrPlanExecutionDetails update_dr_plan_execution_details: (required)
-            Details of DR Plan Execution to update.
+            Details for updating the DR plan execution.
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3520,16 +3536,16 @@ class DisasterRecoveryClient(object):
 
     def update_dr_protection_group(self, update_dr_protection_group_details, dr_protection_group_id, **kwargs):
         """
-        Update the DR Protection Group identified by *drProtectionGroupId*.
+        Update the DR protection group identified by *drProtectionGroupId*.
 
 
         :param oci.disaster_recovery.models.UpdateDrProtectionGroupDetails update_dr_protection_group_details: (required)
-            Details of DR Protection Group to update.
+            Details for updating the the DR protection group.
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -3632,16 +3648,16 @@ class DisasterRecoveryClient(object):
 
     def update_dr_protection_group_role(self, update_dr_protection_group_role_details, dr_protection_group_id, **kwargs):
         """
-        Update the role of the DR Protection Group identified by *drProtectionGroupId*.
+        Update the role of the DR protection group identified by *drProtectionGroupId*.
 
 
         :param oci.disaster_recovery.models.UpdateDrProtectionGroupRoleDetails update_dr_protection_group_role_details: (required)
-            The role details for the DR Protection Group.
+            The role details for the DR protection group to be updated.
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

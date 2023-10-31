@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrPlanGroupExecution(object):
     """
-    Summary information about a group execution in a DR Plan Execution.
+    The details of a group execution in a DR plan execution.
     """
 
     #: A constant which can be used with the type property of a DrPlanGroupExecution.
@@ -157,7 +157,7 @@ class DrPlanGroupExecution(object):
         **[Required]** Gets the group_id of this DrPlanGroupExecution.
         The unique id of the group. Must not be modified by user.
 
-        Example: `sgid1.group..&lt;unique_id&gt;`
+        Example: `sgid1.group..uniqueID`
 
 
         :return: The group_id of this DrPlanGroupExecution.
@@ -171,7 +171,7 @@ class DrPlanGroupExecution(object):
         Sets the group_id of this DrPlanGroupExecution.
         The unique id of the group. Must not be modified by user.
 
-        Example: `sgid1.group..&lt;unique_id&gt;`
+        Example: `sgid1.group..uniqueID`
 
 
         :param group_id: The group_id of this DrPlanGroupExecution.
@@ -183,7 +183,9 @@ class DrPlanGroupExecution(object):
     def type(self):
         """
         **[Required]** Gets the type of this DrPlanGroupExecution.
-        The plan group type.
+        The group type.
+
+        Example: `BUILT_IN`
 
         Allowed values for this property are: "USER_DEFINED", "BUILT_IN", "BUILT_IN_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -198,7 +200,9 @@ class DrPlanGroupExecution(object):
     def type(self, type):
         """
         Sets the type of this DrPlanGroupExecution.
-        The plan group type.
+        The group type.
+
+        Example: `BUILT_IN`
 
 
         :param type: The type of this DrPlanGroupExecution.
@@ -213,7 +217,7 @@ class DrPlanGroupExecution(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DrPlanGroupExecution.
-        The display name of group that was executed.
+        The display name of the group execution.
 
         Example: `DATABASE_SWITCHOVER`
 
@@ -227,7 +231,7 @@ class DrPlanGroupExecution(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DrPlanGroupExecution.
-        The display name of group that was executed.
+        The display name of the group execution.
 
         Example: `DATABASE_SWITCHOVER`
 
@@ -271,9 +275,9 @@ class DrPlanGroupExecution(object):
     def status_details(self):
         """
         Gets the status_details of this DrPlanGroupExecution.
-        Additional details about the group execution status.
+        Additional details on the group execution status.
 
-        Example: `A total of three steps failed in the group`
+        Example: `A total of [3] steps failed in the group`
 
 
         :return: The status_details of this DrPlanGroupExecution.
@@ -285,9 +289,9 @@ class DrPlanGroupExecution(object):
     def status_details(self, status_details):
         """
         Sets the status_details of this DrPlanGroupExecution.
-        Additional details about the group execution status.
+        Additional details on the group execution status.
 
-        Example: `A total of three steps failed in the group`
+        Example: `A total of [3] steps failed in the group`
 
 
         :param status_details: The status_details of this DrPlanGroupExecution.
@@ -299,7 +303,7 @@ class DrPlanGroupExecution(object):
     def time_started(self):
         """
         Gets the time_started of this DrPlanGroupExecution.
-        The time at which group execution began. An RFC3339 formatted datetime string.
+        The time when group execution began. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -313,7 +317,7 @@ class DrPlanGroupExecution(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this DrPlanGroupExecution.
-        The time at which group execution began. An RFC3339 formatted datetime string.
+        The time when group execution began. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -327,7 +331,7 @@ class DrPlanGroupExecution(object):
     def time_ended(self):
         """
         Gets the time_ended of this DrPlanGroupExecution.
-        The time at which group execution ended. An RFC3339 formatted datetime string.
+        The time when group execution ended. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -341,7 +345,7 @@ class DrPlanGroupExecution(object):
     def time_ended(self, time_ended):
         """
         Sets the time_ended of this DrPlanGroupExecution.
-        The time at which group execution ended. An RFC3339 formatted datetime string.
+        The time when group execution ended. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -383,7 +387,7 @@ class DrPlanGroupExecution(object):
     def step_executions(self):
         """
         **[Required]** Gets the step_executions of this DrPlanGroupExecution.
-        A list of details of each step executed in this group.
+        A list of step executions in the group.
 
 
         :return: The step_executions of this DrPlanGroupExecution.
@@ -395,7 +399,7 @@ class DrPlanGroupExecution(object):
     def step_executions(self, step_executions):
         """
         Sets the step_executions of this DrPlanGroupExecution.
-        A list of details of each step executed in this group.
+        A list of step executions in the group.
 
 
         :param step_executions: The step_executions of this DrPlanGroupExecution.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDrProtectionGroupMemberDetails(object):
     """
-    Update properties for a member in a DR Protection Group.
+    Update properties for a member in a DR protection group.
     """
 
     #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
@@ -39,15 +39,30 @@ class UpdateDrProtectionGroupMemberDetails(object):
     #: This constant has a value of "AUTONOMOUS_DATABASE"
     MEMBER_TYPE_AUTONOMOUS_DATABASE = "AUTONOMOUS_DATABASE"
 
+    #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "LOAD_BALANCER"
+    MEMBER_TYPE_LOAD_BALANCER = "LOAD_BALANCER"
+
+    #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "NETWORK_LOAD_BALANCER"
+    MEMBER_TYPE_NETWORK_LOAD_BALANCER = "NETWORK_LOAD_BALANCER"
+
+    #: A constant which can be used with the member_type property of a UpdateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "FILE_SYSTEM"
+    MEMBER_TYPE_FILE_SYSTEM = "FILE_SYSTEM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDrProtectionGroupMemberDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceDetails`
+        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberAutonomousDatabaseDetails`
+        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberFileSystemDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberVolumeGroupDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails`
+        * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberLoadBalancerDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceMovableDetails`
         * :class:`~oci.disaster_recovery.models.UpdateDrProtectionGroupMemberDatabaseDetails`
 
@@ -59,7 +74,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"
         :type member_type: str
 
         """
@@ -87,14 +102,23 @@ class UpdateDrProtectionGroupMemberDetails(object):
         if type == 'COMPUTE_INSTANCE':
             return 'UpdateDrProtectionGroupMemberComputeInstanceDetails'
 
+        if type == 'NETWORK_LOAD_BALANCER':
+            return 'UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails'
+
         if type == 'AUTONOMOUS_DATABASE':
             return 'UpdateDrProtectionGroupMemberAutonomousDatabaseDetails'
+
+        if type == 'FILE_SYSTEM':
+            return 'UpdateDrProtectionGroupMemberFileSystemDetails'
 
         if type == 'VOLUME_GROUP':
             return 'UpdateDrProtectionGroupMemberVolumeGroupDetails'
 
         if type == 'COMPUTE_INSTANCE_NON_MOVABLE':
             return 'UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails'
+
+        if type == 'LOAD_BALANCER':
+            return 'UpdateDrProtectionGroupMemberLoadBalancerDetails'
 
         if type == 'COMPUTE_INSTANCE_MOVABLE':
             return 'UpdateDrProtectionGroupMemberComputeInstanceMovableDetails'
@@ -110,7 +134,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         **[Required]** Gets the member_id of this UpdateDrProtectionGroupMemberDetails.
         The OCID of the member.
 
-        Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.database.oc1..uniqueID`
 
 
         :return: The member_id of this UpdateDrProtectionGroupMemberDetails.
@@ -124,7 +148,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         Sets the member_id of this UpdateDrProtectionGroupMemberDetails.
         The OCID of the member.
 
-        Example: `ocid1.database.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.database.oc1..uniqueID`
 
 
         :param member_id: The member_id of this UpdateDrProtectionGroupMemberDetails.
@@ -138,7 +162,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         **[Required]** Gets the member_type of this UpdateDrProtectionGroupMemberDetails.
         The type of the member.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"
 
 
         :return: The member_type of this UpdateDrProtectionGroupMemberDetails.
@@ -156,7 +180,7 @@ class UpdateDrProtectionGroupMemberDetails(object):
         :param member_type: The member_type of this UpdateDrProtectionGroupMemberDetails.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"]
+        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `member_type`, must be None or one of {allowed_values}"

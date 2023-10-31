@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDrProtectionGroupMemberAutonomousDatabaseDetails(CreateDrProtectionGroupMemberDetails):
     """
-    Create properties for an Autonomous Database member.
+    Create properties for an Autonomous Database Serverless member.
     """
 
     def __init__(self, **kwargs):
@@ -27,7 +27,7 @@ class CreateDrProtectionGroupMemberAutonomousDatabaseDetails(CreateDrProtectionG
 
         :param member_type:
             The value to assign to the member_type property of this CreateDrProtectionGroupMemberAutonomousDatabaseDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"
         :type member_type: str
 
         """

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DownloadMaskingLogDetails(object):
     """
-    Details to download masking log.
+    Details to download the masking log.
     """
 
     def __init__(self, **kwargs):

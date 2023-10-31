@@ -12,8 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrPlanExecutionCollection(object):
     """
-    Results of a DR Plan Execution search. Contains both DR Plan Execution summary items
-    and other information, such as metadata.
+    A list of DR plan execution summaries.
     """
 
     def __init__(self, **kwargs):
@@ -40,7 +39,7 @@ class DrPlanExecutionCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DrPlanExecutionCollection.
-        A list of all DR Plan Execution summary objects.
+        A list of DR plan execution summaries.
 
 
         :return: The items of this DrPlanExecutionCollection.
@@ -52,7 +51,7 @@ class DrPlanExecutionCollection(object):
     def items(self, items):
         """
         Sets the items of this DrPlanExecutionCollection.
-        A list of all DR Plan Execution summary objects.
+        A list of DR plan execution summaries.
 
 
         :param items: The items of this DrPlanExecutionCollection.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestSummary(object):
     """
-    A summary of a work request.
+    The summary of a work request.
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequestSummary.
@@ -263,9 +263,9 @@ class WorkRequestSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this WorkRequestSummary.
-        The ID (OCID) of the work request.
+        The OCID of the work request.
 
-        Example: `ocid1.workrequest.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.workrequest.oc1..uniqueID`
 
 
         :return: The id of this WorkRequestSummary.
@@ -277,9 +277,9 @@ class WorkRequestSummary(object):
     def id(self, id):
         """
         Sets the id of this WorkRequestSummary.
-        The ID (OCID) of the work request.
+        The OCID of the work request.
 
-        Example: `ocid1.workrequest.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.workrequest.oc1..uniqueID`
 
 
         :param id: The id of this WorkRequestSummary.
@@ -296,7 +296,7 @@ class WorkRequestSummary(object):
         and those resources are not in the same compartment, it is up to the service team to pick the primary
         resource whose compartment should be used.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :return: The compartment_id of this WorkRequestSummary.
@@ -313,7 +313,7 @@ class WorkRequestSummary(object):
         and those resources are not in the same compartment, it is up to the service team to pick the primary
         resource whose compartment should be used.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :param compartment_id: The compartment_id of this WorkRequestSummary.

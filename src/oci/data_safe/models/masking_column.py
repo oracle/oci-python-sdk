@@ -521,7 +521,7 @@ class MaskingColumn(object):
     def is_masking_enabled(self):
         """
         **[Required]** Gets the is_masking_enabled of this MaskingColumn.
-        Indicates if data masking is enabled for the masking column.
+        Indicates whether data masking is enabled for the masking column.
 
 
         :return: The is_masking_enabled of this MaskingColumn.
@@ -533,7 +533,7 @@ class MaskingColumn(object):
     def is_masking_enabled(self, is_masking_enabled):
         """
         Sets the is_masking_enabled of this MaskingColumn.
-        Indicates if data masking is enabled for the masking column.
+        Indicates whether data masking is enabled for the masking column.
 
 
         :param is_masking_enabled: The is_masking_enabled of this MaskingColumn.

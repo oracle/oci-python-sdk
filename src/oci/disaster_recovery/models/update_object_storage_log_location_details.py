@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateObjectStorageLogLocationDetails(object):
     """
-    Information about updating an Object Storage log location for a DR Protection Group.
+    The details for updating an object storage log location for a DR protection group.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class UpdateObjectStorageLogLocationDetails(object):
     def namespace(self):
         """
         **[Required]** Gets the namespace of this UpdateObjectStorageLogLocationDetails.
-        The namespace in Object Storage (Note - this is usually the tenancy name).
+        The namespace in object storage (Note - this is usually the tenancy name).
 
         Example: `myocitenancy`
 
@@ -60,7 +60,7 @@ class UpdateObjectStorageLogLocationDetails(object):
     def namespace(self, namespace):
         """
         Sets the namespace of this UpdateObjectStorageLogLocationDetails.
-        The namespace in Object Storage (Note - this is usually the tenancy name).
+        The namespace in object storage (Note - this is usually the tenancy name).
 
         Example: `myocitenancy`
 
@@ -74,7 +74,7 @@ class UpdateObjectStorageLogLocationDetails(object):
     def bucket(self):
         """
         **[Required]** Gets the bucket of this UpdateObjectStorageLogLocationDetails.
-        The bucket name inside the Object Storage namespace.
+        The bucket name inside the object storage namespace.
 
         Example: `operation_logs`
 
@@ -88,7 +88,7 @@ class UpdateObjectStorageLogLocationDetails(object):
     def bucket(self, bucket):
         """
         Sets the bucket of this UpdateObjectStorageLogLocationDetails.
-        The bucket name inside the Object Storage namespace.
+        The bucket name inside the object storage namespace.
 
         Example: `operation_logs`
 

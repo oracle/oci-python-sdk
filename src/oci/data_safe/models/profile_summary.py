@@ -246,7 +246,7 @@ class ProfileSummary(object):
     def failed_login_attempts(self):
         """
         Gets the failed_login_attempts of this ProfileSummary.
-        Maximum times the user is allowed in fail login before the user account is locked.
+        Maximum times the user is allowed to fail login before the user account is locked.
 
 
         :return: The failed_login_attempts of this ProfileSummary.
@@ -258,7 +258,7 @@ class ProfileSummary(object):
     def failed_login_attempts(self, failed_login_attempts):
         """
         Sets the failed_login_attempts of this ProfileSummary.
-        Maximum times the user is allowed in fail login before the user account is locked.
+        Maximum times the user is allowed to fail login before the user account is locked.
 
 
         :param failed_login_attempts: The failed_login_attempts of this ProfileSummary.

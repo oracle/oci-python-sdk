@@ -116,6 +116,7 @@ API Reference
 * :doc:`Logging Management <logging/client/oci.logging.LoggingManagementClient>`
 * :doc:`Managed Instance <os_management_hub/client/oci.os_management_hub.ManagedInstanceClient>`
 * :doc:`Managed Instance Group <os_management_hub/client/oci.os_management_hub.ManagedInstanceGroupClient>`
+* :doc:`Managed My Sql Databases <database_management/client/oci.database_management.ManagedMySqlDatabasesClient>`
 * :doc:`Management <oda/client/oci.oda.ManagementClient>`
 * :doc:`Management Agent <management_agent/client/oci.management_agent.ManagementAgentClient>`
 * :doc:`Management Station <os_management_hub/client/oci.os_management_hub.ManagementStationClient>`

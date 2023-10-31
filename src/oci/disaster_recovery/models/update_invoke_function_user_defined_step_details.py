@@ -58,7 +58,7 @@ class UpdateInvokeFunctionUserDefinedStepDetails(UpdateDrPlanUserDefinedStepDeta
         **[Required]** Gets the function_id of this UpdateInvokeFunctionUserDefinedStepDetails.
         The OCID of function to be invoked.
 
-        Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.fnfunc.oc1..uniqueID`
 
 
         :return: The function_id of this UpdateInvokeFunctionUserDefinedStepDetails.
@@ -72,7 +72,7 @@ class UpdateInvokeFunctionUserDefinedStepDetails(UpdateDrPlanUserDefinedStepDeta
         Sets the function_id of this UpdateInvokeFunctionUserDefinedStepDetails.
         The OCID of function to be invoked.
 
-        Example: `ocid1.fnfunc.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.fnfunc.oc1..uniqueID`
 
 
         :param function_id: The function_id of this UpdateInvokeFunctionUserDefinedStepDetails.

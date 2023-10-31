@@ -20,7 +20,9 @@ class UpdateConfigDetails(object):
         Initializes a new UpdateConfigDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.stack_monitoring.models.UpdateLicenseEnterpriseExtensibilityConfigDetails`
         * :class:`~oci.stack_monitoring.models.UpdateAutoPromoteConfigDetails`
+        * :class:`~oci.stack_monitoring.models.UpdateLicenseAutoAssignConfigDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -68,8 +70,14 @@ class UpdateConfigDetails(object):
         """
         type = object_dictionary['configType']
 
+        if type == 'LICENSE_ENTERPRISE_EXTENSIBILITY':
+            return 'UpdateLicenseEnterpriseExtensibilityConfigDetails'
+
         if type == 'AUTO_PROMOTE':
             return 'UpdateAutoPromoteConfigDetails'
+
+        if type == 'LICENSE_AUTO_ASSIGN':
+            return 'UpdateLicenseAutoAssignConfigDetails'
         else:
             return 'UpdateConfigDetails'
 

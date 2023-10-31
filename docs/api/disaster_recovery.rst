@@ -19,12 +19,22 @@ Disaster Recovery
     :template: autosummary/model_class.rst
 
     oci.disaster_recovery.models.AssociateDrProtectionGroupDetails
+    oci.disaster_recovery.models.BlockVolumeAttachmentDetails
+    oci.disaster_recovery.models.BlockVolumeMountDetails
     oci.disaster_recovery.models.CancelDrPlanExecutionDetails
     oci.disaster_recovery.models.ChangeDrProtectionGroupCompartmentDetails
+    oci.disaster_recovery.models.ComputeInstanceMovableFileSystemOperation
     oci.disaster_recovery.models.ComputeInstanceMovableVnicMapping
     oci.disaster_recovery.models.ComputeInstanceMovableVnicMappingDetails
+    oci.disaster_recovery.models.ComputeInstanceNonMovableBlockVolumeOperation
+    oci.disaster_recovery.models.ComputeInstanceNonMovableFileSystemOperation
     oci.disaster_recovery.models.ComputeInstanceVnicMapping
     oci.disaster_recovery.models.ComputeInstanceVnicMappingDetails
+    oci.disaster_recovery.models.CreateBlockVolumeAttachmentDetails
+    oci.disaster_recovery.models.CreateBlockVolumeMountDetails
+    oci.disaster_recovery.models.CreateComputeInstanceMovableFileSystemOperationDetails
+    oci.disaster_recovery.models.CreateComputeInstanceNonMovableBlockVolumeOperationDetails
+    oci.disaster_recovery.models.CreateComputeInstanceNonMovableFileSystemOperationDetails
     oci.disaster_recovery.models.CreateDrPlanDetails
     oci.disaster_recovery.models.CreateDrPlanExecutionDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupDetails
@@ -34,7 +44,12 @@ Disaster Recovery
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberComputeInstanceNonMovableDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberDatabaseDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberDetails
+    oci.disaster_recovery.models.CreateDrProtectionGroupMemberFileSystemDetails
+    oci.disaster_recovery.models.CreateDrProtectionGroupMemberLoadBalancerDetails
+    oci.disaster_recovery.models.CreateDrProtectionGroupMemberNetworkLoadBalancerDetails
     oci.disaster_recovery.models.CreateDrProtectionGroupMemberVolumeGroupDetails
+    oci.disaster_recovery.models.CreateFileSystemMountDetails
+    oci.disaster_recovery.models.CreateFileSystemUnmountDetails
     oci.disaster_recovery.models.CreateObjectStorageLogLocationDetails
     oci.disaster_recovery.models.DisassociateDrProtectionGroupDefaultDetails
     oci.disaster_recovery.models.DisassociateDrProtectionGroupDetails
@@ -60,16 +75,27 @@ Disaster Recovery
     oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceMovable
     oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceNonMovable
     oci.disaster_recovery.models.DrProtectionGroupMemberDatabase
+    oci.disaster_recovery.models.DrProtectionGroupMemberFileSystem
+    oci.disaster_recovery.models.DrProtectionGroupMemberLoadBalancer
+    oci.disaster_recovery.models.DrProtectionGroupMemberNetworkLoadBalancer
     oci.disaster_recovery.models.DrProtectionGroupMemberVolumeGroup
     oci.disaster_recovery.models.DrProtectionGroupSummary
     oci.disaster_recovery.models.FailoverExecutionOptionDetails
     oci.disaster_recovery.models.FailoverExecutionOptions
     oci.disaster_recovery.models.FailoverPrecheckExecutionOptionDetails
     oci.disaster_recovery.models.FailoverPrecheckExecutionOptions
+    oci.disaster_recovery.models.FileSystemExportMapping
+    oci.disaster_recovery.models.FileSystemExportMappingDetails
+    oci.disaster_recovery.models.FileSystemMountDetails
+    oci.disaster_recovery.models.FileSystemUnmountDetails
     oci.disaster_recovery.models.IgnoreDrPlanExecutionDetails
     oci.disaster_recovery.models.InvokeFunctionPrecheckStep
     oci.disaster_recovery.models.InvokeFunctionStep
+    oci.disaster_recovery.models.LoadBalancerBackendSetMapping
+    oci.disaster_recovery.models.LoadBalancerBackendSetMappingDetails
     oci.disaster_recovery.models.LocalScriptPrecheckStep
+    oci.disaster_recovery.models.NetworkLoadBalancerBackendSetMapping
+    oci.disaster_recovery.models.NetworkLoadBalancerBackendSetMappingDetails
     oci.disaster_recovery.models.ObjectStorageLogLocation
     oci.disaster_recovery.models.ObjectStorageScriptLocation
     oci.disaster_recovery.models.ObjectStoreScriptPrecheckStep
@@ -78,10 +104,23 @@ Disaster Recovery
     oci.disaster_recovery.models.RetryDrPlanExecutionDetails
     oci.disaster_recovery.models.RunLocalScriptUserDefinedStep
     oci.disaster_recovery.models.RunObjectStoreScriptUserDefinedStep
+    oci.disaster_recovery.models.StartDrillExecutionOptionDetails
+    oci.disaster_recovery.models.StartDrillExecutionOptions
+    oci.disaster_recovery.models.StartDrillPrecheckExecutionOptionDetails
+    oci.disaster_recovery.models.StartDrillPrecheckExecutionOptions
+    oci.disaster_recovery.models.StopDrillExecutionOptionDetails
+    oci.disaster_recovery.models.StopDrillExecutionOptions
+    oci.disaster_recovery.models.StopDrillPrecheckExecutionOptionDetails
+    oci.disaster_recovery.models.StopDrillPrecheckExecutionOptions
     oci.disaster_recovery.models.SwitchoverExecutionOptionDetails
     oci.disaster_recovery.models.SwitchoverExecutionOptions
     oci.disaster_recovery.models.SwitchoverPrecheckExecutionOptionDetails
     oci.disaster_recovery.models.SwitchoverPrecheckExecutionOptions
+    oci.disaster_recovery.models.UpdateBlockVolumeAttachmentDetails
+    oci.disaster_recovery.models.UpdateBlockVolumeMountDetails
+    oci.disaster_recovery.models.UpdateComputeInstanceMovableFileSystemOperationDetails
+    oci.disaster_recovery.models.UpdateComputeInstanceNonMovableBlockVolumeOperationDetails
+    oci.disaster_recovery.models.UpdateComputeInstanceNonMovableFileSystemOperationDetails
     oci.disaster_recovery.models.UpdateDrPlanDetails
     oci.disaster_recovery.models.UpdateDrPlanExecutionDetails
     oci.disaster_recovery.models.UpdateDrPlanGroupDetails
@@ -94,8 +133,13 @@ Disaster Recovery
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberComputeInstanceNonMovableDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberDatabaseDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberDetails
+    oci.disaster_recovery.models.UpdateDrProtectionGroupMemberFileSystemDetails
+    oci.disaster_recovery.models.UpdateDrProtectionGroupMemberLoadBalancerDetails
+    oci.disaster_recovery.models.UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupMemberVolumeGroupDetails
     oci.disaster_recovery.models.UpdateDrProtectionGroupRoleDetails
+    oci.disaster_recovery.models.UpdateFileSystemMountDetails
+    oci.disaster_recovery.models.UpdateFileSystemUnmountDetails
     oci.disaster_recovery.models.UpdateInvokeFunctionPrecheckStepDetails
     oci.disaster_recovery.models.UpdateInvokeFunctionUserDefinedStepDetails
     oci.disaster_recovery.models.UpdateLocalScriptPrecheckStepDetails

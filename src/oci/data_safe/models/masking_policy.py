@@ -502,8 +502,7 @@ class MaskingPolicy(object):
         **[Required]** Gets the recompile of this MaskingPolicy.
         Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
         'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-        attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
-        recompile manually using UTL_RECOMP package.
+        attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
 
         Allowed values for this property are: "SERIAL", "PARALLEL", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -520,8 +519,7 @@ class MaskingPolicy(object):
         Sets the recompile of this MaskingPolicy.
         Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),
         'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree
-        attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further
-        recompile manually using UTL_RECOMP package.
+        attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
 
 
         :param recompile: The recompile of this MaskingPolicy.

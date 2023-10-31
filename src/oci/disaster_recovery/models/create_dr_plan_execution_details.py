@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDrPlanExecutionDetails(object):
     """
-    The details for creating a DR Plan Execution.
+    The details for creating a DR plan execution.
     """
 
     def __init__(self, **kwargs):
@@ -67,7 +67,7 @@ class CreateDrPlanExecutionDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateDrPlanExecutionDetails.
-        The display name of the DR Plan Execution.
+        The display name of the DR plan execution.
 
         Example: `Execution - EBS Switchover PHX to IAD`
 
@@ -81,7 +81,7 @@ class CreateDrPlanExecutionDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDrPlanExecutionDetails.
-        The display name of the DR Plan Execution.
+        The display name of the DR plan execution.
 
         Example: `Execution - EBS Switchover PHX to IAD`
 
@@ -95,9 +95,9 @@ class CreateDrPlanExecutionDetails(object):
     def plan_id(self):
         """
         **[Required]** Gets the plan_id of this CreateDrPlanExecutionDetails.
-        The OCID of the DR Plan.
+        The OCID of the DR plan.
 
-        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drplan.oc1..uniqueID`
 
 
         :return: The plan_id of this CreateDrPlanExecutionDetails.
@@ -109,9 +109,9 @@ class CreateDrPlanExecutionDetails(object):
     def plan_id(self, plan_id):
         """
         Sets the plan_id of this CreateDrPlanExecutionDetails.
-        The OCID of the DR Plan.
+        The OCID of the DR plan.
 
-        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drplan.oc1..uniqueID`
 
 
         :param plan_id: The plan_id of this CreateDrPlanExecutionDetails.
@@ -144,6 +144,7 @@ class CreateDrPlanExecutionDetails(object):
         """
         Gets the freeform_tags of this CreateDrPlanExecutionDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -157,6 +158,7 @@ class CreateDrPlanExecutionDetails(object):
         """
         Sets the freeform_tags of this CreateDrPlanExecutionDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -170,6 +172,7 @@ class CreateDrPlanExecutionDetails(object):
         """
         Gets the defined_tags of this CreateDrPlanExecutionDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
@@ -183,6 +186,7 @@ class CreateDrPlanExecutionDetails(object):
         """
         Sets the defined_tags of this CreateDrPlanExecutionDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
