@@ -1043,6 +1043,11 @@ class DbSystemClient(object):
             Filter instances if they are using the latest revision of the
             Configuration they are associated with.
 
+        :param list[str] database_management: (optional)
+            Filter DB Systems by their Database Management configuration.
+
+            Allowed values are: "ENABLED", "DISABLED"
+
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending. Display name is default ordered as ascending.
 
@@ -1102,6 +1107,7 @@ class DbSystemClient(object):
             "lifecycle_state",
             "configuration_id",
             "is_up_to_date",
+            "database_management",
             "sort_by",
             "sort_order",
             "limit",
@@ -1118,6 +1124,14 @@ class DbSystemClient(object):
                 raise ValueError(
                     f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
+
+        if 'database_management' in kwargs:
+            database_management_allowed_values = ["ENABLED", "DISABLED"]
+            for database_management_item in kwargs['database_management']:
+                if database_management_item not in database_management_allowed_values:
+                    raise ValueError(
+                        f"Invalid value for `database_management`, must be one of { database_management_allowed_values }"
+                    )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated"]
@@ -1141,6 +1155,7 @@ class DbSystemClient(object):
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "configurationId": kwargs.get("configuration_id", missing),
             "isUpToDate": kwargs.get("is_up_to_date", missing),
+            "databaseManagement": self.base_client.generate_collection_format_param(kwargs.get("database_management", missing), 'multi'),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "limit": kwargs.get("limit", missing),

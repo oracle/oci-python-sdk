@@ -27,7 +27,7 @@ class UpdateDrProtectionGroupMemberDatabaseDetails(UpdateDrProtectionGroupMember
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberDatabaseDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"
         :type member_type: str
 
         :param password_vault_secret_id:
@@ -56,9 +56,9 @@ class UpdateDrProtectionGroupMemberDatabaseDetails(UpdateDrProtectionGroupMember
     def password_vault_secret_id(self):
         """
         Gets the password_vault_secret_id of this UpdateDrProtectionGroupMemberDatabaseDetails.
-        The OCID of the vault secret where the database password is stored.
+        The OCID of the vault secret where the database SYSDBA password is stored.
 
-        Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.vaultsecret.oc1..uniqueID`
 
 
         :return: The password_vault_secret_id of this UpdateDrProtectionGroupMemberDatabaseDetails.
@@ -70,9 +70,9 @@ class UpdateDrProtectionGroupMemberDatabaseDetails(UpdateDrProtectionGroupMember
     def password_vault_secret_id(self, password_vault_secret_id):
         """
         Sets the password_vault_secret_id of this UpdateDrProtectionGroupMemberDatabaseDetails.
-        The OCID of the vault secret where the database password is stored.
+        The OCID of the vault secret where the database SYSDBA password is stored.
 
-        Example: `ocid1.vaultsecret.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.vaultsecret.oc1..uniqueID`
 
 
         :param password_vault_secret_id: The password_vault_secret_id of this UpdateDrProtectionGroupMemberDatabaseDetails.

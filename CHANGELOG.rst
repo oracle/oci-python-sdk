@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.115.0 - 2023-10-31
+====================
+
+Added
+-----
+* Support for calling Oracle Cloud Infrastructure services in the us-saltlake-2 region
+* Support for disaster recovery of load balancers, network load balancers and file systems in the Disaster Recovery service
+* Support for performing disaster recovery drills in the Disaster Recovery service
+* Support for enterprise SKUs and extensibility in the Stack Monitoring service
+* Support for metric extensions in the Stack Monitoring service
+* Support for baseline and anomaly detection in the Stack Monitoring service
+* Support for integration with Database Management service in the MySQL HeatWave service
+* Support for MySQL database management in the Database Management service
+* Support for database firewalls in the Data Safe service
+ 
+Breaking
+--------
+* The properties `compartment_id` and `user_assessment_id` were removed from the `ProfileAggregation` model in the Data Safe service
+ 
+====================
 2.114.0 - 2023-10-24
 ====================
 

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDataSafePrivateEndpointDetails(object):
     """
-    The details used to create a new Data Safe private endpoint.
+    The details used to create the new Data Safe private endpoint.
     """
 
     def __init__(self, **kwargs):

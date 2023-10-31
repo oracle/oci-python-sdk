@@ -338,7 +338,7 @@ class TargetDatabaseSummary(object):
     def associated_resource_ids(self):
         """
         Gets the associated_resource_ids of this TargetDatabaseSummary.
-        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        The OCIDs of associated resources like database, Data Safe private endpoint etc.
 
 
         :return: The associated_resource_ids of this TargetDatabaseSummary.
@@ -350,7 +350,7 @@ class TargetDatabaseSummary(object):
     def associated_resource_ids(self, associated_resource_ids):
         """
         Sets the associated_resource_ids of this TargetDatabaseSummary.
-        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        The OCIDs of associated resources like database, Data Safe private endpoint etc.
 
 
         :param associated_resource_ids: The associated_resource_ids of this TargetDatabaseSummary.

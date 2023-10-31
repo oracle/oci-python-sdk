@@ -601,7 +601,7 @@ class DiscoveryJob(object):
         """
         **[Required]** Gets the is_include_all_schemas of this DiscoveryJob.
         Indicates if all the schemas in the associated target database are used for data discovery.
-        If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used.
+        If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
 
 
         :return: The is_include_all_schemas of this DiscoveryJob.
@@ -614,7 +614,7 @@ class DiscoveryJob(object):
         """
         Sets the is_include_all_schemas of this DiscoveryJob.
         Indicates if all the schemas in the associated target database are used for data discovery.
-        If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used.
+        If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
 
 
         :param is_include_all_schemas: The is_include_all_schemas of this DiscoveryJob.

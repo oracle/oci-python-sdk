@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrProtectionGroupMemberComputeInstance(DrProtectionGroupMember):
     """
-    Properties for a Compute Instance member of a DR Protection Group.
+    Deprecated. Properties for a compute instance member of a DR protection group.
     """
 
     def __init__(self, **kwargs):
@@ -27,7 +27,7 @@ class DrProtectionGroupMemberComputeInstance(DrProtectionGroupMember):
 
         :param member_type:
             The value to assign to the member_type property of this DrProtectionGroupMemberComputeInstance.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"
         :type member_type: str
 
         :param is_movable:
@@ -77,7 +77,7 @@ class DrProtectionGroupMemberComputeInstance(DrProtectionGroupMember):
     def is_movable(self):
         """
         Gets the is_movable of this DrProtectionGroupMemberComputeInstance.
-        A flag indicating if this compute instance should be moved during DR operations.
+        A flag indicating if the compute instance should be moved during DR operations.
 
         Example: `false`
 
@@ -91,7 +91,7 @@ class DrProtectionGroupMemberComputeInstance(DrProtectionGroupMember):
     def is_movable(self, is_movable):
         """
         Sets the is_movable of this DrProtectionGroupMemberComputeInstance.
-        A flag indicating if this compute instance should be moved during DR operations.
+        A flag indicating if the compute instance should be moved during DR operations.
 
         Example: `false`
 
@@ -129,9 +129,10 @@ class DrProtectionGroupMemberComputeInstance(DrProtectionGroupMember):
     def destination_compartment_id(self):
         """
         Gets the destination_compartment_id of this DrProtectionGroupMemberComputeInstance.
-        The OCID of the compartment for this compute instance in the destination region.
+        The OCID of a compartment in the destination region in which the compute instance
+        should be launched.
 
-        Example: `ocid1.compartment.oc1..exampleocid`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :return: The destination_compartment_id of this DrProtectionGroupMemberComputeInstance.
@@ -143,9 +144,10 @@ class DrProtectionGroupMemberComputeInstance(DrProtectionGroupMember):
     def destination_compartment_id(self, destination_compartment_id):
         """
         Sets the destination_compartment_id of this DrProtectionGroupMemberComputeInstance.
-        The OCID of the compartment for this compute instance in the destination region.
+        The OCID of a compartment in the destination region in which the compute instance
+        should be launched.
 
-        Example: `ocid1.compartment.oc1..exampleocid`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :param destination_compartment_id: The destination_compartment_id of this DrProtectionGroupMemberComputeInstance.
@@ -157,9 +159,10 @@ class DrProtectionGroupMemberComputeInstance(DrProtectionGroupMember):
     def destination_dedicated_vm_host_id(self):
         """
         Gets the destination_dedicated_vm_host_id of this DrProtectionGroupMemberComputeInstance.
-        The OCID of the dedicated VM Host for this compute instance in the destination region.
+        The OCID of a dedicated VM host in the destination region where the compute instance
+        should be launched.
 
-        Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+        Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 
 
         :return: The destination_dedicated_vm_host_id of this DrProtectionGroupMemberComputeInstance.
@@ -171,9 +174,10 @@ class DrProtectionGroupMemberComputeInstance(DrProtectionGroupMember):
     def destination_dedicated_vm_host_id(self, destination_dedicated_vm_host_id):
         """
         Sets the destination_dedicated_vm_host_id of this DrProtectionGroupMemberComputeInstance.
-        The OCID of the dedicated VM Host for this compute instance in the destination region.
+        The OCID of a dedicated VM host in the destination region where the compute instance
+        should be launched.
 
-        Example: `ocid1.dedicatedvmhost.oc1.iad.exampleocid`
+        Example: `ocid1.dedicatedvmhost.oc1..uniqueID`
 
 
         :param destination_dedicated_vm_host_id: The destination_dedicated_vm_host_id of this DrProtectionGroupMemberComputeInstance.

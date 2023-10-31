@@ -320,7 +320,7 @@ class Profile(object):
     def user_count(self):
         """
         Gets the user_count of this Profile.
-        The number of users having a given profile.
+        The number of users that have a given profile.
 
 
         :return: The user_count of this Profile.
@@ -332,7 +332,7 @@ class Profile(object):
     def user_count(self, user_count):
         """
         Sets the user_count of this Profile.
-        The number of users having a given profile.
+        The number of users that have a given profile.
 
 
         :param user_count: The user_count of this Profile.

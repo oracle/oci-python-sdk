@@ -23,6 +23,14 @@ class CreateDbSystemDetails(object):
     #: This constant has a value of "DISABLED"
     CRASH_RECOVERY_DISABLED = "DISABLED"
 
+    #: A constant which can be used with the database_management property of a CreateDbSystemDetails.
+    #: This constant has a value of "ENABLED"
+    DATABASE_MANAGEMENT_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the database_management property of a CreateDbSystemDetails.
+    #: This constant has a value of "DISABLED"
+    DATABASE_MANAGEMENT_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDbSystemDetails object with values from keyword arguments.
@@ -125,6 +133,11 @@ class CreateDbSystemDetails(object):
             Allowed values for this property are: "ENABLED", "DISABLED"
         :type crash_recovery: str
 
+        :param database_management:
+            The value to assign to the database_management property of this CreateDbSystemDetails.
+            Allowed values for this property are: "ENABLED", "DISABLED"
+        :type database_management: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -150,7 +163,8 @@ class CreateDbSystemDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'deletion_policy': 'CreateDeletionPolicyDetails',
-            'crash_recovery': 'str'
+            'crash_recovery': 'str',
+            'database_management': 'str'
         }
 
         self.attribute_map = {
@@ -177,7 +191,8 @@ class CreateDbSystemDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'deletion_policy': 'deletionPolicy',
-            'crash_recovery': 'crashRecovery'
+            'crash_recovery': 'crashRecovery',
+            'database_management': 'databaseManagement'
         }
 
         self._display_name = None
@@ -204,6 +219,7 @@ class CreateDbSystemDetails(object):
         self._defined_tags = None
         self._deletion_policy = None
         self._crash_recovery = None
+        self._database_management = None
 
     @property
     def display_name(self):
@@ -847,6 +863,37 @@ class CreateDbSystemDetails(object):
                 f"Invalid value for `crash_recovery`, must be None or one of {allowed_values}"
             )
         self._crash_recovery = crash_recovery
+
+    @property
+    def database_management(self):
+        """
+        Gets the database_management of this CreateDbSystemDetails.
+        Whether to enable monitoring via the Database Management service.
+
+        Allowed values for this property are: "ENABLED", "DISABLED"
+
+
+        :return: The database_management of this CreateDbSystemDetails.
+        :rtype: str
+        """
+        return self._database_management
+
+    @database_management.setter
+    def database_management(self, database_management):
+        """
+        Sets the database_management of this CreateDbSystemDetails.
+        Whether to enable monitoring via the Database Management service.
+
+
+        :param database_management: The database_management of this CreateDbSystemDetails.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(database_management, allowed_values):
+            raise ValueError(
+                f"Invalid value for `database_management`, must be None or one of {allowed_values}"
+            )
+        self._database_management = database_management
 
     def __repr__(self):
         return formatted_flat_dict(self)

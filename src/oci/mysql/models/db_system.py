@@ -51,6 +51,14 @@ class DbSystem(object):
     #: This constant has a value of "DISABLED"
     CRASH_RECOVERY_DISABLED = "DISABLED"
 
+    #: A constant which can be used with the database_management property of a DbSystem.
+    #: This constant has a value of "ENABLED"
+    DATABASE_MANAGEMENT_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the database_management property of a DbSystem.
+    #: This constant has a value of "DISABLED"
+    DATABASE_MANAGEMENT_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbSystem object with values from keyword arguments.
@@ -192,6 +200,12 @@ class DbSystem(object):
             The value to assign to the point_in_time_recovery_details property of this DbSystem.
         :type point_in_time_recovery_details: oci.mysql.models.PointInTimeRecoveryDetails
 
+        :param database_management:
+            The value to assign to the database_management property of this DbSystem.
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type database_management: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -226,7 +240,8 @@ class DbSystem(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'crash_recovery': 'str',
-            'point_in_time_recovery_details': 'PointInTimeRecoveryDetails'
+            'point_in_time_recovery_details': 'PointInTimeRecoveryDetails',
+            'database_management': 'str'
         }
 
         self.attribute_map = {
@@ -262,7 +277,8 @@ class DbSystem(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'crash_recovery': 'crashRecovery',
-            'point_in_time_recovery_details': 'pointInTimeRecoveryDetails'
+            'point_in_time_recovery_details': 'pointInTimeRecoveryDetails',
+            'database_management': 'databaseManagement'
         }
 
         self._id = None
@@ -298,6 +314,7 @@ class DbSystem(object):
         self._defined_tags = None
         self._crash_recovery = None
         self._point_in_time_recovery_details = None
+        self._database_management = None
 
     @property
     def id(self):
@@ -1124,6 +1141,36 @@ class DbSystem(object):
         :type: oci.mysql.models.PointInTimeRecoveryDetails
         """
         self._point_in_time_recovery_details = point_in_time_recovery_details
+
+    @property
+    def database_management(self):
+        """
+        Gets the database_management of this DbSystem.
+        Whether to enable monitoring via the Database Management service.
+
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The database_management of this DbSystem.
+        :rtype: str
+        """
+        return self._database_management
+
+    @database_management.setter
+    def database_management(self, database_management):
+        """
+        Sets the database_management of this DbSystem.
+        Whether to enable monitoring via the Database Management service.
+
+
+        :param database_management: The database_management of this DbSystem.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(database_management, allowed_values):
+            database_management = 'UNKNOWN_ENUM_VALUE'
+        self._database_management = database_management
 
     def __repr__(self):
         return formatted_flat_dict(self)

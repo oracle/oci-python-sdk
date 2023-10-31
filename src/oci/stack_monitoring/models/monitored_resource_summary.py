@@ -39,6 +39,14 @@ class MonitoredResourceSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the license property of a MonitoredResourceSummary.
+    #: This constant has a value of "STANDARD_EDITION"
+    LICENSE_STANDARD_EDITION = "STANDARD_EDITION"
+
+    #: A constant which can be used with the license property of a MonitoredResourceSummary.
+    #: This constant has a value of "ENTERPRISE_EDITION"
+    LICENSE_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MonitoredResourceSummary object with values from keyword arguments.
@@ -59,6 +67,10 @@ class MonitoredResourceSummary(object):
         :param type:
             The value to assign to the type property of this MonitoredResourceSummary.
         :type type: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this MonitoredResourceSummary.
+        :type compartment_id: str
 
         :param host_name:
             The value to assign to the host_name property of this MonitoredResourceSummary.
@@ -90,6 +102,12 @@ class MonitoredResourceSummary(object):
             The value to assign to the properties property of this MonitoredResourceSummary.
         :type properties: list[oci.stack_monitoring.models.MonitoredResourceProperty]
 
+        :param license:
+            The value to assign to the license property of this MonitoredResourceSummary.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type license: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this MonitoredResourceSummary.
         :type freeform_tags: dict(str, str)
@@ -108,6 +126,7 @@ class MonitoredResourceSummary(object):
             'name': 'str',
             'display_name': 'str',
             'type': 'str',
+            'compartment_id': 'str',
             'host_name': 'str',
             'external_id': 'str',
             'management_agent_id': 'str',
@@ -115,6 +134,7 @@ class MonitoredResourceSummary(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'properties': 'list[MonitoredResourceProperty]',
+            'license': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -125,6 +145,7 @@ class MonitoredResourceSummary(object):
             'name': 'name',
             'display_name': 'displayName',
             'type': 'type',
+            'compartment_id': 'compartmentId',
             'host_name': 'hostName',
             'external_id': 'externalId',
             'management_agent_id': 'managementAgentId',
@@ -132,6 +153,7 @@ class MonitoredResourceSummary(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'properties': 'properties',
+            'license': 'license',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -141,6 +163,7 @@ class MonitoredResourceSummary(object):
         self._name = None
         self._display_name = None
         self._type = None
+        self._compartment_id = None
         self._host_name = None
         self._external_id = None
         self._management_agent_id = None
@@ -148,6 +171,7 @@ class MonitoredResourceSummary(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._properties = None
+        self._license = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -251,6 +275,34 @@ class MonitoredResourceSummary(object):
         :type: str
         """
         self._type = type
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this MonitoredResourceSummary.
+        Compartment Identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this MonitoredResourceSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this MonitoredResourceSummary.
+        Compartment Identifier `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this MonitoredResourceSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def host_name(self):
@@ -435,6 +487,36 @@ class MonitoredResourceSummary(object):
         :type: list[oci.stack_monitoring.models.MonitoredResourceProperty]
         """
         self._properties = properties
+
+    @property
+    def license(self):
+        """
+        Gets the license of this MonitoredResourceSummary.
+        License edition of the monitored resource.
+
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The license of this MonitoredResourceSummary.
+        :rtype: str
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """
+        Sets the license of this MonitoredResourceSummary.
+        License edition of the monitored resource.
+
+
+        :param license: The license of this MonitoredResourceSummary.
+        :type: str
+        """
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION"]
+        if not value_allowed_none_or_none_sentinel(license, allowed_values):
+            license = 'UNKNOWN_ENUM_VALUE'
+        self._license = license
 
     @property
     def freeform_tags(self):

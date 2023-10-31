@@ -56,7 +56,14 @@ class UpdateRunObjectStoreScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedSt
     def run_on_instance_id(self):
         """
         **[Required]** Gets the run_on_instance_id of this UpdateRunObjectStoreScriptUserDefinedStepDetails.
-        The OCID of the instance where this script or command should be executed.
+        The OCID of the instance on which this script or command should be executed.
+
+        **For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region where the
+        instance is currently present.
+
+        **For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving instance.
+
+        Example: `ocid1.instance.oc1..uniqueID`
 
 
         :return: The run_on_instance_id of this UpdateRunObjectStoreScriptUserDefinedStepDetails.
@@ -68,7 +75,14 @@ class UpdateRunObjectStoreScriptUserDefinedStepDetails(UpdateDrPlanUserDefinedSt
     def run_on_instance_id(self, run_on_instance_id):
         """
         Sets the run_on_instance_id of this UpdateRunObjectStoreScriptUserDefinedStepDetails.
-        The OCID of the instance where this script or command should be executed.
+        The OCID of the instance on which this script or command should be executed.
+
+        **For moving instances:** *runOnInstanceId* must be the OCID of the instance in the region where the
+        instance is currently present.
+
+        **For non-moving instances:** *runOnInstanceId* must be the OCID of the non-moving instance.
+
+        Example: `ocid1.instance.oc1..uniqueID`
 
 
         :param run_on_instance_id: The run_on_instance_id of this UpdateRunObjectStoreScriptUserDefinedStepDetails.

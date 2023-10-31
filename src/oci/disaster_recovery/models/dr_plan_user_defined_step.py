@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrPlanUserDefinedStep(object):
     """
-    The details for a user-defined step in a DR Plan.
+    The details for a user-defined step in a DR plan.
     """
 
     #: A constant which can be used with the step_type property of a DrPlanUserDefinedStep.
@@ -102,24 +102,22 @@ class DrPlanUserDefinedStep(object):
     def step_type(self):
         """
         **[Required]** Gets the step_type of this DrPlanUserDefinedStep.
-        The type of the step.
+        The type of the user-defined step.
 
-          RUN_OBJECTSTORE_SCRIPT_PRECHECK - A step which performs a precheck on a script stored
-            in Oracle Object Storage Service
+          **RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A step which performs a precheck on a script stored
+            in OCI object storage.
 
-          RUN_LOCAL_SCRIPT_PRECHECK - A step which performs a precheck on a script which resides
-            locally on a compute instance
+          **RUN_LOCAL_SCRIPT_PRECHECK** - A step which performs a precheck on a script which resides
+            locally on a compute instance.
 
-          INVOKE_FUNCTION_PRECHECK - A step which performs a precheck on an Oracle Function.
+          **INVOKE_FUNCTION_PRECHECK** - A step which performs a precheck on an OCI function.
             See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
 
-          RUN_OBJECTSTORE_SCRIPT - A step which runs a script stored in
-            Oracle Object Storage Service
+          **RUN_OBJECTSTORE_SCRIPT** - A step which runs a script stored in OCI object storage.
 
-          RUN_LOCAL_SCRIPT - A step which runs a script that resides locally
-            on a compute instance
+          **RUN_LOCAL_SCRIPT** - A step which runs a script that resides locally on a compute instance.
 
-          INVOKE_FUNCTION - A step which invokes an Oracle Function.
+          **INVOKE_FUNCTION** - A step which invokes an OCI function.
             See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
 
         Allowed values for this property are: "RUN_OBJECTSTORE_SCRIPT_PRECHECK", "RUN_LOCAL_SCRIPT_PRECHECK", "INVOKE_FUNCTION_PRECHECK", "RUN_OBJECTSTORE_SCRIPT", "RUN_LOCAL_SCRIPT", "INVOKE_FUNCTION", 'UNKNOWN_ENUM_VALUE'.
@@ -135,24 +133,22 @@ class DrPlanUserDefinedStep(object):
     def step_type(self, step_type):
         """
         Sets the step_type of this DrPlanUserDefinedStep.
-        The type of the step.
+        The type of the user-defined step.
 
-          RUN_OBJECTSTORE_SCRIPT_PRECHECK - A step which performs a precheck on a script stored
-            in Oracle Object Storage Service
+          **RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A step which performs a precheck on a script stored
+            in OCI object storage.
 
-          RUN_LOCAL_SCRIPT_PRECHECK - A step which performs a precheck on a script which resides
-            locally on a compute instance
+          **RUN_LOCAL_SCRIPT_PRECHECK** - A step which performs a precheck on a script which resides
+            locally on a compute instance.
 
-          INVOKE_FUNCTION_PRECHECK - A step which performs a precheck on an Oracle Function.
+          **INVOKE_FUNCTION_PRECHECK** - A step which performs a precheck on an OCI function.
             See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
 
-          RUN_OBJECTSTORE_SCRIPT - A step which runs a script stored in
-            Oracle Object Storage Service
+          **RUN_OBJECTSTORE_SCRIPT** - A step which runs a script stored in OCI object storage.
 
-          RUN_LOCAL_SCRIPT - A step which runs a script that resides locally
-            on a compute instance
+          **RUN_LOCAL_SCRIPT** - A step which runs a script that resides locally on a compute instance.
 
-          INVOKE_FUNCTION - A step which invokes an Oracle Function.
+          **INVOKE_FUNCTION** - A step which invokes an OCI function.
             See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
 
 

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDrProtectionGroupMemberVolumeGroupDetails(UpdateDrProtectionGroupMemberDetails):
     """
-    Update properties for a Volume Group member.
+    Update properties for a volume group member.
     """
 
     def __init__(self, **kwargs):
@@ -27,7 +27,7 @@ class UpdateDrProtectionGroupMemberVolumeGroupDetails(UpdateDrProtectionGroupMem
 
         :param member_type:
             The value to assign to the member_type property of this UpdateDrProtectionGroupMemberVolumeGroupDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"
         :type member_type: str
 
         """

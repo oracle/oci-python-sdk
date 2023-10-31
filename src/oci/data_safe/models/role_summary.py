@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RoleSummary(object):
     """
-    Details of a role fetched from the database.
+    The details of a role fetched from the database.
     """
 
     def __init__(self, **kwargs):
@@ -81,7 +81,7 @@ class RoleSummary(object):
     def role_name(self):
         """
         **[Required]** Gets the role_name of this RoleSummary.
-        Name of the role.
+        The name of the role.
 
 
         :return: The role_name of this RoleSummary.
@@ -93,7 +93,7 @@ class RoleSummary(object):
     def role_name(self, role_name):
         """
         Sets the role_name of this RoleSummary.
-        Name of the role.
+        The name of the role.
 
 
         :param role_name: The role_name of this RoleSummary.

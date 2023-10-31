@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDrProtectionGroupMemberDetails(object):
     """
-    Create properties for a member in a DR Protection Group.
+    Create properties for a member in a DR protection group.
     """
 
     #: A constant which can be used with the member_type property of a CreateDrProtectionGroupMemberDetails.
@@ -39,6 +39,18 @@ class CreateDrProtectionGroupMemberDetails(object):
     #: This constant has a value of "AUTONOMOUS_DATABASE"
     MEMBER_TYPE_AUTONOMOUS_DATABASE = "AUTONOMOUS_DATABASE"
 
+    #: A constant which can be used with the member_type property of a CreateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "LOAD_BALANCER"
+    MEMBER_TYPE_LOAD_BALANCER = "LOAD_BALANCER"
+
+    #: A constant which can be used with the member_type property of a CreateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "NETWORK_LOAD_BALANCER"
+    MEMBER_TYPE_NETWORK_LOAD_BALANCER = "NETWORK_LOAD_BALANCER"
+
+    #: A constant which can be used with the member_type property of a CreateDrProtectionGroupMemberDetails.
+    #: This constant has a value of "FILE_SYSTEM"
+    MEMBER_TYPE_FILE_SYSTEM = "FILE_SYSTEM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDrProtectionGroupMemberDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -49,7 +61,10 @@ class CreateDrProtectionGroupMemberDetails(object):
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberComputeInstanceDetails`
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberDatabaseDetails`
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberAutonomousDatabaseDetails`
+        * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberNetworkLoadBalancerDetails`
         * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberVolumeGroupDetails`
+        * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberFileSystemDetails`
+        * :class:`~oci.disaster_recovery.models.CreateDrProtectionGroupMemberLoadBalancerDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -59,7 +74,7 @@ class CreateDrProtectionGroupMemberDetails(object):
 
         :param member_type:
             The value to assign to the member_type property of this CreateDrProtectionGroupMemberDetails.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"
         :type member_type: str
 
         """
@@ -99,8 +114,17 @@ class CreateDrProtectionGroupMemberDetails(object):
         if type == 'AUTONOMOUS_DATABASE':
             return 'CreateDrProtectionGroupMemberAutonomousDatabaseDetails'
 
+        if type == 'NETWORK_LOAD_BALANCER':
+            return 'CreateDrProtectionGroupMemberNetworkLoadBalancerDetails'
+
         if type == 'VOLUME_GROUP':
             return 'CreateDrProtectionGroupMemberVolumeGroupDetails'
+
+        if type == 'FILE_SYSTEM':
+            return 'CreateDrProtectionGroupMemberFileSystemDetails'
+
+        if type == 'LOAD_BALANCER':
+            return 'CreateDrProtectionGroupMemberLoadBalancerDetails'
         else:
             return 'CreateDrProtectionGroupMemberDetails'
 
@@ -110,7 +134,7 @@ class CreateDrProtectionGroupMemberDetails(object):
         **[Required]** Gets the member_id of this CreateDrProtectionGroupMemberDetails.
         The OCID of the member.
 
-        Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.instance.oc1..uniqueID`
 
 
         :return: The member_id of this CreateDrProtectionGroupMemberDetails.
@@ -124,7 +148,7 @@ class CreateDrProtectionGroupMemberDetails(object):
         Sets the member_id of this CreateDrProtectionGroupMemberDetails.
         The OCID of the member.
 
-        Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.instance.oc1..uniqueID`
 
 
         :param member_id: The member_id of this CreateDrProtectionGroupMemberDetails.
@@ -138,7 +162,7 @@ class CreateDrProtectionGroupMemberDetails(object):
         **[Required]** Gets the member_type of this CreateDrProtectionGroupMemberDetails.
         The type of the member.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"
 
 
         :return: The member_type of this CreateDrProtectionGroupMemberDetails.
@@ -156,7 +180,7 @@ class CreateDrProtectionGroupMemberDetails(object):
         :param member_type: The member_type of this CreateDrProtectionGroupMemberDetails.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"]
+        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             raise ValueError(
                 f"Invalid value for `member_type`, must be None or one of {allowed_values}"

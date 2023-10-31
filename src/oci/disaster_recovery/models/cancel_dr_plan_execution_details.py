@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CancelDrPlanExecutionDetails(DrPlanExecutionControlDetails):
     """
-    The details for cancelling a DR Plan Execution.
+    The details for cancelling a DR plan execution.
     """
 
     def __init__(self, **kwargs):

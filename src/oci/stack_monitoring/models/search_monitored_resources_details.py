@@ -39,6 +39,14 @@ class SearchMonitoredResourcesDetails(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the license property of a SearchMonitoredResourcesDetails.
+    #: This constant has a value of "STANDARD_EDITION"
+    LICENSE_STANDARD_EDITION = "STANDARD_EDITION"
+
+    #: A constant which can be used with the license property of a SearchMonitoredResourcesDetails.
+    #: This constant has a value of "ENTERPRISE_EDITION"
+    LICENSE_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
     #: A constant which can be used with the sort_order property of a SearchMonitoredResourcesDetails.
     #: This constant has a value of "ASC"
     SORT_ORDER_ASC = "ASC"
@@ -97,6 +105,11 @@ class SearchMonitoredResourcesDetails(object):
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
         :type lifecycle_state: str
 
+        :param license:
+            The value to assign to the license property of this SearchMonitoredResourcesDetails.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION"
+        :type license: str
+
         :param time_created_greater_than_or_equal_to:
             The value to assign to the time_created_greater_than_or_equal_to property of this SearchMonitoredResourcesDetails.
         :type time_created_greater_than_or_equal_to: datetime
@@ -142,6 +155,7 @@ class SearchMonitoredResourcesDetails(object):
             'host_name_contains': 'str',
             'management_agent_id': 'str',
             'lifecycle_state': 'str',
+            'license': 'str',
             'time_created_greater_than_or_equal_to': 'datetime',
             'time_created_less_than': 'datetime',
             'time_updated_greater_than_or_equal_to': 'datetime',
@@ -162,6 +176,7 @@ class SearchMonitoredResourcesDetails(object):
             'host_name_contains': 'hostNameContains',
             'management_agent_id': 'managementAgentId',
             'lifecycle_state': 'lifecycleState',
+            'license': 'license',
             'time_created_greater_than_or_equal_to': 'timeCreatedGreaterThanOrEqualTo',
             'time_created_less_than': 'timeCreatedLessThan',
             'time_updated_greater_than_or_equal_to': 'timeUpdatedGreaterThanOrEqualTo',
@@ -181,6 +196,7 @@ class SearchMonitoredResourcesDetails(object):
         self._host_name_contains = None
         self._management_agent_id = None
         self._lifecycle_state = None
+        self._license = None
         self._time_created_greater_than_or_equal_to = None
         self._time_created_less_than = None
         self._time_updated_greater_than_or_equal_to = None
@@ -426,6 +442,37 @@ class SearchMonitoredResourcesDetails(object):
                 f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def license(self):
+        """
+        Gets the license of this SearchMonitoredResourcesDetails.
+        License edition of the monitored resource.
+
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION"
+
+
+        :return: The license of this SearchMonitoredResourcesDetails.
+        :rtype: str
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """
+        Sets the license of this SearchMonitoredResourcesDetails.
+        License edition of the monitored resource.
+
+
+        :param license: The license of this SearchMonitoredResourcesDetails.
+        :type: str
+        """
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION"]
+        if not value_allowed_none_or_none_sentinel(license, allowed_values):
+            raise ValueError(
+                f"Invalid value for `license`, must be None or one of {allowed_values}"
+            )
+        self._license = license
 
     @property
     def time_created_greater_than_or_equal_to(self):

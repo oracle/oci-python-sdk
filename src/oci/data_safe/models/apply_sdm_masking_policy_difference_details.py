@@ -38,7 +38,7 @@ class ApplySdmMaskingPolicyDifferenceDetails(object):
     @property
     def sdm_masking_policy_difference_id(self):
         """
-        Gets the sdm_masking_policy_difference_id of this ApplySdmMaskingPolicyDifferenceDetails.
+        **[Required]** Gets the sdm_masking_policy_difference_id of this ApplySdmMaskingPolicyDifferenceDetails.
         The OCID of the SDM masking policy difference.
 
 

@@ -56,7 +56,7 @@ class AutoPromoteConfigDetails(Config):
 
         :param config_type:
             The value to assign to the config_type property of this AutoPromoteConfigDetails.
-            Allowed values for this property are: "AUTO_PROMOTE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUTO_PROMOTE", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_type: str
 

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrProtectionGroup(object):
     """
-    Details about a DR Protection Group.
+    The details of a DR protection group.
     """
 
     #: A constant which can be used with the role property of a DrProtectionGroup.
@@ -40,6 +40,10 @@ class DrProtectionGroup(object):
     LIFECYCLE_STATE_UPDATING = "UPDATING"
 
     #: A constant which can be used with the lifecycle_state property of a DrProtectionGroup.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a DrProtectionGroup.
     #: This constant has a value of "NEEDS_ATTENTION"
     LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
@@ -54,6 +58,10 @@ class DrProtectionGroup(object):
     #: A constant which can be used with the lifecycle_state property of a DrProtectionGroup.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a DrProtectionGroup.
+    #: This constant has a value of "DR_DRILL_IN_PROGRESS"
+    LIFECYCLE_SUB_STATE_DR_DRILL_IN_PROGRESS = "DR_DRILL_IN_PROGRESS"
 
     def __init__(self, **kwargs):
         """
@@ -104,13 +112,19 @@ class DrProtectionGroup(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DrProtectionGroup.
-            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param life_cycle_details:
             The value to assign to the life_cycle_details property of this DrProtectionGroup.
         :type life_cycle_details: str
+
+        :param lifecycle_sub_state:
+            The value to assign to the lifecycle_sub_state property of this DrProtectionGroup.
+            Allowed values for this property are: "DR_DRILL_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_sub_state: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DrProtectionGroup.
@@ -138,6 +152,7 @@ class DrProtectionGroup(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'life_cycle_details': 'str',
+            'lifecycle_sub_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -156,6 +171,7 @@ class DrProtectionGroup(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'life_cycle_details': 'lifeCycleDetails',
+            'lifecycle_sub_state': 'lifecycleSubState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -173,6 +189,7 @@ class DrProtectionGroup(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._life_cycle_details = None
+        self._lifecycle_sub_state = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -181,9 +198,9 @@ class DrProtectionGroup(object):
     def id(self):
         """
         **[Required]** Gets the id of this DrProtectionGroup.
-        The OCID of the DR Protection Group.
+        The OCID of the DR protection group.
 
-        Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :return: The id of this DrProtectionGroup.
@@ -195,9 +212,9 @@ class DrProtectionGroup(object):
     def id(self, id):
         """
         Sets the id of this DrProtectionGroup.
-        The OCID of the DR Protection Group.
+        The OCID of the DR protection group.
 
-        Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :param id: The id of this DrProtectionGroup.
@@ -209,9 +226,9 @@ class DrProtectionGroup(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DrProtectionGroup.
-        The OCID of the compartment containing the DR Protection Group.
+        The OCID of the compartment containing the DR protection group.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :return: The compartment_id of this DrProtectionGroup.
@@ -223,9 +240,9 @@ class DrProtectionGroup(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DrProtectionGroup.
-        The OCID of the compartment containing the DR Protection Group.
+        The OCID of the compartment containing the DR protection group.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :param compartment_id: The compartment_id of this DrProtectionGroup.
@@ -237,9 +254,9 @@ class DrProtectionGroup(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DrProtectionGroup.
-        The display name of the DR Protection Group.
+        The display name of the DR protection group.
 
-        Example: `EBS PHX DRPG`
+        Example: `EBS PHX Group`
 
 
         :return: The display_name of this DrProtectionGroup.
@@ -251,9 +268,9 @@ class DrProtectionGroup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DrProtectionGroup.
-        The display name of the DR Protection Group.
+        The display name of the DR protection group.
 
-        Example: `EBS PHX DRPG`
+        Example: `EBS PHX Group`
 
 
         :param display_name: The display_name of this DrProtectionGroup.
@@ -265,7 +282,7 @@ class DrProtectionGroup(object):
     def role(self):
         """
         **[Required]** Gets the role of this DrProtectionGroup.
-        The role of the DR Protection Group.
+        The role of the DR protection group.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "UNCONFIGURED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -280,7 +297,7 @@ class DrProtectionGroup(object):
     def role(self, role):
         """
         Sets the role of this DrProtectionGroup.
-        The role of the DR Protection Group.
+        The role of the DR protection group.
 
 
         :param role: The role of this DrProtectionGroup.
@@ -295,9 +312,9 @@ class DrProtectionGroup(object):
     def peer_id(self):
         """
         Gets the peer_id of this DrProtectionGroup.
-        The OCID of the peer (remote) DR Protection Group.
+        The OCID of the peer DR protection group.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :return: The peer_id of this DrProtectionGroup.
@@ -309,9 +326,9 @@ class DrProtectionGroup(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this DrProtectionGroup.
-        The OCID of the peer (remote) DR Protection Group.
+        The OCID of the peer DR protection group.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :param peer_id: The peer_id of this DrProtectionGroup.
@@ -323,7 +340,7 @@ class DrProtectionGroup(object):
     def peer_region(self):
         """
         Gets the peer_region of this DrProtectionGroup.
-        The region of the peer (remote) DR Protection Group.
+        The region of the peer DR protection group.
 
         Example: `us-ashburn-1`
 
@@ -337,7 +354,7 @@ class DrProtectionGroup(object):
     def peer_region(self, peer_region):
         """
         Sets the peer_region of this DrProtectionGroup.
-        The region of the peer (remote) DR Protection Group.
+        The region of the peer DR protection group.
 
         Example: `us-ashburn-1`
 
@@ -371,7 +388,7 @@ class DrProtectionGroup(object):
     def members(self):
         """
         Gets the members of this DrProtectionGroup.
-        A list of DR Protection Group members.
+        A list of DR protection group members.
 
 
         :return: The members of this DrProtectionGroup.
@@ -383,7 +400,7 @@ class DrProtectionGroup(object):
     def members(self, members):
         """
         Sets the members of this DrProtectionGroup.
-        A list of DR Protection Group members.
+        A list of DR protection group members.
 
 
         :param members: The members of this DrProtectionGroup.
@@ -395,7 +412,7 @@ class DrProtectionGroup(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this DrProtectionGroup.
-        The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.
+        The date and time the DR protection group was created. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -409,7 +426,7 @@ class DrProtectionGroup(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DrProtectionGroup.
-        The date and time the DR Protection Group was created. An RFC3339 formatted datetime string.
+        The date and time the DR protection group was created. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -423,7 +440,7 @@ class DrProtectionGroup(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this DrProtectionGroup.
-        The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.
+        The date and time the DR protection group was updated. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -437,7 +454,7 @@ class DrProtectionGroup(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DrProtectionGroup.
-        The date and time the DR Protection Group was updated. An RFC3339 formatted datetime string.
+        The date and time the DR protection group was updated. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -451,9 +468,9 @@ class DrProtectionGroup(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DrProtectionGroup.
-        The current state of the DR Protection Group.
+        The current state of the DR protection group.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -466,13 +483,13 @@ class DrProtectionGroup(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DrProtectionGroup.
-        The current state of the DR Protection Group.
+        The current state of the DR protection group.
 
 
         :param lifecycle_state: The lifecycle_state of this DrProtectionGroup.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "INACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -481,7 +498,7 @@ class DrProtectionGroup(object):
     def life_cycle_details(self):
         """
         Gets the life_cycle_details of this DrProtectionGroup.
-        A message describing the DR Protection Group's current state in more detail.
+        A message describing the DR protection group's current state in more detail.
 
 
         :return: The life_cycle_details of this DrProtectionGroup.
@@ -493,7 +510,7 @@ class DrProtectionGroup(object):
     def life_cycle_details(self, life_cycle_details):
         """
         Sets the life_cycle_details of this DrProtectionGroup.
-        A message describing the DR Protection Group's current state in more detail.
+        A message describing the DR protection group's current state in more detail.
 
 
         :param life_cycle_details: The life_cycle_details of this DrProtectionGroup.
@@ -502,10 +519,41 @@ class DrProtectionGroup(object):
         self._life_cycle_details = life_cycle_details
 
     @property
+    def lifecycle_sub_state(self):
+        """
+        Gets the lifecycle_sub_state of this DrProtectionGroup.
+        The current sub-state of the DR protection group.
+
+        Allowed values for this property are: "DR_DRILL_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_sub_state of this DrProtectionGroup.
+        :rtype: str
+        """
+        return self._lifecycle_sub_state
+
+    @lifecycle_sub_state.setter
+    def lifecycle_sub_state(self, lifecycle_sub_state):
+        """
+        Sets the lifecycle_sub_state of this DrProtectionGroup.
+        The current sub-state of the DR protection group.
+
+
+        :param lifecycle_sub_state: The lifecycle_sub_state of this DrProtectionGroup.
+        :type: str
+        """
+        allowed_values = ["DR_DRILL_IN_PROGRESS"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_sub_state, allowed_values):
+            lifecycle_sub_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_sub_state = lifecycle_sub_state
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this DrProtectionGroup.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -519,6 +567,7 @@ class DrProtectionGroup(object):
         """
         Sets the freeform_tags of this DrProtectionGroup.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -532,6 +581,7 @@ class DrProtectionGroup(object):
         """
         Gets the defined_tags of this DrProtectionGroup.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
@@ -545,6 +595,7 @@ class DrProtectionGroup(object):
         """
         Sets the defined_tags of this DrProtectionGroup.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
@@ -558,6 +609,7 @@ class DrProtectionGroup(object):
         """
         Gets the system_tags of this DrProtectionGroup.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
+
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 
@@ -571,6 +623,7 @@ class DrProtectionGroup(object):
         """
         Sets the system_tags of this DrProtectionGroup.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
+
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 

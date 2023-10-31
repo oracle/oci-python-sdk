@@ -23,7 +23,7 @@ class FailoverExecutionOptions(DrPlanExecutionOptions):
 
         :param plan_execution_type:
             The value to assign to the plan_execution_type property of this FailoverExecutionOptions.
-            Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK"
+            Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL_PRECHECK", "START_DRILL", "STOP_DRILL_PRECHECK", "STOP_DRILL"
         :type plan_execution_type: str
 
         :param are_prechecks_enabled:

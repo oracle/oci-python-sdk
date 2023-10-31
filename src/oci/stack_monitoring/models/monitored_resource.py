@@ -41,6 +41,14 @@ class MonitoredResource(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the license property of a MonitoredResource.
+    #: This constant has a value of "STANDARD_EDITION"
+    LICENSE_STANDARD_EDITION = "STANDARD_EDITION"
+
+    #: A constant which can be used with the license property of a MonitoredResource.
+    #: This constant has a value of "ENTERPRISE_EDITION"
+    LICENSE_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MonitoredResource object with values from keyword arguments.
@@ -100,6 +108,12 @@ class MonitoredResource(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param license:
+            The value to assign to the license property of this MonitoredResource.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type license: str
+
         :param properties:
             The value to assign to the properties property of this MonitoredResource.
         :type properties: list[oci.stack_monitoring.models.MonitoredResourceProperty]
@@ -143,6 +157,7 @@ class MonitoredResource(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'license': 'str',
             'properties': 'list[MonitoredResourceProperty]',
             'database_connection_details': 'ConnectionDetails',
             'credentials': 'MonitoredResourceCredential',
@@ -166,6 +181,7 @@ class MonitoredResource(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'license': 'license',
             'properties': 'properties',
             'database_connection_details': 'databaseConnectionDetails',
             'credentials': 'credentials',
@@ -188,6 +204,7 @@ class MonitoredResource(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._license = None
         self._properties = None
         self._database_connection_details = None
         self._credentials = None
@@ -551,6 +568,36 @@ class MonitoredResource(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def license(self):
+        """
+        Gets the license of this MonitoredResource.
+        License edition of the monitored resource.
+
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The license of this MonitoredResource.
+        :rtype: str
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """
+        Sets the license of this MonitoredResource.
+        License edition of the monitored resource.
+
+
+        :param license: The license of this MonitoredResource.
+        :type: str
+        """
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION"]
+        if not value_allowed_none_or_none_sentinel(license, allowed_values):
+            license = 'UNKNOWN_ENUM_VALUE'
+        self._license = license
 
     @property
     def properties(self):

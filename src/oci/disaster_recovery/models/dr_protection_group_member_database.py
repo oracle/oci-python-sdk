@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrProtectionGroupMemberDatabase(DrProtectionGroupMember):
     """
-    Properties for a Database (DBCS) member of a DR Protection Group.
+    The properties for a Base Database or Exadata Database member of a DR protection group.
     """
 
     def __init__(self, **kwargs):
@@ -27,7 +27,7 @@ class DrProtectionGroupMemberDatabase(DrProtectionGroupMember):
 
         :param member_type:
             The value to assign to the member_type property of this DrProtectionGroupMemberDatabase.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"
         :type member_type: str
 
         :param password_vault_secret_id:
@@ -56,9 +56,10 @@ class DrProtectionGroupMemberDatabase(DrProtectionGroupMember):
     def password_vault_secret_id(self):
         """
         Gets the password_vault_secret_id of this DrProtectionGroupMemberDatabase.
-        The ID of the vault secret where the database password is stored.
+        The OCID of the vault secret where the database SYSDBA password is stored.
+        This password is used for performing database DR operations.
 
-        Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+        Example: `ocid1.vaultsecret.oc1..uniqueID`
 
 
         :return: The password_vault_secret_id of this DrProtectionGroupMemberDatabase.
@@ -70,9 +71,10 @@ class DrProtectionGroupMemberDatabase(DrProtectionGroupMember):
     def password_vault_secret_id(self, password_vault_secret_id):
         """
         Sets the password_vault_secret_id of this DrProtectionGroupMemberDatabase.
-        The ID of the vault secret where the database password is stored.
+        The OCID of the vault secret where the database SYSDBA password is stored.
+        This password is used for performing database DR operations.
 
-        Example: `ocid1.vaultsecret.oc1.phx.exampleocid1`
+        Example: `ocid1.vaultsecret.oc1..uniqueID`
 
 
         :param password_vault_secret_id: The password_vault_secret_id of this DrProtectionGroupMemberDatabase.

@@ -31,12 +31,12 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.AssociateDrProtectionGroupDetails associate_dr_protection_group_details: (required)
-            Details for creating an association between two DR Protection Groups.
+            Details for creating an association between two DR protection groups.
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -74,12 +74,12 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.CancelDrPlanExecutionDetails cancel_dr_plan_execution_details: (required)
-            Details for canceling a DR Plan Execution.
+            Details for canceling the DR plan execution.
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -117,12 +117,12 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.ChangeDrProtectionGroupCompartmentDetails change_dr_protection_group_compartment_details: (required)
-            Details of DR Protection Group compartment to change.
+            Details for changing the DR protection group compartment.
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -160,7 +160,7 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.CreateDrPlanDetails create_dr_plan_details: (required)
-            Details for creating the new DR Plan.
+            Details for creating the new DR plan.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -198,7 +198,7 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.CreateDrPlanExecutionDetails create_dr_plan_execution_details: (required)
-            Details for the new DR Plan Execution.
+            Details for creating the DR plan execution.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -236,7 +236,7 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.CreateDrProtectionGroupDetails create_dr_protection_group_details: (required)
-            Details for the new DR Protection Group.
+            Details for creating the DR protection group.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -274,9 +274,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str dr_plan_id: (required)
-            The OCID of the DR Plan.
+            The OCID of the DR plan.
 
-            Example: `ocid1.drplan.oc1.iad.exampleocid`
+            Example: `ocid1.drplan.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.DrPlan.lifecycle_state`
@@ -336,9 +336,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -384,9 +384,9 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -432,12 +432,12 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.DisassociateDrProtectionGroupDetails disassociate_dr_protection_group_details: (required)
-            Details for removing an association between two DR Protection Groups.
+            Details for deleting the association between two DR protection groups.
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -475,12 +475,12 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.IgnoreDrPlanExecutionDetails ignore_dr_plan_execution_details: (required)
-            Details of the failed group or step to ignore.
+            Details for ignoring the failed group or step and resuming execution.
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -518,12 +518,12 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.PauseDrPlanExecutionDetails pause_dr_plan_execution_details: (required)
-            Details for pausing a DR Plan Execution.
+            Details for pausing the DR plan execution.
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -561,12 +561,12 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.ResumeDrPlanExecutionDetails resume_dr_plan_execution_details: (required)
-            Details for resuming a DR Plan Execution.
+            Details for resuming the DR plan execution.
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -604,12 +604,12 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.RetryDrPlanExecutionDetails retry_dr_plan_execution_details: (required)
-            Details of the failed group or step to retry.
+            Details for retrying execution of the failed group or step.
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -647,12 +647,12 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.UpdateDrPlanDetails update_dr_plan_details: (required)
-            Details of DR Plan to update.
+            Details for updating the DR plan.
 
         :param str dr_plan_id: (required)
-            The OCID of the DR Plan.
+            The OCID of the DR plan.
 
-            Example: `ocid1.drplan.oc1.iad.exampleocid`
+            Example: `ocid1.drplan.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -690,12 +690,12 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.UpdateDrPlanExecutionDetails update_dr_plan_execution_details: (required)
-            Details of DR Plan Execution to update.
+            Details for updating the DR plan execution.
 
         :param str dr_plan_execution_id: (required)
-            The OCID of the DR Plan Execution.
+            The OCID of the DR plan execution.
 
-            Example: `ocid1.drplanexecution.oc1.iad.exampleocid`
+            Example: `ocid1.drplanexecution.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -733,12 +733,12 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.UpdateDrProtectionGroupDetails update_dr_protection_group_details: (required)
-            Details of DR Protection Group to update.
+            Details for updating the the DR protection group.
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`
@@ -776,12 +776,12 @@ class DisasterRecoveryClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.disaster_recovery.models.UpdateDrProtectionGroupRoleDetails update_dr_protection_group_role_details: (required)
-            The role details for the DR Protection Group.
+            The role details for the DR protection group to be updated.
 
         :param str dr_protection_group_id: (required)
-            The OCID of the DR Protection Group.
+            The OCID of the DR protection group.
 
-            Example: `ocid1.drprotectiongroup.oc1.phx.exampleocid`
+            Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.disaster_recovery.models.WorkRequest.status`

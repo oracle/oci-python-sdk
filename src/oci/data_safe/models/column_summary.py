@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ColumnSummary(object):
     """
-    Details of a column in a table fetched from the database.
+    The details of a column in a table fetched from the database.
     """
 
     def __init__(self, **kwargs):

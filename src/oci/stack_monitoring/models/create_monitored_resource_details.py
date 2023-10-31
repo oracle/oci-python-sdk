@@ -16,6 +16,14 @@ class CreateMonitoredResourceDetails(object):
     The combination of monitored resource name and type should be unique across tenancy.
     """
 
+    #: A constant which can be used with the license property of a CreateMonitoredResourceDetails.
+    #: This constant has a value of "STANDARD_EDITION"
+    LICENSE_STANDARD_EDITION = "STANDARD_EDITION"
+
+    #: A constant which can be used with the license property of a CreateMonitoredResourceDetails.
+    #: This constant has a value of "ENTERPRISE_EDITION"
+    LICENSE_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateMonitoredResourceDetails object with values from keyword arguments.
@@ -52,6 +60,11 @@ class CreateMonitoredResourceDetails(object):
         :param resource_time_zone:
             The value to assign to the resource_time_zone property of this CreateMonitoredResourceDetails.
         :type resource_time_zone: str
+
+        :param license:
+            The value to assign to the license property of this CreateMonitoredResourceDetails.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION"
+        :type license: str
 
         :param properties:
             The value to assign to the properties property of this CreateMonitoredResourceDetails.
@@ -95,6 +108,7 @@ class CreateMonitoredResourceDetails(object):
             'external_id': 'str',
             'management_agent_id': 'str',
             'resource_time_zone': 'str',
+            'license': 'str',
             'properties': 'list[MonitoredResourceProperty]',
             'database_connection_details': 'ConnectionDetails',
             'credentials': 'MonitoredResourceCredential',
@@ -114,6 +128,7 @@ class CreateMonitoredResourceDetails(object):
             'external_id': 'externalId',
             'management_agent_id': 'managementAgentId',
             'resource_time_zone': 'resourceTimeZone',
+            'license': 'license',
             'properties': 'properties',
             'database_connection_details': 'databaseConnectionDetails',
             'credentials': 'credentials',
@@ -132,6 +147,7 @@ class CreateMonitoredResourceDetails(object):
         self._external_id = None
         self._management_agent_id = None
         self._resource_time_zone = None
+        self._license = None
         self._properties = None
         self._database_connection_details = None
         self._credentials = None
@@ -352,6 +368,39 @@ class CreateMonitoredResourceDetails(object):
         :type: str
         """
         self._resource_time_zone = resource_time_zone
+
+    @property
+    def license(self):
+        """
+        Gets the license of this CreateMonitoredResourceDetails.
+        License edition of the monitored resource. If not provided
+        the default license type for the compartment will be used.
+
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION"
+
+
+        :return: The license of this CreateMonitoredResourceDetails.
+        :rtype: str
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """
+        Sets the license of this CreateMonitoredResourceDetails.
+        License edition of the monitored resource. If not provided
+        the default license type for the compartment will be used.
+
+
+        :param license: The license of this CreateMonitoredResourceDetails.
+        :type: str
+        """
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION"]
+        if not value_allowed_none_or_none_sentinel(license, allowed_values):
+            raise ValueError(
+                f"Invalid value for `license`, must be None or one of {allowed_values}"
+            )
+        self._license = license
 
     @property
     def properties(self):

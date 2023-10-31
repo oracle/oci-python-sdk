@@ -6,6 +6,8 @@
 
 from __future__ import absolute_import
 
+from .anomaly_data_point import AnomalyDataPoint
+from .anomaly_metric_data import AnomalyMetricData
 from .associate_monitored_resources_details import AssociateMonitoredResourcesDetails
 from .associated_monitored_resource import AssociatedMonitoredResource
 from .associated_resources_collection import AssociatedResourcesCollection
@@ -14,19 +16,32 @@ from .association_details import AssociationDetails
 from .association_resource_details import AssociationResourceDetails
 from .auto_promote_config_details import AutoPromoteConfigDetails
 from .auto_promote_config_summary import AutoPromoteConfigSummary
+from .baselineable_metric import BaselineableMetric
+from .baselineable_metric_summary import BaselineableMetricSummary
+from .baselineable_metric_summary_collection import BaselineableMetricSummaryCollection
 from .change_config_compartment_details import ChangeConfigCompartmentDetails
+from .change_metric_extension_compartment_details import ChangeMetricExtensionCompartmentDetails
 from .change_monitored_resource_compartment_details import ChangeMonitoredResourceCompartmentDetails
+from .change_monitored_resource_task_compartment_details import ChangeMonitoredResourceTaskCompartmentDetails
 from .config import Config
 from .config_collection import ConfigCollection
 from .config_summary import ConfigSummary
 from .connection_details import ConnectionDetails
 from .create_auto_promote_config_details import CreateAutoPromoteConfigDetails
+from .create_baselineable_metric_details import CreateBaselineableMetricDetails
 from .create_config_details import CreateConfigDetails
 from .create_discovery_job_details import CreateDiscoveryJobDetails
+from .create_license_auto_assign_config_details import CreateLicenseAutoAssignConfigDetails
+from .create_license_enterprise_extensibility_config_details import CreateLicenseEnterpriseExtensibilityConfigDetails
+from .create_metric_extension_details import CreateMetricExtensionDetails
 from .create_monitored_resource_details import CreateMonitoredResourceDetails
+from .create_monitored_resource_task_details import CreateMonitoredResourceTaskDetails
+from .create_monitored_resource_type_details import CreateMonitoredResourceTypeDetails
 from .credential_collection import CredentialCollection
 from .credential_details import CredentialDetails
 from .credential_property import CredentialProperty
+from .data_point import DataPoint
+from .disable_metric_extension_details import DisableMetricExtensionDetails
 from .disassociate_monitored_resources_details import DisassociateMonitoredResourcesDetails
 from .discovery_details import DiscoveryDetails
 from .discovery_job import DiscoveryJob
@@ -34,7 +49,26 @@ from .discovery_job_collection import DiscoveryJobCollection
 from .discovery_job_log_collection import DiscoveryJobLogCollection
 from .discovery_job_log_summary import DiscoveryJobLogSummary
 from .discovery_job_summary import DiscoveryJobSummary
+from .enable_metric_extension_details import EnableMetricExtensionDetails
+from .enabled_resource_details import EnabledResourceDetails
 from .encrypted_credentials import EncryptedCredentials
+from .evaluate_baselineable_metric_details import EvaluateBaselineableMetricDetails
+from .evaluate_baselineable_metric_result import EvaluateBaselineableMetricResult
+from .import_oci_telemetry_resources_task_details import ImportOciTelemetryResourcesTaskDetails
+from .jmx_query_properties import JmxQueryProperties
+from .jmx_update_query_properties import JmxUpdateQueryProperties
+from .license_auto_assign_config_details import LicenseAutoAssignConfigDetails
+from .license_auto_assign_config_summary import LicenseAutoAssignConfigSummary
+from .license_enterprise_extensibility_config_details import LicenseEnterpriseExtensibilityConfigDetails
+from .license_enterprise_extensibility_config_summary import LicenseEnterpriseExtensibilityConfigSummary
+from .manage_license_details import ManageLicenseDetails
+from .metric import Metric
+from .metric_data import MetricData
+from .metric_extension import MetricExtension
+from .metric_extension_collection import MetricExtensionCollection
+from .metric_extension_query_properties import MetricExtensionQueryProperties
+from .metric_extension_summary import MetricExtensionSummary
+from .metric_extension_update_query_properties import MetricExtensionUpdateQueryProperties
 from .monitored_resource import MonitoredResource
 from .monitored_resource_alias_credential import MonitoredResourceAliasCredential
 from .monitored_resource_alias_source_credential import MonitoredResourceAliasSourceCredential
@@ -47,17 +81,45 @@ from .monitored_resource_member_summary import MonitoredResourceMemberSummary
 from .monitored_resource_members_collection import MonitoredResourceMembersCollection
 from .monitored_resource_property import MonitoredResourceProperty
 from .monitored_resource_summary import MonitoredResourceSummary
+from .monitored_resource_task import MonitoredResourceTask
+from .monitored_resource_task_details import MonitoredResourceTaskDetails
+from .monitored_resource_task_summary import MonitoredResourceTaskSummary
+from .monitored_resource_tasks_collection import MonitoredResourceTasksCollection
+from .monitored_resource_type import MonitoredResourceType
+from .monitored_resource_type_summary import MonitoredResourceTypeSummary
+from .monitored_resource_types_collection import MonitoredResourceTypesCollection
+from .monitored_resources_count_aggregation import MonitoredResourcesCountAggregation
+from .monitored_resources_count_aggregation_collection import MonitoredResourcesCountAggregationCollection
+from .os_command_query_properties import OsCommandQueryProperties
+from .os_command_update_query_properties import OsCommandUpdateQueryProperties
 from .plain_text_credentials import PlainTextCredentials
 from .pre_existing_credentials import PreExistingCredentials
 from .property_details import PropertyDetails
+from .resource_type_metadata_details import ResourceTypeMetadataDetails
+from .script_file_details import ScriptFileDetails
 from .search_associated_resources_details import SearchAssociatedResourcesDetails
 from .search_monitored_resource_associations_details import SearchMonitoredResourceAssociationsDetails
 from .search_monitored_resource_members_details import SearchMonitoredResourceMembersDetails
 from .search_monitored_resources_details import SearchMonitoredResourcesDetails
+from .sql_details import SqlDetails
+from .sql_in_param_details import SqlInParamDetails
+from .sql_out_param_details import SqlOutParamDetails
+from .sql_query_properties import SqlQueryProperties
+from .sql_update_query_properties import SqlUpdateQueryProperties
+from .system_format_resource_type_metadata_details import SystemFormatResourceTypeMetadataDetails
+from .test_metric_extension_data import TestMetricExtensionData
+from .test_metric_extension_details import TestMetricExtensionDetails
+from .unique_property_set import UniquePropertySet
 from .update_and_propagate_tags_details import UpdateAndPropagateTagsDetails
 from .update_auto_promote_config_details import UpdateAutoPromoteConfigDetails
+from .update_baselineable_metric_details import UpdateBaselineableMetricDetails
 from .update_config_details import UpdateConfigDetails
+from .update_license_auto_assign_config_details import UpdateLicenseAutoAssignConfigDetails
+from .update_license_enterprise_extensibility_config_details import UpdateLicenseEnterpriseExtensibilityConfigDetails
+from .update_metric_extension_details import UpdateMetricExtensionDetails
 from .update_monitored_resource_details import UpdateMonitoredResourceDetails
+from .update_monitored_resource_task_details import UpdateMonitoredResourceTaskDetails
+from .update_monitored_resource_type_details import UpdateMonitoredResourceTypeDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_error_collection import WorkRequestErrorCollection
@@ -69,6 +131,8 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 
 # Maps type names to classes for stack_monitoring services.
 stack_monitoring_type_mapping = {
+    "AnomalyDataPoint": AnomalyDataPoint,
+    "AnomalyMetricData": AnomalyMetricData,
     "AssociateMonitoredResourcesDetails": AssociateMonitoredResourcesDetails,
     "AssociatedMonitoredResource": AssociatedMonitoredResource,
     "AssociatedResourcesCollection": AssociatedResourcesCollection,
@@ -77,19 +141,32 @@ stack_monitoring_type_mapping = {
     "AssociationResourceDetails": AssociationResourceDetails,
     "AutoPromoteConfigDetails": AutoPromoteConfigDetails,
     "AutoPromoteConfigSummary": AutoPromoteConfigSummary,
+    "BaselineableMetric": BaselineableMetric,
+    "BaselineableMetricSummary": BaselineableMetricSummary,
+    "BaselineableMetricSummaryCollection": BaselineableMetricSummaryCollection,
     "ChangeConfigCompartmentDetails": ChangeConfigCompartmentDetails,
+    "ChangeMetricExtensionCompartmentDetails": ChangeMetricExtensionCompartmentDetails,
     "ChangeMonitoredResourceCompartmentDetails": ChangeMonitoredResourceCompartmentDetails,
+    "ChangeMonitoredResourceTaskCompartmentDetails": ChangeMonitoredResourceTaskCompartmentDetails,
     "Config": Config,
     "ConfigCollection": ConfigCollection,
     "ConfigSummary": ConfigSummary,
     "ConnectionDetails": ConnectionDetails,
     "CreateAutoPromoteConfigDetails": CreateAutoPromoteConfigDetails,
+    "CreateBaselineableMetricDetails": CreateBaselineableMetricDetails,
     "CreateConfigDetails": CreateConfigDetails,
     "CreateDiscoveryJobDetails": CreateDiscoveryJobDetails,
+    "CreateLicenseAutoAssignConfigDetails": CreateLicenseAutoAssignConfigDetails,
+    "CreateLicenseEnterpriseExtensibilityConfigDetails": CreateLicenseEnterpriseExtensibilityConfigDetails,
+    "CreateMetricExtensionDetails": CreateMetricExtensionDetails,
     "CreateMonitoredResourceDetails": CreateMonitoredResourceDetails,
+    "CreateMonitoredResourceTaskDetails": CreateMonitoredResourceTaskDetails,
+    "CreateMonitoredResourceTypeDetails": CreateMonitoredResourceTypeDetails,
     "CredentialCollection": CredentialCollection,
     "CredentialDetails": CredentialDetails,
     "CredentialProperty": CredentialProperty,
+    "DataPoint": DataPoint,
+    "DisableMetricExtensionDetails": DisableMetricExtensionDetails,
     "DisassociateMonitoredResourcesDetails": DisassociateMonitoredResourcesDetails,
     "DiscoveryDetails": DiscoveryDetails,
     "DiscoveryJob": DiscoveryJob,
@@ -97,7 +174,26 @@ stack_monitoring_type_mapping = {
     "DiscoveryJobLogCollection": DiscoveryJobLogCollection,
     "DiscoveryJobLogSummary": DiscoveryJobLogSummary,
     "DiscoveryJobSummary": DiscoveryJobSummary,
+    "EnableMetricExtensionDetails": EnableMetricExtensionDetails,
+    "EnabledResourceDetails": EnabledResourceDetails,
     "EncryptedCredentials": EncryptedCredentials,
+    "EvaluateBaselineableMetricDetails": EvaluateBaselineableMetricDetails,
+    "EvaluateBaselineableMetricResult": EvaluateBaselineableMetricResult,
+    "ImportOciTelemetryResourcesTaskDetails": ImportOciTelemetryResourcesTaskDetails,
+    "JmxQueryProperties": JmxQueryProperties,
+    "JmxUpdateQueryProperties": JmxUpdateQueryProperties,
+    "LicenseAutoAssignConfigDetails": LicenseAutoAssignConfigDetails,
+    "LicenseAutoAssignConfigSummary": LicenseAutoAssignConfigSummary,
+    "LicenseEnterpriseExtensibilityConfigDetails": LicenseEnterpriseExtensibilityConfigDetails,
+    "LicenseEnterpriseExtensibilityConfigSummary": LicenseEnterpriseExtensibilityConfigSummary,
+    "ManageLicenseDetails": ManageLicenseDetails,
+    "Metric": Metric,
+    "MetricData": MetricData,
+    "MetricExtension": MetricExtension,
+    "MetricExtensionCollection": MetricExtensionCollection,
+    "MetricExtensionQueryProperties": MetricExtensionQueryProperties,
+    "MetricExtensionSummary": MetricExtensionSummary,
+    "MetricExtensionUpdateQueryProperties": MetricExtensionUpdateQueryProperties,
     "MonitoredResource": MonitoredResource,
     "MonitoredResourceAliasCredential": MonitoredResourceAliasCredential,
     "MonitoredResourceAliasSourceCredential": MonitoredResourceAliasSourceCredential,
@@ -110,17 +206,45 @@ stack_monitoring_type_mapping = {
     "MonitoredResourceMembersCollection": MonitoredResourceMembersCollection,
     "MonitoredResourceProperty": MonitoredResourceProperty,
     "MonitoredResourceSummary": MonitoredResourceSummary,
+    "MonitoredResourceTask": MonitoredResourceTask,
+    "MonitoredResourceTaskDetails": MonitoredResourceTaskDetails,
+    "MonitoredResourceTaskSummary": MonitoredResourceTaskSummary,
+    "MonitoredResourceTasksCollection": MonitoredResourceTasksCollection,
+    "MonitoredResourceType": MonitoredResourceType,
+    "MonitoredResourceTypeSummary": MonitoredResourceTypeSummary,
+    "MonitoredResourceTypesCollection": MonitoredResourceTypesCollection,
+    "MonitoredResourcesCountAggregation": MonitoredResourcesCountAggregation,
+    "MonitoredResourcesCountAggregationCollection": MonitoredResourcesCountAggregationCollection,
+    "OsCommandQueryProperties": OsCommandQueryProperties,
+    "OsCommandUpdateQueryProperties": OsCommandUpdateQueryProperties,
     "PlainTextCredentials": PlainTextCredentials,
     "PreExistingCredentials": PreExistingCredentials,
     "PropertyDetails": PropertyDetails,
+    "ResourceTypeMetadataDetails": ResourceTypeMetadataDetails,
+    "ScriptFileDetails": ScriptFileDetails,
     "SearchAssociatedResourcesDetails": SearchAssociatedResourcesDetails,
     "SearchMonitoredResourceAssociationsDetails": SearchMonitoredResourceAssociationsDetails,
     "SearchMonitoredResourceMembersDetails": SearchMonitoredResourceMembersDetails,
     "SearchMonitoredResourcesDetails": SearchMonitoredResourcesDetails,
+    "SqlDetails": SqlDetails,
+    "SqlInParamDetails": SqlInParamDetails,
+    "SqlOutParamDetails": SqlOutParamDetails,
+    "SqlQueryProperties": SqlQueryProperties,
+    "SqlUpdateQueryProperties": SqlUpdateQueryProperties,
+    "SystemFormatResourceTypeMetadataDetails": SystemFormatResourceTypeMetadataDetails,
+    "TestMetricExtensionData": TestMetricExtensionData,
+    "TestMetricExtensionDetails": TestMetricExtensionDetails,
+    "UniquePropertySet": UniquePropertySet,
     "UpdateAndPropagateTagsDetails": UpdateAndPropagateTagsDetails,
     "UpdateAutoPromoteConfigDetails": UpdateAutoPromoteConfigDetails,
+    "UpdateBaselineableMetricDetails": UpdateBaselineableMetricDetails,
     "UpdateConfigDetails": UpdateConfigDetails,
+    "UpdateLicenseAutoAssignConfigDetails": UpdateLicenseAutoAssignConfigDetails,
+    "UpdateLicenseEnterpriseExtensibilityConfigDetails": UpdateLicenseEnterpriseExtensibilityConfigDetails,
+    "UpdateMetricExtensionDetails": UpdateMetricExtensionDetails,
     "UpdateMonitoredResourceDetails": UpdateMonitoredResourceDetails,
+    "UpdateMonitoredResourceTaskDetails": UpdateMonitoredResourceTaskDetails,
+    "UpdateMonitoredResourceTypeDetails": UpdateMonitoredResourceTypeDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestErrorCollection": WorkRequestErrorCollection,

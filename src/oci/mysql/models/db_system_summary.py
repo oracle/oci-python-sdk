@@ -23,6 +23,14 @@ class DbSystemSummary(object):
     #: This constant has a value of "DISABLED"
     CRASH_RECOVERY_DISABLED = "DISABLED"
 
+    #: A constant which can be used with the database_management property of a DbSystemSummary.
+    #: This constant has a value of "ENABLED"
+    DATABASE_MANAGEMENT_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the database_management property of a DbSystemSummary.
+    #: This constant has a value of "DISABLED"
+    DATABASE_MANAGEMENT_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbSystemSummary object with values from keyword arguments.
@@ -114,6 +122,12 @@ class DbSystemSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type crash_recovery: str
 
+        :param database_management:
+            The value to assign to the database_management property of this DbSystemSummary.
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type database_management: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -136,7 +150,8 @@ class DbSystemSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'backup_policy': 'BackupPolicy',
             'shape_name': 'str',
-            'crash_recovery': 'str'
+            'crash_recovery': 'str',
+            'database_management': 'str'
         }
 
         self.attribute_map = {
@@ -160,7 +175,8 @@ class DbSystemSummary(object):
             'defined_tags': 'definedTags',
             'backup_policy': 'backupPolicy',
             'shape_name': 'shapeName',
-            'crash_recovery': 'crashRecovery'
+            'crash_recovery': 'crashRecovery',
+            'database_management': 'databaseManagement'
         }
 
         self._id = None
@@ -184,6 +200,7 @@ class DbSystemSummary(object):
         self._backup_policy = None
         self._shape_name = None
         self._crash_recovery = None
+        self._database_management = None
 
     @property
     def id(self):
@@ -716,6 +733,36 @@ class DbSystemSummary(object):
         if not value_allowed_none_or_none_sentinel(crash_recovery, allowed_values):
             crash_recovery = 'UNKNOWN_ENUM_VALUE'
         self._crash_recovery = crash_recovery
+
+    @property
+    def database_management(self):
+        """
+        Gets the database_management of this DbSystemSummary.
+        Whether to enable monitoring via the Database Management service.
+
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The database_management of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._database_management
+
+    @database_management.setter
+    def database_management(self, database_management):
+        """
+        Sets the database_management of this DbSystemSummary.
+        Whether to enable monitoring via the Database Management service.
+
+
+        :param database_management: The database_management of this DbSystemSummary.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(database_management, allowed_values):
+            database_management = 'UNKNOWN_ENUM_VALUE'
+        self._database_management = database_management
 
     def __repr__(self):
         return formatted_flat_dict(self)

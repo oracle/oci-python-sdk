@@ -59,6 +59,14 @@ class DiscoveryDetails(object):
     #: This constant has a value of "ORACLE_MFT"
     RESOURCE_TYPE_ORACLE_MFT = "ORACLE_MFT"
 
+    #: A constant which can be used with the license property of a DiscoveryDetails.
+    #: This constant has a value of "STANDARD_EDITION"
+    LICENSE_STANDARD_EDITION = "STANDARD_EDITION"
+
+    #: A constant which can be used with the license property of a DiscoveryDetails.
+    #: This constant has a value of "ENTERPRISE_EDITION"
+    LICENSE_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DiscoveryDetails object with values from keyword arguments.
@@ -78,6 +86,12 @@ class DiscoveryDetails(object):
             The value to assign to the resource_name property of this DiscoveryDetails.
         :type resource_name: str
 
+        :param license:
+            The value to assign to the license property of this DiscoveryDetails.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type license: str
+
         :param properties:
             The value to assign to the properties property of this DiscoveryDetails.
         :type properties: oci.stack_monitoring.models.PropertyDetails
@@ -95,6 +109,7 @@ class DiscoveryDetails(object):
             'agent_id': 'str',
             'resource_type': 'str',
             'resource_name': 'str',
+            'license': 'str',
             'properties': 'PropertyDetails',
             'credentials': 'CredentialCollection',
             'tags': 'PropertyDetails'
@@ -104,6 +119,7 @@ class DiscoveryDetails(object):
             'agent_id': 'agentId',
             'resource_type': 'resourceType',
             'resource_name': 'resourceName',
+            'license': 'license',
             'properties': 'properties',
             'credentials': 'credentials',
             'tags': 'tags'
@@ -112,6 +128,7 @@ class DiscoveryDetails(object):
         self._agent_id = None
         self._resource_type = None
         self._resource_name = None
+        self._license = None
         self._properties = None
         self._credentials = None
         self._tags = None
@@ -193,6 +210,36 @@ class DiscoveryDetails(object):
         :type: str
         """
         self._resource_name = resource_name
+
+    @property
+    def license(self):
+        """
+        Gets the license of this DiscoveryDetails.
+        License edition of the monitored resource.
+
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The license of this DiscoveryDetails.
+        :rtype: str
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """
+        Sets the license of this DiscoveryDetails.
+        License edition of the monitored resource.
+
+
+        :param license: The license of this DiscoveryDetails.
+        :type: str
+        """
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION"]
+        if not value_allowed_none_or_none_sentinel(license, allowed_values):
+            license = 'UNKNOWN_ENUM_VALUE'
+        self._license = license
 
     @property
     def properties(self):

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDrProtectionGroupDetails(object):
     """
-    The details for creating a DR Protection Group.
+    The details for creating a DR protection group.
     """
 
     def __init__(self, **kwargs):
@@ -81,9 +81,9 @@ class CreateDrProtectionGroupDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateDrProtectionGroupDetails.
-        The OCID of the compartment in which to create the DR Protection Group.
+        The OCID of the compartment in which to create the DR protection group.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :return: The compartment_id of this CreateDrProtectionGroupDetails.
@@ -95,9 +95,9 @@ class CreateDrProtectionGroupDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateDrProtectionGroupDetails.
-        The OCID of the compartment in which to create the DR Protection Group.
+        The OCID of the compartment in which to create the DR protection group.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :param compartment_id: The compartment_id of this CreateDrProtectionGroupDetails.
@@ -109,9 +109,9 @@ class CreateDrProtectionGroupDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateDrProtectionGroupDetails.
-        The display name of the DR Protection Group.
+        The display name of the DR protection group.
 
-        Example: `EBS PHX DRPG`
+        Example: `EBS PHX Group`
 
 
         :return: The display_name of this CreateDrProtectionGroupDetails.
@@ -123,9 +123,9 @@ class CreateDrProtectionGroupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDrProtectionGroupDetails.
-        The display name of the DR Protection Group.
+        The display name of the DR protection group.
 
-        Example: `EBS PHX DRPG`
+        Example: `EBS PHX Group`
 
 
         :param display_name: The display_name of this CreateDrProtectionGroupDetails.
@@ -177,7 +177,7 @@ class CreateDrProtectionGroupDetails(object):
     def members(self):
         """
         Gets the members of this CreateDrProtectionGroupDetails.
-        A list of DR Protection Group members.
+        A list of DR protection group members.
 
 
         :return: The members of this CreateDrProtectionGroupDetails.
@@ -189,7 +189,7 @@ class CreateDrProtectionGroupDetails(object):
     def members(self, members):
         """
         Sets the members of this CreateDrProtectionGroupDetails.
-        A list of DR Protection Group members.
+        A list of DR protection group members.
 
 
         :param members: The members of this CreateDrProtectionGroupDetails.
@@ -202,6 +202,7 @@ class CreateDrProtectionGroupDetails(object):
         """
         Gets the freeform_tags of this CreateDrProtectionGroupDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -215,6 +216,7 @@ class CreateDrProtectionGroupDetails(object):
         """
         Sets the freeform_tags of this CreateDrProtectionGroupDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -228,6 +230,7 @@ class CreateDrProtectionGroupDetails(object):
         """
         Gets the defined_tags of this CreateDrProtectionGroupDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
@@ -241,6 +244,7 @@ class CreateDrProtectionGroupDetails(object):
         """
         Sets the defined_tags of this CreateDrProtectionGroupDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
