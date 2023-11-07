@@ -96,12 +96,14 @@ Database
     oci.database.models.CompleteExternalBackupJobDetails
     oci.database.models.ComputePerformanceSummary
     oci.database.models.ConfigureAutonomousDatabaseVaultKeyDetails
+    oci.database.models.ConfigureSaasAdminUserDetails
     oci.database.models.ConsoleConnection
     oci.database.models.ConsoleConnectionSummary
     oci.database.models.ConvertToPdbDetails
     oci.database.models.ConvertToPdbTargetBase
     oci.database.models.ConvertToRegularPluggableDatabaseDetails
     oci.database.models.CreateApplicationVipDetails
+    oci.database.models.CreateAutonomousContainerDatabaseDataguardAssociationDetails
     oci.database.models.CreateAutonomousContainerDatabaseDetails
     oci.database.models.CreateAutonomousDatabaseBackupDetails
     oci.database.models.CreateAutonomousDatabaseBase
@@ -317,6 +319,8 @@ Database
     oci.database.models.RotateAutonomousVmClusterSslCertsDetails
     oci.database.models.RotateCloudAutonomousVmClusterOrdsCertsDetails
     oci.database.models.RotateCloudAutonomousVmClusterSslCertsDetails
+    oci.database.models.SaasAdminUserConfiguration
+    oci.database.models.SaasAdminUserStatus
     oci.database.models.ScanDetails
     oci.database.models.ScheduledOperationDetails
     oci.database.models.SelfMountDetails

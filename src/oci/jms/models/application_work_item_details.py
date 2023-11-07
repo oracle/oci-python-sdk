@@ -23,12 +23,12 @@ class ApplicationWorkItemDetails(WorkItemDetails):
 
         :param kind:
             The value to assign to the kind property of this ApplicationWorkItemDetails.
-            Allowed values for this property are: "BASIC", "APPLICATION"
+            Allowed values for this property are: "BASIC", "APPLICATION", "LCM"
         :type kind: str
 
         :param work_item_type:
             The value to assign to the work_item_type property of this ApplicationWorkItemDetails.
-            Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS"
+            Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS"
         :type work_item_type: str
 
         :param application_key:

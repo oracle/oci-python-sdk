@@ -40,6 +40,10 @@ class JavaMigrationAnalysisResult(object):
             The value to assign to the fleet_id property of this JavaMigrationAnalysisResult.
         :type fleet_id: str
 
+        :param application_key:
+            The value to assign to the application_key property of this JavaMigrationAnalysisResult.
+        :type application_key: str
+
         :param application_name:
             The value to assign to the application_name property of this JavaMigrationAnalysisResult.
         :type application_name: str
@@ -99,6 +103,7 @@ class JavaMigrationAnalysisResult(object):
             'id': 'str',
             'work_request_id': 'str',
             'fleet_id': 'str',
+            'application_key': 'str',
             'application_name': 'str',
             'application_path': 'str',
             'application_execution_type': 'str',
@@ -118,6 +123,7 @@ class JavaMigrationAnalysisResult(object):
             'id': 'id',
             'work_request_id': 'workRequestId',
             'fleet_id': 'fleetId',
+            'application_key': 'applicationKey',
             'application_name': 'applicationName',
             'application_path': 'applicationPath',
             'application_execution_type': 'applicationExecutionType',
@@ -136,6 +142,7 @@ class JavaMigrationAnalysisResult(object):
         self._id = None
         self._work_request_id = None
         self._fleet_id = None
+        self._application_key = None
         self._application_name = None
         self._application_path = None
         self._application_execution_type = None
@@ -221,6 +228,30 @@ class JavaMigrationAnalysisResult(object):
         :type: str
         """
         self._fleet_id = fleet_id
+
+    @property
+    def application_key(self):
+        """
+        Gets the application_key of this JavaMigrationAnalysisResult.
+        The unique key that identifies the application.
+
+
+        :return: The application_key of this JavaMigrationAnalysisResult.
+        :rtype: str
+        """
+        return self._application_key
+
+    @application_key.setter
+    def application_key(self, application_key):
+        """
+        Sets the application_key of this JavaMigrationAnalysisResult.
+        The unique key that identifies the application.
+
+
+        :param application_key: The application_key of this JavaMigrationAnalysisResult.
+        :type: str
+        """
+        self._application_key = application_key
 
     @property
     def application_name(self):

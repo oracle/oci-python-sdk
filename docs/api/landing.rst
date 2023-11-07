@@ -100,6 +100,7 @@ API Reference
 * :doc:`Inventory <cloud_bridge/client/oci.cloud_bridge.InventoryClient>`
 * :doc:`Invoice Service <osp_gateway/client/oci.osp_gateway.InvoiceServiceClient>`
 * :doc:`Invoice Summary <onesubscription/client/oci.onesubscription.InvoiceSummaryClient>`
+* :doc:`Java Download <jms_java_downloads/client/oci.jms_java_downloads.JavaDownloadClient>`
 * :doc:`Java Management Service <jms/client/oci.jms.JavaManagementServiceClient>`
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
@@ -308,6 +309,7 @@ API Reference
     identity_domains
     integration
     jms
+    jms_java_downloads
     key_management
     license_manager
     limits

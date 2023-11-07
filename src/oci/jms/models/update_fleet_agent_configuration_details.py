@@ -44,6 +44,10 @@ class UpdateFleetAgentConfigurationDetails(object):
             The value to assign to the windows_configuration property of this UpdateFleetAgentConfigurationDetails.
         :type windows_configuration: oci.jms.models.FleetAgentOsConfiguration
 
+        :param mac_os_configuration:
+            The value to assign to the mac_os_configuration property of this UpdateFleetAgentConfigurationDetails.
+        :type mac_os_configuration: oci.jms.models.FleetAgentOsConfiguration
+
         """
         self.swagger_types = {
             'jre_scan_frequency_in_minutes': 'int',
@@ -51,7 +55,8 @@ class UpdateFleetAgentConfigurationDetails(object):
             'work_request_validity_period_in_days': 'int',
             'agent_polling_interval_in_minutes': 'int',
             'linux_configuration': 'FleetAgentOsConfiguration',
-            'windows_configuration': 'FleetAgentOsConfiguration'
+            'windows_configuration': 'FleetAgentOsConfiguration',
+            'mac_os_configuration': 'FleetAgentOsConfiguration'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class UpdateFleetAgentConfigurationDetails(object):
             'work_request_validity_period_in_days': 'workRequestValidityPeriodInDays',
             'agent_polling_interval_in_minutes': 'agentPollingIntervalInMinutes',
             'linux_configuration': 'linuxConfiguration',
-            'windows_configuration': 'windowsConfiguration'
+            'windows_configuration': 'windowsConfiguration',
+            'mac_os_configuration': 'macOsConfiguration'
         }
 
         self._jre_scan_frequency_in_minutes = None
@@ -69,6 +75,7 @@ class UpdateFleetAgentConfigurationDetails(object):
         self._agent_polling_interval_in_minutes = None
         self._linux_configuration = None
         self._windows_configuration = None
+        self._mac_os_configuration = None
 
     @property
     def jre_scan_frequency_in_minutes(self):
@@ -205,6 +212,26 @@ class UpdateFleetAgentConfigurationDetails(object):
         :type: oci.jms.models.FleetAgentOsConfiguration
         """
         self._windows_configuration = windows_configuration
+
+    @property
+    def mac_os_configuration(self):
+        """
+        Gets the mac_os_configuration of this UpdateFleetAgentConfigurationDetails.
+
+        :return: The mac_os_configuration of this UpdateFleetAgentConfigurationDetails.
+        :rtype: oci.jms.models.FleetAgentOsConfiguration
+        """
+        return self._mac_os_configuration
+
+    @mac_os_configuration.setter
+    def mac_os_configuration(self, mac_os_configuration):
+        """
+        Sets the mac_os_configuration of this UpdateFleetAgentConfigurationDetails.
+
+        :param mac_os_configuration: The mac_os_configuration of this UpdateFleetAgentConfigurationDetails.
+        :type: oci.jms.models.FleetAgentOsConfiguration
+        """
+        self._mac_os_configuration = mac_os_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -39,7 +39,7 @@ class PerformanceTuningAnalysis(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this PerformanceTuningAnalysis.
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
+        PerformanceTuningAnalysis flag to store enabled or disabled status
 
 
         :return: The is_enabled of this PerformanceTuningAnalysis.
@@ -51,7 +51,7 @@ class PerformanceTuningAnalysis(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this PerformanceTuningAnalysis.
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
+        PerformanceTuningAnalysis flag to store enabled or disabled status
 
 
         :param is_enabled: The is_enabled of this PerformanceTuningAnalysis.

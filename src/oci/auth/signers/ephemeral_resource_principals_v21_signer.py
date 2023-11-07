@@ -5,12 +5,12 @@
 import json
 import os
 import threading
+import logging
 
 from cryptography.hazmat.primitives.serialization import Encoding, PublicFormat
 
 import oci
 import oci.signer
-from oci._vendor import requests
 
 from .ephemeral_resource_principals_signer import FixedSessionKeySupplier, FileBasedSessionKeySupplier
 from .key_pair_signer import KeyPairSigner
@@ -19,17 +19,12 @@ from .. import auth_utils
 from ..security_token_container import SecurityTokenContainer
 
 
-METADATA_URL_BASE = 'http://169.254.169.254/opc/v2'
-GET_REGION_URL = '{}/instance/region'.format(METADATA_URL_BASE)
-METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
-
-
 class EphemeralResourcePrincipalV21Signer(SecurityTokenSigner):
 
     def __init__(self, resource_principal_token_endpoint=None, resource_principal_session_token_endpoint=None,
                  resource_id=None, private_key=None, private_key_passphrase=None, retry_strategy=None,
                  log_requests=None, generic_headers=None, tenancy_id=None, rp_version=None, region=None, **kwargs):
-
+        self.logger = logging.getLogger(f"{__name__}.{id(self)}")
         if resource_principal_token_endpoint:
             self.resource_principal_token_endpoint = resource_principal_token_endpoint
         else:
@@ -58,7 +53,7 @@ class EphemeralResourcePrincipalV21Signer(SecurityTokenSigner):
             self.retry_strategy = oci.retry.DEFAULT_RETRY_STRATEGY
 
         # Hard coded Path for RPT
-        self.resource_principal_token_path = "/20180711/resourcePrincipalTokenV2/{}".format(resource_id)
+        self.resource_principal_token_path = f"/20180711/resourcePrincipalTokenV2/{resource_id}"
 
         # Holders for the tokens needed.
         self.rpt = None
@@ -212,15 +207,6 @@ class EphemeralResourcePrincipalV21Signer(SecurityTokenSigner):
     def _initialize_and_return_region(self, region_raw=None):
         if hasattr(self, 'region'):
             return self.region
-
-        if region_raw is None:
-            try:
-                self.logger.debug("Requesting region information from :{}".format(GET_REGION_URL))
-                response = requests.get(GET_REGION_URL, timeout=(10, 60), headers=METADATA_AUTH_HEADERS)
-                region_raw = response.text.strip().lower()
-            except Exception as ex:
-                self.logger.debug("Got exception: {} while getting region from: {}, setting region as None".format(ex, GET_REGION_URL))
-                region_raw = None
 
         # The region can be something like "phx" but internally we expect "us-phoenix-1", "us-ashburn-1" etc.
         if region_raw in oci.regions.REGIONS_SHORT_NAMES:

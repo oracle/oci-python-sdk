@@ -44,6 +44,10 @@ class FleetAgentConfiguration(object):
             The value to assign to the windows_configuration property of this FleetAgentConfiguration.
         :type windows_configuration: oci.jms.models.FleetAgentOsConfiguration
 
+        :param mac_os_configuration:
+            The value to assign to the mac_os_configuration property of this FleetAgentConfiguration.
+        :type mac_os_configuration: oci.jms.models.FleetAgentOsConfiguration
+
         :param time_last_modified:
             The value to assign to the time_last_modified property of this FleetAgentConfiguration.
         :type time_last_modified: datetime
@@ -56,6 +60,7 @@ class FleetAgentConfiguration(object):
             'agent_polling_interval_in_minutes': 'int',
             'linux_configuration': 'FleetAgentOsConfiguration',
             'windows_configuration': 'FleetAgentOsConfiguration',
+            'mac_os_configuration': 'FleetAgentOsConfiguration',
             'time_last_modified': 'datetime'
         }
 
@@ -66,6 +71,7 @@ class FleetAgentConfiguration(object):
             'agent_polling_interval_in_minutes': 'agentPollingIntervalInMinutes',
             'linux_configuration': 'linuxConfiguration',
             'windows_configuration': 'windowsConfiguration',
+            'mac_os_configuration': 'macOsConfiguration',
             'time_last_modified': 'timeLastModified'
         }
 
@@ -75,6 +81,7 @@ class FleetAgentConfiguration(object):
         self._agent_polling_interval_in_minutes = None
         self._linux_configuration = None
         self._windows_configuration = None
+        self._mac_os_configuration = None
         self._time_last_modified = None
 
     @property
@@ -212,6 +219,26 @@ class FleetAgentConfiguration(object):
         :type: oci.jms.models.FleetAgentOsConfiguration
         """
         self._windows_configuration = windows_configuration
+
+    @property
+    def mac_os_configuration(self):
+        """
+        **[Required]** Gets the mac_os_configuration of this FleetAgentConfiguration.
+
+        :return: The mac_os_configuration of this FleetAgentConfiguration.
+        :rtype: oci.jms.models.FleetAgentOsConfiguration
+        """
+        return self._mac_os_configuration
+
+    @mac_os_configuration.setter
+    def mac_os_configuration(self, mac_os_configuration):
+        """
+        Sets the mac_os_configuration of this FleetAgentConfiguration.
+
+        :param mac_os_configuration: The mac_os_configuration of this FleetAgentConfiguration.
+        :type: oci.jms.models.FleetAgentOsConfiguration
+        """
+        self._mac_os_configuration = mac_os_configuration
 
     @property
     def time_last_modified(self):

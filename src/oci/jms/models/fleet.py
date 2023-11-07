@@ -96,6 +96,10 @@ class Fleet(object):
             The value to assign to the is_advanced_features_enabled property of this Fleet.
         :type is_advanced_features_enabled: bool
 
+        :param is_export_setting_enabled:
+            The value to assign to the is_export_setting_enabled property of this Fleet.
+        :type is_export_setting_enabled: bool
+
         :param time_created:
             The value to assign to the time_created property of this Fleet.
         :type time_created: datetime
@@ -132,6 +136,7 @@ class Fleet(object):
             'inventory_log': 'CustomLog',
             'operation_log': 'CustomLog',
             'is_advanced_features_enabled': 'bool',
+            'is_export_setting_enabled': 'bool',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -152,6 +157,7 @@ class Fleet(object):
             'inventory_log': 'inventoryLog',
             'operation_log': 'operationLog',
             'is_advanced_features_enabled': 'isAdvancedFeaturesEnabled',
+            'is_export_setting_enabled': 'isExportSettingEnabled',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'defined_tags': 'definedTags',
@@ -171,6 +177,7 @@ class Fleet(object):
         self._inventory_log = None
         self._operation_log = None
         self._is_advanced_features_enabled = None
+        self._is_export_setting_enabled = None
         self._time_created = None
         self._lifecycle_state = None
         self._defined_tags = None
@@ -476,6 +483,30 @@ class Fleet(object):
         :type: bool
         """
         self._is_advanced_features_enabled = is_advanced_features_enabled
+
+    @property
+    def is_export_setting_enabled(self):
+        """
+        Gets the is_export_setting_enabled of this Fleet.
+        Whether or not export setting is enabled in this Fleet.
+
+
+        :return: The is_export_setting_enabled of this Fleet.
+        :rtype: bool
+        """
+        return self._is_export_setting_enabled
+
+    @is_export_setting_enabled.setter
+    def is_export_setting_enabled(self, is_export_setting_enabled):
+        """
+        Sets the is_export_setting_enabled of this Fleet.
+        Whether or not export setting is enabled in this Fleet.
+
+
+        :param is_export_setting_enabled: The is_export_setting_enabled of this Fleet.
+        :type: bool
+        """
+        self._is_export_setting_enabled = is_export_setting_enabled
 
     @property
     def time_created(self):
