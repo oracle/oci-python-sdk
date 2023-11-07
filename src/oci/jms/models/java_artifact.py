@@ -54,13 +54,53 @@ class JavaArtifact(object):
             The value to assign to the sha256 property of this JavaArtifact.
         :type sha256: str
 
+        :param artifact_file_name:
+            The value to assign to the artifact_file_name property of this JavaArtifact.
+        :type artifact_file_name: str
+
+        :param os_family:
+            The value to assign to the os_family property of this JavaArtifact.
+        :type os_family: str
+
+        :param architecture:
+            The value to assign to the architecture property of this JavaArtifact.
+        :type architecture: str
+
+        :param package_type:
+            The value to assign to the package_type property of this JavaArtifact.
+        :type package_type: str
+
+        :param package_type_detail:
+            The value to assign to the package_type_detail property of this JavaArtifact.
+        :type package_type_detail: str
+
+        :param download_url:
+            The value to assign to the download_url property of this JavaArtifact.
+        :type download_url: str
+
+        :param script_download_url:
+            The value to assign to the script_download_url property of this JavaArtifact.
+        :type script_download_url: str
+
+        :param script_checksum_url:
+            The value to assign to the script_checksum_url property of this JavaArtifact.
+        :type script_checksum_url: str
+
         """
         self.swagger_types = {
             'artifact_id': 'int',
             'artifact_description': 'str',
             'artifact_content_type': 'str',
             'approximate_file_size_in_bytes': 'int',
-            'sha256': 'str'
+            'sha256': 'str',
+            'artifact_file_name': 'str',
+            'os_family': 'str',
+            'architecture': 'str',
+            'package_type': 'str',
+            'package_type_detail': 'str',
+            'download_url': 'str',
+            'script_download_url': 'str',
+            'script_checksum_url': 'str'
         }
 
         self.attribute_map = {
@@ -68,7 +108,15 @@ class JavaArtifact(object):
             'artifact_description': 'artifactDescription',
             'artifact_content_type': 'artifactContentType',
             'approximate_file_size_in_bytes': 'approximateFileSizeInBytes',
-            'sha256': 'sha256'
+            'sha256': 'sha256',
+            'artifact_file_name': 'artifactFileName',
+            'os_family': 'osFamily',
+            'architecture': 'architecture',
+            'package_type': 'packageType',
+            'package_type_detail': 'packageTypeDetail',
+            'download_url': 'downloadUrl',
+            'script_download_url': 'scriptDownloadUrl',
+            'script_checksum_url': 'scriptChecksumUrl'
         }
 
         self._artifact_id = None
@@ -76,6 +124,14 @@ class JavaArtifact(object):
         self._artifact_content_type = None
         self._approximate_file_size_in_bytes = None
         self._sha256 = None
+        self._artifact_file_name = None
+        self._os_family = None
+        self._architecture = None
+        self._package_type = None
+        self._package_type_detail = None
+        self._download_url = None
+        self._script_download_url = None
+        self._script_checksum_url = None
 
     @property
     def artifact_id(self):
@@ -202,6 +258,210 @@ class JavaArtifact(object):
         :type: str
         """
         self._sha256 = sha256
+
+    @property
+    def artifact_file_name(self):
+        """
+        Gets the artifact_file_name of this JavaArtifact.
+        The file name of the artifact.
+
+
+        :return: The artifact_file_name of this JavaArtifact.
+        :rtype: str
+        """
+        return self._artifact_file_name
+
+    @artifact_file_name.setter
+    def artifact_file_name(self, artifact_file_name):
+        """
+        Sets the artifact_file_name of this JavaArtifact.
+        The file name of the artifact.
+
+
+        :param artifact_file_name: The artifact_file_name of this JavaArtifact.
+        :type: str
+        """
+        self._artifact_file_name = artifact_file_name
+
+    @property
+    def os_family(self):
+        """
+        **[Required]** Gets the os_family of this JavaArtifact.
+        The target Operating System family for the artifact.
+
+
+        :return: The os_family of this JavaArtifact.
+        :rtype: str
+        """
+        return self._os_family
+
+    @os_family.setter
+    def os_family(self, os_family):
+        """
+        Sets the os_family of this JavaArtifact.
+        The target Operating System family for the artifact.
+
+
+        :param os_family: The os_family of this JavaArtifact.
+        :type: str
+        """
+        self._os_family = os_family
+
+    @property
+    def architecture(self):
+        """
+        **[Required]** Gets the architecture of this JavaArtifact.
+        The target Operating System architecture for the artifact.
+
+
+        :return: The architecture of this JavaArtifact.
+        :rtype: str
+        """
+        return self._architecture
+
+    @architecture.setter
+    def architecture(self, architecture):
+        """
+        Sets the architecture of this JavaArtifact.
+        The target Operating System architecture for the artifact.
+
+
+        :param architecture: The architecture of this JavaArtifact.
+        :type: str
+        """
+        self._architecture = architecture
+
+    @property
+    def package_type(self):
+        """
+        **[Required]** Gets the package_type of this JavaArtifact.
+        The package type(typically the file extension) of the artifact.
+
+
+        :return: The package_type of this JavaArtifact.
+        :rtype: str
+        """
+        return self._package_type
+
+    @package_type.setter
+    def package_type(self, package_type):
+        """
+        Sets the package_type of this JavaArtifact.
+        The package type(typically the file extension) of the artifact.
+
+
+        :param package_type: The package_type of this JavaArtifact.
+        :type: str
+        """
+        self._package_type = package_type
+
+    @property
+    def package_type_detail(self):
+        """
+        Gets the package_type_detail of this JavaArtifact.
+        Additional information about the package type.
+
+
+        :return: The package_type_detail of this JavaArtifact.
+        :rtype: str
+        """
+        return self._package_type_detail
+
+    @package_type_detail.setter
+    def package_type_detail(self, package_type_detail):
+        """
+        Sets the package_type_detail of this JavaArtifact.
+        Additional information about the package type.
+
+
+        :param package_type_detail: The package_type_detail of this JavaArtifact.
+        :type: str
+        """
+        self._package_type_detail = package_type_detail
+
+    @property
+    def download_url(self):
+        """
+        **[Required]** Gets the download_url of this JavaArtifact.
+        The endpoint that returns a short-lived artifact download URL in the response payload.
+        This download url can then be used for downloading the artifact.
+        See this `API`__ for more details.
+
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl
+
+
+        :return: The download_url of this JavaArtifact.
+        :rtype: str
+        """
+        return self._download_url
+
+    @download_url.setter
+    def download_url(self, download_url):
+        """
+        Sets the download_url of this JavaArtifact.
+        The endpoint that returns a short-lived artifact download URL in the response payload.
+        This download url can then be used for downloading the artifact.
+        See this `API`__ for more details.
+
+        __ https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl
+
+
+        :param download_url: The download_url of this JavaArtifact.
+        :type: str
+        """
+        self._download_url = download_url
+
+    @property
+    def script_download_url(self):
+        """
+        **[Required]** Gets the script_download_url of this JavaArtifact.
+        The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles.
+        Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+
+
+        :return: The script_download_url of this JavaArtifact.
+        :rtype: str
+        """
+        return self._script_download_url
+
+    @script_download_url.setter
+    def script_download_url(self, script_download_url):
+        """
+        Sets the script_download_url of this JavaArtifact.
+        The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles.
+        Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+
+
+        :param script_download_url: The script_download_url of this JavaArtifact.
+        :type: str
+        """
+        self._script_download_url = script_download_url
+
+    @property
+    def script_checksum_url(self):
+        """
+        **[Required]** Gets the script_checksum_url of this JavaArtifact.
+        The URL for retrieving the checksum for the artifact.
+        Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+
+
+        :return: The script_checksum_url of this JavaArtifact.
+        :rtype: str
+        """
+        return self._script_checksum_url
+
+    @script_checksum_url.setter
+    def script_checksum_url(self, script_checksum_url):
+        """
+        Sets the script_checksum_url of this JavaArtifact.
+        The URL for retrieving the checksum for the artifact.
+        Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+
+
+        :param script_checksum_url: The script_checksum_url of this JavaArtifact.
+        :type: str
+        """
+        self._script_checksum_url = script_checksum_url
 
     def __repr__(self):
         return formatted_flat_dict(self)

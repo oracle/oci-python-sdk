@@ -132,6 +132,14 @@ class JavaReleaseSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type artifact_content_types: list[str]
 
+        :param mos_patches:
+            The value to assign to the mos_patches property of this JavaReleaseSummary.
+        :type mos_patches: list[oci.jms.models.PatchDetail]
+
+        :param days_under_security_baseline:
+            The value to assign to the days_under_security_baseline property of this JavaReleaseSummary.
+        :type days_under_security_baseline: int
+
         """
         self.swagger_types = {
             'release_version': 'str',
@@ -144,7 +152,9 @@ class JavaReleaseSummary(object):
             'license_details': 'JavaLicense',
             'release_date': 'datetime',
             'release_notes_url': 'str',
-            'artifact_content_types': 'list[str]'
+            'artifact_content_types': 'list[str]',
+            'mos_patches': 'list[PatchDetail]',
+            'days_under_security_baseline': 'int'
         }
 
         self.attribute_map = {
@@ -158,7 +168,9 @@ class JavaReleaseSummary(object):
             'license_details': 'licenseDetails',
             'release_date': 'releaseDate',
             'release_notes_url': 'releaseNotesUrl',
-            'artifact_content_types': 'artifactContentTypes'
+            'artifact_content_types': 'artifactContentTypes',
+            'mos_patches': 'mosPatches',
+            'days_under_security_baseline': 'daysUnderSecurityBaseline'
         }
 
         self._release_version = None
@@ -172,6 +184,8 @@ class JavaReleaseSummary(object):
         self._release_date = None
         self._release_notes_url = None
         self._artifact_content_types = None
+        self._mos_patches = None
+        self._days_under_security_baseline = None
 
     @property
     def release_version(self):
@@ -456,6 +470,56 @@ class JavaReleaseSummary(object):
         if artifact_content_types:
             artifact_content_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in artifact_content_types]
         self._artifact_content_types = artifact_content_types
+
+    @property
+    def mos_patches(self):
+        """
+        Gets the mos_patches of this JavaReleaseSummary.
+        List of My Oracle Support(MoS) patches available for this release.
+        This information is only available for `BPR` release type.
+
+
+        :return: The mos_patches of this JavaReleaseSummary.
+        :rtype: list[oci.jms.models.PatchDetail]
+        """
+        return self._mos_patches
+
+    @mos_patches.setter
+    def mos_patches(self, mos_patches):
+        """
+        Sets the mos_patches of this JavaReleaseSummary.
+        List of My Oracle Support(MoS) patches available for this release.
+        This information is only available for `BPR` release type.
+
+
+        :param mos_patches: The mos_patches of this JavaReleaseSummary.
+        :type: list[oci.jms.models.PatchDetail]
+        """
+        self._mos_patches = mos_patches
+
+    @property
+    def days_under_security_baseline(self):
+        """
+        Gets the days_under_security_baseline of this JavaReleaseSummary.
+        The number of days since this release has been under the security baseline.
+
+
+        :return: The days_under_security_baseline of this JavaReleaseSummary.
+        :rtype: int
+        """
+        return self._days_under_security_baseline
+
+    @days_under_security_baseline.setter
+    def days_under_security_baseline(self, days_under_security_baseline):
+        """
+        Sets the days_under_security_baseline of this JavaReleaseSummary.
+        The number of days since this release has been under the security baseline.
+
+
+        :param days_under_security_baseline: The days_under_security_baseline of this JavaReleaseSummary.
+        :type: int
+        """
+        self._days_under_security_baseline = days_under_security_baseline
 
     def __repr__(self):
         return formatted_flat_dict(self)

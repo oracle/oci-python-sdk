@@ -84,12 +84,14 @@ from .cloud_vm_cluster_summary import CloudVmClusterSummary
 from .complete_external_backup_job_details import CompleteExternalBackupJobDetails
 from .compute_performance_summary import ComputePerformanceSummary
 from .configure_autonomous_database_vault_key_details import ConfigureAutonomousDatabaseVaultKeyDetails
+from .configure_saas_admin_user_details import ConfigureSaasAdminUserDetails
 from .console_connection import ConsoleConnection
 from .console_connection_summary import ConsoleConnectionSummary
 from .convert_to_pdb_details import ConvertToPdbDetails
 from .convert_to_pdb_target_base import ConvertToPdbTargetBase
 from .convert_to_regular_pluggable_database_details import ConvertToRegularPluggableDatabaseDetails
 from .create_application_vip_details import CreateApplicationVipDetails
+from .create_autonomous_container_database_dataguard_association_details import CreateAutonomousContainerDatabaseDataguardAssociationDetails
 from .create_autonomous_container_database_details import CreateAutonomousContainerDatabaseDetails
 from .create_autonomous_database_backup_details import CreateAutonomousDatabaseBackupDetails
 from .create_autonomous_database_base import CreateAutonomousDatabaseBase
@@ -305,6 +307,8 @@ from .rotate_autonomous_vm_cluster_ords_certs_details import RotateAutonomousVmC
 from .rotate_autonomous_vm_cluster_ssl_certs_details import RotateAutonomousVmClusterSslCertsDetails
 from .rotate_cloud_autonomous_vm_cluster_ords_certs_details import RotateCloudAutonomousVmClusterOrdsCertsDetails
 from .rotate_cloud_autonomous_vm_cluster_ssl_certs_details import RotateCloudAutonomousVmClusterSslCertsDetails
+from .saas_admin_user_configuration import SaasAdminUserConfiguration
+from .saas_admin_user_status import SaasAdminUserStatus
 from .scan_details import ScanDetails
 from .scheduled_operation_details import ScheduledOperationDetails
 from .self_mount_details import SelfMountDetails
@@ -442,12 +446,14 @@ database_type_mapping = {
     "CompleteExternalBackupJobDetails": CompleteExternalBackupJobDetails,
     "ComputePerformanceSummary": ComputePerformanceSummary,
     "ConfigureAutonomousDatabaseVaultKeyDetails": ConfigureAutonomousDatabaseVaultKeyDetails,
+    "ConfigureSaasAdminUserDetails": ConfigureSaasAdminUserDetails,
     "ConsoleConnection": ConsoleConnection,
     "ConsoleConnectionSummary": ConsoleConnectionSummary,
     "ConvertToPdbDetails": ConvertToPdbDetails,
     "ConvertToPdbTargetBase": ConvertToPdbTargetBase,
     "ConvertToRegularPluggableDatabaseDetails": ConvertToRegularPluggableDatabaseDetails,
     "CreateApplicationVipDetails": CreateApplicationVipDetails,
+    "CreateAutonomousContainerDatabaseDataguardAssociationDetails": CreateAutonomousContainerDatabaseDataguardAssociationDetails,
     "CreateAutonomousContainerDatabaseDetails": CreateAutonomousContainerDatabaseDetails,
     "CreateAutonomousDatabaseBackupDetails": CreateAutonomousDatabaseBackupDetails,
     "CreateAutonomousDatabaseBase": CreateAutonomousDatabaseBase,
@@ -663,6 +669,8 @@ database_type_mapping = {
     "RotateAutonomousVmClusterSslCertsDetails": RotateAutonomousVmClusterSslCertsDetails,
     "RotateCloudAutonomousVmClusterOrdsCertsDetails": RotateCloudAutonomousVmClusterOrdsCertsDetails,
     "RotateCloudAutonomousVmClusterSslCertsDetails": RotateCloudAutonomousVmClusterSslCertsDetails,
+    "SaasAdminUserConfiguration": SaasAdminUserConfiguration,
+    "SaasAdminUserStatus": SaasAdminUserStatus,
     "ScanDetails": ScanDetails,
     "ScheduledOperationDetails": ScheduledOperationDetails,
     "SelfMountDetails": SelfMountDetails,

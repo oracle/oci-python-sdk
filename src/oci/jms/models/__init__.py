@@ -8,6 +8,7 @@ from __future__ import absolute_import
 
 from .add_fleet_installation_sites_details import AddFleetInstallationSitesDetails
 from .advanced_usage_tracking import AdvancedUsageTracking
+from .agent import Agent
 from .announcement_collection import AnnouncementCollection
 from .announcement_summary import AnnouncementSummary
 from .application_installation_usage_summary import ApplicationInstallationUsageSummary
@@ -22,6 +23,7 @@ from .blocklist_entry import BlocklistEntry
 from .blocklist_target import BlocklistTarget
 from .change_fleet_compartment_details import ChangeFleetCompartmentDetails
 from .create_blocklist_details import CreateBlocklistDetails
+from .create_drs_file_details import CreateDrsFileDetails
 from .create_fleet_details import CreateFleetDetails
 from .crypto_analysis_result import CryptoAnalysisResult
 from .crypto_analysis_result_collection import CryptoAnalysisResultCollection
@@ -32,7 +34,15 @@ from .deployed_application_installation_usage_summary import DeployedApplication
 from .deployed_application_installation_usage_summary_collection import DeployedApplicationInstallationUsageSummaryCollection
 from .deployed_application_usage import DeployedApplicationUsage
 from .deployed_application_usage_collection import DeployedApplicationUsageCollection
+from .disable_drs_details import DisableDrsDetails
+from .drs_file import DrsFile
+from .drs_file_collection import DrsFileCollection
+from .drs_file_summary import DrsFileSummary
+from .drs_target import DrsTarget
+from .enable_drs_details import EnableDrsDetails
 from .existing_installation_site_id import ExistingInstallationSiteId
+from .export_setting import ExportSetting
+from .export_status import ExportStatus
 from .fleet import Fleet
 from .fleet_advanced_feature_configuration import FleetAdvancedFeatureConfiguration
 from .fleet_agent_configuration import FleetAgentConfiguration
@@ -71,17 +81,21 @@ from .jre_usage import JreUsage
 from .jre_usage_collection import JreUsageCollection
 from .key_size_algorithm import KeySizeAlgorithm
 from .lcm import Lcm
+from .lcm_work_item_details import LcmWorkItemDetails
 from .library_usage import LibraryUsage
 from .library_usage_collection import LibraryUsageCollection
+from .manage_drs_details import ManageDrsDetails
 from .managed_instance_usage import ManagedInstanceUsage
 from .managed_instance_usage_collection import ManagedInstanceUsageCollection
 from .minimum_key_size_settings import MinimumKeySizeSettings
 from .new_installation_site import NewInstallationSite
 from .operating_system import OperatingSystem
+from .patch_detail import PatchDetail
 from .performance_tuning_analysis import PerformanceTuningAnalysis
 from .performance_tuning_analysis_result import PerformanceTuningAnalysisResult
 from .performance_tuning_analysis_result_collection import PerformanceTuningAnalysisResultCollection
 from .performance_tuning_analysis_result_summary import PerformanceTuningAnalysisResultSummary
+from .plugin import Plugin
 from .post_installation_action_settings import PostInstallationActionSettings
 from .principal import Principal
 from .proxies import Proxies
@@ -94,6 +108,8 @@ from .resource_inventory import ResourceInventory
 from .scan_java_server_usage_details import ScanJavaServerUsageDetails
 from .scan_library_usage_details import ScanLibraryUsageDetails
 from .summarized_events_log import SummarizedEventsLog
+from .update_drs_file_details import UpdateDrsFileDetails
+from .update_export_setting_details import UpdateExportSettingDetails
 from .update_fleet_advanced_feature_configuration_details import UpdateFleetAdvancedFeatureConfigurationDetails
 from .update_fleet_agent_configuration_details import UpdateFleetAgentConfigurationDetails
 from .update_fleet_details import UpdateFleetDetails
@@ -112,6 +128,7 @@ from .work_request_resource import WorkRequestResource
 jms_type_mapping = {
     "AddFleetInstallationSitesDetails": AddFleetInstallationSitesDetails,
     "AdvancedUsageTracking": AdvancedUsageTracking,
+    "Agent": Agent,
     "AnnouncementCollection": AnnouncementCollection,
     "AnnouncementSummary": AnnouncementSummary,
     "ApplicationInstallationUsageSummary": ApplicationInstallationUsageSummary,
@@ -126,6 +143,7 @@ jms_type_mapping = {
     "BlocklistTarget": BlocklistTarget,
     "ChangeFleetCompartmentDetails": ChangeFleetCompartmentDetails,
     "CreateBlocklistDetails": CreateBlocklistDetails,
+    "CreateDrsFileDetails": CreateDrsFileDetails,
     "CreateFleetDetails": CreateFleetDetails,
     "CryptoAnalysisResult": CryptoAnalysisResult,
     "CryptoAnalysisResultCollection": CryptoAnalysisResultCollection,
@@ -136,7 +154,15 @@ jms_type_mapping = {
     "DeployedApplicationInstallationUsageSummaryCollection": DeployedApplicationInstallationUsageSummaryCollection,
     "DeployedApplicationUsage": DeployedApplicationUsage,
     "DeployedApplicationUsageCollection": DeployedApplicationUsageCollection,
+    "DisableDrsDetails": DisableDrsDetails,
+    "DrsFile": DrsFile,
+    "DrsFileCollection": DrsFileCollection,
+    "DrsFileSummary": DrsFileSummary,
+    "DrsTarget": DrsTarget,
+    "EnableDrsDetails": EnableDrsDetails,
     "ExistingInstallationSiteId": ExistingInstallationSiteId,
+    "ExportSetting": ExportSetting,
+    "ExportStatus": ExportStatus,
     "Fleet": Fleet,
     "FleetAdvancedFeatureConfiguration": FleetAdvancedFeatureConfiguration,
     "FleetAgentConfiguration": FleetAgentConfiguration,
@@ -175,17 +201,21 @@ jms_type_mapping = {
     "JreUsageCollection": JreUsageCollection,
     "KeySizeAlgorithm": KeySizeAlgorithm,
     "Lcm": Lcm,
+    "LcmWorkItemDetails": LcmWorkItemDetails,
     "LibraryUsage": LibraryUsage,
     "LibraryUsageCollection": LibraryUsageCollection,
+    "ManageDrsDetails": ManageDrsDetails,
     "ManagedInstanceUsage": ManagedInstanceUsage,
     "ManagedInstanceUsageCollection": ManagedInstanceUsageCollection,
     "MinimumKeySizeSettings": MinimumKeySizeSettings,
     "NewInstallationSite": NewInstallationSite,
     "OperatingSystem": OperatingSystem,
+    "PatchDetail": PatchDetail,
     "PerformanceTuningAnalysis": PerformanceTuningAnalysis,
     "PerformanceTuningAnalysisResult": PerformanceTuningAnalysisResult,
     "PerformanceTuningAnalysisResultCollection": PerformanceTuningAnalysisResultCollection,
     "PerformanceTuningAnalysisResultSummary": PerformanceTuningAnalysisResultSummary,
+    "Plugin": Plugin,
     "PostInstallationActionSettings": PostInstallationActionSettings,
     "Principal": Principal,
     "Proxies": Proxies,
@@ -198,6 +228,8 @@ jms_type_mapping = {
     "ScanJavaServerUsageDetails": ScanJavaServerUsageDetails,
     "ScanLibraryUsageDetails": ScanLibraryUsageDetails,
     "SummarizedEventsLog": SummarizedEventsLog,
+    "UpdateDrsFileDetails": UpdateDrsFileDetails,
+    "UpdateExportSettingDetails": UpdateExportSettingDetails,
     "UpdateFleetAdvancedFeatureConfigurationDetails": UpdateFleetAdvancedFeatureConfigurationDetails,
     "UpdateFleetAgentConfigurationDetails": UpdateFleetAgentConfigurationDetails,
     "UpdateFleetDetails": UpdateFleetDetails,

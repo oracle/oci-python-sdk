@@ -23,6 +23,10 @@ class WorkItemDetails(object):
     #: This constant has a value of "APPLICATION"
     KIND_APPLICATION = "APPLICATION"
 
+    #: A constant which can be used with the kind property of a WorkItemDetails.
+    #: This constant has a value of "LCM"
+    KIND_LCM = "LCM"
+
     #: A constant which can be used with the work_item_type property of a WorkItemDetails.
     #: This constant has a value of "LCM"
     WORK_ITEM_TYPE_LCM = "LCM"
@@ -48,6 +52,18 @@ class WorkItemDetails(object):
     WORK_ITEM_TYPE_ADVANCED_USAGE_TRACKING = "ADVANCED_USAGE_TRACKING"
 
     #: A constant which can be used with the work_item_type property of a WorkItemDetails.
+    #: This constant has a value of "ADV_USAGE_SERVER_METADATA"
+    WORK_ITEM_TYPE_ADV_USAGE_SERVER_METADATA = "ADV_USAGE_SERVER_METADATA"
+
+    #: A constant which can be used with the work_item_type property of a WorkItemDetails.
+    #: This constant has a value of "ADV_USAGE_SERVER_LIBRARIES"
+    WORK_ITEM_TYPE_ADV_USAGE_SERVER_LIBRARIES = "ADV_USAGE_SERVER_LIBRARIES"
+
+    #: A constant which can be used with the work_item_type property of a WorkItemDetails.
+    #: This constant has a value of "ADV_USAGE_JAVA_LIBRARIES"
+    WORK_ITEM_TYPE_ADV_USAGE_JAVA_LIBRARIES = "ADV_USAGE_JAVA_LIBRARIES"
+
+    #: A constant which can be used with the work_item_type property of a WorkItemDetails.
     #: This constant has a value of "PERFORMANCE_TUNING"
     WORK_ITEM_TYPE_PERFORMANCE_TUNING = "PERFORMANCE_TUNING"
 
@@ -55,11 +71,20 @@ class WorkItemDetails(object):
     #: This constant has a value of "JMIGRATE_ANALYSIS"
     WORK_ITEM_TYPE_JMIGRATE_ANALYSIS = "JMIGRATE_ANALYSIS"
 
+    #: A constant which can be used with the work_item_type property of a WorkItemDetails.
+    #: This constant has a value of "JMIGRATE_CREATE_REPORT"
+    WORK_ITEM_TYPE_JMIGRATE_CREATE_REPORT = "JMIGRATE_CREATE_REPORT"
+
+    #: A constant which can be used with the work_item_type property of a WorkItemDetails.
+    #: This constant has a value of "DRS"
+    WORK_ITEM_TYPE_DRS = "DRS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkItemDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.jms.models.LcmWorkItemDetails`
         * :class:`~oci.jms.models.BasicWorkItemDetails`
         * :class:`~oci.jms.models.ApplicationWorkItemDetails`
 
@@ -67,13 +92,13 @@ class WorkItemDetails(object):
 
         :param kind:
             The value to assign to the kind property of this WorkItemDetails.
-            Allowed values for this property are: "BASIC", "APPLICATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BASIC", "APPLICATION", "LCM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type kind: str
 
         :param work_item_type:
             The value to assign to the work_item_type property of this WorkItemDetails.
-            Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type work_item_type: str
 
@@ -99,6 +124,9 @@ class WorkItemDetails(object):
         """
         type = object_dictionary['kind']
 
+        if type == 'LCM':
+            return 'LcmWorkItemDetails'
+
         if type == 'BASIC':
             return 'BasicWorkItemDetails'
 
@@ -113,7 +141,7 @@ class WorkItemDetails(object):
         **[Required]** Gets the kind of this WorkItemDetails.
         The kind of work item details.
 
-        Allowed values for this property are: "BASIC", "APPLICATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BASIC", "APPLICATION", "LCM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -132,7 +160,7 @@ class WorkItemDetails(object):
         :param kind: The kind of this WorkItemDetails.
         :type: str
         """
-        allowed_values = ["BASIC", "APPLICATION"]
+        allowed_values = ["BASIC", "APPLICATION", "LCM"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             kind = 'UNKNOWN_ENUM_VALUE'
         self._kind = kind
@@ -143,7 +171,7 @@ class WorkItemDetails(object):
         Gets the work_item_type of this WorkItemDetails.
         The work item type.
 
-        Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -162,7 +190,7 @@ class WorkItemDetails(object):
         :param work_item_type: The work_item_type of this WorkItemDetails.
         :type: str
         """
-        allowed_values = ["LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS"]
+        allowed_values = ["LCM", "JFR_CAPTURE", "JFR_UPLOAD", "CRYPTO_ANALYSIS", "CRYPTO_ANALYSIS_MERGE", "ADVANCED_USAGE_TRACKING", "ADV_USAGE_SERVER_METADATA", "ADV_USAGE_SERVER_LIBRARIES", "ADV_USAGE_JAVA_LIBRARIES", "PERFORMANCE_TUNING", "JMIGRATE_ANALYSIS", "JMIGRATE_CREATE_REPORT", "DRS"]
         if not value_allowed_none_or_none_sentinel(work_item_type, allowed_values):
             work_item_type = 'UNKNOWN_ENUM_VALUE'
         self._work_item_type = work_item_type

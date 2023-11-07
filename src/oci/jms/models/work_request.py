@@ -62,12 +62,40 @@ class WorkRequest(object):
     OPERATION_TYPE_REQUEST_JAVA_MIGRATION_ANALYSIS = "REQUEST_JAVA_MIGRATION_ANALYSIS"
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_JMS_REPORT"
+    OPERATION_TYPE_DELETE_JMS_REPORT = "DELETE_JMS_REPORT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "SCAN_JAVA_SERVER_USAGE"
     OPERATION_TYPE_SCAN_JAVA_SERVER_USAGE = "SCAN_JAVA_SERVER_USAGE"
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "SCAN_LIBRARY_USAGE"
     OPERATION_TYPE_SCAN_LIBRARY_USAGE = "SCAN_LIBRARY_USAGE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "EXPORT_DATA_CSV"
+    OPERATION_TYPE_EXPORT_DATA_CSV = "EXPORT_DATA_CSV"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_DRS_FILE"
+    OPERATION_TYPE_CREATE_DRS_FILE = "CREATE_DRS_FILE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_DRS_FILE"
+    OPERATION_TYPE_UPDATE_DRS_FILE = "UPDATE_DRS_FILE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_DRS_FILE"
+    OPERATION_TYPE_DELETE_DRS_FILE = "DELETE_DRS_FILE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ENABLE_DRS"
+    OPERATION_TYPE_ENABLE_DRS = "ENABLE_DRS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DISABLE_DRS"
+    OPERATION_TYPE_DISABLE_DRS = "DISABLE_DRS"
 
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
@@ -100,7 +128,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "DELETE_JMS_REPORT", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", "EXPORT_DATA_CSV", "CREATE_DRS_FILE", "UPDATE_DRS_FILE", "DELETE_DRS_FILE", "ENABLE_DRS", "DISABLE_DRS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -207,7 +235,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "DELETE_JMS_REPORT", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", "EXPORT_DATA_CSV", "CREATE_DRS_FILE", "UPDATE_DRS_FILE", "DELETE_DRS_FILE", "ENABLE_DRS", "DISABLE_DRS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -226,7 +254,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"]
+        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "DELETE_JMS_REPORT", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", "EXPORT_DATA_CSV", "CREATE_DRS_FILE", "UPDATE_DRS_FILE", "DELETE_DRS_FILE", "ENABLE_DRS", "DISABLE_DRS"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

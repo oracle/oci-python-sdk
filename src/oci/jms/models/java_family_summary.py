@@ -51,13 +51,23 @@ class JavaFamilySummary(object):
             The value to assign to the doc_url property of this JavaFamilySummary.
         :type doc_url: str
 
+        :param latest_release_version:
+            The value to assign to the latest_release_version property of this JavaFamilySummary.
+        :type latest_release_version: str
+
+        :param is_supported_version:
+            The value to assign to the is_supported_version property of this JavaFamilySummary.
+        :type is_supported_version: bool
+
         """
         self.swagger_types = {
             'family_version': 'str',
             'display_name': 'str',
             'support_type': 'str',
             'end_of_support_life_date': 'datetime',
-            'doc_url': 'str'
+            'doc_url': 'str',
+            'latest_release_version': 'str',
+            'is_supported_version': 'bool'
         }
 
         self.attribute_map = {
@@ -65,7 +75,9 @@ class JavaFamilySummary(object):
             'display_name': 'displayName',
             'support_type': 'supportType',
             'end_of_support_life_date': 'endOfSupportLifeDate',
-            'doc_url': 'docUrl'
+            'doc_url': 'docUrl',
+            'latest_release_version': 'latestReleaseVersion',
+            'is_supported_version': 'isSupportedVersion'
         }
 
         self._family_version = None
@@ -73,6 +85,8 @@ class JavaFamilySummary(object):
         self._support_type = None
         self._end_of_support_life_date = None
         self._doc_url = None
+        self._latest_release_version = None
+        self._is_supported_version = None
 
     @property
     def family_version(self):
@@ -203,6 +217,60 @@ class JavaFamilySummary(object):
         :type: str
         """
         self._doc_url = doc_url
+
+    @property
+    def latest_release_version(self):
+        """
+        **[Required]** Gets the latest_release_version of this JavaFamilySummary.
+        Latest Java release version in the family.
+
+
+        :return: The latest_release_version of this JavaFamilySummary.
+        :rtype: str
+        """
+        return self._latest_release_version
+
+    @latest_release_version.setter
+    def latest_release_version(self, latest_release_version):
+        """
+        Sets the latest_release_version of this JavaFamilySummary.
+        Latest Java release version in the family.
+
+
+        :param latest_release_version: The latest_release_version of this JavaFamilySummary.
+        :type: str
+        """
+        self._latest_release_version = latest_release_version
+
+    @property
+    def is_supported_version(self):
+        """
+        **[Required]** Gets the is_supported_version of this JavaFamilySummary.
+        Whether or not this Java release family is under active support.
+        Refer `Java Support Roadmap`__ for more details.
+
+        __ https://www.oracle.com/java/technologies/java-se-support-roadmap.html
+
+
+        :return: The is_supported_version of this JavaFamilySummary.
+        :rtype: bool
+        """
+        return self._is_supported_version
+
+    @is_supported_version.setter
+    def is_supported_version(self, is_supported_version):
+        """
+        Sets the is_supported_version of this JavaFamilySummary.
+        Whether or not this Java release family is under active support.
+        Refer `Java Support Roadmap`__ for more details.
+
+        __ https://www.oracle.com/java/technologies/java-se-support-roadmap.html
+
+
+        :param is_supported_version: The is_supported_version of this JavaFamilySummary.
+        :type: bool
+        """
+        self._is_supported_version = is_supported_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

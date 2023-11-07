@@ -12,8 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RequestCryptoAnalysesDetails(object):
     """
-    Details of the request to start a JFR analysis.
-    When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+    Details of the request to start a JFR crypto event analysis.
+    When the targets aren't specified, then all managed instances currently in the fleet are selected.
     """
 
     def __init__(self, **kwargs):

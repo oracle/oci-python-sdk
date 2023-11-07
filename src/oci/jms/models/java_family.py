@@ -29,6 +29,10 @@ class JavaFamily(object):
         Initializes a new JavaFamily object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param latest_release_artifacts:
+            The value to assign to the latest_release_artifacts property of this JavaFamily.
+        :type latest_release_artifacts: list[oci.jms.models.JavaArtifact]
+
         :param family_version:
             The value to assign to the family_version property of this JavaFamily.
         :type family_version: str
@@ -51,28 +55,71 @@ class JavaFamily(object):
             The value to assign to the doc_url property of this JavaFamily.
         :type doc_url: str
 
+        :param latest_release_version:
+            The value to assign to the latest_release_version property of this JavaFamily.
+        :type latest_release_version: str
+
+        :param is_supported_version:
+            The value to assign to the is_supported_version property of this JavaFamily.
+        :type is_supported_version: bool
+
         """
         self.swagger_types = {
+            'latest_release_artifacts': 'list[JavaArtifact]',
             'family_version': 'str',
             'display_name': 'str',
             'support_type': 'str',
             'end_of_support_life_date': 'datetime',
-            'doc_url': 'str'
+            'doc_url': 'str',
+            'latest_release_version': 'str',
+            'is_supported_version': 'bool'
         }
 
         self.attribute_map = {
+            'latest_release_artifacts': 'latestReleaseArtifacts',
             'family_version': 'familyVersion',
             'display_name': 'displayName',
             'support_type': 'supportType',
             'end_of_support_life_date': 'endOfSupportLifeDate',
-            'doc_url': 'docUrl'
+            'doc_url': 'docUrl',
+            'latest_release_version': 'latestReleaseVersion',
+            'is_supported_version': 'isSupportedVersion'
         }
 
+        self._latest_release_artifacts = None
         self._family_version = None
         self._display_name = None
         self._support_type = None
         self._end_of_support_life_date = None
         self._doc_url = None
+        self._latest_release_version = None
+        self._is_supported_version = None
+
+    @property
+    def latest_release_artifacts(self):
+        """
+        Gets the latest_release_artifacts of this JavaFamily.
+        List of artifacts for the latest Java release version in this family.
+        The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+
+
+        :return: The latest_release_artifacts of this JavaFamily.
+        :rtype: list[oci.jms.models.JavaArtifact]
+        """
+        return self._latest_release_artifacts
+
+    @latest_release_artifacts.setter
+    def latest_release_artifacts(self, latest_release_artifacts):
+        """
+        Sets the latest_release_artifacts of this JavaFamily.
+        List of artifacts for the latest Java release version in this family.
+        The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+
+
+        :param latest_release_artifacts: The latest_release_artifacts of this JavaFamily.
+        :type: list[oci.jms.models.JavaArtifact]
+        """
+        self._latest_release_artifacts = latest_release_artifacts
 
     @property
     def family_version(self):
@@ -203,6 +250,60 @@ class JavaFamily(object):
         :type: str
         """
         self._doc_url = doc_url
+
+    @property
+    def latest_release_version(self):
+        """
+        **[Required]** Gets the latest_release_version of this JavaFamily.
+        Latest Java release version in the family.
+
+
+        :return: The latest_release_version of this JavaFamily.
+        :rtype: str
+        """
+        return self._latest_release_version
+
+    @latest_release_version.setter
+    def latest_release_version(self, latest_release_version):
+        """
+        Sets the latest_release_version of this JavaFamily.
+        Latest Java release version in the family.
+
+
+        :param latest_release_version: The latest_release_version of this JavaFamily.
+        :type: str
+        """
+        self._latest_release_version = latest_release_version
+
+    @property
+    def is_supported_version(self):
+        """
+        **[Required]** Gets the is_supported_version of this JavaFamily.
+        Whether or not this Java release family is under active support.
+        Refer `Java Support Roadmap`__ for more details.
+
+        __ https://www.oracle.com/java/technologies/java-se-support-roadmap.html
+
+
+        :return: The is_supported_version of this JavaFamily.
+        :rtype: bool
+        """
+        return self._is_supported_version
+
+    @is_supported_version.setter
+    def is_supported_version(self, is_supported_version):
+        """
+        Sets the is_supported_version of this JavaFamily.
+        Whether or not this Java release family is under active support.
+        Refer `Java Support Roadmap`__ for more details.
+
+        __ https://www.oracle.com/java/technologies/java-se-support-roadmap.html
+
+
+        :param is_supported_version: The is_supported_version of this JavaFamily.
+        :type: bool
+        """
+        self._is_supported_version = is_supported_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

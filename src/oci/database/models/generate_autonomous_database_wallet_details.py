@@ -37,19 +37,26 @@ class GenerateAutonomousDatabaseWalletDetails(object):
             The value to assign to the password property of this GenerateAutonomousDatabaseWalletDetails.
         :type password: str
 
+        :param is_regional:
+            The value to assign to the is_regional property of this GenerateAutonomousDatabaseWalletDetails.
+        :type is_regional: bool
+
         """
         self.swagger_types = {
             'generate_type': 'str',
-            'password': 'str'
+            'password': 'str',
+            'is_regional': 'bool'
         }
 
         self.attribute_map = {
             'generate_type': 'generateType',
-            'password': 'password'
+            'password': 'password',
+            'is_regional': 'isRegional'
         }
 
         self._generate_type = None
         self._password = None
+        self._is_regional = None
 
     @property
     def generate_type(self):
@@ -117,6 +124,30 @@ class GenerateAutonomousDatabaseWalletDetails(object):
         :type: str
         """
         self._password = password
+
+    @property
+    def is_regional(self):
+        """
+        Gets the is_regional of this GenerateAutonomousDatabaseWalletDetails.
+        True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+
+
+        :return: The is_regional of this GenerateAutonomousDatabaseWalletDetails.
+        :rtype: bool
+        """
+        return self._is_regional
+
+    @is_regional.setter
+    def is_regional(self, is_regional):
+        """
+        Sets the is_regional of this GenerateAutonomousDatabaseWalletDetails.
+        True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+
+
+        :param is_regional: The is_regional of this GenerateAutonomousDatabaseWalletDetails.
+        :type: bool
+        """
+        self._is_regional = is_regional
 
     def __repr__(self):
         return formatted_flat_dict(self)

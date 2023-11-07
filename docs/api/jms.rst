@@ -20,6 +20,7 @@ Jms
 
     oci.jms.models.AddFleetInstallationSitesDetails
     oci.jms.models.AdvancedUsageTracking
+    oci.jms.models.Agent
     oci.jms.models.AnnouncementCollection
     oci.jms.models.AnnouncementSummary
     oci.jms.models.ApplicationInstallationUsageSummary
@@ -34,6 +35,7 @@ Jms
     oci.jms.models.BlocklistTarget
     oci.jms.models.ChangeFleetCompartmentDetails
     oci.jms.models.CreateBlocklistDetails
+    oci.jms.models.CreateDrsFileDetails
     oci.jms.models.CreateFleetDetails
     oci.jms.models.CryptoAnalysisResult
     oci.jms.models.CryptoAnalysisResultCollection
@@ -44,7 +46,15 @@ Jms
     oci.jms.models.DeployedApplicationInstallationUsageSummaryCollection
     oci.jms.models.DeployedApplicationUsage
     oci.jms.models.DeployedApplicationUsageCollection
+    oci.jms.models.DisableDrsDetails
+    oci.jms.models.DrsFile
+    oci.jms.models.DrsFileCollection
+    oci.jms.models.DrsFileSummary
+    oci.jms.models.DrsTarget
+    oci.jms.models.EnableDrsDetails
     oci.jms.models.ExistingInstallationSiteId
+    oci.jms.models.ExportSetting
+    oci.jms.models.ExportStatus
     oci.jms.models.Fleet
     oci.jms.models.FleetAdvancedFeatureConfiguration
     oci.jms.models.FleetAgentConfiguration
@@ -83,17 +93,21 @@ Jms
     oci.jms.models.JreUsageCollection
     oci.jms.models.KeySizeAlgorithm
     oci.jms.models.Lcm
+    oci.jms.models.LcmWorkItemDetails
     oci.jms.models.LibraryUsage
     oci.jms.models.LibraryUsageCollection
+    oci.jms.models.ManageDrsDetails
     oci.jms.models.ManagedInstanceUsage
     oci.jms.models.ManagedInstanceUsageCollection
     oci.jms.models.MinimumKeySizeSettings
     oci.jms.models.NewInstallationSite
     oci.jms.models.OperatingSystem
+    oci.jms.models.PatchDetail
     oci.jms.models.PerformanceTuningAnalysis
     oci.jms.models.PerformanceTuningAnalysisResult
     oci.jms.models.PerformanceTuningAnalysisResultCollection
     oci.jms.models.PerformanceTuningAnalysisResultSummary
+    oci.jms.models.Plugin
     oci.jms.models.PostInstallationActionSettings
     oci.jms.models.Principal
     oci.jms.models.Proxies
@@ -106,6 +120,8 @@ Jms
     oci.jms.models.ScanJavaServerUsageDetails
     oci.jms.models.ScanLibraryUsageDetails
     oci.jms.models.SummarizedEventsLog
+    oci.jms.models.UpdateDrsFileDetails
+    oci.jms.models.UpdateExportSettingDetails
     oci.jms.models.UpdateFleetAdvancedFeatureConfigurationDetails
     oci.jms.models.UpdateFleetAgentConfigurationDetails
     oci.jms.models.UpdateFleetDetails

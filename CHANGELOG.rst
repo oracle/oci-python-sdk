@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.115.1 - 2023-11-07
+====================
+
+Added
+-----
+* Support for Java Management Service Downloads
+* Support for creating autonomous dataguard associations in the Database service
+* Support for SaaS administrative user configurations for autonomous database in the Database service
+* Support for macOS in the the Java Management service
+* Support for distribution and management of deployment rule sets in the Java Management service
+* Support for new download location of Oracle Java runtime binaries in the Java Management service
+* Support for exporting data across regions in the Java Management service
+ 
+Fixed
+-----
+* Fixed an issue in Resource Principals v2.1 introduced in the `v2.111.0` release
+ 
+====================
 2.115.0 - 2023-10-31
 ====================
 

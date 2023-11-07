@@ -22,6 +22,22 @@ class ManagedInstanceUsage(object):
     #: This constant has a value of "ORACLE_MANAGEMENT_AGENT"
     MANAGED_INSTANCE_TYPE_ORACLE_MANAGEMENT_AGENT = "ORACLE_MANAGEMENT_AGENT"
 
+    #: A constant which can be used with the drs_file_status property of a ManagedInstanceUsage.
+    #: This constant has a value of "PRESENT"
+    DRS_FILE_STATUS_PRESENT = "PRESENT"
+
+    #: A constant which can be used with the drs_file_status property of a ManagedInstanceUsage.
+    #: This constant has a value of "ABSENT"
+    DRS_FILE_STATUS_ABSENT = "ABSENT"
+
+    #: A constant which can be used with the drs_file_status property of a ManagedInstanceUsage.
+    #: This constant has a value of "MISMATCH"
+    DRS_FILE_STATUS_MISMATCH = "MISMATCH"
+
+    #: A constant which can be used with the drs_file_status property of a ManagedInstanceUsage.
+    #: This constant has a value of "NOT_CONFIGURED"
+    DRS_FILE_STATUS_NOT_CONFIGURED = "NOT_CONFIGURED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagedInstanceUsage object with values from keyword arguments.
@@ -49,6 +65,10 @@ class ManagedInstanceUsage(object):
             The value to assign to the operating_system property of this ManagedInstanceUsage.
         :type operating_system: oci.jms.models.OperatingSystem
 
+        :param agent:
+            The value to assign to the agent property of this ManagedInstanceUsage.
+        :type agent: oci.jms.models.Agent
+
         :param approximate_application_count:
             The value to assign to the approximate_application_count property of this ManagedInstanceUsage.
         :type approximate_application_count: int
@@ -60,6 +80,12 @@ class ManagedInstanceUsage(object):
         :param approximate_jre_count:
             The value to assign to the approximate_jre_count property of this ManagedInstanceUsage.
         :type approximate_jre_count: int
+
+        :param drs_file_status:
+            The value to assign to the drs_file_status property of this ManagedInstanceUsage.
+            Allowed values for this property are: "PRESENT", "ABSENT", "MISMATCH", "NOT_CONFIGURED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type drs_file_status: str
 
         :param time_start:
             The value to assign to the time_start property of this ManagedInstanceUsage.
@@ -84,9 +110,11 @@ class ManagedInstanceUsage(object):
             'hostname': 'str',
             'host_id': 'str',
             'operating_system': 'OperatingSystem',
+            'agent': 'Agent',
             'approximate_application_count': 'int',
             'approximate_installation_count': 'int',
             'approximate_jre_count': 'int',
+            'drs_file_status': 'str',
             'time_start': 'datetime',
             'time_end': 'datetime',
             'time_first_seen': 'datetime',
@@ -99,9 +127,11 @@ class ManagedInstanceUsage(object):
             'hostname': 'hostname',
             'host_id': 'hostId',
             'operating_system': 'operatingSystem',
+            'agent': 'agent',
             'approximate_application_count': 'approximateApplicationCount',
             'approximate_installation_count': 'approximateInstallationCount',
             'approximate_jre_count': 'approximateJreCount',
+            'drs_file_status': 'drsFileStatus',
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
             'time_first_seen': 'timeFirstSeen',
@@ -113,9 +143,11 @@ class ManagedInstanceUsage(object):
         self._hostname = None
         self._host_id = None
         self._operating_system = None
+        self._agent = None
         self._approximate_application_count = None
         self._approximate_installation_count = None
         self._approximate_jre_count = None
+        self._drs_file_status = None
         self._time_start = None
         self._time_end = None
         self._time_first_seen = None
@@ -252,6 +284,26 @@ class ManagedInstanceUsage(object):
         self._operating_system = operating_system
 
     @property
+    def agent(self):
+        """
+        Gets the agent of this ManagedInstanceUsage.
+
+        :return: The agent of this ManagedInstanceUsage.
+        :rtype: oci.jms.models.Agent
+        """
+        return self._agent
+
+    @agent.setter
+    def agent(self, agent):
+        """
+        Sets the agent of this ManagedInstanceUsage.
+
+        :param agent: The agent of this ManagedInstanceUsage.
+        :type: oci.jms.models.Agent
+        """
+        self._agent = agent
+
+    @property
     def approximate_application_count(self):
         """
         Gets the approximate_application_count of this ManagedInstanceUsage.
@@ -322,6 +374,36 @@ class ManagedInstanceUsage(object):
         :type: int
         """
         self._approximate_jre_count = approximate_jre_count
+
+    @property
+    def drs_file_status(self):
+        """
+        Gets the drs_file_status of this ManagedInstanceUsage.
+        DRS file status
+
+        Allowed values for this property are: "PRESENT", "ABSENT", "MISMATCH", "NOT_CONFIGURED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The drs_file_status of this ManagedInstanceUsage.
+        :rtype: str
+        """
+        return self._drs_file_status
+
+    @drs_file_status.setter
+    def drs_file_status(self, drs_file_status):
+        """
+        Sets the drs_file_status of this ManagedInstanceUsage.
+        DRS file status
+
+
+        :param drs_file_status: The drs_file_status of this ManagedInstanceUsage.
+        :type: str
+        """
+        allowed_values = ["PRESENT", "ABSENT", "MISMATCH", "NOT_CONFIGURED"]
+        if not value_allowed_none_or_none_sentinel(drs_file_status, allowed_values):
+            drs_file_status = 'UNKNOWN_ENUM_VALUE'
+        self._drs_file_status = drs_file_status
 
     @property
     def time_start(self):

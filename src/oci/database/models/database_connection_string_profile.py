@@ -128,6 +128,10 @@ class DatabaseConnectionStringProfile(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type syntax_format: str
 
+        :param is_regional:
+            The value to assign to the is_regional property of this DatabaseConnectionStringProfile.
+        :type is_regional: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -137,7 +141,8 @@ class DatabaseConnectionStringProfile(object):
             'tls_authentication': 'str',
             'host_format': 'str',
             'session_mode': 'str',
-            'syntax_format': 'str'
+            'syntax_format': 'str',
+            'is_regional': 'bool'
         }
 
         self.attribute_map = {
@@ -148,7 +153,8 @@ class DatabaseConnectionStringProfile(object):
             'tls_authentication': 'tlsAuthentication',
             'host_format': 'hostFormat',
             'session_mode': 'sessionMode',
-            'syntax_format': 'syntaxFormat'
+            'syntax_format': 'syntaxFormat',
+            'is_regional': 'isRegional'
         }
 
         self._display_name = None
@@ -159,6 +165,7 @@ class DatabaseConnectionStringProfile(object):
         self._host_format = None
         self._session_mode = None
         self._syntax_format = None
+        self._is_regional = None
 
     @property
     def display_name(self):
@@ -389,6 +396,30 @@ class DatabaseConnectionStringProfile(object):
         if not value_allowed_none_or_none_sentinel(syntax_format, allowed_values):
             syntax_format = 'UNKNOWN_ENUM_VALUE'
         self._syntax_format = syntax_format
+
+    @property
+    def is_regional(self):
+        """
+        Gets the is_regional of this DatabaseConnectionStringProfile.
+        True for a regional connection string, applicable to cross-region DG only.
+
+
+        :return: The is_regional of this DatabaseConnectionStringProfile.
+        :rtype: bool
+        """
+        return self._is_regional
+
+    @is_regional.setter
+    def is_regional(self, is_regional):
+        """
+        Sets the is_regional of this DatabaseConnectionStringProfile.
+        True for a regional connection string, applicable to cross-region DG only.
+
+
+        :param is_regional: The is_regional of this DatabaseConnectionStringProfile.
+        :type: bool
+        """
+        self._is_regional = is_regional
 
     def __repr__(self):
         return formatted_flat_dict(self)
