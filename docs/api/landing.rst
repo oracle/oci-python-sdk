@@ -156,6 +156,7 @@ API Reference
 * :doc:`Perfhub <database_management/client/oci.database_management.PerfhubClient>`
 * :doc:`Plugin <compute_instance_agent/client/oci.compute_instance_agent.PluginClient>`
 * :doc:`Pluginconfig <compute_instance_agent/client/oci.compute_instance_agent.PluginconfigClient>`
+* :doc:`Postgresql <psql/client/oci.psql.PostgresqlClient>`
 * :doc:`Query <apm_traces/client/oci.apm_traces.QueryClient>`
 * :doc:`Queue <queue/client/oci.queue.QueueClient>`
 * :doc:`Queue Admin <queue/client/oci.queue.QueueAdminClient>`
@@ -348,6 +349,7 @@ API Reference
     osub_organization_subscription
     osub_subscription
     osub_usage
+    psql
     queue
     recovery
     redis

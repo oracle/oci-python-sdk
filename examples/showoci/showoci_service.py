@@ -38,7 +38,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.10.24"
+    version = "23.10.31"
     oci_compatible_version = "2.110.2"
     thread_lock = threading.Lock()
 
@@ -896,7 +896,7 @@ class ShowOCIService(object):
         return not (lifecycle_state == 'DELETED' or lifecycle_state == 'DELETING' or
                     lifecycle_state == 'TERMINATED' or lifecycle_state == 'TERMINATING' or
                     lifecycle_state == 'UNAVAILABLE' or
-                    lifecycle_state == 'MIGRATED' or lifecycle_state == 'FAILED')
+                    lifecycle_state == 'MIGRATED')
 
     ##########################################################################
     # find shape info
@@ -13651,9 +13651,132 @@ class ShowOCIService(object):
                         'compartment_id': str(compartment['id']),
                         'sum_info': "Big Data Service (Nodes)",
                         'sum_size_gb': self.get_value(bds.number_of_nodes),
+                        'number_of_nodes_requiring_maintenance_reboot': self.get_value(bds.number_of_nodes_requiring_maintenance_reboot),
+                        'is_kafka_configured': self.get_value(bds.is_kafka_configured),
                         'defined_tags': [] if bds.defined_tags is None else bds.defined_tags,
                         'freeform_tags': [] if bds.freeform_tags is None else bds.freeform_tags,
+                        'error_message': "",
+                        'network_cidr_block': "",
+                        'network_is_nat_gateway_required': "",
+                        'cluster_details_bda_version': "",
+                        'cluster_details_bdm_version': "",
+                        'cluster_details_bds_version': "",
+                        'cluster_details_os_version': "",
+                        'cluster_details_db_version': "",
+                        'cluster_details_bd_cell_version': "",
+                        'cluster_details_csql_cell_version': "",
+                        'cluster_details_time_refreshed': "",
+                        'cluster_details_c_manager_url': "",
+                        'cluster_details_ambari_url': "",
+                        'cluster_details_big_data_manager_url': "",
+                        'cluster_details_hue_server_url': "",
+                        'cluster_details_odh_version': "",
+                        'cluster_details_jupyter_hub_url': "",
+                        'cloud_sql_details_shape': "",
+                        'cloud_sql_details_block_volume_size_in_gbs': "",
+                        'cloud_sql_details_is_kerberos_mapped_to_database_users': "",
+                        'cloud_sql_details_ip_address': "",
+                        'created_by': "",
+                        'kms_key_id': "",
+                        'nodes': [],
+                        'autoscale': [],
                         'region_name': str(self.config['region'])}
+
+                    # Get extra details
+                    try:
+                        # bds.models.BdsInstance
+                        ext = bds_client.get_bds_instance(
+                            bds.id,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+
+                        if ext:
+                            if ext.network_config:
+                                val['network_cidr_block'] = self.get_value(ext.network_config.cidr_block)
+                                val['network_is_nat_gateway_required'] = self.get_value(ext.network_config.is_nat_gateway_required)
+
+                            if ext.cluster_details:
+                                val['cluster_details_bda_version'] = self.get_value(ext.cluster_details.bda_version)
+                                val['cluster_details_bdm_version'] = self.get_value(ext.cluster_details.bdm_version)
+                                val['cluster_details_bds_version'] = self.get_value(ext.cluster_details.bds_version)
+                                val['cluster_details_os_version'] = self.get_value(ext.cluster_details.os_version)
+                                val['cluster_details_db_version'] = self.get_value(ext.cluster_details.db_version)
+                                val['cluster_details_bd_cell_version'] = self.get_value(ext.cluster_details.bd_cell_version)
+                                val['cluster_details_csql_cell_version'] = self.get_value(ext.cluster_details.csql_cell_version)
+                                val['cluster_details_time_refreshed'] = self.get_value(ext.cluster_details.time_refreshed)
+                                val['cluster_details_c_manager_url'] = self.get_value(ext.cluster_details.cloudera_manager_url)
+                                val['cluster_details_ambari_url'] = self.get_value(ext.cluster_details.ambari_url)
+                                val['cluster_details_big_data_manager_url'] = self.get_value(ext.cluster_details.big_data_manager_url)
+                                val['cluster_details_hue_server_url'] = self.get_value(ext.cluster_details.hue_server_url)
+                                val['cluster_details_odh_version'] = self.get_value(ext.cluster_details.odh_version)
+                                val['cluster_details_jupyter_hub_url'] = self.get_value(ext.cluster_details.jupyter_hub_url)
+
+                            nodes = []
+                            for nd in ext.nodes:
+                                nodes.append({
+                                    'instance_id': self.get_value(nd.instance_id),
+                                    'display_name': self.get_value(nd.display_name),
+                                    'lifecycle_state': self.get_value(nd.lifecycle_state),
+                                    'node_type': self.get_value(nd.node_type),
+                                    'shape': self.get_value(nd.shape),
+                                    'subnet_id': self.get_value(nd.subnet_id),
+                                    'subnet_name': self.get_network_subnet(nd.subnet_id, False),
+                                    'subnet_name_detailed': self.get_network_subnet(nd.subnet_id, True),
+                                    'ip_address': self.get_value(nd.ip_address),
+                                    'hostname': self.get_value(nd.hostname),
+                                    'image_id': self.get_value(nd.image_id),
+                                    'availability_domain': self.get_value(nd.availability_domain),
+                                    'fault_domain': self.get_value(nd.fault_domain),
+                                    'time_created': self.get_value(nd.time_created),
+                                    'time_updated': self.get_value(nd.time_updated),
+                                    'ocpus': self.get_value(nd.ocpus),
+                                    'memory_in_gbs': self.get_value(nd.memory_in_gbs),
+                                    'nvmes': self.get_value(nd.nvmes),
+                                    'attached_block_volumes_ids': [bd.volume_attachment_id for bd in nd.attached_block_volumes],
+                                    'attached_block_volumes_gbs': [bd.volume_size_in_gbs for bd in nd.attached_block_volumes],
+                                    'local_disks_total_size_in_gbs': self.get_value(nd.local_disks_total_size_in_gbs),
+                                    'time_maintenance_reboot_due': self.get_value(nd.time_maintenance_reboot_due)})
+
+                            # Added the nodes to the main array
+                            val['nodes'] = nodes
+                            if ext.cloud_sql_details:
+                                val['cloud_sql_details_shape'] = self.get_value(ext.cloud_sql_details.shape)
+                                val['cloud_sql_details_block_volume_size_in_gbs'] = self.get_value(ext.cloud_sql_details.block_volume_size_in_gbs)
+                                val['cloud_sql_details_is_kerberos_mapped_to_database_users'] = self.get_value(ext.cloud_sql_details.is_kerberos_mapped_to_database_users)
+                                val['cloud_sql_details_ip_address'] = self.get_value(ext.cloud_sql_details.ip_address)
+                            val['created_by'] = self.get_value(ext.created_by)
+                            val['kms_key_id'] = self.get_value(ext.kms_key_id)
+
+                    except Exception as e:
+                        errstr += "Issue with " + str(bds.display_name) + " "
+                        val['error_message'] = str(e)
+                        self.__load_print_auth_warning("", True, to_print=self.flags.skip_threads)
+
+                    # get Autoscale configuration
+                    try:
+                        # bds.models.BdsInstance
+                        ext = bds_client.list_auto_scaling_configurations(
+                            compartment_id=bds.compartment_id,
+                            bds_instance_id=bds.id,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+
+                        autoscale = []
+                        for ats in ext:
+                            autoscale.append({
+                                'display_name': self.get_value(ats.display_name),
+                                'lifecycle_state': self.get_value(ats.lifecycle_state),
+                                'node_type': self.get_value(ats.node_type),
+                                'time_created': self.get_value(ats.time_created),
+                                'time_updated': self.get_value(ats.time_updated),
+                                'policy_type': self.get_value(ats.policy_details.policy_type) if ats.policy_details else "",
+                                'policy_trigger_type': self.get_value(ats.policy_details.trigger_type) if ats.policy_details else "",
+                                'policy_action_type': self.get_value(ats.policy_details.action_type) if ats.policy_details else "",
+                            })
+                        val['autoscale'] = autoscale
+
+                    except Exception as e:
+                        errstr += "Issue with " + str(bds.display_name) + " Autoscale "
+                        val['error_message'] = str(e)
+                        self.__load_print_auth_warning("", True, to_print=self.flags.skip_threads)
 
                     # add the data
                     cnt += 1

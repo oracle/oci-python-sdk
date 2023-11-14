@@ -85,6 +85,17 @@ from .app_three_legged_o_auth_credential import AppThreeLeggedOAuthCredential
 from .app_trust_policies import AppTrustPolicies
 from .app_user_assertion_attributes import AppUserAssertionAttributes
 from .app_user_roles import AppUserRoles
+from .approval_workflow import ApprovalWorkflow
+from .approval_workflow_approval_workflow_steps import ApprovalWorkflowApprovalWorkflowSteps
+from .approval_workflow_assignment import ApprovalWorkflowAssignment
+from .approval_workflow_assignment_approval_workflow import ApprovalWorkflowAssignmentApprovalWorkflow
+from .approval_workflow_assignment_assigned_to import ApprovalWorkflowAssignmentAssignedTo
+from .approval_workflow_assignments import ApprovalWorkflowAssignments
+from .approval_workflow_max_duration import ApprovalWorkflowMaxDuration
+from .approval_workflow_step import ApprovalWorkflowStep
+from .approval_workflow_step_approvers import ApprovalWorkflowStepApprovers
+from .approval_workflow_steps import ApprovalWorkflowSteps
+from .approval_workflows import ApprovalWorkflows
 from .apps import Apps
 from .auth_token import AuthToken
 from .auth_token_search_request import AuthTokenSearchRequest
@@ -105,6 +116,36 @@ from .authentication_factor_settings_third_party_factor import AuthenticationFac
 from .authentication_factor_settings_totp_settings import AuthenticationFactorSettingsTotpSettings
 from .authentication_factors_remover import AuthenticationFactorsRemover
 from .authentication_factors_remover_user import AuthenticationFactorsRemoverUser
+from .branding_setting import BrandingSetting
+from .branding_settings import BrandingSettings
+from .branding_settings_company_names import BrandingSettingsCompanyNames
+from .branding_settings_default_company_names import BrandingSettingsDefaultCompanyNames
+from .branding_settings_default_images import BrandingSettingsDefaultImages
+from .branding_settings_default_login_texts import BrandingSettingsDefaultLoginTexts
+from .branding_settings_images import BrandingSettingsImages
+from .branding_settings_login_texts import BrandingSettingsLoginTexts
+from .cloud_gate import CloudGate
+from .cloud_gate_ext_mappings import CloudGateExtMappings
+from .cloud_gate_ext_servers import CloudGateExtServers
+from .cloud_gate_ext_upstream_server_groups import CloudGateExtUpstreamServerGroups
+from .cloud_gate_ext_upstream_servers import CloudGateExtUpstreamServers
+from .cloud_gate_mapping import CloudGateMapping
+from .cloud_gate_mapping_cloud_gate import CloudGateMappingCloudGate
+from .cloud_gate_mapping_gateway_app import CloudGateMappingGatewayApp
+from .cloud_gate_mapping_search_request import CloudGateMappingSearchRequest
+from .cloud_gate_mapping_server import CloudGateMappingServer
+from .cloud_gate_mapping_upstream_server_group import CloudGateMappingUpstreamServerGroup
+from .cloud_gate_mappings import CloudGateMappings
+from .cloud_gate_oauth_client import CloudGateOauthClient
+from .cloud_gate_search_request import CloudGateSearchRequest
+from .cloud_gate_server import CloudGateServer
+from .cloud_gate_server_cloud_gate import CloudGateServerCloudGate
+from .cloud_gate_server_search_request import CloudGateServerSearchRequest
+from .cloud_gate_servers import CloudGateServers
+from .cloud_gates import CloudGates
+from .condition import Condition
+from .condition_search_request import ConditionSearchRequest
+from .conditions import Conditions
 from .customer_secret_key import CustomerSecretKey
 from .customer_secret_key_search_request import CustomerSecretKeySearchRequest
 from .customer_secret_key_user import CustomerSecretKeyUser
@@ -173,6 +214,7 @@ from .identity_provider_correlation_policy import IdentityProviderCorrelationPol
 from .identity_provider_jit_user_prov_assigned_groups import IdentityProviderJitUserProvAssignedGroups
 from .identity_provider_jit_user_prov_attributes import IdentityProviderJitUserProvAttributes
 from .identity_provider_jit_user_prov_group_mappings import IdentityProviderJitUserProvGroupMappings
+from .identity_provider_relay_idp_param_mappings import IdentityProviderRelayIdpParamMappings
 from .identity_provider_search_request import IdentityProviderSearchRequest
 from .identity_providers import IdentityProviders
 from .identity_setting import IdentitySetting
@@ -218,6 +260,8 @@ from .my_authentication_factor_validator_security_questions import MyAuthenticat
 from .my_authentication_factor_validator_third_party_factor import MyAuthenticationFactorValidatorThirdPartyFactor
 from .my_authentication_factors_remover import MyAuthenticationFactorsRemover
 from .my_authentication_factors_remover_user import MyAuthenticationFactorsRemoverUser
+from .my_completed_approval import MyCompletedApproval
+from .my_completed_approvals import MyCompletedApprovals
 from .my_customer_secret_key import MyCustomerSecretKey
 from .my_customer_secret_key_user import MyCustomerSecretKeyUser
 from .my_customer_secret_keys import MyCustomerSecretKeys
@@ -237,7 +281,10 @@ from .my_o_auth2_client_credential import MyOAuth2ClientCredential
 from .my_o_auth2_client_credential_scopes import MyOAuth2ClientCredentialScopes
 from .my_o_auth2_client_credential_user import MyOAuth2ClientCredentialUser
 from .my_o_auth2_client_credentials import MyOAuth2ClientCredentials
+from .my_pending_approval import MyPendingApproval
+from .my_pending_approvals import MyPendingApprovals
 from .my_request import MyRequest
+from .my_request_approval_details import MyRequestApprovalDetails
 from .my_request_requesting import MyRequestRequesting
 from .my_request_requestor import MyRequestRequestor
 from .my_request_search_request import MyRequestSearchRequest
@@ -259,11 +306,26 @@ from .my_trusted_user_agents import MyTrustedUserAgents
 from .my_user_db_credential import MyUserDbCredential
 from .my_user_db_credentials import MyUserDbCredentials
 from .my_user_db_credentials_user import MyUserDbCredentialsUser
+from .network_perimeter import NetworkPerimeter
+from .network_perimeter_ip_addresses import NetworkPerimeterIpAddresses
+from .network_perimeter_search_request import NetworkPerimeterSearchRequest
+from .network_perimeters import NetworkPerimeters
+from .notification_setting import NotificationSetting
+from .notification_settings import NotificationSettings
+from .notification_settings_event_settings import NotificationSettingsEventSettings
+from .notification_settings_from_email_address import NotificationSettingsFromEmailAddress
+from .notification_settings_search_request import NotificationSettingsSearchRequest
 from .o_auth2_client_credential import OAuth2ClientCredential
 from .o_auth2_client_credential_scopes import OAuth2ClientCredentialScopes
 from .o_auth2_client_credential_search_request import OAuth2ClientCredentialSearchRequest
 from .o_auth2_client_credential_user import OAuth2ClientCredentialUser
 from .o_auth2_client_credentials import OAuth2ClientCredentials
+from .o_auth_client_certificate import OAuthClientCertificate
+from .o_auth_client_certificate_search_request import OAuthClientCertificateSearchRequest
+from .o_auth_client_certificates import OAuthClientCertificates
+from .o_auth_partner_certificate import OAuthPartnerCertificate
+from .o_auth_partner_certificate_search_request import OAuthPartnerCertificateSearchRequest
+from .o_auth_partner_certificates import OAuthPartnerCertificates
 from .operations import Operations
 from .password_policies import PasswordPolicies
 from .password_policy import PasswordPolicy
@@ -271,9 +333,31 @@ from .password_policy_configured_password_policy_rules import PasswordPolicyConf
 from .password_policy_groups import PasswordPolicyGroups
 from .password_policy_search_request import PasswordPolicySearchRequest
 from .patch_op import PatchOp
+from .policies import Policies
+from .policy import Policy
+from .policy_policy_type import PolicyPolicyType
+from .policy_rules import PolicyRules
+from .policy_search_request import PolicySearchRequest
 from .resource_type_schema_attribute import ResourceTypeSchemaAttribute
 from .resource_type_schema_attribute_search_request import ResourceTypeSchemaAttributeSearchRequest
 from .resource_type_schema_attributes import ResourceTypeSchemaAttributes
+from .rule import Rule
+from .rule_condition_group import RuleConditionGroup
+from .rule_policy_type import RulePolicyType
+from .rule_return import RuleReturn
+from .rule_search_request import RuleSearchRequest
+from .rules import Rules
+from .schema import Schema
+from .schema_attributes import SchemaAttributes
+from .schema_idcs_complex_attribute_name_mappings import SchemaIdcsComplexAttributeNameMappings
+from .schema_idcs_csv_attribute_name_mappings import SchemaIdcsCsvAttributeNameMappings
+from .schema_localized_canonical_values import SchemaLocalizedCanonicalValues
+from .schema_localized_display_name import SchemaLocalizedDisplayName
+from .schema_referenced_resource_type_unique_attribute_name_mappings import SchemaReferencedResourceTypeUniqueAttributeNameMappings
+from .schema_resolve_value_using_resource_type import SchemaResolveValueUsingResourceType
+from .schema_search_request import SchemaSearchRequest
+from .schema_sub_attributes import SchemaSubAttributes
+from .schemas import Schemas
 from .security_question import SecurityQuestion
 from .security_question_question_text import SecurityQuestionQuestionText
 from .security_question_search_request import SecurityQuestionSearchRequest
@@ -281,6 +365,30 @@ from .security_question_setting import SecurityQuestionSetting
 from .security_question_settings import SecurityQuestionSettings
 from .security_question_settings_search_request import SecurityQuestionSettingsSearchRequest
 from .security_questions import SecurityQuestions
+from .self_registration_profile import SelfRegistrationProfile
+from .self_registration_profile_after_submit_text import SelfRegistrationProfileAfterSubmitText
+from .self_registration_profile_consent_text import SelfRegistrationProfileConsentText
+from .self_registration_profile_default_groups import SelfRegistrationProfileDefaultGroups
+from .self_registration_profile_display_name import SelfRegistrationProfileDisplayName
+from .self_registration_profile_email_template import SelfRegistrationProfileEmailTemplate
+from .self_registration_profile_footer_text import SelfRegistrationProfileFooterText
+from .self_registration_profile_header_text import SelfRegistrationProfileHeaderText
+from .self_registration_profile_search_request import SelfRegistrationProfileSearchRequest
+from .self_registration_profile_user_attributes import SelfRegistrationProfileUserAttributes
+from .self_registration_profiles import SelfRegistrationProfiles
+from .setting import Setting
+from .settings import Settings
+from .settings_certificate_validation import SettingsCertificateValidation
+from .settings_cloud_gate_cors_settings import SettingsCloudGateCorsSettings
+from .settings_company_names import SettingsCompanyNames
+from .settings_default_company_names import SettingsDefaultCompanyNames
+from .settings_default_images import SettingsDefaultImages
+from .settings_default_login_texts import SettingsDefaultLoginTexts
+from .settings_images import SettingsImages
+from .settings_login_texts import SettingsLoginTexts
+from .settings_purge_configs import SettingsPurgeConfigs
+from .settings_search_request import SettingsSearchRequest
+from .settings_tenant_custom_claims import SettingsTenantCustomClaims
 from .smtp_credential import SmtpCredential
 from .smtp_credential_search_request import SmtpCredentialSearchRequest
 from .smtp_credential_user import SmtpCredentialUser
@@ -424,6 +532,17 @@ identity_domains_type_mapping = {
     "AppTrustPolicies": AppTrustPolicies,
     "AppUserAssertionAttributes": AppUserAssertionAttributes,
     "AppUserRoles": AppUserRoles,
+    "ApprovalWorkflow": ApprovalWorkflow,
+    "ApprovalWorkflowApprovalWorkflowSteps": ApprovalWorkflowApprovalWorkflowSteps,
+    "ApprovalWorkflowAssignment": ApprovalWorkflowAssignment,
+    "ApprovalWorkflowAssignmentApprovalWorkflow": ApprovalWorkflowAssignmentApprovalWorkflow,
+    "ApprovalWorkflowAssignmentAssignedTo": ApprovalWorkflowAssignmentAssignedTo,
+    "ApprovalWorkflowAssignments": ApprovalWorkflowAssignments,
+    "ApprovalWorkflowMaxDuration": ApprovalWorkflowMaxDuration,
+    "ApprovalWorkflowStep": ApprovalWorkflowStep,
+    "ApprovalWorkflowStepApprovers": ApprovalWorkflowStepApprovers,
+    "ApprovalWorkflowSteps": ApprovalWorkflowSteps,
+    "ApprovalWorkflows": ApprovalWorkflows,
     "Apps": Apps,
     "AuthToken": AuthToken,
     "AuthTokenSearchRequest": AuthTokenSearchRequest,
@@ -444,6 +563,36 @@ identity_domains_type_mapping = {
     "AuthenticationFactorSettingsTotpSettings": AuthenticationFactorSettingsTotpSettings,
     "AuthenticationFactorsRemover": AuthenticationFactorsRemover,
     "AuthenticationFactorsRemoverUser": AuthenticationFactorsRemoverUser,
+    "BrandingSetting": BrandingSetting,
+    "BrandingSettings": BrandingSettings,
+    "BrandingSettingsCompanyNames": BrandingSettingsCompanyNames,
+    "BrandingSettingsDefaultCompanyNames": BrandingSettingsDefaultCompanyNames,
+    "BrandingSettingsDefaultImages": BrandingSettingsDefaultImages,
+    "BrandingSettingsDefaultLoginTexts": BrandingSettingsDefaultLoginTexts,
+    "BrandingSettingsImages": BrandingSettingsImages,
+    "BrandingSettingsLoginTexts": BrandingSettingsLoginTexts,
+    "CloudGate": CloudGate,
+    "CloudGateExtMappings": CloudGateExtMappings,
+    "CloudGateExtServers": CloudGateExtServers,
+    "CloudGateExtUpstreamServerGroups": CloudGateExtUpstreamServerGroups,
+    "CloudGateExtUpstreamServers": CloudGateExtUpstreamServers,
+    "CloudGateMapping": CloudGateMapping,
+    "CloudGateMappingCloudGate": CloudGateMappingCloudGate,
+    "CloudGateMappingGatewayApp": CloudGateMappingGatewayApp,
+    "CloudGateMappingSearchRequest": CloudGateMappingSearchRequest,
+    "CloudGateMappingServer": CloudGateMappingServer,
+    "CloudGateMappingUpstreamServerGroup": CloudGateMappingUpstreamServerGroup,
+    "CloudGateMappings": CloudGateMappings,
+    "CloudGateOauthClient": CloudGateOauthClient,
+    "CloudGateSearchRequest": CloudGateSearchRequest,
+    "CloudGateServer": CloudGateServer,
+    "CloudGateServerCloudGate": CloudGateServerCloudGate,
+    "CloudGateServerSearchRequest": CloudGateServerSearchRequest,
+    "CloudGateServers": CloudGateServers,
+    "CloudGates": CloudGates,
+    "Condition": Condition,
+    "ConditionSearchRequest": ConditionSearchRequest,
+    "Conditions": Conditions,
     "CustomerSecretKey": CustomerSecretKey,
     "CustomerSecretKeySearchRequest": CustomerSecretKeySearchRequest,
     "CustomerSecretKeyUser": CustomerSecretKeyUser,
@@ -512,6 +661,7 @@ identity_domains_type_mapping = {
     "IdentityProviderJitUserProvAssignedGroups": IdentityProviderJitUserProvAssignedGroups,
     "IdentityProviderJitUserProvAttributes": IdentityProviderJitUserProvAttributes,
     "IdentityProviderJitUserProvGroupMappings": IdentityProviderJitUserProvGroupMappings,
+    "IdentityProviderRelayIdpParamMappings": IdentityProviderRelayIdpParamMappings,
     "IdentityProviderSearchRequest": IdentityProviderSearchRequest,
     "IdentityProviders": IdentityProviders,
     "IdentitySetting": IdentitySetting,
@@ -557,6 +707,8 @@ identity_domains_type_mapping = {
     "MyAuthenticationFactorValidatorThirdPartyFactor": MyAuthenticationFactorValidatorThirdPartyFactor,
     "MyAuthenticationFactorsRemover": MyAuthenticationFactorsRemover,
     "MyAuthenticationFactorsRemoverUser": MyAuthenticationFactorsRemoverUser,
+    "MyCompletedApproval": MyCompletedApproval,
+    "MyCompletedApprovals": MyCompletedApprovals,
     "MyCustomerSecretKey": MyCustomerSecretKey,
     "MyCustomerSecretKeyUser": MyCustomerSecretKeyUser,
     "MyCustomerSecretKeys": MyCustomerSecretKeys,
@@ -576,7 +728,10 @@ identity_domains_type_mapping = {
     "MyOAuth2ClientCredentialScopes": MyOAuth2ClientCredentialScopes,
     "MyOAuth2ClientCredentialUser": MyOAuth2ClientCredentialUser,
     "MyOAuth2ClientCredentials": MyOAuth2ClientCredentials,
+    "MyPendingApproval": MyPendingApproval,
+    "MyPendingApprovals": MyPendingApprovals,
     "MyRequest": MyRequest,
+    "MyRequestApprovalDetails": MyRequestApprovalDetails,
     "MyRequestRequesting": MyRequestRequesting,
     "MyRequestRequestor": MyRequestRequestor,
     "MyRequestSearchRequest": MyRequestSearchRequest,
@@ -598,11 +753,26 @@ identity_domains_type_mapping = {
     "MyUserDbCredential": MyUserDbCredential,
     "MyUserDbCredentials": MyUserDbCredentials,
     "MyUserDbCredentialsUser": MyUserDbCredentialsUser,
+    "NetworkPerimeter": NetworkPerimeter,
+    "NetworkPerimeterIpAddresses": NetworkPerimeterIpAddresses,
+    "NetworkPerimeterSearchRequest": NetworkPerimeterSearchRequest,
+    "NetworkPerimeters": NetworkPerimeters,
+    "NotificationSetting": NotificationSetting,
+    "NotificationSettings": NotificationSettings,
+    "NotificationSettingsEventSettings": NotificationSettingsEventSettings,
+    "NotificationSettingsFromEmailAddress": NotificationSettingsFromEmailAddress,
+    "NotificationSettingsSearchRequest": NotificationSettingsSearchRequest,
     "OAuth2ClientCredential": OAuth2ClientCredential,
     "OAuth2ClientCredentialScopes": OAuth2ClientCredentialScopes,
     "OAuth2ClientCredentialSearchRequest": OAuth2ClientCredentialSearchRequest,
     "OAuth2ClientCredentialUser": OAuth2ClientCredentialUser,
     "OAuth2ClientCredentials": OAuth2ClientCredentials,
+    "OAuthClientCertificate": OAuthClientCertificate,
+    "OAuthClientCertificateSearchRequest": OAuthClientCertificateSearchRequest,
+    "OAuthClientCertificates": OAuthClientCertificates,
+    "OAuthPartnerCertificate": OAuthPartnerCertificate,
+    "OAuthPartnerCertificateSearchRequest": OAuthPartnerCertificateSearchRequest,
+    "OAuthPartnerCertificates": OAuthPartnerCertificates,
     "Operations": Operations,
     "PasswordPolicies": PasswordPolicies,
     "PasswordPolicy": PasswordPolicy,
@@ -610,9 +780,31 @@ identity_domains_type_mapping = {
     "PasswordPolicyGroups": PasswordPolicyGroups,
     "PasswordPolicySearchRequest": PasswordPolicySearchRequest,
     "PatchOp": PatchOp,
+    "Policies": Policies,
+    "Policy": Policy,
+    "PolicyPolicyType": PolicyPolicyType,
+    "PolicyRules": PolicyRules,
+    "PolicySearchRequest": PolicySearchRequest,
     "ResourceTypeSchemaAttribute": ResourceTypeSchemaAttribute,
     "ResourceTypeSchemaAttributeSearchRequest": ResourceTypeSchemaAttributeSearchRequest,
     "ResourceTypeSchemaAttributes": ResourceTypeSchemaAttributes,
+    "Rule": Rule,
+    "RuleConditionGroup": RuleConditionGroup,
+    "RulePolicyType": RulePolicyType,
+    "RuleReturn": RuleReturn,
+    "RuleSearchRequest": RuleSearchRequest,
+    "Rules": Rules,
+    "Schema": Schema,
+    "SchemaAttributes": SchemaAttributes,
+    "SchemaIdcsComplexAttributeNameMappings": SchemaIdcsComplexAttributeNameMappings,
+    "SchemaIdcsCsvAttributeNameMappings": SchemaIdcsCsvAttributeNameMappings,
+    "SchemaLocalizedCanonicalValues": SchemaLocalizedCanonicalValues,
+    "SchemaLocalizedDisplayName": SchemaLocalizedDisplayName,
+    "SchemaReferencedResourceTypeUniqueAttributeNameMappings": SchemaReferencedResourceTypeUniqueAttributeNameMappings,
+    "SchemaResolveValueUsingResourceType": SchemaResolveValueUsingResourceType,
+    "SchemaSearchRequest": SchemaSearchRequest,
+    "SchemaSubAttributes": SchemaSubAttributes,
+    "Schemas": Schemas,
     "SecurityQuestion": SecurityQuestion,
     "SecurityQuestionQuestionText": SecurityQuestionQuestionText,
     "SecurityQuestionSearchRequest": SecurityQuestionSearchRequest,
@@ -620,6 +812,30 @@ identity_domains_type_mapping = {
     "SecurityQuestionSettings": SecurityQuestionSettings,
     "SecurityQuestionSettingsSearchRequest": SecurityQuestionSettingsSearchRequest,
     "SecurityQuestions": SecurityQuestions,
+    "SelfRegistrationProfile": SelfRegistrationProfile,
+    "SelfRegistrationProfileAfterSubmitText": SelfRegistrationProfileAfterSubmitText,
+    "SelfRegistrationProfileConsentText": SelfRegistrationProfileConsentText,
+    "SelfRegistrationProfileDefaultGroups": SelfRegistrationProfileDefaultGroups,
+    "SelfRegistrationProfileDisplayName": SelfRegistrationProfileDisplayName,
+    "SelfRegistrationProfileEmailTemplate": SelfRegistrationProfileEmailTemplate,
+    "SelfRegistrationProfileFooterText": SelfRegistrationProfileFooterText,
+    "SelfRegistrationProfileHeaderText": SelfRegistrationProfileHeaderText,
+    "SelfRegistrationProfileSearchRequest": SelfRegistrationProfileSearchRequest,
+    "SelfRegistrationProfileUserAttributes": SelfRegistrationProfileUserAttributes,
+    "SelfRegistrationProfiles": SelfRegistrationProfiles,
+    "Setting": Setting,
+    "Settings": Settings,
+    "SettingsCertificateValidation": SettingsCertificateValidation,
+    "SettingsCloudGateCorsSettings": SettingsCloudGateCorsSettings,
+    "SettingsCompanyNames": SettingsCompanyNames,
+    "SettingsDefaultCompanyNames": SettingsDefaultCompanyNames,
+    "SettingsDefaultImages": SettingsDefaultImages,
+    "SettingsDefaultLoginTexts": SettingsDefaultLoginTexts,
+    "SettingsImages": SettingsImages,
+    "SettingsLoginTexts": SettingsLoginTexts,
+    "SettingsPurgeConfigs": SettingsPurgeConfigs,
+    "SettingsSearchRequest": SettingsSearchRequest,
+    "SettingsTenantCustomClaims": SettingsTenantCustomClaims,
     "SmtpCredential": SmtpCredential,
     "SmtpCredentialSearchRequest": SmtpCredentialSearchRequest,
     "SmtpCredentialUser": SmtpCredentialUser,

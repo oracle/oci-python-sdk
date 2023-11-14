@@ -31,6 +31,8 @@ from .bds_instance import BdsInstance
 from .bds_instance_summary import BdsInstanceSummary
 from .bds_metastore_configuration import BdsMetastoreConfiguration
 from .bds_metastore_configuration_summary import BdsMetastoreConfigurationSummary
+from .certificate_service_info_details import CertificateServiceInfoDetails
+from .certificate_service_info_summary import CertificateServiceInfoSummary
 from .change_bds_instance_compartment_details import ChangeBdsInstanceCompartmentDetails
 from .change_shape_details import ChangeShapeDetails
 from .change_shape_nodes import ChangeShapeNodes
@@ -43,8 +45,12 @@ from .create_node_details import CreateNodeDetails
 from .day_based_horizontal_scaling_schedule_details import DayBasedHorizontalScalingScheduleDetails
 from .day_based_vertical_scaling_schedule_details import DayBasedVerticalScalingScheduleDetails
 from .default_error import DefaultError
+from .disable_certificate_details import DisableCertificateDetails
+from .enable_certificate_details import EnableCertificateDetails
 from .execute_bootstrap_script_details import ExecuteBootstrapScriptDetails
 from .horizontal_scaling_schedule_details import HorizontalScalingScheduleDetails
+from .host_cert_details import HostCertDetails
+from .host_specific_certificate_details import HostSpecificCertificateDetails
 from .install_os_patch_details import InstallOsPatchDetails
 from .install_patch_details import InstallPatchDetails
 from .kerberos_details import KerberosDetails
@@ -66,6 +72,7 @@ from .remove_auto_scaling_configuration_details import RemoveAutoScalingConfigur
 from .remove_cloud_sql_details import RemoveCloudSqlDetails
 from .remove_kafka_details import RemoveKafkaDetails
 from .remove_node_details import RemoveNodeDetails
+from .renew_certificate_details import RenewCertificateDetails
 from .restart_node_details import RestartNodeDetails
 from .schedule_based_horizontal_scaling_policy_details import ScheduleBasedHorizontalScalingPolicyDetails
 from .schedule_based_vertical_scaling_policy_details import ScheduleBasedVerticalScalingPolicyDetails
@@ -118,6 +125,8 @@ bds_type_mapping = {
     "BdsInstanceSummary": BdsInstanceSummary,
     "BdsMetastoreConfiguration": BdsMetastoreConfiguration,
     "BdsMetastoreConfigurationSummary": BdsMetastoreConfigurationSummary,
+    "CertificateServiceInfoDetails": CertificateServiceInfoDetails,
+    "CertificateServiceInfoSummary": CertificateServiceInfoSummary,
     "ChangeBdsInstanceCompartmentDetails": ChangeBdsInstanceCompartmentDetails,
     "ChangeShapeDetails": ChangeShapeDetails,
     "ChangeShapeNodes": ChangeShapeNodes,
@@ -130,8 +139,12 @@ bds_type_mapping = {
     "DayBasedHorizontalScalingScheduleDetails": DayBasedHorizontalScalingScheduleDetails,
     "DayBasedVerticalScalingScheduleDetails": DayBasedVerticalScalingScheduleDetails,
     "DefaultError": DefaultError,
+    "DisableCertificateDetails": DisableCertificateDetails,
+    "EnableCertificateDetails": EnableCertificateDetails,
     "ExecuteBootstrapScriptDetails": ExecuteBootstrapScriptDetails,
     "HorizontalScalingScheduleDetails": HorizontalScalingScheduleDetails,
+    "HostCertDetails": HostCertDetails,
+    "HostSpecificCertificateDetails": HostSpecificCertificateDetails,
     "InstallOsPatchDetails": InstallOsPatchDetails,
     "InstallPatchDetails": InstallPatchDetails,
     "KerberosDetails": KerberosDetails,
@@ -153,6 +166,7 @@ bds_type_mapping = {
     "RemoveCloudSqlDetails": RemoveCloudSqlDetails,
     "RemoveKafkaDetails": RemoveKafkaDetails,
     "RemoveNodeDetails": RemoveNodeDetails,
+    "RenewCertificateDetails": RenewCertificateDetails,
     "RestartNodeDetails": RestartNodeDetails,
     "ScheduleBasedHorizontalScalingPolicyDetails": ScheduleBasedHorizontalScalingPolicyDetails,
     "ScheduleBasedVerticalScalingPolicyDetails": ScheduleBasedVerticalScalingPolicyDetails,

@@ -76,19 +76,26 @@ class TranscriptionModelDetails(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type language_code: str
 
+        :param transcription_settings:
+            The value to assign to the transcription_settings property of this TranscriptionModelDetails.
+        :type transcription_settings: oci.ai_speech.models.TranscriptionSettings
+
         """
         self.swagger_types = {
             'domain': 'str',
-            'language_code': 'str'
+            'language_code': 'str',
+            'transcription_settings': 'TranscriptionSettings'
         }
 
         self.attribute_map = {
             'domain': 'domain',
-            'language_code': 'languageCode'
+            'language_code': 'languageCode',
+            'transcription_settings': 'transcriptionSettings'
         }
 
         self._domain = None
         self._language_code = None
+        self._transcription_settings = None
 
     @property
     def domain(self):
@@ -169,6 +176,26 @@ class TranscriptionModelDetails(object):
         if not value_allowed_none_or_none_sentinel(language_code, allowed_values):
             language_code = 'UNKNOWN_ENUM_VALUE'
         self._language_code = language_code
+
+    @property
+    def transcription_settings(self):
+        """
+        Gets the transcription_settings of this TranscriptionModelDetails.
+
+        :return: The transcription_settings of this TranscriptionModelDetails.
+        :rtype: oci.ai_speech.models.TranscriptionSettings
+        """
+        return self._transcription_settings
+
+    @transcription_settings.setter
+    def transcription_settings(self, transcription_settings):
+        """
+        Sets the transcription_settings of this TranscriptionModelDetails.
+
+        :param transcription_settings: The transcription_settings of this TranscriptionModelDetails.
+        :type: oci.ai_speech.models.TranscriptionSettings
+        """
+        self._transcription_settings = transcription_settings
 
     def __repr__(self):
         return formatted_flat_dict(self)

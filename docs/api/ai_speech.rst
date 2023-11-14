@@ -21,6 +21,7 @@ Ai Speech
     oci.ai_speech.models.AudioFormatDetails
     oci.ai_speech.models.ChangeTranscriptionJobCompartmentDetails
     oci.ai_speech.models.CreateTranscriptionJobDetails
+    oci.ai_speech.models.Diarization
     oci.ai_speech.models.InputLocation
     oci.ai_speech.models.ObjectListFileInputLocation
     oci.ai_speech.models.ObjectListInlineInputLocation
@@ -33,6 +34,7 @@ Ai Speech
     oci.ai_speech.models.TranscriptionJobSummary
     oci.ai_speech.models.TranscriptionModelDetails
     oci.ai_speech.models.TranscriptionNormalization
+    oci.ai_speech.models.TranscriptionSettings
     oci.ai_speech.models.TranscriptionTask
     oci.ai_speech.models.TranscriptionTaskCollection
     oci.ai_speech.models.TranscriptionTaskSummary
