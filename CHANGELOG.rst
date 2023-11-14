@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.116.0 - 2023-11-14
+====================
+
+Added
+-----
+* Support for the PostgreSQL service
+* Support for new operations in the Identity Domains service
+* Support for enabling, disabling, and renewing SSL/TLS in the Big Data service
+* Support for diarization in the AI Speech service
+* Support for Capacity Topology API in the Compute service  
+ 
+Breaking
+--------
+* Model `MyRequest` in the Identity Domains service now allows only certain restricted values. For more information please see https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/tools/python/latest/api/identity_domains/models/oci.identity_domains.models.MyRequest.html#oci.identity_domains.models.MyRequest 
+ 
+====================
 2.115.1 - 2023-11-07
 ====================
 

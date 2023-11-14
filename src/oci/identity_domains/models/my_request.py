@@ -27,6 +27,46 @@ class MyRequest(object):
     #: This constant has a value of "delete"
     IDCS_PREVENTED_OPERATIONS_DELETE = "delete"
 
+    #: A constant which can be used with the status property of a MyRequest.
+    #: This constant has a value of "CREATED"
+    STATUS_CREATED = "CREATED"
+
+    #: A constant which can be used with the status property of a MyRequest.
+    #: This constant has a value of "COMPLETE"
+    STATUS_COMPLETE = "COMPLETE"
+
+    #: A constant which can be used with the status property of a MyRequest.
+    #: This constant has a value of "IN_PROGRESS"
+    STATUS_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the status property of a MyRequest.
+    #: This constant has a value of "APPROVED"
+    STATUS_APPROVED = "APPROVED"
+
+    #: A constant which can be used with the status property of a MyRequest.
+    #: This constant has a value of "REJECTED"
+    STATUS_REJECTED = "REJECTED"
+
+    #: A constant which can be used with the status property of a MyRequest.
+    #: This constant has a value of "CANCELED"
+    STATUS_CANCELED = "CANCELED"
+
+    #: A constant which can be used with the status property of a MyRequest.
+    #: This constant has a value of "EXPIRED"
+    STATUS_EXPIRED = "EXPIRED"
+
+    #: A constant which can be used with the status property of a MyRequest.
+    #: This constant has a value of "FAILED"
+    STATUS_FAILED = "FAILED"
+
+    #: A constant which can be used with the action property of a MyRequest.
+    #: This constant has a value of "CANCEL"
+    ACTION_CANCEL = "CANCEL"
+
+    #: A constant which can be used with the action property of a MyRequest.
+    #: This constant has a value of "ESCALATE"
+    ACTION_ESCALATE = "ESCALATE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MyRequest object with values from keyword arguments.
@@ -92,7 +132,23 @@ class MyRequest(object):
 
         :param status:
             The value to assign to the status property of this MyRequest.
+            Allowed values for this property are: "CREATED", "COMPLETE", "IN_PROGRESS", "APPROVED", "REJECTED", "CANCELED", "EXPIRED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
+
+        :param action:
+            The value to assign to the action property of this MyRequest.
+            Allowed values for this property are: "CANCEL", "ESCALATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type action: str
+
+        :param expires:
+            The value to assign to the expires property of this MyRequest.
+        :type expires: str
+
+        :param approval_details:
+            The value to assign to the approval_details property of this MyRequest.
+        :type approval_details: list[oci.identity_domains.models.MyRequestApprovalDetails]
 
         :param requestor:
             The value to assign to the requestor property of this MyRequest.
@@ -119,6 +175,9 @@ class MyRequest(object):
             'tenancy_ocid': 'str',
             'justification': 'str',
             'status': 'str',
+            'action': 'str',
+            'expires': 'str',
+            'approval_details': 'list[MyRequestApprovalDetails]',
             'requestor': 'MyRequestRequestor',
             'requesting': 'MyRequestRequesting'
         }
@@ -139,6 +198,9 @@ class MyRequest(object):
             'tenancy_ocid': 'tenancyOcid',
             'justification': 'justification',
             'status': 'status',
+            'action': 'action',
+            'expires': 'expires',
+            'approval_details': 'approvalDetails',
             'requestor': 'requestor',
             'requesting': 'requesting'
         }
@@ -158,6 +220,9 @@ class MyRequest(object):
         self._tenancy_ocid = None
         self._justification = None
         self._status = None
+        self._action = None
+        self._expires = None
+        self._approval_details = None
         self._requestor = None
         self._requesting = None
 
@@ -719,11 +784,14 @@ class MyRequest(object):
          - caseExact: true
          - idcsSearchable: true
          - multiValued: false
-         - mutability: readWrite
+         - mutability: readOnly
          - required: false
          - returned: default
          - type: string
          - uniqueness: none
+
+        Allowed values for this property are: "CREATED", "COMPLETE", "IN_PROGRESS", "APPROVED", "REJECTED", "CANCELED", "EXPIRED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The status of this MyRequest.
@@ -741,7 +809,7 @@ class MyRequest(object):
          - caseExact: true
          - idcsSearchable: true
          - multiValued: false
-         - mutability: readWrite
+         - mutability: readOnly
          - required: false
          - returned: default
          - type: string
@@ -751,7 +819,154 @@ class MyRequest(object):
         :param status: The status of this MyRequest.
         :type: str
         """
+        allowed_values = ["CREATED", "COMPLETE", "IN_PROGRESS", "APPROVED", "REJECTED", "CANCELED", "EXPIRED", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(status, allowed_values):
+            status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
+
+    @property
+    def action(self):
+        """
+        Gets the action of this MyRequest.
+        Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+        Allowed values for this property are: "CANCEL", "ESCALATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The action of this MyRequest.
+        :rtype: str
+        """
+        return self._action
+
+    @action.setter
+    def action(self, action):
+        """
+        Sets the action of this MyRequest.
+        Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :param action: The action of this MyRequest.
+        :type: str
+        """
+        allowed_values = ["CANCEL", "ESCALATE"]
+        if not value_allowed_none_or_none_sentinel(action, allowed_values):
+            action = 'UNKNOWN_ENUM_VALUE'
+        self._action = action
+
+    @property
+    def expires(self):
+        """
+        Gets the expires of this MyRequest.
+        Time by when Request expires
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: readOnly
+         - required: false
+         - returned: default
+         - type: dateTime
+         - uniqueness: none
+
+
+        :return: The expires of this MyRequest.
+        :rtype: str
+        """
+        return self._expires
+
+    @expires.setter
+    def expires(self, expires):
+        """
+        Sets the expires of this MyRequest.
+        Time by when Request expires
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: readOnly
+         - required: false
+         - returned: default
+         - type: dateTime
+         - uniqueness: none
+
+
+        :param expires: The expires of this MyRequest.
+        :type: str
+        """
+        self._expires = expires
+
+    @property
+    def approval_details(self):
+        """
+        Gets the approval_details of this MyRequest.
+        Approvals created for this request.
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+         - idcsSearchable: false
+         - multiValued: true
+         - mutability: readOnly
+         - returned: request
+         - type: complex
+         - uniqueness: none
+
+
+        :return: The approval_details of this MyRequest.
+        :rtype: list[oci.identity_domains.models.MyRequestApprovalDetails]
+        """
+        return self._approval_details
+
+    @approval_details.setter
+    def approval_details(self, approval_details):
+        """
+        Sets the approval_details of this MyRequest.
+        Approvals created for this request.
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+         - idcsSearchable: false
+         - multiValued: true
+         - mutability: readOnly
+         - returned: request
+         - type: complex
+         - uniqueness: none
+
+
+        :param approval_details: The approval_details of this MyRequest.
+        :type: list[oci.identity_domains.models.MyRequestApprovalDetails]
+        """
+        self._approval_details = approval_details
 
     @property
     def requestor(self):

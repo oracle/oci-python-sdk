@@ -1,0 +1,11 @@
+DedicatedCapacitySource
+=======================
+
+.. currentmodule:: oci.core.models
+
+.. autoclass:: DedicatedCapacitySource
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

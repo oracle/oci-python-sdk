@@ -1,0 +1,11 @@
+DbSystemDetails
+===============
+
+.. currentmodule:: oci.psql.models
+
+.. autoclass:: DbSystemDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

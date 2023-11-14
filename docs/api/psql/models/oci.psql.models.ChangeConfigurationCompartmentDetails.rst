@@ -1,0 +1,11 @@
+ChangeConfigurationCompartmentDetails
+=====================================
+
+.. currentmodule:: oci.psql.models
+
+.. autoclass:: ChangeConfigurationCompartmentDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

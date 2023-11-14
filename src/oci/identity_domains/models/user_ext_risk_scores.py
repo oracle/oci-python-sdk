@@ -312,6 +312,8 @@ class UserExtRiskScores(object):
          - returned: always
          - type: integer
          - uniqueness: none
+         - idcsMaxValue: 100
+         - idcsMinValue: 0
 
 
         :return: The score of this UserExtRiskScores.
@@ -336,6 +338,8 @@ class UserExtRiskScores(object):
          - returned: always
          - type: integer
          - uniqueness: none
+         - idcsMaxValue: 100
+         - idcsMinValue: 0
 
 
         :param score: The score of this UserExtRiskScores.

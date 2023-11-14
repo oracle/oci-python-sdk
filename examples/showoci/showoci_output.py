@@ -21,7 +21,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.10.24"
+    version = "23.10.31"
 
     ##########################################################################
     # spaces for align
@@ -2462,8 +2462,19 @@ class ShowOCIOutput(object):
             if 'bds' in data_ai:
                 self.print_header("Big Data Service", 2)
                 for val in data_ai['bds']:
-                    print(self.taba + val['display_name'] + ", (" + val['cluster_version'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'])
-                    print(self.tabs + "Nodes: " + val['number_of_nodes'] + ", is_high_availability: " + val['is_high_availability'] + ", is_secure: " + val['is_secure'] + ", is_cloud_sql_configured: " + val['is_cloud_sql_configured'])
+                    print(self.taba + val['display_name'] + ", (" + val['cluster_version'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                    is_high_availability = ", High Availability" if val['is_high_availability'] else ", No HA"
+                    is_secure = ", Secure" if val['is_secure'] else ", Not Secure"
+                    is_cloud_sql_configured = ", Cloud SQL Configured" if val['is_cloud_sql_configured'] else ", No Cloud SQL"
+                    is_kafka_configured = ", Kafka Configured" if val['is_kafka_configured'] else ", No Kafka Configured"
+                    print(self.tabs + "Config    : " + val['number_of_nodes'] + " Nodes" + is_high_availability + is_secure + is_cloud_sql_configured + is_kafka_configured)
+                    print(self.tabs + "Versions  : Cluster: " + val['cluster_version'] + ", BDS: " + val['cluster_details_bds_version'] + ", OS: " + val['cluster_details_os_version'] + ", BDCell: " + val['cluster_details_bd_cell_version'] + ", ODH: " + val['cluster_details_bd_cell_version'])
+                    print(self.tabs + "URLS      : Ambhari: " + val['cluster_details_ambari_url'] + ", Hue: " + val['cluster_details_hue_server_url'] + ", Jupyter: " + val['cluster_details_jupyter_hub_url'] + ", BigData: " + val['cluster_details_big_data_manager_url'])
+                    for index, nd in enumerate(val['nodes'], start=1):
+                        volumes = str(' '.join(str(x) + "gb" for x in nd['attached_block_volumes_gbs'])) + " volumes"
+                        print(self.tabs + "Node " + str(index).ljust(3) + "  : " + nd['display_name'] + " (" + nd['lifecycle_state'] + "), Created: " + nd['time_created'][0:16] + ", Type: " + nd['node_type'].ljust(9) + ", " + nd['shape'] + "." + nd['ocpus'] + "." + nd['memory_in_gbs'] + ", " + volumes + ", IP: " + nd['ip_address'] + " " + nd['subnet_name'] + ", " + nd['availability_domain'] + ":" + nd['fault_domain'])
+                    for index, nd in enumerate(val['autoscale'], start=1):
+                        print(self.tabs + "AutoScale : " + nd['display_name'] + " (" + nd['lifecycle_state'] + "), Created: " + nd['time_created'][0:16] + ", Type: " + nd['policy_type'].ljust(9) + ", " + nd['policy_trigger_type'] + ", " + nd['policy_action_type'])
                 print("")
 
             # DI
@@ -3178,6 +3189,16 @@ class ShowOCISummary(object):
                 self.__summary_core_size(array)
                 array = [x for x in data_ai['bds'] if x['lifecycle_state'] != 'ACTIVE']
                 self.__summary_core_size(array, add_info="Stopped ")
+                # add shapes
+                for bds in data_ai['bds']:
+                    for nd in bds['nodes']:
+                        for stg in nd['attached_block_volumes_gbs']:
+                            self.summary_global_list.append({'type': "Big Data Service (Block Storage GB)", 'size': float(stg)})
+                        if nd['lifecycle_state'] == 'ACTIVE':
+                            info = "Big Data Service Compute - " + nd['shape'] + "." + nd['ocpus'] + "." + nd['memory_in_gbs']
+                            self.summary_global_list.append({'type': info, 'size': float(1)})
+                            self.summary_global_list.append({'type': "Big Data Service (OCPUs)", 'size': float(nd['ocpus'])})
+                            self.summary_global_list.append({'type': "Big Data Service (Memory GB)", 'size': float(nd['memory_in_gbs'])})
 
             if 'data_integration' in data_ai:
                 array = [x for x in data_ai['data_integration'] if x['lifecycle_state'] == 'ACTIVE']
@@ -3302,7 +3323,7 @@ class ShowOCISummary(object):
             for db in dbs:
                 if 'sum_info' in db and 'sum_count' in db:
 
-                    if db['sum_count'].isdigit():
+                    if db['sum_count'].replace(".", "").isnumeric():
                         self.summary_global_list.append({'type': "Total OCPUs - Autonomous Database", 'size': float(db['sum_count'])})
 
                         if float(db['sum_count']) == 0:
@@ -3312,7 +3333,7 @@ class ShowOCISummary(object):
                             self.summary_global_list.append({'type': db['sum_info'], 'size': float(db['sum_count'])})
 
                 if 'sum_info_storage' in db and 'sum_size_tb' in db:
-                    if db['sum_size_tb'].isdigit():
+                    if db['sum_size_tb'].replace(".", "").isnumeric():
                         self.summary_global_list.append({'type': db['sum_info_storage'], 'size': float(db['sum_size_tb'])})
 
         except Exception as e:
@@ -6087,7 +6108,7 @@ class ShowOCICSV(object):
                         'compute_model': dbs['compute_model'],
                         'compute_count': dbs['compute_count'],
                         'cpu_core_count': dbs['cpu_core_count'],
-                        'db_storage_gb': str(int(dbs['data_storage_size_in_tbs']) * 1024) if str(dbs['data_storage_size_in_tbs']).isdigit() else '',
+                        'db_storage_gb': str(int(dbs['data_storage_size_in_tbs']) * 1024) if str(dbs['data_storage_size_in_tbs']).replace(".", "").isnumeric() else '',
                         'shape_ocpus': "",
                         'memory_gb': "",
                         'local_storage_tb': "",
@@ -8233,10 +8254,38 @@ class ShowOCICSV(object):
                         'is_secure': ar['is_secure'],
                         'cluster_profile': ar['cluster_profile'],
                         'is_cloud_sql_configured': ar['is_cloud_sql_configured'],
+                        'is_kafka_configured': ar['is_kafka_configured'],
+                        'number_of_nodes_requiring_maintenance_reboot': ar['number_of_nodes_requiring_maintenance_reboot'],
                         'lifecycle_state': ar['lifecycle_state'],
                         'time_created': ar['time_created'][0:16],
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'network_cidr_block': ar['network_cidr_block'],
+                        'network_is_nat_gateway_required': ar['network_is_nat_gateway_required'],
+                        'cluster_details_bda_version': ar['cluster_details_bda_version'],
+                        'cluster_details_bdm_version': ar['cluster_details_bdm_version'],
+                        'cluster_details_bds_version': ar['cluster_details_bds_version'],
+                        'cluster_details_os_version': ar['cluster_details_os_version'],
+                        'cluster_details_db_version': ar['cluster_details_db_version'],
+                        'cluster_details_bd_cell_version': ar['cluster_details_bd_cell_version'],
+                        'cluster_details_csql_cell_version': ar['cluster_details_csql_cell_version'],
+                        'cluster_details_time_refreshed': ar['cluster_details_time_refreshed'],
+                        'cluster_details_c_manager_url': ar['cluster_details_c_manager_url'],
+                        'cluster_details_ambari_url': ar['cluster_details_ambari_url'],
+                        'cluster_details_big_data_manager_url': ar['cluster_details_big_data_manager_url'],
+                        'cluster_details_hue_server_url': ar['cluster_details_hue_server_url'],
+                        'cluster_details_odh_version': ar['cluster_details_odh_version'],
+                        'cluster_details_jupyter_hub_url': ar['cluster_details_jupyter_hub_url'],
+                        'cloud_sql_details_shape': ar['cloud_sql_details_shape'],
+                        'cloud_sql_details_block_volume_size_in_gbs': ar['cloud_sql_details_block_volume_size_in_gbs'],
+                        'cloud_sql_details_is_kerberos_mapped_to_database_users': ar['cloud_sql_details_is_kerberos_mapped_to_database_users'],
+                        'cloud_sql_details_ip_address': ar['cloud_sql_details_ip_address'],
+                        'created_by': ar['created_by'],
+                        'kms_key_id': ar['kms_key_id'],
+                        'nodes_ids': str(':'.join(x['instance_id'] for x in ar['nodes'])),
+                        'nodes_hostname': str(':'.join(x['hostname'] for x in ar['nodes'])),
+                        'nodes_ip_address': str(':'.join(x['ip_address'] for x in ar['nodes'])),
+                        'nodes_shapes': str(':'.join(x['shape'] + "." + x['ocpus'] + "." + x['memory_in_gbs'] for x in ar['nodes'])),
                         'id': ar['id']
                     }
 
