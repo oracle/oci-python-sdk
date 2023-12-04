@@ -159,7 +159,7 @@ class PostgresqlClient(object):
         resource_path = "/backups/{backupId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_backup_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/ChangeBackupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -271,7 +271,7 @@ class PostgresqlClient(object):
         resource_path = "/configurations/{configurationId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_configuration_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Configuration/ChangeConfigurationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -385,7 +385,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems/{dbSystemId}/actions/changeCompartment"
         method = "POST"
         operation_name = "change_db_system_compartment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/ChangeDbSystemCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -491,7 +491,7 @@ class PostgresqlClient(object):
         resource_path = "/backups"
         method = "POST"
         operation_name = "create_backup"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/CreateBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -583,7 +583,7 @@ class PostgresqlClient(object):
         resource_path = "/configurations"
         method = "POST"
         operation_name = "create_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Configuration/CreateConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -677,7 +677,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems"
         method = "POST"
         operation_name = "create_db_system"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/CreateDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -771,7 +771,7 @@ class PostgresqlClient(object):
         resource_path = "/backups/{backupId}"
         method = "DELETE"
         operation_name = "delete_backup"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/DeleteBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -872,7 +872,7 @@ class PostgresqlClient(object):
         resource_path = "/configurations/{configurationId}"
         method = "DELETE"
         operation_name = "delete_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Configuration/DeleteConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -973,7 +973,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems/{dbSystemId}"
         method = "DELETE"
         operation_name = "delete_db_system"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/DeleteDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1080,7 +1080,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems/{dbSystemId}/actions/failover"
         method = "POST"
         operation_name = "failover_db_system"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/FailoverDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1183,7 +1183,7 @@ class PostgresqlClient(object):
         resource_path = "/backups/{backupId}"
         method = "GET"
         operation_name = "get_backup"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/GetBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1281,7 +1281,7 @@ class PostgresqlClient(object):
         resource_path = "/configurations/{configurationId}"
         method = "GET"
         operation_name = "get_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Configuration/GetConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1379,7 +1379,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems/{dbSystemId}/connectionDetails"
         method = "GET"
         operation_name = "get_connection_details"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/ConnectionDetails/GetConnectionDetails"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1482,7 +1482,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems/{dbSystemId}"
         method = "GET"
         operation_name = "get_db_system"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/GetDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1596,7 +1596,7 @@ class PostgresqlClient(object):
         resource_path = "/defaultConfigurations/{defaultConfigurationId}"
         method = "GET"
         operation_name = "get_default_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DefaultConfiguration/GetDefaultConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1694,7 +1694,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems/{dbSystemId}/primaryDbInstance"
         method = "GET"
         operation_name = "get_primary_db_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/GetPrimaryDbInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1792,7 +1792,7 @@ class PostgresqlClient(object):
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
         operation_name = "get_work_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1926,7 +1926,7 @@ class PostgresqlClient(object):
         resource_path = "/backups"
         method = "GET"
         operation_name = "list_backups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/BackupCollection/ListBackups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2094,7 +2094,7 @@ class PostgresqlClient(object):
         resource_path = "/configurations"
         method = "GET"
         operation_name = "list_configurations"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/ConfigurationCollection/ListConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2254,7 +2254,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems"
         method = "GET"
         operation_name = "list_db_systems"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystemCollection/ListDbSystems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2413,7 +2413,7 @@ class PostgresqlClient(object):
         resource_path = "/defaultConfigurations"
         method = "GET"
         operation_name = "list_default_configurations"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DefaultConfigurationCollection/ListDefaultConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2563,7 +2563,7 @@ class PostgresqlClient(object):
         resource_path = "/shapes"
         method = "GET"
         operation_name = "list_shapes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/ShapeSummary/ListShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2697,7 +2697,7 @@ class PostgresqlClient(object):
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
         operation_name = "list_work_request_errors"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2839,7 +2839,7 @@ class PostgresqlClient(object):
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
         operation_name = "list_work_request_logs"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2992,7 +2992,7 @@ class PostgresqlClient(object):
         resource_path = "/workRequests"
         method = "GET"
         operation_name = "list_work_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3127,7 +3127,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems/{dbSystemId}"
         method = "PATCH"
         operation_name = "patch_db_system"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/PatchDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3236,7 +3236,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems/{dbSystemId}/actions/resetMasterUserPassword"
         method = "POST"
         operation_name = "reset_master_user_password"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/ResetMasterUserPassword"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3348,7 +3348,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems/{dbSystemId}/actions/restartDbInstance"
         method = "POST"
         operation_name = "restart_db_instance_in_db_system"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/RestartDbInstanceInDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3460,7 +3460,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems/{dbSystemId}/actions/restore"
         method = "POST"
         operation_name = "restore_db_system"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/RestoreDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3569,7 +3569,7 @@ class PostgresqlClient(object):
         resource_path = "/backups/{backupId}"
         method = "PUT"
         operation_name = "update_backup"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Backup/UpdateBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3680,7 +3680,7 @@ class PostgresqlClient(object):
         resource_path = "/configurations/{configurationId}"
         method = "PUT"
         operation_name = "update_configuration"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/Configuration/UpdateConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3794,7 +3794,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems/{dbSystemId}"
         method = "PUT"
         operation_name = "update_db_system"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/UpdateDbSystem"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3909,7 +3909,7 @@ class PostgresqlClient(object):
         resource_path = "/dbSystems/{dbSystemId}/dbinstances/{dbInstanceId}"
         method = "PUT"
         operation_name = "update_db_system_db_instance"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/postgresql/20220915/DbSystem/UpdateDbSystemDbInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

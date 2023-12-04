@@ -1,9 +1,9 @@
-SupportedSkuSummaryCollection
-=============================
+ReplaceHostDetails
+==================
 
 .. currentmodule:: oci.ocvp.models
 
-.. autoclass:: SupportedSkuSummaryCollection
+.. autoclass:: ReplaceHostDetails
     :show-inheritance:
     :special-members: __init__
     :members:

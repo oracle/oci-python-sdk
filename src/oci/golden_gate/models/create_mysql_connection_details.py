@@ -408,7 +408,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
     def ssl_ca(self):
         """
         Gets the ssl_ca of this CreateMysqlConnectionDetails.
-        Database Certificate - The base64 encoded content of mysql.pem file
+        Database Certificate - The base64 encoded content of a .pem or .crt file.
         containing the server public key (for 1 and 2-way SSL).
 
 
@@ -421,7 +421,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
     def ssl_ca(self, ssl_ca):
         """
         Sets the ssl_ca of this CreateMysqlConnectionDetails.
-        Database Certificate - The base64 encoded content of mysql.pem file
+        Database Certificate - The base64 encoded content of a .pem or .crt file.
         containing the server public key (for 1 and 2-way SSL).
 
 
@@ -434,9 +434,8 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
     def ssl_crl(self):
         """
         Gets the ssl_crl of this CreateMysqlConnectionDetails.
-        Certificates revoked by certificate authorities (CA).
-        Server certificate must not be on this list (for 1 and 2-way SSL).
-        Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+        Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 
 
         :return: The ssl_crl of this CreateMysqlConnectionDetails.
@@ -448,9 +447,8 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
     def ssl_crl(self, ssl_crl):
         """
         Sets the ssl_crl of this CreateMysqlConnectionDetails.
-        Certificates revoked by certificate authorities (CA).
-        Server certificate must not be on this list (for 1 and 2-way SSL).
-        Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
+        Note: This is an optional property and only applicable if TLS/MTLS option is selected.
 
 
         :param ssl_crl: The ssl_crl of this CreateMysqlConnectionDetails.
@@ -462,7 +460,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
     def ssl_cert(self):
         """
         Gets the ssl_cert of this CreateMysqlConnectionDetails.
-        Client Certificate - The base64 encoded content of client-cert.pem file
+        Client Certificate - The base64 encoded content of a .pem or .crt file.
         containing the client public key (for 2-way SSL).
 
 
@@ -475,7 +473,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
     def ssl_cert(self, ssl_cert):
         """
         Sets the ssl_cert of this CreateMysqlConnectionDetails.
-        Client Certificate - The base64 encoded content of client-cert.pem file
+        Client Certificate - The base64 encoded content of a .pem or .crt file.
         containing the client public key (for 2-way SSL).
 
 
@@ -488,7 +486,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
     def ssl_key(self):
         """
         Gets the ssl_key of this CreateMysqlConnectionDetails.
-        Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+        Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 
 
         :return: The ssl_key of this CreateMysqlConnectionDetails.
@@ -500,7 +498,7 @@ class CreateMysqlConnectionDetails(CreateConnectionDetails):
     def ssl_key(self, ssl_key):
         """
         Sets the ssl_key of this CreateMysqlConnectionDetails.
-        Client Key - The client-key.pem containing the client private key (for 2-way SSL).
+        Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
 
 
         :param ssl_key: The ssl_key of this CreateMysqlConnectionDetails.

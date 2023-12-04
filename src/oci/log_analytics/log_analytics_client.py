@@ -22834,6 +22834,202 @@ class LogAnalyticsClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def upload_discovery_data(self, namespace_name, upload_discovery_data_details, **kwargs):
+        """
+        Accepts discovery data for processing by Logging Analytics.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param stream upload_discovery_data_details: (required)
+            Discovery data
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_meta_properties: (optional)
+            Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3
+
+        :param str discovery_data_type: (optional)
+            Discovery data type
+
+            Allowed values are: "ENTITY", "K8S_OBJECTS"
+
+        :param str payload_type: (optional)
+            Identifies the type of request payload.
+
+            Allowed values are: "JSON", "GZIP", "ZIP"
+
+        :param str content_type: (optional)
+            The content type of the log data.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str expect: (optional)
+            A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent.
+            If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+            The only allowed value for this parameter is \"100-Continue\" (case-insensitive).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+        :param int buffer_limit: (optional)
+            A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
+            If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
+
+            The buffer_limit parameter is used when the stream object does not have a `seek`, `tell`, or `fileno` property for the Python Request library to calculate out the content length.
+            If buffer_limit is not passed, then the buffer_limit will be defaulted to 100MB.
+            Large streams can cause the process to freeze, consider passing in content-length for large streams instead.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/upload_discovery_data.py.html>`__ to see an example of how to use upload_discovery_data API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['namespaceName']
+        resource_path = "/namespaces/{namespaceName}/actions/uploadDiscoveryData"
+        method = "POST"
+        operation_name = "upload_discovery_data"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logan-api-spec/20200601/LogAnalyticsEntity/UploadDiscoveryData"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "buffer_limit",
+            "opc_request_id",
+            "opc_meta_properties",
+            "discovery_data_type",
+            "payload_type",
+            "content_type",
+            "opc_retry_token",
+            "expect"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"upload_discovery_data got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'discovery_data_type' in kwargs:
+            discovery_data_type_allowed_values = ["ENTITY", "K8S_OBJECTS"]
+            if kwargs['discovery_data_type'] not in discovery_data_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `discovery_data_type`, must be one of { discovery_data_type_allowed_values }"
+                )
+
+        if 'payload_type' in kwargs:
+            payload_type_allowed_values = ["JSON", "GZIP", "ZIP"]
+            if kwargs['payload_type'] not in payload_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `payload_type`, must be one of { payload_type_allowed_values }"
+                )
+
+        query_params = {
+            "discoveryDataType": kwargs.get("discovery_data_type", missing),
+            "payloadType": kwargs.get("payload_type", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-meta-properties": kwargs.get("opc_meta_properties", missing),
+            "content-type": kwargs.get("content_type", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "expect": kwargs.get("expect", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
+
+        # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
+        try:
+            upload_discovery_data_details
+        except NameError:
+            upload_discovery_data_details = kwargs.get("upload_discovery_data_details", missing)
+
+        if upload_discovery_data_details is not missing and upload_discovery_data_details is not None:
+            if (not isinstance(upload_discovery_data_details, (six.binary_type, six.string_types)) and
+                    not hasattr(upload_discovery_data_details, "read")):
+                raise TypeError('The body must be a string, bytes, or provide a read() method.')
+
+            if hasattr(upload_discovery_data_details, 'fileno') and hasattr(upload_discovery_data_details, 'name') and upload_discovery_data_details.name != '<stdin>':
+                if requests.utils.super_len(upload_discovery_data_details) == 0:
+                    header_params['Content-Length'] = '0'
+
+            # If content length is not given and stream object have no 'fileno' and is not a string or bytes, try to calculate content length
+            elif 'Content-Length' not in header_params and not is_content_length_calculable_by_req_util(upload_discovery_data_details):
+                calculated_obj = back_up_body_calculate_stream_content_length(upload_discovery_data_details, kwargs.get("buffer_limit"))
+                header_params['Content-Length'] = calculated_obj["content_length"]
+                upload_discovery_data_details = calculated_obj["byte_content"]
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=upload_discovery_data_details,
+                enforce_content_headers=False,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=upload_discovery_data_details,
+                enforce_content_headers=False,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def upload_log_events_file(self, namespace_name, log_group_id, upload_log_events_file_details, **kwargs):
         """
         Accepts log events for processing by Logging Analytics.

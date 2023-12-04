@@ -2517,7 +2517,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/remediationRuns/{remediationRunId}/applicationDependencyRecommendations"
         method = "GET"
         operation_name = "list_application_dependency_recommendations"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/ApplicationDependencyRecommendationCollection/ListApplicationDependencyRecommendations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ListApplicationDependencyRecommendations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3021,7 +3021,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/remediationRecipes"
         method = "GET"
         operation_name = "list_remediation_recipes"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipeCollection/ListRemediationRecipes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRecipe/ListRemediationRecipes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3189,7 +3189,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/remediationRuns"
         method = "GET"
         operation_name = "list_remediation_runs"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunCollection/ListRemediationRuns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRun/ListRemediationRuns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3351,7 +3351,7 @@ class ApplicationDependencyManagementClient(object):
         resource_path = "/remediationRuns/{remediationRunId}/stages"
         method = "GET"
         operation_name = "list_stages"
-        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStageCollection/ListStages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/adm/20220421/RemediationRunStage/ListStages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3464,7 +3464,7 @@ class ApplicationDependencyManagementClient(object):
     def list_vulnerability_audits(self, **kwargs):
         """
         Returns a list of Vulnerability Audits based on the specified query parameters.
-        At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
+        At least one of id, compartmentId query parameter must be provided.
 
 
         :param str id: (optional)

@@ -49,6 +49,10 @@ class UpgradeDbSystemDetails(object):
             The value to assign to the new_gi_version property of this UpgradeDbSystemDetails.
         :type new_gi_version: str
 
+        :param new_os_version:
+            The value to assign to the new_os_version property of this UpgradeDbSystemDetails.
+        :type new_os_version: str
+
         :param is_snapshot_retention_days_force_updated:
             The value to assign to the is_snapshot_retention_days_force_updated property of this UpgradeDbSystemDetails.
         :type is_snapshot_retention_days_force_updated: bool
@@ -58,6 +62,7 @@ class UpgradeDbSystemDetails(object):
             'action': 'str',
             'snapshot_retention_period_in_days': 'int',
             'new_gi_version': 'str',
+            'new_os_version': 'str',
             'is_snapshot_retention_days_force_updated': 'bool'
         }
 
@@ -65,12 +70,14 @@ class UpgradeDbSystemDetails(object):
             'action': 'action',
             'snapshot_retention_period_in_days': 'snapshotRetentionPeriodInDays',
             'new_gi_version': 'newGiVersion',
+            'new_os_version': 'newOsVersion',
             'is_snapshot_retention_days_force_updated': 'isSnapshotRetentionDaysForceUpdated'
         }
 
         self._action = None
         self._snapshot_retention_period_in_days = None
         self._new_gi_version = None
+        self._new_os_version = None
         self._is_snapshot_retention_days_force_updated = None
 
     @property
@@ -151,6 +158,30 @@ class UpgradeDbSystemDetails(object):
         :type: str
         """
         self._new_gi_version = new_gi_version
+
+    @property
+    def new_os_version(self):
+        """
+        Gets the new_os_version of this UpgradeDbSystemDetails.
+        A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+
+
+        :return: The new_os_version of this UpgradeDbSystemDetails.
+        :rtype: str
+        """
+        return self._new_os_version
+
+    @new_os_version.setter
+    def new_os_version(self, new_os_version):
+        """
+        Sets the new_os_version of this UpgradeDbSystemDetails.
+        A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+
+
+        :param new_os_version: The new_os_version of this UpgradeDbSystemDetails.
+        :type: str
+        """
+        self._new_os_version = new_os_version
 
     @property
     def is_snapshot_retention_days_force_updated(self):

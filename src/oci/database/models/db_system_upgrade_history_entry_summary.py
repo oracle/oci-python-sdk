@@ -70,6 +70,14 @@ class DbSystemUpgradeHistoryEntrySummary(object):
             The value to assign to the old_gi_version property of this DbSystemUpgradeHistoryEntrySummary.
         :type old_gi_version: str
 
+        :param old_os_version:
+            The value to assign to the old_os_version property of this DbSystemUpgradeHistoryEntrySummary.
+        :type old_os_version: str
+
+        :param new_os_version:
+            The value to assign to the new_os_version property of this DbSystemUpgradeHistoryEntrySummary.
+        :type new_os_version: str
+
         :param snapshot_retention_period_in_days:
             The value to assign to the snapshot_retention_period_in_days property of this DbSystemUpgradeHistoryEntrySummary.
         :type snapshot_retention_period_in_days: int
@@ -98,6 +106,8 @@ class DbSystemUpgradeHistoryEntrySummary(object):
             'action': 'str',
             'new_gi_version': 'str',
             'old_gi_version': 'str',
+            'old_os_version': 'str',
+            'new_os_version': 'str',
             'snapshot_retention_period_in_days': 'int',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -110,6 +120,8 @@ class DbSystemUpgradeHistoryEntrySummary(object):
             'action': 'action',
             'new_gi_version': 'newGiVersion',
             'old_gi_version': 'oldGiVersion',
+            'old_os_version': 'oldOsVersion',
+            'new_os_version': 'newOsVersion',
             'snapshot_retention_period_in_days': 'snapshotRetentionPeriodInDays',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -121,6 +133,8 @@ class DbSystemUpgradeHistoryEntrySummary(object):
         self._action = None
         self._new_gi_version = None
         self._old_gi_version = None
+        self._old_os_version = None
+        self._new_os_version = None
         self._snapshot_retention_period_in_days = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -188,7 +202,7 @@ class DbSystemUpgradeHistoryEntrySummary(object):
     @property
     def new_gi_version(self):
         """
-        **[Required]** Gets the new_gi_version of this DbSystemUpgradeHistoryEntrySummary.
+        Gets the new_gi_version of this DbSystemUpgradeHistoryEntrySummary.
         A valid Oracle Grid Infrastructure (GI) software version.
 
 
@@ -212,7 +226,7 @@ class DbSystemUpgradeHistoryEntrySummary(object):
     @property
     def old_gi_version(self):
         """
-        **[Required]** Gets the old_gi_version of this DbSystemUpgradeHistoryEntrySummary.
+        Gets the old_gi_version of this DbSystemUpgradeHistoryEntrySummary.
         A valid Oracle Grid Infrastructure (GI) software version.
 
 
@@ -232,6 +246,54 @@ class DbSystemUpgradeHistoryEntrySummary(object):
         :type: str
         """
         self._old_gi_version = old_gi_version
+
+    @property
+    def old_os_version(self):
+        """
+        Gets the old_os_version of this DbSystemUpgradeHistoryEntrySummary.
+        A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+
+
+        :return: The old_os_version of this DbSystemUpgradeHistoryEntrySummary.
+        :rtype: str
+        """
+        return self._old_os_version
+
+    @old_os_version.setter
+    def old_os_version(self, old_os_version):
+        """
+        Sets the old_os_version of this DbSystemUpgradeHistoryEntrySummary.
+        A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+
+
+        :param old_os_version: The old_os_version of this DbSystemUpgradeHistoryEntrySummary.
+        :type: str
+        """
+        self._old_os_version = old_os_version
+
+    @property
+    def new_os_version(self):
+        """
+        Gets the new_os_version of this DbSystemUpgradeHistoryEntrySummary.
+        A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+
+
+        :return: The new_os_version of this DbSystemUpgradeHistoryEntrySummary.
+        :rtype: str
+        """
+        return self._new_os_version
+
+    @new_os_version.setter
+    def new_os_version(self, new_os_version):
+        """
+        Sets the new_os_version of this DbSystemUpgradeHistoryEntrySummary.
+        A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+
+
+        :param new_os_version: The new_os_version of this DbSystemUpgradeHistoryEntrySummary.
+        :type: str
+        """
+        self._new_os_version = new_os_version
 
     @property
     def snapshot_retention_period_in_days(self):

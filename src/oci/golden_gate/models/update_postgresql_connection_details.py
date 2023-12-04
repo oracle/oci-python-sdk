@@ -383,6 +383,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
         """
         Gets the ssl_ca of this UpdatePostgresqlConnectionDetails.
         The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+        The supported file formats are .pem and .crt.
 
 
         :return: The ssl_ca of this UpdatePostgresqlConnectionDetails.
@@ -395,6 +396,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
         """
         Sets the ssl_ca of this UpdatePostgresqlConnectionDetails.
         The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+        The supported file formats are .pem and .crt.
 
 
         :param ssl_ca: The ssl_ca of this UpdatePostgresqlConnectionDetails.
@@ -406,7 +408,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
     def ssl_crl(self):
         """
         Gets the ssl_crl of this UpdatePostgresqlConnectionDetails.
-        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA) for PostgreSQL.
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
 
 
         :return: The ssl_crl of this UpdatePostgresqlConnectionDetails.
@@ -418,7 +420,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
     def ssl_crl(self, ssl_crl):
         """
         Sets the ssl_crl of this UpdatePostgresqlConnectionDetails.
-        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA) for PostgreSQL.
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
 
 
         :param ssl_crl: The ssl_crl of this UpdatePostgresqlConnectionDetails.
@@ -430,7 +432,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
     def ssl_cert(self):
         """
         Gets the ssl_cert of this UpdatePostgresqlConnectionDetails.
-        The base64 encoded certificate of the PostgreSQL server.
+        The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
 
 
         :return: The ssl_cert of this UpdatePostgresqlConnectionDetails.
@@ -442,7 +444,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
     def ssl_cert(self, ssl_cert):
         """
         Sets the ssl_cert of this UpdatePostgresqlConnectionDetails.
-        The base64 encoded certificate of the PostgreSQL server.
+        The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
 
 
         :param ssl_cert: The ssl_cert of this UpdatePostgresqlConnectionDetails.
@@ -454,7 +456,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
     def ssl_key(self):
         """
         Gets the ssl_key of this UpdatePostgresqlConnectionDetails.
-        The base64 encoded private key of the PostgreSQL server.
+        The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
 
 
         :return: The ssl_key of this UpdatePostgresqlConnectionDetails.
@@ -466,7 +468,7 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
     def ssl_key(self, ssl_key):
         """
         Sets the ssl_key of this UpdatePostgresqlConnectionDetails.
-        The base64 encoded private key of the PostgreSQL server.
+        The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
 
 
         :param ssl_key: The ssl_key of this UpdatePostgresqlConnectionDetails.

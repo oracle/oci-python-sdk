@@ -31,6 +31,9 @@ Golden Gate
     oci.golden_gate.models.CancelDeploymentBackupDetails
     oci.golden_gate.models.CancelDeploymentUpgradeDetails
     oci.golden_gate.models.CancelSnoozeDeploymentUpgradeDetails
+    oci.golden_gate.models.Certificate
+    oci.golden_gate.models.CertificateCollection
+    oci.golden_gate.models.CertificateSummary
     oci.golden_gate.models.ChangeConnectionCompartmentDetails
     oci.golden_gate.models.ChangeDatabaseRegistrationCompartmentDetails
     oci.golden_gate.models.ChangeDeploymentBackupCompartmentDetails
@@ -48,6 +51,7 @@ Golden Gate
     oci.golden_gate.models.CreateAmazonS3ConnectionDetails
     oci.golden_gate.models.CreateAzureDataLakeStorageConnectionDetails
     oci.golden_gate.models.CreateAzureSynapseConnectionDetails
+    oci.golden_gate.models.CreateCertificateDetails
     oci.golden_gate.models.CreateConnectionAssignmentDetails
     oci.golden_gate.models.CreateConnectionDetails
     oci.golden_gate.models.CreateDatabaseRegistrationDetails

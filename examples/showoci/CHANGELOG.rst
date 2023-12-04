@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.11.28 - 23.11.28
+=====================
+* Simmplify the Identity Domains User Extract
+
+=====================
 23.10.31 - 23.10.31
 =====================
 * Added additional information to Big Data Cloud Service

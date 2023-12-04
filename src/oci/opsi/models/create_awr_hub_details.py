@@ -149,7 +149,7 @@ class CreateAwrHubDetails(object):
     @property
     def object_storage_bucket_name(self):
         """
-        **[Required]** Gets the object_storage_bucket_name of this CreateAwrHubDetails.
+        Gets the object_storage_bucket_name of this CreateAwrHubDetails.
         Object Storage Bucket Name
 
 
