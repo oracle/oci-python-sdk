@@ -99,6 +99,9 @@ Database
     oci.database.models.ConfigureSaasAdminUserDetails
     oci.database.models.ConsoleConnection
     oci.database.models.ConsoleConnectionSummary
+    oci.database.models.ConsoleHistory
+    oci.database.models.ConsoleHistoryCollection
+    oci.database.models.ConsoleHistorySummary
     oci.database.models.ConvertToPdbDetails
     oci.database.models.ConvertToPdbTargetBase
     oci.database.models.ConvertToRegularPluggableDatabaseDetails
@@ -118,6 +121,7 @@ Database
     oci.database.models.CreateCloudExadataInfrastructureDetails
     oci.database.models.CreateCloudVmClusterDetails
     oci.database.models.CreateConsoleConnectionDetails
+    oci.database.models.CreateConsoleHistoryDetails
     oci.database.models.CreateCrossRegionAutonomousDatabaseDataGuardDetails
     oci.database.models.CreateCrossRegionDisasterRecoveryDetails
     oci.database.models.CreateDataGuardAssociationDetails
@@ -327,6 +331,8 @@ Database
     oci.database.models.StackMonitoringConfig
     oci.database.models.StoragePerformanceDetails
     oci.database.models.SwitchoverDataGuardAssociationDetails
+    oci.database.models.SystemVersionCollection
+    oci.database.models.SystemVersionSummary
     oci.database.models.Update
     oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
     oci.database.models.UpdateAutonomousContainerDatabaseDetails
@@ -340,6 +346,7 @@ Database
     oci.database.models.UpdateCloudExadataInfrastructureDetails
     oci.database.models.UpdateCloudVmClusterDetails
     oci.database.models.UpdateConsoleConnectionDetails
+    oci.database.models.UpdateConsoleHistoryDetails
     oci.database.models.UpdateDataGuardAssociationDetails
     oci.database.models.UpdateDatabaseDetails
     oci.database.models.UpdateDatabaseSoftwareImageDetails

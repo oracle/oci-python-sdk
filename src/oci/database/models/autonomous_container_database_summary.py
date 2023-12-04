@@ -330,6 +330,10 @@ class AutonomousContainerDatabaseSummary(object):
             The value to assign to the largest_provisionable_autonomous_database_in_cpus property of this AutonomousContainerDatabaseSummary.
         :type largest_provisionable_autonomous_database_in_cpus: float
 
+        :param time_of_last_backup:
+            The value to assign to the time_of_last_backup property of this AutonomousContainerDatabaseSummary.
+        :type time_of_last_backup: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -375,7 +379,8 @@ class AutonomousContainerDatabaseSummary(object):
             'compute_model': 'str',
             'provisioned_cpus': 'float',
             'reserved_cpus': 'float',
-            'largest_provisionable_autonomous_database_in_cpus': 'float'
+            'largest_provisionable_autonomous_database_in_cpus': 'float',
+            'time_of_last_backup': 'datetime'
         }
 
         self.attribute_map = {
@@ -422,7 +427,8 @@ class AutonomousContainerDatabaseSummary(object):
             'compute_model': 'computeModel',
             'provisioned_cpus': 'provisionedCpus',
             'reserved_cpus': 'reservedCpus',
-            'largest_provisionable_autonomous_database_in_cpus': 'largestProvisionableAutonomousDatabaseInCpus'
+            'largest_provisionable_autonomous_database_in_cpus': 'largestProvisionableAutonomousDatabaseInCpus',
+            'time_of_last_backup': 'timeOfLastBackup'
         }
 
         self._id = None
@@ -469,6 +475,7 @@ class AutonomousContainerDatabaseSummary(object):
         self._provisioned_cpus = None
         self._reserved_cpus = None
         self._largest_provisionable_autonomous_database_in_cpus = None
+        self._time_of_last_backup = None
 
     @property
     def id(self):
@@ -1613,6 +1620,30 @@ class AutonomousContainerDatabaseSummary(object):
         :type: float
         """
         self._largest_provisionable_autonomous_database_in_cpus = largest_provisionable_autonomous_database_in_cpus
+
+    @property
+    def time_of_last_backup(self):
+        """
+        Gets the time_of_last_backup of this AutonomousContainerDatabaseSummary.
+        The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+
+
+        :return: The time_of_last_backup of this AutonomousContainerDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_of_last_backup
+
+    @time_of_last_backup.setter
+    def time_of_last_backup(self, time_of_last_backup):
+        """
+        Sets the time_of_last_backup of this AutonomousContainerDatabaseSummary.
+        The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+
+
+        :param time_of_last_backup: The time_of_last_backup of this AutonomousContainerDatabaseSummary.
+        :type: datetime
+        """
+        self._time_of_last_backup = time_of_last_backup
 
     def __repr__(self):
         return formatted_flat_dict(self)

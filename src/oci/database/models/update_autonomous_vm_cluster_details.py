@@ -45,25 +45,46 @@ class UpdateAutonomousVmClusterDetails(object):
             The value to assign to the defined_tags property of this UpdateAutonomousVmClusterDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param autonomous_data_storage_size_in_tbs:
+            The value to assign to the autonomous_data_storage_size_in_tbs property of this UpdateAutonomousVmClusterDetails.
+        :type autonomous_data_storage_size_in_tbs: float
+
+        :param cpu_core_count_per_node:
+            The value to assign to the cpu_core_count_per_node property of this UpdateAutonomousVmClusterDetails.
+        :type cpu_core_count_per_node: int
+
+        :param total_container_databases:
+            The value to assign to the total_container_databases property of this UpdateAutonomousVmClusterDetails.
+        :type total_container_databases: int
+
         """
         self.swagger_types = {
             'maintenance_window_details': 'MaintenanceWindow',
             'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'autonomous_data_storage_size_in_tbs': 'float',
+            'cpu_core_count_per_node': 'int',
+            'total_container_databases': 'int'
         }
 
         self.attribute_map = {
             'maintenance_window_details': 'maintenanceWindowDetails',
             'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
+            'cpu_core_count_per_node': 'cpuCoreCountPerNode',
+            'total_container_databases': 'totalContainerDatabases'
         }
 
         self._maintenance_window_details = None
         self._license_model = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._autonomous_data_storage_size_in_tbs = None
+        self._cpu_core_count_per_node = None
+        self._total_container_databases = None
 
     @property
     def maintenance_window_details(self):
@@ -179,6 +200,78 @@ class UpdateAutonomousVmClusterDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def autonomous_data_storage_size_in_tbs(self):
+        """
+        Gets the autonomous_data_storage_size_in_tbs of this UpdateAutonomousVmClusterDetails.
+        The new scaled up/down value for autonomous data storage in TBs for Autonomous VM cluster.
+
+
+        :return: The autonomous_data_storage_size_in_tbs of this UpdateAutonomousVmClusterDetails.
+        :rtype: float
+        """
+        return self._autonomous_data_storage_size_in_tbs
+
+    @autonomous_data_storage_size_in_tbs.setter
+    def autonomous_data_storage_size_in_tbs(self, autonomous_data_storage_size_in_tbs):
+        """
+        Sets the autonomous_data_storage_size_in_tbs of this UpdateAutonomousVmClusterDetails.
+        The new scaled up/down value for autonomous data storage in TBs for Autonomous VM cluster.
+
+
+        :param autonomous_data_storage_size_in_tbs: The autonomous_data_storage_size_in_tbs of this UpdateAutonomousVmClusterDetails.
+        :type: float
+        """
+        self._autonomous_data_storage_size_in_tbs = autonomous_data_storage_size_in_tbs
+
+    @property
+    def cpu_core_count_per_node(self):
+        """
+        Gets the cpu_core_count_per_node of this UpdateAutonomousVmClusterDetails.
+        The new scaled up/down value for cpus per Autonomous VM cluster per node.
+
+
+        :return: The cpu_core_count_per_node of this UpdateAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._cpu_core_count_per_node
+
+    @cpu_core_count_per_node.setter
+    def cpu_core_count_per_node(self, cpu_core_count_per_node):
+        """
+        Sets the cpu_core_count_per_node of this UpdateAutonomousVmClusterDetails.
+        The new scaled up/down value for cpus per Autonomous VM cluster per node.
+
+
+        :param cpu_core_count_per_node: The cpu_core_count_per_node of this UpdateAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._cpu_core_count_per_node = cpu_core_count_per_node
+
+    @property
+    def total_container_databases(self):
+        """
+        Gets the total_container_databases of this UpdateAutonomousVmClusterDetails.
+        The new scaled up/down value for maxACD count for Autonomous VM cluster.
+
+
+        :return: The total_container_databases of this UpdateAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._total_container_databases
+
+    @total_container_databases.setter
+    def total_container_databases(self, total_container_databases):
+        """
+        Sets the total_container_databases of this UpdateAutonomousVmClusterDetails.
+        The new scaled up/down value for maxACD count for Autonomous VM cluster.
+
+
+        :param total_container_databases: The total_container_databases of this UpdateAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._total_container_databases = total_container_databases
 
     def __repr__(self):
         return formatted_flat_dict(self)

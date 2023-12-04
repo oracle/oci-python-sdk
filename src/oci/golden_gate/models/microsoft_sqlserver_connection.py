@@ -443,7 +443,7 @@ class MicrosoftSqlserverConnection(Connection):
     def ssl_ca(self):
         """
         Gets the ssl_ca of this MicrosoftSqlserverConnection.
-        Database Certificate - The base64 encoded content of pem file
+        Database Certificate - The base64 encoded content of a .pem or .crt file.
         containing the server public key (for 1-way SSL).
 
 
@@ -456,7 +456,7 @@ class MicrosoftSqlserverConnection(Connection):
     def ssl_ca(self, ssl_ca):
         """
         Sets the ssl_ca of this MicrosoftSqlserverConnection.
-        Database Certificate - The base64 encoded content of pem file
+        Database Certificate - The base64 encoded content of a .pem or .crt file.
         containing the server public key (for 1-way SSL).
 
 

@@ -62,6 +62,11 @@ from .awr_database_wait_event_bucket_summary import AwrDatabaseWaitEventBucketSu
 from .awr_database_wait_event_collection import AwrDatabaseWaitEventCollection
 from .awr_database_wait_event_summary import AwrDatabaseWaitEventSummary
 from .awr_hub import AwrHub
+from .awr_hub_objects import AwrHubObjects
+from .awr_hub_source import AwrHubSource
+from .awr_hub_source_summary import AwrHubSourceSummary
+from .awr_hub_source_summary_collection import AwrHubSourceSummaryCollection
+from .awr_hub_sources import AwrHubSources
 from .awr_hub_summary import AwrHubSummary
 from .awr_hub_summary_collection import AwrHubSummaryCollection
 from .awr_hubs import AwrHubs
@@ -73,12 +78,14 @@ from .awr_source_summary import AwrSourceSummary
 from .basic_configuration_item_metadata import BasicConfigurationItemMetadata
 from .basic_configuration_item_summary import BasicConfigurationItemSummary
 from .change_autonomous_database_insight_advanced_features_details import ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails
+from .change_awr_hub_source_compartment_details import ChangeAwrHubSourceCompartmentDetails
 from .change_database_insight_compartment_details import ChangeDatabaseInsightCompartmentDetails
 from .change_enterprise_manager_bridge_compartment_details import ChangeEnterpriseManagerBridgeCompartmentDetails
 from .change_exadata_insight_compartment_details import ChangeExadataInsightCompartmentDetails
 from .change_host_insight_compartment_details import ChangeHostInsightCompartmentDetails
 from .change_news_report_compartment_details import ChangeNewsReportCompartmentDetails
 from .change_operations_insights_private_endpoint_compartment_details import ChangeOperationsInsightsPrivateEndpointCompartmentDetails
+from .change_operations_insights_warehouse_compartment_details import ChangeOperationsInsightsWarehouseCompartmentDetails
 from .change_opsi_configuration_compartment_details import ChangeOpsiConfigurationCompartmentDetails
 from .change_pe_comanaged_database_insight_details import ChangePeComanagedDatabaseInsightDetails
 from .cloud_importable_compute_entity_summary import CloudImportableComputeEntitySummary
@@ -92,6 +99,7 @@ from .configuration_item_unit_details import ConfigurationItemUnitDetails
 from .configuration_items_collection import ConfigurationItemsCollection
 from .connection_details import ConnectionDetails
 from .create_awr_hub_details import CreateAwrHubDetails
+from .create_awr_hub_source_details import CreateAwrHubSourceDetails
 from .create_basic_configuration_item_details import CreateBasicConfigurationItemDetails
 from .create_configuration_item_details import CreateConfigurationItemDetails
 from .create_database_insight_details import CreateDatabaseInsightDetails
@@ -257,6 +265,7 @@ from .ingest_sql_stats_response_details import IngestSqlStatsResponseDetails
 from .ingest_sql_text_details import IngestSqlTextDetails
 from .ingest_sql_text_response_details import IngestSqlTextResponseDetails
 from .instance_metrics import InstanceMetrics
+from .list_objects import ListObjects
 from .macs_managed_cloud_host_configuration_summary import MacsManagedCloudHostConfigurationSummary
 from .macs_managed_cloud_host_insight import MacsManagedCloudHostInsight
 from .macs_managed_cloud_host_insight_summary import MacsManagedCloudHostInsightSummary
@@ -274,6 +283,7 @@ from .news_report import NewsReport
 from .news_report_collection import NewsReportCollection
 from .news_report_summary import NewsReportSummary
 from .news_reports import NewsReports
+from .object_summary import ObjectSummary
 from .operations_insights_private_endpoint import OperationsInsightsPrivateEndpoint
 from .operations_insights_private_endpoint_collection import OperationsInsightsPrivateEndpointCollection
 from .operations_insights_private_endpoint_summary import OperationsInsightsPrivateEndpointSummary
@@ -395,6 +405,7 @@ from .top_processes_usage_trend import TopProcessesUsageTrend
 from .top_processes_usage_trend_aggregation import TopProcessesUsageTrendAggregation
 from .update_autonomous_database_insight_details import UpdateAutonomousDatabaseInsightDetails
 from .update_awr_hub_details import UpdateAwrHubDetails
+from .update_awr_hub_source_details import UpdateAwrHubSourceDetails
 from .update_basic_configuration_item_details import UpdateBasicConfigurationItemDetails
 from .update_configuration_item_details import UpdateConfigurationItemDetails
 from .update_database_insight_details import UpdateDatabaseInsightDetails
@@ -489,6 +500,11 @@ opsi_type_mapping = {
     "AwrDatabaseWaitEventCollection": AwrDatabaseWaitEventCollection,
     "AwrDatabaseWaitEventSummary": AwrDatabaseWaitEventSummary,
     "AwrHub": AwrHub,
+    "AwrHubObjects": AwrHubObjects,
+    "AwrHubSource": AwrHubSource,
+    "AwrHubSourceSummary": AwrHubSourceSummary,
+    "AwrHubSourceSummaryCollection": AwrHubSourceSummaryCollection,
+    "AwrHubSources": AwrHubSources,
     "AwrHubSummary": AwrHubSummary,
     "AwrHubSummaryCollection": AwrHubSummaryCollection,
     "AwrHubs": AwrHubs,
@@ -500,12 +516,14 @@ opsi_type_mapping = {
     "BasicConfigurationItemMetadata": BasicConfigurationItemMetadata,
     "BasicConfigurationItemSummary": BasicConfigurationItemSummary,
     "ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails": ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails,
+    "ChangeAwrHubSourceCompartmentDetails": ChangeAwrHubSourceCompartmentDetails,
     "ChangeDatabaseInsightCompartmentDetails": ChangeDatabaseInsightCompartmentDetails,
     "ChangeEnterpriseManagerBridgeCompartmentDetails": ChangeEnterpriseManagerBridgeCompartmentDetails,
     "ChangeExadataInsightCompartmentDetails": ChangeExadataInsightCompartmentDetails,
     "ChangeHostInsightCompartmentDetails": ChangeHostInsightCompartmentDetails,
     "ChangeNewsReportCompartmentDetails": ChangeNewsReportCompartmentDetails,
     "ChangeOperationsInsightsPrivateEndpointCompartmentDetails": ChangeOperationsInsightsPrivateEndpointCompartmentDetails,
+    "ChangeOperationsInsightsWarehouseCompartmentDetails": ChangeOperationsInsightsWarehouseCompartmentDetails,
     "ChangeOpsiConfigurationCompartmentDetails": ChangeOpsiConfigurationCompartmentDetails,
     "ChangePeComanagedDatabaseInsightDetails": ChangePeComanagedDatabaseInsightDetails,
     "CloudImportableComputeEntitySummary": CloudImportableComputeEntitySummary,
@@ -519,6 +537,7 @@ opsi_type_mapping = {
     "ConfigurationItemsCollection": ConfigurationItemsCollection,
     "ConnectionDetails": ConnectionDetails,
     "CreateAwrHubDetails": CreateAwrHubDetails,
+    "CreateAwrHubSourceDetails": CreateAwrHubSourceDetails,
     "CreateBasicConfigurationItemDetails": CreateBasicConfigurationItemDetails,
     "CreateConfigurationItemDetails": CreateConfigurationItemDetails,
     "CreateDatabaseInsightDetails": CreateDatabaseInsightDetails,
@@ -684,6 +703,7 @@ opsi_type_mapping = {
     "IngestSqlTextDetails": IngestSqlTextDetails,
     "IngestSqlTextResponseDetails": IngestSqlTextResponseDetails,
     "InstanceMetrics": InstanceMetrics,
+    "ListObjects": ListObjects,
     "MacsManagedCloudHostConfigurationSummary": MacsManagedCloudHostConfigurationSummary,
     "MacsManagedCloudHostInsight": MacsManagedCloudHostInsight,
     "MacsManagedCloudHostInsightSummary": MacsManagedCloudHostInsightSummary,
@@ -701,6 +721,7 @@ opsi_type_mapping = {
     "NewsReportCollection": NewsReportCollection,
     "NewsReportSummary": NewsReportSummary,
     "NewsReports": NewsReports,
+    "ObjectSummary": ObjectSummary,
     "OperationsInsightsPrivateEndpoint": OperationsInsightsPrivateEndpoint,
     "OperationsInsightsPrivateEndpointCollection": OperationsInsightsPrivateEndpointCollection,
     "OperationsInsightsPrivateEndpointSummary": OperationsInsightsPrivateEndpointSummary,
@@ -822,6 +843,7 @@ opsi_type_mapping = {
     "TopProcessesUsageTrendAggregation": TopProcessesUsageTrendAggregation,
     "UpdateAutonomousDatabaseInsightDetails": UpdateAutonomousDatabaseInsightDetails,
     "UpdateAwrHubDetails": UpdateAwrHubDetails,
+    "UpdateAwrHubSourceDetails": UpdateAwrHubSourceDetails,
     "UpdateBasicConfigurationItemDetails": UpdateBasicConfigurationItemDetails,
     "UpdateConfigurationItemDetails": UpdateConfigurationItemDetails,
     "UpdateDatabaseInsightDetails": UpdateDatabaseInsightDetails,

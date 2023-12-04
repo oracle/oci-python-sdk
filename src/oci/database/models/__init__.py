@@ -87,6 +87,9 @@ from .configure_autonomous_database_vault_key_details import ConfigureAutonomous
 from .configure_saas_admin_user_details import ConfigureSaasAdminUserDetails
 from .console_connection import ConsoleConnection
 from .console_connection_summary import ConsoleConnectionSummary
+from .console_history import ConsoleHistory
+from .console_history_collection import ConsoleHistoryCollection
+from .console_history_summary import ConsoleHistorySummary
 from .convert_to_pdb_details import ConvertToPdbDetails
 from .convert_to_pdb_target_base import ConvertToPdbTargetBase
 from .convert_to_regular_pluggable_database_details import ConvertToRegularPluggableDatabaseDetails
@@ -106,6 +109,7 @@ from .create_cloud_autonomous_vm_cluster_details import CreateCloudAutonomousVmC
 from .create_cloud_exadata_infrastructure_details import CreateCloudExadataInfrastructureDetails
 from .create_cloud_vm_cluster_details import CreateCloudVmClusterDetails
 from .create_console_connection_details import CreateConsoleConnectionDetails
+from .create_console_history_details import CreateConsoleHistoryDetails
 from .create_cross_region_autonomous_database_data_guard_details import CreateCrossRegionAutonomousDatabaseDataGuardDetails
 from .create_cross_region_disaster_recovery_details import CreateCrossRegionDisasterRecoveryDetails
 from .create_data_guard_association_details import CreateDataGuardAssociationDetails
@@ -315,6 +319,8 @@ from .self_mount_details import SelfMountDetails
 from .stack_monitoring_config import StackMonitoringConfig
 from .storage_performance_details import StoragePerformanceDetails
 from .switchover_data_guard_association_details import SwitchoverDataGuardAssociationDetails
+from .system_version_collection import SystemVersionCollection
+from .system_version_summary import SystemVersionSummary
 from .update import Update
 from .update_autonomous_container_database_data_guard_association_details import UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
 from .update_autonomous_container_database_details import UpdateAutonomousContainerDatabaseDetails
@@ -328,6 +334,7 @@ from .update_cloud_autonomous_vm_cluster_details import UpdateCloudAutonomousVmC
 from .update_cloud_exadata_infrastructure_details import UpdateCloudExadataInfrastructureDetails
 from .update_cloud_vm_cluster_details import UpdateCloudVmClusterDetails
 from .update_console_connection_details import UpdateConsoleConnectionDetails
+from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_data_guard_association_details import UpdateDataGuardAssociationDetails
 from .update_database_details import UpdateDatabaseDetails
 from .update_database_software_image_details import UpdateDatabaseSoftwareImageDetails
@@ -449,6 +456,9 @@ database_type_mapping = {
     "ConfigureSaasAdminUserDetails": ConfigureSaasAdminUserDetails,
     "ConsoleConnection": ConsoleConnection,
     "ConsoleConnectionSummary": ConsoleConnectionSummary,
+    "ConsoleHistory": ConsoleHistory,
+    "ConsoleHistoryCollection": ConsoleHistoryCollection,
+    "ConsoleHistorySummary": ConsoleHistorySummary,
     "ConvertToPdbDetails": ConvertToPdbDetails,
     "ConvertToPdbTargetBase": ConvertToPdbTargetBase,
     "ConvertToRegularPluggableDatabaseDetails": ConvertToRegularPluggableDatabaseDetails,
@@ -468,6 +478,7 @@ database_type_mapping = {
     "CreateCloudExadataInfrastructureDetails": CreateCloudExadataInfrastructureDetails,
     "CreateCloudVmClusterDetails": CreateCloudVmClusterDetails,
     "CreateConsoleConnectionDetails": CreateConsoleConnectionDetails,
+    "CreateConsoleHistoryDetails": CreateConsoleHistoryDetails,
     "CreateCrossRegionAutonomousDatabaseDataGuardDetails": CreateCrossRegionAutonomousDatabaseDataGuardDetails,
     "CreateCrossRegionDisasterRecoveryDetails": CreateCrossRegionDisasterRecoveryDetails,
     "CreateDataGuardAssociationDetails": CreateDataGuardAssociationDetails,
@@ -677,6 +688,8 @@ database_type_mapping = {
     "StackMonitoringConfig": StackMonitoringConfig,
     "StoragePerformanceDetails": StoragePerformanceDetails,
     "SwitchoverDataGuardAssociationDetails": SwitchoverDataGuardAssociationDetails,
+    "SystemVersionCollection": SystemVersionCollection,
+    "SystemVersionSummary": SystemVersionSummary,
     "Update": Update,
     "UpdateAutonomousContainerDatabaseDataGuardAssociationDetails": UpdateAutonomousContainerDatabaseDataGuardAssociationDetails,
     "UpdateAutonomousContainerDatabaseDetails": UpdateAutonomousContainerDatabaseDetails,
@@ -690,6 +703,7 @@ database_type_mapping = {
     "UpdateCloudExadataInfrastructureDetails": UpdateCloudExadataInfrastructureDetails,
     "UpdateCloudVmClusterDetails": UpdateCloudVmClusterDetails,
     "UpdateConsoleConnectionDetails": UpdateConsoleConnectionDetails,
+    "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateDataGuardAssociationDetails": UpdateDataGuardAssociationDetails,
     "UpdateDatabaseDetails": UpdateDatabaseDetails,
     "UpdateDatabaseSoftwareImageDetails": UpdateDatabaseSoftwareImageDetails,

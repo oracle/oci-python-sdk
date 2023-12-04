@@ -38,7 +38,7 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.10.31"
+    version = "23.11.28"
     oci_compatible_version = "2.110.2"
     thread_lock = threading.Lock()
 
@@ -16221,18 +16221,6 @@ class ShowOCIDomains(object):
                 if self.skip_threads:
                     print(".", end="")
 
-                ext_password = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user
-                ext_mfa = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user
-                ext_user = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user
-                ext_user_state = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user
-                ext_posix = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user
-                ext_adaptive = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user
-                ext_db_user = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user
-                ext_db_user_credential = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user
-                ext_credential = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user
-                ext_capabilities = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user
-                ext_self_change = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
-
                 user_value = {
                     'id': self.get_value(var.id),
                     'ocid': self.get_value(var.ocid),
@@ -16273,84 +16261,15 @@ class ShowOCIDomains(object):
                         'ocid': self.get_value(x.ocid),
                         'date_added': self.get_date(x.date_added)
                     } for x in var.groups] if var.groups else [],
-                    'ext_user': {
-                        'is_federated_user': self.get_value(ext_user.is_federated_user) if ext_user else "",
-                        'is_authentication_delegated': self.get_value(ext_user.is_authentication_delegated) if ext_user else "",
-                        'status': self.get_value(ext_user.status) if ext_user else "",
-                        'provider': self.get_value(ext_user.provider) if ext_user else "",
-                        'creation_mechanism': self.get_value(ext_user.creation_mechanism) if ext_user else "",
-                        'do_not_show_getting_started': self.get_value(ext_user.do_not_show_getting_started) if ext_user else "",
-                        'bypass_notification': self.get_value(ext_user.bypass_notification) if ext_user else "",
-                        'is_account_recovery_enrolled': self.get_value(ext_user.is_account_recovery_enrolled) if ext_user else "",
-                        'account_recovery_required': self.get_value(ext_user.account_recovery_required) if ext_user else "",
-                        'user_flow_controlled_by_external_client': self.get_value(ext_user.user_flow_controlled_by_external_client) if ext_user else "",
-                        'is_group_membership_normalized': self.get_value(ext_user.is_group_membership_normalized) if ext_user else "",
-                        'is_group_membership_synced_to_users_groups': self.get_value(ext_user.is_group_membership_synced_to_users_groups) if ext_user else ""
-                    },
-                    'ext_password': {
-                        'last_successful_set_date': self.get_date(ext_password.last_successful_set_date) if ext_password else "",
-                        'cant_change': self.get_value(ext_password.cant_change) if ext_password else "",
-                        'cant_expire': self.get_value(ext_password.cant_expire) if ext_password else "",
-                        'must_change': self.get_value(ext_password.must_change) if ext_password else "",
-                        'expired': self.get_value(ext_password.expired) if ext_password else "",
-                        'last_successful_validation_date': self.get_date(ext_password.last_successful_validation_date) if ext_password else "",
-                        'last_failed_validation_date': self.get_date(ext_password.last_failed_validation_date) if ext_password else "",
-                        'applicable_password_policy': self.get_value(ext_password.applicable_password_policy.value) if ext_password and ext_password.applicable_password_policy else ""
-                    },
-                    'ext_user_state': {
-                        'last_successful_login_date': self.get_date(ext_user_state.last_successful_login_date) if ext_user_state else "",
-                        'previous_successful_login_date': self.get_date(ext_user_state.previous_successful_login_date) if ext_user_state else "",
-                        'last_failed_login_date': self.get_date(ext_user_state.last_failed_login_date) if ext_user_state else "",
-                        'login_attempts': self.get_value(ext_user_state.login_attempts) if ext_user_state else "",
-                        'recovery_attempts': self.get_value(ext_user_state.recovery_attempts) if ext_user_state else "",
-                        'recovery_enroll_attempts': self.get_value(ext_user_state.recovery_enroll_attempts) if ext_user_state else "",
-                        'max_concurrent_sessions': self.get_value(ext_user_state.max_concurrent_sessions) if ext_user_state else "",
-                        'recovery_locked_date': self.get_date(ext_user_state.recovery_locked.lock_date) if ext_user_state and ext_user_state.recovery_locked else "",
-                        'recovery_locked_on': self.get_value(ext_user_state.recovery_locked.on) if ext_user_state and ext_user_state.recovery_locked else "",
-                        'locked_date': self.get_date(ext_user_state.locked.lock_date) if ext_user_state and ext_user_state.locked else "",
-                        'locked_expired': self.get_date(ext_user_state.locked.on) if ext_user_state and ext_user_state.locked else "",
-                        'locked_on': self.get_value(ext_user_state.locked.on) if ext_user_state and ext_user_state.locked else "",
-                        'locked_reason': self.get_value(ext_user_state.locked.reason) if ext_user_state and ext_user_state.locked else ""
-                    },
-                    'ext_mfa': {
-                        'preferred_authentication_factor': self.get_value(ext_mfa.preferred_authentication_factor) if ext_mfa else "",
-                        'mfa_status': self.get_value(ext_mfa.mfa_status) if ext_mfa else "",
-                        'preferred_third_party_vendor': self.get_value(ext_mfa.preferred_third_party_vendor) if ext_mfa else "",
-                        'preferred_authentication_method': self.get_value(ext_mfa.preferred_authentication_method) if ext_mfa else "",
-                        'login_attempts': self.get_value(ext_mfa.login_attempts) if ext_mfa else "",
-                        'mfa_enabled_on': self.get_value(ext_mfa.mfa_enabled_on) if ext_mfa else "",
-                        'mfa_ignored_apps': str(','.join(self.get_value(x) for x in ext_mfa.mfa_ignored_apps)) if ext_mfa and ext_mfa.mfa_ignored_apps else ""
-                    },
-                    'ext_posix': {
-                        'uid_number': self.get_value(ext_posix.uid_number) if ext_posix else "",
-                        'gid_number': self.get_value(ext_posix.gid_number) if ext_posix else "",
-                        'gecos': self.get_value(ext_posix.gecos) if ext_posix else "",
-                        'home_directory': self.get_value(ext_posix.home_directory) if ext_posix else "",
-                        'login_shell': self.get_value(ext_posix.login_shell) if ext_posix else ""
-                    },
-                    'ext_adaptive': {
-                        'risk_level': self.get_value(ext_adaptive.risk_level) if ext_adaptive else "",
-                        'risk_scores': str(','.join(self.get_value(x.value) for x in ext_adaptive.risk_scores)) if ext_adaptive and ext_adaptive.risk_scores else ""
-                    },
-                    'ext_db_user': {
-                        'is_db_user': self.get_value(ext_db_user.is_db_user) if ext_db_user else "",
-                        'domain_level_schema': self.get_value(ext_db_user.domain_level_schema) if ext_db_user else "",
-                        'instance_level_schema': self.get_value(ext_db_user.instance_level_schema) if ext_db_user else "",
-                        'db_global_roles': str(','.join(x for x in ext_db_user.db_global_roles)) if ext_db_user else ""
-                    },
-                    'ext_db_user_credential': {
-                        'db_user_name': self.get_value(ext_db_user_credential.db_user_name) if ext_db_user_credential else "",
-                        'db_login_attempts': self.get_value(ext_db_user_credential.db_login_attempts) if ext_db_user_credential else ""
-                    },
-                    'ext_capabilities': {
-                        'can_use_api_keys': self.get_value(ext_capabilities.can_use_api_keys) if ext_capabilities else "",
-                        'can_use_auth_tokens': self.get_value(ext_capabilities.can_use_auth_tokens) if ext_capabilities else "",
-                        'can_use_console_password': self.get_value(ext_capabilities.can_use_console_password) if ext_capabilities else "",
-                        'can_use_customer_secret_keys': self.get_value(ext_capabilities.can_use_customer_secret_keys) if ext_capabilities else "",
-                        'can_use_o_auth2_client_credentials': self.get_value(ext_capabilities.can_use_o_auth2_client_credentials) if ext_capabilities else "",
-                        'can_use_smtp_credentials': self.get_value(ext_capabilities.can_use_smtp_credentials) if ext_capabilities else "",
-                        'can_use_db_credentials': self.get_value(ext_capabilities.can_use_db_credentials) if ext_capabilities else ""
-                    },
+                    'ext_user': self.load_identity_domain_users_ext_user(var),
+                    'ext_password': self.load_identity_domain_users_ext_password(var),
+                    'ext_user_state': self.load_identity_domain_users_ext_user_state(var),
+                    'ext_mfa': self.load_identity_domain_users_ext_mfa(var),
+                    'ext_posix': self.load_identity_domain_users_ext_posix(var),
+                    'ext_adaptive': self.load_identity_domain_users_ext_adaptive(var),
+                    'ext_db_user': self.load_identity_domain_users_ext_db_user(var),
+                    'ext_db_user_credential': self.load_identity_domain_users_ext_db_user_credential(var),
+                    'ext_capabilities': self.load_identity_domain_users_ext_capabilities(var),
                     'roles': [{'value': x.value, 'type': x.type} for x in var.roles] if var.roles else [],
                     'api_keys': [],
                     'customer_secret_keys': [],
@@ -16358,10 +16277,12 @@ class ShowOCIDomains(object):
                     'smtp_credentials': [],
                     'o_auth2_client_credentials': [],
                     'db_credentials': [],
-                    'allow_self_change': self.get_value(ext_self_change.allow_self_change) if ext_self_change else ""
+                    'allow_self_change': self.load_identity_domain_users_ext_self_change(var)
                 }
 
-                if not self.skip_identity_user_credential:
+                ext_credential = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_user_credentials_user
+
+                if ext_credential and not self.skip_identity_user_credential:
                     user_value['api_keys'] = self.__get_api_keys(identity_domain_client, var.ocid, ext_credential)
                     user_value['customer_secret_keys'] = self.__get_customer_secret_keys(identity_domain_client, var.ocid, ext_credential)
                     user_value['auth_tokens'] = self.__get_auth_tokens(identity_domain_client, var.ocid, ext_credential)
@@ -16387,6 +16308,319 @@ class ShowOCIDomains(object):
             raise
         except Exception as e:
             self.__print_error("__load_identity_domain_users", e)
+
+##################################################################################
+# load_identity_domain_users_ext_password
+##################################################################################
+    def load_identity_domain_users_ext_self_change(self, var):
+        data = ""
+        try:
+            ext_self_change = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_self_change_user
+
+            if ext_self_change:
+                data = self.get_date(ext_self_change.allow_self_change)
+
+            return data
+
+        except Exception as e:
+            self.__print_error("load_identity_domain_users_ext_self_change", e)
+            return data
+
+##################################################################################
+# load_identity_domain_users_ext_password
+##################################################################################
+    def load_identity_domain_users_ext_password(self, var):
+
+        try:
+            data = {
+                'last_successful_set_date': "",
+                'cant_change': "",
+                'cant_expire': "",
+                'must_change': "",
+                'expired': "",
+                'last_successful_validation_date': "",
+                'last_failed_validation_date': "",
+                'applicable_password_policy': ""
+            }
+            ext_password = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_password_state_user
+
+            if ext_password:
+                data['last_successful_set_date'] = self.get_date(ext_password.last_successful_set_date)
+                data['cant_change'] = self.get_value(ext_password.cant_change)
+                data['cant_expire'] = self.get_value(ext_password.cant_expire)
+                data['must_change'] = self.get_value(ext_password.must_change)
+                data['expired'] = self.get_value(ext_password.expired)
+                data['last_successful_validation_date'] = self.get_date(ext_password.last_successful_validation_date)
+                data['last_failed_validation_date'] = self.get_date(ext_password.last_failed_validation_date)
+
+                if ext_password.applicable_password_policy:
+                    data['applicable_password_policy'] = self.get_value(ext_password.applicable_password_policy.value)
+
+            return data
+
+        except Exception as e:
+            self.__print_error("load_identity_domain_users_ext_password", e)
+            return data
+
+##################################################################################
+# load_identity_domain_users_ext_db_user_credential
+##################################################################################
+    def load_identity_domain_users_ext_db_user_credential(self, var):
+
+        try:
+            data = {
+                'db_user_name': "",
+                'db_login_attempts': ""
+            }
+            ext_db_user_credential = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_db_credentials_user
+
+            if ext_db_user_credential:
+                data['db_user_name'] = self.get_value(ext_db_user_credential.db_user_name)
+                data['db_login_attempts'] = self.get_value(ext_db_user_credential.db_login_attempts)
+
+            return data
+
+        except Exception as e:
+            self.__print_error("load_identity_domain_users_ext_db_user_credential", e)
+            return data
+
+##################################################################################
+# load_identity_domain_users_ext_adaptive
+##################################################################################
+    def load_identity_domain_users_ext_adaptive(self, var):
+
+        try:
+            data = {
+                'risk_level': "",
+                'risk_scores': ""
+            }
+            ext_adaptive = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_adaptive_user
+
+            if ext_adaptive:
+                data['risk_level'] = self.get_value(ext_adaptive.risk_level)
+
+                if ext_adaptive.risk_scores:
+                    data['risk_scores'] = str(','.join(self.get_value(x.value) for x in ext_adaptive.risk_scores))
+
+            return data
+
+        except Exception as e:
+            self.__print_error("load_identity_domain_users_ext_adaptive", e)
+            return data
+
+##################################################################################
+# load_identity_domain_users_ext_posix
+##################################################################################
+    def load_identity_domain_users_ext_posix(self, var):
+
+        try:
+            data = {
+                'uid_number': "",
+                'gid_number': "",
+                'gecos': "",
+                'home_directory': "",
+                'login_shell': ""
+            }
+            ext_posix = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_posix_user
+
+            if ext_posix:
+                data = {
+                    'uid_number': self.get_value(ext_posix.uid_number),
+                    'gid_number': self.get_value(ext_posix.gid_number),
+                    'gecos': self.get_value(ext_posix.gecos),
+                    'home_directory': self.get_value(ext_posix.home_directory),
+                    'login_shell': self.get_value(ext_posix.login_shell)
+                }
+            return data
+
+        except Exception as e:
+            self.__print_error("load_identity_domain_users_ext_posix", e)
+            return data
+
+##################################################################################
+# load_identity_domain_users_ext_db_user
+##################################################################################
+    def load_identity_domain_users_ext_db_user(self, var):
+
+        try:
+            data = {
+                'is_db_user': "",
+                'domain_level_schema': "",
+                'instance_level_schema': "",
+                'db_global_roles': ""
+            }
+            ext_db_user = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_db_user_user
+
+            if ext_db_user:
+                data = {
+                    'is_db_user': self.get_value(ext_db_user.is_db_user),
+                    'domain_level_schema': self.get_value(ext_db_user.domain_level_schema),
+                    'instance_level_schema': self.get_value(ext_db_user.instance_level_schema),
+                    'db_global_roles': str(','.join(x for x in ext_db_user.db_global_roles)) if ext_db_user.db_global_roles else ""
+                }
+            return data
+
+        except Exception as e:
+            self.__print_error("load_identity_domain_users_ext_db_user", e)
+            return data
+
+##################################################################################
+# load_identity_domain_users_ext_user_state
+##################################################################################
+    def load_identity_domain_users_ext_user_state(self, var):
+
+        try:
+            data = {
+                'last_successful_login_date': "",
+                'previous_successful_login_date': "",
+                'last_failed_login_date': "",
+                'login_attempts': "",
+                'recovery_attempts': "",
+                'recovery_enroll_attempts': "",
+                'max_concurrent_sessions': "",
+                'recovery_locked_date': "",
+                'recovery_locked_on': "",
+                'locked_date': "",
+                'locked_expired': "",
+                'locked_on': "",
+                'locked_reason': ""
+            }
+            ext_user_state = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_user_state_user
+
+            if ext_user_state:
+                data['last_successful_login_date'] = self.get_date(ext_user_state.last_successful_login_date)
+                data['previous_successful_login_date'] = self.get_date(ext_user_state.previous_successful_login_date)
+                data['last_failed_login_date'] = self.get_date(ext_user_state.last_failed_login_date)
+                data['login_attempts'] = self.get_value(ext_user_state.login_attempts)
+                data['recovery_attempts'] = self.get_value(ext_user_state.recovery_attempts)
+                data['recovery_enroll_attempts'] = self.get_value(ext_user_state.recovery_enroll_attempts)
+                data['max_concurrent_sessions'] = self.get_value(ext_user_state.max_concurrent_sessions)
+
+                if ext_user_state.recovery_locked:
+                    data['recovery_locked_date'] = self.get_date(ext_user_state.recovery_locked.lock_date)
+                    data['recovery_locked_on'] = self.get_value(ext_user_state.recovery_locked.on)
+
+                if ext_user_state.locked:
+                    data['locked_date'] = self.get_date(ext_user_state.locked.lock_date)
+                    data['locked_expired'] = self.get_date(ext_user_state.locked.on)
+                    data['locked_on'] = self.get_value(ext_user_state.locked.on)
+                    data['locked_reason'] = self.get_value(ext_user_state.locked.reason)
+
+            return data
+
+        except Exception as e:
+            self.__print_error("load_identity_domain_users_ext_user_state", e)
+            return data
+
+##################################################################################
+# load_identity_domain_users_ext_mfa
+##################################################################################
+    def load_identity_domain_users_ext_mfa(self, var):
+
+        try:
+            data = {
+                'preferred_authentication_factor': "",
+                'mfa_status': "",
+                'preferred_third_party_vendor': "",
+                'preferred_authentication_method': "",
+                'login_attempts': "",
+                'mfa_enabled_on': "",
+                'mfa_ignored_apps': ""
+            }
+            ext_mfa = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_mfa_user
+
+            if ext_mfa:
+                data['preferred_authentication_factor'] = self.get_value(ext_mfa.preferred_authentication_factor)
+                data['mfa_status'] = self.get_value(ext_mfa.mfa_status)
+                data['preferred_third_party_vendor'] = self.get_value(ext_mfa.preferred_third_party_vendor)
+                data['preferred_authentication_method'] = self.get_value(ext_mfa.preferred_authentication_method)
+                data['login_attempts'] = self.get_value(ext_mfa.login_attempts)
+                data['mfa_enabled_on'] = self.get_value(ext_mfa.mfa_enabled_on)
+
+                if ext_mfa.mfa_ignored_apps:
+                    data['mfa_ignored_apps'] = str(','.join(self.get_value(x) for x in ext_mfa.mfa_ignored_apps))
+
+            return data
+
+        except Exception as e:
+            self.__print_error("load_identity_domain_users_ext_mfa", e)
+            return data
+
+##################################################################################
+# load_identity_domain_users_ext_capabilities
+##################################################################################
+    def load_identity_domain_users_ext_capabilities(self, var):
+
+        try:
+            data = {
+                'can_use_api_keys': "",
+                'can_use_auth_tokens': "",
+                'can_use_console_password': "",
+                'can_use_customer_secret_keys': "",
+                'can_use_o_auth2_client_credentials': "",
+                'can_use_smtp_credentials': "",
+                'can_use_db_credentials': ""
+            }
+            ext_capabilities = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_capabilities_user
+
+            if ext_capabilities:
+                data = {
+                    'can_use_api_keys': self.get_value(ext_capabilities.can_use_api_keys),
+                    'can_use_auth_tokens': self.get_value(ext_capabilities.can_use_auth_tokens),
+                    'can_use_console_password': self.get_value(ext_capabilities.can_use_console_password),
+                    'can_use_customer_secret_keys': self.get_value(ext_capabilities.can_use_customer_secret_keys),
+                    'can_use_o_auth2_client_credentials': self.get_value(ext_capabilities.can_use_o_auth2_client_credentials),
+                    'can_use_smtp_credentials': self.get_value(ext_capabilities.can_use_smtp_credentials),
+                    'can_use_db_credentials': self.get_value(ext_capabilities.can_use_db_credentials)
+                }
+            return data
+
+        except Exception as e:
+            self.__print_error("load_identity_domain_users_ext_capabilities", e)
+            return data
+
+##################################################################################
+# load_identity_domain_users_ext_user
+##################################################################################
+    def load_identity_domain_users_ext_user(self, var):
+        data = {}
+        try:
+            data = {
+                'is_federated_user': "",
+                'is_authentication_delegated': "",
+                'status': "",
+                'provider': "",
+                'creation_mechanism': "",
+                'do_not_show_getting_started': "",
+                'bypass_notification': "",
+                'is_account_recovery_enrolled': "",
+                'account_recovery_required': "",
+                'user_flow_controlled_by_external_client': "",
+                'is_group_membership_normalized': "",
+                'is_group_membership_synced_to_users_groups': ""
+            }
+
+            ext_user = var.urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user
+            if ext_user:
+                data = {
+                    'is_federated_user': self.get_value(ext_user.is_federated_user),
+                    'is_authentication_delegated': self.get_value(ext_user.is_authentication_delegated),
+                    'status': self.get_value(ext_user.status),
+                    'provider': self.get_value(ext_user.provider),
+                    'creation_mechanism': self.get_value(ext_user.creation_mechanism),
+                    'do_not_show_getting_started': self.get_value(ext_user.do_not_show_getting_started),
+                    'bypass_notification': self.get_value(ext_user.bypass_notification),
+                    'is_account_recovery_enrolled': self.get_value(ext_user.is_account_recovery_enrolled),
+                    'account_recovery_required': self.get_value(ext_user.account_recovery_required),
+                    'user_flow_controlled_by_external_client': self.get_value(ext_user.user_flow_controlled_by_external_client),
+                    'is_group_membership_normalized': self.get_value(ext_user.is_group_membership_normalized),
+                    'is_group_membership_synced_to_users_groups': self.get_value(ext_user.is_group_membership_synced_to_users_groups)
+                }
+            return data
+
+        except Exception as e:
+            self.__print_error("load_identity_domain_users_ext_capabilities", e)
+            return data
 
 ##################################################################################
 # load_identity_domain_groups

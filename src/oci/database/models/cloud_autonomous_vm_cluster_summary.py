@@ -286,6 +286,18 @@ class CloudAutonomousVmClusterSummary(object):
             The value to assign to the non_provisionable_autonomous_container_databases property of this CloudAutonomousVmClusterSummary.
         :type non_provisionable_autonomous_container_databases: int
 
+        :param exadata_storage_in_tbs_lowest_scaled_value:
+            The value to assign to the exadata_storage_in_tbs_lowest_scaled_value property of this CloudAutonomousVmClusterSummary.
+        :type exadata_storage_in_tbs_lowest_scaled_value: float
+
+        :param ocpus_lowest_scaled_value:
+            The value to assign to the ocpus_lowest_scaled_value property of this CloudAutonomousVmClusterSummary.
+        :type ocpus_lowest_scaled_value: int
+
+        :param max_acds_lowest_scaled_value:
+            The value to assign to the max_acds_lowest_scaled_value property of this CloudAutonomousVmClusterSummary.
+        :type max_acds_lowest_scaled_value: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -341,7 +353,10 @@ class CloudAutonomousVmClusterSummary(object):
             'reserved_cpus': 'float',
             'provisionable_autonomous_container_databases': 'int',
             'provisioned_autonomous_container_databases': 'int',
-            'non_provisionable_autonomous_container_databases': 'int'
+            'non_provisionable_autonomous_container_databases': 'int',
+            'exadata_storage_in_tbs_lowest_scaled_value': 'float',
+            'ocpus_lowest_scaled_value': 'int',
+            'max_acds_lowest_scaled_value': 'int'
         }
 
         self.attribute_map = {
@@ -398,7 +413,10 @@ class CloudAutonomousVmClusterSummary(object):
             'reserved_cpus': 'reservedCpus',
             'provisionable_autonomous_container_databases': 'provisionableAutonomousContainerDatabases',
             'provisioned_autonomous_container_databases': 'provisionedAutonomousContainerDatabases',
-            'non_provisionable_autonomous_container_databases': 'nonProvisionableAutonomousContainerDatabases'
+            'non_provisionable_autonomous_container_databases': 'nonProvisionableAutonomousContainerDatabases',
+            'exadata_storage_in_tbs_lowest_scaled_value': 'exadataStorageInTBsLowestScaledValue',
+            'ocpus_lowest_scaled_value': 'ocpusLowestScaledValue',
+            'max_acds_lowest_scaled_value': 'maxAcdsLowestScaledValue'
         }
 
         self._id = None
@@ -455,6 +473,9 @@ class CloudAutonomousVmClusterSummary(object):
         self._provisionable_autonomous_container_databases = None
         self._provisioned_autonomous_container_databases = None
         self._non_provisionable_autonomous_container_databases = None
+        self._exadata_storage_in_tbs_lowest_scaled_value = None
+        self._ocpus_lowest_scaled_value = None
+        self._max_acds_lowest_scaled_value = None
 
     @property
     def id(self):
@@ -1857,6 +1878,78 @@ class CloudAutonomousVmClusterSummary(object):
         :type: int
         """
         self._non_provisionable_autonomous_container_databases = non_provisionable_autonomous_container_databases
+
+    @property
+    def exadata_storage_in_tbs_lowest_scaled_value(self):
+        """
+        Gets the exadata_storage_in_tbs_lowest_scaled_value of this CloudAutonomousVmClusterSummary.
+        The lowest value to which exadataStorage in TBs can be scaled down.
+
+
+        :return: The exadata_storage_in_tbs_lowest_scaled_value of this CloudAutonomousVmClusterSummary.
+        :rtype: float
+        """
+        return self._exadata_storage_in_tbs_lowest_scaled_value
+
+    @exadata_storage_in_tbs_lowest_scaled_value.setter
+    def exadata_storage_in_tbs_lowest_scaled_value(self, exadata_storage_in_tbs_lowest_scaled_value):
+        """
+        Sets the exadata_storage_in_tbs_lowest_scaled_value of this CloudAutonomousVmClusterSummary.
+        The lowest value to which exadataStorage in TBs can be scaled down.
+
+
+        :param exadata_storage_in_tbs_lowest_scaled_value: The exadata_storage_in_tbs_lowest_scaled_value of this CloudAutonomousVmClusterSummary.
+        :type: float
+        """
+        self._exadata_storage_in_tbs_lowest_scaled_value = exadata_storage_in_tbs_lowest_scaled_value
+
+    @property
+    def ocpus_lowest_scaled_value(self):
+        """
+        Gets the ocpus_lowest_scaled_value of this CloudAutonomousVmClusterSummary.
+        The lowest value to which ocpus can be scaled down.
+
+
+        :return: The ocpus_lowest_scaled_value of this CloudAutonomousVmClusterSummary.
+        :rtype: int
+        """
+        return self._ocpus_lowest_scaled_value
+
+    @ocpus_lowest_scaled_value.setter
+    def ocpus_lowest_scaled_value(self, ocpus_lowest_scaled_value):
+        """
+        Sets the ocpus_lowest_scaled_value of this CloudAutonomousVmClusterSummary.
+        The lowest value to which ocpus can be scaled down.
+
+
+        :param ocpus_lowest_scaled_value: The ocpus_lowest_scaled_value of this CloudAutonomousVmClusterSummary.
+        :type: int
+        """
+        self._ocpus_lowest_scaled_value = ocpus_lowest_scaled_value
+
+    @property
+    def max_acds_lowest_scaled_value(self):
+        """
+        Gets the max_acds_lowest_scaled_value of this CloudAutonomousVmClusterSummary.
+        The lowest value to which ACDs can be scaled down.
+
+
+        :return: The max_acds_lowest_scaled_value of this CloudAutonomousVmClusterSummary.
+        :rtype: int
+        """
+        return self._max_acds_lowest_scaled_value
+
+    @max_acds_lowest_scaled_value.setter
+    def max_acds_lowest_scaled_value(self, max_acds_lowest_scaled_value):
+        """
+        Sets the max_acds_lowest_scaled_value of this CloudAutonomousVmClusterSummary.
+        The lowest value to which ACDs can be scaled down.
+
+
+        :param max_acds_lowest_scaled_value: The max_acds_lowest_scaled_value of this CloudAutonomousVmClusterSummary.
+        :type: int
+        """
+        self._max_acds_lowest_scaled_value = max_acds_lowest_scaled_value
 
     def __repr__(self):
         return formatted_flat_dict(self)

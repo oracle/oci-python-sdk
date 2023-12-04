@@ -258,6 +258,18 @@ class AutonomousVmCluster(object):
             The value to assign to the time_ords_certificate_expires property of this AutonomousVmCluster.
         :type time_ords_certificate_expires: datetime
 
+        :param exadata_storage_in_tbs_lowest_scaled_value:
+            The value to assign to the exadata_storage_in_tbs_lowest_scaled_value property of this AutonomousVmCluster.
+        :type exadata_storage_in_tbs_lowest_scaled_value: float
+
+        :param cpus_lowest_scaled_value:
+            The value to assign to the cpus_lowest_scaled_value property of this AutonomousVmCluster.
+        :type cpus_lowest_scaled_value: int
+
+        :param max_acds_lowest_scaled_value:
+            The value to assign to the max_acds_lowest_scaled_value property of this AutonomousVmCluster.
+        :type max_acds_lowest_scaled_value: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -306,7 +318,10 @@ class AutonomousVmCluster(object):
             'scan_listener_port_non_tls': 'int',
             'is_mtls_enabled': 'bool',
             'time_database_ssl_certificate_expires': 'datetime',
-            'time_ords_certificate_expires': 'datetime'
+            'time_ords_certificate_expires': 'datetime',
+            'exadata_storage_in_tbs_lowest_scaled_value': 'float',
+            'cpus_lowest_scaled_value': 'int',
+            'max_acds_lowest_scaled_value': 'int'
         }
 
         self.attribute_map = {
@@ -356,7 +371,10 @@ class AutonomousVmCluster(object):
             'scan_listener_port_non_tls': 'scanListenerPortNonTls',
             'is_mtls_enabled': 'isMtlsEnabled',
             'time_database_ssl_certificate_expires': 'timeDatabaseSslCertificateExpires',
-            'time_ords_certificate_expires': 'timeOrdsCertificateExpires'
+            'time_ords_certificate_expires': 'timeOrdsCertificateExpires',
+            'exadata_storage_in_tbs_lowest_scaled_value': 'exadataStorageInTBsLowestScaledValue',
+            'cpus_lowest_scaled_value': 'cpusLowestScaledValue',
+            'max_acds_lowest_scaled_value': 'maxAcdsLowestScaledValue'
         }
 
         self._id = None
@@ -406,6 +424,9 @@ class AutonomousVmCluster(object):
         self._is_mtls_enabled = None
         self._time_database_ssl_certificate_expires = None
         self._time_ords_certificate_expires = None
+        self._exadata_storage_in_tbs_lowest_scaled_value = None
+        self._cpus_lowest_scaled_value = None
+        self._max_acds_lowest_scaled_value = None
 
     @property
     def id(self):
@@ -1600,6 +1621,78 @@ class AutonomousVmCluster(object):
         :type: datetime
         """
         self._time_ords_certificate_expires = time_ords_certificate_expires
+
+    @property
+    def exadata_storage_in_tbs_lowest_scaled_value(self):
+        """
+        Gets the exadata_storage_in_tbs_lowest_scaled_value of this AutonomousVmCluster.
+        The lowest value to which exadataStorage in TBs can be scaled down.
+
+
+        :return: The exadata_storage_in_tbs_lowest_scaled_value of this AutonomousVmCluster.
+        :rtype: float
+        """
+        return self._exadata_storage_in_tbs_lowest_scaled_value
+
+    @exadata_storage_in_tbs_lowest_scaled_value.setter
+    def exadata_storage_in_tbs_lowest_scaled_value(self, exadata_storage_in_tbs_lowest_scaled_value):
+        """
+        Sets the exadata_storage_in_tbs_lowest_scaled_value of this AutonomousVmCluster.
+        The lowest value to which exadataStorage in TBs can be scaled down.
+
+
+        :param exadata_storage_in_tbs_lowest_scaled_value: The exadata_storage_in_tbs_lowest_scaled_value of this AutonomousVmCluster.
+        :type: float
+        """
+        self._exadata_storage_in_tbs_lowest_scaled_value = exadata_storage_in_tbs_lowest_scaled_value
+
+    @property
+    def cpus_lowest_scaled_value(self):
+        """
+        Gets the cpus_lowest_scaled_value of this AutonomousVmCluster.
+        The lowest value to which cpus can be scaled down.
+
+
+        :return: The cpus_lowest_scaled_value of this AutonomousVmCluster.
+        :rtype: int
+        """
+        return self._cpus_lowest_scaled_value
+
+    @cpus_lowest_scaled_value.setter
+    def cpus_lowest_scaled_value(self, cpus_lowest_scaled_value):
+        """
+        Sets the cpus_lowest_scaled_value of this AutonomousVmCluster.
+        The lowest value to which cpus can be scaled down.
+
+
+        :param cpus_lowest_scaled_value: The cpus_lowest_scaled_value of this AutonomousVmCluster.
+        :type: int
+        """
+        self._cpus_lowest_scaled_value = cpus_lowest_scaled_value
+
+    @property
+    def max_acds_lowest_scaled_value(self):
+        """
+        Gets the max_acds_lowest_scaled_value of this AutonomousVmCluster.
+        The lowest value to which ACDs can be scaled down.
+
+
+        :return: The max_acds_lowest_scaled_value of this AutonomousVmCluster.
+        :rtype: int
+        """
+        return self._max_acds_lowest_scaled_value
+
+    @max_acds_lowest_scaled_value.setter
+    def max_acds_lowest_scaled_value(self, max_acds_lowest_scaled_value):
+        """
+        Sets the max_acds_lowest_scaled_value of this AutonomousVmCluster.
+        The lowest value to which ACDs can be scaled down.
+
+
+        :param max_acds_lowest_scaled_value: The max_acds_lowest_scaled_value of this AutonomousVmCluster.
+        :type: int
+        """
+        self._max_acds_lowest_scaled_value = max_acds_lowest_scaled_value
 
     def __repr__(self):
         return formatted_flat_dict(self)

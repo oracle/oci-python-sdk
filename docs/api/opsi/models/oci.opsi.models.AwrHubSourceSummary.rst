@@ -1,9 +1,9 @@
-DatastoreSummary
-================
+AwrHubSourceSummary
+===================
 
-.. currentmodule:: oci.ocvp.models
+.. currentmodule:: oci.opsi.models
 
-.. autoclass:: DatastoreSummary
+.. autoclass:: AwrHubSourceSummary
     :show-inheritance:
     :special-members: __init__
     :members:

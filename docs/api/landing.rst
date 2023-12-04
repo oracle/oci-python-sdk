@@ -38,6 +38,7 @@ API Reference
 * :doc:`Certificates Management <certificates_management/client/oci.certificates_management.CertificatesManagementClient>`
 * :doc:`Channels <mysql/client/oci.mysql.ChannelsClient>`
 * :doc:`Cloud Guard <cloud_guard/client/oci.cloud_guard.CloudGuardClient>`
+* :doc:`Cluster <ocvp/client/oci.ocvp.ClusterClient>`
 * :doc:`Commitment <osub_subscription/client/oci.osub_subscription.CommitmentClient>`
 * :doc:`Commitment <osub_subscription/client/oci.osub_subscription.CommitmentClient>`
 * :doc:`Common <cloud_bridge/client/oci.cloud_bridge.CommonClient>`

@@ -74,6 +74,11 @@ Opsi
     oci.opsi.models.AwrDatabaseWaitEventCollection
     oci.opsi.models.AwrDatabaseWaitEventSummary
     oci.opsi.models.AwrHub
+    oci.opsi.models.AwrHubObjects
+    oci.opsi.models.AwrHubSource
+    oci.opsi.models.AwrHubSourceSummary
+    oci.opsi.models.AwrHubSourceSummaryCollection
+    oci.opsi.models.AwrHubSources
     oci.opsi.models.AwrHubSummary
     oci.opsi.models.AwrHubSummaryCollection
     oci.opsi.models.AwrHubs
@@ -85,12 +90,14 @@ Opsi
     oci.opsi.models.BasicConfigurationItemMetadata
     oci.opsi.models.BasicConfigurationItemSummary
     oci.opsi.models.ChangeAutonomousDatabaseInsightAdvancedFeaturesDetails
+    oci.opsi.models.ChangeAwrHubSourceCompartmentDetails
     oci.opsi.models.ChangeDatabaseInsightCompartmentDetails
     oci.opsi.models.ChangeEnterpriseManagerBridgeCompartmentDetails
     oci.opsi.models.ChangeExadataInsightCompartmentDetails
     oci.opsi.models.ChangeHostInsightCompartmentDetails
     oci.opsi.models.ChangeNewsReportCompartmentDetails
     oci.opsi.models.ChangeOperationsInsightsPrivateEndpointCompartmentDetails
+    oci.opsi.models.ChangeOperationsInsightsWarehouseCompartmentDetails
     oci.opsi.models.ChangeOpsiConfigurationCompartmentDetails
     oci.opsi.models.ChangePeComanagedDatabaseInsightDetails
     oci.opsi.models.CloudImportableComputeEntitySummary
@@ -104,6 +111,7 @@ Opsi
     oci.opsi.models.ConfigurationItemsCollection
     oci.opsi.models.ConnectionDetails
     oci.opsi.models.CreateAwrHubDetails
+    oci.opsi.models.CreateAwrHubSourceDetails
     oci.opsi.models.CreateBasicConfigurationItemDetails
     oci.opsi.models.CreateConfigurationItemDetails
     oci.opsi.models.CreateDatabaseInsightDetails
@@ -269,6 +277,7 @@ Opsi
     oci.opsi.models.IngestSqlTextDetails
     oci.opsi.models.IngestSqlTextResponseDetails
     oci.opsi.models.InstanceMetrics
+    oci.opsi.models.ListObjects
     oci.opsi.models.MacsManagedCloudHostConfigurationSummary
     oci.opsi.models.MacsManagedCloudHostInsight
     oci.opsi.models.MacsManagedCloudHostInsightSummary
@@ -286,6 +295,7 @@ Opsi
     oci.opsi.models.NewsReportCollection
     oci.opsi.models.NewsReportSummary
     oci.opsi.models.NewsReports
+    oci.opsi.models.ObjectSummary
     oci.opsi.models.OperationsInsightsPrivateEndpoint
     oci.opsi.models.OperationsInsightsPrivateEndpointCollection
     oci.opsi.models.OperationsInsightsPrivateEndpointSummary
@@ -407,6 +417,7 @@ Opsi
     oci.opsi.models.TopProcessesUsageTrendAggregation
     oci.opsi.models.UpdateAutonomousDatabaseInsightDetails
     oci.opsi.models.UpdateAwrHubDetails
+    oci.opsi.models.UpdateAwrHubSourceDetails
     oci.opsi.models.UpdateBasicConfigurationItemDetails
     oci.opsi.models.UpdateConfigurationItemDetails
     oci.opsi.models.UpdateDatabaseInsightDetails

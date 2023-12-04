@@ -54,6 +54,8 @@ from .update_knowledge_base_details import UpdateKnowledgeBaseDetails
 from .update_remediation_recipe_details import UpdateRemediationRecipeDetails
 from .update_remediation_run_details import UpdateRemediationRunDetails
 from .update_vulnerability_audit_details import UpdateVulnerabilityAuditDetails
+from .usage_data_details import UsageDataDetails
+from .usage_data_via_object_storage_tuple_details import UsageDataViaObjectStorageTupleDetails
 from .verify_configuration import VerifyConfiguration
 from .verify_stage import VerifyStage
 from .vulnerability import Vulnerability
@@ -121,6 +123,8 @@ adm_type_mapping = {
     "UpdateRemediationRecipeDetails": UpdateRemediationRecipeDetails,
     "UpdateRemediationRunDetails": UpdateRemediationRunDetails,
     "UpdateVulnerabilityAuditDetails": UpdateVulnerabilityAuditDetails,
+    "UsageDataDetails": UsageDataDetails,
+    "UsageDataViaObjectStorageTupleDetails": UsageDataViaObjectStorageTupleDetails,
     "VerifyConfiguration": VerifyConfiguration,
     "VerifyStage": VerifyStage,
     "Vulnerability": Vulnerability,

@@ -66,6 +66,8 @@ Adm
     oci.adm.models.UpdateRemediationRecipeDetails
     oci.adm.models.UpdateRemediationRunDetails
     oci.adm.models.UpdateVulnerabilityAuditDetails
+    oci.adm.models.UsageDataDetails
+    oci.adm.models.UsageDataViaObjectStorageTupleDetails
     oci.adm.models.VerifyConfiguration
     oci.adm.models.VerifyStage
     oci.adm.models.Vulnerability

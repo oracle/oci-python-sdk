@@ -110,6 +110,10 @@ class CreateVmClusterDetails(object):
             The value to assign to the data_collection_options property of this CreateVmClusterDetails.
         :type data_collection_options: oci.database.models.DataCollectionOptions
 
+        :param system_version:
+            The value to assign to the system_version property of this CreateVmClusterDetails.
+        :type system_version: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -131,7 +135,8 @@ class CreateVmClusterDetails(object):
             'db_servers': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'data_collection_options': 'DataCollectionOptions'
+            'data_collection_options': 'DataCollectionOptions',
+            'system_version': 'str'
         }
 
         self.attribute_map = {
@@ -154,7 +159,8 @@ class CreateVmClusterDetails(object):
             'db_servers': 'dbServers',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'data_collection_options': 'dataCollectionOptions'
+            'data_collection_options': 'dataCollectionOptions',
+            'system_version': 'systemVersion'
         }
 
         self._compartment_id = None
@@ -177,6 +183,7 @@ class CreateVmClusterDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._data_collection_options = None
+        self._system_version = None
 
     @property
     def compartment_id(self):
@@ -692,6 +699,30 @@ class CreateVmClusterDetails(object):
         :type: oci.database.models.DataCollectionOptions
         """
         self._data_collection_options = data_collection_options
+
+    @property
+    def system_version(self):
+        """
+        Gets the system_version of this CreateVmClusterDetails.
+        Operating system version of the image.
+
+
+        :return: The system_version of this CreateVmClusterDetails.
+        :rtype: str
+        """
+        return self._system_version
+
+    @system_version.setter
+    def system_version(self, system_version):
+        """
+        Sets the system_version of this CreateVmClusterDetails.
+        Operating system version of the image.
+
+
+        :param system_version: The system_version of this CreateVmClusterDetails.
+        :type: str
+        """
+        self._system_version = system_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

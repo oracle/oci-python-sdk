@@ -19,6 +19,9 @@ from .azure_synapse_connection_summary import AzureSynapseConnectionSummary
 from .cancel_deployment_backup_details import CancelDeploymentBackupDetails
 from .cancel_deployment_upgrade_details import CancelDeploymentUpgradeDetails
 from .cancel_snooze_deployment_upgrade_details import CancelSnoozeDeploymentUpgradeDetails
+from .certificate import Certificate
+from .certificate_collection import CertificateCollection
+from .certificate_summary import CertificateSummary
 from .change_connection_compartment_details import ChangeConnectionCompartmentDetails
 from .change_database_registration_compartment_details import ChangeDatabaseRegistrationCompartmentDetails
 from .change_deployment_backup_compartment_details import ChangeDeploymentBackupCompartmentDetails
@@ -36,6 +39,7 @@ from .create_amazon_redshift_connection_details import CreateAmazonRedshiftConne
 from .create_amazon_s3_connection_details import CreateAmazonS3ConnectionDetails
 from .create_azure_data_lake_storage_connection_details import CreateAzureDataLakeStorageConnectionDetails
 from .create_azure_synapse_connection_details import CreateAzureSynapseConnectionDetails
+from .create_certificate_details import CreateCertificateDetails
 from .create_connection_assignment_details import CreateConnectionAssignmentDetails
 from .create_connection_details import CreateConnectionDetails
 from .create_database_registration_details import CreateDatabaseRegistrationDetails
@@ -208,6 +212,9 @@ golden_gate_type_mapping = {
     "CancelDeploymentBackupDetails": CancelDeploymentBackupDetails,
     "CancelDeploymentUpgradeDetails": CancelDeploymentUpgradeDetails,
     "CancelSnoozeDeploymentUpgradeDetails": CancelSnoozeDeploymentUpgradeDetails,
+    "Certificate": Certificate,
+    "CertificateCollection": CertificateCollection,
+    "CertificateSummary": CertificateSummary,
     "ChangeConnectionCompartmentDetails": ChangeConnectionCompartmentDetails,
     "ChangeDatabaseRegistrationCompartmentDetails": ChangeDatabaseRegistrationCompartmentDetails,
     "ChangeDeploymentBackupCompartmentDetails": ChangeDeploymentBackupCompartmentDetails,
@@ -225,6 +232,7 @@ golden_gate_type_mapping = {
     "CreateAmazonS3ConnectionDetails": CreateAmazonS3ConnectionDetails,
     "CreateAzureDataLakeStorageConnectionDetails": CreateAzureDataLakeStorageConnectionDetails,
     "CreateAzureSynapseConnectionDetails": CreateAzureSynapseConnectionDetails,
+    "CreateCertificateDetails": CreateCertificateDetails,
     "CreateConnectionAssignmentDetails": CreateConnectionAssignmentDetails,
     "CreateConnectionDetails": CreateConnectionDetails,
     "CreateDatabaseRegistrationDetails": CreateDatabaseRegistrationDetails,
