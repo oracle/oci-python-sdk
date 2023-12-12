@@ -111,6 +111,10 @@ class Task(object):
             The value to assign to the config_provider_delegate property of this Task.
         :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
+        :param is_concurrent_allowed:
+            The value to assign to the is_concurrent_allowed property of this Task.
+        :type is_concurrent_allowed: bool
+
         :param metadata:
             The value to assign to the metadata property of this Task.
         :type metadata: oci.data_integration.models.ObjectMetadata
@@ -139,6 +143,7 @@ class Task(object):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'ConfigProvider',
+            'is_concurrent_allowed': 'bool',
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)',
             'registry_metadata': 'RegistryMetadata'
@@ -159,6 +164,7 @@ class Task(object):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
+            'is_concurrent_allowed': 'isConcurrentAllowed',
             'metadata': 'metadata',
             'key_map': 'keyMap',
             'registry_metadata': 'registryMetadata'
@@ -178,6 +184,7 @@ class Task(object):
         self._parameters = None
         self._op_config_values = None
         self._config_provider_delegate = None
+        self._is_concurrent_allowed = None
         self._metadata = None
         self._key_map = None
         self._registry_metadata = None
@@ -539,6 +546,30 @@ class Task(object):
         :type: oci.data_integration.models.ConfigProvider
         """
         self._config_provider_delegate = config_provider_delegate
+
+    @property
+    def is_concurrent_allowed(self):
+        """
+        Gets the is_concurrent_allowed of this Task.
+        Whether the same task can be executed concurrently.
+
+
+        :return: The is_concurrent_allowed of this Task.
+        :rtype: bool
+        """
+        return self._is_concurrent_allowed
+
+    @is_concurrent_allowed.setter
+    def is_concurrent_allowed(self, is_concurrent_allowed):
+        """
+        Sets the is_concurrent_allowed of this Task.
+        Whether the same task can be executed concurrently.
+
+
+        :param is_concurrent_allowed: The is_concurrent_allowed of this Task.
+        :type: bool
+        """
+        self._is_concurrent_allowed = is_concurrent_allowed
 
     @property
     def metadata(self):

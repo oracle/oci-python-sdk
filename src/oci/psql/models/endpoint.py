@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Endpoint(object):
     """
-    The node endpoint information.
+    Information about the database instance node endpoint.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class Endpoint(object):
     def fqdn(self):
         """
         **[Required]** Gets the fqdn of this Endpoint.
-        The FQDN of the endpoint
+        The FQDN of the endpoint.
 
 
         :return: The fqdn of this Endpoint.
@@ -65,7 +65,7 @@ class Endpoint(object):
     def fqdn(self, fqdn):
         """
         Sets the fqdn of this Endpoint.
-        The FQDN of the endpoint
+        The FQDN of the endpoint.
 
 
         :param fqdn: The fqdn of this Endpoint.
@@ -77,7 +77,7 @@ class Endpoint(object):
     def ip_address(self):
         """
         **[Required]** Gets the ip_address of this Endpoint.
-        The IP Address of the endpoint
+        The IP address of the endpoint.
 
 
         :return: The ip_address of this Endpoint.
@@ -89,7 +89,7 @@ class Endpoint(object):
     def ip_address(self, ip_address):
         """
         Sets the ip_address of this Endpoint.
-        The IP Address of the endpoint
+        The IP address of the endpoint.
 
 
         :param ip_address: The ip_address of this Endpoint.
@@ -101,7 +101,7 @@ class Endpoint(object):
     def port(self):
         """
         **[Required]** Gets the port of this Endpoint.
-        The port Address of the endpoint
+        The port address of the endpoint.
 
 
         :return: The port of this Endpoint.
@@ -113,7 +113,7 @@ class Endpoint(object):
     def port(self, port):
         """
         Sets the port of this Endpoint.
-        The port Address of the endpoint
+        The port address of the endpoint.
 
 
         :param port: The port of this Endpoint.

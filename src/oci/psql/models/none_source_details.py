@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NoneSourceDetails(SourceDetails):
     """
-    This is used to create new DB system or update without restore from backup. The DbSystem details that are part of the CreateDbSystem request are not required, but if present will override the backup's DbSystem details snapshot.
+    This is used to create new database system or update without restoring from backup.
     """
 
     def __init__(self, **kwargs):

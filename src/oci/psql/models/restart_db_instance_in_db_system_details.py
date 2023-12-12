@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RestartDbInstanceInDbSystemDetails(object):
     """
-    DbInstance restart parameters.
+    Database instance node restart parameters.
     """
 
     #: A constant which can be used with the restart_type property of a RestartDbInstanceInDbSystemDetails.
@@ -55,7 +55,7 @@ class RestartDbInstanceInDbSystemDetails(object):
     def db_instance_id(self):
         """
         **[Required]** Gets the db_instance_id of this RestartDbInstanceInDbSystemDetails.
-        Unique identifier of the DbInstance.
+        A unique identifier for the database instance, or node.
 
 
         :return: The db_instance_id of this RestartDbInstanceInDbSystemDetails.
@@ -67,7 +67,7 @@ class RestartDbInstanceInDbSystemDetails(object):
     def db_instance_id(self, db_instance_id):
         """
         Sets the db_instance_id of this RestartDbInstanceInDbSystemDetails.
-        Unique identifier of the DbInstance.
+        A unique identifier for the database instance, or node.
 
 
         :param db_instance_id: The db_instance_id of this RestartDbInstanceInDbSystemDetails.
@@ -79,7 +79,7 @@ class RestartDbInstanceInDbSystemDetails(object):
     def restart_type(self):
         """
         **[Required]** Gets the restart_type of this RestartDbInstanceInDbSystemDetails.
-        The DbInstance restart type to use.
+        The restart type for the database instance.
 
         Allowed values for this property are: "NORMAL", "NODE_REBOOT"
 
@@ -93,7 +93,7 @@ class RestartDbInstanceInDbSystemDetails(object):
     def restart_type(self, restart_type):
         """
         Sets the restart_type of this RestartDbInstanceInDbSystemDetails.
-        The DbInstance restart type to use.
+        The restart type for the database instance.
 
 
         :param restart_type: The restart_type of this RestartDbInstanceInDbSystemDetails.

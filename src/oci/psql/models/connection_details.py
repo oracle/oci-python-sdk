@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConnectionDetails(object):
     """
-    The real-time DbSystem configuration that customers can use for getting access to the PostgreSQL instance.
+    Database system connection information. Used to connect to PostgreSQL instance(s).
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class ConnectionDetails(object):
     def ca_certificate(self):
         """
         **[Required]** Gets the ca_certificate of this ConnectionDetails.
-        The CA certificate to be used by the Posgresql client to connect to the database.
+        The CA certificate to be used by the PosgreSQL client to connect to the database.
         The CA certificate is used to authenticate the server identity.
         It is issued by PostgreSQL Service Private CA.
 
@@ -67,7 +67,7 @@ class ConnectionDetails(object):
     def ca_certificate(self, ca_certificate):
         """
         Sets the ca_certificate of this ConnectionDetails.
-        The CA certificate to be used by the Posgresql client to connect to the database.
+        The CA certificate to be used by the PosgreSQL client to connect to the database.
         The CA certificate is used to authenticate the server identity.
         It is issued by PostgreSQL Service Private CA.
 
@@ -101,7 +101,7 @@ class ConnectionDetails(object):
     def instance_endpoints(self):
         """
         **[Required]** Gets the instance_endpoints of this ConnectionDetails.
-        The list of DbInstance endpoints in the DbSystem.
+        The list of database instance node endpoints in the database system.
 
 
         :return: The instance_endpoints of this ConnectionDetails.
@@ -113,7 +113,7 @@ class ConnectionDetails(object):
     def instance_endpoints(self, instance_endpoints):
         """
         Sets the instance_endpoints of this ConnectionDetails.
-        The list of DbInstance endpoints in the DbSystem.
+        The list of database instance node endpoints in the database system.
 
 
         :param instance_endpoints: The instance_endpoints of this ConnectionDetails.

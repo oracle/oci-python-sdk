@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbInstanceEndpoint(object):
     """
-    The DbInstance endpoint information.
+    The database instance node endpoint information.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class DbInstanceEndpoint(object):
     def db_instance_id(self):
         """
         **[Required]** Gets the db_instance_id of this DbInstanceEndpoint.
-        Unique identifier of the DbInstance.
+        Unique identifier of the database instance node.
 
 
         :return: The db_instance_id of this DbInstanceEndpoint.
@@ -58,7 +58,7 @@ class DbInstanceEndpoint(object):
     def db_instance_id(self, db_instance_id):
         """
         Sets the db_instance_id of this DbInstanceEndpoint.
-        Unique identifier of the DbInstance.
+        Unique identifier of the database instance node.
 
 
         :param db_instance_id: The db_instance_id of this DbInstanceEndpoint.

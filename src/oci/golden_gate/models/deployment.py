@@ -208,6 +208,14 @@ class Deployment(object):
             The value to assign to the subnet_id property of this Deployment.
         :type subnet_id: str
 
+        :param load_balancer_subnet_id:
+            The value to assign to the load_balancer_subnet_id property of this Deployment.
+        :type load_balancer_subnet_id: str
+
+        :param load_balancer_id:
+            The value to assign to the load_balancer_id property of this Deployment.
+        :type load_balancer_id: str
+
         :param fqdn:
             The value to assign to the fqdn property of this Deployment.
         :type fqdn: str
@@ -306,6 +314,10 @@ class Deployment(object):
             The value to assign to the time_ogg_version_supported_until property of this Deployment.
         :type time_ogg_version_supported_until: datetime
 
+        :param ingress_ips:
+            The value to assign to the ingress_ips property of this Deployment.
+        :type ingress_ips: list[oci.golden_gate.models.IngressIpDetails]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -322,6 +334,8 @@ class Deployment(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_healthy': 'bool',
             'subnet_id': 'str',
+            'load_balancer_subnet_id': 'str',
+            'load_balancer_id': 'str',
             'fqdn': 'str',
             'license_model': 'str',
             'cpu_core_count': 'int',
@@ -344,7 +358,8 @@ class Deployment(object):
             'next_maintenance_action_type': 'str',
             'next_maintenance_description': 'str',
             'maintenance_configuration': 'MaintenanceConfiguration',
-            'time_ogg_version_supported_until': 'datetime'
+            'time_ogg_version_supported_until': 'datetime',
+            'ingress_ips': 'list[IngressIpDetails]'
         }
 
         self.attribute_map = {
@@ -362,6 +377,8 @@ class Deployment(object):
             'defined_tags': 'definedTags',
             'is_healthy': 'isHealthy',
             'subnet_id': 'subnetId',
+            'load_balancer_subnet_id': 'loadBalancerSubnetId',
+            'load_balancer_id': 'loadBalancerId',
             'fqdn': 'fqdn',
             'license_model': 'licenseModel',
             'cpu_core_count': 'cpuCoreCount',
@@ -384,7 +401,8 @@ class Deployment(object):
             'next_maintenance_action_type': 'nextMaintenanceActionType',
             'next_maintenance_description': 'nextMaintenanceDescription',
             'maintenance_configuration': 'maintenanceConfiguration',
-            'time_ogg_version_supported_until': 'timeOggVersionSupportedUntil'
+            'time_ogg_version_supported_until': 'timeOggVersionSupportedUntil',
+            'ingress_ips': 'ingressIps'
         }
 
         self._id = None
@@ -401,6 +419,8 @@ class Deployment(object):
         self._defined_tags = None
         self._is_healthy = None
         self._subnet_id = None
+        self._load_balancer_subnet_id = None
+        self._load_balancer_id = None
         self._fqdn = None
         self._license_model = None
         self._cpu_core_count = None
@@ -424,6 +444,7 @@ class Deployment(object):
         self._next_maintenance_description = None
         self._maintenance_configuration = None
         self._time_ogg_version_supported_until = None
+        self._ingress_ips = None
 
     @property
     def id(self):
@@ -789,7 +810,7 @@ class Deployment(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this Deployment.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the subnet of the deployment's private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -803,7 +824,7 @@ class Deployment(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this Deployment.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the subnet of the deployment's private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -812,6 +833,68 @@ class Deployment(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def load_balancer_subnet_id(self):
+        """
+        Gets the load_balancer_subnet_id of this Deployment.
+        The `OCID`__ of a public subnet in the customer tenancy.
+        Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+        For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The load_balancer_subnet_id of this Deployment.
+        :rtype: str
+        """
+        return self._load_balancer_subnet_id
+
+    @load_balancer_subnet_id.setter
+    def load_balancer_subnet_id(self, load_balancer_subnet_id):
+        """
+        Sets the load_balancer_subnet_id of this Deployment.
+        The `OCID`__ of a public subnet in the customer tenancy.
+        Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+        For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param load_balancer_subnet_id: The load_balancer_subnet_id of this Deployment.
+        :type: str
+        """
+        self._load_balancer_subnet_id = load_balancer_subnet_id
+
+    @property
+    def load_balancer_id(self):
+        """
+        Gets the load_balancer_id of this Deployment.
+        The `OCID`__ of the loadbalancer in the customer's subnet.
+        The loadbalancer of the public deployment created in the customer subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The load_balancer_id of this Deployment.
+        :rtype: str
+        """
+        return self._load_balancer_id
+
+    @load_balancer_id.setter
+    def load_balancer_id(self, load_balancer_id):
+        """
+        Sets the load_balancer_id of this Deployment.
+        The `OCID`__ of the loadbalancer in the customer's subnet.
+        The loadbalancer of the public deployment created in the customer subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param load_balancer_id: The load_balancer_id of this Deployment.
+        :type: str
+        """
+        self._load_balancer_id = load_balancer_id
 
     @property
     def fqdn(self):
@@ -1412,6 +1495,32 @@ class Deployment(object):
         :type: datetime
         """
         self._time_ogg_version_supported_until = time_ogg_version_supported_until
+
+    @property
+    def ingress_ips(self):
+        """
+        Gets the ingress_ips of this Deployment.
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
+        Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+
+
+        :return: The ingress_ips of this Deployment.
+        :rtype: list[oci.golden_gate.models.IngressIpDetails]
+        """
+        return self._ingress_ips
+
+    @ingress_ips.setter
+    def ingress_ips(self, ingress_ips):
+        """
+        Sets the ingress_ips of this Deployment.
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.
+        Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+
+
+        :param ingress_ips: The ingress_ips of this Deployment.
+        :type: list[oci.golden_gate.models.IngressIpDetails]
+        """
+        self._ingress_ips = ingress_ips
 
     def __repr__(self):
         return formatted_flat_dict(self)

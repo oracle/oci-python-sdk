@@ -12,9 +12,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PatchDbSystemDetails(object):
     """
-    For Adding Read Replica DB Instance, Operation is INSERT and Value object to specify is
+    For adding read replica database instances, the operation is INSERT and value object to specify is
     #/definitions/CreateDbInstanceDetails.
-    For Removing Read Replica DB Instance, Operation is REMOVE and Value object needs to be Array of dbInstanceId's
+    For removing read replica database instances, the operation is REMOVE and value object needs to be an array of dbInstanceId's.
     """
 
     def __init__(self, **kwargs):

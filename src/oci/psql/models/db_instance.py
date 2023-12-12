@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbInstance(object):
     """
-    DbInstance information.
+    Information about a database instance node.
     """
 
     #: A constant which can be used with the lifecycle_state property of a DbInstance.
@@ -118,7 +118,7 @@ class DbInstance(object):
     def id(self):
         """
         **[Required]** Gets the id of this DbInstance.
-        Unique identifier that is immutable on creation.
+        A unique identifier for the database instance node. Immutable on creation.
 
 
         :return: The id of this DbInstance.
@@ -130,7 +130,7 @@ class DbInstance(object):
     def id(self, id):
         """
         Sets the id of this DbInstance.
-        Unique identifier that is immutable on creation.
+        A unique identifier for the database instance node. Immutable on creation.
 
 
         :param id: The id of this DbInstance.
@@ -142,7 +142,7 @@ class DbInstance(object):
     def display_name(self):
         """
         Gets the display_name of this DbInstance.
-        Display name of the DbInstance.
+        A user-friendly display name for the database instance node. Avoid entering confidential information.
 
 
         :return: The display_name of this DbInstance.
@@ -154,7 +154,7 @@ class DbInstance(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DbInstance.
-        Display name of the DbInstance.
+        A user-friendly display name for the database instance node. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this DbInstance.
@@ -166,7 +166,7 @@ class DbInstance(object):
     def description(self):
         """
         Gets the description of this DbInstance.
-        Description of the DbInstance.
+        Description of the database instance node.
 
 
         :return: The description of this DbInstance.
@@ -178,7 +178,7 @@ class DbInstance(object):
     def description(self, description):
         """
         Sets the description of this DbInstance.
-        Description of the DbInstance.
+        Description of the database instance node.
 
 
         :param description: The description of this DbInstance.
@@ -190,7 +190,7 @@ class DbInstance(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this DbInstance.
-        The availability domain in which the DbInstance is placed.
+        The availability domain in which the database instance node is located.
 
 
         :return: The availability_domain of this DbInstance.
@@ -202,7 +202,7 @@ class DbInstance(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this DbInstance.
-        The availability domain in which the DbInstance is placed.
+        The availability domain in which the database instance node is located.
 
 
         :param availability_domain: The availability_domain of this DbInstance.
@@ -214,7 +214,7 @@ class DbInstance(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DbInstance.
-        The current state of the DbInstance.
+        The current state of the database instance node.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -229,7 +229,7 @@ class DbInstance(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DbInstance.
-        The current state of the DbInstance.
+        The current state of the database instance node.
 
 
         :param lifecycle_state: The lifecycle_state of this DbInstance.
@@ -268,7 +268,12 @@ class DbInstance(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this DbInstance.
-        The time the the DbInstance was created. An RFC3339 formatted datetime string.
+        The date and time that the database instance node was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this DbInstance.
@@ -280,7 +285,12 @@ class DbInstance(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DbInstance.
-        The time the the DbInstance was created. An RFC3339 formatted datetime string.
+        The date and time that the database instance node was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this DbInstance.
@@ -292,7 +302,12 @@ class DbInstance(object):
     def time_updated(self):
         """
         Gets the time_updated of this DbInstance.
-        The time the DbInstance was updated. An RFC3339 formatted datetime string.
+        The date and time that the database instance node was updated, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_updated of this DbInstance.
@@ -304,7 +319,12 @@ class DbInstance(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DbInstance.
-        The time the DbInstance was updated. An RFC3339 formatted datetime string.
+        The date and time that the database instance node was updated, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_updated: The time_updated of this DbInstance.

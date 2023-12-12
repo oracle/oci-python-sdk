@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDbInstanceDetails(object):
     """
-    The information about new DbInstance.
+    Information about the new database instance node.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class CreateDbInstanceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateDbInstanceDetails.
-        Display name of the DbInstance.
+        Display name of the database instance node. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateDbInstanceDetails.
@@ -65,7 +65,7 @@ class CreateDbInstanceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDbInstanceDetails.
-        Display name of the DbInstance.
+        Display name of the database instance node. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateDbInstanceDetails.
@@ -77,7 +77,7 @@ class CreateDbInstanceDetails(object):
     def description(self):
         """
         Gets the description of this CreateDbInstanceDetails.
-        Description of the DbInstance. This field should be input by the user.
+        A user-provided description of the database instance node.
 
 
         :return: The description of this CreateDbInstanceDetails.
@@ -89,7 +89,7 @@ class CreateDbInstanceDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateDbInstanceDetails.
-        Description of the DbInstance. This field should be input by the user.
+        A user-provided description of the database instance node.
 
 
         :param description: The description of this CreateDbInstanceDetails.
@@ -101,8 +101,8 @@ class CreateDbInstanceDetails(object):
     def private_ip(self):
         """
         Gets the private_ip of this CreateDbInstanceDetails.
-        Private IP in customer subnet that will be assigned to the DbInstance. The value is optional.
-        If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+        Private IP in customer subnet that will be assigned to the database instance node. This value is optional.
+        If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
 
 
         :return: The private_ip of this CreateDbInstanceDetails.
@@ -114,8 +114,8 @@ class CreateDbInstanceDetails(object):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this CreateDbInstanceDetails.
-        Private IP in customer subnet that will be assigned to the DbInstance. The value is optional.
-        If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+        Private IP in customer subnet that will be assigned to the database instance node. This value is optional.
+        If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
 
 
         :param private_ip: The private_ip of this CreateDbInstanceDetails.

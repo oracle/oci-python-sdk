@@ -31,7 +31,7 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str backup_id: (required)
-            unique Backup identifier
+            A unique identifier for the backup.
 
         :param oci.psql.models.ChangeBackupCompartmentDetails change_backup_compartment_details: (required)
             The information to be updated.
@@ -66,59 +66,13 @@ class PostgresqlClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
-    def change_configuration_compartment_and_wait_for_state(self, configuration_id, change_configuration_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
-        """
-        Calls :py:func:`~oci.psql.PostgresqlClient.change_configuration_compartment` and waits for the :py:class:`~oci.psql.models.Configuration` acted upon
-        to enter the given state(s).
-
-        :param str configuration_id: (required)
-            unique Configuration identifier
-
-        :param oci.psql.models.ChangeConfigurationCompartmentDetails change_configuration_compartment_details: (required)
-            The information to be updated.
-
-        :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.psql.models.Configuration.lifecycle_state`
-
-        :param dict operation_kwargs:
-            A dictionary of keyword arguments to pass to :py:func:`~oci.psql.PostgresqlClient.change_configuration_compartment`
-
-        :param dict waiter_kwargs:
-            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
-            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
-        """
-        operation_result = self.client.change_configuration_compartment(configuration_id, change_configuration_compartment_details, **operation_kwargs)
-        if not wait_for_states:
-            return operation_result
-
-        lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        configuration_id = operation_result.data.id
-
-        try:
-            waiter_result = oci.wait_until(
-                self.client,
-                self.client.get_configuration(configuration_id),  # noqa: F821
-                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
-                **waiter_kwargs
-            )
-            result_to_return = waiter_result
-
-            return result_to_return
-        except (NameError, TypeError) as e:
-            if not e.args:
-                e.args = ('',)
-            e.args = e.args + ('This composite operation is currently not supported in the SDK. Please use the operation from the service client and use waiters as an alternative. For more information on waiters, visit: "https://docs.oracle.com/en-us/iaas/tools/python/latest/api/waiters.html"', )
-            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
-        except Exception as e:
-            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
-
     def change_db_system_compartment_and_wait_for_state(self, db_system_id, change_db_system_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.psql.PostgresqlClient.change_db_system_compartment` and waits for the :py:class:`~oci.psql.models.WorkRequest`
         to enter the given state(s).
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.ChangeDbSystemCompartmentDetails change_db_system_compartment_details: (required)
             The information to be updated.
@@ -159,7 +113,7 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.psql.models.CreateBackupDetails create_backup_details: (required)
-            Details for the new Backup.
+            Details for the new backup.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.psql.models.WorkRequest.status`
@@ -197,7 +151,7 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.psql.models.CreateConfigurationDetails create_configuration_details: (required)
-            Details for the new Configuration.
+            Details for the new configuration.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.psql.models.Configuration.lifecycle_state`
@@ -240,7 +194,7 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.psql.models.CreateDbSystemDetails create_db_system_details: (required)
-            Details for the new DbSystem.
+            Details for the new database system.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.psql.models.WorkRequest.status`
@@ -278,7 +232,7 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str backup_id: (required)
-            unique Backup identifier
+            A unique identifier for the backup.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.psql.models.WorkRequest.status`
@@ -324,7 +278,7 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str configuration_id: (required)
-            unique Configuration identifier
+            A unique identifier for the configuration.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.psql.models.Configuration.lifecycle_state`
@@ -384,7 +338,7 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.psql.models.WorkRequest.status`
@@ -430,7 +384,7 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.FailoverDbSystemDetails failover_db_system_details: (required)
             The information to be updated.
@@ -471,10 +425,10 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.PatchDbSystemDetails patch_db_system_details: (required)
-            The information to be patched.
+            The information to be modified.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.psql.models.WorkRequest.status`
@@ -512,7 +466,7 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.ResetMasterUserPasswordDetails reset_master_user_password_details: (required)
             The information to be updated.
@@ -553,10 +507,10 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.RestartDbInstanceInDbSystemDetails restart_db_instance_in_db_system_details: (required)
-            DdInstance restart parameters.
+            Database instance node restart parameters.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.psql.models.WorkRequest.status`
@@ -594,10 +548,10 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.RestoreDbSystemDetails restore_db_system_details: (required)
-            DB System restore parameters.
+            Database system restore parameters.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.psql.models.WorkRequest.status`
@@ -635,7 +589,7 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str backup_id: (required)
-            unique Backup identifier
+            A unique identifier for the backup.
 
         :param oci.psql.models.UpdateBackupDetails update_backup_details: (required)
             The information to be updated.
@@ -681,10 +635,10 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str configuration_id: (required)
-            unique Configuration identifier
+            A unique identifier for the configuration.
 
         :param oci.psql.models.UpdateConfigurationDetails update_configuration_details: (required)
-            Details for Updating display name or description for Configuration.
+            Details for updating display name or description for a configuration.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.psql.models.Configuration.lifecycle_state`
@@ -727,7 +681,7 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.UpdateDbSystemDetails update_db_system_details: (required)
             The information to be updated.
@@ -768,13 +722,13 @@ class PostgresqlClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param str db_instance_id: (required)
-            unique DbInstance identifier
+            A unique identifier for the database instance node.
 
         :param oci.psql.models.UpdateDbSystemDbInstanceDetails update_db_system_db_instance_details: (required)
-            DdInstance update parameters.
+            Database instance node update parameters.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.psql.models.WorkRequest.status`

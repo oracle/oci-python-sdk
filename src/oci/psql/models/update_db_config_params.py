@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDbConfigParams(object):
     """
-    Configuration for PGSQL instance.
+    Configuration for the PostgreSQL database instance.
     """
 
     #: A constant which can be used with the apply_config property of a UpdateDbConfigParams.
@@ -55,8 +55,8 @@ class UpdateDbConfigParams(object):
     def apply_config(self):
         """
         Gets the apply_config of this UpdateDbConfigParams.
-        Specify whether config update requires a restart of Db instance or reload of config.
-        Some of the config changes require restart of DB instnace's to apply.
+        Whether a configuration update requires a restart of the database instance or a reload of the configuration.
+        Some configuration changes require a restart of database instances to be applied.
 
         Allowed values for this property are: "RESTART", "RELOAD"
 
@@ -70,8 +70,8 @@ class UpdateDbConfigParams(object):
     def apply_config(self, apply_config):
         """
         Sets the apply_config of this UpdateDbConfigParams.
-        Specify whether config update requires a restart of Db instance or reload of config.
-        Some of the config changes require restart of DB instnace's to apply.
+        Whether a configuration update requires a restart of the database instance or a reload of the configuration.
+        Some configuration changes require a restart of database instances to be applied.
 
 
         :param apply_config: The apply_config of this UpdateDbConfigParams.
@@ -88,7 +88,9 @@ class UpdateDbConfigParams(object):
     def config_id(self):
         """
         **[Required]** Gets the config_id of this UpdateDbConfigParams.
-        Configuration identifier
+        The `OCID`__ of the configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The config_id of this UpdateDbConfigParams.
@@ -100,7 +102,9 @@ class UpdateDbConfigParams(object):
     def config_id(self, config_id):
         """
         Sets the config_id of this UpdateDbConfigParams.
-        Configuration identifier
+        The `OCID`__ of the configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param config_id: The config_id of this UpdateDbConfigParams.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BackupPolicy(object):
     """
-    Posgresql DB system backup policy
+    PostgreSQL database system backup policy.
     """
 
     #: A constant which can be used with the kind property of a BackupPolicy.
@@ -93,7 +93,7 @@ class BackupPolicy(object):
     def kind(self):
         """
         Gets the kind of this BackupPolicy.
-        Backup policy kind
+        The kind of backup policy.
 
         Allowed values for this property are: "DAILY", "WEEKLY", "MONTHLY", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -108,7 +108,7 @@ class BackupPolicy(object):
     def kind(self, kind):
         """
         Sets the kind of this BackupPolicy.
-        Backup policy kind
+        The kind of backup policy.
 
 
         :param kind: The kind of this BackupPolicy.
@@ -123,7 +123,7 @@ class BackupPolicy(object):
     def retention_days(self):
         """
         Gets the retention_days of this BackupPolicy.
-        How many days the customers data should be stored after the db system deletion.
+        How many days the data should be stored after the database system deletion.
 
 
         :return: The retention_days of this BackupPolicy.
@@ -135,7 +135,7 @@ class BackupPolicy(object):
     def retention_days(self, retention_days):
         """
         Sets the retention_days of this BackupPolicy.
-        How many days the customers data should be stored after the db system deletion.
+        How many days the data should be stored after the database system deletion.
 
 
         :param retention_days: The retention_days of this BackupPolicy.

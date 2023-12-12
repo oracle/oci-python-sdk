@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlFirewallPolicyDimensions(object):
     """
-    The dimensions available for SQL firewall policy analytics.
+    The dimensions available for SQL Firewall policy analytics.
     """
 
     #: A constant which can be used with the enforcement_scope property of a SqlFirewallPolicyDimensions.
@@ -118,7 +118,7 @@ class SqlFirewallPolicyDimensions(object):
     def security_policy_id(self):
         """
         Gets the security_policy_id of this SqlFirewallPolicyDimensions.
-        The OCID of the security policy corresponding to the SQL firewall policy.
+        The OCID of the security policy corresponding to the SQL Firewall policy.
 
 
         :return: The security_policy_id of this SqlFirewallPolicyDimensions.
@@ -130,7 +130,7 @@ class SqlFirewallPolicyDimensions(object):
     def security_policy_id(self, security_policy_id):
         """
         Sets the security_policy_id of this SqlFirewallPolicyDimensions.
-        The OCID of the security policy corresponding to the SQL firewall policy.
+        The OCID of the security policy corresponding to the SQL Firewall policy.
 
 
         :param security_policy_id: The security_policy_id of this SqlFirewallPolicyDimensions.
@@ -142,7 +142,7 @@ class SqlFirewallPolicyDimensions(object):
     def enforcement_scope(self):
         """
         Gets the enforcement_scope of this SqlFirewallPolicyDimensions.
-        Specifies the SQL firewall policy enforcement option.
+        Specifies the SQL Firewall policy enforcement option.
 
         Allowed values for this property are: "ENFORCE_CONTEXT", "ENFORCE_SQL", "ENFORCE_ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -157,7 +157,7 @@ class SqlFirewallPolicyDimensions(object):
     def enforcement_scope(self, enforcement_scope):
         """
         Sets the enforcement_scope of this SqlFirewallPolicyDimensions.
-        Specifies the SQL firewall policy enforcement option.
+        Specifies the SQL Firewall policy enforcement option.
 
 
         :param enforcement_scope: The enforcement_scope of this SqlFirewallPolicyDimensions.
@@ -172,7 +172,7 @@ class SqlFirewallPolicyDimensions(object):
     def violation_action(self):
         """
         Gets the violation_action of this SqlFirewallPolicyDimensions.
-        Specifies the mode in which the SQL firewall policy is enabled.
+        Specifies the mode in which the SQL Firewall policy is enabled.
 
         Allowed values for this property are: "BLOCK", "OBSERVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -187,7 +187,7 @@ class SqlFirewallPolicyDimensions(object):
     def violation_action(self, violation_action):
         """
         Sets the violation_action of this SqlFirewallPolicyDimensions.
-        Specifies the mode in which the SQL firewall policy is enabled.
+        Specifies the mode in which the SQL Firewall policy is enabled.
 
 
         :param violation_action: The violation_action of this SqlFirewallPolicyDimensions.
@@ -202,7 +202,7 @@ class SqlFirewallPolicyDimensions(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this SqlFirewallPolicyDimensions.
-        The current state of the SQL firewall policy.
+        The current state of the SQL Firewall policy.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "FAILED", "DELETING", "DELETED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -217,7 +217,7 @@ class SqlFirewallPolicyDimensions(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this SqlFirewallPolicyDimensions.
-        The current state of the SQL firewall policy.
+        The current state of the SQL Firewall policy.
 
 
         :param lifecycle_state: The lifecycle_state of this SqlFirewallPolicyDimensions.

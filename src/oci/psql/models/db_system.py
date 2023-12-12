@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbSystem(object):
     """
-    Description of DbSystem resource.
+    Information about a database system.
     """
 
     #: A constant which can be used with the lifecycle_state property of a DbSystem.
@@ -240,7 +240,7 @@ class DbSystem(object):
     def id(self):
         """
         **[Required]** Gets the id of this DbSystem.
-        Unique identifier that is immutable on creation
+        A unique identifier for the database system. Immutable on creation.
 
 
         :return: The id of this DbSystem.
@@ -252,7 +252,7 @@ class DbSystem(object):
     def id(self, id):
         """
         Sets the id of this DbSystem.
-        Unique identifier that is immutable on creation
+        A unique identifier for the database system. Immutable on creation.
 
 
         :param id: The id of this DbSystem.
@@ -264,7 +264,7 @@ class DbSystem(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DbSystem.
-        DbSystem display name
+        A user-friendly display name for the database system. Avoid entering confidential information.
 
 
         :return: The display_name of this DbSystem.
@@ -276,7 +276,7 @@ class DbSystem(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DbSystem.
-        DbSystem display name
+        A user-friendly display name for the database system. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this DbSystem.
@@ -288,7 +288,7 @@ class DbSystem(object):
     def description(self):
         """
         Gets the description of this DbSystem.
-        Description of the DbSystem.
+        A description of the database system.
 
 
         :return: The description of this DbSystem.
@@ -300,7 +300,7 @@ class DbSystem(object):
     def description(self, description):
         """
         Sets the description of this DbSystem.
-        Description of the DbSystem.
+        A description of the database system.
 
 
         :param description: The description of this DbSystem.
@@ -312,7 +312,9 @@ class DbSystem(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DbSystem.
-        Compartment identifier
+        The `OCID`__ of the compartment that contains the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DbSystem.
@@ -324,7 +326,9 @@ class DbSystem(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DbSystem.
-        Compartment identifier
+        The `OCID`__ of the compartment that contains the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DbSystem.
@@ -336,7 +340,12 @@ class DbSystem(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this DbSystem.
-        The time the the DbSystem was created. An RFC3339 formatted datetime string
+        The date and time that the database system was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this DbSystem.
@@ -348,7 +357,12 @@ class DbSystem(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DbSystem.
-        The time the the DbSystem was created. An RFC3339 formatted datetime string
+        The date and time that the database system was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this DbSystem.
@@ -360,7 +374,12 @@ class DbSystem(object):
     def time_updated(self):
         """
         Gets the time_updated of this DbSystem.
-        The time the DbSystem was updated. An RFC3339 formatted datetime string
+        The date and time that the database system was updated, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_updated of this DbSystem.
@@ -372,7 +391,12 @@ class DbSystem(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DbSystem.
-        The time the DbSystem was updated. An RFC3339 formatted datetime string
+        The date and time that the database system was updated, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_updated: The time_updated of this DbSystem.
@@ -384,7 +408,7 @@ class DbSystem(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DbSystem.
-        The current state of the DbSystem.
+        The current state of the database system.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -399,7 +423,7 @@ class DbSystem(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DbSystem.
-        The current state of the DbSystem.
+        The current state of the database system.
 
 
         :param lifecycle_state: The lifecycle_state of this DbSystem.
@@ -438,7 +462,7 @@ class DbSystem(object):
     def admin_username(self):
         """
         Gets the admin_username of this DbSystem.
-        The DB system username.
+        The database system administrator username.
 
 
         :return: The admin_username of this DbSystem.
@@ -450,7 +474,7 @@ class DbSystem(object):
     def admin_username(self, admin_username):
         """
         Sets the admin_username of this DbSystem.
-        The DB system username.
+        The database system administrator username.
 
 
         :param admin_username: The admin_username of this DbSystem.
@@ -540,7 +564,7 @@ class DbSystem(object):
     def system_type(self):
         """
         **[Required]** Gets the system_type of this DbSystem.
-        Type of the DbSystem.
+        Type of the database system.
 
         Allowed values for this property are: "OCI_OPTIMIZED_STORAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -555,7 +579,7 @@ class DbSystem(object):
     def system_type(self, system_type):
         """
         Sets the system_type of this DbSystem.
-        Type of the DbSystem.
+        Type of the database system.
 
 
         :param system_type: The system_type of this DbSystem.
@@ -570,7 +594,7 @@ class DbSystem(object):
     def db_version(self):
         """
         **[Required]** Gets the db_version of this DbSystem.
-        The major and minor versions of the DbSystem software.
+        The major and minor versions of the database system software.
 
 
         :return: The db_version of this DbSystem.
@@ -582,7 +606,7 @@ class DbSystem(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this DbSystem.
-        The major and minor versions of the DbSystem software.
+        The major and minor versions of the database system software.
 
 
         :param db_version: The db_version of this DbSystem.
@@ -594,7 +618,9 @@ class DbSystem(object):
     def config_id(self):
         """
         Gets the config_id of this DbSystem.
-        Configuration identifier
+        The `OCID`__ of the configuration associated with the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The config_id of this DbSystem.
@@ -606,7 +632,9 @@ class DbSystem(object):
     def config_id(self, config_id):
         """
         Sets the config_id of this DbSystem.
-        Configuration identifier
+        The `OCID`__ of the configuration associated with the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param config_id: The config_id of this DbSystem.
@@ -618,7 +646,8 @@ class DbSystem(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this DbSystem.
-        Shape of dbInstance.
+        The name of the shape for the database instance.
+        Example: `VM.Standard.E4.Flex`
 
 
         :return: The shape of this DbSystem.
@@ -630,7 +659,8 @@ class DbSystem(object):
     def shape(self, shape):
         """
         Sets the shape of this DbSystem.
-        Shape of dbInstance.
+        The name of the shape for the database instance.
+        Example: `VM.Standard.E4.Flex`
 
 
         :param shape: The shape of this DbSystem.
@@ -642,7 +672,7 @@ class DbSystem(object):
     def instance_ocpu_count(self):
         """
         **[Required]** Gets the instance_ocpu_count of this DbSystem.
-        The total number of OCPUs available to each DbInstance.
+        The total number of OCPUs available to each database instance node.
 
 
         :return: The instance_ocpu_count of this DbSystem.
@@ -654,7 +684,7 @@ class DbSystem(object):
     def instance_ocpu_count(self, instance_ocpu_count):
         """
         Sets the instance_ocpu_count of this DbSystem.
-        The total number of OCPUs available to each DbInstance.
+        The total number of OCPUs available to each database instance node.
 
 
         :param instance_ocpu_count: The instance_ocpu_count of this DbSystem.
@@ -666,7 +696,7 @@ class DbSystem(object):
     def instance_memory_size_in_gbs(self):
         """
         **[Required]** Gets the instance_memory_size_in_gbs of this DbSystem.
-        The total amount of memory available to each DbInstance, in gigabytes.
+        The total amount of memory available to each database instance node, in gigabytes.
 
 
         :return: The instance_memory_size_in_gbs of this DbSystem.
@@ -678,7 +708,7 @@ class DbSystem(object):
     def instance_memory_size_in_gbs(self, instance_memory_size_in_gbs):
         """
         Sets the instance_memory_size_in_gbs of this DbSystem.
-        The total amount of memory available to each DbInstance, in gigabytes.
+        The total amount of memory available to each database instance node, in gigabytes.
 
 
         :param instance_memory_size_in_gbs: The instance_memory_size_in_gbs of this DbSystem.
@@ -690,7 +720,7 @@ class DbSystem(object):
     def instance_count(self):
         """
         Gets the instance_count of this DbSystem.
-        Count of DbInstances in the DbSystem.
+        Count of instances, or nodes, in the database system.
 
 
         :return: The instance_count of this DbSystem.
@@ -702,7 +732,7 @@ class DbSystem(object):
     def instance_count(self, instance_count):
         """
         Sets the instance_count of this DbSystem.
-        Count of DbInstances in the DbSystem.
+        Count of instances, or nodes, in the database system.
 
 
         :param instance_count: The instance_count of this DbSystem.
@@ -714,7 +744,7 @@ class DbSystem(object):
     def instances(self):
         """
         Gets the instances of this DbSystem.
-        The list of DbInstances in the DbSystem.
+        The list of instances, or nodes, in the database system.
 
 
         :return: The instances of this DbSystem.
@@ -726,7 +756,7 @@ class DbSystem(object):
     def instances(self, instances):
         """
         Sets the instances of this DbSystem.
-        The list of DbInstances in the DbSystem.
+        The list of instances, or nodes, in the database system.
 
 
         :param instances: The instances of this DbSystem.

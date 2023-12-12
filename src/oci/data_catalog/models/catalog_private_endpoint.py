@@ -84,6 +84,10 @@ class CatalogPrivateEndpoint(object):
             The value to assign to the freeform_tags property of this CatalogPrivateEndpoint.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this CatalogPrivateEndpoint.
+        :type system_tags: dict(str, dict(str, object))
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CatalogPrivateEndpoint.
         :type defined_tags: dict(str, dict(str, object))
@@ -102,6 +106,10 @@ class CatalogPrivateEndpoint(object):
             The value to assign to the attached_catalogs property of this CatalogPrivateEndpoint.
         :type attached_catalogs: list[str]
 
+        :param locks:
+            The value to assign to the locks property of this CatalogPrivateEndpoint.
+        :type locks: list[oci.data_catalog.models.ResourceLock]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -112,10 +120,12 @@ class CatalogPrivateEndpoint(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))',
             'defined_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
-            'attached_catalogs': 'list[str]'
+            'attached_catalogs': 'list[str]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -127,10 +137,12 @@ class CatalogPrivateEndpoint(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags',
             'defined_tags': 'definedTags',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
-            'attached_catalogs': 'attachedCatalogs'
+            'attached_catalogs': 'attachedCatalogs',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -141,10 +153,12 @@ class CatalogPrivateEndpoint(object):
         self._time_created = None
         self._time_updated = None
         self._freeform_tags = None
+        self._system_tags = None
         self._defined_tags = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._attached_catalogs = None
+        self._locks = None
 
     @property
     def id(self):
@@ -351,6 +365,42 @@ class CatalogPrivateEndpoint(object):
         self._freeform_tags = freeform_tags
 
     @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this CatalogPrivateEndpoint.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        System tags can be viewed by users, but can only be created by the system.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this CatalogPrivateEndpoint.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this CatalogPrivateEndpoint.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        System tags can be viewed by users, but can only be created by the system.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this CatalogPrivateEndpoint.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
+
+    @property
     def defined_tags(self):
         """
         Gets the defined_tags of this CatalogPrivateEndpoint.
@@ -453,6 +503,30 @@ class CatalogPrivateEndpoint(object):
         :type: list[str]
         """
         self._attached_catalogs = attached_catalogs
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CatalogPrivateEndpoint.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CatalogPrivateEndpoint.
+        :rtype: list[oci.data_catalog.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CatalogPrivateEndpoint.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CatalogPrivateEndpoint.
+        :type: list[oci.data_catalog.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

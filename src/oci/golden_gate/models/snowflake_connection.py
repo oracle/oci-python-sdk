@@ -105,6 +105,12 @@ class SnowflakeConnection(Connection):
             The value to assign to the subnet_id property of this SnowflakeConnection.
         :type subnet_id: str
 
+        :param routing_method:
+            The value to assign to the routing_method property of this SnowflakeConnection.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type routing_method: str
+
         :param technology_type:
             The value to assign to the technology_type property of this SnowflakeConnection.
             Allowed values for this property are: "SNOWFLAKE", 'UNKNOWN_ENUM_VALUE'.
@@ -144,6 +150,7 @@ class SnowflakeConnection(Connection):
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
+            'routing_method': 'str',
             'technology_type': 'str',
             'connection_url': 'str',
             'authentication_type': 'str',
@@ -168,6 +175,7 @@ class SnowflakeConnection(Connection):
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'technology_type': 'technologyType',
             'connection_url': 'connectionUrl',
             'authentication_type': 'authenticationType',
@@ -191,6 +199,7 @@ class SnowflakeConnection(Connection):
         self._ingress_ips = None
         self._nsg_ids = None
         self._subnet_id = None
+        self._routing_method = None
         self._technology_type = None
         self._connection_url = None
         self._authentication_type = None

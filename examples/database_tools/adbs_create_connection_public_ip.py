@@ -30,6 +30,7 @@
 
 import oci
 from oci.config import from_file, validate_config
+from utils.dbtools import Colors
 from utils.dbtools import get_dbtools_clients, get_database_clients, get_secrets_client, get_kms_vault_client
 from utils.dbtools import get_vaults_clients, get_wallet_and_create_secrets, delete_secret
 
@@ -317,10 +318,6 @@ class DBToolsExample:
 # Run DBToolsExample and print results
 #
 if __name__ == "__main__":
-    # Output Colors
-    OKGREEN = '\033[92m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
     example = None
 
     try:
@@ -333,10 +330,10 @@ if __name__ == "__main__":
         example.update_connection()
         example.validate_connection()
 
-        print(f"{OKGREEN}Python SDK test completed OK{ENDC}")
+        print(f"{Colors.OKGREEN}Python SDK test completed OK{Colors.ENDC}")
 
     except Exception as e:
-        print(f"{FAIL}Exception during tests:{ENDC} {e}")
+        print(f"{Colors.FAIL}Exception during tests:{Colors.ENDC} {e}")
 
     finally:
         if do_clean_up_at_end and example is not None:

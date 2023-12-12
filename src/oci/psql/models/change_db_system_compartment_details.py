@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeDbSystemCompartmentDetails(object):
     """
-    Change db system compartment operation details.
+    Change database system compartment operation details.
     """
 
     def __init__(self, **kwargs):
@@ -40,7 +40,7 @@ class ChangeDbSystemCompartmentDetails(object):
         """
         **[Required]** Gets the compartment_id of this ChangeDbSystemCompartmentDetails.
         The `OCID`__ of the compartment
-        into which the resource should be moved.
+        into which the database system should be moved.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -55,7 +55,7 @@ class ChangeDbSystemCompartmentDetails(object):
         """
         Sets the compartment_id of this ChangeDbSystemCompartmentDetails.
         The `OCID`__ of the compartment
-        into which the resource should be moved.
+        into which the database system should be moved.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

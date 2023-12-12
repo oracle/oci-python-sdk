@@ -130,6 +130,10 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
             The value to assign to the config_provider_delegate property of this UpdateTaskFromRestTask.
         :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
+        :param is_concurrent_allowed:
+            The value to assign to the is_concurrent_allowed property of this UpdateTaskFromRestTask.
+        :type is_concurrent_allowed: bool
+
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateTaskFromRestTask.
         :type registry_metadata: oci.data_integration.models.RegistryMetadata
@@ -209,6 +213,7 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'ConfigProvider',
+            'is_concurrent_allowed': 'bool',
             'registry_metadata': 'RegistryMetadata',
             'auth_details': 'AuthDetails',
             'auth_config': 'AuthConfig',
@@ -241,6 +246,7 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
+            'is_concurrent_allowed': 'isConcurrentAllowed',
             'registry_metadata': 'registryMetadata',
             'auth_details': 'authDetails',
             'auth_config': 'authConfig',
@@ -272,6 +278,7 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
         self._parameters = None
         self._op_config_values = None
         self._config_provider_delegate = None
+        self._is_concurrent_allowed = None
         self._registry_metadata = None
         self._auth_details = None
         self._auth_config = None

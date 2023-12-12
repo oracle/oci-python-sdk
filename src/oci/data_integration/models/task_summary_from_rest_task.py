@@ -131,6 +131,10 @@ class TaskSummaryFromRestTask(TaskSummary):
             The value to assign to the config_provider_delegate property of this TaskSummaryFromRestTask.
         :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
+        :param is_concurrent_allowed:
+            The value to assign to the is_concurrent_allowed property of this TaskSummaryFromRestTask.
+        :type is_concurrent_allowed: bool
+
         :param metadata:
             The value to assign to the metadata property of this TaskSummaryFromRestTask.
         :type metadata: oci.data_integration.models.ObjectMetadata
@@ -209,6 +213,7 @@ class TaskSummaryFromRestTask(TaskSummary):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'ConfigProvider',
+            'is_concurrent_allowed': 'bool',
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)',
             'auth_details': 'AuthDetails',
@@ -240,6 +245,7 @@ class TaskSummaryFromRestTask(TaskSummary):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
+            'is_concurrent_allowed': 'isConcurrentAllowed',
             'metadata': 'metadata',
             'key_map': 'keyMap',
             'auth_details': 'authDetails',
@@ -270,6 +276,7 @@ class TaskSummaryFromRestTask(TaskSummary):
         self._parameters = None
         self._op_config_values = None
         self._config_provider_delegate = None
+        self._is_concurrent_allowed = None
         self._metadata = None
         self._key_map = None
         self._auth_details = None

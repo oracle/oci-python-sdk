@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbSystemCollection(object):
     """
-    Results of a DB system search. Contains boh DbSystemSummary items and other information, such as metadata.
+    Results of a database system search. Contains both DbSystemSummary items and other information, such as metadata.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class DbSystemCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DbSystemCollection.
-        List of DB systems.
+        List of database systems.
 
 
         :return: The items of this DbSystemCollection.
@@ -51,7 +51,7 @@ class DbSystemCollection(object):
     def items(self, items):
         """
         Sets the items of this DbSystemCollection.
-        List of DB systems.
+        List of database systems.
 
 
         :param items: The items of this DbSystemCollection.

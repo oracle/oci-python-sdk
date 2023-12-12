@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BackupSummary(object):
     """
-    Summary of the Backup.
+    Summary information for a backup.
     """
 
     def __init__(self, **kwargs):
@@ -130,7 +130,7 @@ class BackupSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this BackupSummary.
-        Unique identifier that is immutable on creation
+        A unique identifier for the backup. Immutable on creation.
 
 
         :return: The id of this BackupSummary.
@@ -142,7 +142,7 @@ class BackupSummary(object):
     def id(self, id):
         """
         Sets the id of this BackupSummary.
-        Unique identifier that is immutable on creation
+        A unique identifier for the backup. Immutable on creation.
 
 
         :param id: The id of this BackupSummary.
@@ -154,7 +154,7 @@ class BackupSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this BackupSummary.
-        Backup identifier, can be renamed
+        A user-friendly display name for the backup. Avoid entering confidential information.
 
 
         :return: The display_name of this BackupSummary.
@@ -166,7 +166,7 @@ class BackupSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this BackupSummary.
-        Backup identifier, can be renamed
+        A user-friendly display name for the backup. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this BackupSummary.
@@ -178,7 +178,9 @@ class BackupSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this BackupSummary.
-        Compartment identifier
+        The `OCID`__ of the compartment that contains the backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this BackupSummary.
@@ -190,7 +192,9 @@ class BackupSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this BackupSummary.
-        Compartment identifier
+        The `OCID`__ of the compartment that contains the backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this BackupSummary.
@@ -202,7 +206,12 @@ class BackupSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this BackupSummary.
-        The time the the Backup was created. An RFC3339 formatted datetime string
+        The date and time the backup was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this BackupSummary.
@@ -214,7 +223,12 @@ class BackupSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this BackupSummary.
-        The time the the Backup was created. An RFC3339 formatted datetime string
+        The date and time the backup was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this BackupSummary.
@@ -226,7 +240,12 @@ class BackupSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this BackupSummary.
-        The time the Backup was updated. An RFC3339 formatted datetime string
+        The date and time the backup was updated, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_updated of this BackupSummary.
@@ -238,7 +257,12 @@ class BackupSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this BackupSummary.
-        The time the Backup was updated. An RFC3339 formatted datetime string
+        The date and time the backup was updated, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_updated: The time_updated of this BackupSummary.
@@ -250,7 +274,7 @@ class BackupSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this BackupSummary.
-        The current state of the Backup.
+        The current state of the backup.
 
 
         :return: The lifecycle_state of this BackupSummary.
@@ -262,7 +286,7 @@ class BackupSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this BackupSummary.
-        The current state of the Backup.
+        The current state of the backup.
 
 
         :param lifecycle_state: The lifecycle_state of this BackupSummary.
@@ -298,7 +322,7 @@ class BackupSummary(object):
     def source_type(self):
         """
         Gets the source_type of this BackupSummary.
-        Specifies whether the backup was created manually, or via scheduled backup policy
+        Specifies whether the backup was created manually, or by a management policy.
 
 
         :return: The source_type of this BackupSummary.
@@ -310,7 +334,7 @@ class BackupSummary(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this BackupSummary.
-        Specifies whether the backup was created manually, or via scheduled backup policy
+        Specifies whether the backup was created manually, or by a management policy.
 
 
         :param source_type: The source_type of this BackupSummary.
@@ -322,7 +346,7 @@ class BackupSummary(object):
     def backup_size(self):
         """
         Gets the backup_size of this BackupSummary.
-        Backup size in GB.
+        The size of the backup, in gigabytes.
 
 
         :return: The backup_size of this BackupSummary.
@@ -334,7 +358,7 @@ class BackupSummary(object):
     def backup_size(self, backup_size):
         """
         Sets the backup_size of this BackupSummary.
-        Backup size in GB.
+        The size of the backup, in gigabytes.
 
 
         :param backup_size: The backup_size of this BackupSummary.
@@ -346,7 +370,9 @@ class BackupSummary(object):
     def db_system_id(self):
         """
         Gets the db_system_id of this BackupSummary.
-        The source DbSystem OCID.
+        The backup's source database system's `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this BackupSummary.
@@ -358,7 +384,9 @@ class BackupSummary(object):
     def db_system_id(self, db_system_id):
         """
         Sets the db_system_id of this BackupSummary.
-        The source DbSystem OCID.
+        The backup's source database system's `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this BackupSummary.

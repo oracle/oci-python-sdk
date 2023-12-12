@@ -3443,11 +3443,11 @@ class DataSafeClient(object):
 
     def change_sql_firewall_policy_compartment(self, sql_firewall_policy_id, change_sql_firewall_policy_compartment_details, **kwargs):
         """
-        Moves the specified SQL firewall policy and its dependent resources into a different compartment.
+        Moves the specified SQL Firewall policy and its dependent resources into a different compartment.
 
 
         :param str sql_firewall_policy_id: (required)
-            The OCID of the SQL firewall policy resource.
+            The OCID of the SQL Firewall policy resource.
 
         :param oci.data_safe.models.ChangeSqlFirewallPolicyCompartmentDetails change_sql_firewall_policy_compartment_details: (required)
             Details for the compartment move.
@@ -7709,11 +7709,11 @@ class DataSafeClient(object):
 
     def delete_sql_firewall_policy(self, sql_firewall_policy_id, **kwargs):
         """
-        Deletes the SQL firewall policy resource.
+        Deletes the SQL Firewall policy resource.
 
 
         :param str sql_firewall_policy_id: (required)
-            The OCID of the SQL firewall policy resource.
+            The OCID of the SQL Firewall policy resource.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -9660,7 +9660,7 @@ class DataSafeClient(object):
 
     def generate_report(self, report_definition_id, generate_report_details, **kwargs):
         """
-        Generates a PDF or XLS report based on parameters and report definition.
+        Generates a .xls or .pdf report based on parameters and report definition.
 
 
         :param str report_definition_id: (required)
@@ -10022,7 +10022,7 @@ class DataSafeClient(object):
 
     def generate_sql_firewall_policy(self, sql_collection_id, **kwargs):
         """
-        Generates or appends to the SQL firewall policy using the specified SQL collection.
+        Generates or appends to the SQL Firewall policy using the specified SQL collection.
 
 
         :param str sql_collection_id: (required)
@@ -12384,7 +12384,7 @@ class DataSafeClient(object):
 
     def get_report_content(self, report_id, **kwargs):
         """
-        Downloads the specified report in the form of PDF or XLXS.
+        Downloads the specified report in the form of .xls or .pdf.
 
 
         :param str report_id: (required)
@@ -13575,11 +13575,11 @@ class DataSafeClient(object):
 
     def get_sql_firewall_policy(self, sql_firewall_policy_id, **kwargs):
         """
-        Gets a SQL firewall policy by identifier.
+        Gets a SQL Firewall policy by identifier.
 
 
         :param str sql_firewall_policy_id: (required)
-            The OCID of the SQL firewall policy resource.
+            The OCID of the SQL Firewall policy resource.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -17921,13 +17921,16 @@ class DataSafeClient(object):
         :param str group_by: (optional)
             Attribute by which the discovery analytics data should be grouped.
 
-            Allowed values are: "targetId", "sensitiveDataModelId"
+            Allowed values are: "targetId", "sensitiveDataModelId", "sensitiveTypeId", "targetIdAndSensitiveDataModelId", "sensitiveTypeIdAndTargetId", "sensitiveTypeIdAndSensitiveDataModelId"
 
         :param str target_id: (optional)
             A filter to return only items related to a specific target OCID.
 
         :param str sensitive_data_model_id: (optional)
             A filter to return only the resources that match the specified sensitive data model OCID.
+
+        :param str sensitive_type_id: (optional)
+            A filter to return only items related to a specific sensitive type OCID.
 
         :param int limit: (optional)
             For list pagination. The maximum number of items to return per page in a paginated \"List\" call. For details about how pagination works, see `List Pagination`__.
@@ -17941,6 +17944,10 @@ class DataSafeClient(object):
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
+
+        :param bool is_common: (optional)
+            A filter to return only the common sensitive type resources. Common sensitive types belong to
+            library sensitive types which are frequently used to perform sensitive data discovery.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -17975,9 +17982,11 @@ class DataSafeClient(object):
             "group_by",
             "target_id",
             "sensitive_data_model_id",
+            "sensitive_type_id",
             "limit",
             "page",
-            "opc_request_id"
+            "opc_request_id",
+            "is_common"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -17985,7 +17994,7 @@ class DataSafeClient(object):
                 f"list_discovery_analytics got unknown kwargs: {extra_kwargs!r}")
 
         if 'group_by' in kwargs:
-            group_by_allowed_values = ["targetId", "sensitiveDataModelId"]
+            group_by_allowed_values = ["targetId", "sensitiveDataModelId", "sensitiveTypeId", "targetIdAndSensitiveDataModelId", "sensitiveTypeIdAndTargetId", "sensitiveTypeIdAndSensitiveDataModelId"]
             if kwargs['group_by'] not in group_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
@@ -17997,8 +18006,10 @@ class DataSafeClient(object):
             "groupBy": kwargs.get("group_by", missing),
             "targetId": kwargs.get("target_id", missing),
             "sensitiveDataModelId": kwargs.get("sensitive_data_model_id", missing),
+            "sensitiveTypeId": kwargs.get("sensitive_type_id", missing),
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "isCommon": kwargs.get("is_common", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -20505,7 +20516,7 @@ class DataSafeClient(object):
         When you perform the ListProfileAnalytics operation, if the parameter compartmentIdInSubtree is set to \"true,\" and if the
         parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
         permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-        root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+        root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
         compartmentId, then \"Not Authorized\" is returned.
 
         The parameter compartmentIdInSubtree applies when you perform ListProfileAnalytics on the compartmentId passed and when it is
@@ -23599,6 +23610,10 @@ class DataSafeClient(object):
 
             Allowed values are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
 
+        :param bool is_common: (optional)
+            A filter to return only the common sensitive type resources. Common sensitive types belong to
+            library sensitive types which are frequently used to perform sensitive data discovery.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -23643,7 +23658,8 @@ class DataSafeClient(object):
             "opc_request_id",
             "limit",
             "page",
-            "lifecycle_state"
+            "lifecycle_state",
+            "is_common"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -23708,7 +23724,8 @@ class DataSafeClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "lifecycleState": kwargs.get("lifecycle_state", missing)
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "isCommon": kwargs.get("is_common", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -24321,9 +24338,9 @@ class DataSafeClient(object):
 
     def list_sql_firewall_allowed_sql_analytics(self, compartment_id, **kwargs):
         """
-        Returns the aggregation details of all SQL firewall allowed SQL statements.
+        Returns the aggregation details of all SQL Firewall allowed SQL statements.
 
-        The ListSqlFirewallAllowedSqlAnalytics operation returns the aggregates of the SQL firewall allowed SQL statements in the specified `compartmentId`.
+        The ListSqlFirewallAllowedSqlAnalytics operation returns the aggregates of the SQL Firewall allowed SQL statements in the specified `compartmentId`.
 
         The parameter `accessLevel` specifies whether to return only those compartments for which the
         requestor has INSPECT permissions on at least one resource directly
@@ -24492,9 +24509,9 @@ class DataSafeClient(object):
 
     def list_sql_firewall_allowed_sqls(self, compartment_id, **kwargs):
         """
-        Retrieves a list of all SQL firewall allowed SQL statements.
+        Retrieves a list of all SQL Firewall allowed SQL statements.
 
-        The ListSqlFirewallAllowedSqls operation returns only the SQL firewall allowed SQL statements in the specified `compartmentId`.
+        The ListSqlFirewallAllowedSqls operation returns only the SQL Firewall allowed SQL statements in the specified `compartmentId`.
 
         The parameter `accessLevel` specifies whether to return only those compartments for which the
         requestor has INSPECT permissions on at least one resource directly
@@ -24676,9 +24693,9 @@ class DataSafeClient(object):
 
     def list_sql_firewall_policies(self, compartment_id, **kwargs):
         """
-        Retrieves a list of all SQL firewall policies.
+        Retrieves a list of all SQL Firewall policies.
 
-        The ListSqlFirewallPolicies operation returns only the SQL firewall policies in the specified `compartmentId`.
+        The ListSqlFirewallPolicies operation returns only the SQL Firewall policies in the specified `compartmentId`.
 
         The parameter `accessLevel` specifies whether to return only those compartments for which the
         requestor has INSPECT permissions on at least one resource directly
@@ -24724,12 +24741,12 @@ class DataSafeClient(object):
             An optional filter to return only resources that match the specified OCID of the security policy resource.
 
         :param str lifecycle_state: (optional)
-            The current state of the SQL firewall policy.
+            The current state of the SQL Firewall policy.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "FAILED", "DELETING", "DELETED", "NEEDS_ATTENTION"
 
         :param str sql_firewall_policy_id: (optional)
-            An optional filter to return only resources that match the specified OCID of the SQL firewall policy resource.
+            An optional filter to return only resources that match the specified OCID of the SQL Firewall policy resource.
 
         :param str db_user_name: (optional)
             A filter to return only items that match the specified user name.
@@ -24918,7 +24935,7 @@ class DataSafeClient(object):
 
     def list_sql_firewall_policy_analytics(self, compartment_id, **kwargs):
         """
-        Gets a list of aggregated SQL firewall policy details.
+        Gets a list of aggregated SQL Firewall policy details.
 
         The parameter `accessLevel` specifies whether to return only those compartments for which the
         requestor has INSPECT permissions on at least one resource directly
@@ -24958,12 +24975,12 @@ class DataSafeClient(object):
             __ https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] group_by: (optional)
-            The group by parameter to summarize SQL firewall policy aggregation.
+            The group by parameter to summarize SQL Firewall policy aggregation.
 
             Allowed values are: "violationAction", "enforcementScope", "securityPolicyId", "lifecycleState"
 
         :param str lifecycle_state: (optional)
-            The current state of the SQL firewall policy.
+            The current state of the SQL Firewall policy.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "FAILED", "DELETING", "DELETED", "NEEDS_ATTENTION"
 
@@ -24971,13 +24988,13 @@ class DataSafeClient(object):
             An optional filter to return only resources that match the specified OCID of the security policy resource.
 
         :param datetime time_started: (optional)
-            An optional filter to return the summary of the SQL firewall policies created after the date-time specified,
+            An optional filter to return the summary of the SQL Firewall policies created after the date-time specified,
             in the format defined by `RFC3339`__.
 
             __ https://tools.ietf.org/html/rfc3339
 
         :param datetime time_ended: (optional)
-            An optional filter to return the summary of the SQL firewall policies created before the date-time specified,
+            An optional filter to return the summary of the SQL Firewall policies created before the date-time specified,
             in the format defined by `RFC3339`__.
 
             __ https://tools.ietf.org/html/rfc3339
@@ -25109,7 +25126,7 @@ class DataSafeClient(object):
 
     def list_sql_firewall_violation_analytics(self, compartment_id, **kwargs):
         """
-        Returns the aggregation details of the SQL firewall violations.
+        Returns the aggregation details of the SQL Firewall violations.
 
 
         :param str compartment_id: (required)
@@ -25341,7 +25358,7 @@ class DataSafeClient(object):
 
     def list_sql_firewall_violations(self, compartment_id, **kwargs):
         """
-        Gets a list of all the SQL firewall violations captured by the firewall.
+        Gets a list of all the SQL Firewall violations captured by the firewall.
 
 
         :param str compartment_id: (required)
@@ -26110,7 +26127,7 @@ class DataSafeClient(object):
         When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to \"true,\" and if the
         parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
         permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-        root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+        root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
         compartmentId, then \"Not Authorized\" is returned.
 
         The parameter compartmentIdInSubtree applies when you perform ListUserAnalytics on the compartmentId passed and when it is
@@ -28898,7 +28915,7 @@ class DataSafeClient(object):
 
     def remove_schedule_report(self, report_definition_id, **kwargs):
         """
-        Deletes the schedule of a PDF or XLS report.
+        Deletes the schedule of a .xls or .pdf report.
 
 
         :param str report_definition_id: (required)
@@ -29345,14 +29362,14 @@ class DataSafeClient(object):
 
     def schedule_report(self, report_definition_id, schedule_report_details, **kwargs):
         """
-        Schedules a PDF or XLS report based on parameters and report definition.
+        Schedules a .xls or .pdf report based on parameters and report definition.
 
 
         :param str report_definition_id: (required)
             Unique report definition identifier
 
         :param oci.data_safe.models.ScheduleReportDetails schedule_report_details: (required)
-            The details for the audit report schedule. It contains details such as schedule, PDF/XLS and number of rows.
+            The details for the audit report schedule. It contains details such as schedule, MIME type .xls/.pdf and number of rows.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -32840,14 +32857,14 @@ class DataSafeClient(object):
 
     def update_sql_firewall_policy(self, sql_firewall_policy_id, update_sql_firewall_policy_details, **kwargs):
         """
-        Updates the SQL firewall policy.
+        Updates the SQL Firewall policy.
 
 
         :param str sql_firewall_policy_id: (required)
-            The OCID of the SQL firewall policy resource.
+            The OCID of the SQL Firewall policy resource.
 
         :param oci.data_safe.models.UpdateSqlFirewallPolicyDetails update_sql_firewall_policy_details: (required)
-            Details to update the SQL firewall policy.
+            Details to update the SQL Firewall policy.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

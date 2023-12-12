@@ -329,6 +329,9 @@ from .import_object_metadata_summary import ImportObjectMetadataSummary
 from .import_request import ImportRequest
 from .import_request_summary import ImportRequestSummary
 from .import_request_summary_collection import ImportRequestSummaryCollection
+from .incremental_data_entity_clause import IncrementalDataEntityClause
+from .incremental_field_clause import IncrementalFieldClause
+from .incremental_read_config import IncrementalReadConfig
 from .input_field import InputField
 from .input_link import InputLink
 from .input_port import InputPort
@@ -455,6 +458,7 @@ from .secret_config import SecretConfig
 from .select import Select
 from .sensitive_attribute import SensitiveAttribute
 from .shape import Shape
+from .shape_details import ShapeDetails
 from .shape_field import ShapeField
 from .sort import Sort
 from .sort_clause import SortClause
@@ -916,6 +920,9 @@ data_integration_type_mapping = {
     "ImportRequest": ImportRequest,
     "ImportRequestSummary": ImportRequestSummary,
     "ImportRequestSummaryCollection": ImportRequestSummaryCollection,
+    "IncrementalDataEntityClause": IncrementalDataEntityClause,
+    "IncrementalFieldClause": IncrementalFieldClause,
+    "IncrementalReadConfig": IncrementalReadConfig,
     "InputField": InputField,
     "InputLink": InputLink,
     "InputPort": InputPort,
@@ -1042,6 +1049,7 @@ data_integration_type_mapping = {
     "Select": Select,
     "SensitiveAttribute": SensitiveAttribute,
     "Shape": Shape,
+    "ShapeDetails": ShapeDetails,
     "ShapeField": ShapeField,
     "Sort": Sort,
     "SortClause": SortClause,

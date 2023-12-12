@@ -34,22 +34,29 @@ class JsonFormatAttribute(AbstractFormatAttribute):
             The value to assign to the encoding property of this JsonFormatAttribute.
         :type encoding: str
 
+        :param sample_entity_data:
+            The value to assign to the sample_entity_data property of this JsonFormatAttribute.
+        :type sample_entity_data: str
+
         """
         self.swagger_types = {
             'model_type': 'str',
             'is_file_pattern': 'bool',
-            'encoding': 'str'
+            'encoding': 'str',
+            'sample_entity_data': 'str'
         }
 
         self.attribute_map = {
             'model_type': 'modelType',
             'is_file_pattern': 'isFilePattern',
-            'encoding': 'encoding'
+            'encoding': 'encoding',
+            'sample_entity_data': 'sampleEntityData'
         }
 
         self._model_type = None
         self._is_file_pattern = None
         self._encoding = None
+        self._sample_entity_data = None
         self._model_type = 'JSON_FORMAT'
 
     @property
@@ -75,6 +82,30 @@ class JsonFormatAttribute(AbstractFormatAttribute):
         :type: str
         """
         self._encoding = encoding
+
+    @property
+    def sample_entity_data(self):
+        """
+        Gets the sample_entity_data of this JsonFormatAttribute.
+        Sample JSON with all fields of JSON schema specified in it for the JSON data files used in Data Flow, Data Loader or Data Preview and should be specified in Base64 encoded format. Maximum size is 2 MB.
+
+
+        :return: The sample_entity_data of this JsonFormatAttribute.
+        :rtype: str
+        """
+        return self._sample_entity_data
+
+    @sample_entity_data.setter
+    def sample_entity_data(self, sample_entity_data):
+        """
+        Sets the sample_entity_data of this JsonFormatAttribute.
+        Sample JSON with all fields of JSON schema specified in it for the JSON data files used in Data Flow, Data Loader or Data Preview and should be specified in Base64 encoded format. Maximum size is 2 MB.
+
+
+        :param sample_entity_data: The sample_entity_data of this JsonFormatAttribute.
+        :type: str
+        """
+        self._sample_entity_data = sample_entity_data
 
     def __repr__(self):
         return formatted_flat_dict(self)

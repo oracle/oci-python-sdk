@@ -54,6 +54,15 @@ class UpdateKafkaConnectionDetails(UpdateConnectionDetails):
             The value to assign to the nsg_ids property of this UpdateKafkaConnectionDetails.
         :type nsg_ids: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateKafkaConnectionDetails.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this UpdateKafkaConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param stream_pool_id:
             The value to assign to the stream_pool_id property of this UpdateKafkaConnectionDetails.
         :type stream_pool_id: str
@@ -112,6 +121,8 @@ class UpdateKafkaConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'stream_pool_id': 'str',
             'bootstrap_servers': 'list[KafkaBootstrapServer]',
             'security_protocol': 'str',
@@ -135,6 +146,8 @@ class UpdateKafkaConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'stream_pool_id': 'streamPoolId',
             'bootstrap_servers': 'bootstrapServers',
             'security_protocol': 'securityProtocol',
@@ -157,6 +170,8 @@ class UpdateKafkaConnectionDetails(UpdateConnectionDetails):
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._stream_pool_id = None
         self._bootstrap_servers = None
         self._security_protocol = None

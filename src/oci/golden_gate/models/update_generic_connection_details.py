@@ -54,6 +54,15 @@ class UpdateGenericConnectionDetails(UpdateConnectionDetails):
             The value to assign to the nsg_ids property of this UpdateGenericConnectionDetails.
         :type nsg_ids: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateGenericConnectionDetails.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this UpdateGenericConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param host:
             The value to assign to the host property of this UpdateGenericConnectionDetails.
         :type host: str
@@ -68,6 +77,8 @@ class UpdateGenericConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'host': 'str'
         }
 
@@ -80,6 +91,8 @@ class UpdateGenericConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'host': 'host'
         }
 
@@ -91,6 +104,8 @@ class UpdateGenericConnectionDetails(UpdateConnectionDetails):
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._host = None
         self._connection_type = 'GENERIC'
 

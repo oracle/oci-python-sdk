@@ -67,7 +67,7 @@ class UpdateBackupDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateBackupDetails.
-        Backup display name
+        A user-friendly display name for the backup. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateBackupDetails.
@@ -79,7 +79,7 @@ class UpdateBackupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateBackupDetails.
-        Backup display name
+        A user-friendly display name for the backup. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateBackupDetails.
@@ -91,7 +91,7 @@ class UpdateBackupDetails(object):
     def description(self):
         """
         Gets the description of this UpdateBackupDetails.
-        Backup description
+        A description for the backup.
 
 
         :return: The description of this UpdateBackupDetails.
@@ -103,7 +103,7 @@ class UpdateBackupDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateBackupDetails.
-        Backup description
+        A description for the backup.
 
 
         :param description: The description of this UpdateBackupDetails.

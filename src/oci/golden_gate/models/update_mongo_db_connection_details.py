@@ -54,6 +54,15 @@ class UpdateMongoDbConnectionDetails(UpdateConnectionDetails):
             The value to assign to the nsg_ids property of this UpdateMongoDbConnectionDetails.
         :type nsg_ids: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateMongoDbConnectionDetails.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this UpdateMongoDbConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param connection_string:
             The value to assign to the connection_string property of this UpdateMongoDbConnectionDetails.
         :type connection_string: str
@@ -80,6 +89,8 @@ class UpdateMongoDbConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'connection_string': 'str',
             'username': 'str',
             'password': 'str',
@@ -95,6 +106,8 @@ class UpdateMongoDbConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'connection_string': 'connectionString',
             'username': 'username',
             'password': 'password',
@@ -109,6 +122,8 @@ class UpdateMongoDbConnectionDetails(UpdateConnectionDetails):
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._connection_string = None
         self._username = None
         self._password = None

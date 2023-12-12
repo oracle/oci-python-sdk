@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlFirewallAllowedSqlAggregation(object):
     """
-    The details of SQL firewall allow SQL aggregate.
+    The details of SQL Firewall allow SQL aggregate.
     """
 
     def __init__(self, **kwargs):

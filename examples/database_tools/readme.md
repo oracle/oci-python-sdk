@@ -9,6 +9,7 @@ We show 5 use cases for the Database Tools service
 - Bare Metal, VM and Exadata with private ip
 - MySQL with public ip
 - MySQL DB System with private endpoint
+- Generic JDBC connection
 
 ## ADB-S with Public IP
 ![](images/ADB-S.with.Public.IP.png)
@@ -53,3 +54,10 @@ See: **mysql_db_system_create_connection_with_pe.py** where we:
 2. Create required secret
 3. Create a connection using the Database Tools private endpoint
 4. Validate the connection
+
+## Generic JDBC connection
+
+###
+See **generic_jdbc_connection.py** where we:
+1. Create required secret
+2. Create a connection

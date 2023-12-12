@@ -63,7 +63,7 @@ class EntryDetails(object):
         """
         **[Required]** Gets the entry_type of this EntryDetails.
         The security policy entry type. Allowed values:
-        - FIREWALL_POLICY - The SQL firewall policy entry type.
+        - FIREWALL_POLICY - The SQL Firewall policy entry type.
 
         Allowed values for this property are: "FIREWALL_POLICY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -79,7 +79,7 @@ class EntryDetails(object):
         """
         Sets the entry_type of this EntryDetails.
         The security policy entry type. Allowed values:
-        - FIREWALL_POLICY - The SQL firewall policy entry type.
+        - FIREWALL_POLICY - The SQL Firewall policy entry type.
 
 
         :param entry_type: The entry_type of this EntryDetails.

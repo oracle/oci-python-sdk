@@ -107,6 +107,18 @@ class ConnectionSummary(object):
     #: This constant has a value of "GOOGLE_BIGQUERY"
     CONNECTION_TYPE_GOOGLE_BIGQUERY = "GOOGLE_BIGQUERY"
 
+    #: A constant which can be used with the routing_method property of a ConnectionSummary.
+    #: This constant has a value of "SHARED_SERVICE_ENDPOINT"
+    ROUTING_METHOD_SHARED_SERVICE_ENDPOINT = "SHARED_SERVICE_ENDPOINT"
+
+    #: A constant which can be used with the routing_method property of a ConnectionSummary.
+    #: This constant has a value of "SHARED_DEPLOYMENT_ENDPOINT"
+    ROUTING_METHOD_SHARED_DEPLOYMENT_ENDPOINT = "SHARED_DEPLOYMENT_ENDPOINT"
+
+    #: A constant which can be used with the routing_method property of a ConnectionSummary.
+    #: This constant has a value of "DEDICATED_ENDPOINT"
+    ROUTING_METHOD_DEDICATED_ENDPOINT = "DEDICATED_ENDPOINT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConnectionSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -208,6 +220,12 @@ class ConnectionSummary(object):
             The value to assign to the subnet_id property of this ConnectionSummary.
         :type subnet_id: str
 
+        :param routing_method:
+            The value to assign to the routing_method property of this ConnectionSummary.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type routing_method: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -226,7 +244,8 @@ class ConnectionSummary(object):
             'key_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'routing_method': 'str'
         }
 
         self.attribute_map = {
@@ -246,7 +265,8 @@ class ConnectionSummary(object):
             'key_id': 'keyId',
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod'
         }
 
         self._connection_type = None
@@ -266,6 +286,7 @@ class ConnectionSummary(object):
         self._ingress_ips = None
         self._nsg_ids = None
         self._subnet_id = None
+        self._routing_method = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -794,7 +815,7 @@ class ConnectionSummary(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this ConnectionSummary.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the target subnet of the dedicated connection.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -808,7 +829,7 @@ class ConnectionSummary(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this ConnectionSummary.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the target subnet of the dedicated connection.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -817,6 +838,42 @@ class ConnectionSummary(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def routing_method(self):
+        """
+        Gets the routing_method of this ConnectionSummary.
+        Controls the network traffic direction to the target:
+        SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+        SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
+        DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+
+        Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The routing_method of this ConnectionSummary.
+        :rtype: str
+        """
+        return self._routing_method
+
+    @routing_method.setter
+    def routing_method(self, routing_method):
+        """
+        Sets the routing_method of this ConnectionSummary.
+        Controls the network traffic direction to the target:
+        SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+        SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
+        DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+
+
+        :param routing_method: The routing_method of this ConnectionSummary.
+        :type: str
+        """
+        allowed_values = ["SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"]
+        if not value_allowed_none_or_none_sentinel(routing_method, allowed_values):
+            routing_method = 'UNKNOWN_ENUM_VALUE'
+        self._routing_method = routing_method
 
     def __repr__(self):
         return formatted_flat_dict(self)

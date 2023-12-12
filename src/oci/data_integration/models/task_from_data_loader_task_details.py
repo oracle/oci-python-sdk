@@ -78,6 +78,10 @@ class TaskFromDataLoaderTaskDetails(Task):
             The value to assign to the config_provider_delegate property of this TaskFromDataLoaderTaskDetails.
         :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
+        :param is_concurrent_allowed:
+            The value to assign to the is_concurrent_allowed property of this TaskFromDataLoaderTaskDetails.
+        :type is_concurrent_allowed: bool
+
         :param metadata:
             The value to assign to the metadata property of this TaskFromDataLoaderTaskDetails.
         :type metadata: oci.data_integration.models.ObjectMetadata
@@ -122,6 +126,7 @@ class TaskFromDataLoaderTaskDetails(Task):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'ConfigProvider',
+            'is_concurrent_allowed': 'bool',
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)',
             'registry_metadata': 'RegistryMetadata',
@@ -146,6 +151,7 @@ class TaskFromDataLoaderTaskDetails(Task):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
+            'is_concurrent_allowed': 'isConcurrentAllowed',
             'metadata': 'metadata',
             'key_map': 'keyMap',
             'registry_metadata': 'registryMetadata',
@@ -169,6 +175,7 @@ class TaskFromDataLoaderTaskDetails(Task):
         self._parameters = None
         self._op_config_values = None
         self._config_provider_delegate = None
+        self._is_concurrent_allowed = None
         self._metadata = None
         self._key_map = None
         self._registry_metadata = None

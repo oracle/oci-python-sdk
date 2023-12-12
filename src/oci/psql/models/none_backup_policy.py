@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NoneBackupPolicy(BackupPolicy):
     """
-    No backup policy
+    No backup policy.
     """
 
     def __init__(self, **kwargs):

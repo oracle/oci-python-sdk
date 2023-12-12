@@ -62,6 +62,11 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
             The value to assign to the subnet_id property of this CreateMicrosoftSqlserverConnectionDetails.
         :type subnet_id: str
 
+        :param routing_method:
+            The value to assign to the routing_method property of this CreateMicrosoftSqlserverConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param technology_type:
             The value to assign to the technology_type property of this CreateMicrosoftSqlserverConnectionDetails.
         :type technology_type: str
@@ -118,6 +123,7 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
             'key_id': 'str',
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
+            'routing_method': 'str',
             'technology_type': 'str',
             'database_name': 'str',
             'host': 'str',
@@ -142,6 +148,7 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'technology_type': 'technologyType',
             'database_name': 'databaseName',
             'host': 'host',
@@ -165,6 +172,7 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
         self._key_id = None
         self._nsg_ids = None
         self._subnet_id = None
+        self._routing_method = None
         self._technology_type = None
         self._database_name = None
         self._host = None
@@ -428,6 +436,9 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
     def private_ip(self):
         """
         Gets the private_ip of this CreateMicrosoftSqlserverConnectionDetails.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.
@@ -444,6 +455,9 @@ class CreateMicrosoftSqlserverConnectionDetails(CreateConnectionDetails):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this CreateMicrosoftSqlserverConnectionDetails.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbSystemSummary(object):
     """
-    Summary of the DbSystem.
+    Summary information about a database system.
     """
 
     def __init__(self, **kwargs):
@@ -151,7 +151,7 @@ class DbSystemSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this DbSystemSummary.
-        Unique identifier that is immutable on creation
+        A unique identifier for the database system. Immutable on creation.
 
 
         :return: The id of this DbSystemSummary.
@@ -163,7 +163,7 @@ class DbSystemSummary(object):
     def id(self, id):
         """
         Sets the id of this DbSystemSummary.
-        Unique identifier that is immutable on creation
+        A unique identifier for the database system. Immutable on creation.
 
 
         :param id: The id of this DbSystemSummary.
@@ -175,7 +175,7 @@ class DbSystemSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DbSystemSummary.
-        DbSystem display name
+        A user-friendly display name for the database system. Avoid entering confidential information.
 
 
         :return: The display_name of this DbSystemSummary.
@@ -187,7 +187,7 @@ class DbSystemSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DbSystemSummary.
-        DbSystem display name
+        A user-friendly display name for the database system. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this DbSystemSummary.
@@ -199,7 +199,9 @@ class DbSystemSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DbSystemSummary.
-        Compartment identifier
+        The `OCID`__ of the compartment that contains the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DbSystemSummary.
@@ -211,7 +213,9 @@ class DbSystemSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DbSystemSummary.
-        Compartment identifier
+        The `OCID`__ of the compartment that contains the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DbSystemSummary.
@@ -223,7 +227,12 @@ class DbSystemSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this DbSystemSummary.
-        The time the the DbSystem was created. An RFC3339 formatted datetime string
+        The date and time that the database system was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this DbSystemSummary.
@@ -235,7 +244,12 @@ class DbSystemSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DbSystemSummary.
-        The time the the DbSystem was created. An RFC3339 formatted datetime string
+        The date and time that the database system was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this DbSystemSummary.
@@ -247,7 +261,12 @@ class DbSystemSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this DbSystemSummary.
-        The time the DbSystem was updated. An RFC3339 formatted datetime string
+        The date and time that the database system was updated, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_updated of this DbSystemSummary.
@@ -259,7 +278,12 @@ class DbSystemSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DbSystemSummary.
-        The time the DbSystem was updated. An RFC3339 formatted datetime string
+        The date and time that the database system was updated, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_updated: The time_updated of this DbSystemSummary.
@@ -271,7 +295,7 @@ class DbSystemSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DbSystemSummary.
-        The current state of the DbSystem.
+        The current state of the database system.
 
 
         :return: The lifecycle_state of this DbSystemSummary.
@@ -283,7 +307,7 @@ class DbSystemSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DbSystemSummary.
-        The current state of the DbSystem.
+        The current state of the database system.
 
 
         :param lifecycle_state: The lifecycle_state of this DbSystemSummary.
@@ -319,7 +343,7 @@ class DbSystemSummary(object):
     def system_type(self):
         """
         **[Required]** Gets the system_type of this DbSystemSummary.
-        Type of the DbSystem.
+        Type of the database system.
 
 
         :return: The system_type of this DbSystemSummary.
@@ -331,7 +355,7 @@ class DbSystemSummary(object):
     def system_type(self, system_type):
         """
         Sets the system_type of this DbSystemSummary.
-        Type of the DbSystem.
+        Type of the database system.
 
 
         :param system_type: The system_type of this DbSystemSummary.
@@ -343,7 +367,7 @@ class DbSystemSummary(object):
     def instance_count(self):
         """
         **[Required]** Gets the instance_count of this DbSystemSummary.
-        Count of DbInstances in the DbSystem.
+        Count of database instances, or nodes, in the database system.
 
 
         :return: The instance_count of this DbSystemSummary.
@@ -355,7 +379,7 @@ class DbSystemSummary(object):
     def instance_count(self, instance_count):
         """
         Sets the instance_count of this DbSystemSummary.
-        Count of DbInstances in the DbSystem.
+        Count of database instances, or nodes, in the database system.
 
 
         :param instance_count: The instance_count of this DbSystemSummary.
@@ -367,7 +391,8 @@ class DbSystemSummary(object):
     def shape(self):
         """
         Gets the shape of this DbSystemSummary.
-        Shape of dbInstance.
+        The name of the shape for the database instance node.
+        Example: `VM.Standard.E4.Flex`
 
 
         :return: The shape of this DbSystemSummary.
@@ -379,7 +404,8 @@ class DbSystemSummary(object):
     def shape(self, shape):
         """
         Sets the shape of this DbSystemSummary.
-        Shape of dbInstance.
+        The name of the shape for the database instance node.
+        Example: `VM.Standard.E4.Flex`
 
 
         :param shape: The shape of this DbSystemSummary.
@@ -391,7 +417,7 @@ class DbSystemSummary(object):
     def instance_ocpu_count(self):
         """
         **[Required]** Gets the instance_ocpu_count of this DbSystemSummary.
-        The total number of OCPUs available to each DbInstance.
+        The total number of OCPUs available to each database instance node.
 
 
         :return: The instance_ocpu_count of this DbSystemSummary.
@@ -403,7 +429,7 @@ class DbSystemSummary(object):
     def instance_ocpu_count(self, instance_ocpu_count):
         """
         Sets the instance_ocpu_count of this DbSystemSummary.
-        The total number of OCPUs available to each DbInstance.
+        The total number of OCPUs available to each database instance node.
 
 
         :param instance_ocpu_count: The instance_ocpu_count of this DbSystemSummary.
@@ -415,7 +441,7 @@ class DbSystemSummary(object):
     def instance_memory_size_in_gbs(self):
         """
         **[Required]** Gets the instance_memory_size_in_gbs of this DbSystemSummary.
-        The total amount of memory available to each DbInstance, in gigabytes.
+        The total amount of memory available to each database instance node, in gigabytes.
 
 
         :return: The instance_memory_size_in_gbs of this DbSystemSummary.
@@ -427,7 +453,7 @@ class DbSystemSummary(object):
     def instance_memory_size_in_gbs(self, instance_memory_size_in_gbs):
         """
         Sets the instance_memory_size_in_gbs of this DbSystemSummary.
-        The total amount of memory available to each DbInstance, in gigabytes.
+        The total amount of memory available to each database instance node, in gigabytes.
 
 
         :param instance_memory_size_in_gbs: The instance_memory_size_in_gbs of this DbSystemSummary.
@@ -439,7 +465,7 @@ class DbSystemSummary(object):
     def db_version(self):
         """
         **[Required]** Gets the db_version of this DbSystemSummary.
-        Version of DbSystem software.
+        Version of database system software.
 
 
         :return: The db_version of this DbSystemSummary.
@@ -451,7 +477,7 @@ class DbSystemSummary(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this DbSystemSummary.
-        Version of DbSystem software.
+        Version of database system software.
 
 
         :param db_version: The db_version of this DbSystemSummary.
@@ -463,7 +489,9 @@ class DbSystemSummary(object):
     def config_id(self):
         """
         Gets the config_id of this DbSystemSummary.
-        Configuration identifier
+        The `OCID`__ of the configuration associated with the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The config_id of this DbSystemSummary.
@@ -475,7 +503,9 @@ class DbSystemSummary(object):
     def config_id(self, config_id):
         """
         Sets the config_id of this DbSystemSummary.
-        Configuration identifier
+        The `OCID`__ of the configuration associated with the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param config_id: The config_id of this DbSystemSummary.

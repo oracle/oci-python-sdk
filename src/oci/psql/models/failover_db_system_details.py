@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FailoverDbSystemDetails(object):
     """
-    DB system failover information.
+    Database system failover information.
     """
 
     def __init__(self, **kwargs):
@@ -46,8 +46,8 @@ class FailoverDbSystemDetails(object):
     def ad(self):
         """
         Gets the ad of this FailoverDbSystemDetails.
-        The desired AD for 3AD regions. Optional parameter.
-        If not set the AD will be chosen based on the availability.
+        The preferred AD for regions with three availability domains. This parameter is optional.
+        If not set, the AD will be chosen based on availability.
 
 
         :return: The ad of this FailoverDbSystemDetails.
@@ -59,8 +59,8 @@ class FailoverDbSystemDetails(object):
     def ad(self, ad):
         """
         Sets the ad of this FailoverDbSystemDetails.
-        The desired AD for 3AD regions. Optional parameter.
-        If not set the AD will be chosen based on the availability.
+        The preferred AD for regions with three availability domains. This parameter is optional.
+        If not set, the AD will be chosen based on availability.
 
 
         :param ad: The ad of this FailoverDbSystemDetails.
@@ -72,8 +72,10 @@ class FailoverDbSystemDetails(object):
     def db_instance_id(self):
         """
         Gets the db_instance_id of this FailoverDbSystemDetails.
-        Unique identifier of the DbInstance. Optional parameter.
-        If not set an existing DbInstance will be chosen based on the availability.
+        The `OCID`__ of the database instance node. This parameter is optional.
+        If not set, an existing database instance node will be chosen based on availability.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_instance_id of this FailoverDbSystemDetails.
@@ -85,8 +87,10 @@ class FailoverDbSystemDetails(object):
     def db_instance_id(self, db_instance_id):
         """
         Sets the db_instance_id of this FailoverDbSystemDetails.
-        Unique identifier of the DbInstance. Optional parameter.
-        If not set an existing DbInstance will be chosen based on the availability.
+        The `OCID`__ of the database instance node. This parameter is optional.
+        If not set, an existing database instance node will be chosen based on availability.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_instance_id: The db_instance_id of this FailoverDbSystemDetails.

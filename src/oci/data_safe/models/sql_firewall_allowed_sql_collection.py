@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlFirewallAllowedSqlCollection(object):
     """
-    Collection of SQL firewall allowed SQL statements.
+    Collection of SQL Firewall allowed SQL statements.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class SqlFirewallAllowedSqlCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this SqlFirewallAllowedSqlCollection.
-        Array of SQL firewall allowed SQL statements.
+        Array of SQL Firewall allowed SQL statements.
 
 
         :return: The items of this SqlFirewallAllowedSqlCollection.
@@ -51,7 +51,7 @@ class SqlFirewallAllowedSqlCollection(object):
     def items(self, items):
         """
         Sets the items of this SqlFirewallAllowedSqlCollection.
-        Array of SQL firewall allowed SQL statements.
+        Array of SQL Firewall allowed SQL statements.
 
 
         :param items: The items of this SqlFirewallAllowedSqlCollection.

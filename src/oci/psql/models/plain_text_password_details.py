@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PlainTextPasswordDetails(PasswordDetails):
     """
-    Details for in-line DbSystem password.
+    Details for in-line database system password.
     """
 
     def __init__(self, **kwargs):
@@ -49,7 +49,7 @@ class PlainTextPasswordDetails(PasswordDetails):
     def password(self):
         """
         **[Required]** Gets the password of this PlainTextPasswordDetails.
-        The dbSystem password.
+        The database system password.
 
 
         :return: The password of this PlainTextPasswordDetails.
@@ -61,7 +61,7 @@ class PlainTextPasswordDetails(PasswordDetails):
     def password(self, password):
         """
         Sets the password of this PlainTextPasswordDetails.
-        The dbSystem password.
+        The database system password.
 
 
         :param password: The password of this PlainTextPasswordDetails.

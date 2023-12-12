@@ -54,6 +54,15 @@ class UpdateOracleNosqlConnectionDetails(UpdateConnectionDetails):
             The value to assign to the nsg_ids property of this UpdateOracleNosqlConnectionDetails.
         :type nsg_ids: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateOracleNosqlConnectionDetails.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this UpdateOracleNosqlConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param tenancy_id:
             The value to assign to the tenancy_id property of this UpdateOracleNosqlConnectionDetails.
         :type tenancy_id: str
@@ -88,6 +97,8 @@ class UpdateOracleNosqlConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'tenancy_id': 'str',
             'region': 'str',
             'user_id': 'str',
@@ -105,6 +116,8 @@ class UpdateOracleNosqlConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'tenancy_id': 'tenancyId',
             'region': 'region',
             'user_id': 'userId',
@@ -121,6 +134,8 @@ class UpdateOracleNosqlConnectionDetails(UpdateConnectionDetails):
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._tenancy_id = None
         self._region = None
         self._user_id = None

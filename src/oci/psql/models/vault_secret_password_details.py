@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VaultSecretPasswordDetails(PasswordDetails):
     """
-    Secret details for the DbSystem password.
+    Secret details for the database system password.
     """
 
     def __init__(self, **kwargs):
@@ -56,7 +56,9 @@ class VaultSecretPasswordDetails(PasswordDetails):
     def secret_id(self):
         """
         **[Required]** Gets the secret_id of this VaultSecretPasswordDetails.
-        The OCID of secret where the password is stored.
+        The `OCID`__ of the secret where the password is stored.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The secret_id of this VaultSecretPasswordDetails.
@@ -68,7 +70,9 @@ class VaultSecretPasswordDetails(PasswordDetails):
     def secret_id(self, secret_id):
         """
         Sets the secret_id of this VaultSecretPasswordDetails.
-        The OCID of secret where the password is stored.
+        The `OCID`__ of the secret where the password is stored.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param secret_id: The secret_id of this VaultSecretPasswordDetails.
@@ -80,7 +84,7 @@ class VaultSecretPasswordDetails(PasswordDetails):
     def secret_version(self):
         """
         **[Required]** Gets the secret_version of this VaultSecretPasswordDetails.
-        The secret version where the password is stored.
+        The secret version of the stored password.
 
 
         :return: The secret_version of this VaultSecretPasswordDetails.
@@ -92,7 +96,7 @@ class VaultSecretPasswordDetails(PasswordDetails):
     def secret_version(self, secret_version):
         """
         Sets the secret_version of this VaultSecretPasswordDetails.
-        The secret version where the password is stored.
+        The secret version of the stored password.
 
 
         :param secret_version: The secret_version of this VaultSecretPasswordDetails.

@@ -121,7 +121,7 @@ class FindingSummary(object):
     def severity(self):
         """
         Gets the severity of this FindingSummary.
-        The severity of the finding.
+        The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
 
         Allowed values for this property are: "HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -136,7 +136,7 @@ class FindingSummary(object):
     def severity(self, severity):
         """
         Sets the severity of this FindingSummary.
-        The severity of the finding.
+        The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
 
 
         :param severity: The severity of this FindingSummary.

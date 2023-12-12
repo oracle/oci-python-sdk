@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Credentials(object):
     """
-    Initial DbSystem credentials that the DbSystem will be provisioned with.
+    Initial database system credentials that the database system will be provisioned with.
     The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
     """
 
@@ -47,7 +47,7 @@ class Credentials(object):
     def username(self):
         """
         **[Required]** Gets the username of this Credentials.
-        The DB system username.
+        The database system administrator username.
 
 
         :return: The username of this Credentials.
@@ -59,7 +59,7 @@ class Credentials(object):
     def username(self, username):
         """
         Sets the username of this Credentials.
-        The DB system username.
+        The database system administrator username.
 
 
         :param username: The username of this Credentials.

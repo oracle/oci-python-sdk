@@ -1621,7 +1621,7 @@ class User(object):
     @property
     def name(self):
         """
-        **[Required]** Gets the name of this User.
+        Gets the name of this User.
 
         :return: The name of this User.
         :rtype: oci.identity_domains.models.UserName

@@ -90,6 +90,11 @@ class GenericConnectionSummary(ConnectionSummary):
             The value to assign to the subnet_id property of this GenericConnectionSummary.
         :type subnet_id: str
 
+        :param routing_method:
+            The value to assign to the routing_method property of this GenericConnectionSummary.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param technology_type:
             The value to assign to the technology_type property of this GenericConnectionSummary.
         :type technology_type: str
@@ -117,6 +122,7 @@ class GenericConnectionSummary(ConnectionSummary):
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
+            'routing_method': 'str',
             'technology_type': 'str',
             'host': 'str'
         }
@@ -139,6 +145,7 @@ class GenericConnectionSummary(ConnectionSummary):
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'technology_type': 'technologyType',
             'host': 'host'
         }
@@ -160,6 +167,7 @@ class GenericConnectionSummary(ConnectionSummary):
         self._ingress_ips = None
         self._nsg_ids = None
         self._subnet_id = None
+        self._routing_method = None
         self._technology_type = None
         self._host = None
         self._connection_type = 'GENERIC'

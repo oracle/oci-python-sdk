@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlFirewallAllowedSqlDimensions(object):
     """
-    The dimensions available for SQL firewall allow SQL analytics.
+    The dimensions available for SQL Firewall allow SQL analytics.
     """
 
     #: A constant which can be used with the sql_level property of a SqlFirewallAllowedSqlDimensions.
@@ -80,7 +80,7 @@ class SqlFirewallAllowedSqlDimensions(object):
     def sql_firewall_policy_id(self):
         """
         Gets the sql_firewall_policy_id of this SqlFirewallAllowedSqlDimensions.
-        The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
+        The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
 
 
         :return: The sql_firewall_policy_id of this SqlFirewallAllowedSqlDimensions.
@@ -92,7 +92,7 @@ class SqlFirewallAllowedSqlDimensions(object):
     def sql_firewall_policy_id(self, sql_firewall_policy_id):
         """
         Sets the sql_firewall_policy_id of this SqlFirewallAllowedSqlDimensions.
-        The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
+        The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
 
 
         :param sql_firewall_policy_id: The sql_firewall_policy_id of this SqlFirewallAllowedSqlDimensions.
@@ -104,7 +104,7 @@ class SqlFirewallAllowedSqlDimensions(object):
     def sql_level(self):
         """
         Gets the sql_level of this SqlFirewallAllowedSqlDimensions.
-        Specifies the level of SQL included for this SQL firewall policy.
+        Specifies the level of SQL included for this SQL Firewall policy.
         USER_ISSUED_SQL - User issued SQL statements only.
         ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
 
@@ -121,7 +121,7 @@ class SqlFirewallAllowedSqlDimensions(object):
     def sql_level(self, sql_level):
         """
         Sets the sql_level of this SqlFirewallAllowedSqlDimensions.
-        Specifies the level of SQL included for this SQL firewall policy.
+        Specifies the level of SQL included for this SQL Firewall policy.
         USER_ISSUED_SQL - User issued SQL statements only.
         ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
 
@@ -162,7 +162,7 @@ class SqlFirewallAllowedSqlDimensions(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this SqlFirewallAllowedSqlDimensions.
-        The current state of the SQL firewall allowed SQL.
+        The current state of the SQL Firewall allowed SQL.
 
         Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -177,7 +177,7 @@ class SqlFirewallAllowedSqlDimensions(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this SqlFirewallAllowedSqlDimensions.
-        The current state of the SQL firewall allowed SQL.
+        The current state of the SQL Firewall allowed SQL.
 
 
         :param lifecycle_state: The lifecycle_state of this SqlFirewallAllowedSqlDimensions.

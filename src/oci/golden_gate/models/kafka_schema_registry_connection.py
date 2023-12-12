@@ -109,6 +109,12 @@ class KafkaSchemaRegistryConnection(Connection):
             The value to assign to the subnet_id property of this KafkaSchemaRegistryConnection.
         :type subnet_id: str
 
+        :param routing_method:
+            The value to assign to the routing_method property of this KafkaSchemaRegistryConnection.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type routing_method: str
+
         :param technology_type:
             The value to assign to the technology_type property of this KafkaSchemaRegistryConnection.
             Allowed values for this property are: "CONFLUENT_SCHEMA_REGISTRY", 'UNKNOWN_ENUM_VALUE'.
@@ -152,6 +158,7 @@ class KafkaSchemaRegistryConnection(Connection):
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
+            'routing_method': 'str',
             'technology_type': 'str',
             'url': 'str',
             'authentication_type': 'str',
@@ -177,6 +184,7 @@ class KafkaSchemaRegistryConnection(Connection):
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'technology_type': 'technologyType',
             'url': 'url',
             'authentication_type': 'authenticationType',
@@ -201,6 +209,7 @@ class KafkaSchemaRegistryConnection(Connection):
         self._ingress_ips = None
         self._nsg_ids = None
         self._subnet_id = None
+        self._routing_method = None
         self._technology_type = None
         self._url = None
         self._authentication_type = None
@@ -324,6 +333,9 @@ class KafkaSchemaRegistryConnection(Connection):
     def private_ip(self):
         """
         Gets the private_ip of this KafkaSchemaRegistryConnection.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.
@@ -340,6 +352,9 @@ class KafkaSchemaRegistryConnection(Connection):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this KafkaSchemaRegistryConnection.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.

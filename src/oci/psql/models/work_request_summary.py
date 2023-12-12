@@ -159,7 +159,7 @@ class WorkRequestSummary(object):
     def operation_type(self):
         """
         **[Required]** Gets the operation_type of this WorkRequestSummary.
-        Type of the work request
+        Type of the work request.
 
         Allowed values for this property are: "CREATE_POSTGRESQL_DB_SYSTEM", "UPDATE_POSTGRESQL_DB_SYSTEM", "DELETE_POSTGRESQL_DB_SYSTEM", "MOVE_POSTGRESQL_DB_SYSTEM", "CREATE_POSTGRESQL_DB_SYSTEM_BACKUP", "UPDATE_POSTGRESQL_DB_SYSTEM_BACKUP", "DELETE_POSTGRESQL_DB_SYSTEM_BACKUP", "MOVE_POSTGRESQL_DB_SYSTEM_BACKUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -174,7 +174,7 @@ class WorkRequestSummary(object):
     def operation_type(self, operation_type):
         """
         Sets the operation_type of this WorkRequestSummary.
-        Type of the work request
+        Type of the work request.
 
 
         :param operation_type: The operation_type of this WorkRequestSummary.
@@ -219,7 +219,7 @@ class WorkRequestSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this WorkRequestSummary.
-        The id of the work request.
+        The ID of the work request.
 
 
         :return: The id of this WorkRequestSummary.
@@ -231,7 +231,7 @@ class WorkRequestSummary(object):
     def id(self, id):
         """
         Sets the id of this WorkRequestSummary.
-        The id of the work request.
+        The ID of the work request.
 
 
         :param id: The id of this WorkRequestSummary.
@@ -243,7 +243,12 @@ class WorkRequestSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this WorkRequestSummary.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
+        The `OCID`__ of the compartment that contains the work request. Work requests should be scoped to
+        the same compartment as the resource the work request affects. If the work request affects multiple resources,
+        and those resources are not in the same compartment, it is up to the service team to pick the primary
+        resource whose compartment should be used
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this WorkRequestSummary.
@@ -255,7 +260,12 @@ class WorkRequestSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequestSummary.
-        The ocid of the compartment that contains the work request. Work requests should be scoped to
+        The `OCID`__ of the compartment that contains the work request. Work requests should be scoped to
+        the same compartment as the resource the work request affects. If the work request affects multiple resources,
+        and those resources are not in the same compartment, it is up to the service team to pick the primary
+        resource whose compartment should be used
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this WorkRequestSummary.
@@ -375,7 +385,7 @@ class WorkRequestSummary(object):
     def time_finished(self):
         """
         Gets the time_finished of this WorkRequestSummary.
-        The date and time the object was finished, as described in `RFC 3339`__.
+        The date and time the request was finished, as described in `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
 
@@ -389,7 +399,7 @@ class WorkRequestSummary(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this WorkRequestSummary.
-        The date and time the object was finished, as described in `RFC 3339`__.
+        The date and time the request was finished, as described in `RFC 3339`__.
 
         __ https://tools.ietf.org/rfc/rfc3339
 

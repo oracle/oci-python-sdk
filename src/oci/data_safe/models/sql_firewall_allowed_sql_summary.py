@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlFirewallAllowedSqlSummary(object):
     """
-    The resource represents a SQL firewall allowed SQL in Data Safe.
+    The resource represents a SQL Firewall allowed SQL in Data Safe.
     """
 
     #: A constant which can be used with the sql_level property of a SqlFirewallAllowedSqlSummary.
@@ -171,7 +171,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this SqlFirewallAllowedSqlSummary.
-        The OCID of the SQL firewall allowed SQL.
+        The OCID of the SQL Firewall allowed SQL.
 
 
         :return: The id of this SqlFirewallAllowedSqlSummary.
@@ -183,7 +183,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def id(self, id):
         """
         Sets the id of this SqlFirewallAllowedSqlSummary.
-        The OCID of the SQL firewall allowed SQL.
+        The OCID of the SQL Firewall allowed SQL.
 
 
         :param id: The id of this SqlFirewallAllowedSqlSummary.
@@ -195,7 +195,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SqlFirewallAllowedSqlSummary.
-        The OCID of the compartment containing the SQL firewall allowed SQL.
+        The OCID of the compartment containing the SQL Firewall allowed SQL.
 
 
         :return: The compartment_id of this SqlFirewallAllowedSqlSummary.
@@ -207,7 +207,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SqlFirewallAllowedSqlSummary.
-        The OCID of the compartment containing the SQL firewall allowed SQL.
+        The OCID of the compartment containing the SQL Firewall allowed SQL.
 
 
         :param compartment_id: The compartment_id of this SqlFirewallAllowedSqlSummary.
@@ -219,7 +219,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this SqlFirewallAllowedSqlSummary.
-        The display name of the SQL firewall allowed SQL.
+        The display name of the SQL Firewall allowed SQL.
 
 
         :return: The display_name of this SqlFirewallAllowedSqlSummary.
@@ -231,7 +231,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this SqlFirewallAllowedSqlSummary.
-        The display name of the SQL firewall allowed SQL.
+        The display name of the SQL Firewall allowed SQL.
 
 
         :param display_name: The display_name of this SqlFirewallAllowedSqlSummary.
@@ -243,7 +243,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def description(self):
         """
         Gets the description of this SqlFirewallAllowedSqlSummary.
-        The description of the SQL firewall allowed SQL.
+        The description of the SQL Firewall allowed SQL.
 
 
         :return: The description of this SqlFirewallAllowedSqlSummary.
@@ -255,7 +255,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def description(self, description):
         """
         Sets the description of this SqlFirewallAllowedSqlSummary.
-        The description of the SQL firewall allowed SQL.
+        The description of the SQL Firewall allowed SQL.
 
 
         :param description: The description of this SqlFirewallAllowedSqlSummary.
@@ -267,7 +267,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def sql_firewall_policy_id(self):
         """
         **[Required]** Gets the sql_firewall_policy_id of this SqlFirewallAllowedSqlSummary.
-        The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
+        The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
 
 
         :return: The sql_firewall_policy_id of this SqlFirewallAllowedSqlSummary.
@@ -279,7 +279,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def sql_firewall_policy_id(self, sql_firewall_policy_id):
         """
         Sets the sql_firewall_policy_id of this SqlFirewallAllowedSqlSummary.
-        The OCID of the SQL firewall policy corresponding to the SQL firewall allowed SQL.
+        The OCID of the SQL Firewall policy corresponding to the SQL Firewall allowed SQL.
 
 
         :param sql_firewall_policy_id: The sql_firewall_policy_id of this SqlFirewallAllowedSqlSummary.
@@ -339,7 +339,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def sql_text(self):
         """
         **[Required]** Gets the sql_text of this SqlFirewallAllowedSqlSummary.
-        The SQL text of the SQL firewall allowed SQL.
+        The SQL text of the SQL Firewall allowed SQL.
 
 
         :return: The sql_text of this SqlFirewallAllowedSqlSummary.
@@ -351,7 +351,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def sql_text(self, sql_text):
         """
         Sets the sql_text of this SqlFirewallAllowedSqlSummary.
-        The SQL text of the SQL firewall allowed SQL.
+        The SQL text of the SQL Firewall allowed SQL.
 
 
         :param sql_text: The sql_text of this SqlFirewallAllowedSqlSummary.
@@ -363,7 +363,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def sql_level(self):
         """
         **[Required]** Gets the sql_level of this SqlFirewallAllowedSqlSummary.
-        Specifies the level of SQL included for this SQL firewall policy.
+        Specifies the level of SQL included for this SQL Firewall policy.
         USER_ISSUED_SQL - User issued SQL statements only.
         ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
 
@@ -380,7 +380,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def sql_level(self, sql_level):
         """
         Sets the sql_level of this SqlFirewallAllowedSqlSummary.
-        Specifies the level of SQL included for this SQL firewall policy.
+        Specifies the level of SQL included for this SQL Firewall policy.
         USER_ISSUED_SQL - User issued SQL statements only.
         ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
 
@@ -421,7 +421,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def version(self):
         """
         **[Required]** Gets the version of this SqlFirewallAllowedSqlSummary.
-        Version of the associated SQL firewall policy. This identifies whether the allowed SQLs were added in the same batch or not.
+        Version of the associated SQL Firewall policy. This identifies whether the allowed SQLs were added in the same batch or not.
 
 
         :return: The version of this SqlFirewallAllowedSqlSummary.
@@ -433,7 +433,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def version(self, version):
         """
         Sets the version of this SqlFirewallAllowedSqlSummary.
-        Version of the associated SQL firewall policy. This identifies whether the allowed SQLs were added in the same batch or not.
+        Version of the associated SQL Firewall policy. This identifies whether the allowed SQLs were added in the same batch or not.
 
 
         :param version: The version of this SqlFirewallAllowedSqlSummary.
@@ -445,7 +445,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def time_collected(self):
         """
         **[Required]** Gets the time_collected of this SqlFirewallAllowedSqlSummary.
-        The time the the SQL firewall allowed SQL was collected from the target database, in the format defined by RFC3339.
+        The time the the SQL Firewall allowed SQL was collected from the target database, in the format defined by RFC3339.
 
 
         :return: The time_collected of this SqlFirewallAllowedSqlSummary.
@@ -457,7 +457,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def time_collected(self, time_collected):
         """
         Sets the time_collected of this SqlFirewallAllowedSqlSummary.
-        The time the the SQL firewall allowed SQL was collected from the target database, in the format defined by RFC3339.
+        The time the the SQL Firewall allowed SQL was collected from the target database, in the format defined by RFC3339.
 
 
         :param time_collected: The time_collected of this SqlFirewallAllowedSqlSummary.
@@ -469,7 +469,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this SqlFirewallAllowedSqlSummary.
-        The last date and time the SQL firewall allowed SQL was updated, in the format defined by RFC3339.
+        The last date and time the SQL Firewall allowed SQL was updated, in the format defined by RFC3339.
 
 
         :return: The time_updated of this SqlFirewallAllowedSqlSummary.
@@ -481,7 +481,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this SqlFirewallAllowedSqlSummary.
-        The last date and time the SQL firewall allowed SQL was updated, in the format defined by RFC3339.
+        The last date and time the SQL Firewall allowed SQL was updated, in the format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this SqlFirewallAllowedSqlSummary.
@@ -493,7 +493,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this SqlFirewallAllowedSqlSummary.
-        The current state of the SQL firewall allowed SQL.
+        The current state of the SQL Firewall allowed SQL.
 
         Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -508,7 +508,7 @@ class SqlFirewallAllowedSqlSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this SqlFirewallAllowedSqlSummary.
-        The current state of the SQL firewall allowed SQL.
+        The current state of the SQL Firewall allowed SQL.
 
 
         :param lifecycle_state: The lifecycle_state of this SqlFirewallAllowedSqlSummary.

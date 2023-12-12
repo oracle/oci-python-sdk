@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateBackupDetails(object):
     """
-    The information to create a new Backup.
+    The information to create a new backup.
     """
 
     def __init__(self, **kwargs):
@@ -81,7 +81,7 @@ class CreateBackupDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateBackupDetails.
-        Backup display name.
+        A user-friendly display name for the backup. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateBackupDetails.
@@ -93,7 +93,7 @@ class CreateBackupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateBackupDetails.
-        Backup display name.
+        A user-friendly display name for the backup. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateBackupDetails.
@@ -105,7 +105,7 @@ class CreateBackupDetails(object):
     def description(self):
         """
         Gets the description of this CreateBackupDetails.
-        Backup description
+        A description for the backup.
 
 
         :return: The description of this CreateBackupDetails.
@@ -117,7 +117,7 @@ class CreateBackupDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateBackupDetails.
-        Backup description
+        A description for the backup.
 
 
         :param description: The description of this CreateBackupDetails.
@@ -129,7 +129,9 @@ class CreateBackupDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateBackupDetails.
-        Compartment identifier
+        The `OCID`__ of the compartment that contains the backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateBackupDetails.
@@ -141,7 +143,9 @@ class CreateBackupDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateBackupDetails.
-        Compartment identifier
+        The `OCID`__ of the compartment that contains the backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateBackupDetails.
@@ -153,7 +157,7 @@ class CreateBackupDetails(object):
     def db_system_id(self):
         """
         **[Required]** Gets the db_system_id of this CreateBackupDetails.
-        Posgresql DbSystem identifier
+        The ID of the database system.
 
 
         :return: The db_system_id of this CreateBackupDetails.
@@ -165,7 +169,7 @@ class CreateBackupDetails(object):
     def db_system_id(self, db_system_id):
         """
         Sets the db_system_id of this CreateBackupDetails.
-        Posgresql DbSystem identifier
+        The ID of the database system.
 
 
         :param db_system_id: The db_system_id of this CreateBackupDetails.

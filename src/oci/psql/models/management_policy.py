@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManagementPolicy(object):
     """
-    PostgreSQL DB system management policy
+    PostgreSQL database system management policy.
     """
 
     def __init__(self, **kwargs):

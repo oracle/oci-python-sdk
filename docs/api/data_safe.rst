@@ -230,6 +230,7 @@ Data Safe
     oci.data_safe.models.PatchSdmMaskingPolicyDifferenceColumnsDetails
     oci.data_safe.models.PatchSensitiveColumnDetails
     oci.data_safe.models.PatchTargetAlertPolicyAssociationDetails
+    oci.data_safe.models.PatternFormatEntry
     oci.data_safe.models.PreserveOriginalDataFormatEntry
     oci.data_safe.models.PrivateEndpoint
     oci.data_safe.models.Profile

@@ -54,6 +54,15 @@ class UpdateOracleConnectionDetails(UpdateConnectionDetails):
             The value to assign to the nsg_ids property of this UpdateOracleConnectionDetails.
         :type nsg_ids: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateOracleConnectionDetails.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this UpdateOracleConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param username:
             The value to assign to the username property of this UpdateOracleConnectionDetails.
         :type username: str
@@ -92,6 +101,8 @@ class UpdateOracleConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'username': 'str',
             'password': 'str',
             'connection_string': 'str',
@@ -110,6 +121,8 @@ class UpdateOracleConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'username': 'username',
             'password': 'password',
             'connection_string': 'connectionString',
@@ -127,6 +140,8 @@ class UpdateOracleConnectionDetails(UpdateConnectionDetails):
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._username = None
         self._password = None
         self._connection_string = None
@@ -274,6 +289,9 @@ class UpdateOracleConnectionDetails(UpdateConnectionDetails):
     def private_ip(self):
         """
         Gets the private_ip of this UpdateOracleConnectionDetails.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.
@@ -290,6 +308,9 @@ class UpdateOracleConnectionDetails(UpdateConnectionDetails):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this UpdateOracleConnectionDetails.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.

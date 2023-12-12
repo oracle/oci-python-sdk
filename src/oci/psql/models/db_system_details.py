@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbSystemDetails(object):
     """
-    Information about the DbSystem associated to a backup.
+    Information about the database system associated with a backup.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class DbSystemDetails(object):
     def system_type(self):
         """
         **[Required]** Gets the system_type of this DbSystemDetails.
-        Type of the DbSystem.
+        Type of the database system.
 
 
         :return: The system_type of this DbSystemDetails.
@@ -58,7 +58,7 @@ class DbSystemDetails(object):
     def system_type(self, system_type):
         """
         Sets the system_type of this DbSystemDetails.
-        Type of the DbSystem.
+        Type of the database system.
 
 
         :param system_type: The system_type of this DbSystemDetails.
@@ -70,7 +70,7 @@ class DbSystemDetails(object):
     def db_version(self):
         """
         **[Required]** Gets the db_version of this DbSystemDetails.
-        The major and minor versions of the DbSystem software.
+        The major and minor versions of the database system software.
 
 
         :return: The db_version of this DbSystemDetails.
@@ -82,7 +82,7 @@ class DbSystemDetails(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this DbSystemDetails.
-        The major and minor versions of the DbSystem software.
+        The major and minor versions of the database system software.
 
 
         :param db_version: The db_version of this DbSystemDetails.

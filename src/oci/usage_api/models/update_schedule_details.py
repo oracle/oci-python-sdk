@@ -100,7 +100,7 @@ class UpdateScheduleDetails(object):
     def output_file_format(self):
         """
         Gets the output_file_format of this UpdateScheduleDetails.
-        Specifies supported output file format.
+        Specifies the supported output file format.
 
         Allowed values for this property are: "CSV", "PDF"
 
@@ -114,7 +114,7 @@ class UpdateScheduleDetails(object):
     def output_file_format(self, output_file_format):
         """
         Sets the output_file_format of this UpdateScheduleDetails.
-        Specifies supported output file format.
+        Specifies the supported output file format.
 
 
         :param output_file_format: The output_file_format of this UpdateScheduleDetails.

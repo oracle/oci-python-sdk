@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateSqlFirewallPolicyDetails(object):
     """
-    Details to update the SQL firewall policy.
+    Details to update the SQL Firewall policy.
     """
 
     #: A constant which can be used with the status property of a UpdateSqlFirewallPolicyDetails.
@@ -149,7 +149,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateSqlFirewallPolicyDetails.
-        The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+        The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
 
 
         :return: The display_name of this UpdateSqlFirewallPolicyDetails.
@@ -161,7 +161,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateSqlFirewallPolicyDetails.
-        The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+        The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
 
 
         :param display_name: The display_name of this UpdateSqlFirewallPolicyDetails.
@@ -173,7 +173,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def description(self):
         """
         Gets the description of this UpdateSqlFirewallPolicyDetails.
-        The description of the SQL firewall policy.
+        The description of the SQL Firewall policy.
 
 
         :return: The description of this UpdateSqlFirewallPolicyDetails.
@@ -185,7 +185,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateSqlFirewallPolicyDetails.
-        The description of the SQL firewall policy.
+        The description of the SQL Firewall policy.
 
 
         :param description: The description of this UpdateSqlFirewallPolicyDetails.
@@ -197,7 +197,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def status(self):
         """
         Gets the status of this UpdateSqlFirewallPolicyDetails.
-        Specifies whether the SQL firewall policy is enabled or disabled.
+        Specifies whether the SQL Firewall policy is enabled or disabled.
 
         Allowed values for this property are: "ENABLED", "DISABLED"
 
@@ -211,7 +211,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def status(self, status):
         """
         Sets the status of this UpdateSqlFirewallPolicyDetails.
-        Specifies whether the SQL firewall policy is enabled or disabled.
+        Specifies whether the SQL Firewall policy is enabled or disabled.
 
 
         :param status: The status of this UpdateSqlFirewallPolicyDetails.
@@ -228,7 +228,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def enforcement_scope(self):
         """
         Gets the enforcement_scope of this UpdateSqlFirewallPolicyDetails.
-        Specifies the SQL firewall policy enforcement option.
+        Specifies the SQL Firewall policy enforcement option.
 
         Allowed values for this property are: "ENFORCE_CONTEXT", "ENFORCE_SQL", "ENFORCE_ALL"
 
@@ -242,7 +242,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def enforcement_scope(self, enforcement_scope):
         """
         Sets the enforcement_scope of this UpdateSqlFirewallPolicyDetails.
-        Specifies the SQL firewall policy enforcement option.
+        Specifies the SQL Firewall policy enforcement option.
 
 
         :param enforcement_scope: The enforcement_scope of this UpdateSqlFirewallPolicyDetails.
@@ -259,7 +259,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def violation_action(self):
         """
         Gets the violation_action of this UpdateSqlFirewallPolicyDetails.
-        Specifies the SQL firewall action based on detection of SQL firewall violations.
+        Specifies the SQL Firewall action based on detection of SQL Firewall violations.
 
         Allowed values for this property are: "BLOCK", "OBSERVE"
 
@@ -273,7 +273,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def violation_action(self, violation_action):
         """
         Sets the violation_action of this UpdateSqlFirewallPolicyDetails.
-        Specifies the SQL firewall action based on detection of SQL firewall violations.
+        Specifies the SQL Firewall action based on detection of SQL Firewall violations.
 
 
         :param violation_action: The violation_action of this UpdateSqlFirewallPolicyDetails.
@@ -290,7 +290,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def violation_audit(self):
         """
         Gets the violation_audit of this UpdateSqlFirewallPolicyDetails.
-        Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+        Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
 
         Allowed values for this property are: "ENABLED", "DISABLED"
 
@@ -304,7 +304,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def violation_audit(self, violation_audit):
         """
         Sets the violation_audit of this UpdateSqlFirewallPolicyDetails.
-        Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+        Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
 
 
         :param violation_audit: The violation_audit of this UpdateSqlFirewallPolicyDetails.
@@ -321,7 +321,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def allowed_client_ips(self):
         """
         Gets the allowed_client_ips of this UpdateSqlFirewallPolicyDetails.
-        List of allowed ip addresses for the SQL firewall policy.
+        List of allowed ip addresses for the SQL Firewall policy.
 
 
         :return: The allowed_client_ips of this UpdateSqlFirewallPolicyDetails.
@@ -333,7 +333,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def allowed_client_ips(self, allowed_client_ips):
         """
         Sets the allowed_client_ips of this UpdateSqlFirewallPolicyDetails.
-        List of allowed ip addresses for the SQL firewall policy.
+        List of allowed ip addresses for the SQL Firewall policy.
 
 
         :param allowed_client_ips: The allowed_client_ips of this UpdateSqlFirewallPolicyDetails.
@@ -345,7 +345,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def allowed_client_os_usernames(self):
         """
         Gets the allowed_client_os_usernames of this UpdateSqlFirewallPolicyDetails.
-        List of allowed operating system user names for the SQL firewall policy.
+        List of allowed operating system user names for the SQL Firewall policy.
 
 
         :return: The allowed_client_os_usernames of this UpdateSqlFirewallPolicyDetails.
@@ -357,7 +357,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def allowed_client_os_usernames(self, allowed_client_os_usernames):
         """
         Sets the allowed_client_os_usernames of this UpdateSqlFirewallPolicyDetails.
-        List of allowed operating system user names for the SQL firewall policy.
+        List of allowed operating system user names for the SQL Firewall policy.
 
 
         :param allowed_client_os_usernames: The allowed_client_os_usernames of this UpdateSqlFirewallPolicyDetails.
@@ -369,7 +369,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def allowed_client_programs(self):
         """
         Gets the allowed_client_programs of this UpdateSqlFirewallPolicyDetails.
-        List of allowed client programs for the SQL firewall policy.
+        List of allowed client programs for the SQL Firewall policy.
 
 
         :return: The allowed_client_programs of this UpdateSqlFirewallPolicyDetails.
@@ -381,7 +381,7 @@ class UpdateSqlFirewallPolicyDetails(object):
     def allowed_client_programs(self, allowed_client_programs):
         """
         Sets the allowed_client_programs of this UpdateSqlFirewallPolicyDetails.
-        List of allowed client programs for the SQL firewall policy.
+        List of allowed client programs for the SQL Firewall policy.
 
 
         :param allowed_client_programs: The allowed_client_programs of this UpdateSqlFirewallPolicyDetails.

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Backup(object):
     """
-    Db system backup information
+    Database system backup information.
     """
 
     #: A constant which can be used with the source_type property of a Backup.
@@ -190,7 +190,9 @@ class Backup(object):
     def id(self):
         """
         **[Required]** Gets the id of this Backup.
-        Unique identifier that is immutable on creation
+        The `OCID`__ of the backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Backup.
@@ -202,7 +204,9 @@ class Backup(object):
     def id(self, id):
         """
         Sets the id of this Backup.
-        Unique identifier that is immutable on creation
+        The `OCID`__ of the backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Backup.
@@ -214,7 +218,7 @@ class Backup(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this Backup.
-        Backup display name
+        A user-friendly display name for the backup. Avoid entering confidential information.
 
 
         :return: The display_name of this Backup.
@@ -226,7 +230,7 @@ class Backup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Backup.
-        Backup display name
+        A user-friendly display name for the backup. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this Backup.
@@ -238,7 +242,7 @@ class Backup(object):
     def description(self):
         """
         Gets the description of this Backup.
-        Backup description
+        A description for the backup.
 
 
         :return: The description of this Backup.
@@ -250,7 +254,7 @@ class Backup(object):
     def description(self, description):
         """
         Sets the description of this Backup.
-        Backup description
+        A description for the backup.
 
 
         :param description: The description of this Backup.
@@ -262,7 +266,9 @@ class Backup(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Backup.
-        Backup compartment identifier
+        The `OCID`__ of the compartment that contains the backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Backup.
@@ -274,7 +280,9 @@ class Backup(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Backup.
-        Backup compartment identifier
+        The `OCID`__ of the compartment that contains the backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Backup.
@@ -286,7 +294,7 @@ class Backup(object):
     def source_type(self):
         """
         Gets the source_type of this Backup.
-        Specifies whether the backup was created manually, or via scheduled backup policy
+        Specifies whether the backup was created manually, or by a management policy.
 
         Allowed values for this property are: "SCHEDULED", "MANUAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -301,7 +309,7 @@ class Backup(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this Backup.
-        Specifies whether the backup was created manually, or via scheduled backup policy
+        Specifies whether the backup was created manually, or by a management policy.
 
 
         :param source_type: The source_type of this Backup.
@@ -316,7 +324,12 @@ class Backup(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Backup.
-        The time the the Backup was created. An RFC3339 formatted datetime string
+        The date and time the backup was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this Backup.
@@ -328,7 +341,12 @@ class Backup(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Backup.
-        The time the the Backup was created. An RFC3339 formatted datetime string
+        The date and time the backup was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this Backup.
@@ -340,7 +358,12 @@ class Backup(object):
     def time_updated(self):
         """
         Gets the time_updated of this Backup.
-        The time the Backup was updated. An RFC3339 formatted datetime string
+        The date and time the backup was updated, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_updated of this Backup.
@@ -352,7 +375,12 @@ class Backup(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Backup.
-        The time the Backup was updated. An RFC3339 formatted datetime string
+        The date and time the backup was updated, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_updated: The time_updated of this Backup.
@@ -364,7 +392,7 @@ class Backup(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Backup.
-        The current state of the Backup.
+        The current state of the backup.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -379,7 +407,7 @@ class Backup(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Backup.
-        The current state of the Backup.
+        The current state of the backup.
 
 
         :param lifecycle_state: The lifecycle_state of this Backup.
@@ -442,7 +470,7 @@ class Backup(object):
     def backup_size(self):
         """
         **[Required]** Gets the backup_size of this Backup.
-        Backup size in GB.
+        The size of the backup, in gigabytes.
 
 
         :return: The backup_size of this Backup.
@@ -454,7 +482,7 @@ class Backup(object):
     def backup_size(self, backup_size):
         """
         Sets the backup_size of this Backup.
-        Backup size in GB.
+        The size of the backup, in gigabytes.
 
 
         :param backup_size: The backup_size of this Backup.
@@ -466,7 +494,9 @@ class Backup(object):
     def db_system_id(self):
         """
         Gets the db_system_id of this Backup.
-        The source DbSystem OCID.
+        The `OCID`__ of the backup's source database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The db_system_id of this Backup.
@@ -478,7 +508,9 @@ class Backup(object):
     def db_system_id(self, db_system_id):
         """
         Sets the db_system_id of this Backup.
-        The source DbSystem OCID.
+        The `OCID`__ of the backup's source database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param db_system_id: The db_system_id of this Backup.

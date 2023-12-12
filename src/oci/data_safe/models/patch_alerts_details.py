@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PatchAlertsDetails(object):
     """
-    The alert details to update the status of one or more alert specified by the alert IDs.
+    The alert details to update the status of one or more alerts specified by the alert IDs.
     """
 
     def __init__(self, **kwargs):
