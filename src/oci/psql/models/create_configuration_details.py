@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateConfigurationDetails(object):
     """
-    The information to create a new Configuration.
+    The information to create a new configuration.
     """
 
     def __init__(self, **kwargs):
@@ -109,7 +109,7 @@ class CreateConfigurationDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateConfigurationDetails.
-        configuration display name
+        A user-friendly display name for the configuration. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateConfigurationDetails.
@@ -121,7 +121,7 @@ class CreateConfigurationDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateConfigurationDetails.
-        configuration display name
+        A user-friendly display name for the configuration. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateConfigurationDetails.
@@ -133,7 +133,9 @@ class CreateConfigurationDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateConfigurationDetails.
-        Compartment identifier
+        The `OCID`__ of the compartment that contains the configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateConfigurationDetails.
@@ -145,7 +147,9 @@ class CreateConfigurationDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateConfigurationDetails.
-        Compartment identifier
+        The `OCID`__ of the compartment that contains the configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateConfigurationDetails.
@@ -157,7 +161,7 @@ class CreateConfigurationDetails(object):
     def description(self):
         """
         Gets the description of this CreateConfigurationDetails.
-        Details about the Configuration Set.
+        Details about the configuration set.
 
 
         :return: The description of this CreateConfigurationDetails.
@@ -169,7 +173,7 @@ class CreateConfigurationDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateConfigurationDetails.
-        Details about the Configuration Set.
+        Details about the configuration set.
 
 
         :param description: The description of this CreateConfigurationDetails.
@@ -181,7 +185,8 @@ class CreateConfigurationDetails(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this CreateConfigurationDetails.
-        Compute Shape Name like VM.Standard3.Flex.
+        The name of the shape for the configuration.
+        Example: `VM.Standard.E4.Flex`
 
 
         :return: The shape of this CreateConfigurationDetails.
@@ -193,7 +198,8 @@ class CreateConfigurationDetails(object):
     def shape(self, shape):
         """
         Sets the shape of this CreateConfigurationDetails.
-        Compute Shape Name like VM.Standard3.Flex.
+        The name of the shape for the configuration.
+        Example: `VM.Standard.E4.Flex`
 
 
         :param shape: The shape of this CreateConfigurationDetails.
@@ -205,7 +211,7 @@ class CreateConfigurationDetails(object):
     def db_version(self):
         """
         **[Required]** Gets the db_version of this CreateConfigurationDetails.
-        Version of the Postgresql DB
+        Version of the PostgreSQL database.
 
 
         :return: The db_version of this CreateConfigurationDetails.
@@ -217,7 +223,7 @@ class CreateConfigurationDetails(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this CreateConfigurationDetails.
-        Version of the Postgresql DB
+        Version of the PostgreSQL database.
 
 
         :param db_version: The db_version of this CreateConfigurationDetails.
@@ -229,7 +235,7 @@ class CreateConfigurationDetails(object):
     def instance_ocpu_count(self):
         """
         **[Required]** Gets the instance_ocpu_count of this CreateConfigurationDetails.
-        CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        CPU core count.
 
 
         :return: The instance_ocpu_count of this CreateConfigurationDetails.
@@ -241,7 +247,7 @@ class CreateConfigurationDetails(object):
     def instance_ocpu_count(self, instance_ocpu_count):
         """
         Sets the instance_ocpu_count of this CreateConfigurationDetails.
-        CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        CPU core count.
 
 
         :param instance_ocpu_count: The instance_ocpu_count of this CreateConfigurationDetails.
@@ -253,7 +259,7 @@ class CreateConfigurationDetails(object):
     def instance_memory_size_in_gbs(self):
         """
         **[Required]** Gets the instance_memory_size_in_gbs of this CreateConfigurationDetails.
-        Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        Memory size in gigabytes with 1GB increment.
 
 
         :return: The instance_memory_size_in_gbs of this CreateConfigurationDetails.
@@ -265,7 +271,7 @@ class CreateConfigurationDetails(object):
     def instance_memory_size_in_gbs(self, instance_memory_size_in_gbs):
         """
         Sets the instance_memory_size_in_gbs of this CreateConfigurationDetails.
-        Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        Memory size in gigabytes with 1GB increment.
 
 
         :param instance_memory_size_in_gbs: The instance_memory_size_in_gbs of this CreateConfigurationDetails.

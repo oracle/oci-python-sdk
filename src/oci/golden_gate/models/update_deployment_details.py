@@ -300,7 +300,7 @@ class UpdateDeploymentDetails(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this UpdateDeploymentDetails.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the subnet of the deployment's private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -314,7 +314,7 @@ class UpdateDeploymentDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this UpdateDeploymentDetails.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the subnet of the deployment's private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

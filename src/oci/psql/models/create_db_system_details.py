@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDbSystemDetails(object):
     """
-    The information about new DbSystem.
+    The information about new database system.
     """
 
     def __init__(self, **kwargs):
@@ -158,7 +158,7 @@ class CreateDbSystemDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateDbSystemDetails.
-        DbSystem display name
+        A user-friendly display name for the database system. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateDbSystemDetails.
@@ -170,7 +170,7 @@ class CreateDbSystemDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDbSystemDetails.
-        DbSystem display name
+        A user-friendly display name for the database system. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateDbSystemDetails.
@@ -182,7 +182,7 @@ class CreateDbSystemDetails(object):
     def description(self):
         """
         Gets the description of this CreateDbSystemDetails.
-        Description of a DbSystem. This field should be input by the user.
+        A user-provided description of a database system.
 
 
         :return: The description of this CreateDbSystemDetails.
@@ -194,7 +194,7 @@ class CreateDbSystemDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateDbSystemDetails.
-        Description of a DbSystem. This field should be input by the user.
+        A user-provided description of a database system.
 
 
         :param description: The description of this CreateDbSystemDetails.
@@ -206,7 +206,9 @@ class CreateDbSystemDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateDbSystemDetails.
-        Compartment identifier
+        The `OCID`__ of the compartment that contains the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateDbSystemDetails.
@@ -218,7 +220,9 @@ class CreateDbSystemDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateDbSystemDetails.
-        Compartment identifier
+        The `OCID`__ of the compartment that contains the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateDbSystemDetails.
@@ -230,7 +234,7 @@ class CreateDbSystemDetails(object):
     def system_type(self):
         """
         Gets the system_type of this CreateDbSystemDetails.
-        Type of the DbSystem.
+        Type of the database system.
 
 
         :return: The system_type of this CreateDbSystemDetails.
@@ -242,7 +246,7 @@ class CreateDbSystemDetails(object):
     def system_type(self, system_type):
         """
         Sets the system_type of this CreateDbSystemDetails.
-        Type of the DbSystem.
+        Type of the database system.
 
 
         :param system_type: The system_type of this CreateDbSystemDetails.
@@ -254,7 +258,7 @@ class CreateDbSystemDetails(object):
     def db_version(self):
         """
         **[Required]** Gets the db_version of this CreateDbSystemDetails.
-        Version of DbSystem software.
+        Version of database system software.
 
 
         :return: The db_version of this CreateDbSystemDetails.
@@ -266,7 +270,7 @@ class CreateDbSystemDetails(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this CreateDbSystemDetails.
-        Version of DbSystem software.
+        Version of database system software.
 
 
         :param db_version: The db_version of this CreateDbSystemDetails.
@@ -278,7 +282,9 @@ class CreateDbSystemDetails(object):
     def config_id(self):
         """
         Gets the config_id of this CreateDbSystemDetails.
-        Configuration identifier
+        The `OCID`__ of the configuration associated with the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The config_id of this CreateDbSystemDetails.
@@ -290,7 +296,9 @@ class CreateDbSystemDetails(object):
     def config_id(self, config_id):
         """
         Sets the config_id of this CreateDbSystemDetails.
-        Configuration identifier
+        The `OCID`__ of the configuration associated with the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param config_id: The config_id of this CreateDbSystemDetails.
@@ -322,7 +330,8 @@ class CreateDbSystemDetails(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this CreateDbSystemDetails.
-        Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+        The name of the shape for the database instance node. Use the /shapes API for accepted shapes.
+        Example: `VM.Standard.E4.Flex`
 
 
         :return: The shape of this CreateDbSystemDetails.
@@ -334,7 +343,8 @@ class CreateDbSystemDetails(object):
     def shape(self, shape):
         """
         Sets the shape of this CreateDbSystemDetails.
-        Shape of DbInstance. This name should match from with one of the available shapes from /shapes API.
+        The name of the shape for the database instance node. Use the /shapes API for accepted shapes.
+        Example: `VM.Standard.E4.Flex`
 
 
         :param shape: The shape of this CreateDbSystemDetails.
@@ -346,7 +356,7 @@ class CreateDbSystemDetails(object):
     def instance_ocpu_count(self):
         """
         Gets the instance_ocpu_count of this CreateDbSystemDetails.
-        The total number of OCPUs available to each DbInstance.
+        The total number of OCPUs available to each database instance node.
 
 
         :return: The instance_ocpu_count of this CreateDbSystemDetails.
@@ -358,7 +368,7 @@ class CreateDbSystemDetails(object):
     def instance_ocpu_count(self, instance_ocpu_count):
         """
         Sets the instance_ocpu_count of this CreateDbSystemDetails.
-        The total number of OCPUs available to each DbInstance.
+        The total number of OCPUs available to each database instance node.
 
 
         :param instance_ocpu_count: The instance_ocpu_count of this CreateDbSystemDetails.
@@ -370,7 +380,7 @@ class CreateDbSystemDetails(object):
     def instance_memory_size_in_gbs(self):
         """
         Gets the instance_memory_size_in_gbs of this CreateDbSystemDetails.
-        The total amount of memory available to each DbInstance, in gigabytes.
+        The total amount of memory available to each database instance node, in gigabytes.
 
 
         :return: The instance_memory_size_in_gbs of this CreateDbSystemDetails.
@@ -382,7 +392,7 @@ class CreateDbSystemDetails(object):
     def instance_memory_size_in_gbs(self, instance_memory_size_in_gbs):
         """
         Sets the instance_memory_size_in_gbs of this CreateDbSystemDetails.
-        The total amount of memory available to each DbInstance, in gigabytes.
+        The total amount of memory available to each database instance node, in gigabytes.
 
 
         :param instance_memory_size_in_gbs: The instance_memory_size_in_gbs of this CreateDbSystemDetails.
@@ -394,7 +404,7 @@ class CreateDbSystemDetails(object):
     def instance_count(self):
         """
         Gets the instance_count of this CreateDbSystemDetails.
-        Count of DbInstances to be created in the DbSystem.
+        Count of database instances nodes to be created in the database system.
 
 
         :return: The instance_count of this CreateDbSystemDetails.
@@ -406,7 +416,7 @@ class CreateDbSystemDetails(object):
     def instance_count(self, instance_count):
         """
         Sets the instance_count of this CreateDbSystemDetails.
-        Count of DbInstances to be created in the DbSystem.
+        Count of database instances nodes to be created in the database system.
 
 
         :param instance_count: The instance_count of this CreateDbSystemDetails.
@@ -418,8 +428,8 @@ class CreateDbSystemDetails(object):
     def instances_details(self):
         """
         Gets the instances_details of this CreateDbSystemDetails.
-        Details of DbInstances to be created. Optional parameter.
-        If specified, its size must match instanceCount.
+        Details of database instances nodes to be created. This parameter is optional.
+        If specified, its size must match `instanceCount`.
 
 
         :return: The instances_details of this CreateDbSystemDetails.
@@ -431,8 +441,8 @@ class CreateDbSystemDetails(object):
     def instances_details(self, instances_details):
         """
         Sets the instances_details of this CreateDbSystemDetails.
-        Details of DbInstances to be created. Optional parameter.
-        If specified, its size must match instanceCount.
+        Details of database instances nodes to be created. This parameter is optional.
+        If specified, its size must match `instanceCount`.
 
 
         :param instances_details: The instances_details of this CreateDbSystemDetails.

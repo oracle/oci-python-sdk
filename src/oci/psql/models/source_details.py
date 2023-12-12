@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SourceDetails(object):
     """
-    New source is used to restore the DB system.
+    The source used to restore the database system.
     """
 
     #: A constant which can be used with the source_type property of a SourceDetails.

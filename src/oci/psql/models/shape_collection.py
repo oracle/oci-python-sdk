@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ShapeCollection(object):
     """
-    The list of shapes that allowed to use to create a db system.
+    The list of shapes that can be used to create a database system.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ShapeCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ShapeCollection.
-        List of dbSystems.
+        List of supported shapes.
 
 
         :return: The items of this ShapeCollection.
@@ -51,7 +51,7 @@ class ShapeCollection(object):
     def items(self, items):
         """
         Sets the items of this ShapeCollection.
-        List of dbSystems.
+        List of supported shapes.
 
 
         :param items: The items of this ShapeCollection.

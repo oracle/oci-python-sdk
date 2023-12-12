@@ -6,6 +6,7 @@
 
 from __future__ import absolute_import
 
+from .add_resource_lock_details import AddResourceLockDetails
 from .asynchronous_export_glossary_details import AsynchronousExportGlossaryDetails
 from .asynchronous_export_glossary_result import AsynchronousExportGlossaryResult
 from .asynchronous_export_request_details import AsynchronousExportRequestDetails
@@ -134,6 +135,8 @@ from .process_recommendation_details import ProcessRecommendationDetails
 from .property_definition import PropertyDefinition
 from .recommendation_collection import RecommendationCollection
 from .recommendation_details import RecommendationDetails
+from .remove_resource_lock_details import RemoveResourceLockDetails
+from .resource_lock import ResourceLock
 from .rule_attribute import RuleAttribute
 from .rule_collection import RuleCollection
 from .rule_summary import RuleSummary
@@ -183,6 +186,7 @@ from .work_request_resource import WorkRequestResource
 
 # Maps type names to classes for data_catalog services.
 data_catalog_type_mapping = {
+    "AddResourceLockDetails": AddResourceLockDetails,
     "AsynchronousExportGlossaryDetails": AsynchronousExportGlossaryDetails,
     "AsynchronousExportGlossaryResult": AsynchronousExportGlossaryResult,
     "AsynchronousExportRequestDetails": AsynchronousExportRequestDetails,
@@ -311,6 +315,8 @@ data_catalog_type_mapping = {
     "PropertyDefinition": PropertyDefinition,
     "RecommendationCollection": RecommendationCollection,
     "RecommendationDetails": RecommendationDetails,
+    "RemoveResourceLockDetails": RemoveResourceLockDetails,
+    "ResourceLock": ResourceLock,
     "RuleAttribute": RuleAttribute,
     "RuleCollection": RuleCollection,
     "RuleSummary": RuleSummary,

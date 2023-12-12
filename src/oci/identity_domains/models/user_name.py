@@ -19,7 +19,7 @@ class UserName(object):
     - idcsPii: true
     - multiValued: false
     - mutability: readWrite
-    - required: true
+    - required: false
     - returned: default
     - type: complex
     - uniqueness: none
@@ -127,7 +127,7 @@ class UserName(object):
     @property
     def family_name(self):
         """
-        **[Required]** Gets the family_name of this UserName.
+        Gets the family_name of this UserName.
         Last name
 
         **SCIM++ Properties:**
@@ -136,7 +136,7 @@ class UserName(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
-         - required: true
+         - required: false
          - returned: default
          - type: string
          - uniqueness: none
@@ -159,7 +159,7 @@ class UserName(object):
          - idcsSearchable: true
          - multiValued: false
          - mutability: readWrite
-         - required: true
+         - required: false
          - returned: default
          - type: string
          - uniqueness: none

@@ -54,6 +54,15 @@ class UpdateAzureDataLakeStorageConnectionDetails(UpdateConnectionDetails):
             The value to assign to the nsg_ids property of this UpdateAzureDataLakeStorageConnectionDetails.
         :type nsg_ids: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateAzureDataLakeStorageConnectionDetails.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this UpdateAzureDataLakeStorageConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param authentication_type:
             The value to assign to the authentication_type property of this UpdateAzureDataLakeStorageConnectionDetails.
         :type authentication_type: str
@@ -96,6 +105,8 @@ class UpdateAzureDataLakeStorageConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'authentication_type': 'str',
             'account_name': 'str',
             'account_key': 'str',
@@ -115,6 +126,8 @@ class UpdateAzureDataLakeStorageConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'authentication_type': 'authenticationType',
             'account_name': 'accountName',
             'account_key': 'accountKey',
@@ -133,6 +146,8 @@ class UpdateAzureDataLakeStorageConnectionDetails(UpdateConnectionDetails):
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._authentication_type = None
         self._account_name = None
         self._account_key = None

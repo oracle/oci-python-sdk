@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfigOverrides(object):
     """
-    Configuration Overrides for PGSQL instance.
+    Configuration overrides for a PostgreSQL instance.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class ConfigOverrides(object):
     def config_key(self):
         """
         **[Required]** Gets the config_key of this ConfigOverrides.
-        Key is the configuration key.
+        Configuration variable name.
 
 
         :return: The config_key of this ConfigOverrides.
@@ -58,7 +58,7 @@ class ConfigOverrides(object):
     def config_key(self, config_key):
         """
         Sets the config_key of this ConfigOverrides.
-        Key is the configuration key.
+        Configuration variable name.
 
 
         :param config_key: The config_key of this ConfigOverrides.
@@ -70,7 +70,7 @@ class ConfigOverrides(object):
     def overriden_config_value(self):
         """
         **[Required]** Gets the overriden_config_value of this ConfigOverrides.
-        User selected configuration value
+        User-selected variable value.
 
 
         :return: The overriden_config_value of this ConfigOverrides.
@@ -82,7 +82,7 @@ class ConfigOverrides(object):
     def overriden_config_value(self, overriden_config_value):
         """
         Sets the overriden_config_value of this ConfigOverrides.
-        User selected configuration value
+        User-selected variable value.
 
 
         :param overriden_config_value: The overriden_config_value of this ConfigOverrides.

@@ -93,7 +93,7 @@ class WorkRequestResource(object):
     def entity_type(self):
         """
         **[Required]** Gets the entity_type of this WorkRequestResource.
-        The resource type the work request affects.
+        The resource type that the work request affects.
 
 
         :return: The entity_type of this WorkRequestResource.
@@ -105,7 +105,7 @@ class WorkRequestResource(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this WorkRequestResource.
-        The resource type the work request affects.
+        The resource type that the work request affects.
 
 
         :param entity_type: The entity_type of this WorkRequestResource.
@@ -171,7 +171,7 @@ class WorkRequestResource(object):
     def entity_uri(self):
         """
         Gets the entity_uri of this WorkRequestResource.
-        The URI path that the user can do a GET on to access the resource metadata
+        The URI path that the user can do a GET on to access the resource metadata.
 
 
         :return: The entity_uri of this WorkRequestResource.
@@ -183,7 +183,7 @@ class WorkRequestResource(object):
     def entity_uri(self, entity_uri):
         """
         Sets the entity_uri of this WorkRequestResource.
-        The URI path that the user can do a GET on to access the resource metadata
+        The URI path that the user can do a GET on to access the resource metadata.
 
 
         :param entity_uri: The entity_uri of this WorkRequestResource.

@@ -22,7 +22,8 @@ missing = Sentinel("Missing")
 
 class PostgresqlClient(object):
     """
-    A description of the PGSQL Control Plane API
+    Use the OCI Database with PostgreSQL API to manage resources such as database systems, database nodes, backups, and configurations.
+    For information, see the user guide documentation for the [service](/iaas/Content/postgresql/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -118,23 +119,27 @@ class PostgresqlClient(object):
 
     def change_backup_compartment(self, backup_id, change_backup_compartment_details, **kwargs):
         """
-        Moves a Backup resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+        Moves a backup from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
 
 
         :param str backup_id: (required)
-            unique Backup identifier
+            A unique identifier for the backup.
 
         :param oci.psql.models.ChangeBackupCompartmentDetails change_backup_compartment_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -230,23 +235,27 @@ class PostgresqlClient(object):
 
     def change_configuration_compartment(self, configuration_id, change_configuration_compartment_details, **kwargs):
         """
-        Moves a Configuration resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+        Moves a configuration from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
 
 
         :param str configuration_id: (required)
-            unique Configuration identifier
+            A unique identifier for the configuration.
 
         :param oci.psql.models.ChangeConfigurationCompartmentDetails change_configuration_compartment_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -260,7 +269,7 @@ class PostgresqlClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.psql.models.Configuration`
+        :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
         :example:
@@ -324,7 +333,6 @@ class PostgresqlClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_configuration_compartment_details,
-                response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -336,7 +344,6 @@ class PostgresqlClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_configuration_compartment_details,
-                response_type="Configuration",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -344,23 +351,27 @@ class PostgresqlClient(object):
 
     def change_db_system_compartment(self, db_system_id, change_db_system_compartment_details, **kwargs):
         """
-        Moves a DbSystem resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+        Moves a database system from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
 
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.ChangeDbSystemCompartmentDetails change_db_system_compartment_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -456,14 +467,17 @@ class PostgresqlClient(object):
 
     def create_backup(self, create_backup_details, **kwargs):
         """
-        Creates a new Backup.
+        Creates a new backup.
 
 
         :param oci.psql.models.CreateBackupDetails create_backup_details: (required)
-            Details for the new Backup.
+            Details for the new backup.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -548,14 +562,17 @@ class PostgresqlClient(object):
 
     def create_configuration(self, create_configuration_details, **kwargs):
         """
-        Creates a new Configuration Set.
+        Creates a new configuration.
 
 
         :param oci.psql.models.CreateConfigurationDetails create_configuration_details: (required)
-            Details for the new Configuration.
+            Details for the new configuration.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -642,14 +659,17 @@ class PostgresqlClient(object):
 
     def create_db_system(self, create_db_system_details, **kwargs):
         """
-        Creates a new DbSystem.
+        Creates a new database system.
 
 
         :param oci.psql.models.CreateDbSystemDetails create_db_system_details: (required)
-            Details for the new DbSystem.
+            Details for the new database system.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -736,14 +756,15 @@ class PostgresqlClient(object):
 
     def delete_backup(self, backup_id, **kwargs):
         """
-        Deletes a Backup resource by identifier
+        Deletes a backup by identifier.
 
 
         :param str backup_id: (required)
-            unique Backup identifier
+            A unique identifier for the backup.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -837,14 +858,15 @@ class PostgresqlClient(object):
 
     def delete_configuration(self, configuration_id, **kwargs):
         """
-        Deletes a Cofniguration resource by identifier
+        Deletes a configuration by identifier.
 
 
         :param str configuration_id: (required)
-            unique Configuration identifier
+            A unique identifier for the configuration.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -938,14 +960,15 @@ class PostgresqlClient(object):
 
     def delete_db_system(self, db_system_id, **kwargs):
         """
-        Deletes a DbSystem resource by identifier
+        Deletes a database system by identifier.
 
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1039,23 +1062,27 @@ class PostgresqlClient(object):
 
     def failover_db_system(self, db_system_id, failover_db_system_details, **kwargs):
         """
-        Runs a failover operation. Optionally user can specify the desired AD for 3AD regions.
+        Runs a failover operation. Optionally, specify the desired AD for regions with three ADs.
 
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.FailoverDbSystemDetails failover_db_system_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1151,11 +1178,11 @@ class PostgresqlClient(object):
 
     def get_backup(self, backup_id, **kwargs):
         """
-        Gets a Backup by identifier
+        Gets a backup by identifier.
 
 
         :param str backup_id: (required)
-            unique Backup identifier
+            A unique identifier for the backup.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1249,11 +1276,11 @@ class PostgresqlClient(object):
 
     def get_configuration(self, configuration_id, **kwargs):
         """
-        Gets a Configuration by identifier
+        Gets a configuration by identifier.
 
 
         :param str configuration_id: (required)
-            unique Configuration identifier
+            A unique identifier for the configuration.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1347,11 +1374,11 @@ class PostgresqlClient(object):
 
     def get_connection_details(self, db_system_id, **kwargs):
         """
-        Gets the DbSystem connection details.
+        Gets the database system connection details.
 
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1445,17 +1472,17 @@ class PostgresqlClient(object):
 
     def get_db_system(self, db_system_id, **kwargs):
         """
-        Gets a DbSystem by identifier
+        Gets a database system by identifier.
 
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param list[str] excluded_fields: (optional)
-            A filter to exclude DB config  when this query param is set to OverrideDbConfig
+            A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
 
             Allowed values are: "dbConfigurationParams"
 
@@ -1564,11 +1591,11 @@ class PostgresqlClient(object):
 
     def get_default_configuration(self, default_configuration_id, **kwargs):
         """
-        Gets a Default Configuration by identifier
+        Gets a default configuration by identifier.
 
 
         :param str default_configuration_id: (required)
-            unique Configuration identifier
+            A unique identifier for the configuration.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1662,11 +1689,11 @@ class PostgresqlClient(object):
 
     def get_primary_db_instance(self, db_system_id, **kwargs):
         """
-        Gets the primary DbInstance details.
+        Gets the primary database instance node details.
 
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1858,20 +1885,24 @@ class PostgresqlClient(object):
 
     def list_backups(self, **kwargs):
         """
-        Returns a list of Backup.
+        Returns a list of backups.
 
 
         :param str compartment_id: (optional)
             The ID of the compartment in which to list resources.
 
         :param datetime time_started: (optional)
-            The start date for getting  backups. An RFC3339 formatted datetime string
+            The start date for getting backups. An `RFC 3339`__ formatted datetime string.
+
+            __ https://tools.ietf.org/rfc/rfc3339
 
         :param datetime time_ended: (optional)
-            The End date for getting  backups. An RFC3339 formatted datetime string.
+            The end date for getting backups. An `RFC 3339`__ formatted datetime string.
+
+            __ https://tools.ietf.org/rfc/rfc3339
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 
             Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -1879,10 +1910,10 @@ class PostgresqlClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str backup_id: (optional)
-            unique Backup identifier
+            A unique identifier for the backup.
 
         :param str id: (optional)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2029,14 +2060,14 @@ class PostgresqlClient(object):
 
     def list_configurations(self, **kwargs):
         """
-        Returns a list of Configurations.
+        Returns a list of configurations.
 
 
         :param str compartment_id: (optional)
             The ID of the compartment in which to list resources.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 
             Allowed values are: "ACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -2044,13 +2075,14 @@ class PostgresqlClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str db_version: (optional)
-            Verison of the Postgresql DB like 14.5
+            Verison of the PostgreSQL database, such as 14.9.
 
         :param str shape: (optional)
-            Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+            The name of the shape for the configuration.
+            Example: `VM.Standard.E4.Flex`
 
         :param str configuration_id: (optional)
-            unique Configuration identifier
+            A unique identifier for the configuration.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2195,14 +2227,14 @@ class PostgresqlClient(object):
 
     def list_db_systems(self, **kwargs):
         """
-        Returns a list of DbSystems.
+        Returns a list of database systems.
 
 
         :param str compartment_id: (optional)
             The ID of the compartment in which to list resources.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
 
@@ -2210,7 +2242,7 @@ class PostgresqlClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str id: (optional)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2351,11 +2383,11 @@ class PostgresqlClient(object):
 
     def list_default_configurations(self, **kwargs):
         """
-        Returns a list of Default Configurations.
+        Returns a list of default configurations.
 
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 
             Allowed values are: "ACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -2363,13 +2395,14 @@ class PostgresqlClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str db_version: (optional)
-            Verison of the Postgresql DB like 14.5
+            Verison of the PostgreSQL database, such as 14.9.
 
         :param str shape: (optional)
-            Shape name of the compute like VM.Standard.E4.Flex or VM.Standard3.Flex
+            The name of the shape for the configuration.
+            Example: `VM.Standard.E4.Flex`
 
         :param str configuration_id: (optional)
-            unique Configuration identifier
+            A unique identifier for the configuration.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2943,7 +2976,7 @@ class PostgresqlClient(object):
             The ID of the asynchronous work request.
 
         :param str status: (optional)
-            A filter to return only resources their lifecycleState matches the given OperationStatus.
+            A filter to return only resources if their `lifecycleState` matches the given OperationStatus.
 
             Allowed values are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
 
@@ -3089,17 +3122,18 @@ class PostgresqlClient(object):
 
     def patch_db_system(self, db_system_id, patch_db_system_details, **kwargs):
         """
-        Patching operation allows to add DbInstances to the DbSystem or remove them.
+        Modifies the database system by adding or removing database instance nodes.
 
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.PatchDbSystemDetails patch_db_system_details: (required)
-            The information to be patched.
+            The information to be modified.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3195,23 +3229,27 @@ class PostgresqlClient(object):
 
     def reset_master_user_password(self, db_system_id, reset_master_user_password_details, **kwargs):
         """
-        Resets the Db system's master password.
+        Resets the database system's master password.
 
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.ResetMasterUserPasswordDetails reset_master_user_password_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3307,23 +3345,27 @@ class PostgresqlClient(object):
 
     def restart_db_instance_in_db_system(self, db_system_id, restart_db_instance_in_db_system_details, **kwargs):
         """
-        Restarts the running DbInstance.
+        Restarts the running database instance node.
 
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.RestartDbInstanceInDbSystemDetails restart_db_instance_in_db_system_details: (required)
-            DdInstance restart parameters.
+            Database instance node restart parameters.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3419,23 +3461,27 @@ class PostgresqlClient(object):
 
     def restore_db_system(self, db_system_id, restore_db_system_details, **kwargs):
         """
-        Restore the Db System.
+        Restore the database system.
 
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.RestoreDbSystemDetails restore_db_system_details: (required)
-            DB System restore parameters.
+            Database system restore parameters.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3531,17 +3577,18 @@ class PostgresqlClient(object):
 
     def update_backup(self, backup_id, update_backup_details, **kwargs):
         """
-        Updates the Backup
+        Updates the backup.
 
 
         :param str backup_id: (required)
-            unique Backup identifier
+            A unique identifier for the backup.
 
         :param oci.psql.models.UpdateBackupDetails update_backup_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3639,20 +3686,24 @@ class PostgresqlClient(object):
 
     def update_configuration(self, configuration_id, update_configuration_details, **kwargs):
         """
-        Updates a display name or description of the Configuration Set.
+        Updates a display name or description of the configuration.
 
 
         :param str configuration_id: (required)
-            unique Configuration identifier
+            A unique identifier for the configuration.
 
         :param oci.psql.models.UpdateConfigurationDetails update_configuration_details: (required)
-            Details for Updating display name or description for Configuration.
+            Details for updating display name or description for a configuration.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3753,23 +3804,27 @@ class PostgresqlClient(object):
 
     def update_db_system(self, db_system_id, update_db_system_details, **kwargs):
         """
-        Updates the DbSystem
+        Updates the database system.
 
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param oci.psql.models.UpdateDbSystemDetails update_db_system_details: (required)
             The information to be updated.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3865,26 +3920,30 @@ class PostgresqlClient(object):
 
     def update_db_system_db_instance(self, db_system_id, db_instance_id, update_db_system_db_instance_details, **kwargs):
         """
-        Updates the DbInstance.
+        Updates the database instance node.
 
 
         :param str db_system_id: (required)
-            unique DbSystem identifier
+            A unique identifier for the database system.
 
         :param str db_instance_id: (required)
-            unique DbInstance identifier
+            A unique identifier for the database instance node.
 
         :param oci.psql.models.UpdateDbSystemDbInstanceDetails update_db_system_db_instance_details: (required)
-            DdInstance update parameters.
+            Database instance node update parameters.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, `retrytoken` could be expired or invalidated.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

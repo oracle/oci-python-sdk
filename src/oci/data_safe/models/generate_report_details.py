@@ -199,7 +199,7 @@ class GenerateReportDetails(object):
     def mime_type(self):
         """
         **[Required]** Gets the mime_type of this GenerateReportDetails.
-        Specifies the format of report to be excel or pdf
+        Specifies the format of report to be .xls or .pdf
 
         Allowed values for this property are: "PDF", "XLS"
 
@@ -213,7 +213,7 @@ class GenerateReportDetails(object):
     def mime_type(self, mime_type):
         """
         Sets the mime_type of this GenerateReportDetails.
-        Specifies the format of report to be excel or pdf
+        Specifies the format of report to be .xls or .pdf
 
 
         :param mime_type: The mime_type of this GenerateReportDetails.

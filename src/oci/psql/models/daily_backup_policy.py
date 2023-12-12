@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DailyBackupPolicy(BackupPolicy):
     """
-    Daily backup policy
+    Daily backup policy.
     """
 
     def __init__(self, **kwargs):
@@ -56,7 +56,7 @@ class DailyBackupPolicy(BackupPolicy):
     def backup_start(self):
         """
         **[Required]** Gets the backup_start of this DailyBackupPolicy.
-        Hour of the day when backup starts.
+        Hour of the day when the backup starts.
 
 
         :return: The backup_start of this DailyBackupPolicy.
@@ -68,7 +68,7 @@ class DailyBackupPolicy(BackupPolicy):
     def backup_start(self, backup_start):
         """
         Sets the backup_start of this DailyBackupPolicy.
-        Hour of the day when backup starts.
+        Hour of the day when the backup starts.
 
 
         :param backup_start: The backup_start of this DailyBackupPolicy.

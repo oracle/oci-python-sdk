@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.118.0 - 2023-12-12
+====================
+
+Added
+-----
+* Support for changing compartments of configurations in the PostgreSQL service
+* Support for granular policies including compartments, resource types, and recommendations in the Optimizer service
+* Support for token exchanges in the Identity Domains service
+* Support for Apache HTTP server discovery and monitoring in the Stack Monitoring service
+* Support for resource locking in the Data Catalog service
+* Support for concurrency throttling in the Data Integration service
+* Support for reboot migrations for VMs on dedicated hosts in the Compute service
+* Support for connection routing method settings and subnet update in the GoldenGate service
+* Support for data discovery of commonly used sensitive types in the Data Safe service
+* Support for incremental extract and updates to the workflows in the Data Integration service 
+ 
+Breaking
+--------
+* Support for default retries on the operations of the Optimizer service
+ 
+====================
 2.117.0 - 2023-12-04
 ====================
 

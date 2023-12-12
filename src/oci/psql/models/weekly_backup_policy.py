@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WeeklyBackupPolicy(BackupPolicy):
     """
-    Weekly backup policy
+    Weekly backup policy.
     """
 
     #: A constant which can be used with the days_of_the_week property of a WeeklyBackupPolicy.
@@ -94,7 +94,7 @@ class WeeklyBackupPolicy(BackupPolicy):
     def days_of_the_week(self):
         """
         **[Required]** Gets the days_of_the_week of this WeeklyBackupPolicy.
-        Weekly days
+        The day of the week that the backup starts.
 
         Allowed values for items in this list are: "SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -109,7 +109,7 @@ class WeeklyBackupPolicy(BackupPolicy):
     def days_of_the_week(self, days_of_the_week):
         """
         Sets the days_of_the_week of this WeeklyBackupPolicy.
-        Weekly days
+        The day of the week that the backup starts.
 
 
         :param days_of_the_week: The days_of_the_week of this WeeklyBackupPolicy.
@@ -124,7 +124,7 @@ class WeeklyBackupPolicy(BackupPolicy):
     def backup_start(self):
         """
         **[Required]** Gets the backup_start of this WeeklyBackupPolicy.
-        Hour of the day when backup starts.
+        Hour of the day when the backup starts.
 
 
         :return: The backup_start of this WeeklyBackupPolicy.
@@ -136,7 +136,7 @@ class WeeklyBackupPolicy(BackupPolicy):
     def backup_start(self, backup_start):
         """
         Sets the backup_start of this WeeklyBackupPolicy.
-        Hour of the day when backup starts.
+        Hour of the day when the backup starts.
 
 
         :param backup_start: The backup_start of this WeeklyBackupPolicy.

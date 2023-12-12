@@ -221,6 +221,10 @@ Identity Domains
     oci.identity_domains.models.Groups
     oci.identity_domains.models.IdcsCreatedBy
     oci.identity_domains.models.IdcsLastModifiedBy
+    oci.identity_domains.models.IdentityPropagationTrust
+    oci.identity_domains.models.IdentityPropagationTrustImpersonationServiceUsers
+    oci.identity_domains.models.IdentityPropagationTrustKeytab
+    oci.identity_domains.models.IdentityPropagationTrusts
     oci.identity_domains.models.IdentityProvider
     oci.identity_domains.models.IdentityProviderCorrelationPolicy
     oci.identity_domains.models.IdentityProviderJitUserProvAssignedGroups

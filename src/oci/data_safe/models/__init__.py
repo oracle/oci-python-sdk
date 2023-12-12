@@ -218,6 +218,7 @@ from .patch_remove_instruction import PatchRemoveInstruction
 from .patch_sdm_masking_policy_difference_columns_details import PatchSdmMaskingPolicyDifferenceColumnsDetails
 from .patch_sensitive_column_details import PatchSensitiveColumnDetails
 from .patch_target_alert_policy_association_details import PatchTargetAlertPolicyAssociationDetails
+from .pattern_format_entry import PatternFormatEntry
 from .preserve_original_data_format_entry import PreserveOriginalDataFormatEntry
 from .private_endpoint import PrivateEndpoint
 from .profile import Profile
@@ -582,6 +583,7 @@ data_safe_type_mapping = {
     "PatchSdmMaskingPolicyDifferenceColumnsDetails": PatchSdmMaskingPolicyDifferenceColumnsDetails,
     "PatchSensitiveColumnDetails": PatchSensitiveColumnDetails,
     "PatchTargetAlertPolicyAssociationDetails": PatchTargetAlertPolicyAssociationDetails,
+    "PatternFormatEntry": PatternFormatEntry,
     "PreserveOriginalDataFormatEntry": PreserveOriginalDataFormatEntry,
     "PrivateEndpoint": PrivateEndpoint,
     "Profile": Profile,

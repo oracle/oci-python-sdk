@@ -101,6 +101,9 @@ class KafkaBootstrapServer(object):
     def private_ip(self):
         """
         Gets the private_ip of this KafkaBootstrapServer.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.
@@ -117,6 +120,9 @@ class KafkaBootstrapServer(object):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this KafkaBootstrapServer.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.

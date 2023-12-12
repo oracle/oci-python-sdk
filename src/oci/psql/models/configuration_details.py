@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfigurationDetails(object):
     """
-    List of DB Configuration Values.
+    List of configuration details.
     """
 
     def __init__(self, **kwargs):

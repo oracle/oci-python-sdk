@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BackupSourceDetails(SourceDetails):
     """
-    Restoring to a new DbSystem from the backup. The DbSystem details that are part of the CreateDbSystem request are not required, but if present will override the backup's DbSystem details snapshot.
+    Restoring to a new database system from the backup.
+    The database system details that are part of the CreateDbSystem request are not required, but if present will override the details from the backup's database system snapshot.
     """
 
     def __init__(self, **kwargs):
@@ -56,7 +57,9 @@ class BackupSourceDetails(SourceDetails):
     def backup_id(self):
         """
         **[Required]** Gets the backup_id of this BackupSourceDetails.
-        DbSystem backup identifier.
+        The `OCID`__ of the database system backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_id of this BackupSourceDetails.
@@ -68,7 +71,9 @@ class BackupSourceDetails(SourceDetails):
     def backup_id(self, backup_id):
         """
         Sets the backup_id of this BackupSourceDetails.
-        DbSystem backup identifier.
+        The `OCID`__ of the database system backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_id: The backup_id of this BackupSourceDetails.
@@ -80,7 +85,7 @@ class BackupSourceDetails(SourceDetails):
     def is_having_restore_config_overrides(self):
         """
         Gets the is_having_restore_config_overrides of this BackupSourceDetails.
-        Restore the DB config overrides from backup. Default is false
+        Deprecated. Don't use.
 
 
         :return: The is_having_restore_config_overrides of this BackupSourceDetails.
@@ -92,7 +97,7 @@ class BackupSourceDetails(SourceDetails):
     def is_having_restore_config_overrides(self, is_having_restore_config_overrides):
         """
         Sets the is_having_restore_config_overrides of this BackupSourceDetails.
-        Restore the DB config overrides from backup. Default is false
+        Deprecated. Don't use.
 
 
         :param is_having_restore_config_overrides: The is_having_restore_config_overrides of this BackupSourceDetails.

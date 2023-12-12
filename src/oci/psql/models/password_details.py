@@ -12,8 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PasswordDetails(object):
     """
-    Details for the DbSystem password.
-    Password can be passed as `VaultSecretPasswordDetails`(Vault) or `PlainTextPasswordDetails`.
+    Details for the database system password.
+    Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.
     """
 
     #: A constant which can be used with the password_type property of a PasswordDetails.
@@ -70,7 +70,7 @@ class PasswordDetails(object):
     def password_type(self):
         """
         **[Required]** Gets the password_type of this PasswordDetails.
-        Password type
+        The password type.
 
         Allowed values for this property are: "PLAIN_TEXT", "VAULT_SECRET"
 
@@ -84,7 +84,7 @@ class PasswordDetails(object):
     def password_type(self, password_type):
         """
         Sets the password_type of this PasswordDetails.
-        Password type
+        The password type.
 
 
         :param password_type: The password_type of this PasswordDetails.

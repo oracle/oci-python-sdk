@@ -275,7 +275,7 @@ class AuditEventAggregationDimensions(object):
     def object_type(self):
         """
         Gets the object_type of this AuditEventAggregationDimensions.
-        Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+        Type of object in the source database affected by the action. For example PL/SQL, SYNONYM or PACKAGE BODY.
 
 
         :return: The object_type of this AuditEventAggregationDimensions.
@@ -287,7 +287,7 @@ class AuditEventAggregationDimensions(object):
     def object_type(self, object_type):
         """
         Sets the object_type of this AuditEventAggregationDimensions.
-        Type of object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+        Type of object in the source database affected by the action. For example PL/SQL, SYNONYM or PACKAGE BODY.
 
 
         :param object_type: The object_type of this AuditEventAggregationDimensions.
@@ -323,7 +323,7 @@ class AuditEventAggregationDimensions(object):
     def client_program(self):
         """
         Gets the client_program of this AuditEventAggregationDimensions.
-        The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+        The application from which the audit event was generated. For example SQL Plus or SQL Developer.
 
 
         :return: The client_program of this AuditEventAggregationDimensions.
@@ -335,7 +335,7 @@ class AuditEventAggregationDimensions(object):
     def client_program(self, client_program):
         """
         Sets the client_program of this AuditEventAggregationDimensions.
-        The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+        The application from which the audit event was generated. For example SQL Plus or SQL Developer.
 
 
         :param client_program: The client_program of this AuditEventAggregationDimensions.
@@ -401,7 +401,7 @@ class AuditEventAggregationDimensions(object):
     def event_name(self):
         """
         Gets the event_name of this AuditEventAggregationDimensions.
-        The name of the event executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        The name of the event executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
 
 
         :return: The event_name of this AuditEventAggregationDimensions.
@@ -413,7 +413,7 @@ class AuditEventAggregationDimensions(object):
     def event_name(self, event_name):
         """
         Sets the event_name of this AuditEventAggregationDimensions.
-        The name of the event executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        The name of the event executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
 
 
         :param event_name: The event_name of this AuditEventAggregationDimensions.

@@ -54,6 +54,15 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
             The value to assign to the nsg_ids property of this UpdatePostgresqlConnectionDetails.
         :type nsg_ids: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdatePostgresqlConnectionDetails.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this UpdatePostgresqlConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param database_name:
             The value to assign to the database_name property of this UpdatePostgresqlConnectionDetails.
         :type database_name: str
@@ -116,6 +125,8 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'database_name': 'str',
             'host': 'str',
             'port': 'int',
@@ -140,6 +151,8 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'database_name': 'databaseName',
             'host': 'host',
             'port': 'port',
@@ -163,6 +176,8 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._database_name = None
         self._host = None
         self._port = None
@@ -480,6 +495,9 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
     def private_ip(self):
         """
         Gets the private_ip of this UpdatePostgresqlConnectionDetails.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.
@@ -496,6 +514,9 @@ class UpdatePostgresqlConnectionDetails(UpdateConnectionDetails):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this UpdatePostgresqlConnectionDetails.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.

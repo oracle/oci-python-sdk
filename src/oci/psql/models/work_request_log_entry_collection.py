@@ -39,7 +39,7 @@ class WorkRequestLogEntryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this WorkRequestLogEntryCollection.
-        List of workRequestLogEntries.
+        List of work request log entries.
 
 
         :return: The items of this WorkRequestLogEntryCollection.
@@ -51,7 +51,7 @@ class WorkRequestLogEntryCollection(object):
     def items(self, items):
         """
         Sets the items of this WorkRequestLogEntryCollection.
-        List of workRequestLogEntries.
+        List of work request log entries.
 
 
         :param items: The items of this WorkRequestLogEntryCollection.

@@ -18,6 +18,7 @@ Data Catalog
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.data_catalog.models.AddResourceLockDetails
     oci.data_catalog.models.AsynchronousExportGlossaryDetails
     oci.data_catalog.models.AsynchronousExportGlossaryResult
     oci.data_catalog.models.AsynchronousExportRequestDetails
@@ -146,6 +147,8 @@ Data Catalog
     oci.data_catalog.models.PropertyDefinition
     oci.data_catalog.models.RecommendationCollection
     oci.data_catalog.models.RecommendationDetails
+    oci.data_catalog.models.RemoveResourceLockDetails
+    oci.data_catalog.models.ResourceLock
     oci.data_catalog.models.RuleAttribute
     oci.data_catalog.models.RuleCollection
     oci.data_catalog.models.RuleSummary

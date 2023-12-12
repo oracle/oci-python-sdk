@@ -97,6 +97,12 @@ class AzureSynapseConnection(Connection):
             The value to assign to the subnet_id property of this AzureSynapseConnection.
         :type subnet_id: str
 
+        :param routing_method:
+            The value to assign to the routing_method property of this AzureSynapseConnection.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type routing_method: str
+
         :param technology_type:
             The value to assign to the technology_type property of this AzureSynapseConnection.
             Allowed values for this property are: "AZURE_SYNAPSE_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
@@ -130,6 +136,7 @@ class AzureSynapseConnection(Connection):
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
+            'routing_method': 'str',
             'technology_type': 'str',
             'connection_string': 'str',
             'username': 'str'
@@ -153,6 +160,7 @@ class AzureSynapseConnection(Connection):
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'technology_type': 'technologyType',
             'connection_string': 'connectionString',
             'username': 'username'
@@ -175,6 +183,7 @@ class AzureSynapseConnection(Connection):
         self._ingress_ips = None
         self._nsg_ids = None
         self._subnet_id = None
+        self._routing_method = None
         self._technology_type = None
         self._connection_string = None
         self._username = None

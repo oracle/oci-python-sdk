@@ -90,6 +90,10 @@ class CatalogSummary(object):
             The value to assign to the freeform_tags property of this CatalogSummary.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this CatalogSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CatalogSummary.
         :type defined_tags: dict(str, dict(str, object))
@@ -97,6 +101,10 @@ class CatalogSummary(object):
         :param attached_catalog_private_endpoints:
             The value to assign to the attached_catalog_private_endpoints property of this CatalogSummary.
         :type attached_catalog_private_endpoints: list[str]
+
+        :param locks:
+            The value to assign to the locks property of this CatalogSummary.
+        :type locks: list[oci.data_catalog.models.ResourceLock]
 
         """
         self.swagger_types = {
@@ -109,8 +117,10 @@ class CatalogSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))',
             'defined_tags': 'dict(str, dict(str, object))',
-            'attached_catalog_private_endpoints': 'list[str]'
+            'attached_catalog_private_endpoints': 'list[str]',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -123,8 +133,10 @@ class CatalogSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags',
             'defined_tags': 'definedTags',
-            'attached_catalog_private_endpoints': 'attachedCatalogPrivateEndpoints'
+            'attached_catalog_private_endpoints': 'attachedCatalogPrivateEndpoints',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -136,8 +148,10 @@ class CatalogSummary(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
+        self._system_tags = None
         self._defined_tags = None
         self._attached_catalog_private_endpoints = None
+        self._locks = None
 
     @property
     def id(self):
@@ -372,6 +386,42 @@ class CatalogSummary(object):
         self._freeform_tags = freeform_tags
 
     @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this CatalogSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        System tags can be viewed by users, but can only be created by the system.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this CatalogSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this CatalogSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        System tags can be viewed by users, but can only be created by the system.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this CatalogSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
+
+    @property
     def defined_tags(self):
         """
         Gets the defined_tags of this CatalogSummary.
@@ -420,6 +470,30 @@ class CatalogSummary(object):
         :type: list[str]
         """
         self._attached_catalog_private_endpoints = attached_catalog_private_endpoints
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this CatalogSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CatalogSummary.
+        :rtype: list[oci.data_catalog.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CatalogSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CatalogSummary.
+        :type: list[oci.data_catalog.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

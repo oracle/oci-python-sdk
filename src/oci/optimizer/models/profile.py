@@ -84,6 +84,10 @@ class Profile(object):
             The value to assign to the freeform_tags property of this Profile.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Profile.
+        :type system_tags: dict(str, dict(str, object))
+
         :param levels_configuration:
             The value to assign to the levels_configuration property of this Profile.
         :type levels_configuration: oci.optimizer.models.LevelsConfiguration
@@ -119,6 +123,7 @@ class Profile(object):
             'aggregation_interval_in_days': 'int',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))',
             'levels_configuration': 'LevelsConfiguration',
             'target_compartments': 'TargetCompartments',
             'target_tags': 'TargetTags',
@@ -135,6 +140,7 @@ class Profile(object):
             'aggregation_interval_in_days': 'aggregationIntervalInDays',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags',
             'levels_configuration': 'levelsConfiguration',
             'target_compartments': 'targetCompartments',
             'target_tags': 'targetTags',
@@ -150,6 +156,7 @@ class Profile(object):
         self._aggregation_interval_in_days = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._system_tags = None
         self._levels_configuration = None
         self._target_compartments = None
         self._target_tags = None
@@ -344,6 +351,32 @@ class Profile(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Profile.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this Profile.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Profile.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this Profile.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def levels_configuration(self):

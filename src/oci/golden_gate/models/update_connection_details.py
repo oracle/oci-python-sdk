@@ -107,6 +107,18 @@ class UpdateConnectionDetails(object):
     #: This constant has a value of "GOOGLE_BIGQUERY"
     CONNECTION_TYPE_GOOGLE_BIGQUERY = "GOOGLE_BIGQUERY"
 
+    #: A constant which can be used with the routing_method property of a UpdateConnectionDetails.
+    #: This constant has a value of "SHARED_SERVICE_ENDPOINT"
+    ROUTING_METHOD_SHARED_SERVICE_ENDPOINT = "SHARED_SERVICE_ENDPOINT"
+
+    #: A constant which can be used with the routing_method property of a UpdateConnectionDetails.
+    #: This constant has a value of "SHARED_DEPLOYMENT_ENDPOINT"
+    ROUTING_METHOD_SHARED_DEPLOYMENT_ENDPOINT = "SHARED_DEPLOYMENT_ENDPOINT"
+
+    #: A constant which can be used with the routing_method property of a UpdateConnectionDetails.
+    #: This constant has a value of "DEDICATED_ENDPOINT"
+    ROUTING_METHOD_DEDICATED_ENDPOINT = "DEDICATED_ENDPOINT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -171,6 +183,15 @@ class UpdateConnectionDetails(object):
             The value to assign to the nsg_ids property of this UpdateConnectionDetails.
         :type nsg_ids: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateConnectionDetails.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this UpdateConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -180,7 +201,9 @@ class UpdateConnectionDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'vault_id': 'str',
             'key_id': 'str',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str'
         }
 
         self.attribute_map = {
@@ -191,7 +214,9 @@ class UpdateConnectionDetails(object):
             'defined_tags': 'definedTags',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod'
         }
 
         self._connection_type = None
@@ -202,6 +227,8 @@ class UpdateConnectionDetails(object):
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -496,6 +523,71 @@ class UpdateConnectionDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this UpdateConnectionDetails.
+        The `OCID`__ of the target subnet of the dedicated connection.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this UpdateConnectionDetails.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this UpdateConnectionDetails.
+        The `OCID`__ of the target subnet of the dedicated connection.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this UpdateConnectionDetails.
+        :type: str
+        """
+        self._subnet_id = subnet_id
+
+    @property
+    def routing_method(self):
+        """
+        Gets the routing_method of this UpdateConnectionDetails.
+        Controls the network traffic direction to the target:
+        SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+        SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
+        DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+
+        Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+
+
+        :return: The routing_method of this UpdateConnectionDetails.
+        :rtype: str
+        """
+        return self._routing_method
+
+    @routing_method.setter
+    def routing_method(self, routing_method):
+        """
+        Sets the routing_method of this UpdateConnectionDetails.
+        Controls the network traffic direction to the target:
+        SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+        SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
+        DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+
+
+        :param routing_method: The routing_method of this UpdateConnectionDetails.
+        :type: str
+        """
+        allowed_values = ["SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"]
+        if not value_allowed_none_or_none_sentinel(routing_method, allowed_values):
+            raise ValueError(
+                f"Invalid value for `routing_method`, must be None or one of {allowed_values}"
+            )
+        self._routing_method = routing_method
 
     def __repr__(self):
         return formatted_flat_dict(self)

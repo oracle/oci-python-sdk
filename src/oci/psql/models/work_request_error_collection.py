@@ -39,7 +39,7 @@ class WorkRequestErrorCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this WorkRequestErrorCollection.
-        List of workRequestError objects.
+        List of work request errors.
 
 
         :return: The items of this WorkRequestErrorCollection.
@@ -51,7 +51,7 @@ class WorkRequestErrorCollection(object):
     def items(self, items):
         """
         Sets the items of this WorkRequestErrorCollection.
-        List of workRequestError objects.
+        List of work request errors.
 
 
         :param items: The items of this WorkRequestErrorCollection.

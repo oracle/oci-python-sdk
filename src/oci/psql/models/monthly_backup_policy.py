@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MonthlyBackupPolicy(BackupPolicy):
     """
-    Monthly backup policy
+    Monthly backup policy.
     """
 
     def __init__(self, **kwargs):
@@ -87,8 +87,8 @@ class MonthlyBackupPolicy(BackupPolicy):
     def days_of_the_month(self):
         """
         **[Required]** Gets the days_of_the_month of this MonthlyBackupPolicy.
-        Days of the month when backup should start.
-        If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+        Day of the month when the backup should start.
+        To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 
 
         :return: The days_of_the_month of this MonthlyBackupPolicy.
@@ -100,8 +100,8 @@ class MonthlyBackupPolicy(BackupPolicy):
     def days_of_the_month(self, days_of_the_month):
         """
         Sets the days_of_the_month of this MonthlyBackupPolicy.
-        Days of the month when backup should start.
-        If the day is greater last day of the current month, then it will be triggered on the last day of the current month
+        Day of the month when the backup should start.
+        To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
 
 
         :param days_of_the_month: The days_of_the_month of this MonthlyBackupPolicy.

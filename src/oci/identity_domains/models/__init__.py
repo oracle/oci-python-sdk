@@ -209,6 +209,10 @@ from .group_search_request import GroupSearchRequest
 from .groups import Groups
 from .idcs_created_by import IdcsCreatedBy
 from .idcs_last_modified_by import IdcsLastModifiedBy
+from .identity_propagation_trust import IdentityPropagationTrust
+from .identity_propagation_trust_impersonation_service_users import IdentityPropagationTrustImpersonationServiceUsers
+from .identity_propagation_trust_keytab import IdentityPropagationTrustKeytab
+from .identity_propagation_trusts import IdentityPropagationTrusts
 from .identity_provider import IdentityProvider
 from .identity_provider_correlation_policy import IdentityProviderCorrelationPolicy
 from .identity_provider_jit_user_prov_assigned_groups import IdentityProviderJitUserProvAssignedGroups
@@ -656,6 +660,10 @@ identity_domains_type_mapping = {
     "Groups": Groups,
     "IdcsCreatedBy": IdcsCreatedBy,
     "IdcsLastModifiedBy": IdcsLastModifiedBy,
+    "IdentityPropagationTrust": IdentityPropagationTrust,
+    "IdentityPropagationTrustImpersonationServiceUsers": IdentityPropagationTrustImpersonationServiceUsers,
+    "IdentityPropagationTrustKeytab": IdentityPropagationTrustKeytab,
+    "IdentityPropagationTrusts": IdentityPropagationTrusts,
     "IdentityProvider": IdentityProvider,
     "IdentityProviderCorrelationPolicy": IdentityProviderCorrelationPolicy,
     "IdentityProviderJitUserProvAssignedGroups": IdentityProviderJitUserProvAssignedGroups,

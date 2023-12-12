@@ -93,6 +93,10 @@ class CreateDeploymentDetails(object):
             The value to assign to the subnet_id property of this CreateDeploymentDetails.
         :type subnet_id: str
 
+        :param load_balancer_subnet_id:
+            The value to assign to the load_balancer_subnet_id property of this CreateDeploymentDetails.
+        :type load_balancer_subnet_id: str
+
         :param fqdn:
             The value to assign to the fqdn property of this CreateDeploymentDetails.
         :type fqdn: str
@@ -140,6 +144,7 @@ class CreateDeploymentDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'deployment_backup_id': 'str',
             'subnet_id': 'str',
+            'load_balancer_subnet_id': 'str',
             'fqdn': 'str',
             'nsg_ids': 'list[str]',
             'is_public': 'bool',
@@ -160,6 +165,7 @@ class CreateDeploymentDetails(object):
             'defined_tags': 'definedTags',
             'deployment_backup_id': 'deploymentBackupId',
             'subnet_id': 'subnetId',
+            'load_balancer_subnet_id': 'loadBalancerSubnetId',
             'fqdn': 'fqdn',
             'nsg_ids': 'nsgIds',
             'is_public': 'isPublic',
@@ -179,6 +185,7 @@ class CreateDeploymentDetails(object):
         self._defined_tags = None
         self._deployment_backup_id = None
         self._subnet_id = None
+        self._load_balancer_subnet_id = None
         self._fqdn = None
         self._nsg_ids = None
         self._is_public = None
@@ -386,7 +393,7 @@ class CreateDeploymentDetails(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this CreateDeploymentDetails.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the subnet of the deployment's private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -400,7 +407,7 @@ class CreateDeploymentDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreateDeploymentDetails.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the subnet of the deployment's private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -409,6 +416,38 @@ class CreateDeploymentDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def load_balancer_subnet_id(self):
+        """
+        Gets the load_balancer_subnet_id of this CreateDeploymentDetails.
+        The `OCID`__ of a public subnet in the customer tenancy.
+        Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+        For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The load_balancer_subnet_id of this CreateDeploymentDetails.
+        :rtype: str
+        """
+        return self._load_balancer_subnet_id
+
+    @load_balancer_subnet_id.setter
+    def load_balancer_subnet_id(self, load_balancer_subnet_id):
+        """
+        Sets the load_balancer_subnet_id of this CreateDeploymentDetails.
+        The `OCID`__ of a public subnet in the customer tenancy.
+        Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+        For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param load_balancer_subnet_id: The load_balancer_subnet_id of this CreateDeploymentDetails.
+        :type: str
+        """
+        self._load_balancer_subnet_id = load_balancer_subnet_id
 
     @property
     def fqdn(self):

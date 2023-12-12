@@ -39,7 +39,7 @@ class DefaultConfigurationCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DefaultConfigurationCollection.
-        List of Configurations.
+        List of configurations.
 
 
         :return: The items of this DefaultConfigurationCollection.
@@ -51,7 +51,7 @@ class DefaultConfigurationCollection(object):
     def items(self, items):
         """
         Sets the items of this DefaultConfigurationCollection.
-        List of Configurations.
+        List of configurations.
 
 
         :param items: The items of this DefaultConfigurationCollection.

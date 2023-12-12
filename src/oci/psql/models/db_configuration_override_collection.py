@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbConfigurationOverrideCollection(object):
     """
-    Configuration Overrides for PGSQL instance.
+    Configuration overrides for a PostgreSQL instance.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class DbConfigurationOverrideCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DbConfigurationOverrideCollection.
-        List of configuration overriden values
+        List of configuration overridden values.
 
 
         :return: The items of this DbConfigurationOverrideCollection.
@@ -51,7 +51,7 @@ class DbConfigurationOverrideCollection(object):
     def items(self, items):
         """
         Sets the items of this DbConfigurationOverrideCollection.
-        List of configuration overriden values
+        List of configuration overridden values.
 
 
         :param items: The items of this DbConfigurationOverrideCollection.

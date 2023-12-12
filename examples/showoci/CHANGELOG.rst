@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.12.12 - 23.12.12
+=====================
+* Added PostgreSQL
+* Added MYSQL Backups
+* Fixed support for OCVS VMWare clusters
+
+=====================
+23.12.05 - 23.12.05
+=====================
+* Remove space from Compute CSV which produce empty column
+
+=====================
 23.11.28 - 23.11.28
 =====================
 * Simmplify the Identity Domains User Extract

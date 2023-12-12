@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NetworkDetails(object):
     """
-    DbSystem network details.
+    Network details for the database system.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,9 @@ class NetworkDetails(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this NetworkDetails.
-        Customer Subnet identifier
+        The `OCID`__ of the customer subnet associated with the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this NetworkDetails.
@@ -65,7 +67,9 @@ class NetworkDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this NetworkDetails.
-        Customer Subnet identifier
+        The `OCID`__ of the customer subnet associated with the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this NetworkDetails.
@@ -78,7 +82,7 @@ class NetworkDetails(object):
         """
         Gets the primary_db_endpoint_private_ip of this NetworkDetails.
         Private IP in customer subnet. The value is optional.
-        If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+        If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 
 
         :return: The primary_db_endpoint_private_ip of this NetworkDetails.
@@ -91,7 +95,7 @@ class NetworkDetails(object):
         """
         Sets the primary_db_endpoint_private_ip of this NetworkDetails.
         Private IP in customer subnet. The value is optional.
-        If the IP is not provided the IP will be chosen among the available IP addresses from the specified subnet.
+        If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
 
 
         :param primary_db_endpoint_private_ip: The primary_db_endpoint_private_ip of this NetworkDetails.
@@ -103,7 +107,9 @@ class NetworkDetails(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this NetworkDetails.
-        List of customer NetworkSecurityGroup identifiers
+        List of customer Network Security Group `OCIDs`__ associated with the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The nsg_ids of this NetworkDetails.
@@ -115,7 +121,9 @@ class NetworkDetails(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this NetworkDetails.
-        List of customer NetworkSecurityGroup identifiers
+        List of customer Network Security Group `OCIDs`__ associated with the database system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param nsg_ids: The nsg_ids of this NetworkDetails.

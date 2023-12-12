@@ -28,19 +28,26 @@ class Dimensions(object):
             The value to assign to the sensitive_data_model_id property of this Dimensions.
         :type sensitive_data_model_id: str
 
+        :param sensitive_type_id:
+            The value to assign to the sensitive_type_id property of this Dimensions.
+        :type sensitive_type_id: str
+
         """
         self.swagger_types = {
             'target_id': 'str',
-            'sensitive_data_model_id': 'str'
+            'sensitive_data_model_id': 'str',
+            'sensitive_type_id': 'str'
         }
 
         self.attribute_map = {
             'target_id': 'targetId',
-            'sensitive_data_model_id': 'sensitiveDataModelId'
+            'sensitive_data_model_id': 'sensitiveDataModelId',
+            'sensitive_type_id': 'sensitiveTypeId'
         }
 
         self._target_id = None
         self._sensitive_data_model_id = None
+        self._sensitive_type_id = None
 
     @property
     def target_id(self):
@@ -89,6 +96,30 @@ class Dimensions(object):
         :type: str
         """
         self._sensitive_data_model_id = sensitive_data_model_id
+
+    @property
+    def sensitive_type_id(self):
+        """
+        Gets the sensitive_type_id of this Dimensions.
+        The OCID of the sensitive type.
+
+
+        :return: The sensitive_type_id of this Dimensions.
+        :rtype: str
+        """
+        return self._sensitive_type_id
+
+    @sensitive_type_id.setter
+    def sensitive_type_id(self, sensitive_type_id):
+        """
+        Sets the sensitive_type_id of this Dimensions.
+        The OCID of the sensitive type.
+
+
+        :param sensitive_type_id: The sensitive_type_id of this Dimensions.
+        :type: str
+        """
+        self._sensitive_type_id = sensitive_type_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -39,7 +39,7 @@ class ChangeSqlFirewallPolicyCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeSqlFirewallPolicyCompartmentDetails.
-        The OCID of the compartment where you want to move the SQL firewall policy.
+        The OCID of the compartment where you want to move the SQL Firewall policy.
 
 
         :return: The compartment_id of this ChangeSqlFirewallPolicyCompartmentDetails.
@@ -51,7 +51,7 @@ class ChangeSqlFirewallPolicyCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeSqlFirewallPolicyCompartmentDetails.
-        The OCID of the compartment where you want to move the SQL firewall policy.
+        The OCID of the compartment where you want to move the SQL Firewall policy.
 
 
         :param compartment_id: The compartment_id of this ChangeSqlFirewallPolicyCompartmentDetails.

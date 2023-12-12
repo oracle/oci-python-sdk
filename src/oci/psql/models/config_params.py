@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfigParams(object):
     """
-    DB Configuration
+    Database configuration.
     """
 
     def __init__(self, **kwargs):
@@ -88,7 +88,7 @@ class ConfigParams(object):
     def config_key(self):
         """
         **[Required]** Gets the config_key of this ConfigParams.
-        Key is the configuration key.
+        The configuration variable name.
 
 
         :return: The config_key of this ConfigParams.
@@ -100,7 +100,7 @@ class ConfigParams(object):
     def config_key(self, config_key):
         """
         Sets the config_key of this ConfigParams.
-        Key is the configuration key.
+        The configuration variable name.
 
 
         :param config_key: The config_key of this ConfigParams.
@@ -112,7 +112,7 @@ class ConfigParams(object):
     def default_config_value(self):
         """
         **[Required]** Gets the default_config_value of this ConfigParams.
-        Default value
+        Default value for the configuration variable.
 
 
         :return: The default_config_value of this ConfigParams.
@@ -124,7 +124,7 @@ class ConfigParams(object):
     def default_config_value(self, default_config_value):
         """
         Sets the default_config_value of this ConfigParams.
-        Default value
+        Default value for the configuration variable.
 
 
         :param default_config_value: The default_config_value of this ConfigParams.
@@ -136,7 +136,7 @@ class ConfigParams(object):
     def overriden_config_value(self):
         """
         Gets the overriden_config_value of this ConfigParams.
-        User selected configuration value
+        User-selected configuration variable value.
 
 
         :return: The overriden_config_value of this ConfigParams.
@@ -148,7 +148,7 @@ class ConfigParams(object):
     def overriden_config_value(self, overriden_config_value):
         """
         Sets the overriden_config_value of this ConfigParams.
-        User selected configuration value
+        User-selected configuration variable value.
 
 
         :param overriden_config_value: The overriden_config_value of this ConfigParams.
@@ -160,7 +160,7 @@ class ConfigParams(object):
     def allowed_values(self):
         """
         **[Required]** Gets the allowed_values of this ConfigParams.
-        Range or list of allowed values
+        Range or list of allowed values.
 
 
         :return: The allowed_values of this ConfigParams.
@@ -172,7 +172,7 @@ class ConfigParams(object):
     def allowed_values(self, allowed_values):
         """
         Sets the allowed_values of this ConfigParams.
-        Range or list of allowed values
+        Range or list of allowed values.
 
 
         :param allowed_values: The allowed_values of this ConfigParams.
@@ -184,7 +184,7 @@ class ConfigParams(object):
     def is_restart_required(self):
         """
         **[Required]** Gets the is_restart_required of this ConfigParams.
-        If true, modfying this configuration value will requires restart.
+        If true, modifying this configuration value will require a restart of the database.
 
 
         :return: The is_restart_required of this ConfigParams.
@@ -196,7 +196,7 @@ class ConfigParams(object):
     def is_restart_required(self, is_restart_required):
         """
         Sets the is_restart_required of this ConfigParams.
-        If true, modfying this configuration value will requires restart.
+        If true, modifying this configuration value will require a restart of the database.
 
 
         :param is_restart_required: The is_restart_required of this ConfigParams.
@@ -208,7 +208,7 @@ class ConfigParams(object):
     def data_type(self):
         """
         **[Required]** Gets the data_type of this ConfigParams.
-        Describes about the Datatype value.
+        Data type of the variable.
 
 
         :return: The data_type of this ConfigParams.
@@ -220,7 +220,7 @@ class ConfigParams(object):
     def data_type(self, data_type):
         """
         Sets the data_type of this ConfigParams.
-        Describes about the Datatype value.
+        Data type of the variable.
 
 
         :param data_type: The data_type of this ConfigParams.
@@ -232,7 +232,7 @@ class ConfigParams(object):
     def is_overridable(self):
         """
         **[Required]** Gets the is_overridable of this ConfigParams.
-        This flags tells whether the value is overridable or not.
+        Whether the value can be overridden or not.
 
 
         :return: The is_overridable of this ConfigParams.
@@ -244,7 +244,7 @@ class ConfigParams(object):
     def is_overridable(self, is_overridable):
         """
         Sets the is_overridable of this ConfigParams.
-        This flags tells whether the value is overridable or not.
+        Whether the value can be overridden or not.
 
 
         :param is_overridable: The is_overridable of this ConfigParams.
@@ -256,7 +256,7 @@ class ConfigParams(object):
     def description(self):
         """
         **[Required]** Gets the description of this ConfigParams.
-        Details about the Postgresql params.
+        Details about the PostgreSQL parameter.
 
 
         :return: The description of this ConfigParams.
@@ -268,7 +268,7 @@ class ConfigParams(object):
     def description(self, description):
         """
         Sets the description of this ConfigParams.
-        Details about the Postgresql params.
+        Details about the PostgreSQL parameter.
 
 
         :param description: The description of this ConfigParams.

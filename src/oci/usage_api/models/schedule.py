@@ -304,7 +304,7 @@ class Schedule(object):
     def output_file_format(self):
         """
         Gets the output_file_format of this Schedule.
-        Specifies supported output file format.
+        Specifies the supported output file format.
 
         Allowed values for this property are: "CSV", "PDF", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -319,7 +319,7 @@ class Schedule(object):
     def output_file_format(self, output_file_format):
         """
         Sets the output_file_format of this Schedule.
-        Specifies supported output file format.
+        Specifies the supported output file format.
 
 
         :param output_file_format: The output_file_format of this Schedule.
@@ -334,7 +334,7 @@ class Schedule(object):
     def saved_report_id(self):
         """
         Gets the saved_report_id of this Schedule.
-        The saved report id which can also be used to generate query.
+        The saved report ID which can also be used to generate a query.
 
 
         :return: The saved_report_id of this Schedule.
@@ -346,7 +346,7 @@ class Schedule(object):
     def saved_report_id(self, saved_report_id):
         """
         Sets the saved_report_id of this Schedule.
-        The saved report id which can also be used to generate query.
+        The saved report ID which can also be used to generate a query.
 
 
         :param saved_report_id: The saved_report_id of this Schedule.

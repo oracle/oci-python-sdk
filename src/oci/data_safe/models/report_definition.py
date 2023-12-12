@@ -497,7 +497,7 @@ class ReportDefinition(object):
     def time_created(self):
         """
         Gets the time_created of this ReportDefinition.
-        Specifies the data and time the report definition was created.
+        Specifies the date and time the report definition was created.
 
 
         :return: The time_created of this ReportDefinition.
@@ -509,7 +509,7 @@ class ReportDefinition(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ReportDefinition.
-        Specifies the data and time the report definition was created.
+        Specifies the date and time the report definition was created.
 
 
         :param time_created: The time_created of this ReportDefinition.
@@ -521,7 +521,7 @@ class ReportDefinition(object):
     def time_updated(self):
         """
         Gets the time_updated of this ReportDefinition.
-        The date and time the report definition was update.
+        The date and time the report definition was updated.
 
 
         :return: The time_updated of this ReportDefinition.
@@ -533,7 +533,7 @@ class ReportDefinition(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ReportDefinition.
-        The date and time the report definition was update.
+        The date and time the report definition was updated.
 
 
         :param time_updated: The time_updated of this ReportDefinition.
@@ -769,7 +769,7 @@ class ReportDefinition(object):
     def scheduled_report_mime_type(self):
         """
         Gets the scheduled_report_mime_type of this ReportDefinition.
-        Specifies the format of the report ( either XLS or PDF )
+        Specifies the format of the report ( either .xls or .pdf )
 
         Allowed values for this property are: "PDF", "XLS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -784,7 +784,7 @@ class ReportDefinition(object):
     def scheduled_report_mime_type(self, scheduled_report_mime_type):
         """
         Sets the scheduled_report_mime_type of this ReportDefinition.
-        Specifies the format of the report ( either XLS or PDF )
+        Specifies the format of the report ( either .xls or .pdf )
 
 
         :param scheduled_report_mime_type: The scheduled_report_mime_type of this ReportDefinition.
@@ -847,7 +847,7 @@ class ReportDefinition(object):
     def scheduled_report_compartment_id(self):
         """
         Gets the scheduled_report_compartment_id of this ReportDefinition.
-        The OCID of the compartment in which the scheduled resource should be created.
+        The OCID of the compartment in which the scheduled resource will be created.
 
 
         :return: The scheduled_report_compartment_id of this ReportDefinition.
@@ -859,7 +859,7 @@ class ReportDefinition(object):
     def scheduled_report_compartment_id(self, scheduled_report_compartment_id):
         """
         Sets the scheduled_report_compartment_id of this ReportDefinition.
-        The OCID of the compartment in which the scheduled resource should be created.
+        The OCID of the compartment in which the scheduled resource will be created.
 
 
         :param scheduled_report_compartment_id: The scheduled_report_compartment_id of this ReportDefinition.

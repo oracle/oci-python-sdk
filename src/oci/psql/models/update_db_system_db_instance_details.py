@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDbSystemDbInstanceDetails(object):
     """
-    DbInstance update parameters.
+    Database instance node update parameters.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,7 @@ class UpdateDbSystemDbInstanceDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateDbSystemDbInstanceDetails.
-        Display name of the DbInstance.
+        A user-friendly display name of the database instance node. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateDbSystemDbInstanceDetails.
@@ -58,7 +58,7 @@ class UpdateDbSystemDbInstanceDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateDbSystemDbInstanceDetails.
-        Display name of the DbInstance.
+        A user-friendly display name of the database instance node. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateDbSystemDbInstanceDetails.
@@ -70,7 +70,7 @@ class UpdateDbSystemDbInstanceDetails(object):
     def description(self):
         """
         Gets the description of this UpdateDbSystemDbInstanceDetails.
-        Description of the DbInstance.
+        A user-provided description of the database instance node.
 
 
         :return: The description of this UpdateDbSystemDbInstanceDetails.
@@ -82,7 +82,7 @@ class UpdateDbSystemDbInstanceDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateDbSystemDbInstanceDetails.
-        Description of the DbInstance.
+        A user-provided description of the database instance node.
 
 
         :param description: The description of this UpdateDbSystemDbInstanceDetails.

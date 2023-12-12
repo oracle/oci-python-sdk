@@ -156,6 +156,10 @@ class ExtensionUserUser(object):
             The value to assign to the notification_email_template_id property of this ExtensionUserUser.
         :type notification_email_template_id: str
 
+        :param service_user:
+            The value to assign to the service_user property of this ExtensionUserUser.
+        :type service_user: bool
+
         :param support_accounts:
             The value to assign to the support_accounts property of this ExtensionUserUser.
         :type support_accounts: list[oci.identity_domains.models.UserExtSupportAccounts]
@@ -209,6 +213,7 @@ class ExtensionUserUser(object):
             'is_group_membership_normalized': 'bool',
             'is_group_membership_synced_to_users_groups': 'bool',
             'notification_email_template_id': 'str',
+            'service_user': 'bool',
             'support_accounts': 'list[UserExtSupportAccounts]',
             'idcs_app_roles_limited_to_groups': 'list[UserExtIdcsAppRolesLimitedToGroups]',
             'user_token': 'UserExtUserToken',
@@ -236,6 +241,7 @@ class ExtensionUserUser(object):
             'is_group_membership_normalized': 'isGroupMembershipNormalized',
             'is_group_membership_synced_to_users_groups': 'isGroupMembershipSyncedToUsersGroups',
             'notification_email_template_id': 'notificationEmailTemplateId',
+            'service_user': 'serviceUser',
             'support_accounts': 'supportAccounts',
             'idcs_app_roles_limited_to_groups': 'idcsAppRolesLimitedToGroups',
             'user_token': 'userToken',
@@ -262,6 +268,7 @@ class ExtensionUserUser(object):
         self._is_group_membership_normalized = None
         self._is_group_membership_synced_to_users_groups = None
         self._notification_email_template_id = None
+        self._service_user = None
         self._support_accounts = None
         self._idcs_app_roles_limited_to_groups = None
         self._user_token = None
@@ -997,6 +1004,58 @@ class ExtensionUserUser(object):
         :type: str
         """
         self._notification_email_template_id = notification_email_template_id
+
+    @property
+    def service_user(self):
+        """
+        Gets the service_user of this ExtensionUserUser.
+        Indicates if User is a Service User
+
+        **Added In:** 2306131901
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsCsvAttributeName: Service User
+         - idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: immutable
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :return: The service_user of this ExtensionUserUser.
+        :rtype: bool
+        """
+        return self._service_user
+
+    @service_user.setter
+    def service_user(self, service_user):
+        """
+        Sets the service_user of this ExtensionUserUser.
+        Indicates if User is a Service User
+
+        **Added In:** 2306131901
+
+        **SCIM++ Properties:**
+         - caseExact: false
+         - idcsCsvAttributeName: Service User
+         - idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: immutable
+         - required: false
+         - returned: default
+         - type: boolean
+         - uniqueness: none
+
+
+        :param service_user: The service_user of this ExtensionUserUser.
+        :type: bool
+        """
+        self._service_user = service_user
 
     @property
     def support_accounts(self):

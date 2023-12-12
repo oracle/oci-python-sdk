@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OciOptimizedStorageDetails(StorageDetails):
     """
-    Storage details of the OCI_OPTIMIZED_STORAGE DbSystem.
+    Storage details of the database system.
     """
 
     def __init__(self, **kwargs):
@@ -62,7 +62,7 @@ class OciOptimizedStorageDetails(StorageDetails):
     def iops(self):
         """
         Gets the iops of this OciOptimizedStorageDetails.
-        DbSystem Performance Unit
+        Guaranteed input/output storage requests per second (IOPS) available to the database system.
 
 
         :return: The iops of this OciOptimizedStorageDetails.
@@ -74,7 +74,7 @@ class OciOptimizedStorageDetails(StorageDetails):
     def iops(self, iops):
         """
         Sets the iops of this OciOptimizedStorageDetails.
-        DbSystem Performance Unit
+        Guaranteed input/output storage requests per second (IOPS) available to the database system.
 
 
         :param iops: The iops of this OciOptimizedStorageDetails.

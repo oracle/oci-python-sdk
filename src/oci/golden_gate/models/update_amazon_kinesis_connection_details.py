@@ -54,6 +54,15 @@ class UpdateAmazonKinesisConnectionDetails(UpdateConnectionDetails):
             The value to assign to the nsg_ids property of this UpdateAmazonKinesisConnectionDetails.
         :type nsg_ids: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateAmazonKinesisConnectionDetails.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this UpdateAmazonKinesisConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param access_key_id:
             The value to assign to the access_key_id property of this UpdateAmazonKinesisConnectionDetails.
         :type access_key_id: str
@@ -72,6 +81,8 @@ class UpdateAmazonKinesisConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'access_key_id': 'str',
             'secret_access_key': 'str'
         }
@@ -85,6 +96,8 @@ class UpdateAmazonKinesisConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'access_key_id': 'accessKeyId',
             'secret_access_key': 'secretAccessKey'
         }
@@ -97,6 +110,8 @@ class UpdateAmazonKinesisConnectionDetails(UpdateConnectionDetails):
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._access_key_id = None
         self._secret_access_key = None
         self._connection_type = 'AMAZON_KINESIS'

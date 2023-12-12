@@ -39,6 +39,10 @@ class DiscoveryAnalyticsSummary(object):
     #: This constant has a value of "SENSITIVE_DATA_VALUE"
     METRIC_NAME_SENSITIVE_DATA_VALUE = "SENSITIVE_DATA_VALUE"
 
+    #: A constant which can be used with the metric_name property of a DiscoveryAnalyticsSummary.
+    #: This constant has a value of "TARGET_DATABASE"
+    METRIC_NAME_TARGET_DATABASE = "TARGET_DATABASE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DiscoveryAnalyticsSummary object with values from keyword arguments.
@@ -46,7 +50,7 @@ class DiscoveryAnalyticsSummary(object):
 
         :param metric_name:
             The value to assign to the metric_name property of this DiscoveryAnalyticsSummary.
-            Allowed values for this property are: "SENSITIVE_DATA_MODEL", "SENSITIVE_TYPE", "SENSITIVE_SCHEMA", "SENSITIVE_TABLE", "SENSITIVE_COLUMN", "SENSITIVE_DATA_VALUE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SENSITIVE_DATA_MODEL", "SENSITIVE_TYPE", "SENSITIVE_SCHEMA", "SENSITIVE_TABLE", "SENSITIVE_COLUMN", "SENSITIVE_DATA_VALUE", "TARGET_DATABASE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type metric_name: str
 
@@ -81,7 +85,7 @@ class DiscoveryAnalyticsSummary(object):
         **[Required]** Gets the metric_name of this DiscoveryAnalyticsSummary.
         The name of the aggregation metric.
 
-        Allowed values for this property are: "SENSITIVE_DATA_MODEL", "SENSITIVE_TYPE", "SENSITIVE_SCHEMA", "SENSITIVE_TABLE", "SENSITIVE_COLUMN", "SENSITIVE_DATA_VALUE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SENSITIVE_DATA_MODEL", "SENSITIVE_TYPE", "SENSITIVE_SCHEMA", "SENSITIVE_TABLE", "SENSITIVE_COLUMN", "SENSITIVE_DATA_VALUE", "TARGET_DATABASE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -100,7 +104,7 @@ class DiscoveryAnalyticsSummary(object):
         :param metric_name: The metric_name of this DiscoveryAnalyticsSummary.
         :type: str
         """
-        allowed_values = ["SENSITIVE_DATA_MODEL", "SENSITIVE_TYPE", "SENSITIVE_SCHEMA", "SENSITIVE_TABLE", "SENSITIVE_COLUMN", "SENSITIVE_DATA_VALUE"]
+        allowed_values = ["SENSITIVE_DATA_MODEL", "SENSITIVE_TYPE", "SENSITIVE_SCHEMA", "SENSITIVE_TABLE", "SENSITIVE_COLUMN", "SENSITIVE_DATA_VALUE", "TARGET_DATABASE"]
         if not value_allowed_none_or_none_sentinel(metric_name, allowed_values):
             metric_name = 'UNKNOWN_ENUM_VALUE'
         self._metric_name = metric_name

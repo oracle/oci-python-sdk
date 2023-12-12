@@ -90,6 +90,11 @@ class GoldenGateConnectionSummary(ConnectionSummary):
             The value to assign to the subnet_id property of this GoldenGateConnectionSummary.
         :type subnet_id: str
 
+        :param routing_method:
+            The value to assign to the routing_method property of this GoldenGateConnectionSummary.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param technology_type:
             The value to assign to the technology_type property of this GoldenGateConnectionSummary.
         :type technology_type: str
@@ -133,6 +138,7 @@ class GoldenGateConnectionSummary(ConnectionSummary):
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
+            'routing_method': 'str',
             'technology_type': 'str',
             'deployment_id': 'str',
             'host': 'str',
@@ -159,6 +165,7 @@ class GoldenGateConnectionSummary(ConnectionSummary):
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'technology_type': 'technologyType',
             'deployment_id': 'deploymentId',
             'host': 'host',
@@ -184,6 +191,7 @@ class GoldenGateConnectionSummary(ConnectionSummary):
         self._ingress_ips = None
         self._nsg_ids = None
         self._subnet_id = None
+        self._routing_method = None
         self._technology_type = None
         self._deployment_id = None
         self._host = None
@@ -320,6 +328,9 @@ class GoldenGateConnectionSummary(ConnectionSummary):
     def private_ip(self):
         """
         Gets the private_ip of this GoldenGateConnectionSummary.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.
@@ -336,6 +347,9 @@ class GoldenGateConnectionSummary(ConnectionSummary):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this GoldenGateConnectionSummary.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.

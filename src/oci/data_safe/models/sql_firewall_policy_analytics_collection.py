@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlFirewallPolicyAnalyticsCollection(object):
     """
-    SQL firewall policy analytics collection.
+    SQL Firewall policy analytics collection.
     """
 
     def __init__(self, **kwargs):

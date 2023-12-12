@@ -78,6 +78,10 @@ class TaskSummaryFromDataLoaderTask(TaskSummary):
             The value to assign to the config_provider_delegate property of this TaskSummaryFromDataLoaderTask.
         :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
+        :param is_concurrent_allowed:
+            The value to assign to the is_concurrent_allowed property of this TaskSummaryFromDataLoaderTask.
+        :type is_concurrent_allowed: bool
+
         :param metadata:
             The value to assign to the metadata property of this TaskSummaryFromDataLoaderTask.
         :type metadata: oci.data_integration.models.ObjectMetadata
@@ -118,6 +122,7 @@ class TaskSummaryFromDataLoaderTask(TaskSummary):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'ConfigProvider',
+            'is_concurrent_allowed': 'bool',
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)',
             'data_flow': 'DataFlow',
@@ -141,6 +146,7 @@ class TaskSummaryFromDataLoaderTask(TaskSummary):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
+            'is_concurrent_allowed': 'isConcurrentAllowed',
             'metadata': 'metadata',
             'key_map': 'keyMap',
             'data_flow': 'dataFlow',
@@ -163,6 +169,7 @@ class TaskSummaryFromDataLoaderTask(TaskSummary):
         self._parameters = None
         self._op_config_values = None
         self._config_provider_delegate = None
+        self._is_concurrent_allowed = None
         self._metadata = None
         self._key_map = None
         self._data_flow = None

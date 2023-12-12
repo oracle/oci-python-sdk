@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StorageDetails(object):
     """
-    Storage details of the DbSystem.
+    Storage details of the database system.
     """
 
     def __init__(self, **kwargs):
@@ -70,7 +70,7 @@ class StorageDetails(object):
     def system_type(self):
         """
         **[Required]** Gets the system_type of this StorageDetails.
-        Type of the DbSystem.
+        Type of the database system.
 
 
         :return: The system_type of this StorageDetails.
@@ -82,7 +82,7 @@ class StorageDetails(object):
     def system_type(self, system_type):
         """
         Sets the system_type of this StorageDetails.
-        Type of the DbSystem.
+        Type of the database system.
 
 
         :param system_type: The system_type of this StorageDetails.
@@ -94,10 +94,10 @@ class StorageDetails(object):
     def is_regionally_durable(self):
         """
         **[Required]** Gets the is_regionally_durable of this StorageDetails.
-        Specifies if the block volume used for the DbSystem is regional or AD-local.
+        Specifies if the block volume used for the database system is regional or AD-local.
         If not specified, it will be set to false.
-        If isRegionallyDurable is set to true, availabilityDomain should not be specified.
-        If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified.
+        If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 
 
         :return: The is_regionally_durable of this StorageDetails.
@@ -109,10 +109,10 @@ class StorageDetails(object):
     def is_regionally_durable(self, is_regionally_durable):
         """
         Sets the is_regionally_durable of this StorageDetails.
-        Specifies if the block volume used for the DbSystem is regional or AD-local.
+        Specifies if the block volume used for the database system is regional or AD-local.
         If not specified, it will be set to false.
-        If isRegionallyDurable is set to true, availabilityDomain should not be specified.
-        If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified.
+        If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 
 
         :param is_regionally_durable: The is_regionally_durable of this StorageDetails.
@@ -125,8 +125,8 @@ class StorageDetails(object):
         """
         Gets the availability_domain of this StorageDetails.
         Specifies the availability domain of AD-local storage.
-        If isRegionallyDurable is set to true, availabilityDomain should not be specified.
-        If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified.
+        If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 
 
         :return: The availability_domain of this StorageDetails.
@@ -139,8 +139,8 @@ class StorageDetails(object):
         """
         Sets the availability_domain of this StorageDetails.
         Specifies the availability domain of AD-local storage.
-        If isRegionallyDurable is set to true, availabilityDomain should not be specified.
-        If isRegionallyDurable is set to false, availabilityDomain must be specified.
+        If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified.
+        If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 
 
         :param availability_domain: The availability_domain of this StorageDetails.

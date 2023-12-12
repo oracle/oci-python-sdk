@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RestoreDbSystemDetails(object):
     """
-    Backup details to restore the DB system.
+    Backup details to restore the database system.
     """
 
     def __init__(self, **kwargs):
@@ -46,7 +46,9 @@ class RestoreDbSystemDetails(object):
     def backup_id(self):
         """
         **[Required]** Gets the backup_id of this RestoreDbSystemDetails.
-        DbSystem backup identifier.
+        The `OCID`__ of the database system backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The backup_id of this RestoreDbSystemDetails.
@@ -58,7 +60,9 @@ class RestoreDbSystemDetails(object):
     def backup_id(self, backup_id):
         """
         Sets the backup_id of this RestoreDbSystemDetails.
-        DbSystem backup identifier.
+        The `OCID`__ of the database system backup.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param backup_id: The backup_id of this RestoreDbSystemDetails.
@@ -70,8 +74,8 @@ class RestoreDbSystemDetails(object):
     def ad(self):
         """
         Gets the ad of this RestoreDbSystemDetails.
-        The desired AD for 3AD regions. Optional parameter.
-        If not set the AD will be chosen based on the current DB System's AD.
+        The desired AD for regions with three ADs. This parameter is optional.
+        If not set, the AD is chosen based on the database system's current AD.
 
 
         :return: The ad of this RestoreDbSystemDetails.
@@ -83,8 +87,8 @@ class RestoreDbSystemDetails(object):
     def ad(self, ad):
         """
         Sets the ad of this RestoreDbSystemDetails.
-        The desired AD for 3AD regions. Optional parameter.
-        If not set the AD will be chosen based on the current DB System's AD.
+        The desired AD for regions with three ADs. This parameter is optional.
+        If not set, the AD is chosen based on the database system's current AD.
 
 
         :param ad: The ad of this RestoreDbSystemDetails.

@@ -119,6 +119,10 @@ class SensitiveType(object):
             The value to assign to the parent_category_id property of this SensitiveType.
         :type parent_category_id: str
 
+        :param is_common:
+            The value to assign to the is_common property of this SensitiveType.
+        :type is_common: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SensitiveType.
         :type freeform_tags: dict(str, str)
@@ -144,6 +148,7 @@ class SensitiveType(object):
             'time_updated': 'datetime',
             'description': 'str',
             'parent_category_id': 'str',
+            'is_common': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -161,6 +166,7 @@ class SensitiveType(object):
             'time_updated': 'timeUpdated',
             'description': 'description',
             'parent_category_id': 'parentCategoryId',
+            'is_common': 'isCommon',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -177,6 +183,7 @@ class SensitiveType(object):
         self._time_updated = None
         self._description = None
         self._parent_category_id = None
+        self._is_common = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -488,6 +495,32 @@ class SensitiveType(object):
         :type: str
         """
         self._parent_category_id = parent_category_id
+
+    @property
+    def is_common(self):
+        """
+        Gets the is_common of this SensitiveType.
+        Specifies whether the sensitive type is common. Common sensitive types belong to
+        library sensitive types which are frequently used to perform sensitive data discovery.
+
+
+        :return: The is_common of this SensitiveType.
+        :rtype: bool
+        """
+        return self._is_common
+
+    @is_common.setter
+    def is_common(self, is_common):
+        """
+        Sets the is_common of this SensitiveType.
+        Specifies whether the sensitive type is common. Common sensitive types belong to
+        library sensitive types which are frequently used to perform sensitive data discovery.
+
+
+        :param is_common: The is_common of this SensitiveType.
+        :type: bool
+        """
+        self._is_common = is_common
 
     @property
     def freeform_tags(self):

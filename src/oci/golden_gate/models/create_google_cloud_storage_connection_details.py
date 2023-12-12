@@ -62,6 +62,11 @@ class CreateGoogleCloudStorageConnectionDetails(CreateConnectionDetails):
             The value to assign to the subnet_id property of this CreateGoogleCloudStorageConnectionDetails.
         :type subnet_id: str
 
+        :param routing_method:
+            The value to assign to the routing_method property of this CreateGoogleCloudStorageConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param technology_type:
             The value to assign to the technology_type property of this CreateGoogleCloudStorageConnectionDetails.
         :type technology_type: str
@@ -82,6 +87,7 @@ class CreateGoogleCloudStorageConnectionDetails(CreateConnectionDetails):
             'key_id': 'str',
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
+            'routing_method': 'str',
             'technology_type': 'str',
             'service_account_key_file': 'str'
         }
@@ -97,6 +103,7 @@ class CreateGoogleCloudStorageConnectionDetails(CreateConnectionDetails):
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'technology_type': 'technologyType',
             'service_account_key_file': 'serviceAccountKeyFile'
         }
@@ -111,6 +118,7 @@ class CreateGoogleCloudStorageConnectionDetails(CreateConnectionDetails):
         self._key_id = None
         self._nsg_ids = None
         self._subnet_id = None
+        self._routing_method = None
         self._technology_type = None
         self._service_account_key_file = None
         self._connection_type = 'GOOGLE_CLOUD_STORAGE'

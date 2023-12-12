@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlFirewallPolicySummary(object):
     """
-    The SQL firewall policy resource contains the firewall policy metadata for a single user.
+    The SQL Firewall policy resource contains the firewall policy metadata for a single user.
     """
 
     #: A constant which can be used with the sql_level property of a SqlFirewallPolicySummary.
@@ -239,7 +239,7 @@ class SqlFirewallPolicySummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this SqlFirewallPolicySummary.
-        The OCID of the SQL firewall policy.
+        The OCID of the SQL Firewall policy.
 
 
         :return: The id of this SqlFirewallPolicySummary.
@@ -251,7 +251,7 @@ class SqlFirewallPolicySummary(object):
     def id(self, id):
         """
         Sets the id of this SqlFirewallPolicySummary.
-        The OCID of the SQL firewall policy.
+        The OCID of the SQL Firewall policy.
 
 
         :param id: The id of this SqlFirewallPolicySummary.
@@ -263,7 +263,7 @@ class SqlFirewallPolicySummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SqlFirewallPolicySummary.
-        The OCID of the compartment containing the SQL firewall policy.
+        The OCID of the compartment containing the SQL Firewall policy.
 
 
         :return: The compartment_id of this SqlFirewallPolicySummary.
@@ -275,7 +275,7 @@ class SqlFirewallPolicySummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SqlFirewallPolicySummary.
-        The OCID of the compartment containing the SQL firewall policy.
+        The OCID of the compartment containing the SQL Firewall policy.
 
 
         :param compartment_id: The compartment_id of this SqlFirewallPolicySummary.
@@ -287,7 +287,7 @@ class SqlFirewallPolicySummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this SqlFirewallPolicySummary.
-        The display name of the SQL firewall policy.
+        The display name of the SQL Firewall policy.
 
 
         :return: The display_name of this SqlFirewallPolicySummary.
@@ -299,7 +299,7 @@ class SqlFirewallPolicySummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this SqlFirewallPolicySummary.
-        The display name of the SQL firewall policy.
+        The display name of the SQL Firewall policy.
 
 
         :param display_name: The display_name of this SqlFirewallPolicySummary.
@@ -311,7 +311,7 @@ class SqlFirewallPolicySummary(object):
     def description(self):
         """
         Gets the description of this SqlFirewallPolicySummary.
-        The description of the SQL firewall policy.
+        The description of the SQL Firewall policy.
 
 
         :return: The description of this SqlFirewallPolicySummary.
@@ -323,7 +323,7 @@ class SqlFirewallPolicySummary(object):
     def description(self, description):
         """
         Sets the description of this SqlFirewallPolicySummary.
-        The description of the SQL firewall policy.
+        The description of the SQL Firewall policy.
 
 
         :param description: The description of this SqlFirewallPolicySummary.
@@ -335,7 +335,7 @@ class SqlFirewallPolicySummary(object):
     def security_policy_id(self):
         """
         **[Required]** Gets the security_policy_id of this SqlFirewallPolicySummary.
-        The OCID of the security policy corresponding to the SQL firewall policy.
+        The OCID of the security policy corresponding to the SQL Firewall policy.
 
 
         :return: The security_policy_id of this SqlFirewallPolicySummary.
@@ -347,7 +347,7 @@ class SqlFirewallPolicySummary(object):
     def security_policy_id(self, security_policy_id):
         """
         Sets the security_policy_id of this SqlFirewallPolicySummary.
-        The OCID of the security policy corresponding to the SQL firewall policy.
+        The OCID of the security policy corresponding to the SQL Firewall policy.
 
 
         :param security_policy_id: The security_policy_id of this SqlFirewallPolicySummary.
@@ -383,7 +383,7 @@ class SqlFirewallPolicySummary(object):
     def sql_level(self):
         """
         Gets the sql_level of this SqlFirewallPolicySummary.
-        Specifies the level of SQL included for this SQL firewall policy.
+        Specifies the level of SQL included for this SQL Firewall policy.
         USER_ISSUED_SQL - User issued SQL statements only.
         ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
 
@@ -400,7 +400,7 @@ class SqlFirewallPolicySummary(object):
     def sql_level(self, sql_level):
         """
         Sets the sql_level of this SqlFirewallPolicySummary.
-        Specifies the level of SQL included for this SQL firewall policy.
+        Specifies the level of SQL included for this SQL Firewall policy.
         USER_ISSUED_SQL - User issued SQL statements only.
         ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
 
@@ -417,7 +417,7 @@ class SqlFirewallPolicySummary(object):
     def status(self):
         """
         **[Required]** Gets the status of this SqlFirewallPolicySummary.
-        Specifies whether the SQL firewall policy is enabled or disabled.
+        Specifies whether the SQL Firewall policy is enabled or disabled.
 
         Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -432,7 +432,7 @@ class SqlFirewallPolicySummary(object):
     def status(self, status):
         """
         Sets the status of this SqlFirewallPolicySummary.
-        Specifies whether the SQL firewall policy is enabled or disabled.
+        Specifies whether the SQL Firewall policy is enabled or disabled.
 
 
         :param status: The status of this SqlFirewallPolicySummary.
@@ -447,7 +447,7 @@ class SqlFirewallPolicySummary(object):
     def enforcement_scope(self):
         """
         Gets the enforcement_scope of this SqlFirewallPolicySummary.
-        Specifies the SQL firewall policy enforcement option.
+        Specifies the SQL Firewall policy enforcement option.
 
         Allowed values for this property are: "ENFORCE_CONTEXT", "ENFORCE_SQL", "ENFORCE_ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -462,7 +462,7 @@ class SqlFirewallPolicySummary(object):
     def enforcement_scope(self, enforcement_scope):
         """
         Sets the enforcement_scope of this SqlFirewallPolicySummary.
-        Specifies the SQL firewall policy enforcement option.
+        Specifies the SQL Firewall policy enforcement option.
 
 
         :param enforcement_scope: The enforcement_scope of this SqlFirewallPolicySummary.
@@ -477,7 +477,7 @@ class SqlFirewallPolicySummary(object):
     def violation_action(self):
         """
         Gets the violation_action of this SqlFirewallPolicySummary.
-        Specifies the SQL firewall action based on detection of SQL firewall violations.
+        Specifies the SQL Firewall action based on detection of SQL Firewall violations.
 
         Allowed values for this property are: "BLOCK", "OBSERVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -492,7 +492,7 @@ class SqlFirewallPolicySummary(object):
     def violation_action(self, violation_action):
         """
         Sets the violation_action of this SqlFirewallPolicySummary.
-        Specifies the SQL firewall action based on detection of SQL firewall violations.
+        Specifies the SQL Firewall action based on detection of SQL Firewall violations.
 
 
         :param violation_action: The violation_action of this SqlFirewallPolicySummary.
@@ -507,7 +507,7 @@ class SqlFirewallPolicySummary(object):
     def violation_audit(self):
         """
         Gets the violation_audit of this SqlFirewallPolicySummary.
-        Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+        Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
 
         Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -522,7 +522,7 @@ class SqlFirewallPolicySummary(object):
     def violation_audit(self, violation_audit):
         """
         Sets the violation_audit of this SqlFirewallPolicySummary.
-        Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+        Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
 
 
         :param violation_audit: The violation_audit of this SqlFirewallPolicySummary.
@@ -537,7 +537,7 @@ class SqlFirewallPolicySummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this SqlFirewallPolicySummary.
-        The time that the SQL firewall policy was created, in the format defined by RFC3339.
+        The time that the SQL Firewall policy was created, in the format defined by RFC3339.
 
 
         :return: The time_created of this SqlFirewallPolicySummary.
@@ -549,7 +549,7 @@ class SqlFirewallPolicySummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SqlFirewallPolicySummary.
-        The time that the SQL firewall policy was created, in the format defined by RFC3339.
+        The time that the SQL Firewall policy was created, in the format defined by RFC3339.
 
 
         :param time_created: The time_created of this SqlFirewallPolicySummary.
@@ -561,7 +561,7 @@ class SqlFirewallPolicySummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this SqlFirewallPolicySummary.
-        The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+        The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
 
 
         :return: The time_updated of this SqlFirewallPolicySummary.
@@ -573,7 +573,7 @@ class SqlFirewallPolicySummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this SqlFirewallPolicySummary.
-        The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+        The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
 
 
         :param time_updated: The time_updated of this SqlFirewallPolicySummary.
@@ -585,7 +585,7 @@ class SqlFirewallPolicySummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this SqlFirewallPolicySummary.
-        The current state of the SQL firewall policy.
+        The current state of the SQL Firewall policy.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "FAILED", "DELETING", "DELETED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -600,7 +600,7 @@ class SqlFirewallPolicySummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this SqlFirewallPolicySummary.
-        The current state of the SQL firewall policy.
+        The current state of the SQL Firewall policy.
 
 
         :param lifecycle_state: The lifecycle_state of this SqlFirewallPolicySummary.
@@ -615,7 +615,7 @@ class SqlFirewallPolicySummary(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this SqlFirewallPolicySummary.
-        Details about the current state of the SQL firewall policy in Data Safe.
+        Details about the current state of the SQL Firewall policy in Data Safe.
 
 
         :return: The lifecycle_details of this SqlFirewallPolicySummary.
@@ -627,7 +627,7 @@ class SqlFirewallPolicySummary(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this SqlFirewallPolicySummary.
-        Details about the current state of the SQL firewall policy in Data Safe.
+        Details about the current state of the SQL Firewall policy in Data Safe.
 
 
         :param lifecycle_details: The lifecycle_details of this SqlFirewallPolicySummary.

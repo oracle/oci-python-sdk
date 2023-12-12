@@ -38,8 +38,8 @@ import threading
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    version = "23.11.28"
-    oci_compatible_version = "2.110.2"
+    version = "23.12.12"
+    oci_compatible_version = "2.117.0"
     thread_lock = threading.Lock()
 
     ##########################################################################
@@ -156,6 +156,9 @@ class ShowOCIService(object):
     C_DATABASE_ADB_D_CONTAINERS = "autonomous_dedicated_containers"
     C_DATABASE_NOSQL = "nosql"
     C_DATABASE_MYSQL = "mysql"
+    C_DATABASE_MYSQL_BACKUPS = "mysql_backups"
+    C_DATABASE_POSTGRESQL = "postgresql"
+    C_DATABASE_POSTGRESQL_BACKUPS = "postgresql_backups"
     C_DATABASE_SOFTWARE_IMAGES = "database_software_images"
     C_DATABASE_GG_DEPLOYMENTS = "gg_deployments"
     C_DATABASE_GG_DB_REGISTRATION = "gg_db_registration"
@@ -704,7 +707,7 @@ class ShowOCIService(object):
     ##########################################################################
     # get value from service
     ##########################################################################
-    def get_value(self, in_value):
+    def get_value(self, in_value, trim_date=False):
         try:
             out_value = ""
             if in_value:
@@ -714,6 +717,8 @@ class ShowOCIService(object):
                     out_value = ""
                 else:
                     out_value = str(in_value)
+            if trim_date:
+                out_value = out_value[0:16]
             return out_value
 
         except Exception as e:
@@ -4442,6 +4447,9 @@ class ShowOCIService(object):
     def __load_core_network_single_privateip(self, virtual_network, ip_id, return_name=True):
 
         try:
+            if not ip_id:
+                return ""
+
             if 'privateip' not in ip_id:
                 return ""
 
@@ -4471,6 +4479,9 @@ class ShowOCIService(object):
     def __load_core_network_single_vlan(self, virtual_network, vlan_id):
 
         try:
+            if not vlan_id:
+                return ""
+
             if 'vlan' not in vlan_id:
                 return ""
 
@@ -4486,7 +4497,7 @@ class ShowOCIService(object):
         except oci.exceptions.ServiceError as e:
             if self.__check_service_error(e.code):
                 pass
-            raise
+            return "Error fetching VLAN info, Error: " + str(e.code)
         except Exception as e:
             self.__print_error("__load_core_network_single_vlan", e)
             return ""
@@ -7870,6 +7881,8 @@ class ShowOCIService(object):
             virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             nosql_client = oci.nosql.NosqlClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             mysql_client = oci.mysql.DbSystemClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
+            mysql_backup_client = oci.mysql.DbBackupsClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
+            postgresql_client = oci.psql.PostgresqlClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             gg_client = oci.golden_gate.GoldenGateClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
 
             if self.flags.proxy:
@@ -7877,6 +7890,8 @@ class ShowOCIService(object):
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
                 nosql_client.base_client.session.proxies = {'https': self.flags.proxy}
                 mysql_client.base_client.session.proxies = {'https': self.flags.proxy}
+                mysql_backup_client.base_client.session.proxies = {'https': self.flags.proxy}
+                postgresql_client.base_client.session.proxies = {'https': self.flags.proxy}
                 gg_client.base_client.session.proxies = {'https': self.flags.proxy}
 
             # reference to compartments
@@ -7897,6 +7912,9 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_ADB_D_CONTAINERS)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_NOSQL)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_MYSQL)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_MYSQL_BACKUPS)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_POSTGRESQL)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_POSTGRESQL_BACKUPS)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_SOFTWARE_IMAGES)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_GG_DB_REGISTRATION)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_GG_DEPLOYMENTS)
@@ -7924,6 +7942,9 @@ class ShowOCIService(object):
                 db[self.C_DATABASE_ADB_DATABASE] += self.__load_database_adb_database(database_client, compartments)
                 db[self.C_DATABASE_NOSQL] += self.__load_database_nosql(nosql_client, compartments)
                 db[self.C_DATABASE_MYSQL] += self.__load_database_mysql(mysql_client, compartments)
+                db[self.C_DATABASE_MYSQL_BACKUPS] += self.__load_database_mysql_backups(mysql_backup_client, compartments)
+                db[self.C_DATABASE_POSTGRESQL] += self.__load_database_postgresql(postgresql_client, compartments)
+                db[self.C_DATABASE_POSTGRESQL_BACKUPS] += self.__load_database_postgresql_backups(postgresql_client, compartments)
                 db[self.C_DATABASE_SOFTWARE_IMAGES] += self.__load_database_software_images(database_client, compartments)
                 db[self.C_DATABASE_GG_DEPLOYMENTS] += self.__load_database_gg_deployments(gg_client, compartments)
                 db[self.C_DATABASE_GG_DB_REGISTRATION] += self.__load_database_gg_db_registration(gg_client, compartments)
@@ -7945,6 +7966,9 @@ class ShowOCIService(object):
                     future_ADB_DATABASE = executor.submit(self.__load_database_adb_database, database_client, compartments)
                     future_NOSQL = executor.submit(self.__load_database_nosql, nosql_client, compartments)
                     future_MYSQL = executor.submit(self.__load_database_mysql, mysql_client, compartments)
+                    future_MYSQL_BACKUPS = executor.submit(self.__load_database_mysql_backups, mysql_backup_client, compartments)
+                    future_POSTGRESQL = executor.submit(self.__load_database_postgresql, postgresql_client, compartments)
+                    future_POSTGRESQL_BACKUPS = executor.submit(self.__load_database_postgresql_backups, postgresql_client, compartments)
                     future_SOFTWARE_IMAGES = executor.submit(self.__load_database_software_images, database_client, compartments)
                     future_GG_DEPLOYMENTS = executor.submit(self.__load_database_gg_deployments, gg_client, compartments)
                     future_GG_DB_REGISTRATION = executor.submit(self.__load_database_gg_db_registration, gg_client, compartments)
@@ -7973,6 +7997,9 @@ class ShowOCIService(object):
                     db[self.C_DATABASE_ADB_DATABASE] += next(as_completed([future_ADB_DATABASE])).result()
                     db[self.C_DATABASE_NOSQL] += next(as_completed([future_NOSQL])).result()
                     db[self.C_DATABASE_MYSQL] += next(as_completed([future_MYSQL])).result()
+                    db[self.C_DATABASE_MYSQL_BACKUPS] += next(as_completed([future_MYSQL_BACKUPS])).result()
+                    db[self.C_DATABASE_POSTGRESQL] += next(as_completed([future_POSTGRESQL])).result()
+                    db[self.C_DATABASE_POSTGRESQL_BACKUPS] += next(as_completed([future_POSTGRESQL_BACKUPS])).result()
                     db[self.C_DATABASE_SOFTWARE_IMAGES] += next(as_completed([future_SOFTWARE_IMAGES])).result()
                     db[self.C_DATABASE_GG_DEPLOYMENTS] += next(as_completed([future_GG_DEPLOYMENTS])).result()
                     db[self.C_DATABASE_GG_DB_REGISTRATION] += next(as_completed([future_GG_DB_REGISTRATION])).result()
@@ -10384,7 +10411,6 @@ class ShowOCIService(object):
 
     ##########################################################################
     # __load_database_mysql
-    #   TBD - Backups
     ##########################################################################
     def __load_database_mysql(self, mysql_client, compartments):
 
@@ -10477,6 +10503,7 @@ class ShowOCIService(object):
                         'compartment_id': str(compartment['id']),
                         'defined_tags': [] if mysqls.defined_tags is None else mysqls.defined_tags,
                         'freeform_tags': [] if mysqls.freeform_tags is None else mysqls.freeform_tags,
+                        'backups': [],
                         'region_name': str(self.config['region'])
                     }
 
@@ -10534,6 +10561,339 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_database_mysql", e, compartment)
+            return data
+
+    ##########################################################################
+    # __load_database_mysql_backups
+    ##########################################################################
+    def __load_database_mysql_backups(self, mysql_backup_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "MYSQL Backups"
+
+            if self.flags.skip_backups:
+                self.__load_print_thread_cnt(header, cnt, start_time, "Skipped.")
+                return data
+
+            self.__load_print_status_with_threads(header)
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                backups = []
+                try:
+                    backups = oci.pagination.list_call_get_all_results(
+                        mysql_backup_client.list_backups,
+                        compartment_id=compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        raise
+
+                for backup in backups:
+                    if not self.check_lifecycle_state_active(backup.lifecycle_state):
+                        continue
+
+                    value = {
+                        'id': self.get_value(backup.id),
+                        'display_name': self.get_value(backup.display_name),
+                        'description': self.get_value(backup.description),
+                        'db_system_id': self.get_value(backup.db_system_id),
+                        'time_created': self.get_value(backup.time_created, trim_date=True),
+                        'lifecycle_state': self.get_value(backup.lifecycle_state),
+                        'backup_type': self.get_value(backup.backup_type),
+                        'creation_type': self.get_value(backup.creation_type),
+                        'data_storage_size_in_gbs': self.get_value(backup.data_storage_size_in_gbs),
+                        'backup_size_in_gbs': self.get_value(backup.backup_size_in_gbs),
+                        'retention_in_days': self.get_value(backup.retention_in_days),
+                        'mysql_version': self.get_value(backup.mysql_version),
+                        'shape_name': self.get_value(backup.shape_name),
+                        'compartment_id': str(compartment['id']),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'defined_tags': [] if backup.defined_tags is None else backup.defined_tags,
+                        'freeform_tags': [] if backup.freeform_tags is None else backup.freeform_tags,
+                        'region_name': str(self.config['region'])}
+
+                    # add to main data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+                return data
+            else:
+                raise
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_mysql_backups", e, compartment)
+            return data
+
+    ##########################################################################
+    # __load_database_postgresql
+    ##########################################################################
+    def __load_database_postgresql(self, postgresql_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            errstr = ""
+            header = "PostgreSQL Databases"
+            self.__load_print_status_with_threads(header)
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                databases = []
+                try:
+                    databases = oci.pagination.list_call_get_all_results(
+                        postgresql_client.list_db_systems,
+                        compartment_id=compartment['id'],
+                        sort_by="displayName",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                # mysql throw service error often, ignoring incase it does
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        print("e - " + str(e))
+                        return data
+
+                # loop on auto
+                # databases = oci.psql.models.DbSystemSummary
+                for pg in databases:
+                    value = {}
+                    if not self.check_lifecycle_state_active(pg.lifecycle_state):
+                        continue
+
+                    value = {
+                        'id': str(pg.id),
+                        'display_name': self.get_value(pg.display_name),
+                        'time_created': self.get_value(pg.time_created)[0:16],
+                        'time_updated': self.get_value(pg.time_updated)[0:16],
+                        'lifecycle_state': self.get_value(pg.lifecycle_state),
+                        'system_type': self.get_value(pg.system_type),
+                        'instance_count': self.get_value(pg.instance_count),
+                        'instance_ocpu_count': self.get_value(pg.instance_ocpu_count),
+                        'instance_memory_size_in_gbs': self.get_value(pg.instance_memory_size_in_gbs),
+                        'db_version': self.get_value(pg.db_version),
+                        'sum_info': 'Database PostgreSQL - ' + str(pg.shape),
+                        'sum_info_storage': 'Database - Storage (GB)',
+                        'sum_size_gb': 0,
+                        'config_id': "",
+                        'shape': "",
+                        'admin_username': "",
+                        'instances': [],
+                        'storage_system_type': "",
+                        'storage_is_regionally_durable': "",
+                        'storage_availability_domain': "",
+                        'storage_iops': "",
+                        'network_subnet_id': "",
+                        'network_subnet_name': "",
+                        'network_primary_db_endpoint_private_ip': "",
+                        'network_nsg_ids': [],
+                        'network_nsg_names': [],
+                        'management_maintenance_window_start': "",
+                        'management_backup_policy': "",
+                        'source_type': "",
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'compartment_id': str(compartment['id']),
+                        'defined_tags': [] if pg.defined_tags is None else pg.defined_tags,
+                        'freeform_tags': [] if pg.freeform_tags is None else pg.freeform_tags,
+                        'backups': [],
+                        'region_name': str(self.config['region'])
+                    }
+
+                    try:
+                        # get the full DBSystem - oci.mysql.models.DbSystem
+                        pgv = postgresql_client.get_db_system(pg.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                        if pgv:
+                            # instances
+                            for ins in pgv.instances:
+                                value['instances'].append({
+                                    'id': self.get_value(ins.id),
+                                    'display_name': self.get_value(ins.display_name),
+                                    'availability_domain': self.get_value(ins.availability_domain),
+                                    'lifecycle_state': self.get_value(ins.lifecycle_state),
+                                    'time_created': self.get_value(ins.time_created),
+                                    'time_updated': self.get_value(ins.time_updated)
+                                })
+
+                            value['admin_username'] = self.get_value(pgv.admin_username)
+                            value['shape'] = self.get_value(pgv.shape)
+                            value['shape_full'] = self.get_value(pgv.shape) + "." + self.get_value(pgv.instance_ocpu_count) + "." + self.get_value(pgv.instance_memory_size_in_gbs)
+                            value['config_id'] = self.get_value(pgv.config_id)
+                            value['sum_info'] = 'Database PostgreSQL - ' + value['shape_full']
+
+                            # storage_details
+                            if pgv.storage_details:
+                                value['storage_system_type'] = self.get_value(pgv.storage_details.system_type)
+                                value['storage_is_regionally_durable'] = self.get_value(pgv.storage_details.is_regionally_durable)
+                                value['storage_availability_domain'] = self.get_value(pgv.storage_details.availability_domain)
+                                if self.get_value(pgv.storage_details.system_type) == 'OCI_OPTIMIZED_STORAGE':
+                                    value['storage_iops'] = self.get_value(pgv.storage_details.iops)
+
+                            # network_details
+                            if pgv.network_details:
+                                value['network_subnet_id'] = self.get_value(pgv.network_details.subnet_id)
+                                value['network_primary_db_endpoint_private_ip'] = self.get_value(pgv.network_details.primary_db_endpoint_private_ip)
+                                if pgv.network_details.nsg_ids:
+                                    value['network_nsg_ids'] = pgv.network_details.nsg_ids
+                                    value['network_nsg_names'] = self.__load_core_network_get_nsg_names(pgv.network_details.nsg_ids)
+
+                            # management_policy
+                            if pgv.management_policy:
+                                value['management_maintenance_window_start'] = self.get_value(pgv.management_policy.maintenance_window_start)[0:16]
+                                value['management_backup_policy'] = self.get_value(pgv.management_policy.backup_policy.kind) if pgv.management_policy.backup_policy else ""
+
+                            # source
+                            if pgv.source:
+                                value['source_type'] = self.get_value(pgv.source.source_type)
+
+                    except Exception:
+                        print("w", end="")
+
+                    # add the data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_postgresql", e, compartment)
+            return data
+
+    ##########################################################################
+    # __load_database_postgresql_backups
+    ##########################################################################
+    def __load_database_postgresql_backups(self, postgresql_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            errstr = ""
+            header = "PostgreSQL Backups"
+
+            if self.flags.skip_backups:
+                self.__load_print_thread_cnt(header, cnt, start_time, "Skipped.")
+                return data
+
+            self.__load_print_status_with_threads(header)
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    continue
+
+                if self.flags.skip_threads:
+                    print(".", end="")
+
+                backups = []
+                try:
+                    backups = oci.pagination.list_call_get_all_results(
+                        postgresql_client.list_backups,
+                        compartment_id=compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning(to_print=self.flags.skip_threads)
+                        errstr += "a"
+                        continue
+                    else:
+                        raise
+
+                for backup in backups:
+                    if not self.check_lifecycle_state_active(backup.lifecycle_state):
+                        continue
+
+                    value = {
+                        'id': self.get_value(backup.id),
+                        'display_name': self.get_value(backup.display_name),
+                        'db_system_id': self.get_value(backup.db_system_id),
+                        'time_created': self.get_value(backup.time_created, trim_date=True),
+                        'time_updated': self.get_value(backup.time_updated, trim_date=True),
+                        'lifecycle_state': self.get_value(backup.lifecycle_state),
+                        'lifecycle_details': self.get_value(backup.lifecycle_details),
+                        'source_type': self.get_value(backup.source_type),
+                        'backup_size': self.get_value(backup.backup_size),
+                        'retention_period': self.get_value(backup.retention_period),
+                        'compartment_id': str(compartment['id']),
+                        'compartment_name': str(compartment['name']),
+                        'compartment_path': str(compartment['path']),
+                        'defined_tags': [] if backup.defined_tags is None else backup.defined_tags,
+                        'freeform_tags': [] if backup.freeform_tags is None else backup.freeform_tags,
+                        'region_name': str(self.config['region'])}
+
+                    # add to main data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_thread_cnt(header, cnt, start_time, errstr)
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+                return data
+            else:
+                raise
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_postgresql_backups", e, compartment)
             return data
 
     ##########################################################################
@@ -13138,6 +13498,7 @@ class ShowOCIService(object):
             oce_client = oci.oce.OceInstanceClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             ocvs_client = oci.ocvp.SddcClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             esxi_client = oci.ocvp.EsxiHostClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
+            cluster_client = oci.ocvp.ClusterClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             vb_client = oci.visual_builder.VbInstanceClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             opensearch_client = oci.opensearch.OpensearchClusterClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
             virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer, timeout=(self.flags.connection_timeout, self.flags.read_timeout))
@@ -13157,6 +13518,7 @@ class ShowOCIService(object):
                 ocvs_client.base_client.session.proxies = {'https': self.flags.proxy}
                 vb_client.base_client.session.proxies = {'https': self.flags.proxy}
                 esxi_client.base_client.session.proxies = {'https': self.flags.proxy}
+                cluster_client.base_client.session.proxies = {'https': self.flags.proxy}
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
                 opensearch_client.base_client.session.proxies = {'https': self.flags.proxy}
                 devops_client.base_client.session.proxies = {'https': self.flags.proxy}
@@ -13192,7 +13554,7 @@ class ShowOCIService(object):
             ##########################
             if self.flags.skip_threads:
                 paas = self.data[self.C_PAAS_NATIVE]
-                paas[self.C_PAAS_NATIVE_OCVS] += self.__load_paas_ocvs(ocvs_client, esxi_client, virtual_network, compartments)
+                paas[self.C_PAAS_NATIVE_OCVS] += self.__load_paas_ocvs(ocvs_client, cluster_client, esxi_client, virtual_network, compartments)
                 paas[self.C_PAAS_NATIVE_OIC] += self.__load_paas_oic(oic_client, compartments)
                 paas[self.C_PAAS_NATIVE_OCE] += self.__load_paas_oce(oce_client, compartments)
                 paas[self.C_PAAS_NATIVE_OAC] += self.__load_paas_oac(oac_client, compartments)
@@ -13213,7 +13575,7 @@ class ShowOCIService(object):
             ##########################
             else:
                 with ThreadPoolExecutor(max_workers=self.flags.threads) as executor:
-                    future_PAAS_NATIVE_OCVS = executor.submit(self.__load_paas_ocvs, ocvs_client, esxi_client, virtual_network, compartments)
+                    future_PAAS_NATIVE_OCVS = executor.submit(self.__load_paas_ocvs, ocvs_client, cluster_client, esxi_client, virtual_network, compartments)
                     future_PAAS_NATIVE_OIC = executor.submit(self.__load_paas_oic, oic_client, compartments)
                     future_PAAS_NATIVE_OCE = executor.submit(self.__load_paas_oce, oce_client, compartments)
                     future_PAAS_NATIVE_OAC = executor.submit(self.__load_paas_oac, oac_client, compartments)
@@ -13968,7 +14330,7 @@ class ShowOCIService(object):
     ##########################################################################
     # __load_paas_osvc - vmware
     ##########################################################################
-    def __load_paas_ocvs(self, ocvs_client, esxi_client, virtual_network, compartments):
+    def __load_paas_ocvs(self, ocvs_client, cluster_client, esxi_client, virtual_network, compartments):
 
         data = []
         cnt = 0
@@ -14013,105 +14375,192 @@ class ShowOCIService(object):
                 for vmware_summary in ocvs:
                     if not self.check_lifecycle_state_active(vmware_summary.lifecycle_state):
                         continue
+                    if vmware_summary.lifecycle_state == 'FAILED':
+                        continue
 
                     # get vmware object with more details
                     # vmware = oci.ocvp.models.Sddc
                     vmware = ocvs_client.get_sddc(vmware_summary.id).data
-
+                    sddc_ocpus = 0
                     val = {
-                        'id': str(vmware.id),
-                        'display_name': str(vmware.display_name),
-                        'compute_availability_domain': str(vmware.compute_availability_domain),
-                        'instance_display_name_prefix': str(vmware.instance_display_name_prefix),
-                        'vmware_software_version': str(vmware.vmware_software_version),
-                        'esxi_hosts_count': str(vmware.esxi_hosts_count),
-                        'nsx_manager_fqdn': str(vmware.nsx_manager_fqdn),
-                        'nsx_manager_private_ip_id': str(vmware.nsx_manager_private_ip_id),
-                        'nsx_manager_private_ip': self.__load_core_network_single_privateip(virtual_network, vmware.nsx_manager_private_ip_id, False),
-                        'nsx_manager_username': str(vmware.nsx_manager_username),
-                        'nsx_manager_initial_password': str(vmware.nsx_manager_initial_password),
-                        'vcenter_fqdn': str(vmware.vcenter_fqdn),
-                        'vcenter_username': str(vmware.vcenter_username),
-                        'vcenter_private_ip_id': str(vmware.vcenter_private_ip_id),
+                        'id': self.get_value(vmware.id),
+                        'display_name': self.get_value(vmware.display_name),
+                        'sddc_ocpus': 0,
+                        'vmware_software_version': self.get_value(vmware.vmware_software_version),
+                        'esxi_software_version': self.get_value(vmware.esxi_software_version),
+                        'clusters_count': self.get_value(vmware.clusters_count),
+                        'vcenter_fqdn': self.get_value(vmware.vcenter_fqdn),
+                        'nsx_manager_fqdn': self.get_value(vmware.nsx_manager_fqdn),
+                        'vcenter_private_ip_id': self.get_value(vmware.vcenter_private_ip_id),
                         'vcenter_private_ip': self.__load_core_network_single_privateip(virtual_network, vmware.vcenter_private_ip_id, False),
-                        'vcenter_initial_password': str(vmware.vcenter_initial_password),
-                        'workload_network_cidr': str(vmware.workload_network_cidr),
-                        'nsx_overlay_segment_name': str(vmware.nsx_overlay_segment_name),
-                        'nsx_edge_uplink_ip_id': str(vmware.nsx_edge_uplink_ip_id),
+                        'nsx_manager_private_ip_id': self.get_value(vmware.nsx_manager_private_ip_id),
+                        'nsx_manager_private_ip': self.__load_core_network_single_privateip(virtual_network, vmware.nsx_manager_private_ip_id, False),
+                        'vcenter_username': self.get_value(vmware.vcenter_username),
+                        'nsx_manager_username': self.get_value(vmware.nsx_manager_username),
+                        'nsx_edge_uplink_ip_id': self.get_value(vmware.nsx_edge_uplink_ip_id),
                         'nsx_edge_uplink_ip': self.__load_core_network_single_privateip(virtual_network, vmware.nsx_edge_uplink_ip_id, True),
-                        'provisioning_subnet_id': str(vmware.provisioning_subnet_id),
-                        'provisioning_subnet': self.get_network_subnet(vmware.provisioning_subnet_id, True),
-                        'vsphere_vlan_id': str(vmware.vsphere_vlan_id),
-                        'vsphere_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.vsphere_vlan_id),
-                        'vmotion_vlan_id': str(vmware.vmotion_vlan_id),
-                        'vmotion_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.vmotion_vlan_id),
-                        'vsan_vlan_id': str(vmware.vsan_vlan_id),
-                        'vsan_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.vsan_vlan_id),
-                        'nsx_v_tep_vlan_id': str(vmware.nsx_v_tep_vlan_id),
-                        'nsx_v_tep_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_v_tep_vlan_id),
-                        'nsx_edge_v_tep_vlan_id': str(vmware.nsx_edge_v_tep_vlan_id),
-                        'nsx_edge_v_tep_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_edge_v_tep_vlan_id),
-                        'nsx_edge_uplink1_vlan_id': str(vmware.nsx_edge_uplink1_vlan_id),
-                        'nsx_edge_uplink1_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_edge_uplink1_vlan_id),
-                        'nsx_edge_uplink2_vlan_id': str(vmware.nsx_edge_uplink2_vlan_id),
-                        'nsx_edge_uplink2_vlan': self.__load_core_network_single_vlan(virtual_network, vmware.nsx_edge_uplink2_vlan_id),
-                        'hcx_private_ip_id': str(vmware.hcx_private_ip_id),
-                        'hcx_fqdn': str(vmware.hcx_fqdn),
-                        'hcx_initial_password': str(vmware.hcx_initial_password),
-                        'hcx_vlan_id': str(vmware.hcx_vlan_id),
-                        'hcx_on_prem_key': str(vmware.hcx_on_prem_key),
-                        'is_hcx_enabled': str(vmware.is_hcx_enabled),
-                        'time_created': str(vmware.time_created),
-                        'time_updated': str(vmware.time_updated),
-                        'lifecycle_state': str(vmware.lifecycle_state),
-                        'sum_info': "PaaS OCVS VMWare ESXi Servers",
-                        'sum_size_gb': str(vmware.esxi_hosts_count),
+                        'hcx_private_ip_id': self.get_value(vmware.hcx_private_ip_id),
+                        'hcx_private_ip': self.__load_core_network_single_privateip(virtual_network, vmware.hcx_private_ip_id, True),
+                        'hcx_fqdn': self.get_value(vmware.hcx_fqdn),
+                        'hcx_mode': self.get_value(vmware.hcx_mode),
+                        'is_hcx_pending_downgrade': self.get_value(vmware.is_hcx_pending_downgrade),
+                        'time_hcx_billing_cycle_end': self.get_value(vmware.time_hcx_billing_cycle_end),
+                        'time_hcx_license_status_updated': self.get_value(vmware.time_hcx_license_status_updated),
+                        'is_single_host_sddc': self.get_value(vmware.is_single_host_sddc) if vmware.is_single_host_sddc else "False",
+                        'time_created': self.get_value(vmware.time_created, trim_date=True),
+                        'time_updated': self.get_value(vmware.time_updated, trim_date=True),
+                        'lifecycle_state': self.get_value(vmware.lifecycle_state),
+                        'sum_info': "PaaS OCVS SDDC Clusters",
+                        'sum_size_gb': self.get_value(vmware.clusters_count),
                         'compartment_name': str(compartment['name']),
                         'compartment_path': str(compartment['path']),
                         'compartment_id': str(compartment['id']),
                         'defined_tags': [] if vmware.defined_tags is None else vmware.defined_tags,
                         'freeform_tags': [] if vmware.freeform_tags is None else vmware.freeform_tags,
-                        'esxihosts': [],
+                        'initial_configuration': [{
+                            'vsphere_type': self.get_value(icfg.vsphere_type),
+                            'compute_availability_domain': self.get_value(icfg.compute_availability_domain),
+                            'display_name': self.get_value(icfg.display_name),
+                            'instance_display_name_prefix': self.get_value(icfg.instance_display_name_prefix),
+                            'esxi_hosts_count': self.get_value(icfg.esxi_hosts_count),
+                            'initial_commitment': self.get_value(icfg.initial_commitment),
+                            'workload_network_cidr': self.get_value(icfg.workload_network_cidr),
+                            'initial_host_shape_name': self.get_value(icfg.initial_host_shape_name),
+                            'initial_host_ocpu_count': self.get_value(icfg.initial_host_ocpu_count),
+                            'is_shielded_instance_enabled': self.get_value(icfg.is_shielded_instance_enabled),
+                            'capacity_reservation_id': self.get_value(icfg.capacity_reservation_id),
+                            'network_configuration': self.__load_paas_ocvs_network_configuration(icfg.network_configuration, virtual_network),
+                            'datastores': [{
+                                'block_volume_ids': x.block_volume_ids,
+                                'datastore_type': self.get_value(x.datastore_type)
+                            } for x in icfg.datastores] if icfg.datastores else [],
+                        } for icfg in vmware.initial_configuration.initial_cluster_configurations] if vmware.initial_configuration and vmware.initial_configuration.initial_cluster_configurations else [],
+                        'clusters': [],
+                        'cluster_query_error': "",
                         'region_name': str(self.config['region'])}
 
                     #######################
-                    # get the esxi hosts
+                    # get the Clusters
                     #######################
-                    esxis = []
+                    clusters = []
                     try:
-                        esxis = esxi_client.list_esxi_hosts(
+                        clusters = cluster_client.list_clusters(
+                            compartment_id=vmware.compartment_id,
                             sddc_id=vmware.id,
                             sort_by="displayName",
                             retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                         ).data
 
-                    except oci.exceptions.ServiceError:
-                        pass
-                    except oci.exceptions.ConnectTimeout:
-                        pass
+                    except oci.exceptions.ServiceError as e:
+                        val['cluster_query_error'] += str(e)
+                        errstr += "c"
+                    except oci.exceptions.ConnectTimeout as e:
+                        val['cluster_query_error'] += str(e)
+                        errstr += "c"
 
-                    # esxi = classoci.ocvp.models.EsxiHostSummary
-                    if esxis:
-                        for esxi in esxis.items:
-                            if self.check_lifecycle_state_active(esxi.lifecycle_state):
-                                val['esxihosts'].append(
-                                    {
-                                        'id': str(esxi.id),
-                                        'display_name': str(esxi.display_name),
-                                        'compute_instance_id': str(esxi.compute_instance_id),
-                                        'billing_contract_end_date': str(esxi.billing_contract_end_date),
-                                        'current_sku': str(esxi.current_sku),
-                                        'next_sku': str(esxi.next_sku),
-                                        'time_created': str(esxi.time_created),
-                                        'time_updated': str(esxi.time_updated),
-                                        'lifecycle_state': str(esxi.lifecycle_state),
-                                        'defined_tags': [] if esxi.defined_tags is None else esxi.defined_tags,
-                                        'freeform_tags': [] if esxi.freeform_tags is None else esxi.freeform_tags
-                                    }
-                                )
+                    # esxi = oci.ocvp.models.ClusterSummary
+                    if clusters:
+                        for cluster in clusters.items:
+
+                            # oci.ocvp.models.Cluster
+                            cl = cluster_client.get_cluster(cluster_id=cluster.id).data
+                            cluster_ocpus = 0
+                            cldata = {
+                                'id': self.get_value(cl.id),
+                                'compute_availability_domain': self.get_value(cl.compute_availability_domain),
+                                'display_name': self.get_value(cl.display_name),
+                                'cluster_ocpus': 0,
+                                'instance_display_name_prefix': self.get_value(cl.instance_display_name_prefix),
+                                'vmware_software_version': self.get_value(cl.vmware_software_version),
+                                'esxi_software_version': self.get_value(cl.esxi_software_version),
+                                'esxi_hosts_count': self.get_value(cl.esxi_hosts_count),
+                                'initial_commitment': self.get_value(cl.initial_commitment),
+                                'workload_network_cidr': self.get_value(cl.workload_network_cidr),
+                                'time_created': self.get_value(cl.time_created, trim_date=True),
+                                'time_updated': self.get_value(cl.time_updated, trim_date=True),
+                                'lifecycle_state': self.get_value(cl.lifecycle_state),
+                                'initial_host_shape_name': self.get_value(cl.initial_host_shape_name),
+                                'initial_host_ocpu_count': self.get_value(cl.initial_host_ocpu_count),
+                                'is_shielded_instance_enabled': self.get_value(cl.is_shielded_instance_enabled),
+                                'capacity_reservation_id': self.get_value(cl.capacity_reservation_id),
+                                'vsphere_type': self.get_value(cl.vsphere_type),
+                                'datastores': [{
+                                    'block_volume_ids': x.block_volume_ids,
+                                    'capacity': self.get_value(x.capacity),
+                                    'datastore_type': self.get_value(x.datastore_type)
+                                } for x in cl.datastores] if cl.datastores else [],
+                                'network_configuration': self.__load_paas_ocvs_network_configuration(cl.network_configuration, virtual_network),
+                                'esxihosts': [],
+                                'esxi_query_error': "",
+                                'defined_tags': [] if cl.defined_tags is None else cl.defined_tags,
+                                'freeform_tags': [] if cl.freeform_tags is None else cl.freeform_tags
+                            }
+
+                            #################################################
+                            # get the esxi hosts that belongs to the cluster
+                            #################################################
+                            esxis = []
+                            try:
+                                esxis = esxi_client.list_esxi_hosts(
+                                    cluster_id=cl.id,
+                                    sort_by="displayName",
+                                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                                ).data
+
+                            except oci.exceptions.ServiceError as e:
+                                val['esxi_query_error'] += str(e)
+                                errstr += "x"
+                            except oci.exceptions.ConnectTimeout as e:
+                                val['esxi_query_error'] += str(e)
+                                errstr += "x"
+
+                            # esxi = oci.ocvp.models.EsxiHostSummary
+                            if esxis:
+                                for esxi in esxis.items:
+                                    if self.check_lifecycle_state_active(esxi.lifecycle_state):
+                                        exidata = {
+                                            'id': self.get_value(esxi.id),
+                                            'cluster_id': self.get_value(esxi.cluster_id),
+                                            'display_name': self.get_value(esxi.display_name),
+                                            'compute_instance_id': self.get_value(esxi.compute_instance_id),
+                                            'time_created': self.get_value(esxi.time_created, trim_date=True),
+                                            'time_updated': self.get_value(esxi.time_updated, trim_date=True),
+                                            'lifecycle_state': self.get_value(esxi.lifecycle_state),
+                                            'current_commitment': self.get_value(esxi.current_commitment),
+                                            'next_commitment': self.get_value(esxi.next_commitment),
+                                            'billing_contract_end_date': self.get_value(esxi.billing_contract_end_date),
+                                            'failed_esxi_host_id': self.get_value(esxi.failed_esxi_host_id),
+                                            'replacement_esxi_host_id': self.get_value(esxi.replacement_esxi_host_id),
+                                            'grace_period_end_date': self.get_value(esxi.grace_period_end_date, trim_date=True),
+                                            'vmware_software_version': self.get_value(esxi.vmware_software_version),
+                                            'non_upgraded_esxi_host_id': self.get_value(esxi.non_upgraded_esxi_host_id),
+                                            'upgraded_replacement_esxi_host_id': self.get_value(esxi.upgraded_replacement_esxi_host_id),
+                                            'compute_availability_domain': self.get_value(esxi.compute_availability_domain),
+                                            'host_shape_name': self.get_value(esxi.host_shape_name),
+                                            'host_ocpu_count': self.get_value(esxi.host_ocpu_count),
+                                            'billing_donor_host_id': self.get_value(esxi.billing_donor_host_id),
+                                            'swap_billing_host_id': self.get_value(esxi.swap_billing_host_id),
+                                            'is_billing_continuation_in_progress': self.get_value(esxi.is_billing_continuation_in_progress),
+                                            'is_billing_swapping_in_progress': self.get_value(esxi.is_billing_swapping_in_progress),
+                                            'defined_tags': [] if esxi.defined_tags is None else esxi.defined_tags,
+                                            'freeform_tags': [] if esxi.freeform_tags is None else esxi.freeform_tags
+                                        }
+
+                                    # add the esxi to the cluster
+                                    cldata['esxihosts'].append(exidata)
+
+                                    # count ocpus
+                                    if esxi.host_ocpu_count and str(esxi.host_ocpu_count).replace(".", "").isnumeric():
+                                        cluster_ocpus += esxi.host_ocpu_count
+                                        sddc_ocpus += esxi.host_ocpu_count
+
+                            # add the clusters to the vmware
+                            cldata['cluster_ocpus'] = str(cluster_ocpus)
+                            val['clusters'].append(cldata)
 
                     # add the data
                     cnt += 1
+                    val['sddc_ocpus'] = str(sddc_ocpus)
                     data.append(val)
 
             self.__load_print_thread_cnt(header, cnt, start_time, errstr)
@@ -14123,6 +14572,61 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_paas_ocvs", e, compartment)
+            return data
+
+    ##########################################################################
+    # __load_paas_oac
+    ##########################################################################
+    def __load_paas_ocvs_network_configuration(self, network_configuration, virtual_network):
+        try:
+            net = network_configuration
+            data = {
+                'provisioning_subnet_id': "",
+                'provisioning_subnet': "",
+                'vsphere_vlan_id': "",
+                'vsphere_vlan': "",
+                'vmotion_vlan_id': "",
+                'vmotion_vlan': "",
+                'vsan_vlan_id': "",
+                'vsan_vlan': "",
+                'nsx_v_tep_vlan_id': "",
+                'nsx_v_tep_vlan': "",
+                'nsx_edge_v_tep_vlan_id': "",
+                'nsx_edge_v_tep_vlan': "",
+                'nsx_edge_uplink1_vlan_id': "",
+                'nsx_edge_uplink1_vlan': "",
+                'nsx_edge_uplink2_vlan_id': "",
+                'nsx_edge_uplink2_vlan': "",
+                'provisioning_vlan_id': "",
+                'provisioning_vlan': "",
+                'hcx_vlan_id': "",
+                'hcx_vlan': ""
+            }
+            if net:
+                data['provisioning_subnet_id'] = self.get_value(net.provisioning_subnet_id)
+                data['provisioning_subnet'] = self.get_network_subnet(net.provisioning_subnet_id, True)
+                data['vsphere_vlan_id'] = self.get_value(net.vsphere_vlan_id)
+                data['vsphere_vlan'] = self.__load_core_network_single_vlan(virtual_network, net.vsphere_vlan_id)
+                data['vmotion_vlan_id'] = self.get_value(net.vmotion_vlan_id)
+                data['vmotion_vlan'] = self.__load_core_network_single_vlan(virtual_network, net.vmotion_vlan_id)
+                data['vsan_vlan_id'] = self.get_value(net.vsan_vlan_id)
+                data['vsan_vlan'] = self.__load_core_network_single_vlan(virtual_network, net.vsan_vlan_id)
+                data['nsx_v_tep_vlan_id'] = self.get_value(net.nsx_v_tep_vlan_id)
+                data['nsx_v_tep_vlan'] = self.__load_core_network_single_vlan(virtual_network, net.nsx_v_tep_vlan_id)
+                data['nsx_edge_v_tep_vlan_id'] = self.get_value(net.nsx_edge_v_tep_vlan_id)
+                data['nsx_edge_v_tep_vlan'] = self.__load_core_network_single_vlan(virtual_network, net.nsx_edge_v_tep_vlan_id)
+                data['nsx_edge_uplink1_vlan_id'] = self.get_value(net.nsx_edge_uplink1_vlan_id)
+                data['nsx_edge_uplink1_vlan'] = self.__load_core_network_single_vlan(virtual_network, net.nsx_edge_uplink1_vlan_id)
+                data['nsx_edge_uplink2_vlan_id'] = self.get_value(net.nsx_edge_uplink2_vlan_id)
+                data['nsx_edge_uplink2_vlan'] = self.__load_core_network_single_vlan(virtual_network, net.nsx_edge_uplink2_vlan_id)
+                data['provisioning_vlan_id'] = self.get_value(net.provisioning_vlan_id)
+                data['provisioning_vlan'] = self.__load_core_network_single_vlan(virtual_network, net.provisioning_vlan_id)
+                data['hcx_vlan_id'] = self.get_value(net.hcx_vlan_id)
+                data['hcx_vlan'] = self.__load_core_network_single_vlan(virtual_network, net.hcx_vlan_id)
+            return data
+
+        except Exception as e:
+            self.__print_error("__load_paas_ocvs_network_configuration", e)
             return data
 
     ##########################################################################

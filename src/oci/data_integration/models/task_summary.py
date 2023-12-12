@@ -111,6 +111,10 @@ class TaskSummary(object):
             The value to assign to the config_provider_delegate property of this TaskSummary.
         :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
+        :param is_concurrent_allowed:
+            The value to assign to the is_concurrent_allowed property of this TaskSummary.
+        :type is_concurrent_allowed: bool
+
         :param metadata:
             The value to assign to the metadata property of this TaskSummary.
         :type metadata: oci.data_integration.models.ObjectMetadata
@@ -135,6 +139,7 @@ class TaskSummary(object):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'ConfigProvider',
+            'is_concurrent_allowed': 'bool',
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)'
         }
@@ -154,6 +159,7 @@ class TaskSummary(object):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
+            'is_concurrent_allowed': 'isConcurrentAllowed',
             'metadata': 'metadata',
             'key_map': 'keyMap'
         }
@@ -172,6 +178,7 @@ class TaskSummary(object):
         self._parameters = None
         self._op_config_values = None
         self._config_provider_delegate = None
+        self._is_concurrent_allowed = None
         self._metadata = None
         self._key_map = None
 
@@ -532,6 +539,30 @@ class TaskSummary(object):
         :type: oci.data_integration.models.ConfigProvider
         """
         self._config_provider_delegate = config_provider_delegate
+
+    @property
+    def is_concurrent_allowed(self):
+        """
+        Gets the is_concurrent_allowed of this TaskSummary.
+        Whether the same task can be executed concurrently.
+
+
+        :return: The is_concurrent_allowed of this TaskSummary.
+        :rtype: bool
+        """
+        return self._is_concurrent_allowed
+
+    @is_concurrent_allowed.setter
+    def is_concurrent_allowed(self, is_concurrent_allowed):
+        """
+        Sets the is_concurrent_allowed of this TaskSummary.
+        Whether the same task can be executed concurrently.
+
+
+        :param is_concurrent_allowed: The is_concurrent_allowed of this TaskSummary.
+        :type: bool
+        """
+        self._is_concurrent_allowed = is_concurrent_allowed
 
     @property
     def metadata(self):

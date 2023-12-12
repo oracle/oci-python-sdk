@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateSqlFirewallConfigDetails(object):
     """
-    Details to update the SQL firewall config.
+    Details to update the SQL Firewall config.
     """
 
     #: A constant which can be used with the status property of a UpdateSqlFirewallConfigDetails.

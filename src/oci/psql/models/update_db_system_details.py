@@ -81,7 +81,7 @@ class UpdateDbSystemDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateDbSystemDetails.
-        DbSystem display name.
+        A user-friendly display name for the database system. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateDbSystemDetails.
@@ -93,7 +93,7 @@ class UpdateDbSystemDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateDbSystemDetails.
-        DbSystem display name.
+        A user-friendly display name for the database system. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateDbSystemDetails.
@@ -105,7 +105,7 @@ class UpdateDbSystemDetails(object):
     def description(self):
         """
         Gets the description of this UpdateDbSystemDetails.
-        Description of a DbSystem. This field should be input by the user.
+        A user-provided description of the database system.
 
 
         :return: The description of this UpdateDbSystemDetails.
@@ -117,7 +117,7 @@ class UpdateDbSystemDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateDbSystemDetails.
-        Description of a DbSystem. This field should be input by the user.
+        A user-provided description of the database system.
 
 
         :param description: The description of this UpdateDbSystemDetails.

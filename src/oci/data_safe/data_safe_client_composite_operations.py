@@ -763,7 +763,7 @@ class DataSafeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str sql_firewall_policy_id: (required)
-            The OCID of the SQL firewall policy resource.
+            The OCID of the SQL Firewall policy resource.
 
         :param oci.data_safe.models.ChangeSqlFirewallPolicyCompartmentDetails change_sql_firewall_policy_compartment_details: (required)
             Details for the compartment move.
@@ -2202,7 +2202,7 @@ class DataSafeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str sql_firewall_policy_id: (required)
-            The OCID of the SQL firewall policy resource.
+            The OCID of the SQL Firewall policy resource.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
@@ -3463,7 +3463,7 @@ class DataSafeClientCompositeOperations(object):
             Unique report definition identifier
 
         :param oci.data_safe.models.ScheduleReportDetails schedule_report_details: (required)
-            The details for the audit report schedule. It contains details such as schedule, PDF/XLS and number of rows.
+            The details for the audit report schedule. It contains details such as schedule, MIME type .xls/.pdf and number of rows.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
@@ -4680,10 +4680,10 @@ class DataSafeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str sql_firewall_policy_id: (required)
-            The OCID of the SQL firewall policy resource.
+            The OCID of the SQL Firewall policy resource.
 
         :param oci.data_safe.models.UpdateSqlFirewallPolicyDetails update_sql_firewall_policy_details: (required)
-            Details to update the SQL firewall policy.
+            Details to update the SQL Firewall policy.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`

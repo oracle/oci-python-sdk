@@ -6,12 +6,15 @@
 
 from __future__ import absolute_import
 
+from .average_carbon_emission import AverageCarbonEmission
+from .clean_energy_usage import CleanEnergyUsage
 from .configuration import Configuration
 from .configuration_aggregation import ConfigurationAggregation
 from .cost_analysis_ui import CostAnalysisUI
 from .create_custom_table_details import CreateCustomTableDetails
 from .create_query_details import CreateQueryDetails
 from .create_schedule_details import CreateScheduleDetails
+from .create_usage_carbon_emissions_query_details import CreateUsageCarbonEmissionsQueryDetails
 from .custom_table import CustomTable
 from .custom_table_collection import CustomTableCollection
 from .custom_table_summary import CustomTableSummary
@@ -28,6 +31,7 @@ from .query_properties import QueryProperties
 from .query_summary import QuerySummary
 from .report_query import ReportQuery
 from .request_summarized_usages_details import RequestSummarizedUsagesDetails
+from .request_usage_carbon_emissions_details import RequestUsageCarbonEmissionsDetails
 from .result_location import ResultLocation
 from .saved_custom_table import SavedCustomTable
 from .schedule import Schedule
@@ -41,17 +45,28 @@ from .tag import Tag
 from .update_custom_table_details import UpdateCustomTableDetails
 from .update_query_details import UpdateQueryDetails
 from .update_schedule_details import UpdateScheduleDetails
+from .update_usage_carbon_emissions_query_details import UpdateUsageCarbonEmissionsQueryDetails
 from .usage_aggregation import UsageAggregation
+from .usage_carbon_emission_aggregation import UsageCarbonEmissionAggregation
+from .usage_carbon_emission_summary import UsageCarbonEmissionSummary
+from .usage_carbon_emissions_query import UsageCarbonEmissionsQuery
+from .usage_carbon_emissions_query_collection import UsageCarbonEmissionsQueryCollection
+from .usage_carbon_emissions_query_definition import UsageCarbonEmissionsQueryDefinition
+from .usage_carbon_emissions_query_summary import UsageCarbonEmissionsQuerySummary
+from .usage_carbon_emissions_report_query import UsageCarbonEmissionsReportQuery
 from .usage_summary import UsageSummary
 
 # Maps type names to classes for usage_api services.
 usage_api_type_mapping = {
+    "AverageCarbonEmission": AverageCarbonEmission,
+    "CleanEnergyUsage": CleanEnergyUsage,
     "Configuration": Configuration,
     "ConfigurationAggregation": ConfigurationAggregation,
     "CostAnalysisUI": CostAnalysisUI,
     "CreateCustomTableDetails": CreateCustomTableDetails,
     "CreateQueryDetails": CreateQueryDetails,
     "CreateScheduleDetails": CreateScheduleDetails,
+    "CreateUsageCarbonEmissionsQueryDetails": CreateUsageCarbonEmissionsQueryDetails,
     "CustomTable": CustomTable,
     "CustomTableCollection": CustomTableCollection,
     "CustomTableSummary": CustomTableSummary,
@@ -68,6 +83,7 @@ usage_api_type_mapping = {
     "QuerySummary": QuerySummary,
     "ReportQuery": ReportQuery,
     "RequestSummarizedUsagesDetails": RequestSummarizedUsagesDetails,
+    "RequestUsageCarbonEmissionsDetails": RequestUsageCarbonEmissionsDetails,
     "ResultLocation": ResultLocation,
     "SavedCustomTable": SavedCustomTable,
     "Schedule": Schedule,
@@ -81,6 +97,14 @@ usage_api_type_mapping = {
     "UpdateCustomTableDetails": UpdateCustomTableDetails,
     "UpdateQueryDetails": UpdateQueryDetails,
     "UpdateScheduleDetails": UpdateScheduleDetails,
+    "UpdateUsageCarbonEmissionsQueryDetails": UpdateUsageCarbonEmissionsQueryDetails,
     "UsageAggregation": UsageAggregation,
+    "UsageCarbonEmissionAggregation": UsageCarbonEmissionAggregation,
+    "UsageCarbonEmissionSummary": UsageCarbonEmissionSummary,
+    "UsageCarbonEmissionsQuery": UsageCarbonEmissionsQuery,
+    "UsageCarbonEmissionsQueryCollection": UsageCarbonEmissionsQueryCollection,
+    "UsageCarbonEmissionsQueryDefinition": UsageCarbonEmissionsQueryDefinition,
+    "UsageCarbonEmissionsQuerySummary": UsageCarbonEmissionsQuerySummary,
+    "UsageCarbonEmissionsReportQuery": UsageCarbonEmissionsReportQuery,
     "UsageSummary": UsageSummary
 }

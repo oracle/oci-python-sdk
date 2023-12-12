@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlFirewallPolicyCollection(object):
     """
-    Collection of SQL firewall policy summary.
+    Collection of SQL Firewall policy summary.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class SqlFirewallPolicyCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this SqlFirewallPolicyCollection.
-        Array of SQL firewall policy summary.
+        Array of SQL Firewall policy summary.
 
 
         :return: The items of this SqlFirewallPolicyCollection.
@@ -51,7 +51,7 @@ class SqlFirewallPolicyCollection(object):
     def items(self, items):
         """
         Sets the items of this SqlFirewallPolicyCollection.
-        Array of SQL firewall policy summary.
+        Array of SQL Firewall policy summary.
 
 
         :param items: The items of this SqlFirewallPolicyCollection.

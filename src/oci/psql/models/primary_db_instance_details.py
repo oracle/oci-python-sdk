@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PrimaryDbInstanceDetails(object):
     """
-    The primary DbInstance details.
+    The primary database instance node details.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class PrimaryDbInstanceDetails(object):
     def db_instance_id(self):
         """
         **[Required]** Gets the db_instance_id of this PrimaryDbInstanceDetails.
-        Unique identifier of the DbInstance.
+        A unique identifier for the primary database instance node.
 
 
         :return: The db_instance_id of this PrimaryDbInstanceDetails.
@@ -51,7 +51,7 @@ class PrimaryDbInstanceDetails(object):
     def db_instance_id(self, db_instance_id):
         """
         Sets the db_instance_id of this PrimaryDbInstanceDetails.
-        Unique identifier of the DbInstance.
+        A unique identifier for the primary database instance node.
 
 
         :param db_instance_id: The db_instance_id of this PrimaryDbInstanceDetails.

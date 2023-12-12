@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Configuration(object):
     """
-    Db system Postgresql Configuration
+    PostgreSQL configuration for a database system.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Configuration.
@@ -155,7 +155,7 @@ class Configuration(object):
     def id(self):
         """
         **[Required]** Gets the id of this Configuration.
-        Unique identifier that is immutable on creation
+        A unique identifier for the configuration. Immutable on creation.
 
 
         :return: The id of this Configuration.
@@ -167,7 +167,7 @@ class Configuration(object):
     def id(self, id):
         """
         Sets the id of this Configuration.
-        Unique identifier that is immutable on creation
+        A unique identifier for the configuration. Immutable on creation.
 
 
         :param id: The id of this Configuration.
@@ -179,7 +179,7 @@ class Configuration(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this Configuration.
-        Config display name
+        A user-friendly display name for the configuration. Avoid entering confidential information.
 
 
         :return: The display_name of this Configuration.
@@ -191,7 +191,7 @@ class Configuration(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Configuration.
-        Config display name
+        A user-friendly display name for the configuration. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this Configuration.
@@ -203,7 +203,7 @@ class Configuration(object):
     def description(self):
         """
         Gets the description of this Configuration.
-        Config description
+        A description for the configuration.
 
 
         :return: The description of this Configuration.
@@ -215,7 +215,7 @@ class Configuration(object):
     def description(self, description):
         """
         Sets the description of this Configuration.
-        Config description
+        A description for the configuration.
 
 
         :param description: The description of this Configuration.
@@ -227,7 +227,9 @@ class Configuration(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Configuration.
-        Config compartment identifier
+        The `OCID`__ of the compartment that contains the configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Configuration.
@@ -239,7 +241,9 @@ class Configuration(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Configuration.
-        Config compartment identifier
+        The `OCID`__ of the compartment that contains the configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Configuration.
@@ -251,7 +255,12 @@ class Configuration(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Configuration.
-        The time Configuration was created. An RFC3339 formatted datetime string
+        The date and time that the configuration was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The time_created of this Configuration.
@@ -263,7 +272,12 @@ class Configuration(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Configuration.
-        The time Configuration was created. An RFC3339 formatted datetime string
+        The date and time that the configuration was created, expressed in
+        `RFC 3339`__ timestamp format.
+
+        Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param time_created: The time_created of this Configuration.
@@ -275,7 +289,7 @@ class Configuration(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Configuration.
-        The current state of the Configuration.
+        The current state of the configuration.
 
         Allowed values for this property are: "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -290,7 +304,7 @@ class Configuration(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Configuration.
-        The current state of the Configuration.
+        The current state of the configuration.
 
 
         :param lifecycle_state: The lifecycle_state of this Configuration.
@@ -329,7 +343,8 @@ class Configuration(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this Configuration.
-        Compute Shape Name like VM.Standard3.Flex.
+        The name of the shape for the configuration.
+        Example: `VM.Standard.E4.Flex`
 
 
         :return: The shape of this Configuration.
@@ -341,7 +356,8 @@ class Configuration(object):
     def shape(self, shape):
         """
         Sets the shape of this Configuration.
-        Compute Shape Name like VM.Standard3.Flex.
+        The name of the shape for the configuration.
+        Example: `VM.Standard.E4.Flex`
 
 
         :param shape: The shape of this Configuration.
@@ -353,7 +369,7 @@ class Configuration(object):
     def instance_ocpu_count(self):
         """
         **[Required]** Gets the instance_ocpu_count of this Configuration.
-        CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        CPU core count.
 
 
         :return: The instance_ocpu_count of this Configuration.
@@ -365,7 +381,7 @@ class Configuration(object):
     def instance_ocpu_count(self, instance_ocpu_count):
         """
         Sets the instance_ocpu_count of this Configuration.
-        CPU cpuCoreCount. Min value is 1. Max value depends on the shape.
+        CPU core count.
 
 
         :param instance_ocpu_count: The instance_ocpu_count of this Configuration.
@@ -377,7 +393,7 @@ class Configuration(object):
     def instance_memory_size_in_gbs(self):
         """
         **[Required]** Gets the instance_memory_size_in_gbs of this Configuration.
-        Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        Memory size in gigabytes with 1GB increment.
 
 
         :return: The instance_memory_size_in_gbs of this Configuration.
@@ -389,7 +405,7 @@ class Configuration(object):
     def instance_memory_size_in_gbs(self, instance_memory_size_in_gbs):
         """
         Sets the instance_memory_size_in_gbs of this Configuration.
-        Memory Size in GB with 1GB increment. Min value matches the cpuCoreCount. Max value depends on the shape.
+        Memory size in gigabytes with 1GB increment.
 
 
         :param instance_memory_size_in_gbs: The instance_memory_size_in_gbs of this Configuration.
@@ -401,7 +417,7 @@ class Configuration(object):
     def db_version(self):
         """
         **[Required]** Gets the db_version of this Configuration.
-        Version of the Postgresql DB
+        Version of the PostgreSQL database.
 
 
         :return: The db_version of this Configuration.
@@ -413,7 +429,7 @@ class Configuration(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this Configuration.
-        Version of the Postgresql DB
+        Version of the PostgreSQL database.
 
 
         :param db_version: The db_version of this Configuration.

@@ -115,7 +115,7 @@ class AuditPolicyDimensions(object):
         Gets the audit_policy_name of this AuditPolicyDimensions.
         The name of the audit policy. Refer to the `documentation`__ for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
 
-        __ https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827
+        __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827
 
 
         :return: The audit_policy_name of this AuditPolicyDimensions.
@@ -129,7 +129,7 @@ class AuditPolicyDimensions(object):
         Sets the audit_policy_name of this AuditPolicyDimensions.
         The name of the audit policy. Refer to the `documentation`__ for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
 
-        __ https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827
+        __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827
 
 
         :param audit_policy_name: The audit_policy_name of this AuditPolicyDimensions.

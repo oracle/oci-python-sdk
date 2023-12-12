@@ -62,6 +62,11 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
             The value to assign to the subnet_id property of this CreateAmazonS3ConnectionDetails.
         :type subnet_id: str
 
+        :param routing_method:
+            The value to assign to the routing_method property of this CreateAmazonS3ConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param technology_type:
             The value to assign to the technology_type property of this CreateAmazonS3ConnectionDetails.
         :type technology_type: str
@@ -86,6 +91,7 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
             'key_id': 'str',
             'nsg_ids': 'list[str]',
             'subnet_id': 'str',
+            'routing_method': 'str',
             'technology_type': 'str',
             'access_key_id': 'str',
             'secret_access_key': 'str'
@@ -102,6 +108,7 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
             'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'technology_type': 'technologyType',
             'access_key_id': 'accessKeyId',
             'secret_access_key': 'secretAccessKey'
@@ -117,6 +124,7 @@ class CreateAmazonS3ConnectionDetails(CreateConnectionDetails):
         self._key_id = None
         self._nsg_ids = None
         self._subnet_id = None
+        self._routing_method = None
         self._technology_type = None
         self._access_key_id = None
         self._secret_access_key = None

@@ -19,7 +19,7 @@ from showoci_service import ShowOCIService, ShowOCIFlags
 
 
 class ShowOCIData(object):
-    version = "23.11.28"
+    version = "23.12.12"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -3132,6 +3132,12 @@ class ShowOCIData(object):
             mysql = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_MYSQL, 'region_name', region_name, 'compartment_id', compartment['id'])
             if mysql:
                 for dbs in mysql:
+
+                    # Add backup
+                    backups = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_MYSQL_BACKUPS, 'region_name', region_name, 'db_system_id', dbs['id'])
+                    if backups:
+                        dbs['backups'] = backups
+
                     # Add subnet
                     if dbs['subnet_id'] != 'None':
                         dbs['subnet_name'] = self.__get_core_network_subnet_name(dbs['subnet_id'])
@@ -3142,6 +3148,80 @@ class ShowOCIData(object):
 
         except Exception as e:
             self.__print_error("__get_database_mysql", e)
+            return data
+
+    ##########################################################################
+    # __get_database_mysql_standalone_backups
+    ##########################################################################
+    def __get_database_mysql_standalone_backups(self, region_name, compartment):
+
+        data = []
+        try:
+            backups = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_MYSQL_BACKUPS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if backups:
+                for bck in backups:
+
+                    # check if db_system_id exist, if exist skip
+                    dbs = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_MYSQL, 'region_name', region_name, 'id', bck['db_system_id'])
+                    if dbs:
+                        continue
+
+                    data.append(bck)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_database_mysql_standalone_backups", e)
+            return data
+
+    ##########################################################################
+    # __get_database_postgresql
+    ##########################################################################
+    def __get_database_postgresql(self, region_name, compartment):
+
+        data = []
+        try:
+            pg = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_POSTGRESQL, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if pg:
+                for dbs in pg:
+
+                    # Add backup
+                    backups = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_POSTGRESQL_BACKUPS, 'region_name', region_name, 'db_system_id', dbs['id'])
+                    if backups:
+                        dbs['backups'] = backups
+
+                    # Add subnet
+                    if dbs['network_subnet_id']:
+                        dbs['network_subnet_name'] = self.__get_core_network_subnet_name(dbs['network_subnet_id'])
+                    else:
+                        dbs['network_subnet_name'] = ""
+                    data.append(dbs)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_database_postgresql", e)
+            return data
+
+    ##########################################################################
+    # __get_database_postgresql_standalone_backups
+    ##########################################################################
+    def __get_database_postgresql_standalone_backups(self, region_name, compartment):
+
+        data = []
+        try:
+            backups = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_POSTGRESQL_BACKUPS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if backups:
+                for bck in backups:
+
+                    # check if db_system_id exist, if exist skip
+                    dbs = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_POSTGRESQL, 'region_name', region_name, 'id', bck['db_system_id'])
+                    if dbs:
+                        continue
+
+                    data.append(bck)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_database_postgresql_standalone_backups", e)
             return data
 
     ##########################################################################
@@ -3254,6 +3334,21 @@ class ShowOCIData(object):
             if data:
                 if len(data) > 0:
                     return_data['mysql'] = data
+
+            data = self.__get_database_mysql_standalone_backups(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['mysql_standalone_backups'] = data
+
+            data = self.__get_database_postgresql(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['postgresql'] = data
+
+            data = self.__get_database_postgresql_standalone_backups(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['postgresql_standalone_backups'] = data
 
             data = self.__get_database_software_images(region_name, compartment)
             if data:

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DefaultConfigParams(object):
     """
-    Default DB Configuration
+    Default database configuration.
     """
 
     def __init__(self, **kwargs):
@@ -81,7 +81,7 @@ class DefaultConfigParams(object):
     def config_key(self):
         """
         **[Required]** Gets the config_key of this DefaultConfigParams.
-        Key is the configuration key.
+        The configuration variable name.
 
 
         :return: The config_key of this DefaultConfigParams.
@@ -93,7 +93,7 @@ class DefaultConfigParams(object):
     def config_key(self, config_key):
         """
         Sets the config_key of this DefaultConfigParams.
-        Key is the configuration key.
+        The configuration variable name.
 
 
         :param config_key: The config_key of this DefaultConfigParams.
@@ -105,7 +105,7 @@ class DefaultConfigParams(object):
     def default_config_value(self):
         """
         **[Required]** Gets the default_config_value of this DefaultConfigParams.
-        Default value
+        Default value for the variable.
 
 
         :return: The default_config_value of this DefaultConfigParams.
@@ -117,7 +117,7 @@ class DefaultConfigParams(object):
     def default_config_value(self, default_config_value):
         """
         Sets the default_config_value of this DefaultConfigParams.
-        Default value
+        Default value for the variable.
 
 
         :param default_config_value: The default_config_value of this DefaultConfigParams.
@@ -129,7 +129,7 @@ class DefaultConfigParams(object):
     def allowed_values(self):
         """
         **[Required]** Gets the allowed_values of this DefaultConfigParams.
-        Range or list of allowed values
+        Range or list of allowed values.
 
 
         :return: The allowed_values of this DefaultConfigParams.
@@ -141,7 +141,7 @@ class DefaultConfigParams(object):
     def allowed_values(self, allowed_values):
         """
         Sets the allowed_values of this DefaultConfigParams.
-        Range or list of allowed values
+        Range or list of allowed values.
 
 
         :param allowed_values: The allowed_values of this DefaultConfigParams.
@@ -153,7 +153,7 @@ class DefaultConfigParams(object):
     def is_restart_required(self):
         """
         **[Required]** Gets the is_restart_required of this DefaultConfigParams.
-        If true, modfying this configuration value will requires restart.
+        If true, modifying this configuration value will require a restart.
 
 
         :return: The is_restart_required of this DefaultConfigParams.
@@ -165,7 +165,7 @@ class DefaultConfigParams(object):
     def is_restart_required(self, is_restart_required):
         """
         Sets the is_restart_required of this DefaultConfigParams.
-        If true, modfying this configuration value will requires restart.
+        If true, modifying this configuration value will require a restart.
 
 
         :param is_restart_required: The is_restart_required of this DefaultConfigParams.
@@ -177,7 +177,7 @@ class DefaultConfigParams(object):
     def data_type(self):
         """
         **[Required]** Gets the data_type of this DefaultConfigParams.
-        Describes about the Datatype value.
+        Data type of the variable.
 
 
         :return: The data_type of this DefaultConfigParams.
@@ -189,7 +189,7 @@ class DefaultConfigParams(object):
     def data_type(self, data_type):
         """
         Sets the data_type of this DefaultConfigParams.
-        Describes about the Datatype value.
+        Data type of the variable.
 
 
         :param data_type: The data_type of this DefaultConfigParams.
@@ -201,7 +201,7 @@ class DefaultConfigParams(object):
     def is_overridable(self):
         """
         **[Required]** Gets the is_overridable of this DefaultConfigParams.
-        This flags tells whether the value is overridable or not.
+        Whether the value can be overridden or not.
 
 
         :return: The is_overridable of this DefaultConfigParams.
@@ -213,7 +213,7 @@ class DefaultConfigParams(object):
     def is_overridable(self, is_overridable):
         """
         Sets the is_overridable of this DefaultConfigParams.
-        This flags tells whether the value is overridable or not.
+        Whether the value can be overridden or not.
 
 
         :param is_overridable: The is_overridable of this DefaultConfigParams.
@@ -225,7 +225,7 @@ class DefaultConfigParams(object):
     def description(self):
         """
         **[Required]** Gets the description of this DefaultConfigParams.
-        Details about the Postgresql params.
+        Details about the PostgreSQL variable.
 
 
         :return: The description of this DefaultConfigParams.
@@ -237,7 +237,7 @@ class DefaultConfigParams(object):
     def description(self, description):
         """
         Sets the description of this DefaultConfigParams.
-        Details about the Postgresql params.
+        Details about the PostgreSQL variable.
 
 
         :param description: The description of this DefaultConfigParams.

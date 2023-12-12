@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ShapeSummary(object):
     """
-    Summary of the DbSystem shape.
+    Summary of the database system shape.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class ShapeSummary(object):
     def id(self):
         """
         Gets the id of this ShapeSummary.
-        Unique identifier for the shape
+        A unique identifier for the shape.
 
 
         :return: The id of this ShapeSummary.
@@ -72,7 +72,7 @@ class ShapeSummary(object):
     def id(self, id):
         """
         Sets the id of this ShapeSummary.
-        Unique identifier for the shape
+        A unique identifier for the shape.
 
 
         :param id: The id of this ShapeSummary.
@@ -84,7 +84,8 @@ class ShapeSummary(object):
     def shape(self):
         """
         **[Required]** Gets the shape of this ShapeSummary.
-        The Compute Shape Name like VM.Standard.E4.Flex
+        The name of the Compute VM shape.
+        Example: `VM.Standard.E4.Flex`
 
 
         :return: The shape of this ShapeSummary.
@@ -96,7 +97,8 @@ class ShapeSummary(object):
     def shape(self, shape):
         """
         Sets the shape of this ShapeSummary.
-        The Compute Shape Name like VM.Standard.E4.Flex
+        The name of the Compute VM shape.
+        Example: `VM.Standard.E4.Flex`
 
 
         :param shape: The shape of this ShapeSummary.
@@ -108,7 +110,7 @@ class ShapeSummary(object):
     def ocpu_count(self):
         """
         **[Required]** Gets the ocpu_count of this ShapeSummary.
-        The number of OCPUs
+        The number of OCPUs.
 
 
         :return: The ocpu_count of this ShapeSummary.
@@ -120,7 +122,7 @@ class ShapeSummary(object):
     def ocpu_count(self, ocpu_count):
         """
         Sets the ocpu_count of this ShapeSummary.
-        The number of OCPUs
+        The number of OCPUs.
 
 
         :param ocpu_count: The ocpu_count of this ShapeSummary.
@@ -132,7 +134,7 @@ class ShapeSummary(object):
     def memory_size_in_gbs(self):
         """
         **[Required]** Gets the memory_size_in_gbs of this ShapeSummary.
-        The amount of memory in GB
+        The amount of memory in gigabytes.
 
 
         :return: The memory_size_in_gbs of this ShapeSummary.
@@ -144,7 +146,7 @@ class ShapeSummary(object):
     def memory_size_in_gbs(self, memory_size_in_gbs):
         """
         Sets the memory_size_in_gbs of this ShapeSummary.
-        The amount of memory in GB
+        The amount of memory in gigabytes.
 
 
         :param memory_size_in_gbs: The memory_size_in_gbs of this ShapeSummary.

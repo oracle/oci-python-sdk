@@ -150,7 +150,7 @@ class ScheduleReportDetails(object):
     def mime_type(self):
         """
         **[Required]** Gets the mime_type of this ScheduleReportDetails.
-        Specifies if the report will be in Excel or PDF format
+        Specifies if the report will be in .xls or .pdf format
 
         Allowed values for this property are: "PDF", "XLS"
 
@@ -164,7 +164,7 @@ class ScheduleReportDetails(object):
     def mime_type(self, mime_type):
         """
         Sets the mime_type of this ScheduleReportDetails.
-        Specifies if the report will be in Excel or PDF format
+        Specifies if the report will be in .xls or .pdf format
 
 
         :param mime_type: The mime_type of this ScheduleReportDetails.

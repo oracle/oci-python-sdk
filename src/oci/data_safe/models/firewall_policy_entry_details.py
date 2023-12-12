@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FirewallPolicyEntryDetails(EntryDetails):
     """
-    SQL firewall policy details.
+    SQL Firewall policy details.
     """
 
     def __init__(self, **kwargs):
@@ -56,7 +56,7 @@ class FirewallPolicyEntryDetails(EntryDetails):
     def time_generated(self):
         """
         **[Required]** Gets the time_generated of this FirewallPolicyEntryDetails.
-        The time the the SQL firewall policy was generated on the target database, in the format defined by RFC3339.
+        The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
 
 
         :return: The time_generated of this FirewallPolicyEntryDetails.
@@ -68,7 +68,7 @@ class FirewallPolicyEntryDetails(EntryDetails):
     def time_generated(self, time_generated):
         """
         Sets the time_generated of this FirewallPolicyEntryDetails.
-        The time the the SQL firewall policy was generated on the target database, in the format defined by RFC3339.
+        The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
 
 
         :param time_generated: The time_generated of this FirewallPolicyEntryDetails.
@@ -80,7 +80,7 @@ class FirewallPolicyEntryDetails(EntryDetails):
     def time_status_updated(self):
         """
         Gets the time_status_updated of this FirewallPolicyEntryDetails.
-        The last date and time the status of the SQL firewall policy was updated on the target database, in the format defined by RFC3339.
+        The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
 
 
         :return: The time_status_updated of this FirewallPolicyEntryDetails.
@@ -92,7 +92,7 @@ class FirewallPolicyEntryDetails(EntryDetails):
     def time_status_updated(self, time_status_updated):
         """
         Sets the time_status_updated of this FirewallPolicyEntryDetails.
-        The last date and time the status of the SQL firewall policy was updated on the target database, in the format defined by RFC3339.
+        The last date and time the status of the SQL Firewall policy was updated on the target database, in the format defined by RFC3339.
 
 
         :param time_status_updated: The time_status_updated of this FirewallPolicyEntryDetails.
