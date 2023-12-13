@@ -171,7 +171,7 @@ class PluginClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_instance_agent_plugin got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_instance_agent_plugin got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceagentId": instanceagent_id,
@@ -182,7 +182,7 @@ class PluginClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -326,7 +326,7 @@ class PluginClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_instance_agent_plugins got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_instance_agent_plugins got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "instanceagentId": instanceagent_id
@@ -336,27 +336,27 @@ class PluginClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'status' in kwargs:
             status_allowed_values = ["RUNNING", "STOPPED", "NOT_SUPPORTED", "INVALID"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {

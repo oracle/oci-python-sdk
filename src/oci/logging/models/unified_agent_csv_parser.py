@@ -105,7 +105,7 @@ class UnifiedAgentCsvParser(UnifiedAgentParser):
     def delimiter(self):
         """
         Gets the delimiter of this UnifiedAgentCsvParser.
-        csv delimiter.
+        CSV delimiter.
 
 
         :return: The delimiter of this UnifiedAgentCsvParser.
@@ -117,7 +117,7 @@ class UnifiedAgentCsvParser(UnifiedAgentParser):
     def delimiter(self, delimiter):
         """
         Sets the delimiter of this UnifiedAgentCsvParser.
-        csv delimiter.
+        CSV delimiter.
 
 
         :param delimiter: The delimiter of this UnifiedAgentCsvParser.
@@ -129,7 +129,7 @@ class UnifiedAgentCsvParser(UnifiedAgentParser):
     def keys(self):
         """
         **[Required]** Gets the keys of this UnifiedAgentCsvParser.
-        csv keys.
+        CSV keys.
 
 
         :return: The keys of this UnifiedAgentCsvParser.
@@ -141,7 +141,7 @@ class UnifiedAgentCsvParser(UnifiedAgentParser):
     def keys(self, keys):
         """
         Sets the keys of this UnifiedAgentCsvParser.
-        csv keys.
+        CSV keys.
 
 
         :param keys: The keys of this UnifiedAgentCsvParser.

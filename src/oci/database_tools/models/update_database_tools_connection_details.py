@@ -23,11 +23,21 @@ class UpdateDatabaseToolsConnectionDetails(object):
     #: This constant has a value of "MYSQL"
     TYPE_MYSQL = "MYSQL"
 
+    #: A constant which can be used with the type property of a UpdateDatabaseToolsConnectionDetails.
+    #: This constant has a value of "POSTGRESQL"
+    TYPE_POSTGRESQL = "POSTGRESQL"
+
+    #: A constant which can be used with the type property of a UpdateDatabaseToolsConnectionDetails.
+    #: This constant has a value of "GENERIC_JDBC"
+    TYPE_GENERIC_JDBC = "GENERIC_JDBC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDatabaseToolsConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.database_tools.models.UpdateDatabaseToolsConnectionGenericJdbcDetails`
+        * :class:`~oci.database_tools.models.UpdateDatabaseToolsConnectionPostgresqlDetails`
         * :class:`~oci.database_tools.models.UpdateDatabaseToolsConnectionMySqlDetails`
         * :class:`~oci.database_tools.models.UpdateDatabaseToolsConnectionOracleDatabaseDetails`
 
@@ -47,7 +57,7 @@ class UpdateDatabaseToolsConnectionDetails(object):
 
         :param type:
             The value to assign to the type property of this UpdateDatabaseToolsConnectionDetails.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
         :type type: str
 
         """
@@ -77,6 +87,12 @@ class UpdateDatabaseToolsConnectionDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['type']
+
+        if type == 'GENERIC_JDBC':
+            return 'UpdateDatabaseToolsConnectionGenericJdbcDetails'
+
+        if type == 'POSTGRESQL':
+            return 'UpdateDatabaseToolsConnectionPostgresqlDetails'
 
         if type == 'MYSQL':
             return 'UpdateDatabaseToolsConnectionMySqlDetails'
@@ -168,7 +184,7 @@ class UpdateDatabaseToolsConnectionDetails(object):
         **[Required]** Gets the type of this UpdateDatabaseToolsConnectionDetails.
         The `DatabaseToolsConnection` type.
 
-        Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
+        Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
 
 
         :return: The type of this UpdateDatabaseToolsConnectionDetails.
@@ -186,11 +202,10 @@ class UpdateDatabaseToolsConnectionDetails(object):
         :param type: The type of this UpdateDatabaseToolsConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_DATABASE", "MYSQL"]
+        allowed_values = ["ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
-                "Invalid value for `type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `type`, must be None or one of {allowed_values}"
             )
         self._type = type
 

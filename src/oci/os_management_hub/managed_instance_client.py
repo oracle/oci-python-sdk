@@ -181,7 +181,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "attach_software_sources_to_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"attach_software_sources_to_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -191,7 +191,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -302,7 +302,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "detach_software_sources_from_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"detach_software_sources_from_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -312,7 +312,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -425,7 +425,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_module_stream_on_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_module_stream_on_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -435,7 +435,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -549,7 +549,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_module_stream_on_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_module_stream_on_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -559,7 +559,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -650,7 +650,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -660,7 +660,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -769,7 +769,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "install_module_stream_profile_on_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"install_module_stream_profile_on_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -779,7 +779,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -889,7 +889,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "install_packages_on_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"install_packages_on_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -899,7 +899,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1032,7 +1032,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instance_available_packages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instance_available_packages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -1042,20 +1042,20 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1199,7 +1199,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instance_available_software_sources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instance_available_software_sources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -1209,20 +1209,20 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1374,7 +1374,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instance_errata got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instance_errata got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -1384,28 +1384,28 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'advisory_type' in kwargs:
             advisory_type_allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT"]
             for advisory_type_item in kwargs['advisory_type']:
                 if advisory_type_item not in advisory_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `advisory_type`, must be one of {0}".format(advisory_type_allowed_values)
+                        f"Invalid value for `advisory_type`, must be one of { advisory_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeIssued", "name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1562,7 +1562,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instance_installed_packages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instance_installed_packages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -1572,20 +1572,20 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeInstalled", "timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1742,7 +1742,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instance_modules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instance_modules got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -1752,20 +1752,20 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1921,7 +1921,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instance_updatable_packages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instance_updatable_packages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -1931,28 +1931,28 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'classification_type' in kwargs:
             classification_type_allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER"]
             for classification_type_item in kwargs['classification_type']:
                 if classification_type_item not in classification_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `classification_type`, must be one of {0}".format(classification_type_allowed_values)
+                        f"Invalid value for `classification_type`, must be one of { classification_type_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2151,14 +2151,14 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_instances got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_instances got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["NORMAL", "UNREACHABLE", "ERROR", "WARNING", "REGISTRATION_ERROR"]
             for status_item in kwargs['status']:
                 if status_item not in status_allowed_values:
                     raise ValueError(
-                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                        f"Invalid value for `status`, must be one of { status_allowed_values }"
                     )
 
         if 'arch_type' in kwargs:
@@ -2166,7 +2166,7 @@ class ManagedInstanceClient(object):
             for arch_type_item in kwargs['arch_type']:
                 if arch_type_item not in arch_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `arch_type`, must be one of {0}".format(arch_type_allowed_values)
+                        f"Invalid value for `arch_type`, must be one of { arch_type_allowed_values }"
                     )
 
         if 'os_family' in kwargs:
@@ -2174,21 +2174,21 @@ class ManagedInstanceClient(object):
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2378,7 +2378,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "manage_module_streams_on_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"manage_module_streams_on_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -2388,7 +2388,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2495,7 +2495,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "refresh_software_on_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"refresh_software_on_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -2505,7 +2505,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2615,7 +2615,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_module_stream_profile_from_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_module_stream_profile_from_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -2625,7 +2625,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2735,7 +2735,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_packages_from_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_packages_from_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -2745,7 +2745,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2858,7 +2858,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "switch_module_stream_on_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"switch_module_stream_on_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -2868,7 +2868,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2975,7 +2975,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_all_packages_on_managed_instances_in_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_all_packages_on_managed_instances_in_compartment got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -3075,7 +3075,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -3085,7 +3085,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3195,7 +3195,7 @@ class ManagedInstanceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_packages_on_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_packages_on_managed_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -3205,7 +3205,7 @@ class ManagedInstanceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

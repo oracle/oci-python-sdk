@@ -533,7 +533,7 @@ class DatabaseRegistrationSummary(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this DatabaseRegistrationSummary.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the target subnet of the dedicated connection.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -547,7 +547,7 @@ class DatabaseRegistrationSummary(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this DatabaseRegistrationSummary.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the target subnet of the dedicated connection.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

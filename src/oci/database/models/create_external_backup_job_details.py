@@ -409,8 +409,7 @@ class CreateExternalBackupJobDetails(object):
         allowed_values = ["SI", "RAC"]
         if not value_allowed_none_or_none_sentinel(database_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `database_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `database_mode`, must be None or one of {allowed_values}"
             )
         self._database_mode = database_mode
 
@@ -443,8 +442,7 @@ class CreateExternalBackupJobDetails(object):
         allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
         if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
             raise ValueError(
-                "Invalid value for `database_edition`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `database_edition`, must be None or one of {allowed_values}"
             )
         self._database_edition = database_edition
 

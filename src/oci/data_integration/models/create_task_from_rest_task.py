@@ -126,6 +126,10 @@ class CreateTaskFromRestTask(CreateTaskDetails):
             The value to assign to the config_provider_delegate property of this CreateTaskFromRestTask.
         :type config_provider_delegate: oci.data_integration.models.CreateConfigProvider
 
+        :param is_concurrent_allowed:
+            The value to assign to the is_concurrent_allowed property of this CreateTaskFromRestTask.
+        :type is_concurrent_allowed: bool
+
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateTaskFromRestTask.
         :type registry_metadata: oci.data_integration.models.RegistryMetadata
@@ -200,6 +204,7 @@ class CreateTaskFromRestTask(CreateTaskDetails):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'CreateConfigProvider',
+            'is_concurrent_allowed': 'bool',
             'registry_metadata': 'RegistryMetadata',
             'auth_details': 'AuthDetails',
             'auth_config': 'AuthConfig',
@@ -230,6 +235,7 @@ class CreateTaskFromRestTask(CreateTaskDetails):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
+            'is_concurrent_allowed': 'isConcurrentAllowed',
             'registry_metadata': 'registryMetadata',
             'auth_details': 'authDetails',
             'auth_config': 'authConfig',
@@ -259,6 +265,7 @@ class CreateTaskFromRestTask(CreateTaskDetails):
         self._parameters = None
         self._op_config_values = None
         self._config_provider_delegate = None
+        self._is_concurrent_allowed = None
         self._registry_metadata = None
         self._auth_details = None
         self._auth_config = None
@@ -362,8 +369,7 @@ class CreateTaskFromRestTask(CreateTaskDetails):
         allowed_values = ["GET", "POST", "PATCH", "DELETE", "PUT"]
         if not value_allowed_none_or_none_sentinel(method_type, allowed_values):
             raise ValueError(
-                "Invalid value for `method_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `method_type`, must be None or one of {allowed_values}"
             )
         self._method_type = method_type
 
@@ -442,8 +448,7 @@ class CreateTaskFromRestTask(CreateTaskDetails):
         allowed_values = ["SYNCHRONOUS", "ASYNC_OCI_WORKREQUEST", "ASYNC_GENERIC"]
         if not value_allowed_none_or_none_sentinel(api_call_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `api_call_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `api_call_mode`, must be None or one of {allowed_values}"
             )
         self._api_call_mode = api_call_mode
 
@@ -494,8 +499,7 @@ class CreateTaskFromRestTask(CreateTaskDetails):
         allowed_values = ["GET", "POST", "PATCH", "DELETE", "PUT"]
         if not value_allowed_none_or_none_sentinel(cancel_method_type, allowed_values):
             raise ValueError(
-                "Invalid value for `cancel_method_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `cancel_method_type`, must be None or one of {allowed_values}"
             )
         self._cancel_method_type = cancel_method_type
 

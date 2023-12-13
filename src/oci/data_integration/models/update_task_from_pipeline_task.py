@@ -78,6 +78,10 @@ class UpdateTaskFromPipelineTask(UpdateTaskDetails):
             The value to assign to the config_provider_delegate property of this UpdateTaskFromPipelineTask.
         :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
+        :param is_concurrent_allowed:
+            The value to assign to the is_concurrent_allowed property of this UpdateTaskFromPipelineTask.
+        :type is_concurrent_allowed: bool
+
         :param registry_metadata:
             The value to assign to the registry_metadata property of this UpdateTaskFromPipelineTask.
         :type registry_metadata: oci.data_integration.models.RegistryMetadata
@@ -102,6 +106,7 @@ class UpdateTaskFromPipelineTask(UpdateTaskDetails):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'ConfigProvider',
+            'is_concurrent_allowed': 'bool',
             'registry_metadata': 'RegistryMetadata',
             'pipeline': 'Pipeline'
         }
@@ -121,6 +126,7 @@ class UpdateTaskFromPipelineTask(UpdateTaskDetails):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
+            'is_concurrent_allowed': 'isConcurrentAllowed',
             'registry_metadata': 'registryMetadata',
             'pipeline': 'pipeline'
         }
@@ -139,6 +145,7 @@ class UpdateTaskFromPipelineTask(UpdateTaskDetails):
         self._parameters = None
         self._op_config_values = None
         self._config_provider_delegate = None
+        self._is_concurrent_allowed = None
         self._registry_metadata = None
         self._pipeline = None
         self._model_type = 'PIPELINE_TASK'

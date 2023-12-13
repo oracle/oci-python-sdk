@@ -41,13 +41,18 @@ class UpdateNotebookSessionDetails(object):
             The value to assign to the notebook_session_runtime_config_details property of this UpdateNotebookSessionDetails.
         :type notebook_session_runtime_config_details: oci.data_science.models.NotebookSessionRuntimeConfigDetails
 
+        :param notebook_session_storage_mount_configuration_details_list:
+            The value to assign to the notebook_session_storage_mount_configuration_details_list property of this UpdateNotebookSessionDetails.
+        :type notebook_session_storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'notebook_session_configuration_details': 'NotebookSessionConfigurationDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'notebook_session_runtime_config_details': 'NotebookSessionRuntimeConfigDetails'
+            'notebook_session_runtime_config_details': 'NotebookSessionRuntimeConfigDetails',
+            'notebook_session_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]'
         }
 
         self.attribute_map = {
@@ -55,7 +60,8 @@ class UpdateNotebookSessionDetails(object):
             'notebook_session_configuration_details': 'notebookSessionConfigurationDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'notebook_session_runtime_config_details': 'notebookSessionRuntimeConfigDetails'
+            'notebook_session_runtime_config_details': 'notebookSessionRuntimeConfigDetails',
+            'notebook_session_storage_mount_configuration_details_list': 'notebookSessionStorageMountConfigurationDetailsList'
         }
 
         self._display_name = None
@@ -63,6 +69,7 @@ class UpdateNotebookSessionDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._notebook_session_runtime_config_details = None
+        self._notebook_session_storage_mount_configuration_details_list = None
 
     @property
     def display_name(self):
@@ -189,6 +196,30 @@ class UpdateNotebookSessionDetails(object):
         :type: oci.data_science.models.NotebookSessionRuntimeConfigDetails
         """
         self._notebook_session_runtime_config_details = notebook_session_runtime_config_details
+
+    @property
+    def notebook_session_storage_mount_configuration_details_list(self):
+        """
+        Gets the notebook_session_storage_mount_configuration_details_list of this UpdateNotebookSessionDetails.
+        Collection of NotebookSessionStorageMountConfigurationDetails.
+
+
+        :return: The notebook_session_storage_mount_configuration_details_list of this UpdateNotebookSessionDetails.
+        :rtype: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        return self._notebook_session_storage_mount_configuration_details_list
+
+    @notebook_session_storage_mount_configuration_details_list.setter
+    def notebook_session_storage_mount_configuration_details_list(self, notebook_session_storage_mount_configuration_details_list):
+        """
+        Sets the notebook_session_storage_mount_configuration_details_list of this UpdateNotebookSessionDetails.
+        Collection of NotebookSessionStorageMountConfigurationDetails.
+
+
+        :param notebook_session_storage_mount_configuration_details_list: The notebook_session_storage_mount_configuration_details_list of this UpdateNotebookSessionDetails.
+        :type: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        self._notebook_session_storage_mount_configuration_details_list = notebook_session_storage_mount_configuration_details_list
 
     def __repr__(self):
         return formatted_flat_dict(self)

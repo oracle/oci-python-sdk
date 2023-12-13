@@ -106,8 +106,7 @@ class CompartmentMetadata(object):
         allowed_values = ["accessible", "visible", "inaccessible"]
         if not value_allowed_none_or_none_sentinel(access_level, allowed_values):
             raise ValueError(
-                "Invalid value for `access_level`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `access_level`, must be None or one of {allowed_values}"
             )
         self._access_level = access_level
 

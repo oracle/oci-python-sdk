@@ -78,6 +78,10 @@ class TaskFromOCIDataflowTaskDetails(Task):
             The value to assign to the config_provider_delegate property of this TaskFromOCIDataflowTaskDetails.
         :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
+        :param is_concurrent_allowed:
+            The value to assign to the is_concurrent_allowed property of this TaskFromOCIDataflowTaskDetails.
+        :type is_concurrent_allowed: bool
+
         :param metadata:
             The value to assign to the metadata property of this TaskFromOCIDataflowTaskDetails.
         :type metadata: oci.data_integration.models.ObjectMetadata
@@ -93,6 +97,14 @@ class TaskFromOCIDataflowTaskDetails(Task):
         :param dataflow_application:
             The value to assign to the dataflow_application property of this TaskFromOCIDataflowTaskDetails.
         :type dataflow_application: oci.data_integration.models.DataflowApplication
+
+        :param driver_shape_details:
+            The value to assign to the driver_shape_details property of this TaskFromOCIDataflowTaskDetails.
+        :type driver_shape_details: oci.data_integration.models.ShapeDetails
+
+        :param executor_shape_details:
+            The value to assign to the executor_shape_details property of this TaskFromOCIDataflowTaskDetails.
+        :type executor_shape_details: oci.data_integration.models.ShapeDetails
 
         """
         self.swagger_types = {
@@ -110,10 +122,13 @@ class TaskFromOCIDataflowTaskDetails(Task):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'ConfigProvider',
+            'is_concurrent_allowed': 'bool',
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)',
             'registry_metadata': 'RegistryMetadata',
-            'dataflow_application': 'DataflowApplication'
+            'dataflow_application': 'DataflowApplication',
+            'driver_shape_details': 'ShapeDetails',
+            'executor_shape_details': 'ShapeDetails'
         }
 
         self.attribute_map = {
@@ -131,10 +146,13 @@ class TaskFromOCIDataflowTaskDetails(Task):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
+            'is_concurrent_allowed': 'isConcurrentAllowed',
             'metadata': 'metadata',
             'key_map': 'keyMap',
             'registry_metadata': 'registryMetadata',
-            'dataflow_application': 'dataflowApplication'
+            'dataflow_application': 'dataflowApplication',
+            'driver_shape_details': 'driverShapeDetails',
+            'executor_shape_details': 'executorShapeDetails'
         }
 
         self._model_type = None
@@ -151,10 +169,13 @@ class TaskFromOCIDataflowTaskDetails(Task):
         self._parameters = None
         self._op_config_values = None
         self._config_provider_delegate = None
+        self._is_concurrent_allowed = None
         self._metadata = None
         self._key_map = None
         self._registry_metadata = None
         self._dataflow_application = None
+        self._driver_shape_details = None
+        self._executor_shape_details = None
         self._model_type = 'OCI_DATAFLOW_TASK'
 
     @property
@@ -176,6 +197,46 @@ class TaskFromOCIDataflowTaskDetails(Task):
         :type: oci.data_integration.models.DataflowApplication
         """
         self._dataflow_application = dataflow_application
+
+    @property
+    def driver_shape_details(self):
+        """
+        Gets the driver_shape_details of this TaskFromOCIDataflowTaskDetails.
+
+        :return: The driver_shape_details of this TaskFromOCIDataflowTaskDetails.
+        :rtype: oci.data_integration.models.ShapeDetails
+        """
+        return self._driver_shape_details
+
+    @driver_shape_details.setter
+    def driver_shape_details(self, driver_shape_details):
+        """
+        Sets the driver_shape_details of this TaskFromOCIDataflowTaskDetails.
+
+        :param driver_shape_details: The driver_shape_details of this TaskFromOCIDataflowTaskDetails.
+        :type: oci.data_integration.models.ShapeDetails
+        """
+        self._driver_shape_details = driver_shape_details
+
+    @property
+    def executor_shape_details(self):
+        """
+        Gets the executor_shape_details of this TaskFromOCIDataflowTaskDetails.
+
+        :return: The executor_shape_details of this TaskFromOCIDataflowTaskDetails.
+        :rtype: oci.data_integration.models.ShapeDetails
+        """
+        return self._executor_shape_details
+
+    @executor_shape_details.setter
+    def executor_shape_details(self, executor_shape_details):
+        """
+        Sets the executor_shape_details of this TaskFromOCIDataflowTaskDetails.
+
+        :param executor_shape_details: The executor_shape_details of this TaskFromOCIDataflowTaskDetails.
+        :type: oci.data_integration.models.ShapeDetails
+        """
+        self._executor_shape_details = executor_shape_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -172,7 +172,7 @@ class EkmClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_ekms_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_ekms_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -270,7 +270,7 @@ class EkmClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_ekms_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_ekms_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ekmsPrivateEndpointId": ekms_private_endpoint_id
@@ -280,7 +280,7 @@ class EkmClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -367,7 +367,7 @@ class EkmClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_ekms_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_ekms_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ekmsPrivateEndpointId": ekms_private_endpoint_id
@@ -377,7 +377,7 @@ class EkmClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -488,20 +488,20 @@ class EkmClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_ekms_private_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_ekms_private_endpoints got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -610,7 +610,7 @@ class EkmClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_ekms_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_ekms_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "ekmsPrivateEndpointId": ekms_private_endpoint_id
@@ -620,7 +620,7 @@ class EkmClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

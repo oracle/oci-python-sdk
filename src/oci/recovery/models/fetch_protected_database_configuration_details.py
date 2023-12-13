@@ -79,8 +79,7 @@ class FetchProtectedDatabaseConfigurationDetails(object):
         allowed_values = ["CABUNDLE", "TNSNAMES", "HOSTS", "ALL"]
         if not value_allowed_none_or_none_sentinel(configuration_type, allowed_values):
             raise ValueError(
-                "Invalid value for `configuration_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `configuration_type`, must be None or one of {allowed_values}"
             )
         self._configuration_type = configuration_type
 

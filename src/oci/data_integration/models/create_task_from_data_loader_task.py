@@ -74,6 +74,10 @@ class CreateTaskFromDataLoaderTask(CreateTaskDetails):
             The value to assign to the config_provider_delegate property of this CreateTaskFromDataLoaderTask.
         :type config_provider_delegate: oci.data_integration.models.CreateConfigProvider
 
+        :param is_concurrent_allowed:
+            The value to assign to the is_concurrent_allowed property of this CreateTaskFromDataLoaderTask.
+        :type is_concurrent_allowed: bool
+
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateTaskFromDataLoaderTask.
         :type registry_metadata: oci.data_integration.models.RegistryMetadata
@@ -109,6 +113,7 @@ class CreateTaskFromDataLoaderTask(CreateTaskDetails):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'CreateConfigProvider',
+            'is_concurrent_allowed': 'bool',
             'registry_metadata': 'RegistryMetadata',
             'data_flow': 'DataFlow',
             'conditional_composite_field_map': 'ConditionalCompositeFieldMap',
@@ -130,6 +135,7 @@ class CreateTaskFromDataLoaderTask(CreateTaskDetails):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
+            'is_concurrent_allowed': 'isConcurrentAllowed',
             'registry_metadata': 'registryMetadata',
             'data_flow': 'dataFlow',
             'conditional_composite_field_map': 'conditionalCompositeFieldMap',
@@ -150,6 +156,7 @@ class CreateTaskFromDataLoaderTask(CreateTaskDetails):
         self._parameters = None
         self._op_config_values = None
         self._config_provider_delegate = None
+        self._is_concurrent_allowed = None
         self._registry_metadata = None
         self._data_flow = None
         self._conditional_composite_field_map = None

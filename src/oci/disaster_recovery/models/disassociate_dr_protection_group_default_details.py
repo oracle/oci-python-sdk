@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DisassociateDrProtectionGroupDefaultDetails(DisassociateDrProtectionGroupDetails):
     """
-    The default type (required for forward compatibility).
+    The default type.
     """
 
     def __init__(self, **kwargs):

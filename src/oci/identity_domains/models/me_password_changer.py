@@ -704,7 +704,7 @@ class MePasswordChanger(object):
     def password(self):
         """
         **[Required]** Gets the password of this MePasswordChanger.
-        Password attribute. Max length for password is controlled via Password Policy.
+        Password attribute. The maximum length for a password is controlled by a password policy.
 
         **SCIM++ Properties:**
          - type: string
@@ -727,7 +727,7 @@ class MePasswordChanger(object):
     def password(self, password):
         """
         Sets the password of this MePasswordChanger.
-        Password attribute. Max length for password is controlled via Password Policy.
+        Password attribute. The maximum length for a password is controlled by a password policy.
 
         **SCIM++ Properties:**
          - type: string

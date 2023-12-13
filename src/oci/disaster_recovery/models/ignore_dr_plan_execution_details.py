@@ -48,7 +48,7 @@ class IgnoreDrPlanExecutionDetails(object):
         **[Required]** Gets the group_id of this IgnoreDrPlanExecutionDetails.
         The unique id of the group to ignore as a whole, or the group containing the step to ignore.
 
-        Example: `sgid1.group..&lt;unique_id&gt;`
+        Example: `sgid1.group..uniqueID`
 
 
         :return: The group_id of this IgnoreDrPlanExecutionDetails.
@@ -62,7 +62,7 @@ class IgnoreDrPlanExecutionDetails(object):
         Sets the group_id of this IgnoreDrPlanExecutionDetails.
         The unique id of the group to ignore as a whole, or the group containing the step to ignore.
 
-        Example: `sgid1.group..&lt;unique_id&gt;`
+        Example: `sgid1.group..uniqueID`
 
 
         :param group_id: The group_id of this IgnoreDrPlanExecutionDetails.
@@ -76,7 +76,7 @@ class IgnoreDrPlanExecutionDetails(object):
         Gets the step_id of this IgnoreDrPlanExecutionDetails.
         The unique id of the step to ignore (optional). Only needed when ignoring a step.
 
-        Example: `sgid1.step..&lt;unique_id&gt;`
+        Example: `sgid1.step..uniqueID`
 
 
         :return: The step_id of this IgnoreDrPlanExecutionDetails.
@@ -90,7 +90,7 @@ class IgnoreDrPlanExecutionDetails(object):
         Sets the step_id of this IgnoreDrPlanExecutionDetails.
         The unique id of the step to ignore (optional). Only needed when ignoring a step.
 
-        Example: `sgid1.step..&lt;unique_id&gt;`
+        Example: `sgid1.step..uniqueID`
 
 
         :param step_id: The step_id of this IgnoreDrPlanExecutionDetails.

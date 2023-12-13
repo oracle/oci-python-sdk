@@ -186,8 +186,7 @@ class CreateAlertRuleDetails(object):
         allowed_values = ["ACTUAL", "FORECAST"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
-                "Invalid value for `type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `type`, must be None or one of {allowed_values}"
             )
         self._type = type
 
@@ -246,8 +245,7 @@ class CreateAlertRuleDetails(object):
         allowed_values = ["PERCENTAGE", "ABSOLUTE"]
         if not value_allowed_none_or_none_sentinel(threshold_type, allowed_values):
             raise ValueError(
-                "Invalid value for `threshold_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `threshold_type`, must be None or one of {allowed_values}"
             )
         self._threshold_type = threshold_type
 

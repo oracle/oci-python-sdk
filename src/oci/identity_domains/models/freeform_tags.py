@@ -110,6 +110,7 @@ class FreeformTags(object):
         **SCIM++ Properties:**
          - caseExact: false
          - required: true
+         - idcsReturnEmptyWhenNull: true
          - mutability: readWrite
          - returned: default
          - type: string
@@ -133,6 +134,7 @@ class FreeformTags(object):
         **SCIM++ Properties:**
          - caseExact: false
          - required: true
+         - idcsReturnEmptyWhenNull: true
          - mutability: readWrite
          - returned: default
          - type: string

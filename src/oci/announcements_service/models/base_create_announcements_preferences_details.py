@@ -200,8 +200,7 @@ class BaseCreateAnnouncementsPreferencesDetails(object):
         allowed_values = ["OPT_IN_TENANT_ANNOUNCEMENTS", "OPT_IN_TENANT_AND_INFORMATIONAL_ANNOUNCEMENTS", "OPT_OUT_ALL_ANNOUNCEMENTS"]
         if not value_allowed_none_or_none_sentinel(preference_type, allowed_values):
             raise ValueError(
-                "Invalid value for `preference_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `preference_type`, must be None or one of {allowed_values}"
             )
         self._preference_type = preference_type
 

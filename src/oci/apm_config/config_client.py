@@ -179,7 +179,7 @@ class ConfigClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_config got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -291,7 +291,7 @@ class ConfigClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "configId": config_id
@@ -301,7 +301,7 @@ class ConfigClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -401,7 +401,7 @@ class ConfigClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "configId": config_id
@@ -411,7 +411,7 @@ class ConfigClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -575,20 +575,20 @@ class ConfigClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_configs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_configs got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated", "timeUpdated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -697,7 +697,7 @@ class ConfigClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "retrieve_namespace_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"retrieve_namespace_metrics got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -793,7 +793,7 @@ class ConfigClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "retrieve_namespaces got unknown kwargs: {!r}".format(extra_kwargs))
+                f"retrieve_namespaces got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -908,7 +908,7 @@ class ConfigClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "configId": config_id
@@ -918,7 +918,7 @@ class ConfigClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -1022,7 +1022,7 @@ class ConfigClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_span_filter_pattern got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_span_filter_pattern got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "apmDomainId": apm_domain_id

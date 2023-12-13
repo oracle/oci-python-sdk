@@ -8,6 +8,12 @@ import io
 from zipfile import ZipFile
 
 
+class Colors:
+    OKGREEN = '\033[92m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+
+
 def get_dbtools_clients(oci_config):
     client = oci.database_tools.DatabaseToolsClient(config=oci_config)
     # Composite client waits for async operations to complete.
@@ -80,7 +86,10 @@ def extract_vault_first_master_key(oci_config, compartment_id, clients, vault_id
 def create_secret(oci_config, compartment_id: str, clients, vault_id: str, name: str, base64_secret_content: str, vault_key_id: str = None):
     """
     Create a secret using the specified name. The content is in base64Secret.
-    If a secret with that name already exists, we simply return its OCID.
+    - If the secret existed beforehand, 3 values are returned: The secret id, None and False to indicate that the secret already
+      existed and therefore shouldn't be cleaned up
+    - If the secret did no exist, 3 values are also returned: The secret id, the vault id and True to indicate that a secret
+      was created and should be cleaned up
     """
     assert compartment_id, "compartment_id must not be null"
     assert vault_id, "vault_id must not be null"
@@ -95,7 +104,7 @@ def create_secret(oci_config, compartment_id: str, clients, vault_id: str, name:
                 and bundle_response.data.secret_id is not None:
             secret_id = bundle_response.data.secret_id
             print(f"Secret with name {name} found! It will be used instead, secret id: {secret_id}")
-            return secret_id
+            return secret_id, None, False
     except Exception:
         print(f"Secret with name {name} not found, it will be created...")
 
@@ -118,7 +127,7 @@ def create_secret(oci_config, compartment_id: str, clients, vault_id: str, name:
     secret_id = create_secret_response.data.id
     assert status == "ACTIVE", "Creating Secret should succeed"
     print(f"Created Secret. Status: {status}, name: {name}, secret id: {secret_id}.")
-    return secret_id, vault_key_id
+    return secret_id, vault_key_id, True
 
 
 def delete_secret(clients, secret_id: str, deletion_time):
@@ -181,21 +190,21 @@ def get_wallet_and_create_secrets(oci_config, compartment_id, clients, autonomou
     base64_sso_str = base64.b64encode(sso_data).decode()
 
     # 3. Store Wallet in vault and get that secret (Might already be there)
-    wallet_secret_id, vault_key_id = create_secret(oci_config,
-                                                   compartment_id=compartment_id,
-                                                   clients=clients,
-                                                   vault_id=vault_id,
-                                                   name=db_wallet_secret_name,
-                                                   base64_secret_content=base64_sso_str)
+    wallet_secret_id, vault_key_id, was_secret_created = create_secret(oci_config,
+                                                                       compartment_id=compartment_id,
+                                                                       clients=clients,
+                                                                       vault_id=vault_id,
+                                                                       name=db_wallet_secret_name,
+                                                                       base64_secret_content=base64_sso_str)
 
     # 4. Store the DB password in the vault as a secret under name X. If name X already exists, we will simply use it.
     base64_db_password_str = base64.b64encode(db_password.encode()).decode()
-    password_secret_id, vault_key_id = create_secret(oci_config,
-                                                     compartment_id=compartment_id,
-                                                     clients=clients,
-                                                     vault_id=vault_id,
-                                                     vault_key_id=vault_key_id,
-                                                     name=db_password_secret_name,
-                                                     base64_secret_content=base64_db_password_str)
+    password_secret_id, vault_key_id, was_secret_created = create_secret(oci_config,
+                                                                         compartment_id=compartment_id,
+                                                                         clients=clients,
+                                                                         vault_id=vault_id,
+                                                                         vault_key_id=vault_key_id,
+                                                                         name=db_password_secret_name,
+                                                                         base64_secret_content=base64_db_password_str)
 
     return wallet_secret_id, password_secret_id

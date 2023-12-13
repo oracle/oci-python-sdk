@@ -1579,7 +1579,7 @@ class Me(object):
     @property
     def name(self):
         """
-        **[Required]** Gets the name of this Me.
+        Gets the name of this Me.
 
         :return: The name of this Me.
         :rtype: oci.identity_domains.models.MeName

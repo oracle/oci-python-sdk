@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DisassociateDrProtectionGroupDetails(object):
     """
-    The details for disassociating this DR Protection Group from a peer (remote) DR Protection Group.
+    The details for disassociating this DR protection group from a peer DR protection group.
     """
 
     #: A constant which can be used with the type property of a DisassociateDrProtectionGroupDetails.
@@ -61,7 +61,7 @@ class DisassociateDrProtectionGroupDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this DisassociateDrProtectionGroupDetails.
-        The default type (required for forward compatibility).
+        The default type.
 
         Allowed values for this property are: "DEFAULT"
 
@@ -75,7 +75,7 @@ class DisassociateDrProtectionGroupDetails(object):
     def type(self, type):
         """
         Sets the type of this DisassociateDrProtectionGroupDetails.
-        The default type (required for forward compatibility).
+        The default type.
 
 
         :param type: The type of this DisassociateDrProtectionGroupDetails.
@@ -84,8 +84,7 @@ class DisassociateDrProtectionGroupDetails(object):
         allowed_values = ["DEFAULT"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
-                "Invalid value for `type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `type`, must be None or one of {allowed_values}"
             )
         self._type = type
 

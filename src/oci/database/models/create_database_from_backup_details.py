@@ -44,6 +44,10 @@ class CreateDatabaseFromBackupDetails(object):
             The value to assign to the sid_prefix property of this CreateDatabaseFromBackupDetails.
         :type sid_prefix: str
 
+        :param pluggable_databases:
+            The value to assign to the pluggable_databases property of this CreateDatabaseFromBackupDetails.
+        :type pluggable_databases: list[str]
+
         """
         self.swagger_types = {
             'backup_id': 'str',
@@ -51,7 +55,8 @@ class CreateDatabaseFromBackupDetails(object):
             'admin_password': 'str',
             'db_unique_name': 'str',
             'db_name': 'str',
-            'sid_prefix': 'str'
+            'sid_prefix': 'str',
+            'pluggable_databases': 'list[str]'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class CreateDatabaseFromBackupDetails(object):
             'admin_password': 'adminPassword',
             'db_unique_name': 'dbUniqueName',
             'db_name': 'dbName',
-            'sid_prefix': 'sidPrefix'
+            'sid_prefix': 'sidPrefix',
+            'pluggable_databases': 'pluggableDatabases'
         }
 
         self._backup_id = None
@@ -69,6 +75,7 @@ class CreateDatabaseFromBackupDetails(object):
         self._db_unique_name = None
         self._db_name = None
         self._sid_prefix = None
+        self._pluggable_databases = None
 
     @property
     def backup_id(self):
@@ -217,6 +224,30 @@ class CreateDatabaseFromBackupDetails(object):
         :type: str
         """
         self._sid_prefix = sid_prefix
+
+    @property
+    def pluggable_databases(self):
+        """
+        Gets the pluggable_databases of this CreateDatabaseFromBackupDetails.
+        The list of pluggable databases that needs to be restored into new database.
+
+
+        :return: The pluggable_databases of this CreateDatabaseFromBackupDetails.
+        :rtype: list[str]
+        """
+        return self._pluggable_databases
+
+    @pluggable_databases.setter
+    def pluggable_databases(self, pluggable_databases):
+        """
+        Sets the pluggable_databases of this CreateDatabaseFromBackupDetails.
+        The list of pluggable databases that needs to be restored into new database.
+
+
+        :param pluggable_databases: The pluggable_databases of this CreateDatabaseFromBackupDetails.
+        :type: list[str]
+        """
+        self._pluggable_databases = pluggable_databases
 
     def __repr__(self):
         return formatted_flat_dict(self)

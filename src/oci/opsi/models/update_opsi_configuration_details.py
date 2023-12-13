@@ -126,8 +126,7 @@ class UpdateOpsiConfigurationDetails(object):
         allowed_values = ["UX_CONFIGURATION"]
         if not value_allowed_none_or_none_sentinel(opsi_config_type, allowed_values):
             raise ValueError(
-                "Invalid value for `opsi_config_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `opsi_config_type`, must be None or one of {allowed_values}"
             )
         self._opsi_config_type = opsi_config_type
 

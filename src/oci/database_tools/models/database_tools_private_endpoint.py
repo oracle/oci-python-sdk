@@ -39,6 +39,10 @@ class DatabaseToolsPrivateEndpoint(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a DatabaseToolsPrivateEndpoint.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseToolsPrivateEndpoint object with values from keyword arguments.
@@ -59,6 +63,10 @@ class DatabaseToolsPrivateEndpoint(object):
         :param system_tags:
             The value to assign to the system_tags property of this DatabaseToolsPrivateEndpoint.
         :type system_tags: dict(str, dict(str, object))
+
+        :param locks:
+            The value to assign to the locks property of this DatabaseToolsPrivateEndpoint.
+        :type locks: list[oci.database_tools.models.ResourceLock]
 
         :param display_name:
             The value to assign to the display_name property of this DatabaseToolsPrivateEndpoint.
@@ -110,7 +118,7 @@ class DatabaseToolsPrivateEndpoint(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DatabaseToolsPrivateEndpoint.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -132,6 +140,7 @@ class DatabaseToolsPrivateEndpoint(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'system_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]',
             'display_name': 'str',
             'description': 'str',
             'id': 'str',
@@ -155,6 +164,7 @@ class DatabaseToolsPrivateEndpoint(object):
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'system_tags': 'systemTags',
+            'locks': 'locks',
             'display_name': 'displayName',
             'description': 'description',
             'id': 'id',
@@ -177,6 +187,7 @@ class DatabaseToolsPrivateEndpoint(object):
         self._defined_tags = None
         self._freeform_tags = None
         self._system_tags = None
+        self._locks = None
         self._display_name = None
         self._description = None
         self._id = None
@@ -299,6 +310,30 @@ class DatabaseToolsPrivateEndpoint(object):
         :type: dict(str, dict(str, object))
         """
         self._system_tags = system_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this DatabaseToolsPrivateEndpoint.
+        Locks associated with this resource.
+
+
+        :return: The locks of this DatabaseToolsPrivateEndpoint.
+        :rtype: list[oci.database_tools.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this DatabaseToolsPrivateEndpoint.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this DatabaseToolsPrivateEndpoint.
+        :type: list[oci.database_tools.models.ResourceLock]
+        """
+        self._locks = locks
 
     @property
     def display_name(self):
@@ -614,7 +649,7 @@ class DatabaseToolsPrivateEndpoint(object):
         **[Required]** Gets the lifecycle_state of this DatabaseToolsPrivateEndpoint.
         The current state of the Database Tools private endpoint.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -633,7 +668,7 @@ class DatabaseToolsPrivateEndpoint(object):
         :param lifecycle_state: The lifecycle_state of this DatabaseToolsPrivateEndpoint.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

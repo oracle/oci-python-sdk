@@ -232,8 +232,7 @@ class CreateDatabaseSoftwareImageDetails(object):
         allowed_values = ["VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE"]
         if not value_allowed_none_or_none_sentinel(image_shape_family, allowed_values):
             raise ValueError(
-                "Invalid value for `image_shape_family`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `image_shape_family`, must be None or one of {allowed_values}"
             )
         self._image_shape_family = image_shape_family
 
@@ -264,8 +263,7 @@ class CreateDatabaseSoftwareImageDetails(object):
         allowed_values = ["GRID_IMAGE", "DATABASE_IMAGE"]
         if not value_allowed_none_or_none_sentinel(image_type, allowed_values):
             raise ValueError(
-                "Invalid value for `image_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `image_type`, must be None or one of {allowed_values}"
             )
         self._image_type = image_type
 

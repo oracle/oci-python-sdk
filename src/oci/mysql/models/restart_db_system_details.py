@@ -81,8 +81,7 @@ class RestartDbSystemDetails(object):
         allowed_values = ["IMMEDIATE", "FAST", "SLOW"]
         if not value_allowed_none_or_none_sentinel(shutdown_type, allowed_values):
             raise ValueError(
-                "Invalid value for `shutdown_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `shutdown_type`, must be None or one of {allowed_values}"
             )
         self._shutdown_type = shutdown_type
 

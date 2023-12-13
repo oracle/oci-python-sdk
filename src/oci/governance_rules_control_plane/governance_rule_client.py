@@ -169,7 +169,7 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_governance_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_governance_rule got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -265,7 +265,7 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_inclusion_criterion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_inclusion_criterion got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -361,7 +361,7 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_governance_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_governance_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "governanceRuleId": governance_rule_id
@@ -371,7 +371,7 @@ class GovernanceRuleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -464,7 +464,7 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_inclusion_criterion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_inclusion_criterion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "inclusionCriterionId": inclusion_criterion_id
@@ -474,7 +474,7 @@ class GovernanceRuleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -559,7 +559,7 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_enforced_governance_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_enforced_governance_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "enforcedGovernanceRuleId": enforced_governance_rule_id
@@ -569,7 +569,7 @@ class GovernanceRuleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -655,7 +655,7 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_governance_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_governance_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "governanceRuleId": governance_rule_id
@@ -665,7 +665,7 @@ class GovernanceRuleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -751,7 +751,7 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_inclusion_criterion got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_inclusion_criterion got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "inclusionCriterionId": inclusion_criterion_id
@@ -761,7 +761,7 @@ class GovernanceRuleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -847,7 +847,7 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_tenancy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_tenancy_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tenancyAttachmentId": tenancy_attachment_id
@@ -857,7 +857,7 @@ class GovernanceRuleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -979,27 +979,27 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_enforced_governance_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_enforced_governance_rules got unknown kwargs: {extra_kwargs!r}")
 
         if 'governance_rule_type' in kwargs:
             governance_rule_type_allowed_values = ["QUOTA", "TAG", "ALLOWED_REGIONS"]
             if kwargs['governance_rule_type'] not in governance_rule_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `governance_rule_type`, must be one of {0}".format(governance_rule_type_allowed_values)
+                    f"Invalid value for `governance_rule_type`, must be one of { governance_rule_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1140,34 +1140,34 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_governance_rules got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_governance_rules got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'governance_rule_type' in kwargs:
             governance_rule_type_allowed_values = ["QUOTA", "TAG", "ALLOWED_REGIONS"]
             if kwargs['governance_rule_type'] not in governance_rule_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `governance_rule_type`, must be one of {0}".format(governance_rule_type_allowed_values)
+                    f"Invalid value for `governance_rule_type`, must be one of { governance_rule_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1298,27 +1298,27 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_inclusion_criteria got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_inclusion_criteria got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1456,27 +1456,27 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tenancy_attachments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tenancy_attachments got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "NEEDS_ATTENTION", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1594,7 +1594,7 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "retry_governance_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"retry_governance_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "governanceRuleId": governance_rule_id
@@ -1604,7 +1604,7 @@ class GovernanceRuleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1708,7 +1708,7 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "retry_tenancy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"retry_tenancy_attachment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tenancyAttachmentId": tenancy_attachment_id
@@ -1718,7 +1718,7 @@ class GovernanceRuleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1816,7 +1816,7 @@ class GovernanceRuleClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_governance_rule got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_governance_rule got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "governanceRuleId": governance_rule_id
@@ -1826,7 +1826,7 @@ class GovernanceRuleClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

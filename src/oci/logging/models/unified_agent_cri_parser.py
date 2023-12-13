@@ -105,7 +105,7 @@ class UnifiedAgentCriParser(UnifiedAgentParser):
     def is_merge_cri_fields(self):
         """
         Gets the is_merge_cri_fields of this UnifiedAgentCriParser.
-        If you don't need stream/logtag fields, set this to false.
+        If you don't need stream or logtag fields, set this to false.
 
 
         :return: The is_merge_cri_fields of this UnifiedAgentCriParser.
@@ -117,7 +117,7 @@ class UnifiedAgentCriParser(UnifiedAgentParser):
     def is_merge_cri_fields(self, is_merge_cri_fields):
         """
         Sets the is_merge_cri_fields of this UnifiedAgentCriParser.
-        If you don't need stream/logtag fields, set this to false.
+        If you don't need stream or logtag fields, set this to false.
 
 
         :param is_merge_cri_fields: The is_merge_cri_fields of this UnifiedAgentCriParser.
@@ -129,7 +129,7 @@ class UnifiedAgentCriParser(UnifiedAgentParser):
     def nested_parser(self):
         """
         Gets the nested_parser of this UnifiedAgentCriParser.
-        Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+        Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
 
 
         :return: The nested_parser of this UnifiedAgentCriParser.
@@ -141,7 +141,7 @@ class UnifiedAgentCriParser(UnifiedAgentParser):
     def nested_parser(self, nested_parser):
         """
         Sets the nested_parser of this UnifiedAgentCriParser.
-        Optional nested JSON Parser for CRI Parser. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
+        Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
 
 
         :param nested_parser: The nested_parser of this UnifiedAgentCriParser.

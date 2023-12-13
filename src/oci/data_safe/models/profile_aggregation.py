@@ -26,14 +26,6 @@ class ProfileAggregation(object):
             The value to assign to the items property of this ProfileAggregation.
         :type items: list[dict(str, object)]
 
-        :param user_assessment_id:
-            The value to assign to the user_assessment_id property of this ProfileAggregation.
-        :type user_assessment_id: str
-
-        :param compartment_id:
-            The value to assign to the compartment_id property of this ProfileAggregation.
-        :type compartment_id: str
-
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ProfileAggregation.
         :type freeform_tags: dict(str, str)
@@ -45,30 +37,24 @@ class ProfileAggregation(object):
         """
         self.swagger_types = {
             'items': 'list[dict(str, object)]',
-            'user_assessment_id': 'str',
-            'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'items': 'items',
-            'user_assessment_id': 'userAssessmentId',
-            'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._items = None
-        self._user_assessment_id = None
-        self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
     @property
     def items(self):
         """
-        Gets the items of this ProfileAggregation.
+        **[Required]** Gets the items of this ProfileAggregation.
         The array of profile aggregation data.
 
 
@@ -88,56 +74,6 @@ class ProfileAggregation(object):
         :type: list[dict(str, object)]
         """
         self._items = items
-
-    @property
-    def user_assessment_id(self):
-        """
-        **[Required]** Gets the user_assessment_id of this ProfileAggregation.
-        The OCID of the latest user assessment corresponding to the target under consideration. A compartment
-        type assessment can also be passed to profiles from all the targets from the corresponding compartment.
-
-
-        :return: The user_assessment_id of this ProfileAggregation.
-        :rtype: str
-        """
-        return self._user_assessment_id
-
-    @user_assessment_id.setter
-    def user_assessment_id(self, user_assessment_id):
-        """
-        Sets the user_assessment_id of this ProfileAggregation.
-        The OCID of the latest user assessment corresponding to the target under consideration. A compartment
-        type assessment can also be passed to profiles from all the targets from the corresponding compartment.
-
-
-        :param user_assessment_id: The user_assessment_id of this ProfileAggregation.
-        :type: str
-        """
-        self._user_assessment_id = user_assessment_id
-
-    @property
-    def compartment_id(self):
-        """
-        **[Required]** Gets the compartment_id of this ProfileAggregation.
-        The OCID of the compartment that contains the user assessment.
-
-
-        :return: The compartment_id of this ProfileAggregation.
-        :rtype: str
-        """
-        return self._compartment_id
-
-    @compartment_id.setter
-    def compartment_id(self, compartment_id):
-        """
-        Sets the compartment_id of this ProfileAggregation.
-        The OCID of the compartment that contains the user assessment.
-
-
-        :param compartment_id: The compartment_id of this ProfileAggregation.
-        :type: str
-        """
-        self._compartment_id = compartment_id
 
     @property
     def freeform_tags(self):

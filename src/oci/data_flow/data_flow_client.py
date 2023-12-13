@@ -179,7 +179,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_application_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_application_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "applicationId": application_id
@@ -189,7 +189,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -298,7 +298,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_pool_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_pool_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "poolId": pool_id
@@ -308,7 +308,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -409,7 +409,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_private_endpoint_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_private_endpoint_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateEndpointId": private_endpoint_id
@@ -419,7 +419,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -526,7 +526,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_run_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_run_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "runId": run_id
@@ -536,7 +536,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -642,7 +642,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_sql_endpoint_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_sql_endpoint_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sqlEndpointId": sql_endpoint_id
@@ -652,7 +652,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -749,7 +749,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_application got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -845,7 +845,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_pool got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -943,7 +943,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1039,7 +1039,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_run got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_run got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1135,7 +1135,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_sql_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_sql_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1227,7 +1227,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_statement got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_statement got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "runId": run_id
@@ -1237,7 +1237,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1332,7 +1332,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "applicationId": application_id
@@ -1342,7 +1342,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1434,7 +1434,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "poolId": pool_id
@@ -1444,7 +1444,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1536,7 +1536,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateEndpointId": private_endpoint_id
@@ -1546,7 +1546,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1639,7 +1639,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_run got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_run got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "runId": run_id
@@ -1649,7 +1649,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1741,7 +1741,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_sql_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_sql_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sqlEndpointId": sql_endpoint_id
@@ -1751,7 +1751,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1846,7 +1846,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_statement got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_statement got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "runId": run_id,
@@ -1857,7 +1857,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1945,7 +1945,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "applicationId": application_id
@@ -1955,7 +1955,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2044,7 +2044,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "poolId": pool_id
@@ -2054,7 +2054,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2143,7 +2143,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateEndpointId": private_endpoint_id
@@ -2153,7 +2153,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2242,7 +2242,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_run got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_run got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "runId": run_id
@@ -2252,7 +2252,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2344,7 +2344,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_run_log got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_run_log got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "runId": run_id,
@@ -2355,7 +2355,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -2444,7 +2444,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_sql_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_sql_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sqlEndpointId": sql_endpoint_id
@@ -2454,7 +2454,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2546,7 +2546,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_statement got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_statement got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "runId": run_id,
@@ -2557,7 +2557,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2646,7 +2646,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2656,7 +2656,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2782,20 +2782,20 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_applications got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_applications got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName", "language"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2937,27 +2937,27 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_pools got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_pools got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACCEPTED", "SCHEDULED", "CREATING", "ACTIVE", "STOPPING", "STOPPED", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -3099,27 +3099,27 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_private_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_private_endpoints got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -3231,7 +3231,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_run_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_run_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "runId": run_id
@@ -3241,7 +3241,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -3389,27 +3389,27 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_runs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_runs got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", "STOPPING", "STOPPED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName", "language", "runDurationInMilliseconds", "lifecycleState", "totalOCpu", "dataReadInBytes", "dataWrittenInBytes"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -3552,27 +3552,27 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sql_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sql_endpoints got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["id", "timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3701,7 +3701,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_statements got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_statements got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "runId": run_id
@@ -3711,27 +3711,27 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACCEPTED", "CANCELLING", "CANCELLED", "FAILED", "IN_PROGRESS", "SUCCEEDED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -3841,7 +3841,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -3851,7 +3851,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -3957,7 +3957,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -3967,7 +3967,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -4073,7 +4073,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -4182,7 +4182,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"start_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "poolId": pool_id
@@ -4192,7 +4192,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4295,7 +4295,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "stop_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"stop_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "poolId": pool_id
@@ -4305,7 +4305,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4404,7 +4404,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "applicationId": application_id
@@ -4414,7 +4414,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4515,7 +4515,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_pool got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_pool got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "poolId": pool_id
@@ -4525,7 +4525,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4624,7 +4624,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateEndpointId": private_endpoint_id
@@ -4634,7 +4634,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4731,7 +4731,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_run got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_run got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "runId": run_id
@@ -4741,7 +4741,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4840,7 +4840,7 @@ class DataFlowClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_sql_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_sql_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "sqlEndpointId": sql_endpoint_id
@@ -4850,7 +4850,7 @@ class DataFlowClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

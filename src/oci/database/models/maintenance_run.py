@@ -119,6 +119,10 @@ class MaintenanceRun(object):
     #: This constant has a value of "SECURITY_MONTHLY"
     MAINTENANCE_SUBTYPE_SECURITY_MONTHLY = "SECURITY_MONTHLY"
 
+    #: A constant which can be used with the maintenance_subtype property of a MaintenanceRun.
+    #: This constant has a value of "TIMEZONE"
+    MAINTENANCE_SUBTYPE_TIMEZONE = "TIMEZONE"
+
     #: A constant which can be used with the patching_mode property of a MaintenanceRun.
     #: This constant has a value of "ROLLING"
     PATCHING_MODE_ROLLING = "ROLLING"
@@ -204,9 +208,13 @@ class MaintenanceRun(object):
 
         :param maintenance_subtype:
             The value to assign to the maintenance_subtype property of this MaintenanceRun.
-            Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type maintenance_subtype: str
+
+        :param is_dst_file_update_enabled:
+            The value to assign to the is_dst_file_update_enabled property of this MaintenanceRun.
+        :type is_dst_file_update_enabled: bool
 
         :param peer_maintenance_run_id:
             The value to assign to the peer_maintenance_run_id property of this MaintenanceRun.
@@ -284,6 +292,7 @@ class MaintenanceRun(object):
             'maintenance_type': 'str',
             'patch_id': 'str',
             'maintenance_subtype': 'str',
+            'is_dst_file_update_enabled': 'bool',
             'peer_maintenance_run_id': 'str',
             'patching_mode': 'str',
             'patch_failure_count': 'int',
@@ -315,6 +324,7 @@ class MaintenanceRun(object):
             'maintenance_type': 'maintenanceType',
             'patch_id': 'patchId',
             'maintenance_subtype': 'maintenanceSubtype',
+            'is_dst_file_update_enabled': 'isDstFileUpdateEnabled',
             'peer_maintenance_run_id': 'peerMaintenanceRunId',
             'patching_mode': 'patchingMode',
             'patch_failure_count': 'patchFailureCount',
@@ -345,6 +355,7 @@ class MaintenanceRun(object):
         self._maintenance_type = None
         self._patch_id = None
         self._maintenance_subtype = None
+        self._is_dst_file_update_enabled = None
         self._peer_maintenance_run_id = None
         self._patching_mode = None
         self._patch_failure_count = None
@@ -696,7 +707,7 @@ class MaintenanceRun(object):
         Gets the maintenance_subtype of this MaintenanceRun.
         Maintenance sub-type.
 
-        Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -715,10 +726,34 @@ class MaintenanceRun(object):
         :param maintenance_subtype: The maintenance_subtype of this MaintenanceRun.
         :type: str
         """
-        allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY"]
+        allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"]
         if not value_allowed_none_or_none_sentinel(maintenance_subtype, allowed_values):
             maintenance_subtype = 'UNKNOWN_ENUM_VALUE'
         self._maintenance_subtype = maintenance_subtype
+
+    @property
+    def is_dst_file_update_enabled(self):
+        """
+        Gets the is_dst_file_update_enabled of this MaintenanceRun.
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+
+
+        :return: The is_dst_file_update_enabled of this MaintenanceRun.
+        :rtype: bool
+        """
+        return self._is_dst_file_update_enabled
+
+    @is_dst_file_update_enabled.setter
+    def is_dst_file_update_enabled(self, is_dst_file_update_enabled):
+        """
+        Sets the is_dst_file_update_enabled of this MaintenanceRun.
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+
+
+        :param is_dst_file_update_enabled: The is_dst_file_update_enabled of this MaintenanceRun.
+        :type: bool
+        """
+        self._is_dst_file_update_enabled = is_dst_file_update_enabled
 
     @property
     def peer_maintenance_run_id(self):

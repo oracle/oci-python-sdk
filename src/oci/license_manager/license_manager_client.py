@@ -162,7 +162,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "bulk_upload_license_records got unknown kwargs: {!r}".format(extra_kwargs))
+                f"bulk_upload_license_records got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -261,7 +261,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_license_record got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_license_record got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "productLicenseId": product_license_id
@@ -366,7 +366,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_product_license got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_product_license got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -463,7 +463,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_license_record got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_license_record got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "licenseRecordId": license_record_id
@@ -473,7 +473,7 @@ class LicenseManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -567,7 +567,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_product_license got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_product_license got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "productLicenseId": product_license_id
@@ -577,7 +577,7 @@ class LicenseManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -662,7 +662,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_bulk_upload_template got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_bulk_upload_template got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -751,7 +751,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_configuration got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id
@@ -851,7 +851,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_license_metric got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_license_metric got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -946,7 +946,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_license_record got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_license_record got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "licenseRecordId": license_record_id
@@ -956,7 +956,7 @@ class LicenseManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1045,7 +1045,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_product_license got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_product_license got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "productLicenseId": product_license_id
@@ -1055,7 +1055,7 @@ class LicenseManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1168,20 +1168,20 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_license_records got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_license_records got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["expirationDate"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1313,20 +1313,20 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_product_license_consumers got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_product_license_consumers got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["licenseUnitsRequired"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1457,20 +1457,20 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_product_licenses got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_product_licenses got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["totalLicenseUnitsConsumed"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1600,20 +1600,20 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_top_utilized_product_licenses got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_top_utilized_product_licenses got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["totalLicenseUnitsConsumed"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1749,27 +1749,27 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_top_utilized_resources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_top_utilized_resources got unknown kwargs: {extra_kwargs!r}")
 
         if 'resource_unit_type' in kwargs:
             resource_unit_type_allowed_values = ["OCPU", "ECPU"]
             if kwargs['resource_unit_type'] not in resource_unit_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `resource_unit_type`, must be one of {0}".format(resource_unit_type_allowed_values)
+                    f"Invalid value for `resource_unit_type`, must be one of { resource_unit_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["totalUnits"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1881,7 +1881,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_configuration got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id
@@ -1987,7 +1987,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_license_record got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_license_record got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "licenseRecordId": license_record_id
@@ -1997,7 +1997,7 @@ class LicenseManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2098,7 +2098,7 @@ class LicenseManagerClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_product_license got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_product_license got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "productLicenseId": product_license_id
@@ -2108,7 +2108,7 @@ class LicenseManagerClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

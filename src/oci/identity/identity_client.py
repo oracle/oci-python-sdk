@@ -182,7 +182,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "activate_domain got unknown kwargs: {!r}".format(extra_kwargs))
+                f"activate_domain got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "domainId": domain_id
@@ -192,7 +192,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -297,7 +297,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "activate_mfa_totp_device got unknown kwargs: {!r}".format(extra_kwargs))
+                f"activate_mfa_totp_device got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -308,7 +308,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -418,7 +418,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_tag_default_lock got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_tag_default_lock got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagDefaultId": tag_default_id
@@ -428,7 +428,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -539,7 +539,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_tag_namespace_lock got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_tag_namespace_lock got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagNamespaceId": tag_namespace_id
@@ -549,7 +549,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -649,7 +649,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_user_to_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_user_to_group got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -743,13 +743,13 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "assemble_effective_tag_set got unknown kwargs: {!r}".format(extra_kwargs))
+                f"assemble_effective_tag_set got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -860,7 +860,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "bulk_delete_resources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"bulk_delete_resources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "compartmentId": compartment_id
@@ -870,7 +870,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -993,7 +993,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "bulk_delete_tags got unknown kwargs: {!r}".format(extra_kwargs))
+                f"bulk_delete_tags got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "isLockOverride": kwargs.get("is_lock_override", missing)
@@ -1111,7 +1111,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "bulk_edit_tags got unknown kwargs: {!r}".format(extra_kwargs))
+                f"bulk_edit_tags got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1217,7 +1217,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "bulk_move_resources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"bulk_move_resources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "compartmentId": compartment_id
@@ -1227,7 +1227,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1354,7 +1354,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cascade_delete_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cascade_delete_tag_namespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagNamespaceId": tag_namespace_id
@@ -1364,7 +1364,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isLockOverride": kwargs.get("is_lock_override", missing)
@@ -1481,7 +1481,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_domain_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_domain_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "domainId": domain_id
@@ -1491,7 +1491,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1608,7 +1608,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_domain_license_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_domain_license_type got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "domainId": domain_id
@@ -1618,7 +1618,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1727,7 +1727,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_tag_namespace_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_tag_namespace_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagNamespaceId": tag_namespace_id
@@ -1737,7 +1737,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isLockOverride": kwargs.get("is_lock_override", missing)
@@ -1851,7 +1851,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_auth_token got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -1861,7 +1861,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1975,7 +1975,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_compartment got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2083,7 +2083,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_customer_secret_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -2093,7 +2093,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2196,7 +2196,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_db_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_db_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -2206,7 +2206,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2314,7 +2314,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_domain got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_domain got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2426,7 +2426,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_dynamic_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_dynamic_group got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2542,7 +2542,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_group got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2658,7 +2658,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_identity_provider got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2759,7 +2759,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_idp_group_mapping got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_idp_group_mapping got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id
@@ -2769,7 +2769,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2864,7 +2864,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_mfa_totp_device got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_mfa_totp_device got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -2874,7 +2874,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2991,7 +2991,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_network_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_network_source got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -3087,7 +3087,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_o_auth_client_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_o_auth_client_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -3097,7 +3097,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3208,7 +3208,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_or_reset_ui_password got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_or_reset_ui_password got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -3218,7 +3218,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3331,7 +3331,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_policy got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -3427,7 +3427,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_region_subscription got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_region_subscription got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tenancyId": tenancy_id
@@ -3437,7 +3437,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3538,7 +3538,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_smtp_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -3548,7 +3548,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3659,7 +3659,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_swift_password got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_swift_password got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -3669,7 +3669,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3792,7 +3792,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagNamespaceId": tag_namespace_id
@@ -3802,7 +3802,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isLockOverride": kwargs.get("is_lock_override", missing)
@@ -3916,7 +3916,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_tag_default got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_tag_default got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4023,7 +4023,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_tag_namespace got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4154,7 +4154,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_user got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4266,7 +4266,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "deactivate_domain got unknown kwargs: {!r}".format(extra_kwargs))
+                f"deactivate_domain got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "domainId": domain_id
@@ -4276,7 +4276,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4375,7 +4375,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_api_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_api_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -4386,7 +4386,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4477,7 +4477,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_auth_token got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -4488,7 +4488,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4576,7 +4576,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "compartmentId": compartment_id
@@ -4586,7 +4586,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4677,7 +4677,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_customer_secret_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -4688,7 +4688,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4784,7 +4784,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_db_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_db_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -4795,7 +4795,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4895,7 +4895,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_domain got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_domain got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "domainId": domain_id
@@ -4905,7 +4905,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4994,7 +4994,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_dynamic_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_dynamic_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dynamicGroupId": dynamic_group_id
@@ -5004,7 +5004,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5092,7 +5092,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "groupId": group_id
@@ -5102,7 +5102,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5195,7 +5195,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_identity_provider got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id
@@ -5205,7 +5205,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5300,7 +5300,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_idp_group_mapping got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_idp_group_mapping got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id,
@@ -5311,7 +5311,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5402,7 +5402,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_mfa_totp_device got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_mfa_totp_device got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -5413,7 +5413,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5501,7 +5501,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_network_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_network_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkSourceId": network_source_id
@@ -5511,7 +5511,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5602,7 +5602,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_o_auth_client_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_o_auth_client_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -5613,7 +5613,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5701,7 +5701,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "policyId": policy_id
@@ -5711,7 +5711,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5802,7 +5802,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_smtp_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -5813,7 +5813,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5906,7 +5906,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_swift_password got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_swift_password got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -5917,7 +5917,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6031,7 +6031,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagNamespaceId": tag_namespace_id,
@@ -6042,7 +6042,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isLockOverride": kwargs.get("is_lock_override", missing)
@@ -6146,7 +6146,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_tag_default got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_tag_default got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagDefaultId": tag_default_id
@@ -6156,7 +6156,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isLockOverride": kwargs.get("is_lock_override", missing)
@@ -6267,7 +6267,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_tag_namespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagNamespaceId": tag_namespace_id
@@ -6277,7 +6277,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isLockOverride": kwargs.get("is_lock_override", missing)
@@ -6373,7 +6373,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -6383,7 +6383,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6496,7 +6496,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_replication_to_region got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_replication_to_region got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "domainId": domain_id
@@ -6506,7 +6506,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6602,7 +6602,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_totp_seed got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_totp_seed got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -6613,7 +6613,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6694,7 +6694,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_authentication_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_authentication_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "compartmentId": compartment_id
@@ -6704,7 +6704,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6789,7 +6789,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "compartmentId": compartment_id
@@ -6799,7 +6799,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6886,7 +6886,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_domain got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_domain got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "domainId": domain_id
@@ -6896,7 +6896,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6976,7 +6976,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_dynamic_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_dynamic_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dynamicGroupId": dynamic_group_id
@@ -6986,7 +6986,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7068,7 +7068,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "groupId": group_id
@@ -7078,7 +7078,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7165,7 +7165,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_iam_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_iam_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "iamWorkRequestId": iam_work_request_id
@@ -7175,7 +7175,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7259,7 +7259,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_identity_provider got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id
@@ -7269,7 +7269,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7354,7 +7354,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_idp_group_mapping got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_idp_group_mapping got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id,
@@ -7365,7 +7365,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7446,7 +7446,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_mfa_totp_device got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_mfa_totp_device got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -7457,7 +7457,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7535,7 +7535,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_network_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_network_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkSourceId": network_source_id
@@ -7545,7 +7545,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7623,7 +7623,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "policyId": policy_id
@@ -7633,7 +7633,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7714,7 +7714,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_standard_tag_template got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_standard_tag_template got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "standardTagNamespaceName": standard_tag_namespace_name
@@ -7724,7 +7724,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": compartment_id
@@ -7812,7 +7812,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagNamespaceId": tag_namespace_id,
@@ -7823,7 +7823,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7901,7 +7901,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_tag_default got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_tag_default got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagDefaultId": tag_default_id
@@ -7911,7 +7911,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7989,7 +7989,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_tag_namespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagNamespaceId": tag_namespace_id
@@ -7999,7 +7999,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8078,7 +8078,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_tagging_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_tagging_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -8088,7 +8088,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8166,7 +8166,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_tenancy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_tenancy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tenancyId": tenancy_id
@@ -8176,7 +8176,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8254,7 +8254,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -8264,7 +8264,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8342,7 +8342,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_user_group_membership got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_user_group_membership got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userGroupMembershipId": user_group_membership_id
@@ -8352,7 +8352,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8431,7 +8431,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_user_ui_password_information got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_user_ui_password_information got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -8441,7 +8441,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8520,7 +8520,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -8530,7 +8530,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8627,7 +8627,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "import_standard_tags got unknown kwargs: {!r}".format(extra_kwargs))
+                f"import_standard_tags got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -8721,7 +8721,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_allowed_domain_license_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_allowed_domain_license_types got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "currentLicenseTypeName": kwargs.get("current_license_type_name", missing)
@@ -8809,7 +8809,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_api_keys got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_api_keys got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -8819,7 +8819,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8898,7 +8898,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_auth_tokens got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_auth_tokens got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -8908,7 +8908,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8992,7 +8992,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_availability_domains got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_availability_domains got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id
@@ -9097,12 +9097,12 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_bulk_action_resource_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_bulk_action_resource_types got unknown kwargs: {extra_kwargs!r}")
 
         bulk_action_type_allowed_values = ["BULK_MOVE_RESOURCES", "BULK_DELETE_RESOURCES"]
         if bulk_action_type not in bulk_action_type_allowed_values:
             raise ValueError(
-                "Invalid value for `bulk_action_type`, must be one of {0}".format(bulk_action_type_allowed_values)
+                f"Invalid value for `bulk_action_type`, must be one of { bulk_action_type_allowed_values }"
             )
 
         query_params = {
@@ -9197,7 +9197,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_bulk_edit_tags_resource_types got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_bulk_edit_tags_resource_types got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -9362,34 +9362,34 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_compartments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_compartments got unknown kwargs: {extra_kwargs!r}")
 
         if 'access_level' in kwargs:
             access_level_allowed_values = ["ANY", "ACCESSIBLE"]
             if kwargs['access_level'] not in access_level_allowed_values:
                 raise ValueError(
-                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                    f"Invalid value for `access_level`, must be one of { access_level_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -9496,7 +9496,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cost_tracking_tags got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cost_tracking_tags got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -9582,7 +9582,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_customer_secret_keys got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_customer_secret_keys got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -9592,7 +9592,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9717,7 +9717,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_credentials got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -9727,27 +9727,27 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -9911,27 +9911,27 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_domains got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_domains got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "INACTIVE"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -10075,27 +10075,27 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_dynamic_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_dynamic_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -10192,7 +10192,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fault_domains got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fault_domains got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -10322,27 +10322,27 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -10456,7 +10456,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_iam_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_iam_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "iamWorkRequestId": iam_work_request_id
@@ -10466,13 +10466,13 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -10586,7 +10586,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_iam_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_iam_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "iamWorkRequestId": iam_work_request_id
@@ -10596,13 +10596,13 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -10713,7 +10713,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_iam_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_iam_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -10827,7 +10827,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_identity_provider_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_identity_provider_groups got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id
@@ -10837,13 +10837,13 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -10987,27 +10987,27 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_identity_providers got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_identity_providers got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -11114,7 +11114,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_idp_group_mappings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_idp_group_mappings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id
@@ -11124,7 +11124,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -11243,7 +11243,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_mfa_totp_devices got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_mfa_totp_devices got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -11253,20 +11253,20 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11401,27 +11401,27 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_network_sources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_network_sources got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -11529,7 +11529,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_o_auth_client_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_o_auth_client_credentials got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -11539,13 +11539,13 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -11681,27 +11681,27 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_policies got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -11791,7 +11791,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_region_subscriptions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_region_subscriptions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tenancyId": tenancy_id
@@ -11801,7 +11801,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11876,7 +11876,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_regions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_regions got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -11953,7 +11953,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_smtp_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_smtp_credentials got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -11963,7 +11963,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12053,7 +12053,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_standard_tag_namespaces got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_standard_tag_namespaces got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -12141,7 +12141,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_swift_passwords got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_swift_passwords got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -12151,7 +12151,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12256,13 +12256,13 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tag_defaults got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tag_defaults got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -12374,13 +12374,13 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tag_namespaces got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tag_namespaces got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "INACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -12480,7 +12480,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tagging_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tagging_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -12490,7 +12490,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -12588,7 +12588,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tagging_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tagging_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -12598,7 +12598,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -12700,7 +12700,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tagging_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tagging_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -12804,7 +12804,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tags got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tags got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagNamespaceId": tag_namespace_id
@@ -12814,13 +12814,13 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "INACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -12939,7 +12939,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_user_group_memberships got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_user_group_memberships got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -13080,27 +13080,27 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_users got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_users got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -13208,7 +13208,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -13329,7 +13329,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "move_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"move_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "compartmentId": compartment_id
@@ -13339,7 +13339,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13437,7 +13437,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "recover_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"recover_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "compartmentId": compartment_id
@@ -13447,7 +13447,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13554,7 +13554,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_tag_default_lock got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_tag_default_lock got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagDefaultId": tag_default_id
@@ -13564,7 +13564,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13675,7 +13675,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_tag_namespace_lock got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_tag_namespace_lock got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagNamespaceId": tag_namespace_id
@@ -13685,7 +13685,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13780,7 +13780,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_user_from_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_user_from_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userGroupMembershipId": user_group_membership_id
@@ -13790,7 +13790,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13868,7 +13868,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "reset_idp_scim_client got unknown kwargs: {!r}".format(extra_kwargs))
+                f"reset_idp_scim_client got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id
@@ -13878,7 +13878,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13972,7 +13972,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_auth_token got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -13983,7 +13983,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14078,7 +14078,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_authentication_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_authentication_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "compartmentId": compartment_id
@@ -14088,7 +14088,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14183,7 +14183,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "compartmentId": compartment_id
@@ -14193,7 +14193,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14291,7 +14291,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_customer_secret_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -14302,7 +14302,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14405,7 +14405,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_domain got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_domain got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "domainId": domain_id
@@ -14415,7 +14415,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14509,7 +14509,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_dynamic_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_dynamic_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dynamicGroupId": dynamic_group_id
@@ -14519,7 +14519,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14614,7 +14614,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "groupId": group_id
@@ -14624,7 +14624,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14723,7 +14723,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_identity_provider got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id
@@ -14733,7 +14733,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14835,7 +14835,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_idp_group_mapping got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_idp_group_mapping got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "identityProviderId": identity_provider_id,
@@ -14846,7 +14846,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14941,7 +14941,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_network_source got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_network_source got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "networkSourceId": network_source_id
@@ -14951,7 +14951,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15049,7 +15049,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_o_auth_client_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_o_auth_client_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -15060,7 +15060,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15157,7 +15157,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "policyId": policy_id
@@ -15167,7 +15167,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15265,7 +15265,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_smtp_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -15276,7 +15276,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15376,7 +15376,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_swift_password got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_swift_password got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id,
@@ -15387,7 +15387,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15498,7 +15498,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_tag got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_tag got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagNamespaceId": tag_namespace_id,
@@ -15509,7 +15509,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isLockOverride": kwargs.get("is_lock_override", missing)
@@ -15625,7 +15625,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_tag_default got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_tag_default got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagDefaultId": tag_default_id
@@ -15635,7 +15635,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isLockOverride": kwargs.get("is_lock_override", missing)
@@ -15746,7 +15746,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_tag_namespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "tagNamespaceId": tag_namespace_id
@@ -15756,7 +15756,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isLockOverride": kwargs.get("is_lock_override", missing)
@@ -15856,7 +15856,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -15866,7 +15866,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15961,7 +15961,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_user_capabilities got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_user_capabilities got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -15971,7 +15971,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16066,7 +16066,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_user_state got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_user_state got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -16076,7 +16076,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16187,7 +16187,7 @@ class IdentityClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upload_api_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upload_api_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "userId": user_id
@@ -16197,7 +16197,7 @@ class IdentityClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

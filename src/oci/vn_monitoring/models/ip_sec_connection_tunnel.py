@@ -396,8 +396,7 @@ class IPSecConnectionTunnel(object):
         allowed_values = ["UP", "DOWN", "DOWN_FOR_MAINTENANCE", "PARTIAL_UP"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             raise ValueError(
-                "Invalid value for `status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `status`, must be None or one of {allowed_values}"
             )
         self._status = status
 
@@ -428,8 +427,7 @@ class IPSecConnectionTunnel(object):
         allowed_values = ["V1", "V2"]
         if not value_allowed_none_or_none_sentinel(ike_version, allowed_values):
             raise ValueError(
-                "Invalid value for `ike_version`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ike_version`, must be None or one of {allowed_values}"
             )
         self._ike_version = ike_version
 
@@ -460,8 +458,7 @@ class IPSecConnectionTunnel(object):
         allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 
@@ -558,8 +555,7 @@ class IPSecConnectionTunnel(object):
         allowed_values = ["BGP", "STATIC", "POLICY"]
         if not value_allowed_none_or_none_sentinel(routing, allowed_values):
             raise ValueError(
-                "Invalid value for `routing`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `routing`, must be None or one of {allowed_values}"
             )
         self._routing = routing
 
@@ -654,8 +650,7 @@ class IPSecConnectionTunnel(object):
         allowed_values = ["INITIATOR_OR_RESPONDER", "RESPONDER_ONLY"]
         if not value_allowed_none_or_none_sentinel(oracle_can_initiate, allowed_values):
             raise ValueError(
-                "Invalid value for `oracle_can_initiate`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `oracle_can_initiate`, must be None or one of {allowed_values}"
             )
         self._oracle_can_initiate = oracle_can_initiate
 
@@ -706,8 +701,7 @@ class IPSecConnectionTunnel(object):
         allowed_values = ["ENABLED", "DISABLED", "AUTO"]
         if not value_allowed_none_or_none_sentinel(nat_translation_enabled, allowed_values):
             raise ValueError(
-                "Invalid value for `nat_translation_enabled`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `nat_translation_enabled`, must be None or one of {allowed_values}"
             )
         self._nat_translation_enabled = nat_translation_enabled
 
@@ -742,8 +736,7 @@ class IPSecConnectionTunnel(object):
         allowed_values = ["INITIATE_AND_RESPOND", "RESPOND_ONLY"]
         if not value_allowed_none_or_none_sentinel(dpd_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `dpd_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `dpd_mode`, must be None or one of {allowed_values}"
             )
         self._dpd_mode = dpd_mode
 

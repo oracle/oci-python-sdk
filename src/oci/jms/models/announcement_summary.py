@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnnouncementSummary(object):
     """
-    A summary of a announcement on Console Overview page
+    An summary of a announcement on Console Overview page
     """
 
     def __init__(self, **kwargs):

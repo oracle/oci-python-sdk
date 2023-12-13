@@ -23,7 +23,7 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
 
         :param type:
             The value to assign to the type property of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
         :type type: str
 
         :param code:
@@ -107,7 +107,7 @@ class ValidateDatabaseToolsConnectionOracleDatabaseResult(ValidateDatabaseToolsC
     @property
     def database_version(self):
         """
-        Gets the database_version of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
+        **[Required]** Gets the database_version of this ValidateDatabaseToolsConnectionOracleDatabaseResult.
         The database version.
 
 

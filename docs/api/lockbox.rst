@@ -35,6 +35,7 @@ Lockbox
     oci.lockbox.models.CreateAccessRequestDetails
     oci.lockbox.models.CreateApprovalTemplateDetails
     oci.lockbox.models.CreateLockboxDetails
+    oci.lockbox.models.ExportAccessRequestsDetails
     oci.lockbox.models.HandleAccessRequestDetails
     oci.lockbox.models.Lockbox
     oci.lockbox.models.LockboxCollection

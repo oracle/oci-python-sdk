@@ -74,8 +74,7 @@ class UpdateRoutingPolicyDetails(object):
         allowed_values = ["V1"]
         if not value_allowed_none_or_none_sentinel(condition_language_version, allowed_values):
             raise ValueError(
-                "Invalid value for `condition_language_version`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `condition_language_version`, must be None or one of {allowed_values}"
             )
         self._condition_language_version = condition_language_version
 

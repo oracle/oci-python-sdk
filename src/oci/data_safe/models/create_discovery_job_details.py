@@ -338,8 +338,8 @@ class CreateDiscoveryJobDetails(object):
     def is_include_all_schemas(self):
         """
         Gets the is_include_all_schemas of this CreateDiscoveryJobDetails.
-        Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery
-        attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration
+        Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered
+        in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration
         from the sensitive data model is used.
 
 
@@ -352,8 +352,8 @@ class CreateDiscoveryJobDetails(object):
     def is_include_all_schemas(self, is_include_all_schemas):
         """
         Sets the is_include_all_schemas of this CreateDiscoveryJobDetails.
-        Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery
-        attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration
+        Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered
+        in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration
         from the sensitive data model is used.
 
 

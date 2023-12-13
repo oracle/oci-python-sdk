@@ -83,8 +83,7 @@ class UpdateExtract(object):
         allowed_values = ["LOW", "MEDIUM", "HIGH"]
         if not value_allowed_none_or_none_sentinel(performance_profile, allowed_values):
             raise ValueError(
-                "Invalid value for `performance_profile`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `performance_profile`, must be None or one of {allowed_values}"
             )
         self._performance_profile = performance_profile
 

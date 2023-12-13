@@ -31,6 +31,10 @@ class FastLaunchJobConfigSummary(object):
     #: This constant has a value of "LEGACY"
     SHAPE_SERIES_LEGACY = "LEGACY"
 
+    #: A constant which can be used with the shape_series property of a FastLaunchJobConfigSummary.
+    #: This constant has a value of "ARM"
+    SHAPE_SERIES_ARM = "ARM"
+
     #: A constant which can be used with the managed_egress_support property of a FastLaunchJobConfigSummary.
     #: This constant has a value of "REQUIRED"
     MANAGED_EGRESS_SUPPORT_REQUIRED = "REQUIRED"
@@ -66,7 +70,7 @@ class FastLaunchJobConfigSummary(object):
 
         :param shape_series:
             The value to assign to the shape_series property of this FastLaunchJobConfigSummary.
-            Allowed values for this property are: "AMD_ROME", "INTEL_SKYLAKE", "NVIDIA_GPU", "LEGACY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMD_ROME", "INTEL_SKYLAKE", "NVIDIA_GPU", "LEGACY", "ARM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type shape_series: str
 
@@ -204,7 +208,7 @@ class FastLaunchJobConfigSummary(object):
         **[Required]** Gets the shape_series of this FastLaunchJobConfigSummary.
         The family that the compute shape belongs to.
 
-        Allowed values for this property are: "AMD_ROME", "INTEL_SKYLAKE", "NVIDIA_GPU", "LEGACY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMD_ROME", "INTEL_SKYLAKE", "NVIDIA_GPU", "LEGACY", "ARM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -223,7 +227,7 @@ class FastLaunchJobConfigSummary(object):
         :param shape_series: The shape_series of this FastLaunchJobConfigSummary.
         :type: str
         """
-        allowed_values = ["AMD_ROME", "INTEL_SKYLAKE", "NVIDIA_GPU", "LEGACY"]
+        allowed_values = ["AMD_ROME", "INTEL_SKYLAKE", "NVIDIA_GPU", "LEGACY", "ARM"]
         if not value_allowed_none_or_none_sentinel(shape_series, allowed_values):
             shape_series = 'UNKNOWN_ENUM_VALUE'
         self._shape_series = shape_series

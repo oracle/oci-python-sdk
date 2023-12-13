@@ -366,8 +366,7 @@ class CreateIPSecConnectionDetails(object):
         allowed_values = ["IP_ADDRESS", "HOSTNAME"]
         if not value_allowed_none_or_none_sentinel(cpe_local_identifier_type, allowed_values):
             raise ValueError(
-                "Invalid value for `cpe_local_identifier_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `cpe_local_identifier_type`, must be None or one of {allowed_values}"
             )
         self._cpe_local_identifier_type = cpe_local_identifier_type
 

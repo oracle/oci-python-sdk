@@ -60,12 +60,40 @@ class CreateBlocklistDetails(object):
     OPERATION_REQUEST_JAVA_MIGRATION_ANALYSIS = "REQUEST_JAVA_MIGRATION_ANALYSIS"
 
     #: A constant which can be used with the operation property of a CreateBlocklistDetails.
+    #: This constant has a value of "DELETE_JMS_REPORT"
+    OPERATION_DELETE_JMS_REPORT = "DELETE_JMS_REPORT"
+
+    #: A constant which can be used with the operation property of a CreateBlocklistDetails.
     #: This constant has a value of "SCAN_JAVA_SERVER_USAGE"
     OPERATION_SCAN_JAVA_SERVER_USAGE = "SCAN_JAVA_SERVER_USAGE"
 
     #: A constant which can be used with the operation property of a CreateBlocklistDetails.
     #: This constant has a value of "SCAN_LIBRARY_USAGE"
     OPERATION_SCAN_LIBRARY_USAGE = "SCAN_LIBRARY_USAGE"
+
+    #: A constant which can be used with the operation property of a CreateBlocklistDetails.
+    #: This constant has a value of "EXPORT_DATA_CSV"
+    OPERATION_EXPORT_DATA_CSV = "EXPORT_DATA_CSV"
+
+    #: A constant which can be used with the operation property of a CreateBlocklistDetails.
+    #: This constant has a value of "CREATE_DRS_FILE"
+    OPERATION_CREATE_DRS_FILE = "CREATE_DRS_FILE"
+
+    #: A constant which can be used with the operation property of a CreateBlocklistDetails.
+    #: This constant has a value of "UPDATE_DRS_FILE"
+    OPERATION_UPDATE_DRS_FILE = "UPDATE_DRS_FILE"
+
+    #: A constant which can be used with the operation property of a CreateBlocklistDetails.
+    #: This constant has a value of "DELETE_DRS_FILE"
+    OPERATION_DELETE_DRS_FILE = "DELETE_DRS_FILE"
+
+    #: A constant which can be used with the operation property of a CreateBlocklistDetails.
+    #: This constant has a value of "ENABLE_DRS"
+    OPERATION_ENABLE_DRS = "ENABLE_DRS"
+
+    #: A constant which can be used with the operation property of a CreateBlocklistDetails.
+    #: This constant has a value of "DISABLE_DRS"
+    OPERATION_DISABLE_DRS = "DISABLE_DRS"
 
     def __init__(self, **kwargs):
         """
@@ -78,7 +106,7 @@ class CreateBlocklistDetails(object):
 
         :param operation:
             The value to assign to the operation property of this CreateBlocklistDetails.
-            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"
+            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "DELETE_JMS_REPORT", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", "EXPORT_DATA_CSV", "CREATE_DRS_FILE", "UPDATE_DRS_FILE", "DELETE_DRS_FILE", "ENABLE_DRS", "DISABLE_DRS"
         :type operation: str
 
         :param reason:
@@ -128,7 +156,7 @@ class CreateBlocklistDetails(object):
         **[Required]** Gets the operation of this CreateBlocklistDetails.
         The operation type
 
-        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"
+        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "DELETE_JMS_REPORT", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", "EXPORT_DATA_CSV", "CREATE_DRS_FILE", "UPDATE_DRS_FILE", "DELETE_DRS_FILE", "ENABLE_DRS", "DISABLE_DRS"
 
 
         :return: The operation of this CreateBlocklistDetails.
@@ -146,11 +174,10 @@ class CreateBlocklistDetails(object):
         :param operation: The operation of this CreateBlocklistDetails.
         :type: str
         """
-        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"]
+        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "DELETE_JMS_REPORT", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", "EXPORT_DATA_CSV", "CREATE_DRS_FILE", "UPDATE_DRS_FILE", "DELETE_DRS_FILE", "ENABLE_DRS", "DISABLE_DRS"]
         if not value_allowed_none_or_none_sentinel(operation, allowed_values):
             raise ValueError(
-                "Invalid value for `operation`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `operation`, must be None or one of {allowed_values}"
             )
         self._operation = operation
 

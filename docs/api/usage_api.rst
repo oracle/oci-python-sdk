@@ -18,12 +18,15 @@ Usage Api
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.usage_api.models.AverageCarbonEmission
+    oci.usage_api.models.CleanEnergyUsage
     oci.usage_api.models.Configuration
     oci.usage_api.models.ConfigurationAggregation
     oci.usage_api.models.CostAnalysisUI
     oci.usage_api.models.CreateCustomTableDetails
     oci.usage_api.models.CreateQueryDetails
     oci.usage_api.models.CreateScheduleDetails
+    oci.usage_api.models.CreateUsageCarbonEmissionsQueryDetails
     oci.usage_api.models.CustomTable
     oci.usage_api.models.CustomTableCollection
     oci.usage_api.models.CustomTableSummary
@@ -40,6 +43,7 @@ Usage Api
     oci.usage_api.models.QuerySummary
     oci.usage_api.models.ReportQuery
     oci.usage_api.models.RequestSummarizedUsagesDetails
+    oci.usage_api.models.RequestUsageCarbonEmissionsDetails
     oci.usage_api.models.ResultLocation
     oci.usage_api.models.SavedCustomTable
     oci.usage_api.models.Schedule
@@ -53,5 +57,13 @@ Usage Api
     oci.usage_api.models.UpdateCustomTableDetails
     oci.usage_api.models.UpdateQueryDetails
     oci.usage_api.models.UpdateScheduleDetails
+    oci.usage_api.models.UpdateUsageCarbonEmissionsQueryDetails
     oci.usage_api.models.UsageAggregation
+    oci.usage_api.models.UsageCarbonEmissionAggregation
+    oci.usage_api.models.UsageCarbonEmissionSummary
+    oci.usage_api.models.UsageCarbonEmissionsQuery
+    oci.usage_api.models.UsageCarbonEmissionsQueryCollection
+    oci.usage_api.models.UsageCarbonEmissionsQueryDefinition
+    oci.usage_api.models.UsageCarbonEmissionsQuerySummary
+    oci.usage_api.models.UsageCarbonEmissionsReportQuery
     oci.usage_api.models.UsageSummary

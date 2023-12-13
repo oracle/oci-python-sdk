@@ -286,7 +286,7 @@ class UserSummary(object):
     def account_status(self):
         """
         Gets the account_status of this UserSummary.
-        The user account status.
+        The status of the user account.
 
         Allowed values for this property are: "OPEN", "LOCKED", "EXPIRED", "EXPIRED_AND_LOCKED", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -301,7 +301,7 @@ class UserSummary(object):
     def account_status(self, account_status):
         """
         Sets the account_status of this UserSummary.
-        The user account status.
+        The status of the user account.
 
 
         :param account_status: The account_status of this UserSummary.
@@ -340,7 +340,7 @@ class UserSummary(object):
     def time_last_login(self):
         """
         Gets the time_last_login of this UserSummary.
-        The date and time when the user last logged in, in the format defined by `RFC3339`__.
+        The date and time the user last logged in, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -354,7 +354,7 @@ class UserSummary(object):
     def time_last_login(self, time_last_login):
         """
         Sets the time_last_login of this UserSummary.
-        The date and time when the user last logged in, in the format defined by `RFC3339`__.
+        The date and time the user last logged in, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -368,7 +368,7 @@ class UserSummary(object):
     def time_user_created(self):
         """
         Gets the time_user_created of this UserSummary.
-        The date and time when the user was created in the database, in the format defined by `RFC3339`__.
+        The date and time the user was created in the database, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -382,7 +382,7 @@ class UserSummary(object):
     def time_user_created(self, time_user_created):
         """
         Sets the time_user_created of this UserSummary.
-        The date and time when the user was created in the database, in the format defined by `RFC3339`__.
+        The date and time the user was created in the database, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -450,7 +450,7 @@ class UserSummary(object):
     def time_password_changed(self):
         """
         Gets the time_password_changed of this UserSummary.
-        The date and time when the user password was last changed, in the format defined by `RFC3339`__.
+        The date and time the user password was last changed, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -464,7 +464,7 @@ class UserSummary(object):
     def time_password_changed(self, time_password_changed):
         """
         Sets the time_password_changed of this UserSummary.
-        The date and time when the user password was last changed, in the format defined by `RFC3339`__.
+        The date and time the user password was last changed, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 

@@ -23,7 +23,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreatePostgresqlConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -54,13 +54,18 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             The value to assign to the key_id property of this CreatePostgresqlConnectionDetails.
         :type key_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this CreatePostgresqlConnectionDetails.
+        :type nsg_ids: list[str]
+
         :param subnet_id:
             The value to assign to the subnet_id property of this CreatePostgresqlConnectionDetails.
         :type subnet_id: str
 
-        :param nsg_ids:
-            The value to assign to the nsg_ids property of this CreatePostgresqlConnectionDetails.
-        :type nsg_ids: list[str]
+        :param routing_method:
+            The value to assign to the routing_method property of this CreatePostgresqlConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
 
         :param technology_type:
             The value to assign to the technology_type property of this CreatePostgresqlConnectionDetails.
@@ -128,8 +133,9 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'vault_id': 'str',
             'key_id': 'str',
-            'subnet_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'technology_type': 'str',
             'database_name': 'str',
             'host': 'str',
@@ -155,8 +161,9 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
             'defined_tags': 'definedTags',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'technology_type': 'technologyType',
             'database_name': 'databaseName',
             'host': 'host',
@@ -181,8 +188,9 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         self._defined_tags = None
         self._vault_id = None
         self._key_id = None
-        self._subnet_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._technology_type = None
         self._database_name = None
         self._host = None
@@ -428,6 +436,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         """
         Gets the ssl_ca of this CreatePostgresqlConnectionDetails.
         The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+        The supported file formats are .pem and .crt.
 
 
         :return: The ssl_ca of this CreatePostgresqlConnectionDetails.
@@ -440,6 +449,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
         """
         Sets the ssl_ca of this CreatePostgresqlConnectionDetails.
         The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.
+        The supported file formats are .pem and .crt.
 
 
         :param ssl_ca: The ssl_ca of this CreatePostgresqlConnectionDetails.
@@ -451,7 +461,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
     def ssl_crl(self):
         """
         Gets the ssl_crl of this CreatePostgresqlConnectionDetails.
-        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA) for PostgreSQL.
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
 
 
         :return: The ssl_crl of this CreatePostgresqlConnectionDetails.
@@ -463,7 +473,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
     def ssl_crl(self, ssl_crl):
         """
         Sets the ssl_crl of this CreatePostgresqlConnectionDetails.
-        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA) for PostgreSQL.
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA).
 
 
         :param ssl_crl: The ssl_crl of this CreatePostgresqlConnectionDetails.
@@ -475,7 +485,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
     def ssl_cert(self):
         """
         Gets the ssl_cert of this CreatePostgresqlConnectionDetails.
-        The base64 encoded certificate of the PostgreSQL server.
+        The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
 
 
         :return: The ssl_cert of this CreatePostgresqlConnectionDetails.
@@ -487,7 +497,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
     def ssl_cert(self, ssl_cert):
         """
         Sets the ssl_cert of this CreatePostgresqlConnectionDetails.
-        The base64 encoded certificate of the PostgreSQL server.
+        The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt.
 
 
         :param ssl_cert: The ssl_cert of this CreatePostgresqlConnectionDetails.
@@ -499,7 +509,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
     def ssl_key(self):
         """
         Gets the ssl_key of this CreatePostgresqlConnectionDetails.
-        The base64 encoded private key of the PostgreSQL server.
+        The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
 
 
         :return: The ssl_key of this CreatePostgresqlConnectionDetails.
@@ -511,7 +521,7 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
     def ssl_key(self, ssl_key):
         """
         Sets the ssl_key of this CreatePostgresqlConnectionDetails.
-        The base64 encoded private key of the PostgreSQL server.
+        The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
 
 
         :param ssl_key: The ssl_key of this CreatePostgresqlConnectionDetails.
@@ -523,6 +533,9 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
     def private_ip(self):
         """
         Gets the private_ip of this CreatePostgresqlConnectionDetails.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.
@@ -539,6 +552,9 @@ class CreatePostgresqlConnectionDetails(CreateConnectionDetails):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this CreatePostgresqlConnectionDetails.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.

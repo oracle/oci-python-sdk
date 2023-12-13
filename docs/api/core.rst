@@ -94,6 +94,7 @@ Core Services
     oci.core.models.CapacityReportInstanceShapeConfig
     oci.core.models.CapacityReportShapeAvailability
     oci.core.models.CapacityReservationInstanceSummary
+    oci.core.models.CapacitySource
     oci.core.models.CaptureConsoleHistoryDetails
     oci.core.models.CaptureFilter
     oci.core.models.ChangeBootVolumeBackupCompartmentDetails
@@ -102,6 +103,7 @@ Core Services
     oci.core.models.ChangeCaptureFilterCompartmentDetails
     oci.core.models.ChangeClusterNetworkCompartmentDetails
     oci.core.models.ChangeComputeCapacityReservationCompartmentDetails
+    oci.core.models.ChangeComputeCapacityTopologyCompartmentDetails
     oci.core.models.ChangeComputeClusterCompartmentDetails
     oci.core.models.ChangeComputeImageCapabilitySchemaCompartmentDetails
     oci.core.models.ChangeCpeCompartmentDetails
@@ -140,10 +142,16 @@ Core Services
     oci.core.models.ClusterNetworkPlacementConfigurationDetails
     oci.core.models.ClusterNetworkSummary
     oci.core.models.CompartmentInternal
+    oci.core.models.ComputeBareMetalHost
+    oci.core.models.ComputeBareMetalHostCollection
+    oci.core.models.ComputeBareMetalHostSummary
     oci.core.models.ComputeCapacityReport
     oci.core.models.ComputeCapacityReservation
     oci.core.models.ComputeCapacityReservationInstanceShapeSummary
     oci.core.models.ComputeCapacityReservationSummary
+    oci.core.models.ComputeCapacityTopology
+    oci.core.models.ComputeCapacityTopologyCollection
+    oci.core.models.ComputeCapacityTopologySummary
     oci.core.models.ComputeCluster
     oci.core.models.ComputeClusterCollection
     oci.core.models.ComputeClusterSummary
@@ -151,10 +159,16 @@ Core Services
     oci.core.models.ComputeGlobalImageCapabilitySchemaSummary
     oci.core.models.ComputeGlobalImageCapabilitySchemaVersion
     oci.core.models.ComputeGlobalImageCapabilitySchemaVersionSummary
+    oci.core.models.ComputeHpcIsland
+    oci.core.models.ComputeHpcIslandCollection
+    oci.core.models.ComputeHpcIslandSummary
     oci.core.models.ComputeImageCapabilitySchema
     oci.core.models.ComputeImageCapabilitySchemaSummary
     oci.core.models.ComputeInstanceDetails
     oci.core.models.ComputeInstanceOptions
+    oci.core.models.ComputeNetworkBlock
+    oci.core.models.ComputeNetworkBlockCollection
+    oci.core.models.ComputeNetworkBlockSummary
     oci.core.models.ConnectLocalPeeringGatewaysDetails
     oci.core.models.ConnectRemotePeeringConnectionsDetails
     oci.core.models.ConsoleHistory
@@ -172,16 +186,19 @@ Core Services
     oci.core.models.CreateBootVolumeDetails
     oci.core.models.CreateByoipRangeDetails
     oci.core.models.CreateCapacityReportShapeAvailabilityDetails
+    oci.core.models.CreateCapacitySourceDetails
     oci.core.models.CreateCaptureFilterDetails
     oci.core.models.CreateClusterNetworkDetails
     oci.core.models.CreateClusterNetworkInstancePoolDetails
     oci.core.models.CreateComputeCapacityReportDetails
     oci.core.models.CreateComputeCapacityReservationDetails
+    oci.core.models.CreateComputeCapacityTopologyDetails
     oci.core.models.CreateComputeClusterDetails
     oci.core.models.CreateComputeImageCapabilitySchemaDetails
     oci.core.models.CreateCpeDetails
     oci.core.models.CreateCrossConnectDetails
     oci.core.models.CreateCrossConnectGroupDetails
+    oci.core.models.CreateDedicatedCapacitySourceDetails
     oci.core.models.CreateDedicatedVmHostDetails
     oci.core.models.CreateDhcpDetails
     oci.core.models.CreateDrgAttachmentDetails
@@ -234,6 +251,7 @@ Core Services
     oci.core.models.CrossConnectMappingDetailsCollection
     oci.core.models.CrossConnectPortSpeedShape
     oci.core.models.CrossConnectStatus
+    oci.core.models.DedicatedCapacitySource
     oci.core.models.DedicatedVmHost
     oci.core.models.DedicatedVmHostInstanceShapeSummary
     oci.core.models.DedicatedVmHostInstanceSummary
@@ -277,6 +295,7 @@ Core Services
     oci.core.models.ExportImageViaObjectStorageUriDetails
     oci.core.models.FastConnectProviderService
     oci.core.models.FastConnectProviderServiceKey
+    oci.core.models.FlowLogCaptureFilterRuleDetails
     oci.core.models.GenericBmLaunchInstancePlatformConfig
     oci.core.models.GenericBmPlatformConfig
     oci.core.models.GetPublicIpByIpAddressDetails
@@ -471,16 +490,19 @@ Core Services
     oci.core.models.UpdateBootVolumeDetails
     oci.core.models.UpdateBootVolumeKmsKeyDetails
     oci.core.models.UpdateByoipRangeDetails
+    oci.core.models.UpdateCapacitySourceDetails
     oci.core.models.UpdateCaptureFilterDetails
     oci.core.models.UpdateClusterNetworkDetails
     oci.core.models.UpdateClusterNetworkInstancePoolDetails
     oci.core.models.UpdateComputeCapacityReservationDetails
+    oci.core.models.UpdateComputeCapacityTopologyDetails
     oci.core.models.UpdateComputeClusterDetails
     oci.core.models.UpdateComputeImageCapabilitySchemaDetails
     oci.core.models.UpdateConsoleHistoryDetails
     oci.core.models.UpdateCpeDetails
     oci.core.models.UpdateCrossConnectDetails
     oci.core.models.UpdateCrossConnectGroupDetails
+    oci.core.models.UpdateDedicatedCapacitySourceDetails
     oci.core.models.UpdateDedicatedVmHostDetails
     oci.core.models.UpdateDhcpDetails
     oci.core.models.UpdateDrgAttachmentDetails

@@ -31,13 +31,33 @@ class DrPlanExecutionOptionDetails(object):
     #: This constant has a value of "FAILOVER_PRECHECK"
     PLAN_EXECUTION_TYPE_FAILOVER_PRECHECK = "FAILOVER_PRECHECK"
 
+    #: A constant which can be used with the plan_execution_type property of a DrPlanExecutionOptionDetails.
+    #: This constant has a value of "START_DRILL"
+    PLAN_EXECUTION_TYPE_START_DRILL = "START_DRILL"
+
+    #: A constant which can be used with the plan_execution_type property of a DrPlanExecutionOptionDetails.
+    #: This constant has a value of "START_DRILL_PRECHECK"
+    PLAN_EXECUTION_TYPE_START_DRILL_PRECHECK = "START_DRILL_PRECHECK"
+
+    #: A constant which can be used with the plan_execution_type property of a DrPlanExecutionOptionDetails.
+    #: This constant has a value of "STOP_DRILL"
+    PLAN_EXECUTION_TYPE_STOP_DRILL = "STOP_DRILL"
+
+    #: A constant which can be used with the plan_execution_type property of a DrPlanExecutionOptionDetails.
+    #: This constant has a value of "STOP_DRILL_PRECHECK"
+    PLAN_EXECUTION_TYPE_STOP_DRILL_PRECHECK = "STOP_DRILL_PRECHECK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrPlanExecutionOptionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.disaster_recovery.models.StopDrillPrecheckExecutionOptionDetails`
         * :class:`~oci.disaster_recovery.models.SwitchoverPrecheckExecutionOptionDetails`
+        * :class:`~oci.disaster_recovery.models.StopDrillExecutionOptionDetails`
         * :class:`~oci.disaster_recovery.models.FailoverPrecheckExecutionOptionDetails`
+        * :class:`~oci.disaster_recovery.models.StartDrillExecutionOptionDetails`
+        * :class:`~oci.disaster_recovery.models.StartDrillPrecheckExecutionOptionDetails`
         * :class:`~oci.disaster_recovery.models.SwitchoverExecutionOptionDetails`
         * :class:`~oci.disaster_recovery.models.FailoverExecutionOptionDetails`
 
@@ -45,7 +65,7 @@ class DrPlanExecutionOptionDetails(object):
 
         :param plan_execution_type:
             The value to assign to the plan_execution_type property of this DrPlanExecutionOptionDetails.
-            Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK"
+            Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL", "START_DRILL_PRECHECK", "STOP_DRILL", "STOP_DRILL_PRECHECK"
         :type plan_execution_type: str
 
         """
@@ -67,11 +87,23 @@ class DrPlanExecutionOptionDetails(object):
         """
         type = object_dictionary['planExecutionType']
 
+        if type == 'STOP_DRILL_PRECHECK':
+            return 'StopDrillPrecheckExecutionOptionDetails'
+
         if type == 'SWITCHOVER_PRECHECK':
             return 'SwitchoverPrecheckExecutionOptionDetails'
 
+        if type == 'STOP_DRILL':
+            return 'StopDrillExecutionOptionDetails'
+
         if type == 'FAILOVER_PRECHECK':
             return 'FailoverPrecheckExecutionOptionDetails'
+
+        if type == 'START_DRILL':
+            return 'StartDrillExecutionOptionDetails'
+
+        if type == 'START_DRILL_PRECHECK':
+            return 'StartDrillPrecheckExecutionOptionDetails'
 
         if type == 'SWITCHOVER':
             return 'SwitchoverExecutionOptionDetails'
@@ -87,7 +119,7 @@ class DrPlanExecutionOptionDetails(object):
         **[Required]** Gets the plan_execution_type of this DrPlanExecutionOptionDetails.
         The type of the plan execution.
 
-        Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK"
+        Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL", "START_DRILL_PRECHECK", "STOP_DRILL", "STOP_DRILL_PRECHECK"
 
 
         :return: The plan_execution_type of this DrPlanExecutionOptionDetails.
@@ -105,11 +137,10 @@ class DrPlanExecutionOptionDetails(object):
         :param plan_execution_type: The plan_execution_type of this DrPlanExecutionOptionDetails.
         :type: str
         """
-        allowed_values = ["SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK"]
+        allowed_values = ["SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL", "START_DRILL_PRECHECK", "STOP_DRILL", "STOP_DRILL_PRECHECK"]
         if not value_allowed_none_or_none_sentinel(plan_execution_type, allowed_values):
             raise ValueError(
-                "Invalid value for `plan_execution_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `plan_execution_type`, must be None or one of {allowed_values}"
             )
         self._plan_execution_type = plan_execution_type
 

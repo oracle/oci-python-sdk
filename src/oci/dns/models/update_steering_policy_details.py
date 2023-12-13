@@ -322,8 +322,7 @@ class UpdateSteeringPolicyDetails(object):
         allowed_values = ["FAILOVER", "LOAD_BALANCE", "ROUTE_BY_GEO", "ROUTE_BY_ASN", "ROUTE_BY_IP", "CUSTOM"]
         if not value_allowed_none_or_none_sentinel(template, allowed_values):
             raise ValueError(
-                "Invalid value for `template`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `template`, must be None or one of {allowed_values}"
             )
         self._template = template
 

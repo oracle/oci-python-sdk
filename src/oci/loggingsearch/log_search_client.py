@@ -177,7 +177,7 @@ class LogSearchClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "search_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"search_logs got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),

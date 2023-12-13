@@ -133,8 +133,7 @@ class DrgRedundancyStatus(object):
         allowed_values = ["NOT_AVAILABLE", "REDUNDANT", "NOT_REDUNDANT_SINGLE_IPSEC", "NOT_REDUNDANT_SINGLE_VIRTUALCIRCUIT", "NOT_REDUNDANT_MULTIPLE_IPSECS", "NOT_REDUNDANT_MULTIPLE_VIRTUALCIRCUITS", "NOT_REDUNDANT_MIX_CONNECTIONS", "NOT_REDUNDANT_NO_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             raise ValueError(
-                "Invalid value for `status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `status`, must be None or one of {allowed_values}"
             )
         self._status = status
 

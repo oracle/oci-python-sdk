@@ -23,8 +23,7 @@ missing = Sentinel("Missing")
 class LoggingManagementClient(object):
     """
     Use the Logging Management API to create, read, list, update, move and delete
-    log groups, log objects, log saved searches, agent configurations, log data models,
-    continuous queries, and managed continuous queries.
+    log groups, log objects, log saved searches, and agent configurations.
 
     For more information, see [Logging Overview](/iaas/Content/Logging/Concepts/loggingoverview.htm).
     """
@@ -180,7 +179,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_log_group_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_log_group_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logGroupId": log_group_id
@@ -190,7 +189,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -292,7 +291,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_log_log_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_log_log_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logGroupId": log_group_id,
@@ -303,7 +302,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -414,7 +413,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_log_saved_search_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_log_saved_search_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logSavedSearchId": log_saved_search_id
@@ -424,7 +423,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -537,7 +536,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_unified_agent_configuration_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_unified_agent_configuration_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "unifiedAgentConfigurationId": unified_agent_configuration_id
@@ -547,7 +546,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -650,7 +649,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_log got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_log got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logGroupId": log_group_id
@@ -660,7 +659,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -759,7 +758,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_log_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_log_group got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -855,7 +854,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_log_saved_search got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_log_saved_search got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -953,7 +952,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_unified_agent_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_unified_agent_configuration got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1051,7 +1050,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_log got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_log got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logGroupId": log_group_id,
@@ -1062,7 +1061,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1156,7 +1155,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_log_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_log_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logGroupId": log_group_id
@@ -1166,7 +1165,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1260,7 +1259,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_log_saved_search got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_log_saved_search got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logSavedSearchId": log_saved_search_id
@@ -1270,7 +1269,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1364,7 +1363,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_unified_agent_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_unified_agent_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "unifiedAgentConfigurationId": unified_agent_configuration_id
@@ -1374,7 +1373,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1468,7 +1467,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -1478,7 +1477,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1567,7 +1566,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_log got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_log got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logGroupId": log_group_id,
@@ -1578,7 +1577,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1665,7 +1664,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_log_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_log_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logGroupId": log_group_id
@@ -1675,7 +1674,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1762,7 +1761,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_log_saved_search got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_log_saved_search got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logSavedSearchId": log_saved_search_id
@@ -1772,7 +1771,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1859,7 +1858,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_unified_agent_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_unified_agent_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "unifiedAgentConfigurationId": unified_agent_configuration_id
@@ -1869,7 +1868,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1956,7 +1955,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -1966,7 +1965,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2086,20 +2085,20 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_log_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_log_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2231,20 +2230,20 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_log_saved_searches got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_log_saved_searches got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2391,7 +2390,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logGroupId": log_group_id
@@ -2401,34 +2400,34 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'log_type' in kwargs:
             log_type_allowed_values = ["CUSTOM", "SERVICE"]
             if kwargs['log_type'] not in log_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `log_type`, must be one of {0}".format(log_type_allowed_values)
+                    f"Invalid value for `log_type`, must be one of { log_type_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2490,9 +2489,6 @@ class LoggingManagementClient(object):
         Lists all services that support logging.
 
 
-        :param str service_stage: (optional)
-            Service stage of a service. The allowed values are \"ProductionStage\", \"DevStage\" and \"LAStage\".
-
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
             a particular request, please provide the request ID.
@@ -2526,18 +2522,12 @@ class LoggingManagementClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "service_stage",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_services got unknown kwargs: {!r}".format(extra_kwargs))
-
-        query_params = {
-            "serviceStage": kwargs.get("service_stage", missing)
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+                f"list_services got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2559,7 +2549,6 @@ class LoggingManagementClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
-                query_params=query_params,
                 header_params=header_params,
                 response_type="list[ServiceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -2570,7 +2559,6 @@ class LoggingManagementClient(object):
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
-                query_params=query_params,
                 header_params=header_params,
                 response_type="list[ServiceSummary]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
@@ -2671,27 +2659,27 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_unified_agent_configurations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_unified_agent_configurations got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2804,7 +2792,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2814,7 +2802,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -2920,7 +2908,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2930,7 +2918,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -3061,27 +3049,27 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELLING", "CANCELED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["operationType", "status", "timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3195,7 +3183,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_log got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_log got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logGroupId": log_group_id,
@@ -3206,7 +3194,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3306,7 +3294,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_log_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_log_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logGroupId": log_group_id
@@ -3316,7 +3304,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3415,7 +3403,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_log_saved_search got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_log_saved_search got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "logSavedSearchId": log_saved_search_id
@@ -3425,7 +3413,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3527,7 +3515,7 @@ class LoggingManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_unified_agent_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_unified_agent_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "unifiedAgentConfigurationId": unified_agent_configuration_id
@@ -3537,7 +3525,7 @@ class LoggingManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

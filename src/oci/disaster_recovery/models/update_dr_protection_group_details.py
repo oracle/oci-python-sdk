@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDrProtectionGroupDetails(object):
     """
-    The details for updating a DR Protection Group.
+    The details for updating a DR protection group.
     """
 
     def __init__(self, **kwargs):
@@ -67,9 +67,9 @@ class UpdateDrProtectionGroupDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateDrProtectionGroupDetails.
-        The display name of the DR Protection Group.
+        The display name of the DR protection group.
 
-        Example: `EBS PHX DRPG`
+        Example: `EBS PHX Group`
 
 
         :return: The display_name of this UpdateDrProtectionGroupDetails.
@@ -81,9 +81,9 @@ class UpdateDrProtectionGroupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateDrProtectionGroupDetails.
-        The display name of the DR Protection Group.
+        The display name of the DR protection group.
 
-        Example: `EBS PHX DRPG`
+        Example: `EBS PHX Group`
 
 
         :param display_name: The display_name of this UpdateDrProtectionGroupDetails.
@@ -115,7 +115,8 @@ class UpdateDrProtectionGroupDetails(object):
     def members(self):
         """
         Gets the members of this UpdateDrProtectionGroupDetails.
-        A list of DR Protection Group members.
+        A list of DR protection group members.  When updating members, this list must contain all members being retained,
+        including added and updated members. The list must not contain deleted members.
 
 
         :return: The members of this UpdateDrProtectionGroupDetails.
@@ -127,7 +128,8 @@ class UpdateDrProtectionGroupDetails(object):
     def members(self, members):
         """
         Sets the members of this UpdateDrProtectionGroupDetails.
-        A list of DR Protection Group members.
+        A list of DR protection group members.  When updating members, this list must contain all members being retained,
+        including added and updated members. The list must not contain deleted members.
 
 
         :param members: The members of this UpdateDrProtectionGroupDetails.
@@ -140,6 +142,7 @@ class UpdateDrProtectionGroupDetails(object):
         """
         Gets the freeform_tags of this UpdateDrProtectionGroupDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -153,6 +156,7 @@ class UpdateDrProtectionGroupDetails(object):
         """
         Sets the freeform_tags of this UpdateDrProtectionGroupDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -166,6 +170,7 @@ class UpdateDrProtectionGroupDetails(object):
         """
         Gets the defined_tags of this UpdateDrProtectionGroupDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
@@ -179,6 +184,7 @@ class UpdateDrProtectionGroupDetails(object):
         """
         Sets the defined_tags of this UpdateDrProtectionGroupDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 

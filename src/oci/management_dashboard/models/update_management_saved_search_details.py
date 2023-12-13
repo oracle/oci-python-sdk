@@ -412,8 +412,7 @@ class UpdateManagementSavedSearchDetails(object):
         allowed_values = ["SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD", "FILTER_SHOW_IN_DASHBOARD", "FILTER_DONT_SHOW_IN_DASHBOARD"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
-                "Invalid value for `type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `type`, must be None or one of {allowed_values}"
             )
         self._type = type
 

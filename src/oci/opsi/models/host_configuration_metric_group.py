@@ -147,8 +147,7 @@ class HostConfigurationMetricGroup(object):
         allowed_values = ["HOST_PRODUCT", "HOST_RESOURCE_ALLOCATION", "HOST_MEMORY_CONFIGURATION", "HOST_HARDWARE_CONFIGURATION", "HOST_CPU_HARDWARE_CONFIGURATION", "HOST_NETWORK_CONFIGURATION", "HOST_ENTITES", "HOST_FILESYSTEM_CONFIGURATION"]
         if not value_allowed_none_or_none_sentinel(metric_name, allowed_values):
             raise ValueError(
-                "Invalid value for `metric_name`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `metric_name`, must be None or one of {allowed_values}"
             )
         self._metric_name = metric_name
 

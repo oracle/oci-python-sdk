@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseCloudServiceDetails(DatabaseDetails):
     """
-    The details of the Oracle Database Cloud Service to be registered as a target database in Data Safe.
+    The details of the cloud database to be registered as a target database in Data Safe.
     """
 
     def __init__(self, **kwargs):
@@ -102,7 +102,7 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
     def db_system_id(self):
         """
         Gets the db_system_id of this DatabaseCloudServiceDetails.
-        The OCID of the cloud database system registered as a target database in Data Safe.
+        The OCID of the cloud database registered as a target database in Data Safe.
 
 
         :return: The db_system_id of this DatabaseCloudServiceDetails.
@@ -114,7 +114,7 @@ class DatabaseCloudServiceDetails(DatabaseDetails):
     def db_system_id(self, db_system_id):
         """
         Sets the db_system_id of this DatabaseCloudServiceDetails.
-        The OCID of the cloud database system registered as a target database in Data Safe.
+        The OCID of the cloud database registered as a target database in Data Safe.
 
 
         :param db_system_id: The db_system_id of this DatabaseCloudServiceDetails.

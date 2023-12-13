@@ -188,7 +188,7 @@ class NotificationDataPlaneClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_subscription_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_subscription_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subscriptionId": subscription_id
@@ -198,7 +198,7 @@ class NotificationDataPlaneClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -302,7 +302,7 @@ class NotificationDataPlaneClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_subscription got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_subscription got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -401,7 +401,7 @@ class NotificationDataPlaneClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_subscription got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_subscription got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subscriptionId": subscription_id
@@ -411,7 +411,7 @@ class NotificationDataPlaneClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -521,7 +521,7 @@ class NotificationDataPlaneClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_confirm_subscription got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_confirm_subscription got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "id": id
@@ -531,7 +531,7 @@ class NotificationDataPlaneClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "token": token,
@@ -630,7 +630,7 @@ class NotificationDataPlaneClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_subscription got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_subscription got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subscriptionId": subscription_id
@@ -640,7 +640,7 @@ class NotificationDataPlaneClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -751,7 +751,7 @@ class NotificationDataPlaneClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_unsubscription got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_unsubscription got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "id": id
@@ -761,7 +761,7 @@ class NotificationDataPlaneClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "token": token,
@@ -878,7 +878,7 @@ class NotificationDataPlaneClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_subscriptions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_subscriptions got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -1009,7 +1009,7 @@ class NotificationDataPlaneClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "publish_message got unknown kwargs: {!r}".format(extra_kwargs))
+                f"publish_message got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "topicId": topic_id
@@ -1019,7 +1019,7 @@ class NotificationDataPlaneClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1113,7 +1113,7 @@ class NotificationDataPlaneClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "resend_subscription_confirmation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"resend_subscription_confirmation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "id": id
@@ -1123,7 +1123,7 @@ class NotificationDataPlaneClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1223,7 +1223,7 @@ class NotificationDataPlaneClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_subscription got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_subscription got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "subscriptionId": subscription_id
@@ -1233,7 +1233,7 @@ class NotificationDataPlaneClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

@@ -311,8 +311,7 @@ class CreateJobDetails(object):
         allowed_values = ["CDB", "PDB", "NON_CDB", "ACD", "ADB"]
         if not value_allowed_none_or_none_sentinel(database_sub_type, allowed_values):
             raise ValueError(
-                "Invalid value for `database_sub_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `database_sub_type`, must be None or one of {allowed_values}"
             )
         self._database_sub_type = database_sub_type
 
@@ -367,8 +366,7 @@ class CreateJobDetails(object):
         allowed_values = ["SQL"]
         if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
             raise ValueError(
-                "Invalid value for `job_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `job_type`, must be None or one of {allowed_values}"
             )
         self._job_type = job_type
 

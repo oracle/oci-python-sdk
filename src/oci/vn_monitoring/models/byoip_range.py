@@ -431,8 +431,7 @@ class ByoipRange(object):
         allowed_values = ["CREATING", "VALIDATING", "PROVISIONED", "ACTIVE", "FAILED", "DELETING", "DELETED", "ADVERTISING", "WITHDRAWING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_details, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_details`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_details`, must be None or one of {allowed_values}"
             )
         self._lifecycle_details = lifecycle_details
 
@@ -463,8 +462,7 @@ class ByoipRange(object):
         allowed_values = ["INACTIVE", "UPDATING", "ACTIVE", "DELETING", "DELETED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 

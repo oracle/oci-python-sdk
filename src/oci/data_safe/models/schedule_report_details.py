@@ -150,7 +150,7 @@ class ScheduleReportDetails(object):
     def mime_type(self):
         """
         **[Required]** Gets the mime_type of this ScheduleReportDetails.
-        Specifies if the report will be in Excel or PDF format
+        Specifies if the report will be in .xls or .pdf format
 
         Allowed values for this property are: "PDF", "XLS"
 
@@ -164,7 +164,7 @@ class ScheduleReportDetails(object):
     def mime_type(self, mime_type):
         """
         Sets the mime_type of this ScheduleReportDetails.
-        Specifies if the report will be in Excel or PDF format
+        Specifies if the report will be in .xls or .pdf format
 
 
         :param mime_type: The mime_type of this ScheduleReportDetails.
@@ -173,8 +173,7 @@ class ScheduleReportDetails(object):
         allowed_values = ["PDF", "XLS"]
         if not value_allowed_none_or_none_sentinel(mime_type, allowed_values):
             raise ValueError(
-                "Invalid value for `mime_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `mime_type`, must be None or one of {allowed_values}"
             )
         self._mime_type = mime_type
 

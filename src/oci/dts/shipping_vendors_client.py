@@ -150,7 +150,7 @@ class ShippingVendorsClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_shipping_vendors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_shipping_vendors got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",

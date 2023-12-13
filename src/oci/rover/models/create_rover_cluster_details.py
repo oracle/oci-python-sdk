@@ -405,8 +405,7 @@ class CreateRoverClusterDetails(object):
         allowed_values = ["STANDALONE", "STATION"]
         if not value_allowed_none_or_none_sentinel(cluster_type, allowed_values):
             raise ValueError(
-                "Invalid value for `cluster_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `cluster_type`, must be None or one of {allowed_values}"
             )
         self._cluster_type = cluster_type
 
@@ -461,8 +460,7 @@ class CreateRoverClusterDetails(object):
         allowed_values = ["RUGGADIZED", "NON_RUGGADIZED"]
         if not value_allowed_none_or_none_sentinel(enclosure_type, allowed_values):
             raise ValueError(
-                "Invalid value for `enclosure_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `enclosure_type`, must be None or one of {allowed_values}"
             )
         self._enclosure_type = enclosure_type
 
@@ -565,8 +563,7 @@ class CreateRoverClusterDetails(object):
         allowed_values = ["ORACLE_SHIPPED", "CUSTOMER_PICKUP"]
         if not value_allowed_none_or_none_sentinel(shipping_preference, allowed_values):
             raise ValueError(
-                "Invalid value for `shipping_preference`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `shipping_preference`, must be None or one of {allowed_values}"
             )
         self._shipping_preference = shipping_preference
 
@@ -693,8 +690,7 @@ class CreateRoverClusterDetails(object):
         allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 

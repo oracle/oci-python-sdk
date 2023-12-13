@@ -23,11 +23,29 @@ class CreateDatabaseToolsConnectionDetails(object):
     #: This constant has a value of "MYSQL"
     TYPE_MYSQL = "MYSQL"
 
+    #: A constant which can be used with the type property of a CreateDatabaseToolsConnectionDetails.
+    #: This constant has a value of "POSTGRESQL"
+    TYPE_POSTGRESQL = "POSTGRESQL"
+
+    #: A constant which can be used with the type property of a CreateDatabaseToolsConnectionDetails.
+    #: This constant has a value of "GENERIC_JDBC"
+    TYPE_GENERIC_JDBC = "GENERIC_JDBC"
+
+    #: A constant which can be used with the runtime_support property of a CreateDatabaseToolsConnectionDetails.
+    #: This constant has a value of "SUPPORTED"
+    RUNTIME_SUPPORT_SUPPORTED = "SUPPORTED"
+
+    #: A constant which can be used with the runtime_support property of a CreateDatabaseToolsConnectionDetails.
+    #: This constant has a value of "UNSUPPORTED"
+    RUNTIME_SUPPORT_UNSUPPORTED = "UNSUPPORTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDatabaseToolsConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.database_tools.models.CreateDatabaseToolsConnectionGenericJdbcDetails`
+        * :class:`~oci.database_tools.models.CreateDatabaseToolsConnectionPostgresqlDetails`
         * :class:`~oci.database_tools.models.CreateDatabaseToolsConnectionMySqlDetails`
         * :class:`~oci.database_tools.models.CreateDatabaseToolsConnectionOracleDatabaseDetails`
 
@@ -49,10 +67,19 @@ class CreateDatabaseToolsConnectionDetails(object):
             The value to assign to the freeform_tags property of this CreateDatabaseToolsConnectionDetails.
         :type freeform_tags: dict(str, str)
 
+        :param locks:
+            The value to assign to the locks property of this CreateDatabaseToolsConnectionDetails.
+        :type locks: list[oci.database_tools.models.ResourceLock]
+
         :param type:
             The value to assign to the type property of this CreateDatabaseToolsConnectionDetails.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
         :type type: str
+
+        :param runtime_support:
+            The value to assign to the runtime_support property of this CreateDatabaseToolsConnectionDetails.
+            Allowed values for this property are: "SUPPORTED", "UNSUPPORTED"
+        :type runtime_support: str
 
         """
         self.swagger_types = {
@@ -60,7 +87,9 @@ class CreateDatabaseToolsConnectionDetails(object):
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
-            'type': 'str'
+            'locks': 'list[ResourceLock]',
+            'type': 'str',
+            'runtime_support': 'str'
         }
 
         self.attribute_map = {
@@ -68,14 +97,18 @@ class CreateDatabaseToolsConnectionDetails(object):
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
-            'type': 'type'
+            'locks': 'locks',
+            'type': 'type',
+            'runtime_support': 'runtimeSupport'
         }
 
         self._display_name = None
         self._compartment_id = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._locks = None
         self._type = None
+        self._runtime_support = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -84,6 +117,12 @@ class CreateDatabaseToolsConnectionDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['type']
+
+        if type == 'GENERIC_JDBC':
+            return 'CreateDatabaseToolsConnectionGenericJdbcDetails'
+
+        if type == 'POSTGRESQL':
+            return 'CreateDatabaseToolsConnectionPostgresqlDetails'
 
         if type == 'MYSQL':
             return 'CreateDatabaseToolsConnectionMySqlDetails'
@@ -198,12 +237,36 @@ class CreateDatabaseToolsConnectionDetails(object):
         self._freeform_tags = freeform_tags
 
     @property
+    def locks(self):
+        """
+        Gets the locks of this CreateDatabaseToolsConnectionDetails.
+        Locks associated with this resource.
+
+
+        :return: The locks of this CreateDatabaseToolsConnectionDetails.
+        :rtype: list[oci.database_tools.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this CreateDatabaseToolsConnectionDetails.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this CreateDatabaseToolsConnectionDetails.
+        :type: list[oci.database_tools.models.ResourceLock]
+        """
+        self._locks = locks
+
+    @property
     def type(self):
         """
         **[Required]** Gets the type of this CreateDatabaseToolsConnectionDetails.
         The DatabaseToolsConnection type.
 
-        Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
+        Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
 
 
         :return: The type of this CreateDatabaseToolsConnectionDetails.
@@ -221,13 +284,43 @@ class CreateDatabaseToolsConnectionDetails(object):
         :param type: The type of this CreateDatabaseToolsConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_DATABASE", "MYSQL"]
+        allowed_values = ["ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
-                "Invalid value for `type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `type`, must be None or one of {allowed_values}"
             )
         self._type = type
+
+    @property
+    def runtime_support(self):
+        """
+        Gets the runtime_support of this CreateDatabaseToolsConnectionDetails.
+        Specifies whether this connection is supported by the Database Tools Runtime.
+
+        Allowed values for this property are: "SUPPORTED", "UNSUPPORTED"
+
+
+        :return: The runtime_support of this CreateDatabaseToolsConnectionDetails.
+        :rtype: str
+        """
+        return self._runtime_support
+
+    @runtime_support.setter
+    def runtime_support(self, runtime_support):
+        """
+        Sets the runtime_support of this CreateDatabaseToolsConnectionDetails.
+        Specifies whether this connection is supported by the Database Tools Runtime.
+
+
+        :param runtime_support: The runtime_support of this CreateDatabaseToolsConnectionDetails.
+        :type: str
+        """
+        allowed_values = ["SUPPORTED", "UNSUPPORTED"]
+        if not value_allowed_none_or_none_sentinel(runtime_support, allowed_values):
+            raise ValueError(
+                f"Invalid value for `runtime_support`, must be None or one of {allowed_values}"
+            )
+        self._runtime_support = runtime_support
 
     def __repr__(self):
         return formatted_flat_dict(self)

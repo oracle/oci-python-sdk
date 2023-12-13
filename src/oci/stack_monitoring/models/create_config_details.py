@@ -20,7 +20,9 @@ class CreateConfigDetails(object):
         Initializes a new CreateConfigDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.stack_monitoring.models.CreateLicenseAutoAssignConfigDetails`
         * :class:`~oci.stack_monitoring.models.CreateAutoPromoteConfigDetails`
+        * :class:`~oci.stack_monitoring.models.CreateLicenseEnterpriseExtensibilityConfigDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -75,8 +77,14 @@ class CreateConfigDetails(object):
         """
         type = object_dictionary['configType']
 
+        if type == 'LICENSE_AUTO_ASSIGN':
+            return 'CreateLicenseAutoAssignConfigDetails'
+
         if type == 'AUTO_PROMOTE':
             return 'CreateAutoPromoteConfigDetails'
+
+        if type == 'LICENSE_ENTERPRISE_EXTENSIBILITY':
+            return 'CreateLicenseEnterpriseExtensibilityConfigDetails'
         else:
             return 'CreateConfigDetails'
 

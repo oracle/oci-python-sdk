@@ -162,8 +162,7 @@ class AttachIScsiVolumeDetails(AttachVolumeDetails):
         allowed_values = ["NONE", "BM_ENCRYPTION_IN_TRANSIT"]
         if not value_allowed_none_or_none_sentinel(encryption_in_transit_type, allowed_values):
             raise ValueError(
-                "Invalid value for `encryption_in_transit_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `encryption_in_transit_type`, must be None or one of {allowed_values}"
             )
         self._encryption_in_transit_type = encryption_in_transit_type
 

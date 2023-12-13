@@ -117,8 +117,7 @@ class DatabaseUpgradeSourceBase(object):
         allowed_values = ["DB_HOME", "DB_VERSION", "DB_SOFTWARE_IMAGE"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
-                "Invalid value for `source`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `source`, must be None or one of {allowed_values}"
             )
         self._source = source
 

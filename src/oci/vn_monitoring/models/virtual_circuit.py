@@ -457,8 +457,7 @@ class VirtualCircuit(object):
         allowed_values = ["CUSTOMER_MANAGED", "PROVIDER_MANAGED", "ORACLE_MANAGED"]
         if not value_allowed_none_or_none_sentinel(bgp_management, allowed_values):
             raise ValueError(
-                "Invalid value for `bgp_management`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `bgp_management`, must be None or one of {allowed_values}"
             )
         self._bgp_management = bgp_management
 
@@ -489,8 +488,7 @@ class VirtualCircuit(object):
         allowed_values = ["UP", "DOWN"]
         if not value_allowed_none_or_none_sentinel(bgp_session_state, allowed_values):
             raise ValueError(
-                "Invalid value for `bgp_session_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `bgp_session_state`, must be None or one of {allowed_values}"
             )
         self._bgp_session_state = bgp_session_state
 
@@ -521,8 +519,7 @@ class VirtualCircuit(object):
         allowed_values = ["UP", "DOWN"]
         if not value_allowed_none_or_none_sentinel(bgp_ipv6_session_state, allowed_values):
             raise ValueError(
-                "Invalid value for `bgp_ipv6_session_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `bgp_ipv6_session_state`, must be None or one of {allowed_values}"
             )
         self._bgp_ipv6_session_state = bgp_ipv6_session_state
 
@@ -622,8 +619,7 @@ class VirtualCircuit(object):
             for value in routing_policy:
                 if not value_allowed_none_or_none_sentinel(value, allowed_values):
                     raise ValueError(
-                        "Invalid value for `routing_policy`, must be None or one of {0}"
-                        .format(allowed_values)
+                        f"Invalid value for `routing_policy`, must be None or one of {allowed_values}"
                     )
         self._routing_policy = routing_policy
 
@@ -654,8 +650,7 @@ class VirtualCircuit(object):
         allowed_values = ["ENABLED", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(bgp_admin_state, allowed_values):
             raise ValueError(
-                "Invalid value for `bgp_admin_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `bgp_admin_state`, must be None or one of {allowed_values}"
             )
         self._bgp_admin_state = bgp_admin_state
 
@@ -938,8 +933,7 @@ class VirtualCircuit(object):
         allowed_values = ["PENDING_PROVIDER", "VERIFYING", "PROVISIONING", "PROVISIONED", "FAILED", "INACTIVE", "TERMINATING", "TERMINATED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 
@@ -1102,8 +1096,7 @@ class VirtualCircuit(object):
         allowed_values = ["ACTIVE", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(provider_state, allowed_values):
             raise ValueError(
-                "Invalid value for `provider_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `provider_state`, must be None or one of {allowed_values}"
             )
         self._provider_state = provider_state
 
@@ -1212,8 +1205,7 @@ class VirtualCircuit(object):
         allowed_values = ["COLOCATED", "LAYER2", "LAYER3"]
         if not value_allowed_none_or_none_sentinel(service_type, allowed_values):
             raise ValueError(
-                "Invalid value for `service_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `service_type`, must be None or one of {allowed_values}"
             )
         self._service_type = service_type
 
@@ -1284,8 +1276,7 @@ class VirtualCircuit(object):
         allowed_values = ["PUBLIC", "PRIVATE"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
-                "Invalid value for `type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `type`, must be None or one of {allowed_values}"
             )
         self._type = type
 
@@ -1316,8 +1307,7 @@ class VirtualCircuit(object):
         allowed_values = ["MTU_1500", "MTU_9000"]
         if not value_allowed_none_or_none_sentinel(ip_mtu, allowed_values):
             raise ValueError(
-                "Invalid value for `ip_mtu`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ip_mtu`, must be None or one of {allowed_values}"
             )
         self._ip_mtu = ip_mtu
 

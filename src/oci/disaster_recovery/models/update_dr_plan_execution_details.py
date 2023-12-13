@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDrPlanExecutionDetails(object):
     """
-    The details for updating a DR Plan exection.
+    The details for updating a DR plan exection.
     """
 
     def __init__(self, **kwargs):
@@ -53,9 +53,9 @@ class UpdateDrPlanExecutionDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateDrPlanExecutionDetails.
-        The display name of the DR Protection Group to update.
+        The display name of the DR protection group to update.
 
-        Example: `EBS IAD DRPG`
+        Example: `EBS IAD Group`
 
 
         :return: The display_name of this UpdateDrPlanExecutionDetails.
@@ -67,9 +67,9 @@ class UpdateDrPlanExecutionDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateDrPlanExecutionDetails.
-        The display name of the DR Protection Group to update.
+        The display name of the DR protection group to update.
 
-        Example: `EBS IAD DRPG`
+        Example: `EBS IAD Group`
 
 
         :param display_name: The display_name of this UpdateDrPlanExecutionDetails.
@@ -82,6 +82,7 @@ class UpdateDrPlanExecutionDetails(object):
         """
         Gets the freeform_tags of this UpdateDrPlanExecutionDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -95,6 +96,7 @@ class UpdateDrPlanExecutionDetails(object):
         """
         Sets the freeform_tags of this UpdateDrPlanExecutionDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -108,6 +110,7 @@ class UpdateDrPlanExecutionDetails(object):
         """
         Gets the defined_tags of this UpdateDrPlanExecutionDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
@@ -121,6 +124,7 @@ class UpdateDrPlanExecutionDetails(object):
         """
         Sets the defined_tags of this UpdateDrPlanExecutionDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 

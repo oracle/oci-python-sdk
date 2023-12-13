@@ -86,6 +86,10 @@ class TaskSummaryFromSQLTask(TaskSummary):
             The value to assign to the config_provider_delegate property of this TaskSummaryFromSQLTask.
         :type config_provider_delegate: oci.data_integration.models.ConfigProvider
 
+        :param is_concurrent_allowed:
+            The value to assign to the is_concurrent_allowed property of this TaskSummaryFromSQLTask.
+        :type is_concurrent_allowed: bool
+
         :param metadata:
             The value to assign to the metadata property of this TaskSummaryFromSQLTask.
         :type metadata: oci.data_integration.models.ObjectMetadata
@@ -123,6 +127,7 @@ class TaskSummaryFromSQLTask(TaskSummary):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'ConfigProvider',
+            'is_concurrent_allowed': 'bool',
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)',
             'script': 'Script',
@@ -145,6 +150,7 @@ class TaskSummaryFromSQLTask(TaskSummary):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
+            'is_concurrent_allowed': 'isConcurrentAllowed',
             'metadata': 'metadata',
             'key_map': 'keyMap',
             'script': 'script',
@@ -166,6 +172,7 @@ class TaskSummaryFromSQLTask(TaskSummary):
         self._parameters = None
         self._op_config_values = None
         self._config_provider_delegate = None
+        self._is_concurrent_allowed = None
         self._metadata = None
         self._key_map = None
         self._script = None
@@ -220,8 +227,7 @@ class TaskSummaryFromSQLTask(TaskSummary):
         allowed_values = ["STORED_PROCEDURE", "SQL_CODE"]
         if not value_allowed_none_or_none_sentinel(sql_script_type, allowed_values):
             raise ValueError(
-                "Invalid value for `sql_script_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `sql_script_type`, must be None or one of {allowed_values}"
             )
         self._sql_script_type = sql_script_type
 

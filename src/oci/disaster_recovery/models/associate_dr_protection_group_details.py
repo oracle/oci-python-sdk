@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AssociateDrProtectionGroupDetails(object):
     """
-    The details for associating this DR Protection Group with a peer (remote) DR Protection Group.
+    The details for associating a DR protection group with a peer DR protection group.
     """
 
     #: A constant which can be used with the role property of a AssociateDrProtectionGroupDetails.
@@ -66,9 +66,9 @@ class AssociateDrProtectionGroupDetails(object):
     def peer_id(self):
         """
         Gets the peer_id of this AssociateDrProtectionGroupDetails.
-        The OCID of the peer (remote) DR Protection Group.
+        The OCID of the peer DR protection group.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :return: The peer_id of this AssociateDrProtectionGroupDetails.
@@ -80,9 +80,9 @@ class AssociateDrProtectionGroupDetails(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this AssociateDrProtectionGroupDetails.
-        The OCID of the peer (remote) DR Protection Group.
+        The OCID of the peer DR protection group.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :param peer_id: The peer_id of this AssociateDrProtectionGroupDetails.
@@ -94,7 +94,7 @@ class AssociateDrProtectionGroupDetails(object):
     def peer_region(self):
         """
         Gets the peer_region of this AssociateDrProtectionGroupDetails.
-        The region of the peer (remote) DR Protection Group.
+        The region of the peer DR protection group.
 
         Example: `us-ashburn-1`
 
@@ -108,7 +108,7 @@ class AssociateDrProtectionGroupDetails(object):
     def peer_region(self, peer_region):
         """
         Sets the peer_region of this AssociateDrProtectionGroupDetails.
-        The region of the peer (remote) DR Protection Group.
+        The region of the peer DR protection group.
 
         Example: `us-ashburn-1`
 
@@ -122,7 +122,9 @@ class AssociateDrProtectionGroupDetails(object):
     def role(self):
         """
         **[Required]** Gets the role of this AssociateDrProtectionGroupDetails.
-        The role of this DR Protection Group.
+        The role of the DR protection group.
+
+        Example: `STANDBY`
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "UNCONFIGURED"
 
@@ -136,7 +138,9 @@ class AssociateDrProtectionGroupDetails(object):
     def role(self, role):
         """
         Sets the role of this AssociateDrProtectionGroupDetails.
-        The role of this DR Protection Group.
+        The role of the DR protection group.
+
+        Example: `STANDBY`
 
 
         :param role: The role of this AssociateDrProtectionGroupDetails.
@@ -145,8 +149,7 @@ class AssociateDrProtectionGroupDetails(object):
         allowed_values = ["PRIMARY", "STANDBY", "UNCONFIGURED"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             raise ValueError(
-                "Invalid value for `role`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `role`, must be None or one of {allowed_values}"
             )
         self._role = role
 

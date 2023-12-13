@@ -80,6 +80,10 @@ class Job(object):
             The value to assign to the job_log_configuration_details property of this Job.
         :type job_log_configuration_details: oci.data_science.models.JobLogConfigurationDetails
 
+        :param job_storage_mount_configuration_details_list:
+            The value to assign to the job_storage_mount_configuration_details_list property of this Job.
+        :type job_storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Job.
             Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "FAILED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
@@ -110,6 +114,7 @@ class Job(object):
             'job_configuration_details': 'JobConfigurationDetails',
             'job_infrastructure_configuration_details': 'JobInfrastructureConfigurationDetails',
             'job_log_configuration_details': 'JobLogConfigurationDetails',
+            'job_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -127,6 +132,7 @@ class Job(object):
             'job_configuration_details': 'jobConfigurationDetails',
             'job_infrastructure_configuration_details': 'jobInfrastructureConfigurationDetails',
             'job_log_configuration_details': 'jobLogConfigurationDetails',
+            'job_storage_mount_configuration_details_list': 'jobStorageMountConfigurationDetailsList',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
@@ -143,6 +149,7 @@ class Job(object):
         self._job_configuration_details = None
         self._job_infrastructure_configuration_details = None
         self._job_log_configuration_details = None
+        self._job_storage_mount_configuration_details_list = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
@@ -397,6 +404,30 @@ class Job(object):
         :type: oci.data_science.models.JobLogConfigurationDetails
         """
         self._job_log_configuration_details = job_log_configuration_details
+
+    @property
+    def job_storage_mount_configuration_details_list(self):
+        """
+        Gets the job_storage_mount_configuration_details_list of this Job.
+        Collection of JobStorageMountConfigurationDetails.
+
+
+        :return: The job_storage_mount_configuration_details_list of this Job.
+        :rtype: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        return self._job_storage_mount_configuration_details_list
+
+    @job_storage_mount_configuration_details_list.setter
+    def job_storage_mount_configuration_details_list(self, job_storage_mount_configuration_details_list):
+        """
+        Sets the job_storage_mount_configuration_details_list of this Job.
+        Collection of JobStorageMountConfigurationDetails.
+
+
+        :param job_storage_mount_configuration_details_list: The job_storage_mount_configuration_details_list of this Job.
+        :type: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        self._job_storage_mount_configuration_details_list = job_storage_mount_configuration_details_list
 
     @property
     def lifecycle_state(self):

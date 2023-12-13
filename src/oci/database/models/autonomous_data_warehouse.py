@@ -278,8 +278,7 @@ class AutonomousDataWarehouse(object):
         allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 
@@ -502,8 +501,7 @@ class AutonomousDataWarehouse(object):
         allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             raise ValueError(
-                "Invalid value for `license_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
 

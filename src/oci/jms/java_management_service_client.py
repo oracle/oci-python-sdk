@@ -182,7 +182,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_fleet_installation_sites got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_fleet_installation_sites got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -192,7 +192,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -293,7 +293,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -303,7 +303,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -411,7 +411,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_fleet_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_fleet_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -421,7 +421,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -525,7 +525,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_blocklist got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_blocklist got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -535,7 +535,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -577,6 +577,128 @@ class JavaManagementServiceClient(object):
                 header_params=header_params,
                 body=create_blocklist_details,
                 response_type="Blocklist",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def create_drs_file(self, fleet_id, create_drs_file_details, **kwargs):
+        """
+        Request to perform validaition of the DRS file and create the file to the Object Storage.
+
+
+        :param str fleet_id: (required)
+            The `OCID`__ of the Fleet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.jms.models.CreateDrsFileDetails create_drs_file_details: (required)
+            Detail information to create DRS
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            ETag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the ETag you
+            provide matches the resource's current ETag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/create_drs_file.py.html>`__ to see an example of how to use create_drs_file API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
+        resource_path = "/fleets/{fleetId}/drsFiles"
+        method = "POST"
+        operation_name = "create_drs_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateDrsFile"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_drs_file got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "fleetId": fleet_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_drs_file_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_drs_file_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -643,7 +765,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_fleet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_fleet got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -744,7 +866,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_blocklist got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_blocklist got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -755,7 +877,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -855,7 +977,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_crypto_analysis_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_crypto_analysis_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -866,13 +988,124 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def delete_drs_file(self, fleet_id, drs_file_key, **kwargs):
+        """
+        Request to delete the DRS file from the Object Storage.
+
+
+        :param str fleet_id: (required)
+            The `OCID`__ of the Fleet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str drs_file_key: (required)
+            The unique identifier of the DRS File in Object Storage.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            ETag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the ETag you
+            provide matches the resource's current ETag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/delete_drs_file.py.html>`__ to see an example of how to use delete_drs_file API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId', 'drsFileKey']
+        resource_path = "/fleets/{fleetId}/drsFiles/{drsFileKey}"
+        method = "DELETE"
+        operation_name = "delete_drs_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/DeleteDrsFile"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_drs_file got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "fleetId": fleet_id,
+            "drsFileKey": drs_file_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -963,7 +1196,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_fleet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_fleet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -973,7 +1206,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1073,7 +1306,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_java_migration_analysis_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_java_migration_analysis_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -1084,7 +1317,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1184,7 +1417,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_performance_tuning_analysis_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_performance_tuning_analysis_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -1195,7 +1428,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1232,6 +1465,250 @@ class JavaManagementServiceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def disable_drs(self, fleet_id, disable_drs_details, **kwargs):
+        """
+        Request to disable the DRS in the selected target in the Fleet.
+
+
+        :param str fleet_id: (required)
+            The `OCID`__ of the Fleet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.jms.models.DisableDrsDetails disable_drs_details: (required)
+            Detail information to disable DRS
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            ETag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the ETag you
+            provide matches the resource's current ETag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/disable_drs.py.html>`__ to see an example of how to use disable_drs API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
+        resource_path = "/fleets/{fleetId}/actions/disableDrs"
+        method = "POST"
+        operation_name = "disable_drs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DisableDrs"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"disable_drs got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "fleetId": fleet_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=disable_drs_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=disable_drs_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def enable_drs(self, fleet_id, enable_drs_details, **kwargs):
+        """
+        Request to enable the DRS in the selected target in the Fleet.
+
+
+        :param str fleet_id: (required)
+            The `OCID`__ of the Fleet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.jms.models.EnableDrsDetails enable_drs_details: (required)
+            Detail information to enable DRS
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            ETag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the ETag you
+            provide matches the resource's current ETag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/enable_drs.py.html>`__ to see an example of how to use enable_drs API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
+        resource_path = "/fleets/{fleetId}/actions/enableDrs"
+        method = "POST"
+        operation_name = "enable_drs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/EnableDrs"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"enable_drs got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "fleetId": fleet_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=enable_drs_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=enable_drs_details,
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -1287,7 +1764,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_agent_deploy_script got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_agent_deploy_script got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -1297,7 +1774,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "text/plain",
@@ -1392,7 +1869,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_crypto_analysis_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_crypto_analysis_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -1403,7 +1880,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1441,6 +1918,321 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="CryptoAnalysisResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_drs_file(self, fleet_id, drs_file_key, **kwargs):
+        """
+        Get the detail about the created DRS file in the Fleet.
+
+
+        :param str fleet_id: (required)
+            The `OCID`__ of the Fleet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str drs_file_key: (required)
+            The unique identifier of the DRS File in Object Storage.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.jms.models.DrsFile`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_drs_file.py.html>`__ to see an example of how to use get_drs_file API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId', 'drsFileKey']
+        resource_path = "/fleets/{fleetId}/drsFiles/{drsFileKey}"
+        method = "GET"
+        operation_name = "get_drs_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/GetDrsFile"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_drs_file got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "fleetId": fleet_id,
+            "drsFileKey": drs_file_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DrsFile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DrsFile",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_export_setting(self, fleet_id, **kwargs):
+        """
+        Returns export setting for the specified Fleet.
+
+
+        :param str fleet_id: (required)
+            The `OCID`__ of the Fleet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.jms.models.ExportSetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_export_setting.py.html>`__ to see an example of how to use get_export_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
+        resource_path = "/fleets/{fleetId}/exportSetting"
+        method = "GET"
+        operation_name = "get_export_setting"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/GetExportSetting"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_export_setting got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "fleetId": fleet_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ExportSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ExportSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_export_status(self, fleet_id, **kwargs):
+        """
+        Returns last export status for the specified Fleet.
+
+
+        :param str fleet_id: (required)
+            The `OCID`__ of the Fleet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.jms.models.ExportStatus`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/get_export_status.py.html>`__ to see an example of how to use get_export_status API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
+        resource_path = "/fleets/{fleetId}/exportStatus"
+        method = "GET"
+        operation_name = "get_export_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportStatus/GetExportStatus"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_export_status got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "fleetId": fleet_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ExportStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ExportStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -1493,7 +2285,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fleet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fleet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -1503,7 +2295,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1601,7 +2393,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fleet_advanced_feature_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fleet_advanced_feature_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -1611,7 +2403,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1702,7 +2494,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fleet_agent_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fleet_agent_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -1712,7 +2504,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1800,7 +2592,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_java_family got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_java_family got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "familyVersion": family_version
@@ -1810,7 +2602,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1903,7 +2695,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_java_migration_analysis_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_java_migration_analysis_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -1914,7 +2706,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2002,7 +2794,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_java_release got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_java_release got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "releaseVersion": release_version
@@ -2012,7 +2804,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2105,7 +2897,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_performance_tuning_analysis_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_performance_tuning_analysis_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id,
@@ -2116,7 +2908,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2206,7 +2998,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2216,7 +3008,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2338,20 +3130,20 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_announcements got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_announcements got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeReleased", "summary"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2419,7 +3211,7 @@ class JavaManagementServiceClient(object):
         :param str operation: (optional)
             The operation type.
 
-            Allowed values are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"
+            Allowed values are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "DELETE_JMS_REPORT", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", "EXPORT_DATA_CSV", "CREATE_DRS_FILE", "UPDATE_DRS_FILE", "DELETE_DRS_FILE", "ENABLE_DRS", "DISABLE_DRS"
 
         :param str managed_instance_id: (optional)
             The Fleet-unique identifier of the related managed instance.
@@ -2485,7 +3277,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_blocklists got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_blocklists got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -2495,27 +3287,27 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'operation' in kwargs:
-            operation_allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE"]
+            operation_allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", "CREATE_JAVA_INSTALLATION", "COLLECT_JFR", "REQUEST_CRYPTO_EVENT_ANALYSIS", "REQUEST_PERFORMANCE_TUNING_ANALYSIS", "REQUEST_JAVA_MIGRATION_ANALYSIS", "DELETE_JMS_REPORT", "SCAN_JAVA_SERVER_USAGE", "SCAN_LIBRARY_USAGE", "EXPORT_DATA_CSV", "CREATE_DRS_FILE", "UPDATE_DRS_FILE", "DELETE_DRS_FILE", "ENABLE_DRS", "DISABLE_DRS"]
             if kwargs['operation'] not in operation_allowed_values:
                 raise ValueError(
-                    "Invalid value for `operation`, must be one of {0}".format(operation_allowed_values)
+                    f"Invalid value for `operation`, must be one of { operation_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["operation"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2663,7 +3455,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_crypto_analysis_results got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_crypto_analysis_results got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -2673,27 +3465,27 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'aggregation_mode' in kwargs:
             aggregation_mode_allowed_values = ["JFR", "MANAGED_INSTANCE"]
             if kwargs['aggregation_mode'] not in aggregation_mode_allowed_values:
                 raise ValueError(
-                    "Invalid value for `aggregation_mode`, must be one of {0}".format(aggregation_mode_allowed_values)
+                    f"Invalid value for `aggregation_mode`, must be one of { aggregation_mode_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "managedInstanceId", "workRequestId"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2746,6 +3538,152 @@ class JavaManagementServiceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="CryptoAnalysisResultCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_drs_files(self, fleet_id, **kwargs):
+        """
+        List the details about the created DRS files in the Fleet.
+
+
+        :param str fleet_id: (required)
+            The `OCID`__ of the Fleet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field that sorts the DRS details results. Only one sort order can be provided.
+            The default order for _drsFileKey_ is **descending**.
+            If no value is specified, then _drsFileKey_ is default.
+
+            Allowed values are: "bucketName", "namespace", "drsFileKey", "drsFileName", "checksumType", "isDefault"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.jms.models.DrsFileCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/list_drs_files.py.html>`__ to see an example of how to use list_drs_files API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
+        resource_path = "/fleets/{fleetId}/drsFiles"
+        method = "GET"
+        operation_name = "list_drs_files"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFileCollection/ListDrsFiles"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_drs_files got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "fleetId": fleet_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["bucketName", "namespace", "drsFileKey", "drsFileName", "checksumType", "isDefault"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DrsFileCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DrsFileCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -2806,7 +3744,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fleet_diagnoses got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fleet_diagnoses got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -2816,7 +3754,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -2958,27 +3896,27 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fleets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fleets got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "NEEDS_ATTENTION", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3157,7 +4095,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_installation_sites got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_installation_sites got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -3167,20 +4105,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["managedInstanceId", "jreDistribution", "jreVendor", "jreVersion", "path", "approximateApplicationCount", "osName", "securityStatus"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
@@ -3188,14 +4126,14 @@ class JavaManagementServiceClient(object):
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         if 'jre_security_status' in kwargs:
             jre_security_status_allowed_values = ["EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
             if kwargs['jre_security_status'] not in jre_security_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `jre_security_status`, must be one of {0}".format(jre_security_status_allowed_values)
+                    f"Invalid value for `jre_security_status`, must be one of { jre_security_status_allowed_values }"
                 )
 
         query_params = {
@@ -3272,6 +4210,9 @@ class JavaManagementServiceClient(object):
         :param str display_name: (optional)
             The display name for the Java family.
 
+        :param bool is_supported_version: (optional)
+            Filter the Java Release Family versions by support status.
+
         :param int limit: (optional)
             The maximum number of items to return.
 
@@ -3322,6 +4263,7 @@ class JavaManagementServiceClient(object):
             "retry_strategy",
             "family_version",
             "display_name",
+            "is_supported_version",
             "limit",
             "page",
             "sort_order",
@@ -3331,25 +4273,26 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_java_families got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_java_families got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["familyVersion", "endOfSupportLifeDate", "supportType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
             "familyVersion": kwargs.get("family_version", missing),
             "displayName": kwargs.get("display_name", missing),
+            "isSupportedVersion": kwargs.get("is_supported_version", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -3483,7 +4426,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_java_migration_analysis_results got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_java_migration_analysis_results got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -3493,20 +4436,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "managedInstanceId", "workRequestId"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3651,41 +4594,41 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_java_releases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_java_releases got unknown kwargs: {extra_kwargs!r}")
 
         if 'release_type' in kwargs:
             release_type_allowed_values = ["CPU", "FEATURE", "BPR", "PATCH_RELEASE"]
             if kwargs['release_type'] not in release_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `release_type`, must be one of {0}".format(release_type_allowed_values)
+                    f"Invalid value for `release_type`, must be one of { release_type_allowed_values }"
                 )
 
         if 'jre_security_status' in kwargs:
             jre_security_status_allowed_values = ["EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
             if kwargs['jre_security_status'] not in jre_security_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `jre_security_status`, must be one of {0}".format(jre_security_status_allowed_values)
+                    f"Invalid value for `jre_security_status`, must be one of { jre_security_status_allowed_values }"
                 )
 
         if 'license_type' in kwargs:
             license_type_allowed_values = ["OTN", "NFTC", "RESTRICTED"]
             if kwargs['license_type'] not in license_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `license_type`, must be one of {0}".format(license_type_allowed_values)
+                    f"Invalid value for `license_type`, must be one of { license_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["releaseDate", "releaseVersion", "familyVersion", "licenseType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3841,20 +4784,20 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_jre_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_jre_usage got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["distribution", "timeFirstSeen", "timeLastSeen", "vendor", "version", "approximateInstallationCount", "approximateApplicationCount", "approximateManagedInstanceCount", "osName", "securityStatus"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4002,7 +4945,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_performance_tuning_analysis_results got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_performance_tuning_analysis_results got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -4012,20 +4955,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "managedInstanceId", "workRequestId"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4138,7 +5081,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_items got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_items got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -4148,7 +5091,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -4254,7 +5197,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -4264,7 +5207,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -4370,7 +5313,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -4380,7 +5323,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -4458,6 +5401,9 @@ class JavaManagementServiceClient(object):
         :param int limit: (optional)
             The maximum number of items to return.
 
+        :param str managed_instance_id: (optional)
+            The Fleet-unique identifier of the managed instance.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -4492,19 +5438,21 @@ class JavaManagementServiceClient(object):
             "fleet_id",
             "opc_request_id",
             "page",
-            "limit"
+            "limit",
+            "managed_instance_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
             "id": kwargs.get("id", missing),
             "fleetId": kwargs.get("fleet_id", missing),
             "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing)
+            "limit": kwargs.get("limit", missing),
+            "managedInstanceId": kwargs.get("managed_instance_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -4615,7 +5563,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_fleet_installation_sites got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_fleet_installation_sites got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -4625,7 +5573,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4721,7 +5669,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_crypto_analyses got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_crypto_analyses got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -4731,7 +5679,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4825,7 +5773,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_java_migration_analyses got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_java_migration_analyses got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -4835,7 +5783,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4928,7 +5876,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_jfr_recordings got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_jfr_recordings got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -4938,7 +5886,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5032,7 +5980,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "request_performance_tuning_analyses got unknown kwargs: {!r}".format(extra_kwargs))
+                f"request_performance_tuning_analyses got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -5042,7 +5990,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5151,7 +6099,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "scan_java_server_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"scan_java_server_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -5161,7 +6109,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5273,7 +6221,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "scan_library_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"scan_library_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -5283,7 +6231,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5466,7 +6414,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_application_installation_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_application_installation_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -5476,28 +6424,28 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'os_family' in kwargs:
             os_family_allowed_values = ["LINUX", "WINDOWS", "MACOS", "UNKNOWN"]
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeFirstSeen", "timeLastSeen", "displayName", "installationPath", "osName", "approximateJreCount", "approximateInstallationCount", "approximateManagedInstanceCount"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -5703,7 +6651,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_application_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_application_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -5713,28 +6661,28 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["approximateJreCount", "approximateInstallationCount", "approximateManagedInstanceCount"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeFirstSeen", "timeLastSeen", "displayName", "approximateJreCount", "approximateInstallationCount", "approximateManagedInstanceCount", "osName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
@@ -5742,7 +6690,7 @@ class JavaManagementServiceClient(object):
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         query_params = {
@@ -5926,7 +6874,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_deployed_application_installation_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_deployed_application_installation_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -5936,20 +6884,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["applicationName", "applicationType", "applicationSourcePath", "isClustered", "javaServerInstanceCount", "timeFirstSeen", "timeLastSeen"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -6122,7 +7070,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_deployed_application_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_deployed_application_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -6132,20 +7080,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["applicationName", "applicationType", "isClustered", "javaServerInstanceCount", "timeFirstSeen", "timeLastSeen"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -6332,7 +7280,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_installation_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_installation_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -6342,28 +7290,28 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["approximateApplicationCount", "approximateManagedInstanceCount"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["jreDistribution", "jreVendor", "jreVersion", "path", "timeFirstSeen", "timeLastSeen", "approximateApplicationCount", "approximateManagedInstanceCount", "osName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
@@ -6371,7 +7319,7 @@ class JavaManagementServiceClient(object):
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         query_params = {
@@ -6544,7 +7492,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_java_server_instance_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_java_server_instance_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -6554,20 +7502,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["serverInstanceName", "managedInstanceName", "approximateDeployedApplicationCount", "timeFirstSeen", "timeLastSeen"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -6726,7 +7674,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_java_server_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_java_server_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -6736,20 +7684,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["serverName", "serverVersion", "serverInstanceCount", "approximateDeployedApplicationCount", "timeFirstSeen", "timeLastSeen"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -6937,7 +7885,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_jre_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_jre_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -6947,28 +7895,28 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'fields' in kwargs:
             fields_allowed_values = ["approximateInstallationCount", "approximateApplicationCount", "approximateManagedInstanceCount"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["distribution", "timeFirstSeen", "timeLastSeen", "vendor", "version", "approximateInstallationCount", "approximateApplicationCount", "approximateManagedInstanceCount", "osName", "securityStatus"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
@@ -6976,14 +7924,14 @@ class JavaManagementServiceClient(object):
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         if 'jre_security_status' in kwargs:
             jre_security_status_allowed_values = ["EARLY_ACCESS", "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
             if kwargs['jre_security_status'] not in jre_security_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `jre_security_status`, must be one of {0}".format(jre_security_status_allowed_values)
+                    f"Invalid value for `jre_security_status`, must be one of { jre_security_status_allowed_values }"
                 )
 
         query_params = {
@@ -7152,7 +8100,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_library_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_library_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -7162,20 +8110,20 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["applicationCount", "javaServerInstanceCount", "cvssScore", "deployedApplicationCount", "libraryName", "libraryVersion", "managedInstanceCount", "timeFirstSeen", "timeLastSeen"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -7372,7 +8320,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_managed_instance_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_managed_instance_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -7382,13 +8330,13 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'managed_instance_type' in kwargs:
             managed_instance_type_allowed_values = ["ORACLE_MANAGEMENT_AGENT"]
             if kwargs['managed_instance_type'] not in managed_instance_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `managed_instance_type`, must be one of {0}".format(managed_instance_type_allowed_values)
+                    f"Invalid value for `managed_instance_type`, must be one of { managed_instance_type_allowed_values }"
                 )
 
         if 'fields' in kwargs:
@@ -7396,21 +8344,21 @@ class JavaManagementServiceClient(object):
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                        f"Invalid value for `fields`, must be one of { fields_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeFirstSeen", "timeLastSeen", "approximateJreCount", "approximateInstallationCount", "approximateApplicationCount", "osName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
@@ -7418,7 +8366,7 @@ class JavaManagementServiceClient(object):
             for os_family_item in kwargs['os_family']:
                 if os_family_item not in os_family_allowed_values:
                     raise ValueError(
-                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                        f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                     )
 
         query_params = {
@@ -7545,7 +8493,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_resource_inventory got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_resource_inventory got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -7590,6 +8538,246 @@ class JavaManagementServiceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="ResourceInventory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_drs_file(self, fleet_id, update_drs_file_details, drs_file_key, **kwargs):
+        """
+        Request to perform validaition of the DRS file and update the existing file in the Object Storage.
+
+
+        :param str fleet_id: (required)
+            The `OCID`__ of the Fleet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.jms.models.UpdateDrsFileDetails update_drs_file_details: (required)
+            Detail information to update DRS
+
+        :param str drs_file_key: (required)
+            The unique identifier of the DRS File in Object Storage.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            ETag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the ETag you
+            provide matches the resource's current ETag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_drs_file.py.html>`__ to see an example of how to use update_drs_file API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId', 'drsFileKey']
+        resource_path = "/fleets/{fleetId}/drsFiles/{drsFileKey}"
+        method = "PUT"
+        operation_name = "update_drs_file"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateDrsFile"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_drs_file got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "fleetId": fleet_id,
+            "drsFileKey": drs_file_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drs_file_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_drs_file_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_export_setting(self, fleet_id, update_export_setting_details, **kwargs):
+        """
+        Updates existing export setting for the specified Fleet.
+
+
+        :param str fleet_id: (required)
+            The `OCID`__ of the Fleet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.jms.models.UpdateExportSettingDetails update_export_setting_details: (required)
+            The new details for the Export setting.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            ETag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the ETag you
+            provide matches the resource's current ETag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.jms.models.ExportSetting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/update_export_setting.py.html>`__ to see an example of how to use update_export_setting API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['fleetId']
+        resource_path = "/fleets/{fleetId}/exportSetting"
+        method = "PUT"
+        operation_name = "update_export_setting"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/UpdateExportSetting"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_export_setting got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "fleetId": fleet_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_export_setting_details,
+                response_type="ExportSetting",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_export_setting_details,
+                response_type="ExportSetting",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -7653,7 +8841,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_fleet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_fleet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -7663,7 +8851,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7774,7 +8962,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_fleet_advanced_feature_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_fleet_advanced_feature_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -7784,7 +8972,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7890,7 +9078,7 @@ class JavaManagementServiceClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_fleet_agent_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_fleet_agent_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fleetId": fleet_id
@@ -7900,7 +9088,7 @@ class JavaManagementServiceClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

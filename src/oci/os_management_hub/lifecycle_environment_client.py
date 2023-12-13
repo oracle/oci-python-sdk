@@ -181,7 +181,7 @@ class LifecycleEnvironmentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "attach_managed_instances_to_lifecycle_stage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"attach_managed_instances_to_lifecycle_stage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "lifecycleStageId": lifecycle_stage_id
@@ -191,7 +191,7 @@ class LifecycleEnvironmentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -290,7 +290,7 @@ class LifecycleEnvironmentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_lifecycle_environment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_lifecycle_environment got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -388,7 +388,7 @@ class LifecycleEnvironmentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_lifecycle_environment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_lifecycle_environment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "lifecycleEnvironmentId": lifecycle_environment_id
@@ -398,7 +398,7 @@ class LifecycleEnvironmentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -504,7 +504,7 @@ class LifecycleEnvironmentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "detach_managed_instances_from_lifecycle_stage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"detach_managed_instances_from_lifecycle_stage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "lifecycleStageId": lifecycle_stage_id
@@ -514,7 +514,7 @@ class LifecycleEnvironmentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -605,7 +605,7 @@ class LifecycleEnvironmentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_lifecycle_environment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_lifecycle_environment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "lifecycleEnvironmentId": lifecycle_environment_id
@@ -615,7 +615,7 @@ class LifecycleEnvironmentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -703,7 +703,7 @@ class LifecycleEnvironmentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_lifecycle_stage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_lifecycle_stage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "lifecycleStageId": lifecycle_stage_id
@@ -713,7 +713,7 @@ class LifecycleEnvironmentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -864,41 +864,41 @@ class LifecycleEnvironmentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_lifecycle_environments got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_lifecycle_environments got unknown kwargs: {extra_kwargs!r}")
 
         if 'arch_type' in kwargs:
             arch_type_allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
             if kwargs['arch_type'] not in arch_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `arch_type`, must be one of {0}".format(arch_type_allowed_values)
+                    f"Invalid value for `arch_type`, must be one of { arch_type_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
             os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
             if kwargs['os_family'] not in os_family_allowed_values:
                 raise ValueError(
-                    "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                    f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1052,7 +1052,7 @@ class LifecycleEnvironmentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_lifecycle_stage_installed_packages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_lifecycle_stage_installed_packages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "lifecycleStageId": lifecycle_stage_id
@@ -1062,27 +1062,27 @@ class LifecycleEnvironmentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1252,41 +1252,41 @@ class LifecycleEnvironmentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_lifecycle_stages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_lifecycle_stages got unknown kwargs: {extra_kwargs!r}")
 
         if 'arch_type' in kwargs:
             arch_type_allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
             if kwargs['arch_type'] not in arch_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `arch_type`, must be one of {0}".format(arch_type_allowed_values)
+                    f"Invalid value for `arch_type`, must be one of { arch_type_allowed_values }"
                 )
 
         if 'os_family' in kwargs:
             os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
             if kwargs['os_family'] not in os_family_allowed_values:
                 raise ValueError(
-                    "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                    f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1415,7 +1415,7 @@ class LifecycleEnvironmentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "promote_software_source_to_lifecycle_stage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"promote_software_source_to_lifecycle_stage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "lifecycleStageId": lifecycle_stage_id
@@ -1425,7 +1425,7 @@ class LifecycleEnvironmentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "softwareSourceId": kwargs.get("software_source_id", missing)
@@ -1534,7 +1534,7 @@ class LifecycleEnvironmentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_lifecycle_environment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_lifecycle_environment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "lifecycleEnvironmentId": lifecycle_environment_id
@@ -1544,7 +1544,7 @@ class LifecycleEnvironmentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

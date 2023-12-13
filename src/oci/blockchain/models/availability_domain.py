@@ -75,8 +75,7 @@ class AvailabilityDomain(object):
         allowed_values = ["AD1", "AD2", "AD3"]
         if not value_allowed_none_or_none_sentinel(ads, allowed_values):
             raise ValueError(
-                "Invalid value for `ads`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ads`, must be None or one of {allowed_values}"
             )
         self._ads = ads
 

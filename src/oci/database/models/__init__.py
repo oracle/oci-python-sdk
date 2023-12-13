@@ -50,6 +50,7 @@ from .autonomous_virtual_machine import AutonomousVirtualMachine
 from .autonomous_virtual_machine_summary import AutonomousVirtualMachineSummary
 from .autonomous_vm_cluster import AutonomousVmCluster
 from .autonomous_vm_cluster_resource_details import AutonomousVmClusterResourceDetails
+from .autonomous_vm_cluster_resource_usage import AutonomousVmClusterResourceUsage
 from .autonomous_vm_cluster_summary import AutonomousVmClusterSummary
 from .autonomous_vm_resource_usage import AutonomousVmResourceUsage
 from .avm_acd_resource_stats import AvmAcdResourceStats
@@ -83,11 +84,17 @@ from .cloud_vm_cluster_summary import CloudVmClusterSummary
 from .complete_external_backup_job_details import CompleteExternalBackupJobDetails
 from .compute_performance_summary import ComputePerformanceSummary
 from .configure_autonomous_database_vault_key_details import ConfigureAutonomousDatabaseVaultKeyDetails
+from .configure_saas_admin_user_details import ConfigureSaasAdminUserDetails
 from .console_connection import ConsoleConnection
 from .console_connection_summary import ConsoleConnectionSummary
+from .console_history import ConsoleHistory
+from .console_history_collection import ConsoleHistoryCollection
+from .console_history_summary import ConsoleHistorySummary
 from .convert_to_pdb_details import ConvertToPdbDetails
 from .convert_to_pdb_target_base import ConvertToPdbTargetBase
+from .convert_to_regular_pluggable_database_details import ConvertToRegularPluggableDatabaseDetails
 from .create_application_vip_details import CreateApplicationVipDetails
+from .create_autonomous_container_database_dataguard_association_details import CreateAutonomousContainerDatabaseDataguardAssociationDetails
 from .create_autonomous_container_database_details import CreateAutonomousContainerDatabaseDetails
 from .create_autonomous_database_backup_details import CreateAutonomousDatabaseBackupDetails
 from .create_autonomous_database_base import CreateAutonomousDatabaseBase
@@ -102,6 +109,7 @@ from .create_cloud_autonomous_vm_cluster_details import CreateCloudAutonomousVmC
 from .create_cloud_exadata_infrastructure_details import CreateCloudExadataInfrastructureDetails
 from .create_cloud_vm_cluster_details import CreateCloudVmClusterDetails
 from .create_console_connection_details import CreateConsoleConnectionDetails
+from .create_console_history_details import CreateConsoleHistoryDetails
 from .create_cross_region_autonomous_database_data_guard_details import CreateCrossRegionAutonomousDatabaseDataGuardDetails
 from .create_cross_region_disaster_recovery_details import CreateCrossRegionDisasterRecoveryDetails
 from .create_data_guard_association_details import CreateDataGuardAssociationDetails
@@ -134,10 +142,16 @@ from .create_external_macs_connector_details import CreateExternalMacsConnectorD
 from .create_external_non_container_database_details import CreateExternalNonContainerDatabaseDetails
 from .create_external_pluggable_database_details import CreateExternalPluggableDatabaseDetails
 from .create_key_store_details import CreateKeyStoreDetails
+from .create_maintenance_run_details import CreateMaintenanceRunDetails
 from .create_nfs_backup_destination_details import CreateNFSBackupDestinationDetails
 from .create_new_database_details import CreateNewDatabaseDetails
 from .create_oneoff_patch_details import CreateOneoffPatchDetails
+from .create_pluggable_database_creation_type_details import CreatePluggableDatabaseCreationTypeDetails
 from .create_pluggable_database_details import CreatePluggableDatabaseDetails
+from .create_pluggable_database_from_local_clone_details import CreatePluggableDatabaseFromLocalCloneDetails
+from .create_pluggable_database_from_relocate_details import CreatePluggableDatabaseFromRelocateDetails
+from .create_pluggable_database_from_remote_clone_details import CreatePluggableDatabaseFromRemoteCloneDetails
+from .create_pluggable_database_refreshable_clone_details import CreatePluggableDatabaseRefreshableCloneDetails
 from .create_recovery_appliance_backup_destination_details import CreateRecoveryApplianceBackupDestinationDetails
 from .create_refreshable_autonomous_database_clone_details import CreateRefreshableAutonomousDatabaseCloneDetails
 from .create_vm_cluster_details import CreateVmClusterDetails
@@ -277,6 +291,8 @@ from .peer_autonomous_container_database_backup_config import PeerAutonomousCont
 from .pluggable_database import PluggableDatabase
 from .pluggable_database_connection_strings import PluggableDatabaseConnectionStrings
 from .pluggable_database_management_config import PluggableDatabaseManagementConfig
+from .pluggable_database_node_level_details import PluggableDatabaseNodeLevelDetails
+from .pluggable_database_refreshable_clone_config import PluggableDatabaseRefreshableCloneConfig
 from .pluggable_database_summary import PluggableDatabaseSummary
 from .refreshable_clone_collection import RefreshableCloneCollection
 from .refreshable_clone_summary import RefreshableCloneSummary
@@ -295,12 +311,16 @@ from .rotate_autonomous_vm_cluster_ords_certs_details import RotateAutonomousVmC
 from .rotate_autonomous_vm_cluster_ssl_certs_details import RotateAutonomousVmClusterSslCertsDetails
 from .rotate_cloud_autonomous_vm_cluster_ords_certs_details import RotateCloudAutonomousVmClusterOrdsCertsDetails
 from .rotate_cloud_autonomous_vm_cluster_ssl_certs_details import RotateCloudAutonomousVmClusterSslCertsDetails
+from .saas_admin_user_configuration import SaasAdminUserConfiguration
+from .saas_admin_user_status import SaasAdminUserStatus
 from .scan_details import ScanDetails
 from .scheduled_operation_details import ScheduledOperationDetails
 from .self_mount_details import SelfMountDetails
 from .stack_monitoring_config import StackMonitoringConfig
 from .storage_performance_details import StoragePerformanceDetails
 from .switchover_data_guard_association_details import SwitchoverDataGuardAssociationDetails
+from .system_version_collection import SystemVersionCollection
+from .system_version_summary import SystemVersionSummary
 from .update import Update
 from .update_autonomous_container_database_data_guard_association_details import UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
 from .update_autonomous_container_database_details import UpdateAutonomousContainerDatabaseDetails
@@ -314,6 +334,7 @@ from .update_cloud_autonomous_vm_cluster_details import UpdateCloudAutonomousVmC
 from .update_cloud_exadata_infrastructure_details import UpdateCloudExadataInfrastructureDetails
 from .update_cloud_vm_cluster_details import UpdateCloudVmClusterDetails
 from .update_console_connection_details import UpdateConsoleConnectionDetails
+from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_data_guard_association_details import UpdateDataGuardAssociationDetails
 from .update_database_details import UpdateDatabaseDetails
 from .update_database_software_image_details import UpdateDatabaseSoftwareImageDetails
@@ -398,6 +419,7 @@ database_type_mapping = {
     "AutonomousVirtualMachineSummary": AutonomousVirtualMachineSummary,
     "AutonomousVmCluster": AutonomousVmCluster,
     "AutonomousVmClusterResourceDetails": AutonomousVmClusterResourceDetails,
+    "AutonomousVmClusterResourceUsage": AutonomousVmClusterResourceUsage,
     "AutonomousVmClusterSummary": AutonomousVmClusterSummary,
     "AutonomousVmResourceUsage": AutonomousVmResourceUsage,
     "AvmAcdResourceStats": AvmAcdResourceStats,
@@ -431,11 +453,17 @@ database_type_mapping = {
     "CompleteExternalBackupJobDetails": CompleteExternalBackupJobDetails,
     "ComputePerformanceSummary": ComputePerformanceSummary,
     "ConfigureAutonomousDatabaseVaultKeyDetails": ConfigureAutonomousDatabaseVaultKeyDetails,
+    "ConfigureSaasAdminUserDetails": ConfigureSaasAdminUserDetails,
     "ConsoleConnection": ConsoleConnection,
     "ConsoleConnectionSummary": ConsoleConnectionSummary,
+    "ConsoleHistory": ConsoleHistory,
+    "ConsoleHistoryCollection": ConsoleHistoryCollection,
+    "ConsoleHistorySummary": ConsoleHistorySummary,
     "ConvertToPdbDetails": ConvertToPdbDetails,
     "ConvertToPdbTargetBase": ConvertToPdbTargetBase,
+    "ConvertToRegularPluggableDatabaseDetails": ConvertToRegularPluggableDatabaseDetails,
     "CreateApplicationVipDetails": CreateApplicationVipDetails,
+    "CreateAutonomousContainerDatabaseDataguardAssociationDetails": CreateAutonomousContainerDatabaseDataguardAssociationDetails,
     "CreateAutonomousContainerDatabaseDetails": CreateAutonomousContainerDatabaseDetails,
     "CreateAutonomousDatabaseBackupDetails": CreateAutonomousDatabaseBackupDetails,
     "CreateAutonomousDatabaseBase": CreateAutonomousDatabaseBase,
@@ -450,6 +478,7 @@ database_type_mapping = {
     "CreateCloudExadataInfrastructureDetails": CreateCloudExadataInfrastructureDetails,
     "CreateCloudVmClusterDetails": CreateCloudVmClusterDetails,
     "CreateConsoleConnectionDetails": CreateConsoleConnectionDetails,
+    "CreateConsoleHistoryDetails": CreateConsoleHistoryDetails,
     "CreateCrossRegionAutonomousDatabaseDataGuardDetails": CreateCrossRegionAutonomousDatabaseDataGuardDetails,
     "CreateCrossRegionDisasterRecoveryDetails": CreateCrossRegionDisasterRecoveryDetails,
     "CreateDataGuardAssociationDetails": CreateDataGuardAssociationDetails,
@@ -482,10 +511,16 @@ database_type_mapping = {
     "CreateExternalNonContainerDatabaseDetails": CreateExternalNonContainerDatabaseDetails,
     "CreateExternalPluggableDatabaseDetails": CreateExternalPluggableDatabaseDetails,
     "CreateKeyStoreDetails": CreateKeyStoreDetails,
+    "CreateMaintenanceRunDetails": CreateMaintenanceRunDetails,
     "CreateNFSBackupDestinationDetails": CreateNFSBackupDestinationDetails,
     "CreateNewDatabaseDetails": CreateNewDatabaseDetails,
     "CreateOneoffPatchDetails": CreateOneoffPatchDetails,
+    "CreatePluggableDatabaseCreationTypeDetails": CreatePluggableDatabaseCreationTypeDetails,
     "CreatePluggableDatabaseDetails": CreatePluggableDatabaseDetails,
+    "CreatePluggableDatabaseFromLocalCloneDetails": CreatePluggableDatabaseFromLocalCloneDetails,
+    "CreatePluggableDatabaseFromRelocateDetails": CreatePluggableDatabaseFromRelocateDetails,
+    "CreatePluggableDatabaseFromRemoteCloneDetails": CreatePluggableDatabaseFromRemoteCloneDetails,
+    "CreatePluggableDatabaseRefreshableCloneDetails": CreatePluggableDatabaseRefreshableCloneDetails,
     "CreateRecoveryApplianceBackupDestinationDetails": CreateRecoveryApplianceBackupDestinationDetails,
     "CreateRefreshableAutonomousDatabaseCloneDetails": CreateRefreshableAutonomousDatabaseCloneDetails,
     "CreateVmClusterDetails": CreateVmClusterDetails,
@@ -625,6 +660,8 @@ database_type_mapping = {
     "PluggableDatabase": PluggableDatabase,
     "PluggableDatabaseConnectionStrings": PluggableDatabaseConnectionStrings,
     "PluggableDatabaseManagementConfig": PluggableDatabaseManagementConfig,
+    "PluggableDatabaseNodeLevelDetails": PluggableDatabaseNodeLevelDetails,
+    "PluggableDatabaseRefreshableCloneConfig": PluggableDatabaseRefreshableCloneConfig,
     "PluggableDatabaseSummary": PluggableDatabaseSummary,
     "RefreshableCloneCollection": RefreshableCloneCollection,
     "RefreshableCloneSummary": RefreshableCloneSummary,
@@ -643,12 +680,16 @@ database_type_mapping = {
     "RotateAutonomousVmClusterSslCertsDetails": RotateAutonomousVmClusterSslCertsDetails,
     "RotateCloudAutonomousVmClusterOrdsCertsDetails": RotateCloudAutonomousVmClusterOrdsCertsDetails,
     "RotateCloudAutonomousVmClusterSslCertsDetails": RotateCloudAutonomousVmClusterSslCertsDetails,
+    "SaasAdminUserConfiguration": SaasAdminUserConfiguration,
+    "SaasAdminUserStatus": SaasAdminUserStatus,
     "ScanDetails": ScanDetails,
     "ScheduledOperationDetails": ScheduledOperationDetails,
     "SelfMountDetails": SelfMountDetails,
     "StackMonitoringConfig": StackMonitoringConfig,
     "StoragePerformanceDetails": StoragePerformanceDetails,
     "SwitchoverDataGuardAssociationDetails": SwitchoverDataGuardAssociationDetails,
+    "SystemVersionCollection": SystemVersionCollection,
+    "SystemVersionSummary": SystemVersionSummary,
     "Update": Update,
     "UpdateAutonomousContainerDatabaseDataGuardAssociationDetails": UpdateAutonomousContainerDatabaseDataGuardAssociationDetails,
     "UpdateAutonomousContainerDatabaseDetails": UpdateAutonomousContainerDatabaseDetails,
@@ -662,6 +703,7 @@ database_type_mapping = {
     "UpdateCloudExadataInfrastructureDetails": UpdateCloudExadataInfrastructureDetails,
     "UpdateCloudVmClusterDetails": UpdateCloudVmClusterDetails,
     "UpdateConsoleConnectionDetails": UpdateConsoleConnectionDetails,
+    "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateDataGuardAssociationDetails": UpdateDataGuardAssociationDetails,
     "UpdateDatabaseDetails": UpdateDatabaseDetails,
     "UpdateDatabaseSoftwareImageDetails": UpdateDatabaseSoftwareImageDetails,

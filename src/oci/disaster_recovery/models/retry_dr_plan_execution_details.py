@@ -48,7 +48,7 @@ class RetryDrPlanExecutionDetails(object):
         **[Required]** Gets the group_id of this RetryDrPlanExecutionDetails.
         The unique id of the group to retry as a whole, or the group containing the step being retried.
 
-        Example: `sgid1.group..&lt;unique_id&gt;`
+        Example: `sgid1.group..uniqueID`
 
 
         :return: The group_id of this RetryDrPlanExecutionDetails.
@@ -62,7 +62,7 @@ class RetryDrPlanExecutionDetails(object):
         Sets the group_id of this RetryDrPlanExecutionDetails.
         The unique id of the group to retry as a whole, or the group containing the step being retried.
 
-        Example: `sgid1.group..&lt;unique_id&gt;`
+        Example: `sgid1.group..uniqueID`
 
 
         :param group_id: The group_id of this RetryDrPlanExecutionDetails.
@@ -76,7 +76,7 @@ class RetryDrPlanExecutionDetails(object):
         Gets the step_id of this RetryDrPlanExecutionDetails.
         The unique id of the step to retry (optional). Only needed when retrying a step.
 
-        Example: `sgid1.step..&lt;unique_id&gt;`
+        Example: `sgid1.step..uniqueID`
 
 
         :return: The step_id of this RetryDrPlanExecutionDetails.
@@ -90,7 +90,7 @@ class RetryDrPlanExecutionDetails(object):
         Sets the step_id of this RetryDrPlanExecutionDetails.
         The unique id of the step to retry (optional). Only needed when retrying a step.
 
-        Example: `sgid1.step..&lt;unique_id&gt;`
+        Example: `sgid1.step..uniqueID`
 
 
         :param step_id: The step_id of this RetryDrPlanExecutionDetails.

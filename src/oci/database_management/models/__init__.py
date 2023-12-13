@@ -272,6 +272,9 @@ from .managed_database_group_summary import ManagedDatabaseGroupSummary
 from .managed_database_password_credential import ManagedDatabasePasswordCredential
 from .managed_database_secret_credential import ManagedDatabaseSecretCredential
 from .managed_database_summary import ManagedDatabaseSummary
+from .managed_my_sql_database import ManagedMySqlDatabase
+from .managed_my_sql_database_collection import ManagedMySqlDatabaseCollection
+from .managed_my_sql_database_summary import ManagedMySqlDatabaseSummary
 from .memory_aggregate_metrics import MemoryAggregateMetrics
 from .metric_data_point import MetricDataPoint
 from .metric_dimension_definition import MetricDimensionDefinition
@@ -279,6 +282,16 @@ from .metric_statistics_definition import MetricStatisticsDefinition
 from .metrics_aggregation_range import MetricsAggregationRange
 from .metrics_aggregation_range_collection import MetricsAggregationRangeCollection
 from .modify_snapshot_settings_details import ModifySnapshotSettingsDetails
+from .my_sql_configuration_data_collection import MySqlConfigurationDataCollection
+from .my_sql_configuration_data_summary import MySqlConfigurationDataSummary
+from .my_sql_data_collection import MySqlDataCollection
+from .my_sql_data_summary import MySqlDataSummary
+from .my_sql_database_usage_metrics import MySqlDatabaseUsageMetrics
+from .my_sql_fleet_by_category import MySqlFleetByCategory
+from .my_sql_fleet_metric_definition import MySqlFleetMetricDefinition
+from .my_sql_fleet_metric_summary_definition import MySqlFleetMetricSummaryDefinition
+from .my_sql_fleet_metrics import MySqlFleetMetrics
+from .my_sql_fleet_summary import MySqlFleetSummary
 from .object_privilege_collection import ObjectPrivilegeCollection
 from .object_privilege_summary import ObjectPrivilegeSummary
 from .object_storage_job_execution_result_details import ObjectStorageJobExecutionResultDetails
@@ -692,6 +705,9 @@ database_management_type_mapping = {
     "ManagedDatabasePasswordCredential": ManagedDatabasePasswordCredential,
     "ManagedDatabaseSecretCredential": ManagedDatabaseSecretCredential,
     "ManagedDatabaseSummary": ManagedDatabaseSummary,
+    "ManagedMySqlDatabase": ManagedMySqlDatabase,
+    "ManagedMySqlDatabaseCollection": ManagedMySqlDatabaseCollection,
+    "ManagedMySqlDatabaseSummary": ManagedMySqlDatabaseSummary,
     "MemoryAggregateMetrics": MemoryAggregateMetrics,
     "MetricDataPoint": MetricDataPoint,
     "MetricDimensionDefinition": MetricDimensionDefinition,
@@ -699,6 +715,16 @@ database_management_type_mapping = {
     "MetricsAggregationRange": MetricsAggregationRange,
     "MetricsAggregationRangeCollection": MetricsAggregationRangeCollection,
     "ModifySnapshotSettingsDetails": ModifySnapshotSettingsDetails,
+    "MySqlConfigurationDataCollection": MySqlConfigurationDataCollection,
+    "MySqlConfigurationDataSummary": MySqlConfigurationDataSummary,
+    "MySqlDataCollection": MySqlDataCollection,
+    "MySqlDataSummary": MySqlDataSummary,
+    "MySqlDatabaseUsageMetrics": MySqlDatabaseUsageMetrics,
+    "MySqlFleetByCategory": MySqlFleetByCategory,
+    "MySqlFleetMetricDefinition": MySqlFleetMetricDefinition,
+    "MySqlFleetMetricSummaryDefinition": MySqlFleetMetricSummaryDefinition,
+    "MySqlFleetMetrics": MySqlFleetMetrics,
+    "MySqlFleetSummary": MySqlFleetSummary,
     "ObjectPrivilegeCollection": ObjectPrivilegeCollection,
     "ObjectPrivilegeSummary": ObjectPrivilegeSummary,
     "ObjectStorageJobExecutionResultDetails": ObjectStorageJobExecutionResultDetails,

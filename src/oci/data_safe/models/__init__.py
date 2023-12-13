@@ -61,6 +61,7 @@ from .change_audit_archive_retrieval_compartment_details import ChangeAuditArchi
 from .change_audit_policy_compartment_details import ChangeAuditPolicyCompartmentDetails
 from .change_audit_profile_compartment_details import ChangeAuditProfileCompartmentDetails
 from .change_data_safe_private_endpoint_compartment_details import ChangeDataSafePrivateEndpointCompartmentDetails
+from .change_database_security_config_compartment_details import ChangeDatabaseSecurityConfigCompartmentDetails
 from .change_discovery_job_compartment_details import ChangeDiscoveryJobCompartmentDetails
 from .change_library_masking_format_compartment_details import ChangeLibraryMaskingFormatCompartmentDetails
 from .change_masking_policy_compartment_details import ChangeMaskingPolicyCompartmentDetails
@@ -70,8 +71,12 @@ from .change_report_definition_compartment_details import ChangeReportDefinition
 from .change_retention_details import ChangeRetentionDetails
 from .change_sdm_masking_policy_difference_compartment_details import ChangeSdmMaskingPolicyDifferenceCompartmentDetails
 from .change_security_assessment_compartment_details import ChangeSecurityAssessmentCompartmentDetails
+from .change_security_policy_compartment_details import ChangeSecurityPolicyCompartmentDetails
+from .change_security_policy_deployment_compartment_details import ChangeSecurityPolicyDeploymentCompartmentDetails
 from .change_sensitive_data_model_compartment_details import ChangeSensitiveDataModelCompartmentDetails
 from .change_sensitive_type_compartment_details import ChangeSensitiveTypeCompartmentDetails
+from .change_sql_collection_compartment_details import ChangeSqlCollectionCompartmentDetails
+from .change_sql_firewall_policy_compartment_details import ChangeSqlFirewallPolicyCompartmentDetails
 from .change_target_alert_policy_association_compartment_details import ChangeTargetAlertPolicyAssociationCompartmentDetails
 from .change_target_database_compartment_details import ChangeTargetDatabaseCompartmentDetails
 from .change_user_assessment_compartment_details import ChangeUserAssessmentCompartmentDetails
@@ -111,6 +116,7 @@ from .create_sensitive_column_details import CreateSensitiveColumnDetails
 from .create_sensitive_data_model_details import CreateSensitiveDataModelDetails
 from .create_sensitive_type_details import CreateSensitiveTypeDetails
 from .create_sensitive_type_pattern_details import CreateSensitiveTypePatternDetails
+from .create_sql_collection_details import CreateSqlCollectionDetails
 from .create_target_alert_policy_association_details import CreateTargetAlertPolicyAssociationDetails
 from .create_target_database_details import CreateTargetDatabaseDetails
 from .create_user_assessment_details import CreateUserAssessmentDetails
@@ -120,6 +126,9 @@ from .data_safe_private_endpoint import DataSafePrivateEndpoint
 from .data_safe_private_endpoint_summary import DataSafePrivateEndpointSummary
 from .database_cloud_service_details import DatabaseCloudServiceDetails
 from .database_details import DatabaseDetails
+from .database_security_config import DatabaseSecurityConfig
+from .database_security_config_collection import DatabaseSecurityConfigCollection
+from .database_security_config_summary import DatabaseSecurityConfigSummary
 from .delete_rows_format_entry import DeleteRowsFormatEntry
 from .deterministic_encryption_date_format_entry import DeterministicEncryptionDateFormatEntry
 from .deterministic_encryption_format_entry import DeterministicEncryptionFormatEntry
@@ -145,8 +154,10 @@ from .download_sensitive_data_model_details import DownloadSensitiveDataModelDet
 from .download_user_assessment_report_details import DownloadUserAssessmentReportDetails
 from .enable_conditions import EnableConditions
 from .enable_data_safe_configuration_details import EnableDataSafeConfigurationDetails
+from .entry_details import EntryDetails
 from .finding import Finding
 from .finding_summary import FindingSummary
+from .firewall_policy_entry_details import FirewallPolicyEntryDetails
 from .fixed_number_format_entry import FixedNumberFormatEntry
 from .fixed_string_format_entry import FixedStringFormatEntry
 from .format_entry import FormatEntry
@@ -207,6 +218,7 @@ from .patch_remove_instruction import PatchRemoveInstruction
 from .patch_sdm_masking_policy_difference_columns_details import PatchSdmMaskingPolicyDifferenceColumnsDetails
 from .patch_sensitive_column_details import PatchSensitiveColumnDetails
 from .patch_target_alert_policy_association_details import PatchTargetAlertPolicyAssociationDetails
+from .pattern_format_entry import PatternFormatEntry
 from .preserve_original_data_format_entry import PreserveOriginalDataFormatEntry
 from .private_endpoint import PrivateEndpoint
 from .profile import Profile
@@ -249,6 +261,15 @@ from .security_assessment_comparison import SecurityAssessmentComparison
 from .security_assessment_comparison_per_target import SecurityAssessmentComparisonPerTarget
 from .security_assessment_statistics import SecurityAssessmentStatistics
 from .security_assessment_summary import SecurityAssessmentSummary
+from .security_policy import SecurityPolicy
+from .security_policy_collection import SecurityPolicyCollection
+from .security_policy_deployment import SecurityPolicyDeployment
+from .security_policy_deployment_collection import SecurityPolicyDeploymentCollection
+from .security_policy_deployment_summary import SecurityPolicyDeploymentSummary
+from .security_policy_entry_state import SecurityPolicyEntryState
+from .security_policy_entry_state_collection import SecurityPolicyEntryStateCollection
+from .security_policy_entry_state_summary import SecurityPolicyEntryStateSummary
+from .security_policy_summary import SecurityPolicySummary
 from .sensitive_category import SensitiveCategory
 from .sensitive_column import SensitiveColumn
 from .sensitive_column_collection import SensitiveColumnCollection
@@ -265,6 +286,32 @@ from .sensitive_type_collection import SensitiveTypeCollection
 from .sensitive_type_pattern import SensitiveTypePattern
 from .sensitive_type_summary import SensitiveTypeSummary
 from .shuffle_format_entry import ShuffleFormatEntry
+from .sql_collection import SqlCollection
+from .sql_collection_aggregation import SqlCollectionAggregation
+from .sql_collection_analytics_collection import SqlCollectionAnalyticsCollection
+from .sql_collection_collection import SqlCollectionCollection
+from .sql_collection_dimensions import SqlCollectionDimensions
+from .sql_collection_log_aggregation import SqlCollectionLogAggregation
+from .sql_collection_log_dimensions import SqlCollectionLogDimensions
+from .sql_collection_log_insights_collection import SqlCollectionLogInsightsCollection
+from .sql_collection_summary import SqlCollectionSummary
+from .sql_firewall_allowed_sql_aggregation import SqlFirewallAllowedSqlAggregation
+from .sql_firewall_allowed_sql_analytics_collection import SqlFirewallAllowedSqlAnalyticsCollection
+from .sql_firewall_allowed_sql_collection import SqlFirewallAllowedSqlCollection
+from .sql_firewall_allowed_sql_dimensions import SqlFirewallAllowedSqlDimensions
+from .sql_firewall_allowed_sql_summary import SqlFirewallAllowedSqlSummary
+from .sql_firewall_config import SqlFirewallConfig
+from .sql_firewall_policy import SqlFirewallPolicy
+from .sql_firewall_policy_aggregation import SqlFirewallPolicyAggregation
+from .sql_firewall_policy_analytics_collection import SqlFirewallPolicyAnalyticsCollection
+from .sql_firewall_policy_collection import SqlFirewallPolicyCollection
+from .sql_firewall_policy_dimensions import SqlFirewallPolicyDimensions
+from .sql_firewall_policy_summary import SqlFirewallPolicySummary
+from .sql_firewall_violation_aggregation import SqlFirewallViolationAggregation
+from .sql_firewall_violation_aggregation_dimensions import SqlFirewallViolationAggregationDimensions
+from .sql_firewall_violation_analytics_collection import SqlFirewallViolationAnalyticsCollection
+from .sql_firewall_violation_summary import SqlFirewallViolationSummary
+from .sql_firewall_violations_collection import SqlFirewallViolationsCollection
 from .start_audit_trail_details import StartAuditTrailDetails
 from .substring_format_entry import SubstringFormatEntry
 from .summary import Summary
@@ -287,6 +334,7 @@ from .update_column_source_details import UpdateColumnSourceDetails
 from .update_column_source_sdm_details import UpdateColumnSourceSdmDetails
 from .update_column_source_target_details import UpdateColumnSourceTargetDetails
 from .update_data_safe_private_endpoint_details import UpdateDataSafePrivateEndpointDetails
+from .update_database_security_config_details import UpdateDatabaseSecurityConfigDetails
 from .update_library_masking_format_details import UpdateLibraryMaskingFormatDetails
 from .update_masking_column_details import UpdateMaskingColumnDetails
 from .update_masking_policy_details import UpdateMaskingPolicyDetails
@@ -295,11 +343,16 @@ from .update_on_prem_connector_wallet_details import UpdateOnPremConnectorWallet
 from .update_report_definition_details import UpdateReportDefinitionDetails
 from .update_sdm_masking_policy_difference_details import UpdateSdmMaskingPolicyDifferenceDetails
 from .update_security_assessment_details import UpdateSecurityAssessmentDetails
+from .update_security_policy_deployment_details import UpdateSecurityPolicyDeploymentDetails
+from .update_security_policy_details import UpdateSecurityPolicyDetails
 from .update_sensitive_category_details import UpdateSensitiveCategoryDetails
 from .update_sensitive_column_details import UpdateSensitiveColumnDetails
 from .update_sensitive_data_model_details import UpdateSensitiveDataModelDetails
 from .update_sensitive_type_details import UpdateSensitiveTypeDetails
 from .update_sensitive_type_pattern_details import UpdateSensitiveTypePatternDetails
+from .update_sql_collection_details import UpdateSqlCollectionDetails
+from .update_sql_firewall_config_details import UpdateSqlFirewallConfigDetails
+from .update_sql_firewall_policy_details import UpdateSqlFirewallPolicyDetails
 from .update_target_alert_policy_association_details import UpdateTargetAlertPolicyAssociationDetails
 from .update_target_database_details import UpdateTargetDatabaseDetails
 from .update_user_assessment_details import UpdateUserAssessmentDetails
@@ -373,6 +426,7 @@ data_safe_type_mapping = {
     "ChangeAuditPolicyCompartmentDetails": ChangeAuditPolicyCompartmentDetails,
     "ChangeAuditProfileCompartmentDetails": ChangeAuditProfileCompartmentDetails,
     "ChangeDataSafePrivateEndpointCompartmentDetails": ChangeDataSafePrivateEndpointCompartmentDetails,
+    "ChangeDatabaseSecurityConfigCompartmentDetails": ChangeDatabaseSecurityConfigCompartmentDetails,
     "ChangeDiscoveryJobCompartmentDetails": ChangeDiscoveryJobCompartmentDetails,
     "ChangeLibraryMaskingFormatCompartmentDetails": ChangeLibraryMaskingFormatCompartmentDetails,
     "ChangeMaskingPolicyCompartmentDetails": ChangeMaskingPolicyCompartmentDetails,
@@ -382,8 +436,12 @@ data_safe_type_mapping = {
     "ChangeRetentionDetails": ChangeRetentionDetails,
     "ChangeSdmMaskingPolicyDifferenceCompartmentDetails": ChangeSdmMaskingPolicyDifferenceCompartmentDetails,
     "ChangeSecurityAssessmentCompartmentDetails": ChangeSecurityAssessmentCompartmentDetails,
+    "ChangeSecurityPolicyCompartmentDetails": ChangeSecurityPolicyCompartmentDetails,
+    "ChangeSecurityPolicyDeploymentCompartmentDetails": ChangeSecurityPolicyDeploymentCompartmentDetails,
     "ChangeSensitiveDataModelCompartmentDetails": ChangeSensitiveDataModelCompartmentDetails,
     "ChangeSensitiveTypeCompartmentDetails": ChangeSensitiveTypeCompartmentDetails,
+    "ChangeSqlCollectionCompartmentDetails": ChangeSqlCollectionCompartmentDetails,
+    "ChangeSqlFirewallPolicyCompartmentDetails": ChangeSqlFirewallPolicyCompartmentDetails,
     "ChangeTargetAlertPolicyAssociationCompartmentDetails": ChangeTargetAlertPolicyAssociationCompartmentDetails,
     "ChangeTargetDatabaseCompartmentDetails": ChangeTargetDatabaseCompartmentDetails,
     "ChangeUserAssessmentCompartmentDetails": ChangeUserAssessmentCompartmentDetails,
@@ -423,6 +481,7 @@ data_safe_type_mapping = {
     "CreateSensitiveDataModelDetails": CreateSensitiveDataModelDetails,
     "CreateSensitiveTypeDetails": CreateSensitiveTypeDetails,
     "CreateSensitiveTypePatternDetails": CreateSensitiveTypePatternDetails,
+    "CreateSqlCollectionDetails": CreateSqlCollectionDetails,
     "CreateTargetAlertPolicyAssociationDetails": CreateTargetAlertPolicyAssociationDetails,
     "CreateTargetDatabaseDetails": CreateTargetDatabaseDetails,
     "CreateUserAssessmentDetails": CreateUserAssessmentDetails,
@@ -432,6 +491,9 @@ data_safe_type_mapping = {
     "DataSafePrivateEndpointSummary": DataSafePrivateEndpointSummary,
     "DatabaseCloudServiceDetails": DatabaseCloudServiceDetails,
     "DatabaseDetails": DatabaseDetails,
+    "DatabaseSecurityConfig": DatabaseSecurityConfig,
+    "DatabaseSecurityConfigCollection": DatabaseSecurityConfigCollection,
+    "DatabaseSecurityConfigSummary": DatabaseSecurityConfigSummary,
     "DeleteRowsFormatEntry": DeleteRowsFormatEntry,
     "DeterministicEncryptionDateFormatEntry": DeterministicEncryptionDateFormatEntry,
     "DeterministicEncryptionFormatEntry": DeterministicEncryptionFormatEntry,
@@ -457,8 +519,10 @@ data_safe_type_mapping = {
     "DownloadUserAssessmentReportDetails": DownloadUserAssessmentReportDetails,
     "EnableConditions": EnableConditions,
     "EnableDataSafeConfigurationDetails": EnableDataSafeConfigurationDetails,
+    "EntryDetails": EntryDetails,
     "Finding": Finding,
     "FindingSummary": FindingSummary,
+    "FirewallPolicyEntryDetails": FirewallPolicyEntryDetails,
     "FixedNumberFormatEntry": FixedNumberFormatEntry,
     "FixedStringFormatEntry": FixedStringFormatEntry,
     "FormatEntry": FormatEntry,
@@ -519,6 +583,7 @@ data_safe_type_mapping = {
     "PatchSdmMaskingPolicyDifferenceColumnsDetails": PatchSdmMaskingPolicyDifferenceColumnsDetails,
     "PatchSensitiveColumnDetails": PatchSensitiveColumnDetails,
     "PatchTargetAlertPolicyAssociationDetails": PatchTargetAlertPolicyAssociationDetails,
+    "PatternFormatEntry": PatternFormatEntry,
     "PreserveOriginalDataFormatEntry": PreserveOriginalDataFormatEntry,
     "PrivateEndpoint": PrivateEndpoint,
     "Profile": Profile,
@@ -561,6 +626,15 @@ data_safe_type_mapping = {
     "SecurityAssessmentComparisonPerTarget": SecurityAssessmentComparisonPerTarget,
     "SecurityAssessmentStatistics": SecurityAssessmentStatistics,
     "SecurityAssessmentSummary": SecurityAssessmentSummary,
+    "SecurityPolicy": SecurityPolicy,
+    "SecurityPolicyCollection": SecurityPolicyCollection,
+    "SecurityPolicyDeployment": SecurityPolicyDeployment,
+    "SecurityPolicyDeploymentCollection": SecurityPolicyDeploymentCollection,
+    "SecurityPolicyDeploymentSummary": SecurityPolicyDeploymentSummary,
+    "SecurityPolicyEntryState": SecurityPolicyEntryState,
+    "SecurityPolicyEntryStateCollection": SecurityPolicyEntryStateCollection,
+    "SecurityPolicyEntryStateSummary": SecurityPolicyEntryStateSummary,
+    "SecurityPolicySummary": SecurityPolicySummary,
     "SensitiveCategory": SensitiveCategory,
     "SensitiveColumn": SensitiveColumn,
     "SensitiveColumnCollection": SensitiveColumnCollection,
@@ -577,6 +651,32 @@ data_safe_type_mapping = {
     "SensitiveTypePattern": SensitiveTypePattern,
     "SensitiveTypeSummary": SensitiveTypeSummary,
     "ShuffleFormatEntry": ShuffleFormatEntry,
+    "SqlCollection": SqlCollection,
+    "SqlCollectionAggregation": SqlCollectionAggregation,
+    "SqlCollectionAnalyticsCollection": SqlCollectionAnalyticsCollection,
+    "SqlCollectionCollection": SqlCollectionCollection,
+    "SqlCollectionDimensions": SqlCollectionDimensions,
+    "SqlCollectionLogAggregation": SqlCollectionLogAggregation,
+    "SqlCollectionLogDimensions": SqlCollectionLogDimensions,
+    "SqlCollectionLogInsightsCollection": SqlCollectionLogInsightsCollection,
+    "SqlCollectionSummary": SqlCollectionSummary,
+    "SqlFirewallAllowedSqlAggregation": SqlFirewallAllowedSqlAggregation,
+    "SqlFirewallAllowedSqlAnalyticsCollection": SqlFirewallAllowedSqlAnalyticsCollection,
+    "SqlFirewallAllowedSqlCollection": SqlFirewallAllowedSqlCollection,
+    "SqlFirewallAllowedSqlDimensions": SqlFirewallAllowedSqlDimensions,
+    "SqlFirewallAllowedSqlSummary": SqlFirewallAllowedSqlSummary,
+    "SqlFirewallConfig": SqlFirewallConfig,
+    "SqlFirewallPolicy": SqlFirewallPolicy,
+    "SqlFirewallPolicyAggregation": SqlFirewallPolicyAggregation,
+    "SqlFirewallPolicyAnalyticsCollection": SqlFirewallPolicyAnalyticsCollection,
+    "SqlFirewallPolicyCollection": SqlFirewallPolicyCollection,
+    "SqlFirewallPolicyDimensions": SqlFirewallPolicyDimensions,
+    "SqlFirewallPolicySummary": SqlFirewallPolicySummary,
+    "SqlFirewallViolationAggregation": SqlFirewallViolationAggregation,
+    "SqlFirewallViolationAggregationDimensions": SqlFirewallViolationAggregationDimensions,
+    "SqlFirewallViolationAnalyticsCollection": SqlFirewallViolationAnalyticsCollection,
+    "SqlFirewallViolationSummary": SqlFirewallViolationSummary,
+    "SqlFirewallViolationsCollection": SqlFirewallViolationsCollection,
     "StartAuditTrailDetails": StartAuditTrailDetails,
     "SubstringFormatEntry": SubstringFormatEntry,
     "Summary": Summary,
@@ -599,6 +699,7 @@ data_safe_type_mapping = {
     "UpdateColumnSourceSdmDetails": UpdateColumnSourceSdmDetails,
     "UpdateColumnSourceTargetDetails": UpdateColumnSourceTargetDetails,
     "UpdateDataSafePrivateEndpointDetails": UpdateDataSafePrivateEndpointDetails,
+    "UpdateDatabaseSecurityConfigDetails": UpdateDatabaseSecurityConfigDetails,
     "UpdateLibraryMaskingFormatDetails": UpdateLibraryMaskingFormatDetails,
     "UpdateMaskingColumnDetails": UpdateMaskingColumnDetails,
     "UpdateMaskingPolicyDetails": UpdateMaskingPolicyDetails,
@@ -607,11 +708,16 @@ data_safe_type_mapping = {
     "UpdateReportDefinitionDetails": UpdateReportDefinitionDetails,
     "UpdateSdmMaskingPolicyDifferenceDetails": UpdateSdmMaskingPolicyDifferenceDetails,
     "UpdateSecurityAssessmentDetails": UpdateSecurityAssessmentDetails,
+    "UpdateSecurityPolicyDeploymentDetails": UpdateSecurityPolicyDeploymentDetails,
+    "UpdateSecurityPolicyDetails": UpdateSecurityPolicyDetails,
     "UpdateSensitiveCategoryDetails": UpdateSensitiveCategoryDetails,
     "UpdateSensitiveColumnDetails": UpdateSensitiveColumnDetails,
     "UpdateSensitiveDataModelDetails": UpdateSensitiveDataModelDetails,
     "UpdateSensitiveTypeDetails": UpdateSensitiveTypeDetails,
     "UpdateSensitiveTypePatternDetails": UpdateSensitiveTypePatternDetails,
+    "UpdateSqlCollectionDetails": UpdateSqlCollectionDetails,
+    "UpdateSqlFirewallConfigDetails": UpdateSqlFirewallConfigDetails,
+    "UpdateSqlFirewallPolicyDetails": UpdateSqlFirewallPolicyDetails,
     "UpdateTargetAlertPolicyAssociationDetails": UpdateTargetAlertPolicyAssociationDetails,
     "UpdateTargetDatabaseDetails": UpdateTargetDatabaseDetails,
     "UpdateUserAssessmentDetails": UpdateUserAssessmentDetails,

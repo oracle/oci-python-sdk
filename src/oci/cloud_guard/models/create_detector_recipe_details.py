@@ -184,8 +184,7 @@ class CreateDetectorRecipeDetails(object):
         allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", "IAAS_LOG_INSIGHT_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             raise ValueError(
-                "Invalid value for `detector`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `detector`, must be None or one of {allowed_values}"
             )
         self._detector = detector
 

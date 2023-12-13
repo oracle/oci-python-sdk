@@ -35,7 +35,7 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
 
         :param type:
             The value to assign to the type property of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
         :type type: str
 
         :param related_resource:
@@ -66,6 +66,10 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
             The value to assign to the private_endpoint_id property of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
         :type private_endpoint_id: str
 
+        :param proxy_client:
+            The value to assign to the proxy_client property of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
+        :type proxy_client: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -78,7 +82,8 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
             'user_password': 'DatabaseToolsUserPasswordDetails',
             'advanced_properties': 'dict(str, str)',
             'key_stores': 'list[DatabaseToolsKeyStoreDetails]',
-            'private_endpoint_id': 'str'
+            'private_endpoint_id': 'str',
+            'proxy_client': 'DatabaseToolsConnectionOracleDatabaseProxyClientDetails'
         }
 
         self.attribute_map = {
@@ -92,7 +97,8 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
             'user_password': 'userPassword',
             'advanced_properties': 'advancedProperties',
             'key_stores': 'keyStores',
-            'private_endpoint_id': 'privateEndpointId'
+            'private_endpoint_id': 'privateEndpointId',
+            'proxy_client': 'proxyClient'
         }
 
         self._display_name = None
@@ -106,6 +112,7 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
         self._advanced_properties = None
         self._key_stores = None
         self._private_endpoint_id = None
+        self._proxy_client = None
         self._type = 'ORACLE_DATABASE'
 
     @property
@@ -273,6 +280,26 @@ class UpdateDatabaseToolsConnectionOracleDatabaseDetails(UpdateDatabaseToolsConn
         :type: str
         """
         self._private_endpoint_id = private_endpoint_id
+
+    @property
+    def proxy_client(self):
+        """
+        Gets the proxy_client of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
+
+        :return: The proxy_client of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
+        :rtype: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientDetails
+        """
+        return self._proxy_client
+
+    @proxy_client.setter
+    def proxy_client(self, proxy_client):
+        """
+        Sets the proxy_client of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
+
+        :param proxy_client: The proxy_client of this UpdateDatabaseToolsConnectionOracleDatabaseDetails.
+        :type: oci.database_tools.models.DatabaseToolsConnectionOracleDatabaseProxyClientDetails
+        """
+        self._proxy_client = proxy_client
 
     def __repr__(self):
         return formatted_flat_dict(self)

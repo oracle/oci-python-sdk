@@ -236,8 +236,7 @@ class ManagementAgentPlugin(object):
             for value in supported_platform_types:
                 if not value_allowed_none_or_none_sentinel(value, allowed_values):
                     raise ValueError(
-                        "Invalid value for `supported_platform_types`, must be None or one of {0}"
-                        .format(allowed_values)
+                        f"Invalid value for `supported_platform_types`, must be None or one of {allowed_values}"
                     )
         self._supported_platform_types = supported_platform_types
 
@@ -340,8 +339,7 @@ class ManagementAgentPlugin(object):
         allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "TERMINATED", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 

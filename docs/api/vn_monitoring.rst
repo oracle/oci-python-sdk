@@ -160,6 +160,7 @@ Vn Monitoring
     oci.vn_monitoring.models.Endpoint
     oci.vn_monitoring.models.FastConnectProviderService
     oci.vn_monitoring.models.FastConnectProviderServiceKey
+    oci.vn_monitoring.models.FlowLogCaptureFilterRuleDetails
     oci.vn_monitoring.models.ForwardedRoutingAction
     oci.vn_monitoring.models.ForwardedRoutingActionDetails
     oci.vn_monitoring.models.ForwardedRoutingConfiguration

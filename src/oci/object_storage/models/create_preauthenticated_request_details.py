@@ -199,8 +199,7 @@ class CreatePreauthenticatedRequestDetails(object):
         allowed_values = ["ObjectRead", "ObjectWrite", "ObjectReadWrite", "AnyObjectWrite", "AnyObjectRead", "AnyObjectReadWrite"]
         if not value_allowed_none_or_none_sentinel(access_type, allowed_values):
             raise ValueError(
-                "Invalid value for `access_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `access_type`, must be None or one of {allowed_values}"
             )
         self._access_type = access_type
 

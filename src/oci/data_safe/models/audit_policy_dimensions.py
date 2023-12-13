@@ -39,6 +39,10 @@ class AuditPolicyDimensions(object):
     #: This constant has a value of "CUSTOM"
     AUDIT_POLICY_CATEGORY_CUSTOM = "CUSTOM"
 
+    #: A constant which can be used with the audit_policy_category property of a AuditPolicyDimensions.
+    #: This constant has a value of "SQL_FIREWALL_AUDITING"
+    AUDIT_POLICY_CATEGORY_SQL_FIREWALL_AUDITING = "SQL_FIREWALL_AUDITING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AuditPolicyDimensions object with values from keyword arguments.
@@ -46,7 +50,7 @@ class AuditPolicyDimensions(object):
 
         :param audit_policy_category:
             The value to assign to the audit_policy_category property of this AuditPolicyDimensions.
-            Allowed values for this property are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM", "SQL_FIREWALL_AUDITING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type audit_policy_category: str
 
@@ -81,7 +85,7 @@ class AuditPolicyDimensions(object):
         Gets the audit_policy_category of this AuditPolicyDimensions.
         The category to which the audit policy belongs.
 
-        Allowed values for this property are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM", "SQL_FIREWALL_AUDITING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -100,7 +104,7 @@ class AuditPolicyDimensions(object):
         :param audit_policy_category: The audit_policy_category of this AuditPolicyDimensions.
         :type: str
         """
-        allowed_values = ["BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM"]
+        allowed_values = ["BASIC_ACTIVITY", "ADMIN_USER_ACTIVITY", "USER_ACTIVITY", "ORACLE_PREDEFINED", "COMPLIANCE_STANDARD", "CUSTOM", "SQL_FIREWALL_AUDITING"]
         if not value_allowed_none_or_none_sentinel(audit_policy_category, allowed_values):
             audit_policy_category = 'UNKNOWN_ENUM_VALUE'
         self._audit_policy_category = audit_policy_category
@@ -111,7 +115,7 @@ class AuditPolicyDimensions(object):
         Gets the audit_policy_name of this AuditPolicyDimensions.
         The name of the audit policy. Refer to the `documentation`__ for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
 
-        __ https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827
+        __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827
 
 
         :return: The audit_policy_name of this AuditPolicyDimensions.
@@ -125,7 +129,7 @@ class AuditPolicyDimensions(object):
         Sets the audit_policy_name of this AuditPolicyDimensions.
         The name of the audit policy. Refer to the `documentation`__ for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
 
-        __ https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827
+        __ https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/data-safe&id=UDSCS-GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827
 
 
         :param audit_policy_name: The audit_policy_name of this AuditPolicyDimensions.

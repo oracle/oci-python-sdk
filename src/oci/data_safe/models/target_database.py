@@ -354,7 +354,7 @@ class TargetDatabase(object):
     def associated_resource_ids(self):
         """
         Gets the associated_resource_ids of this TargetDatabase.
-        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        The OCIDs of associated resources like database, Data Safe private endpoint etc.
 
 
         :return: The associated_resource_ids of this TargetDatabase.
@@ -366,7 +366,7 @@ class TargetDatabase(object):
     def associated_resource_ids(self, associated_resource_ids):
         """
         Sets the associated_resource_ids of this TargetDatabase.
-        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+        The OCIDs of associated resources like database, Data Safe private endpoint etc.
 
 
         :param associated_resource_ids: The associated_resource_ids of this TargetDatabase.
@@ -432,7 +432,7 @@ class TargetDatabase(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this TargetDatabase.
-        The date and time of target database registration and creation in Data Safe.
+        The date and time of the target database registration and creation in Data Safe.
 
 
         :return: The time_created of this TargetDatabase.
@@ -444,7 +444,7 @@ class TargetDatabase(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this TargetDatabase.
-        The date and time of target database registration and creation in Data Safe.
+        The date and time of the target database registration and creation in Data Safe.
 
 
         :param time_created: The time_created of this TargetDatabase.

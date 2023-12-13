@@ -67,6 +67,10 @@ class ReadOperationConfig(AbstractDataOperationConfig):
             The value to assign to the read_attribute property of this ReadOperationConfig.
         :type read_attribute: oci.data_integration.models.AbstractReadAttribute
 
+        :param incremental_read_config:
+            The value to assign to the incremental_read_config property of this ReadOperationConfig.
+        :type incremental_read_config: oci.data_integration.models.IncrementalReadConfig
+
         :param object_status:
             The value to assign to the object_status property of this ReadOperationConfig.
         :type object_status: int
@@ -84,6 +88,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
             'data_format': 'DataFormat',
             'partition_config': 'PartitionConfig',
             'read_attribute': 'AbstractReadAttribute',
+            'incremental_read_config': 'IncrementalReadConfig',
             'object_status': 'int'
         }
 
@@ -99,6 +104,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
             'data_format': 'dataFormat',
             'partition_config': 'partitionConfig',
             'read_attribute': 'readAttribute',
+            'incremental_read_config': 'incrementalReadConfig',
             'object_status': 'objectStatus'
         }
 
@@ -113,6 +119,7 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         self._data_format = None
         self._partition_config = None
         self._read_attribute = None
+        self._incremental_read_config = None
         self._object_status = None
         self._model_type = 'READ_OPERATION_CONFIG'
 
@@ -267,6 +274,26 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         :type: oci.data_integration.models.AbstractReadAttribute
         """
         self._read_attribute = read_attribute
+
+    @property
+    def incremental_read_config(self):
+        """
+        Gets the incremental_read_config of this ReadOperationConfig.
+
+        :return: The incremental_read_config of this ReadOperationConfig.
+        :rtype: oci.data_integration.models.IncrementalReadConfig
+        """
+        return self._incremental_read_config
+
+    @incremental_read_config.setter
+    def incremental_read_config(self, incremental_read_config):
+        """
+        Sets the incremental_read_config of this ReadOperationConfig.
+
+        :param incremental_read_config: The incremental_read_config of this ReadOperationConfig.
+        :type: oci.data_integration.models.IncrementalReadConfig
+        """
+        self._incremental_read_config = incremental_read_config
 
     @property
     def object_status(self):

@@ -24,7 +24,8 @@ class MonitoringClient(object):
     """
     Use the Monitoring API to manage metric queries and alarms for assessing the health, capacity, and performance of your cloud resources.
     Endpoints vary by operation. For PostMetric, use the `telemetry-ingestion` endpoints; for all other operations, use the `telemetry` endpoints.
-    For information about monitoring, see [Monitoring Overview](/iaas/Content/Monitoring/Concepts/monitoringoverview.htm).
+    For more information, see
+    [the Monitoring documentation](/iaas/Content/Monitoring/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -121,10 +122,10 @@ class MonitoringClient(object):
     def change_alarm_compartment(self, alarm_id, change_alarm_compartment_details, **kwargs):
         """
         Moves an alarm into a different compartment within the same tenancy.
+        For more information, see
+        `Moving an Alarm`__.
 
-        For information about moving resources between compartments, see `Moving Resources Between Compartments`__.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/change-compartment-alarm.htm
 
 
         :param str alarm_id: (required)
@@ -187,7 +188,7 @@ class MonitoringClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_alarm_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_alarm_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "alarmId": alarm_id
@@ -197,7 +198,7 @@ class MonitoringClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -244,13 +245,17 @@ class MonitoringClient(object):
     def create_alarm(self, create_alarm_details, **kwargs):
         """
         Creates a new alarm in the specified compartment.
-        For important limits information, see `Limits on Monitoring`__.
+        For more information, see
+        `Creating an Alarm`__.
+        For important limits information, see
+        `Limits on Monitoring`__.
 
         This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
         :param oci.monitoring.models.CreateAlarmDetails create_alarm_details: (required)
@@ -302,7 +307,7 @@ class MonitoringClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_alarm got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_alarm got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -348,13 +353,17 @@ class MonitoringClient(object):
     def delete_alarm(self, alarm_id, **kwargs):
         """
         Deletes the specified alarm.
-        For important limits information, see `Limits on Monitoring`__.
+        For more information, see
+        `Deleting an Alarm`__.
+        For important limits information, see
+        `Limits on Monitoring`__.
 
         This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/delete-alarm.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
         :param str alarm_id: (required)
@@ -406,7 +415,7 @@ class MonitoringClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_alarm got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_alarm got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "alarmId": alarm_id
@@ -416,7 +425,7 @@ class MonitoringClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -459,13 +468,17 @@ class MonitoringClient(object):
     def get_alarm(self, alarm_id, **kwargs):
         """
         Gets the specified alarm.
-        For important limits information, see `Limits on Monitoring`__.
+        For more information, see
+        `Getting an Alarm`__.
+        For important limits information, see
+        `Limits on Monitoring`__.
 
         This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
         :param str alarm_id: (required)
@@ -511,7 +524,7 @@ class MonitoringClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_alarm got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_alarm got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "alarmId": alarm_id
@@ -521,7 +534,7 @@ class MonitoringClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -565,13 +578,17 @@ class MonitoringClient(object):
     def get_alarm_history(self, alarm_id, **kwargs):
         """
         Get the history of the specified alarm.
-        For important limits information, see `Limits on Monitoring`__.
+        For more information, see
+        `Getting History of an Alarm`__.
+        For important limits information, see
+        `Limits on Monitoring`__.
 
         This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
         :param str alarm_id: (required)
@@ -593,13 +610,15 @@ class MonitoringClient(object):
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
-            For important details about how pagination works, see `List Pagination`__.
+            For important details about how pagination works, see
+            `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
-            For important details about how pagination works, see `List Pagination`__.
+            For important details about how pagination works, see
+            `List Pagination`__.
 
             Default: 1000
 
@@ -656,7 +675,7 @@ class MonitoringClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_alarm_history got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_alarm_history got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "alarmId": alarm_id
@@ -666,13 +685,13 @@ class MonitoringClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'alarm_historytype' in kwargs:
             alarm_historytype_allowed_values = ["STATE_HISTORY", "STATE_TRANSITION_HISTORY"]
             if kwargs['alarm_historytype'] not in alarm_historytype_allowed_values:
                 raise ValueError(
-                    "Invalid value for `alarm_historytype`, must be one of {0}".format(alarm_historytype_allowed_values)
+                    f"Invalid value for `alarm_historytype`, must be one of { alarm_historytype_allowed_values }"
                 )
 
         query_params = {
@@ -728,13 +747,17 @@ class MonitoringClient(object):
     def list_alarms(self, compartment_id, **kwargs):
         """
         Lists the alarms for the specified compartment.
-        For important limits information, see `Limits on Monitoring`__.
+        For more information, see
+        `Listing Alarms`__.
+        For important limits information, see
+        `Limits on Monitoring`__.
 
         This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
         :param str compartment_id: (required)
@@ -752,13 +775,15 @@ class MonitoringClient(object):
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
-            For important details about how pagination works, see `List Pagination`__.
+            For important details about how pagination works, see
+            `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
-            For important details about how pagination works, see `List Pagination`__.
+            For important details about how pagination works, see
+            `List Pagination`__.
 
             Default: 1000
 
@@ -837,27 +862,27 @@ class MonitoringClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_alarms got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_alarms got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "severity"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -916,14 +941,17 @@ class MonitoringClient(object):
         List the status of each alarm in the specified compartment.
         Status is collective, across all metric streams in the alarm.
         To list alarm status for each metric stream, use :func:`retrieve_dimension_states`.
-        The alarm attribute `isNotificationsPerMetricDimensionEnabled` must be set to `true`.
-        For important limits information, see `Limits on Monitoring`__.
+        For more information, see
+        `Listing Alarm Statuses`__.
+        For important limits information, see
+        `Limits on Monitoring`__.
 
         This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
         :param str compartment_id: (required)
@@ -948,13 +976,15 @@ class MonitoringClient(object):
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
-            For important details about how pagination works, see `List Pagination`__.
+            For important details about how pagination works, see
+            `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
-            For important details about how pagination works, see `List Pagination`__.
+            For important details about how pagination works, see
+            `List Pagination`__.
 
             Default: 1000
 
@@ -980,10 +1010,41 @@ class MonitoringClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str resource_id: (optional)
+            The `OCID`__ of a resource that is monitored by the
+            metric that you are searching for.
+
+            Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str service_name: (optional)
+            A filter to return only resources that match the given service name exactly.
+            Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.
+
+            Example: `logging-analytics`
+
+        :param str entity_id: (optional)
+            The `OCID`__ of the entity monitored by the
+            metric that you are searching for.
+
+            Example: `ocid1.instance.oc1.phx.exampleuniqueID`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str status: (optional)
+            The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to
+            \"FIRING\" to filter results to metric streams of the alarm with that status. Default behaviour is to return
+            alarms irrespective of metric streams' status.
+
+            Example: `FIRING`
+
+            Allowed values are: "FIRING", "OK"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1015,25 +1076,36 @@ class MonitoringClient(object):
             "limit",
             "display_name",
             "sort_by",
-            "sort_order"
+            "sort_order",
+            "resource_id",
+            "service_name",
+            "entity_id",
+            "status"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_alarms_status got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_alarms_status got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "severity"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'status' in kwargs:
+            status_allowed_values = ["FIRING", "OK"]
+            if kwargs['status'] not in status_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         query_params = {
@@ -1043,7 +1115,11 @@ class MonitoringClient(object):
             "limit": kwargs.get("limit", missing),
             "displayName": kwargs.get("display_name", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "resourceId": kwargs.get("resource_id", missing),
+            "serviceName": kwargs.get("service_name", missing),
+            "entityId": kwargs.get("entity_id", missing),
+            "status": kwargs.get("status", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1058,6 +1134,8 @@ class MonitoringClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1089,13 +1167,18 @@ class MonitoringClient(object):
     def list_metrics(self, compartment_id, list_metrics_details, **kwargs):
         """
         Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
-        For information about metrics, see `Metrics Overview`__.
-        For important limits information, see `Limits on Monitoring`__.
+        For more information, see
+        `Listing Metric Definitions`__.
+        For information about metrics, see
+        `Metrics Overview`__.
+        For important limits information, see
+        `Limits on Monitoring`__.
 
         Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
         :param str compartment_id: (required)
@@ -1116,13 +1199,15 @@ class MonitoringClient(object):
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
-            For important details about how pagination works, see `List Pagination`__.
+            For important details about how pagination works, see
+            `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
-            For important details about how pagination works, see `List Pagination`__.
+            For important details about how pagination works, see
+            `List Pagination`__.
 
             Default: 1000
 
@@ -1174,7 +1259,7 @@ class MonitoringClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_metrics got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -1228,8 +1313,18 @@ class MonitoringClient(object):
     def post_metric_data(self, post_metric_data_details, **kwargs):
         """
         Publishes raw metric data points to the Monitoring service.
-        For more information about publishing metrics, see `Publishing Custom Metrics`__.
-        For important limits information, see `Limits on Monitoring`__.
+        For a data point to be posted, its timestamp must be near current time (less than two hours in the past and less than 10 minutes in the future).
+
+        For more information about publishing metrics, see
+        `Publishing Custom Metrics`__
+        and
+        `Custom Metrics Walkthrough`__.
+        For information about developing a metric-posting client, see
+        `Developer Guide`__.
+        For an example client, see
+        `MonitoringMetricPostExample.java`__.
+        For important limits information, see
+        `Limits on Monitoring`__.
 
         Per-call limits information follows.
 
@@ -1240,14 +1335,18 @@ class MonitoringClient(object):
         *A metric group is the combination of a given metric, metric namespace, and tenancy for the purpose of determining limits.
         A dimension is a qualifier provided in a metric definition.
         A metric stream is an individual set of aggregated data for a metric with zero or more dimension values.
-        For more information about metric-related concepts, see `Monitoring Concepts`__.
+        For more information about metric-related concepts, see
+        `Monitoring Concepts`__.
 
-        The endpoints for this operation differ from other Monitoring operations. Replace the string `telemetry` with `telemetry-ingestion` in the endpoint, as in the following example:
+        **Note:** The endpoints for this operation differ from other Monitoring operations. Replace the string `telemetry` with `telemetry-ingestion` in the endpoint, as in the following example:
 
         https://telemetry-ingestion.eu-frankfurt-1.oraclecloud.com
 
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/publishingcustommetrics.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/custom-metrics-walkthrough.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/devtoolslanding.htm
+        __ https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/MonitoringMetricPostExample.java
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts
 
 
@@ -1296,7 +1395,7 @@ class MonitoringClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "post_metric_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"post_metric_data got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1341,13 +1440,17 @@ class MonitoringClient(object):
     def remove_alarm_suppression(self, alarm_id, **kwargs):
         """
         Removes any existing suppression for the specified alarm.
-        For important limits information, see `Limits on Monitoring`__.
+        For more information, see
+        `Removing Suppression from an Alarm`__.
+        For important limits information, see
+        `Limits on Monitoring`__.
 
         This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/remove-alarm-suppression.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
         :param str alarm_id: (required)
@@ -1399,7 +1502,7 @@ class MonitoringClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_alarm_suppression got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_alarm_suppression got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "alarmId": alarm_id
@@ -1409,7 +1512,7 @@ class MonitoringClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1453,16 +1556,18 @@ class MonitoringClient(object):
         """
         Lists the current alarm status of each metric stream, where status is derived from the metric stream's last associated transition.
         Optionally filter by status value and one or more dimension key-value pairs.
-        This operation is only valid for alarms that have notifications per dimension enabled (`isNotificationsPerMetricDimensionEnabled=true`).
-         If `isNotificationsPerMetricDimensionEnabled` for the alarm is false or null, then no results are returned.
+        For more information, see
+        `Listing Metric Stream Status in an Alarm`__.
 
-        For important limits information, see `Limits on Monitoring`__.
+        For important limits information, see
+        `Limits on Monitoring`__.
 
-         This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
-         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
-         or transactions, per second (TPS) for a given tenancy.
+        This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+        Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+        or transactions, per second (TPS) for a given tenancy.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status-metric-stream.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
         :param str alarm_id: (required)
@@ -1476,13 +1581,15 @@ class MonitoringClient(object):
 
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
-            For important details about how pagination works, see `List Pagination`__.
+            For important details about how pagination works, see
+            `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
-            For important details about how pagination works, see `List Pagination`__.
+            For important details about how pagination works, see
+            `List Pagination`__.
 
             Default: 1000
 
@@ -1530,7 +1637,7 @@ class MonitoringClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "retrieve_dimension_states got unknown kwargs: {!r}".format(extra_kwargs))
+                f"retrieve_dimension_states got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "alarmId": alarm_id
@@ -1540,7 +1647,7 @@ class MonitoringClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -1594,13 +1701,18 @@ class MonitoringClient(object):
     def summarize_metrics_data(self, compartment_id, summarize_metrics_data_details, **kwargs):
         """
         Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
-        For information on metric queries, see `Building Metric Queries`__.
-        For important limits information, see `Limits on Monitoring`__.
+        For more information, see
+        `Querying Metric Data`__
+        and
+        `Creating a Query`__.
+        For important limits information, see
+        `Limits on Monitoring`__.
 
         Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/buildingqueries.htm
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-landing.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
         :param str compartment_id: (required)
@@ -1661,7 +1773,7 @@ class MonitoringClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_metrics_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_metrics_data got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -1713,13 +1825,17 @@ class MonitoringClient(object):
     def update_alarm(self, alarm_id, update_alarm_details, **kwargs):
         """
         Updates the specified alarm.
-        For important limits information, see `Limits on Monitoring`__.
+        For more information, see
+        `Updating an Alarm`__.
+        For important limits information, see
+        `Limits on Monitoring`__.
 
         This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
         Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
         or transactions, per second (TPS) for a given tenancy.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits
 
 
         :param str alarm_id: (required)
@@ -1774,7 +1890,7 @@ class MonitoringClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_alarm got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_alarm got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "alarmId": alarm_id
@@ -1784,7 +1900,7 @@ class MonitoringClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

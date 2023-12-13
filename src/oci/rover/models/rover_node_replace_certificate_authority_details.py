@@ -142,8 +142,7 @@ class RoverNodeReplaceCertificateAuthorityDetails(object):
         allowed_values = ["RSA2048", "RSA4096", "ECDSA_P256", "ECDSA_P384"]
         if not value_allowed_none_or_none_sentinel(cert_key_algorithm, allowed_values):
             raise ValueError(
-                "Invalid value for `cert_key_algorithm`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `cert_key_algorithm`, must be None or one of {allowed_values}"
             )
         self._cert_key_algorithm = cert_key_algorithm
 
@@ -174,8 +173,7 @@ class RoverNodeReplaceCertificateAuthorityDetails(object):
         allowed_values = ["SHA256_WITH_RSA", "SHA384_WITH_RSA", "SHA512_WITH_RSA", "SHA256_WITH_ECDSA", "SHA384_WITH_ECDSA", "SHA512_WITH_ECDSA"]
         if not value_allowed_none_or_none_sentinel(cert_signature_algorithm, allowed_values):
             raise ValueError(
-                "Invalid value for `cert_signature_algorithm`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `cert_signature_algorithm`, must be None or one of {allowed_values}"
             )
         self._cert_signature_algorithm = cert_signature_algorithm
 

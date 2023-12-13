@@ -469,7 +469,7 @@ class TranscriptionJobSummary(object):
         """
         Gets the freeform_tags of this TranscriptionJobSummary.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Example: `{\"bar-key\": \"value\"}`.
 
 
         :return: The freeform_tags of this TranscriptionJobSummary.
@@ -482,7 +482,7 @@ class TranscriptionJobSummary(object):
         """
         Sets the freeform_tags of this TranscriptionJobSummary.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Example: `{\"bar-key\": \"value\"}`.
 
 
         :param freeform_tags: The freeform_tags of this TranscriptionJobSummary.
@@ -495,7 +495,7 @@ class TranscriptionJobSummary(object):
         """
         Gets the defined_tags of this TranscriptionJobSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace-1\": {\"bar-key-1\": \"value-1\", \"bar-key-2\": \"value-2\"}, \"foo-namespace-2\": {\"bar-key-1\": \"value-1\", \"bar-key-2\": \"value-2\"}}`.
 
 
         :return: The defined_tags of this TranscriptionJobSummary.
@@ -508,7 +508,7 @@ class TranscriptionJobSummary(object):
         """
         Sets the defined_tags of this TranscriptionJobSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Example: `{\"foo-namespace-1\": {\"bar-key-1\": \"value-1\", \"bar-key-2\": \"value-2\"}, \"foo-namespace-2\": {\"bar-key-1\": \"value-1\", \"bar-key-2\": \"value-2\"}}`.
 
 
         :param defined_tags: The defined_tags of this TranscriptionJobSummary.
@@ -521,7 +521,7 @@ class TranscriptionJobSummary(object):
         """
         Gets the system_tags of this TranscriptionJobSummary.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`.
 
 
         :return: The system_tags of this TranscriptionJobSummary.
@@ -534,7 +534,7 @@ class TranscriptionJobSummary(object):
         """
         Sets the system_tags of this TranscriptionJobSummary.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`.
 
 
         :param system_tags: The system_tags of this TranscriptionJobSummary.

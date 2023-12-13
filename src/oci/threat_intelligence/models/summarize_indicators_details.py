@@ -215,8 +215,7 @@ class SummarizeIndicatorsDetails(object):
         allowed_values = ["DOMAIN_NAME", "FILE_NAME", "MD5_HASH", "SHA1_HASH", "SHA256_HASH", "IP_ADDRESS", "URL"]
         if not value_allowed_none_or_none_sentinel(indicator_type, allowed_values):
             raise ValueError(
-                "Invalid value for `indicator_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `indicator_type`, must be None or one of {allowed_values}"
             )
         self._indicator_type = indicator_type
 
@@ -535,8 +534,7 @@ class SummarizeIndicatorsDetails(object):
         allowed_values = ["ASC", "DESC"]
         if not value_allowed_none_or_none_sentinel(sort_order, allowed_values):
             raise ValueError(
-                "Invalid value for `sort_order`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `sort_order`, must be None or one of {allowed_values}"
             )
         self._sort_order = sort_order
 
@@ -567,8 +565,7 @@ class SummarizeIndicatorsDetails(object):
         allowed_values = ["CONFIDENCE", "TIMECREATED", "TIMEUPDATED", "TIMELASTSEEN"]
         if not value_allowed_none_or_none_sentinel(sort_by, allowed_values):
             raise ValueError(
-                "Invalid value for `sort_by`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `sort_by`, must be None or one of {allowed_values}"
             )
         self._sort_by = sort_by
 

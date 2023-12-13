@@ -4,6 +4,171 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.118.0 - 2023-12-12
+====================
+
+Added
+-----
+* Support for changing compartments of configurations in the PostgreSQL service
+* Support for granular policies including compartments, resource types, and recommendations in the Optimizer service
+* Support for token exchanges in the Identity Domains service
+* Support for Apache HTTP server discovery and monitoring in the Stack Monitoring service
+* Support for resource locking in the Data Catalog service
+* Support for concurrency throttling in the Data Integration service
+* Support for reboot migrations for VMs on dedicated hosts in the Compute service
+* Support for connection routing method settings and subnet update in the GoldenGate service
+* Support for data discovery of commonly used sensitive types in the Data Safe service
+* Support for incremental extract and updates to the workflows in the Data Integration service 
+ 
+Breaking
+--------
+* Support for default retries on the operations of the Optimizer service
+ 
+====================
+2.117.0 - 2023-12-04
+====================
+
+Added
+-----
+* Support for calling Oracle Cloud Infrastructure services in the eu-dcc-zurich-1 and the sa-bogota-1 region
+* Support for managing certificates of target Servers in the Golden Gate service
+* Support for AWR Hub Snapshot ingest endpoints in the Operations Insights service
+* Support for reducing false positives in the Application Dependency Management service
+* Support for ARM shapes in the Data Science service
+* Support for new optional parameters in the upload discovery data API in the Usage service
+* Support for multiple clusters in a Software-Defined Data Centers (SDDCs) in the Ocvp service
+* Support for No/Zero days backup in Autonomous Container Database in the Database service
+* Support for provisioning a VM Cluster with a choice of Exadata image version in the Database service
+* Support for updating ocpu/ecpu count, local storage , ACD count and Exadata storage on Cloud Autonomous VM Cluster and Autonomous VM Cluster in the Database service
+* Support for serial console history in the Database service
+* Support for Oracle Linux 8 version database system in the Database service
+ 
+Breaking
+--------
+* Constants `CURRENT_SKU_HOUR`, `CURRENT_SKU_MONTH`, `CURRENT_SKU_ONE_YEAR`, `CURRENT_SKU_THREE_YEARS`, `NEXT_SKU_HOUR`, `NEXT_SKU_MONTH`, `NEXT_SKU_ONE_YEAR`, `NEXT_SKU_THREE_YEARS` were renamed to `CURRENT_COMMITMENT_HOUR`, `CURRENT_COMMITMENT_MONTH`, `CURRENT_COMMITMENT_ONE_YEAR`, `CURRENT_COMMITMENT_THREE_YEARS`, `NEXT_COMMITMENT_HOUR`, `NEXT_COMMITMENT_MONTH`, `NEXT_COMMITMENT_ONE_YEAR`, `NEXT_COMMITMENT_THREE_YEARS` respectively in models `CreateEsxiHostDetails`, `EsxiHost` and `EsxiHostSummary` in the Ocvp service
+* Parameters `sddc_id`, `current_sku`, `next_sku`, were renamed to `cluster_id`, `current_commitment`, `next_commitment` in models `CreateEsxiHostDetails`, `EsxiHost` and `EsxiHostSummary` in the Ocvp service
+* Parameters `non_upgraded_esxi_host_id` and `failed_esxi_host_id` were removed from model `CreateEsxiHostDetails` in the Ocvp service
+* Constants `INITIAL_SKU_HOUR`, `INITIAL_SKU_MONTH`, `INITIAL_SKU_ONE_YEAR`, `INITIAL_SKU_THREE_YEARS` were removed from model `CreateSddcDetails` in the Ocvp service
+* Parameters `compute_availability_domain`, `instance_display_name_prefix`, `esxi_hosts_count`, `initial_sku`, `is_hcx_enabled`, `hcx_vlan_id`, `is_hcx_enterprise_enabled`, `workload_network_cidr`, `provisioning_subnet_id`, `vsphere_vlan_id`, `vmotion_vlan_id`, `vsan_vlan_id`, `nsx_v_tep_vlan_id`, `nsx_edge_v_tep_vlan_id`, `nsx_edge_uplink1_vlan_id`, `nsx_edge_uplink2_vlan_id`, `replication_vlan_id`, `provisioning_vlan_id`, `initial_host_shape_name`, `initial_host_ocpu_count`, `is_shielded_instance_enabled`, `capacity_reservation_id`, `datastores` were removed from model `CreateEsxiHostDetails` in the Ocvp service
+* Models `SupportedSkuSummary` and `SupportedSkuSummaryCollection` were removed from the Ocvp service
+ 
+====================
+2.116.0 - 2023-11-14
+====================
+
+Added
+-----
+* Support for the PostgreSQL service
+* Support for new operations in the Identity Domains service
+* Support for enabling, disabling, and renewing SSL/TLS in the Big Data service
+* Support for diarization in the AI Speech service
+* Support for Capacity Topology API in the Compute service  
+ 
+Breaking
+--------
+* Model `MyRequest` in the Identity Domains service now allows only certain restricted values. For more information please see https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/tools/python/latest/api/identity_domains/models/oci.identity_domains.models.MyRequest.html#oci.identity_domains.models.MyRequest 
+ 
+====================
+2.115.1 - 2023-11-07
+====================
+
+Added
+-----
+* Support for Java Management Service Downloads
+* Support for creating autonomous dataguard associations in the Database service
+* Support for SaaS administrative user configurations for autonomous database in the Database service
+* Support for macOS in the the Java Management service
+* Support for distribution and management of deployment rule sets in the Java Management service
+* Support for new download location of Oracle Java runtime binaries in the Java Management service
+* Support for exporting data across regions in the Java Management service
+ 
+Fixed
+-----
+* Fixed an issue in Resource Principals v2.1 introduced in the `v2.111.0` release
+ 
+====================
+2.115.0 - 2023-10-31
+====================
+
+Added
+-----
+* Support for calling Oracle Cloud Infrastructure services in the us-saltlake-2 region
+* Support for disaster recovery of load balancers, network load balancers and file systems in the Disaster Recovery service
+* Support for performing disaster recovery drills in the Disaster Recovery service
+* Support for enterprise SKUs and extensibility in the Stack Monitoring service
+* Support for metric extensions in the Stack Monitoring service
+* Support for baseline and anomaly detection in the Stack Monitoring service
+* Support for integration with Database Management service in the MySQL HeatWave service
+* Support for MySQL database management in the Database Management service
+* Support for database firewalls in the Data Safe service
+ 
+Breaking
+--------
+* The properties `compartment_id` and `user_assessment_id` were removed from the `ProfileAggregation` model in the Data Safe service
+ 
+====================
+2.114.0 - 2023-10-24
+====================
+
+Added
+-----
+* Support for optional parameters for autonomous container database create and update operations in the Database service
+* Support for maintenance runs for autonomous container database resources in the Database service
+* Support for runtime unsupported connections for Oracle Database and MySQL database types in the Database Tools service
+* Support for PostgreSQL, Generic JDBC connections with runtime unsupported in the Database Tools service
+* Support for resource locking in the Database Tools service
+* Support for proxy sessions for Oracle database connections in the Database Tools service
+* Support for global active tables in the NoSQL Database service
+* Support for application dependency management (ADM) remediation features in the Application Dependency Management service
+* Support for additional connections types for Amazon Kinesis, Amazon Redshift, Elasticsearch, Generic, Google BigQuery, Google Cloud Storage and Redis Database resources in the Golden Gate service
+* Support for optional parameters for the list alarms status operation in the Monitoring Service
+ 
+Breaking
+--------
+* Support for retries by default on operations of the Database Tools service
+* Support for retries by default on operations of the Monitoring service
+* The paremeter `opc_retry_token` was removed from operations `change_database_tools_connection_compartment` and `change_database_tools_private_endpoint_compartment` in the Database Tools service
+* Properties `user_password`, `connection_string` and `user_name` were removed from models `CreateDatabaseToolsConnectionOracleDatabaseDetails` and `CreateDatabaseToolsConnectionMySqlDetails` in the Database Tools service
+ 
+====================
+2.113.0 - 2023-10-17
+====================
+
+Added
+-----
+* Support for the Caching Service
+* Support for the Marketplace Publisher service
+* Support for higher limits for network firewalls in the Network Firewall service
+* Support for exporting access request reports in the Lockbox service
+* Support for storage mounts for jobs and notebooks in the Data Science service
+* Support for unified agent operational metrics for the service configurations in the Logging Management service
+ 
+Breaking
+--------
+* Property `approver_levels` in models `ApprovalTemplateSummary` changed from required to optional in the Lockbox service
+* Properties `lockbox_partner` and `partner_compartment_id` in models `LockboxSummary` changed from required to optional in the Lockbox service
+* Allowed values `ENUM_STRING` and `RQS_FILTER` were removed from the property `type` in model `Parameter` in the Logging service
+* Properties `rqs_type` and `display_name` were removed from model `Parameter` in the Logging service
+* Parameter `service_stage` was removed from operation `list_services` from the logging management client in the Logging service
+* Properties `mapped_secrets`, `application_lists`, `url_lists`, `ip_address_lists`, `security_rules`, `decryption_rules` and `decryption_profiles` were removed from models `CreateNetworkFirewallPolicyDetails`, `NetworkFirewallPolicy` and `UpdateNetworkFirewallPolicyDetails` in the Network Firewall Service
+* Property `sources` is replaced by `source_address` and property `destinations` is replaced by `destination_address` in models `DecryptionRuleMatchCriteria` and `SecurityRuleMatchCriteria` in the Network Firewall Service
+* Property `applications` is replaced by `application` and property `urls` is replaced by `url` in model `SecurityRuleMatchCriteria`in the Network Firewall Service
+ 
+====================
+2.112.4 - 2023-10-10
+====================
+
+Added
+-----
+* Support for creating flow log type capture filters in Virtual Cloud Network service
+* Support for export and import of metadata in Data Integration service
+* Support for displaying resource usage information on autonomous vm cluster get operations in Database service
+* Support for displaying resource usage information for the list of autonomous container databases on autonomous vm cluster get operations in Database service
+* Support for pluggable database with enhanced features in Database service
+* Support for exporting container and kubernetes app listings in Marketplace service
+* Support for work request statuses for export container and kubernetes app listings in Marketplace service
+ 
+====================
 2.112.3 - 2023-10-03
 ====================
 

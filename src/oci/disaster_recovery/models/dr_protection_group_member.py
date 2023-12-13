@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrProtectionGroupMember(object):
     """
-    Properties for a member in a DR Protection Group.
+    The properties of a member in a DR protection group.
     """
 
     #: A constant which can be used with the member_type property of a DrProtectionGroupMember.
@@ -39,14 +39,29 @@ class DrProtectionGroupMember(object):
     #: This constant has a value of "AUTONOMOUS_DATABASE"
     MEMBER_TYPE_AUTONOMOUS_DATABASE = "AUTONOMOUS_DATABASE"
 
+    #: A constant which can be used with the member_type property of a DrProtectionGroupMember.
+    #: This constant has a value of "LOAD_BALANCER"
+    MEMBER_TYPE_LOAD_BALANCER = "LOAD_BALANCER"
+
+    #: A constant which can be used with the member_type property of a DrProtectionGroupMember.
+    #: This constant has a value of "NETWORK_LOAD_BALANCER"
+    MEMBER_TYPE_NETWORK_LOAD_BALANCER = "NETWORK_LOAD_BALANCER"
+
+    #: A constant which can be used with the member_type property of a DrProtectionGroupMember.
+    #: This constant has a value of "FILE_SYSTEM"
+    MEMBER_TYPE_FILE_SYSTEM = "FILE_SYSTEM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrProtectionGroupMember object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberVolumeGroup`
+        * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberNetworkLoadBalancer`
+        * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberFileSystem`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceMovable`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberAutonomousDatabase`
+        * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberLoadBalancer`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstance`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberComputeInstanceNonMovable`
         * :class:`~oci.disaster_recovery.models.DrProtectionGroupMemberDatabase`
@@ -59,7 +74,7 @@ class DrProtectionGroupMember(object):
 
         :param member_type:
             The value to assign to the member_type property of this DrProtectionGroupMember.
-            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type member_type: str
 
@@ -88,11 +103,20 @@ class DrProtectionGroupMember(object):
         if type == 'VOLUME_GROUP':
             return 'DrProtectionGroupMemberVolumeGroup'
 
+        if type == 'NETWORK_LOAD_BALANCER':
+            return 'DrProtectionGroupMemberNetworkLoadBalancer'
+
+        if type == 'FILE_SYSTEM':
+            return 'DrProtectionGroupMemberFileSystem'
+
         if type == 'COMPUTE_INSTANCE_MOVABLE':
             return 'DrProtectionGroupMemberComputeInstanceMovable'
 
         if type == 'AUTONOMOUS_DATABASE':
             return 'DrProtectionGroupMemberAutonomousDatabase'
+
+        if type == 'LOAD_BALANCER':
+            return 'DrProtectionGroupMemberLoadBalancer'
 
         if type == 'COMPUTE_INSTANCE':
             return 'DrProtectionGroupMemberComputeInstance'
@@ -111,7 +135,7 @@ class DrProtectionGroupMember(object):
         **[Required]** Gets the member_id of this DrProtectionGroupMember.
         The OCID of the member.
 
-        Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.instance.oc1..uniqueID`
 
 
         :return: The member_id of this DrProtectionGroupMember.
@@ -125,7 +149,7 @@ class DrProtectionGroupMember(object):
         Sets the member_id of this DrProtectionGroupMember.
         The OCID of the member.
 
-        Example: `ocid1.instance.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.instance.oc1..uniqueID`
 
 
         :param member_id: The member_id of this DrProtectionGroupMember.
@@ -139,7 +163,7 @@ class DrProtectionGroupMember(object):
         **[Required]** Gets the member_type of this DrProtectionGroupMember.
         The type of the member.
 
-        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -158,7 +182,7 @@ class DrProtectionGroupMember(object):
         :param member_type: The member_type of this DrProtectionGroupMember.
         :type: str
         """
-        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE"]
+        allowed_values = ["COMPUTE_INSTANCE", "COMPUTE_INSTANCE_MOVABLE", "COMPUTE_INSTANCE_NON_MOVABLE", "VOLUME_GROUP", "DATABASE", "AUTONOMOUS_DATABASE", "LOAD_BALANCER", "NETWORK_LOAD_BALANCER", "FILE_SYSTEM"]
         if not value_allowed_none_or_none_sentinel(member_type, allowed_values):
             member_type = 'UNKNOWN_ENUM_VALUE'
         self._member_type = member_type

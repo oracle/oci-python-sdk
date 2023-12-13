@@ -76,6 +76,7 @@ from .byoipv6_cidr_details import Byoipv6CidrDetails
 from .capacity_report_instance_shape_config import CapacityReportInstanceShapeConfig
 from .capacity_report_shape_availability import CapacityReportShapeAvailability
 from .capacity_reservation_instance_summary import CapacityReservationInstanceSummary
+from .capacity_source import CapacitySource
 from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .capture_filter import CaptureFilter
 from .change_boot_volume_backup_compartment_details import ChangeBootVolumeBackupCompartmentDetails
@@ -84,6 +85,7 @@ from .change_byoip_range_compartment_details import ChangeByoipRangeCompartmentD
 from .change_capture_filter_compartment_details import ChangeCaptureFilterCompartmentDetails
 from .change_cluster_network_compartment_details import ChangeClusterNetworkCompartmentDetails
 from .change_compute_capacity_reservation_compartment_details import ChangeComputeCapacityReservationCompartmentDetails
+from .change_compute_capacity_topology_compartment_details import ChangeComputeCapacityTopologyCompartmentDetails
 from .change_compute_cluster_compartment_details import ChangeComputeClusterCompartmentDetails
 from .change_compute_image_capability_schema_compartment_details import ChangeComputeImageCapabilitySchemaCompartmentDetails
 from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
@@ -122,10 +124,16 @@ from .cluster_network import ClusterNetwork
 from .cluster_network_placement_configuration_details import ClusterNetworkPlacementConfigurationDetails
 from .cluster_network_summary import ClusterNetworkSummary
 from .compartment_internal import CompartmentInternal
+from .compute_bare_metal_host import ComputeBareMetalHost
+from .compute_bare_metal_host_collection import ComputeBareMetalHostCollection
+from .compute_bare_metal_host_summary import ComputeBareMetalHostSummary
 from .compute_capacity_report import ComputeCapacityReport
 from .compute_capacity_reservation import ComputeCapacityReservation
 from .compute_capacity_reservation_instance_shape_summary import ComputeCapacityReservationInstanceShapeSummary
 from .compute_capacity_reservation_summary import ComputeCapacityReservationSummary
+from .compute_capacity_topology import ComputeCapacityTopology
+from .compute_capacity_topology_collection import ComputeCapacityTopologyCollection
+from .compute_capacity_topology_summary import ComputeCapacityTopologySummary
 from .compute_cluster import ComputeCluster
 from .compute_cluster_collection import ComputeClusterCollection
 from .compute_cluster_summary import ComputeClusterSummary
@@ -133,10 +141,16 @@ from .compute_global_image_capability_schema import ComputeGlobalImageCapability
 from .compute_global_image_capability_schema_summary import ComputeGlobalImageCapabilitySchemaSummary
 from .compute_global_image_capability_schema_version import ComputeGlobalImageCapabilitySchemaVersion
 from .compute_global_image_capability_schema_version_summary import ComputeGlobalImageCapabilitySchemaVersionSummary
+from .compute_hpc_island import ComputeHpcIsland
+from .compute_hpc_island_collection import ComputeHpcIslandCollection
+from .compute_hpc_island_summary import ComputeHpcIslandSummary
 from .compute_image_capability_schema import ComputeImageCapabilitySchema
 from .compute_image_capability_schema_summary import ComputeImageCapabilitySchemaSummary
 from .compute_instance_details import ComputeInstanceDetails
 from .compute_instance_options import ComputeInstanceOptions
+from .compute_network_block import ComputeNetworkBlock
+from .compute_network_block_collection import ComputeNetworkBlockCollection
+from .compute_network_block_summary import ComputeNetworkBlockSummary
 from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .connect_remote_peering_connections_details import ConnectRemotePeeringConnectionsDetails
 from .console_history import ConsoleHistory
@@ -154,16 +168,19 @@ from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
 from .create_boot_volume_details import CreateBootVolumeDetails
 from .create_byoip_range_details import CreateByoipRangeDetails
 from .create_capacity_report_shape_availability_details import CreateCapacityReportShapeAvailabilityDetails
+from .create_capacity_source_details import CreateCapacitySourceDetails
 from .create_capture_filter_details import CreateCaptureFilterDetails
 from .create_cluster_network_details import CreateClusterNetworkDetails
 from .create_cluster_network_instance_pool_details import CreateClusterNetworkInstancePoolDetails
 from .create_compute_capacity_report_details import CreateComputeCapacityReportDetails
 from .create_compute_capacity_reservation_details import CreateComputeCapacityReservationDetails
+from .create_compute_capacity_topology_details import CreateComputeCapacityTopologyDetails
 from .create_compute_cluster_details import CreateComputeClusterDetails
 from .create_compute_image_capability_schema_details import CreateComputeImageCapabilitySchemaDetails
 from .create_cpe_details import CreateCpeDetails
 from .create_cross_connect_details import CreateCrossConnectDetails
 from .create_cross_connect_group_details import CreateCrossConnectGroupDetails
+from .create_dedicated_capacity_source_details import CreateDedicatedCapacitySourceDetails
 from .create_dedicated_vm_host_details import CreateDedicatedVmHostDetails
 from .create_dhcp_details import CreateDhcpDetails
 from .create_drg_attachment_details import CreateDrgAttachmentDetails
@@ -216,6 +233,7 @@ from .cross_connect_mapping_details import CrossConnectMappingDetails
 from .cross_connect_mapping_details_collection import CrossConnectMappingDetailsCollection
 from .cross_connect_port_speed_shape import CrossConnectPortSpeedShape
 from .cross_connect_status import CrossConnectStatus
+from .dedicated_capacity_source import DedicatedCapacitySource
 from .dedicated_vm_host import DedicatedVmHost
 from .dedicated_vm_host_instance_shape_summary import DedicatedVmHostInstanceShapeSummary
 from .dedicated_vm_host_instance_summary import DedicatedVmHostInstanceSummary
@@ -259,6 +277,7 @@ from .export_image_via_object_storage_tuple_details import ExportImageViaObjectS
 from .export_image_via_object_storage_uri_details import ExportImageViaObjectStorageUriDetails
 from .fast_connect_provider_service import FastConnectProviderService
 from .fast_connect_provider_service_key import FastConnectProviderServiceKey
+from .flow_log_capture_filter_rule_details import FlowLogCaptureFilterRuleDetails
 from .generic_bm_launch_instance_platform_config import GenericBmLaunchInstancePlatformConfig
 from .generic_bm_platform_config import GenericBmPlatformConfig
 from .get_public_ip_by_ip_address_details import GetPublicIpByIpAddressDetails
@@ -453,16 +472,19 @@ from .update_boot_volume_backup_details import UpdateBootVolumeBackupDetails
 from .update_boot_volume_details import UpdateBootVolumeDetails
 from .update_boot_volume_kms_key_details import UpdateBootVolumeKmsKeyDetails
 from .update_byoip_range_details import UpdateByoipRangeDetails
+from .update_capacity_source_details import UpdateCapacitySourceDetails
 from .update_capture_filter_details import UpdateCaptureFilterDetails
 from .update_cluster_network_details import UpdateClusterNetworkDetails
 from .update_cluster_network_instance_pool_details import UpdateClusterNetworkInstancePoolDetails
 from .update_compute_capacity_reservation_details import UpdateComputeCapacityReservationDetails
+from .update_compute_capacity_topology_details import UpdateComputeCapacityTopologyDetails
 from .update_compute_cluster_details import UpdateComputeClusterDetails
 from .update_compute_image_capability_schema_details import UpdateComputeImageCapabilitySchemaDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
 from .update_cross_connect_details import UpdateCrossConnectDetails
 from .update_cross_connect_group_details import UpdateCrossConnectGroupDetails
+from .update_dedicated_capacity_source_details import UpdateDedicatedCapacitySourceDetails
 from .update_dedicated_vm_host_details import UpdateDedicatedVmHostDetails
 from .update_dhcp_details import UpdateDhcpDetails
 from .update_drg_attachment_details import UpdateDrgAttachmentDetails
@@ -630,6 +652,7 @@ core_type_mapping = {
     "CapacityReportInstanceShapeConfig": CapacityReportInstanceShapeConfig,
     "CapacityReportShapeAvailability": CapacityReportShapeAvailability,
     "CapacityReservationInstanceSummary": CapacityReservationInstanceSummary,
+    "CapacitySource": CapacitySource,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
     "CaptureFilter": CaptureFilter,
     "ChangeBootVolumeBackupCompartmentDetails": ChangeBootVolumeBackupCompartmentDetails,
@@ -638,6 +661,7 @@ core_type_mapping = {
     "ChangeCaptureFilterCompartmentDetails": ChangeCaptureFilterCompartmentDetails,
     "ChangeClusterNetworkCompartmentDetails": ChangeClusterNetworkCompartmentDetails,
     "ChangeComputeCapacityReservationCompartmentDetails": ChangeComputeCapacityReservationCompartmentDetails,
+    "ChangeComputeCapacityTopologyCompartmentDetails": ChangeComputeCapacityTopologyCompartmentDetails,
     "ChangeComputeClusterCompartmentDetails": ChangeComputeClusterCompartmentDetails,
     "ChangeComputeImageCapabilitySchemaCompartmentDetails": ChangeComputeImageCapabilitySchemaCompartmentDetails,
     "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
@@ -676,10 +700,16 @@ core_type_mapping = {
     "ClusterNetworkPlacementConfigurationDetails": ClusterNetworkPlacementConfigurationDetails,
     "ClusterNetworkSummary": ClusterNetworkSummary,
     "CompartmentInternal": CompartmentInternal,
+    "ComputeBareMetalHost": ComputeBareMetalHost,
+    "ComputeBareMetalHostCollection": ComputeBareMetalHostCollection,
+    "ComputeBareMetalHostSummary": ComputeBareMetalHostSummary,
     "ComputeCapacityReport": ComputeCapacityReport,
     "ComputeCapacityReservation": ComputeCapacityReservation,
     "ComputeCapacityReservationInstanceShapeSummary": ComputeCapacityReservationInstanceShapeSummary,
     "ComputeCapacityReservationSummary": ComputeCapacityReservationSummary,
+    "ComputeCapacityTopology": ComputeCapacityTopology,
+    "ComputeCapacityTopologyCollection": ComputeCapacityTopologyCollection,
+    "ComputeCapacityTopologySummary": ComputeCapacityTopologySummary,
     "ComputeCluster": ComputeCluster,
     "ComputeClusterCollection": ComputeClusterCollection,
     "ComputeClusterSummary": ComputeClusterSummary,
@@ -687,10 +717,16 @@ core_type_mapping = {
     "ComputeGlobalImageCapabilitySchemaSummary": ComputeGlobalImageCapabilitySchemaSummary,
     "ComputeGlobalImageCapabilitySchemaVersion": ComputeGlobalImageCapabilitySchemaVersion,
     "ComputeGlobalImageCapabilitySchemaVersionSummary": ComputeGlobalImageCapabilitySchemaVersionSummary,
+    "ComputeHpcIsland": ComputeHpcIsland,
+    "ComputeHpcIslandCollection": ComputeHpcIslandCollection,
+    "ComputeHpcIslandSummary": ComputeHpcIslandSummary,
     "ComputeImageCapabilitySchema": ComputeImageCapabilitySchema,
     "ComputeImageCapabilitySchemaSummary": ComputeImageCapabilitySchemaSummary,
     "ComputeInstanceDetails": ComputeInstanceDetails,
     "ComputeInstanceOptions": ComputeInstanceOptions,
+    "ComputeNetworkBlock": ComputeNetworkBlock,
+    "ComputeNetworkBlockCollection": ComputeNetworkBlockCollection,
+    "ComputeNetworkBlockSummary": ComputeNetworkBlockSummary,
     "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConnectRemotePeeringConnectionsDetails": ConnectRemotePeeringConnectionsDetails,
     "ConsoleHistory": ConsoleHistory,
@@ -708,16 +744,19 @@ core_type_mapping = {
     "CreateBootVolumeDetails": CreateBootVolumeDetails,
     "CreateByoipRangeDetails": CreateByoipRangeDetails,
     "CreateCapacityReportShapeAvailabilityDetails": CreateCapacityReportShapeAvailabilityDetails,
+    "CreateCapacitySourceDetails": CreateCapacitySourceDetails,
     "CreateCaptureFilterDetails": CreateCaptureFilterDetails,
     "CreateClusterNetworkDetails": CreateClusterNetworkDetails,
     "CreateClusterNetworkInstancePoolDetails": CreateClusterNetworkInstancePoolDetails,
     "CreateComputeCapacityReportDetails": CreateComputeCapacityReportDetails,
     "CreateComputeCapacityReservationDetails": CreateComputeCapacityReservationDetails,
+    "CreateComputeCapacityTopologyDetails": CreateComputeCapacityTopologyDetails,
     "CreateComputeClusterDetails": CreateComputeClusterDetails,
     "CreateComputeImageCapabilitySchemaDetails": CreateComputeImageCapabilitySchemaDetails,
     "CreateCpeDetails": CreateCpeDetails,
     "CreateCrossConnectDetails": CreateCrossConnectDetails,
     "CreateCrossConnectGroupDetails": CreateCrossConnectGroupDetails,
+    "CreateDedicatedCapacitySourceDetails": CreateDedicatedCapacitySourceDetails,
     "CreateDedicatedVmHostDetails": CreateDedicatedVmHostDetails,
     "CreateDhcpDetails": CreateDhcpDetails,
     "CreateDrgAttachmentDetails": CreateDrgAttachmentDetails,
@@ -770,6 +809,7 @@ core_type_mapping = {
     "CrossConnectMappingDetailsCollection": CrossConnectMappingDetailsCollection,
     "CrossConnectPortSpeedShape": CrossConnectPortSpeedShape,
     "CrossConnectStatus": CrossConnectStatus,
+    "DedicatedCapacitySource": DedicatedCapacitySource,
     "DedicatedVmHost": DedicatedVmHost,
     "DedicatedVmHostInstanceShapeSummary": DedicatedVmHostInstanceShapeSummary,
     "DedicatedVmHostInstanceSummary": DedicatedVmHostInstanceSummary,
@@ -813,6 +853,7 @@ core_type_mapping = {
     "ExportImageViaObjectStorageUriDetails": ExportImageViaObjectStorageUriDetails,
     "FastConnectProviderService": FastConnectProviderService,
     "FastConnectProviderServiceKey": FastConnectProviderServiceKey,
+    "FlowLogCaptureFilterRuleDetails": FlowLogCaptureFilterRuleDetails,
     "GenericBmLaunchInstancePlatformConfig": GenericBmLaunchInstancePlatformConfig,
     "GenericBmPlatformConfig": GenericBmPlatformConfig,
     "GetPublicIpByIpAddressDetails": GetPublicIpByIpAddressDetails,
@@ -1007,16 +1048,19 @@ core_type_mapping = {
     "UpdateBootVolumeDetails": UpdateBootVolumeDetails,
     "UpdateBootVolumeKmsKeyDetails": UpdateBootVolumeKmsKeyDetails,
     "UpdateByoipRangeDetails": UpdateByoipRangeDetails,
+    "UpdateCapacitySourceDetails": UpdateCapacitySourceDetails,
     "UpdateCaptureFilterDetails": UpdateCaptureFilterDetails,
     "UpdateClusterNetworkDetails": UpdateClusterNetworkDetails,
     "UpdateClusterNetworkInstancePoolDetails": UpdateClusterNetworkInstancePoolDetails,
     "UpdateComputeCapacityReservationDetails": UpdateComputeCapacityReservationDetails,
+    "UpdateComputeCapacityTopologyDetails": UpdateComputeCapacityTopologyDetails,
     "UpdateComputeClusterDetails": UpdateComputeClusterDetails,
     "UpdateComputeImageCapabilitySchemaDetails": UpdateComputeImageCapabilitySchemaDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,
     "UpdateCrossConnectDetails": UpdateCrossConnectDetails,
     "UpdateCrossConnectGroupDetails": UpdateCrossConnectGroupDetails,
+    "UpdateDedicatedCapacitySourceDetails": UpdateDedicatedCapacitySourceDetails,
     "UpdateDedicatedVmHostDetails": UpdateDedicatedVmHostDetails,
     "UpdateDhcpDetails": UpdateDhcpDetails,
     "UpdateDrgAttachmentDetails": UpdateDrgAttachmentDetails,

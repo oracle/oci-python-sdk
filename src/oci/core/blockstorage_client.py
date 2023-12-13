@@ -177,7 +177,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_boot_volume_backup_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_boot_volume_backup_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeBackupId": boot_volume_backup_id
@@ -187,7 +187,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -281,7 +281,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_boot_volume_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_boot_volume_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeId": boot_volume_id
@@ -291,7 +291,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -385,7 +385,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_volume_backup_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_volume_backup_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeBackupId": volume_backup_id
@@ -395,7 +395,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -489,7 +489,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_volume_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_volume_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeId": volume_id
@@ -499,7 +499,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -593,7 +593,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_volume_group_backup_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_volume_group_backup_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeGroupBackupId": volume_group_backup_id
@@ -603,7 +603,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -697,7 +697,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_volume_group_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_volume_group_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeGroupId": volume_group_id
@@ -707,7 +707,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -808,7 +808,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "copy_boot_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"copy_boot_volume_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeBackupId": boot_volume_backup_id
@@ -818,7 +818,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -923,7 +923,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "copy_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"copy_volume_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeBackupId": volume_backup_id
@@ -933,7 +933,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1038,7 +1038,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "copy_volume_group_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"copy_volume_group_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeGroupBackupId": volume_group_backup_id
@@ -1048,7 +1048,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1147,7 +1147,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_boot_volume got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1245,7 +1245,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_boot_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_boot_volume_backup got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1353,7 +1353,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_volume got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_volume got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1451,7 +1451,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_volume_backup got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1552,7 +1552,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_volume_backup_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_volume_backup_policy got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1634,7 +1634,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_volume_backup_policy_assignment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_volume_backup_policy_assignment got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1730,7 +1730,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_volume_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_volume_group got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1824,7 +1824,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_volume_group_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_volume_group_backup got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1918,7 +1918,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_boot_volume got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeId": boot_volume_id
@@ -1928,7 +1928,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2014,7 +2014,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_boot_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_boot_volume_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeBackupId": boot_volume_backup_id
@@ -2024,7 +2024,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2110,7 +2110,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_boot_volume_kms_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_boot_volume_kms_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeId": boot_volume_id
@@ -2120,7 +2120,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2211,7 +2211,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_volume got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_volume got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeId": volume_id
@@ -2221,7 +2221,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2307,7 +2307,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_volume_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeBackupId": volume_backup_id
@@ -2317,7 +2317,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2414,7 +2414,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_volume_backup_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_volume_backup_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "policyId": policy_id
@@ -2424,7 +2424,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2511,7 +2511,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_volume_backup_policy_assignment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_volume_backup_policy_assignment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "policyAssignmentId": policy_assignment_id
@@ -2521,7 +2521,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2610,7 +2610,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_volume_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_volume_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeGroupId": volume_group_id
@@ -2620,7 +2620,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2709,7 +2709,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_volume_group_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_volume_group_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeGroupBackupId": volume_group_backup_id
@@ -2719,7 +2719,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2805,7 +2805,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_volume_kms_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_volume_kms_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeId": volume_id
@@ -2815,7 +2815,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2891,7 +2891,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_block_volume_replica got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_block_volume_replica got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "blockVolumeReplicaId": block_volume_replica_id
@@ -2901,7 +2901,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2977,7 +2977,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_boot_volume got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeId": boot_volume_id
@@ -2987,7 +2987,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3063,7 +3063,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_boot_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_boot_volume_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeBackupId": boot_volume_backup_id
@@ -3073,7 +3073,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3159,7 +3159,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_boot_volume_kms_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_boot_volume_kms_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeId": boot_volume_id
@@ -3169,7 +3169,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3247,7 +3247,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_boot_volume_replica got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_boot_volume_replica got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeReplicaId": boot_volume_replica_id
@@ -3257,7 +3257,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3333,7 +3333,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_volume got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_volume got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeId": volume_id
@@ -3343,7 +3343,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3419,7 +3419,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_volume_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeBackupId": volume_backup_id
@@ -3429,7 +3429,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3505,7 +3505,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_volume_backup_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_volume_backup_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "policyId": policy_id
@@ -3515,7 +3515,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3615,7 +3615,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_volume_backup_policy_asset_assignment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_volume_backup_policy_asset_assignment got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "assetId": asset_id,
@@ -3698,7 +3698,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_volume_backup_policy_assignment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_volume_backup_policy_assignment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "policyAssignmentId": policy_assignment_id
@@ -3708,7 +3708,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3786,7 +3786,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_volume_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_volume_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeGroupId": volume_group_id
@@ -3796,7 +3796,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3874,7 +3874,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_volume_group_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_volume_group_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeGroupBackupId": volume_group_backup_id
@@ -3884,7 +3884,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3960,7 +3960,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_volume_group_replica got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_volume_group_replica got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeGroupReplicaId": volume_group_replica_id
@@ -3970,7 +3970,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4056,7 +4056,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_volume_kms_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_volume_kms_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeId": volume_id
@@ -4066,7 +4066,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4209,27 +4209,27 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_block_volume_replicas got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_block_volume_replicas got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "ACTIVATING", "TERMINATING", "TERMINATED", "FAULTY"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -4382,27 +4382,27 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_boot_volume_backups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_boot_volume_backups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "REQUEST_RECEIVED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -4557,27 +4557,27 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_boot_volume_replicas got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_boot_volume_replicas got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "ACTIVATING", "TERMINATING", "TERMINATED", "FAULTY"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -4702,7 +4702,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_boot_volumes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_boot_volumes got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
@@ -4816,7 +4816,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_volume_backup_policies got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_volume_backup_policies got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -4962,27 +4962,27 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_volume_backups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_volume_backups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "REQUEST_RECEIVED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -5127,20 +5127,20 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_volume_group_backups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_volume_group_backups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -5290,27 +5290,27 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_volume_group_replicas got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_volume_group_replicas got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "ACTIVATING", "TERMINATING", "TERMINATED", "FAULTY"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -5463,27 +5463,27 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_volume_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_volume_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "UPDATE_PENDING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -5638,27 +5638,27 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_volumes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_volumes got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "RESTORING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -5761,7 +5761,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_boot_volume got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeId": boot_volume_id
@@ -5771,7 +5771,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5865,7 +5865,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_boot_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_boot_volume_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeBackupId": boot_volume_backup_id
@@ -5875,7 +5875,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5968,7 +5968,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_boot_volume_kms_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_boot_volume_kms_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "bootVolumeId": boot_volume_id
@@ -5978,7 +5978,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6072,7 +6072,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_volume got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_volume got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeId": volume_id
@@ -6082,7 +6082,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6176,7 +6176,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_volume_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeBackupId": volume_backup_id
@@ -6186,7 +6186,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6298,7 +6298,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_volume_backup_policy got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_volume_backup_policy got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "policyId": policy_id
@@ -6308,7 +6308,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6417,7 +6417,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_volume_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_volume_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeGroupId": volume_group_id
@@ -6427,7 +6427,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "preserveVolumeReplica": kwargs.get("preserve_volume_replica", missing)
@@ -6529,7 +6529,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_volume_group_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_volume_group_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeGroupBackupId": volume_group_backup_id
@@ -6539,7 +6539,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6632,7 +6632,7 @@ class BlockstorageClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_volume_kms_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_volume_kms_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "volumeId": volume_id
@@ -6642,7 +6642,7 @@ class BlockstorageClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

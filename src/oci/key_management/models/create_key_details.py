@@ -265,8 +265,7 @@ class CreateKeyDetails(object):
         allowed_values = ["HSM", "SOFTWARE", "EXTERNAL"]
         if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `protection_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `protection_mode`, must be None or one of {allowed_values}"
             )
         self._protection_mode = protection_mode
 

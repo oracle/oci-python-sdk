@@ -39,6 +39,14 @@ class DeploymentVersionSummary(object):
     #: This constant has a value of "DATABASE_POSTGRESQL"
     DEPLOYMENT_TYPE_DATABASE_POSTGRESQL = "DATABASE_POSTGRESQL"
 
+    #: A constant which can be used with the deployment_type property of a DeploymentVersionSummary.
+    #: This constant has a value of "DATABASE_DB2ZOS"
+    DEPLOYMENT_TYPE_DATABASE_DB2_ZOS = "DATABASE_DB2ZOS"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentVersionSummary.
+    #: This constant has a value of "DATA_TRANSFORMS"
+    DEPLOYMENT_TYPE_DATA_TRANSFORMS = "DATA_TRANSFORMS"
+
     #: A constant which can be used with the release_type property of a DeploymentVersionSummary.
     #: This constant has a value of "MAJOR"
     RELEASE_TYPE_MAJOR = "MAJOR"
@@ -62,7 +70,7 @@ class DeploymentVersionSummary(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this DeploymentVersionSummary.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
@@ -142,7 +150,7 @@ class DeploymentVersionSummary(object):
         NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
             Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -163,7 +171,7 @@ class DeploymentVersionSummary(object):
         :param deployment_type: The deployment_type of this DeploymentVersionSummary.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATA_TRANSFORMS"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type

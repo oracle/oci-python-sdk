@@ -470,6 +470,47 @@ class DataSafeClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def change_database_security_config_compartment_and_wait_for_state(self, database_security_config_id, change_database_security_config_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.change_database_security_config_compartment` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str database_security_config_id: (required)
+            The OCID of the database security configuration resource.
+
+        :param oci.data_safe.models.ChangeDatabaseSecurityConfigCompartmentDetails change_database_security_config_compartment_details: (required)
+            Details for the compartment move.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.change_database_security_config_compartment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_database_security_config_compartment(database_security_config_id, change_database_security_config_compartment_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def change_report_compartment_and_wait_for_state(self, report_id, change_report_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_safe.DataSafeClient.change_report_compartment` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
@@ -574,6 +615,170 @@ class DataSafeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.change_retention(audit_profile_id, change_retention_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def change_security_policy_compartment_and_wait_for_state(self, security_policy_id, change_security_policy_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.change_security_policy_compartment` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str security_policy_id: (required)
+            The OCID of the security policy resource.
+
+        :param oci.data_safe.models.ChangeSecurityPolicyCompartmentDetails change_security_policy_compartment_details: (required)
+            Details for the compartment move.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.change_security_policy_compartment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_security_policy_compartment(security_policy_id, change_security_policy_compartment_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def change_security_policy_deployment_compartment_and_wait_for_state(self, security_policy_deployment_id, change_security_policy_deployment_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.change_security_policy_deployment_compartment` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str security_policy_deployment_id: (required)
+            The OCID of the security policy deployment resource.
+
+        :param oci.data_safe.models.ChangeSecurityPolicyDeploymentCompartmentDetails change_security_policy_deployment_compartment_details: (required)
+            Details for the compartment move.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.change_security_policy_deployment_compartment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_security_policy_deployment_compartment(security_policy_deployment_id, change_security_policy_deployment_compartment_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def change_sql_collection_compartment_and_wait_for_state(self, sql_collection_id, change_sql_collection_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.change_sql_collection_compartment` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sql_collection_id: (required)
+            The OCID of the SQL collection resource.
+
+        :param oci.data_safe.models.ChangeSqlCollectionCompartmentDetails change_sql_collection_compartment_details: (required)
+            Details for the compartment move.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.change_sql_collection_compartment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_sql_collection_compartment(sql_collection_id, change_sql_collection_compartment_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def change_sql_firewall_policy_compartment_and_wait_for_state(self, sql_firewall_policy_id, change_sql_firewall_policy_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.change_sql_firewall_policy_compartment` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sql_firewall_policy_id: (required)
+            The OCID of the SQL Firewall policy resource.
+
+        :param oci.data_safe.models.ChangeSqlFirewallPolicyCompartmentDetails change_sql_firewall_policy_compartment_details: (required)
+            Details for the compartment move.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.change_sql_firewall_policy_compartment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_sql_firewall_policy_compartment(sql_firewall_policy_id, change_sql_firewall_policy_compartment_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 
@@ -1156,6 +1361,44 @@ class DataSafeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.create_sensitive_type(create_sensitive_type_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_sql_collection_and_wait_for_state(self, create_sql_collection_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.create_sql_collection` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param oci.data_safe.models.CreateSqlCollectionDetails create_sql_collection_details: (required)
+            Details of the SQL collection.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.create_sql_collection`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_sql_collection(create_sql_collection_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 
@@ -1907,6 +2150,98 @@ class DataSafeClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def delete_sql_collection_and_wait_for_state(self, sql_collection_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.delete_sql_collection` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sql_collection_id: (required)
+            The OCID of the SQL collection resource.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.delete_sql_collection`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_sql_collection(sql_collection_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_sql_firewall_policy_and_wait_for_state(self, sql_firewall_policy_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.delete_sql_firewall_policy` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sql_firewall_policy_id: (required)
+            The OCID of the SQL Firewall policy resource.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.delete_sql_firewall_policy`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = None
+        try:
+            operation_result = self.client.delete_sql_firewall_policy(sql_firewall_policy_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def delete_target_alert_policy_association_and_wait_for_state(self, target_alert_policy_association_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_safe.DataSafeClient.delete_target_alert_policy_association` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
@@ -2367,6 +2702,44 @@ class DataSafeClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def generate_sql_firewall_policy_and_wait_for_state(self, sql_collection_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.generate_sql_firewall_policy` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sql_collection_id: (required)
+            The OCID of the SQL collection resource.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.generate_sql_firewall_policy`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.generate_sql_firewall_policy(sql_collection_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def generate_user_assessment_report_and_wait_for_state(self, user_assessment_id, generate_user_assessment_report_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_safe.DataSafeClient.generate_user_assessment_report` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
@@ -2771,6 +3144,82 @@ class DataSafeClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def purge_sql_collection_logs_and_wait_for_state(self, sql_collection_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.purge_sql_collection_logs` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sql_collection_id: (required)
+            The OCID of the SQL collection resource.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.purge_sql_collection_logs`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.purge_sql_collection_logs(sql_collection_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def refresh_database_security_configuration_and_wait_for_state(self, database_security_config_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.refresh_database_security_configuration` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str database_security_config_id: (required)
+            The OCID of the database security configuration resource.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.refresh_database_security_configuration`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.refresh_database_security_configuration(database_security_config_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def refresh_security_assessment_and_wait_for_state(self, security_assessment_id, run_security_assessment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_safe.DataSafeClient.refresh_security_assessment` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
@@ -2793,6 +3242,44 @@ class DataSafeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.refresh_security_assessment(security_assessment_id, run_security_assessment_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def refresh_sql_collection_log_insights_and_wait_for_state(self, sql_collection_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.refresh_sql_collection_log_insights` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sql_collection_id: (required)
+            The OCID of the SQL collection resource.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.refresh_sql_collection_log_insights`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.refresh_sql_collection_log_insights(sql_collection_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 
@@ -2976,7 +3463,7 @@ class DataSafeClientCompositeOperations(object):
             Unique report definition identifier
 
         :param oci.data_safe.models.ScheduleReportDetails schedule_report_details: (required)
-            The details for the audit report schedule. It contains details such as schedule, PDF/XLS and number of rows.
+            The details for the audit report schedule. It contains details such as schedule, MIME type .xls/.pdf and number of rows.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
@@ -3125,6 +3612,44 @@ class DataSafeClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def start_sql_collection_and_wait_for_state(self, sql_collection_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.start_sql_collection` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sql_collection_id: (required)
+            The OCID of the SQL collection resource.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.start_sql_collection`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.start_sql_collection(sql_collection_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def stop_audit_trail_and_wait_for_state(self, audit_trail_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_safe.DataSafeClient.stop_audit_trail` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
@@ -3144,6 +3669,44 @@ class DataSafeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.stop_audit_trail(audit_trail_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def stop_sql_collection_and_wait_for_state(self, sql_collection_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.stop_sql_collection` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sql_collection_id: (required)
+            The OCID of the SQL collection resource.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.stop_sql_collection`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.stop_sql_collection(sql_collection_id, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 
@@ -3471,6 +4034,47 @@ class DataSafeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.update_data_safe_private_endpoint(data_safe_private_endpoint_id, update_data_safe_private_endpoint_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_database_security_config_and_wait_for_state(self, database_security_config_id, update_database_security_config_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.update_database_security_config` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str database_security_config_id: (required)
+            The OCID of the database security configuration resource.
+
+        :param oci.data_safe.models.UpdateDatabaseSecurityConfigDetails update_database_security_config_details: (required)
+            Details to update the database security configuration.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.update_database_security_config`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_database_security_config(database_security_config_id, update_database_security_config_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 
@@ -3821,6 +4425,88 @@ class DataSafeClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def update_security_policy_and_wait_for_state(self, security_policy_id, update_security_policy_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.update_security_policy` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str security_policy_id: (required)
+            The OCID of the security policy resource.
+
+        :param oci.data_safe.models.UpdateSecurityPolicyDetails update_security_policy_details: (required)
+            Details to update the security policy.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.update_security_policy`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_security_policy(security_policy_id, update_security_policy_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_security_policy_deployment_and_wait_for_state(self, security_policy_deployment_id, update_security_policy_deployment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.update_security_policy_deployment` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str security_policy_deployment_id: (required)
+            The OCID of the security policy deployment resource.
+
+        :param oci.data_safe.models.UpdateSecurityPolicyDeploymentDetails update_security_policy_deployment_details: (required)
+            Details to update the security policy deployment.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.update_security_policy_deployment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_security_policy_deployment(security_policy_deployment_id, update_security_policy_deployment_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_sensitive_column_and_wait_for_state(self, sensitive_data_model_id, sensitive_column_key, update_sensitive_column_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_safe.DataSafeClient.update_sensitive_column` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
@@ -3928,6 +4614,88 @@ class DataSafeClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.update_sensitive_type(sensitive_type_id, update_sensitive_type_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_sql_collection_and_wait_for_state(self, sql_collection_id, update_sql_collection_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.update_sql_collection` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sql_collection_id: (required)
+            The OCID of the SQL collection resource.
+
+        :param oci.data_safe.models.UpdateSqlCollectionDetails update_sql_collection_details: (required)
+            Details to update the SQL collection.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.update_sql_collection`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_sql_collection(sql_collection_id, update_sql_collection_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_sql_firewall_policy_and_wait_for_state(self, sql_firewall_policy_id, update_sql_firewall_policy_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_safe.DataSafeClient.update_sql_firewall_policy` and waits for the :py:class:`~oci.data_safe.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str sql_firewall_policy_id: (required)
+            The OCID of the SQL Firewall policy resource.
+
+        :param oci.data_safe.models.UpdateSqlFirewallPolicyDetails update_sql_firewall_policy_details: (required)
+            Details to update the SQL Firewall policy.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_safe.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_safe.DataSafeClient.update_sql_firewall_policy`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_sql_firewall_policy(sql_firewall_policy_id, update_sql_firewall_policy_details, **operation_kwargs)
         if not wait_for_states:
             return operation_result
 

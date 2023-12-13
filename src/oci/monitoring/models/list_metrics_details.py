@@ -224,6 +224,7 @@ class ListMetricsDetails(object):
         Gets the group_by of this ListMetricsDetails.
         Group metrics by these fields in the response. For example, to list all metric namespaces available
                   in a compartment, groupBy the \"namespace\" field. Supported fields: namespace, name, resourceGroup.
+        If `groupBy` is used, then `dimensionFilters` is ignored.
 
         Example - group by namespace:
         `[ \"namespace\" ]`
@@ -240,6 +241,7 @@ class ListMetricsDetails(object):
         Sets the group_by of this ListMetricsDetails.
         Group metrics by these fields in the response. For example, to list all metric namespaces available
                   in a compartment, groupBy the \"namespace\" field. Supported fields: namespace, name, resourceGroup.
+        If `groupBy` is used, then `dimensionFilters` is ignored.
 
         Example - group by namespace:
         `[ \"namespace\" ]`
@@ -281,8 +283,7 @@ class ListMetricsDetails(object):
         allowed_values = ["NAMESPACE", "NAME", "RESOURCEGROUP"]
         if not value_allowed_none_or_none_sentinel(sort_by, allowed_values):
             raise ValueError(
-                "Invalid value for `sort_by`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `sort_by`, must be None or one of {allowed_values}"
             )
         self._sort_by = sort_by
 
@@ -319,8 +320,7 @@ class ListMetricsDetails(object):
         allowed_values = ["ASC", "DESC"]
         if not value_allowed_none_or_none_sentinel(sort_order, allowed_values):
             raise ValueError(
-                "Invalid value for `sort_order`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `sort_order`, must be None or one of {allowed_values}"
             )
         self._sort_order = sort_order
 

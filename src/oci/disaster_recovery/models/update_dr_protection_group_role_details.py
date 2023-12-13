@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDrProtectionGroupRoleDetails(object):
     """
-    The role details for a DR Protection Group.
+    The details for updating the role of a DR protection group.
     """
 
     #: A constant which can be used with the role property of a UpdateDrProtectionGroupRoleDetails.
@@ -52,7 +52,7 @@ class UpdateDrProtectionGroupRoleDetails(object):
     def role(self):
         """
         **[Required]** Gets the role of this UpdateDrProtectionGroupRoleDetails.
-        The role of the DR Protection Group.
+        The new role of the DR protection group.
 
         Allowed values for this property are: "PRIMARY", "STANDBY", "UNCONFIGURED"
 
@@ -66,7 +66,7 @@ class UpdateDrProtectionGroupRoleDetails(object):
     def role(self, role):
         """
         Sets the role of this UpdateDrProtectionGroupRoleDetails.
-        The role of the DR Protection Group.
+        The new role of the DR protection group.
 
 
         :param role: The role of this UpdateDrProtectionGroupRoleDetails.
@@ -75,8 +75,7 @@ class UpdateDrProtectionGroupRoleDetails(object):
         allowed_values = ["PRIMARY", "STANDBY", "UNCONFIGURED"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             raise ValueError(
-                "Invalid value for `role`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `role`, must be None or one of {allowed_values}"
             )
         self._role = role
 

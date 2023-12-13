@@ -127,8 +127,7 @@ class UpdateNewsReportDetails(object):
         allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             raise ValueError(
-                "Invalid value for `status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `status`, must be None or one of {allowed_values}"
             )
         self._status = status
 
@@ -159,8 +158,7 @@ class UpdateNewsReportDetails(object):
         allowed_values = ["WEEKLY"]
         if not value_allowed_none_or_none_sentinel(news_frequency, allowed_values):
             raise ValueError(
-                "Invalid value for `news_frequency`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `news_frequency`, must be None or one of {allowed_values}"
             )
         self._news_frequency = news_frequency
 
@@ -191,8 +189,7 @@ class UpdateNewsReportDetails(object):
         allowed_values = ["EN"]
         if not value_allowed_none_or_none_sentinel(locale, allowed_values):
             raise ValueError(
-                "Invalid value for `locale`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `locale`, must be None or one of {allowed_values}"
             )
         self._locale = locale
 

@@ -179,7 +179,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_data_files got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_data_files got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -190,7 +190,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -295,7 +295,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_managed_database_to_managed_database_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_managed_database_to_managed_database_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseGroupId": managed_database_group_id
@@ -305,7 +305,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -423,7 +423,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "addm_tasks got unknown kwargs: {!r}".format(extra_kwargs))
+                f"addm_tasks got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -433,20 +433,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TASK_NAME", "TASK_ID", "DESCRIPTION", "DB_USER", "STATUS", "TIME_CREATED", "BEGIN_TIME", "END_TIME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -570,7 +570,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_database_parameters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_database_parameters got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -580,7 +580,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -691,7 +691,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_db_management_private_endpoint_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_db_management_private_endpoint_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbManagementPrivateEndpointId": db_management_private_endpoint_id
@@ -701,7 +701,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -813,7 +813,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_external_db_system_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_external_db_system_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemId": external_db_system_id
@@ -823,7 +823,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -935,7 +935,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_external_exadata_infrastructure_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_external_exadata_infrastructure_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataInfrastructureId": external_exadata_infrastructure_id
@@ -945,7 +945,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1057,7 +1057,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_job_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_job_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -1067,7 +1067,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1181,7 +1181,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_managed_database_group_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_managed_database_group_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseGroupId": managed_database_group_id
@@ -1191,7 +1191,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1289,7 +1289,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_plan_retention got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_plan_retention got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -1299,7 +1299,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1391,7 +1391,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_space_budget got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_space_budget got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -1401,7 +1401,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1492,7 +1492,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_sql_plan_baselines_attributes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_sql_plan_baselines_attributes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -1502,7 +1502,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1607,7 +1607,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "check_external_db_system_connector_connection_status got unknown kwargs: {!r}".format(extra_kwargs))
+                f"check_external_db_system_connector_connection_status got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemConnectorId": external_db_system_connector_id
@@ -1617,7 +1617,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1726,7 +1726,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "check_external_exadata_storage_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"check_external_exadata_storage_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataStorageConnectorId": external_exadata_storage_connector_id
@@ -1736,7 +1736,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1833,7 +1833,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "configure_automatic_capture_filters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"configure_automatic_capture_filters got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -1843,7 +1843,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1936,7 +1936,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "configure_automatic_spm_evolve_advisor_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"configure_automatic_spm_evolve_advisor_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -1946,7 +1946,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2040,7 +2040,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_db_management_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_db_management_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2136,7 +2136,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_external_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_external_db_system got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2234,7 +2234,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_external_db_system_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_external_db_system_connector got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2332,7 +2332,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_external_db_system_discovery got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_external_db_system_discovery got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2435,7 +2435,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_external_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_external_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2533,7 +2533,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_external_exadata_storage_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_external_exadata_storage_connector got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2633,7 +2633,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_job got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2730,7 +2730,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_managed_database_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_managed_database_group got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2831,7 +2831,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_tablespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_tablespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -2841,7 +2841,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2941,7 +2941,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_db_management_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_db_management_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbManagementPrivateEndpointId": db_management_private_endpoint_id
@@ -2951,7 +2951,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3046,7 +3046,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_external_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_external_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemId": external_db_system_id
@@ -3056,7 +3056,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3151,7 +3151,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_external_db_system_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_external_db_system_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemConnectorId": external_db_system_connector_id
@@ -3161,7 +3161,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3256,7 +3256,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_external_db_system_discovery got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_external_db_system_discovery got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemDiscoveryId": external_db_system_discovery_id
@@ -3266,7 +3266,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3361,7 +3361,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_external_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_external_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataInfrastructureId": external_exadata_infrastructure_id
@@ -3371,7 +3371,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3466,7 +3466,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_external_exadata_storage_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_external_exadata_storage_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataStorageConnectorId": external_exadata_storage_connector_id
@@ -3476,7 +3476,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3569,7 +3569,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -3579,7 +3579,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3675,7 +3675,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_managed_database_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_managed_database_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseGroupId": managed_database_group_id
@@ -3685,7 +3685,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3775,7 +3775,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_preferred_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_preferred_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -3786,7 +3786,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3875,7 +3875,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_automatic_initial_plan_capture got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_automatic_initial_plan_capture got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -3885,7 +3885,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3979,7 +3979,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_automatic_spm_evolve_advisor_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_automatic_spm_evolve_advisor_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -3989,7 +3989,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4094,7 +4094,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_external_db_system_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_external_db_system_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemId": external_db_system_id
@@ -4104,7 +4104,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4212,7 +4212,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_external_db_system_stack_monitoring got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_external_db_system_stack_monitoring got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemId": external_db_system_id
@@ -4222,7 +4222,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4336,7 +4336,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_external_exadata_infrastructure_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_external_exadata_infrastructure_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataInfrastructureId": external_exadata_infrastructure_id
@@ -4346,7 +4346,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4443,7 +4443,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_high_frequency_automatic_spm_evolve_advisor_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_high_frequency_automatic_spm_evolve_advisor_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -4453,7 +4453,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4546,7 +4546,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_sql_plan_baselines_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_sql_plan_baselines_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -4556,7 +4556,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4676,7 +4676,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "discover_external_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"discover_external_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4772,7 +4772,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "drop_sql_plan_baselines got unknown kwargs: {!r}".format(extra_kwargs))
+                f"drop_sql_plan_baselines got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -4782,7 +4782,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4884,7 +4884,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "drop_tablespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"drop_tablespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -4895,7 +4895,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4997,7 +4997,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_automatic_initial_plan_capture got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_automatic_initial_plan_capture got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -5007,7 +5007,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5110,7 +5110,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_automatic_spm_evolve_advisor_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_automatic_spm_evolve_advisor_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -5120,7 +5120,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5228,7 +5228,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_external_db_system_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_external_db_system_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemId": external_db_system_id
@@ -5238,7 +5238,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5351,7 +5351,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_external_db_system_stack_monitoring got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_external_db_system_stack_monitoring got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemId": external_db_system_id
@@ -5361,7 +5361,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5478,7 +5478,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_external_exadata_infrastructure_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_external_exadata_infrastructure_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataInfrastructureId": external_exadata_infrastructure_id
@@ -5488,7 +5488,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5592,7 +5592,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_high_frequency_automatic_spm_evolve_advisor_task got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_high_frequency_automatic_spm_evolve_advisor_task got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -5602,7 +5602,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5696,7 +5696,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_sql_plan_baselines_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_sql_plan_baselines_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -5706,7 +5706,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5802,7 +5802,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_awr_snapshot got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_awr_snapshot got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -5812,7 +5812,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5953,7 +5953,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_awr_db_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_awr_db_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -5964,20 +5964,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'report_type' in kwargs:
             report_type_allowed_values = ["AWR", "ASH"]
             if kwargs['report_type'] not in report_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `report_type`, must be one of {0}".format(report_type_allowed_values)
+                    f"Invalid value for `report_type`, must be one of { report_type_allowed_values }"
                 )
 
         if 'report_format' in kwargs:
             report_format_allowed_values = ["HTML", "TEXT"]
             if kwargs['report_format'] not in report_format_allowed_values:
                 raise ValueError(
-                    "Invalid value for `report_format`, must be one of {0}".format(report_format_allowed_values)
+                    f"Invalid value for `report_format`, must be one of { report_format_allowed_values }"
                 )
 
         query_params = {
@@ -6130,7 +6130,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_awr_db_sql_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_awr_db_sql_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -6141,13 +6141,13 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'report_format' in kwargs:
             report_format_allowed_values = ["HTML", "TEXT"]
             if kwargs['report_format'] not in report_format_allowed_values:
                 raise ValueError(
-                    "Invalid value for `report_format`, must be one of {0}".format(report_format_allowed_values)
+                    f"Invalid value for `report_format`, must be one of { report_format_allowed_values }"
                 )
 
         query_params = {
@@ -6262,7 +6262,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cluster_cache_metric got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cluster_cache_metric got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -6272,7 +6272,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "startTime": start_time,
@@ -6408,13 +6408,13 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_database_fleet_health_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_database_fleet_health_metrics got unknown kwargs: {extra_kwargs!r}")
 
         if 'compare_type' in kwargs:
             compare_type_allowed_values = ["HOUR", "DAY", "WEEK"]
             if kwargs['compare_type'] not in compare_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `compare_type`, must be one of {0}".format(compare_type_allowed_values)
+                    f"Invalid value for `compare_type`, must be one of { compare_type_allowed_values }"
                 )
 
         query_params = {
@@ -6525,7 +6525,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_database_home_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_database_home_metrics got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "managedDatabaseId": managed_database_id,
@@ -6620,7 +6620,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_db_management_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_db_management_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbManagementPrivateEndpointId": db_management_private_endpoint_id
@@ -6630,7 +6630,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6718,7 +6718,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_asm got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_asm got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalAsmId": external_asm_id
@@ -6728,7 +6728,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6818,7 +6818,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_asm_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_asm_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalAsmId": external_asm_id
@@ -6828,7 +6828,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6918,7 +6918,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_asm_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_asm_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalAsmInstanceId": external_asm_instance_id
@@ -6928,7 +6928,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7018,7 +7018,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalClusterId": external_cluster_id
@@ -7028,7 +7028,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7118,7 +7118,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_cluster_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_cluster_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalClusterInstanceId": external_cluster_instance_id
@@ -7128,7 +7128,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7218,7 +7218,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_db_home got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_db_home got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbHomeId": external_db_home_id
@@ -7228,7 +7228,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7318,7 +7318,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_db_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_db_node got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbNodeId": external_db_node_id
@@ -7328,7 +7328,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7418,7 +7418,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemId": external_db_system_id
@@ -7428,7 +7428,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7518,7 +7518,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_db_system_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_db_system_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemConnectorId": external_db_system_connector_id
@@ -7528,7 +7528,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7618,7 +7618,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_db_system_discovery got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_db_system_discovery got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemDiscoveryId": external_db_system_discovery_id
@@ -7628,7 +7628,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7719,7 +7719,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataInfrastructureId": external_exadata_infrastructure_id
@@ -7729,7 +7729,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7819,7 +7819,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_exadata_storage_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_exadata_storage_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataStorageConnectorId": external_exadata_storage_connector_id
@@ -7829,7 +7829,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7919,7 +7919,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_exadata_storage_grid got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_exadata_storage_grid got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataStorageGridId": external_exadata_storage_grid_id
@@ -7929,7 +7929,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8019,7 +8019,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_exadata_storage_server got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_exadata_storage_server got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataStorageServerId": external_exadata_storage_server_id
@@ -8029,7 +8029,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8119,7 +8119,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_listener got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_listener got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalListenerId": external_listener_id
@@ -8129,7 +8129,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8219,7 +8219,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_iorm_plan got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_iorm_plan got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataStorageServerId": external_exadata_storage_server_id
@@ -8229,7 +8229,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8317,7 +8317,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -8327,7 +8327,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8413,7 +8413,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job_execution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job_execution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobExecutionId": job_execution_id
@@ -8423,7 +8423,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8509,7 +8509,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_job_run got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_job_run got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobRunId": job_run_id
@@ -8519,7 +8519,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8607,7 +8607,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_managed_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_managed_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -8617,7 +8617,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8705,7 +8705,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_managed_database_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_managed_database_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseGroupId": managed_database_group_id
@@ -8715,7 +8715,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8803,7 +8803,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_open_alert_history got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_open_alert_history got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataStorageServerId": external_exadata_storage_server_id
@@ -8813,7 +8813,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8910,7 +8910,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_optimizer_statistics_advisor_execution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_optimizer_statistics_advisor_execution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -8921,7 +8921,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "taskName": task_name
@@ -9022,7 +9022,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_optimizer_statistics_advisor_execution_script got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_optimizer_statistics_advisor_execution_script got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -9033,7 +9033,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "taskName": task_name
@@ -9131,7 +9131,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_optimizer_statistics_collection_operation got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_optimizer_statistics_collection_operation got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -9142,7 +9142,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9257,7 +9257,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_pdb_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_pdb_metrics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -9267,13 +9267,13 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'compare_type' in kwargs:
             compare_type_allowed_values = ["HOUR", "DAY", "WEEK"]
             if kwargs['compare_type'] not in compare_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `compare_type`, must be one of {0}".format(compare_type_allowed_values)
+                    f"Invalid value for `compare_type`, must be one of { compare_type_allowed_values }"
                 )
 
         query_params = {
@@ -9376,7 +9376,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_preferred_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_preferred_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -9387,7 +9387,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9478,7 +9478,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_sql_plan_baseline got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_sql_plan_baseline got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -9489,7 +9489,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9581,7 +9581,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_sql_plan_baseline_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_sql_plan_baseline_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -9591,7 +9591,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9684,7 +9684,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_tablespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_tablespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -9695,7 +9695,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9783,7 +9783,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_top_sql_cpu_activity got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_top_sql_cpu_activity got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataStorageServerId": external_exadata_storage_server_id
@@ -9793,7 +9793,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9886,7 +9886,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_user got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_user got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -9897,7 +9897,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9985,7 +9985,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -9995,7 +9995,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10089,7 +10089,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "implement_optimizer_statistics_advisor_recommendations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"implement_optimizer_statistics_advisor_recommendations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -10100,7 +10100,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10217,7 +10217,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_asm_properties got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_asm_properties got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -10227,20 +10227,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -10366,7 +10366,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_associated_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_associated_databases got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbManagementPrivateEndpointId": db_management_private_endpoint_id
@@ -10376,20 +10376,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeRegistered"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -10549,7 +10549,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_awr_db_snapshots got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_awr_db_snapshots got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -10560,20 +10560,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_BEGIN", "SNAPSHOT_ID"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -10721,7 +10721,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_awr_dbs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_awr_dbs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -10731,20 +10731,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["END_INTERVAL_TIME", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -10877,7 +10877,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_consumer_group_privileges got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_consumer_group_privileges got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -10888,20 +10888,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11028,7 +11028,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cursor_cache_statements got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cursor_cache_statements got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -11038,20 +11038,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["sqlId", "schema"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11182,7 +11182,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_data_access_containers got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_data_access_containers got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -11193,20 +11193,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11336,7 +11336,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_database_parameters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_database_parameters got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -11346,27 +11346,27 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'source' in kwargs:
             source_allowed_values = ["CURRENT", "SPFILE"]
             if kwargs['source'] not in source_allowed_values:
                 raise ValueError(
-                    "Invalid value for `source`, must be one of {0}".format(source_allowed_values)
+                    f"Invalid value for `source`, must be one of { source_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11509,27 +11509,27 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_management_private_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_management_private_endpoints got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -11653,7 +11653,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_asm_disk_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_asm_disk_groups got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalAsmId": external_asm_id
@@ -11663,20 +11663,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11811,20 +11811,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_asm_instances got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_asm_instances got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -11948,7 +11948,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_asm_users got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_asm_users got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalAsmId": external_asm_id
@@ -11958,20 +11958,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12106,20 +12106,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_asms got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_asms got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12255,20 +12255,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_cluster_instances got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_cluster_instances got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12404,20 +12404,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_clusters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_clusters got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12553,20 +12553,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_databases got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12702,20 +12702,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_db_homes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_db_homes got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -12851,20 +12851,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_db_nodes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_db_nodes got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13000,20 +13000,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_db_system_connectors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_db_system_connectors got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13142,20 +13142,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_db_system_discoveries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_db_system_discoveries got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13283,20 +13283,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_db_systems got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_db_systems got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13424,20 +13424,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_exadata_infrastructures got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_exadata_infrastructures got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13570,20 +13570,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_exadata_storage_connectors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_exadata_storage_connectors got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13717,20 +13717,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_exadata_storage_servers got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_exadata_storage_servers got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -13860,7 +13860,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_listener_services got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_listener_services got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalListenerId": external_listener_id
@@ -13870,20 +13870,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14019,20 +14019,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_listeners got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_listeners got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14192,20 +14192,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_job_executions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_job_executions got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14364,20 +14364,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_job_runs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_job_runs got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14533,27 +14533,27 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_jobs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_jobs got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACTIVE", "INACTIVE"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14696,27 +14696,27 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_database_groups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_database_groups got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -14871,34 +14871,34 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_managed_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_managed_databases got unknown kwargs: {extra_kwargs!r}")
 
         if 'management_option' in kwargs:
             management_option_allowed_values = ["BASIC", "ADVANCED"]
             if kwargs['management_option'] not in management_option_allowed_values:
                 raise ValueError(
-                    "Invalid value for `management_option`, must be one of {0}".format(management_option_allowed_values)
+                    f"Invalid value for `management_option`, must be one of { management_option_allowed_values }"
                 )
 
         if 'deployment_type' in kwargs:
             deployment_type_allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS"]
             if kwargs['deployment_type'] not in deployment_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `deployment_type`, must be one of {0}".format(deployment_type_allowed_values)
+                    f"Invalid value for `deployment_type`, must be one of { deployment_type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15030,7 +15030,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_object_privileges got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_object_privileges got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -15041,20 +15041,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15166,7 +15166,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_optimizer_statistics_advisor_executions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_optimizer_statistics_advisor_executions got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -15176,7 +15176,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "startTimeGreaterThanOrEqualTo": kwargs.get("start_time_greater_than_or_equal_to", missing),
@@ -15307,7 +15307,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_optimizer_statistics_collection_aggregations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_optimizer_statistics_collection_aggregations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -15317,19 +15317,19 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'task_type' in kwargs:
             task_type_allowed_values = ["ALL", "MANUAL", "AUTO"]
             if kwargs['task_type'] not in task_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `task_type`, must be one of {0}".format(task_type_allowed_values)
+                    f"Invalid value for `task_type`, must be one of { task_type_allowed_values }"
                 )
 
         group_type_allowed_values = ["TASK_STATUS", "TASK_OBJECTS_STATUS"]
         if group_type not in group_type_allowed_values:
             raise ValueError(
-                "Invalid value for `group_type`, must be one of {0}".format(group_type_allowed_values)
+                f"Invalid value for `group_type`, must be one of { group_type_allowed_values }"
             )
 
         query_params = {
@@ -15480,7 +15480,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_optimizer_statistics_collection_operations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_optimizer_statistics_collection_operations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -15490,27 +15490,27 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'task_type' in kwargs:
             task_type_allowed_values = ["ALL", "MANUAL", "AUTO"]
             if kwargs['task_type'] not in task_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `task_type`, must be one of {0}".format(task_type_allowed_values)
+                    f"Invalid value for `task_type`, must be one of { task_type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["START_TIME", "END_TIME", "STATUS"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15613,7 +15613,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_preferred_credentials got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_preferred_credentials got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -15623,7 +15623,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15740,7 +15740,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_proxied_for_users got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_proxied_for_users got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -15751,20 +15751,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -15893,7 +15893,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_proxy_users got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_proxy_users got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -15904,20 +15904,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16046,7 +16046,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_roles got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_roles got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -16057,20 +16057,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16197,7 +16197,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sql_plan_baseline_jobs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sql_plan_baseline_jobs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -16207,20 +16207,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16388,7 +16388,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_sql_plan_baselines got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_sql_plan_baselines got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -16398,27 +16398,27 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'origin' in kwargs:
             origin_allowed_values = ["ADDM_SQLTUNE", "AUTO_CAPTURE", "AUTO_SQLTUNE", "EVOLVE_AUTO_INDEX_LOAD", "EVOLVE_CREATE_FROM_ADAPTIVE", "EVOLVE_LOAD_FROM_STS", "EVOLVE_LOAD_FROM_AWR", "EVOLVE_LOAD_FROM_CURSOR_CACHE", "MANUAL_LOAD", "MANUAL_LOAD_FROM_AWR", "MANUAL_LOAD_FROM_CURSOR_CACHE", "MANUAL_LOAD_FROM_STS", "MANUAL_SQLTUNE", "STORED_OUTLINE", "UNKNOWN"]
             if kwargs['origin'] not in origin_allowed_values:
                 raise ValueError(
-                    "Invalid value for `origin`, must be one of {0}".format(origin_allowed_values)
+                    f"Invalid value for `origin`, must be one of { origin_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "timeLastModified"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16557,7 +16557,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_system_privileges got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_system_privileges got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -16568,20 +16568,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16682,7 +16682,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_table_statistics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_table_statistics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -16692,7 +16692,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16807,7 +16807,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_tablespaces got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_tablespaces got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -16817,20 +16817,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -16957,7 +16957,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_users got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_users got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -16967,20 +16967,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -17101,7 +17101,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -17111,20 +17111,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -17244,7 +17244,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -17254,20 +17254,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -17405,27 +17405,27 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -17533,7 +17533,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "load_sql_plan_baselines_from_awr got unknown kwargs: {!r}".format(extra_kwargs))
+                f"load_sql_plan_baselines_from_awr got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -17543,7 +17543,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17638,7 +17638,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "load_sql_plan_baselines_from_cursor_cache got unknown kwargs: {!r}".format(extra_kwargs))
+                f"load_sql_plan_baselines_from_cursor_cache got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -17648,7 +17648,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17749,7 +17749,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "patch_external_db_system_discovery got unknown kwargs: {!r}".format(extra_kwargs))
+                f"patch_external_db_system_discovery got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemDiscoveryId": external_db_system_discovery_id
@@ -17759,7 +17759,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17864,7 +17864,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_data_file got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_data_file got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -17875,7 +17875,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17981,7 +17981,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_managed_database_from_managed_database_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_managed_database_from_managed_database_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseGroupId": managed_database_group_id
@@ -17991,7 +17991,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18092,7 +18092,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "reset_database_parameters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"reset_database_parameters got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -18102,7 +18102,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18208,7 +18208,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "resize_data_file got unknown kwargs: {!r}".format(extra_kwargs))
+                f"resize_data_file got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -18219,7 +18219,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18323,7 +18323,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "run_historic_addm got unknown kwargs: {!r}".format(extra_kwargs))
+                f"run_historic_addm got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -18333,7 +18333,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18491,7 +18491,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_db_cpu_usages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_db_cpu_usages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -18502,27 +18502,27 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'session_type' in kwargs:
             session_type_allowed_values = ["FOREGROUND", "BACKGROUND", "ALL"]
             if kwargs['session_type'] not in session_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `session_type`, must be one of {0}".format(session_type_allowed_values)
+                    f"Invalid value for `session_type`, must be one of { session_type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_SAMPLED", "AVG_VALUE"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -18693,7 +18693,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_db_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_db_metrics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -18704,20 +18704,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMESTAMP", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -18892,7 +18892,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_db_parameter_changes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_db_parameter_changes got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -18903,20 +18903,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["IS_CHANGED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -19120,7 +19120,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_db_parameters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_db_parameters got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -19131,41 +19131,41 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'value_changed' in kwargs:
             value_changed_allowed_values = ["Y", "N"]
             if kwargs['value_changed'] not in value_changed_allowed_values:
                 raise ValueError(
-                    "Invalid value for `value_changed`, must be one of {0}".format(value_changed_allowed_values)
+                    f"Invalid value for `value_changed`, must be one of { value_changed_allowed_values }"
                 )
 
         if 'value_default' in kwargs:
             value_default_allowed_values = ["TRUE", "FALSE"]
             if kwargs['value_default'] not in value_default_allowed_values:
                 raise ValueError(
-                    "Invalid value for `value_default`, must be one of {0}".format(value_default_allowed_values)
+                    f"Invalid value for `value_default`, must be one of { value_default_allowed_values }"
                 )
 
         if 'value_modified' in kwargs:
             value_modified_allowed_values = ["MODIFIED", "SYSTEM_MOD", "FALSE"]
             if kwargs['value_modified'] not in value_modified_allowed_values:
                 raise ValueError(
-                    "Invalid value for `value_modified`, must be one of {0}".format(value_modified_allowed_values)
+                    f"Invalid value for `value_modified`, must be one of { value_modified_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["IS_CHANGED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -19318,7 +19318,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_db_snapshot_ranges got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_db_snapshot_ranges got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -19328,20 +19328,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["END_INTERVAL_TIME", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -19508,7 +19508,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_db_sysstats got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_db_sysstats got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -19519,20 +19519,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_BEGIN", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -19701,7 +19701,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_db_top_wait_events got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_db_top_wait_events got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -19712,27 +19712,27 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'session_type' in kwargs:
             session_type_allowed_values = ["FOREGROUND", "BACKGROUND", "ALL"]
             if kwargs['session_type'] not in session_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `session_type`, must be one of {0}".format(session_type_allowed_values)
+                    f"Invalid value for `session_type`, must be one of { session_type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["WAITS_PERSEC", "AVG_WAIT_TIME_PERSEC"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -19914,7 +19914,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_db_wait_event_buckets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_db_wait_event_buckets got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -19925,20 +19925,20 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["CATEGORY", "PERCENTAGE"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -20119,7 +20119,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_awr_db_wait_events got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_awr_db_wait_events got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -20130,27 +20130,27 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'session_type' in kwargs:
             session_type_allowed_values = ["FOREGROUND", "BACKGROUND", "ALL"]
             if kwargs['session_type'] not in session_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `session_type`, must be one of {0}".format(session_type_allowed_values)
+                    f"Invalid value for `session_type`, must be one of { session_type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_BEGIN", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -20280,7 +20280,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_external_asm_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_external_asm_metrics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalAsmId": external_asm_id
@@ -20290,7 +20290,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -20412,7 +20412,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_external_cluster_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_external_cluster_metrics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalClusterId": external_cluster_id
@@ -20422,7 +20422,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -20544,7 +20544,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_external_db_node_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_external_db_node_metrics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbNodeId": external_db_node_id
@@ -20554,7 +20554,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -20676,7 +20676,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_external_db_system_availability_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_external_db_system_availability_metrics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemId": external_db_system_id
@@ -20686,7 +20686,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -20808,7 +20808,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_external_listener_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_external_listener_metrics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalListenerId": external_listener_id
@@ -20818,7 +20818,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -20961,20 +20961,20 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_job_executions_statuses got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_job_executions_statuses got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -21094,7 +21094,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_managed_database_availability_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_managed_database_availability_metrics got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -21104,7 +21104,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing),
@@ -21209,7 +21209,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_sql_plan_baselines got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_sql_plan_baselines got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -21219,7 +21219,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing)
@@ -21321,7 +21321,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_sql_plan_baselines_by_last_execution got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_sql_plan_baselines_by_last_execution got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id
@@ -21331,7 +21331,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "page": kwargs.get("page", missing)
@@ -21435,7 +21435,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "test_preferred_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"test_preferred_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -21446,7 +21446,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -21547,7 +21547,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_db_management_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_db_management_private_endpoint got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbManagementPrivateEndpointId": db_management_private_endpoint_id
@@ -21557,7 +21557,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -21659,7 +21659,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_asm got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_asm got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalAsmId": external_asm_id
@@ -21669,7 +21669,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -21769,7 +21769,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalClusterId": external_cluster_id
@@ -21779,7 +21779,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -21879,7 +21879,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_cluster_instance got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_cluster_instance got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalClusterInstanceId": external_cluster_instance_id
@@ -21889,7 +21889,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -21989,7 +21989,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_db_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_db_node got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbNodeId": external_db_node_id
@@ -21999,7 +21999,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22099,7 +22099,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemId": external_db_system_id
@@ -22109,7 +22109,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22211,7 +22211,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_db_system_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_db_system_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemConnectorId": external_db_system_connector_id
@@ -22221,7 +22221,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22321,7 +22321,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_db_system_discovery got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_db_system_discovery got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDbSystemDiscoveryId": external_db_system_discovery_id
@@ -22331,7 +22331,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22441,7 +22441,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataInfrastructureId": external_exadata_infrastructure_id
@@ -22451,7 +22451,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22557,7 +22557,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_exadata_storage_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_exadata_storage_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalExadataStorageConnectorId": external_exadata_storage_connector_id
@@ -22567,7 +22567,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22669,7 +22669,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_listener got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_listener got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalListenerId": external_listener_id
@@ -22679,7 +22679,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22777,7 +22777,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "jobId": job_id
@@ -22787,7 +22787,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22889,7 +22889,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_managed_database_group got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_managed_database_group got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseGroupId": managed_database_group_id
@@ -22899,7 +22899,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23004,7 +23004,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_preferred_credential got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_preferred_credential got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -23015,7 +23015,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -23112,7 +23112,7 @@ class DbManagementClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_tablespace got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_tablespace got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managedDatabaseId": managed_database_id,
@@ -23123,7 +23123,7 @@ class DbManagementClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

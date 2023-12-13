@@ -229,8 +229,7 @@ class ExportDetails(object):
         allowed_values = ["LOG"]
         if not value_allowed_none_or_none_sentinel(sub_system, allowed_values):
             raise ValueError(
-                "Invalid value for `sub_system`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `sub_system`, must be None or one of {allowed_values}"
             )
         self._sub_system = sub_system
 
@@ -262,15 +261,14 @@ class ExportDetails(object):
     def max_total_count(self):
         """
         Gets the max_total_count of this ExportDetails.
-        Maximum number of results retrieved from data source.  Note a maximum value will be enforced; if the export results can be streamed, the maximum will be 50000000, otherwise 10000; that is, if not streamed, actualMaxTotalCountUsed = Math.min(maxTotalCount, 10000).
+        Maximum number of results retrieved from data source is determined by the specific query used and the maxTotalCount input field.
+        If the export results can be streamed, the maximum will be 1,000,000.
+        If the results cannot be streamed, the maximum limit is 500 for queries that include the link command
+        and 10,000 for the queries that does not include the link command.
 
-
-        Export will incrementally stream results depending on the queryString.
-
-        Some commands including head/tail are not compatible with streaming result delivery and therefore enforce a reduced limit on overall maxtotalcount.
-         no sort command or sort by id, e.g. ' | sort id ' - is streaming compatible
-         sort by time and id, e.g. ' | sort -time, id ' - is streaming compatible
-        all other cases, e.g. ' | sort -time, id, mtgtguid ' - is not streaming compatible due to the additional sort field
+        Queries that include certain commands such as head, tail or stats cannot be streamed and are subject to a maximum of 10,000 results.
+        Queries that include the sort command cannot be streamed unless the sort fields are restricted to id and/or time.
+        The maximum number of results retrieved is the lesser of the maxTotalCount input provided and the applicable limit described above.
 
 
         :return: The max_total_count of this ExportDetails.
@@ -282,15 +280,14 @@ class ExportDetails(object):
     def max_total_count(self, max_total_count):
         """
         Sets the max_total_count of this ExportDetails.
-        Maximum number of results retrieved from data source.  Note a maximum value will be enforced; if the export results can be streamed, the maximum will be 50000000, otherwise 10000; that is, if not streamed, actualMaxTotalCountUsed = Math.min(maxTotalCount, 10000).
+        Maximum number of results retrieved from data source is determined by the specific query used and the maxTotalCount input field.
+        If the export results can be streamed, the maximum will be 1,000,000.
+        If the results cannot be streamed, the maximum limit is 500 for queries that include the link command
+        and 10,000 for the queries that does not include the link command.
 
-
-        Export will incrementally stream results depending on the queryString.
-
-        Some commands including head/tail are not compatible with streaming result delivery and therefore enforce a reduced limit on overall maxtotalcount.
-         no sort command or sort by id, e.g. ' | sort id ' - is streaming compatible
-         sort by time and id, e.g. ' | sort -time, id ' - is streaming compatible
-        all other cases, e.g. ' | sort -time, id, mtgtguid ' - is not streaming compatible due to the additional sort field
+        Queries that include certain commands such as head, tail or stats cannot be streamed and are subject to a maximum of 10,000 results.
+        Queries that include the sort command cannot be streamed unless the sort fields are restricted to id and/or time.
+        The maximum number of results retrieved is the lesser of the maxTotalCount input provided and the applicable limit described above.
 
 
         :param max_total_count: The max_total_count of this ExportDetails.
@@ -393,8 +390,7 @@ class ExportDetails(object):
         allowed_values = ["CSV", "JSON"]
         if not value_allowed_none_or_none_sentinel(output_format, allowed_values):
             raise ValueError(
-                "Invalid value for `output_format`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `output_format`, must be None or one of {allowed_values}"
             )
         self._output_format = output_format
 

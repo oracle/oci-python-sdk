@@ -242,8 +242,7 @@ class CreateSoftwareSourceDetails(object):
         allowed_values = ["IA_32", "X86_64", "AARCH64", "SPARC", "AMD64_DEBIAN"]
         if not value_allowed_none_or_none_sentinel(arch_type, allowed_values):
             raise ValueError(
-                "Invalid value for `arch_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `arch_type`, must be None or one of {allowed_values}"
             )
         self._arch_type = arch_type
 
@@ -346,8 +345,7 @@ class CreateSoftwareSourceDetails(object):
         allowed_values = ["SHA1", "SHA256", "SHA384", "SHA512"]
         if not value_allowed_none_or_none_sentinel(checksum_type, allowed_values):
             raise ValueError(
-                "Invalid value for `checksum_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `checksum_type`, must be None or one of {allowed_values}"
             )
         self._checksum_type = checksum_type
 

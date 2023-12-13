@@ -100,8 +100,7 @@ class UpdateTransferJobDetails(object):
         allowed_values = ["CLOSED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 
@@ -148,8 +147,7 @@ class UpdateTransferJobDetails(object):
         allowed_values = ["DISK", "APPLIANCE"]
         if not value_allowed_none_or_none_sentinel(device_type, allowed_values):
             raise ValueError(
-                "Invalid value for `device_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `device_type`, must be None or one of {allowed_values}"
             )
         self._device_type = device_type
 

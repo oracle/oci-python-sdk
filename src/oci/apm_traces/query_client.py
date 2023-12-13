@@ -172,7 +172,7 @@ class QueryClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_quick_picks got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_quick_picks got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "apmDomainId": apm_domain_id,
@@ -288,7 +288,7 @@ class QueryClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "query got unknown kwargs: {!r}".format(extra_kwargs))
+                f"query got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "apmDomainId": apm_domain_id,

@@ -32,6 +32,10 @@ class AppExtensionRadiusAppApp(object):
             The value to assign to the secret_key property of this AppExtensionRadiusAppApp.
         :type secret_key: str
 
+        :param secret_key_temporary:
+            The value to assign to the secret_key_temporary property of this AppExtensionRadiusAppApp.
+        :type secret_key_temporary: str
+
         :param include_group_in_response:
             The value to assign to the include_group_in_response property of this AppExtensionRadiusAppApp.
         :type include_group_in_response: bool
@@ -85,6 +89,7 @@ class AppExtensionRadiusAppApp(object):
             'client_ip': 'str',
             'port': 'str',
             'secret_key': 'str',
+            'secret_key_temporary': 'str',
             'include_group_in_response': 'bool',
             'capture_client_ip': 'bool',
             'type_of_radius_app': 'str',
@@ -103,6 +108,7 @@ class AppExtensionRadiusAppApp(object):
             'client_ip': 'clientIP',
             'port': 'port',
             'secret_key': 'secretKey',
+            'secret_key_temporary': 'secretKeyTemporary',
             'include_group_in_response': 'includeGroupInResponse',
             'capture_client_ip': 'captureClientIp',
             'type_of_radius_app': 'typeOfRadiusApp',
@@ -120,6 +126,7 @@ class AppExtensionRadiusAppApp(object):
         self._client_ip = None
         self._port = None
         self._secret_key = None
+        self._secret_key_temporary = None
         self._include_group_in_response = None
         self._capture_client_ip = None
         self._type_of_radius_app = None
@@ -270,6 +277,54 @@ class AppExtensionRadiusAppApp(object):
         :type: str
         """
         self._secret_key = secret_key
+
+    @property
+    def secret_key_temporary(self):
+        """
+        Gets the secret_key_temporary of this AppExtensionRadiusAppApp.
+        Secret key used to secure communication between RADIUS Proxy and RADIUS client. This will be available only for few releases for an internal migration requirement. Use secretKey attribute instead of this attribute for all other requirements.
+
+        **Added In:** 2306131901
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - idcsSearchable: false
+         - idcsSensitive: encrypt
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: never
+         - type: string
+
+
+        :return: The secret_key_temporary of this AppExtensionRadiusAppApp.
+        :rtype: str
+        """
+        return self._secret_key_temporary
+
+    @secret_key_temporary.setter
+    def secret_key_temporary(self, secret_key_temporary):
+        """
+        Sets the secret_key_temporary of this AppExtensionRadiusAppApp.
+        Secret key used to secure communication between RADIUS Proxy and RADIUS client. This will be available only for few releases for an internal migration requirement. Use secretKey attribute instead of this attribute for all other requirements.
+
+        **Added In:** 2306131901
+
+        **SCIM++ Properties:**
+         - caseExact: true
+         - idcsSearchable: false
+         - idcsSensitive: encrypt
+         - multiValued: false
+         - mutability: readWrite
+         - required: false
+         - returned: never
+         - type: string
+
+
+        :param secret_key_temporary: The secret_key_temporary of this AppExtensionRadiusAppApp.
+        :type: str
+        """
+        self._secret_key_temporary = secret_key_temporary
 
     @property
     def include_group_in_response(self):

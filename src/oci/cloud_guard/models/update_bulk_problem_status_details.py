@@ -93,8 +93,7 @@ class UpdateBulkProblemStatusDetails(object):
         allowed_values = ["OPEN", "RESOLVED", "DISMISSED", "DELETED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             raise ValueError(
-                "Invalid value for `status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `status`, must be None or one of {allowed_values}"
             )
         self._status = status
 

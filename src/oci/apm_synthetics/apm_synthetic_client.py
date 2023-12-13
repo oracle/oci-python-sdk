@@ -176,7 +176,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "aggregate_network_data got unknown kwargs: {!r}".format(extra_kwargs))
+                f"aggregate_network_data got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "monitorId": monitor_id
@@ -186,7 +186,7 @@ class ApmSyntheticClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -297,7 +297,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_dedicated_vantage_point got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_dedicated_vantage_point got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -406,7 +406,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_monitor got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_monitor got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -515,7 +515,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_script got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_script got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -624,7 +624,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_dedicated_vantage_point got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_dedicated_vantage_point got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dedicatedVantagePointId": dedicated_vantage_point_id
@@ -634,7 +634,7 @@ class ApmSyntheticClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -740,7 +740,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_monitor got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_monitor got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "monitorId": monitor_id
@@ -750,7 +750,7 @@ class ApmSyntheticClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -856,7 +856,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_script got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_script got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "scriptId": script_id
@@ -866,7 +866,7 @@ class ApmSyntheticClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -964,7 +964,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_dedicated_vantage_point got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_dedicated_vantage_point got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dedicatedVantagePointId": dedicated_vantage_point_id
@@ -974,7 +974,7 @@ class ApmSyntheticClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -1073,7 +1073,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_monitor got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_monitor got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "monitorId": monitor_id
@@ -1083,7 +1083,7 @@ class ApmSyntheticClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -1194,7 +1194,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_monitor_result got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_monitor_result got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "monitorId": monitor_id,
@@ -1205,7 +1205,7 @@ class ApmSyntheticClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id,
@@ -1307,7 +1307,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_script got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_script got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "scriptId": script_id
@@ -1317,7 +1317,7 @@ class ApmSyntheticClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -1456,27 +1456,27 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_dedicated_vantage_points got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_dedicated_vantage_points got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "name", "timeCreated", "timeUpdated", "status"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'status' in kwargs:
             status_allowed_values = ["ENABLED", "DISABLED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         query_params = {
@@ -1638,27 +1638,27 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_monitors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_monitors got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["ENABLED", "DISABLED", "INVALID"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated", "timeUpdated", "status", "monitorType", "maintenanceWindowTimeStarted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1799,20 +1799,20 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_public_vantage_points got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_public_vantage_points got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["name", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1950,20 +1950,20 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_scripts got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_scripts got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName", "timeCreated", "timeUpdated", "contentType"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2078,7 +2078,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_dedicated_vantage_point got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_dedicated_vantage_point got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dedicatedVantagePointId": dedicated_vantage_point_id
@@ -2088,7 +2088,7 @@ class ApmSyntheticClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -2201,7 +2201,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_monitor got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_monitor got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "monitorId": monitor_id
@@ -2211,7 +2211,7 @@ class ApmSyntheticClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id
@@ -2324,7 +2324,7 @@ class ApmSyntheticClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_script got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_script got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "scriptId": script_id
@@ -2334,7 +2334,7 @@ class ApmSyntheticClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "apmDomainId": apm_domain_id

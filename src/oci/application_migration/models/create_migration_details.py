@@ -307,8 +307,7 @@ class CreateMigrationDetails(object):
         allowed_values = ["DATABASE_SYSTEM", "NOT_SET"]
         if not value_allowed_none_or_none_sentinel(pre_created_target_database_type, allowed_values):
             raise ValueError(
-                "Invalid value for `pre_created_target_database_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `pre_created_target_database_type`, must be None or one of {allowed_values}"
             )
         self._pre_created_target_database_type = pre_created_target_database_type
 

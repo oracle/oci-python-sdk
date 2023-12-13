@@ -77,7 +77,7 @@ class UnifiedAgentLoggingSource(object):
     def name(self):
         """
         **[Required]** Gets the name of this UnifiedAgentLoggingSource.
-        unique name for the source
+        Unique name for the source.
 
 
         :return: The name of this UnifiedAgentLoggingSource.
@@ -89,7 +89,7 @@ class UnifiedAgentLoggingSource(object):
     def name(self, name):
         """
         Sets the name of this UnifiedAgentLoggingSource.
-        unique name for the source
+        Unique name for the source.
 
 
         :param name: The name of this UnifiedAgentLoggingSource.

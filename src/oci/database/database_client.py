@@ -176,7 +176,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "activate_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"activate_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id
@@ -186,7 +186,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -292,7 +292,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_storage_capacity_cloud_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_storage_capacity_cloud_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudExadataInfrastructureId": cloud_exadata_infrastructure_id
@@ -302,7 +302,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -407,7 +407,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_storage_capacity_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_storage_capacity_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id
@@ -417,7 +417,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -525,7 +525,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_virtual_machine_to_cloud_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_virtual_machine_to_cloud_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudVmClusterId": cloud_vm_cluster_id
@@ -535,7 +535,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -645,7 +645,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_virtual_machine_to_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_virtual_machine_to_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id
@@ -655,7 +655,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -765,7 +765,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "autonomous_database_manual_refresh got unknown kwargs: {!r}".format(extra_kwargs))
+                f"autonomous_database_manual_refresh got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -775,7 +775,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -882,7 +882,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "backupId": backup_id
@@ -892,7 +892,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1002,7 +1002,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_autonomous_container_database_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_autonomous_container_database_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id
@@ -1012,7 +1012,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1124,7 +1124,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_autonomous_database_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_autonomous_database_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -1134,7 +1134,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1246,7 +1246,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_autonomous_exadata_infrastructure_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_autonomous_exadata_infrastructure_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousExadataInfrastructureId": autonomous_exadata_infrastructure_id
@@ -1256,7 +1256,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1364,7 +1364,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_autonomous_vm_cluster_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_autonomous_vm_cluster_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousVmClusterId": autonomous_vm_cluster_id
@@ -1374,7 +1374,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1486,7 +1486,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_backup_destination_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_backup_destination_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "backupDestinationId": backup_destination_id
@@ -1496,7 +1496,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1604,7 +1604,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_cloud_autonomous_vm_cluster_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_cloud_autonomous_vm_cluster_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudAutonomousVmClusterId": cloud_autonomous_vm_cluster_id
@@ -1614,7 +1614,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1724,7 +1724,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_cloud_exadata_infrastructure_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_cloud_exadata_infrastructure_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudExadataInfrastructureId": cloud_exadata_infrastructure_id
@@ -1734,7 +1734,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1842,7 +1842,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_cloud_vm_cluster_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_cloud_vm_cluster_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudVmClusterId": cloud_vm_cluster_id
@@ -1852,7 +1852,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1964,7 +1964,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_database_software_image_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_database_software_image_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseSoftwareImageId": database_software_image_id
@@ -1974,7 +1974,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2087,7 +2087,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_dataguard_role got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_dataguard_role got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id
@@ -2097,7 +2097,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2218,7 +2218,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_db_system_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_db_system_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -2228,7 +2228,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2328,7 +2328,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_disaster_recovery_configuration got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_disaster_recovery_configuration got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -2338,7 +2338,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2447,7 +2447,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_exadata_infrastructure_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_exadata_infrastructure_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id
@@ -2457,7 +2457,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2570,7 +2570,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_external_container_database_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_external_container_database_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalContainerDatabaseId": external_container_database_id
@@ -2580,7 +2580,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2692,7 +2692,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_external_non_container_database_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_external_non_container_database_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalNonContainerDatabaseId": external_non_container_database_id
@@ -2702,7 +2702,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2817,7 +2817,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_external_pluggable_database_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_external_pluggable_database_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalPluggableDatabaseId": external_pluggable_database_id
@@ -2827,7 +2827,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2939,7 +2939,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_key_store_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_key_store_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyStoreId": key_store_id
@@ -2949,7 +2949,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3057,7 +3057,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_key_store_type got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_key_store_type got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -3067,7 +3067,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3175,7 +3175,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_oneoff_patch_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_oneoff_patch_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "oneoffPatchId": oneoff_patch_id
@@ -3185,7 +3185,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3294,7 +3294,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_vm_cluster_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_vm_cluster_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id
@@ -3304,7 +3304,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3411,7 +3411,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "check_external_database_connector_connection_status got unknown kwargs: {!r}".format(extra_kwargs))
+                f"check_external_database_connector_connection_status got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDatabaseConnectorId": external_database_connector_id
@@ -3421,7 +3421,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3527,7 +3527,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "complete_external_backup_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"complete_external_backup_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "backupId": backup_id
@@ -3537,7 +3537,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3650,7 +3650,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "configure_autonomous_database_vault_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"configure_autonomous_database_vault_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -3660,7 +3660,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3699,6 +3699,116 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=configure_autonomous_database_vault_key_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def configure_saas_admin_user(self, autonomous_database_id, configure_saas_admin_user_details, **kwargs):
+        """
+        This operation updates SaaS administrative user configuration of the Autonomous Database.
+
+
+        :param str autonomous_database_id: (required)
+            The database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database.models.ConfigureSaasAdminUserDetails configure_saas_admin_user_details: (required)
+            Request to update SaaS administrative user configuration of the Autonomous Database.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/configure_saas_admin_user.py.html>`__ to see an example of how to use configure_saas_admin_user API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
+        resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/configureSaasAdminUser"
+        method = "POST"
+        operation_name = "configure_saas_admin_user"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ConfigureSaasAdminUser"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"configure_saas_admin_user got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "autonomousDatabaseId": autonomous_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=configure_saas_admin_user_details,
+                response_type="AutonomousDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=configure_saas_admin_user_details,
+                response_type="AutonomousDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -3760,7 +3870,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "convert_to_pdb got unknown kwargs: {!r}".format(extra_kwargs))
+                f"convert_to_pdb got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -3770,7 +3880,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3809,6 +3919,127 @@ class DatabaseClient(object):
                 header_params=header_params,
                 body=convert_to_pdb_details,
                 response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def convert_to_regular_pluggable_database(self, convert_to_regular_pluggable_database_details, pluggable_database_id, **kwargs):
+        """
+        Converts a Refreshable clone to Regular pluggable database (PDB).
+        Pluggable Database will be in `READ_WRITE` openmode after conversion.
+
+
+        :param oci.database.models.ConvertToRegularPluggableDatabaseDetails convert_to_regular_pluggable_database_details: (required)
+            Request to convert a Refreshable clone pluggable database (PDB) to a Regular pluggable database.
+
+        :param str pluggable_database_id: (required)
+            The database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PluggableDatabase`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/convert_to_regular_pluggable_database.py.html>`__ to see an example of how to use convert_to_regular_pluggable_database API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pluggableDatabaseId']
+        resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/convertToRegular"
+        method = "POST"
+        operation_name = "convert_to_regular_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/ConvertToRegularPluggableDatabase"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"convert_to_regular_pluggable_database got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "pluggableDatabaseId": pluggable_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=convert_to_regular_pluggable_database_details,
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=convert_to_regular_pluggable_database_details,
+                response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -3867,7 +4098,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_application_vip got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_application_vip got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -3959,7 +4190,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_autonomous_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_autonomous_container_database got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -3996,6 +4227,124 @@ class DatabaseClient(object):
                 header_params=header_params,
                 body=create_autonomous_container_database_details,
                 response_type="AutonomousContainerDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def create_autonomous_container_database_dataguard_association(self, autonomous_container_database_id, create_autonomous_container_database_dataguard_association_details, **kwargs):
+        """
+        Create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
+        specified Autonomous Container database and a peer Autonomous Container database. For more information, see `Using Oracle Data Guard`__.
+
+        All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
+        called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
+        You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
+        resource in the Console. For more information, see
+        `Resource Identifiers`__.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param str autonomous_container_database_id: (required)
+            The Autonomous Container Database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database.models.CreateAutonomousContainerDatabaseDataguardAssociationDetails create_autonomous_container_database_dataguard_association_details: (required)
+            A request to create an Autonomous Data Guard association.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_autonomous_container_database_dataguard_association.py.html>`__ to see an example of how to use create_autonomous_container_database_dataguard_association API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousContainerDatabaseId']
+        resource_path = "/autonomousContainerDatabases/{autonomousContainerDatabaseId}/autonomousContainerDatabaseDataguardAssociations"
+        method = "POST"
+        operation_name = "create_autonomous_container_database_dataguard_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousContainerDatabaseDataguardAssociation/CreateAutonomousContainerDatabaseDataguardAssociation"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_autonomous_container_database_dataguard_association got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "autonomousContainerDatabaseId": autonomous_container_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_autonomous_container_database_dataguard_association_details,
+                response_type="AutonomousContainerDatabaseDataguardAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_autonomous_container_database_dataguard_association_details,
+                response_type="AutonomousContainerDatabaseDataguardAssociation",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -4054,7 +4403,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_autonomous_database got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4150,7 +4499,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_autonomous_database_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_autonomous_database_backup got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4246,7 +4595,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_autonomous_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_autonomous_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4338,7 +4687,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_backup got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4433,7 +4782,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_backup_destination got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_backup_destination got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4529,7 +4878,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_cloud_autonomous_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_cloud_autonomous_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4629,7 +4978,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_cloud_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_cloud_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4727,7 +5076,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_cloud_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_cloud_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -4826,7 +5175,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_console_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbNodeId": db_node_id
@@ -4836,7 +5185,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4875,6 +5224,119 @@ class DatabaseClient(object):
                 header_params=header_params,
                 body=create_console_connection_details,
                 response_type="ConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def create_console_history(self, create_console_history_details, db_node_id, **kwargs):
+        """
+        Captures the most recent serial console data (up to a megabyte) for the specified database node.
+
+
+        :param oci.database.models.CreateConsoleHistoryDetails create_console_history_details: (required)
+            Request object for creating a console history.
+
+        :param str db_node_id: (required)
+            The database node `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ConsoleHistory`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_console_history.py.html>`__ to see an example of how to use create_console_history API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbNodeId']
+        resource_path = "/dbNodes/{dbNodeId}/consoleHistories"
+        method = "POST"
+        operation_name = "create_console_history"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/CreateConsoleHistory"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_console_history got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "dbNodeId": db_node_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_console_history_details,
+                response_type="ConsoleHistory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_console_history_details,
+                response_type="ConsoleHistory",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -4944,7 +5406,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_data_guard_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_data_guard_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -4954,7 +5416,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5051,7 +5513,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_database got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5143,7 +5605,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_database_software_image got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_database_software_image got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5234,7 +5696,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_db_home got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_db_home got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5330,7 +5792,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5426,7 +5888,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_external_backup_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_external_backup_job got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5521,7 +5983,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_external_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_external_container_database got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5617,7 +6079,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_external_database_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_external_database_connector got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5713,7 +6175,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_external_non_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_external_non_container_database got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5810,7 +6272,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_external_pluggable_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_external_pluggable_database got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5906,7 +6368,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_key_store got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_key_store got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -5944,6 +6406,105 @@ class DatabaseClient(object):
                 header_params=header_params,
                 body=create_key_store_details,
                 response_type="KeyStore",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def create_maintenance_run(self, create_maintenance_run_details, **kwargs):
+        """
+        Creates a maintenance run with one of the following:
+        The latest available release update patch (RUP) for the Autonomous Container Database.
+        The latest available RUP and DST time zone (TZ) file updates for the Autonomous Container Database.
+        Creates a maintenance run to update the DST TZ file for the Autonomous Container Database.
+
+
+        :param oci.database.models.CreateMaintenanceRunDetails create_maintenance_run_details: (required)
+            Request to create a Maintenance Run for the resource.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.MaintenanceRun`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/create_maintenance_run.py.html>`__ to see an example of how to use create_maintenance_run API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = []
+        resource_path = "/maintenanceRuns"
+        method = "POST"
+        operation_name = "create_maintenance_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/MaintenanceRun/CreateMaintenanceRun"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"create_maintenance_run got unknown kwargs: {extra_kwargs!r}")
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_maintenance_run_details,
+                response_type="MaintenanceRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_maintenance_run_details,
+                response_type="MaintenanceRun",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -6002,7 +6563,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_oneoff_patch got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_oneoff_patch got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -6048,6 +6609,7 @@ class DatabaseClient(object):
     def create_pluggable_database(self, create_pluggable_database_details, **kwargs):
         """
         Creates and starts a pluggable database in the specified container database.
+        Pluggable Database can be created using different operations (e.g. LocalClone, RemoteClone, Relocate ) with this API.
         Use the :func:`start_pluggable_database` and :func:`stop_pluggable_database` APIs to start and stop the pluggable database.
 
 
@@ -6099,7 +6661,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_pluggable_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_pluggable_database got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -6196,7 +6758,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -6298,7 +6860,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_vm_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_vm_cluster_network got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id
@@ -6308,7 +6870,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6427,7 +6989,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "db_node_action got unknown kwargs: {!r}".format(extra_kwargs))
+                f"db_node_action got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbNodeId": db_node_id
@@ -6437,7 +6999,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "action": action
@@ -6540,7 +7102,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_application_vip got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_application_vip got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "applicationVipId": application_vip_id
@@ -6550,7 +7112,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6643,7 +7205,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_autonomous_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -6653,7 +7215,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6746,7 +7308,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_autonomous_database_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_autonomous_database_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseBackupId": autonomous_database_backup_id
@@ -6756,7 +7318,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6849,7 +7411,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_autonomous_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_autonomous_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousVmClusterId": autonomous_vm_cluster_id
@@ -6859,7 +7421,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -6948,7 +7510,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "backupId": backup_id
@@ -6958,7 +7520,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7050,7 +7612,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_backup_destination got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_backup_destination got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "backupDestinationId": backup_destination_id
@@ -7060,7 +7622,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7153,7 +7715,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_cloud_autonomous_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_cloud_autonomous_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudAutonomousVmClusterId": cloud_autonomous_vm_cluster_id
@@ -7163,7 +7725,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7260,7 +7822,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_cloud_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_cloud_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudExadataInfrastructureId": cloud_exadata_infrastructure_id
@@ -7270,7 +7832,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "isDeleteVmClusters": kwargs.get("is_delete_vm_clusters", missing)
@@ -7370,7 +7932,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_cloud_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_cloud_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudVmClusterId": cloud_vm_cluster_id
@@ -7380,7 +7942,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7472,7 +8034,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_console_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbNodeId": db_node_id,
@@ -7483,12 +8045,119 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def delete_console_history(self, db_node_id, console_history_id, **kwargs):
+        """
+        Deletes the specified database node console history.
+
+
+        :param str db_node_id: (required)
+            The database node `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str console_history_id: (required)
+            The OCID of the console history.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/delete_console_history.py.html>`__ to see an example of how to use delete_console_history API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbNodeId', 'consoleHistoryId']
+        resource_path = "/dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}"
+        method = "DELETE"
+        operation_name = "delete_console_history"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/DeleteConsoleHistory"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"delete_console_history got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "dbNodeId": db_node_id,
+            "consoleHistoryId": console_history_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -7585,7 +8254,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -7595,7 +8264,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "performFinalBackup": kwargs.get("perform_final_backup", missing)
@@ -7691,7 +8360,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_database_software_image got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_database_software_image got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseSoftwareImageId": database_software_image_id
@@ -7701,7 +8370,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -7799,7 +8468,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_db_home got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_db_home got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbHomeId": db_home_id
@@ -7809,7 +8478,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "performFinalBackup": kwargs.get("perform_final_backup", missing)
@@ -7908,7 +8577,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id
@@ -7918,7 +8587,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8013,7 +8682,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_external_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_external_container_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalContainerDatabaseId": external_container_database_id
@@ -8023,7 +8692,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8119,7 +8788,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_external_database_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_external_database_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDatabaseConnectorId": external_database_connector_id
@@ -8129,7 +8798,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8222,7 +8891,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_external_non_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_external_non_container_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalNonContainerDatabaseId": external_non_container_database_id
@@ -8232,7 +8901,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8326,7 +8995,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_external_pluggable_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_external_pluggable_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalPluggableDatabaseId": external_pluggable_database_id
@@ -8336,7 +9005,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8429,7 +9098,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_key_store got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_key_store got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyStoreId": key_store_id
@@ -8439,7 +9108,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8532,7 +9201,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_oneoff_patch got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_oneoff_patch got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "oneoffPatchId": oneoff_patch_id
@@ -8542,7 +9211,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8635,7 +9304,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_pluggable_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_pluggable_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "pluggableDatabaseId": pluggable_database_id
@@ -8645,7 +9314,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8738,7 +9407,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id
@@ -8748,7 +9417,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8847,7 +9516,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_vm_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_vm_cluster_network got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id,
@@ -8858,7 +9527,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -8949,7 +9618,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "deregister_autonomous_database_data_safe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"deregister_autonomous_database_data_safe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -8959,7 +9628,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9047,7 +9716,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_autonomous_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_autonomous_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -9057,7 +9726,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9143,7 +9812,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_autonomous_database_operations_insights got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_autonomous_database_operations_insights got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -9153,7 +9822,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9253,7 +9922,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -9263,7 +9932,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9368,7 +10037,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_external_container_database_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_external_container_database_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalContainerDatabaseId": external_container_database_id
@@ -9378,7 +10047,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9481,7 +10150,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_external_container_database_stack_monitoring got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_external_container_database_stack_monitoring got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalContainerDatabaseId": external_container_database_id
@@ -9491,7 +10160,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9598,7 +10267,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_external_non_container_database_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_external_non_container_database_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalNonContainerDatabaseId": external_non_container_database_id
@@ -9608,7 +10277,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9711,7 +10380,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_external_non_container_database_operations_insights got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_external_non_container_database_operations_insights got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalNonContainerDatabaseId": external_non_container_database_id
@@ -9721,7 +10390,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9824,7 +10493,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_external_non_container_database_stack_monitoring got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_external_non_container_database_stack_monitoring got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalNonContainerDatabaseId": external_non_container_database_id
@@ -9834,7 +10503,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -9941,7 +10610,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_external_pluggable_database_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_external_pluggable_database_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalPluggableDatabaseId": external_pluggable_database_id
@@ -9951,7 +10620,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10054,7 +10723,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_external_pluggable_database_operations_insights got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_external_pluggable_database_operations_insights got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalPluggableDatabaseId": external_pluggable_database_id
@@ -10064,7 +10733,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10167,7 +10836,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_external_pluggable_database_stack_monitoring got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_external_pluggable_database_stack_monitoring got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalPluggableDatabaseId": external_pluggable_database_id
@@ -10177,7 +10846,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10280,7 +10949,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "disable_pluggable_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"disable_pluggable_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "pluggableDatabaseId": pluggable_database_id
@@ -10290,7 +10959,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10389,7 +11058,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_exadata_infrastructure_config_file got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_exadata_infrastructure_config_file got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id
@@ -10399,7 +11068,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -10503,7 +11172,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_oneoff_patch got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_oneoff_patch got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "oneoffPatchId": oneoff_patch_id
@@ -10513,7 +11182,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10617,7 +11286,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_validation_report got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_validation_report got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id,
@@ -10628,7 +11297,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -10731,7 +11400,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "download_vm_cluster_network_config_file got unknown kwargs: {!r}".format(extra_kwargs))
+                f"download_vm_cluster_network_config_file got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id,
@@ -10742,7 +11411,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -10832,7 +11501,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_autonomous_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_autonomous_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -10842,7 +11511,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -10928,7 +11597,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_autonomous_database_operations_insights got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_autonomous_database_operations_insights got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -10938,7 +11607,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11041,7 +11710,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -11051,7 +11720,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11165,7 +11834,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_external_container_database_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_external_container_database_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalContainerDatabaseId": external_container_database_id
@@ -11175,7 +11844,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11283,7 +11952,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_external_container_database_stack_monitoring got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_external_container_database_stack_monitoring got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalContainerDatabaseId": external_container_database_id
@@ -11293,7 +11962,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11405,7 +12074,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_external_non_container_database_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_external_non_container_database_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalNonContainerDatabaseId": external_non_container_database_id
@@ -11415,7 +12084,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11523,7 +12192,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_external_non_container_database_operations_insights got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_external_non_container_database_operations_insights got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalNonContainerDatabaseId": external_non_container_database_id
@@ -11533,7 +12202,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11641,7 +12310,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_external_non_container_database_stack_monitoring got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_external_non_container_database_stack_monitoring got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalNonContainerDatabaseId": external_non_container_database_id
@@ -11651,7 +12320,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11763,7 +12432,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_external_pluggable_database_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_external_pluggable_database_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalPluggableDatabaseId": external_pluggable_database_id
@@ -11773,7 +12442,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11881,7 +12550,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_external_pluggable_database_operations_insights got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_external_pluggable_database_operations_insights got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalPluggableDatabaseId": external_pluggable_database_id
@@ -11891,7 +12560,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -11999,7 +12668,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_external_pluggable_database_stack_monitoring got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_external_pluggable_database_stack_monitoring got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalPluggableDatabaseId": external_pluggable_database_id
@@ -12009,7 +12678,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12117,7 +12786,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "enable_pluggable_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"enable_pluggable_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "pluggableDatabaseId": pluggable_database_id
@@ -12127,7 +12796,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12242,7 +12911,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "fail_over_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"fail_over_autonomous_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -12252,7 +12921,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "peerDbId": kwargs.get("peer_db_id", missing)
@@ -12359,7 +13028,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "failover_autonomous_container_database_dataguard_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"failover_autonomous_container_database_dataguard_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id,
@@ -12370,7 +13039,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12472,7 +13141,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "failover_data_guard_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"failover_data_guard_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id,
@@ -12483,7 +13152,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12584,7 +13253,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_autonomous_database_wallet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_autonomous_database_wallet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -12594,7 +13263,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/octet-stream",
@@ -12697,7 +13366,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "generate_recommended_vm_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
+                f"generate_recommended_vm_cluster_network got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id
@@ -12707,7 +13376,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12799,7 +13468,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_application_vip got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_application_vip got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "applicationVipId": application_vip_id
@@ -12809,7 +13478,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12889,7 +13558,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_autonomous_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_autonomous_container_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id
@@ -12899,7 +13568,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -12982,7 +13651,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_autonomous_container_database_dataguard_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_autonomous_container_database_dataguard_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id,
@@ -12993,7 +13662,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13079,7 +13748,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_autonomous_container_database_resource_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_autonomous_container_database_resource_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id
@@ -13089,7 +13758,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13177,7 +13846,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_autonomous_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -13187,7 +13856,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13275,7 +13944,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_autonomous_database_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_autonomous_database_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseBackupId": autonomous_database_backup_id
@@ -13285,7 +13954,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13378,7 +14047,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_autonomous_database_dataguard_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_autonomous_database_dataguard_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id,
@@ -13389,7 +14058,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13472,7 +14141,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_autonomous_database_regional_wallet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_autonomous_database_regional_wallet got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -13558,7 +14227,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_autonomous_database_wallet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_autonomous_database_wallet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -13568,7 +14237,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13648,7 +14317,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_autonomous_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_autonomous_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousExadataInfrastructureId": autonomous_exadata_infrastructure_id
@@ -13658,7 +14327,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13736,7 +14405,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_autonomous_patch got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_autonomous_patch got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousPatchId": autonomous_patch_id
@@ -13746,7 +14415,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13832,7 +14501,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_autonomous_virtual_machine got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_autonomous_virtual_machine got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousVirtualMachineId": autonomous_virtual_machine_id
@@ -13842,7 +14511,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13930,7 +14599,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_autonomous_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_autonomous_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousVmClusterId": autonomous_vm_cluster_id
@@ -13940,7 +14609,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -13976,6 +14645,104 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="AutonomousVmCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_autonomous_vm_cluster_resource_usage(self, autonomous_vm_cluster_id, **kwargs):
+        """
+        Get the resource usage details for the specified Autonomous Exadata VM cluster.
+
+
+        :param str autonomous_vm_cluster_id: (required)
+            The autonomous VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousVmClusterResourceUsage`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_autonomous_vm_cluster_resource_usage.py.html>`__ to see an example of how to use get_autonomous_vm_cluster_resource_usage API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousVmClusterId']
+        resource_path = "/autonomousVmClusters/{autonomousVmClusterId}/resourceUsage"
+        method = "GET"
+        operation_name = "get_autonomous_vm_cluster_resource_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/GetAutonomousVmClusterResourceUsage"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_autonomous_vm_cluster_resource_usage got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "autonomousVmClusterId": autonomous_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="AutonomousVmClusterResourceUsage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="AutonomousVmClusterResourceUsage",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -14020,7 +14787,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "backupId": backup_id
@@ -14030,7 +14797,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14116,7 +14883,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_backup_destination got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_backup_destination got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "backupDestinationId": backup_destination_id
@@ -14126,7 +14893,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14214,7 +14981,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cloud_autonomous_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cloud_autonomous_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudAutonomousVmClusterId": cloud_autonomous_vm_cluster_id
@@ -14224,7 +14991,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14312,7 +15079,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cloud_autonomous_vm_cluster_resource_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cloud_autonomous_vm_cluster_resource_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudAutonomousVmClusterId": cloud_autonomous_vm_cluster_id
@@ -14322,7 +15089,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14410,7 +15177,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cloud_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cloud_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudExadataInfrastructureId": cloud_exadata_infrastructure_id
@@ -14420,7 +15187,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14514,7 +15281,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cloud_exadata_infrastructure_unallocated_resources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cloud_exadata_infrastructure_unallocated_resources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudExadataInfrastructureId": cloud_exadata_infrastructure_id
@@ -14524,7 +15291,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "dbServers": self.base_client.generate_collection_format_param(kwargs.get("db_servers", missing), 'multi')
@@ -14619,7 +15386,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cloud_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cloud_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudVmClusterId": cloud_vm_cluster_id
@@ -14629,7 +15396,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14718,7 +15485,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cloud_vm_cluster_iorm_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cloud_vm_cluster_iorm_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudVmClusterId": cloud_vm_cluster_id
@@ -14728,7 +15495,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14821,7 +15588,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cloud_vm_cluster_update got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cloud_vm_cluster_update got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudVmClusterId": cloud_vm_cluster_id,
@@ -14832,7 +15599,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -14925,7 +15692,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_cloud_vm_cluster_update_history_entry got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_cloud_vm_cluster_update_history_entry got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudVmClusterId": cloud_vm_cluster_id,
@@ -14936,7 +15703,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15019,7 +15786,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_console_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbNodeId": db_node_id,
@@ -15030,7 +15797,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15064,6 +15831,210 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="ConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_console_history(self, db_node_id, console_history_id, **kwargs):
+        """
+        Gets information about the specified database node console history.
+
+
+        :param str db_node_id: (required)
+            The database node `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str console_history_id: (required)
+            The OCID of the console history.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ConsoleHistory`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_console_history.py.html>`__ to see an example of how to use get_console_history API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbNodeId', 'consoleHistoryId']
+        resource_path = "/dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}"
+        method = "GET"
+        operation_name = "get_console_history"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/GetConsoleHistory"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_console_history got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "dbNodeId": db_node_id,
+            "consoleHistoryId": console_history_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ConsoleHistory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ConsoleHistory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def get_console_history_content(self, db_node_id, console_history_id, **kwargs):
+        """
+        Retrieves the specified database node console history contents upto a megabyte.
+
+
+        :param str db_node_id: (required)
+            The database node `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str console_history_id: (required)
+            The OCID of the console history.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type stream
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/get_console_history_content.py.html>`__ to see an example of how to use get_console_history_content API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbNodeId', 'consoleHistoryId']
+        resource_path = "/dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}/content"
+        method = "GET"
+        operation_name = "get_console_history_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/GetConsoleHistoryContent"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"get_console_history_content got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "dbNodeId": db_node_id,
+            "consoleHistoryId": console_history_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/octet-stream",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -15113,7 +16084,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_data_guard_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_data_guard_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id,
@@ -15124,7 +16095,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15202,7 +16173,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -15212,7 +16183,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15290,7 +16261,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_database_software_image got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_database_software_image got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseSoftwareImageId": database_software_image_id
@@ -15300,7 +16271,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15391,7 +16362,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_database_upgrade_history_entry got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_database_upgrade_history_entry got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id,
@@ -15402,7 +16373,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15482,7 +16453,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_db_home got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_db_home got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbHomeId": db_home_id
@@ -15492,7 +16463,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15575,7 +16546,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_db_home_patch got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_db_home_patch got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbHomeId": db_home_id,
@@ -15586,7 +16557,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15669,7 +16640,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_db_home_patch_history_entry got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_db_home_patch_history_entry got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbHomeId": db_home_id,
@@ -15680,7 +16651,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15758,7 +16729,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_db_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_db_node got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbNodeId": db_node_id
@@ -15768,7 +16739,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -15859,7 +16830,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_db_server got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_db_server got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbServerId": db_server_id
@@ -15869,7 +16840,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "exadataInfrastructureId": exadata_infrastructure_id
@@ -15963,7 +16934,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -15973,7 +16944,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16056,7 +17027,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_db_system_patch got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_db_system_patch got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id,
@@ -16067,7 +17038,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16150,7 +17121,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_db_system_patch_history_entry got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_db_system_patch_history_entry got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id,
@@ -16161,7 +17132,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16252,7 +17223,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_db_system_upgrade_history_entry got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_db_system_upgrade_history_entry got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id,
@@ -16263,7 +17234,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16358,7 +17329,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id
@@ -16368,14 +17339,14 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'excluded_fields' in kwargs:
             excluded_fields_allowed_values = ["multiRackConfigurationFile"]
             for excluded_fields_item in kwargs['excluded_fields']:
                 if excluded_fields_item not in excluded_fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `excluded_fields`, must be one of {0}".format(excluded_fields_allowed_values)
+                        f"Invalid value for `excluded_fields`, must be one of { excluded_fields_allowed_values }"
                     )
 
         query_params = {
@@ -16471,7 +17442,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_exadata_infrastructure_ocpus got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_exadata_infrastructure_ocpus got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousExadataInfrastructureId": autonomous_exadata_infrastructure_id
@@ -16481,7 +17452,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16575,7 +17546,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_exadata_infrastructure_un_allocated_resources got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_exadata_infrastructure_un_allocated_resources got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id
@@ -16585,7 +17556,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "dbServers": self.base_client.generate_collection_format_param(kwargs.get("db_servers", missing), 'multi')
@@ -16691,7 +17662,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_exadata_iorm_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_exadata_iorm_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -16701,7 +17672,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16785,7 +17756,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_backup_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_backup_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "backupId": backup_id
@@ -16795,7 +17766,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16881,7 +17852,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_container_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalContainerDatabaseId": external_container_database_id
@@ -16891,7 +17862,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -16980,7 +17951,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_database_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_database_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDatabaseConnectorId": external_database_connector_id
@@ -16990,7 +17961,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17078,7 +18049,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_non_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_non_container_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalNonContainerDatabaseId": external_non_container_database_id
@@ -17088,7 +18059,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17177,7 +18148,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_external_pluggable_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_external_pluggable_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalPluggableDatabaseId": external_pluggable_database_id
@@ -17187,7 +18158,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17286,13 +18257,13 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_infrastructure_target_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_infrastructure_target_versions got unknown kwargs: {extra_kwargs!r}")
 
         if 'target_resource_type' in kwargs:
             target_resource_type_allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_VM_CLUSTER", "AUTONOMOUS_DATABASE", "CLOUD_AUTONOMOUS_VM_CLUSTER"]
             if kwargs['target_resource_type'] not in target_resource_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `target_resource_type`, must be one of {0}".format(target_resource_type_allowed_values)
+                    f"Invalid value for `target_resource_type`, must be one of { target_resource_type_allowed_values }"
                 )
 
         query_params = {
@@ -17388,7 +18359,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_key_store got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_key_store got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyStoreId": key_store_id
@@ -17398,7 +18369,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17476,7 +18447,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_maintenance_run got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_maintenance_run got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maintenanceRunId": maintenance_run_id
@@ -17486,7 +18457,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17562,7 +18533,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_maintenance_run_history got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_maintenance_run_history got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maintenanceRunHistoryId": maintenance_run_history_id
@@ -17572,7 +18543,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17658,7 +18629,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_oneoff_patch got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_oneoff_patch got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "oneoffPatchId": oneoff_patch_id
@@ -17668,7 +18639,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17761,7 +18732,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_pdb_conversion_history_entry got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_pdb_conversion_history_entry got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id,
@@ -17772,7 +18743,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17852,7 +18823,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_pluggable_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_pluggable_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "pluggableDatabaseId": pluggable_database_id
@@ -17862,7 +18833,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -17948,7 +18919,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id
@@ -17958,7 +18929,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18052,7 +19023,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vm_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vm_cluster_network got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id,
@@ -18063,7 +19034,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18148,7 +19119,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vm_cluster_patch got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vm_cluster_patch got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id,
@@ -18159,7 +19130,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18242,7 +19213,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vm_cluster_patch_history_entry got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vm_cluster_patch_history_entry got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id,
@@ -18253,7 +19224,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18344,7 +19315,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vm_cluster_update got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vm_cluster_update got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id,
@@ -18355,7 +19326,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18448,7 +19419,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_vm_cluster_update_history_entry got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_vm_cluster_update_history_entry got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id,
@@ -18459,7 +19430,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -18549,7 +19520,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "launch_autonomous_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"launch_autonomous_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -18661,7 +19632,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "launch_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"launch_db_system got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -18784,27 +19755,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_application_vips got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_application_vips got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["DISPLAYNAME", "TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -18908,7 +19879,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_container_database_dataguard_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_container_database_dataguard_associations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id
@@ -18918,7 +19889,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -19031,19 +20002,19 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_container_database_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_container_database_versions got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         service_component_allowed_values = ["ADBD", "EXACC"]
         if service_component not in service_component_allowed_values:
             raise ValueError(
-                "Invalid value for `service_component`, must be one of {0}".format(service_component_allowed_values)
+                f"Invalid value for `service_component`, must be one of { service_component_allowed_values }"
             )
 
         query_params = {
@@ -19140,7 +20111,7 @@ class DatabaseClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state exactly.
 
-            Allowed values are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "UNAVAILABLE"
+            Allowed values are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "ENABLING_AUTONOMOUS_DATA_GUARD", "UNAVAILABLE"
 
         :param str availability_domain: (optional)
             A filter to return only resources that match the given availability domain exactly.
@@ -19201,34 +20172,34 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_container_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_container_databases got unknown kwargs: {extra_kwargs!r}")
 
         if 'infrastructure_type' in kwargs:
             infrastructure_type_allowed_values = ["CLOUD", "CLOUD_AT_CUSTOMER"]
             if kwargs['infrastructure_type'] not in infrastructure_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `infrastructure_type`, must be one of {0}".format(infrastructure_type_allowed_values)
+                    f"Invalid value for `infrastructure_type`, must be one of { infrastructure_type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "UNAVAILABLE"]
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "ENABLING_AUTONOMOUS_DATA_GUARD", "UNAVAILABLE"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -19375,27 +20346,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_database_backups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_database_backups got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -19506,13 +20477,13 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_database_character_sets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_database_character_sets got unknown kwargs: {extra_kwargs!r}")
 
         if 'character_set_type' in kwargs:
             character_set_type_allowed_values = ["DATABASE", "NATIONAL"]
             if kwargs['character_set_type'] not in character_set_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `character_set_type`, must be one of {0}".format(character_set_type_allowed_values)
+                    f"Invalid value for `character_set_type`, must be one of { character_set_type_allowed_values }"
                 )
 
         query_params = {
@@ -19651,7 +20622,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_database_clones got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_database_clones got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -19661,34 +20632,34 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NONE", "TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'clone_type' in kwargs:
             clone_type_allowed_values = ["REFRESHABLE_CLONE"]
             if kwargs['clone_type'] not in clone_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `clone_type`, must be one of {0}".format(clone_type_allowed_values)
+                    f"Invalid value for `clone_type`, must be one of { clone_type_allowed_values }"
                 )
 
         query_params = {
@@ -19795,7 +20766,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_database_dataguard_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_database_dataguard_associations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -19805,7 +20776,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -19907,7 +20878,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_database_refreshable_clones got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_database_refreshable_clones got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -19917,7 +20888,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -20091,41 +21062,41 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_databases got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'infrastructure_type' in kwargs:
             infrastructure_type_allowed_values = ["CLOUD", "CLOUD_AT_CUSTOMER"]
             if kwargs['infrastructure_type'] not in infrastructure_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `infrastructure_type`, must be one of {0}".format(infrastructure_type_allowed_values)
+                    f"Invalid value for `infrastructure_type`, must be one of { infrastructure_type_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'db_workload' in kwargs:
             db_workload_allowed_values = ["OLTP", "DW", "AJD", "APEX"]
             if kwargs['db_workload'] not in db_workload_allowed_values:
                 raise ValueError(
-                    "Invalid value for `db_workload`, must be one of {0}".format(db_workload_allowed_values)
+                    f"Invalid value for `db_workload`, must be one of { db_workload_allowed_values }"
                 )
 
         query_params = {
@@ -20257,20 +21228,20 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_db_preview_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_db_preview_versions got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["DBWORKLOAD"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -20388,20 +21359,20 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_db_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_db_versions got unknown kwargs: {extra_kwargs!r}")
 
         if 'db_workload' in kwargs:
             db_workload_allowed_values = ["OLTP", "DW", "AJD", "APEX"]
             if kwargs['db_workload'] not in db_workload_allowed_values:
                 raise ValueError(
-                    "Invalid value for `db_workload`, must be one of {0}".format(db_workload_allowed_values)
+                    f"Invalid value for `db_workload`, must be one of { db_workload_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -20510,7 +21481,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_exadata_infrastructure_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_exadata_infrastructure_shapes got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "availabilityDomain": availability_domain,
@@ -20638,27 +21609,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_exadata_infrastructures got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_exadata_infrastructures got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -20776,13 +21747,13 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_virtual_machines got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_virtual_machines got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -20828,6 +21799,127 @@ class DatabaseClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[AutonomousVirtualMachineSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_autonomous_vm_cluster_acd_resource_usage(self, autonomous_vm_cluster_id, **kwargs):
+        """
+        Gets the list of resource usage details for all the Autonomous Container Database in the specified Autonomous Exadata VM cluster.
+
+
+        :param str autonomous_vm_cluster_id: (required)
+            The autonomous VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str compartment_id: (optional)
+            The compartment `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousContainerDatabaseResourceUsage`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_autonomous_vm_cluster_acd_resource_usage.py.html>`__ to see an example of how to use list_autonomous_vm_cluster_acd_resource_usage API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousVmClusterId']
+        resource_path = "/autonomousVmClusters/{autonomousVmClusterId}/acdResourceUsage"
+        method = "GET"
+        operation_name = "list_autonomous_vm_cluster_acd_resource_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousVmCluster/ListAutonomousVmClusterAcdResourceUsage"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "compartment_id",
+            "opc_request_id",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_autonomous_vm_cluster_acd_resource_usage got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "autonomousVmClusterId": autonomous_vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AutonomousContainerDatabaseResourceUsage]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AutonomousContainerDatabaseResourceUsage]",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -20914,27 +22006,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_autonomous_vm_clusters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_autonomous_vm_clusters got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -21047,7 +22139,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_backup_destination got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_backup_destination got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -21154,7 +22246,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_backups got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_backups got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "databaseId": kwargs.get("database_id", missing),
@@ -21263,7 +22355,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cloud_autonomous_vm_cluster_acd_resource_usage got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cloud_autonomous_vm_cluster_acd_resource_usage got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudAutonomousVmClusterId": cloud_autonomous_vm_cluster_id
@@ -21273,7 +22365,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "compartmentId": kwargs.get("compartment_id", missing),
@@ -21408,27 +22500,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cloud_autonomous_vm_clusters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cloud_autonomous_vm_clusters got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -21560,27 +22652,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cloud_exadata_infrastructures got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cloud_exadata_infrastructures got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -21694,7 +22786,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cloud_vm_cluster_update_history_entries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cloud_vm_cluster_update_history_entries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudVmClusterId": cloud_vm_cluster_id
@@ -21704,13 +22796,13 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'update_type' in kwargs:
             update_type_allowed_values = ["GI_UPGRADE", "GI_PATCH", "OS_UPDATE"]
             if kwargs['update_type'] not in update_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `update_type`, must be one of {0}".format(update_type_allowed_values)
+                    f"Invalid value for `update_type`, must be one of { update_type_allowed_values }"
                 )
 
         query_params = {
@@ -21822,7 +22914,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cloud_vm_cluster_updates got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cloud_vm_cluster_updates got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudVmClusterId": cloud_vm_cluster_id
@@ -21832,13 +22924,13 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'update_type' in kwargs:
             update_type_allowed_values = ["GI_UPGRADE", "GI_PATCH", "OS_UPDATE"]
             if kwargs['update_type'] not in update_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `update_type`, must be one of {0}".format(update_type_allowed_values)
+                    f"Invalid value for `update_type`, must be one of { update_type_allowed_values }"
                 )
 
         query_params = {
@@ -21970,27 +23062,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_cloud_vm_clusters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_cloud_vm_clusters got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -22083,7 +23175,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_console_connections got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_console_connections got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbNodeId": db_node_id
@@ -22093,7 +23185,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -22132,6 +23224,167 @@ class DatabaseClient(object):
                 api_reference_link=api_reference_link,
                 required_arguments=required_arguments)
 
+    def list_console_histories(self, db_node_id, **kwargs):
+        """
+        Lists the console histories for the specified database node.
+
+
+        :param str db_node_id: (required)
+            The database node `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str sort_by: (optional)
+            The field to sort by.  You can provide one sort order (`sortOrder`).  Default order for TIMECREATED is descending.  Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the given lifecycle state exactly.
+
+            Allowed values are: "REQUESTED", "GETTING_HISTORY", "SUCCEEDED", "FAILED", "DELETED", "DELETING"
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name given. The match is not case sensitive.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ConsoleHistoryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_console_histories.py.html>`__ to see an example of how to use list_console_histories API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbNodeId']
+        resource_path = "/dbNodes/{dbNodeId}/consoleHistories"
+        method = "GET"
+        operation_name = "list_console_histories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/ListConsoleHistories"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "opc_request_id",
+            "sort_by",
+            "sort_order",
+            "lifecycle_state",
+            "display_name"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_console_histories got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "dbNodeId": db_node_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["REQUESTED", "GETTING_HISTORY", "SUCCEEDED", "FAILED", "DELETED", "DELETING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "displayName": kwargs.get("display_name", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ConsoleHistoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ConsoleHistoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
     def list_container_database_patches(self, autonomous_container_database_id, compartment_id, **kwargs):
         """
         Lists the patches applicable to the requested container database.
@@ -22152,6 +23405,11 @@ class DatabaseClient(object):
 
         :param str page: (optional)
             The pagination token to continue listing from.
+
+        :param str autonomous_patch_type: (optional)
+            Autonomous patch type, either \"QUARTERLY\" or \"TIMEZONE\".
+
+            Allowed values are: "QUARTERLY", "TIMEZONE"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -22183,12 +23441,13 @@ class DatabaseClient(object):
             "allow_control_chars",
             "retry_strategy",
             "limit",
-            "page"
+            "page",
+            "autonomous_patch_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_container_database_patches got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_container_database_patches got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id
@@ -22198,12 +23457,20 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        if 'autonomous_patch_type' in kwargs:
+            autonomous_patch_type_allowed_values = ["QUARTERLY", "TIMEZONE"]
+            if kwargs['autonomous_patch_type'] not in autonomous_patch_type_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `autonomous_patch_type`, must be one of { autonomous_patch_type_allowed_values }"
+                )
 
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "compartmentId": compartment_id
+            "compartmentId": compartment_id,
+            "autonomousPatchType": kwargs.get("autonomous_patch_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -22297,7 +23564,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_data_guard_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_data_guard_associations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -22307,7 +23574,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -22443,41 +23710,41 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_database_software_images got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_database_software_images got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "DELETING", "DELETED", "FAILED", "TERMINATING", "TERMINATED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'image_type' in kwargs:
             image_type_allowed_values = ["GRID_IMAGE", "DATABASE_IMAGE"]
             if kwargs['image_type'] not in image_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `image_type`, must be one of {0}".format(image_type_allowed_values)
+                    f"Invalid value for `image_type`, must be one of { image_type_allowed_values }"
                 )
 
         if 'image_shape_family' in kwargs:
             image_shape_family_allowed_values = ["VM_BM_SHAPE", "EXADATA_SHAPE", "EXACC_SHAPE"]
             if kwargs['image_shape_family'] not in image_shape_family_allowed_values:
                 raise ValueError(
-                    "Invalid value for `image_shape_family`, must be one of {0}".format(image_shape_family_allowed_values)
+                    f"Invalid value for `image_shape_family`, must be one of { image_shape_family_allowed_values }"
                 )
 
         query_params = {
@@ -22610,7 +23877,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_database_upgrade_history_entries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_database_upgrade_history_entries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -22620,34 +23887,34 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'upgrade_action' in kwargs:
             upgrade_action_allowed_values = ["PRECHECK", "UPGRADE", "ROLLBACK"]
             if kwargs['upgrade_action'] not in upgrade_action_allowed_values:
                 raise ValueError(
-                    "Invalid value for `upgrade_action`, must be one of {0}".format(upgrade_action_allowed_values)
+                    f"Invalid value for `upgrade_action`, must be one of { upgrade_action_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["SUCCEEDED", "FAILED", "IN_PROGRESS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMESTARTED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -22786,27 +24053,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_databases got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["DBNAME", "TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "UPGRADING", "CONVERTING", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -22910,7 +24177,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_home_patch_history_entries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_home_patch_history_entries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbHomeId": db_home_id
@@ -22920,7 +24187,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -23018,7 +24285,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_home_patches got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_home_patches got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbHomeId": db_home_id
@@ -23028,7 +24295,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -23170,27 +24437,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_homes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_homes got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -23332,27 +24599,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_nodes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_nodes got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -23487,27 +24754,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_servers got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_servers got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "AVAILABLE", "UNAVAILABLE", "DELETING", "DELETED", "MAINTENANCE_IN_PROGRESS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -23607,7 +24874,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_system_compute_performances got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_system_compute_performances got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "dbSystemShape": kwargs.get("db_system_shape", missing)
@@ -23704,7 +24971,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_system_patch_history_entries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_system_patch_history_entries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -23714,7 +24981,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -23812,7 +25079,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_system_patches got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_system_patches got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -23822,7 +25089,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -23924,7 +25191,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_system_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_system_shapes got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "availabilityDomain": kwargs.get("availability_domain", missing),
@@ -24024,12 +25291,12 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_system_storage_performances got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_system_storage_performances got unknown kwargs: {extra_kwargs!r}")
 
         storage_management_allowed_values = ["ASM", "LVM"]
         if storage_management not in storage_management_allowed_values:
             raise ValueError(
-                "Invalid value for `storage_management`, must be one of {0}".format(storage_management_allowed_values)
+                f"Invalid value for `storage_management`, must be one of { storage_management_allowed_values }"
             )
 
         query_params = {
@@ -24156,7 +25423,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_system_upgrade_history_entries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_system_upgrade_history_entries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -24166,34 +25433,34 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMESTARTED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'upgrade_action' in kwargs:
             upgrade_action_allowed_values = ["PRECHECK", "ROLLBACK", "UPDATE_SNAPSHOT_RETENTION_DAYS", "UPGRADE"]
             if kwargs['upgrade_action'] not in upgrade_action_allowed_values:
                 raise ValueError(
-                    "Invalid value for `upgrade_action`, must be one of {0}".format(upgrade_action_allowed_values)
+                    f"Invalid value for `upgrade_action`, must be one of { upgrade_action_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["IN_PROGRESS", "SUCCEEDED", "FAILED", "NEEDS_ATTENTION"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -24339,27 +25606,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_systems got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_systems got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MIGRATED", "MAINTENANCE_IN_PROGRESS", "NEEDS_ATTENTION", "UPGRADING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -24489,13 +25756,13 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_db_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_db_versions got unknown kwargs: {extra_kwargs!r}")
 
         if 'storage_management' in kwargs:
             storage_management_allowed_values = ["ASM", "LVM"]
             if kwargs['storage_management'] not in storage_management_allowed_values:
                 raise ValueError(
-                    "Invalid value for `storage_management`, must be one of {0}".format(storage_management_allowed_values)
+                    f"Invalid value for `storage_management`, must be one of { storage_management_allowed_values }"
                 )
 
         query_params = {
@@ -24631,27 +25898,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_exadata_infrastructures got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_exadata_infrastructures got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", "MAINTENANCE_IN_PROGRESS", "WAITING_FOR_CONNECTIVITY"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'excluded_fields' in kwargs:
@@ -24659,7 +25926,7 @@ class DatabaseClient(object):
             for excluded_fields_item in kwargs['excluded_fields']:
                 if excluded_fields_item not in excluded_fields_allowed_values:
                     raise ValueError(
-                        "Invalid value for `excluded_fields`, must be one of {0}".format(excluded_fields_allowed_values)
+                        f"Invalid value for `excluded_fields`, must be one of { excluded_fields_allowed_values }"
                     )
 
         query_params = {
@@ -24793,27 +26060,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_container_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_container_databases got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["DISPLAYNAME", "TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "NOT_CONNECTED", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -24951,27 +26218,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_database_connectors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_database_connectors got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["DISPLAYNAME", "TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -25105,27 +26372,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_non_container_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_non_container_databases got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["DISPLAYNAME", "TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "NOT_CONNECTED", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -25265,27 +26532,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_external_pluggable_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_external_pluggable_databases got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["DISPLAYNAME", "TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "NOT_CONNECTED", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -25406,20 +26673,20 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_flex_components got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_flex_components got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["NAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -25530,13 +26797,13 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_gi_versions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_gi_versions got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -25640,7 +26907,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_key_stores got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_key_stores got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id,
@@ -25740,7 +27007,7 @@ class DatabaseClient(object):
         :param str maintenance_subtype: (optional)
             The sub-type of the maintenance run.
 
-            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY"
+            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -25785,48 +27052,48 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_maintenance_run_history got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_maintenance_run_history got unknown kwargs: {extra_kwargs!r}")
 
         if 'target_resource_type' in kwargs:
             target_resource_type_allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_VM_CLUSTER", "AUTONOMOUS_DATABASE", "CLOUD_AUTONOMOUS_VM_CLUSTER"]
             if kwargs['target_resource_type'] not in target_resource_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `target_resource_type`, must be one of {0}".format(target_resource_type_allowed_values)
+                    f"Invalid value for `target_resource_type`, must be one of { target_resource_type_allowed_values }"
                 )
 
         if 'maintenance_type' in kwargs:
             maintenance_type_allowed_values = ["PLANNED", "UNPLANNED"]
             if kwargs['maintenance_type'] not in maintenance_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `maintenance_type`, must be one of {0}".format(maintenance_type_allowed_values)
+                    f"Invalid value for `maintenance_type`, must be one of { maintenance_type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_SCHEDULED", "TIME_ENDED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", "CANCELED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'maintenance_subtype' in kwargs:
-            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY"]
+            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"]
             if kwargs['maintenance_subtype'] not in maintenance_subtype_allowed_values:
                 raise ValueError(
-                    "Invalid value for `maintenance_subtype`, must be one of {0}".format(maintenance_subtype_allowed_values)
+                    f"Invalid value for `maintenance_subtype`, must be one of { maintenance_subtype_allowed_values }"
                 )
 
         query_params = {
@@ -25933,7 +27200,7 @@ class DatabaseClient(object):
         :param str maintenance_subtype: (optional)
             The sub-type of the maintenance run.
 
-            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY"
+            Allowed values are: "QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -25978,48 +27245,48 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_maintenance_runs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_maintenance_runs got unknown kwargs: {extra_kwargs!r}")
 
         if 'target_resource_type' in kwargs:
             target_resource_type_allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_VM_CLUSTER", "AUTONOMOUS_DATABASE", "CLOUD_AUTONOMOUS_VM_CLUSTER"]
             if kwargs['target_resource_type'] not in target_resource_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `target_resource_type`, must be one of {0}".format(target_resource_type_allowed_values)
+                    f"Invalid value for `target_resource_type`, must be one of { target_resource_type_allowed_values }"
                 )
 
         if 'maintenance_type' in kwargs:
             maintenance_type_allowed_values = ["PLANNED", "UNPLANNED"]
             if kwargs['maintenance_type'] not in maintenance_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `maintenance_type`, must be one of {0}".format(maintenance_type_allowed_values)
+                    f"Invalid value for `maintenance_type`, must be one of { maintenance_type_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIME_SCHEDULED", "TIME_ENDED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", "CANCELED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'maintenance_subtype' in kwargs:
-            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY"]
+            maintenance_subtype_allowed_values = ["QUARTERLY", "HARDWARE", "CRITICAL", "INFRASTRUCTURE", "DATABASE", "ONEOFF", "SECURITY_MONTHLY", "TIMEZONE"]
             if kwargs['maintenance_subtype'] not in maintenance_subtype_allowed_values:
                 raise ValueError(
-                    "Invalid value for `maintenance_subtype`, must be one of {0}".format(maintenance_subtype_allowed_values)
+                    f"Invalid value for `maintenance_subtype`, must be one of { maintenance_subtype_allowed_values }"
                 )
 
         query_params = {
@@ -26151,27 +27418,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_oneoff_patches got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_oneoff_patches got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "AVAILABLE", "UPDATING", "INACTIVE", "FAILED", "EXPIRED", "DELETING", "DELETED", "TERMINATING", "TERMINATED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -26303,7 +27570,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_pdb_conversion_history_entries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_pdb_conversion_history_entries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -26313,34 +27580,34 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'pdb_conversion_action' in kwargs:
             pdb_conversion_action_allowed_values = ["PRECHECK", "CONVERT", "SYNC", "SYNC_ROLLBACK"]
             if kwargs['pdb_conversion_action'] not in pdb_conversion_action_allowed_values:
                 raise ValueError(
-                    "Invalid value for `pdb_conversion_action`, must be one of {0}".format(pdb_conversion_action_allowed_values)
+                    f"Invalid value for `pdb_conversion_action`, must be one of { pdb_conversion_action_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["SUCCEEDED", "FAILED", "IN_PROGRESS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMESTARTED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -26428,7 +27695,7 @@ class DatabaseClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state exactly.
 
-            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", "FAILED"
+            Allowed values are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", "FAILED", "RELOCATING", "RELOCATED", "REFRESHING", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "DISABLED"
 
         :param str pdb_name: (optional)
             A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.
@@ -26474,27 +27741,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_pluggable_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_pluggable_databases got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["PDBNAME", "TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", "FAILED"]
+            lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "UPDATING", "FAILED", "RELOCATING", "RELOCATED", "REFRESHING", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "DISABLED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -26541,6 +27808,131 @@ class DatabaseClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[PluggableDatabaseSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def list_system_versions(self, compartment_id, shape, gi_version, **kwargs):
+        """
+        Gets a list of supported Exadata system versions for a given shape and GI version.
+
+
+        :param str compartment_id: (required)
+            The compartment `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str shape: (required)
+            Specifies shape query parameter.
+
+        :param str gi_version: (required)
+            Specifies gi version query parameter.
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.SystemVersionCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/list_system_versions.py.html>`__ to see an example of how to use list_system_versions API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['compartmentId', 'shape', 'giVersion']
+        resource_path = "/systemVersions"
+        method = "GET"
+        operation_name = "list_system_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/SystemVersionCollection/ListSystemVersions"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"list_system_versions got unknown kwargs: {extra_kwargs!r}")
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "shape": shape,
+            "giVersion": gi_version
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SystemVersionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SystemVersionCollection",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -26628,7 +28020,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_vm_cluster_networks got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_vm_cluster_networks got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id
@@ -26638,27 +28030,27 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "REQUIRES_VALIDATION", "VALIDATING", "VALIDATED", "VALIDATION_FAILED", "UPDATING", "ALLOCATED", "TERMINATING", "TERMINATED", "FAILED", "NEEDS_ATTENTION"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -26764,7 +28156,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_vm_cluster_patch_history_entries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_vm_cluster_patch_history_entries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id
@@ -26774,7 +28166,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -26872,7 +28264,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_vm_cluster_patches got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_vm_cluster_patches got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id
@@ -26882,7 +28274,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -26996,7 +28388,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_vm_cluster_update_history_entries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_vm_cluster_update_history_entries got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id
@@ -27006,20 +28398,20 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'update_type' in kwargs:
             update_type_allowed_values = ["GI_UPGRADE", "GI_PATCH", "OS_UPDATE"]
             if kwargs['update_type'] not in update_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `update_type`, must be one of {0}".format(update_type_allowed_values)
+                    f"Invalid value for `update_type`, must be one of { update_type_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["IN_PROGRESS", "SUCCEEDED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -27138,7 +28530,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_vm_cluster_updates got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_vm_cluster_updates got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id
@@ -27148,20 +28540,20 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'update_type' in kwargs:
             update_type_allowed_values = ["GI_UPGRADE", "GI_PATCH", "OS_UPDATE"]
             if kwargs['update_type'] not in update_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `update_type`, must be one of {0}".format(update_type_allowed_values)
+                    f"Invalid value for `update_type`, must be one of { update_type_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["AVAILABLE", "SUCCESS", "IN_PROGRESS", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -27295,27 +28687,27 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_vm_clusters got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_vm_clusters got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         query_params = {
@@ -27371,6 +28763,7 @@ class DatabaseClient(object):
 
     def local_clone_pluggable_database(self, local_clone_pluggable_database_details, pluggable_database_id, **kwargs):
         """
+        **Deprecated.** Use :func:`create_pluggable_database` for Pluggable Database LocalClone Operation.
         Clones and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation.
 
 
@@ -27433,7 +28826,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "local_clone_pluggable_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"local_clone_pluggable_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "pluggableDatabaseId": pluggable_database_id
@@ -27443,7 +28836,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27553,7 +28946,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "migrate_exadata_db_system_resource_model got unknown kwargs: {!r}".format(extra_kwargs))
+                f"migrate_exadata_db_system_resource_model got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -27563,7 +28956,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27673,7 +29066,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "migrate_vault_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"migrate_vault_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -27683,7 +29076,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27793,7 +29186,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "modify_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"modify_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -27803,7 +29196,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27913,7 +29306,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "modify_pluggable_database_management got unknown kwargs: {!r}".format(extra_kwargs))
+                f"modify_pluggable_database_management got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "pluggableDatabaseId": pluggable_database_id
@@ -27923,7 +29316,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -27963,6 +29356,121 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=modify_pluggable_database_management_details,
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def refresh_pluggable_database(self, pluggable_database_id, **kwargs):
+        """
+        Refreshes a pluggable database (PDB) Refreshable clone.
+
+
+        :param str pluggable_database_id: (required)
+            The database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PluggableDatabase`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/refresh_pluggable_database.py.html>`__ to see an example of how to use refresh_pluggable_database API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['pluggableDatabaseId']
+        resource_path = "/pluggableDatabases/{pluggableDatabaseId}/actions/refresh"
+        method = "POST"
+        operation_name = "refresh_pluggable_database"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/RefreshPluggableDatabase"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"refresh_pluggable_database got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "pluggableDatabaseId": pluggable_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PluggableDatabase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
                 response_type="PluggableDatabase",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
@@ -28020,7 +29528,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "register_autonomous_database_data_safe got unknown kwargs: {!r}".format(extra_kwargs))
+                f"register_autonomous_database_data_safe got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -28030,7 +29538,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -28125,7 +29633,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "reinstate_autonomous_container_database_dataguard_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"reinstate_autonomous_container_database_dataguard_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id,
@@ -28136,7 +29644,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -28234,7 +29742,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "reinstate_data_guard_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"reinstate_data_guard_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id,
@@ -28245,7 +29753,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -28290,6 +29798,7 @@ class DatabaseClient(object):
 
     def remote_clone_pluggable_database(self, remote_clone_pluggable_database_details, pluggable_database_id, **kwargs):
         """
+        **Deprecated.** Use :func:`create_pluggable_database` for Pluggable Database RemoteClone Operation.
         Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
         For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
 
@@ -28353,7 +29862,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remote_clone_pluggable_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remote_clone_pluggable_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "pluggableDatabaseId": pluggable_database_id
@@ -28363,7 +29872,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -28473,7 +29982,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_virtual_machine_from_cloud_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_virtual_machine_from_cloud_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudVmClusterId": cloud_vm_cluster_id
@@ -28483,7 +29992,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -28593,7 +30102,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_virtual_machine_from_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_virtual_machine_from_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id
@@ -28603,7 +30112,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -28719,7 +30228,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "resize_vm_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
+                f"resize_vm_cluster_network got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id,
@@ -28730,7 +30239,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -28840,7 +30349,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "resource_pool_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+                f"resource_pool_shapes got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -28943,7 +30452,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restart_autonomous_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restart_autonomous_container_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id
@@ -28953,7 +30462,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -29044,7 +30553,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restart_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restart_autonomous_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -29054,7 +30563,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -29147,7 +30656,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restore_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restore_autonomous_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -29157,7 +30666,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -29252,7 +30761,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "restore_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"restore_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -29262,7 +30771,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -29368,7 +30877,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rotate_autonomous_container_database_encryption_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rotate_autonomous_container_database_encryption_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id
@@ -29378,7 +30887,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -29485,7 +30994,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rotate_autonomous_database_encryption_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rotate_autonomous_database_encryption_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -29495,7 +31004,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -29603,7 +31112,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rotate_autonomous_vm_cluster_ords_certs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rotate_autonomous_vm_cluster_ords_certs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousVmClusterId": autonomous_vm_cluster_id
@@ -29613,7 +31122,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -29721,7 +31230,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rotate_autonomous_vm_cluster_ssl_certs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rotate_autonomous_vm_cluster_ssl_certs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousVmClusterId": autonomous_vm_cluster_id
@@ -29731,7 +31240,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -29840,7 +31349,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rotate_cloud_autonomous_vm_cluster_ords_certs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rotate_cloud_autonomous_vm_cluster_ords_certs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudAutonomousVmClusterId": cloud_autonomous_vm_cluster_id
@@ -29850,7 +31359,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -29959,7 +31468,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rotate_cloud_autonomous_vm_cluster_ssl_certs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rotate_cloud_autonomous_vm_cluster_ssl_certs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudAutonomousVmClusterId": cloud_autonomous_vm_cluster_id
@@ -29969,7 +31478,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -30074,7 +31583,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rotate_ords_certs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rotate_ords_certs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousExadataInfrastructureId": autonomous_exadata_infrastructure_id
@@ -30084,7 +31593,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -30187,7 +31696,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rotate_pluggable_database_encryption_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rotate_pluggable_database_encryption_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "pluggableDatabaseId": pluggable_database_id
@@ -30197,7 +31706,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -30300,7 +31809,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rotate_ssl_certs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rotate_ssl_certs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousExadataInfrastructureId": autonomous_exadata_infrastructure_id
@@ -30310,7 +31819,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -30415,7 +31924,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "rotate_vault_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"rotate_vault_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -30425,7 +31934,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -30464,6 +31973,104 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="Database",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def saas_admin_user_status(self, autonomous_database_id, **kwargs):
+        """
+        This operation gets SaaS administrative user status of the Autonomous Database.
+
+
+        :param str autonomous_database_id: (required)
+            The database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.SaasAdminUserStatus`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/saas_admin_user_status.py.html>`__ to see an example of how to use saas_admin_user_status API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['autonomousDatabaseId']
+        resource_path = "/autonomousDatabases/{autonomousDatabaseId}/actions/getSaasAdminUserStatus"
+        method = "POST"
+        operation_name = "saas_admin_user_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/SaasAdminUserStatus"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"saas_admin_user_status got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "autonomousDatabaseId": autonomous_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SaasAdminUserStatus",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="SaasAdminUserStatus",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -30531,7 +32138,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "scan_external_container_database_pluggable_databases got unknown kwargs: {!r}".format(extra_kwargs))
+                f"scan_external_container_database_pluggable_databases got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalContainerDatabaseId": external_container_database_id
@@ -30541,7 +32148,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "externalDatabaseConnectorId": external_database_connector_id
@@ -30638,7 +32245,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "shrink_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"shrink_autonomous_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -30648,7 +32255,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -30738,7 +32345,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"start_autonomous_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -30748,7 +32355,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -30850,7 +32457,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "start_pluggable_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"start_pluggable_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "pluggableDatabaseId": pluggable_database_id
@@ -30860,7 +32467,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -30957,7 +32564,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "stop_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"stop_autonomous_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -30967,7 +32574,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -31070,7 +32677,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "stop_pluggable_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"stop_pluggable_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "pluggableDatabaseId": pluggable_database_id
@@ -31080,7 +32687,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -31180,7 +32787,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "switchover_autonomous_container_database_dataguard_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"switchover_autonomous_container_database_dataguard_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id,
@@ -31191,7 +32798,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -31301,7 +32908,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "switchover_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"switchover_autonomous_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -31311,7 +32918,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "peerDbId": kwargs.get("peer_db_id", missing)
@@ -31422,7 +33029,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "switchover_data_guard_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"switchover_data_guard_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id,
@@ -31433,7 +33040,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -31525,7 +33132,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "terminate_autonomous_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"terminate_autonomous_container_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id
@@ -31535,7 +33142,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -31623,7 +33230,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "terminate_autonomous_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"terminate_autonomous_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousExadataInfrastructureId": autonomous_exadata_infrastructure_id
@@ -31633,7 +33240,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -31728,7 +33335,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "terminate_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"terminate_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -31738,7 +33345,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -31829,7 +33436,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_autonomous_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_autonomous_container_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id
@@ -31839,7 +33446,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -31943,7 +33550,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_autonomous_container_database_dataguard_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_autonomous_container_database_dataguard_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousContainerDatabaseId": autonomous_container_database_id,
@@ -31954,7 +33561,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -32054,7 +33661,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_autonomous_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -32064,7 +33671,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -32164,7 +33771,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_autonomous_database_backup got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_autonomous_database_backup got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseBackupId": autonomous_database_backup_id
@@ -32174,7 +33781,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -32263,7 +33870,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_autonomous_database_regional_wallet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_autonomous_database_regional_wallet got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -32352,7 +33959,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_autonomous_database_wallet got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_autonomous_database_wallet got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousDatabaseId": autonomous_database_id
@@ -32362,7 +33969,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -32455,7 +34062,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_autonomous_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_autonomous_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousExadataInfrastructureId": autonomous_exadata_infrastructure_id
@@ -32465,7 +34072,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -32564,7 +34171,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_autonomous_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_autonomous_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "autonomousVmClusterId": autonomous_vm_cluster_id
@@ -32574,7 +34181,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -32677,7 +34284,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_backup_destination got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_backup_destination got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "backupDestinationId": backup_destination_id
@@ -32687,7 +34294,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -32787,7 +34394,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_cloud_autonomous_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_cloud_autonomous_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudAutonomousVmClusterId": cloud_autonomous_vm_cluster_id
@@ -32797,7 +34404,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -32897,7 +34504,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_cloud_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_cloud_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudExadataInfrastructureId": cloud_exadata_infrastructure_id
@@ -32907,7 +34514,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -33007,7 +34614,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_cloud_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_cloud_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudVmClusterId": cloud_vm_cluster_id
@@ -33017,7 +34624,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -33117,7 +34724,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_cloud_vm_cluster_iorm_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_cloud_vm_cluster_iorm_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "cloudVmClusterId": cloud_vm_cluster_id
@@ -33127,7 +34734,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -33230,7 +34837,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_console_connection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbNodeId": db_node_id,
@@ -33241,7 +34848,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -33280,6 +34887,120 @@ class DatabaseClient(object):
                 header_params=header_params,
                 body=update_console_connection_details,
                 response_type="ConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+
+    def update_console_history(self, db_node_id, console_history_id, update_console_history_details, **kwargs):
+        """
+        Updates the specified database node console history.
+
+
+        :param str db_node_id: (required)
+            The database node `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str console_history_id: (required)
+            The OCID of the console history.
+
+        :param oci.database.models.UpdateConsoleHistoryDetails update_console_history_details: (required)
+            Request to update the specified database node console history.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ConsoleHistory`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/database/update_console_history.py.html>`__ to see an example of how to use update_console_history API.
+        """
+        # Required path and query arguments. These are in camelCase to replace values in service endpoints.
+        required_arguments = ['dbNodeId', 'consoleHistoryId']
+        resource_path = "/dbNodes/{dbNodeId}/consoleHistories/{consoleHistoryId}"
+        method = "PUT"
+        operation_name = "update_console_history"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/database/20160918/ConsoleHistory/UpdateConsoleHistory"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                f"update_console_history got unknown kwargs: {extra_kwargs!r}")
+
+        path_params = {
+            "dbNodeId": db_node_id,
+            "consoleHistoryId": console_history_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_console_history_details,
+                response_type="ConsoleHistory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link,
+                required_arguments=required_arguments)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_console_history_details,
+                response_type="ConsoleHistory",
                 allow_control_chars=kwargs.get('allow_control_chars'),
                 operation_name=operation_name,
                 api_reference_link=api_reference_link,
@@ -33346,7 +35067,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_data_guard_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_data_guard_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id,
@@ -33357,7 +35078,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -33453,7 +35174,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -33463,7 +35184,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -33558,7 +35279,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_database_software_image got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_database_software_image got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseSoftwareImageId": database_software_image_id
@@ -33568,7 +35289,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -33663,7 +35384,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_db_home got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_db_home got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbHomeId": db_home_id
@@ -33673,7 +35394,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -33772,7 +35493,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_db_node got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_db_node got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbNodeId": db_node_id
@@ -33782,7 +35503,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -33885,7 +35606,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -33895,7 +35616,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -33995,7 +35716,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_exadata_infrastructure got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id
@@ -34005,7 +35726,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -34115,7 +35836,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_exadata_iorm_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_exadata_iorm_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -34125,7 +35846,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -34228,7 +35949,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_container_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalContainerDatabaseId": external_container_database_id
@@ -34238,7 +35959,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -34339,7 +36060,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_database_connector got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_database_connector got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalDatabaseConnectorId": external_database_connector_id
@@ -34349,7 +36070,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -34449,7 +36170,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_non_container_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_non_container_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalNonContainerDatabaseId": external_non_container_database_id
@@ -34459,7 +36180,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -34561,7 +36282,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_external_pluggable_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_external_pluggable_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "externalPluggableDatabaseId": external_pluggable_database_id
@@ -34571,7 +36292,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -34671,7 +36392,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_key_store got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_key_store got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "keyStoreId": key_store_id
@@ -34681,7 +36402,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -34775,7 +36496,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_maintenance_run got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_maintenance_run got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "maintenanceRunId": maintenance_run_id
@@ -34785,7 +36506,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -34884,7 +36605,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_oneoff_patch got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_oneoff_patch got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "oneoffPatchId": oneoff_patch_id
@@ -34894,7 +36615,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -34990,7 +36711,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_pluggable_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_pluggable_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "pluggableDatabaseId": pluggable_database_id
@@ -35000,7 +36721,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -35099,7 +36820,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_vm_cluster got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_vm_cluster got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "vmClusterId": vm_cluster_id
@@ -35109,7 +36830,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -35215,7 +36936,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_vm_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_vm_cluster_network got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id,
@@ -35226,7 +36947,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -35326,7 +37047,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upgrade_database got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upgrade_database got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "databaseId": database_id
@@ -35336,7 +37057,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -35444,7 +37165,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "upgrade_db_system got unknown kwargs: {!r}".format(extra_kwargs))
+                f"upgrade_db_system got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "dbSystemId": db_system_id
@@ -35454,7 +37175,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -35560,7 +37281,7 @@ class DatabaseClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "validate_vm_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
+                f"validate_vm_cluster_network got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "exadataInfrastructureId": exadata_infrastructure_id,
@@ -35571,7 +37292,7 @@ class DatabaseClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

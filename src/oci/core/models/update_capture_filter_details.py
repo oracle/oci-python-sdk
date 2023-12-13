@@ -32,6 +32,10 @@ class UpdateCaptureFilterDetails(object):
             The value to assign to the vtap_capture_filter_rules property of this UpdateCaptureFilterDetails.
         :type vtap_capture_filter_rules: list[oci.core.models.VtapCaptureFilterRuleDetails]
 
+        :param flow_log_capture_filter_rules:
+            The value to assign to the flow_log_capture_filter_rules property of this UpdateCaptureFilterDetails.
+        :type flow_log_capture_filter_rules: list[oci.core.models.FlowLogCaptureFilterRuleDetails]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateCaptureFilterDetails.
         :type freeform_tags: dict(str, str)
@@ -41,6 +45,7 @@ class UpdateCaptureFilterDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'vtap_capture_filter_rules': 'list[VtapCaptureFilterRuleDetails]',
+            'flow_log_capture_filter_rules': 'list[FlowLogCaptureFilterRuleDetails]',
             'freeform_tags': 'dict(str, str)'
         }
 
@@ -48,12 +53,14 @@ class UpdateCaptureFilterDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'vtap_capture_filter_rules': 'vtapCaptureFilterRules',
+            'flow_log_capture_filter_rules': 'flowLogCaptureFilterRules',
             'freeform_tags': 'freeformTags'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._vtap_capture_filter_rules = None
+        self._flow_log_capture_filter_rules = None
         self._freeform_tags = None
 
     @property
@@ -139,6 +146,30 @@ class UpdateCaptureFilterDetails(object):
         :type: list[oci.core.models.VtapCaptureFilterRuleDetails]
         """
         self._vtap_capture_filter_rules = vtap_capture_filter_rules
+
+    @property
+    def flow_log_capture_filter_rules(self):
+        """
+        Gets the flow_log_capture_filter_rules of this UpdateCaptureFilterDetails.
+        The set of rules governing what traffic the VCN flow log collects.
+
+
+        :return: The flow_log_capture_filter_rules of this UpdateCaptureFilterDetails.
+        :rtype: list[oci.core.models.FlowLogCaptureFilterRuleDetails]
+        """
+        return self._flow_log_capture_filter_rules
+
+    @flow_log_capture_filter_rules.setter
+    def flow_log_capture_filter_rules(self, flow_log_capture_filter_rules):
+        """
+        Sets the flow_log_capture_filter_rules of this UpdateCaptureFilterDetails.
+        The set of rules governing what traffic the VCN flow log collects.
+
+
+        :param flow_log_capture_filter_rules: The flow_log_capture_filter_rules of this UpdateCaptureFilterDetails.
+        :type: list[oci.core.models.FlowLogCaptureFilterRuleDetails]
+        """
+        self._flow_log_capture_filter_rules = flow_log_capture_filter_rules
 
     @property
     def freeform_tags(self):

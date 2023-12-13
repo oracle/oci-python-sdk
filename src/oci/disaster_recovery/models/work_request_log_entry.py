@@ -48,7 +48,7 @@ class WorkRequestLogEntry(object):
         **[Required]** Gets the message of this WorkRequestLogEntry.
         A human-readable log message.
 
-        Example: `DR Plan Execution is in progress`
+        Example: `DR plan execution is in progress`
 
 
         :return: The message of this WorkRequestLogEntry.
@@ -62,7 +62,7 @@ class WorkRequestLogEntry(object):
         Sets the message of this WorkRequestLogEntry.
         A human-readable log message.
 
-        Example: `DR Plan Execution is in progress`
+        Example: `DR plan execution is in progress`
 
 
         :param message: The message of this WorkRequestLogEntry.

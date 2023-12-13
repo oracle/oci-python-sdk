@@ -223,8 +223,7 @@ class CreateIPSecConnectionTunnelDetails(object):
         allowed_values = ["BGP", "STATIC", "POLICY"]
         if not value_allowed_none_or_none_sentinel(routing, allowed_values):
             raise ValueError(
-                "Invalid value for `routing`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `routing`, must be None or one of {allowed_values}"
             )
         self._routing = routing
 
@@ -255,8 +254,7 @@ class CreateIPSecConnectionTunnelDetails(object):
         allowed_values = ["V1", "V2"]
         if not value_allowed_none_or_none_sentinel(ike_version, allowed_values):
             raise ValueError(
-                "Invalid value for `ike_version`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `ike_version`, must be None or one of {allowed_values}"
             )
         self._ike_version = ike_version
 
@@ -337,8 +335,7 @@ class CreateIPSecConnectionTunnelDetails(object):
         allowed_values = ["INITIATOR_OR_RESPONDER", "RESPONDER_ONLY"]
         if not value_allowed_none_or_none_sentinel(oracle_initiation, allowed_values):
             raise ValueError(
-                "Invalid value for `oracle_initiation`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `oracle_initiation`, must be None or one of {allowed_values}"
             )
         self._oracle_initiation = oracle_initiation
 
@@ -383,8 +380,7 @@ class CreateIPSecConnectionTunnelDetails(object):
         allowed_values = ["ENABLED", "DISABLED", "AUTO"]
         if not value_allowed_none_or_none_sentinel(nat_translation_enabled, allowed_values):
             raise ValueError(
-                "Invalid value for `nat_translation_enabled`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `nat_translation_enabled`, must be None or one of {allowed_values}"
             )
         self._nat_translation_enabled = nat_translation_enabled
 

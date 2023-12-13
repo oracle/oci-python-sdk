@@ -154,8 +154,7 @@ class UpdateSensitiveColumnDetails(object):
         allowed_values = ["VALID", "INVALID"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             raise ValueError(
-                "Invalid value for `status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `status`, must be None or one of {allowed_values}"
             )
         self._status = status
 
@@ -246,8 +245,7 @@ class UpdateSensitiveColumnDetails(object):
         allowed_values = ["NONE", "APP_DEFINED", "DB_DEFINED"]
         if not value_allowed_none_or_none_sentinel(relation_type, allowed_values):
             raise ValueError(
-                "Invalid value for `relation_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `relation_type`, must be None or one of {allowed_values}"
             )
         self._relation_type = relation_type
 

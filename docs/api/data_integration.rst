@@ -341,6 +341,9 @@ Data Integration
     oci.data_integration.models.ImportRequest
     oci.data_integration.models.ImportRequestSummary
     oci.data_integration.models.ImportRequestSummaryCollection
+    oci.data_integration.models.IncrementalDataEntityClause
+    oci.data_integration.models.IncrementalFieldClause
+    oci.data_integration.models.IncrementalReadConfig
     oci.data_integration.models.InputField
     oci.data_integration.models.InputLink
     oci.data_integration.models.InputPort
@@ -467,6 +470,7 @@ Data Integration
     oci.data_integration.models.Select
     oci.data_integration.models.SensitiveAttribute
     oci.data_integration.models.Shape
+    oci.data_integration.models.ShapeDetails
     oci.data_integration.models.ShapeField
     oci.data_integration.models.Sort
     oci.data_integration.models.SortClause

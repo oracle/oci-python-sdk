@@ -98,8 +98,7 @@ class DocumentDetails(object):
         allowed_values = ["INLINE", "OBJECT_STORAGE"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
-                "Invalid value for `source`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `source`, must be None or one of {allowed_values}"
             )
         self._source = source
 

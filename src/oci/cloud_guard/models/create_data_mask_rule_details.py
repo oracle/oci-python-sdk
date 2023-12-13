@@ -313,8 +313,7 @@ class CreateDataMaskRuleDetails(object):
             for value in data_mask_categories:
                 if not value_allowed_none_or_none_sentinel(value, allowed_values):
                     raise ValueError(
-                        "Invalid value for `data_mask_categories`, must be None or one of {0}"
-                        .format(allowed_values)
+                        f"Invalid value for `data_mask_categories`, must be None or one of {allowed_values}"
                     )
         self._data_mask_categories = data_mask_categories
 
@@ -345,8 +344,7 @@ class CreateDataMaskRuleDetails(object):
         allowed_values = ["ENABLED", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(data_mask_rule_status, allowed_values):
             raise ValueError(
-                "Invalid value for `data_mask_rule_status`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `data_mask_rule_status`, must be None or one of {allowed_values}"
             )
         self._data_mask_rule_status = data_mask_rule_status
 
@@ -377,8 +375,7 @@ class CreateDataMaskRuleDetails(object):
         allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 

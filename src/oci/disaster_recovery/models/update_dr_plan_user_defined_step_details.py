@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDrPlanUserDefinedStepDetails(object):
     """
-    The details for updating a user-defined step in a DR Plan.
+    The details for updating a user-defined step in a DR plan.
     """
 
     #: A constant which can be used with the step_type property of a UpdateDrPlanUserDefinedStepDetails.
@@ -103,12 +103,21 @@ class UpdateDrPlanUserDefinedStepDetails(object):
         **[Required]** Gets the step_type of this UpdateDrPlanUserDefinedStepDetails.
         The type of the user-defined step.
 
-        RUN_OBJECTSTORE_SCRIPT - A step which runs a script stored in Oracle Object Storage Service.
+          **RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A step which performs a precheck on a script stored
+            in OCI object storage.
 
-        RUN_LOCAL_SCRIPT - A step which runs a script that resides locally on a compute instance.
+          **RUN_LOCAL_SCRIPT_PRECHECK** - A step which performs a precheck on a script which resides
+            locally on a compute instance.
 
-        INVOKE_FUNCTION - A step which invokes an Oracle Function.
-          See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
+          **INVOKE_FUNCTION_PRECHECK** - A step which performs a precheck on an OCI function.
+            See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
+
+          **RUN_OBJECTSTORE_SCRIPT** - A step which runs a script stored in OCI object storage.
+
+          **RUN_LOCAL_SCRIPT** - A step which runs a script that resides locally on a compute instance.
+
+          **INVOKE_FUNCTION** - A step which invokes an OCI function.
+            See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
 
         Allowed values for this property are: "RUN_OBJECTSTORE_SCRIPT_PRECHECK", "RUN_LOCAL_SCRIPT_PRECHECK", "INVOKE_FUNCTION_PRECHECK", "RUN_OBJECTSTORE_SCRIPT", "RUN_LOCAL_SCRIPT", "INVOKE_FUNCTION"
 
@@ -124,12 +133,21 @@ class UpdateDrPlanUserDefinedStepDetails(object):
         Sets the step_type of this UpdateDrPlanUserDefinedStepDetails.
         The type of the user-defined step.
 
-        RUN_OBJECTSTORE_SCRIPT - A step which runs a script stored in Oracle Object Storage Service.
+          **RUN_OBJECTSTORE_SCRIPT_PRECHECK** - A step which performs a precheck on a script stored
+            in OCI object storage.
 
-        RUN_LOCAL_SCRIPT - A step which runs a script that resides locally on a compute instance.
+          **RUN_LOCAL_SCRIPT_PRECHECK** - A step which performs a precheck on a script which resides
+            locally on a compute instance.
 
-        INVOKE_FUNCTION - A step which invokes an Oracle Function.
-          See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
+          **INVOKE_FUNCTION_PRECHECK** - A step which performs a precheck on an OCI function.
+            See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
+
+          **RUN_OBJECTSTORE_SCRIPT** - A step which runs a script stored in OCI object storage.
+
+          **RUN_LOCAL_SCRIPT** - A step which runs a script that resides locally on a compute instance.
+
+          **INVOKE_FUNCTION** - A step which invokes an OCI function.
+            See https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm.
 
 
         :param step_type: The step_type of this UpdateDrPlanUserDefinedStepDetails.
@@ -138,8 +156,7 @@ class UpdateDrPlanUserDefinedStepDetails(object):
         allowed_values = ["RUN_OBJECTSTORE_SCRIPT_PRECHECK", "RUN_LOCAL_SCRIPT_PRECHECK", "INVOKE_FUNCTION_PRECHECK", "RUN_OBJECTSTORE_SCRIPT", "RUN_LOCAL_SCRIPT", "INVOKE_FUNCTION"]
         if not value_allowed_none_or_none_sentinel(step_type, allowed_values):
             raise ValueError(
-                "Invalid value for `step_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `step_type`, must be None or one of {allowed_values}"
             )
         self._step_type = step_type
 

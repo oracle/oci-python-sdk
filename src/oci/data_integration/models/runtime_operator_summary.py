@@ -414,7 +414,7 @@ class RuntimeOperatorSummary(object):
     def status(self):
         """
         Gets the status of this RuntimeOperatorSummary.
-        status
+        Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState field instead.
 
         Allowed values for this property are: "NOT_STARTED", "QUEUED", "RUNNING", "TERMINATING", "TERMINATED", "SUCCESS", "ERROR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -429,7 +429,7 @@ class RuntimeOperatorSummary(object):
     def status(self, status):
         """
         Sets the status of this RuntimeOperatorSummary.
-        status
+        Status of RuntimeOperator. This field is deprecated, use RuntimeOperator's executionState field instead.
 
 
         :param status: The status of this RuntimeOperatorSummary.

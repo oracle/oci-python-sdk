@@ -236,8 +236,7 @@ class CreateManagedInstanceGroupDetails(object):
         allowed_values = ["LINUX", "WINDOWS", "ALL"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             raise ValueError(
-                "Invalid value for `os_family`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `os_family`, must be None or one of {allowed_values}"
             )
         self._os_family = os_family
 

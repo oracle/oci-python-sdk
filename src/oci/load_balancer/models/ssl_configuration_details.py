@@ -416,8 +416,7 @@ class SSLConfigurationDetails(object):
         allowed_values = ["ENABLED", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(server_order_preference, allowed_values):
             raise ValueError(
-                "Invalid value for `server_order_preference`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `server_order_preference`, must be None or one of {allowed_values}"
             )
         self._server_order_preference = server_order_preference
 

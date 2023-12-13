@@ -120,7 +120,7 @@ class UnifiedJSONParser(UnifiedAgentParser):
     def time_type(self):
         """
         Gets the time_type of this UnifiedJSONParser.
-        Time type of JSON parser.
+        JSON parser time type.
 
         Allowed values for this property are: "FLOAT", "UNIXTIME", "STRING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -135,7 +135,7 @@ class UnifiedJSONParser(UnifiedAgentParser):
     def time_type(self, time_type):
         """
         Sets the time_type of this UnifiedJSONParser.
-        Time type of JSON parser.
+        JSON parser time type.
 
 
         :param time_type: The time_type of this UnifiedJSONParser.

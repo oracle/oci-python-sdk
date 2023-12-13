@@ -23,7 +23,7 @@ class CreateJavaMessageServiceConnectionDetails(CreateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this CreateJavaMessageServiceConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -54,13 +54,18 @@ class CreateJavaMessageServiceConnectionDetails(CreateConnectionDetails):
             The value to assign to the key_id property of this CreateJavaMessageServiceConnectionDetails.
         :type key_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this CreateJavaMessageServiceConnectionDetails.
+        :type nsg_ids: list[str]
+
         :param subnet_id:
             The value to assign to the subnet_id property of this CreateJavaMessageServiceConnectionDetails.
         :type subnet_id: str
 
-        :param nsg_ids:
-            The value to assign to the nsg_ids property of this CreateJavaMessageServiceConnectionDetails.
-        :type nsg_ids: list[str]
+        :param routing_method:
+            The value to assign to the routing_method property of this CreateJavaMessageServiceConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
 
         :param technology_type:
             The value to assign to the technology_type property of this CreateJavaMessageServiceConnectionDetails.
@@ -106,6 +111,34 @@ class CreateJavaMessageServiceConnectionDetails(CreateConnectionDetails):
             The value to assign to the password property of this CreateJavaMessageServiceConnectionDetails.
         :type password: str
 
+        :param security_protocol:
+            The value to assign to the security_protocol property of this CreateJavaMessageServiceConnectionDetails.
+        :type security_protocol: str
+
+        :param authentication_type:
+            The value to assign to the authentication_type property of this CreateJavaMessageServiceConnectionDetails.
+        :type authentication_type: str
+
+        :param trust_store:
+            The value to assign to the trust_store property of this CreateJavaMessageServiceConnectionDetails.
+        :type trust_store: str
+
+        :param trust_store_password:
+            The value to assign to the trust_store_password property of this CreateJavaMessageServiceConnectionDetails.
+        :type trust_store_password: str
+
+        :param key_store:
+            The value to assign to the key_store property of this CreateJavaMessageServiceConnectionDetails.
+        :type key_store: str
+
+        :param key_store_password:
+            The value to assign to the key_store_password property of this CreateJavaMessageServiceConnectionDetails.
+        :type key_store_password: str
+
+        :param ssl_key_password:
+            The value to assign to the ssl_key_password property of this CreateJavaMessageServiceConnectionDetails.
+        :type ssl_key_password: str
+
         :param private_ip:
             The value to assign to the private_ip property of this CreateJavaMessageServiceConnectionDetails.
         :type private_ip: str
@@ -120,8 +153,9 @@ class CreateJavaMessageServiceConnectionDetails(CreateConnectionDetails):
             'defined_tags': 'dict(str, dict(str, object))',
             'vault_id': 'str',
             'key_id': 'str',
-            'subnet_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'technology_type': 'str',
             'should_use_jndi': 'bool',
             'jndi_connection_factory': 'str',
@@ -133,6 +167,13 @@ class CreateJavaMessageServiceConnectionDetails(CreateConnectionDetails):
             'connection_factory': 'str',
             'username': 'str',
             'password': 'str',
+            'security_protocol': 'str',
+            'authentication_type': 'str',
+            'trust_store': 'str',
+            'trust_store_password': 'str',
+            'key_store': 'str',
+            'key_store_password': 'str',
+            'ssl_key_password': 'str',
             'private_ip': 'str'
         }
 
@@ -145,8 +186,9 @@ class CreateJavaMessageServiceConnectionDetails(CreateConnectionDetails):
             'defined_tags': 'definedTags',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'technology_type': 'technologyType',
             'should_use_jndi': 'shouldUseJndi',
             'jndi_connection_factory': 'jndiConnectionFactory',
@@ -158,6 +200,13 @@ class CreateJavaMessageServiceConnectionDetails(CreateConnectionDetails):
             'connection_factory': 'connectionFactory',
             'username': 'username',
             'password': 'password',
+            'security_protocol': 'securityProtocol',
+            'authentication_type': 'authenticationType',
+            'trust_store': 'trustStore',
+            'trust_store_password': 'trustStorePassword',
+            'key_store': 'keyStore',
+            'key_store_password': 'keyStorePassword',
+            'ssl_key_password': 'sslKeyPassword',
             'private_ip': 'privateIp'
         }
 
@@ -169,8 +218,9 @@ class CreateJavaMessageServiceConnectionDetails(CreateConnectionDetails):
         self._defined_tags = None
         self._vault_id = None
         self._key_id = None
-        self._subnet_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._technology_type = None
         self._should_use_jndi = None
         self._jndi_connection_factory = None
@@ -182,6 +232,13 @@ class CreateJavaMessageServiceConnectionDetails(CreateConnectionDetails):
         self._connection_factory = None
         self._username = None
         self._password = None
+        self._security_protocol = None
+        self._authentication_type = None
+        self._trust_store = None
+        self._trust_store_password = None
+        self._key_store = None
+        self._key_store_password = None
+        self._ssl_key_password = None
         self._private_ip = None
         self._connection_type = 'JAVA_MESSAGE_SERVICE'
 
@@ -468,9 +525,186 @@ class CreateJavaMessageServiceConnectionDetails(CreateConnectionDetails):
         self._password = password
 
     @property
+    def security_protocol(self):
+        """
+        Gets the security_protocol of this CreateJavaMessageServiceConnectionDetails.
+        Security protocol for Java Message Service. If not provided, default is PLAIN.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :return: The security_protocol of this CreateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._security_protocol
+
+    @security_protocol.setter
+    def security_protocol(self, security_protocol):
+        """
+        Sets the security_protocol of this CreateJavaMessageServiceConnectionDetails.
+        Security protocol for Java Message Service. If not provided, default is PLAIN.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :param security_protocol: The security_protocol of this CreateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._security_protocol = security_protocol
+
+    @property
+    def authentication_type(self):
+        """
+        Gets the authentication_type of this CreateJavaMessageServiceConnectionDetails.
+        Authentication type for Java Message Service.  If not provided, default is NONE.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :return: The authentication_type of this CreateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._authentication_type
+
+    @authentication_type.setter
+    def authentication_type(self, authentication_type):
+        """
+        Sets the authentication_type of this CreateJavaMessageServiceConnectionDetails.
+        Authentication type for Java Message Service.  If not provided, default is NONE.
+        Optional until 2024-06-27, in the release after it will be made required.
+
+
+        :param authentication_type: The authentication_type of this CreateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._authentication_type = authentication_type
+
+    @property
+    def trust_store(self):
+        """
+        Gets the trust_store of this CreateJavaMessageServiceConnectionDetails.
+        The base64 encoded content of the TrustStore file.
+
+
+        :return: The trust_store of this CreateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._trust_store
+
+    @trust_store.setter
+    def trust_store(self, trust_store):
+        """
+        Sets the trust_store of this CreateJavaMessageServiceConnectionDetails.
+        The base64 encoded content of the TrustStore file.
+
+
+        :param trust_store: The trust_store of this CreateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._trust_store = trust_store
+
+    @property
+    def trust_store_password(self):
+        """
+        Gets the trust_store_password of this CreateJavaMessageServiceConnectionDetails.
+        The TrustStore password.
+
+
+        :return: The trust_store_password of this CreateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._trust_store_password
+
+    @trust_store_password.setter
+    def trust_store_password(self, trust_store_password):
+        """
+        Sets the trust_store_password of this CreateJavaMessageServiceConnectionDetails.
+        The TrustStore password.
+
+
+        :param trust_store_password: The trust_store_password of this CreateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._trust_store_password = trust_store_password
+
+    @property
+    def key_store(self):
+        """
+        Gets the key_store of this CreateJavaMessageServiceConnectionDetails.
+        The base64 encoded content of the KeyStore file.
+
+
+        :return: The key_store of this CreateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._key_store
+
+    @key_store.setter
+    def key_store(self, key_store):
+        """
+        Sets the key_store of this CreateJavaMessageServiceConnectionDetails.
+        The base64 encoded content of the KeyStore file.
+
+
+        :param key_store: The key_store of this CreateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._key_store = key_store
+
+    @property
+    def key_store_password(self):
+        """
+        Gets the key_store_password of this CreateJavaMessageServiceConnectionDetails.
+        The KeyStore password.
+
+
+        :return: The key_store_password of this CreateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._key_store_password
+
+    @key_store_password.setter
+    def key_store_password(self, key_store_password):
+        """
+        Sets the key_store_password of this CreateJavaMessageServiceConnectionDetails.
+        The KeyStore password.
+
+
+        :param key_store_password: The key_store_password of this CreateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._key_store_password = key_store_password
+
+    @property
+    def ssl_key_password(self):
+        """
+        Gets the ssl_key_password of this CreateJavaMessageServiceConnectionDetails.
+        The password for the cert inside of the KeyStore.
+        In case it differs from the KeyStore password, it should be provided.
+
+
+        :return: The ssl_key_password of this CreateJavaMessageServiceConnectionDetails.
+        :rtype: str
+        """
+        return self._ssl_key_password
+
+    @ssl_key_password.setter
+    def ssl_key_password(self, ssl_key_password):
+        """
+        Sets the ssl_key_password of this CreateJavaMessageServiceConnectionDetails.
+        The password for the cert inside of the KeyStore.
+        In case it differs from the KeyStore password, it should be provided.
+
+
+        :param ssl_key_password: The ssl_key_password of this CreateJavaMessageServiceConnectionDetails.
+        :type: str
+        """
+        self._ssl_key_password = ssl_key_password
+
+    @property
     def private_ip(self):
         """
         Gets the private_ip of this CreateJavaMessageServiceConnectionDetails.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.
@@ -487,6 +721,9 @@ class CreateJavaMessageServiceConnectionDetails(CreateConnectionDetails):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this CreateJavaMessageServiceConnectionDetails.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.

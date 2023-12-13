@@ -89,6 +89,10 @@ class UpdateInstanceDetails(object):
             The value to assign to the time_maintenance_reboot_due property of this UpdateInstanceDetails.
         :type time_maintenance_reboot_due: datetime
 
+        :param dedicated_vm_host_id:
+            The value to assign to the dedicated_vm_host_id property of this UpdateInstanceDetails.
+        :type dedicated_vm_host_id: str
+
         """
         self.swagger_types = {
             'capacity_reservation_id': 'str',
@@ -105,7 +109,8 @@ class UpdateInstanceDetails(object):
             'fault_domain': 'str',
             'launch_options': 'UpdateLaunchOptions',
             'availability_config': 'UpdateInstanceAvailabilityConfigDetails',
-            'time_maintenance_reboot_due': 'datetime'
+            'time_maintenance_reboot_due': 'datetime',
+            'dedicated_vm_host_id': 'str'
         }
 
         self.attribute_map = {
@@ -123,7 +128,8 @@ class UpdateInstanceDetails(object):
             'fault_domain': 'faultDomain',
             'launch_options': 'launchOptions',
             'availability_config': 'availabilityConfig',
-            'time_maintenance_reboot_due': 'timeMaintenanceRebootDue'
+            'time_maintenance_reboot_due': 'timeMaintenanceRebootDue',
+            'dedicated_vm_host_id': 'dedicatedVmHostId'
         }
 
         self._capacity_reservation_id = None
@@ -141,6 +147,7 @@ class UpdateInstanceDetails(object):
         self._launch_options = None
         self._availability_config = None
         self._time_maintenance_reboot_due = None
+        self._dedicated_vm_host_id = None
 
     @property
     def capacity_reservation_id(self):
@@ -503,8 +510,7 @@ class UpdateInstanceDetails(object):
         allowed_values = ["ALLOW_DOWNTIME", "AVOID_DOWNTIME"]
         if not value_allowed_none_or_none_sentinel(update_operation_constraint, allowed_values):
             raise ValueError(
-                "Invalid value for `update_operation_constraint`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `update_operation_constraint`, must be None or one of {allowed_values}"
             )
         self._update_operation_constraint = update_operation_constraint
 
@@ -673,6 +679,36 @@ class UpdateInstanceDetails(object):
         :type: datetime
         """
         self._time_maintenance_reboot_due = time_maintenance_reboot_due
+
+    @property
+    def dedicated_vm_host_id(self):
+        """
+        Gets the dedicated_vm_host_id of this UpdateInstanceDetails.
+        The OCID of the dedicated virtual machine host to place the instance on.
+        Supported only if this VM instance was already placed on a dedicated virtual machine host
+        - that is, you can't move an instance from on-demand capacity to dedicated capacity,
+        nor can you move an instance from dedicated capacity to on-demand capacity.
+
+
+        :return: The dedicated_vm_host_id of this UpdateInstanceDetails.
+        :rtype: str
+        """
+        return self._dedicated_vm_host_id
+
+    @dedicated_vm_host_id.setter
+    def dedicated_vm_host_id(self, dedicated_vm_host_id):
+        """
+        Sets the dedicated_vm_host_id of this UpdateInstanceDetails.
+        The OCID of the dedicated virtual machine host to place the instance on.
+        Supported only if this VM instance was already placed on a dedicated virtual machine host
+        - that is, you can't move an instance from on-demand capacity to dedicated capacity,
+        nor can you move an instance from dedicated capacity to on-demand capacity.
+
+
+        :param dedicated_vm_host_id: The dedicated_vm_host_id of this UpdateInstanceDetails.
+        :type: str
+        """
+        self._dedicated_vm_host_id = dedicated_vm_host_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

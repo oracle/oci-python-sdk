@@ -148,8 +148,7 @@ class UpdateAnalyticsInstanceDetails(object):
         allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
         if not value_allowed_none_or_none_sentinel(license_type, allowed_values):
             raise ValueError(
-                "Invalid value for `license_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `license_type`, must be None or one of {allowed_values}"
             )
         self._license_type = license_type
 

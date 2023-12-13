@@ -44,6 +44,18 @@ class WorkRequest(object):
     OPERATION_TYPE_ADD_SOURCES_TO_AGENT = "ADD_SOURCES_TO_AGENT"
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ENABLE_METRIC_EXTENSION"
+    OPERATION_TYPE_ENABLE_METRIC_EXTENSION = "ENABLE_METRIC_EXTENSION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DISABLE_METRIC_EXTENSION"
+    OPERATION_TYPE_DISABLE_METRIC_EXTENSION = "DISABLE_METRIC_EXTENSION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "TEST_METRIC_EXTENSION"
+    OPERATION_TYPE_TEST_METRIC_EXTENSION = "TEST_METRIC_EXTENSION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "BULK_ADD_RESOURCES"
     OPERATION_TYPE_BULK_ADD_RESOURCES = "BULK_ADD_RESOURCES"
 
@@ -54,6 +66,10 @@ class WorkRequest(object):
     #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "UPDATE_AND_PROPAGATE_TAGS"
     OPERATION_TYPE_UPDATE_AND_PROPAGATE_TAGS = "UPDATE_AND_PROPAGATE_TAGS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "IMPORT_RESOURCES"
+    OPERATION_TYPE_IMPORT_RESOURCES = "IMPORT_RESOURCES"
 
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
@@ -90,7 +106,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "BULK_ADD_RESOURCES", "BULK_DELETE_RESOURCES", "UPDATE_AND_PROPAGATE_TAGS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "ENABLE_METRIC_EXTENSION", "DISABLE_METRIC_EXTENSION", "TEST_METRIC_EXTENSION", "BULK_ADD_RESOURCES", "BULK_DELETE_RESOURCES", "UPDATE_AND_PROPAGATE_TAGS", "IMPORT_RESOURCES", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -169,7 +185,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         Type of the work request
 
-        Allowed values for this property are: "CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "BULK_ADD_RESOURCES", "BULK_DELETE_RESOURCES", "UPDATE_AND_PROPAGATE_TAGS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "ENABLE_METRIC_EXTENSION", "DISABLE_METRIC_EXTENSION", "TEST_METRIC_EXTENSION", "BULK_ADD_RESOURCES", "BULK_DELETE_RESOURCES", "UPDATE_AND_PROPAGATE_TAGS", "IMPORT_RESOURCES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -188,7 +204,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "BULK_ADD_RESOURCES", "BULK_DELETE_RESOURCES", "UPDATE_AND_PROPAGATE_TAGS"]
+        allowed_values = ["CREATE_RESOURCES", "UPDATE_RESOURCES", "DELETE_RESOURCES", "MOVE_RESOURCES", "ENABLE_EXTERNAL_DATABASE", "DISABLE_EXTERNAL_DATABASE", "ADD_SOURCES_TO_AGENT", "ENABLE_METRIC_EXTENSION", "DISABLE_METRIC_EXTENSION", "TEST_METRIC_EXTENSION", "BULK_ADD_RESOURCES", "BULK_DELETE_RESOURCES", "UPDATE_AND_PROPAGATE_TAGS", "IMPORT_RESOURCES"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

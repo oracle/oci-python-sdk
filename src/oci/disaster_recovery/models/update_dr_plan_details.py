@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDrPlanDetails(object):
     """
-    The details for updating a DR Plan.
+    The details for updating a DR plan.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class UpdateDrPlanDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateDrPlanDetails.
-        The display name of the DR Plan being updated.
+        The display name of the DR plan being updated.
 
         Example: `EBS Switchover PHX to IAD`
 
@@ -74,7 +74,7 @@ class UpdateDrPlanDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateDrPlanDetails.
-        The display name of the DR Plan being updated.
+        The display name of the DR plan being updated.
 
         Example: `EBS Switchover PHX to IAD`
 
@@ -88,7 +88,7 @@ class UpdateDrPlanDetails(object):
     def plan_groups(self):
         """
         Gets the plan_groups of this UpdateDrPlanDetails.
-        An ordered list of plan groups in a DR Plan.
+        An ordered list of groups in a DR plan.
 
 
         :return: The plan_groups of this UpdateDrPlanDetails.
@@ -100,7 +100,7 @@ class UpdateDrPlanDetails(object):
     def plan_groups(self, plan_groups):
         """
         Sets the plan_groups of this UpdateDrPlanDetails.
-        An ordered list of plan groups in a DR Plan.
+        An ordered list of groups in a DR plan.
 
 
         :param plan_groups: The plan_groups of this UpdateDrPlanDetails.
@@ -113,6 +113,7 @@ class UpdateDrPlanDetails(object):
         """
         Gets the freeform_tags of this UpdateDrPlanDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -126,6 +127,7 @@ class UpdateDrPlanDetails(object):
         """
         Sets the freeform_tags of this UpdateDrPlanDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -139,6 +141,7 @@ class UpdateDrPlanDetails(object):
         """
         Gets the defined_tags of this UpdateDrPlanDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
@@ -152,6 +155,7 @@ class UpdateDrPlanDetails(object):
         """
         Sets the defined_tags of this UpdateDrPlanDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 

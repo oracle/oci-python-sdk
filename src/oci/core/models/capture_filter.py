@@ -43,6 +43,10 @@ class CaptureFilter(object):
     #: This constant has a value of "VTAP"
     FILTER_TYPE_VTAP = "VTAP"
 
+    #: A constant which can be used with the filter_type property of a CaptureFilter.
+    #: This constant has a value of "FLOWLOG"
+    FILTER_TYPE_FLOWLOG = "FLOWLOG"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CaptureFilter object with values from keyword arguments.
@@ -76,7 +80,7 @@ class CaptureFilter(object):
 
         :param filter_type:
             The value to assign to the filter_type property of this CaptureFilter.
-            Allowed values for this property are: "VTAP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VTAP", "FLOWLOG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type filter_type: str
 
@@ -88,6 +92,10 @@ class CaptureFilter(object):
             The value to assign to the vtap_capture_filter_rules property of this CaptureFilter.
         :type vtap_capture_filter_rules: list[oci.core.models.VtapCaptureFilterRuleDetails]
 
+        :param flow_log_capture_filter_rules:
+            The value to assign to the flow_log_capture_filter_rules property of this CaptureFilter.
+        :type flow_log_capture_filter_rules: list[oci.core.models.FlowLogCaptureFilterRuleDetails]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -98,7 +106,8 @@ class CaptureFilter(object):
             'lifecycle_state': 'str',
             'filter_type': 'str',
             'time_created': 'datetime',
-            'vtap_capture_filter_rules': 'list[VtapCaptureFilterRuleDetails]'
+            'vtap_capture_filter_rules': 'list[VtapCaptureFilterRuleDetails]',
+            'flow_log_capture_filter_rules': 'list[FlowLogCaptureFilterRuleDetails]'
         }
 
         self.attribute_map = {
@@ -110,7 +119,8 @@ class CaptureFilter(object):
             'lifecycle_state': 'lifecycleState',
             'filter_type': 'filterType',
             'time_created': 'timeCreated',
-            'vtap_capture_filter_rules': 'vtapCaptureFilterRules'
+            'vtap_capture_filter_rules': 'vtapCaptureFilterRules',
+            'flow_log_capture_filter_rules': 'flowLogCaptureFilterRules'
         }
 
         self._compartment_id = None
@@ -122,6 +132,7 @@ class CaptureFilter(object):
         self._filter_type = None
         self._time_created = None
         self._vtap_capture_filter_rules = None
+        self._flow_log_capture_filter_rules = None
 
     @property
     def compartment_id(self):
@@ -309,7 +320,7 @@ class CaptureFilter(object):
         Gets the filter_type of this CaptureFilter.
         Indicates which service will use this capture filter
 
-        Allowed values for this property are: "VTAP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VTAP", "FLOWLOG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -328,7 +339,7 @@ class CaptureFilter(object):
         :param filter_type: The filter_type of this CaptureFilter.
         :type: str
         """
-        allowed_values = ["VTAP"]
+        allowed_values = ["VTAP", "FLOWLOG"]
         if not value_allowed_none_or_none_sentinel(filter_type, allowed_values):
             filter_type = 'UNKNOWN_ENUM_VALUE'
         self._filter_type = filter_type
@@ -388,6 +399,30 @@ class CaptureFilter(object):
         :type: list[oci.core.models.VtapCaptureFilterRuleDetails]
         """
         self._vtap_capture_filter_rules = vtap_capture_filter_rules
+
+    @property
+    def flow_log_capture_filter_rules(self):
+        """
+        Gets the flow_log_capture_filter_rules of this CaptureFilter.
+        The set of rules governing what traffic the VCN flow log collects.
+
+
+        :return: The flow_log_capture_filter_rules of this CaptureFilter.
+        :rtype: list[oci.core.models.FlowLogCaptureFilterRuleDetails]
+        """
+        return self._flow_log_capture_filter_rules
+
+    @flow_log_capture_filter_rules.setter
+    def flow_log_capture_filter_rules(self, flow_log_capture_filter_rules):
+        """
+        Sets the flow_log_capture_filter_rules of this CaptureFilter.
+        The set of rules governing what traffic the VCN flow log collects.
+
+
+        :param flow_log_capture_filter_rules: The flow_log_capture_filter_rules of this CaptureFilter.
+        :type: list[oci.core.models.FlowLogCaptureFilterRuleDetails]
+        """
+        self._flow_log_capture_filter_rules = flow_log_capture_filter_rules
 
     def __repr__(self):
         return formatted_flat_dict(self)

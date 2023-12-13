@@ -112,6 +112,10 @@ class MyAuthenticationFactorsRemover(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
+        :param token:
+            The value to assign to the token property of this MyAuthenticationFactorsRemover.
+        :type token: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -128,7 +132,8 @@ class MyAuthenticationFactorsRemover(object):
             'compartment_ocid': 'str',
             'tenancy_ocid': 'str',
             'user': 'MyAuthenticationFactorsRemoverUser',
-            'type': 'str'
+            'type': 'str',
+            'token': 'str'
         }
 
         self.attribute_map = {
@@ -146,7 +151,8 @@ class MyAuthenticationFactorsRemover(object):
             'compartment_ocid': 'compartmentOcid',
             'tenancy_ocid': 'tenancyOcid',
             'user': 'user',
-            'type': 'type'
+            'type': 'type',
+            'token': 'token'
         }
 
         self._id = None
@@ -164,6 +170,7 @@ class MyAuthenticationFactorsRemover(object):
         self._tenancy_ocid = None
         self._user = None
         self._type = None
+        self._token = None
 
     @property
     def id(self):
@@ -736,6 +743,48 @@ class MyAuthenticationFactorsRemover(object):
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
+
+    @property
+    def token(self):
+        """
+        Gets the token of this MyAuthenticationFactorsRemover.
+        Specifies the token to be removed
+
+        **SCIM++ Properties:**
+         - type: string
+         - multiValued: false
+         - required: false
+         - mutability: readWrite
+         - returned: request
+         - uniqueness: none
+         - idcsSearchable: false
+
+
+        :return: The token of this MyAuthenticationFactorsRemover.
+        :rtype: str
+        """
+        return self._token
+
+    @token.setter
+    def token(self, token):
+        """
+        Sets the token of this MyAuthenticationFactorsRemover.
+        Specifies the token to be removed
+
+        **SCIM++ Properties:**
+         - type: string
+         - multiValued: false
+         - required: false
+         - mutability: readWrite
+         - returned: request
+         - uniqueness: none
+         - idcsSearchable: false
+
+
+        :param token: The token of this MyAuthenticationFactorsRemover.
+        :type: str
+        """
+        self._token = token
 
     def __repr__(self):
         return formatted_flat_dict(self)

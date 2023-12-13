@@ -67,8 +67,7 @@ class GenerateSensitiveDataModelForDownloadDetails(object):
         allowed_values = ["XML"]
         if not value_allowed_none_or_none_sentinel(data_model_format, allowed_values):
             raise ValueError(
-                "Invalid value for `data_model_format`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `data_model_format`, must be None or one of {allowed_values}"
             )
         self._data_model_format = data_model_format
 

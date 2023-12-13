@@ -23,7 +23,7 @@ class KafkaSchemaRegistryConnectionSummary(ConnectionSummary):
 
         :param connection_type:
             The value to assign to the connection_type property of this KafkaSchemaRegistryConnectionSummary.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param id:
@@ -78,10 +78,6 @@ class KafkaSchemaRegistryConnectionSummary(ConnectionSummary):
             The value to assign to the key_id property of this KafkaSchemaRegistryConnectionSummary.
         :type key_id: str
 
-        :param subnet_id:
-            The value to assign to the subnet_id property of this KafkaSchemaRegistryConnectionSummary.
-        :type subnet_id: str
-
         :param ingress_ips:
             The value to assign to the ingress_ips property of this KafkaSchemaRegistryConnectionSummary.
         :type ingress_ips: list[oci.golden_gate.models.IngressIpDetails]
@@ -89,6 +85,15 @@ class KafkaSchemaRegistryConnectionSummary(ConnectionSummary):
         :param nsg_ids:
             The value to assign to the nsg_ids property of this KafkaSchemaRegistryConnectionSummary.
         :type nsg_ids: list[str]
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this KafkaSchemaRegistryConnectionSummary.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this KafkaSchemaRegistryConnectionSummary.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
 
         :param technology_type:
             The value to assign to the technology_type property of this KafkaSchemaRegistryConnectionSummary.
@@ -126,9 +131,10 @@ class KafkaSchemaRegistryConnectionSummary(ConnectionSummary):
             'time_updated': 'datetime',
             'vault_id': 'str',
             'key_id': 'str',
-            'subnet_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'technology_type': 'str',
             'url': 'str',
             'authentication_type': 'str',
@@ -151,9 +157,10 @@ class KafkaSchemaRegistryConnectionSummary(ConnectionSummary):
             'time_updated': 'timeUpdated',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'subnet_id': 'subnetId',
             'ingress_ips': 'ingressIps',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'technology_type': 'technologyType',
             'url': 'url',
             'authentication_type': 'authenticationType',
@@ -175,9 +182,10 @@ class KafkaSchemaRegistryConnectionSummary(ConnectionSummary):
         self._time_updated = None
         self._vault_id = None
         self._key_id = None
-        self._subnet_id = None
         self._ingress_ips = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._technology_type = None
         self._url = None
         self._authentication_type = None
@@ -289,6 +297,9 @@ class KafkaSchemaRegistryConnectionSummary(ConnectionSummary):
     def private_ip(self):
         """
         Gets the private_ip of this KafkaSchemaRegistryConnectionSummary.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.
@@ -305,6 +316,9 @@ class KafkaSchemaRegistryConnectionSummary(ConnectionSummary):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this KafkaSchemaRegistryConnectionSummary.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.

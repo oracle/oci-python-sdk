@@ -23,7 +23,7 @@ class UpdateAmazonS3ConnectionDetails(UpdateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateAmazonS3ConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -54,6 +54,15 @@ class UpdateAmazonS3ConnectionDetails(UpdateConnectionDetails):
             The value to assign to the nsg_ids property of this UpdateAmazonS3ConnectionDetails.
         :type nsg_ids: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateAmazonS3ConnectionDetails.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this UpdateAmazonS3ConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         :param access_key_id:
             The value to assign to the access_key_id property of this UpdateAmazonS3ConnectionDetails.
         :type access_key_id: str
@@ -72,6 +81,8 @@ class UpdateAmazonS3ConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'access_key_id': 'str',
             'secret_access_key': 'str'
         }
@@ -85,6 +96,8 @@ class UpdateAmazonS3ConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'access_key_id': 'accessKeyId',
             'secret_access_key': 'secretAccessKey'
         }
@@ -97,6 +110,8 @@ class UpdateAmazonS3ConnectionDetails(UpdateConnectionDetails):
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._access_key_id = None
         self._secret_access_key = None
         self._connection_type = 'AMAZON_S3'

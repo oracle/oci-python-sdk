@@ -97,8 +97,7 @@ class MaintenancePolicy(object):
         allowed_values = ["ENABLED", "DISABLED", "NONE"]
         if not value_allowed_none_or_none_sentinel(monthly_patching_override, allowed_values):
             raise ValueError(
-                "Invalid value for `monthly_patching_override`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `monthly_patching_override`, must be None or one of {allowed_values}"
             )
         self._monthly_patching_override = monthly_patching_override
 
@@ -129,8 +128,7 @@ class MaintenancePolicy(object):
         allowed_values = ["PROD", "NON_PROD", "NONE"]
         if not value_allowed_none_or_none_sentinel(environment_maintenance_override, allowed_values):
             raise ValueError(
-                "Invalid value for `environment_maintenance_override`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `environment_maintenance_override`, must be None or one of {allowed_values}"
             )
         self._environment_maintenance_override = environment_maintenance_override
 

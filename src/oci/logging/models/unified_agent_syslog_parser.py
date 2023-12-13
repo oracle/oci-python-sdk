@@ -182,7 +182,7 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def rfc5424_time_format(self):
         """
         Gets the rfc5424_time_format of this UnifiedAgentSyslogParser.
-        rfc5424 time format.
+        RFC 5424 time format.
 
 
         :return: The rfc5424_time_format of this UnifiedAgentSyslogParser.
@@ -194,7 +194,7 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def rfc5424_time_format(self, rfc5424_time_format):
         """
         Sets the rfc5424_time_format of this UnifiedAgentSyslogParser.
-        rfc5424 time format.
+        RFC 5424 time format.
 
 
         :param rfc5424_time_format: The rfc5424_time_format of this UnifiedAgentSyslogParser.
@@ -206,7 +206,7 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def message_format(self):
         """
         Gets the message_format of this UnifiedAgentSyslogParser.
-        Message format of syslog.
+        Syslog message format.
 
         Allowed values for this property are: "RFC3164", "RFC5424", "AUTO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -221,7 +221,7 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def message_format(self, message_format):
         """
         Sets the message_format of this UnifiedAgentSyslogParser.
-        Message format of syslog.
+        Syslog message format.
 
 
         :param message_format: The message_format of this UnifiedAgentSyslogParser.
@@ -236,7 +236,7 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def is_with_priority(self):
         """
         Gets the is_with_priority of this UnifiedAgentSyslogParser.
-        With priority or not.
+        Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
 
 
         :return: The is_with_priority of this UnifiedAgentSyslogParser.
@@ -248,7 +248,7 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def is_with_priority(self, is_with_priority):
         """
         Sets the is_with_priority of this UnifiedAgentSyslogParser.
-        With priority or not.
+        Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
 
 
         :param is_with_priority: The is_with_priority of this UnifiedAgentSyslogParser.
@@ -260,7 +260,7 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def is_support_colonless_ident(self):
         """
         Gets the is_support_colonless_ident of this UnifiedAgentSyslogParser.
-        Support colonless ident or not.
+        Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
 
 
         :return: The is_support_colonless_ident of this UnifiedAgentSyslogParser.
@@ -272,7 +272,7 @@ class UnifiedAgentSyslogParser(UnifiedAgentParser):
     def is_support_colonless_ident(self, is_support_colonless_ident):
         """
         Sets the is_support_colonless_ident of this UnifiedAgentSyslogParser.
-        Support colonless ident or not.
+        Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
 
 
         :param is_support_colonless_ident: The is_support_colonless_ident of this UnifiedAgentSyslogParser.

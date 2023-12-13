@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrProtectionGroupCollection(object):
     """
-    A list of DR Protection Groups.
+    A list of DR protection group summaries.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class DrProtectionGroupCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DrProtectionGroupCollection.
-        A list of DR Protection Group summary objects.
+        A list of DR protection group summaries.
 
 
         :return: The items of this DrProtectionGroupCollection.
@@ -51,7 +51,7 @@ class DrProtectionGroupCollection(object):
     def items(self, items):
         """
         Sets the items of this DrProtectionGroupCollection.
-        A list of DR Protection Group summary objects.
+        A list of DR protection group summaries.
 
 
         :param items: The items of this DrProtectionGroupCollection.

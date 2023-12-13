@@ -92,8 +92,7 @@ class ExadataIormConfigUpdateDetails(object):
         allowed_values = ["LOW_LATENCY", "HIGH_THROUGHPUT", "BALANCED", "AUTO", "BASIC"]
         if not value_allowed_none_or_none_sentinel(objective, allowed_values):
             raise ValueError(
-                "Invalid value for `objective`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `objective`, must be None or one of {allowed_values}"
             )
         self._objective = objective
 

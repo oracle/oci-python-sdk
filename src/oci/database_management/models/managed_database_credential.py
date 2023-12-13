@@ -115,8 +115,7 @@ class ManagedDatabaseCredential(object):
         allowed_values = ["SECRET", "PASSWORD"]
         if not value_allowed_none_or_none_sentinel(credential_type, allowed_values):
             raise ValueError(
-                "Invalid value for `credential_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `credential_type`, must be None or one of {allowed_values}"
             )
         self._credential_type = credential_type
 
@@ -171,8 +170,7 @@ class ManagedDatabaseCredential(object):
         allowed_values = ["NORMAL", "SYSDBA"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             raise ValueError(
-                "Invalid value for `role`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `role`, must be None or one of {allowed_values}"
             )
         self._role = role
 

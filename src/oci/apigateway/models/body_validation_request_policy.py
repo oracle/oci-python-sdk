@@ -177,8 +177,7 @@ class BodyValidationRequestPolicy(object):
         allowed_values = ["ENFORCING", "PERMISSIVE", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(validation_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `validation_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `validation_mode`, must be None or one of {allowed_values}"
             )
         self._validation_mode = validation_mode
 

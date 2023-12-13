@@ -106,6 +106,10 @@ class CreateTaskDetails(object):
             The value to assign to the config_provider_delegate property of this CreateTaskDetails.
         :type config_provider_delegate: oci.data_integration.models.CreateConfigProvider
 
+        :param is_concurrent_allowed:
+            The value to assign to the is_concurrent_allowed property of this CreateTaskDetails.
+        :type is_concurrent_allowed: bool
+
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateTaskDetails.
         :type registry_metadata: oci.data_integration.models.RegistryMetadata
@@ -125,6 +129,7 @@ class CreateTaskDetails(object):
             'parameters': 'list[Parameter]',
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'CreateConfigProvider',
+            'is_concurrent_allowed': 'bool',
             'registry_metadata': 'RegistryMetadata'
         }
 
@@ -142,6 +147,7 @@ class CreateTaskDetails(object):
             'parameters': 'parameters',
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
+            'is_concurrent_allowed': 'isConcurrentAllowed',
             'registry_metadata': 'registryMetadata'
         }
 
@@ -158,6 +164,7 @@ class CreateTaskDetails(object):
         self._parameters = None
         self._op_config_values = None
         self._config_provider_delegate = None
+        self._is_concurrent_allowed = None
         self._registry_metadata = None
 
     @staticmethod
@@ -215,8 +222,7 @@ class CreateTaskDetails(object):
         allowed_values = ["INTEGRATION_TASK", "DATA_LOADER_TASK", "PIPELINE_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "REST_TASK"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
-                "Invalid value for `model_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `model_type`, must be None or one of {allowed_values}"
             )
         self._model_type = model_type
 
@@ -495,6 +501,30 @@ class CreateTaskDetails(object):
         :type: oci.data_integration.models.CreateConfigProvider
         """
         self._config_provider_delegate = config_provider_delegate
+
+    @property
+    def is_concurrent_allowed(self):
+        """
+        Gets the is_concurrent_allowed of this CreateTaskDetails.
+        Whether the same task can be executed concurrently.
+
+
+        :return: The is_concurrent_allowed of this CreateTaskDetails.
+        :rtype: bool
+        """
+        return self._is_concurrent_allowed
+
+    @is_concurrent_allowed.setter
+    def is_concurrent_allowed(self, is_concurrent_allowed):
+        """
+        Sets the is_concurrent_allowed of this CreateTaskDetails.
+        Whether the same task can be executed concurrently.
+
+
+        :param is_concurrent_allowed: The is_concurrent_allowed of this CreateTaskDetails.
+        :type: bool
+        """
+        self._is_concurrent_allowed = is_concurrent_allowed
 
     @property
     def registry_metadata(self):

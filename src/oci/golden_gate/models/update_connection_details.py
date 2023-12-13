@@ -79,15 +79,61 @@ class UpdateConnectionDetails(object):
     #: This constant has a value of "MONGODB"
     CONNECTION_TYPE_MONGODB = "MONGODB"
 
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "AMAZON_KINESIS"
+    CONNECTION_TYPE_AMAZON_KINESIS = "AMAZON_KINESIS"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "AMAZON_REDSHIFT"
+    CONNECTION_TYPE_AMAZON_REDSHIFT = "AMAZON_REDSHIFT"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "REDIS"
+    CONNECTION_TYPE_REDIS = "REDIS"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "ELASTICSEARCH"
+    CONNECTION_TYPE_ELASTICSEARCH = "ELASTICSEARCH"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "GENERIC"
+    CONNECTION_TYPE_GENERIC = "GENERIC"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "GOOGLE_CLOUD_STORAGE"
+    CONNECTION_TYPE_GOOGLE_CLOUD_STORAGE = "GOOGLE_CLOUD_STORAGE"
+
+    #: A constant which can be used with the connection_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "GOOGLE_BIGQUERY"
+    CONNECTION_TYPE_GOOGLE_BIGQUERY = "GOOGLE_BIGQUERY"
+
+    #: A constant which can be used with the routing_method property of a UpdateConnectionDetails.
+    #: This constant has a value of "SHARED_SERVICE_ENDPOINT"
+    ROUTING_METHOD_SHARED_SERVICE_ENDPOINT = "SHARED_SERVICE_ENDPOINT"
+
+    #: A constant which can be used with the routing_method property of a UpdateConnectionDetails.
+    #: This constant has a value of "SHARED_DEPLOYMENT_ENDPOINT"
+    ROUTING_METHOD_SHARED_DEPLOYMENT_ENDPOINT = "SHARED_DEPLOYMENT_ENDPOINT"
+
+    #: A constant which can be used with the routing_method property of a UpdateConnectionDetails.
+    #: This constant has a value of "DEDICATED_ENDPOINT"
+    ROUTING_METHOD_DEDICATED_ENDPOINT = "DEDICATED_ENDPOINT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.golden_gate.models.UpdateElasticsearchConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateGoogleBigQueryConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateOracleConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateAmazonRedshiftConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateOciObjectStorageConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateRedisConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateMongoDbConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateGoogleCloudStorageConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateAzureDataLakeStorageConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateAmazonKinesisConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateJavaMessageServiceConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateGoldenGateConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdatePostgresqlConnectionDetails`
@@ -99,13 +145,14 @@ class UpdateConnectionDetails(object):
         * :class:`~oci.golden_gate.models.UpdateHdfsConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateMysqlConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateKafkaConnectionDetails`
+        * :class:`~oci.golden_gate.models.UpdateGenericConnectionDetails`
         * :class:`~oci.golden_gate.models.UpdateAzureSynapseConnectionDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -136,6 +183,15 @@ class UpdateConnectionDetails(object):
             The value to assign to the nsg_ids property of this UpdateConnectionDetails.
         :type nsg_ids: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateConnectionDetails.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this UpdateConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
+
         """
         self.swagger_types = {
             'connection_type': 'str',
@@ -145,7 +201,9 @@ class UpdateConnectionDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'vault_id': 'str',
             'key_id': 'str',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str'
         }
 
         self.attribute_map = {
@@ -156,7 +214,9 @@ class UpdateConnectionDetails(object):
             'defined_tags': 'definedTags',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod'
         }
 
         self._connection_type = None
@@ -167,6 +227,8 @@ class UpdateConnectionDetails(object):
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -176,17 +238,35 @@ class UpdateConnectionDetails(object):
         """
         type = object_dictionary['connectionType']
 
+        if type == 'ELASTICSEARCH':
+            return 'UpdateElasticsearchConnectionDetails'
+
+        if type == 'GOOGLE_BIGQUERY':
+            return 'UpdateGoogleBigQueryConnectionDetails'
+
         if type == 'ORACLE':
             return 'UpdateOracleConnectionDetails'
+
+        if type == 'AMAZON_REDSHIFT':
+            return 'UpdateAmazonRedshiftConnectionDetails'
 
         if type == 'OCI_OBJECT_STORAGE':
             return 'UpdateOciObjectStorageConnectionDetails'
 
+        if type == 'REDIS':
+            return 'UpdateRedisConnectionDetails'
+
         if type == 'MONGODB':
             return 'UpdateMongoDbConnectionDetails'
 
+        if type == 'GOOGLE_CLOUD_STORAGE':
+            return 'UpdateGoogleCloudStorageConnectionDetails'
+
         if type == 'AZURE_DATA_LAKE_STORAGE':
             return 'UpdateAzureDataLakeStorageConnectionDetails'
+
+        if type == 'AMAZON_KINESIS':
+            return 'UpdateAmazonKinesisConnectionDetails'
 
         if type == 'JAVA_MESSAGE_SERVICE':
             return 'UpdateJavaMessageServiceConnectionDetails'
@@ -221,6 +301,9 @@ class UpdateConnectionDetails(object):
         if type == 'KAFKA':
             return 'UpdateKafkaConnectionDetails'
 
+        if type == 'GENERIC':
+            return 'UpdateGenericConnectionDetails'
+
         if type == 'AZURE_SYNAPSE_ANALYTICS':
             return 'UpdateAzureSynapseConnectionDetails'
         else:
@@ -232,7 +315,7 @@ class UpdateConnectionDetails(object):
         Gets the connection_type of this UpdateConnectionDetails.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
 
 
         :return: The connection_type of this UpdateConnectionDetails.
@@ -250,11 +333,10 @@ class UpdateConnectionDetails(object):
         :param connection_type: The connection_type of this UpdateConnectionDetails.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             raise ValueError(
-                "Invalid value for `connection_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `connection_type`, must be None or one of {allowed_values}"
             )
         self._connection_type = connection_type
 
@@ -441,6 +523,71 @@ class UpdateConnectionDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this UpdateConnectionDetails.
+        The `OCID`__ of the target subnet of the dedicated connection.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this UpdateConnectionDetails.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this UpdateConnectionDetails.
+        The `OCID`__ of the target subnet of the dedicated connection.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this UpdateConnectionDetails.
+        :type: str
+        """
+        self._subnet_id = subnet_id
+
+    @property
+    def routing_method(self):
+        """
+        Gets the routing_method of this UpdateConnectionDetails.
+        Controls the network traffic direction to the target:
+        SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+        SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
+        DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+
+        Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+
+
+        :return: The routing_method of this UpdateConnectionDetails.
+        :rtype: str
+        """
+        return self._routing_method
+
+    @routing_method.setter
+    def routing_method(self, routing_method):
+        """
+        Sets the routing_method of this UpdateConnectionDetails.
+        Controls the network traffic direction to the target:
+        SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+        SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
+        DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+
+
+        :param routing_method: The routing_method of this UpdateConnectionDetails.
+        :type: str
+        """
+        allowed_values = ["SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"]
+        if not value_allowed_none_or_none_sentinel(routing_method, allowed_values):
+            raise ValueError(
+                f"Invalid value for `routing_method`, must be None or one of {allowed_values}"
+            )
+        self._routing_method = routing_method
 
     def __repr__(self):
         return formatted_flat_dict(self)

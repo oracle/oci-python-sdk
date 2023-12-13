@@ -48,11 +48,21 @@ class Config(object):
     #: This constant has a value of "AUTO_PROMOTE"
     CONFIG_TYPE_AUTO_PROMOTE = "AUTO_PROMOTE"
 
+    #: A constant which can be used with the config_type property of a Config.
+    #: This constant has a value of "LICENSE_AUTO_ASSIGN"
+    CONFIG_TYPE_LICENSE_AUTO_ASSIGN = "LICENSE_AUTO_ASSIGN"
+
+    #: A constant which can be used with the config_type property of a Config.
+    #: This constant has a value of "LICENSE_ENTERPRISE_EXTENSIBILITY"
+    CONFIG_TYPE_LICENSE_ENTERPRISE_EXTENSIBILITY = "LICENSE_ENTERPRISE_EXTENSIBILITY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Config object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.stack_monitoring.models.LicenseEnterpriseExtensibilityConfigDetails`
+        * :class:`~oci.stack_monitoring.models.LicenseAutoAssignConfigDetails`
         * :class:`~oci.stack_monitoring.models.AutoPromoteConfigDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -85,7 +95,7 @@ class Config(object):
 
         :param config_type:
             The value to assign to the config_type property of this Config.
-            Allowed values for this property are: "AUTO_PROMOTE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUTO_PROMOTE", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_type: str
 
@@ -146,6 +156,12 @@ class Config(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['configType']
+
+        if type == 'LICENSE_ENTERPRISE_EXTENSIBILITY':
+            return 'LicenseEnterpriseExtensibilityConfigDetails'
+
+        if type == 'LICENSE_AUTO_ASSIGN':
+            return 'LicenseAutoAssignConfigDetails'
 
         if type == 'AUTO_PROMOTE':
             return 'AutoPromoteConfigDetails'
@@ -308,7 +324,7 @@ class Config(object):
         **[Required]** Gets the config_type of this Config.
         The type of configuration.
 
-        Allowed values for this property are: "AUTO_PROMOTE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUTO_PROMOTE", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -327,7 +343,7 @@ class Config(object):
         :param config_type: The config_type of this Config.
         :type: str
         """
-        allowed_values = ["AUTO_PROMOTE"]
+        allowed_values = ["AUTO_PROMOTE", "LICENSE_AUTO_ASSIGN", "LICENSE_ENTERPRISE_EXTENSIBILITY"]
         if not value_allowed_none_or_none_sentinel(config_type, allowed_values):
             config_type = 'UNKNOWN_ENUM_VALUE'
         self._config_type = config_type

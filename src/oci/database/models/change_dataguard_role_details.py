@@ -106,8 +106,7 @@ class ChangeDataguardRoleDetails(object):
         allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY", "BACKUP_COPY", "SNAPSHOT_STANDBY"]
         if not value_allowed_none_or_none_sentinel(role, allowed_values):
             raise ValueError(
-                "Invalid value for `role`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `role`, must be None or one of {allowed_values}"
             )
         self._role = role
 
@@ -166,8 +165,7 @@ class ChangeDataguardRoleDetails(object):
         allowed_values = ["SNAPSHOT_SERVICES", "PRIMARY_SERVICES"]
         if not value_allowed_none_or_none_sentinel(connection_strings_type, allowed_values):
             raise ValueError(
-                "Invalid value for `connection_strings_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `connection_strings_type`, must be None or one of {allowed_values}"
             )
         self._connection_strings_type = connection_strings_type
 

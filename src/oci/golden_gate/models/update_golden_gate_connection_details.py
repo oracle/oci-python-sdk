@@ -23,7 +23,7 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
 
         :param connection_type:
             The value to assign to the connection_type property of this UpdateGoldenGateConnectionDetails.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"
         :type connection_type: str
 
         :param display_name:
@@ -53,6 +53,15 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
         :param nsg_ids:
             The value to assign to the nsg_ids property of this UpdateGoldenGateConnectionDetails.
         :type nsg_ids: list[str]
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateGoldenGateConnectionDetails.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this UpdateGoldenGateConnectionDetails.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"
+        :type routing_method: str
 
         :param deployment_id:
             The value to assign to the deployment_id property of this UpdateGoldenGateConnectionDetails.
@@ -88,6 +97,8 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'str',
             'key_id': 'str',
             'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str',
             'deployment_id': 'str',
             'host': 'str',
             'port': 'int',
@@ -105,6 +116,8 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
             'vault_id': 'vaultId',
             'key_id': 'keyId',
             'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod',
             'deployment_id': 'deploymentId',
             'host': 'host',
             'port': 'port',
@@ -121,6 +134,8 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
         self._vault_id = None
         self._key_id = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
         self._deployment_id = None
         self._host = None
         self._port = None
@@ -257,6 +272,9 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
     def private_ip(self):
         """
         Gets the private_ip of this UpdateGoldenGateConnectionDetails.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.
@@ -273,6 +291,9 @@ class UpdateGoldenGateConnectionDetails(UpdateConnectionDetails):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this UpdateGoldenGateConnectionDetails.
+        Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+        field, or make sure the host name is resolvable in the target VCN.
+
         The private IP address of the connection's endpoint in the customer's VCN, typically a
         database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
         In case the privateIp is provided, the subnetId must also be provided.

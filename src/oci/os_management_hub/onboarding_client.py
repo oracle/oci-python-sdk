@@ -171,7 +171,7 @@ class OnboardingClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_profile got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_profile got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -269,7 +269,7 @@ class OnboardingClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_profile got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_profile got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "profileId": profile_id
@@ -279,7 +279,7 @@ class OnboardingClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -366,7 +366,7 @@ class OnboardingClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_profile got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_profile got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "profileId": profile_id
@@ -376,7 +376,7 @@ class OnboardingClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -540,56 +540,56 @@ class OnboardingClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_profiles got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_profiles got unknown kwargs: {extra_kwargs!r}")
 
         if 'profile_type' in kwargs:
             profile_type_allowed_values = ["SOFTWARESOURCE", "GROUP", "LIFECYCLE", "STATION"]
             for profile_type_item in kwargs['profile_type']:
                 if profile_type_item not in profile_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `profile_type`, must be one of {0}".format(profile_type_allowed_values)
+                        f"Invalid value for `profile_type`, must be one of { profile_type_allowed_values }"
                     )
 
         if 'os_family' in kwargs:
             os_family_allowed_values = ["ORACLE_LINUX_9", "ORACLE_LINUX_8", "ORACLE_LINUX_7"]
             if kwargs['os_family'] not in os_family_allowed_values:
                 raise ValueError(
-                    "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                    f"Invalid value for `os_family`, must be one of { os_family_allowed_values }"
                 )
 
         if 'arch_type' in kwargs:
             arch_type_allowed_values = ["X86_64", "AARCH64", "I686", "NOARCH", "SRC"]
             if kwargs['arch_type'] not in arch_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `arch_type`, must be one of {0}".format(arch_type_allowed_values)
+                    f"Invalid value for `arch_type`, must be one of { arch_type_allowed_values }"
                 )
 
         if 'vendor_name' in kwargs:
             vendor_name_allowed_values = ["ORACLE"]
             if kwargs['vendor_name'] not in vendor_name_allowed_values:
                 raise ValueError(
-                    "Invalid value for `vendor_name`, must be one of {0}".format(vendor_name_allowed_values)
+                    f"Invalid value for `vendor_name`, must be one of { vendor_name_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -706,7 +706,7 @@ class OnboardingClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_profile got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_profile got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "profileId": profile_id
@@ -716,7 +716,7 @@ class OnboardingClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

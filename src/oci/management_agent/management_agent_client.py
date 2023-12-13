@@ -170,7 +170,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_management_agent_install_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_management_agent_install_key got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -266,7 +266,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_management_agent got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_management_agent got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementAgentId": management_agent_id
@@ -276,7 +276,7 @@ class ManagementAgentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -369,7 +369,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_management_agent_install_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_management_agent_install_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementAgentInstallKeyId": management_agent_install_key_id
@@ -379,7 +379,7 @@ class ManagementAgentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -472,7 +472,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -482,7 +482,7 @@ class ManagementAgentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -575,7 +575,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "deploy_plugins got unknown kwargs: {!r}".format(extra_kwargs))
+                f"deploy_plugins got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -662,7 +662,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_auto_upgradable_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_auto_upgradable_config got unknown kwargs: {extra_kwargs!r}")
 
         query_params = {
             "compartmentId": compartment_id
@@ -753,7 +753,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_management_agent got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_management_agent got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementAgentId": management_agent_id
@@ -763,7 +763,7 @@ class ManagementAgentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -849,7 +849,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_management_agent_install_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_management_agent_install_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementAgentInstallKeyId": management_agent_install_key_id
@@ -859,7 +859,7 @@ class ManagementAgentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -949,7 +949,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_management_agent_install_key_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_management_agent_install_key_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementAgentInstallKeyId": management_agent_install_key_id
@@ -959,7 +959,7 @@ class ManagementAgentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "pluginName": self.base_client.generate_collection_format_param(kwargs.get("plugin_name", missing), 'multi')
@@ -1052,7 +1052,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -1062,7 +1062,7 @@ class ManagementAgentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1184,7 +1184,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_availability_histories got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_availability_histories got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementAgentId": management_agent_id
@@ -1194,20 +1194,20 @@ class ManagementAgentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAvailabilityStatusStarted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1350,34 +1350,34 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_management_agent_images got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_management_agent_images got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["platformType", "version"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "TERMINATED", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'install_type' in kwargs:
             install_type_allowed_values = ["AGENT", "GATEWAY"]
             if kwargs['install_type'] not in install_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `install_type`, must be one of {0}".format(install_type_allowed_values)
+                    f"Invalid value for `install_type`, must be one of { install_type_allowed_values }"
                 )
 
         query_params = {
@@ -1512,27 +1512,27 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_management_agent_install_keys got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_management_agent_install_keys got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "TERMINATED", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -1671,27 +1671,27 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_management_agent_plugins got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_management_agent_plugins got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "TERMINATED", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'platform_type' in kwargs:
@@ -1699,7 +1699,7 @@ class ManagementAgentClient(object):
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                        f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
                     )
 
         query_params = {
@@ -1877,20 +1877,20 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_management_agents got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_management_agents got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "TERMINATED", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'availability_status' in kwargs:
             availability_status_allowed_values = ["ACTIVE", "SILENT", "NOT_AVAILABLE"]
             if kwargs['availability_status'] not in availability_status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `availability_status`, must be one of {0}".format(availability_status_allowed_values)
+                    f"Invalid value for `availability_status`, must be one of { availability_status_allowed_values }"
                 )
 
         if 'platform_type' in kwargs:
@@ -1898,28 +1898,28 @@ class ManagementAgentClient(object):
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                        f"Invalid value for `platform_type`, must be one of { platform_type_allowed_values }"
                     )
 
         if 'install_type' in kwargs:
             install_type_allowed_values = ["AGENT", "GATEWAY"]
             if kwargs['install_type'] not in install_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `install_type`, must be one of {0}".format(install_type_allowed_values)
+                    f"Invalid value for `install_type`, must be one of { install_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName", "host", "availabilityStatus", "platformType", "pluginDisplayNames", "version"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2047,7 +2047,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2057,20 +2057,20 @@ class ManagementAgentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timestamp"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2187,7 +2187,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2197,20 +2197,20 @@ class ManagementAgentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timestamp"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2349,34 +2349,34 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["CREATED", "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'type' in kwargs:
             type_allowed_values = ["DEPLOY_PLUGIN", "UPGRADE_PLUGIN", "CREATE_UPGRADE_PLUGINS", "AGENTIMAGE_UPGRADE"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                    f"Invalid value for `type`, must be one of { type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2485,7 +2485,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "set_auto_upgradable_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"set_auto_upgradable_config got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -2597,20 +2597,20 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_management_agent_counts got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_management_agent_counts got unknown kwargs: {extra_kwargs!r}")
 
         group_by_allowed_values = ["availabilityStatus", "platformType", "version"]
         for group_by_item in group_by:
             if group_by_item not in group_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                    f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
                 )
 
         if 'install_type' in kwargs:
             install_type_allowed_values = ["AGENT", "GATEWAY"]
             if kwargs['install_type'] not in install_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `install_type`, must be one of {0}".format(install_type_allowed_values)
+                    f"Invalid value for `install_type`, must be one of { install_type_allowed_values }"
                 )
 
         query_params = {
@@ -2721,12 +2721,12 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "summarize_management_agent_plugin_counts got unknown kwargs: {!r}".format(extra_kwargs))
+                f"summarize_management_agent_plugin_counts got unknown kwargs: {extra_kwargs!r}")
 
         group_by_allowed_values = ["pluginName"]
         if group_by not in group_by_allowed_values:
             raise ValueError(
-                "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                f"Invalid value for `group_by`, must be one of { group_by_allowed_values }"
             )
 
         query_params = {
@@ -2840,7 +2840,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_management_agent got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_management_agent got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementAgentId": management_agent_id
@@ -2850,7 +2850,7 @@ class ManagementAgentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2960,7 +2960,7 @@ class ManagementAgentClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_management_agent_install_key got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_management_agent_install_key got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "managementAgentInstallKeyId": management_agent_install_key_id
@@ -2970,7 +2970,7 @@ class ManagementAgentClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

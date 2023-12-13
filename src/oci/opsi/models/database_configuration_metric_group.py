@@ -115,8 +115,7 @@ class DatabaseConfigurationMetricGroup(object):
         allowed_values = ["DB_EXTERNAL_PROPERTIES", "DB_EXTERNAL_INSTANCE", "DB_OS_CONFIG_INSTANCE", "DB_PARAMETERS"]
         if not value_allowed_none_or_none_sentinel(metric_name, allowed_values):
             raise ValueError(
-                "Invalid value for `metric_name`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `metric_name`, must be None or one of {allowed_values}"
             )
         self._metric_name = metric_name
 

@@ -59,7 +59,9 @@
 # - oci.mysql.DbSystemClient
 # - oci.cloud_guard.CloudGuardClient
 # - oci.logging.LoggingManagementClient
-# - oci.ocvp.EsxiHostClient and oci.ocvp.SddcClient
+# - oci.ocvp.EsxiHostClient
+# - oci.ocvp.SddcClient
+# - oci.ocvp.ClusterClient
 # - oci.golden_gate.GoldenGateClient
 # - oci.network_load_balancer.NetworkLoadBalancerClient
 # - oci.management_agent.ManagementAgentClient
@@ -73,6 +75,7 @@
 # - oci.identity_domains.IdentityDomainsClient
 # - oci.network_firewall.NetworkFirewallClient
 # - oci.opensearch.OpensearchClusterClient
+# - oci.psql.PostgresqlClient
 #
 # Modules without CSV yet:
 # - datasciencemodeldeployment
@@ -86,12 +89,17 @@
 # - oci.ai_vision.AIServiceVisionClient
 # - oci.apm_config.ConfigClient
 # - oci.apm_synthetics.ApmSyntheticClient
+# - oci.apm_control_plane.ApmDomainClient
+# - oci.apm_traces.TraceClient
+# - oci.apm_traces.QueryClient
+# - oci.appmgmt_control.AppmgmtControlClient
 # - oci.application_migration.ApplicationMigrationClient
 # - oci.artifacts.ArtifactsClient
 # - oci.certificates_management.CertificatesManagementClient
 # - oci.cloud_migrations.MigrationClient
 # - oci.container_instances.ContainerInstanceClient
 # - oci.data_labeling_service.DataLabelingManagementClient
+# - oci.data_safe.DataSafeClient
 # - oci.disaster_recovery.DisasterRecoveryClient
 # - oci.fusion_apps.FusionApplicationsClient
 # - oci.jms.JavaManagementServiceClient
@@ -102,6 +110,7 @@
 # - oci.opsi.OperationsInsightsClient
 # - oci.optimizer.OptimizerClient
 # - oci.recovery.DatabaseRecoveryClient
+# - oci.redis.RedisClusterClient
 # - oci.service_mesh.ServiceMeshClient
 # - oci.threat_intelligence.ThreatintelClient
 ##########################################################################
@@ -118,7 +127,7 @@ import contextlib
 import os
 import time
 
-version = "23.09.26"
+version = "23.12.12"
 
 ##########################################################################
 # check OCI version

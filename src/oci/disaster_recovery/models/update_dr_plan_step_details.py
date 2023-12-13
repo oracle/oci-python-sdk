@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDrPlanStepDetails(object):
     """
-    The details for updating a DR Plan step.
+    The details for updating a DR plan step.
     """
 
     #: A constant which can be used with the error_mode property of a UpdateDrPlanStepDetails.
@@ -83,9 +83,9 @@ class UpdateDrPlanStepDetails(object):
     def id(self):
         """
         Gets the id of this UpdateDrPlanStepDetails.
-        The unique id of this step.
+        The unique id of the step.
 
-        Example: `sgid1.step..&lt;unique_id&gt;`
+        Example: `sgid1.step..uniqueID`
 
 
         :return: The id of this UpdateDrPlanStepDetails.
@@ -97,9 +97,9 @@ class UpdateDrPlanStepDetails(object):
     def id(self, id):
         """
         Sets the id of this UpdateDrPlanStepDetails.
-        The unique id of this step.
+        The unique id of the step.
 
-        Example: `sgid1.step..&lt;unique_id&gt;`
+        Example: `sgid1.step..uniqueID`
 
 
         :param id: The id of this UpdateDrPlanStepDetails.
@@ -111,7 +111,7 @@ class UpdateDrPlanStepDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateDrPlanStepDetails.
-        The display name of this step in a group.
+        The display name of the step in a group.
 
         Example: `My_STEP_3A - EBS Start - STAGE A`
 
@@ -125,7 +125,7 @@ class UpdateDrPlanStepDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateDrPlanStepDetails.
-        The display name of this step in a group.
+        The display name of the step in a group.
 
         Example: `My_STEP_3A - EBS Start - STAGE A`
 
@@ -162,8 +162,7 @@ class UpdateDrPlanStepDetails(object):
         allowed_values = ["STOP_ON_ERROR", "CONTINUE_ON_ERROR"]
         if not value_allowed_none_or_none_sentinel(error_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `error_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `error_mode`, must be None or one of {allowed_values}"
             )
         self._error_mode = error_mode
 

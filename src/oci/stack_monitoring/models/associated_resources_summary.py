@@ -39,6 +39,14 @@ class AssociatedResourcesSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the license property of a AssociatedResourcesSummary.
+    #: This constant has a value of "STANDARD_EDITION"
+    LICENSE_STANDARD_EDITION = "STANDARD_EDITION"
+
+    #: A constant which can be used with the license property of a AssociatedResourcesSummary.
+    #: This constant has a value of "ENTERPRISE_EDITION"
+    LICENSE_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AssociatedResourcesSummary object with values from keyword arguments.
@@ -82,6 +90,12 @@ class AssociatedResourcesSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param license:
+            The value to assign to the license property of this AssociatedResourcesSummary.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type license: str
+
         :param associated_resources:
             The value to assign to the associated_resources property of this AssociatedResourcesSummary.
         :type associated_resources: list[oci.stack_monitoring.models.AssociatedMonitoredResource]
@@ -97,6 +111,7 @@ class AssociatedResourcesSummary(object):
             'external_id': 'str',
             'management_agent_id': 'str',
             'lifecycle_state': 'str',
+            'license': 'str',
             'associated_resources': 'list[AssociatedMonitoredResource]'
         }
 
@@ -110,6 +125,7 @@ class AssociatedResourcesSummary(object):
             'external_id': 'externalId',
             'management_agent_id': 'managementAgentId',
             'lifecycle_state': 'lifecycleState',
+            'license': 'license',
             'associated_resources': 'associatedResources'
         }
 
@@ -122,6 +138,7 @@ class AssociatedResourcesSummary(object):
         self._external_id = None
         self._management_agent_id = None
         self._lifecycle_state = None
+        self._license = None
         self._associated_resources = None
 
     @property
@@ -367,6 +384,36 @@ class AssociatedResourcesSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def license(self):
+        """
+        Gets the license of this AssociatedResourcesSummary.
+        License edition of the monitored resource.
+
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The license of this AssociatedResourcesSummary.
+        :rtype: str
+        """
+        return self._license
+
+    @license.setter
+    def license(self, license):
+        """
+        Sets the license of this AssociatedResourcesSummary.
+        License edition of the monitored resource.
+
+
+        :param license: The license of this AssociatedResourcesSummary.
+        :type: str
+        """
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION"]
+        if not value_allowed_none_or_none_sentinel(license, allowed_values):
+            license = 'UNKNOWN_ENUM_VALUE'
+        self._license = license
 
     @property
     def associated_resources(self):

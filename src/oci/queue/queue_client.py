@@ -168,7 +168,7 @@ class QueueClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_message got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_message got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "queueId": queue_id,
@@ -179,7 +179,7 @@ class QueueClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -272,7 +272,7 @@ class QueueClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_messages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_messages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "queueId": queue_id
@@ -282,7 +282,7 @@ class QueueClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -402,7 +402,7 @@ class QueueClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_messages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_messages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "queueId": queue_id
@@ -412,7 +412,7 @@ class QueueClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "visibilityInSeconds": kwargs.get("visibility_in_seconds", missing),
@@ -516,7 +516,7 @@ class QueueClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_stats got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_stats got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "queueId": queue_id
@@ -526,7 +526,7 @@ class QueueClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "channelId": kwargs.get("channel_id", missing)
@@ -640,7 +640,7 @@ class QueueClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_channels got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_channels got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "queueId": queue_id
@@ -650,7 +650,7 @@ class QueueClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -754,7 +754,7 @@ class QueueClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "put_messages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"put_messages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "queueId": queue_id
@@ -764,7 +764,7 @@ class QueueClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -862,7 +862,7 @@ class QueueClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_message got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_message got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "queueId": queue_id,
@@ -873,7 +873,7 @@ class QueueClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -970,7 +970,7 @@ class QueueClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_messages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_messages got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "queueId": queue_id
@@ -980,7 +980,7 @@ class QueueClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

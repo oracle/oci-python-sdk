@@ -375,8 +375,7 @@ class BgpSessionInfo(object):
         allowed_values = ["UP", "DOWN"]
         if not value_allowed_none_or_none_sentinel(bgp_state, allowed_values):
             raise ValueError(
-                "Invalid value for `bgp_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `bgp_state`, must be None or one of {allowed_values}"
             )
         self._bgp_state = bgp_state
 
@@ -407,8 +406,7 @@ class BgpSessionInfo(object):
         allowed_values = ["UP", "DOWN"]
         if not value_allowed_none_or_none_sentinel(bgp_ipv6_state, allowed_values):
             raise ValueError(
-                "Invalid value for `bgp_ipv6_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `bgp_ipv6_state`, must be None or one of {allowed_values}"
             )
         self._bgp_ipv6_state = bgp_ipv6_state
 

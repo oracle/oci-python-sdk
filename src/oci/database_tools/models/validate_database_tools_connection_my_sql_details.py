@@ -23,7 +23,7 @@ class ValidateDatabaseToolsConnectionMySqlDetails(ValidateDatabaseToolsConnectio
 
         :param type:
             The value to assign to the type property of this ValidateDatabaseToolsConnectionMySqlDetails.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
         :type type: str
 
         """

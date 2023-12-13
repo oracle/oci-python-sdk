@@ -307,8 +307,7 @@ class CreateBudgetDetails(object):
         allowed_values = ["MONTHLY"]
         if not value_allowed_none_or_none_sentinel(reset_period, allowed_values):
             raise ValueError(
-                "Invalid value for `reset_period`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `reset_period`, must be None or one of {allowed_values}"
             )
         self._reset_period = reset_period
 
@@ -363,8 +362,7 @@ class CreateBudgetDetails(object):
         allowed_values = ["INVOICE", "MONTH", "SINGLE_USE"]
         if not value_allowed_none_or_none_sentinel(processing_period_type, allowed_values):
             raise ValueError(
-                "Invalid value for `processing_period_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `processing_period_type`, must be None or one of {allowed_values}"
             )
         self._processing_period_type = processing_period_type
 
@@ -443,8 +441,7 @@ class CreateBudgetDetails(object):
         allowed_values = ["COMPARTMENT", "TAG"]
         if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
             raise ValueError(
-                "Invalid value for `target_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `target_type`, must be None or one of {allowed_values}"
             )
         self._target_type = target_type
 

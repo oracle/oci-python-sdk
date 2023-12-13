@@ -171,7 +171,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "bulk_replace_service_catalog_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"bulk_replace_service_catalog_associations got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceCatalogId": service_catalog_id
@@ -181,7 +181,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -278,7 +278,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_private_application_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_private_application_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateApplicationId": private_application_id
@@ -288,7 +288,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -385,7 +385,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_service_catalog_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_service_catalog_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceCatalogId": service_catalog_id
@@ -395,7 +395,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -490,7 +490,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_private_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_private_application got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -586,7 +586,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_service_catalog got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_service_catalog got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -682,7 +682,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_service_catalog_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_service_catalog_association got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -777,7 +777,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_private_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_private_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateApplicationId": private_application_id
@@ -787,7 +787,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -879,7 +879,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_service_catalog got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_service_catalog got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceCatalogId": service_catalog_id
@@ -889,7 +889,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -981,7 +981,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_service_catalog_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_service_catalog_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceCatalogAssociationId": service_catalog_association_id
@@ -991,7 +991,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1077,7 +1077,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_private_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_private_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateApplicationId": private_application_id
@@ -1087,7 +1087,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1174,7 +1174,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_private_application_action_download_logo got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_private_application_action_download_logo got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateApplicationId": private_application_id
@@ -1184,7 +1184,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "image/bmp, image/gif, image/jpeg, image/png, image/tiff",
@@ -1271,7 +1271,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_private_application_package got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_private_application_package got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateApplicationPackageId": private_application_package_id
@@ -1281,7 +1281,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1368,7 +1368,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_private_application_package_action_download_config got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_private_application_package_action_download_config got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateApplicationPackageId": private_application_package_id
@@ -1378,7 +1378,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/zip",
@@ -1465,7 +1465,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_service_catalog got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_service_catalog got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceCatalogId": service_catalog_id
@@ -1475,7 +1475,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1562,7 +1562,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_service_catalog_association got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_service_catalog_association got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceCatalogAssociationId": service_catalog_association_id
@@ -1572,7 +1572,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1659,7 +1659,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -1669,7 +1669,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1811,14 +1811,14 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_applications got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_applications got unknown kwargs: {extra_kwargs!r}")
 
         if 'package_type' in kwargs:
             package_type_allowed_values = ["STACK"]
             for package_type_item in kwargs['package_type']:
                 if package_type_item not in package_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `package_type`, must be one of {0}".format(package_type_allowed_values)
+                        f"Invalid value for `package_type`, must be one of { package_type_allowed_values }"
                     )
 
         if 'pricing' in kwargs:
@@ -1826,14 +1826,14 @@ class ServiceCatalogClient(object):
             for pricing_item in kwargs['pricing']:
                 if pricing_item not in pricing_allowed_values:
                     raise ValueError(
-                        "Invalid value for `pricing`, must be one of {0}".format(pricing_allowed_values)
+                        f"Invalid value for `pricing`, must be one of { pricing_allowed_values }"
                     )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -1974,28 +1974,28 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_private_application_packages got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_private_application_packages got unknown kwargs: {extra_kwargs!r}")
 
         if 'package_type' in kwargs:
             package_type_allowed_values = ["STACK"]
             for package_type_item in kwargs['package_type']:
                 if package_type_item not in package_type_allowed_values:
                     raise ValueError(
-                        "Invalid value for `package_type`, must be one of {0}".format(package_type_allowed_values)
+                        f"Invalid value for `package_type`, must be one of { package_type_allowed_values }"
                     )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "VERSION"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2124,20 +2124,20 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_private_applications got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_private_applications got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "LIFECYCLESTATE"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2269,20 +2269,20 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_service_catalog_associations got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_service_catalog_associations got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2410,20 +2410,20 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_service_catalogs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_service_catalogs got unknown kwargs: {extra_kwargs!r}")
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2542,7 +2542,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2552,20 +2552,20 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2683,7 +2683,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2693,20 +2693,20 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -2839,27 +2839,27 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["ACCEPTED", "FAILED", "SUCCEEDED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -2968,7 +2968,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_private_application got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_private_application got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "privateApplicationId": private_application_id
@@ -2978,7 +2978,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -3077,7 +3077,7 @@ class ServiceCatalogClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_service_catalog got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_service_catalog got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "serviceCatalogId": service_catalog_id
@@ -3087,7 +3087,7 @@ class ServiceCatalogClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

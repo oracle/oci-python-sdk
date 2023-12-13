@@ -47,6 +47,14 @@ class CreateDeploymentDetails(object):
     #: This constant has a value of "DATABASE_POSTGRESQL"
     DEPLOYMENT_TYPE_DATABASE_POSTGRESQL = "DATABASE_POSTGRESQL"
 
+    #: A constant which can be used with the deployment_type property of a CreateDeploymentDetails.
+    #: This constant has a value of "DATABASE_DB2ZOS"
+    DEPLOYMENT_TYPE_DATABASE_DB2_ZOS = "DATABASE_DB2ZOS"
+
+    #: A constant which can be used with the deployment_type property of a CreateDeploymentDetails.
+    #: This constant has a value of "DATA_TRANSFORMS"
+    DEPLOYMENT_TYPE_DATA_TRANSFORMS = "DATA_TRANSFORMS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDeploymentDetails object with values from keyword arguments.
@@ -85,6 +93,10 @@ class CreateDeploymentDetails(object):
             The value to assign to the subnet_id property of this CreateDeploymentDetails.
         :type subnet_id: str
 
+        :param load_balancer_subnet_id:
+            The value to assign to the load_balancer_subnet_id property of this CreateDeploymentDetails.
+        :type load_balancer_subnet_id: str
+
         :param fqdn:
             The value to assign to the fqdn property of this CreateDeploymentDetails.
         :type fqdn: str
@@ -107,7 +119,7 @@ class CreateDeploymentDetails(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this CreateDeploymentDetails.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATA_TRANSFORMS"
         :type deployment_type: str
 
         :param ogg_data:
@@ -132,6 +144,7 @@ class CreateDeploymentDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'deployment_backup_id': 'str',
             'subnet_id': 'str',
+            'load_balancer_subnet_id': 'str',
             'fqdn': 'str',
             'nsg_ids': 'list[str]',
             'is_public': 'bool',
@@ -152,6 +165,7 @@ class CreateDeploymentDetails(object):
             'defined_tags': 'definedTags',
             'deployment_backup_id': 'deploymentBackupId',
             'subnet_id': 'subnetId',
+            'load_balancer_subnet_id': 'loadBalancerSubnetId',
             'fqdn': 'fqdn',
             'nsg_ids': 'nsgIds',
             'is_public': 'isPublic',
@@ -171,6 +185,7 @@ class CreateDeploymentDetails(object):
         self._defined_tags = None
         self._deployment_backup_id = None
         self._subnet_id = None
+        self._load_balancer_subnet_id = None
         self._fqdn = None
         self._nsg_ids = None
         self._is_public = None
@@ -232,8 +247,7 @@ class CreateDeploymentDetails(object):
         allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             raise ValueError(
-                "Invalid value for `license_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
 
@@ -379,7 +393,7 @@ class CreateDeploymentDetails(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this CreateDeploymentDetails.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the subnet of the deployment's private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -393,7 +407,7 @@ class CreateDeploymentDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreateDeploymentDetails.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the subnet of the deployment's private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -402,6 +416,38 @@ class CreateDeploymentDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def load_balancer_subnet_id(self):
+        """
+        Gets the load_balancer_subnet_id of this CreateDeploymentDetails.
+        The `OCID`__ of a public subnet in the customer tenancy.
+        Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+        For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The load_balancer_subnet_id of this CreateDeploymentDetails.
+        :rtype: str
+        """
+        return self._load_balancer_subnet_id
+
+    @load_balancer_subnet_id.setter
+    def load_balancer_subnet_id(self, load_balancer_subnet_id):
+        """
+        Sets the load_balancer_subnet_id of this CreateDeploymentDetails.
+        The `OCID`__ of a public subnet in the customer tenancy.
+        Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+        For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param load_balancer_subnet_id: The load_balancer_subnet_id of this CreateDeploymentDetails.
+        :type: str
+        """
+        self._load_balancer_subnet_id = load_balancer_subnet_id
 
     @property
     def fqdn(self):
@@ -531,7 +577,7 @@ class CreateDeploymentDetails(object):
         NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
             Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATA_TRANSFORMS"
 
 
         :return: The deployment_type of this CreateDeploymentDetails.
@@ -551,11 +597,10 @@ class CreateDeploymentDetails(object):
         :param deployment_type: The deployment_type of this CreateDeploymentDetails.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATA_TRANSFORMS"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             raise ValueError(
-                "Invalid value for `deployment_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `deployment_type`, must be None or one of {allowed_values}"
             )
         self._deployment_type = deployment_type
 

@@ -186,8 +186,7 @@ class UpdateDeploymentDetails(object):
         allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             raise ValueError(
-                "Invalid value for `license_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
 
@@ -301,7 +300,7 @@ class UpdateDeploymentDetails(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this UpdateDeploymentDetails.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the subnet of the deployment's private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -315,7 +314,7 @@ class UpdateDeploymentDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this UpdateDeploymentDetails.
-        The `OCID`__ of the subnet being referenced.
+        The `OCID`__ of the subnet of the deployment's private endpoint.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -262,8 +262,7 @@ class PublicIp(object):
         allowed_values = ["PRIVATE_IP", "NAT_GATEWAY"]
         if not value_allowed_none_or_none_sentinel(assigned_entity_type, allowed_values):
             raise ValueError(
-                "Invalid value for `assigned_entity_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `assigned_entity_type`, must be None or one of {allowed_values}"
             )
         self._assigned_entity_type = assigned_entity_type
 
@@ -494,8 +493,7 @@ class PublicIp(object):
         allowed_values = ["PROVISIONING", "AVAILABLE", "ASSIGNING", "ASSIGNED", "UNASSIGNING", "UNASSIGNED", "TERMINATING", "TERMINATED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
-                "Invalid value for `lifecycle_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifecycle_state`, must be None or one of {allowed_values}"
             )
         self._lifecycle_state = lifecycle_state
 
@@ -556,8 +554,7 @@ class PublicIp(object):
         allowed_values = ["EPHEMERAL", "RESERVED"]
         if not value_allowed_none_or_none_sentinel(lifetime, allowed_values):
             raise ValueError(
-                "Invalid value for `lifetime`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `lifetime`, must be None or one of {allowed_values}"
             )
         self._lifetime = lifetime
 
@@ -646,8 +643,7 @@ class PublicIp(object):
         allowed_values = ["REGION", "AVAILABILITY_DOMAIN"]
         if not value_allowed_none_or_none_sentinel(scope, allowed_values):
             raise ValueError(
-                "Invalid value for `scope`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `scope`, must be None or one of {allowed_values}"
             )
         self._scope = scope
 

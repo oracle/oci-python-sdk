@@ -188,8 +188,7 @@ class CreateMaskingColumnDetails(object):
         allowed_values = ["TABLE", "EDITIONING_VIEW"]
         if not value_allowed_none_or_none_sentinel(object_type, allowed_values):
             raise ValueError(
-                "Invalid value for `object_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `object_type`, must be None or one of {allowed_values}"
             )
         self._object_type = object_type
 
@@ -287,7 +286,7 @@ class CreateMaskingColumnDetails(object):
     def is_masking_enabled(self):
         """
         Gets the is_masking_enabled of this CreateMaskingColumnDetails.
-        Indicates if data masking is enabled for the masking column. Set it to false if
+        Indicates whether data masking is enabled for the masking column. Set it to false if
         you don't want to mask the column.
 
 
@@ -300,7 +299,7 @@ class CreateMaskingColumnDetails(object):
     def is_masking_enabled(self, is_masking_enabled):
         """
         Sets the is_masking_enabled of this CreateMaskingColumnDetails.
-        Indicates if data masking is enabled for the masking column. Set it to false if
+        Indicates whether data masking is enabled for the masking column. Set it to false if
         you don't want to mask the column.
 
 

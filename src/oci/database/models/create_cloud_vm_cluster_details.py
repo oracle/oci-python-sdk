@@ -145,6 +145,10 @@ class CreateCloudVmClusterDetails(object):
             The value to assign to the data_collection_options property of this CreateCloudVmClusterDetails.
         :type data_collection_options: oci.database.models.DataCollectionOptions
 
+        :param system_version:
+            The value to assign to the system_version property of this CreateCloudVmClusterDetails.
+        :type system_version: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -175,7 +179,8 @@ class CreateCloudVmClusterDetails(object):
             'gi_version': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'data_collection_options': 'DataCollectionOptions'
+            'data_collection_options': 'DataCollectionOptions',
+            'system_version': 'str'
         }
 
         self.attribute_map = {
@@ -207,7 +212,8 @@ class CreateCloudVmClusterDetails(object):
             'gi_version': 'giVersion',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'data_collection_options': 'dataCollectionOptions'
+            'data_collection_options': 'dataCollectionOptions',
+            'system_version': 'systemVersion'
         }
 
         self._compartment_id = None
@@ -239,6 +245,7 @@ class CreateCloudVmClusterDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._data_collection_options = None
+        self._system_version = None
 
     @property
     def compartment_id(self):
@@ -707,8 +714,7 @@ class CreateCloudVmClusterDetails(object):
         allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             raise ValueError(
-                "Invalid value for `license_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
 
@@ -1031,6 +1037,30 @@ class CreateCloudVmClusterDetails(object):
         :type: oci.database.models.DataCollectionOptions
         """
         self._data_collection_options = data_collection_options
+
+    @property
+    def system_version(self):
+        """
+        Gets the system_version of this CreateCloudVmClusterDetails.
+        Operating system version of the image.
+
+
+        :return: The system_version of this CreateCloudVmClusterDetails.
+        :rtype: str
+        """
+        return self._system_version
+
+    @system_version.setter
+    def system_version(self, system_version):
+        """
+        Sets the system_version of this CreateCloudVmClusterDetails.
+        Operating system version of the image.
+
+
+        :param system_version: The system_version of this CreateCloudVmClusterDetails.
+        :type: str
+        """
+        self._system_version = system_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

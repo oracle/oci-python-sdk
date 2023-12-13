@@ -86,9 +86,17 @@ class MetastoreSummary(object):
             The value to assign to the freeform_tags property of this MetastoreSummary.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this MetastoreSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param defined_tags:
             The value to assign to the defined_tags property of this MetastoreSummary.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param locks:
+            The value to assign to the locks property of this MetastoreSummary.
+        :type locks: list[oci.data_catalog.models.ResourceLock]
 
         """
         self.swagger_types = {
@@ -100,7 +108,9 @@ class MetastoreSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'system_tags': 'dict(str, dict(str, object))',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'locks': 'list[ResourceLock]'
         }
 
         self.attribute_map = {
@@ -112,7 +122,9 @@ class MetastoreSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'system_tags': 'systemTags',
+            'defined_tags': 'definedTags',
+            'locks': 'locks'
         }
 
         self._id = None
@@ -123,7 +135,9 @@ class MetastoreSummary(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
+        self._system_tags = None
         self._defined_tags = None
+        self._locks = None
 
     @property
     def id(self):
@@ -334,6 +348,42 @@ class MetastoreSummary(object):
         self._freeform_tags = freeform_tags
 
     @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this MetastoreSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        System tags can be viewed by users, but can only be created by the system.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this MetastoreSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this MetastoreSummary.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        System tags can be viewed by users, but can only be created by the system.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this MetastoreSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
+
+    @property
     def defined_tags(self):
         """
         Gets the defined_tags of this MetastoreSummary.
@@ -358,6 +408,30 @@ class MetastoreSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def locks(self):
+        """
+        Gets the locks of this MetastoreSummary.
+        Locks associated with this resource.
+
+
+        :return: The locks of this MetastoreSummary.
+        :rtype: list[oci.data_catalog.models.ResourceLock]
+        """
+        return self._locks
+
+    @locks.setter
+    def locks(self, locks):
+        """
+        Sets the locks of this MetastoreSummary.
+        Locks associated with this resource.
+
+
+        :param locks: The locks of this MetastoreSummary.
+        :type: list[oci.data_catalog.models.ResourceLock]
+        """
+        self._locks = locks
 
     def __repr__(self):
         return formatted_flat_dict(self)

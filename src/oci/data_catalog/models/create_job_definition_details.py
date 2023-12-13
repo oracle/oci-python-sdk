@@ -254,8 +254,7 @@ class CreateJobDefinitionDetails(object):
         allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", "ASYNC_DELETE", "IMPORT_DATA_ASSET", "CREATE_SCAN_PROXY", "ASYNC_EXPORT_GLOSSARY"]
         if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
             raise ValueError(
-                "Invalid value for `job_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `job_type`, must be None or one of {allowed_values}"
             )
         self._job_type = job_type
 

@@ -137,6 +137,18 @@ class AccessRequest(object):
             The value to assign to the time_expired property of this AccessRequest.
         :type time_expired: datetime
 
+        :param time_reminded:
+            The value to assign to the time_reminded property of this AccessRequest.
+        :type time_reminded: datetime
+
+        :param reminder_count:
+            The value to assign to the reminder_count property of this AccessRequest.
+        :type reminder_count: int
+
+        :param requestor_location:
+            The value to assign to the requestor_location property of this AccessRequest.
+        :type requestor_location: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -151,7 +163,10 @@ class AccessRequest(object):
             'activity_logs': 'list[ActivityLog]',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'time_expired': 'datetime'
+            'time_expired': 'datetime',
+            'time_reminded': 'datetime',
+            'reminder_count': 'int',
+            'requestor_location': 'str'
         }
 
         self.attribute_map = {
@@ -167,7 +182,10 @@ class AccessRequest(object):
             'activity_logs': 'activityLogs',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
-            'time_expired': 'timeExpired'
+            'time_expired': 'timeExpired',
+            'time_reminded': 'timeReminded',
+            'reminder_count': 'reminderCount',
+            'requestor_location': 'requestorLocation'
         }
 
         self._id = None
@@ -183,6 +201,9 @@ class AccessRequest(object):
         self._time_created = None
         self._time_updated = None
         self._time_expired = None
+        self._time_reminded = None
+        self._reminder_count = None
+        self._requestor_location = None
 
     @property
     def id(self):
@@ -525,6 +546,86 @@ class AccessRequest(object):
         :type: datetime
         """
         self._time_expired = time_expired
+
+    @property
+    def time_reminded(self):
+        """
+        **[Required]** Gets the time_reminded of this AccessRequest.
+        The time the access request was last reminded. Format is defined by `RFC3339`__.
+        Example: `2020-01-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_reminded of this AccessRequest.
+        :rtype: datetime
+        """
+        return self._time_reminded
+
+    @time_reminded.setter
+    def time_reminded(self, time_reminded):
+        """
+        Sets the time_reminded of this AccessRequest.
+        The time the access request was last reminded. Format is defined by `RFC3339`__.
+        Example: `2020-01-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_reminded: The time_reminded of this AccessRequest.
+        :type: datetime
+        """
+        self._time_reminded = time_reminded
+
+    @property
+    def reminder_count(self):
+        """
+        **[Required]** Gets the reminder_count of this AccessRequest.
+        The count of times the access request was reminded.
+
+
+        :return: The reminder_count of this AccessRequest.
+        :rtype: int
+        """
+        return self._reminder_count
+
+    @reminder_count.setter
+    def reminder_count(self, reminder_count):
+        """
+        Sets the reminder_count of this AccessRequest.
+        The count of times the access request was reminded.
+
+
+        :param reminder_count: The reminder_count of this AccessRequest.
+        :type: int
+        """
+        self._reminder_count = reminder_count
+
+    @property
+    def requestor_location(self):
+        """
+        **[Required]** Gets the requestor_location of this AccessRequest.
+        The location of the requestor. Format with be two letters indicatiog operator's country code defined by https://jira-sd.mc1.oracleiaas.com/browse/SSD-17880
+        Example: `US`
+
+
+        :return: The requestor_location of this AccessRequest.
+        :rtype: str
+        """
+        return self._requestor_location
+
+    @requestor_location.setter
+    def requestor_location(self, requestor_location):
+        """
+        Sets the requestor_location of this AccessRequest.
+        The location of the requestor. Format with be two letters indicatiog operator's country code defined by https://jira-sd.mc1.oracleiaas.com/browse/SSD-17880
+        Example: `US`
+
+
+        :param requestor_location: The requestor_location of this AccessRequest.
+        :type: str
+        """
+        self._requestor_location = requestor_location
 
     def __repr__(self):
         return formatted_flat_dict(self)

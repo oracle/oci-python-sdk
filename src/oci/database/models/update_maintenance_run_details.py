@@ -249,8 +249,7 @@ class UpdateMaintenanceRunDetails(object):
         allowed_values = ["ROLLING", "NONROLLING"]
         if not value_allowed_none_or_none_sentinel(patching_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `patching_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `patching_mode`, must be None or one of {allowed_values}"
             )
         self._patching_mode = patching_mode
 

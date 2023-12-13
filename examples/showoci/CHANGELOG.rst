@@ -5,6 +5,39 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.12.12 - 23.12.12
+=====================
+* Added PostgreSQL
+* Added MYSQL Backups
+* Fixed support for OCVS VMWare clusters
+
+=====================
+23.12.05 - 23.12.05
+=====================
+* Remove space from Compute CSV which produce empty column
+
+=====================
+23.11.28 - 23.11.28
+=====================
+* Simmplify the Identity Domains User Extract
+
+=====================
+23.10.31 - 23.10.31
+=====================
+* Added additional information to Big Data Cloud Service
+* Extract FAILED status as well.
+
+=====================
+23.10.24 - 23.10.24
+=====================
+* Fix bug with instance configuration and object storage csv
+
+=====================
+23.10.17 - 23.10.17
+=====================
+* Fix bug with resource principle authentication
+
+=====================
 23.09.26 - 23.09.26
 =====================
 * Added network load balancers to the CSV
@@ -12,7 +45,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 =====================
 23.09.19 - 23.09.19
 =====================
-* Added resource principle authenticion with -rp
+* Added resource principle authentication with -rp
 * Added log unified agents configuration
 
 =====================

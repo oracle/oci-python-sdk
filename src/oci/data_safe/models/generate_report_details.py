@@ -199,7 +199,7 @@ class GenerateReportDetails(object):
     def mime_type(self):
         """
         **[Required]** Gets the mime_type of this GenerateReportDetails.
-        Specifies the format of report to be excel or pdf
+        Specifies the format of report to be .xls or .pdf
 
         Allowed values for this property are: "PDF", "XLS"
 
@@ -213,7 +213,7 @@ class GenerateReportDetails(object):
     def mime_type(self, mime_type):
         """
         Sets the mime_type of this GenerateReportDetails.
-        Specifies the format of report to be excel or pdf
+        Specifies the format of report to be .xls or .pdf
 
 
         :param mime_type: The mime_type of this GenerateReportDetails.
@@ -222,8 +222,7 @@ class GenerateReportDetails(object):
         allowed_values = ["PDF", "XLS"]
         if not value_allowed_none_or_none_sentinel(mime_type, allowed_values):
             raise ValueError(
-                "Invalid value for `mime_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `mime_type`, must be None or one of {allowed_values}"
             )
         self._mime_type = mime_type
 

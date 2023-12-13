@@ -347,8 +347,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
         if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
             raise ValueError(
-                "Invalid value for `database_edition`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `database_edition`, must be None or one of {allowed_values}"
             )
         self._database_edition = database_edition
 
@@ -383,8 +382,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         allowed_values = ["HIGH", "NORMAL"]
         if not value_allowed_none_or_none_sentinel(disk_redundancy, allowed_values):
             raise ValueError(
-                "Invalid value for `disk_redundancy`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `disk_redundancy`, must be None or one of {allowed_values}"
             )
         self._disk_redundancy = disk_redundancy
 
@@ -415,8 +413,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             raise ValueError(
-                "Invalid value for `license_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
 

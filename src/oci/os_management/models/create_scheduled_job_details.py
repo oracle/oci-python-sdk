@@ -344,8 +344,7 @@ class CreateScheduledJobDetails(object):
         allowed_values = ["ONETIME", "RECURRING"]
         if not value_allowed_none_or_none_sentinel(schedule_type, allowed_values):
             raise ValueError(
-                "Invalid value for `schedule_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `schedule_type`, must be None or one of {allowed_values}"
             )
         self._schedule_type = schedule_type
 
@@ -400,8 +399,7 @@ class CreateScheduledJobDetails(object):
         allowed_values = ["HOUR", "DAY", "WEEK", "MONTH"]
         if not value_allowed_none_or_none_sentinel(interval_type, allowed_values):
             raise ValueError(
-                "Invalid value for `interval_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `interval_type`, must be None or one of {allowed_values}"
             )
         self._interval_type = interval_type
 
@@ -512,8 +510,7 @@ class CreateScheduledJobDetails(object):
         allowed_values = ["INSTALL", "UPDATE", "REMOVE", "UPDATEALL", "ENABLEMODULESTREAM", "DISABLEMODULESTREAM", "SWITCHMODULESTREAM", "INSTALLMODULESTREAMPROFILE", "REMOVEMODULESTREAMPROFILE", "COMPOUND"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             raise ValueError(
-                "Invalid value for `operation_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `operation_type`, must be None or one of {allowed_values}"
             )
         self._operation_type = operation_type
 
@@ -544,8 +541,7 @@ class CreateScheduledJobDetails(object):
         allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL"]
         if not value_allowed_none_or_none_sentinel(update_type, allowed_values):
             raise ValueError(
-                "Invalid value for `update_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `update_type`, must be None or one of {allowed_values}"
             )
         self._update_type = update_type
 
@@ -680,8 +676,7 @@ class CreateScheduledJobDetails(object):
         allowed_values = ["LINUX", "WINDOWS", "ALL"]
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             raise ValueError(
-                "Invalid value for `os_family`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `os_family`, must be None or one of {allowed_values}"
             )
         self._os_family = os_family
 

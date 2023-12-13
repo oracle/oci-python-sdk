@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateKnowledgeBaseDetails(object):
     """
-    Details to create a new Knowledge Base.
+    Details to create a new knowledge base.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +60,7 @@ class CreateKnowledgeBaseDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateKnowledgeBaseDetails.
-        The Oracle Cloud Identifier (`OCID`__) of the Knowledge Base's compartment.
+        The compartment Oracle Cloud Identifier (`OCID`__) of the knowledge base.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -74,7 +74,7 @@ class CreateKnowledgeBaseDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateKnowledgeBaseDetails.
-        The Oracle Cloud Identifier (`OCID`__) of the Knowledge Base's compartment.
+        The compartment Oracle Cloud Identifier (`OCID`__) of the knowledge base.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -88,7 +88,7 @@ class CreateKnowledgeBaseDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateKnowledgeBaseDetails.
-        The name of the Knowledge Base.
+        The name of the knowledge base.
 
 
         :return: The display_name of this CreateKnowledgeBaseDetails.
@@ -100,7 +100,7 @@ class CreateKnowledgeBaseDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateKnowledgeBaseDetails.
-        The name of the Knowledge Base.
+        The name of the knowledge base.
 
 
         :param display_name: The display_name of this CreateKnowledgeBaseDetails.

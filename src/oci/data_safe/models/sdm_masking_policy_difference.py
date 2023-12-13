@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SdmMaskingPolicyDifference(object):
     """
-    A SDM masking policy difference resource. It helps track the difference between sensitive columns of SDM and masking columns of the masking policy.
+    A resource that tracks the differences between sensitive columns in the sensitive data model and masking columns in the masking policy
     """
 
     #: A constant which can be used with the difference_type property of a SdmMaskingPolicyDifference.
@@ -160,7 +160,7 @@ class SdmMaskingPolicyDifference(object):
     def id(self):
         """
         **[Required]** Gets the id of this SdmMaskingPolicyDifference.
-        The OCID of the SDM masking policy difference.
+        The OCID of the Sensitive data model and masking policy difference resource.
 
 
         :return: The id of this SdmMaskingPolicyDifference.
@@ -172,7 +172,7 @@ class SdmMaskingPolicyDifference(object):
     def id(self, id):
         """
         Sets the id of this SdmMaskingPolicyDifference.
-        The OCID of the SDM masking policy difference.
+        The OCID of the Sensitive data model and masking policy difference resource.
 
 
         :param id: The id of this SdmMaskingPolicyDifference.
@@ -184,7 +184,7 @@ class SdmMaskingPolicyDifference(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this SdmMaskingPolicyDifference.
-        The OCID of the compartment that contains the SDM masking policy difference.
+        The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
 
 
         :return: The compartment_id of this SdmMaskingPolicyDifference.
@@ -196,7 +196,7 @@ class SdmMaskingPolicyDifference(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this SdmMaskingPolicyDifference.
-        The OCID of the compartment that contains the SDM masking policy difference.
+        The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
 
 
         :param compartment_id: The compartment_id of this SdmMaskingPolicyDifference.

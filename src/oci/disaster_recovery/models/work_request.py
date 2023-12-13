@@ -263,9 +263,9 @@ class WorkRequest(object):
     def id(self):
         """
         **[Required]** Gets the id of this WorkRequest.
-        The ID (OCID) of the work request.
+        The OCID of the work request.
 
-        Example: `ocid1.workrequest.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.drworkrequest.oc1..uniqueID`
 
 
         :return: The id of this WorkRequest.
@@ -277,9 +277,9 @@ class WorkRequest(object):
     def id(self, id):
         """
         Sets the id of this WorkRequest.
-        The ID (OCID) of the work request.
+        The OCID of the work request.
 
-        Example: `ocid1.workrequest.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.drworkrequest.oc1..uniqueID`
 
 
         :param id: The id of this WorkRequest.
@@ -296,7 +296,7 @@ class WorkRequest(object):
         and those resources are not in the same compartment, it is up to the service team to pick the primary
         resource whose compartment should be used
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :return: The compartment_id of this WorkRequest.
@@ -313,7 +313,7 @@ class WorkRequest(object):
         and those resources are not in the same compartment, it is up to the service team to pick the primary
         resource whose compartment should be used
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :param compartment_id: The compartment_id of this WorkRequest.

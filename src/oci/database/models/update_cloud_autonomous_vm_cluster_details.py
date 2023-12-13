@@ -40,6 +40,18 @@ class UpdateCloudAutonomousVmClusterDetails(object):
             The value to assign to the maintenance_window_details property of this UpdateCloudAutonomousVmClusterDetails.
         :type maintenance_window_details: oci.database.models.MaintenanceWindow
 
+        :param autonomous_data_storage_size_in_tbs:
+            The value to assign to the autonomous_data_storage_size_in_tbs property of this UpdateCloudAutonomousVmClusterDetails.
+        :type autonomous_data_storage_size_in_tbs: float
+
+        :param cpu_core_count_per_node:
+            The value to assign to the cpu_core_count_per_node property of this UpdateCloudAutonomousVmClusterDetails.
+        :type cpu_core_count_per_node: int
+
+        :param total_container_databases:
+            The value to assign to the total_container_databases property of this UpdateCloudAutonomousVmClusterDetails.
+        :type total_container_databases: int
+
         :param license_model:
             The value to assign to the license_model property of this UpdateCloudAutonomousVmClusterDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
@@ -62,6 +74,9 @@ class UpdateCloudAutonomousVmClusterDetails(object):
             'description': 'str',
             'display_name': 'str',
             'maintenance_window_details': 'MaintenanceWindow',
+            'autonomous_data_storage_size_in_tbs': 'float',
+            'cpu_core_count_per_node': 'int',
+            'total_container_databases': 'int',
             'license_model': 'str',
             'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
@@ -72,6 +87,9 @@ class UpdateCloudAutonomousVmClusterDetails(object):
             'description': 'description',
             'display_name': 'displayName',
             'maintenance_window_details': 'maintenanceWindowDetails',
+            'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
+            'cpu_core_count_per_node': 'cpuCoreCountPerNode',
+            'total_container_databases': 'totalContainerDatabases',
             'license_model': 'licenseModel',
             'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
@@ -81,6 +99,9 @@ class UpdateCloudAutonomousVmClusterDetails(object):
         self._description = None
         self._display_name = None
         self._maintenance_window_details = None
+        self._autonomous_data_storage_size_in_tbs = None
+        self._cpu_core_count_per_node = None
+        self._total_container_databases = None
         self._license_model = None
         self._nsg_ids = None
         self._freeform_tags = None
@@ -155,6 +176,78 @@ class UpdateCloudAutonomousVmClusterDetails(object):
         self._maintenance_window_details = maintenance_window_details
 
     @property
+    def autonomous_data_storage_size_in_tbs(self):
+        """
+        Gets the autonomous_data_storage_size_in_tbs of this UpdateCloudAutonomousVmClusterDetails.
+        The new scaled up/down value for exadata storage in TBs for cloud autonomous VM cluster.
+
+
+        :return: The autonomous_data_storage_size_in_tbs of this UpdateCloudAutonomousVmClusterDetails.
+        :rtype: float
+        """
+        return self._autonomous_data_storage_size_in_tbs
+
+    @autonomous_data_storage_size_in_tbs.setter
+    def autonomous_data_storage_size_in_tbs(self, autonomous_data_storage_size_in_tbs):
+        """
+        Sets the autonomous_data_storage_size_in_tbs of this UpdateCloudAutonomousVmClusterDetails.
+        The new scaled up/down value for exadata storage in TBs for cloud autonomous VM cluster.
+
+
+        :param autonomous_data_storage_size_in_tbs: The autonomous_data_storage_size_in_tbs of this UpdateCloudAutonomousVmClusterDetails.
+        :type: float
+        """
+        self._autonomous_data_storage_size_in_tbs = autonomous_data_storage_size_in_tbs
+
+    @property
+    def cpu_core_count_per_node(self):
+        """
+        Gets the cpu_core_count_per_node of this UpdateCloudAutonomousVmClusterDetails.
+        The new scaled up/down value for ocpus for cloud autonomous VM cluster per node.
+
+
+        :return: The cpu_core_count_per_node of this UpdateCloudAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._cpu_core_count_per_node
+
+    @cpu_core_count_per_node.setter
+    def cpu_core_count_per_node(self, cpu_core_count_per_node):
+        """
+        Sets the cpu_core_count_per_node of this UpdateCloudAutonomousVmClusterDetails.
+        The new scaled up/down value for ocpus for cloud autonomous VM cluster per node.
+
+
+        :param cpu_core_count_per_node: The cpu_core_count_per_node of this UpdateCloudAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._cpu_core_count_per_node = cpu_core_count_per_node
+
+    @property
+    def total_container_databases(self):
+        """
+        Gets the total_container_databases of this UpdateCloudAutonomousVmClusterDetails.
+        The new scaled up/down value for maxACD count for cloud autonomous VM cluster.
+
+
+        :return: The total_container_databases of this UpdateCloudAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._total_container_databases
+
+    @total_container_databases.setter
+    def total_container_databases(self, total_container_databases):
+        """
+        Sets the total_container_databases of this UpdateCloudAutonomousVmClusterDetails.
+        The new scaled up/down value for maxACD count for cloud autonomous VM cluster.
+
+
+        :param total_container_databases: The total_container_databases of this UpdateCloudAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._total_container_databases = total_container_databases
+
+    @property
     def license_model(self):
         """
         Gets the license_model of this UpdateCloudAutonomousVmClusterDetails.
@@ -197,8 +290,7 @@ class UpdateCloudAutonomousVmClusterDetails(object):
         allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             raise ValueError(
-                "Invalid value for `license_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `license_model`, must be None or one of {allowed_values}"
             )
         self._license_model = license_model
 

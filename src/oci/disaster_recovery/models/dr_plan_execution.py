@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrPlanExecution(object):
     """
-    The details of a DR Plan Execution.
+    The details of a DR plan execution.
     """
 
     #: A constant which can be used with the plan_execution_type property of a DrPlanExecution.
@@ -30,6 +30,22 @@ class DrPlanExecution(object):
     #: A constant which can be used with the plan_execution_type property of a DrPlanExecution.
     #: This constant has a value of "FAILOVER_PRECHECK"
     PLAN_EXECUTION_TYPE_FAILOVER_PRECHECK = "FAILOVER_PRECHECK"
+
+    #: A constant which can be used with the plan_execution_type property of a DrPlanExecution.
+    #: This constant has a value of "START_DRILL"
+    PLAN_EXECUTION_TYPE_START_DRILL = "START_DRILL"
+
+    #: A constant which can be used with the plan_execution_type property of a DrPlanExecution.
+    #: This constant has a value of "START_DRILL_PRECHECK"
+    PLAN_EXECUTION_TYPE_START_DRILL_PRECHECK = "START_DRILL_PRECHECK"
+
+    #: A constant which can be used with the plan_execution_type property of a DrPlanExecution.
+    #: This constant has a value of "STOP_DRILL"
+    PLAN_EXECUTION_TYPE_STOP_DRILL = "STOP_DRILL"
+
+    #: A constant which can be used with the plan_execution_type property of a DrPlanExecution.
+    #: This constant has a value of "STOP_DRILL_PRECHECK"
+    PLAN_EXECUTION_TYPE_STOP_DRILL_PRECHECK = "STOP_DRILL_PRECHECK"
 
     #: A constant which can be used with the lifecycle_state property of a DrPlanExecution.
     #: This constant has a value of "ACCEPTED"
@@ -102,7 +118,7 @@ class DrPlanExecution(object):
 
         :param plan_execution_type:
             The value to assign to the plan_execution_type property of this DrPlanExecution.
-            Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL", "START_DRILL_PRECHECK", "STOP_DRILL", "STOP_DRILL_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type plan_execution_type: str
 
@@ -247,9 +263,9 @@ class DrPlanExecution(object):
     def id(self):
         """
         **[Required]** Gets the id of this DrPlanExecution.
-        The OCID of the DR Plan Execution.
+        The OCID of the DR plan execution.
 
-        Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drplanexecution.oc1..uniqueID`
 
 
         :return: The id of this DrPlanExecution.
@@ -261,9 +277,9 @@ class DrPlanExecution(object):
     def id(self, id):
         """
         Sets the id of this DrPlanExecution.
-        The OCID of the DR Plan Execution.
+        The OCID of the DR plan execution.
 
-        Example: `ocid1.drplanexecution.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drplanexecution.oc1..uniqueID`
 
 
         :param id: The id of this DrPlanExecution.
@@ -275,9 +291,9 @@ class DrPlanExecution(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DrPlanExecution.
-        The OCID of the compartment containing this DR Plan Execution.
+        The OCID of the compartment containing this DR plan execution.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :return: The compartment_id of this DrPlanExecution.
@@ -289,9 +305,9 @@ class DrPlanExecution(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DrPlanExecution.
-        The OCID of the compartment containing this DR Plan Execution.
+        The OCID of the compartment containing this DR plan execution.
 
-        Example: `ocid1.compartment.oc1..&lt;unique_id&gt;`
+        Example: `ocid1.compartment.oc1..uniqueID`
 
 
         :param compartment_id: The compartment_id of this DrPlanExecution.
@@ -303,7 +319,7 @@ class DrPlanExecution(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DrPlanExecution.
-        The display name of this DR Plan Execution.
+        The display name of the DR plan execution.
 
         Example: `Execution - EBS Switchover PHX to IAD`
 
@@ -317,7 +333,7 @@ class DrPlanExecution(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DrPlanExecution.
-        The display name of this DR Plan Execution.
+        The display name of the DR plan execution.
 
         Example: `Execution - EBS Switchover PHX to IAD`
 
@@ -331,9 +347,9 @@ class DrPlanExecution(object):
     def plan_id(self):
         """
         **[Required]** Gets the plan_id of this DrPlanExecution.
-        The OCID of the DR Plan.
+        The OCID of the DR plan.
 
-        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drplan.oc1..uniqueID`
 
 
         :return: The plan_id of this DrPlanExecution.
@@ -345,9 +361,9 @@ class DrPlanExecution(object):
     def plan_id(self, plan_id):
         """
         Sets the plan_id of this DrPlanExecution.
-        The OCID of the DR Plan.
+        The OCID of the DR plan.
 
-        Example: `ocid1.drplan.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drplan.oc1..uniqueID`
 
 
         :param plan_id: The plan_id of this DrPlanExecution.
@@ -359,9 +375,9 @@ class DrPlanExecution(object):
     def plan_execution_type(self):
         """
         **[Required]** Gets the plan_execution_type of this DrPlanExecution.
-        The type of the DR Plan executed.
+        The type of the DR plan executed.
 
-        Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL", "START_DRILL_PRECHECK", "STOP_DRILL", "STOP_DRILL_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -374,13 +390,13 @@ class DrPlanExecution(object):
     def plan_execution_type(self, plan_execution_type):
         """
         Sets the plan_execution_type of this DrPlanExecution.
-        The type of the DR Plan executed.
+        The type of the DR plan executed.
 
 
         :param plan_execution_type: The plan_execution_type of this DrPlanExecution.
         :type: str
         """
-        allowed_values = ["SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK"]
+        allowed_values = ["SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL", "START_DRILL_PRECHECK", "STOP_DRILL", "STOP_DRILL_PRECHECK"]
         if not value_allowed_none_or_none_sentinel(plan_execution_type, allowed_values):
             plan_execution_type = 'UNKNOWN_ENUM_VALUE'
         self._plan_execution_type = plan_execution_type
@@ -409,9 +425,9 @@ class DrPlanExecution(object):
     def dr_protection_group_id(self):
         """
         **[Required]** Gets the dr_protection_group_id of this DrPlanExecution.
-        The OCID of the DR Protection Group to which this DR Plan Execution belongs.
+        The OCID of the DR protection group to which this DR plan execution belongs.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :return: The dr_protection_group_id of this DrPlanExecution.
@@ -423,9 +439,9 @@ class DrPlanExecution(object):
     def dr_protection_group_id(self, dr_protection_group_id):
         """
         Sets the dr_protection_group_id of this DrPlanExecution.
-        The OCID of the DR Protection Group to which this DR Plan Execution belongs.
+        The OCID of the DR protection group to which this DR plan execution belongs.
 
-        Example: `ocid1.drprotectiongroup.oc1.iad.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :param dr_protection_group_id: The dr_protection_group_id of this DrPlanExecution.
@@ -437,10 +453,10 @@ class DrPlanExecution(object):
     def peer_dr_protection_group_id(self):
         """
         **[Required]** Gets the peer_dr_protection_group_id of this DrPlanExecution.
-        The OCID of peer (remote) DR Protection Group associated with this plan's
-        DR Protection Group.
+        The OCID of peer DR protection group associated with this plan's
+        DR protection group.
 
-        Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :return: The peer_dr_protection_group_id of this DrPlanExecution.
@@ -452,10 +468,10 @@ class DrPlanExecution(object):
     def peer_dr_protection_group_id(self, peer_dr_protection_group_id):
         """
         Sets the peer_dr_protection_group_id of this DrPlanExecution.
-        The OCID of peer (remote) DR Protection Group associated with this plan's
-        DR Protection Group.
+        The OCID of peer DR protection group associated with this plan's
+        DR protection group.
 
-        Example: `ocid1.drprotectiongroup.oc1.phx.&lt;unique_id&gt;`
+        Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 
 
         :param peer_dr_protection_group_id: The peer_dr_protection_group_id of this DrPlanExecution.
@@ -467,7 +483,8 @@ class DrPlanExecution(object):
     def peer_region(self):
         """
         **[Required]** Gets the peer_region of this DrPlanExecution.
-        The region of the peer (remote) DR Protection Group.
+        The region of the peer DR protection group associated with this plan's
+        DR protection group.
 
         Example: `us-ashburn-1`
 
@@ -481,7 +498,8 @@ class DrPlanExecution(object):
     def peer_region(self, peer_region):
         """
         Sets the peer_region of this DrPlanExecution.
-        The region of the peer (remote) DR Protection Group.
+        The region of the peer DR protection group associated with this plan's
+        DR protection group.
 
         Example: `us-ashburn-1`
 
@@ -515,7 +533,7 @@ class DrPlanExecution(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this DrPlanExecution.
-        The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.
+        The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -529,7 +547,7 @@ class DrPlanExecution(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DrPlanExecution.
-        The date and time at which DR Plan Execution was created. An RFC3339 formatted datetime string.
+        The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -543,7 +561,7 @@ class DrPlanExecution(object):
     def time_started(self):
         """
         Gets the time_started of this DrPlanExecution.
-        The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.
+        The date and time at which DR plan execution began. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -557,7 +575,7 @@ class DrPlanExecution(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this DrPlanExecution.
-        The date and time at which DR Plan Execution began. An RFC3339 formatted datetime string.
+        The date and time at which DR plan execution began. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -571,7 +589,7 @@ class DrPlanExecution(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this DrPlanExecution.
-        The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.
+        The time when DR plan execution was last updated. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -585,7 +603,7 @@ class DrPlanExecution(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DrPlanExecution.
-        The time at which DR Plan Execution was last updated. An RFC3339 formatted datetime string.
+        The time when DR plan execution was last updated. An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
 
@@ -599,7 +617,7 @@ class DrPlanExecution(object):
     def time_ended(self):
         """
         Gets the time_ended of this DrPlanExecution.
-        The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled.
+        The date and time at which DR plan execution succeeded, failed, was paused, or was canceled.
         An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
@@ -614,7 +632,7 @@ class DrPlanExecution(object):
     def time_ended(self, time_ended):
         """
         Sets the time_ended of this DrPlanExecution.
-        The date and time at which DR Plan Execution succeeded, failed, was paused, or was canceled.
+        The date and time at which DR plan execution succeeded, failed, was paused, or was canceled.
         An RFC3339 formatted datetime string.
 
         Example: `2019-03-29T09:36:42Z`
@@ -629,7 +647,7 @@ class DrPlanExecution(object):
     def execution_duration_in_sec(self):
         """
         Gets the execution_duration_in_sec of this DrPlanExecution.
-        The total duration in seconds taken to complete the DR Plan Execution.
+        The total duration in seconds taken to complete the DR plan execution.
 
         Example: `750`
 
@@ -643,7 +661,7 @@ class DrPlanExecution(object):
     def execution_duration_in_sec(self, execution_duration_in_sec):
         """
         Sets the execution_duration_in_sec of this DrPlanExecution.
-        The total duration in seconds taken to complete the DR Plan Execution.
+        The total duration in seconds taken to complete the DR plan execution.
 
         Example: `750`
 
@@ -657,7 +675,7 @@ class DrPlanExecution(object):
     def group_executions(self):
         """
         **[Required]** Gets the group_executions of this DrPlanExecution.
-        A list of groups executed in this DR Plan Execution.
+        A list of groups executed in this DR plan execution.
 
 
         :return: The group_executions of this DrPlanExecution.
@@ -669,7 +687,7 @@ class DrPlanExecution(object):
     def group_executions(self, group_executions):
         """
         Sets the group_executions of this DrPlanExecution.
-        A list of groups executed in this DR Plan Execution.
+        A list of groups executed in this DR plan execution.
 
 
         :param group_executions: The group_executions of this DrPlanExecution.
@@ -681,7 +699,7 @@ class DrPlanExecution(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DrPlanExecution.
-        The current state of the DR Plan Execution.
+        The current state of the DR plan execution.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "CANCELING", "CANCELED", "SUCCEEDED", "FAILED", "DELETING", "DELETED", "PAUSING", "PAUSED", "RESUMING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -696,7 +714,7 @@ class DrPlanExecution(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DrPlanExecution.
-        The current state of the DR Plan Execution.
+        The current state of the DR plan execution.
 
 
         :param lifecycle_state: The lifecycle_state of this DrPlanExecution.
@@ -711,9 +729,7 @@ class DrPlanExecution(object):
     def life_cycle_details(self):
         """
         Gets the life_cycle_details of this DrPlanExecution.
-        A message describing the DR Plan Execution's current state in more detail.
-
-        Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+        A message describing the DR plan execution's current state in more detail.
 
 
         :return: The life_cycle_details of this DrPlanExecution.
@@ -725,9 +741,7 @@ class DrPlanExecution(object):
     def life_cycle_details(self, life_cycle_details):
         """
         Sets the life_cycle_details of this DrPlanExecution.
-        A message describing the DR Plan Execution's current state in more detail.
-
-        Example: `The DR Plan Execution [Execution - EBS Switchover PHX to IAD] is currently in progress`
+        A message describing the DR plan execution's current state in more detail.
 
 
         :param life_cycle_details: The life_cycle_details of this DrPlanExecution.
@@ -740,6 +754,7 @@ class DrPlanExecution(object):
         """
         Gets the freeform_tags of this DrPlanExecution.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -753,6 +768,7 @@ class DrPlanExecution(object):
         """
         Sets the freeform_tags of this DrPlanExecution.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
         Example: `{\"Department\": \"Finance\"}`
 
 
@@ -766,6 +782,7 @@ class DrPlanExecution(object):
         """
         Gets the defined_tags of this DrPlanExecution.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
@@ -779,6 +796,7 @@ class DrPlanExecution(object):
         """
         Sets the defined_tags of this DrPlanExecution.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
 
@@ -792,6 +810,7 @@ class DrPlanExecution(object):
         """
         Gets the system_tags of this DrPlanExecution.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
+
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 
@@ -805,6 +824,7 @@ class DrPlanExecution(object):
         """
         Sets the system_tags of this DrPlanExecution.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
+
         Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 

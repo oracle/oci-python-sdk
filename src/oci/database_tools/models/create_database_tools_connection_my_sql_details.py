@@ -37,10 +37,19 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
             The value to assign to the freeform_tags property of this CreateDatabaseToolsConnectionMySqlDetails.
         :type freeform_tags: dict(str, str)
 
+        :param locks:
+            The value to assign to the locks property of this CreateDatabaseToolsConnectionMySqlDetails.
+        :type locks: list[oci.database_tools.models.ResourceLock]
+
         :param type:
             The value to assign to the type property of this CreateDatabaseToolsConnectionMySqlDetails.
-            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL"
+            Allowed values for this property are: "ORACLE_DATABASE", "MYSQL", "POSTGRESQL", "GENERIC_JDBC"
         :type type: str
+
+        :param runtime_support:
+            The value to assign to the runtime_support property of this CreateDatabaseToolsConnectionMySqlDetails.
+            Allowed values for this property are: "SUPPORTED", "UNSUPPORTED"
+        :type runtime_support: str
 
         :param related_resource:
             The value to assign to the related_resource property of this CreateDatabaseToolsConnectionMySqlDetails.
@@ -76,7 +85,9 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'locks': 'list[ResourceLock]',
             'type': 'str',
+            'runtime_support': 'str',
             'related_resource': 'CreateDatabaseToolsRelatedResourceMySqlDetails',
             'connection_string': 'str',
             'user_name': 'str',
@@ -91,7 +102,9 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'locks': 'locks',
             'type': 'type',
+            'runtime_support': 'runtimeSupport',
             'related_resource': 'relatedResource',
             'connection_string': 'connectionString',
             'user_name': 'userName',
@@ -105,7 +118,9 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
         self._compartment_id = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._locks = None
         self._type = None
+        self._runtime_support = None
         self._related_resource = None
         self._connection_string = None
         self._user_name = None
@@ -138,7 +153,7 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
     @property
     def connection_string(self):
         """
-        Gets the connection_string of this CreateDatabaseToolsConnectionMySqlDetails.
+        **[Required]** Gets the connection_string of this CreateDatabaseToolsConnectionMySqlDetails.
         The connection string used to connect to the MySQL Server.
 
 
@@ -162,7 +177,7 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
     @property
     def user_name(self):
         """
-        Gets the user_name of this CreateDatabaseToolsConnectionMySqlDetails.
+        **[Required]** Gets the user_name of this CreateDatabaseToolsConnectionMySqlDetails.
         The user name.
 
 
@@ -186,7 +201,7 @@ class CreateDatabaseToolsConnectionMySqlDetails(CreateDatabaseToolsConnectionDet
     @property
     def user_password(self):
         """
-        Gets the user_password of this CreateDatabaseToolsConnectionMySqlDetails.
+        **[Required]** Gets the user_password of this CreateDatabaseToolsConnectionMySqlDetails.
 
         :return: The user_password of this CreateDatabaseToolsConnectionMySqlDetails.
         :rtype: oci.database_tools.models.DatabaseToolsUserPasswordDetails

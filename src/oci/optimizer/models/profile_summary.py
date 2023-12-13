@@ -84,6 +84,10 @@ class ProfileSummary(object):
             The value to assign to the freeform_tags property of this ProfileSummary.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ProfileSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ProfileSummary.
             Allowed values for this property are: "ACTIVE", "FAILED", "INACTIVE", "ATTACHING", "DETACHING", "DELETING", "DELETED", "UPDATING", "CREATING", 'UNKNOWN_ENUM_VALUE'.
@@ -119,6 +123,7 @@ class ProfileSummary(object):
             'aggregation_interval_in_days': 'int',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str',
             'levels_configuration': 'LevelsConfiguration',
             'target_compartments': 'TargetCompartments',
@@ -135,6 +140,7 @@ class ProfileSummary(object):
             'aggregation_interval_in_days': 'aggregationIntervalInDays',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags',
             'lifecycle_state': 'lifecycleState',
             'levels_configuration': 'levelsConfiguration',
             'target_compartments': 'targetCompartments',
@@ -150,6 +156,7 @@ class ProfileSummary(object):
         self._aggregation_interval_in_days = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._system_tags = None
         self._lifecycle_state = None
         self._levels_configuration = None
         self._target_compartments = None
@@ -344,6 +351,32 @@ class ProfileSummary(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ProfileSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :return: The system_tags of this ProfileSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ProfileSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{ \"orcl-cloud\": { \"free-tier-retained\": \"true\" } }`
+
+
+        :param system_tags: The system_tags of this ProfileSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def lifecycle_state(self):

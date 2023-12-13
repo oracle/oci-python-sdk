@@ -79,6 +79,34 @@ class Connection(object):
     #: This constant has a value of "MONGODB"
     CONNECTION_TYPE_MONGODB = "MONGODB"
 
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "AMAZON_KINESIS"
+    CONNECTION_TYPE_AMAZON_KINESIS = "AMAZON_KINESIS"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "AMAZON_REDSHIFT"
+    CONNECTION_TYPE_AMAZON_REDSHIFT = "AMAZON_REDSHIFT"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "REDIS"
+    CONNECTION_TYPE_REDIS = "REDIS"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "ELASTICSEARCH"
+    CONNECTION_TYPE_ELASTICSEARCH = "ELASTICSEARCH"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "GENERIC"
+    CONNECTION_TYPE_GENERIC = "GENERIC"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "GOOGLE_CLOUD_STORAGE"
+    CONNECTION_TYPE_GOOGLE_CLOUD_STORAGE = "GOOGLE_CLOUD_STORAGE"
+
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "GOOGLE_BIGQUERY"
+    CONNECTION_TYPE_GOOGLE_BIGQUERY = "GOOGLE_BIGQUERY"
+
     #: A constant which can be used with the lifecycle_state property of a Connection.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -103,6 +131,18 @@ class Connection(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the routing_method property of a Connection.
+    #: This constant has a value of "SHARED_SERVICE_ENDPOINT"
+    ROUTING_METHOD_SHARED_SERVICE_ENDPOINT = "SHARED_SERVICE_ENDPOINT"
+
+    #: A constant which can be used with the routing_method property of a Connection.
+    #: This constant has a value of "SHARED_DEPLOYMENT_ENDPOINT"
+    ROUTING_METHOD_SHARED_DEPLOYMENT_ENDPOINT = "SHARED_DEPLOYMENT_ENDPOINT"
+
+    #: A constant which can be used with the routing_method property of a Connection.
+    #: This constant has a value of "DEDICATED_ENDPOINT"
+    ROUTING_METHOD_DEDICATED_ENDPOINT = "DEDICATED_ENDPOINT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Connection object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -111,25 +151,32 @@ class Connection(object):
         * :class:`~oci.golden_gate.models.KafkaConnection`
         * :class:`~oci.golden_gate.models.PostgresqlConnection`
         * :class:`~oci.golden_gate.models.JavaMessageServiceConnection`
+        * :class:`~oci.golden_gate.models.ElasticsearchConnection`
+        * :class:`~oci.golden_gate.models.AmazonRedshiftConnection`
         * :class:`~oci.golden_gate.models.SnowflakeConnection`
         * :class:`~oci.golden_gate.models.GoldenGateConnection`
         * :class:`~oci.golden_gate.models.MysqlConnection`
         * :class:`~oci.golden_gate.models.AmazonS3Connection`
+        * :class:`~oci.golden_gate.models.GoogleBigQueryConnection`
         * :class:`~oci.golden_gate.models.OracleConnection`
         * :class:`~oci.golden_gate.models.AzureDataLakeStorageConnection`
         * :class:`~oci.golden_gate.models.MongoDbConnection`
         * :class:`~oci.golden_gate.models.HdfsConnection`
+        * :class:`~oci.golden_gate.models.GoogleCloudStorageConnection`
         * :class:`~oci.golden_gate.models.OciObjectStorageConnection`
         * :class:`~oci.golden_gate.models.KafkaSchemaRegistryConnection`
         * :class:`~oci.golden_gate.models.MicrosoftSqlserverConnection`
+        * :class:`~oci.golden_gate.models.AmazonKinesisConnection`
+        * :class:`~oci.golden_gate.models.GenericConnection`
         * :class:`~oci.golden_gate.models.OracleNosqlConnection`
         * :class:`~oci.golden_gate.models.AzureSynapseConnection`
+        * :class:`~oci.golden_gate.models.RedisConnection`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param connection_type:
             The value to assign to the connection_type property of this Connection.
-            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -187,10 +234,6 @@ class Connection(object):
             The value to assign to the key_id property of this Connection.
         :type key_id: str
 
-        :param subnet_id:
-            The value to assign to the subnet_id property of this Connection.
-        :type subnet_id: str
-
         :param ingress_ips:
             The value to assign to the ingress_ips property of this Connection.
         :type ingress_ips: list[oci.golden_gate.models.IngressIpDetails]
@@ -198,6 +241,16 @@ class Connection(object):
         :param nsg_ids:
             The value to assign to the nsg_ids property of this Connection.
         :type nsg_ids: list[str]
+
+        :param subnet_id:
+            The value to assign to the subnet_id property of this Connection.
+        :type subnet_id: str
+
+        :param routing_method:
+            The value to assign to the routing_method property of this Connection.
+            Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type routing_method: str
 
         """
         self.swagger_types = {
@@ -215,9 +268,10 @@ class Connection(object):
             'time_updated': 'datetime',
             'vault_id': 'str',
             'key_id': 'str',
-            'subnet_id': 'str',
             'ingress_ips': 'list[IngressIpDetails]',
-            'nsg_ids': 'list[str]'
+            'nsg_ids': 'list[str]',
+            'subnet_id': 'str',
+            'routing_method': 'str'
         }
 
         self.attribute_map = {
@@ -235,9 +289,10 @@ class Connection(object):
             'time_updated': 'timeUpdated',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
-            'subnet_id': 'subnetId',
             'ingress_ips': 'ingressIps',
-            'nsg_ids': 'nsgIds'
+            'nsg_ids': 'nsgIds',
+            'subnet_id': 'subnetId',
+            'routing_method': 'routingMethod'
         }
 
         self._connection_type = None
@@ -254,9 +309,10 @@ class Connection(object):
         self._time_updated = None
         self._vault_id = None
         self._key_id = None
-        self._subnet_id = None
         self._ingress_ips = None
         self._nsg_ids = None
+        self._subnet_id = None
+        self._routing_method = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -275,6 +331,12 @@ class Connection(object):
         if type == 'JAVA_MESSAGE_SERVICE':
             return 'JavaMessageServiceConnection'
 
+        if type == 'ELASTICSEARCH':
+            return 'ElasticsearchConnection'
+
+        if type == 'AMAZON_REDSHIFT':
+            return 'AmazonRedshiftConnection'
+
         if type == 'SNOWFLAKE':
             return 'SnowflakeConnection'
 
@@ -286,6 +348,9 @@ class Connection(object):
 
         if type == 'AMAZON_S3':
             return 'AmazonS3Connection'
+
+        if type == 'GOOGLE_BIGQUERY':
+            return 'GoogleBigQueryConnection'
 
         if type == 'ORACLE':
             return 'OracleConnection'
@@ -299,6 +364,9 @@ class Connection(object):
         if type == 'HDFS':
             return 'HdfsConnection'
 
+        if type == 'GOOGLE_CLOUD_STORAGE':
+            return 'GoogleCloudStorageConnection'
+
         if type == 'OCI_OBJECT_STORAGE':
             return 'OciObjectStorageConnection'
 
@@ -308,11 +376,20 @@ class Connection(object):
         if type == 'MICROSOFT_SQLSERVER':
             return 'MicrosoftSqlserverConnection'
 
+        if type == 'AMAZON_KINESIS':
+            return 'AmazonKinesisConnection'
+
+        if type == 'GENERIC':
+            return 'GenericConnection'
+
         if type == 'ORACLE_NOSQL':
             return 'OracleNosqlConnection'
 
         if type == 'AZURE_SYNAPSE_ANALYTICS':
             return 'AzureSynapseConnection'
+
+        if type == 'REDIS':
+            return 'RedisConnection'
         else:
             return 'Connection'
 
@@ -322,7 +399,7 @@ class Connection(object):
         **[Required]** Gets the connection_type of this Connection.
         The connection type.
 
-        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -341,7 +418,7 @@ class Connection(object):
         :param connection_type: The connection_type of this Connection.
         :type: str
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type
@@ -717,34 +794,6 @@ class Connection(object):
         self._key_id = key_id
 
     @property
-    def subnet_id(self):
-        """
-        Gets the subnet_id of this Connection.
-        The `OCID`__ of the subnet being referenced.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The subnet_id of this Connection.
-        :rtype: str
-        """
-        return self._subnet_id
-
-    @subnet_id.setter
-    def subnet_id(self, subnet_id):
-        """
-        Sets the subnet_id of this Connection.
-        The `OCID`__ of the subnet being referenced.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-
-        :param subnet_id: The subnet_id of this Connection.
-        :type: str
-        """
-        self._subnet_id = subnet_id
-
-    @property
     def ingress_ips(self):
         """
         Gets the ingress_ips of this Connection.
@@ -793,6 +842,70 @@ class Connection(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this Connection.
+        The `OCID`__ of the target subnet of the dedicated connection.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this Connection.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this Connection.
+        The `OCID`__ of the target subnet of the dedicated connection.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this Connection.
+        :type: str
+        """
+        self._subnet_id = subnet_id
+
+    @property
+    def routing_method(self):
+        """
+        Gets the routing_method of this Connection.
+        Controls the network traffic direction to the target:
+        SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+        SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
+        DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+
+        Allowed values for this property are: "SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The routing_method of this Connection.
+        :rtype: str
+        """
+        return self._routing_method
+
+    @routing_method.setter
+    def routing_method(self, routing_method):
+        """
+        Sets the routing_method of this Connection.
+        Controls the network traffic direction to the target:
+        SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+        SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
+        DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+
+
+        :param routing_method: The routing_method of this Connection.
+        :type: str
+        """
+        allowed_values = ["SHARED_SERVICE_ENDPOINT", "SHARED_DEPLOYMENT_ENDPOINT", "DEDICATED_ENDPOINT"]
+        if not value_allowed_none_or_none_sentinel(routing_method, allowed_values):
+            routing_method = 'UNKNOWN_ENUM_VALUE'
+        self._routing_method = routing_method
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -371,8 +371,7 @@ class CreateOpensearchClusterDetails(object):
         allowed_values = ["FLEX", "BM"]
         if not value_allowed_none_or_none_sentinel(master_node_host_type, allowed_values):
             raise ValueError(
-                "Invalid value for `master_node_host_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `master_node_host_type`, must be None or one of {allowed_values}"
             )
         self._master_node_host_type = master_node_host_type
 
@@ -499,8 +498,7 @@ class CreateOpensearchClusterDetails(object):
         allowed_values = ["FLEX", "BM"]
         if not value_allowed_none_or_none_sentinel(data_node_host_type, allowed_values):
             raise ValueError(
-                "Invalid value for `data_node_host_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `data_node_host_type`, must be None or one of {allowed_values}"
             )
         self._data_node_host_type = data_node_host_type
 
@@ -795,8 +793,7 @@ class CreateOpensearchClusterDetails(object):
         allowed_values = ["DISABLED", "PERMISSIVE", "ENFORCING"]
         if not value_allowed_none_or_none_sentinel(security_mode, allowed_values):
             raise ValueError(
-                "Invalid value for `security_mode`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `security_mode`, must be None or one of {allowed_values}"
             )
         self._security_mode = security_mode
 

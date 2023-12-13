@@ -31,21 +31,41 @@ class DrPlanExecutionOptions(object):
     #: This constant has a value of "FAILOVER_PRECHECK"
     PLAN_EXECUTION_TYPE_FAILOVER_PRECHECK = "FAILOVER_PRECHECK"
 
+    #: A constant which can be used with the plan_execution_type property of a DrPlanExecutionOptions.
+    #: This constant has a value of "START_DRILL_PRECHECK"
+    PLAN_EXECUTION_TYPE_START_DRILL_PRECHECK = "START_DRILL_PRECHECK"
+
+    #: A constant which can be used with the plan_execution_type property of a DrPlanExecutionOptions.
+    #: This constant has a value of "START_DRILL"
+    PLAN_EXECUTION_TYPE_START_DRILL = "START_DRILL"
+
+    #: A constant which can be used with the plan_execution_type property of a DrPlanExecutionOptions.
+    #: This constant has a value of "STOP_DRILL_PRECHECK"
+    PLAN_EXECUTION_TYPE_STOP_DRILL_PRECHECK = "STOP_DRILL_PRECHECK"
+
+    #: A constant which can be used with the plan_execution_type property of a DrPlanExecutionOptions.
+    #: This constant has a value of "STOP_DRILL"
+    PLAN_EXECUTION_TYPE_STOP_DRILL = "STOP_DRILL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DrPlanExecutionOptions object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.disaster_recovery.models.StopDrillExecutionOptions`
         * :class:`~oci.disaster_recovery.models.SwitchoverExecutionOptions`
         * :class:`~oci.disaster_recovery.models.FailoverPrecheckExecutionOptions`
+        * :class:`~oci.disaster_recovery.models.StartDrillExecutionOptions`
         * :class:`~oci.disaster_recovery.models.SwitchoverPrecheckExecutionOptions`
+        * :class:`~oci.disaster_recovery.models.StartDrillPrecheckExecutionOptions`
+        * :class:`~oci.disaster_recovery.models.StopDrillPrecheckExecutionOptions`
         * :class:`~oci.disaster_recovery.models.FailoverExecutionOptions`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param plan_execution_type:
             The value to assign to the plan_execution_type property of this DrPlanExecutionOptions.
-            Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL_PRECHECK", "START_DRILL", "STOP_DRILL_PRECHECK", "STOP_DRILL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type plan_execution_type: str
 
@@ -68,14 +88,26 @@ class DrPlanExecutionOptions(object):
         """
         type = object_dictionary['planExecutionType']
 
+        if type == 'STOP_DRILL':
+            return 'StopDrillExecutionOptions'
+
         if type == 'SWITCHOVER':
             return 'SwitchoverExecutionOptions'
 
         if type == 'FAILOVER_PRECHECK':
             return 'FailoverPrecheckExecutionOptions'
 
+        if type == 'START_DRILL':
+            return 'StartDrillExecutionOptions'
+
         if type == 'SWITCHOVER_PRECHECK':
             return 'SwitchoverPrecheckExecutionOptions'
+
+        if type == 'START_DRILL_PRECHECK':
+            return 'StartDrillPrecheckExecutionOptions'
+
+        if type == 'STOP_DRILL_PRECHECK':
+            return 'StopDrillPrecheckExecutionOptions'
 
         if type == 'FAILOVER':
             return 'FailoverExecutionOptions'
@@ -88,7 +120,7 @@ class DrPlanExecutionOptions(object):
         **[Required]** Gets the plan_execution_type of this DrPlanExecutionOptions.
         The type of the plan execution.
 
-        Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL_PRECHECK", "START_DRILL", "STOP_DRILL_PRECHECK", "STOP_DRILL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -107,7 +139,7 @@ class DrPlanExecutionOptions(object):
         :param plan_execution_type: The plan_execution_type of this DrPlanExecutionOptions.
         :type: str
         """
-        allowed_values = ["SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK"]
+        allowed_values = ["SWITCHOVER", "SWITCHOVER_PRECHECK", "FAILOVER", "FAILOVER_PRECHECK", "START_DRILL_PRECHECK", "START_DRILL", "STOP_DRILL_PRECHECK", "STOP_DRILL"]
         if not value_allowed_none_or_none_sentinel(plan_execution_type, allowed_values):
             plan_execution_type = 'UNKNOWN_ENUM_VALUE'
         self._plan_execution_type = plan_execution_type

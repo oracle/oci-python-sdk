@@ -40,7 +40,7 @@ class WorkRequestSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this WorkRequestSummaryCollection.
-        A list of workRequestSummary objects.
+        A list of work request summaries.
 
 
         :return: The items of this WorkRequestSummaryCollection.
@@ -52,7 +52,7 @@ class WorkRequestSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this WorkRequestSummaryCollection.
-        A list of workRequestSummary objects.
+        A list of work request summaries.
 
 
         :param items: The items of this WorkRequestSummaryCollection.

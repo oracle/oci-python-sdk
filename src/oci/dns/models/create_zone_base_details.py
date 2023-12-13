@@ -123,8 +123,7 @@ class CreateZoneBaseDetails(object):
         allowed_values = ["NONE", "DYNECT"]
         if not value_allowed_none_or_none_sentinel(migration_source, allowed_values):
             raise ValueError(
-                "Invalid value for `migration_source`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `migration_source`, must be None or one of {allowed_values}"
             )
         self._migration_source = migration_source
 

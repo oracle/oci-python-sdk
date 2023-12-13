@@ -116,8 +116,8 @@ class AlarmDimensionStatesCollection(object):
     def is_notifications_per_metric_dimension_enabled(self):
         """
         **[Required]** Gets the is_notifications_per_metric_dimension_enabled of this AlarmDimensionStatesCollection.
-        When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams.
-        Example: `true`
+        When set to `true`, splits alarm notifications per metric stream.
+        When set to `false`, groups alarm notifications across metric streams.
 
 
         :return: The is_notifications_per_metric_dimension_enabled of this AlarmDimensionStatesCollection.
@@ -129,8 +129,8 @@ class AlarmDimensionStatesCollection(object):
     def is_notifications_per_metric_dimension_enabled(self, is_notifications_per_metric_dimension_enabled):
         """
         Sets the is_notifications_per_metric_dimension_enabled of this AlarmDimensionStatesCollection.
-        When set to `true`, splits notifications per metric stream. When set to `false`, groups notifications across metric streams.
-        Example: `true`
+        When set to `true`, splits alarm notifications per metric stream.
+        When set to `false`, groups alarm notifications across metric streams.
 
 
         :param is_notifications_per_metric_dimension_enabled: The is_notifications_per_metric_dimension_enabled of this AlarmDimensionStatesCollection.

@@ -264,8 +264,7 @@ class CreateManagedListDetails(object):
         allowed_values = ["CIDR_BLOCK", "USERS", "GROUPS", "IPV4ADDRESS", "IPV6ADDRESS", "RESOURCE_OCID", "REGION", "COUNTRY", "STATE", "CITY", "TAGS", "GENERIC"]
         if not value_allowed_none_or_none_sentinel(list_type, allowed_values):
             raise ValueError(
-                "Invalid value for `list_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `list_type`, must be None or one of {allowed_values}"
             )
         self._list_type = list_type
 

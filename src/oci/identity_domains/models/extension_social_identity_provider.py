@@ -50,6 +50,10 @@ class ExtensionSocialIdentityProvider(object):
             The value to assign to the access_token_url property of this ExtensionSocialIdentityProvider.
         :type access_token_url: str
 
+        :param relay_idp_param_mappings:
+            The value to assign to the relay_idp_param_mappings property of this ExtensionSocialIdentityProvider.
+        :type relay_idp_param_mappings: list[oci.identity_domains.models.IdentityProviderRelayIdpParamMappings]
+
         :param profile_url:
             The value to assign to the profile_url property of this ExtensionSocialIdentityProvider.
         :type profile_url: str
@@ -101,6 +105,7 @@ class ExtensionSocialIdentityProvider(object):
             'status': 'str',
             'authz_url': 'str',
             'access_token_url': 'str',
+            'relay_idp_param_mappings': 'list[IdentityProviderRelayIdpParamMappings]',
             'profile_url': 'str',
             'scope': 'list[str]',
             'admin_scope': 'list[str]',
@@ -120,6 +125,7 @@ class ExtensionSocialIdentityProvider(object):
             'status': 'status',
             'authz_url': 'authzUrl',
             'access_token_url': 'accessTokenUrl',
+            'relay_idp_param_mappings': 'relayIdpParamMappings',
             'profile_url': 'profileUrl',
             'scope': 'scope',
             'admin_scope': 'adminScope',
@@ -138,6 +144,7 @@ class ExtensionSocialIdentityProvider(object):
         self._status = None
         self._authz_url = None
         self._access_token_url = None
+        self._relay_idp_param_mappings = None
         self._profile_url = None
         self._scope = None
         self._admin_scope = None
@@ -395,6 +402,54 @@ class ExtensionSocialIdentityProvider(object):
         :type: str
         """
         self._access_token_url = access_token_url
+
+    @property
+    def relay_idp_param_mappings(self):
+        """
+        Gets the relay_idp_param_mappings of this ExtensionSocialIdentityProvider.
+        Relay Param variable for Social IDP
+
+        **Added In:** 2305190132
+
+        **SCIM++ Properties:**
+         - idcsCompositeKey: [relayParamKey]
+         - idcsSearchable: true
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: complex
+         - uniqueness: none
+
+
+        :return: The relay_idp_param_mappings of this ExtensionSocialIdentityProvider.
+        :rtype: list[oci.identity_domains.models.IdentityProviderRelayIdpParamMappings]
+        """
+        return self._relay_idp_param_mappings
+
+    @relay_idp_param_mappings.setter
+    def relay_idp_param_mappings(self, relay_idp_param_mappings):
+        """
+        Sets the relay_idp_param_mappings of this ExtensionSocialIdentityProvider.
+        Relay Param variable for Social IDP
+
+        **Added In:** 2305190132
+
+        **SCIM++ Properties:**
+         - idcsCompositeKey: [relayParamKey]
+         - idcsSearchable: true
+         - multiValued: true
+         - mutability: readWrite
+         - required: false
+         - returned: default
+         - type: complex
+         - uniqueness: none
+
+
+        :param relay_idp_param_mappings: The relay_idp_param_mappings of this ExtensionSocialIdentityProvider.
+        :type: list[oci.identity_domains.models.IdentityProviderRelayIdpParamMappings]
+        """
+        self._relay_idp_param_mappings = relay_idp_param_mappings
 
     @property
     def profile_url(self):

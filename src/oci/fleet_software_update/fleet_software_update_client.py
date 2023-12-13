@@ -178,7 +178,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "abort_fsu_discovery got unknown kwargs: {!r}".format(extra_kwargs))
+                f"abort_fsu_discovery got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuDiscoveryId": fsu_discovery_id
@@ -188,7 +188,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -299,7 +299,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "add_fsu_collection_targets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"add_fsu_collection_targets got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuCollectionId": fsu_collection_id
@@ -309,7 +309,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -416,7 +416,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "cancel_fsu_action got unknown kwargs: {!r}".format(extra_kwargs))
+                f"cancel_fsu_action got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuActionId": fsu_action_id
@@ -426,7 +426,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -535,7 +535,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_fsu_action_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_fsu_action_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuActionId": fsu_action_id
@@ -545,7 +545,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -656,7 +656,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_fsu_collection_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_fsu_collection_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuCollectionId": fsu_collection_id
@@ -666,7 +666,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -777,7 +777,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_fsu_cycle_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_fsu_cycle_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuCycleId": fsu_cycle_id
@@ -787,7 +787,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -898,7 +898,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "change_fsu_discovery_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+                f"change_fsu_discovery_compartment got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuDiscoveryId": fsu_discovery_id
@@ -908,7 +908,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1010,7 +1010,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "clone_fsu_cycle got unknown kwargs: {!r}".format(extra_kwargs))
+                f"clone_fsu_cycle got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuCycleId": fsu_cycle_id
@@ -1020,7 +1020,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1120,7 +1120,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_fsu_action got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_fsu_action got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1218,7 +1218,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_fsu_collection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_fsu_collection got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1316,7 +1316,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_fsu_cycle got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_fsu_cycle got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1414,7 +1414,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "create_fsu_discovery got unknown kwargs: {!r}".format(extra_kwargs))
+                f"create_fsu_discovery got unknown kwargs: {extra_kwargs!r}")
 
         header_params = {
             "accept": "application/json",
@@ -1512,7 +1512,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_fsu_action got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_fsu_action got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuActionId": fsu_action_id
@@ -1522,7 +1522,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1617,7 +1617,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_fsu_collection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_fsu_collection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuCollectionId": fsu_collection_id
@@ -1627,7 +1627,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1722,7 +1722,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_fsu_cycle got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_fsu_cycle got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuCycleId": fsu_cycle_id
@@ -1732,7 +1732,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1827,7 +1827,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_fsu_discovery got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_fsu_discovery got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuDiscoveryId": fsu_discovery_id
@@ -1837,7 +1837,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -1932,7 +1932,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "delete_fsu_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"delete_fsu_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuJobId": fsu_job_id
@@ -1942,7 +1942,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2029,7 +2029,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fsu_action got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fsu_action got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuActionId": fsu_action_id
@@ -2039,7 +2039,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2128,7 +2128,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fsu_action_output_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fsu_action_output_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuActionId": fsu_action_id
@@ -2138,7 +2138,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/x-yaml",
@@ -2226,7 +2226,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fsu_collection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fsu_collection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuCollectionId": fsu_collection_id
@@ -2236,7 +2236,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2324,7 +2324,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fsu_cycle got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fsu_cycle got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuCycleId": fsu_cycle_id
@@ -2334,7 +2334,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2422,7 +2422,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fsu_discovery got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fsu_discovery got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuDiscoveryId": fsu_discovery_id
@@ -2432,7 +2432,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2520,7 +2520,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fsu_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fsu_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuJobId": fsu_job_id
@@ -2530,7 +2530,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2618,7 +2618,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_fsu_job_output_content got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_fsu_job_output_content got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuJobId": fsu_job_id
@@ -2628,7 +2628,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/x-yaml",
@@ -2716,7 +2716,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+                f"get_work_request got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -2726,7 +2726,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -2855,34 +2855,34 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fsu_actions got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fsu_actions got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "UPDATING", "FAILED", "NEEDS_ATTENTION", "SUCCEEDED", "CANCELING", "CANCELED", "UNKNOWN", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'type' in kwargs:
             type_allowed_values = ["STAGE", "PRECHECK", "APPLY", "ROLLBACK_AND_REMOVE_TARGET", "CLEANUP"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                    f"Invalid value for `type`, must be one of { type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3019,7 +3019,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fsu_collection_targets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fsu_collection_targets got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuCollectionId": fsu_collection_id
@@ -3029,27 +3029,27 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'status' in kwargs:
             status_allowed_values = ["IDLE", "EXECUTING_JOB", "JOB_FAILED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["currentVersion", "status"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3188,34 +3188,34 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fsu_collections got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fsu_collections got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "NEEDS_ATTENTION", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'type' in kwargs:
             type_allowed_values = ["DB", "GI"]
             if kwargs['type'] not in type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `type`, must be one of {0}".format(type_allowed_values)
+                    f"Invalid value for `type`, must be one of { type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3361,34 +3361,34 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fsu_cycles got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fsu_cycles got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "UPDATING", "IN_PROGRESS", "FAILED", "NEEDS_ATTENTION", "SUCCEEDED", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'collection_type' in kwargs:
             collection_type_allowed_values = ["DB", "GI"]
             if kwargs['collection_type'] not in collection_type_allowed_values:
                 raise ValueError(
-                    "Invalid value for `collection_type`, must be one of {0}".format(collection_type_allowed_values)
+                    f"Invalid value for `collection_type`, must be one of { collection_type_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3522,27 +3522,27 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fsu_discoveries got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fsu_discoveries got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3677,7 +3677,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fsu_discovery_targets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fsu_discovery_targets got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuDiscoveryId": fsu_discovery_id
@@ -3687,27 +3687,27 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'status' in kwargs:
             status_allowed_values = ["IDLE", "EXECUTING_JOB", "JOB_FAILED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["currentVersion", "status"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -3818,7 +3818,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fsu_job_outputs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fsu_job_outputs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuJobId": fsu_job_id
@@ -3828,7 +3828,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -3955,27 +3955,27 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_fsu_jobs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_fsu_jobs got unknown kwargs: {extra_kwargs!r}")
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["ACCEPTED", "IN_PROGRESS", "UNKNOWN", "TERMINATED", "FAILED", "NEEDS_ATTENTION", "SUCCEEDED", "WAITING", "CANCELING", "CANCELED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    f"Invalid value for `lifecycle_state`, must be one of { lifecycle_state_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeCreated", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -4096,7 +4096,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_errors got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -4106,20 +4106,20 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -4239,7 +4239,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_request_logs got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "workRequestId": work_request_id
@@ -4249,20 +4249,20 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         query_params = {
@@ -4396,27 +4396,27 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+                f"list_work_requests got unknown kwargs: {extra_kwargs!r}")
 
         if 'status' in kwargs:
             status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
             if kwargs['status'] not in status_allowed_values:
                 raise ValueError(
-                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    f"Invalid value for `status`, must be one of { status_allowed_values }"
                 )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                    f"Invalid value for `sort_order`, must be one of { sort_order_allowed_values }"
                 )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                    f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
                 )
 
         query_params = {
@@ -4538,7 +4538,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "remove_fsu_collection_targets got unknown kwargs: {!r}".format(extra_kwargs))
+                f"remove_fsu_collection_targets got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuCollectionId": fsu_collection_id
@@ -4548,7 +4548,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4655,7 +4655,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "resume_fsu_action got unknown kwargs: {!r}".format(extra_kwargs))
+                f"resume_fsu_action got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuActionId": fsu_action_id
@@ -4665,7 +4665,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4771,7 +4771,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "retry_fsu_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"retry_fsu_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuJobId": fsu_job_id
@@ -4781,7 +4781,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4881,7 +4881,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_fsu_action got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_fsu_action got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuActionId": fsu_action_id
@@ -4891,7 +4891,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -4991,7 +4991,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_fsu_collection got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_fsu_collection got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuCollectionId": fsu_collection_id
@@ -5001,7 +5001,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5101,7 +5101,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_fsu_cycle got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_fsu_cycle got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuCycleId": fsu_cycle_id
@@ -5111,7 +5111,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5211,7 +5211,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_fsu_discovery got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_fsu_discovery got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuDiscoveryId": fsu_discovery_id
@@ -5221,7 +5221,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",
@@ -5321,7 +5321,7 @@ class FleetSoftwareUpdateClient(object):
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_fsu_job got unknown kwargs: {!r}".format(extra_kwargs))
+                f"update_fsu_job got unknown kwargs: {extra_kwargs!r}")
 
         path_params = {
             "fsuJobId": fsu_job_id
@@ -5331,7 +5331,7 @@ class FleetSoftwareUpdateClient(object):
 
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+                raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
         header_params = {
             "accept": "application/json",

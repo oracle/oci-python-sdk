@@ -12,6 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LocalClonePluggableDatabaseDetails(object):
     """
+    **Deprecated.** Use :func:`create_pluggable_database_details` for Pluggable Database LocalClone Operation.
     Parameters for cloning a pluggable database (PDB) within the same database (CDB).
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.

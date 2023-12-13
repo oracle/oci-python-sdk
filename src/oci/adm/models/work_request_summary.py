@@ -16,6 +16,30 @@ class WorkRequestSummary(object):
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "CREATE_REMEDIATION_RECIPE"
+    OPERATION_TYPE_CREATE_REMEDIATION_RECIPE = "CREATE_REMEDIATION_RECIPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DELETE_REMEDIATION_RECIPE"
+    OPERATION_TYPE_DELETE_REMEDIATION_RECIPE = "DELETE_REMEDIATION_RECIPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "MOVE_REMEDIATION_RECIPE"
+    OPERATION_TYPE_MOVE_REMEDIATION_RECIPE = "MOVE_REMEDIATION_RECIPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_REMEDIATION_RECIPE"
+    OPERATION_TYPE_UPDATE_REMEDIATION_RECIPE = "UPDATE_REMEDIATION_RECIPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "ACTIVATE_REMEDIATION_RECIPE"
+    OPERATION_TYPE_ACTIVATE_REMEDIATION_RECIPE = "ACTIVATE_REMEDIATION_RECIPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "DEACTIVATE_REMEDIATION_RECIPE"
+    OPERATION_TYPE_DEACTIVATE_REMEDIATION_RECIPE = "DEACTIVATE_REMEDIATION_RECIPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
     #: This constant has a value of "CREATE_KNOWLEDGE_BASE"
     OPERATION_TYPE_CREATE_KNOWLEDGE_BASE = "CREATE_KNOWLEDGE_BASE"
 
@@ -66,7 +90,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_REMEDIATION_RECIPE", "DELETE_REMEDIATION_RECIPE", "MOVE_REMEDIATION_RECIPE", "UPDATE_REMEDIATION_RECIPE", "ACTIVATE_REMEDIATION_RECIPE", "DEACTIVATE_REMEDIATION_RECIPE", "CREATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -112,6 +136,10 @@ class WorkRequestSummary(object):
             The value to assign to the defined_tags property of this WorkRequestSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this WorkRequestSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'operation_type': 'str',
@@ -124,7 +152,8 @@ class WorkRequestSummary(object):
             'time_started': 'datetime',
             'time_finished': 'datetime',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -138,7 +167,8 @@ class WorkRequestSummary(object):
             'time_started': 'timeStarted',
             'time_finished': 'timeFinished',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
 
         self._operation_type = None
@@ -152,6 +182,7 @@ class WorkRequestSummary(object):
         self._time_finished = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def operation_type(self):
@@ -159,7 +190,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request
 
-        Allowed values for this property are: "CREATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_REMEDIATION_RECIPE", "DELETE_REMEDIATION_RECIPE", "MOVE_REMEDIATION_RECIPE", "UPDATE_REMEDIATION_RECIPE", "ACTIVATE_REMEDIATION_RECIPE", "DEACTIVATE_REMEDIATION_RECIPE", "CREATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -178,7 +209,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE"]
+        allowed_values = ["CREATE_REMEDIATION_RECIPE", "DELETE_REMEDIATION_RECIPE", "MOVE_REMEDIATION_RECIPE", "UPDATE_REMEDIATION_RECIPE", "ACTIVATE_REMEDIATION_RECIPE", "DEACTIVATE_REMEDIATION_RECIPE", "CREATE_KNOWLEDGE_BASE", "DELETE_KNOWLEDGE_BASE", "MOVE_KNOWLEDGE_BASE", "UPDATE_KNOWLEDGE_BASE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -454,6 +485,32 @@ class WorkRequestSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this WorkRequestSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this WorkRequestSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this WorkRequestSummary.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this WorkRequestSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

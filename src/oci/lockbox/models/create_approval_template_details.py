@@ -130,7 +130,7 @@ class CreateApprovalTemplateDetails(object):
     @property
     def approver_levels(self):
         """
-        **[Required]** Gets the approver_levels of this CreateApprovalTemplateDetails.
+        Gets the approver_levels of this CreateApprovalTemplateDetails.
 
         :return: The approver_levels of this CreateApprovalTemplateDetails.
         :rtype: oci.lockbox.models.ApproverLevels
@@ -174,8 +174,7 @@ class CreateApprovalTemplateDetails(object):
         allowed_values = ["ENABLED", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(auto_approval_state, allowed_values):
             raise ValueError(
-                "Invalid value for `auto_approval_state`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `auto_approval_state`, must be None or one of {allowed_values}"
             )
         self._auto_approval_state = auto_approval_state
 

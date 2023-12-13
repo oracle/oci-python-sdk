@@ -152,6 +152,38 @@ class AutonomousVmCluster(object):
             The value to assign to the next_maintenance_run_id property of this AutonomousVmCluster.
         :type next_maintenance_run_id: str
 
+        :param cpu_percentage:
+            The value to assign to the cpu_percentage property of this AutonomousVmCluster.
+        :type cpu_percentage: float
+
+        :param autonomous_data_storage_percentage:
+            The value to assign to the autonomous_data_storage_percentage property of this AutonomousVmCluster.
+        :type autonomous_data_storage_percentage: float
+
+        :param provisioned_cpus:
+            The value to assign to the provisioned_cpus property of this AutonomousVmCluster.
+        :type provisioned_cpus: float
+
+        :param total_autonomous_data_storage_in_tbs:
+            The value to assign to the total_autonomous_data_storage_in_tbs property of this AutonomousVmCluster.
+        :type total_autonomous_data_storage_in_tbs: float
+
+        :param reserved_cpus:
+            The value to assign to the reserved_cpus property of this AutonomousVmCluster.
+        :type reserved_cpus: float
+
+        :param provisionable_autonomous_container_databases:
+            The value to assign to the provisionable_autonomous_container_databases property of this AutonomousVmCluster.
+        :type provisionable_autonomous_container_databases: int
+
+        :param provisioned_autonomous_container_databases:
+            The value to assign to the provisioned_autonomous_container_databases property of this AutonomousVmCluster.
+        :type provisioned_autonomous_container_databases: int
+
+        :param non_provisionable_autonomous_container_databases:
+            The value to assign to the non_provisionable_autonomous_container_databases property of this AutonomousVmCluster.
+        :type non_provisionable_autonomous_container_databases: int
+
         :param memory_size_in_gbs:
             The value to assign to the memory_size_in_gbs property of this AutonomousVmCluster.
         :type memory_size_in_gbs: int
@@ -226,6 +258,18 @@ class AutonomousVmCluster(object):
             The value to assign to the time_ords_certificate_expires property of this AutonomousVmCluster.
         :type time_ords_certificate_expires: datetime
 
+        :param exadata_storage_in_tbs_lowest_scaled_value:
+            The value to assign to the exadata_storage_in_tbs_lowest_scaled_value property of this AutonomousVmCluster.
+        :type exadata_storage_in_tbs_lowest_scaled_value: float
+
+        :param cpus_lowest_scaled_value:
+            The value to assign to the cpus_lowest_scaled_value property of this AutonomousVmCluster.
+        :type cpus_lowest_scaled_value: int
+
+        :param max_acds_lowest_scaled_value:
+            The value to assign to the max_acds_lowest_scaled_value property of this AutonomousVmCluster.
+        :type max_acds_lowest_scaled_value: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -249,6 +293,14 @@ class AutonomousVmCluster(object):
             'maintenance_window': 'MaintenanceWindow',
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
+            'cpu_percentage': 'float',
+            'autonomous_data_storage_percentage': 'float',
+            'provisioned_cpus': 'float',
+            'total_autonomous_data_storage_in_tbs': 'float',
+            'reserved_cpus': 'float',
+            'provisionable_autonomous_container_databases': 'int',
+            'provisioned_autonomous_container_databases': 'int',
+            'non_provisionable_autonomous_container_databases': 'int',
             'memory_size_in_gbs': 'int',
             'db_node_storage_size_in_gbs': 'int',
             'data_storage_size_in_tbs': 'float',
@@ -266,7 +318,10 @@ class AutonomousVmCluster(object):
             'scan_listener_port_non_tls': 'int',
             'is_mtls_enabled': 'bool',
             'time_database_ssl_certificate_expires': 'datetime',
-            'time_ords_certificate_expires': 'datetime'
+            'time_ords_certificate_expires': 'datetime',
+            'exadata_storage_in_tbs_lowest_scaled_value': 'float',
+            'cpus_lowest_scaled_value': 'int',
+            'max_acds_lowest_scaled_value': 'int'
         }
 
         self.attribute_map = {
@@ -291,6 +346,14 @@ class AutonomousVmCluster(object):
             'maintenance_window': 'maintenanceWindow',
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
+            'cpu_percentage': 'cpuPercentage',
+            'autonomous_data_storage_percentage': 'autonomousDataStoragePercentage',
+            'provisioned_cpus': 'provisionedCpus',
+            'total_autonomous_data_storage_in_tbs': 'totalAutonomousDataStorageInTBs',
+            'reserved_cpus': 'reservedCpus',
+            'provisionable_autonomous_container_databases': 'provisionableAutonomousContainerDatabases',
+            'provisioned_autonomous_container_databases': 'provisionedAutonomousContainerDatabases',
+            'non_provisionable_autonomous_container_databases': 'nonProvisionableAutonomousContainerDatabases',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
@@ -308,7 +371,10 @@ class AutonomousVmCluster(object):
             'scan_listener_port_non_tls': 'scanListenerPortNonTls',
             'is_mtls_enabled': 'isMtlsEnabled',
             'time_database_ssl_certificate_expires': 'timeDatabaseSslCertificateExpires',
-            'time_ords_certificate_expires': 'timeOrdsCertificateExpires'
+            'time_ords_certificate_expires': 'timeOrdsCertificateExpires',
+            'exadata_storage_in_tbs_lowest_scaled_value': 'exadataStorageInTBsLowestScaledValue',
+            'cpus_lowest_scaled_value': 'cpusLowestScaledValue',
+            'max_acds_lowest_scaled_value': 'maxAcdsLowestScaledValue'
         }
 
         self._id = None
@@ -332,6 +398,14 @@ class AutonomousVmCluster(object):
         self._maintenance_window = None
         self._last_maintenance_run_id = None
         self._next_maintenance_run_id = None
+        self._cpu_percentage = None
+        self._autonomous_data_storage_percentage = None
+        self._provisioned_cpus = None
+        self._total_autonomous_data_storage_in_tbs = None
+        self._reserved_cpus = None
+        self._provisionable_autonomous_container_databases = None
+        self._provisioned_autonomous_container_databases = None
+        self._non_provisionable_autonomous_container_databases = None
         self._memory_size_in_gbs = None
         self._db_node_storage_size_in_gbs = None
         self._data_storage_size_in_tbs = None
@@ -350,6 +424,9 @@ class AutonomousVmCluster(object):
         self._is_mtls_enabled = None
         self._time_database_ssl_certificate_expires = None
         self._time_ords_certificate_expires = None
+        self._exadata_storage_in_tbs_lowest_scaled_value = None
+        self._cpus_lowest_scaled_value = None
+        self._max_acds_lowest_scaled_value = None
 
     @property
     def id(self):
@@ -892,6 +969,198 @@ class AutonomousVmCluster(object):
         self._next_maintenance_run_id = next_maintenance_run_id
 
     @property
+    def cpu_percentage(self):
+        """
+        Gets the cpu_percentage of this AutonomousVmCluster.
+        The percentage of total number of CPUs used in an Autonomous VM Cluster.
+
+
+        :return: The cpu_percentage of this AutonomousVmCluster.
+        :rtype: float
+        """
+        return self._cpu_percentage
+
+    @cpu_percentage.setter
+    def cpu_percentage(self, cpu_percentage):
+        """
+        Sets the cpu_percentage of this AutonomousVmCluster.
+        The percentage of total number of CPUs used in an Autonomous VM Cluster.
+
+
+        :param cpu_percentage: The cpu_percentage of this AutonomousVmCluster.
+        :type: float
+        """
+        self._cpu_percentage = cpu_percentage
+
+    @property
+    def autonomous_data_storage_percentage(self):
+        """
+        Gets the autonomous_data_storage_percentage of this AutonomousVmCluster.
+        The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+
+
+        :return: The autonomous_data_storage_percentage of this AutonomousVmCluster.
+        :rtype: float
+        """
+        return self._autonomous_data_storage_percentage
+
+    @autonomous_data_storage_percentage.setter
+    def autonomous_data_storage_percentage(self, autonomous_data_storage_percentage):
+        """
+        Sets the autonomous_data_storage_percentage of this AutonomousVmCluster.
+        The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
+
+
+        :param autonomous_data_storage_percentage: The autonomous_data_storage_percentage of this AutonomousVmCluster.
+        :type: float
+        """
+        self._autonomous_data_storage_percentage = autonomous_data_storage_percentage
+
+    @property
+    def provisioned_cpus(self):
+        """
+        Gets the provisioned_cpus of this AutonomousVmCluster.
+        The number of CPUs provisioned in an Autonomous VM Cluster.
+
+
+        :return: The provisioned_cpus of this AutonomousVmCluster.
+        :rtype: float
+        """
+        return self._provisioned_cpus
+
+    @provisioned_cpus.setter
+    def provisioned_cpus(self, provisioned_cpus):
+        """
+        Sets the provisioned_cpus of this AutonomousVmCluster.
+        The number of CPUs provisioned in an Autonomous VM Cluster.
+
+
+        :param provisioned_cpus: The provisioned_cpus of this AutonomousVmCluster.
+        :type: float
+        """
+        self._provisioned_cpus = provisioned_cpus
+
+    @property
+    def total_autonomous_data_storage_in_tbs(self):
+        """
+        Gets the total_autonomous_data_storage_in_tbs of this AutonomousVmCluster.
+        The total data disk group size for Autonomous Databases, in TBs.
+
+
+        :return: The total_autonomous_data_storage_in_tbs of this AutonomousVmCluster.
+        :rtype: float
+        """
+        return self._total_autonomous_data_storage_in_tbs
+
+    @total_autonomous_data_storage_in_tbs.setter
+    def total_autonomous_data_storage_in_tbs(self, total_autonomous_data_storage_in_tbs):
+        """
+        Sets the total_autonomous_data_storage_in_tbs of this AutonomousVmCluster.
+        The total data disk group size for Autonomous Databases, in TBs.
+
+
+        :param total_autonomous_data_storage_in_tbs: The total_autonomous_data_storage_in_tbs of this AutonomousVmCluster.
+        :type: float
+        """
+        self._total_autonomous_data_storage_in_tbs = total_autonomous_data_storage_in_tbs
+
+    @property
+    def reserved_cpus(self):
+        """
+        Gets the reserved_cpus of this AutonomousVmCluster.
+        The number of CPUs reserved in an Autonomous VM Cluster.
+
+
+        :return: The reserved_cpus of this AutonomousVmCluster.
+        :rtype: float
+        """
+        return self._reserved_cpus
+
+    @reserved_cpus.setter
+    def reserved_cpus(self, reserved_cpus):
+        """
+        Sets the reserved_cpus of this AutonomousVmCluster.
+        The number of CPUs reserved in an Autonomous VM Cluster.
+
+
+        :param reserved_cpus: The reserved_cpus of this AutonomousVmCluster.
+        :type: float
+        """
+        self._reserved_cpus = reserved_cpus
+
+    @property
+    def provisionable_autonomous_container_databases(self):
+        """
+        Gets the provisionable_autonomous_container_databases of this AutonomousVmCluster.
+        The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+
+
+        :return: The provisionable_autonomous_container_databases of this AutonomousVmCluster.
+        :rtype: int
+        """
+        return self._provisionable_autonomous_container_databases
+
+    @provisionable_autonomous_container_databases.setter
+    def provisionable_autonomous_container_databases(self, provisionable_autonomous_container_databases):
+        """
+        Sets the provisionable_autonomous_container_databases of this AutonomousVmCluster.
+        The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+
+
+        :param provisionable_autonomous_container_databases: The provisionable_autonomous_container_databases of this AutonomousVmCluster.
+        :type: int
+        """
+        self._provisionable_autonomous_container_databases = provisionable_autonomous_container_databases
+
+    @property
+    def provisioned_autonomous_container_databases(self):
+        """
+        Gets the provisioned_autonomous_container_databases of this AutonomousVmCluster.
+        The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+
+
+        :return: The provisioned_autonomous_container_databases of this AutonomousVmCluster.
+        :rtype: int
+        """
+        return self._provisioned_autonomous_container_databases
+
+    @provisioned_autonomous_container_databases.setter
+    def provisioned_autonomous_container_databases(self, provisioned_autonomous_container_databases):
+        """
+        Sets the provisioned_autonomous_container_databases of this AutonomousVmCluster.
+        The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+
+
+        :param provisioned_autonomous_container_databases: The provisioned_autonomous_container_databases of this AutonomousVmCluster.
+        :type: int
+        """
+        self._provisioned_autonomous_container_databases = provisioned_autonomous_container_databases
+
+    @property
+    def non_provisionable_autonomous_container_databases(self):
+        """
+        Gets the non_provisionable_autonomous_container_databases of this AutonomousVmCluster.
+        The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+
+
+        :return: The non_provisionable_autonomous_container_databases of this AutonomousVmCluster.
+        :rtype: int
+        """
+        return self._non_provisionable_autonomous_container_databases
+
+    @non_provisionable_autonomous_container_databases.setter
+    def non_provisionable_autonomous_container_databases(self, non_provisionable_autonomous_container_databases):
+        """
+        Sets the non_provisionable_autonomous_container_databases of this AutonomousVmCluster.
+        The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+
+
+        :param non_provisionable_autonomous_container_databases: The non_provisionable_autonomous_container_databases of this AutonomousVmCluster.
+        :type: int
+        """
+        self._non_provisionable_autonomous_container_databases = non_provisionable_autonomous_container_databases
+
+    @property
     def memory_size_in_gbs(self):
         """
         Gets the memory_size_in_gbs of this AutonomousVmCluster.
@@ -1352,6 +1621,78 @@ class AutonomousVmCluster(object):
         :type: datetime
         """
         self._time_ords_certificate_expires = time_ords_certificate_expires
+
+    @property
+    def exadata_storage_in_tbs_lowest_scaled_value(self):
+        """
+        Gets the exadata_storage_in_tbs_lowest_scaled_value of this AutonomousVmCluster.
+        The lowest value to which exadataStorage in TBs can be scaled down.
+
+
+        :return: The exadata_storage_in_tbs_lowest_scaled_value of this AutonomousVmCluster.
+        :rtype: float
+        """
+        return self._exadata_storage_in_tbs_lowest_scaled_value
+
+    @exadata_storage_in_tbs_lowest_scaled_value.setter
+    def exadata_storage_in_tbs_lowest_scaled_value(self, exadata_storage_in_tbs_lowest_scaled_value):
+        """
+        Sets the exadata_storage_in_tbs_lowest_scaled_value of this AutonomousVmCluster.
+        The lowest value to which exadataStorage in TBs can be scaled down.
+
+
+        :param exadata_storage_in_tbs_lowest_scaled_value: The exadata_storage_in_tbs_lowest_scaled_value of this AutonomousVmCluster.
+        :type: float
+        """
+        self._exadata_storage_in_tbs_lowest_scaled_value = exadata_storage_in_tbs_lowest_scaled_value
+
+    @property
+    def cpus_lowest_scaled_value(self):
+        """
+        Gets the cpus_lowest_scaled_value of this AutonomousVmCluster.
+        The lowest value to which cpus can be scaled down.
+
+
+        :return: The cpus_lowest_scaled_value of this AutonomousVmCluster.
+        :rtype: int
+        """
+        return self._cpus_lowest_scaled_value
+
+    @cpus_lowest_scaled_value.setter
+    def cpus_lowest_scaled_value(self, cpus_lowest_scaled_value):
+        """
+        Sets the cpus_lowest_scaled_value of this AutonomousVmCluster.
+        The lowest value to which cpus can be scaled down.
+
+
+        :param cpus_lowest_scaled_value: The cpus_lowest_scaled_value of this AutonomousVmCluster.
+        :type: int
+        """
+        self._cpus_lowest_scaled_value = cpus_lowest_scaled_value
+
+    @property
+    def max_acds_lowest_scaled_value(self):
+        """
+        Gets the max_acds_lowest_scaled_value of this AutonomousVmCluster.
+        The lowest value to which ACDs can be scaled down.
+
+
+        :return: The max_acds_lowest_scaled_value of this AutonomousVmCluster.
+        :rtype: int
+        """
+        return self._max_acds_lowest_scaled_value
+
+    @max_acds_lowest_scaled_value.setter
+    def max_acds_lowest_scaled_value(self, max_acds_lowest_scaled_value):
+        """
+        Sets the max_acds_lowest_scaled_value of this AutonomousVmCluster.
+        The lowest value to which ACDs can be scaled down.
+
+
+        :param max_acds_lowest_scaled_value: The max_acds_lowest_scaled_value of this AutonomousVmCluster.
+        :type: int
+        """
+        self._max_acds_lowest_scaled_value = max_acds_lowest_scaled_value
 
     def __repr__(self):
         return formatted_flat_dict(self)

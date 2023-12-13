@@ -84,6 +84,10 @@ class AutonomousContainerDatabaseSummary(object):
     LIFECYCLE_STATE_ROLE_CHANGE_IN_PROGRESS = "ROLE_CHANGE_IN_PROGRESS"
 
     #: A constant which can be used with the lifecycle_state property of a AutonomousContainerDatabaseSummary.
+    #: This constant has a value of "ENABLING_AUTONOMOUS_DATA_GUARD"
+    LIFECYCLE_STATE_ENABLING_AUTONOMOUS_DATA_GUARD = "ENABLING_AUTONOMOUS_DATA_GUARD"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousContainerDatabaseSummary.
     #: This constant has a value of "UNAVAILABLE"
     LIFECYCLE_STATE_UNAVAILABLE = "UNAVAILABLE"
 
@@ -198,7 +202,7 @@ class AutonomousContainerDatabaseSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousContainerDatabaseSummary.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "ENABLING_AUTONOMOUS_DATA_GUARD", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -245,6 +249,14 @@ class AutonomousContainerDatabaseSummary(object):
             Allowed values for this property are: "NEXT_RELEASE_UPDATE", "LATEST_RELEASE_UPDATE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type version_preference: str
+
+        :param is_dst_file_update_enabled:
+            The value to assign to the is_dst_file_update_enabled property of this AutonomousContainerDatabaseSummary.
+        :type is_dst_file_update_enabled: bool
+
+        :param dst_file_version:
+            The value to assign to the dst_file_version property of this AutonomousContainerDatabaseSummary.
+        :type dst_file_version: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AutonomousContainerDatabaseSummary.
@@ -318,6 +330,10 @@ class AutonomousContainerDatabaseSummary(object):
             The value to assign to the largest_provisionable_autonomous_database_in_cpus property of this AutonomousContainerDatabaseSummary.
         :type largest_provisionable_autonomous_database_in_cpus: float
 
+        :param time_of_last_backup:
+            The value to assign to the time_of_last_backup property of this AutonomousContainerDatabaseSummary.
+        :type time_of_last_backup: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -345,6 +361,8 @@ class AutonomousContainerDatabaseSummary(object):
             'maintenance_window': 'MaintenanceWindow',
             'standby_maintenance_buffer_in_days': 'int',
             'version_preference': 'str',
+            'is_dst_file_update_enabled': 'bool',
+            'dst_file_version': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'role': 'str',
@@ -361,7 +379,8 @@ class AutonomousContainerDatabaseSummary(object):
             'compute_model': 'str',
             'provisioned_cpus': 'float',
             'reserved_cpus': 'float',
-            'largest_provisionable_autonomous_database_in_cpus': 'float'
+            'largest_provisionable_autonomous_database_in_cpus': 'float',
+            'time_of_last_backup': 'datetime'
         }
 
         self.attribute_map = {
@@ -390,6 +409,8 @@ class AutonomousContainerDatabaseSummary(object):
             'maintenance_window': 'maintenanceWindow',
             'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays',
             'version_preference': 'versionPreference',
+            'is_dst_file_update_enabled': 'isDstFileUpdateEnabled',
+            'dst_file_version': 'dstFileVersion',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'role': 'role',
@@ -406,7 +427,8 @@ class AutonomousContainerDatabaseSummary(object):
             'compute_model': 'computeModel',
             'provisioned_cpus': 'provisionedCpus',
             'reserved_cpus': 'reservedCpus',
-            'largest_provisionable_autonomous_database_in_cpus': 'largestProvisionableAutonomousDatabaseInCpus'
+            'largest_provisionable_autonomous_database_in_cpus': 'largestProvisionableAutonomousDatabaseInCpus',
+            'time_of_last_backup': 'timeOfLastBackup'
         }
 
         self._id = None
@@ -434,6 +456,8 @@ class AutonomousContainerDatabaseSummary(object):
         self._maintenance_window = None
         self._standby_maintenance_buffer_in_days = None
         self._version_preference = None
+        self._is_dst_file_update_enabled = None
+        self._dst_file_version = None
         self._freeform_tags = None
         self._defined_tags = None
         self._role = None
@@ -451,6 +475,7 @@ class AutonomousContainerDatabaseSummary(object):
         self._provisioned_cpus = None
         self._reserved_cpus = None
         self._largest_provisionable_autonomous_database_in_cpus = None
+        self._time_of_last_backup = None
 
     @property
     def id(self):
@@ -816,7 +841,7 @@ class AutonomousContainerDatabaseSummary(object):
         **[Required]** Gets the lifecycle_state of this AutonomousContainerDatabaseSummary.
         The current state of the Autonomous Container Database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "ENABLING_AUTONOMOUS_DATA_GUARD", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -835,7 +860,7 @@ class AutonomousContainerDatabaseSummary(object):
         :param lifecycle_state: The lifecycle_state of this AutonomousContainerDatabaseSummary.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "UNAVAILABLE"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "ENABLING_AUTONOMOUS_DATA_GUARD", "UNAVAILABLE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -1101,6 +1126,54 @@ class AutonomousContainerDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(version_preference, allowed_values):
             version_preference = 'UNKNOWN_ENUM_VALUE'
         self._version_preference = version_preference
+
+    @property
+    def is_dst_file_update_enabled(self):
+        """
+        Gets the is_dst_file_update_enabled of this AutonomousContainerDatabaseSummary.
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+
+
+        :return: The is_dst_file_update_enabled of this AutonomousContainerDatabaseSummary.
+        :rtype: bool
+        """
+        return self._is_dst_file_update_enabled
+
+    @is_dst_file_update_enabled.setter
+    def is_dst_file_update_enabled(self, is_dst_file_update_enabled):
+        """
+        Sets the is_dst_file_update_enabled of this AutonomousContainerDatabaseSummary.
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+
+
+        :param is_dst_file_update_enabled: The is_dst_file_update_enabled of this AutonomousContainerDatabaseSummary.
+        :type: bool
+        """
+        self._is_dst_file_update_enabled = is_dst_file_update_enabled
+
+    @property
+    def dst_file_version(self):
+        """
+        Gets the dst_file_version of this AutonomousContainerDatabaseSummary.
+        DST Time Zone File version of the Autonomous Container Database.
+
+
+        :return: The dst_file_version of this AutonomousContainerDatabaseSummary.
+        :rtype: str
+        """
+        return self._dst_file_version
+
+    @dst_file_version.setter
+    def dst_file_version(self, dst_file_version):
+        """
+        Sets the dst_file_version of this AutonomousContainerDatabaseSummary.
+        DST Time Zone File version of the Autonomous Container Database.
+
+
+        :param dst_file_version: The dst_file_version of this AutonomousContainerDatabaseSummary.
+        :type: str
+        """
+        self._dst_file_version = dst_file_version
 
     @property
     def freeform_tags(self):
@@ -1547,6 +1620,30 @@ class AutonomousContainerDatabaseSummary(object):
         :type: float
         """
         self._largest_provisionable_autonomous_database_in_cpus = largest_provisionable_autonomous_database_in_cpus
+
+    @property
+    def time_of_last_backup(self):
+        """
+        Gets the time_of_last_backup of this AutonomousContainerDatabaseSummary.
+        The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+
+
+        :return: The time_of_last_backup of this AutonomousContainerDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_of_last_backup
+
+    @time_of_last_backup.setter
+    def time_of_last_backup(self, time_of_last_backup):
+        """
+        Sets the time_of_last_backup of this AutonomousContainerDatabaseSummary.
+        The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+
+
+        :param time_of_last_backup: The time_of_last_backup of this AutonomousContainerDatabaseSummary.
+        :type: datetime
+        """
+        self._time_of_last_backup = time_of_last_backup
 
     def __repr__(self):
         return formatted_flat_dict(self)

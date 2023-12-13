@@ -9,6 +9,7 @@ from __future__ import absolute_import
 from .audio_format_details import AudioFormatDetails
 from .change_transcription_job_compartment_details import ChangeTranscriptionJobCompartmentDetails
 from .create_transcription_job_details import CreateTranscriptionJobDetails
+from .diarization import Diarization
 from .input_location import InputLocation
 from .object_list_file_input_location import ObjectListFileInputLocation
 from .object_list_inline_input_location import ObjectListInlineInputLocation
@@ -21,6 +22,7 @@ from .transcription_job_collection import TranscriptionJobCollection
 from .transcription_job_summary import TranscriptionJobSummary
 from .transcription_model_details import TranscriptionModelDetails
 from .transcription_normalization import TranscriptionNormalization
+from .transcription_settings import TranscriptionSettings
 from .transcription_task import TranscriptionTask
 from .transcription_task_collection import TranscriptionTaskCollection
 from .transcription_task_summary import TranscriptionTaskSummary
@@ -31,6 +33,7 @@ ai_speech_type_mapping = {
     "AudioFormatDetails": AudioFormatDetails,
     "ChangeTranscriptionJobCompartmentDetails": ChangeTranscriptionJobCompartmentDetails,
     "CreateTranscriptionJobDetails": CreateTranscriptionJobDetails,
+    "Diarization": Diarization,
     "InputLocation": InputLocation,
     "ObjectListFileInputLocation": ObjectListFileInputLocation,
     "ObjectListInlineInputLocation": ObjectListInlineInputLocation,
@@ -43,6 +46,7 @@ ai_speech_type_mapping = {
     "TranscriptionJobSummary": TranscriptionJobSummary,
     "TranscriptionModelDetails": TranscriptionModelDetails,
     "TranscriptionNormalization": TranscriptionNormalization,
+    "TranscriptionSettings": TranscriptionSettings,
     "TranscriptionTask": TranscriptionTask,
     "TranscriptionTaskCollection": TranscriptionTaskCollection,
     "TranscriptionTaskSummary": TranscriptionTaskSummary,

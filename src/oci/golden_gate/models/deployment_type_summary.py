@@ -23,6 +23,10 @@ class DeploymentTypeSummary(object):
     #: This constant has a value of "STREAM_ANALYTICS"
     CATEGORY_STREAM_ANALYTICS = "STREAM_ANALYTICS"
 
+    #: A constant which can be used with the category property of a DeploymentTypeSummary.
+    #: This constant has a value of "DATA_TRANSFORMS"
+    CATEGORY_DATA_TRANSFORMS = "DATA_TRANSFORMS"
+
     #: A constant which can be used with the deployment_type property of a DeploymentTypeSummary.
     #: This constant has a value of "OGG"
     DEPLOYMENT_TYPE_OGG = "OGG"
@@ -46,6 +50,14 @@ class DeploymentTypeSummary(object):
     #: A constant which can be used with the deployment_type property of a DeploymentTypeSummary.
     #: This constant has a value of "DATABASE_POSTGRESQL"
     DEPLOYMENT_TYPE_DATABASE_POSTGRESQL = "DATABASE_POSTGRESQL"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentTypeSummary.
+    #: This constant has a value of "DATABASE_DB2ZOS"
+    DEPLOYMENT_TYPE_DATABASE_DB2_ZOS = "DATABASE_DB2ZOS"
+
+    #: A constant which can be used with the deployment_type property of a DeploymentTypeSummary.
+    #: This constant has a value of "DATA_TRANSFORMS"
+    DEPLOYMENT_TYPE_DATA_TRANSFORMS = "DATA_TRANSFORMS"
 
     #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
     #: This constant has a value of "GOLDENGATE"
@@ -111,6 +123,34 @@ class DeploymentTypeSummary(object):
     #: This constant has a value of "MONGODB"
     CONNECTION_TYPES_MONGODB = "MONGODB"
 
+    #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
+    #: This constant has a value of "AMAZON_KINESIS"
+    CONNECTION_TYPES_AMAZON_KINESIS = "AMAZON_KINESIS"
+
+    #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
+    #: This constant has a value of "AMAZON_REDSHIFT"
+    CONNECTION_TYPES_AMAZON_REDSHIFT = "AMAZON_REDSHIFT"
+
+    #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
+    #: This constant has a value of "REDIS"
+    CONNECTION_TYPES_REDIS = "REDIS"
+
+    #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
+    #: This constant has a value of "ELASTICSEARCH"
+    CONNECTION_TYPES_ELASTICSEARCH = "ELASTICSEARCH"
+
+    #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
+    #: This constant has a value of "GENERIC"
+    CONNECTION_TYPES_GENERIC = "GENERIC"
+
+    #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
+    #: This constant has a value of "GOOGLE_CLOUD_STORAGE"
+    CONNECTION_TYPES_GOOGLE_CLOUD_STORAGE = "GOOGLE_CLOUD_STORAGE"
+
+    #: A constant which can be used with the connection_types property of a DeploymentTypeSummary.
+    #: This constant has a value of "GOOGLE_BIGQUERY"
+    CONNECTION_TYPES_GOOGLE_BIGQUERY = "GOOGLE_BIGQUERY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DeploymentTypeSummary object with values from keyword arguments.
@@ -118,7 +158,7 @@ class DeploymentTypeSummary(object):
 
         :param category:
             The value to assign to the category property of this DeploymentTypeSummary.
-            Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type category: str
 
@@ -128,13 +168,13 @@ class DeploymentTypeSummary(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this DeploymentTypeSummary.
-            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
         :param connection_types:
             The value to assign to the connection_types property of this DeploymentTypeSummary.
-            Allowed values for items in this list are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_types: list[str]
 
@@ -150,6 +190,14 @@ class DeploymentTypeSummary(object):
             The value to assign to the ogg_version property of this DeploymentTypeSummary.
         :type ogg_version: str
 
+        :param supported_technologies_url:
+            The value to assign to the supported_technologies_url property of this DeploymentTypeSummary.
+        :type supported_technologies_url: str
+
+        :param default_username:
+            The value to assign to the default_username property of this DeploymentTypeSummary.
+        :type default_username: str
+
         """
         self.swagger_types = {
             'category': 'str',
@@ -158,7 +206,9 @@ class DeploymentTypeSummary(object):
             'connection_types': 'list[str]',
             'source_technologies': 'list[str]',
             'target_technologies': 'list[str]',
-            'ogg_version': 'str'
+            'ogg_version': 'str',
+            'supported_technologies_url': 'str',
+            'default_username': 'str'
         }
 
         self.attribute_map = {
@@ -168,7 +218,9 @@ class DeploymentTypeSummary(object):
             'connection_types': 'connectionTypes',
             'source_technologies': 'sourceTechnologies',
             'target_technologies': 'targetTechnologies',
-            'ogg_version': 'oggVersion'
+            'ogg_version': 'oggVersion',
+            'supported_technologies_url': 'supportedTechnologiesUrl',
+            'default_username': 'defaultUsername'
         }
 
         self._category = None
@@ -178,15 +230,17 @@ class DeploymentTypeSummary(object):
         self._source_technologies = None
         self._target_technologies = None
         self._ogg_version = None
+        self._supported_technologies_url = None
+        self._default_username = None
 
     @property
     def category(self):
         """
         **[Required]** Gets the category of this DeploymentTypeSummary.
-        The deployment category defines the broad separation of the deployment type into categories.  Currently
-        the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+        The deployment category defines the broad separation of the deployment type into three categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 
-        Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -199,14 +253,14 @@ class DeploymentTypeSummary(object):
     def category(self, category):
         """
         Sets the category of this DeploymentTypeSummary.
-        The deployment category defines the broad separation of the deployment type into categories.  Currently
-        the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+        The deployment category defines the broad separation of the deployment type into three categories.
+        Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 
 
         :param category: The category of this DeploymentTypeSummary.
         :type: str
         """
-        allowed_values = ["DATA_REPLICATION", "STREAM_ANALYTICS"]
+        allowed_values = ["DATA_REPLICATION", "STREAM_ANALYTICS", "DATA_TRANSFORMS"]
         if not value_allowed_none_or_none_sentinel(category, allowed_values):
             category = 'UNKNOWN_ENUM_VALUE'
         self._category = category
@@ -243,7 +297,7 @@ class DeploymentTypeSummary(object):
         NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
             Its use is discouraged in favor of 'DATABASE_ORACLE'.
 
-        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATA_TRANSFORMS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -264,7 +318,7 @@ class DeploymentTypeSummary(object):
         :param deployment_type: The deployment_type of this DeploymentTypeSummary.
         :type: str
         """
-        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL"]
+        allowed_values = ["OGG", "DATABASE_ORACLE", "BIGDATA", "DATABASE_MICROSOFT_SQLSERVER", "DATABASE_MYSQL", "DATABASE_POSTGRESQL", "DATABASE_DB2ZOS", "DATA_TRANSFORMS"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type
@@ -275,7 +329,7 @@ class DeploymentTypeSummary(object):
         Gets the connection_types of this DeploymentTypeSummary.
         An array of connectionTypes.
 
-        Allowed values for items in this list are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -294,7 +348,7 @@ class DeploymentTypeSummary(object):
         :param connection_types: The connection_types of this DeploymentTypeSummary.
         :type: list[str]
         """
-        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB"]
+        allowed_values = ["GOLDENGATE", "KAFKA", "KAFKA_SCHEMA_REGISTRY", "MYSQL", "JAVA_MESSAGE_SERVICE", "MICROSOFT_SQLSERVER", "OCI_OBJECT_STORAGE", "ORACLE", "AZURE_DATA_LAKE_STORAGE", "POSTGRESQL", "AZURE_SYNAPSE_ANALYTICS", "SNOWFLAKE", "AMAZON_S3", "HDFS", "ORACLE_NOSQL", "MONGODB", "AMAZON_KINESIS", "AMAZON_REDSHIFT", "REDIS", "ELASTICSEARCH", "GENERIC", "GOOGLE_CLOUD_STORAGE", "GOOGLE_BIGQUERY"]
         if connection_types:
             connection_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in connection_types]
         self._connection_types = connection_types
@@ -378,6 +432,54 @@ class DeploymentTypeSummary(object):
         :type: str
         """
         self._ogg_version = ogg_version
+
+    @property
+    def supported_technologies_url(self):
+        """
+        Gets the supported_technologies_url of this DeploymentTypeSummary.
+        The URL to the webpage listing the supported technologies.
+
+
+        :return: The supported_technologies_url of this DeploymentTypeSummary.
+        :rtype: str
+        """
+        return self._supported_technologies_url
+
+    @supported_technologies_url.setter
+    def supported_technologies_url(self, supported_technologies_url):
+        """
+        Sets the supported_technologies_url of this DeploymentTypeSummary.
+        The URL to the webpage listing the supported technologies.
+
+
+        :param supported_technologies_url: The supported_technologies_url of this DeploymentTypeSummary.
+        :type: str
+        """
+        self._supported_technologies_url = supported_technologies_url
+
+    @property
+    def default_username(self):
+        """
+        Gets the default_username of this DeploymentTypeSummary.
+        The default admin username used by deployment.
+
+
+        :return: The default_username of this DeploymentTypeSummary.
+        :rtype: str
+        """
+        return self._default_username
+
+    @default_username.setter
+    def default_username(self, default_username):
+        """
+        Sets the default_username of this DeploymentTypeSummary.
+        The default admin username used by deployment.
+
+
+        :param default_username: The default_username of this DeploymentTypeSummary.
+        :type: str
+        """
+        self._default_username = default_username
 
     def __repr__(self):
         return formatted_flat_dict(self)

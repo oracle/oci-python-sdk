@@ -39,6 +39,10 @@ Logging
     oci.logging.models.LogSavedSearchSummaryCollection
     oci.logging.models.LogSummary
     oci.logging.models.OciService
+    oci.logging.models.OperationalMetricsConfiguration
+    oci.logging.models.OperationalMetricsDestination
+    oci.logging.models.OperationalMetricsRecordInput
+    oci.logging.models.OperationalMetricsSource
     oci.logging.models.Parameter
     oci.logging.models.ResourceType
     oci.logging.models.ServiceSummary

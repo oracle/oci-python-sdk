@@ -190,7 +190,7 @@ class CreateScheduleDetails(object):
     def output_file_format(self):
         """
         Gets the output_file_format of this CreateScheduleDetails.
-        Specifies supported output file format.
+        Specifies the supported output file format.
 
         Allowed values for this property are: "CSV", "PDF"
 
@@ -204,7 +204,7 @@ class CreateScheduleDetails(object):
     def output_file_format(self, output_file_format):
         """
         Sets the output_file_format of this CreateScheduleDetails.
-        Specifies supported output file format.
+        Specifies the supported output file format.
 
 
         :param output_file_format: The output_file_format of this CreateScheduleDetails.
@@ -213,8 +213,7 @@ class CreateScheduleDetails(object):
         allowed_values = ["CSV", "PDF"]
         if not value_allowed_none_or_none_sentinel(output_file_format, allowed_values):
             raise ValueError(
-                "Invalid value for `output_file_format`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `output_file_format`, must be None or one of {allowed_values}"
             )
         self._output_file_format = output_file_format
 
@@ -222,7 +221,7 @@ class CreateScheduleDetails(object):
     def saved_report_id(self):
         """
         Gets the saved_report_id of this CreateScheduleDetails.
-        The saved report id which can also be used to generate query.
+        The saved report ID which can also be used to generate a query.
 
 
         :return: The saved_report_id of this CreateScheduleDetails.
@@ -234,7 +233,7 @@ class CreateScheduleDetails(object):
     def saved_report_id(self, saved_report_id):
         """
         Sets the saved_report_id of this CreateScheduleDetails.
-        The saved report id which can also be used to generate query.
+        The saved report ID which can also be used to generate a query.
 
 
         :param saved_report_id: The saved_report_id of this CreateScheduleDetails.

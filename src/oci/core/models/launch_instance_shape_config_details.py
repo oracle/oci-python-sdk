@@ -198,8 +198,7 @@ class LaunchInstanceShapeConfigDetails(object):
         allowed_values = ["BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1"]
         if not value_allowed_none_or_none_sentinel(baseline_ocpu_utilization, allowed_values):
             raise ValueError(
-                "Invalid value for `baseline_ocpu_utilization`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `baseline_ocpu_utilization`, must be None or one of {allowed_values}"
             )
         self._baseline_ocpu_utilization = baseline_ocpu_utilization
 

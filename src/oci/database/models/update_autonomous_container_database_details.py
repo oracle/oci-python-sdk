@@ -58,6 +58,10 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             Allowed values for this property are: "NEXT_RELEASE_UPDATE", "LATEST_RELEASE_UPDATE"
         :type version_preference: str
 
+        :param is_dst_file_update_enabled:
+            The value to assign to the is_dst_file_update_enabled property of this UpdateAutonomousContainerDatabaseDetails.
+        :type is_dst_file_update_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateAutonomousContainerDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -77,6 +81,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             'maintenance_window_details': 'MaintenanceWindow',
             'standby_maintenance_buffer_in_days': 'int',
             'version_preference': 'str',
+            'is_dst_file_update_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'backup_config': 'AutonomousContainerDatabaseBackupConfig'
@@ -88,6 +93,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             'maintenance_window_details': 'maintenanceWindowDetails',
             'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays',
             'version_preference': 'versionPreference',
+            'is_dst_file_update_enabled': 'isDstFileUpdateEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'backup_config': 'backupConfig'
@@ -98,6 +104,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         self._maintenance_window_details = None
         self._standby_maintenance_buffer_in_days = None
         self._version_preference = None
+        self._is_dst_file_update_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
         self._backup_config = None
@@ -153,8 +160,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         allowed_values = ["RELEASE_UPDATES", "RELEASE_UPDATE_REVISIONS"]
         if not value_allowed_none_or_none_sentinel(patch_model, allowed_values):
             raise ValueError(
-                "Invalid value for `patch_model`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `patch_model`, must be None or one of {allowed_values}"
             )
         self._patch_model = patch_model
 
@@ -231,10 +237,33 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         allowed_values = ["NEXT_RELEASE_UPDATE", "LATEST_RELEASE_UPDATE"]
         if not value_allowed_none_or_none_sentinel(version_preference, allowed_values):
             raise ValueError(
-                "Invalid value for `version_preference`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `version_preference`, must be None or one of {allowed_values}"
             )
         self._version_preference = version_preference
+
+    @property
+    def is_dst_file_update_enabled(self):
+        """
+        Gets the is_dst_file_update_enabled of this UpdateAutonomousContainerDatabaseDetails.
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+
+
+        :return: The is_dst_file_update_enabled of this UpdateAutonomousContainerDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_dst_file_update_enabled
+
+    @is_dst_file_update_enabled.setter
+    def is_dst_file_update_enabled(self, is_dst_file_update_enabled):
+        """
+        Sets the is_dst_file_update_enabled of this UpdateAutonomousContainerDatabaseDetails.
+        Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
+
+
+        :param is_dst_file_update_enabled: The is_dst_file_update_enabled of this UpdateAutonomousContainerDatabaseDetails.
+        :type: bool
+        """
+        self._is_dst_file_update_enabled = is_dst_file_update_enabled
 
     @property
     def freeform_tags(self):

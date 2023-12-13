@@ -264,8 +264,7 @@ class UpdateBucketDetails(object):
         allowed_values = ["NoPublicAccess", "ObjectRead", "ObjectReadWithoutList"]
         if not value_allowed_none_or_none_sentinel(public_access_type, allowed_values):
             raise ValueError(
-                "Invalid value for `public_access_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `public_access_type`, must be None or one of {allowed_values}"
             )
         self._public_access_type = public_access_type
 
@@ -430,8 +429,7 @@ class UpdateBucketDetails(object):
         allowed_values = ["Enabled", "Suspended"]
         if not value_allowed_none_or_none_sentinel(versioning, allowed_values):
             raise ValueError(
-                "Invalid value for `versioning`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `versioning`, must be None or one of {allowed_values}"
             )
         self._versioning = versioning
 

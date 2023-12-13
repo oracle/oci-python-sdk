@@ -23,6 +23,7 @@ from .change_lockbox_compartment_details import ChangeLockboxCompartmentDetails
 from .create_access_request_details import CreateAccessRequestDetails
 from .create_approval_template_details import CreateApprovalTemplateDetails
 from .create_lockbox_details import CreateLockboxDetails
+from .export_access_requests_details import ExportAccessRequestsDetails
 from .handle_access_request_details import HandleAccessRequestDetails
 from .lockbox import Lockbox
 from .lockbox_collection import LockboxCollection
@@ -57,6 +58,7 @@ lockbox_type_mapping = {
     "CreateAccessRequestDetails": CreateAccessRequestDetails,
     "CreateApprovalTemplateDetails": CreateApprovalTemplateDetails,
     "CreateLockboxDetails": CreateLockboxDetails,
+    "ExportAccessRequestsDetails": ExportAccessRequestsDetails,
     "HandleAccessRequestDetails": HandleAccessRequestDetails,
     "Lockbox": Lockbox,
     "LockboxCollection": LockboxCollection,

@@ -8,10 +8,12 @@ Database Management
 
     oci.database_management.DbManagementClient
     oci.database_management.DiagnosabilityClient
+    oci.database_management.ManagedMySqlDatabasesClient
     oci.database_management.PerfhubClient
     oci.database_management.SqlTuningClient
     oci.database_management.DbManagementClientCompositeOperations
     oci.database_management.DiagnosabilityClientCompositeOperations
+    oci.database_management.ManagedMySqlDatabasesClientCompositeOperations
     oci.database_management.PerfhubClientCompositeOperations
     oci.database_management.SqlTuningClientCompositeOperations
 
@@ -290,6 +292,9 @@ Database Management
     oci.database_management.models.ManagedDatabasePasswordCredential
     oci.database_management.models.ManagedDatabaseSecretCredential
     oci.database_management.models.ManagedDatabaseSummary
+    oci.database_management.models.ManagedMySqlDatabase
+    oci.database_management.models.ManagedMySqlDatabaseCollection
+    oci.database_management.models.ManagedMySqlDatabaseSummary
     oci.database_management.models.MemoryAggregateMetrics
     oci.database_management.models.MetricDataPoint
     oci.database_management.models.MetricDimensionDefinition
@@ -297,6 +302,16 @@ Database Management
     oci.database_management.models.MetricsAggregationRange
     oci.database_management.models.MetricsAggregationRangeCollection
     oci.database_management.models.ModifySnapshotSettingsDetails
+    oci.database_management.models.MySqlConfigurationDataCollection
+    oci.database_management.models.MySqlConfigurationDataSummary
+    oci.database_management.models.MySqlDataCollection
+    oci.database_management.models.MySqlDataSummary
+    oci.database_management.models.MySqlDatabaseUsageMetrics
+    oci.database_management.models.MySqlFleetByCategory
+    oci.database_management.models.MySqlFleetMetricDefinition
+    oci.database_management.models.MySqlFleetMetricSummaryDefinition
+    oci.database_management.models.MySqlFleetMetrics
+    oci.database_management.models.MySqlFleetSummary
     oci.database_management.models.ObjectPrivilegeCollection
     oci.database_management.models.ObjectPrivilegeSummary
     oci.database_management.models.ObjectStorageJobExecutionResultDetails

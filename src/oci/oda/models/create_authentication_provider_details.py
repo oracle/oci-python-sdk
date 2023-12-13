@@ -193,8 +193,7 @@ class CreateAuthenticationProviderDetails(object):
         allowed_values = ["CLIENT_CREDENTIALS", "AUTHORIZATION_CODE"]
         if not value_allowed_none_or_none_sentinel(grant_type, allowed_values):
             raise ValueError(
-                "Invalid value for `grant_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `grant_type`, must be None or one of {allowed_values}"
             )
         self._grant_type = grant_type
 
@@ -225,8 +224,7 @@ class CreateAuthenticationProviderDetails(object):
         allowed_values = ["GENERIC", "OAM", "GOOGLE", "MICROSOFT"]
         if not value_allowed_none_or_none_sentinel(identity_provider, allowed_values):
             raise ValueError(
-                "Invalid value for `identity_provider`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `identity_provider`, must be None or one of {allowed_values}"
             )
         self._identity_provider = identity_provider
 

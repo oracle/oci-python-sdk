@@ -40,6 +40,10 @@ class AccessRequestSummary(object):
             The value to assign to the requestor_id property of this AccessRequestSummary.
         :type requestor_id: str
 
+        :param requestor_location:
+            The value to assign to the requestor_location property of this AccessRequestSummary.
+        :type requestor_location: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AccessRequestSummary.
         :type lifecycle_state: str
@@ -67,6 +71,7 @@ class AccessRequestSummary(object):
             'display_name': 'str',
             'description': 'str',
             'requestor_id': 'str',
+            'requestor_location': 'str',
             'lifecycle_state': 'str',
             'access_duration': 'str',
             'time_created': 'datetime',
@@ -80,6 +85,7 @@ class AccessRequestSummary(object):
             'display_name': 'displayName',
             'description': 'description',
             'requestor_id': 'requestorId',
+            'requestor_location': 'requestorLocation',
             'lifecycle_state': 'lifecycleState',
             'access_duration': 'accessDuration',
             'time_created': 'timeCreated',
@@ -92,6 +98,7 @@ class AccessRequestSummary(object):
         self._display_name = None
         self._description = None
         self._requestor_id = None
+        self._requestor_location = None
         self._lifecycle_state = None
         self._access_duration = None
         self._time_created = None
@@ -217,6 +224,32 @@ class AccessRequestSummary(object):
         :type: str
         """
         self._requestor_id = requestor_id
+
+    @property
+    def requestor_location(self):
+        """
+        Gets the requestor_location of this AccessRequestSummary.
+        The two-char country code of the requestor while creating the access request
+        Example: `US`
+
+
+        :return: The requestor_location of this AccessRequestSummary.
+        :rtype: str
+        """
+        return self._requestor_location
+
+    @requestor_location.setter
+    def requestor_location(self, requestor_location):
+        """
+        Sets the requestor_location of this AccessRequestSummary.
+        The two-char country code of the requestor while creating the access request
+        Example: `US`
+
+
+        :param requestor_location: The requestor_location of this AccessRequestSummary.
+        :type: str
+        """
+        self._requestor_location = requestor_location
 
     @property
     def lifecycle_state(self):

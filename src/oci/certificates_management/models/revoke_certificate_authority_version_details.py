@@ -95,8 +95,7 @@ class RevokeCertificateAuthorityVersionDetails(object):
         allowed_values = ["UNSPECIFIED", "KEY_COMPROMISE", "CA_COMPROMISE", "AFFILIATION_CHANGED", "SUPERSEDED", "CESSATION_OF_OPERATION", "PRIVILEGE_WITHDRAWN", "AA_COMPROMISE"]
         if not value_allowed_none_or_none_sentinel(revocation_reason, allowed_values):
             raise ValueError(
-                "Invalid value for `revocation_reason`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `revocation_reason`, must be None or one of {allowed_values}"
             )
         self._revocation_reason = revocation_reason
 

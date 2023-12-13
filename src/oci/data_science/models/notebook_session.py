@@ -84,6 +84,10 @@ class NotebookSession(object):
             The value to assign to the notebook_session_runtime_config_details property of this NotebookSession.
         :type notebook_session_runtime_config_details: oci.data_science.models.NotebookSessionRuntimeConfigDetails
 
+        :param notebook_session_storage_mount_configuration_details_list:
+            The value to assign to the notebook_session_storage_mount_configuration_details_list property of this NotebookSession.
+        :type notebook_session_storage_mount_configuration_details_list: list[oci.data_science.models.StorageMountConfigurationDetails]
+
         :param notebook_session_url:
             The value to assign to the notebook_session_url property of this NotebookSession.
         :type notebook_session_url: str
@@ -117,6 +121,7 @@ class NotebookSession(object):
             'notebook_session_configuration_details': 'NotebookSessionConfigurationDetails',
             'notebook_session_config_details': 'NotebookSessionConfigDetails',
             'notebook_session_runtime_config_details': 'NotebookSessionRuntimeConfigDetails',
+            'notebook_session_storage_mount_configuration_details_list': 'list[StorageMountConfigurationDetails]',
             'notebook_session_url': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -134,6 +139,7 @@ class NotebookSession(object):
             'notebook_session_configuration_details': 'notebookSessionConfigurationDetails',
             'notebook_session_config_details': 'notebookSessionConfigDetails',
             'notebook_session_runtime_config_details': 'notebookSessionRuntimeConfigDetails',
+            'notebook_session_storage_mount_configuration_details_list': 'notebookSessionStorageMountConfigurationDetailsList',
             'notebook_session_url': 'notebookSessionUrl',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -150,6 +156,7 @@ class NotebookSession(object):
         self._notebook_session_configuration_details = None
         self._notebook_session_config_details = None
         self._notebook_session_runtime_config_details = None
+        self._notebook_session_storage_mount_configuration_details_list = None
         self._notebook_session_url = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -383,6 +390,30 @@ class NotebookSession(object):
         :type: oci.data_science.models.NotebookSessionRuntimeConfigDetails
         """
         self._notebook_session_runtime_config_details = notebook_session_runtime_config_details
+
+    @property
+    def notebook_session_storage_mount_configuration_details_list(self):
+        """
+        Gets the notebook_session_storage_mount_configuration_details_list of this NotebookSession.
+        Collection of NotebookSessionStorageMountConfigurationDetails.
+
+
+        :return: The notebook_session_storage_mount_configuration_details_list of this NotebookSession.
+        :rtype: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        return self._notebook_session_storage_mount_configuration_details_list
+
+    @notebook_session_storage_mount_configuration_details_list.setter
+    def notebook_session_storage_mount_configuration_details_list(self, notebook_session_storage_mount_configuration_details_list):
+        """
+        Sets the notebook_session_storage_mount_configuration_details_list of this NotebookSession.
+        Collection of NotebookSessionStorageMountConfigurationDetails.
+
+
+        :param notebook_session_storage_mount_configuration_details_list: The notebook_session_storage_mount_configuration_details_list of this NotebookSession.
+        :type: list[oci.data_science.models.StorageMountConfigurationDetails]
+        """
+        self._notebook_session_storage_mount_configuration_details_list = notebook_session_storage_mount_configuration_details_list
 
     @property
     def notebook_session_url(self):

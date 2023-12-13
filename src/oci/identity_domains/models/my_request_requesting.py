@@ -49,6 +49,10 @@ class MyRequestRequesting(object):
             The value to assign to the display property of this MyRequestRequesting.
         :type display: str
 
+        :param description:
+            The value to assign to the description property of this MyRequestRequesting.
+        :type description: str
+
         :param type:
             The value to assign to the type property of this MyRequestRequesting.
             Allowed values for this property are: "Group", "App", 'UNKNOWN_ENUM_VALUE'.
@@ -60,6 +64,7 @@ class MyRequestRequesting(object):
             'value': 'str',
             'ref': 'str',
             'display': 'str',
+            'description': 'str',
             'type': 'str'
         }
 
@@ -67,12 +72,14 @@ class MyRequestRequesting(object):
             'value': 'value',
             'ref': '$ref',
             'display': 'display',
+            'description': 'description',
             'type': 'type'
         }
 
         self._value = None
         self._ref = None
         self._display = None
+        self._description = None
         self._type = None
 
     @property
@@ -204,6 +211,52 @@ class MyRequestRequesting(object):
         :type: str
         """
         self._display = display
+
+    @property
+    def description(self):
+        """
+        Gets the description of this MyRequestRequesting.
+        Resource description
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: readOnly
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :return: The description of this MyRequestRequesting.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this MyRequestRequesting.
+        Resource description
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+         - idcsSearchable: true
+         - multiValued: false
+         - mutability: readOnly
+         - required: false
+         - returned: default
+         - type: string
+         - uniqueness: none
+
+
+        :param description: The description of this MyRequestRequesting.
+        :type: str
+        """
+        self._description = description
 
     @property
     def type(self):

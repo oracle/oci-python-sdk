@@ -100,7 +100,7 @@ class UpdateScheduleDetails(object):
     def output_file_format(self):
         """
         Gets the output_file_format of this UpdateScheduleDetails.
-        Specifies supported output file format.
+        Specifies the supported output file format.
 
         Allowed values for this property are: "CSV", "PDF"
 
@@ -114,7 +114,7 @@ class UpdateScheduleDetails(object):
     def output_file_format(self, output_file_format):
         """
         Sets the output_file_format of this UpdateScheduleDetails.
-        Specifies supported output file format.
+        Specifies the supported output file format.
 
 
         :param output_file_format: The output_file_format of this UpdateScheduleDetails.
@@ -123,8 +123,7 @@ class UpdateScheduleDetails(object):
         allowed_values = ["CSV", "PDF"]
         if not value_allowed_none_or_none_sentinel(output_file_format, allowed_values):
             raise ValueError(
-                "Invalid value for `output_file_format`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `output_file_format`, must be None or one of {allowed_values}"
             )
         self._output_file_format = output_file_format
 

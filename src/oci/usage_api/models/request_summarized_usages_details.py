@@ -250,8 +250,7 @@ class RequestSummarizedUsagesDetails(object):
         allowed_values = ["HOURLY", "DAILY", "MONTHLY", "TOTAL"]
         if not value_allowed_none_or_none_sentinel(granularity, allowed_values):
             raise ValueError(
-                "Invalid value for `granularity`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `granularity`, must be None or one of {allowed_values}"
             )
         self._granularity = granularity
 
@@ -336,8 +335,7 @@ class RequestSummarizedUsagesDetails(object):
         allowed_values = ["USAGE", "COST", "CREDIT", "EXPIREDCREDIT", "ALLCREDIT"]
         if not value_allowed_none_or_none_sentinel(query_type, allowed_values):
             raise ValueError(
-                "Invalid value for `query_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `query_type`, must be None or one of {allowed_values}"
             )
         self._query_type = query_type
 

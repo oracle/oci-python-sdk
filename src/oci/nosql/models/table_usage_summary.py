@@ -55,6 +55,10 @@ class TableUsageSummary(object):
             The value to assign to the max_shard_size_usage_in_percent property of this TableUsageSummary.
         :type max_shard_size_usage_in_percent: int
 
+        :param time_started:
+            The value to assign to the time_started property of this TableUsageSummary.
+        :type time_started: datetime
+
         """
         self.swagger_types = {
             'seconds_in_period': 'int',
@@ -64,7 +68,8 @@ class TableUsageSummary(object):
             'read_throttle_count': 'int',
             'write_throttle_count': 'int',
             'storage_throttle_count': 'int',
-            'max_shard_size_usage_in_percent': 'int'
+            'max_shard_size_usage_in_percent': 'int',
+            'time_started': 'datetime'
         }
 
         self.attribute_map = {
@@ -75,7 +80,8 @@ class TableUsageSummary(object):
             'read_throttle_count': 'readThrottleCount',
             'write_throttle_count': 'writeThrottleCount',
             'storage_throttle_count': 'storageThrottleCount',
-            'max_shard_size_usage_in_percent': 'maxShardSizeUsageInPercent'
+            'max_shard_size_usage_in_percent': 'maxShardSizeUsageInPercent',
+            'time_started': 'timeStarted'
         }
 
         self._seconds_in_period = None
@@ -86,6 +92,7 @@ class TableUsageSummary(object):
         self._write_throttle_count = None
         self._storage_throttle_count = None
         self._max_shard_size_usage_in_percent = None
+        self._time_started = None
 
     @property
     def seconds_in_period(self):
@@ -284,6 +291,30 @@ class TableUsageSummary(object):
         :type: int
         """
         self._max_shard_size_usage_in_percent = max_shard_size_usage_in_percent
+
+    @property
+    def time_started(self):
+        """
+        Gets the time_started of this TableUsageSummary.
+        The time stamp of this usage record.
+
+
+        :return: The time_started of this TableUsageSummary.
+        :rtype: datetime
+        """
+        return self._time_started
+
+    @time_started.setter
+    def time_started(self, time_started):
+        """
+        Sets the time_started of this TableUsageSummary.
+        The time stamp of this usage record.
+
+
+        :param time_started: The time_started of this TableUsageSummary.
+        :type: datetime
+        """
+        self._time_started = time_started
 
     def __repr__(self):
         return formatted_flat_dict(self)

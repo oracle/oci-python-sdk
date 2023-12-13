@@ -263,8 +263,7 @@ class CreateApplicationDetails(object):
         allowed_values = ["GENERIC_X86", "GENERIC_ARM", "GENERIC_X86_ARM"]
         if not value_allowed_none_or_none_sentinel(shape, allowed_values):
             raise ValueError(
-                "Invalid value for `shape`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `shape`, must be None or one of {allowed_values}"
             )
         self._shape = shape
 

@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UnifiedAgentParser(object):
     """
-    source parser object.
+    Source parser object.
     """
 
     #: A constant which can be used with the parser_type property of a UnifiedAgentParser.
@@ -245,7 +245,7 @@ class UnifiedAgentParser(object):
     def field_time_key(self):
         """
         Gets the field_time_key of this UnifiedAgentParser.
-        Specify time field for the event time. If the event doesn't have this field, the current time is used.
+        Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
 
 
         :return: The field_time_key of this UnifiedAgentParser.
@@ -257,7 +257,7 @@ class UnifiedAgentParser(object):
     def field_time_key(self, field_time_key):
         """
         Sets the field_time_key of this UnifiedAgentParser.
-        Specify time field for the event time. If the event doesn't have this field, the current time is used.
+        Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
 
 
         :param field_time_key: The field_time_key of this UnifiedAgentParser.
@@ -357,7 +357,7 @@ class UnifiedAgentParser(object):
     def is_null_empty_string(self):
         """
         Gets the is_null_empty_string of this UnifiedAgentParser.
-        If true, an empty string field is replaced with nil.
+        If true, an empty string field is replaced with a null value.
 
 
         :return: The is_null_empty_string of this UnifiedAgentParser.
@@ -369,7 +369,7 @@ class UnifiedAgentParser(object):
     def is_null_empty_string(self, is_null_empty_string):
         """
         Sets the is_null_empty_string of this UnifiedAgentParser.
-        If true, an empty string field is replaced with nil.
+        If true, an empty string field is replaced with a null value.
 
 
         :param is_null_empty_string: The is_null_empty_string of this UnifiedAgentParser.
@@ -381,7 +381,7 @@ class UnifiedAgentParser(object):
     def is_estimate_current_event(self):
         """
         Gets the is_estimate_current_event of this UnifiedAgentParser.
-        If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+        If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
 
 
         :return: The is_estimate_current_event of this UnifiedAgentParser.
@@ -393,7 +393,7 @@ class UnifiedAgentParser(object):
     def is_estimate_current_event(self, is_estimate_current_event):
         """
         Sets the is_estimate_current_event of this UnifiedAgentParser.
-        If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
+        If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
 
 
         :param is_estimate_current_event: The is_estimate_current_event of this UnifiedAgentParser.
@@ -405,7 +405,7 @@ class UnifiedAgentParser(object):
     def is_keep_time_key(self):
         """
         Gets the is_keep_time_key of this UnifiedAgentParser.
-        If true, keep time field in the record.
+        If true, keep the time field in the record.
 
 
         :return: The is_keep_time_key of this UnifiedAgentParser.
@@ -417,7 +417,7 @@ class UnifiedAgentParser(object):
     def is_keep_time_key(self, is_keep_time_key):
         """
         Sets the is_keep_time_key of this UnifiedAgentParser.
-        If true, keep time field in the record.
+        If true, keep the time field in the record.
 
 
         :param is_keep_time_key: The is_keep_time_key of this UnifiedAgentParser.

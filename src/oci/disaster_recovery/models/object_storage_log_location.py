@@ -12,7 +12,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectStorageLogLocation(object):
     """
-    Information about an Object Storage log location for a DR Protection Group.
+    The details of an object storage log location for a DR protection group.
     """
 
     def __init__(self, **kwargs):
@@ -53,7 +53,7 @@ class ObjectStorageLogLocation(object):
     def namespace(self):
         """
         **[Required]** Gets the namespace of this ObjectStorageLogLocation.
-        The namespace in Object Storage (Note - this is usually the tenancy name).
+        The namespace in object storage (Note - this is usually the tenancy name).
 
         Example: `myocitenancy`
 
@@ -67,7 +67,7 @@ class ObjectStorageLogLocation(object):
     def namespace(self, namespace):
         """
         Sets the namespace of this ObjectStorageLogLocation.
-        The namespace in Object Storage (Note - this is usually the tenancy name).
+        The namespace in object storage (Note - this is usually the tenancy name).
 
         Example: `myocitenancy`
 
@@ -81,7 +81,7 @@ class ObjectStorageLogLocation(object):
     def bucket(self):
         """
         **[Required]** Gets the bucket of this ObjectStorageLogLocation.
-        The bucket name inside the Object Storage namespace.
+        The bucket name inside the object storage namespace.
 
         Example: `operation_logs`
 
@@ -95,7 +95,7 @@ class ObjectStorageLogLocation(object):
     def bucket(self, bucket):
         """
         Sets the bucket of this ObjectStorageLogLocation.
-        The bucket name inside the Object Storage namespace.
+        The bucket name inside the object storage namespace.
 
         Example: `operation_logs`
 
@@ -109,7 +109,7 @@ class ObjectStorageLogLocation(object):
     def object(self):
         """
         Gets the object of this ObjectStorageLogLocation.
-        The object name inside the Object Storage bucket.
+        The object name inside the object storage bucket.
 
         Example: `switchover_plan_executions`
 
@@ -123,7 +123,7 @@ class ObjectStorageLogLocation(object):
     def object(self, object):
         """
         Sets the object of this ObjectStorageLogLocation.
-        The object name inside the Object Storage bucket.
+        The object name inside the object storage bucket.
 
         Example: `switchover_plan_executions`
 

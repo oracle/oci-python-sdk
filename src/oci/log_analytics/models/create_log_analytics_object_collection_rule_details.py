@@ -346,8 +346,7 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         allowed_values = ["LIVE", "HISTORIC", "HISTORIC_LIVE"]
         if not value_allowed_none_or_none_sentinel(collection_type, allowed_values):
             raise ValueError(
-                "Invalid value for `collection_type`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `collection_type`, must be None or one of {allowed_values}"
             )
         self._collection_type = collection_type
 
@@ -618,8 +617,7 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         allowed_values = ["OBJECT_PATH"]
         if not value_allowed_none_or_none_sentinel(log_set_key, allowed_values):
             raise ValueError(
-                "Invalid value for `log_set_key`, must be None or one of {0}"
-                .format(allowed_values)
+                f"Invalid value for `log_set_key`, must be None or one of {allowed_values}"
             )
         self._log_set_key = log_set_key
 

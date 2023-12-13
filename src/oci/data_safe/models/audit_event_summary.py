@@ -364,7 +364,7 @@ class AuditEventSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AuditEventSummary.
-        The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
+        The OCID of the compartment containing the audit event. The compartment is the same as that of audit profile of the target database resource.
 
 
         :return: The compartment_id of this AuditEventSummary.
@@ -376,7 +376,7 @@ class AuditEventSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AuditEventSummary.
-        The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
+        The OCID of the compartment containing the audit event. The compartment is the same as that of audit profile of the target database resource.
 
 
         :param compartment_id: The compartment_id of this AuditEventSummary.
@@ -526,7 +526,7 @@ class AuditEventSummary(object):
     def audit_event_time(self):
         """
         **[Required]** Gets the audit_event_time of this AuditEventSummary.
-        The time of the audit event occurrence in the target database.
+        The time that the audit event occurs in the target database.
 
 
         :return: The audit_event_time of this AuditEventSummary.
@@ -538,7 +538,7 @@ class AuditEventSummary(object):
     def audit_event_time(self, audit_event_time):
         """
         Sets the audit_event_time of this AuditEventSummary.
-        The time of the audit event occurrence in the target database.
+        The time that the audit event occurs in the target database.
 
 
         :param audit_event_time: The audit_event_time of this AuditEventSummary.
@@ -598,7 +598,7 @@ class AuditEventSummary(object):
     def operation(self):
         """
         Gets the operation of this AuditEventSummary.
-        The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+        The name of the action executed by the user on the target database. For example ALTER, CREATE or DROP.
 
 
         :return: The operation of this AuditEventSummary.
@@ -610,7 +610,7 @@ class AuditEventSummary(object):
     def operation(self, operation):
         """
         Sets the operation of this AuditEventSummary.
-        The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+        The name of the action executed by the user on the target database. For example ALTER, CREATE or DROP.
 
 
         :param operation: The operation of this AuditEventSummary.
@@ -652,7 +652,7 @@ class AuditEventSummary(object):
     def event_name(self):
         """
         Gets the event_name of this AuditEventSummary.
-        The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        The name of the detail action executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
 
 
         :return: The event_name of this AuditEventSummary.
@@ -664,7 +664,7 @@ class AuditEventSummary(object):
     def event_name(self, event_name):
         """
         Sets the event_name of this AuditEventSummary.
-        The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        The name of the detail action executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
 
 
         :param event_name: The event_name of this AuditEventSummary.
@@ -700,7 +700,7 @@ class AuditEventSummary(object):
     def error_message(self):
         """
         Gets the error_message of this AuditEventSummary.
-        The detailed message on why the Error occurred.
+        The detailed message on why the error occurred.
 
 
         :return: The error_message of this AuditEventSummary.
@@ -712,7 +712,7 @@ class AuditEventSummary(object):
     def error_message(self, error_message):
         """
         Sets the error_message of this AuditEventSummary.
-        The detailed message on why the Error occurred.
+        The detailed message on why the error occurred.
 
 
         :param error_message: The error_message of this AuditEventSummary.
@@ -724,7 +724,7 @@ class AuditEventSummary(object):
     def object_type(self):
         """
         Gets the object_type of this AuditEventSummary.
-        The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+        The type of the object in the source database affected by the action. For example PL/SQL, SYNONYM or PACKAGE BODY.
 
 
         :return: The object_type of this AuditEventSummary.
@@ -736,7 +736,7 @@ class AuditEventSummary(object):
     def object_type(self, object_type):
         """
         Sets the object_type of this AuditEventSummary.
-        The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+        The type of the object in the source database affected by the action. For example PL/SQL, SYNONYM or PACKAGE BODY.
 
 
         :param object_type: The object_type of this AuditEventSummary.
@@ -916,7 +916,7 @@ class AuditEventSummary(object):
     def client_program(self):
         """
         Gets the client_program of this AuditEventSummary.
-        The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+        The application from which the audit event was generated. For example SQL Plus or SQL Developer.
 
 
         :return: The client_program of this AuditEventSummary.
@@ -928,7 +928,7 @@ class AuditEventSummary(object):
     def client_program(self, client_program):
         """
         Sets the client_program of this AuditEventSummary.
-        The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+        The application from which the audit event was generated. For example SQL Plus or SQL Developer.
 
 
         :param client_program: The client_program of this AuditEventSummary.

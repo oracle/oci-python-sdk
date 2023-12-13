@@ -13,6 +13,7 @@ from oci.decorators import init_model_state_from_kwargs
 class CreatePluggableDatabaseDetails(object):
     """
     Parameters for creating a pluggable database in a specified container database (CDB).
+    Additional option `pdbCreationTypeDetails` can be used for creating Pluggable Database using different operations, e.g. LocalClone, Remote Clone, Relocate.
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
@@ -41,6 +42,18 @@ class CreatePluggableDatabaseDetails(object):
             The value to assign to the should_pdb_admin_account_be_locked property of this CreatePluggableDatabaseDetails.
         :type should_pdb_admin_account_be_locked: bool
 
+        :param container_database_admin_password:
+            The value to assign to the container_database_admin_password property of this CreatePluggableDatabaseDetails.
+        :type container_database_admin_password: str
+
+        :param should_create_pdb_backup:
+            The value to assign to the should_create_pdb_backup property of this CreatePluggableDatabaseDetails.
+        :type should_create_pdb_backup: bool
+
+        :param pdb_creation_type_details:
+            The value to assign to the pdb_creation_type_details property of this CreatePluggableDatabaseDetails.
+        :type pdb_creation_type_details: oci.database.models.CreatePluggableDatabaseCreationTypeDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreatePluggableDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -56,6 +69,9 @@ class CreatePluggableDatabaseDetails(object):
             'pdb_admin_password': 'str',
             'tde_wallet_password': 'str',
             'should_pdb_admin_account_be_locked': 'bool',
+            'container_database_admin_password': 'str',
+            'should_create_pdb_backup': 'bool',
+            'pdb_creation_type_details': 'CreatePluggableDatabaseCreationTypeDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -66,6 +82,9 @@ class CreatePluggableDatabaseDetails(object):
             'pdb_admin_password': 'pdbAdminPassword',
             'tde_wallet_password': 'tdeWalletPassword',
             'should_pdb_admin_account_be_locked': 'shouldPdbAdminAccountBeLocked',
+            'container_database_admin_password': 'containerDatabaseAdminPassword',
+            'should_create_pdb_backup': 'shouldCreatePdbBackup',
+            'pdb_creation_type_details': 'pdbCreationTypeDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -75,6 +94,9 @@ class CreatePluggableDatabaseDetails(object):
         self._pdb_admin_password = None
         self._tde_wallet_password = None
         self._should_pdb_admin_account_be_locked = None
+        self._container_database_admin_password = None
+        self._should_create_pdb_backup = None
+        self._pdb_creation_type_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -203,6 +225,74 @@ class CreatePluggableDatabaseDetails(object):
         :type: bool
         """
         self._should_pdb_admin_account_be_locked = should_pdb_admin_account_be_locked
+
+    @property
+    def container_database_admin_password(self):
+        """
+        Gets the container_database_admin_password of this CreatePluggableDatabaseDetails.
+        The DB system administrator password of the Container Database.
+
+
+        :return: The container_database_admin_password of this CreatePluggableDatabaseDetails.
+        :rtype: str
+        """
+        return self._container_database_admin_password
+
+    @container_database_admin_password.setter
+    def container_database_admin_password(self, container_database_admin_password):
+        """
+        Sets the container_database_admin_password of this CreatePluggableDatabaseDetails.
+        The DB system administrator password of the Container Database.
+
+
+        :param container_database_admin_password: The container_database_admin_password of this CreatePluggableDatabaseDetails.
+        :type: str
+        """
+        self._container_database_admin_password = container_database_admin_password
+
+    @property
+    def should_create_pdb_backup(self):
+        """
+        Gets the should_create_pdb_backup of this CreatePluggableDatabaseDetails.
+        Indicates whether to take Pluggable Database Backup after the operation.
+
+
+        :return: The should_create_pdb_backup of this CreatePluggableDatabaseDetails.
+        :rtype: bool
+        """
+        return self._should_create_pdb_backup
+
+    @should_create_pdb_backup.setter
+    def should_create_pdb_backup(self, should_create_pdb_backup):
+        """
+        Sets the should_create_pdb_backup of this CreatePluggableDatabaseDetails.
+        Indicates whether to take Pluggable Database Backup after the operation.
+
+
+        :param should_create_pdb_backup: The should_create_pdb_backup of this CreatePluggableDatabaseDetails.
+        :type: bool
+        """
+        self._should_create_pdb_backup = should_create_pdb_backup
+
+    @property
+    def pdb_creation_type_details(self):
+        """
+        Gets the pdb_creation_type_details of this CreatePluggableDatabaseDetails.
+
+        :return: The pdb_creation_type_details of this CreatePluggableDatabaseDetails.
+        :rtype: oci.database.models.CreatePluggableDatabaseCreationTypeDetails
+        """
+        return self._pdb_creation_type_details
+
+    @pdb_creation_type_details.setter
+    def pdb_creation_type_details(self, pdb_creation_type_details):
+        """
+        Sets the pdb_creation_type_details of this CreatePluggableDatabaseDetails.
+
+        :param pdb_creation_type_details: The pdb_creation_type_details of this CreatePluggableDatabaseDetails.
+        :type: oci.database.models.CreatePluggableDatabaseCreationTypeDetails
+        """
+        self._pdb_creation_type_details = pdb_creation_type_details
 
     @property
     def freeform_tags(self):
