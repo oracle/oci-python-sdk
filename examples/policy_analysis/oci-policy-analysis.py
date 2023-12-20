@@ -19,6 +19,8 @@
 from oci import config
 from oci import identity
 from oci import loggingingestion
+from oci import pagination
+
 from oci.auth.signers import InstancePrincipalsSecurityTokenSigner
 from oci.loggingingestion.models import PutLogsDetails, LogEntry, LogEntryBatch
 
@@ -28,6 +30,7 @@ import os
 import datetime
 import uuid
 import logging
+
 
 # Lists
 dynamic_group_statements = []
@@ -139,22 +142,22 @@ def getNestedCompartment(identity_client, comp_ocid, level, max_level, comp_stri
         # return, stop
         return
 
-    # Where are we? Do we need to recurse?
-    list_compartments_response = identity_client.list_compartments(
-        compartment_id=comp_ocid,
-        limit=1000,
+    # Using the paging API 
+    paginated_response = pagination.list_call_get_all_results(
+        identity_client.list_compartments,
+        comp_ocid,
         access_level="ACCESSIBLE",
-        compartment_id_in_subtree=False,
-        sort_by="NAME",
         sort_order="ASC",
-        lifecycle_state="ACTIVE")
-    comp_list = list_compartments_response.data
+        lifecycle_state="ACTIVE",
+        limit=1000)
+    comp_list = paginated_response.data
 
     # Iterate and if any have sub-compartments, call recursive until none left
     if len(comp_list) == 0:
         # print(f"fall back level {level}")
         return
     for comp in comp_list:
+        logging.debug(f"L{level} / Comp: {comp.name}")
         # Recurse
         if comp_string == "":
             getNestedCompartment(identity_client=identity_client,
@@ -300,7 +303,7 @@ if __name__ == "__main__":
     entries = []
     logging.info("========Summary Special==============")
     for index, statement in enumerate(special_statements, start=1):
-        logging.info(f"Statement #{index}: {statement}")
+        logging.info(f"Statement #{index}: {statement[0]} | Policy: {statement[2]}")
         entries.append(LogEntry(id=str(uuid.uuid1()),
                                 data=f"Statement #{index}: {statement}"))
     logging.info(f"Total Special statement in tenancy: {len(special_statements)}")
