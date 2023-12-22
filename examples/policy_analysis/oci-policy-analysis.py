@@ -351,7 +351,7 @@ if __name__ == "__main__":
         logging.info(f"Statement #{index}: {statement[9]} | Policy: {statement[5]}/{statement[6]}")
         entries.append(LogEntry(id=str(uuid.uuid1()),
                                 data=f"Statement #{index}: {statement[9]} | Policy: {statement[5]}/{statement[6]}"))
-    logging.info(f"Total Regular statement in tenancy: {len(regular_statements)}")
+    logging.info(f"Total Regular statements in tenancy: {len(regular_statements)}")
 
     # Create Log Batch
     regular_batch = LogEntryBatch(defaultlogentrytime=datetime.datetime.now(datetime.UTC),
