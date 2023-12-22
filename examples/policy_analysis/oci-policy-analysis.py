@@ -142,7 +142,7 @@ def getNestedCompartment(identity_client, comp_ocid, level, max_level, comp_stri
         # return, stop
         return
 
-    # Using the paging API 
+    # Using the paging API
     paginated_response = pagination.list_call_get_all_results(
         identity_client.list_compartments,
         comp_ocid,
@@ -354,7 +354,7 @@ if __name__ == "__main__":
     logging.info(f"Total Regular statement in tenancy: {len(regular_statements)}")
 
     # Create Log Batch
-    regular_batch = LogEntryBatch(defaultlogentrytime=datetime.datetime.utcnow(),
+    regular_batch = LogEntryBatch(defaultlogentrytime=datetime.datetime.now(datetime.UTC),
                                   source="oci-policy-analysis",
                                   type="regular-statement",
                                   entries=entries)
