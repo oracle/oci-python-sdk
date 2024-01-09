@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.118.1 - 2024-01-09
+====================
+
+Added
+-----
+* Support for calling Oracle Cloud Infrastructure services in the sa-valparaiso-1 region
+* Support for creation of up to 60 containers per container instance in the Container Instances service
+* Support for Oracle GoldenGate discovery and monitoring in the Stack Monitoring service
+* Support for GoldenGate stream analytics in the GoldenGate service
+* Support for backup work requests in MySQL Heatwave service
+* Support for create, update, delete and list operations on premise vantage points in the Application Performance Monitoring service
+* Support for create, update, delete and list operations on workers in the Application Performance Monitoring service
+* Support for host capacity planning for compute instances and host unallocated metrics in the Operations Insights service
+ 
+====================
 2.118.0 - 2023-12-12
 ====================
 

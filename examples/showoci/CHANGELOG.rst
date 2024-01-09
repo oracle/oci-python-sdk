@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+23.12.20 - 23.12.20
+=====================
+* Added CSV for Announcements
+* Added -andays flag to extract last XX Days of announcement, default 30
+* Amend error control on showoci_service.py
+* Added errors csv for service and processing errors and warnings
+
+=====================
 23.12.12 - 23.12.12
 =====================
 * Added PostgreSQL

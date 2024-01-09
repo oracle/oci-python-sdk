@@ -127,7 +127,7 @@ import contextlib
 import os
 import time
 
-version = "23.12.12"
+version = "23.12.20"
 
 ##########################################################################
 # check OCI version
@@ -333,6 +333,7 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-a', action='store_true', default=False, dest='all', help='Print All Resources')
     parser.add_argument('-ani', action='store_true', default=False, dest='allnoiam', help='Print All Resources but identity')
     parser.add_argument('-an', action='store_true', default=False, dest='announcement', help='Print Announcements')
+    parser.add_argument('-andays', default=30, dest='announcement_days', type=int, help='Announcement Last X Days (Default=30)')
     parser.add_argument('-c', '-cn', action='store_true', default=False, dest='compute', help='Print Compute and Containers')
     parser.add_argument('-d', action='store_true', default=False, dest='database', help='Print Database')
     parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge, DNS Services and WAAS policies, DNS Zone is slow can be excluded using -exclude DNSZONE')
@@ -463,6 +464,7 @@ def set_service_extract_flags(cmd):
 
     if cmd.all or cmd.allnoiam or cmd.announcement:
         prm.read_announcement = True
+        prm.read_announcement_days = cmd.announcement_days
 
     if cmd.all or cmd.allnoiam or cmd.edge:
         prm.read_edge = True
