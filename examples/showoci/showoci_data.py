@@ -16,10 +16,11 @@
 ##########################################################################
 from __future__ import print_function
 from showoci_service import ShowOCIService, ShowOCIFlags
+import sys
 
 
 class ShowOCIData(object):
-    version = "23.12.12"
+    version = "23.12.20"
 
     ############################################
     # ShowOCIService - Service object to query
@@ -27,6 +28,7 @@ class ShowOCIData(object):
     ###########################################
     service = None
     error = 0
+    error_array = []
 
     # OCI Processed data
     data = []
@@ -88,7 +90,7 @@ class ShowOCIData(object):
                 announcement_data = {'type': "announcement", 'data': self.service.get_announcement()}
                 self.data.append(announcement_data)
 
-            # run on announcement module
+            # run on security_scores module
             if self.service.flags.read_security:
                 security_scores_data = {'type': "security_scores", 'data': self.service.get_security_scores()}
                 self.data.append(security_scores_data)
@@ -102,12 +104,12 @@ class ShowOCIData(object):
                 # run on each subscribed region
                 for region_name in tenancy['list_region_subscriptions']:
 
-                    # if filtered by region skip if not cmd.region
-                    if self.service.flags.filter_by_region and self.service.flags.filter_by_region not in region_name:
+                    # check if filter by region
+                    if not self.service.oci_region_name_filter(region_name):
                         continue
 
-                    limits_data = []
                     # limits services which regional but not compartment
+                    limits_data = []
                     if self.service.flags.read_limits:
                         limits_data = self.__get_limits_main(region_name)
 
@@ -118,6 +120,11 @@ class ShowOCIData(object):
                     if value or limits_data:
                         region_data = ({'type': "region", 'region': region_name, 'data': value, 'limits': limits_data})
                         self.data.append(region_data)
+
+            # Append Error Array
+            self.error_array += self.service.error_array
+            error_data = {'type': "errors", 'data': self.error_array}
+            self.data.append(error_data)
 
             # return the json data
             return self.data
@@ -187,15 +194,39 @@ class ShowOCIData(object):
     ##########################################################################
     # print print error
     ##########################################################################
-    def __print_error(self, msg, e):
-        classname = type(self).__name__
+    def __print_error(self, e):
+        try:
+            classname = type(self).__name__
+            caller_function = sys._getframe(1).f_code.co_name
 
-        if isinstance(e, KeyError):
-            print("\nError in " + classname + ":" + msg + ": KeyError " + str(e.args))
-        else:
-            print("\nError in " + classname + ":" + msg + ": " + str(e))
+            if isinstance(e, KeyError):
+                print("\nError in " + classname + ":" + caller_function + ": KeyError " + str(e.args))
+            else:
+                print("\nError in " + classname + ":" + caller_function + ": " + str(e))
 
-        self.error += 1
+            self.error += 1
+            self.__add_to_error_array(classname, caller_function, "", e)
+
+        except Exception as e:
+            print("\nError in __print_error " + str(e))
+
+    ##########################################################################
+    # __add_to_error_array
+    ##########################################################################
+    def __add_to_error_array(self, classname, caller_function, compartment_name, err, warning=False):
+
+        try:
+            error_info = {
+                'class': classname,
+                'function': caller_function,
+                'compartment': compartment_name,
+                'error': str(err),
+                'is_warning': str(warning)
+            }
+            self.error_array.append(error_info)
+
+        except Exception as e:
+            print("\nError in __add_to_error_array " + str(e))
 
     ##########################################################################
     # run on Region
@@ -395,7 +426,7 @@ class ShowOCIData(object):
             return ret_var
 
         except Exception as e:
-            self.__print_error("get_oci_region_data", e)
+            self.__print_error(e)
 
     ##########################################################################
     # Print Network VCN NAT
@@ -421,7 +452,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_nat", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -455,7 +486,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_igw", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -492,7 +523,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_sgw", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -535,7 +566,7 @@ class ShowOCIData(object):
             return retStr, name, route_table
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_drg_details", e)
+            self.__print_error(e)
             return retStr, name
 
     ##########################################################################
@@ -566,7 +597,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_drg_attached", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -605,7 +636,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_local_peering", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -672,7 +703,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_subnets", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -734,7 +765,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_vlans", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -761,7 +792,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_security_lists", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -825,7 +856,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_security_lists", e)
+            self.__print_error(e)
             return data
 
     ###########################################################################
@@ -898,7 +929,7 @@ class ShowOCIData(object):
             return line + network_dest
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_route_rule", e)
+            self.__print_error(e)
             return line
 
     ########################################################################
@@ -934,7 +965,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_route_tables", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -959,7 +990,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_dhcp_options", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1026,7 +1057,7 @@ class ShowOCIData(object):
             return vcn_data
 
         except BaseException as e:
-            self.__print_error("__get_core_network_vcn", e)
+            self.__print_error(e)
             return vcn_data
 
     ##########################################################################
@@ -1039,7 +1070,7 @@ class ShowOCIData(object):
             return cpes
 
         except Exception as e:
-            self.__print_error("__get_core_network_cpe", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1052,7 +1083,7 @@ class ShowOCIData(object):
             return nfw
 
         except Exception as e:
-            self.__print_error("__get_core_network_firewall", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1065,7 +1096,7 @@ class ShowOCIData(object):
             return nfw
 
         except Exception as e:
-            self.__print_error("__get_core_network_firewall_policies", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1113,7 +1144,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_drg", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1128,7 +1159,7 @@ class ShowOCIData(object):
             return ""
 
         except Exception as e:
-            self.__print_error("__get_core_network_drg_route", e)
+            self.__print_error(e)
 
     ##########################################################################
     # get dRG details
@@ -1143,7 +1174,7 @@ class ShowOCIData(object):
             return ""
 
         except Exception as e:
-            self.__print_error("__get_core_network_drg_name", e)
+            self.__print_error(e)
 
     ##########################################################################
     # get cpe name
@@ -1157,7 +1188,7 @@ class ShowOCIData(object):
                 return "CPE - " + cpe['name']
 
         except Exception as e:
-            self.__print_error("__get_core_network_cpe_name", e)
+            self.__print_error(e)
 
     ##########################################################################
     # get vcn name
@@ -1170,7 +1201,7 @@ class ShowOCIData(object):
                 return vcn['name']
 
         except Exception as e:
-            self.__print_error("__get_core_network_vcn_name", e)
+            self.__print_error(e)
 
     ##########################################################################
     # get rfc name
@@ -1185,7 +1216,7 @@ class ShowOCIData(object):
             return ""
 
         except Exception as e:
-            self.__print_error("__get_core_network_rpc_name", e)
+            self.__print_error(e)
 
     ##########################################################################
     # get Subnet Name
@@ -1200,7 +1231,7 @@ class ShowOCIData(object):
                 return ""
 
         except Exception as e:
-            self.__print_error("__get_core_network_subnet_name", e)
+            self.__print_error(e)
 
     ##########################################################################
     # print network remote peering
@@ -1235,7 +1266,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_remote_peering", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1277,7 +1308,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_ipsec", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1340,7 +1371,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_network_virtual_circuit", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1356,7 +1387,7 @@ class ShowOCIData(object):
             return ""
 
         except Exception as e:
-            self.__print_error("__get_core_network_local_peering", e)
+            self.__print_error(e)
 
     ##########################################################################
     # get Network route
@@ -1370,7 +1401,7 @@ class ShowOCIData(object):
             return ""
 
         except Exception as e:
-            self.__print_error("__get_core_network_route", e)
+            self.__print_error(e)
 
     ##########################################################################
     # self.__get_core_network_private_ip
@@ -1385,7 +1416,7 @@ class ShowOCIData(object):
             return " Not Exist"
 
         except Exception as e:
-            self.__print_error("__get_core_network_private_ip", e)
+            self.__print_error(e)
 
     ##########################################################################
     # Network Main
@@ -1430,7 +1461,7 @@ class ShowOCIData(object):
             return return_data
 
         except Exception as e:
-            self.__print_error("__get_core_network_main", e)
+            self.__print_error(e)
             return return_data
 
     ##########################################################################
@@ -1449,7 +1480,7 @@ class ShowOCIData(object):
             return backupstr
 
         except Exception as e:
-            self.__print_error("__get_core_block_volume_backup_policy", e)
+            self.__print_error(e)
 
     ##########################################################################
     # get Core Block boot volume
@@ -1500,7 +1531,7 @@ class ShowOCIData(object):
             return value
 
         except Exception as e:
-            self.__print_error("__get_core_block_volume_boot", e)
+            self.__print_error(e)
 
     ##########################################################################
     # get Core Block boot volume
@@ -1556,7 +1587,7 @@ class ShowOCIData(object):
             return value
 
         except Exception as e:
-            self.__print_error("__get_core_block_volume", e)
+            self.__print_error(e)
 
     ##########################################################################
     # get compute boot volume or volume
@@ -1601,7 +1632,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_block_volume_boot_backup", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1653,7 +1684,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_block_volume_not_attached", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1706,7 +1737,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_block_boot_not_attached", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1751,7 +1782,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_block_volume_groups", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1905,7 +1936,7 @@ class ShowOCIData(object):
             return data
 
         except BaseException as e:
-            self.__print_error("__get_core_compute_instances", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1935,7 +1966,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_compute_images", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -1970,7 +2001,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_compute_capacity_reservation", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2002,7 +2033,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_compute_instance_configuration", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2025,7 +2056,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_compute_instance_pool", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2055,7 +2086,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_core_compute_autoscaling", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2121,7 +2152,7 @@ class ShowOCIData(object):
             return return_data
 
         except Exception as e:
-            self.__print_error("__get_core_compute_main", e)
+            self.__print_error(e)
             return return_data
 
     ##########################################################################
@@ -2195,7 +2226,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_db_nodes", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2242,7 +2273,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_db_databases", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2257,7 +2288,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_db_patches", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2272,7 +2303,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_db_patches_history", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2316,7 +2347,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_db_backups", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2340,7 +2371,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_db_pdbs", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2365,7 +2396,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_db_homes", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2397,7 +2428,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_db_dataguard", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2509,7 +2540,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_db_exadata", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2618,7 +2649,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_db_exacc", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2700,7 +2731,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_adb_dedicated", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2774,7 +2805,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_db_systems", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2820,7 +2851,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_db_all_backups", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2849,7 +2880,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_autonomous_backups", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -2990,7 +3021,7 @@ class ShowOCIData(object):
             return value
 
         except Exception as e:
-            self.__print_error("__get_database_adb_database_info", e)
+            self.__print_error(e)
             return {}
 
     ##########################################################################
@@ -3012,7 +3043,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_autonomous_databases", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3103,7 +3134,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_adb_dedicated", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3119,7 +3150,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_nosql", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3147,7 +3178,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_mysql", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3170,7 +3201,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_mysql_standalone_backups", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3198,7 +3229,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_postgresql", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3221,7 +3252,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_postgresql_standalone_backups", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3235,7 +3266,7 @@ class ShowOCIData(object):
             return database_software_images
 
         except Exception as e:
-            self.__print_error("__get_database_software_images", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3259,7 +3290,7 @@ class ShowOCIData(object):
             return return_data
 
         except Exception as e:
-            self.__print_error("__get_database_goldengate", e)
+            self.__print_error(e)
             return return_data
 
     ##########################################################################
@@ -3273,7 +3304,7 @@ class ShowOCIData(object):
             return database_gg_deployments
 
         except Exception as e:
-            self.__print_error("__get_database_goldengate_deployments", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3287,7 +3318,7 @@ class ShowOCIData(object):
             return database_gg_db_registrations
 
         except Exception as e:
-            self.__print_error("__get_database_goldengate_db_registration", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3381,7 +3412,7 @@ class ShowOCIData(object):
             return return_data
 
         except Exception as e:
-            self.__print_error("__get_database_main", e)
+            self.__print_error(e)
             return return_data
 
     ##########################################################################
@@ -3402,7 +3433,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_file_storage_mount_target", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3431,7 +3462,7 @@ class ShowOCIData(object):
 
             return bytes_details + ", " + file_details
         except Exception as e:
-            self.__print_error("__get_file_storage_limits", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -3469,7 +3500,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_file_storage_exports", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -3509,7 +3540,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("oci_file_storage: ", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3579,7 +3610,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_object_storage_main", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3609,7 +3640,7 @@ class ShowOCIData(object):
                             "RegEx=" + str(h['response_body_regex']) + ", " +
                             "url_path =" + str(h['url_path']))
         except Exception as e:
-            self.__print_error("__get_load_balancer_bs_healthchecker", e)
+            self.__print_error(e)
             return ""
 
     ##########################################################################
@@ -3639,7 +3670,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_load_balancer_backendset", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3709,7 +3740,7 @@ class ShowOCIData(object):
 
             return data
         except Exception as e:
-            self.__print_error("__get_load_balancer_details", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3733,7 +3764,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_load_balancer_main", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3763,7 +3794,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_load_balancer_backendset_network", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3807,7 +3838,7 @@ class ShowOCIData(object):
 
             return data
         except Exception as e:
-            self.__print_error("__get_load_balancer_network_details", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3828,7 +3859,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_load_balancer_main", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3859,7 +3890,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_resource_management_main", e)
+            self.__print_error(e)
             return data
 
     ##########################################################################
@@ -3898,7 +3929,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_email_main", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -3981,7 +4012,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_container_main", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4004,7 +4035,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_streams_queues_main", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4039,7 +4070,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_functions_main", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4068,7 +4099,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_apigateway_main", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4119,7 +4150,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_monitoring_main", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4135,7 +4166,7 @@ class ShowOCIData(object):
                     return topic['name']
             return topic_id
         except Exception as e:
-            self.__print_error("__get_notification_topic_name", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4148,7 +4179,7 @@ class ShowOCIData(object):
                 return stream['name']
             return stream_id
         except Exception as e:
-            self.__print_error("__get_streaming_stream_name", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4161,7 +4192,7 @@ class ShowOCIData(object):
                 return function['display_name']
             return function_id
         except Exception as e:
-            self.__print_error("__get_function_name", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4193,7 +4224,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_notifications_main", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4228,7 +4259,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_load_edge_main", e)
+            self.__print_error(e)
             return []
 
     ##########################################################################
@@ -4244,7 +4275,7 @@ class ShowOCIData(object):
             return
 
         except Exception as e:
-            self.__print_error("__get_limits_main", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4259,7 +4290,7 @@ class ShowOCIData(object):
             return
 
         except Exception as e:
-            self.__print_error("__get_quotas_main", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4307,7 +4338,7 @@ class ShowOCIData(object):
             return paas_services
 
         except Exception as e:
-            self.__print_error("__get_paas_native_main", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4346,7 +4377,7 @@ class ShowOCIData(object):
             return security_services
 
         except Exception as e:
-            self.__print_error("__get_security_main", e)
+            self.__print_error(e)
             pass
 
     ##########################################################################
@@ -4389,5 +4420,5 @@ class ShowOCIData(object):
             return data_ai
 
         except Exception as e:
-            self.__print_error("__get_data_ai_main", e)
+            self.__print_error(e)
             pass

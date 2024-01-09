@@ -21,7 +21,7 @@ import csv
 
 
 class ShowOCIOutput(object):
-    version = "23.12.12"
+    version = "23.12.20"
 
     ##########################################################################
     # spaces for align
@@ -95,6 +95,10 @@ class ShowOCIOutput(object):
                         self.__print_region_data(d['region'], d['data'])
                         if limits_exist:
                             self.__print_limits_main(d['limits'])
+
+                    elif d['type'] == "errors":
+                        self.__print_errors(d['data'])
+                        has_data = True
 
                     else:
                         print("Error Unknown Type in JSON file...")
@@ -2079,7 +2083,7 @@ class ShowOCIOutput(object):
             self.print_header("Announcements", 2)
 
             for ann in announcements:
-                print(self.taba + ann['summary'][0:100] + " (" + ann['reference_ticket_number'] + ") - " + ann['announcement_type'] + ", Start Time: " + ann['time_one_value'][0:16] + ", Time Created: " + ann['time_created'][0:16] + " (" + ann['lifecycle_state'] + ")")
+                print(self.taba + ann['summary'][0:100] + " (" + ann['reference_ticket_number'] + ") - " + ann['announcement_type'] + ", Time: " + ann['time_one_value'][0:16] + " - " + ann['time_two_value'][0:16] + ", Time Created: " + ann['time_created'][0:16] + " (" + ann['lifecycle_state'] + ")")
                 if ann['affected_regions']:
                     print(self.tabs + "Regions  : " + ann['affected_regions'])
                 if ann['services']:
@@ -2088,6 +2092,26 @@ class ShowOCIOutput(object):
 
         except Exception as e:
             self.__print_error("__print_announcement_main", e)
+
+    ##########################################################################
+    # Errors
+    ##########################################################################
+    def __print_errors(self, errors):
+
+        try:
+            if not errors:
+                return
+
+            self.print_header("Service and Processing Issues", 2)
+
+            for arr in errors:
+                is_warning = "Warning: " if arr['is_warning'] == 'True' else "Error:   "
+                compartment = ", Compartment " + arr['compartment'] if arr['compartment'] else ""
+                print(self.taba + is_warning + arr['class'] + ":" + arr['function'] + compartment + ", " + arr['error'][0:60])
+            print("")
+
+        except Exception as e:
+            self.__print_error("__print_errors", e)
 
     ##########################################################################
     # __print_security_scores_main
@@ -4052,6 +4076,8 @@ class ShowOCICSV(object):
     error = 0
     csv_tags_to_cols = False
     csv_file_header = ""
+    csv_announcements = []
+    csv_errors = []
     csv_identity_compartments = []
     csv_identity_groups = []
     csv_identity_users = []
@@ -4169,6 +4195,12 @@ class ShowOCICSV(object):
                     if d['type'] == "identity":
                         self.__csv_identity_main(d['data'])
 
+                    if d['type'] == "errors":
+                        self.__csv_error_data(d['data'])
+
+                    if d['type'] == "announcement":
+                        self.__csv_announcements(d['data'])
+
                     elif d['type'] == "region":
                         self.__csv_region_data(d['region'], d['data'])
 
@@ -4180,6 +4212,8 @@ class ShowOCICSV(object):
 
             # generate CSV files from each file
             self.__print_header("Processing CSV Files", 0)
+            self.__export_to_csv_file("announcements", self.csv_announcements)
+            self.__export_to_csv_file("errors", self.csv_errors)
             self.__export_to_csv_file("identity_compartments", self.csv_identity_compartments)
             self.__export_to_csv_file("identity_users", self.csv_identity_users)
             self.__export_to_csv_file("identity_policy", self.csv_identity_policies)
@@ -5090,6 +5124,41 @@ class ShowOCICSV(object):
             self.__print_error("__csv_identity_compartments", e)
 
     ##########################################################################
+    # CSV Announcement
+    ##########################################################################
+
+    def __csv_announcements(self, announcements):
+        try:
+            for ann in announcements:
+                data = {
+                    'region_name': ann['region_name'],
+                    'time_created': ann['time_created'],
+                    'type': ann['type'],
+                    'affected_regions': ann['affected_regions'],
+                    'services': ann['services'],
+                    'environment_name': ann['environment_name'],
+                    'lifecycle_state': ann['lifecycle_state'],
+                    'reference_ticket_number': ann['reference_ticket_number'],
+                    'time_one_type': ann['time_one_type'],
+                    'time_one_title': ann['time_one_title'],
+                    'time_one_value': ann['time_one_value'],
+                    'time_two_type': ann['time_two_type'],
+                    'time_two_title': ann['time_two_title'],
+                    'time_two_value': ann['time_two_value'],
+                    'announcement_type': ann['announcement_type'],
+                    'summary': ann['summary'],
+                    'is_banner': ann['is_banner'],
+                    'time_updated': ann['time_updated'],
+                    'platform_type': ann['platform_type'],
+                    'id': ann['id'],
+                    'chain_id': ann['chain_id']
+                }
+                self.csv_announcements.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_announcements", e)
+
+    ##########################################################################
     # csv Identity Policies
     ##########################################################################
     def __csv_identity_policies(self, policies_data):
@@ -5139,6 +5208,26 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_identity_main", e)
+
+    ##########################################################################
+    # CSV Network Subnets
+    ##########################################################################
+    def __csv_error_data(self, data):
+
+        try:
+            for err in data:
+                value = {
+                    'class': err['class'],
+                    'function': err['function'],
+                    'compartment': err['compartment'],
+                    'is_warning': err['is_warning'],
+                    'error': err['error']
+                }
+
+                self.csv_errors.append(value)
+
+        except Exception as e:
+            self.__print_error("__csv_error_data", e)
 
     ##########################################################################
     # CSV Network Subnets
@@ -7552,6 +7641,7 @@ class ShowOCICSV(object):
                         'kms_key_id': ar['kms_key_id'],
                         'bucket_id': ar['id'],
                         'time_created': ar['time_created'],
+                        'error_message': ar['error_message'],
                         'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
                         'defined_tags': self.__get_defined_tags(ar['defined_tags']),
                         'logs': str(', '.join(x['name'] for x in ar['logs']))

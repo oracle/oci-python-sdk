@@ -22,19 +22,26 @@ Apm Synthetics
     oci.apm_synthetics.models.AggregatedNetworkData
     oci.apm_synthetics.models.AggregatedNetworkDataResult
     oci.apm_synthetics.models.AvailabilityConfiguration
+    oci.apm_synthetics.models.AvailableCapability
     oci.apm_synthetics.models.BrowserMonitorConfiguration
     oci.apm_synthetics.models.ClientCertificate
     oci.apm_synthetics.models.ClientCertificateDetails
     oci.apm_synthetics.models.CreateDedicatedVantagePointDetails
     oci.apm_synthetics.models.CreateMonitorDetails
+    oci.apm_synthetics.models.CreateOnPremiseVantagePointDetails
     oci.apm_synthetics.models.CreateScriptDetails
+    oci.apm_synthetics.models.CreateWorkerDetails
     oci.apm_synthetics.models.DedicatedVantagePoint
     oci.apm_synthetics.models.DedicatedVantagePointCollection
     oci.apm_synthetics.models.DedicatedVantagePointSummary
     oci.apm_synthetics.models.DnsConfiguration
+    oci.apm_synthetics.models.DnsSecMonitorConfiguration
+    oci.apm_synthetics.models.DnsServerMonitorConfiguration
+    oci.apm_synthetics.models.DnsTraceMonitorConfiguration
     oci.apm_synthetics.models.DvpStackDetails
     oci.apm_synthetics.models.GeoSummary
     oci.apm_synthetics.models.Header
+    oci.apm_synthetics.models.IdentityInfoDetails
     oci.apm_synthetics.models.Link
     oci.apm_synthetics.models.MaintenanceWindowSchedule
     oci.apm_synthetics.models.Monitor
@@ -49,6 +56,10 @@ Apm Synthetics
     oci.apm_synthetics.models.NetworkConfiguration
     oci.apm_synthetics.models.NetworkMonitorConfiguration
     oci.apm_synthetics.models.Node
+    oci.apm_synthetics.models.OnPremiseVantagePoint
+    oci.apm_synthetics.models.OnPremiseVantagePointCollection
+    oci.apm_synthetics.models.OnPremiseVantagePointSummary
+    oci.apm_synthetics.models.OnPremiseVpWorkerVersionDetails
     oci.apm_synthetics.models.OracleRMStack
     oci.apm_synthetics.models.PrivateKey
     oci.apm_synthetics.models.PublicVantagePointCollection
@@ -65,8 +76,15 @@ Apm Synthetics
     oci.apm_synthetics.models.ScriptedRestMonitorConfiguration
     oci.apm_synthetics.models.UpdateDedicatedVantagePointDetails
     oci.apm_synthetics.models.UpdateMonitorDetails
+    oci.apm_synthetics.models.UpdateOnPremiseVantagePointDetails
     oci.apm_synthetics.models.UpdateScriptDetails
+    oci.apm_synthetics.models.UpdateWorkerDetails
     oci.apm_synthetics.models.VantagePointExecution
     oci.apm_synthetics.models.VantagePointInfo
     oci.apm_synthetics.models.VantagePointNode
     oci.apm_synthetics.models.VerifyText
+    oci.apm_synthetics.models.Worker
+    oci.apm_synthetics.models.WorkerCollection
+    oci.apm_synthetics.models.WorkerMonitorList
+    oci.apm_synthetics.models.WorkerSummary
+    oci.apm_synthetics.models.WorkersSummary

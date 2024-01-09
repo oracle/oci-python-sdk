@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2023, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 REGIONS_SHORT_NAMES = {
@@ -40,6 +40,7 @@ REGIONS_SHORT_NAMES = {
     'mty': 'mx-monterrey-1',
     'aga': 'us-saltlake-2',
     'bog': 'sa-bogota-1',
+    'vap': 'sa-valparaiso-1',
     'lfi': 'us-langley-1',
     'luf': 'us-luke-1',
     'ric': 'us-gov-ashburn-1',
@@ -100,6 +101,7 @@ REGION_REALMS = {
     'mx-monterrey-1': 'oc1',
     'us-saltlake-2': 'oc1',
     'sa-bogota-1': 'oc1',
+    'sa-valparaiso-1': 'oc1',
 
     'us-langley-1': 'oc2',
     'us-luke-1': 'oc2',
@@ -183,6 +185,7 @@ REGIONS = [
     'mx-monterrey-1',
     'us-saltlake-2',
     'sa-bogota-1',
+    'sa-valparaiso-1',
     'us-langley-1',
     'us-luke-1',
     'us-gov-ashburn-1',
