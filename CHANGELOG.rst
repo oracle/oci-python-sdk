@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.118.2 - 2024-01-11
+====================
+
+Fixed
+-----
+* Removed dependency on python-pkcs11
+ 
+====================
 2.118.1 - 2024-01-09
 ====================
 
