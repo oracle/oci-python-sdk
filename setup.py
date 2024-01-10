@@ -36,8 +36,7 @@ requires = [
     "pyOpenSSL>=17.5.0,<24.0.0",
     "python-dateutil>=2.5.3,<3.0.0",
     "pytz>=2016.10",
-    "circuitbreaker>=1.3.1,< 2.0.0",
-    'python-pkcs11==0.7.0 ; python_version >= "3.7" and platform_system != "Windows"'
+    "circuitbreaker>=1.3.1,< 2.0.0"
 ]
 
 setup(
