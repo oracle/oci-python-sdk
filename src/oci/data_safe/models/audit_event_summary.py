@@ -75,6 +75,14 @@ class AuditEventSummary(object):
     #: This constant has a value of "DIRECT_PATH_API"
     AUDIT_TYPE_DIRECT_PATH_API = "DIRECT_PATH_API"
 
+    #: A constant which can be used with the trail_source property of a AuditEventSummary.
+    #: This constant has a value of "TABLE"
+    TRAIL_SOURCE_TABLE = "TABLE"
+
+    #: A constant which can be used with the trail_source property of a AuditEventSummary.
+    #: This constant has a value of "FILE"
+    TRAIL_SOURCE_FILE = "FILE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AuditEventSummary object with values from keyword arguments.
@@ -218,6 +226,20 @@ class AuditEventSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type audit_type: str
 
+        :param peer_target_database_key:
+            The value to assign to the peer_target_database_key property of this AuditEventSummary.
+        :type peer_target_database_key: int
+
+        :param trail_source:
+            The value to assign to the trail_source property of this AuditEventSummary.
+            Allowed values for this property are: "TABLE", "FILE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type trail_source: str
+
+        :param database_unique_name:
+            The value to assign to the database_unique_name property of this AuditEventSummary.
+        :type database_unique_name: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AuditEventSummary.
         :type freeform_tags: dict(str, str)
@@ -260,6 +282,9 @@ class AuditEventSummary(object):
             'client_id': 'str',
             'audit_policies': 'str',
             'audit_type': 'str',
+            'peer_target_database_key': 'int',
+            'trail_source': 'str',
+            'database_unique_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -297,6 +322,9 @@ class AuditEventSummary(object):
             'client_id': 'clientId',
             'audit_policies': 'auditPolicies',
             'audit_type': 'auditType',
+            'peer_target_database_key': 'peerTargetDatabaseKey',
+            'trail_source': 'trailSource',
+            'database_unique_name': 'databaseUniqueName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -333,6 +361,9 @@ class AuditEventSummary(object):
         self._client_id = None
         self._audit_policies = None
         self._audit_type = None
+        self._peer_target_database_key = None
+        self._trail_source = None
+        self._database_unique_name = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -1139,6 +1170,84 @@ class AuditEventSummary(object):
         if not value_allowed_none_or_none_sentinel(audit_type, allowed_values):
             audit_type = 'UNKNOWN_ENUM_VALUE'
         self._audit_type = audit_type
+
+    @property
+    def peer_target_database_key(self):
+        """
+        Gets the peer_target_database_key of this AuditEventSummary.
+        The secondary id assigned for the peer database registered with Data Safe.
+
+
+        :return: The peer_target_database_key of this AuditEventSummary.
+        :rtype: int
+        """
+        return self._peer_target_database_key
+
+    @peer_target_database_key.setter
+    def peer_target_database_key(self, peer_target_database_key):
+        """
+        Sets the peer_target_database_key of this AuditEventSummary.
+        The secondary id assigned for the peer database registered with Data Safe.
+
+
+        :param peer_target_database_key: The peer_target_database_key of this AuditEventSummary.
+        :type: int
+        """
+        self._peer_target_database_key = peer_target_database_key
+
+    @property
+    def trail_source(self):
+        """
+        Gets the trail_source of this AuditEventSummary.
+        The underlying source of unified audit trail.
+
+        Allowed values for this property are: "TABLE", "FILE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The trail_source of this AuditEventSummary.
+        :rtype: str
+        """
+        return self._trail_source
+
+    @trail_source.setter
+    def trail_source(self, trail_source):
+        """
+        Sets the trail_source of this AuditEventSummary.
+        The underlying source of unified audit trail.
+
+
+        :param trail_source: The trail_source of this AuditEventSummary.
+        :type: str
+        """
+        allowed_values = ["TABLE", "FILE"]
+        if not value_allowed_none_or_none_sentinel(trail_source, allowed_values):
+            trail_source = 'UNKNOWN_ENUM_VALUE'
+        self._trail_source = trail_source
+
+    @property
+    def database_unique_name(self):
+        """
+        Gets the database_unique_name of this AuditEventSummary.
+        Unique name of the database associated to the peer target database.
+
+
+        :return: The database_unique_name of this AuditEventSummary.
+        :rtype: str
+        """
+        return self._database_unique_name
+
+    @database_unique_name.setter
+    def database_unique_name(self, database_unique_name):
+        """
+        Sets the database_unique_name of this AuditEventSummary.
+        Unique name of the database associated to the peer target database.
+
+
+        :param database_unique_name: The database_unique_name of this AuditEventSummary.
+        :type: str
+        """
+        self._database_unique_name = database_unique_name
 
     @property
     def freeform_tags(self):

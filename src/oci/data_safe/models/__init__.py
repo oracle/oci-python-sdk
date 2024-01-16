@@ -108,6 +108,7 @@ from .create_library_masking_format_details import CreateLibraryMaskingFormatDet
 from .create_masking_column_details import CreateMaskingColumnDetails
 from .create_masking_policy_details import CreateMaskingPolicyDetails
 from .create_on_prem_connector_details import CreateOnPremConnectorDetails
+from .create_peer_target_database_details import CreatePeerTargetDatabaseDetails
 from .create_report_definition_details import CreateReportDefinitionDetails
 from .create_sdm_masking_policy_difference_details import CreateSdmMaskingPolicyDifferenceDetails
 from .create_security_assessment_details import CreateSecurityAssessmentDetails
@@ -129,6 +130,12 @@ from .database_details import DatabaseDetails
 from .database_security_config import DatabaseSecurityConfig
 from .database_security_config_collection import DatabaseSecurityConfigCollection
 from .database_security_config_summary import DatabaseSecurityConfigSummary
+from .database_table_access_entry import DatabaseTableAccessEntry
+from .database_table_access_entry_collection import DatabaseTableAccessEntryCollection
+from .database_table_access_entry_summary import DatabaseTableAccessEntrySummary
+from .database_view_access_entry import DatabaseViewAccessEntry
+from .database_view_access_entry_collection import DatabaseViewAccessEntryCollection
+from .database_view_access_entry_summary import DatabaseViewAccessEntrySummary
 from .delete_rows_format_entry import DeleteRowsFormatEntry
 from .deterministic_encryption_date_format_entry import DeterministicEncryptionDateFormatEntry
 from .deterministic_encryption_format_entry import DeterministicEncryptionFormatEntry
@@ -156,7 +163,12 @@ from .enable_conditions import EnableConditions
 from .enable_data_safe_configuration_details import EnableDataSafeConfigurationDetails
 from .entry_details import EntryDetails
 from .finding import Finding
+from .finding_analytics_collection import FindingAnalyticsCollection
+from .finding_analytics_dimensions import FindingAnalyticsDimensions
+from .finding_analytics_summary import FindingAnalyticsSummary
 from .finding_summary import FindingSummary
+from .findings_change_audit_log_collection import FindingsChangeAuditLogCollection
+from .findings_change_audit_log_summary import FindingsChangeAuditLogSummary
 from .firewall_policy_entry_details import FirewallPolicyEntryDetails
 from .fixed_number_format_entry import FixedNumberFormatEntry
 from .fixed_string_format_entry import FixedStringFormatEntry
@@ -219,6 +231,9 @@ from .patch_sdm_masking_policy_difference_columns_details import PatchSdmMasking
 from .patch_sensitive_column_details import PatchSensitiveColumnDetails
 from .patch_target_alert_policy_association_details import PatchTargetAlertPolicyAssociationDetails
 from .pattern_format_entry import PatternFormatEntry
+from .peer_target_database import PeerTargetDatabase
+from .peer_target_database_collection import PeerTargetDatabaseCollection
+from .peer_target_database_summary import PeerTargetDatabaseSummary
 from .preserve_original_data_format_entry import PreserveOriginalDataFormatEntry
 from .private_endpoint import PrivateEndpoint
 from .profile import Profile
@@ -243,6 +258,8 @@ from .report_definition_collection import ReportDefinitionCollection
 from .report_definition_summary import ReportDefinitionSummary
 from .report_details import ReportDetails
 from .report_summary import ReportSummary
+from .role_grant_path_collection import RoleGrantPathCollection
+from .role_grant_path_summary import RoleGrantPathSummary
 from .role_summary import RoleSummary
 from .run_security_assessment_details import RunSecurityAssessmentDetails
 from .run_user_assessment_details import RunUserAssessmentDetails
@@ -261,6 +278,11 @@ from .security_assessment_comparison import SecurityAssessmentComparison
 from .security_assessment_comparison_per_target import SecurityAssessmentComparisonPerTarget
 from .security_assessment_statistics import SecurityAssessmentStatistics
 from .security_assessment_summary import SecurityAssessmentSummary
+from .security_feature_analytics_collection import SecurityFeatureAnalyticsCollection
+from .security_feature_analytics_dimensions import SecurityFeatureAnalyticsDimensions
+from .security_feature_analytics_summary import SecurityFeatureAnalyticsSummary
+from .security_feature_collection import SecurityFeatureCollection
+from .security_feature_summary import SecurityFeatureSummary
 from .security_policy import SecurityPolicy
 from .security_policy_collection import SecurityPolicyCollection
 from .security_policy_deployment import SecurityPolicyDeployment
@@ -269,6 +291,9 @@ from .security_policy_deployment_summary import SecurityPolicyDeploymentSummary
 from .security_policy_entry_state import SecurityPolicyEntryState
 from .security_policy_entry_state_collection import SecurityPolicyEntryStateCollection
 from .security_policy_entry_state_summary import SecurityPolicyEntryStateSummary
+from .security_policy_report import SecurityPolicyReport
+from .security_policy_report_collection import SecurityPolicyReportCollection
+from .security_policy_report_summary import SecurityPolicyReportSummary
 from .security_policy_summary import SecurityPolicySummary
 from .sensitive_category import SensitiveCategory
 from .sensitive_column import SensitiveColumn
@@ -335,12 +360,15 @@ from .update_column_source_sdm_details import UpdateColumnSourceSdmDetails
 from .update_column_source_target_details import UpdateColumnSourceTargetDetails
 from .update_data_safe_private_endpoint_details import UpdateDataSafePrivateEndpointDetails
 from .update_database_security_config_details import UpdateDatabaseSecurityConfigDetails
+from .update_finding_details import UpdateFindingDetails
 from .update_library_masking_format_details import UpdateLibraryMaskingFormatDetails
 from .update_masking_column_details import UpdateMaskingColumnDetails
 from .update_masking_policy_details import UpdateMaskingPolicyDetails
 from .update_on_prem_connector_details import UpdateOnPremConnectorDetails
 from .update_on_prem_connector_wallet_details import UpdateOnPremConnectorWalletDetails
+from .update_peer_target_database_details import UpdatePeerTargetDatabaseDetails
 from .update_report_definition_details import UpdateReportDefinitionDetails
+from .update_report_details import UpdateReportDetails
 from .update_sdm_masking_policy_difference_details import UpdateSdmMaskingPolicyDifferenceDetails
 from .update_security_assessment_details import UpdateSecurityAssessmentDetails
 from .update_security_policy_deployment_details import UpdateSecurityPolicyDeploymentDetails
@@ -356,6 +384,8 @@ from .update_sql_firewall_policy_details import UpdateSqlFirewallPolicyDetails
 from .update_target_alert_policy_association_details import UpdateTargetAlertPolicyAssociationDetails
 from .update_target_database_details import UpdateTargetDatabaseDetails
 from .update_user_assessment_details import UpdateUserAssessmentDetails
+from .user_access_analytics_collection import UserAccessAnalyticsCollection
+from .user_access_analytics_summary import UserAccessAnalyticsSummary
 from .user_aggregation import UserAggregation
 from .user_assessment import UserAssessment
 from .user_assessment_base_line_details import UserAssessmentBaseLineDetails
@@ -473,6 +503,7 @@ data_safe_type_mapping = {
     "CreateMaskingColumnDetails": CreateMaskingColumnDetails,
     "CreateMaskingPolicyDetails": CreateMaskingPolicyDetails,
     "CreateOnPremConnectorDetails": CreateOnPremConnectorDetails,
+    "CreatePeerTargetDatabaseDetails": CreatePeerTargetDatabaseDetails,
     "CreateReportDefinitionDetails": CreateReportDefinitionDetails,
     "CreateSdmMaskingPolicyDifferenceDetails": CreateSdmMaskingPolicyDifferenceDetails,
     "CreateSecurityAssessmentDetails": CreateSecurityAssessmentDetails,
@@ -494,6 +525,12 @@ data_safe_type_mapping = {
     "DatabaseSecurityConfig": DatabaseSecurityConfig,
     "DatabaseSecurityConfigCollection": DatabaseSecurityConfigCollection,
     "DatabaseSecurityConfigSummary": DatabaseSecurityConfigSummary,
+    "DatabaseTableAccessEntry": DatabaseTableAccessEntry,
+    "DatabaseTableAccessEntryCollection": DatabaseTableAccessEntryCollection,
+    "DatabaseTableAccessEntrySummary": DatabaseTableAccessEntrySummary,
+    "DatabaseViewAccessEntry": DatabaseViewAccessEntry,
+    "DatabaseViewAccessEntryCollection": DatabaseViewAccessEntryCollection,
+    "DatabaseViewAccessEntrySummary": DatabaseViewAccessEntrySummary,
     "DeleteRowsFormatEntry": DeleteRowsFormatEntry,
     "DeterministicEncryptionDateFormatEntry": DeterministicEncryptionDateFormatEntry,
     "DeterministicEncryptionFormatEntry": DeterministicEncryptionFormatEntry,
@@ -521,7 +558,12 @@ data_safe_type_mapping = {
     "EnableDataSafeConfigurationDetails": EnableDataSafeConfigurationDetails,
     "EntryDetails": EntryDetails,
     "Finding": Finding,
+    "FindingAnalyticsCollection": FindingAnalyticsCollection,
+    "FindingAnalyticsDimensions": FindingAnalyticsDimensions,
+    "FindingAnalyticsSummary": FindingAnalyticsSummary,
     "FindingSummary": FindingSummary,
+    "FindingsChangeAuditLogCollection": FindingsChangeAuditLogCollection,
+    "FindingsChangeAuditLogSummary": FindingsChangeAuditLogSummary,
     "FirewallPolicyEntryDetails": FirewallPolicyEntryDetails,
     "FixedNumberFormatEntry": FixedNumberFormatEntry,
     "FixedStringFormatEntry": FixedStringFormatEntry,
@@ -584,6 +626,9 @@ data_safe_type_mapping = {
     "PatchSensitiveColumnDetails": PatchSensitiveColumnDetails,
     "PatchTargetAlertPolicyAssociationDetails": PatchTargetAlertPolicyAssociationDetails,
     "PatternFormatEntry": PatternFormatEntry,
+    "PeerTargetDatabase": PeerTargetDatabase,
+    "PeerTargetDatabaseCollection": PeerTargetDatabaseCollection,
+    "PeerTargetDatabaseSummary": PeerTargetDatabaseSummary,
     "PreserveOriginalDataFormatEntry": PreserveOriginalDataFormatEntry,
     "PrivateEndpoint": PrivateEndpoint,
     "Profile": Profile,
@@ -608,6 +653,8 @@ data_safe_type_mapping = {
     "ReportDefinitionSummary": ReportDefinitionSummary,
     "ReportDetails": ReportDetails,
     "ReportSummary": ReportSummary,
+    "RoleGrantPathCollection": RoleGrantPathCollection,
+    "RoleGrantPathSummary": RoleGrantPathSummary,
     "RoleSummary": RoleSummary,
     "RunSecurityAssessmentDetails": RunSecurityAssessmentDetails,
     "RunUserAssessmentDetails": RunUserAssessmentDetails,
@@ -626,6 +673,11 @@ data_safe_type_mapping = {
     "SecurityAssessmentComparisonPerTarget": SecurityAssessmentComparisonPerTarget,
     "SecurityAssessmentStatistics": SecurityAssessmentStatistics,
     "SecurityAssessmentSummary": SecurityAssessmentSummary,
+    "SecurityFeatureAnalyticsCollection": SecurityFeatureAnalyticsCollection,
+    "SecurityFeatureAnalyticsDimensions": SecurityFeatureAnalyticsDimensions,
+    "SecurityFeatureAnalyticsSummary": SecurityFeatureAnalyticsSummary,
+    "SecurityFeatureCollection": SecurityFeatureCollection,
+    "SecurityFeatureSummary": SecurityFeatureSummary,
     "SecurityPolicy": SecurityPolicy,
     "SecurityPolicyCollection": SecurityPolicyCollection,
     "SecurityPolicyDeployment": SecurityPolicyDeployment,
@@ -634,6 +686,9 @@ data_safe_type_mapping = {
     "SecurityPolicyEntryState": SecurityPolicyEntryState,
     "SecurityPolicyEntryStateCollection": SecurityPolicyEntryStateCollection,
     "SecurityPolicyEntryStateSummary": SecurityPolicyEntryStateSummary,
+    "SecurityPolicyReport": SecurityPolicyReport,
+    "SecurityPolicyReportCollection": SecurityPolicyReportCollection,
+    "SecurityPolicyReportSummary": SecurityPolicyReportSummary,
     "SecurityPolicySummary": SecurityPolicySummary,
     "SensitiveCategory": SensitiveCategory,
     "SensitiveColumn": SensitiveColumn,
@@ -700,12 +755,15 @@ data_safe_type_mapping = {
     "UpdateColumnSourceTargetDetails": UpdateColumnSourceTargetDetails,
     "UpdateDataSafePrivateEndpointDetails": UpdateDataSafePrivateEndpointDetails,
     "UpdateDatabaseSecurityConfigDetails": UpdateDatabaseSecurityConfigDetails,
+    "UpdateFindingDetails": UpdateFindingDetails,
     "UpdateLibraryMaskingFormatDetails": UpdateLibraryMaskingFormatDetails,
     "UpdateMaskingColumnDetails": UpdateMaskingColumnDetails,
     "UpdateMaskingPolicyDetails": UpdateMaskingPolicyDetails,
     "UpdateOnPremConnectorDetails": UpdateOnPremConnectorDetails,
     "UpdateOnPremConnectorWalletDetails": UpdateOnPremConnectorWalletDetails,
+    "UpdatePeerTargetDatabaseDetails": UpdatePeerTargetDatabaseDetails,
     "UpdateReportDefinitionDetails": UpdateReportDefinitionDetails,
+    "UpdateReportDetails": UpdateReportDetails,
     "UpdateSdmMaskingPolicyDifferenceDetails": UpdateSdmMaskingPolicyDifferenceDetails,
     "UpdateSecurityAssessmentDetails": UpdateSecurityAssessmentDetails,
     "UpdateSecurityPolicyDeploymentDetails": UpdateSecurityPolicyDeploymentDetails,
@@ -721,6 +779,8 @@ data_safe_type_mapping = {
     "UpdateTargetAlertPolicyAssociationDetails": UpdateTargetAlertPolicyAssociationDetails,
     "UpdateTargetDatabaseDetails": UpdateTargetDatabaseDetails,
     "UpdateUserAssessmentDetails": UpdateUserAssessmentDetails,
+    "UserAccessAnalyticsCollection": UserAccessAnalyticsCollection,
+    "UserAccessAnalyticsSummary": UserAccessAnalyticsSummary,
     "UserAggregation": UserAggregation,
     "UserAssessment": UserAssessment,
     "UserAssessmentBaseLineDetails": UserAssessmentBaseLineDetails,

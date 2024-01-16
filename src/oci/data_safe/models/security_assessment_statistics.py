@@ -53,6 +53,10 @@ class SecurityAssessmentStatistics(object):
             The value to assign to the _pass property of this SecurityAssessmentStatistics.
         :type _pass: oci.data_safe.models.SectionStatistics
 
+        :param deferred:
+            The value to assign to the deferred property of this SecurityAssessmentStatistics.
+        :type deferred: oci.data_safe.models.SectionStatistics
+
         """
         self.swagger_types = {
             'targets_count': 'int',
@@ -61,7 +65,8 @@ class SecurityAssessmentStatistics(object):
             'low_risk': 'SectionStatistics',
             'advisory': 'SectionStatistics',
             'evaluate': 'SectionStatistics',
-            '_pass': 'SectionStatistics'
+            '_pass': 'SectionStatistics',
+            'deferred': 'SectionStatistics'
         }
 
         self.attribute_map = {
@@ -71,7 +76,8 @@ class SecurityAssessmentStatistics(object):
             'low_risk': 'lowRisk',
             'advisory': 'advisory',
             'evaluate': 'evaluate',
-            '_pass': 'pass'
+            '_pass': 'pass',
+            'deferred': 'deferred'
         }
 
         self._targets_count = None
@@ -81,6 +87,7 @@ class SecurityAssessmentStatistics(object):
         self._advisory = None
         self._evaluate = None
         self.__pass = None
+        self._deferred = None
 
     @property
     def targets_count(self):
@@ -225,6 +232,26 @@ class SecurityAssessmentStatistics(object):
         :type: oci.data_safe.models.SectionStatistics
         """
         self.__pass = _pass
+
+    @property
+    def deferred(self):
+        """
+        Gets the deferred of this SecurityAssessmentStatistics.
+
+        :return: The deferred of this SecurityAssessmentStatistics.
+        :rtype: oci.data_safe.models.SectionStatistics
+        """
+        return self._deferred
+
+    @deferred.setter
+    def deferred(self, deferred):
+        """
+        Sets the deferred of this SecurityAssessmentStatistics.
+
+        :param deferred: The deferred of this SecurityAssessmentStatistics.
+        :type: oci.data_safe.models.SectionStatistics
+        """
+        self._deferred = deferred
 
     def __repr__(self):
         return formatted_flat_dict(self)

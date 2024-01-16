@@ -160,6 +160,14 @@ class UserSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type admin_roles: list[str]
 
+        :param are_all_schemas_accessible:
+            The value to assign to the are_all_schemas_accessible property of this UserSummary.
+        :type are_all_schemas_accessible: bool
+
+        :param schema_list:
+            The value to assign to the schema_list property of this UserSummary.
+        :type schema_list: list[str]
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -173,7 +181,9 @@ class UserSummary(object):
             'user_profile': 'str',
             'time_password_changed': 'datetime',
             'user_types': 'list[str]',
-            'admin_roles': 'list[str]'
+            'admin_roles': 'list[str]',
+            'are_all_schemas_accessible': 'bool',
+            'schema_list': 'list[str]'
         }
 
         self.attribute_map = {
@@ -188,7 +198,9 @@ class UserSummary(object):
             'user_profile': 'userProfile',
             'time_password_changed': 'timePasswordChanged',
             'user_types': 'userTypes',
-            'admin_roles': 'adminRoles'
+            'admin_roles': 'adminRoles',
+            'are_all_schemas_accessible': 'areAllSchemasAccessible',
+            'schema_list': 'schemaList'
         }
 
         self._key = None
@@ -203,6 +215,8 @@ class UserSummary(object):
         self._time_password_changed = None
         self._user_types = None
         self._admin_roles = None
+        self._are_all_schemas_accessible = None
+        self._schema_list = None
 
     @property
     def key(self):
@@ -545,6 +559,54 @@ class UserSummary(object):
         if admin_roles:
             admin_roles[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in admin_roles]
         self._admin_roles = admin_roles
+
+    @property
+    def are_all_schemas_accessible(self):
+        """
+        Gets the are_all_schemas_accessible of this UserSummary.
+        Indicates whether the user has access to all the schemas.
+
+
+        :return: The are_all_schemas_accessible of this UserSummary.
+        :rtype: bool
+        """
+        return self._are_all_schemas_accessible
+
+    @are_all_schemas_accessible.setter
+    def are_all_schemas_accessible(self, are_all_schemas_accessible):
+        """
+        Sets the are_all_schemas_accessible of this UserSummary.
+        Indicates whether the user has access to all the schemas.
+
+
+        :param are_all_schemas_accessible: The are_all_schemas_accessible of this UserSummary.
+        :type: bool
+        """
+        self._are_all_schemas_accessible = are_all_schemas_accessible
+
+    @property
+    def schema_list(self):
+        """
+        Gets the schema_list of this UserSummary.
+        The list of database schemas current user can access.
+
+
+        :return: The schema_list of this UserSummary.
+        :rtype: list[str]
+        """
+        return self._schema_list
+
+    @schema_list.setter
+    def schema_list(self, schema_list):
+        """
+        Sets the schema_list of this UserSummary.
+        The list of database schemas current user can access.
+
+
+        :param schema_list: The schema_list of this UserSummary.
+        :type: list[str]
+        """
+        self._schema_list = schema_list
 
     def __repr__(self):
         return formatted_flat_dict(self)

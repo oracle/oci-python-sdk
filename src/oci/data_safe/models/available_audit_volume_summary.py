@@ -24,6 +24,14 @@ class AvailableAuditVolumeSummary(object):
             The value to assign to the audit_profile_id property of this AvailableAuditVolumeSummary.
         :type audit_profile_id: str
 
+        :param audit_trail_id:
+            The value to assign to the audit_trail_id property of this AvailableAuditVolumeSummary.
+        :type audit_trail_id: str
+
+        :param database_unique_name:
+            The value to assign to the database_unique_name property of this AvailableAuditVolumeSummary.
+        :type database_unique_name: str
+
         :param trail_location:
             The value to assign to the trail_location property of this AvailableAuditVolumeSummary.
         :type trail_location: str
@@ -39,6 +47,8 @@ class AvailableAuditVolumeSummary(object):
         """
         self.swagger_types = {
             'audit_profile_id': 'str',
+            'audit_trail_id': 'str',
+            'database_unique_name': 'str',
             'trail_location': 'str',
             'month_in_consideration': 'datetime',
             'volume': 'int'
@@ -46,12 +56,16 @@ class AvailableAuditVolumeSummary(object):
 
         self.attribute_map = {
             'audit_profile_id': 'auditProfileId',
+            'audit_trail_id': 'auditTrailId',
+            'database_unique_name': 'databaseUniqueName',
             'trail_location': 'trailLocation',
             'month_in_consideration': 'monthInConsideration',
             'volume': 'volume'
         }
 
         self._audit_profile_id = None
+        self._audit_trail_id = None
+        self._database_unique_name = None
         self._trail_location = None
         self._month_in_consideration = None
         self._volume = None
@@ -79,6 +93,54 @@ class AvailableAuditVolumeSummary(object):
         :type: str
         """
         self._audit_profile_id = audit_profile_id
+
+    @property
+    def audit_trail_id(self):
+        """
+        Gets the audit_trail_id of this AvailableAuditVolumeSummary.
+        The OCID of the audit trail.
+
+
+        :return: The audit_trail_id of this AvailableAuditVolumeSummary.
+        :rtype: str
+        """
+        return self._audit_trail_id
+
+    @audit_trail_id.setter
+    def audit_trail_id(self, audit_trail_id):
+        """
+        Sets the audit_trail_id of this AvailableAuditVolumeSummary.
+        The OCID of the audit trail.
+
+
+        :param audit_trail_id: The audit_trail_id of this AvailableAuditVolumeSummary.
+        :type: str
+        """
+        self._audit_trail_id = audit_trail_id
+
+    @property
+    def database_unique_name(self):
+        """
+        Gets the database_unique_name of this AvailableAuditVolumeSummary.
+        Unique name of the database associated to the peer target database.
+
+
+        :return: The database_unique_name of this AvailableAuditVolumeSummary.
+        :rtype: str
+        """
+        return self._database_unique_name
+
+    @database_unique_name.setter
+    def database_unique_name(self, database_unique_name):
+        """
+        Sets the database_unique_name of this AvailableAuditVolumeSummary.
+        Unique name of the database associated to the peer target database.
+
+
+        :param database_unique_name: The database_unique_name of this AvailableAuditVolumeSummary.
+        :type: str
+        """
+        self._database_unique_name = database_unique_name
 
     @property
     def trail_location(self):

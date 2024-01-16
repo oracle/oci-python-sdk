@@ -658,8 +658,7 @@ class CreateAlarmDetails(object):
         A list of destinations for alarm notifications.
         Each destination is represented by the `OCID`__
         of a related resource, such as a :class:`NotificationTopic`.
-        Supported destination services: Notifications
-        , Streaming.
+        Supported destination services: Notifications, Streaming.
         Limit: One destination per supported destination service.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -677,8 +676,7 @@ class CreateAlarmDetails(object):
         A list of destinations for alarm notifications.
         Each destination is represented by the `OCID`__
         of a related resource, such as a :class:`NotificationTopic`.
-        Supported destination services: Notifications
-        , Streaming.
+        Supported destination services: Notifications, Streaming.
         Limit: One destination per supported destination service.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm

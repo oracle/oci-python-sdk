@@ -5537,7 +5537,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApiKeys/{apiKeyId}"
         method = "DELETE"
         operation_name = "delete_api_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApiKey/DeleteApiKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5658,7 +5658,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Apps/{appId}"
         method = "DELETE"
         operation_name = "delete_app"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/App/DeleteApp"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5779,7 +5779,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AppRoles/{appRoleId}"
         method = "DELETE"
         operation_name = "delete_app_role"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AppRole/DeleteAppRole"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5900,7 +5900,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApprovalWorkflows/{approvalWorkflowId}"
         method = "DELETE"
         operation_name = "delete_approval_workflow"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflow/DeleteApprovalWorkflow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6021,7 +6021,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApprovalWorkflowAssignments/{approvalWorkflowAssignmentId}"
         method = "DELETE"
         operation_name = "delete_approval_workflow_assignment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowAssignment/DeleteApprovalWorkflowAssignment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6142,7 +6142,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApprovalWorkflowSteps/{approvalWorkflowStepId}"
         method = "DELETE"
         operation_name = "delete_approval_workflow_step"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowStep/DeleteApprovalWorkflowStep"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6263,7 +6263,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AuthTokens/{authTokenId}"
         method = "DELETE"
         operation_name = "delete_auth_token"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthToken/DeleteAuthToken"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6384,7 +6384,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGates/{cloudGateId}"
         method = "DELETE"
         operation_name = "delete_cloud_gate"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGate/DeleteCloudGate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6505,7 +6505,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGateMappings/{cloudGateMappingId}"
         method = "DELETE"
         operation_name = "delete_cloud_gate_mapping"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateMapping/DeleteCloudGateMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6626,7 +6626,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGateServers/{cloudGateServerId}"
         method = "DELETE"
         operation_name = "delete_cloud_gate_server"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateServer/DeleteCloudGateServer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6747,7 +6747,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Conditions/{conditionId}"
         method = "DELETE"
         operation_name = "delete_condition"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/DeleteCondition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6868,7 +6868,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CustomerSecretKeys/{customerSecretKeyId}"
         method = "DELETE"
         operation_name = "delete_customer_secret_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CustomerSecretKey/DeleteCustomerSecretKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6989,7 +6989,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/DynamicResourceGroups/{dynamicResourceGroupId}"
         method = "DELETE"
         operation_name = "delete_dynamic_resource_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/DynamicResourceGroup/DeleteDynamicResourceGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7110,7 +7110,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Grants/{grantId}"
         method = "DELETE"
         operation_name = "delete_grant"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Grant/DeleteGrant"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7231,7 +7231,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Groups/{groupId}"
         method = "DELETE"
         operation_name = "delete_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Group/DeleteGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7352,7 +7352,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentityPropagationTrusts/{identityPropagationTrustId}"
         method = "DELETE"
         operation_name = "delete_identity_propagation_trust"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrust/DeleteIdentityPropagationTrust"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7473,7 +7473,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentityProviders/{identityProviderId}"
         method = "DELETE"
         operation_name = "delete_identity_provider"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProvider/DeleteIdentityProvider"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7594,7 +7594,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyApiKeys/{myApiKeyId}"
         method = "DELETE"
         operation_name = "delete_my_api_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyApiKey/DeleteMyApiKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7715,7 +7715,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyAuthTokens/{myAuthTokenId}"
         method = "DELETE"
         operation_name = "delete_my_auth_token"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyAuthToken/DeleteMyAuthToken"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7836,7 +7836,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyCustomerSecretKeys/{myCustomerSecretKeyId}"
         method = "DELETE"
         operation_name = "delete_my_customer_secret_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyCustomerSecretKey/DeleteMyCustomerSecretKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7957,7 +7957,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyDevices/{myDeviceId}"
         method = "DELETE"
         operation_name = "delete_my_device"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyDevice/DeleteMyDevice"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8078,7 +8078,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyOAuth2ClientCredentials/{myOAuth2ClientCredentialId}"
         method = "DELETE"
         operation_name = "delete_my_o_auth2_client_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyOAuth2ClientCredential/DeleteMyOAuth2ClientCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8199,7 +8199,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MySmtpCredentials/{mySmtpCredentialId}"
         method = "DELETE"
         operation_name = "delete_my_smtp_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySmtpCredential/DeleteMySmtpCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8320,7 +8320,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MySupportAccounts/{mySupportAccountId}"
         method = "DELETE"
         operation_name = "delete_my_support_account"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySupportAccount/DeleteMySupportAccount"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8441,7 +8441,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyTrustedUserAgents/{myTrustedUserAgentId}"
         method = "DELETE"
         operation_name = "delete_my_trusted_user_agent"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyTrustedUserAgent/DeleteMyTrustedUserAgent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8562,7 +8562,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyUserDbCredentials/{myUserDbCredentialId}"
         method = "DELETE"
         operation_name = "delete_my_user_db_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyUserDbCredential/DeleteMyUserDbCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8683,7 +8683,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/NetworkPerimeters/{networkPerimeterId}"
         method = "DELETE"
         operation_name = "delete_network_perimeter"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NetworkPerimeter/DeleteNetworkPerimeter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8804,7 +8804,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuth2ClientCredentials/{oAuth2ClientCredentialId}"
         method = "DELETE"
         operation_name = "delete_o_auth2_client_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuth2ClientCredential/DeleteOAuth2ClientCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8925,7 +8925,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuthClientCertificates/{oAuthClientCertificateId}"
         method = "DELETE"
         operation_name = "delete_o_auth_client_certificate"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthClientCertificate/DeleteOAuthClientCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9046,7 +9046,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuthPartnerCertificates/{oAuthPartnerCertificateId}"
         method = "DELETE"
         operation_name = "delete_o_auth_partner_certificate"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthPartnerCertificate/DeleteOAuthPartnerCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9167,7 +9167,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/PasswordPolicies/{passwordPolicyId}"
         method = "DELETE"
         operation_name = "delete_password_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/PasswordPolicy/DeletePasswordPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9288,7 +9288,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Policies/{policyId}"
         method = "DELETE"
         operation_name = "delete_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/DeletePolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9409,7 +9409,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Rules/{ruleId}"
         method = "DELETE"
         operation_name = "delete_rule"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/DeleteRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9530,7 +9530,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SecurityQuestions/{securityQuestionId}"
         method = "DELETE"
         operation_name = "delete_security_question"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestion/DeleteSecurityQuestion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9651,7 +9651,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SelfRegistrationProfiles/{selfRegistrationProfileId}"
         method = "DELETE"
         operation_name = "delete_self_registration_profile"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SelfRegistrationProfile/DeleteSelfRegistrationProfile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9772,7 +9772,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SmtpCredentials/{smtpCredentialId}"
         method = "DELETE"
         operation_name = "delete_smtp_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SmtpCredential/DeleteSmtpCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9893,7 +9893,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Users/{userId}"
         method = "DELETE"
         operation_name = "delete_user"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/User/DeleteUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10014,7 +10014,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/UserDbCredentials/{userDbCredentialId}"
         method = "DELETE"
         operation_name = "delete_user_db_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserDbCredential/DeleteUserDbCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10137,7 +10137,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AccountMgmtInfos/{accountMgmtInfoId}"
         method = "GET"
         operation_name = "get_account_mgmt_info"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountMgmtInfo/GetAccountMgmtInfo"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10270,7 +10270,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AccountRecoverySettings/{accountRecoverySettingId}"
         method = "GET"
         operation_name = "get_account_recovery_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountRecoverySetting/GetAccountRecoverySetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10403,7 +10403,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApiKeys/{apiKeyId}"
         method = "GET"
         operation_name = "get_api_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApiKey/GetApiKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10536,7 +10536,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Apps/{appId}"
         method = "GET"
         operation_name = "get_app"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/App/GetApp"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10669,7 +10669,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AppRoles/{appRoleId}"
         method = "GET"
         operation_name = "get_app_role"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AppRole/GetAppRole"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10802,7 +10802,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApprovalWorkflows/{approvalWorkflowId}"
         method = "GET"
         operation_name = "get_approval_workflow"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflow/GetApprovalWorkflow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10935,7 +10935,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApprovalWorkflowAssignments/{approvalWorkflowAssignmentId}"
         method = "GET"
         operation_name = "get_approval_workflow_assignment"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowAssignment/GetApprovalWorkflowAssignment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11068,7 +11068,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApprovalWorkflowSteps/{approvalWorkflowStepId}"
         method = "GET"
         operation_name = "get_approval_workflow_step"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowStep/GetApprovalWorkflowStep"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11201,7 +11201,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AuthTokens/{authTokenId}"
         method = "GET"
         operation_name = "get_auth_token"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthToken/GetAuthToken"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11334,7 +11334,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AuthenticationFactorSettings/{authenticationFactorSettingId}"
         method = "GET"
         operation_name = "get_authentication_factor_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthenticationFactorSetting/GetAuthenticationFactorSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11467,7 +11467,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/BrandingSettings/{brandingSettingId}"
         method = "GET"
         operation_name = "get_branding_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/BrandingSetting/GetBrandingSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11600,7 +11600,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGates/{cloudGateId}"
         method = "GET"
         operation_name = "get_cloud_gate"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGate/GetCloudGate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11733,7 +11733,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGateMappings/{cloudGateMappingId}"
         method = "GET"
         operation_name = "get_cloud_gate_mapping"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateMapping/GetCloudGateMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11866,7 +11866,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGateServers/{cloudGateServerId}"
         method = "GET"
         operation_name = "get_cloud_gate_server"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateServer/GetCloudGateServer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11999,7 +11999,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Conditions/{conditionId}"
         method = "GET"
         operation_name = "get_condition"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/GetCondition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12132,7 +12132,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CustomerSecretKeys/{customerSecretKeyId}"
         method = "GET"
         operation_name = "get_customer_secret_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CustomerSecretKey/GetCustomerSecretKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12265,7 +12265,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/DynamicResourceGroups/{dynamicResourceGroupId}"
         method = "GET"
         operation_name = "get_dynamic_resource_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/DynamicResourceGroup/GetDynamicResourceGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12398,7 +12398,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Grants/{grantId}"
         method = "GET"
         operation_name = "get_grant"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Grant/GetGrant"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12531,7 +12531,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Groups/{groupId}"
         method = "GET"
         operation_name = "get_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Group/GetGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12664,7 +12664,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentityPropagationTrusts/{identityPropagationTrustId}"
         method = "GET"
         operation_name = "get_identity_propagation_trust"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrust/GetIdentityPropagationTrust"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12797,7 +12797,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentityProviders/{identityProviderId}"
         method = "GET"
         operation_name = "get_identity_provider"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProvider/GetIdentityProvider"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12930,7 +12930,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentitySettings/{identitySettingId}"
         method = "GET"
         operation_name = "get_identity_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentitySetting/GetIdentitySetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13063,7 +13063,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/KmsiSettings/{kmsiSettingId}"
         method = "GET"
         operation_name = "get_kmsi_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/KmsiSetting/GetKmsiSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13193,7 +13193,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Me"
         method = "GET"
         operation_name = "get_me"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Me/GetMe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13306,7 +13306,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyApiKeys/{myApiKeyId}"
         method = "GET"
         operation_name = "get_my_api_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyApiKey/GetMyApiKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13413,7 +13413,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyAuthTokens/{myAuthTokenId}"
         method = "GET"
         operation_name = "get_my_auth_token"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyAuthToken/GetMyAuthToken"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13520,7 +13520,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyCompletedApprovals/{myCompletedApprovalId}"
         method = "GET"
         operation_name = "get_my_completed_approval"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyCompletedApproval/GetMyCompletedApproval"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13627,7 +13627,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyCustomerSecretKeys/{myCustomerSecretKeyId}"
         method = "GET"
         operation_name = "get_my_customer_secret_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyCustomerSecretKey/GetMyCustomerSecretKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13742,7 +13742,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyDevices/{myDeviceId}"
         method = "GET"
         operation_name = "get_my_device"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyDevice/GetMyDevice"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13867,7 +13867,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyOAuth2ClientCredentials/{myOAuth2ClientCredentialId}"
         method = "GET"
         operation_name = "get_my_o_auth2_client_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyOAuth2ClientCredential/GetMyOAuth2ClientCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13974,7 +13974,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyPendingApprovals/{myPendingApprovalId}"
         method = "GET"
         operation_name = "get_my_pending_approval"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyPendingApproval/GetMyPendingApproval"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14089,7 +14089,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyRequests/{myRequestId}"
         method = "GET"
         operation_name = "get_my_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyRequest/GetMyRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14214,7 +14214,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MySmtpCredentials/{mySmtpCredentialId}"
         method = "GET"
         operation_name = "get_my_smtp_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySmtpCredential/GetMySmtpCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14321,7 +14321,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MySupportAccounts/{mySupportAccountId}"
         method = "GET"
         operation_name = "get_my_support_account"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySupportAccount/GetMySupportAccount"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14436,7 +14436,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyTrustedUserAgents/{myTrustedUserAgentId}"
         method = "GET"
         operation_name = "get_my_trusted_user_agent"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyTrustedUserAgent/GetMyTrustedUserAgent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14561,7 +14561,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyUserDbCredentials/{myUserDbCredentialId}"
         method = "GET"
         operation_name = "get_my_user_db_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyUserDbCredential/GetMyUserDbCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14676,7 +14676,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/NetworkPerimeters/{networkPerimeterId}"
         method = "GET"
         operation_name = "get_network_perimeter"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NetworkPerimeter/GetNetworkPerimeter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14809,7 +14809,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/NotificationSettings/{notificationSettingId}"
         method = "GET"
         operation_name = "get_notification_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NotificationSetting/GetNotificationSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14942,7 +14942,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuth2ClientCredentials/{oAuth2ClientCredentialId}"
         method = "GET"
         operation_name = "get_o_auth2_client_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuth2ClientCredential/GetOAuth2ClientCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15067,7 +15067,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuthClientCertificates/{oAuthClientCertificateId}"
         method = "GET"
         operation_name = "get_o_auth_client_certificate"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthClientCertificate/GetOAuthClientCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15174,7 +15174,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuthPartnerCertificates/{oAuthPartnerCertificateId}"
         method = "GET"
         operation_name = "get_o_auth_partner_certificate"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthPartnerCertificate/GetOAuthPartnerCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15289,7 +15289,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/PasswordPolicies/{passwordPolicyId}"
         method = "GET"
         operation_name = "get_password_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/PasswordPolicy/GetPasswordPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15422,7 +15422,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Policies/{policyId}"
         method = "GET"
         operation_name = "get_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/GetPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15555,7 +15555,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Rules/{ruleId}"
         method = "GET"
         operation_name = "get_rule"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/GetRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15680,7 +15680,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Schemas/{schemaId}"
         method = "GET"
         operation_name = "get_schema"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Schema/GetSchema"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15795,7 +15795,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SecurityQuestions/{securityQuestionId}"
         method = "GET"
         operation_name = "get_security_question"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestion/GetSecurityQuestion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15928,7 +15928,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SecurityQuestionSettings/{securityQuestionSettingId}"
         method = "GET"
         operation_name = "get_security_question_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestionSetting/GetSecurityQuestionSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16061,7 +16061,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SelfRegistrationProfiles/{selfRegistrationProfileId}"
         method = "GET"
         operation_name = "get_self_registration_profile"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SelfRegistrationProfile/GetSelfRegistrationProfile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16194,7 +16194,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Settings/{settingId}"
         method = "GET"
         operation_name = "get_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Setting/GetSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16327,7 +16327,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SmtpCredentials/{smtpCredentialId}"
         method = "GET"
         operation_name = "get_smtp_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SmtpCredential/GetSmtpCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16460,7 +16460,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Users/{userId}"
         method = "GET"
         operation_name = "get_user"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/User/GetUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16593,7 +16593,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/UserAttributesSettings/{userAttributesSettingId}"
         method = "GET"
         operation_name = "get_user_attributes_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSetting/GetUserAttributesSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16726,7 +16726,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/UserDbCredentials/{userDbCredentialId}"
         method = "GET"
         operation_name = "get_user_db_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserDbCredential/GetUserDbCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16881,7 +16881,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AccountMgmtInfos"
         method = "GET"
         operation_name = "list_account_mgmt_infos"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountMgmtInfos/ListAccountMgmtInfos"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17026,7 +17026,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AccountRecoverySettings"
         method = "GET"
         operation_name = "list_account_recovery_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountRecoverySettings/ListAccountRecoverySettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17173,7 +17173,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApiKeys"
         method = "GET"
         operation_name = "list_api_keys"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApiKeys/ListApiKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17337,7 +17337,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AppRoles"
         method = "GET"
         operation_name = "list_app_roles"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AppRoles/ListAppRoles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17501,7 +17501,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApprovalWorkflowAssignments"
         method = "GET"
         operation_name = "list_approval_workflow_assignments"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowAssignments/ListApprovalWorkflowAssignments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17665,7 +17665,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApprovalWorkflowSteps"
         method = "GET"
         operation_name = "list_approval_workflow_steps"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowSteps/ListApprovalWorkflowSteps"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17829,7 +17829,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApprovalWorkflows"
         method = "GET"
         operation_name = "list_approval_workflows"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflows/ListApprovalWorkflows"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17993,7 +17993,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Apps"
         method = "GET"
         operation_name = "list_apps"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Apps/ListApps"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18157,7 +18157,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AuthTokens"
         method = "GET"
         operation_name = "list_auth_tokens"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthTokens/ListAuthTokens"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18302,7 +18302,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AuthenticationFactorSettings"
         method = "GET"
         operation_name = "list_authentication_factor_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthenticationFactorSettings/ListAuthenticationFactorSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18430,7 +18430,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/BrandingSettings"
         method = "GET"
         operation_name = "list_branding_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/BrandingSettings/ListBrandingSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18577,7 +18577,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGateMappings"
         method = "GET"
         operation_name = "list_cloud_gate_mappings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateMappings/ListCloudGateMappings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18741,7 +18741,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGateServers"
         method = "GET"
         operation_name = "list_cloud_gate_servers"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateServers/ListCloudGateServers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -18905,7 +18905,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGates"
         method = "GET"
         operation_name = "list_cloud_gates"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGates/ListCloudGates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19069,7 +19069,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Conditions"
         method = "GET"
         operation_name = "list_conditions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Conditions/ListConditions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19233,7 +19233,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CustomerSecretKeys"
         method = "GET"
         operation_name = "list_customer_secret_keys"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CustomerSecretKeys/ListCustomerSecretKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19397,7 +19397,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/DynamicResourceGroups"
         method = "GET"
         operation_name = "list_dynamic_resource_groups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/DynamicResourceGroups/ListDynamicResourceGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19561,7 +19561,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Grants"
         method = "GET"
         operation_name = "list_grants"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Grants/ListGrants"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19725,7 +19725,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Groups"
         method = "GET"
         operation_name = "list_groups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Groups/ListGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -19889,7 +19889,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentityPropagationTrusts"
         method = "GET"
         operation_name = "list_identity_propagation_trusts"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrusts/ListIdentityPropagationTrusts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20053,7 +20053,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentityProviders"
         method = "GET"
         operation_name = "list_identity_providers"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProviders/ListIdentityProviders"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20198,7 +20198,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentitySettings"
         method = "GET"
         operation_name = "list_identity_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentitySettings/ListIdentitySettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20326,7 +20326,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/KmsiSettings"
         method = "GET"
         operation_name = "list_kmsi_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/KmsiSettings/ListKmsiSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20465,7 +20465,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyApiKeys"
         method = "GET"
         operation_name = "list_my_api_keys"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyApiKeys/ListMyApiKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20609,7 +20609,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyApps"
         method = "GET"
         operation_name = "list_my_apps"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyApps/ListMyApps"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20753,7 +20753,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyAuthTokens"
         method = "GET"
         operation_name = "list_my_auth_tokens"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyAuthTokens/ListMyAuthTokens"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -20897,7 +20897,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyCompletedApprovals"
         method = "GET"
         operation_name = "list_my_completed_approvals"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyCompletedApprovals/ListMyCompletedApprovals"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21041,7 +21041,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyCustomerSecretKeys"
         method = "GET"
         operation_name = "list_my_customer_secret_keys"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyCustomerSecretKeys/ListMyCustomerSecretKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21193,7 +21193,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyDevices"
         method = "GET"
         operation_name = "list_my_devices"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyDevices/ListMyDevices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21357,7 +21357,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyGroups"
         method = "GET"
         operation_name = "list_my_groups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyGroups/ListMyGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21513,7 +21513,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyOAuth2ClientCredentials"
         method = "GET"
         operation_name = "list_my_o_auth2_client_credentials"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyOAuth2ClientCredentials/ListMyOAuth2ClientCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21657,7 +21657,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyPendingApprovals"
         method = "GET"
         operation_name = "list_my_pending_approvals"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyPendingApprovals/ListMyPendingApprovals"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21801,7 +21801,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyRequestableGroups"
         method = "GET"
         operation_name = "list_my_requestable_groups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyRequestableGroups/ListMyRequestableGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -21953,7 +21953,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyRequests"
         method = "GET"
         operation_name = "list_my_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyRequests/ListMyRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22109,7 +22109,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MySmtpCredentials"
         method = "GET"
         operation_name = "list_my_smtp_credentials"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySmtpCredentials/ListMySmtpCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22253,7 +22253,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MySupportAccounts"
         method = "GET"
         operation_name = "list_my_support_accounts"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySupportAccounts/ListMySupportAccounts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22405,7 +22405,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyTrustedUserAgents"
         method = "GET"
         operation_name = "list_my_trusted_user_agents"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyTrustedUserAgents/ListMyTrustedUserAgents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22561,7 +22561,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyUserDbCredentials"
         method = "GET"
         operation_name = "list_my_user_db_credentials"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyUserDbCredentials/ListMyUserDbCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22713,7 +22713,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/NetworkPerimeters"
         method = "GET"
         operation_name = "list_network_perimeters"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NetworkPerimeters/ListNetworkPerimeters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -22858,7 +22858,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/NotificationSettings"
         method = "GET"
         operation_name = "list_notification_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NotificationSettings/ListNotificationSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23005,7 +23005,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuth2ClientCredentials"
         method = "GET"
         operation_name = "list_o_auth2_client_credentials"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuth2ClientCredentials/ListOAuth2ClientCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23161,7 +23161,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuthClientCertificates"
         method = "GET"
         operation_name = "list_o_auth_client_certificates"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthClientCertificates/ListOAuthClientCertificates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23305,7 +23305,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuthPartnerCertificates"
         method = "GET"
         operation_name = "list_o_auth_partner_certificates"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthPartnerCertificates/ListOAuthPartnerCertificates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23457,7 +23457,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/PasswordPolicies"
         method = "GET"
         operation_name = "list_password_policies"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/PasswordPolicies/ListPasswordPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23621,7 +23621,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Policies"
         method = "GET"
         operation_name = "list_policies"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policies/ListPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23785,7 +23785,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ResourceTypeSchemaAttributes"
         method = "GET"
         operation_name = "list_resource_type_schema_attributes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ResourceTypeSchemaAttributes/ListResourceTypeSchemaAttributes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -23949,7 +23949,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Rules"
         method = "GET"
         operation_name = "list_rules"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rules/ListRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24102,7 +24102,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Schemas"
         method = "GET"
         operation_name = "list_schemas"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Schemas/ListSchemas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24233,7 +24233,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SecurityQuestionSettings"
         method = "GET"
         operation_name = "list_security_question_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestionSettings/ListSecurityQuestionSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24380,7 +24380,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SecurityQuestions"
         method = "GET"
         operation_name = "list_security_questions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestions/ListSecurityQuestions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24544,7 +24544,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SelfRegistrationProfiles"
         method = "GET"
         operation_name = "list_self_registration_profiles"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SelfRegistrationProfiles/ListSelfRegistrationProfiles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24689,7 +24689,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Settings"
         method = "GET"
         operation_name = "list_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Settings/ListSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24836,7 +24836,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SmtpCredentials"
         method = "GET"
         operation_name = "list_smtp_credentials"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SmtpCredentials/ListSmtpCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -24981,7 +24981,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/UserAttributesSettings"
         method = "GET"
         operation_name = "list_user_attributes_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSettings/ListUserAttributesSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25128,7 +25128,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/UserDbCredentials"
         method = "GET"
         operation_name = "list_user_db_credentials"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserDbCredentials/ListUserDbCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25292,7 +25292,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Users"
         method = "GET"
         operation_name = "list_users"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Users/ListUsers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25452,7 +25452,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AccountRecoverySettings/{accountRecoverySettingId}"
         method = "PATCH"
         operation_name = "patch_account_recovery_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountRecoverySetting/PatchAccountRecoverySetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25608,7 +25608,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApiKeys/{apiKeyId}"
         method = "PATCH"
         operation_name = "patch_api_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApiKey/PatchApiKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25764,7 +25764,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Apps/{appId}"
         method = "PATCH"
         operation_name = "patch_app"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/App/PatchApp"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -25920,7 +25920,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AppRoles/{appRoleId}"
         method = "PATCH"
         operation_name = "patch_app_role"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AppRole/PatchAppRole"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26076,7 +26076,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApprovalWorkflows/{approvalWorkflowId}"
         method = "PATCH"
         operation_name = "patch_approval_workflow"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflow/PatchApprovalWorkflow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26232,7 +26232,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApprovalWorkflowSteps/{approvalWorkflowStepId}"
         method = "PATCH"
         operation_name = "patch_approval_workflow_step"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflowStep/PatchApprovalWorkflowStep"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26388,7 +26388,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AuthTokens/{authTokenId}"
         method = "PATCH"
         operation_name = "patch_auth_token"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthToken/PatchAuthToken"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26544,7 +26544,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGates/{cloudGateId}"
         method = "PATCH"
         operation_name = "patch_cloud_gate"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGate/PatchCloudGate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26700,7 +26700,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGateMappings/{cloudGateMappingId}"
         method = "PATCH"
         operation_name = "patch_cloud_gate_mapping"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateMapping/PatchCloudGateMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -26856,7 +26856,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGateServers/{cloudGateServerId}"
         method = "PATCH"
         operation_name = "patch_cloud_gate_server"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateServer/PatchCloudGateServer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27012,7 +27012,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Conditions/{conditionId}"
         method = "PATCH"
         operation_name = "patch_condition"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/PatchCondition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27168,7 +27168,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CustomerSecretKeys/{customerSecretKeyId}"
         method = "PATCH"
         operation_name = "patch_customer_secret_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CustomerSecretKey/PatchCustomerSecretKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27324,7 +27324,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/DynamicResourceGroups/{dynamicResourceGroupId}"
         method = "PATCH"
         operation_name = "patch_dynamic_resource_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/DynamicResourceGroup/PatchDynamicResourceGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27480,7 +27480,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Grants/{grantId}"
         method = "PATCH"
         operation_name = "patch_grant"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Grant/PatchGrant"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27636,7 +27636,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Groups/{groupId}"
         method = "PATCH"
         operation_name = "patch_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Group/PatchGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27794,7 +27794,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentityPropagationTrusts/{identityPropagationTrustId}"
         method = "PATCH"
         operation_name = "patch_identity_propagation_trust"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrust/PatchIdentityPropagationTrust"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -27950,7 +27950,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentityProviders/{identityProviderId}"
         method = "PATCH"
         operation_name = "patch_identity_provider"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProvider/PatchIdentityProvider"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -28106,7 +28106,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentitySettings/{identitySettingId}"
         method = "PATCH"
         operation_name = "patch_identity_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentitySetting/PatchIdentitySetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -28262,7 +28262,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/KmsiSettings/{kmsiSettingId}"
         method = "PATCH"
         operation_name = "patch_kmsi_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/KmsiSetting/PatchKmsiSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -28415,7 +28415,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Me"
         method = "PATCH"
         operation_name = "patch_me"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Me/PatchMe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -28551,7 +28551,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyApiKeys/{myApiKeyId}"
         method = "PATCH"
         operation_name = "patch_my_api_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyApiKey/PatchMyApiKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -28681,7 +28681,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyAuthTokens/{myAuthTokenId}"
         method = "PATCH"
         operation_name = "patch_my_auth_token"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyAuthToken/PatchMyAuthToken"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -28811,7 +28811,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyCustomerSecretKeys/{myCustomerSecretKeyId}"
         method = "PATCH"
         operation_name = "patch_my_customer_secret_key"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyCustomerSecretKey/PatchMyCustomerSecretKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -28949,7 +28949,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyDevices/{myDeviceId}"
         method = "PATCH"
         operation_name = "patch_my_device"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyDevice/PatchMyDevice"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -29097,7 +29097,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyOAuth2ClientCredentials/{myOAuth2ClientCredentialId}"
         method = "PATCH"
         operation_name = "patch_my_o_auth2_client_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyOAuth2ClientCredential/PatchMyOAuth2ClientCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -29227,7 +29227,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyPendingApprovals/{myPendingApprovalId}"
         method = "PATCH"
         operation_name = "patch_my_pending_approval"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyPendingApproval/PatchMyPendingApproval"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -29365,7 +29365,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyRequests/{myRequestId}"
         method = "PATCH"
         operation_name = "patch_my_request"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyRequest/PatchMyRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -29513,7 +29513,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MySmtpCredentials/{mySmtpCredentialId}"
         method = "PATCH"
         operation_name = "patch_my_smtp_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MySmtpCredential/PatchMySmtpCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -29651,7 +29651,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/NetworkPerimeters/{networkPerimeterId}"
         method = "PATCH"
         operation_name = "patch_network_perimeter"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NetworkPerimeter/PatchNetworkPerimeter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -29807,7 +29807,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuth2ClientCredentials/{oAuth2ClientCredentialId}"
         method = "PATCH"
         operation_name = "patch_o_auth2_client_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuth2ClientCredential/PatchOAuth2ClientCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -29963,7 +29963,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/PasswordPolicies/{passwordPolicyId}"
         method = "PATCH"
         operation_name = "patch_password_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/PasswordPolicy/PatchPasswordPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -30119,7 +30119,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Policies/{policyId}"
         method = "PATCH"
         operation_name = "patch_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/PatchPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -30275,7 +30275,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Rules/{ruleId}"
         method = "PATCH"
         operation_name = "patch_rule"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/PatchRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -30423,7 +30423,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Schemas/{schemaId}"
         method = "PATCH"
         operation_name = "patch_schema"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Schema/PatchSchema"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -30561,7 +30561,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SecurityQuestions/{securityQuestionId}"
         method = "PATCH"
         operation_name = "patch_security_question"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestion/PatchSecurityQuestion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -30717,7 +30717,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SecurityQuestionSettings/{securityQuestionSettingId}"
         method = "PATCH"
         operation_name = "patch_security_question_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestionSetting/PatchSecurityQuestionSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -30873,7 +30873,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SelfRegistrationProfiles/{selfRegistrationProfileId}"
         method = "PATCH"
         operation_name = "patch_self_registration_profile"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SelfRegistrationProfile/PatchSelfRegistrationProfile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -31029,7 +31029,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Settings/{settingId}"
         method = "PATCH"
         operation_name = "patch_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Setting/PatchSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -31185,7 +31185,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SmtpCredentials/{smtpCredentialId}"
         method = "PATCH"
         operation_name = "patch_smtp_credential"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SmtpCredential/PatchSmtpCredential"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -31341,7 +31341,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Users/{userId}"
         method = "PATCH"
         operation_name = "patch_user"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/User/PatchUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -31497,7 +31497,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/UserAttributesSettings/{userAttributesSettingId}"
         method = "PATCH"
         operation_name = "patch_user_attributes_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSetting/PatchUserAttributesSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -31653,7 +31653,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AccountRecoverySettings/{accountRecoverySettingId}"
         method = "PUT"
         operation_name = "put_account_recovery_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountRecoverySetting/PutAccountRecoverySetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -31809,7 +31809,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Apps/{appId}"
         method = "PUT"
         operation_name = "put_app"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/App/PutApp"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -31965,7 +31965,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AppStatusChanger/{appStatusChangerId}"
         method = "PUT"
         operation_name = "put_app_status_changer"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AppStatusChanger/PutAppStatusChanger"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -32121,7 +32121,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApprovalWorkflows/{approvalWorkflowId}"
         method = "PUT"
         operation_name = "put_approval_workflow"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApprovalWorkflow/PutApprovalWorkflow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -32277,7 +32277,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AuthenticationFactorSettings/{authenticationFactorSettingId}"
         method = "PUT"
         operation_name = "put_authentication_factor_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthenticationFactorSetting/PutAuthenticationFactorSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -32433,7 +32433,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGates/{cloudGateId}"
         method = "PUT"
         operation_name = "put_cloud_gate"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGate/PutCloudGate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -32589,7 +32589,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGateMappings/{cloudGateMappingId}"
         method = "PUT"
         operation_name = "put_cloud_gate_mapping"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateMapping/PutCloudGateMapping"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -32745,7 +32745,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGateServers/{cloudGateServerId}"
         method = "PUT"
         operation_name = "put_cloud_gate_server"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateServer/PutCloudGateServer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -32901,7 +32901,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Conditions/{conditionId}"
         method = "PUT"
         operation_name = "put_condition"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/PutCondition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -33057,7 +33057,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/DynamicResourceGroups/{dynamicResourceGroupId}"
         method = "PUT"
         operation_name = "put_dynamic_resource_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/DynamicResourceGroup/PutDynamicResourceGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -33213,7 +33213,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Groups/{groupId}"
         method = "PUT"
         operation_name = "put_group"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Group/PutGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -33371,7 +33371,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentityPropagationTrusts/{identityPropagationTrustId}"
         method = "PUT"
         operation_name = "put_identity_propagation_trust"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityPropagationTrust/PutIdentityPropagationTrust"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -33527,7 +33527,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentityProviders/{identityProviderId}"
         method = "PUT"
         operation_name = "put_identity_provider"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProvider/PutIdentityProvider"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -33683,7 +33683,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentitySettings/{identitySettingId}"
         method = "PUT"
         operation_name = "put_identity_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentitySetting/PutIdentitySetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -33839,7 +33839,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/KmsiSettings/{kmsiSettingId}"
         method = "PUT"
         operation_name = "put_kmsi_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/KmsiSetting/PutKmsiSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -33992,7 +33992,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Me"
         method = "PUT"
         operation_name = "put_me"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Me/PutMe"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -34125,7 +34125,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MePasswordChanger"
         method = "PUT"
         operation_name = "put_me_password_changer"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MePasswordChanger/PutMePasswordChanger"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -34251,7 +34251,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/NetworkPerimeters/{networkPerimeterId}"
         method = "PUT"
         operation_name = "put_network_perimeter"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NetworkPerimeter/PutNetworkPerimeter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -34407,7 +34407,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/NotificationSettings/{notificationSettingId}"
         method = "PUT"
         operation_name = "put_notification_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NotificationSetting/PutNotificationSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -34563,7 +34563,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/PasswordPolicies/{passwordPolicyId}"
         method = "PUT"
         operation_name = "put_password_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/PasswordPolicy/PutPasswordPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -34719,7 +34719,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Policies/{policyId}"
         method = "PUT"
         operation_name = "put_policy"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/PutPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -34875,7 +34875,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Rules/{ruleId}"
         method = "PUT"
         operation_name = "put_rule"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/PutRule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -35023,7 +35023,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Schemas/{schemaId}"
         method = "PUT"
         operation_name = "put_schema"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Schema/PutSchema"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -35161,7 +35161,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SecurityQuestionSettings/{securityQuestionSettingId}"
         method = "PUT"
         operation_name = "put_security_question_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestionSetting/PutSecurityQuestionSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -35317,7 +35317,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SelfRegistrationProfiles/{selfRegistrationProfileId}"
         method = "PUT"
         operation_name = "put_self_registration_profile"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SelfRegistrationProfile/PutSelfRegistrationProfile"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -35473,7 +35473,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Settings/{settingId}"
         method = "PUT"
         operation_name = "put_setting"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Setting/PutSetting"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -35629,7 +35629,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Users/{userId}"
         method = "PUT"
         operation_name = "put_user"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/User/PutUser"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -35777,7 +35777,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/UserCapabilitiesChanger/{userCapabilitiesChangerId}"
         method = "PUT"
         operation_name = "put_user_capabilities_changer"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserCapabilitiesChanger/PutUserCapabilitiesChanger"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -35907,7 +35907,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/UserPasswordChanger/{userPasswordChangerId}"
         method = "PUT"
         operation_name = "put_user_password_changer"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserPasswordChanger/PutUserPasswordChanger"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -36037,7 +36037,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/UserPasswordResetter/{userPasswordResetterId}"
         method = "PUT"
         operation_name = "put_user_password_resetter"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserPasswordResetter/PutUserPasswordResetter"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -36175,7 +36175,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/UserStatusChanger/{userStatusChangerId}"
         method = "PUT"
         operation_name = "put_user_status_changer"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserStatusChanger/PutUserStatusChanger"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -36311,7 +36311,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AccountMgmtInfos/.search"
         method = "POST"
         operation_name = "search_account_mgmt_infos"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AccountMgmtInfos/SearchAccountMgmtInfos"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -36425,7 +36425,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ApiKeys/.search"
         method = "POST"
         operation_name = "search_api_keys"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ApiKeys/SearchApiKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -36539,7 +36539,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AppRoles/.search"
         method = "POST"
         operation_name = "search_app_roles"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AppRoles/SearchAppRoles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -36653,7 +36653,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Apps/.search"
         method = "POST"
         operation_name = "search_apps"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Apps/SearchApps"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -36767,7 +36767,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AuthTokens/.search"
         method = "POST"
         operation_name = "search_auth_tokens"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthTokens/SearchAuthTokens"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -36881,7 +36881,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/AuthenticationFactorSettings/.search"
         method = "POST"
         operation_name = "search_authentication_factor_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/AuthenticationFactorSettings/SearchAuthenticationFactorSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -36995,7 +36995,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGateMappings/.search"
         method = "POST"
         operation_name = "search_cloud_gate_mappings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateMappings/SearchCloudGateMappings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -37109,7 +37109,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGateServers/.search"
         method = "POST"
         operation_name = "search_cloud_gate_servers"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGateServers/SearchCloudGateServers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -37223,7 +37223,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CloudGates/.search"
         method = "POST"
         operation_name = "search_cloud_gates"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CloudGates/SearchCloudGates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -37337,7 +37337,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Conditions/.search"
         method = "POST"
         operation_name = "search_conditions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Conditions/SearchConditions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -37451,7 +37451,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/CustomerSecretKeys/.search"
         method = "POST"
         operation_name = "search_customer_secret_keys"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/CustomerSecretKeys/SearchCustomerSecretKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -37565,7 +37565,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/DynamicResourceGroups/.search"
         method = "POST"
         operation_name = "search_dynamic_resource_groups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/DynamicResourceGroups/SearchDynamicResourceGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -37679,7 +37679,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Grants/.search"
         method = "POST"
         operation_name = "search_grants"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Grants/SearchGrants"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -37793,7 +37793,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Groups/.search"
         method = "POST"
         operation_name = "search_groups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Groups/SearchGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -37907,7 +37907,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentityProviders/.search"
         method = "POST"
         operation_name = "search_identity_providers"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentityProviders/SearchIdentityProviders"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -38021,7 +38021,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/IdentitySettings/.search"
         method = "POST"
         operation_name = "search_identity_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/IdentitySettings/SearchIdentitySettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -38135,7 +38135,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/KmsiSettings/.search"
         method = "POST"
         operation_name = "search_kmsi_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/KmsiSettings/SearchKmsiSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -38249,7 +38249,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyApps/.search"
         method = "POST"
         operation_name = "search_my_apps"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyApps/SearchMyApps"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -38363,7 +38363,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyGroups/.search"
         method = "POST"
         operation_name = "search_my_groups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyGroups/SearchMyGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -38477,7 +38477,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyRequestableGroups/.search"
         method = "POST"
         operation_name = "search_my_requestable_groups"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyRequestableGroups/SearchMyRequestableGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -38591,7 +38591,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/MyRequests/.search"
         method = "POST"
         operation_name = "search_my_requests"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/MyRequests/SearchMyRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -38705,7 +38705,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/NetworkPerimeters/.search"
         method = "POST"
         operation_name = "search_network_perimeters"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NetworkPerimeters/SearchNetworkPerimeters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -38819,7 +38819,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/NotificationSettings/.search"
         method = "POST"
         operation_name = "search_notification_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/NotificationSettings/SearchNotificationSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -38933,7 +38933,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuth2ClientCredentials/.search"
         method = "POST"
         operation_name = "search_o_auth2_client_credentials"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuth2ClientCredentials/SearchOAuth2ClientCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -39047,7 +39047,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuthClientCertificates/.search"
         method = "POST"
         operation_name = "search_o_auth_client_certificates"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthClientCertificates/SearchOAuthClientCertificates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -39161,7 +39161,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/OAuthPartnerCertificates/.search"
         method = "POST"
         operation_name = "search_o_auth_partner_certificates"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OAuthPartnerCertificates/SearchOAuthPartnerCertificates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -39275,7 +39275,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/PasswordPolicies/.search"
         method = "POST"
         operation_name = "search_password_policies"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/PasswordPolicies/SearchPasswordPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -39389,7 +39389,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Policies/.search"
         method = "POST"
         operation_name = "search_policies"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policies/SearchPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -39503,7 +39503,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/ResourceTypeSchemaAttributes/.search"
         method = "POST"
         operation_name = "search_resource_type_schema_attributes"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/ResourceTypeSchemaAttributes/SearchResourceTypeSchemaAttributes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -39617,7 +39617,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Rules/.search"
         method = "POST"
         operation_name = "search_rules"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rules/SearchRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -39731,7 +39731,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Schemas/.search"
         method = "POST"
         operation_name = "search_schemas"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Schemas/SearchSchemas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -39845,7 +39845,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SecurityQuestionSettings/.search"
         method = "POST"
         operation_name = "search_security_question_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestionSettings/SearchSecurityQuestionSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -39959,7 +39959,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SecurityQuestions/.search"
         method = "POST"
         operation_name = "search_security_questions"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SecurityQuestions/SearchSecurityQuestions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -40073,7 +40073,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SelfRegistrationProfiles/.search"
         method = "POST"
         operation_name = "search_self_registration_profiles"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SelfRegistrationProfiles/SearchSelfRegistrationProfiles"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -40187,7 +40187,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Settings/.search"
         method = "POST"
         operation_name = "search_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Settings/SearchSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -40301,7 +40301,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/SmtpCredentials/.search"
         method = "POST"
         operation_name = "search_smtp_credentials"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SmtpCredentials/SearchSmtpCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -40415,7 +40415,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/UserAttributesSettings/.search"
         method = "POST"
         operation_name = "search_user_attributes_settings"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSettings/SearchUserAttributesSettings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -40529,7 +40529,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/UserDbCredentials/.search"
         method = "POST"
         operation_name = "search_user_db_credentials"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserDbCredentials/SearchUserDbCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -40643,7 +40643,7 @@ class IdentityDomainsClient(object):
         resource_path = "/admin/v1/Users/.search"
         method = "POST"
         operation_name = "search_users"
-        api_reference_link = ""
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Users/SearchUsers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [

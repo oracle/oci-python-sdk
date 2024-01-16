@@ -19,6 +19,30 @@ class DetectConfiguration(object):
     #: This constant has a value of "NEAREST"
     UPGRADE_POLICY_NEAREST = "NEAREST"
 
+    #: A constant which can be used with the max_permissible_severity property of a DetectConfiguration.
+    #: This constant has a value of "UNSET"
+    MAX_PERMISSIBLE_SEVERITY_UNSET = "UNSET"
+
+    #: A constant which can be used with the max_permissible_severity property of a DetectConfiguration.
+    #: This constant has a value of "NONE"
+    MAX_PERMISSIBLE_SEVERITY_NONE = "NONE"
+
+    #: A constant which can be used with the max_permissible_severity property of a DetectConfiguration.
+    #: This constant has a value of "LOW"
+    MAX_PERMISSIBLE_SEVERITY_LOW = "LOW"
+
+    #: A constant which can be used with the max_permissible_severity property of a DetectConfiguration.
+    #: This constant has a value of "MEDIUM"
+    MAX_PERMISSIBLE_SEVERITY_MEDIUM = "MEDIUM"
+
+    #: A constant which can be used with the max_permissible_severity property of a DetectConfiguration.
+    #: This constant has a value of "HIGH"
+    MAX_PERMISSIBLE_SEVERITY_HIGH = "HIGH"
+
+    #: A constant which can be used with the max_permissible_severity property of a DetectConfiguration.
+    #: This constant has a value of "CRITICAL"
+    MAX_PERMISSIBLE_SEVERITY_CRITICAL = "CRITICAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DetectConfiguration object with values from keyword arguments.
@@ -42,25 +66,34 @@ class DetectConfiguration(object):
             The value to assign to the max_permissible_cvss_v3_score property of this DetectConfiguration.
         :type max_permissible_cvss_v3_score: float
 
+        :param max_permissible_severity:
+            The value to assign to the max_permissible_severity property of this DetectConfiguration.
+            Allowed values for this property are: "UNSET", "NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type max_permissible_severity: str
+
         """
         self.swagger_types = {
             'exclusions': 'list[str]',
             'upgrade_policy': 'str',
             'max_permissible_cvss_v2_score': 'float',
-            'max_permissible_cvss_v3_score': 'float'
+            'max_permissible_cvss_v3_score': 'float',
+            'max_permissible_severity': 'str'
         }
 
         self.attribute_map = {
             'exclusions': 'exclusions',
             'upgrade_policy': 'upgradePolicy',
             'max_permissible_cvss_v2_score': 'maxPermissibleCvssV2Score',
-            'max_permissible_cvss_v3_score': 'maxPermissibleCvssV3Score'
+            'max_permissible_cvss_v3_score': 'maxPermissibleCvssV3Score',
+            'max_permissible_severity': 'maxPermissibleSeverity'
         }
 
         self._exclusions = None
         self._upgrade_policy = None
         self._max_permissible_cvss_v2_score = None
         self._max_permissible_cvss_v3_score = None
+        self._max_permissible_severity = None
 
     @property
     def exclusions(self):
@@ -167,6 +200,36 @@ class DetectConfiguration(object):
         :type: float
         """
         self._max_permissible_cvss_v3_score = max_permissible_cvss_v3_score
+
+    @property
+    def max_permissible_severity(self):
+        """
+        Gets the max_permissible_severity of this DetectConfiguration.
+        The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+
+        Allowed values for this property are: "UNSET", "NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The max_permissible_severity of this DetectConfiguration.
+        :rtype: str
+        """
+        return self._max_permissible_severity
+
+    @max_permissible_severity.setter
+    def max_permissible_severity(self, max_permissible_severity):
+        """
+        Sets the max_permissible_severity of this DetectConfiguration.
+        The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+
+
+        :param max_permissible_severity: The max_permissible_severity of this DetectConfiguration.
+        :type: str
+        """
+        allowed_values = ["UNSET", "NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL"]
+        if not value_allowed_none_or_none_sentinel(max_permissible_severity, allowed_values):
+            max_permissible_severity = 'UNKNOWN_ENUM_VALUE'
+        self._max_permissible_severity = max_permissible_severity
 
     def __repr__(self):
         return formatted_flat_dict(self)

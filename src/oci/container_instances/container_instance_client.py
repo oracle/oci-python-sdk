@@ -1518,6 +1518,9 @@ class ContainerInstanceClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str resource_id: (optional)
+            The OCID of the resource affected by the work request.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1554,7 +1557,8 @@ class ContainerInstanceClient(object):
             "availability_domain",
             "status",
             "sort_by",
-            "sort_order"
+            "sort_order",
+            "resource_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1590,7 +1594,8 @@ class ContainerInstanceClient(object):
             "availabilityDomain": kwargs.get("availability_domain", missing),
             "status": kwargs.get("status", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "resourceId": kwargs.get("resource_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

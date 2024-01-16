@@ -190,7 +190,7 @@ class Metric(object):
         Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
         Each dimension takes the form of a key-value pair.
 
-        Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
+        Example: `{\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"}`
 
 
         :return: The dimensions of this Metric.
@@ -205,7 +205,7 @@ class Metric(object):
         Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
         Each dimension takes the form of a key-value pair.
 
-        Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
+        Example: `{\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"}`
 
 
         :param dimensions: The dimensions of this Metric.

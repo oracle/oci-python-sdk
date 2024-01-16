@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UsageDataDetails(object):
     """
-    The source details of the usage data on Object Storage.
+    The source details of the usage data in object storage. The usage data file uploaded to object storage must be a gzip archive
+    of the JSON usage data returned from the GraalVM native-image-inspect tool after a native-image build.
     Set `sourceType` to `objectStorageTuple`
     and use :func:`usage_data_via_object_storage_tuple_details`
     when specifying the namespace, bucket name, and object name.

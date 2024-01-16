@@ -106,6 +106,10 @@ class TargetDatabase(object):
             The value to assign to the time_updated property of this TargetDatabase.
         :type time_updated: datetime
 
+        :param peer_target_databases:
+            The value to assign to the peer_target_databases property of this TargetDatabase.
+        :type peer_target_databases: list[oci.data_safe.models.PeerTargetDatabase]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this TargetDatabase.
         :type freeform_tags: dict(str, str)
@@ -133,6 +137,7 @@ class TargetDatabase(object):
             'lifecycle_details': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'peer_target_databases': 'list[PeerTargetDatabase]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -152,6 +157,7 @@ class TargetDatabase(object):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'peer_target_databases': 'peerTargetDatabases',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -170,6 +176,7 @@ class TargetDatabase(object):
         self._lifecycle_details = None
         self._time_created = None
         self._time_updated = None
+        self._peer_target_databases = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -475,6 +482,30 @@ class TargetDatabase(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def peer_target_databases(self):
+        """
+        Gets the peer_target_databases of this TargetDatabase.
+        The OCIDs of associated resources like database, Data Safe private endpoint, etc.
+
+
+        :return: The peer_target_databases of this TargetDatabase.
+        :rtype: list[oci.data_safe.models.PeerTargetDatabase]
+        """
+        return self._peer_target_databases
+
+    @peer_target_databases.setter
+    def peer_target_databases(self, peer_target_databases):
+        """
+        Sets the peer_target_databases of this TargetDatabase.
+        The OCIDs of associated resources like database, Data Safe private endpoint, etc.
+
+
+        :param peer_target_databases: The peer_target_databases of this TargetDatabase.
+        :type: list[oci.data_safe.models.PeerTargetDatabase]
+        """
+        self._peer_target_databases = peer_target_databases
 
     @property
     def freeform_tags(self):

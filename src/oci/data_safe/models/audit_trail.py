@@ -86,6 +86,22 @@ class AuditTrail(object):
     #: This constant has a value of "STOPPED_FAILED"
     STATUS_STOPPED_FAILED = "STOPPED_FAILED"
 
+    #: A constant which can be used with the trail_source property of a AuditTrail.
+    #: This constant has a value of "TABLE"
+    TRAIL_SOURCE_TABLE = "TABLE"
+
+    #: A constant which can be used with the trail_source property of a AuditTrail.
+    #: This constant has a value of "FILE"
+    TRAIL_SOURCE_FILE = "FILE"
+
+    #: A constant which can be used with the purge_job_status property of a AuditTrail.
+    #: This constant has a value of "SUCCEEDED"
+    PURGE_JOB_STATUS_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the purge_job_status property of a AuditTrail.
+    #: This constant has a value of "FAILED"
+    PURGE_JOB_STATUS_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AuditTrail object with values from keyword arguments.
@@ -159,6 +175,30 @@ class AuditTrail(object):
             The value to assign to the time_last_collected property of this AuditTrail.
         :type time_last_collected: datetime
 
+        :param peer_target_database_key:
+            The value to assign to the peer_target_database_key property of this AuditTrail.
+        :type peer_target_database_key: int
+
+        :param trail_source:
+            The value to assign to the trail_source property of this AuditTrail.
+            Allowed values for this property are: "TABLE", "FILE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type trail_source: str
+
+        :param purge_job_time:
+            The value to assign to the purge_job_time property of this AuditTrail.
+        :type purge_job_time: datetime
+
+        :param purge_job_status:
+            The value to assign to the purge_job_status property of this AuditTrail.
+            Allowed values for this property are: "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type purge_job_status: str
+
+        :param purge_job_details:
+            The value to assign to the purge_job_details property of this AuditTrail.
+        :type purge_job_details: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AuditTrail.
         :type freeform_tags: dict(str, str)
@@ -189,6 +229,11 @@ class AuditTrail(object):
             'work_request_id': 'str',
             'compartment_id': 'str',
             'time_last_collected': 'datetime',
+            'peer_target_database_key': 'int',
+            'trail_source': 'str',
+            'purge_job_time': 'datetime',
+            'purge_job_status': 'str',
+            'purge_job_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -211,6 +256,11 @@ class AuditTrail(object):
             'work_request_id': 'workRequestId',
             'compartment_id': 'compartmentId',
             'time_last_collected': 'timeLastCollected',
+            'peer_target_database_key': 'peerTargetDatabaseKey',
+            'trail_source': 'trailSource',
+            'purge_job_time': 'purgeJobTime',
+            'purge_job_status': 'purgeJobStatus',
+            'purge_job_details': 'purgeJobDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -232,6 +282,11 @@ class AuditTrail(object):
         self._work_request_id = None
         self._compartment_id = None
         self._time_last_collected = None
+        self._peer_target_database_key = None
+        self._trail_source = None
+        self._purge_job_time = None
+        self._purge_job_status = None
+        self._purge_job_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -637,6 +692,142 @@ class AuditTrail(object):
         :type: datetime
         """
         self._time_last_collected = time_last_collected
+
+    @property
+    def peer_target_database_key(self):
+        """
+        Gets the peer_target_database_key of this AuditTrail.
+        The secondary id assigned for the peer database registered with Data Safe.
+
+
+        :return: The peer_target_database_key of this AuditTrail.
+        :rtype: int
+        """
+        return self._peer_target_database_key
+
+    @peer_target_database_key.setter
+    def peer_target_database_key(self, peer_target_database_key):
+        """
+        Sets the peer_target_database_key of this AuditTrail.
+        The secondary id assigned for the peer database registered with Data Safe.
+
+
+        :param peer_target_database_key: The peer_target_database_key of this AuditTrail.
+        :type: int
+        """
+        self._peer_target_database_key = peer_target_database_key
+
+    @property
+    def trail_source(self):
+        """
+        Gets the trail_source of this AuditTrail.
+        The underlying source of unified audit trail.
+
+        Allowed values for this property are: "TABLE", "FILE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The trail_source of this AuditTrail.
+        :rtype: str
+        """
+        return self._trail_source
+
+    @trail_source.setter
+    def trail_source(self, trail_source):
+        """
+        Sets the trail_source of this AuditTrail.
+        The underlying source of unified audit trail.
+
+
+        :param trail_source: The trail_source of this AuditTrail.
+        :type: str
+        """
+        allowed_values = ["TABLE", "FILE"]
+        if not value_allowed_none_or_none_sentinel(trail_source, allowed_values):
+            trail_source = 'UNKNOWN_ENUM_VALUE'
+        self._trail_source = trail_source
+
+    @property
+    def purge_job_time(self):
+        """
+        Gets the purge_job_time of this AuditTrail.
+        The date and time of the last purge job. The purge job deletes audit data in the
+        target database every seven days so that the database's audit trail does not become too large.
+        In the format defined by RFC3339.
+
+
+        :return: The purge_job_time of this AuditTrail.
+        :rtype: datetime
+        """
+        return self._purge_job_time
+
+    @purge_job_time.setter
+    def purge_job_time(self, purge_job_time):
+        """
+        Sets the purge_job_time of this AuditTrail.
+        The date and time of the last purge job. The purge job deletes audit data in the
+        target database every seven days so that the database's audit trail does not become too large.
+        In the format defined by RFC3339.
+
+
+        :param purge_job_time: The purge_job_time of this AuditTrail.
+        :type: datetime
+        """
+        self._purge_job_time = purge_job_time
+
+    @property
+    def purge_job_status(self):
+        """
+        Gets the purge_job_status of this AuditTrail.
+        The current status of the audit trail purge job.
+
+        Allowed values for this property are: "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The purge_job_status of this AuditTrail.
+        :rtype: str
+        """
+        return self._purge_job_status
+
+    @purge_job_status.setter
+    def purge_job_status(self, purge_job_status):
+        """
+        Sets the purge_job_status of this AuditTrail.
+        The current status of the audit trail purge job.
+
+
+        :param purge_job_status: The purge_job_status of this AuditTrail.
+        :type: str
+        """
+        allowed_values = ["SUCCEEDED", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(purge_job_status, allowed_values):
+            purge_job_status = 'UNKNOWN_ENUM_VALUE'
+        self._purge_job_status = purge_job_status
+
+    @property
+    def purge_job_details(self):
+        """
+        Gets the purge_job_details of this AuditTrail.
+        The details of the audit trail purge job that ran at the time specified by purgeJobTime\".
+
+
+        :return: The purge_job_details of this AuditTrail.
+        :rtype: str
+        """
+        return self._purge_job_details
+
+    @purge_job_details.setter
+    def purge_job_details(self, purge_job_details):
+        """
+        Sets the purge_job_details of this AuditTrail.
+        The details of the audit trail purge job that ran at the time specified by purgeJobTime\".
+
+
+        :param purge_job_details: The purge_job_details of this AuditTrail.
+        :type: str
+        """
+        self._purge_job_details = purge_job_details
 
     @property
     def freeform_tags(self):

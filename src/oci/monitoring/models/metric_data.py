@@ -229,7 +229,7 @@ class MetricData(object):
         Qualifiers provided in the definition of the returned metric.
         Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
 
-        Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
+        Example: `{\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"}`
 
 
         :return: The dimensions of this MetricData.
@@ -244,7 +244,7 @@ class MetricData(object):
         Qualifiers provided in the definition of the returned metric.
         Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
 
-        Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
+        Example: `{\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"}`
 
 
         :param dimensions: The dimensions of this MetricData.
