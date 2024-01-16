@@ -148,6 +148,10 @@ class AuditTrailSummary(object):
             The value to assign to the audit_collection_start_time property of this AuditTrailSummary.
         :type audit_collection_start_time: datetime
 
+        :param peer_target_database_key:
+            The value to assign to the peer_target_database_key property of this AuditTrailSummary.
+        :type peer_target_database_key: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AuditTrailSummary.
         :type freeform_tags: dict(str, str)
@@ -172,6 +176,7 @@ class AuditTrailSummary(object):
             'lifecycle_details': 'str',
             'is_auto_purge_enabled': 'bool',
             'audit_collection_start_time': 'datetime',
+            'peer_target_database_key': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -191,6 +196,7 @@ class AuditTrailSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'is_auto_purge_enabled': 'isAutoPurgeEnabled',
             'audit_collection_start_time': 'auditCollectionStartTime',
+            'peer_target_database_key': 'peerTargetDatabaseKey',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -209,6 +215,7 @@ class AuditTrailSummary(object):
         self._lifecycle_details = None
         self._is_auto_purge_enabled = None
         self._audit_collection_start_time = None
+        self._peer_target_database_key = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -561,6 +568,30 @@ class AuditTrailSummary(object):
         :type: datetime
         """
         self._audit_collection_start_time = audit_collection_start_time
+
+    @property
+    def peer_target_database_key(self):
+        """
+        Gets the peer_target_database_key of this AuditTrailSummary.
+        The secondary id assigned for the peer database registered with Data Safe.
+
+
+        :return: The peer_target_database_key of this AuditTrailSummary.
+        :rtype: int
+        """
+        return self._peer_target_database_key
+
+    @peer_target_database_key.setter
+    def peer_target_database_key(self, peer_target_database_key):
+        """
+        Sets the peer_target_database_key of this AuditTrailSummary.
+        The secondary id assigned for the peer database registered with Data Safe.
+
+
+        :param peer_target_database_key: The peer_target_database_key of this AuditTrailSummary.
+        :type: int
+        """
+        self._peer_target_database_key = peer_target_database_key
 
     @property
     def freeform_tags(self):

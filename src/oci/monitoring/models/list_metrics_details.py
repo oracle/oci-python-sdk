@@ -195,7 +195,7 @@ class ListMetricsDetails(object):
         Qualifiers that you want to use when searching for metric definitions.
         Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
 
-        Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
+        Example: `{\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"}`
 
 
         :return: The dimension_filters of this ListMetricsDetails.
@@ -210,7 +210,7 @@ class ListMetricsDetails(object):
         Qualifiers that you want to use when searching for metric definitions.
         Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
 
-        Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
+        Example: `{\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"}`
 
 
         :param dimension_filters: The dimension_filters of this ListMetricsDetails.

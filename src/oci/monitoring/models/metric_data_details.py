@@ -83,7 +83,7 @@ class MetricDataDetails(object):
         **[Required]** Gets the namespace of this MetricDataDetails.
         The source service or application emitting the metric.
 
-        A valid namespace value starts with an alphabetical character and includes only alphanumeric characters and underscores. The \"oci_\" prefix is reserved.
+        A valid namespace value starts with an alphabetical character and includes only alphanumeric characters and underscores. Custom metrics can't use the following reserved prefixes: `oci_` and `oracle_`
         Avoid entering confidential information.
 
         Example: `my_namespace`
@@ -100,7 +100,7 @@ class MetricDataDetails(object):
         Sets the namespace of this MetricDataDetails.
         The source service or application emitting the metric.
 
-        A valid namespace value starts with an alphabetical character and includes only alphanumeric characters and underscores. The \"oci_\" prefix is reserved.
+        A valid namespace value starts with an alphabetical character and includes only alphanumeric characters and underscores. Custom metrics can't use the following reserved prefixes: `oci_` and `oracle_`
         Avoid entering confidential information.
 
         Example: `my_namespace`
@@ -177,7 +177,7 @@ class MetricDataDetails(object):
         **[Required]** Gets the name of this MetricDataDetails.
         The name of the metric.
 
-        A valid name value starts with an alphabetical character and includes only alphanumeric characters, dots, underscores, hyphens, and dollar signs. The `oci_` prefix is reserved.
+        A valid name value starts with an alphabetical character and includes only alphanumeric characters, dots, underscores, hyphens, and dollar signs.
         Avoid entering confidential information.
 
         Example: `my_app.success_rate`
@@ -194,7 +194,7 @@ class MetricDataDetails(object):
         Sets the name of this MetricDataDetails.
         The name of the metric.
 
-        A valid name value starts with an alphabetical character and includes only alphanumeric characters, dots, underscores, hyphens, and dollar signs. The `oci_` prefix is reserved.
+        A valid name value starts with an alphabetical character and includes only alphanumeric characters, dots, underscores, hyphens, and dollar signs.
         Avoid entering confidential information.
 
         Example: `my_app.success_rate`
@@ -215,7 +215,7 @@ class MetricDataDetails(object):
         A valid dimension value includes only Unicode characters. The character limit for a dimension value is 512.
         Empty strings are not allowed for keys or values. Avoid entering confidential information.
 
-        Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
+        Example: `{\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"}`
 
 
         :return: The dimensions of this MetricDataDetails.
@@ -233,7 +233,7 @@ class MetricDataDetails(object):
         A valid dimension value includes only Unicode characters. The character limit for a dimension value is 512.
         Empty strings are not allowed for keys or values. Avoid entering confidential information.
 
-        Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
+        Example: `{\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"}`
 
 
         :param dimensions: The dimensions of this MetricDataDetails.

@@ -24,6 +24,10 @@ class ApplicationDependency(object):
             The value to assign to the gav property of this ApplicationDependency.
         :type gav: str
 
+        :param purl:
+            The value to assign to the purl property of this ApplicationDependency.
+        :type purl: str
+
         :param node_id:
             The value to assign to the node_id property of this ApplicationDependency.
         :type node_id: str
@@ -35,25 +39,29 @@ class ApplicationDependency(object):
         """
         self.swagger_types = {
             'gav': 'str',
+            'purl': 'str',
             'node_id': 'str',
             'application_dependency_node_ids': 'list[str]'
         }
 
         self.attribute_map = {
             'gav': 'gav',
+            'purl': 'purl',
             'node_id': 'nodeId',
             'application_dependency_node_ids': 'applicationDependencyNodeIds'
         }
 
         self._gav = None
+        self._purl = None
         self._node_id = None
         self._application_dependency_node_ids = None
 
     @property
     def gav(self):
         """
-        **[Required]** Gets the gav of this ApplicationDependency.
-        Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
+        Gets the gav of this ApplicationDependency.
+        Group Artifact Version (GAV) identifier (Group:Artifact:Version). Example: org.graalvm.nativeimage:svm:21.1.0.
+        \"N/A\" for non-maven artifacts.
 
 
         :return: The gav of this ApplicationDependency.
@@ -65,13 +73,38 @@ class ApplicationDependency(object):
     def gav(self, gav):
         """
         Sets the gav of this ApplicationDependency.
-        Group Artifact Version (GAV) identifier (Group:Artifact:Version), e.g. org.graalvm.nativeimage:svm:21.1.0.
+        Group Artifact Version (GAV) identifier (Group:Artifact:Version). Example: org.graalvm.nativeimage:svm:21.1.0.
+        \"N/A\" for non-maven artifacts.
 
 
         :param gav: The gav of this ApplicationDependency.
         :type: str
         """
         self._gav = gav
+
+    @property
+    def purl(self):
+        """
+        Gets the purl of this ApplicationDependency.
+        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+
+
+        :return: The purl of this ApplicationDependency.
+        :rtype: str
+        """
+        return self._purl
+
+    @purl.setter
+    def purl(self, purl):
+        """
+        Sets the purl of this ApplicationDependency.
+        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+
+
+        :param purl: The purl of this ApplicationDependency.
+        :type: str
+        """
+        self._purl = purl
 
     @property
     def node_id(self):

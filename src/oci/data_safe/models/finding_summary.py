@@ -39,6 +39,26 @@ class FindingSummary(object):
     #: This constant has a value of "PASS"
     SEVERITY_PASS = "PASS"
 
+    #: A constant which can be used with the severity property of a FindingSummary.
+    #: This constant has a value of "DEFERRED"
+    SEVERITY_DEFERRED = "DEFERRED"
+
+    #: A constant which can be used with the lifecycle_state property of a FindingSummary.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a FindingSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a FindingSummary.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the lifecycle_state property of a FindingSummary.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new FindingSummary object with values from keyword arguments.
@@ -46,7 +66,7 @@ class FindingSummary(object):
 
         :param severity:
             The value to assign to the severity property of this FindingSummary.
-            Allowed values for this property are: "HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", "DEFERRED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type severity: str
 
@@ -61,6 +81,10 @@ class FindingSummary(object):
         :param key:
             The value to assign to the key property of this FindingSummary.
         :type key: str
+
+        :param is_top_finding:
+            The value to assign to the is_top_finding property of this FindingSummary.
+        :type is_top_finding: bool
 
         :param title:
             The value to assign to the title property of this FindingSummary.
@@ -82,17 +106,60 @@ class FindingSummary(object):
             The value to assign to the references property of this FindingSummary.
         :type references: oci.data_safe.models.References
 
+        :param oracle_defined_severity:
+            The value to assign to the oracle_defined_severity property of this FindingSummary.
+        :type oracle_defined_severity: str
+
+        :param is_risk_modified:
+            The value to assign to the is_risk_modified property of this FindingSummary.
+        :type is_risk_modified: bool
+
+        :param has_target_db_risk_level_changed:
+            The value to assign to the has_target_db_risk_level_changed property of this FindingSummary.
+        :type has_target_db_risk_level_changed: bool
+
+        :param justification:
+            The value to assign to the justification property of this FindingSummary.
+        :type justification: str
+
+        :param time_valid_until:
+            The value to assign to the time_valid_until property of this FindingSummary.
+        :type time_valid_until: datetime
+
+        :param time_updated:
+            The value to assign to the time_updated property of this FindingSummary.
+        :type time_updated: datetime
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this FindingSummary.
+            Allowed values for this property are: "ACTIVE", "UPDATING", "NEEDS_ATTENTION", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this FindingSummary.
+        :type lifecycle_details: str
+
         """
         self.swagger_types = {
             'severity': 'str',
             'assessment_id': 'str',
             'target_id': 'str',
             'key': 'str',
+            'is_top_finding': 'bool',
             'title': 'str',
             'remarks': 'str',
             'details': 'object',
             'summary': 'str',
-            'references': 'References'
+            'references': 'References',
+            'oracle_defined_severity': 'str',
+            'is_risk_modified': 'bool',
+            'has_target_db_risk_level_changed': 'bool',
+            'justification': 'str',
+            'time_valid_until': 'datetime',
+            'time_updated': 'datetime',
+            'lifecycle_state': 'str',
+            'lifecycle_details': 'str'
         }
 
         self.attribute_map = {
@@ -100,22 +167,40 @@ class FindingSummary(object):
             'assessment_id': 'assessmentId',
             'target_id': 'targetId',
             'key': 'key',
+            'is_top_finding': 'isTopFinding',
             'title': 'title',
             'remarks': 'remarks',
             'details': 'details',
             'summary': 'summary',
-            'references': 'references'
+            'references': 'references',
+            'oracle_defined_severity': 'oracleDefinedSeverity',
+            'is_risk_modified': 'isRiskModified',
+            'has_target_db_risk_level_changed': 'hasTargetDbRiskLevelChanged',
+            'justification': 'justification',
+            'time_valid_until': 'timeValidUntil',
+            'time_updated': 'timeUpdated',
+            'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails'
         }
 
         self._severity = None
         self._assessment_id = None
         self._target_id = None
         self._key = None
+        self._is_top_finding = None
         self._title = None
         self._remarks = None
         self._details = None
         self._summary = None
         self._references = None
+        self._oracle_defined_severity = None
+        self._is_risk_modified = None
+        self._has_target_db_risk_level_changed = None
+        self._justification = None
+        self._time_valid_until = None
+        self._time_updated = None
+        self._lifecycle_state = None
+        self._lifecycle_details = None
 
     @property
     def severity(self):
@@ -123,7 +208,7 @@ class FindingSummary(object):
         Gets the severity of this FindingSummary.
         The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
 
-        Allowed values for this property are: "HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", "DEFERRED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -142,7 +227,7 @@ class FindingSummary(object):
         :param severity: The severity of this FindingSummary.
         :type: str
         """
-        allowed_values = ["HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS"]
+        allowed_values = ["HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", "DEFERRED"]
         if not value_allowed_none_or_none_sentinel(severity, allowed_values):
             severity = 'UNKNOWN_ENUM_VALUE'
         self._severity = severity
@@ -218,6 +303,30 @@ class FindingSummary(object):
         :type: str
         """
         self._key = key
+
+    @property
+    def is_top_finding(self):
+        """
+        Gets the is_top_finding of this FindingSummary.
+        Indicates whether a given finding is marked as topFinding or not.
+
+
+        :return: The is_top_finding of this FindingSummary.
+        :rtype: bool
+        """
+        return self._is_top_finding
+
+    @is_top_finding.setter
+    def is_top_finding(self, is_top_finding):
+        """
+        Sets the is_top_finding of this FindingSummary.
+        Indicates whether a given finding is marked as topFinding or not.
+
+
+        :param is_top_finding: The is_top_finding of this FindingSummary.
+        :type: bool
+        """
+        self._is_top_finding = is_top_finding
 
     @property
     def title(self):
@@ -338,6 +447,208 @@ class FindingSummary(object):
         :type: oci.data_safe.models.References
         """
         self._references = references
+
+    @property
+    def oracle_defined_severity(self):
+        """
+        Gets the oracle_defined_severity of this FindingSummary.
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+
+
+        :return: The oracle_defined_severity of this FindingSummary.
+        :rtype: str
+        """
+        return self._oracle_defined_severity
+
+    @oracle_defined_severity.setter
+    def oracle_defined_severity(self, oracle_defined_severity):
+        """
+        Sets the oracle_defined_severity of this FindingSummary.
+        The severity of the finding as determined by security assessment. This cannot be modified by user.
+
+
+        :param oracle_defined_severity: The oracle_defined_severity of this FindingSummary.
+        :type: str
+        """
+        self._oracle_defined_severity = oracle_defined_severity
+
+    @property
+    def is_risk_modified(self):
+        """
+        Gets the is_risk_modified of this FindingSummary.
+        Determines if this risk level was modified by user.
+
+
+        :return: The is_risk_modified of this FindingSummary.
+        :rtype: bool
+        """
+        return self._is_risk_modified
+
+    @is_risk_modified.setter
+    def is_risk_modified(self, is_risk_modified):
+        """
+        Sets the is_risk_modified of this FindingSummary.
+        Determines if this risk level was modified by user.
+
+
+        :param is_risk_modified: The is_risk_modified of this FindingSummary.
+        :type: bool
+        """
+        self._is_risk_modified = is_risk_modified
+
+    @property
+    def has_target_db_risk_level_changed(self):
+        """
+        Gets the has_target_db_risk_level_changed of this FindingSummary.
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+
+
+        :return: The has_target_db_risk_level_changed of this FindingSummary.
+        :rtype: bool
+        """
+        return self._has_target_db_risk_level_changed
+
+    @has_target_db_risk_level_changed.setter
+    def has_target_db_risk_level_changed(self, has_target_db_risk_level_changed):
+        """
+        Sets the has_target_db_risk_level_changed of this FindingSummary.
+        Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+
+
+        :param has_target_db_risk_level_changed: The has_target_db_risk_level_changed of this FindingSummary.
+        :type: bool
+        """
+        self._has_target_db_risk_level_changed = has_target_db_risk_level_changed
+
+    @property
+    def justification(self):
+        """
+        Gets the justification of this FindingSummary.
+        User provided reason for accepting or modifying this finding if they choose to do so.
+
+
+        :return: The justification of this FindingSummary.
+        :rtype: str
+        """
+        return self._justification
+
+    @justification.setter
+    def justification(self, justification):
+        """
+        Sets the justification of this FindingSummary.
+        User provided reason for accepting or modifying this finding if they choose to do so.
+
+
+        :param justification: The justification of this FindingSummary.
+        :type: str
+        """
+        self._justification = justification
+
+    @property
+    def time_valid_until(self):
+        """
+        Gets the time_valid_until of this FindingSummary.
+        The time until which the change in severity(deferred / modified) of this finding is valid.
+
+
+        :return: The time_valid_until of this FindingSummary.
+        :rtype: datetime
+        """
+        return self._time_valid_until
+
+    @time_valid_until.setter
+    def time_valid_until(self, time_valid_until):
+        """
+        Sets the time_valid_until of this FindingSummary.
+        The time until which the change in severity(deferred / modified) of this finding is valid.
+
+
+        :param time_valid_until: The time_valid_until of this FindingSummary.
+        :type: datetime
+        """
+        self._time_valid_until = time_valid_until
+
+    @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this FindingSummary.
+        The date and time the risk level of finding was last updated, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_updated of this FindingSummary.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this FindingSummary.
+        The date and time the risk level of finding was last updated, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_updated: The time_updated of this FindingSummary.
+        :type: datetime
+        """
+        self._time_updated = time_updated
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this FindingSummary.
+        The current state of the finding.
+
+        Allowed values for this property are: "ACTIVE", "UPDATING", "NEEDS_ATTENTION", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this FindingSummary.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this FindingSummary.
+        The current state of the finding.
+
+
+        :param lifecycle_state: The lifecycle_state of this FindingSummary.
+        :type: str
+        """
+        allowed_values = ["ACTIVE", "UPDATING", "NEEDS_ATTENTION", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this FindingSummary.
+        Details about the current state of the finding.
+
+
+        :return: The lifecycle_details of this FindingSummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this FindingSummary.
+        Details about the current state of the finding.
+
+
+        :param lifecycle_details: The lifecycle_details of this FindingSummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -25,6 +25,10 @@ class ApplicationDependencyRecommendationSummary(object):
             The value to assign to the gav property of this ApplicationDependencyRecommendationSummary.
         :type gav: str
 
+        :param purl:
+            The value to assign to the purl property of this ApplicationDependencyRecommendationSummary.
+        :type purl: str
+
         :param node_id:
             The value to assign to the node_id property of this ApplicationDependencyRecommendationSummary.
         :type node_id: str
@@ -37,25 +41,35 @@ class ApplicationDependencyRecommendationSummary(object):
             The value to assign to the recommended_gav property of this ApplicationDependencyRecommendationSummary.
         :type recommended_gav: str
 
+        :param recommended_purl:
+            The value to assign to the recommended_purl property of this ApplicationDependencyRecommendationSummary.
+        :type recommended_purl: str
+
         """
         self.swagger_types = {
             'gav': 'str',
+            'purl': 'str',
             'node_id': 'str',
             'application_dependency_node_ids': 'list[str]',
-            'recommended_gav': 'str'
+            'recommended_gav': 'str',
+            'recommended_purl': 'str'
         }
 
         self.attribute_map = {
             'gav': 'gav',
+            'purl': 'purl',
             'node_id': 'nodeId',
             'application_dependency_node_ids': 'applicationDependencyNodeIds',
-            'recommended_gav': 'recommendedGav'
+            'recommended_gav': 'recommendedGav',
+            'recommended_purl': 'recommendedPurl'
         }
 
         self._gav = None
+        self._purl = None
         self._node_id = None
         self._application_dependency_node_ids = None
         self._recommended_gav = None
+        self._recommended_purl = None
 
     @property
     def gav(self):
@@ -80,6 +94,30 @@ class ApplicationDependencyRecommendationSummary(object):
         :type: str
         """
         self._gav = gav
+
+    @property
+    def purl(self):
+        """
+        Gets the purl of this ApplicationDependencyRecommendationSummary.
+        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+
+
+        :return: The purl of this ApplicationDependencyRecommendationSummary.
+        :rtype: str
+        """
+        return self._purl
+
+    @purl.setter
+    def purl(self, purl):
+        """
+        Sets the purl of this ApplicationDependencyRecommendationSummary.
+        Package URL defined in https://github.com/package-url/purl-spec, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.1.0
+
+
+        :param purl: The purl of this ApplicationDependencyRecommendationSummary.
+        :type: str
+        """
+        self._purl = purl
 
     @property
     def node_id(self):
@@ -152,6 +190,30 @@ class ApplicationDependencyRecommendationSummary(object):
         :type: str
         """
         self._recommended_gav = recommended_gav
+
+    @property
+    def recommended_purl(self):
+        """
+        Gets the recommended_purl of this ApplicationDependencyRecommendationSummary.
+        Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+
+
+        :return: The recommended_purl of this ApplicationDependencyRecommendationSummary.
+        :rtype: str
+        """
+        return self._recommended_purl
+
+    @recommended_purl.setter
+    def recommended_purl(self, recommended_purl):
+        """
+        Sets the recommended_purl of this ApplicationDependencyRecommendationSummary.
+        Recommended application dependency in PURL format, e.g. pkg:maven/org.graalvm.nativeimage/svm@21.2.0
+
+
+        :param recommended_purl: The recommended_purl of this ApplicationDependencyRecommendationSummary.
+        :type: str
+        """
+        self._recommended_purl = recommended_purl
 
     def __repr__(self):
         return formatted_flat_dict(self)

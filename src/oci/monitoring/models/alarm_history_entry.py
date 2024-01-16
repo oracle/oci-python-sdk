@@ -88,7 +88,7 @@ class AlarmHistoryEntry(object):
         **[Required]** Gets the timestamp of this AlarmHistoryEntry.
         Timestamp for this alarm history entry. Format defined by RFC3339.
 
-        Example: `2019-02-01T01:02:29.600Z`
+        Example: `2023-02-01T01:02:29.600Z`
 
 
         :return: The timestamp of this AlarmHistoryEntry.
@@ -102,7 +102,7 @@ class AlarmHistoryEntry(object):
         Sets the timestamp of this AlarmHistoryEntry.
         Timestamp for this alarm history entry. Format defined by RFC3339.
 
-        Example: `2019-02-01T01:02:29.600Z`
+        Example: `2023-02-01T01:02:29.600Z`
 
 
         :param timestamp: The timestamp of this AlarmHistoryEntry.
@@ -117,7 +117,7 @@ class AlarmHistoryEntry(object):
         Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
         Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.
 
-        Example: `2019-02-01T0:59:00.789Z`
+        Example: `2023-02-01T0:59:00.789Z`
 
 
         :return: The timestamp_triggered of this AlarmHistoryEntry.
@@ -132,7 +132,7 @@ class AlarmHistoryEntry(object):
         Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
         Available for state transition entries only. Note: A three-minute lag for this value accounts for any late-arriving metrics.
 
-        Example: `2019-02-01T0:59:00.789Z`
+        Example: `2023-02-01T0:59:00.789Z`
 
 
         :param timestamp_triggered: The timestamp_triggered of this AlarmHistoryEntry.

@@ -1,0 +1,11 @@
+FindingAnalyticsDimensions
+==========================
+
+.. currentmodule:: oci.data_safe.models
+
+.. autoclass:: FindingAnalyticsDimensions
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

@@ -48,7 +48,7 @@ class AggregatedDatapoint(object):
         **[Required]** Gets the timestamp of this AggregatedDatapoint.
         The date and time associated with the value of this data point. Format defined by RFC3339.
 
-        Example: `2019-02-01T01:02:29.600Z`
+        Example: `2023-02-01T01:02:29.600Z`
 
 
         :return: The timestamp of this AggregatedDatapoint.
@@ -62,7 +62,7 @@ class AggregatedDatapoint(object):
         Sets the timestamp of this AggregatedDatapoint.
         The date and time associated with the value of this data point. Format defined by RFC3339.
 
-        Example: `2019-02-01T01:02:29.600Z`
+        Example: `2023-02-01T01:02:29.600Z`
 
 
         :param timestamp: The timestamp of this AggregatedDatapoint.

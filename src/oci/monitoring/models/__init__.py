@@ -14,8 +14,16 @@ from .alarm_history_collection import AlarmHistoryCollection
 from .alarm_history_entry import AlarmHistoryEntry
 from .alarm_status_summary import AlarmStatusSummary
 from .alarm_summary import AlarmSummary
+from .alarm_suppression import AlarmSuppression
+from .alarm_suppression_alarm_target import AlarmSuppressionAlarmTarget
+from .alarm_suppression_collection import AlarmSuppressionCollection
+from .alarm_suppression_history_item import AlarmSuppressionHistoryItem
+from .alarm_suppression_history_item_collection import AlarmSuppressionHistoryItemCollection
+from .alarm_suppression_summary import AlarmSuppressionSummary
+from .alarm_suppression_target import AlarmSuppressionTarget
 from .change_alarm_compartment_details import ChangeAlarmCompartmentDetails
 from .create_alarm_details import CreateAlarmDetails
+from .create_alarm_suppression_details import CreateAlarmSuppressionDetails
 from .datapoint import Datapoint
 from .failed_metric_record import FailedMetricRecord
 from .list_metrics_details import ListMetricsDetails
@@ -25,6 +33,7 @@ from .metric_data_details import MetricDataDetails
 from .post_metric_data_details import PostMetricDataDetails
 from .post_metric_data_response_details import PostMetricDataResponseDetails
 from .retrieve_dimension_states_details import RetrieveDimensionStatesDetails
+from .summarize_alarm_suppression_history_details import SummarizeAlarmSuppressionHistoryDetails
 from .summarize_metrics_data_details import SummarizeMetricsDataDetails
 from .suppression import Suppression
 from .update_alarm_details import UpdateAlarmDetails
@@ -39,8 +48,16 @@ monitoring_type_mapping = {
     "AlarmHistoryEntry": AlarmHistoryEntry,
     "AlarmStatusSummary": AlarmStatusSummary,
     "AlarmSummary": AlarmSummary,
+    "AlarmSuppression": AlarmSuppression,
+    "AlarmSuppressionAlarmTarget": AlarmSuppressionAlarmTarget,
+    "AlarmSuppressionCollection": AlarmSuppressionCollection,
+    "AlarmSuppressionHistoryItem": AlarmSuppressionHistoryItem,
+    "AlarmSuppressionHistoryItemCollection": AlarmSuppressionHistoryItemCollection,
+    "AlarmSuppressionSummary": AlarmSuppressionSummary,
+    "AlarmSuppressionTarget": AlarmSuppressionTarget,
     "ChangeAlarmCompartmentDetails": ChangeAlarmCompartmentDetails,
     "CreateAlarmDetails": CreateAlarmDetails,
+    "CreateAlarmSuppressionDetails": CreateAlarmSuppressionDetails,
     "Datapoint": Datapoint,
     "FailedMetricRecord": FailedMetricRecord,
     "ListMetricsDetails": ListMetricsDetails,
@@ -50,6 +67,7 @@ monitoring_type_mapping = {
     "PostMetricDataDetails": PostMetricDataDetails,
     "PostMetricDataResponseDetails": PostMetricDataResponseDetails,
     "RetrieveDimensionStatesDetails": RetrieveDimensionStatesDetails,
+    "SummarizeAlarmSuppressionHistoryDetails": SummarizeAlarmSuppressionHistoryDetails,
     "SummarizeMetricsDataDetails": SummarizeMetricsDataDetails,
     "Suppression": Suppression,
     "UpdateAlarmDetails": UpdateAlarmDetails

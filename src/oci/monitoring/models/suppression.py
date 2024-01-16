@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Suppression(object):
     """
-    The configuration details for suppressing an alarm.
+    The configuration details for an alarm-wide suppression.
+    For dimension-specific suppressions, see :class:`AlarmSuppression`.
     For information about alarms, see
     `Alarms Overview`__.
 
@@ -97,7 +98,7 @@ class Suppression(object):
         **[Required]** Gets the time_suppress_from of this Suppression.
         The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
 
-        Example: `2019-02-01T01:02:29.600Z`
+        Example: `2023-02-01T01:02:29.600Z`
 
 
         :return: The time_suppress_from of this Suppression.
@@ -111,7 +112,7 @@ class Suppression(object):
         Sets the time_suppress_from of this Suppression.
         The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.
 
-        Example: `2019-02-01T01:02:29.600Z`
+        Example: `2023-02-01T01:02:29.600Z`
 
 
         :param time_suppress_from: The time_suppress_from of this Suppression.
@@ -125,7 +126,7 @@ class Suppression(object):
         **[Required]** Gets the time_suppress_until of this Suppression.
         The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
 
-        Example: `2019-02-01T02:02:29.600Z`
+        Example: `2023-02-01T02:02:29.600Z`
 
 
         :return: The time_suppress_until of this Suppression.
@@ -139,7 +140,7 @@ class Suppression(object):
         Sets the time_suppress_until of this Suppression.
         The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.
 
-        Example: `2019-02-01T02:02:29.600Z`
+        Example: `2023-02-01T02:02:29.600Z`
 
 
         :param time_suppress_until: The time_suppress_until of this Suppression.

@@ -2484,15 +2484,19 @@ class ApplicationDependencyManagementClient(object):
         :param str gav: (optional)
             A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
 
+        :param str purl: (optional)
+            A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
+
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided.
             If sort order is dfs, the nodes are returned by going through the application dependency tree in a depth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
             If sort order is bfs, the nodes are returned by going through the application dependency tree in a breadth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
             Default order for gav is ascending where ascending corresponds to alphanumerical order.
+            Default order for purl is ascending where ascending corresponds to alphabetical order
             Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
             Sorting by DFS or BFS cannot be used in conjunction with the following query parameters: \"gav\", \"cvssV2GreaterThanOrEqual\", \"cvssV3GreaterThanOrEqual\" and \"vulnerabilityId\".
 
-            Allowed values are: "gav", "nodeId", "dfs", "bfs"
+            Allowed values are: "gav", "purl", "nodeId", "dfs", "bfs"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2528,6 +2532,7 @@ class ApplicationDependencyManagementClient(object):
             "page",
             "sort_order",
             "gav",
+            "purl",
             "sort_by"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2553,7 +2558,7 @@ class ApplicationDependencyManagementClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["gav", "nodeId", "dfs", "bfs"]
+            sort_by_allowed_values = ["gav", "purl", "nodeId", "dfs", "bfs"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
@@ -2564,6 +2569,7 @@ class ApplicationDependencyManagementClient(object):
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "gav": kwargs.get("gav", missing),
+            "purl": kwargs.get("purl", missing),
             "sortBy": kwargs.get("sort_by", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
@@ -2623,10 +2629,15 @@ class ApplicationDependencyManagementClient(object):
             A filter to return only Vulnerability Audits that match the specified id.
 
         :param float cvss_v3_greater_than_or_equal: (optional)
-            A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater or equal than the specified value.
+            A filter that returns only Vulnerabilities that have a Common Vulnerability Scoring System Version 3 (CVSS V3) greater than or equal to the specified value.
 
         :param float cvss_v2_greater_than_or_equal: (optional)
-            A filter that returns only Vulnerability Audits that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater or equal than the specified value.
+            A filter that returns only Vulnerabilities that have a Common Vulnerability Scoring System Version 2 (CVSS V2) greater than or equal to the specified value.
+
+        :param str severity_greater_than_or_equal: (optional)
+            A filter that returns only Vulnerabilities that have a severity greater than or equal to the specified value.
+
+            Allowed values are: "NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL"
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2644,10 +2655,11 @@ class ApplicationDependencyManagementClient(object):
             If sort order is dfs, the nodes are returned by going through the application dependency tree in a depth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
             If sort order is bfs, the nodes are returned by going through the application dependency tree in a breadth-first manner. Children are sorted based on their GAV property alphabetically (either ascending or descending, depending on the order parameter). Default order is ascending.
             Default order for gav is ascending where ascending corresponds to alphanumerical order.
+            Default order for purl is ascending where ascending corresponds to alphabetical order
             Default order for nodeId is ascending where ascending corresponds to alphanumerical order.
             Sorting by DFS or BFS cannot be used in conjunction with the following query parameters: \"gav\", \"cvssV2GreaterThanOrEqual\", \"cvssV3GreaterThanOrEqual\" and \"vulnerabilityId\".
 
-            Allowed values are: "gav", "nodeId", "dfs", "bfs"
+            Allowed values are: "gav", "purl", "nodeId", "dfs", "bfs"
 
         :param str root_node_id: (optional)
             A filter to override the top level root identifier with the new given value. The application dependency tree will only be traversed from the given node.
@@ -2659,6 +2671,9 @@ class ApplicationDependencyManagementClient(object):
 
         :param str gav: (optional)
             A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
+
+        :param str purl: (optional)
+            A filter to return only resources that match the entire PURL given (https://github.com/package-url/purl-spec/).
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2695,6 +2710,7 @@ class ApplicationDependencyManagementClient(object):
             "vulnerability_id",
             "cvss_v3_greater_than_or_equal",
             "cvss_v2_greater_than_or_equal",
+            "severity_greater_than_or_equal",
             "limit",
             "page",
             "sort_order",
@@ -2702,6 +2718,7 @@ class ApplicationDependencyManagementClient(object):
             "root_node_id",
             "depth",
             "gav",
+            "purl",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2719,6 +2736,13 @@ class ApplicationDependencyManagementClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError(f'Parameter {k} cannot be None, whitespace or empty string')
 
+        if 'severity_greater_than_or_equal' in kwargs:
+            severity_greater_than_or_equal_allowed_values = ["NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL"]
+            if kwargs['severity_greater_than_or_equal'] not in severity_greater_than_or_equal_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `severity_greater_than_or_equal`, must be one of { severity_greater_than_or_equal_allowed_values }"
+                )
+
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
@@ -2727,7 +2751,7 @@ class ApplicationDependencyManagementClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["gav", "nodeId", "dfs", "bfs"]
+            sort_by_allowed_values = ["gav", "purl", "nodeId", "dfs", "bfs"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
@@ -2737,13 +2761,15 @@ class ApplicationDependencyManagementClient(object):
             "vulnerabilityId": kwargs.get("vulnerability_id", missing),
             "cvssV3GreaterThanOrEqual": kwargs.get("cvss_v3_greater_than_or_equal", missing),
             "cvssV2GreaterThanOrEqual": kwargs.get("cvss_v2_greater_than_or_equal", missing),
+            "severityGreaterThanOrEqual": kwargs.get("severity_greater_than_or_equal", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "rootNodeId": kwargs.get("root_node_id", missing),
             "depth": kwargs.get("depth", missing),
-            "gav": kwargs.get("gav", missing)
+            "gav": kwargs.get("gav", missing),
+            "purl": kwargs.get("purl", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3509,11 +3535,25 @@ class ApplicationDependencyManagementClient(object):
             Default order for _timeCreated_ is **descending**.
             Default order for _vulnerableArtifactsCount_ is **ascending**.
             Default order for _vulnerableArtifactsCountWithIgnored_ is **ascending**.
+            Default order for _maxObservedSeverity_ is **ascending**.
+            Default order for _maxObservedSeverityWithIgnored_ is **ascending**.
+            Default order for _displayName_ is **ascending**.
 
-            Allowed values are: "maxObservedCvssV2Score", "maxObservedCvssV3Score", "timeCreated", "vulnerableArtifactsCount", "maxObservedCvssV2ScoreWithIgnored", "maxObservedCvssV3ScoreWithIgnored", "vulnerableArtifactsCountWithIgnored"
+            Allowed values are: "maxObservedCvssV2Score", "maxObservedCvssV3Score", "maxObservedSeverity", "timeCreated", "vulnerableArtifactsCount", "maxObservedCvssV2ScoreWithIgnored", "maxObservedCvssV3ScoreWithIgnored", "maxObservedSeverityWithIgnored", "vulnerableArtifactsCountWithIgnored", "displayName"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
+
+        :param datetime time_created_greater_than_or_equal_to: (optional)
+            A filter to return only Vulnerability Audits with timeCreated greater or equal to the specified value.
+
+        :param datetime time_created_less_than_or_equal_to: (optional)
+            A filter to return only Vulnerability Audits with timeCreated less or equal to the specified value.
+
+        :param str max_observed_severity_greater_than_or_equal_to: (optional)
+            A filter that returns only Vulnerability Audits that have a maximum observed Severity greater than or equal to the specified value.
+
+            Allowed values are: "NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3554,7 +3594,10 @@ class ApplicationDependencyManagementClient(object):
             "page",
             "opc_request_id",
             "sort_by",
-            "display_name"
+            "display_name",
+            "time_created_greater_than_or_equal_to",
+            "time_created_less_than_or_equal_to",
+            "max_observed_severity_greater_than_or_equal_to"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3576,10 +3619,17 @@ class ApplicationDependencyManagementClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["maxObservedCvssV2Score", "maxObservedCvssV3Score", "timeCreated", "vulnerableArtifactsCount", "maxObservedCvssV2ScoreWithIgnored", "maxObservedCvssV3ScoreWithIgnored", "vulnerableArtifactsCountWithIgnored"]
+            sort_by_allowed_values = ["maxObservedCvssV2Score", "maxObservedCvssV3Score", "maxObservedSeverity", "timeCreated", "vulnerableArtifactsCount", "maxObservedCvssV2ScoreWithIgnored", "maxObservedCvssV3ScoreWithIgnored", "maxObservedSeverityWithIgnored", "vulnerableArtifactsCountWithIgnored", "displayName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     f"Invalid value for `sort_by`, must be one of { sort_by_allowed_values }"
+                )
+
+        if 'max_observed_severity_greater_than_or_equal_to' in kwargs:
+            max_observed_severity_greater_than_or_equal_to_allowed_values = ["NONE", "LOW", "MEDIUM", "HIGH", "CRITICAL"]
+            if kwargs['max_observed_severity_greater_than_or_equal_to'] not in max_observed_severity_greater_than_or_equal_to_allowed_values:
+                raise ValueError(
+                    f"Invalid value for `max_observed_severity_greater_than_or_equal_to`, must be one of { max_observed_severity_greater_than_or_equal_to_allowed_values }"
                 )
 
         query_params = {
@@ -3592,7 +3642,10 @@ class ApplicationDependencyManagementClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "displayName": kwargs.get("display_name", missing),
+            "timeCreatedGreaterThanOrEqualTo": kwargs.get("time_created_greater_than_or_equal_to", missing),
+            "timeCreatedLessThanOrEqualTo": kwargs.get("time_created_less_than_or_equal_to", missing),
+            "maxObservedSeverityGreaterThanOrEqualTo": kwargs.get("max_observed_severity_greater_than_or_equal_to", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

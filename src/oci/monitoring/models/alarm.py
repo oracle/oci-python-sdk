@@ -667,7 +667,7 @@ class Alarm(object):
         Gets the body of this Alarm.
         The human-readable content of the delivered alarm notification. Oracle recommends providing guidance
         to operators for resolving the alarm condition. Consider adding links to standard runbook
-        practices.
+        practices. Avoid entering confidential information.
 
         Example: `High CPU usage alert. Follow runbook instructions for resolution.`
 
@@ -683,7 +683,7 @@ class Alarm(object):
         Sets the body of this Alarm.
         The human-readable content of the delivered alarm notification. Oracle recommends providing guidance
         to operators for resolving the alarm condition. Consider adding links to standard runbook
-        practices.
+        practices. Avoid entering confidential information.
 
         Example: `High CPU usage alert. Follow runbook instructions for resolution.`
 
@@ -762,8 +762,7 @@ class Alarm(object):
         A list of destinations for alarm notifications.
         Each destination is represented by the `OCID`__
         of a related resource, such as a :class:`NotificationTopic`.
-        Supported destination services: Notifications
-        , Streaming.
+        Supported destination services: Notifications, Streaming.
         Limit: One destination per supported destination service.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -781,8 +780,7 @@ class Alarm(object):
         A list of destinations for alarm notifications.
         Each destination is represented by the `OCID`__
         of a related resource, such as a :class:`NotificationTopic`.
-        Supported destination services: Notifications
-        , Streaming.
+        Supported destination services: Notifications, Streaming.
         Limit: One destination per supported destination service.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -973,7 +971,7 @@ class Alarm(object):
         **[Required]** Gets the time_created of this Alarm.
         The date and time the alarm was created. Format defined by RFC3339.
 
-        Example: `2019-02-01T01:02:29.600Z`
+        Example: `2023-02-01T01:02:29.600Z`
 
 
         :return: The time_created of this Alarm.
@@ -987,7 +985,7 @@ class Alarm(object):
         Sets the time_created of this Alarm.
         The date and time the alarm was created. Format defined by RFC3339.
 
-        Example: `2019-02-01T01:02:29.600Z`
+        Example: `2023-02-01T01:02:29.600Z`
 
 
         :param time_created: The time_created of this Alarm.
@@ -1001,7 +999,7 @@ class Alarm(object):
         **[Required]** Gets the time_updated of this Alarm.
         The date and time the alarm was last updated. Format defined by RFC3339.
 
-        Example: `2019-02-03T01:02:29.600Z`
+        Example: `2023-02-03T01:02:29.600Z`
 
 
         :return: The time_updated of this Alarm.
@@ -1015,7 +1013,7 @@ class Alarm(object):
         Sets the time_updated of this Alarm.
         The date and time the alarm was last updated. Format defined by RFC3339.
 
-        Example: `2019-02-03T01:02:29.600Z`
+        Example: `2023-02-03T01:02:29.600Z`
 
 
         :param time_updated: The time_updated of this Alarm.

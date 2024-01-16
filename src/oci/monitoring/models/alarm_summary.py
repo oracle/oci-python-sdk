@@ -94,6 +94,10 @@ class AlarmSummary(object):
             The value to assign to the is_enabled property of this AlarmSummary.
         :type is_enabled: bool
 
+        :param is_notifications_per_metric_dimension_enabled:
+            The value to assign to the is_notifications_per_metric_dimension_enabled property of this AlarmSummary.
+        :type is_notifications_per_metric_dimension_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AlarmSummary.
         :type freeform_tags: dict(str, str)
@@ -118,6 +122,7 @@ class AlarmSummary(object):
             'destinations': 'list[str]',
             'suppression': 'Suppression',
             'is_enabled': 'bool',
+            'is_notifications_per_metric_dimension_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'lifecycle_state': 'str'
@@ -134,6 +139,7 @@ class AlarmSummary(object):
             'destinations': 'destinations',
             'suppression': 'suppression',
             'is_enabled': 'isEnabled',
+            'is_notifications_per_metric_dimension_enabled': 'isNotificationsPerMetricDimensionEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'lifecycle_state': 'lifecycleState'
@@ -149,6 +155,7 @@ class AlarmSummary(object):
         self._destinations = None
         self._suppression = None
         self._is_enabled = None
+        self._is_notifications_per_metric_dimension_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
         self._lifecycle_state = None
@@ -389,7 +396,7 @@ class AlarmSummary(object):
     def severity(self):
         """
         **[Required]** Gets the severity of this AlarmSummary.
-        The perceived severity of the alarm with regard to the affected system.
+        The perceived type of response required when the alarm is in the \"FIRING\" state.
 
         Example: `CRITICAL`
 
@@ -406,7 +413,7 @@ class AlarmSummary(object):
     def severity(self, severity):
         """
         Sets the severity of this AlarmSummary.
-        The perceived severity of the alarm with regard to the affected system.
+        The perceived type of response required when the alarm is in the \"FIRING\" state.
 
         Example: `CRITICAL`
 
@@ -426,8 +433,7 @@ class AlarmSummary(object):
         A list of destinations for alarm notifications.
         Each destination is represented by the `OCID`__
         of a related resource, such as a :class:`NotificationTopic`.
-        Supported destination services: Notifications
-        , Streaming.
+        Supported destination services: Notifications, Streaming.
         Limit: One destination per supported destination service.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -445,8 +451,7 @@ class AlarmSummary(object):
         A list of destinations for alarm notifications.
         Each destination is represented by the `OCID`__
         of a related resource, such as a :class:`NotificationTopic`.
-        Supported destination services: Notifications
-        , Streaming.
+        Supported destination services: Notifications, Streaming.
         Limit: One destination per supported destination service.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -508,6 +513,38 @@ class AlarmSummary(object):
         :type: bool
         """
         self._is_enabled = is_enabled
+
+    @property
+    def is_notifications_per_metric_dimension_enabled(self):
+        """
+        Gets the is_notifications_per_metric_dimension_enabled of this AlarmSummary.
+        Whether the alarm sends a separate message for each metric stream.
+        See `Creating an Alarm That Splits Messages by Metric Stream`__.
+        Example: `true`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm
+
+
+        :return: The is_notifications_per_metric_dimension_enabled of this AlarmSummary.
+        :rtype: bool
+        """
+        return self._is_notifications_per_metric_dimension_enabled
+
+    @is_notifications_per_metric_dimension_enabled.setter
+    def is_notifications_per_metric_dimension_enabled(self, is_notifications_per_metric_dimension_enabled):
+        """
+        Sets the is_notifications_per_metric_dimension_enabled of this AlarmSummary.
+        Whether the alarm sends a separate message for each metric stream.
+        See `Creating an Alarm That Splits Messages by Metric Stream`__.
+        Example: `true`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm
+
+
+        :param is_notifications_per_metric_dimension_enabled: The is_notifications_per_metric_dimension_enabled of this AlarmSummary.
+        :type: bool
+        """
+        self._is_notifications_per_metric_dimension_enabled = is_notifications_per_metric_dimension_enabled
 
     @property
     def freeform_tags(self):

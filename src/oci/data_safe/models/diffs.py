@@ -39,6 +39,10 @@ class Diffs(object):
     #: This constant has a value of "PASS"
     SEVERITY_PASS = "PASS"
 
+    #: A constant which can be used with the severity property of a Diffs.
+    #: This constant has a value of "DEFERRED"
+    SEVERITY_DEFERRED = "DEFERRED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Diffs object with values from keyword arguments.
@@ -66,7 +70,7 @@ class Diffs(object):
 
         :param severity:
             The value to assign to the severity property of this Diffs.
-            Allowed values for this property are: "HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", "DEFERRED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type severity: str
 
@@ -214,7 +218,7 @@ class Diffs(object):
         Gets the severity of this Diffs.
         The severity of this diff.
 
-        Allowed values for this property are: "HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", "DEFERRED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -233,7 +237,7 @@ class Diffs(object):
         :param severity: The severity of this Diffs.
         :type: str
         """
-        allowed_values = ["HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS"]
+        allowed_values = ["HIGH", "MEDIUM", "LOW", "EVALUATE", "ADVISORY", "PASS", "DEFERRED"]
         if not value_allowed_none_or_none_sentinel(severity, allowed_values):
             severity = 'UNKNOWN_ENUM_VALUE'
         self._severity = severity

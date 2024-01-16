@@ -178,7 +178,7 @@ class AlarmStatusSummary(object):
     def severity(self):
         """
         **[Required]** Gets the severity of this AlarmStatusSummary.
-        The configured severity of the alarm.
+        The perceived type of response required when the alarm is in the \"FIRING\" state.
 
         Example: `CRITICAL`
 
@@ -195,7 +195,7 @@ class AlarmStatusSummary(object):
     def severity(self, severity):
         """
         Sets the severity of this AlarmStatusSummary.
-        The configured severity of the alarm.
+        The perceived type of response required when the alarm is in the \"FIRING\" state.
 
         Example: `CRITICAL`
 
@@ -215,7 +215,7 @@ class AlarmStatusSummary(object):
         Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
         Note: A three-minute lag for this value accounts for any late-arriving metrics.
 
-        Example: `2019-02-01T01:02:29.600Z`
+        Example: `2023-02-01T01:02:29.600Z`
 
 
         :return: The timestamp_triggered of this AlarmStatusSummary.
@@ -230,7 +230,7 @@ class AlarmStatusSummary(object):
         Timestamp for the transition of the alarm state. For example, the time when the alarm transitioned from OK to Firing.
         Note: A three-minute lag for this value accounts for any late-arriving metrics.
 
-        Example: `2019-02-01T01:02:29.600Z`
+        Example: `2023-02-01T01:02:29.600Z`
 
 
         :param timestamp_triggered: The timestamp_triggered of this AlarmStatusSummary.

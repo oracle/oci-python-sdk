@@ -12,7 +12,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UsageDataViaObjectStorageTupleDetails(UsageDataDetails):
     """
-    Reference to an object in Object Storage as a tuple.
+    Reference to an object in object storage as a tuple. The usage data file uploaded to object storage must be a gzip archive
+    of the JSON usage data returned from the GraalVM native-image-inspect tool after a native-image build.
     """
 
     def __init__(self, **kwargs):

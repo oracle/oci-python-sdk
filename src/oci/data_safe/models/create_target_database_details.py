@@ -48,6 +48,10 @@ class CreateTargetDatabaseDetails(object):
             The value to assign to the connection_option property of this CreateTargetDatabaseDetails.
         :type connection_option: oci.data_safe.models.ConnectionOption
 
+        :param peer_target_database_details:
+            The value to assign to the peer_target_database_details property of this CreateTargetDatabaseDetails.
+        :type peer_target_database_details: list[oci.data_safe.models.CreatePeerTargetDatabaseDetails]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateTargetDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -65,6 +69,7 @@ class CreateTargetDatabaseDetails(object):
             'credentials': 'Credentials',
             'tls_config': 'TlsConfig',
             'connection_option': 'ConnectionOption',
+            'peer_target_database_details': 'list[CreatePeerTargetDatabaseDetails]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -77,6 +82,7 @@ class CreateTargetDatabaseDetails(object):
             'credentials': 'credentials',
             'tls_config': 'tlsConfig',
             'connection_option': 'connectionOption',
+            'peer_target_database_details': 'peerTargetDatabaseDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -88,6 +94,7 @@ class CreateTargetDatabaseDetails(object):
         self._credentials = None
         self._tls_config = None
         self._connection_option = None
+        self._peer_target_database_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -242,6 +249,30 @@ class CreateTargetDatabaseDetails(object):
         :type: oci.data_safe.models.ConnectionOption
         """
         self._connection_option = connection_option
+
+    @property
+    def peer_target_database_details(self):
+        """
+        Gets the peer_target_database_details of this CreateTargetDatabaseDetails.
+        The details of the database to be registered as a peer target database.
+
+
+        :return: The peer_target_database_details of this CreateTargetDatabaseDetails.
+        :rtype: list[oci.data_safe.models.CreatePeerTargetDatabaseDetails]
+        """
+        return self._peer_target_database_details
+
+    @peer_target_database_details.setter
+    def peer_target_database_details(self, peer_target_database_details):
+        """
+        Sets the peer_target_database_details of this CreateTargetDatabaseDetails.
+        The details of the database to be registered as a peer target database.
+
+
+        :param peer_target_database_details: The peer_target_database_details of this CreateTargetDatabaseDetails.
+        :type: list[oci.data_safe.models.CreatePeerTargetDatabaseDetails]
+        """
+        self._peer_target_database_details = peer_target_database_details
 
     @property
     def freeform_tags(self):

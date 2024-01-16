@@ -120,6 +120,7 @@ Data Safe
     oci.data_safe.models.CreateMaskingColumnDetails
     oci.data_safe.models.CreateMaskingPolicyDetails
     oci.data_safe.models.CreateOnPremConnectorDetails
+    oci.data_safe.models.CreatePeerTargetDatabaseDetails
     oci.data_safe.models.CreateReportDefinitionDetails
     oci.data_safe.models.CreateSdmMaskingPolicyDifferenceDetails
     oci.data_safe.models.CreateSecurityAssessmentDetails
@@ -141,6 +142,12 @@ Data Safe
     oci.data_safe.models.DatabaseSecurityConfig
     oci.data_safe.models.DatabaseSecurityConfigCollection
     oci.data_safe.models.DatabaseSecurityConfigSummary
+    oci.data_safe.models.DatabaseTableAccessEntry
+    oci.data_safe.models.DatabaseTableAccessEntryCollection
+    oci.data_safe.models.DatabaseTableAccessEntrySummary
+    oci.data_safe.models.DatabaseViewAccessEntry
+    oci.data_safe.models.DatabaseViewAccessEntryCollection
+    oci.data_safe.models.DatabaseViewAccessEntrySummary
     oci.data_safe.models.DeleteRowsFormatEntry
     oci.data_safe.models.DeterministicEncryptionDateFormatEntry
     oci.data_safe.models.DeterministicEncryptionFormatEntry
@@ -168,7 +175,12 @@ Data Safe
     oci.data_safe.models.EnableDataSafeConfigurationDetails
     oci.data_safe.models.EntryDetails
     oci.data_safe.models.Finding
+    oci.data_safe.models.FindingAnalyticsCollection
+    oci.data_safe.models.FindingAnalyticsDimensions
+    oci.data_safe.models.FindingAnalyticsSummary
     oci.data_safe.models.FindingSummary
+    oci.data_safe.models.FindingsChangeAuditLogCollection
+    oci.data_safe.models.FindingsChangeAuditLogSummary
     oci.data_safe.models.FirewallPolicyEntryDetails
     oci.data_safe.models.FixedNumberFormatEntry
     oci.data_safe.models.FixedStringFormatEntry
@@ -231,6 +243,9 @@ Data Safe
     oci.data_safe.models.PatchSensitiveColumnDetails
     oci.data_safe.models.PatchTargetAlertPolicyAssociationDetails
     oci.data_safe.models.PatternFormatEntry
+    oci.data_safe.models.PeerTargetDatabase
+    oci.data_safe.models.PeerTargetDatabaseCollection
+    oci.data_safe.models.PeerTargetDatabaseSummary
     oci.data_safe.models.PreserveOriginalDataFormatEntry
     oci.data_safe.models.PrivateEndpoint
     oci.data_safe.models.Profile
@@ -255,6 +270,8 @@ Data Safe
     oci.data_safe.models.ReportDefinitionSummary
     oci.data_safe.models.ReportDetails
     oci.data_safe.models.ReportSummary
+    oci.data_safe.models.RoleGrantPathCollection
+    oci.data_safe.models.RoleGrantPathSummary
     oci.data_safe.models.RoleSummary
     oci.data_safe.models.RunSecurityAssessmentDetails
     oci.data_safe.models.RunUserAssessmentDetails
@@ -273,6 +290,11 @@ Data Safe
     oci.data_safe.models.SecurityAssessmentComparisonPerTarget
     oci.data_safe.models.SecurityAssessmentStatistics
     oci.data_safe.models.SecurityAssessmentSummary
+    oci.data_safe.models.SecurityFeatureAnalyticsCollection
+    oci.data_safe.models.SecurityFeatureAnalyticsDimensions
+    oci.data_safe.models.SecurityFeatureAnalyticsSummary
+    oci.data_safe.models.SecurityFeatureCollection
+    oci.data_safe.models.SecurityFeatureSummary
     oci.data_safe.models.SecurityPolicy
     oci.data_safe.models.SecurityPolicyCollection
     oci.data_safe.models.SecurityPolicyDeployment
@@ -281,6 +303,9 @@ Data Safe
     oci.data_safe.models.SecurityPolicyEntryState
     oci.data_safe.models.SecurityPolicyEntryStateCollection
     oci.data_safe.models.SecurityPolicyEntryStateSummary
+    oci.data_safe.models.SecurityPolicyReport
+    oci.data_safe.models.SecurityPolicyReportCollection
+    oci.data_safe.models.SecurityPolicyReportSummary
     oci.data_safe.models.SecurityPolicySummary
     oci.data_safe.models.SensitiveCategory
     oci.data_safe.models.SensitiveColumn
@@ -347,12 +372,15 @@ Data Safe
     oci.data_safe.models.UpdateColumnSourceTargetDetails
     oci.data_safe.models.UpdateDataSafePrivateEndpointDetails
     oci.data_safe.models.UpdateDatabaseSecurityConfigDetails
+    oci.data_safe.models.UpdateFindingDetails
     oci.data_safe.models.UpdateLibraryMaskingFormatDetails
     oci.data_safe.models.UpdateMaskingColumnDetails
     oci.data_safe.models.UpdateMaskingPolicyDetails
     oci.data_safe.models.UpdateOnPremConnectorDetails
     oci.data_safe.models.UpdateOnPremConnectorWalletDetails
+    oci.data_safe.models.UpdatePeerTargetDatabaseDetails
     oci.data_safe.models.UpdateReportDefinitionDetails
+    oci.data_safe.models.UpdateReportDetails
     oci.data_safe.models.UpdateSdmMaskingPolicyDifferenceDetails
     oci.data_safe.models.UpdateSecurityAssessmentDetails
     oci.data_safe.models.UpdateSecurityPolicyDeploymentDetails
@@ -368,6 +396,8 @@ Data Safe
     oci.data_safe.models.UpdateTargetAlertPolicyAssociationDetails
     oci.data_safe.models.UpdateTargetDatabaseDetails
     oci.data_safe.models.UpdateUserAssessmentDetails
+    oci.data_safe.models.UserAccessAnalyticsCollection
+    oci.data_safe.models.UserAccessAnalyticsSummary
     oci.data_safe.models.UserAggregation
     oci.data_safe.models.UserAssessment
     oci.data_safe.models.UserAssessmentBaseLineDetails

@@ -28,19 +28,26 @@ class CalculateAuditVolumeAvailableDetails(object):
             The value to assign to the trail_locations property of this CalculateAuditVolumeAvailableDetails.
         :type trail_locations: list[str]
 
+        :param database_unique_name:
+            The value to assign to the database_unique_name property of this CalculateAuditVolumeAvailableDetails.
+        :type database_unique_name: str
+
         """
         self.swagger_types = {
             'audit_collection_start_time': 'datetime',
-            'trail_locations': 'list[str]'
+            'trail_locations': 'list[str]',
+            'database_unique_name': 'str'
         }
 
         self.attribute_map = {
             'audit_collection_start_time': 'auditCollectionStartTime',
-            'trail_locations': 'trailLocations'
+            'trail_locations': 'trailLocations',
+            'database_unique_name': 'databaseUniqueName'
         }
 
         self._audit_collection_start_time = None
         self._trail_locations = None
+        self._database_unique_name = None
 
     @property
     def audit_collection_start_time(self):
@@ -69,7 +76,7 @@ class CalculateAuditVolumeAvailableDetails(object):
     @property
     def trail_locations(self):
         """
-        **[Required]** Gets the trail_locations of this CalculateAuditVolumeAvailableDetails.
+        Gets the trail_locations of this CalculateAuditVolumeAvailableDetails.
         The trail locations for which the audit data volume has to be calculated.
 
 
@@ -89,6 +96,30 @@ class CalculateAuditVolumeAvailableDetails(object):
         :type: list[str]
         """
         self._trail_locations = trail_locations
+
+    @property
+    def database_unique_name(self):
+        """
+        Gets the database_unique_name of this CalculateAuditVolumeAvailableDetails.
+        Unique name of the database associated to the peer target database.
+
+
+        :return: The database_unique_name of this CalculateAuditVolumeAvailableDetails.
+        :rtype: str
+        """
+        return self._database_unique_name
+
+    @database_unique_name.setter
+    def database_unique_name(self, database_unique_name):
+        """
+        Sets the database_unique_name of this CalculateAuditVolumeAvailableDetails.
+        Unique name of the database associated to the peer target database.
+
+
+        :param database_unique_name: The database_unique_name of this CalculateAuditVolumeAvailableDetails.
+        :type: str
+        """
+        self._database_unique_name = database_unique_name
 
     def __repr__(self):
         return formatted_flat_dict(self)
